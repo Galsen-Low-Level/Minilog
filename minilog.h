@@ -6,7 +6,9 @@
 #if !defined(__MINILOG) 
 #define  __MINILOG 
 
-//#include <stddef.h>  
+#include <stddef.h>  
+#include <curses.h> 
+#include <term.h> 
 
 #if defined(__cplusplus)
 # define  __mlog  extern "C" 
@@ -22,46 +24,56 @@
 # define  nptr (__ptr_t) 0 
 #else 
 # define  nptr NULL
-#endif 
+#endif
 
+ 
 #define  FLOG(__severity_level ,  __mesg) \
     fmtmsg(MM_CONSOLE|MM_PRINT , "FTPFM:v1.0" , __severity_level , __mesg ,0/* no action */, 0/* no tag*/)
 
-#define  tc_int  1, putchar  
-#define  tc_exec(__termcap)  tputs(__termcap , tc_int) 
-#define  tc_exec_p(__t)   tc_exec(tiparm(__t) )
-//!NOTE  For cursor  position 
-#define  tc_cursor_at(__x , __y)  tigoto(__x , __y) 
+#define  __mlog_interupt    0x1 , putchar 
+#define  mlog_exec(__itermcap) tputs(__itermcap , __mlog_interupt)
+
+//!NOTE : For Cursor movement 
+#define  mlog_cusror(__x , __y)  mlog_exec(tgoto(cursor_address , __x , __y))
 
 
-#define RSET_CODE 0x27 
-#define FGRD_CODE 0x167 
+#define  CAPCODE(__code)\
+  ((TERMTYPE*)(cur_term))->Strings[__code] 
 
-//  ((TERMTYPE*)(cur_term))->Strings[__code] 
-#define  SETAF  ((TERMTYPE *)(cur_term))->Strings[359] 
-#define  RSET   ((TERMTYPE *)(cur_term))->Strings[39] 
+#define  SETAF   CAPCODE(0x167)  
+#define  RSET    CAPCODE(0x27)    
+#define  CADDR   CAPCODE(0xa)   
+#define  BLINK   CAPCODE(0x1a)   
+#define  BOLD    CAPCODE(0x1b)   
 
-#define  __restore  tc_exec(RSET) 
-#define  tc_color_attr(__color_attribute)  SETAF , __color_attribute  
+#define  __restore  mlog_exec(RSET)  
+#define  tc_color_attr(__color_attribute)  mlog_exec(tiparm(SETAF , __color_attribute))   
+
 
 enum __log_level { 
   INFO,
 #define LP_INFO  tc_color_attr(COLOR_CYAN) 
   WARN, 
 #define LP_WARN  tc_color_attr(COLOR_YELLOW) 
-  ERROR
+  ERROR,
 #define LP_ERROR tc_color_attr(COLOR_RED) 
-
-//!TODO  : add new log level  named FATALITY   & ALERT (WARN + BLINK) 
+  ALERT, 
+#define LP_ALERT mlog_exec(BLINK); LP_WARN   
+  FATALITY 
+#define LP_FATALITY  mlog_exec(BOLD); LP_ERROR 
+//!TODO  : add new log level  named FATALITY(ERROR + BLINK)   & ALERT (WARN + BLINK) 
 } ; 
 
-#define __get_lp_level(__lp_level) tc_exec_p(LP_##__lp_level)  
+#define __get_lp_level(__lp_level) LP_##__lp_level 
 
 #define  __LP_GENERIC(__lvl , ...) minilog(__lvl ,__VA_ARGS__)
 
 #define  LOGINFO(...) __LP_GENERIC(INFO, __VA_ARGS__)  
 #define  LOGWARN(...) __LP_GENERIC(WARN, __VA_ARGS__)  
 #define  LOGERR(...)  __LP_GENERIC(ERROR,__VA_ARGS__)  
+#define  LOGARLT(...)  __LP_GENERIC(ALERT,__VA_ARGS__)  
+#define  LOGFATAL(...)  __LP_GENERIC(FATALITY,__VA_ARGS__)  
+
 
 /* @fn minilog_setup(void) ; 
  * @brief configure or initilize the terminal capbilities  
@@ -84,6 +96,22 @@ static int minilog_set_current_locale(void) ;
  */
 __mlog int minilog(int __log_level , const char *__restrict__ __fmtstr , ...) ; 
 
+static   __always_inline int minilog_apply_lglvl(int __log_level)  
+{
+  int what_happen = 0 ;  
+   switch (__log_level) 
+   {
+     case INFO  : __get_lp_level(INFO) ; break; 
+     case WARN  : __get_lp_level(WARN) ; break; 
+     case ERROR : __get_lp_level(ERROR) ; break; 
+     case ALERT : __get_lp_level(ALERT) ; break; 
+     case FATALITY : __get_lp_level(FATALITY);  break; 
+     default : 
+                what_happen=~0 ;break; 
+   }
+
+   return what_happen ;   
+}
 /* @fn __minilog(const char  * , ... ) 
  * @brief write formated log 
  * @param const char *  formated string  
@@ -91,7 +119,7 @@ __mlog int minilog(int __log_level , const char *__restrict__ __fmtstr , ...) ;
  * @return int - 0 ok otherwise -1
  */
 static int 
-__minilog (const char * __restrict__ __fmtstr ,  ...);  
+__minilog (int __log_level  , const char * __restrict__ __fmtstr ,  ...);  
 
 /*  @fn minilog_perform_locale(char  __parmreq_(1024))) 
  *  @brief format time in specific representation  
