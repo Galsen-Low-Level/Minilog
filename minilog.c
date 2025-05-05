@@ -11,8 +11,6 @@
 #include  <assert.h> 
 #include  <string.h>
 #include  <fmtmsg.h>  
-#include  <term.h> 
-#include  <curses.h>
 #include  <locale.h> 
 #include  "minilog.h"  
 
@@ -36,9 +34,11 @@ int  minilog_setup(void) {
     return   ~0 ; 
   }
 
+  //!Disable buffering on stdout 
+  (void) setvbuf(stdout ,  (char *) 0 ,  _IONBF , 0 ) ; 
   if(!minilog_set_current_locale()) 
   {
-    LOGERR("Cannot set l18n and l10n");   
+    LOGARLT("Cannot set l18n and l10n"); 
     return ~0; 
   }
 
@@ -54,34 +54,20 @@ static int minilog_set_current_locale(void)
 
 int minilog(int loglvl ,  const char * restrict fmtstr , ... )
 {
-  int  log_status = MM_OK ;  
   __gnuc_va_list ap ; 
   __builtin_va_start(ap , fmtstr) ; 
-
-  switch(loglvl) 
-  {
-    case INFO   : __get_lp_level(INFO) ; break ; 
-    case WARN   : __get_lp_level(WARN)  ; break; 
-    case ERROR  : __get_lp_level(ERROR) ; break;
-    default :
-                 log_status=~0; 
-                 goto __htftp_log_end ;  
-  }
- 
-  char tmp_fmtstr[1024]  ={0} ;  
+   char tmp_fmtstr[1024]  ={0} ;  
   vsnprintf(tmp_fmtstr,  1024 , fmtstr , ap ) ; 
-  log_status = __minilog("%s" ,tmp_fmtstr)  ;  
+  int log_status = __minilog(loglvl ,"%s" ,tmp_fmtstr)  ;  
 
-  __builtin_va_end(ap);  
+  __builtin_va_end(ap); 
 
-  __restore ; 
 
-__htftp_log_end:
-  return  MM_OK != log_status  ? ~0 :  0 ;  
+  return   log_status ==MM_OK ? 0 : ~0 ;  
 }
 
 static int  
-__minilog(const char * restrict  fmtstr ,  ...) 
+__minilog(int loglvl , const char * restrict  fmtstr ,  ...) 
 {
   
   char  strtime_buffer[1024] = {0} ; 
@@ -90,12 +76,16 @@ __minilog(const char * restrict  fmtstr ,  ...)
   __gnuc_va_list ap ; 
   __builtin_va_start(ap  , fmtstr) ; 
 
-  vsprintf((strtime_buffer +strlen(strtime_buffer)) ,   fmtstr , ap ) ;
+  //!TODO :  More flexible move 
+  //      ->  Allow user to move strtime_buffer  ( LEFT , MIDDLE , RIGHT ) 
+  vsprintf((strtime_buffer +strlen(strtime_buffer)) ,   fmtstr , ap ); 
 
+  minilog_apply_lglvl(loglvl) ;
+ 
   int s =  FLOG(MM_INFO, strtime_buffer) ; 
   __builtin_va_end(ap); 
   
-
+  __restore ; 
   return s ; 
 } 
 

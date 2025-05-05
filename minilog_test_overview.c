@@ -8,11 +8,11 @@
 #include <stdlib.h> 
 #include "minilog.h"
 
-int main (void) 
-{
- 
-  int s =  minilog_setup(); 
- 
+extern char **environ ; 
+int main (int ac  , char **av , char **env)  
+{ 
+  int s =  minilog_setup();
+
   
   return EXIT_SUCCESS ; 
 }
