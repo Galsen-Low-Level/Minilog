@@ -6,6 +6,7 @@ pkgcfg = import('pkgconfig')
 cc = meson.get_compiler('c') 
 add_project_arguments(
   cc.get_supported_arguments(), 
+  '-DMINILOG_ALLOW_ABORT_ON_FATAL', 
   language:'c'
   )
 
