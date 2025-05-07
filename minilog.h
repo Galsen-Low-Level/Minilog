@@ -30,7 +30,7 @@
 
  
 #define  FLOG(__severity_level ,  __mesg) \
-    fmtmsg(MM_CONSOLE|MM_PRINT , "FTPFM:v1.0" , __severity_level , __mesg ,0/* no action */, 0/* no tag*/)
+    fmtmsg(MM_CONSOLE|MM_PRINT , ":::" , __severity_level , __mesg ,0/* no action */, 0/* no tag*/)
 
 #define  __mlog_interupt    0x1 , putchar 
 #define  mlog_exec(__itermcap) tputs(__itermcap , __mlog_interupt)
@@ -132,6 +132,8 @@ static   __always_inline int minilog_apply_lglvl(int __log_level)
 
    return what_happen ; 
 }
+
+static void  minilog_auto_check_program_bn(void)  __attribute__((constructor))  ; 
 /* @fn __minilog(const char  * , ... ) 
  * @brief write formated log 
  * @param const char *  formated string  

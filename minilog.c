@@ -14,9 +14,11 @@
 #include  <locale.h> 
 #include  "minilog.h"  
 
+char minilog_basename[0xff] ={0} ; 
+
 
 int  minilog_setup(void) {
-  int  erret =  OK; 
+  int  erret =  OK;
   if( ERR == setupterm(nptr, STDOUT_FILENO , &erret)) 
   {
     switch(erret) 
@@ -84,20 +86,23 @@ __minilog(int loglvl , const char * restrict  fmtstr ,  ...)
   if(!(~0  ^severity)) 
     FLOG(MM_WARNING ,"Cannot apply  severity scope\n") ; 
  
-  int check_special_severity =  severity & 0xf ; 
-  
-  int s =  FLOG((severity >> 4 ), strtime_buffer) ; 
+ 
+  //!TODO : Add origin basename program  to minilog
+  int s =  FLOG((severity >> 4 ), strtime_buffer) ;
   __builtin_va_end(ap); 
   
   __restore ; 
 
-  if(check_special_severity ) 
-  {
+
 #if defined(MINILOG_ABORT_ON_FATALITY)
-    if (check_special_severity & 2)
-      exit(2); 
-#endif 
+  /*! Check  special severity flags */ 
+  int check_special_severity = (severity & 0xf); 
+  switch(check_special_severity)
+  {
+     case 2 :  
+       _Exit(2); 
   }
+#endif 
 
   
   return s ; 
@@ -110,5 +115,14 @@ minilog_perform_locale(char strtime_buffer  __Nonullable_(1024))
    struct  tm *broken_down_time = localtime(&tepoch);  
    ssize_t readed_bytes = strftime(strtime_buffer , 1024 ,  "%F%T%P : ", broken_down_time) ; 
    assert(!readed_bytes^strlen(strtime_buffer)) ; 
+}
+
+
+void minilog_auto_check_program_bn(void)
+{
+  char *program_basename  = getenv("_") ;  
+  
+  memcpy(minilog_basename , program_basename  , strlen(program_basename))  ; 
+  strcat(minilog_basename , "::2") ; 
 }
 
