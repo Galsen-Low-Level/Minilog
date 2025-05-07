@@ -38,7 +38,7 @@ int  minilog_setup(void) {
   (void) setvbuf(stdout ,  (char *) 0 ,  _IONBF , 0 ) ; 
   if(!minilog_set_current_locale()) 
   {
-    LOGARLT("Cannot set l18n and l10n"); 
+    LOGNTH("Cannot set l18n and l10n"); 
     return ~0; 
   }
 
@@ -80,12 +80,26 @@ __minilog(int loglvl , const char * restrict  fmtstr ,  ...)
   //      ->  Allow user to move strtime_buffer  ( LEFT , MIDDLE , RIGHT ) 
   vsprintf((strtime_buffer +strlen(strtime_buffer)) ,   fmtstr , ap ); 
 
-  minilog_apply_lglvl(loglvl) ;
+  int severity =  minilog_apply_lglvl(loglvl) ; 
+  if(!(~0  ^severity)) 
+    FLOG(MM_WARNING ,"Cannot apply  severity scope\n") ; 
  
-  int s =  FLOG(MM_INFO, strtime_buffer) ; 
+  int check_special_severity =  severity & 0xf ; 
+  
+  int s =  FLOG((severity >> 4 ), strtime_buffer) ; 
   __builtin_va_end(ap); 
   
   __restore ; 
+
+  if(check_special_severity ) 
+  {
+#if  ABORT_ON_FATALITY 
+    if (check_special_severity & 2)
+      exit(2); 
+#endif 
+  }
+
+  
   return s ; 
 } 
 
