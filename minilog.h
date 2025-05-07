@@ -27,6 +27,7 @@
 # define  nptr NULL
 #endif
 
+
  
 #define  FLOG(__severity_level ,  __mesg) \
     fmtmsg(MM_CONSOLE|MM_PRINT , "FTPFM:v1.0" , __severity_level , __mesg ,0/* no action */, 0/* no tag*/)
@@ -78,6 +79,10 @@ enum __log_level {
 #define  LOGNTH(...)    __LP_GENERIC(NOTHING ,__VA_ARGS__)
 
 
+#if defined(MINILOG_ALLOW_ABORT_ON_FATAL) 
+#define MINILOG_ABORT_ON_FATALITY 1  
+#endif 
+
 /* @fn minilog_setup(void) ; 
  * @brief configure or initilize the terminal capbilities  
  */
@@ -115,11 +120,11 @@ static   __always_inline int minilog_apply_lglvl(int __log_level)
      /* ------------Special  log level ---------------- */
      case ALERT : 
                   __get_lp_level(ALERT) ;  
-                  what_happen = (MM_WARNING <<4) | 2 ; 
+                  what_happen = (MM_WARNING <<4) | 1; 
                   break; 
      case FATALITY : 
                   __get_lp_level(FATALITY); 
-                  what_happen = (MM_HALT <<4) | 4; 
+                  what_happen = (MM_HALT <<4) | 2; 
                   break; 
      default : 
                 what_happen=~0 ;break; 

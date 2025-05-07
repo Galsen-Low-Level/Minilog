@@ -38,7 +38,7 @@ int  minilog_setup(void) {
   (void) setvbuf(stdout ,  (char *) 0 ,  _IONBF , 0 ) ; 
   if(!minilog_set_current_locale()) 
   {
-    LOGNTH("Cannot set l18n and l10n"); 
+    LOGFATAL("Cannot set l18n and l10n"); 
     return ~0; 
   }
 
@@ -93,7 +93,7 @@ __minilog(int loglvl , const char * restrict  fmtstr ,  ...)
 
   if(check_special_severity ) 
   {
-#if  ABORT_ON_FATALITY 
+#if defined(MINILOG_ABORT_ON_FATALITY)
     if (check_special_severity & 2)
       exit(2); 
 #endif 
