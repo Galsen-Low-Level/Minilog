@@ -38,7 +38,7 @@ int  minilog_setup(void) {
 
   //!Disable buffering on stdout 
   (void) setvbuf(stdout ,  (char *) 0 ,  _IONBF , 0 ) ; 
-  if(!minilog_set_current_locale()) 
+  if(minilog_set_current_locale()) 
   {
     LOGFATAL("Cannot set l18n and l10n"); 
     return ~0; 
