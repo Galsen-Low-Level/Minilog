@@ -62,7 +62,8 @@ enum __log_level {
   ERROR,
 #define LP_ERROR tc_color_attr(COLOR_RED) 
   ALERT, 
-#define LP_ALERT mlog_exec(BLINK); LP_WARN   
+#define LP_ALERT mlog_exec(BLINK); tc_color_attr(COLOR_MAGENTA)  
+#define MM_ALERT  5  
   FATALITY 
 #define LP_FATALITY  mlog_exec(BOLD); LP_ERROR 
 } ; 
@@ -120,7 +121,8 @@ static   __always_inline int minilog_apply_lglvl(int __log_level)
      /* ------------Special  log level ---------------- */
      case ALERT : 
                   __get_lp_level(ALERT) ;  
-                  what_happen = (MM_WARNING <<4) | 1; 
+                  addseverity(5 ,  "ALERT");  
+                  what_happen = (MM_ALERT <<4) | 1; 
                   break; 
      case FATALITY : 
                   __get_lp_level(FATALITY); 

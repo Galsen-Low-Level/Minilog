@@ -10,7 +10,6 @@
 #include  <time.h> 
 #include  <assert.h> 
 #include  <string.h>
-#include  <fmtmsg.h>  
 #include  <locale.h> 
 #include  "minilog.h"  
 
@@ -44,7 +43,6 @@ int  minilog_setup(void) {
     return ~0; 
   }
 
-  
   return erret &~erret ; 
 }
 
