@@ -20,4 +20,8 @@ minilog_so_decl= declare_dependency(
   include_directories:[inc_dir],
   dependencies:[using_curses] ,
   version:meson.project_version() 
-  )  
+  ) 
+
+executable(meson.project_name(), 
+  'minilog_overview.c',
+  link_with:[minilog_so])
