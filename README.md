@@ -2,18 +2,19 @@
 
 > *A Minimalistic  log print using termcapabities for native support for almost all terminal.*
 
+ <img src="https://img.shields.io/badge/With%20Python%20Support%20On%20Progress-gray?style=for-the-badge&logo=python" width="200"  height="" alt="Python-Support-on-progress" style="margin-right:20px"  align="right"/>
 
 ## About 
 
-As its name suggests, minilog is a tool dedicated to native logging based on termcapabilities .
+As its name suggests, __minilog__ is a tool dedicated to native logging based on termcapabilities .
 It adapts automatically to different terminals, thanks to its __support for termcapabilities__, and is often already present on most Unix systems.
 
 Lightweight and easy to use, it has no external dependencies,
-which reduces the memory footprint when used.
+which ***reduces the memory footprint*** when used.
 
 By default, for fast display, standard output is not buffered, i.e. it is not timed.
 by the operating system, giving you instant display of messages.
-It can be quickly integrated into your workflow, as the project is built into a single file called a shared object.
+It can be quickly integrated into your workflow, as the project is built into a single file called a *shared object*.
 
 It can be integrated into your code by creating a link to it.
 
@@ -28,12 +29,13 @@ To install or build it, we used the build manager called [Meson Build System](ht
 And here are the commands to type: 
 
 After cloning. 
-1 -> Enter to project. 
+
+* Enter to project. 
 ```bash 
 $ cd Minilog
 ``` 
 
-2 -> start construction with meson
+* start construction with meson
 ```bash
 $ meson setup build      # build the project
 $ meson compile -C build # compile project
@@ -51,12 +53,14 @@ and in the build folder you'll have the executable.
 Feel free to play around with the main.c file, which contains code examples you can play with too. 
 
 For the more timid, use Docker : 
-``bash 
+```bash 
 $ docker build . -t minilog 
 $ docker run minilog # run it  
 ```
 
-Here are a few screenshots to see what the logs look like 
+###### Here is a screenshot to see what the logs look like 
+
+<img src="assets/screenshots/mlog-img.png" width="300"  height="" alt="minilogss"  align="center"/>
 
 
 
@@ -66,7 +70,7 @@ Here are a few screenshots to see what the logs look like
 >     feat: so I know it's a feature request,  
 >     idea: to discuss an idea
 >     question: if it's a question, I'll be happy to answer it. 
->
+
 
 
 **_Happy Hacking Folks_** 
@@ -75,8 +79,8 @@ Here are a few screenshots to see what the logs look like
 
 Feel free to contribute.
 
-We ❤️  Computers at all Levels.
+We  ❤️ Computers at all Levels.
 
-From Senegal. 🇸🇳
+From Senegal 🇸🇳
 
 
