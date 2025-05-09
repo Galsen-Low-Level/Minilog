@@ -15,6 +15,7 @@ int main (int ac  , char **av , char **env)
   if(minilog_setup()/*! Initial  minilog stuff */)   
     return EXIT_FAILURE ; 
 
+  LOGNTH("This is a basic log  with no effect  sound boring  hunnn ? :x"); 
   LOGINFO("This is an Information  log"); 
   LOGWARN("This is an Warning  log  with %s",  mesg); 
   LOGERR("Error log") ; 
