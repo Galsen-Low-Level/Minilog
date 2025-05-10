@@ -46,16 +46,23 @@ At the end of compilation, you'll have a .so file that can be integrated into yo
 
 ### OverView: 
 
-For a quick appercu, a dockerfile is provided to build the environment and get an overview.
-Or you can directly use the build project as described above (see the section on how to build)
-and in the build folder you'll have the executable.
+> ![WARNING] 
+> Due to a technical problem with Docker containers, most of the images I try to use don't work.
+> Most of them refuse to download resource packages (I don't know why??).
+> This section is therefore unreliable on my side. I suggest you work on your side
+> Try and make a pull request. Thanks in advance.
 
-Feel free to play around with the main.c file, which contains code examples you can play with too. 
 
-For the more timid, use Docker : 
+~For a quick appercu, a dockerfile is provided to build the environment and get an overview.~
+~Or you can directly use the build project as described above (see the section on how to build)~
+~and in the build folder you'll have the executable.~
+
+Feel free to play around with the `minilog_overview.c` file, which contains code examples you can play with too. 
+
+~For the more timid, use Docker :~ 
 ```bash 
-$ docker build . -t minilog 
-$ docker run minilog # run it  
+~$ docker build . -t minilog~ 
+~$ docker run minilog # run it~  
 ```
 
 ###### Here is a screenshot to see what the logs look like 
