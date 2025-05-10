@@ -46,7 +46,7 @@ At the end of compilation, you'll have a .so file that can be integrated into yo
 
 ### OverView: 
 
-> ![WARNING] 
+> [!WARNING] 
 > Due to a technical problem with Docker containers, most of the images I try to use don't work.
 > Most of them refuse to download resource packages (I don't know why??).
 > This section is therefore unreliable on my side. I suggest you work on your side
@@ -60,9 +60,10 @@ At the end of compilation, you'll have a .so file that can be integrated into yo
 Feel free to play around with the `minilog_overview.c` file, which contains code examples you can play with too. 
 
 ~For the more timid, use Docker :~ 
-```bash 
-~$ docker build . -t minilog~ 
-~$ docker run minilog # run it~  
+```diff
+! Do Not Try  
+- $ docker build . -t minilog~ 
+- $ docker run minilog # run it~  
 ```
 
 ###### Here is a screenshot to see what the logs look like 
