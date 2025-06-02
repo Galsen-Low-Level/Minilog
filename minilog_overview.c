@@ -9,18 +9,25 @@
 #include "minilog.h"
 
 
+extern char * minilog_basename ; 
+
+
 int main (int ac  , char **av , char **env)  
 { 
   char *mesg="This this my message"; 
   if(minilog_setup()/*! Initial  minilog stuff */)   
     return EXIT_FAILURE ; 
 
-  LOGNTH("This is a basic log  with no effect  sound boring  hunnn ? :x"); 
+  
+  LOGWARN("This is an Warning  log  with %s  %s   \$%s  %s  \$%s",  mesg ,"another part of mesg" , "please consult the man page" ,
+      "now im the part of action " ,  "the tags begins here ");
+  LOGNTH("This is a basic log  with no effect  sound boring  hunnn ? :x  \$%s","hi folks "); 
+
   LOGINFO("This is an Information  log"); 
-  LOGWARN("This is an Warning  log  with %s",  mesg); 
   LOGERR("Error log") ; 
   LOGARLT("Alert log with blinking effect"); 
   LOGFATAL("FATALITY log  w'll kill  your application  becareful buddy ;)") ; 
   
+
   return EXIT_SUCCESS ; 
 }
