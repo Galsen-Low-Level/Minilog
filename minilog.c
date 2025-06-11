@@ -3,30 +3,26 @@
  * @author Umar Ba  <jUmarB@protonmail.com> 
  * */
 
-#include  <stdlib.h> 
-#include  <unistd.h> 
-#include  <stdio.h> 
-#include  <time.h> 
-#include  <assert.h> 
-#include  <string.h>
-#include  <locale.h> 
-#include  <errno.h>
-#include  <stdalign.h> 
-#include <sys/syslog.h>
-#include <pthread.h> 
-#include <fcntl.h>
-#include <poll.h> 
+#include<stdlib.h> 
+#include<unistd.h> 
+#include<stdio.h> 
+#include<time.h> 
+#include<assert.h> 
+#include<string.h>
+#include<locale.h> 
+#include<errno.h>
+#include<stdalign.h> 
+#include<sys/syslog.h>
+#include<fcntl.h>
 
 
 #define  __need___va_list  
 #include  <stdarg.h> 
- 
 
 #include  "minilog.h"  
 
 extern char *program_invocation_short_name ; 
-char minilog_basename[0xff] ={0} ; 
-
+char *minilog_basename = (char *)  0 ;
 int fdstream = ~0; 
 
 int  minilog_setup(struct  __minilog_initial_param_t * __Nullable  miniparm ) { 
@@ -79,7 +75,7 @@ int  __configure(struct __minilog_initial_param_t *  restrict parm )
    
    /* handle stream record file*/ 
    if (!parm->_record) 
-     return ~0 ; 
+     return 0; 
 
    /*TODO : How to synchronize io terminal and file stream log*/ 
    int fd_streamrec =  open(parm->_record , O_CREAT|  O_WRONLY | O_APPEND , S_IRUSR | S_IWUSR) ;  
@@ -93,7 +89,8 @@ int  __configure(struct __minilog_initial_param_t *  restrict parm )
    /*! Add color to  log  file  but hard  to read
     *  Not recommanded if you  want to analyse the log file later on 
     * dup2(fd_streamrec , STDOUT_FILENO) ; 
-    */ 
+    */
+
    dup2(fd_streamrec , STDERR_FILENO); 
    
    return  fd_streamrec ; 
@@ -175,11 +172,11 @@ static int
 __minilog_advanced(int loglvl , struct __minilog_extended  * restrict mlg_ext ) 
 {
   
-  char *text_copy  = strdup(mlg_ext->text) ; 
-  
+  char text_copy[0xff]= {0} ; 
+  strcpy(text_copy , mlg_ext->text) ;  
+
   ssize_t  bytes  = minilog_perform_locale(mlg_ext->text) ; 
   memcpy( (mlg_ext->text + bytes)  , text_copy , strlen(text_copy)) ;  
-  free(text_copy) ; 
  
   int severity =  minilog_apply_lglvl(loglvl) ; 
   if(!(~0  ^severity)) 
@@ -264,8 +261,11 @@ void minilog_auto_check_program_bn(void)
      fprintf(stderr , "Not Able  to define basename program") ; 
      return ; 
   }
-  *(minilog_basename)  = 0x3a ; 
+  minilog_basename = (char *) calloc(strlen(program_invocation_short_name)+2 ,1) ;
+  if (!minilog_basename)
+    return ; 
 
+  *(minilog_basename)  = 0x3a ; 
   memcpy( (minilog_basename+1)  , program_invocation_short_name , strlen(program_invocation_short_name))  ;  
 }
 
@@ -287,4 +287,7 @@ static void minilog_cleanup(void)
 {
    if(fdstream >0 )  
      close(fdstream) ; 
+   
+   if(minilog_basename) 
+     free(minilog_basename) ; 
 }

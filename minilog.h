@@ -58,11 +58,11 @@ struct   __minilog_extended
 
 enum  {
    MESG , 
-#define MESG MESG 
+#define MESG    MESG 
    ACTION, 
 #define ACTION  ACTION 
    TAG
-#define TAG  TAG 
+#define TAG     TAG 
 }; 
 
 #define  MLOG(__severity_level , __minext)\
@@ -86,7 +86,7 @@ enum  {
 #define  BOLD    CAPCODE(0x1b)   
 
 #define  __restore  mlog_exec(RSET)  
-#define  tc_color_attr(__color_attribute)  mlog_exec(tiparm(SETAF , __color_attribute))   
+#define  tc_color_attr(__color_attribute)  mlog_exec(tiparm(SETAF, __color_attribute))   
 
 
 enum __log_level {
@@ -123,19 +123,21 @@ enum {
 #define  LOGFATAL(...)  __LP_GENERIC(FATALITY,__VA_ARGS__)   
 #define  LOGNTH(...)    __LP_GENERIC(NOTHING ,__VA_ARGS__)
 
-extern char  minilog_basname[0xff] ; 
+extern char  *minilog_basname ;  
+extern int fdstream  ; 
+
 #if defined(MINILOG_ALLOW_ABORT_ON_FATAL) 
 #define MINILOG_ABORT_ON_FATALITY 1  
 #endif
 
-extern int fdstream  ; 
- 
+
 #define  STREAM_ON(__fstream)\
-  &(struct __minilog_initial_param_t){ ._record = __fstream } 
+  &(struct __minilog_initial_param_t){ ._record = __fstream} 
 
 typedef struct   __minilog_initial_param_t mparm ; 
 struct __minilog_initial_param_t { 
-  char *_record ; 
+  char *_record ;  /* filename */
+  int   _options;  /* bit mask */
 }; 
 
 
