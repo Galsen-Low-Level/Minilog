@@ -109,7 +109,7 @@ enum __log_level {
 enum { 
    ALRT  = (1 << 0), 
    FATL  = (1 << 1),
-   CRTC  = (1 << 2) 
+   CRTC  = (1 << 2) /* Not implemented yet */ 
 }; 
 
 #define __get_lp_level(__lp_level) LP_##__lp_level 
@@ -126,12 +126,28 @@ enum {
 extern char  minilog_basname[0xff] ; 
 #if defined(MINILOG_ALLOW_ABORT_ON_FATAL) 
 #define MINILOG_ABORT_ON_FATALITY 1  
-#endif 
+#endif
+
+extern int fdstream  ; 
+ 
+#define  STREAM_ON(__fstream)\
+  &(struct __minilog_initial_param_t){ ._record = __fstream } 
+
+typedef struct   __minilog_initial_param_t mparm ; 
+struct __minilog_initial_param_t { 
+  char *_record ; 
+}; 
+
+
 
 /* @fn minilog_setup(void) ; 
  * @brief configure or initilize the terminal capbilities  
  */
-__mlog int minilog_setup(void) ; 
+__mlog int minilog_setup(struct __minilog_initial_param_t * __Nullable __initial_parameters) ; 
+
+static  void minilog_cleanup(void) __attribute__((destructor)) ; 
+
+int  __configure(struct __minilog_initial_param_t * __restrict__  __parm)  ; 
 
 /* @fn minilog_set_current_locale(void) 
  * @brief apply  current locale  (l18n & l10n) for portability 
@@ -144,9 +160,9 @@ static int minilog_set_current_locale(void) ;
  * @param  int - __log_level   
  * @param const char *  formated string  
  * @param ...  variadic parameter   
- * @return   int - 0 ok  otherwise  ~1
- *  
+ * @return   int - 0 ok  otherwise  ~1 
  */
+
 __mlog int minilog(int __log_level , const char *__restrict__ __fmtstr , ... ) ; 
 
 //! Apply log level with the right color  
@@ -199,9 +215,6 @@ static __always_inline  void  __check_severity(int __severity)
 #endif      
 
 /*! 
- *  #if defined(MINILOG_AUTO_CHECK_STARTUP_BN)
- *  static void minilog_auto_check_program_bn(void)  
- *  #else 
  *  
  */
 static void  minilog_auto_check_program_bn(void) 

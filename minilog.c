@@ -13,6 +13,10 @@
 #include  <errno.h>
 #include  <stdalign.h> 
 #include <sys/syslog.h>
+#include <pthread.h> 
+#include <fcntl.h>
+#include <poll.h> 
+
 
 #define  __need___va_list  
 #include  <stdarg.h> 
@@ -23,11 +27,9 @@
 extern char *program_invocation_short_name ; 
 char minilog_basename[0xff] ={0} ; 
 
+int fdstream = ~0; 
 
-int  minilog_setup(void) {
-  
-  //!Disable buffering on stdout 
-  (void) setvbuf(stdout ,  (char *) 0 ,  _IONBF , 0 ) ; 
+int  minilog_setup(struct  __minilog_initial_param_t * __Nullable  miniparm ) { 
   
   int  erret =  OK;
   if( ERR == setupterm(nptr, STDOUT_FILENO , &erret)) 
@@ -44,9 +46,18 @@ int  minilog_setup(void) {
          fprintf(stderr, "Termcapabilities DataBase Not found \n") ;
          break; 
     }
-    return   ~(erret & ~erret) ;  
+    return   ~0 ;   
   }
 
+  if(miniparm)
+  {
+    fdstream = __configure(miniparm) ; 
+    if (!(~0 ^ fdstream))  
+      LOGWARN("minilog startup configuration failed") ;  
+  }
+  
+  (void) setvbuf(stdout ,  (char *) 0 ,  _IONBF , 0 ) ;  
+  
   if(minilog_set_current_locale()) 
   {
     LOGFATAL("Cannot set l18n and l10n"); 
@@ -58,8 +69,39 @@ int  minilog_setup(void) {
      LOGWARN("Not  Able  to add new severity ") ;
   }
 
-  return erret &~erret ; 
+  return   (erret  & ~erret);    
 }
+
+
+int  __configure(struct __minilog_initial_param_t *  restrict parm )  
+{
+   if (!parm) return ~0 ;  
+   
+   /* handle stream record file*/ 
+   if (!parm->_record) 
+     return ~0 ; 
+
+   /*TODO : How to synchronize io terminal and file stream log*/ 
+   int fd_streamrec =  open(parm->_record , O_CREAT|  O_WRONLY | O_APPEND , S_IRUSR | S_IWUSR) ;  
+  
+   if (!(~0  ^ fd_streamrec))
+   {
+     LOGWARN("No able to open  file object, No binding : %s ", strerror(*__errno_location())) ;  
+     return ~0 ; 
+   }
+
+   /*! Add color to  log  file  but hard  to read
+    *  Not recommanded if you  want to analyse the log file later on 
+    * dup2(fd_streamrec , STDOUT_FILENO) ; 
+    */ 
+   dup2(fd_streamrec , STDERR_FILENO); 
+   
+   return  fd_streamrec ; 
+   
+}
+
+
+
 //!TODO  : Provide a new function that handle multiple category  
 static int minilog_set_current_locale(void) 
 {
@@ -166,8 +208,7 @@ int minilog_register(int severity , char * buffer)
     *    TURN_OFF(severity)  
     */
 
-
-   /*  severity&=~severity ;   /** disable the severity  */
+   /*  severity&=~severity ;   /*INCOMING  FEATURE :  Allow  to disable the severity but no flag specified yet  */
    return fmtmsg(MM_CONSOLE|MM_PRINT , minilog_basename , (severity >> 4)  , 
                  mlg_ext->text, __mlg_isextended(mlg_ext) ) ;  
 
@@ -240,3 +281,10 @@ static void  __check_severity(int __severity)
 }
 
 #endif
+
+
+static void minilog_cleanup(void) 
+{
+   if(fdstream >0 )  
+     close(fdstream) ; 
+}

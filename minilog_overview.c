@@ -14,8 +14,11 @@ extern char * minilog_basename ;
 
 int main (int ac  , char **av , char **env)  
 { 
-  char *mesg="This this my message"; 
-  if(minilog_setup()/*! Initial  minilog stuff */)   
+  char *mesg="This this my message";
+  
+  int mlgstatus =  minilog_setup(STREAM_ON("myXternalogfile")); 
+
+  if(!(~0  ^mlgstatus)) 
     return EXIT_FAILURE ; 
 
   
