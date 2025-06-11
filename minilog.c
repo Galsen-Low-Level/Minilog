@@ -11,6 +11,7 @@
 #include  <string.h>
 #include  <locale.h> 
 #include  <errno.h>
+#include  <stdalign.h> 
 #include <sys/syslog.h>
 
 #define  __need___va_list  
@@ -140,18 +141,11 @@ __minilog_advanced(int loglvl , struct __minilog_extended  * restrict mlg_ext )
  
   int severity =  minilog_apply_lglvl(loglvl) ; 
   if(!(~0  ^severity)) 
-    FLOG(MM_WARNING ,"Cannot apply  severity scope\n") ; 
+    MLOG(MM_WARNING ,"Cannot apply  severity scope\n") ; 
  
 
-  //FLOG((severity >> 4 ) ,  mlg_ext)
-  //TODO :  Re-think  Flog  
-  //        -> option a :  build it like macro   
-  //        -> option b :  or bullet proof function
-  int s = fmtmsg(MM_CONSOLE|MM_PRINT , minilog_basename ,  
-          (severity >> 4 ) , mlg_ext->text,
-          strlen(mlg_ext->action) ? mlg_ext->action  :0 , 
-          strlen(mlg_ext->tag)    ? mlg_ext->tag     :0 ) ; 
-
+  int s = MLOG(severity , (char *)mlg_ext) ; 
+  
   __restore ; 
   __check_severity(severity); 
 
@@ -160,11 +154,32 @@ __minilog_advanced(int loglvl , struct __minilog_extended  * restrict mlg_ext )
 }
 
 
+int minilog_register(int severity , char * buffer)    
+{
+
+   char *minext_buffer  __attribute__((aligned(alignof(struct __minilog_extended)))) = buffer ;    
+   struct __minilog_extended  * mlg_ext = (struct __minilog_extended*)  minext_buffer; 
+
+   /*
+    *  !FEAT :if user wan't show the severity level  : todo : hide sevrity by doing (severity &~severity)  disabled 
+    *  if(NO_SERVERITY)  
+    *    TURN_OFF(severity)  
+    */
+
+
+   /*  severity&=~severity ;   /** disable the severity  */
+   return fmtmsg(MM_CONSOLE|MM_PRINT , minilog_basename , (severity >> 4)  , 
+                 mlg_ext->text, __mlg_isextended(mlg_ext) ) ;  
+
+}
+
 static int  
 __minilog(int loglvl , const char * restrict  fmtstr , ... ) 
 {
-  char  inline_log_buffer[MIBLMT] = {0}; 
-  ssize_t bytes =  minilog_perform_locale(inline_log_buffer) ; 
+  
+  __mlg_ext_init(mlg_ext); 
+
+  ssize_t bytes =  minilog_perform_locale(mlg_ext.text) ; 
   
   __gnuc_va_list ap ; 
   __builtin_va_start(ap  , fmtstr) ; 
@@ -172,21 +187,19 @@ __minilog(int loglvl , const char * restrict  fmtstr , ... )
 
   int severity =  minilog_apply_lglvl(loglvl) ; 
   if(!(~0  ^severity)) 
-    FLOG(MM_WARNING ,"Cannot apply  severity scope\n") ; 
+    MLOG(MM_WARNING ,"Cannot apply  severity scope\n") ; 
 
-  vsprintf((inline_log_buffer+bytes) , fmtstr , ap ) ; 
- 
-  //!TODO : Add origin basename program  to minilog
-  int s =  FLOG((severity >> 4), inline_log_buffer) ;
+  vsprintf((mlg_ext.text+bytes) , fmtstr , ap ) ; 
   
-  bzero(inline_log_buffer ,  MIBLMT) ; 
+
+  int mlg_status  =  MLOG(severity, (char *) &mlg_ext ) ; 
 
   __builtin_va_end(ap); 
   __restore ; 
   __check_severity(severity); 
   
-  return s ; 
-} 
+  return  mlg_status ;  
+}
 
 static ssize_t 
 minilog_perform_locale(char inline_log_buffer  __Nonullable_(MIBLMT)) 

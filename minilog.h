@@ -44,6 +44,14 @@ struct   __minilog_extended
    char tag    __msr ; 
 }; 
 
+#define  __mlg_ext_init(__v_identifier)  \
+  struct __minilog_extended  __v_identifier;\
+  memset(&__v_identifier ,  0, sizeof(__v_identifier)) 
+
+#define  __mlg_isextended(__mlg_ds) \
+     ((*(*__mlg_ds).action !=  0) ? (*__mlg_ds).action:  0),\
+     ((*(*__mlg_ds).tag !=  0) ? (*__mlg_ds).tag:  0) 
+
 #if  !defined(MINILOG_EXTSYMB) 
 # define  MINILOG_EXTSYMB   0x24 /*$*/ 
 #endif 
@@ -57,8 +65,8 @@ enum  {
 #define TAG  TAG 
 }; 
 
-#define  FLOG(__severity_level ,  __mesg) \
-         fmtmsg(MM_CONSOLE|MM_PRINT ,  ":::" , __severity_level , __mesg, 0,0) 
+#define  MLOG(__severity_level , __minext)\
+  minilog_register(__severity_level, __minext) 
 
 
 #define  __mlog_interupt    0x1 , putchar 
@@ -172,7 +180,7 @@ static   __always_inline int minilog_apply_lglvl(int __log_level)
 }
 
 #if defined(MINILOG_ABORT_ON_FATALITY) 
-static void __attribute__((noreturn))  __check_severity(int __severity)  ;   
+static void __check_severity(int __severity) ;   
 #else  
 static __always_inline  void  __check_severity(int __severity)  
 {
@@ -190,6 +198,12 @@ static __always_inline  void  __check_severity(int __severity)
 }
 #endif      
 
+/*! 
+ *  #if defined(MINILOG_AUTO_CHECK_STARTUP_BN)
+ *  static void minilog_auto_check_program_bn(void)  
+ *  #else 
+ *  
+ */
 static void  minilog_auto_check_program_bn(void) 
   __attribute__((constructor)) ; 
 /* @fn __minilog(const char  * , ... ) 
@@ -207,6 +221,14 @@ __minilog_advanced(int  __log_level ,  struct __minilog_extended *__restrict__ _
 /*  @fn minilog_perform_locale(char  __parmreq_(1024))) 
  *  @brief format time in specific representation  
  *  @param  char  strtime_buffer with limited size 1024  null value  is no allowed 
+ */
+
+int 
+minilog_register(int __severity , char  *  __restrict__  __buffer)  ; 
+
+/*
+ * 
+ *
  */
 static ssize_t  
 minilog_perform_locale(char strtime_buffer  __Nonullable_(1024)) ; 
