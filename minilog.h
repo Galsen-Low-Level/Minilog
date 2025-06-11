@@ -11,7 +11,9 @@
 #include <term.h> 
 #include <fmtmsg.h> 
 
-
+#include <features.h> 
+#define __need___va_list 
+#include <stdarg.h>  
 
 #if defined(__cplusplus)
 # define  __mlog  extern "C" 
@@ -29,7 +31,10 @@
 # define  nptr NULL
 #endif
 
-#define MINILOG_INLINE_BUFFER_LIMIT  (8<<7)  
+
+#define MINILOG_INLINE_BUFFER_LIMIT  (8<<7) 
+#define MIBLMT  MINILOG_INLINE_BUFFER_LIMIT  
+
 #define __msr  [MINILOG_INLINE_BUFFER_LIMIT]
 
 struct   __minilog_extended 
@@ -38,6 +43,10 @@ struct   __minilog_extended
    char action __msr ;
    char tag    __msr ; 
 }; 
+
+#if  !defined(MINILOG_EXTSYMB) 
+# define  MINILOG_EXTSYMB   0x24 /*$*/ 
+#endif 
 
 enum  {
    MESG , 
@@ -88,6 +97,13 @@ enum __log_level {
 #define LP_FATALITY  mlog_exec(BOLD); LP_ERROR 
 } ; 
 
+/*special  log mask */
+enum { 
+   ALRT  = (1 << 0), 
+   FATL  = (1 << 1),
+   CRTC  = (1 << 2) 
+}; 
+
 #define __get_lp_level(__lp_level) LP_##__lp_level 
 
 #define  __LP_GENERIC(__lvl , ...) minilog(__lvl ,__VA_ARGS__)
@@ -123,7 +139,7 @@ static int minilog_set_current_locale(void) ;
  * @return   int - 0 ok  otherwise  ~1
  *  
  */
-__mlog int minilog(int __log_level , const char *__restrict__ __fmtstr , ...) ; 
+__mlog int minilog(int __log_level , const char *__restrict__ __fmtstr , ... ) ; 
 
 //! Apply log level with the right color  
 static   __always_inline int minilog_apply_lglvl(int __log_level)  
@@ -132,21 +148,21 @@ static   __always_inline int minilog_apply_lglvl(int __log_level)
    switch (__log_level) 
    {
      case INFO  : __get_lp_level(INFO) ; 
-                  what_happen  = (MM_INFO << 4) ; break; 
+                  what_happen  = (MM_INFO  <<4) ; break; 
      case WARN  : __get_lp_level(WARN);  
                   what_happen = (MM_WARNING<<4) ; break; 
      case ERROR : __get_lp_level(ERROR) ;  
-                  what_happen = (MM_ERROR <<4)  ; break; 
+                  what_happen = (MM_ERROR  <<4)  ; break; 
      case NOTHING: __get_lp_level(NOTHING) ;  
-                  what_happen = (MM_NOSEV <<4)   ; break; 
+                  what_happen = (MM_NOSEV  <<4)   ; break; 
      /* ------------Special  log level ---------------- */
      case ALERT : 
                   __get_lp_level(ALERT) ;  
-                  what_happen = (MM_ALERT <<4) | 1; 
+                  what_happen = (MM_ALERT <<4) | ALRT; 
                   break; 
      case FATALITY : 
                   __get_lp_level(FATALITY); 
-                  what_happen = (MM_HALT <<4) | 2; 
+                  what_happen = (MM_HALT <<4)  | FATL;  
                   break; 
      default : 
                 what_happen=~0 /*?*/;break; 
@@ -155,20 +171,24 @@ static   __always_inline int minilog_apply_lglvl(int __log_level)
    return what_happen ; 
 }
 
-static __always_inline void  __check_severity(int __severity ) 
+#if defined(MINILOG_ABORT_ON_FATALITY) 
+static void __attribute__((noreturn))  __check_severity(int __severity)  ;   
+#else  
+static __always_inline  void  __check_severity(int __severity)  
 {
  
-#if defined(MINILOG_ABORT_ON_FATALITY)
   /*! Check  special severity flags */ 
   int check_special_severity = (__severity & 0xf); 
   switch(check_special_severity)
   {
-     case 2 :  
-       exit(2); 
+     case FATL:  
+       /* 
+        * !Nothing to do 
+        */
+       break; 
   }
-#endif      
 }
-
+#endif      
 
 static void  minilog_auto_check_program_bn(void) 
   __attribute__((constructor)) ; 
@@ -179,7 +199,7 @@ static void  minilog_auto_check_program_bn(void)
  * @return int - 0 ok otherwise -1
  */
 static int 
-__minilog (int __log_level  , const char * __restrict__ __fmtstr ,  ...);  
+__minilog (int __log_level  , const char * __restrict__ __fmtstr ,   ... );  
 
 static int
 __minilog_advanced(int  __log_level ,  struct __minilog_extended *__restrict__ __mlog_extension) ; 
