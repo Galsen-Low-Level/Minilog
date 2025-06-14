@@ -13,8 +13,11 @@
 #include<errno.h>
 #include<stdalign.h> 
 #include<sys/syslog.h>
+#include<sys/wait.h> 
 #include<fcntl.h>
-
+#include<sys/types.h> 
+#include<sys/stat.h>  
+#include<poll.h> 
 
 #define  __need___va_list  
 #include  <stdarg.h> 
@@ -75,10 +78,26 @@ int  __configure(struct __minilog_initial_param_t *  restrict parm )
    
    /* handle stream record file*/ 
    if (!parm->_record) 
-     return 0; 
+     return 0;
+
+   
 
    /*TODO : How to synchronize io terminal and file stream log*/ 
-   int fd_streamrec =  open(parm->_record , O_CREAT|  O_WRONLY | O_APPEND , S_IRUSR | S_IWUSR) ;  
+   /*PISTE: faire un fifo  temporaire  qui va televerser 
+    *           sur un ficher de log  et le terminal*/ 
+   
+   /*! Add Extension .fifo*/ 
+   char logqueuing[0x14] = {0}; 
+   memcpy(logqueuing , parm->_record , strlen(parm->_record )) ;  
+   strcat(logqueuing ,   ".fifo") ;  
+
+   if (!(~0 ^(mkfifo(logqueuing , S_IRUSR |  S_IWUSR)))  )
+   {  
+     if(!(EEXIST ^ errno)) 
+       LOGWARN("creating temporary fifo file :%s \n",  strerror(*__errno_location())) ;   
+   }
+
+   int fd_streamrec =  open(logqueuing , O_RDWR)  ; 
   
    if (!(~0  ^ fd_streamrec))
    {
@@ -86,15 +105,81 @@ int  __configure(struct __minilog_initial_param_t *  restrict parm )
      return ~0 ; 
    }
 
+
    /*! Add color to  log  file  but hard  to read
     *  Not recommanded if you  want to analyse the log file later on 
     * dup2(fd_streamrec , STDOUT_FILENO) ; 
     */
 
    dup2(fd_streamrec , STDERR_FILENO); 
+
+   /*! TODO : Should provide a flags that enable synchronisation  between file and terminal*/ 
+  
+   /* The watchlog  create a subprocess  that listen  on logfile
+    * to showup  on terminal*/ 
+    watchlog(fd_streamrec  , parm->_record) ;  
    
    return  fd_streamrec ; 
    
+}
+
+
+void watchlog(int fd  ,  const char * restrict   recordfile ) 
+{
+   pid_t logspy =  fork() ; 
+   if(!(~0 ^ logspy))
+   {
+      LOGWARN("Cannot  spy on log file to listen changed due to :%s", strerror(*__errno_location())); 
+      return ; 
+   }
+  
+   if(!(logspy & 0xffff))
+   {
+      //tail_forward_sync(fd ,recordfile)  ; 
+      tail_forward(fd , recordfile ) ; /* like tail -f command */
+   }
+
+
+}
+
+static void tail_forward(int fd  ,  const char * restrict recordfile ) 
+{
+
+  struct  pollfd  evtpolling = { 
+    .fd = fd ,
+    .events=POLLIN, 
+    .revents= 0 , 
+  };
+ 
+  int rfd =  open(recordfile ,  O_CREAT|O_WRONLY| O_APPEND , S_IRUSR | S_IWUSR) ; 
+  if(! (~0 ^ rfd)) 
+  {
+     LOGWARN("Not able to synchronise to :%s", recordfile) ; 
+  }
+  printf("-> start listening on   child proc : %i \n", getpid());  
+  char minilog_buffer_sync[10000] = {0} ; 
+  while(1) 
+  {
+     int pollingstsatus =  poll(&evtpolling , 1 , ~0)  ; 
+     
+     if (!(~0 ^ pollingstsatus))
+       break ; 
+
+     if (evtpolling.revents & POLLIN) 
+     { 
+      
+       read(evtpolling.fd,minilog_buffer_sync , 10000) ;
+      
+       fprintf(stdout , "%s" , minilog_buffer_sync) ; 
+       write(rfd , minilog_buffer_sync , strlen(minilog_buffer_sync)) ;  
+       bzero(minilog_buffer_sync , 10000) ; 
+       evtpolling.revents &=~POLLIN ;  
+     }else 
+       puts("listening ...") ; 
+
+  }
+
+  exit(1) ; 
 }
 
 

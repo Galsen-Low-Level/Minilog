@@ -25,6 +25,11 @@
 #define __Nonullable_(__sizereq) [static __sizereq] 
 #define __Nonullable [static  0x1] 
 
+#if __glibc_has_attribute(__unused__) 
+# define __maybe_unused  __attribute__((__unused__))
+#else 
+# define __maybe_unused  
+#endif 
 #if defined(__ptr_t) 
 # define  nptr (__ptr_t) 0 
 #else 
@@ -151,6 +156,11 @@ static  void minilog_cleanup(void) __attribute__((destructor)) ;
 
 int  __configure(struct __minilog_initial_param_t * __restrict__  __parm)  ; 
 
+
+void  watchlog(int __fd , const char * __restrict__  __record_fn) ;
+
+static void tail_forward(int __fd , const char * __restrict__  __record_fn ) ; 
+
 /* @fn minilog_set_current_locale(void) 
  * @brief apply  current locale  (l18n & l10n) for portability 
  */
@@ -174,7 +184,7 @@ static   __always_inline int minilog_apply_lglvl(int __log_level)
    switch (__log_level) 
    {
      case INFO  : __get_lp_level(INFO) ; 
-                  what_happen  = (MM_INFO  <<4) ; break; 
+                  what_happen  = (MM_INFO  <<4) ; break;
      case WARN  : __get_lp_level(WARN);  
                   what_happen = (MM_WARNING<<4) ; break; 
      case ERROR : __get_lp_level(ERROR) ;  
