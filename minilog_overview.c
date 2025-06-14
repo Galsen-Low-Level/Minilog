@@ -6,27 +6,45 @@
  */
 #include <stdio.h> 
 #include <stdlib.h> 
+#include <unistd.h> 
 #include "minilog.h"
 
 
 extern char * minilog_basename ; 
 
 
-int main (int ac  , char **av , char **env)  
+int main (int ac  , char **av , __maybe_unused char **env)  
 { 
+
   char *mesg="This this my message"; 
-  if(minilog_setup()/*! Initial  minilog stuff */)   
+
+  char *file_target =  (char *) 0 ; 
+  if((ac  &  ~(1) ) ) 
+      file_target =  *(av +(ac-1)) ; 
+
+ 
+  int mlgstatus =  minilog_setup(STREAM_ON(file_target)); 
+
+  if(!(~0  ^mlgstatus)) 
     return EXIT_FAILURE ; 
 
-  
-  LOGWARN("This is an Warning  log  with %s  %s   \$%s  %s  \$%s",  mesg ,"another part of mesg" , "please consult the man page" ,
+   /* This  code below simulate  how your application  will log  message */
+   while(1) 
+   {
+     LOGWARN("This is an Warning  log  with %s  %s   \$%s  %s  \$%s",  mesg ,"another part of mesg" , "please consult the man page" ,
       "now im the part of action " ,  "the tags begins here ");
-  LOGNTH("This is a basic log  with no effect  sound boring  hunnn ? :x  \$%s","hi folks "); 
 
-  LOGINFO("This is an Information  log"); 
-  LOGERR("Error log") ; 
-  LOGARLT("Alert log with blinking effect"); 
-  LOGFATAL("FATALITY log  w'll kill  your application  becareful buddy ;)") ; 
+     sleep(1) ; 
+     LOGNTH("This is a basic log  with no effect  sound boring  hunnn ? :x  \$%s","hi folks "); 
+     sleep(2) ; 
+     LOGINFO("This is an Information  log"); 
+     LOGERR("Error log") ; 
+     sleep(2) ; 
+     LOGARLT("Alert log with blinking effect"); 
+     sleep(1) ; 
+     //LOGFATAL("FATALITY log  w'll kill  your application  becareful buddy ;)") ; 
+     sleep(2) ; 
+   }
   
 
   return EXIT_SUCCESS ; 

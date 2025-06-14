@@ -25,6 +25,11 @@
 #define __Nonullable_(__sizereq) [static __sizereq] 
 #define __Nonullable [static  0x1] 
 
+#if __glibc_has_attribute(__unused__) 
+# define __maybe_unused  __attribute__((__unused__))
+#else 
+# define __maybe_unused  
+#endif 
 #if defined(__ptr_t) 
 # define  nptr (__ptr_t) 0 
 #else 
@@ -44,21 +49,29 @@ struct   __minilog_extended
    char tag    __msr ; 
 }; 
 
+#define  __mlg_ext_init(__v_identifier)  \
+  struct __minilog_extended  __v_identifier;\
+  memset(&__v_identifier ,  0, sizeof(__v_identifier)) 
+
+#define  __mlg_isextended(__mlg_ds) \
+     ((*(*__mlg_ds).action !=  0) ? (*__mlg_ds).action:  0),\
+     ((*(*__mlg_ds).tag !=  0) ? (*__mlg_ds).tag:  0) 
+
 #if  !defined(MINILOG_EXTSYMB) 
 # define  MINILOG_EXTSYMB   0x24 /*$*/ 
 #endif 
 
 enum  {
    MESG , 
-#define MESG MESG 
+#define MESG    MESG 
    ACTION, 
 #define ACTION  ACTION 
    TAG
-#define TAG  TAG 
+#define TAG     TAG 
 }; 
 
-#define  FLOG(__severity_level ,  __mesg) \
-         fmtmsg(MM_CONSOLE|MM_PRINT ,  ":::" , __severity_level , __mesg, 0,0) 
+#define  MLOG(__severity_level , __minext)\
+  minilog_register(__severity_level, __minext) 
 
 
 #define  __mlog_interupt    0x1 , putchar 
@@ -78,7 +91,7 @@ enum  {
 #define  BOLD    CAPCODE(0x1b)   
 
 #define  __restore  mlog_exec(RSET)  
-#define  tc_color_attr(__color_attribute)  mlog_exec(tiparm(SETAF , __color_attribute))   
+#define  tc_color_attr(__color_attribute)  mlog_exec(tiparm(SETAF, __color_attribute))   
 
 
 enum __log_level {
@@ -101,7 +114,7 @@ enum __log_level {
 enum { 
    ALRT  = (1 << 0), 
    FATL  = (1 << 1),
-   CRTC  = (1 << 2) 
+   CRTC  = (1 << 2) /* Not implemented yet */ 
 }; 
 
 #define __get_lp_level(__lp_level) LP_##__lp_level 
@@ -115,15 +128,38 @@ enum {
 #define  LOGFATAL(...)  __LP_GENERIC(FATALITY,__VA_ARGS__)   
 #define  LOGNTH(...)    __LP_GENERIC(NOTHING ,__VA_ARGS__)
 
-extern char  minilog_basname[0xff] ; 
+extern char  *minilog_basname ;  
+extern int fdstream  ; 
+
 #if defined(MINILOG_ALLOW_ABORT_ON_FATAL) 
 #define MINILOG_ABORT_ON_FATALITY 1  
-#endif 
+#endif
+
+
+#define  STREAM_ON(__fstream)\
+  &(struct __minilog_initial_param_t){ ._record = __fstream} 
+
+typedef struct   __minilog_initial_param_t mparm ; 
+struct __minilog_initial_param_t { 
+  char *_record ;  /* filename */
+  int   _options;  /* bit mask */
+}; 
+
+
 
 /* @fn minilog_setup(void) ; 
  * @brief configure or initilize the terminal capbilities  
  */
-__mlog int minilog_setup(void) ; 
+__mlog int minilog_setup(struct __minilog_initial_param_t * __Nullable __initial_parameters) ; 
+
+static  void minilog_cleanup(void) __attribute__((destructor)) ; 
+
+int  __configure(struct __minilog_initial_param_t * __restrict__  __parm)  ; 
+
+
+void  watchlog(int __fd , const char * __restrict__  __record_fn) ;
+
+static void tail_forward(int __fd , const char * __restrict__  __record_fn ) ; 
 
 /* @fn minilog_set_current_locale(void) 
  * @brief apply  current locale  (l18n & l10n) for portability 
@@ -136,9 +172,9 @@ static int minilog_set_current_locale(void) ;
  * @param  int - __log_level   
  * @param const char *  formated string  
  * @param ...  variadic parameter   
- * @return   int - 0 ok  otherwise  ~1
- *  
+ * @return   int - 0 ok  otherwise  ~1 
  */
+
 __mlog int minilog(int __log_level , const char *__restrict__ __fmtstr , ... ) ; 
 
 //! Apply log level with the right color  
@@ -148,7 +184,7 @@ static   __always_inline int minilog_apply_lglvl(int __log_level)
    switch (__log_level) 
    {
      case INFO  : __get_lp_level(INFO) ; 
-                  what_happen  = (MM_INFO  <<4) ; break; 
+                  what_happen  = (MM_INFO  <<4) ; break;
      case WARN  : __get_lp_level(WARN);  
                   what_happen = (MM_WARNING<<4) ; break; 
      case ERROR : __get_lp_level(ERROR) ;  
@@ -172,7 +208,7 @@ static   __always_inline int minilog_apply_lglvl(int __log_level)
 }
 
 #if defined(MINILOG_ABORT_ON_FATALITY) 
-static void __attribute__((noreturn))  __check_severity(int __severity)  ;   
+static void __check_severity(int __severity) ;   
 #else  
 static __always_inline  void  __check_severity(int __severity)  
 {
@@ -190,6 +226,9 @@ static __always_inline  void  __check_severity(int __severity)
 }
 #endif      
 
+/*! 
+ *  
+ */
 static void  minilog_auto_check_program_bn(void) 
   __attribute__((constructor)) ; 
 /* @fn __minilog(const char  * , ... ) 
@@ -207,6 +246,14 @@ __minilog_advanced(int  __log_level ,  struct __minilog_extended *__restrict__ _
 /*  @fn minilog_perform_locale(char  __parmreq_(1024))) 
  *  @brief format time in specific representation  
  *  @param  char  strtime_buffer with limited size 1024  null value  is no allowed 
+ */
+
+int 
+minilog_register(int __severity , char  *  __restrict__  __buffer)  ; 
+
+/*
+ * 
+ *
  */
 static ssize_t  
 minilog_perform_locale(char strtime_buffer  __Nonullable_(1024)) ; 
