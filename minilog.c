@@ -50,11 +50,10 @@ int  minilog_setup(struct  __minilog_initial_param_t * __Nullable  miniparm ) {
 
   if(miniparm)
   {
-    fdstream = __configure(miniparm) ; 
-    if (!(~0 ^ fdstream))  
-      LOGWARN("minilog startup configuration failed") ;  
+     minilog_configure(miniparm) ; 
   }
-  
+
+  /*No buffering  on standard output   */
   (void) setvbuf(stdout ,  (char *) 0 ,  _IONBF , 0 ) ;  
   
   if(minilog_set_current_locale()) 
@@ -72,59 +71,57 @@ int  minilog_setup(struct  __minilog_initial_param_t * __Nullable  miniparm ) {
 }
 
 
-int  __configure(struct __minilog_initial_param_t *  restrict parm )  
+int minilog_configure(struct __minilog_initial_param_t *  restrict parm )  
 {
-   if (!parm) return ~0 ;  
    
    /* handle stream record file*/ 
-   if (!parm->_record) 
-     return 0;
-
-   
-
-   /*TODO : How to synchronize io terminal and file stream log*/ 
-   /*PISTE: faire un fifo  temporaire  qui va televerser 
-    *           sur un ficher de log  et le terminal*/ 
-   
-   /*! Add Extension .fifo*/ 
-   char logqueuing[0x14] = {0}; 
-   memcpy(logqueuing , parm->_record , strlen(parm->_record )) ;  
-   strcat(logqueuing ,   ".fifo") ;  
-
-   if (!(~0 ^(mkfifo(logqueuing , S_IRUSR |  S_IWUSR)))  )
-   {  
-     if(!(EEXIST ^ errno)) 
-       LOGWARN("creating temporary fifo file :%s \n",  strerror(*__errno_location())) ;   
-   }
-
-   int fd_streamrec =  open(logqueuing , O_RDWR)  ; 
-  
-   if (!(~0  ^ fd_streamrec))
+   if (parm->_fstream->_record_file) 
    {
-     LOGWARN("No able to open  file object, No binding : %s ", strerror(*__errno_location())) ;  
-     return ~0 ; 
+     int link_fds = minilog_create_record_stream_pipeline(parm->_fstream);
+     minilog_watchlog(link_fds);
    }
 
-
-   /*! Add color to  log  file  but hard  to read
-    *  Not recommanded if you  want to analyse the log file later on 
-    * dup2(fd_streamrec , STDOUT_FILENO) ; 
-    */
-
-   dup2(fd_streamrec , STDERR_FILENO); 
-
-   /*! TODO : Should provide a flags that enable synchronisation  between file and terminal*/ 
-  
-   /* The watchlog  create a subprocess  that listen  on logfile
-    * to showup  on terminal*/ 
-    watchlog(fd_streamrec  , parm->_record) ;  
-   
-   return  fd_streamrec ; 
+   return  0 ; 
    
 }
 
+int  minilog_create_record_stream_pipeline(mr_sync * restrict  source )
+{
+  if(!source ) return  -EDESTADDRREQ ;
+  
+  char template[0x64]  = {0} ; 
+  strcat(template ,  source->_record_file) ; 
+  strcat(template  , "XXXXXX") ;  
+  source->_stream_pipe = mktemp(template) ;  
+  
+  if(!source->_stream_pipe)  
+    return errno ; 
+  
+  if(!(~0 ^  mkfifo(source->_stream_pipe , S_IRUSR  | S_IWUSR))) 
+  {
+     if((EEXIST ^ errno))
+       return errno ; 
+  }
+   
+  
+  source->_fd_stream_links  = (open(source->_stream_pipe , O_RDWR) << 8) ;  
+  source->_fd_stream_links |= open(source->_record_file , O_CREAT|O_RDWR , S_IRUSR|S_IWUSR) ;
+  
 
-void watchlog(int fd  ,  const char * restrict   recordfile ) 
+  if(!(~0  ^ ((source->_fd_stream_links >> 8) & 0xff))) 
+  { 
+    if (~0 != (source->_fd_stream_links  & 0xff))   
+      close(source->_fd_stream_links &0xff ) ; 
+
+    unlink(source->_stream_pipe) ; 
+    return  -EACCES ;
+  } 
+  
+  dup2((source->_fd_stream_links >> 8) , STDERR_FILENO) ; 
+  return source->_fd_stream_links ; 
+}
+
+void minilog_watchlog(int fds) 
 {
    pid_t logspy =  fork() ; 
    if(!(~0 ^ logspy))
@@ -135,29 +132,24 @@ void watchlog(int fd  ,  const char * restrict   recordfile )
   
    if(!(logspy & 0xffff))
    {
-      //tail_forward_sync(fd ,recordfile)  ; 
-      tail_forward(fd , recordfile ) ; /* like tail -f command */
+      minilog_tail_forward_sync(fds)  ; /* like tail -f command */
    }
-
 
 }
 
-static void tail_forward(int fd  ,  const char * restrict recordfile ) 
+static void minilog_tail_forward_sync(int fds)  
 {
 
   struct  pollfd  evtpolling = { 
-    .fd = fd ,
+    .fd =  ((fds >> 8) & 0xff)  ,
     .events=POLLIN, 
     .revents= 0 , 
   };
+
+  int rfd =  (fds  & 0xff) ; 
  
-  int rfd =  open(recordfile ,  O_CREAT|O_WRONLY| O_APPEND , S_IRUSR | S_IWUSR) ; 
-  if(! (~0 ^ rfd)) 
-  {
-     LOGWARN("Not able to synchronise to :%s", recordfile) ; 
-  }
   printf("-> start listening on   child proc : %i \n", getpid());  
-  char minilog_buffer_sync[10000] = {0} ; 
+  char minilog_buffer_sync[MIBLMT] = {0} ; 
   while(1) 
   {
      int pollingstsatus =  poll(&evtpolling , 1 , ~0)  ; 
@@ -171,7 +163,7 @@ static void tail_forward(int fd  ,  const char * restrict recordfile )
        read(evtpolling.fd,minilog_buffer_sync , 10000) ;
       
        fprintf(stdout , "%s" , minilog_buffer_sync) ; 
-       write(rfd , minilog_buffer_sync , strlen(minilog_buffer_sync)) ;  
+       write(rfd , minilog_buffer_sync  , strlen(minilog_buffer_sync)) ;  
        bzero(minilog_buffer_sync , 10000) ; 
        evtpolling.revents &=~POLLIN ;  
      }else 
