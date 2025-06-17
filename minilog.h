@@ -135,31 +135,43 @@ extern int fdstream  ;
 #define MINILOG_ABORT_ON_FATALITY 1  
 #endif
 
-
 #define  STREAM_ON(__fstream)\
-  &(struct __minilog_initial_param_t){ ._record = __fstream} 
+  &(struct __minilog_initial_param_t)\
+  {\
+    ._fstream =&(struct __minilog_record_sync){ ._record_file =__fstream}\
+  }
+
+typedef struct   __minilog_record_sync mr_sync ; 
+struct __minilog_record_sync   { 
+  char * _record_file;            /* The target record file */ 
+  char * _stream_pipe;            /* Stream pipe that listen on stderr or stdout  */
+  int  _fd_stream_links ;         /* file descriptors for record  file  and streampipe */
+};   
 
 typedef struct   __minilog_initial_param_t mparm ; 
 struct __minilog_initial_param_t { 
-  char *_record ;  /* filename */
-  int   _options;  /* bit mask */
+   struct __minilog_record_sync *  _fstream; 
 }; 
 
+typedef  void (*multi_sigcatch)(int  , ...) ;
 
+#define  DEFAULT_TARGET_SIGNALS  3,SIGINT,SIGCHLD,SIGTERM 
+#define  MLOG_DEFSIGCATCH(__nsigs , ...) \
+  sigcatcher(__nsigs , ##__VA_ARGS__) 
 
 /* @fn minilog_setup(void) ; 
  * @brief configure or initilize the terminal capbilities  
  */
 __mlog int minilog_setup(struct __minilog_initial_param_t * __Nullable __initial_parameters) ; 
+void minilog_cleanup(void) __attribute__((destructor));  
+int  minilog_configure(struct __minilog_initial_param_t * __restrict__  __parm)  ; 
+int  minilog_create_record_stream_pipeline(mr_sync * __restrict__  __source); 
+void  minilog_watchlog(int __fds , multi_sigcatch __variadic_signal_hanler_callback);
 
-static  void minilog_cleanup(void) __attribute__((destructor)) ; 
+void  sigcatcher(const int __nsigs ,  ...) __attribute__((weak)) ; 
+void  minilog_defsighdl(int __target_signal) __attribute__((weak)) ; 
 
-int  __configure(struct __minilog_initial_param_t * __restrict__  __parm)  ; 
-
-
-void  watchlog(int __fd , const char * __restrict__  __record_fn) ;
-
-static void tail_forward(int __fd , const char * __restrict__  __record_fn ) ; 
+static void minilog_tail_forward_sync(int __fds ) ; 
 
 /* @fn minilog_set_current_locale(void) 
  * @brief apply  current locale  (l18n & l10n) for portability 
