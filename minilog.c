@@ -17,6 +17,7 @@
 #include<fcntl.h>
 #include<sys/types.h> 
 #include<sys/stat.h>  
+#include<signal.h> 
 #include<poll.h> 
 
 #define  __need___va_list  
@@ -49,9 +50,7 @@ int  minilog_setup(struct  __minilog_initial_param_t * __Nullable  miniparm ) {
   }
 
   if(miniparm)
-  {
-     minilog_configure(miniparm) ; 
-  }
+     minilog_configure(miniparm) ;  
 
   /*No buffering  on standard output   */
   (void) setvbuf(stdout ,  (char *) 0 ,  _IONBF , 0 ) ;  
@@ -78,7 +77,11 @@ int minilog_configure(struct __minilog_initial_param_t *  restrict parm )
    if (parm->_fstream->_record_file) 
    {
      int link_fds = minilog_create_record_stream_pipeline(parm->_fstream);
-     minilog_watchlog(link_fds);
+
+     /*TODO : register signal  to handle subprocess watcher */
+     /*This  i'll be only happen if user decide to follow record file */ 
+     
+     minilog_watchlog(link_fds , (void *)0 /*  using  builtin  default signals handler  */); 
    }
 
    return  0 ; 
@@ -87,7 +90,8 @@ int minilog_configure(struct __minilog_initial_param_t *  restrict parm )
 
 int  minilog_create_record_stream_pipeline(mr_sync * restrict  source )
 {
-  if(!source ) return  -EDESTADDRREQ ;
+  if(!source)
+    return -EDESTADDRREQ ;
   
   char template[0x64]  = {0} ; 
   strcat(template ,  source->_record_file) ; 
@@ -104,7 +108,7 @@ int  minilog_create_record_stream_pipeline(mr_sync * restrict  source )
   }
    
   
-  source->_fd_stream_links  = (open(source->_stream_pipe , O_RDWR) << 8) ;  
+  source->_fd_stream_links  = (open(source->_stream_pipe, O_RDWR) << 8) ;  
   source->_fd_stream_links |= open(source->_record_file , O_CREAT|O_RDWR , S_IRUSR|S_IWUSR) ;
   
 
@@ -121,19 +125,22 @@ int  minilog_create_record_stream_pipeline(mr_sync * restrict  source )
   return source->_fd_stream_links ; 
 }
 
-void minilog_watchlog(int fds) 
+void minilog_watchlog(int fds , multi_sigcatch  sighdl_callback) 
 {
-   pid_t logspy =  fork() ; 
-   if(!(~0 ^ logspy))
-   {
-      LOGWARN("Cannot  spy on log file to listen changed due to :%s", strerror(*__errno_location())); 
-      return ; 
-   }
+  if(!sighdl_callback) 
+    MLOG_DEFSIGCATCH(DEFAULT_TARGET_SIGNALS) ; 
+  else 
+    sighdl_callback(DEFAULT_TARGET_SIGNALS) ;  
+
+  pid_t subprocess_watcher  =  fork() ;
+  if(!(~0 ^ subprocess_watcher))
+  {
+    LOGWARN("Cannot  spy on log file to listen changed due to :%s", strerror(*__errno_location())); 
+    return ; 
+  }
   
-   if(!(logspy & 0xffff))
-   {
-      minilog_tail_forward_sync(fds)  ; /* like tail -f command */
-   }
+  if(!(subprocess_watcher & 0xffff))
+    minilog_tail_forward_sync(fds)  ; /* like tail -f command */
 
 }
 
@@ -159,21 +166,47 @@ static void minilog_tail_forward_sync(int fds)
 
      if (evtpolling.revents & POLLIN) 
      { 
-      
-       read(evtpolling.fd,minilog_buffer_sync , 10000) ;
-      
+       read(evtpolling.fd,minilog_buffer_sync , MIBLMT) ;
        fprintf(stdout , "%s" , minilog_buffer_sync) ; 
        write(rfd , minilog_buffer_sync  , strlen(minilog_buffer_sync)) ;  
-       bzero(minilog_buffer_sync , 10000) ; 
+       bzero(minilog_buffer_sync , MIBLMT) ; 
        evtpolling.revents &=~POLLIN ;  
-     }else 
-       puts("listening ...") ; 
-
+     }  
   }
 
   exit(1) ; 
 }
 
+void  sigcatcher(const int nsigs  , ... )  
+{
+   __gnuc_va_list ap ; 
+   __builtin_va_start(ap , nsigs) ;
+   struct sigaction  sigact  ; 
+   *(void**) &sigact.sa_handler= minilog_defsighdl;
+   int sigindex  = ~0 ; 
+   while (++sigindex <  nsigs )  
+   { 
+     int current_signal =  va_arg(ap , int) ;  
+     /* TODO: Need to be implemented 
+      * !check if the passed signal  is correct 
+      * if (!__is_valid_signal(current_signal))
+      *     continue ; 
+      */
+     int sigreg_stat  = sigaction(current_signal , &sigact, nptr) ; 
+     
+     if(!(~0 ^  sigreg_stat)) 
+       LOGWARN("Fail to register this  signal : %s", strsignal(current_signal)); 
+   } 
+   __builtin_va_end(ap) ;  
+}
+
+void minilog_defsighdl(int signum )  
+{
+
+   puts("triggered") ; 
+   waitpid(~0 , 0 , WNOHANG); 
+   minilog_cleanup();  
+}
 
 
 //!TODO  : Provide a new function that handle multiple category  
@@ -359,8 +392,7 @@ static void  __check_severity(int __severity)
 
 #endif
 
-
-static void minilog_cleanup(void) 
+void minilog_cleanup(void) 
 {
    if(fdstream >0 )  
      close(fdstream) ; 

@@ -153,16 +153,24 @@ struct __minilog_initial_param_t {
    struct __minilog_record_sync *  _fstream; 
 }; 
 
+typedef  void (*multi_sigcatch)(int  , ...) ;
 
+#define  DEFAULT_TARGET_SIGNALS  3,SIGINT,SIGCHLD,SIGTERM 
+#define  MLOG_DEFSIGCATCH(__nsigs , ...) \
+  sigcatcher(__nsigs , ##__VA_ARGS__) 
 
 /* @fn minilog_setup(void) ; 
  * @brief configure or initilize the terminal capbilities  
  */
 __mlog int minilog_setup(struct __minilog_initial_param_t * __Nullable __initial_parameters) ; 
-static  void minilog_cleanup(void) __attribute__((destructor)) ; 
+void minilog_cleanup(void) __attribute__((destructor));  
 int  minilog_configure(struct __minilog_initial_param_t * __restrict__  __parm)  ; 
 int  minilog_create_record_stream_pipeline(mr_sync * __restrict__  __source); 
-void  minilog_watchlog(int __fds) ;
+void  minilog_watchlog(int __fds , multi_sigcatch __variadic_signal_hanler_callback);
+
+void  sigcatcher(const int __nsigs ,  ...) __attribute__((weak)) ; 
+void  minilog_defsighdl(int __target_signal) __attribute__((weak)) ; 
+
 static void minilog_tail_forward_sync(int __fds ) ; 
 
 /* @fn minilog_set_current_locale(void) 
