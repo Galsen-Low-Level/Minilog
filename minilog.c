@@ -27,7 +27,16 @@
 
 extern char *program_invocation_short_name ; 
 char *minilog_basename = (char *)  0 ;
-int fdstream = ~0; 
+
+struct   minilog_pipeline_stream  { 
+   char  * _tmpipe;  
+   int  _fds ;   
+}   mps  = { 
+  ._tmpipe = (char *) 0 , 
+  0 
+} ; 
+
+char  *pipefile = (char *)  0 ; 
 
 int  minilog_setup(struct  __minilog_initial_param_t * __Nullable  miniparm ) { 
   
@@ -82,10 +91,10 @@ int minilog_configure(struct __minilog_initial_param_t *  restrict parm )
      /*This  i'll be only happen if user decide to follow record file */ 
      
      minilog_watchlog(link_fds , (void *)0 /*  using  builtin  default signals handler  */); 
+     mps._fds =  link_fds ;  
    }
 
    return  0 ; 
-   
 }
 
 int  minilog_create_record_stream_pipeline(mr_sync * restrict  source )
@@ -96,8 +105,12 @@ int  minilog_create_record_stream_pipeline(mr_sync * restrict  source )
   char template[0x64]  = {0} ; 
   strcat(template ,  source->_record_file) ; 
   strcat(template  , "XXXXXX") ;  
+  /* NOTE: <BUGS ISSUE> see manpage (3) of mktemp  BUGS section 
+   * TODO: Generate temprorary filename using mkstemp or equivalent 
+   **/
   source->_stream_pipe = mktemp(template) ;  
-  
+  mps._tmpipe =strdup(source->_stream_pipe) ; 
+
   if(!source->_stream_pipe)  
     return errno ; 
   
@@ -109,7 +122,7 @@ int  minilog_create_record_stream_pipeline(mr_sync * restrict  source )
    
   
   source->_fd_stream_links  = (open(source->_stream_pipe, O_RDWR) << 8) ;  
-  source->_fd_stream_links |= open(source->_record_file , O_CREAT|O_RDWR , S_IRUSR|S_IWUSR) ;
+  source->_fd_stream_links |= open(source->_record_file , O_CREAT|O_RDWR|O_APPEND, S_IRUSR|S_IWUSR) ;
   
 
   if(!(~0  ^ ((source->_fd_stream_links >> 8) & 0xff))) 
@@ -125,7 +138,7 @@ int  minilog_create_record_stream_pipeline(mr_sync * restrict  source )
   return source->_fd_stream_links ; 
 }
 
-void minilog_watchlog(int fds , multi_sigcatch  sighdl_callback) 
+int  minilog_watchlog(int fds , multi_sigcatch  sighdl_callback) 
 {
   if(!sighdl_callback) 
     MLOG_DEFSIGCATCH(DEFAULT_TARGET_SIGNALS) ; 
@@ -136,12 +149,13 @@ void minilog_watchlog(int fds , multi_sigcatch  sighdl_callback)
   if(!(~0 ^ subprocess_watcher))
   {
     LOGWARN("Cannot  spy on log file to listen changed due to :%s", strerror(*__errno_location())); 
-    return ; 
+    return ~0 ;  
   }
   
   if(!(subprocess_watcher & 0xffff))
     minilog_tail_forward_sync(fds)  ; /* like tail -f command */
-
+  
+  return  0 ;  
 }
 
 static void minilog_tail_forward_sync(int fds)  
@@ -154,7 +168,8 @@ static void minilog_tail_forward_sync(int fds)
   };
 
   int rfd =  (fds  & 0xff) ; 
- 
+
+  /*! TODO: Should be removed */ 
   printf("-> start listening on   child proc : %i \n", getpid());  
   char minilog_buffer_sync[MIBLMT] = {0} ; 
   while(1) 
@@ -203,8 +218,11 @@ void  sigcatcher(const int nsigs  , ... )
 void minilog_defsighdl(int signum )  
 {
 
-   puts("triggered") ; 
-   waitpid(~0 , 0 , WNOHANG); 
+   int status  = 0 ; 
+   waitpid(~0 , &status , WNOHANG); 
+   /*!TODO:  Analyse status code  */
+   
+
    minilog_cleanup();  
 }
 
@@ -246,12 +264,11 @@ int minilog(int loglvl ,  const char * restrict fmtstr , ... )
 
   if (action_tag_symbol) 
   {  
-    /* when  the symbole  detected move one step  cause we don't want to show it  */
-    action_tag_symbol++; 
+    /* when  the symbole is  detected move one step forward  cause we don't want to show it */
+    action_tag_symbol=(char *)-(~(long long int)action_tag_symbol) ;  
 
     char *atb[] = { mlg_ext.action ,  mlg_ext.tag } ; 
     int  item = 0 ; 
-   
     
     while ( *action_tag_symbol  != 0  ) 
     { 
@@ -270,7 +287,6 @@ int minilog(int loglvl ,  const char * restrict fmtstr , ... )
 
     __minilog_advanced(loglvl , &mlg_ext) ; 
   }
-
 
 __minilog_end_gnu_variadic__: 
   __builtin_va_end(ap); 
@@ -292,7 +308,6 @@ __minilog_advanced(int loglvl , struct __minilog_extended  * restrict mlg_ext )
   if(!(~0  ^severity)) 
     MLOG(MM_WARNING ,"Cannot apply  severity scope\n") ; 
  
-
   int s = MLOG(severity , (char *)mlg_ext) ; 
   
   __restore ; 
@@ -394,9 +409,23 @@ static void  __check_severity(int __severity)
 
 void minilog_cleanup(void) 
 {
-   if(fdstream >0 )  
-     close(fdstream) ; 
-   
+  if(mps._tmpipe) 
+  {
+    unlink(mps._tmpipe); 
+    free(mps._tmpipe) ; 
+  } 
+  if(mps._fds > 0)  
+  {
+      int  pipestream  = mps._fds >> 8 ; 
+      int  logfile     = mps._fds & 0xff; 
+      if(0 < pipestream ) 
+        close(pipestream) ; 
+      if(0 < logfile) 
+        close(logfile) ; 
+  }
+  
+
    if(minilog_basename) 
      free(minilog_basename) ; 
+
 }

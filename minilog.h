@@ -129,7 +129,7 @@ enum {
 #define  LOGNTH(...)    __LP_GENERIC(NOTHING ,__VA_ARGS__)
 
 extern char  *minilog_basname ;  
-extern int fdstream  ; 
+extern int fdstream  ;  
 
 #if defined(MINILOG_ALLOW_ABORT_ON_FATAL) 
 #define MINILOG_ABORT_ON_FATALITY 1  
@@ -165,8 +165,8 @@ typedef  void (*multi_sigcatch)(int  , ...) ;
 __mlog int minilog_setup(struct __minilog_initial_param_t * __Nullable __initial_parameters) ; 
 void minilog_cleanup(void) __attribute__((destructor));  
 int  minilog_configure(struct __minilog_initial_param_t * __restrict__  __parm)  ; 
-int  minilog_create_record_stream_pipeline(mr_sync * __restrict__  __source); 
-void  minilog_watchlog(int __fds , multi_sigcatch __variadic_signal_hanler_callback);
+int  minilog_create_record_stream_pipeline(mr_sync * __restrict__  __source);
+int  minilog_watchlog(int __fds , multi_sigcatch __variadic_signal_hanler_callback);
 
 void  sigcatcher(const int __nsigs ,  ...) __attribute__((weak)) ; 
 void  minilog_defsighdl(int __target_signal) __attribute__((weak)) ; 
