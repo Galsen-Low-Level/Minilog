@@ -93,7 +93,7 @@ enum  {
 #define  __restore  mlog_exec(RSET)  
 #define  tc_color_attr(__color_attribute)  mlog_exec(tiparm(SETAF, __color_attribute))   
 
-
+/* ! Default log level*/
 enum __log_level {
   NOTHING, 
 #define  LP_NOTHING
@@ -219,24 +219,20 @@ static   __always_inline int minilog_apply_lglvl(int __log_level)
    return what_happen ; 
 }
 
-#if defined(MINILOG_ABORT_ON_FATALITY) 
-static void __check_severity(int __severity) ;   
-#else  
 static __always_inline  void  __check_severity(int __severity)  
 {
- 
   /*! Check  special severity flags */ 
   int check_special_severity = (__severity & 0xf); 
   switch(check_special_severity)
   {
      case FATL:  
-       /* 
-        * !Nothing to do 
-        */
+#if MINILOG_ALLOW_ABORT_ON_FATAL  
+       exit(FATL) ; 
+#endif 
+       /* !Nothing to do */
        break; 
   }
 }
-#endif      
 
 /*! 
  *  
@@ -255,19 +251,17 @@ __minilog (int __log_level  , const char * __restrict__ __fmtstr ,   ... );
 static int
 __minilog_advanced(int  __log_level ,  struct __minilog_extended *__restrict__ __mlog_extension) ; 
 
-/*  @fn minilog_perform_locale(char  __parmreq_(1024))) 
- *  @brief format time in specific representation  
- *  @param  char  strtime_buffer with limited size 1024  null value  is no allowed 
- */
-
 int 
 minilog_register(int __severity , char  *  __restrict__  __buffer)  ; 
 
-/*
- * 
- *
+
+/* @fn minilog_perform_locale(char  __parmreq_(1024))) 
+ * @brief format time in specific representation  
+ * @param  char  strtime_buffer with limited size 1024  null value  is no allowed 
  */
+
+
 static ssize_t  
-minilog_perform_locale(char strtime_buffer  __Nonullable_(1024)) ; 
+minilog_perform_locale(char strtime_buffer  __Nonullable_(1024 /*1024 reserved*/)) ; 
 
 #endif /*! __MINILOG*/

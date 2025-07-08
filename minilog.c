@@ -25,7 +25,6 @@
 
 #include  "minilog.h"  
 
-extern char *program_invocation_short_name ; 
 char *minilog_basename = (char *)  0 ;
 
 struct   minilog_pipeline_stream  { 
@@ -69,7 +68,7 @@ int  minilog_setup(struct  __minilog_initial_param_t * __Nullable  miniparm ) {
     LOGFATAL("Cannot set l18n and l10n"); 
     return ~0; 
   }
-
+  
   if(!(~(addseverity(5 ,  "ALERT"))) )
   {
      LOGWARN("Not  Able  to add new severity ") ;
@@ -97,7 +96,7 @@ int minilog_configure(struct __minilog_initial_param_t *  restrict parm )
    return  0 ; 
 }
 
-int  minilog_create_record_stream_pipeline(mr_sync * restrict  source )
+int  minilog_create_record_stream_pipeline(mr_sync * restrict  source /*,TODO :define the communication type */) 
 {
   if(!source)
     return -EDESTADDRREQ ;
@@ -119,16 +118,15 @@ int  minilog_create_record_stream_pipeline(mr_sync * restrict  source )
      if((EEXIST ^ errno))
        return errno ; 
   }
-   
   
-  source->_fd_stream_links  = (open(source->_stream_pipe, O_RDWR) << 8) ;  
-  source->_fd_stream_links |= open(source->_record_file , O_CREAT|O_RDWR|O_APPEND, S_IRUSR|S_IWUSR) ;
+  source->_fd_stream_links  = (open(source->_stream_pipe, O_RDWR) << 8) \
+                              | open(source->_record_file , O_CREAT|O_RDWR|O_APPEND, S_IRUSR|S_IWUSR) ;
   
 
   if(!(~0  ^ ((source->_fd_stream_links >> 8) & 0xff))) 
   { 
     if (~0 != (source->_fd_stream_links  & 0xff))   
-      close(source->_fd_stream_links &0xff ) ; 
+      close(source->_fd_stream_links & 0xff) ; 
 
     unlink(source->_stream_pipe) ; 
     return  -EACCES ;
@@ -140,10 +138,12 @@ int  minilog_create_record_stream_pipeline(mr_sync * restrict  source )
 
 int  minilog_watchlog(int fds , multi_sigcatch  sighdl_callback) 
 {
+  /*! Register predefined  signal before lauching the process */
   if(!sighdl_callback) 
     MLOG_DEFSIGCATCH(DEFAULT_TARGET_SIGNALS) ; 
   else 
     sighdl_callback(DEFAULT_TARGET_SIGNALS) ;  
+
 
   pid_t subprocess_watcher  =  fork() ;
   if(!(~0 ^ subprocess_watcher))
@@ -169,8 +169,6 @@ static void minilog_tail_forward_sync(int fds)
 
   int rfd =  (fds  & 0xff) ; 
 
-  /*! TODO: Should be removed */ 
-  printf("-> start listening on   child proc : %i \n", getpid());  
   char minilog_buffer_sync[MIBLMT] = {0} ; 
   while(1) 
   {
@@ -324,13 +322,12 @@ int minilog_register(int severity , char * buffer)
    char *minext_buffer  __attribute__((aligned(alignof(struct __minilog_extended)))) = buffer ;    
    struct __minilog_extended  * mlg_ext = (struct __minilog_extended*)  minext_buffer; 
 
-   /*
-    *  !FEAT :if user wan't show the severity level  : todo : hide sevrity by doing (severity &~severity)  disabled 
-    *  if(NO_SERVERITY)  
-    *    TURN_OFF(severity)  
-    */
 
-   /*  severity&=~severity ;   /*INCOMING  FEATURE :  Allow  to disable the severity but no flag specified yet  */
+#if  MINILOG_TURN_OFF_SEVERITY 
+    /*Disable severity log level*/
+    severity &=~severity;  
+#endif 
+   
    return fmtmsg(MM_CONSOLE|MM_PRINT , minilog_basename , (severity >> 4)  , 
                  mlg_ext->text, __mlg_isextended(mlg_ext) ) ;  
 
@@ -380,32 +377,45 @@ minilog_perform_locale(char inline_log_buffer  __Nonullable_(MIBLMT))
 
 void minilog_auto_check_program_bn(void) 
 {
-  char *program_basename = getenv((const char [])  { 0x5f ,  0x00 }) ; 
-  if (!program_basename) 
-  {
-     fprintf(stderr , "Not Able  to define basename program") ; 
-     return ; 
-  }
-  minilog_basename = (char *) calloc(strlen(program_invocation_short_name)+2 ,1) ;
+ 
+  minilog_basename = (char *) calloc(0x7f ,01) ;
   if (!minilog_basename)
     return ; 
-
+  
   *(minilog_basename)  = 0x3a ; 
-  memcpy( (minilog_basename+1)  , program_invocation_short_name , strlen(program_invocation_short_name))  ;  
-}
 
-#if defined(MINILOG_ABORT_ON_FATALITY) 
-static void  __check_severity(int __severity)  
-{ 
-  /*! Check  special severity flags */ 
-  int check_special_severity = (__severity & 0xf); 
-  switch(check_special_severity)
+#if _ERRNO_H  
+  extern char * program_invocation_short_name  ; 
+
+  size_t  pbn_len =  strlen(program_invocation_short_name) ; 
+  memcpy( (minilog_basename+1)  , program_invocation_short_name , pbn_len) ; 
+
+#else 
+
+  char *program_basename = getenv((const char [])  { 0x5f,00}) ; 
+  if (!program_basename) 
   {
-     case FATL: exit(FATL) ;
+     fprintf(stderr , "Not Able  to define basename program"); 
+     strcat(minilog_basename ,  "UNDEFINED") ; 
+     return ; 
   }
+
+  //!  get root program name 
+  char  *path_sep    = (char *)00,
+        *penulitmate = (char *)00;
+
+  while (nptr !=(path_sep =strtok(program_basename ,(const char [] ){0x2f,00}  ) ))
+  {
+     program_basename =(char *) 00; 
+     penulitmate = path_sep ;  
+  }
+  
+  memcpy( (minilog_basename+1) ,   penulitmate , strlen(penulitmate) ) ; 
+  
+#endif 
 }
 
-#endif
+
 
 void minilog_cleanup(void) 
 {

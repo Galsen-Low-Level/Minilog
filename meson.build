@@ -6,7 +6,10 @@ pkgcfg = import('pkgconfig')
 cc = meson.get_compiler('c') 
 add_project_arguments(
   cc.get_supported_arguments(),
-  '-DMINILOG_ALLOW_ABORT_ON_FATAL', 
+  '-DMINILOG_ALLOW_ABORT_ON_FATAL=1', 
+  
+  #By default  the log show the log level severity 
+  '-DMINILOG_TURN_OFF_SEVERITY=0', 
   language:'c'
   )
 
