@@ -18,12 +18,17 @@ int main (int ac  , char **av , __maybe_unused char **env)
 
   char *mesg="This this my message"; 
 
-  char *file_target =  (char *) 0 ; 
+  char *file_target =  (char *) 00; 
   if((ac  &  ~(1) ) ) 
       file_target =  *(av +(ac-1)) ; 
+  
 
+  mr_sync fsync  = {
+     file_target,
+     ._comtype= '|' , 
+  }; 
  
-  int mlgstatus =  minilog_setup(STREAM_ON(file_target)); 
+  int mlgstatus =  minilog_setup(INIT(&fsync)) ; 
 
   if(!(~0  ^mlgstatus)) 
     return EXIT_FAILURE ; 

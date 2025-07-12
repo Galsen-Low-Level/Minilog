@@ -25,17 +25,17 @@
 
 #include  "minilog.h"  
 
-char *minilog_basename = (char *)  0 ;
+char *minilog_basename = (char *)00 ;
 
 struct   minilog_pipeline_stream  { 
    char  * _tmpipe;  
    int  _fds ;   
 }   mps  = { 
-  ._tmpipe = (char *) 0 , 
+  ._tmpipe = (char *) 00 , 
   0 
 } ; 
 
-char  *pipefile = (char *)  0 ; 
+char  *pipefile = (char *)00 ; 
 
 int  minilog_setup(struct  __minilog_initial_param_t * __Nullable  miniparm ) { 
   
@@ -89,18 +89,35 @@ int minilog_configure(struct __minilog_initial_param_t *  restrict parm )
      /*TODO : register signal  to handle subprocess watcher */
      /*This  i'll be only happen if user decide to follow record file */ 
      
-     minilog_watchlog(link_fds , (void *)0 /*  using  builtin  default signals handler  */); 
+     minilog_watchlog(link_fds); 
      mps._fds =  link_fds ;  
    }
 
    return  0 ; 
 }
 
-int  minilog_create_record_stream_pipeline(mr_sync * restrict  source /*,TODO :define the communication type */) 
+/*! TODO :change minilog_create_record_stream_pipeline prototype 
+ *        to
+ *        int minilog_create_record_stream_pipeline(mr_sync ,  comtype)
+ *
+ */
+int  minilog_create_record_stream_pipeline(mr_sync * restrict  source) 
 {
+  
   if(!source)
     return -EDESTADDRREQ ;
-  
+
+  //!get type of communication specified 
+  switch(minilog_syncom(source->_code) & 0xf) 
+  {
+    case MINILOG_COM_PIPE: 
+      puts("pipe") ; break ; 
+    case MINILOG_COM_SOCKET: 
+      puts("socket");break ; 
+  }
+
+  exit(1);
+
   char template[0x64]  = {0} ; 
   strcat(template ,  source->_record_file) ; 
   strcat(template  , "XXXXXX") ;  
@@ -118,14 +135,14 @@ int  minilog_create_record_stream_pipeline(mr_sync * restrict  source /*,TODO :d
      if((EEXIST ^ errno))
        return errno ; 
   }
-  
+ 
   source->_fd_stream_links  = (open(source->_stream_pipe, O_RDWR) << 8) \
                               | open(source->_record_file , O_CREAT|O_RDWR|O_APPEND, S_IRUSR|S_IWUSR) ;
   
 
   if(!(~0  ^ ((source->_fd_stream_links >> 8) & 0xff))) 
   { 
-    if (~0 != (source->_fd_stream_links  & 0xff))   
+    if (!(~0 ^ (source->_fd_stream_links  & 0xff)))   
       close(source->_fd_stream_links & 0xff) ; 
 
     unlink(source->_stream_pipe) ; 
@@ -136,14 +153,10 @@ int  minilog_create_record_stream_pipeline(mr_sync * restrict  source /*,TODO :d
   return source->_fd_stream_links ; 
 }
 
-int  minilog_watchlog(int fds , multi_sigcatch  sighdl_callback) 
+int  minilog_watchlog(int fds)    
 {
   /*! Register predefined  signal before lauching the process */
-  if(!sighdl_callback) 
-    MLOG_DEFSIGCATCH(DEFAULT_TARGET_SIGNALS) ; 
-  else 
-    sighdl_callback(DEFAULT_TARGET_SIGNALS) ;  
-
+  MLOG_DEFSIGCATCH(DEFAULT_TARGET_SIGNALS) ; 
 
   pid_t subprocess_watcher  =  fork() ;
   if(!(~0 ^ subprocess_watcher))
@@ -195,7 +208,7 @@ void  sigcatcher(const int nsigs  , ... )
    __gnuc_va_list ap ; 
    __builtin_va_start(ap , nsigs) ;
    struct sigaction  sigact  ; 
-   *(void**) &sigact.sa_handler= minilog_defsighdl;
+   *(void**) &sigact.sa_handler= minilog_sighdl;
    int sigindex  = ~0 ; 
    while (++sigindex <  nsigs )  
    { 
@@ -213,14 +226,14 @@ void  sigcatcher(const int nsigs  , ... )
    __builtin_va_end(ap) ;  
 }
 
-void minilog_defsighdl(int signum )  
+void minilog_sighdl(int signum )  
 {
 
    int status  = 0 ; 
    waitpid(~0 , &status , WNOHANG); 
    /*!TODO:  Analyse status code  */
-   
 
+   //!_is_terminated_signal(signum)  
    minilog_cleanup();  
 }
 
@@ -374,6 +387,11 @@ minilog_perform_locale(char inline_log_buffer  __Nonullable_(MIBLMT))
    return readed_bytes ; 
 }
 
+void minilog_exit(void) 
+{
+   exit(0);  
+}
+
 
 void minilog_auto_check_program_bn(void) 
 {
@@ -392,7 +410,7 @@ void minilog_auto_check_program_bn(void)
 
 #else 
 
-  char *program_basename = getenv((const char [])  { 0x5f,00}) ; 
+  char *program_basename = getenv((const char [])  {0x5f,00}) ; 
   if (!program_basename) 
   {
      fprintf(stderr , "Not Able  to define basename program"); 
@@ -410,7 +428,7 @@ void minilog_auto_check_program_bn(void)
      penulitmate = path_sep ;  
   }
   
-  memcpy( (minilog_basename+1) ,   penulitmate , strlen(penulitmate) ) ; 
+  memcpy( (minilog_basename+1) , penulitmate , strlen(penulitmate) ) ; 
   
 #endif 
 }
@@ -426,8 +444,8 @@ void minilog_cleanup(void)
   } 
   if(mps._fds > 0)  
   {
-      int  pipestream  = mps._fds >> 8 ; 
-      int  logfile     = mps._fds & 0xff; 
+      int  pipestream  = mps._fds >> 8 ,
+           logfile     = mps._fds & 0xff; 
       if(0 < pipestream ) 
         close(pipestream) ; 
       if(0 < logfile) 

@@ -1,3 +1,4 @@
+# @author Umar Ba <jUmarB@protonmail.com> 
 project('minilog', 'c',
   version : '0.1',
   default_options : [  'c_std=gnu99','warning_level=3'])

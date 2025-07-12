@@ -141,21 +141,42 @@ extern int fdstream  ;
     ._fstream =&(struct __minilog_record_sync){ ._record_file =__fstream}\
   }
 
+#define INIT(...)  \
+  &(struct  __minilog_initial_param_t)\
+  {\
+    __VA_ARGS__\
+  }
+
+enum __minilog_record_comtype  { 
+   PIPE    =  0xC , 
+#define   MINILOG_COM_PIPE   PIPE 
+   SOCKET  
+#define MINILOG_COM_SOCKET  SOCKET 
+}; 
+
 typedef struct   __minilog_record_sync mr_sync ; 
 struct __minilog_record_sync   { 
   char * _record_file;            /* The target record file */ 
   char * _stream_pipe;            /* Stream pipe that listen on stderr or stdout  */
   int  _fd_stream_links ;         /* file descriptors for record  file  and streampipe */
+  union { 
+    unsigned char  _comtype; 
+    int            _code:8 ;
+  };
 };   
 
 typedef struct   __minilog_initial_param_t mparm ; 
 struct __minilog_initial_param_t { 
    struct __minilog_record_sync *  _fstream; 
+
 }; 
 
 typedef  void (*multi_sigcatch)(int  , ...) ;
 
-#define  DEFAULT_TARGET_SIGNALS  3,SIGINT,SIGCHLD,SIGTERM 
+#if !defined(DEFAULT_TARGET_SIGNALS) 
+# define  DEFAULT_TARGET_SIGNALS  3,SIGINT,SIGCHLD,SIGTERM 
+#endif  
+
 #define  MLOG_DEFSIGCATCH(__nsigs , ...) \
   sigcatcher(__nsigs , ##__VA_ARGS__) 
 
@@ -166,17 +187,22 @@ __mlog int minilog_setup(struct __minilog_initial_param_t * __Nullable __initial
 void minilog_cleanup(void) __attribute__((destructor));  
 int  minilog_configure(struct __minilog_initial_param_t * __restrict__  __parm)  ; 
 int  minilog_create_record_stream_pipeline(mr_sync * __restrict__  __source);
-int  minilog_watchlog(int __fds , multi_sigcatch __variadic_signal_hanler_callback);
+int  minilog_watchlog(int __fds) ; //   multi_sigcatch __variadic_signal_hanler_callback);
 
-void  sigcatcher(const int __nsigs ,  ...) __attribute__((weak)) ; 
-void  minilog_defsighdl(int __target_signal) __attribute__((weak)) ; 
+
+/**  
+ * Can be overrided  by  using shim  technique 
+ **/
+__mlog void  sigcatcher(const int __nsigs ,  ...) __attribute__((weak)) ; 
+__mlog void  minilog_sighdl(int __target_signal) __attribute__((weak)) ; 
 
 static void minilog_tail_forward_sync(int __fds ) ; 
 
 /* @fn minilog_set_current_locale(void) 
  * @brief apply  current locale  (l18n & l10n) for portability 
  */
-static int minilog_set_current_locale(void) ;  
+static int minilog_set_current_locale(void) ; 
+//static int minilog_set_current_localv(int opt l1x ,  ... ) ; 
 
 /* @fn  minilog(int  , const char  * ,  ...) 
  * @brief write formated log on stdandard output with color indication 
@@ -219,6 +245,24 @@ static   __always_inline int minilog_apply_lglvl(int __log_level)
    return what_happen ; 
 }
 
+static __always_inline int  minilog_syncom(unsigned char  __comtype) 
+{
+
+   /*By default  PIPE communication is used  to sychronize terminal log & logfile*/
+   if(!__comtype) 
+     goto  _defcom; 
+  
+   int magic_check = (0x7 ^ (__comtype >> 4)); 
+   if(!magic_check || !magic_check ^ 4)  
+       return  (__comtype ^(0xf0)) ;
+
+_defcom: 
+   return  MINILOG_COM_PIPE ; 
+   
+}
+
+
+void  minilog_exit(void) __attribute__((noreturn)) ;
 static __always_inline  void  __check_severity(int __severity)  
 {
   /*! Check  special severity flags */ 
@@ -227,14 +271,15 @@ static __always_inline  void  __check_severity(int __severity)
   {
      case FATL:  
 #if MINILOG_ALLOW_ABORT_ON_FATAL  
-       exit(FATL) ; 
+       minilog_exit();  
 #endif 
        /* !Nothing to do */
        break; 
   }
 }
 
-/*! 
+/* @fn minilog_auto_check_program_bn(void) 
+ * @brief Detect the program basename  for indication
  *  
  */
 static void  minilog_auto_check_program_bn(void) 
