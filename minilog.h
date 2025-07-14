@@ -189,6 +189,7 @@ int  minilog_configure(struct __minilog_initial_param_t * __restrict__  __parm) 
 int  minilog_create_record_stream_pipeline(mr_sync * __restrict__  __source);
 int  minilog_watchlog(int __fds) ; //   multi_sigcatch __variadic_signal_hanler_callback);
 
+static int minilog_sync_pipe(const char * __restrict__  source); 
 
 /**  
  * Can be overrided  by  using shim  technique 

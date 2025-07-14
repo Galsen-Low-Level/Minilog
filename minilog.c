@@ -96,11 +96,7 @@ int minilog_configure(struct __minilog_initial_param_t *  restrict parm )
    return  0 ; 
 }
 
-/*! TODO :change minilog_create_record_stream_pipeline prototype 
- *        to
- *        int minilog_create_record_stream_pipeline(mr_sync ,  comtype)
- *
- */
+
 int  minilog_create_record_stream_pipeline(mr_sync * restrict  source) 
 {
   
@@ -111,46 +107,63 @@ int  minilog_create_record_stream_pipeline(mr_sync * restrict  source)
   switch(minilog_syncom(source->_code) & 0xf) 
   {
     case MINILOG_COM_PIPE: 
-      puts("pipe") ; break ; 
-    case MINILOG_COM_SOCKET: 
+      source->_fd_stream_links =  minilog_sync_pipe(source->_record_file) ; 
+      break ; 
+    case MINILOG_COM_SOCKET:
+      /*source->_fd_stream_links =  minilog_sync_socket(source->_record_file);
+       *break;*/
       puts("socket");break ; 
-  }
+  }  
 
-  exit(1);
-
-  char template[0x64]  = {0} ; 
-  strcat(template ,  source->_record_file) ; 
-  strcat(template  , "XXXXXX") ;  
-  /* NOTE: <BUGS ISSUE> see manpage (3) of mktemp  BUGS section 
-   * TODO: Generate temprorary filename using mkstemp or equivalent 
-   **/
-  source->_stream_pipe = mktemp(template) ;  
-  mps._tmpipe =strdup(source->_stream_pipe) ; 
-
-  if(!source->_stream_pipe)  
-    return errno ; 
-  
-  if(!(~0 ^  mkfifo(source->_stream_pipe , S_IRUSR  | S_IWUSR))) 
-  {
-     if((EEXIST ^ errno))
-       return errno ; 
-  }
- 
-  source->_fd_stream_links  = (open(source->_stream_pipe, O_RDWR) << 8) \
-                              | open(source->_record_file , O_CREAT|O_RDWR|O_APPEND, S_IRUSR|S_IWUSR) ;
-  
-
-  if(!(~0  ^ ((source->_fd_stream_links >> 8) & 0xff))) 
-  { 
-    if (!(~0 ^ (source->_fd_stream_links  & 0xff)))   
-      close(source->_fd_stream_links & 0xff) ; 
-
-    unlink(source->_stream_pipe) ; 
-    return  -EACCES ;
-  } 
-  
+  /* Terminal < -- > [pipe/socket buffer] =={event pollin event}==>  file.log */
   dup2((source->_fd_stream_links >> 8) , STDERR_FILENO) ; 
   return source->_fd_stream_links ; 
+}
+
+static int minilog_sync_pipe(const char * restrict  source) 
+{
+  if(!source) return  ~0 ;
+  
+  int  fds = 0 ; 
+  char *tmplate  = (char *) calloc(strlen(source)+0x8 , (sizeof(char))) ; 
+  if (!tmplate)
+    return  ~0 ; 
+
+  memset(tmplate , 0x58, (strlen(source)+7))   ; 
+  memcpy((tmplate),source , strlen(source)) ; 
+  memset((tmplate+strlen(source)) ,  0x2e , 01);
+
+  int  _ = mkstemp(tmplate) ; 
+  if(!(~0^_)) 
+    return errno ; 
+
+  mps._tmpipe =  strdup(tmplate) ;  
+  unlink(tmplate); 
+  close(_) ;
+  free(tmplate) ; 
+  
+ 
+  if(!(~0 ^ mknod(mps._tmpipe,S_IFIFO|S_IRUSR|S_IWUSR,00)))
+  {
+    perror("mknod") ;  
+    if ((EEXIST ^ errno)) 
+     {
+       fds = errno ; 
+       goto  _end ;  
+     }
+  } 
+
+  fds =  (open(mps._tmpipe,O_RDWR) <<8) | (open(source,O_CREAT|O_APPEND|O_RDWR,S_IRUSR|S_IWUSR)) ; 
+  if (!(~0 ^(fds >> 8) & 0x07)) 
+  { 
+     if(!!(~0  ^ (fds  & 0x0f)))
+       close(fds & 0xff ) ;  
+     
+     goto  _end ; 
+  }
+
+_end: 
+  return  fds;  
 }
 
 int  minilog_watchlog(int fds)    
@@ -281,7 +294,7 @@ int minilog(int loglvl ,  const char * restrict fmtstr , ... )
     char *atb[] = { mlg_ext.action ,  mlg_ext.tag } ; 
     int  item = 0 ; 
     
-    while ( *action_tag_symbol  != 0  ) 
+    while ( *action_tag_symbol  != 00  ) 
     { 
       char *looking_for_next_symbol= strchr(action_tag_symbol , MINILOG_EXTSYMB) ; 
       if(looking_for_next_symbol) 
@@ -444,8 +457,8 @@ void minilog_cleanup(void)
   } 
   if(mps._fds > 0)  
   {
-      int  pipestream  = mps._fds >> 8 ,
-           logfile     = mps._fds & 0xff; 
+      int  pipestream  = ((mps._fds >> 8) & 0xff) ,
+           logfile     = (mps._fds & 0xff); 
       if(0 < pipestream ) 
         close(pipestream) ; 
       if(0 < logfile) 
