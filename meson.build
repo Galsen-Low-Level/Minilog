@@ -1,14 +1,13 @@
 # @author Umar Ba <jUmarB@protonmail.com> 
 project('minilog', 'c',
   version : '0.1',
-  default_options : [  'c_std=gnu99','warning_level=3'])
+  default_options : ['c_std=gnu99','warning_level=3'])
 
 pkgcfg = import('pkgconfig') 
 cc = meson.get_compiler('c') 
 add_project_arguments(
   cc.get_supported_arguments(),
   '-DMINILOG_ALLOW_ABORT_ON_FATAL=1', 
-  
   #By default  the log show the log level severity 
   '-DMINILOG_TURN_OFF_SEVERITY=0', 
   language:'c'

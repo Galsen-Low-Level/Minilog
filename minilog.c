@@ -80,15 +80,10 @@ int  minilog_setup(struct  __minilog_initial_param_t * __Nullable  miniparm ) {
 
 int minilog_configure(struct __minilog_initial_param_t *  restrict parm )  
 {
-   
    /* handle stream record file*/ 
    if (parm->_fstream->_record_file) 
    {
      int link_fds = minilog_create_record_stream_pipeline(parm->_fstream);
-
-     /*TODO : register signal  to handle subprocess watcher */
-     /*This  i'll be only happen if user decide to follow record file */ 
-     
      minilog_watchlog(link_fds); 
      mps._fds =  link_fds ;  
    }

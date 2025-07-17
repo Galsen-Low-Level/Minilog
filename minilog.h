@@ -1,6 +1,10 @@
 /* @file logprint.h 
- * @brief a simple logger with termcap embedded 
+ * @brief a simple logger with termcap embedded  
  * @author  Umar Ba <jUmarB@protonmail.com> 
+ *
+ *
+ *
+ * @music: Voyage - Allude ( Electronic Gems  ) 
  */
 
 #if !defined(__MINILOG) 
@@ -9,11 +13,13 @@
 #include <stddef.h>  
 #include <curses.h> 
 #include <term.h> 
-#include <fmtmsg.h> 
+#include <fmtmsg.h>
+#include <sys/cdefs.h> 
 
 #include <features.h> 
 #define __need___va_list 
 #include <stdarg.h>  
+
 
 #if defined(__cplusplus)
 # define  __mlog  extern "C" 
@@ -29,9 +35,35 @@
 # define __maybe_unused  __attribute__((__unused__))
 #else 
 # define __maybe_unused  
+#endif
+
+#if __glibc_has_attribute(destructor)  
+#define  __dtor  __attribute__((destructor))
+#else
+# if MINILOG_COMPILATION_FAIL_ON_FATAL
+# error   "No end distroyer to release allocated resources.A leak memory 'll occured"
+# else 
+# warning "No end destroyer to release allocated resources.A leak memory 'll occured"
+/* NOTE  : should  found another way  to release ressources  without relying on
+ *         GNU function attribute: 
+ *         -> see  on_exit or  atexit */ 
+
+# endif  /* MINILOG_COMPILE_FAIL_ON_FATAL*/  
+# define __dtor   /*  NOTHING  */
+#endif
+
+/*NOTE : This override indication  use weak  GNU attribute 
+ *     : as  marker to indicate  the function can be rewriten  in user program 
+ **/ 
+#if __glibc_has_attribute(weak) 
+# define __user_override  __attribute__((weak)) 
+#else 
+# define __user_override  /* NOTHING */ 
 #endif 
+
+
 #if defined(__ptr_t) 
-# define  nptr (__ptr_t) 0 
+# define  nptr (__ptr_t) 00 
 #else 
 # define  nptr NULL
 #endif
@@ -73,13 +105,11 @@ enum  {
 #define  MLOG(__severity_level , __minext)\
   minilog_register(__severity_level, __minext) 
 
-
 #define  __mlog_interupt    0x1 , putchar 
 #define  mlog_exec(__itermcap) tputs(__itermcap , __mlog_interupt)
 
 //!NOTE : For Cursor movement 
 #define  mlog_cusror(__x , __y)  mlog_exec(tgoto(cursor_address , __x , __y))
-
 
 #define  CAPCODE(__code)\
   ((TERMTYPE*)(cur_term))->Strings[__code] 
@@ -128,18 +158,10 @@ enum {
 #define  LOGFATAL(...)  __LP_GENERIC(FATALITY,__VA_ARGS__)   
 #define  LOGNTH(...)    __LP_GENERIC(NOTHING ,__VA_ARGS__)
 
-extern char  *minilog_basname ;  
-extern int fdstream  ;  
-
 #if defined(MINILOG_ALLOW_ABORT_ON_FATAL) 
 #define MINILOG_ABORT_ON_FATALITY 1  
 #endif
 
-#define  STREAM_ON(__fstream)\
-  &(struct __minilog_initial_param_t)\
-  {\
-    ._fstream =&(struct __minilog_record_sync){ ._record_file =__fstream}\
-  }
 
 #define INIT(...)  \
   &(struct  __minilog_initial_param_t)\
@@ -147,13 +169,31 @@ extern int fdstream  ;
     __VA_ARGS__\
   }
 
+extern char  *minilog_basname ;  
+extern int fdstream  ;  
+
+/** 
+ * Representing  the stream communication 
+ * should   handled  using Named Pipe 
+ * or  using  Local Socket   
+ **/
 enum __minilog_record_comtype  { 
    PIPE    =  0xC , 
 #define   MINILOG_COM_PIPE   PIPE 
-   SOCKET  
+/** 
+ * NOTE: This part is not implemented yet 
+ *       but stay in draft.W'll be available
+ *       in the next version 
+ */
+   SOCKET    
 #define MINILOG_COM_SOCKET  SOCKET 
 }; 
 
+/** 
+ * Data structure  that handle the target logfile specified by the user
+ * here is some information  you should awareof 
+ * such as the logfilename and the communication type 
+ **/
 typedef struct   __minilog_record_sync mr_sync ; 
 struct __minilog_record_sync   { 
   char * _record_file;            /* The target record file */ 
@@ -165,58 +205,134 @@ struct __minilog_record_sync   {
   };
 };   
 
+/**  
+ * Wrap's up some  information and  allow user
+ * to determine how  the logfile or  stream syncronisation 
+ * should operate  and more. 
+ * It's just like  and object  that you can specified  some values 
+ * to control how the stream log should behave 
+ **/
 typedef struct   __minilog_initial_param_t mparm ; 
 struct __minilog_initial_param_t { 
    struct __minilog_record_sync *  _fstream; 
-
+   /* ... NOTE: soon ...  */
 }; 
 
 typedef  void (*multi_sigcatch)(int  , ...) ;
 
 #if !defined(DEFAULT_TARGET_SIGNALS) 
+/* Default registred signal  to handle how the stream log  subprocess  
+ * should exit   the program. NOTE: you can specify  more signal. 
+ * NOTE:  This Signals are procssed by a variadic function*/
 # define  DEFAULT_TARGET_SIGNALS  3,SIGINT,SIGCHLD,SIGTERM 
 #endif  
 
-#define  MLOG_DEFSIGCATCH(__nsigs , ...) \
+
+#define  MLOG_DEFSIGCATCH(__nsigs , ...)\
   sigcatcher(__nsigs , ##__VA_ARGS__) 
 
-/* @fn minilog_setup(void) ; 
- * @brief configure or initilize the terminal capbilities  
+/**
+ * @fn minilog_setup( struct __minilog_initial_param_t * ) ; 
+ * @brief configure and  initilize the terminal capbilities and more stuff 
+ * @param  struct  __minilog_initial_param_t -  configuration parameters 
+ * @return int    -   status code   0 : OK   ; Otherwise error 
  */
 __mlog int minilog_setup(struct __minilog_initial_param_t * __Nullable __initial_parameters) ; 
-void minilog_cleanup(void) __attribute__((destructor));  
-int  minilog_configure(struct __minilog_initial_param_t * __restrict__  __parm)  ; 
-int  minilog_create_record_stream_pipeline(mr_sync * __restrict__  __source);
-int  minilog_watchlog(int __fds) ; //   multi_sigcatch __variadic_signal_hanler_callback);
 
-static int minilog_sync_pipe(const char * __restrict__  source); 
+/**
+ * @fn  minilog_cleanup(void) 
+ * @brief  clean all  allocated memory  when the  application  turned off (exit or brutal exit) 
+ **/
+void minilog_cleanup(void) __dtor;  
+
+/** 
+ * @fn minilog_configure(struct __minilog_initial_param_t *) 
+ * @brief  apply or register  the configuration
+ * @param  struct __minilog_initial_param_t  * -  initial parameters 
+ * @return int    -  0 : OK  ;  Otherwise  error 
+ **/
+int  minilog_configure(struct __minilog_initial_param_t * __restrict__  __parm)  ; 
+
+/**
+ * @fn minilog_create_record_stream_pipeline(mr_sync )  e.g  call it mister sync  :D ! 
+ * @brief   create synchronize  stream pipeline between terminal  output and logfile 
+ * @param  mr_sync  aka  struct  __minilog_record_sync  - hold the target logfile  e
+ * @return   int  -  0 :OK ; Otherwise  error  
+ **/
+int  minilog_create_record_stream_pipeline(mr_sync * __restrict__  __source);
+
+/**
+ * @fn minilog_watchlog(int) 
+ * @brief create  the subprocess stream but register the signal before 
+ * @param  int   - bit compacted file descritors 
+ * @return int   - 0 :OK ; Otherwise error 
+ **/
+int  minilog_watchlog(int __bitfds) ;  
+
+/** 
+ * @fn minilog_sync_pipe(const char * )  
+ * @brief establish  record stream to logfile but using pipe communication 
+ * @param  const char  *  log filename 
+ * @int   int    - 0 : OK ;  Otherwise  error  
+ **/
+static int minilog_sync_pipe(const char * __restrict__   __source) ; 
 
 /**  
- * Can be overrided  by  using shim  technique 
- **/
-__mlog void  sigcatcher(const int __nsigs ,  ...) __attribute__((weak)) ; 
-__mlog void  minilog_sighdl(int __target_signal) __attribute__((weak)) ; 
+ * <<!>> : Functions marked  <<__user_override>> can be override 
+ *         in user  program.  
+ * NOTE  : For advanced programmer  can use SHIM Technique.   
+ */  
 
-static void minilog_tail_forward_sync(int __fds ) ; 
+/** 
+ * @fn sigcatcher(const int  ,  __gnu_variadic__)  
+ * @brief  default built-in signal catcher. Catch desired signal. 
+ *         
+ * @param  const int n signals, 
+ * @param  ...       - signals 
+ **/
+__mlog void  __user_override 
+sigcatcher(const int __nsigs ,  ...) ; 
+
+/** 
+ * @fn minilog_sighdl(int) 
+ * @brief handle subprocess exiting signal
+ * @param   int  - the signal itself 
+ **/
+__mlog void __user_override 
+minilog_sighdl(int __target_signal) ; 
+
+/** 
+ * @fn minilog_tail_forward_sync
+ * @brief manage to  synchronize the output from the terminal 
+ *        and log file 
+ * @param  int  -- bits compacted fds 
+ */
+static void minilog_tail_forward_sync(int __bitfds ) ; 
 
 /* @fn minilog_set_current_locale(void) 
  * @brief apply  current locale  (l18n & l10n) for portability 
  */
 static int minilog_set_current_locale(void) ; 
+
 //static int minilog_set_current_localv(int opt l1x ,  ... ) ; 
 
-/* @fn  minilog(int  , const char  * ,  ...) 
+/* @fn  minilog(int  , const char  * , __gnu_variadic__) 
  * @brief write formated log on stdandard output with color indication 
  *        see   __log_level enum 
  * @param  int - __log_level   
  * @param const char *  formated string  
  * @param ...  variadic parameter   
- * @return   int - 0 ok  otherwise  ~1 
+ * @return   int - 0 ok  otherwise  error  
  */
 
-__mlog int minilog(int __log_level , const char *__restrict__ __fmtstr , ... ) ; 
+__mlog int minilog(int __log_level , const char *__restrict__ __fmtstr , ... ) 
+  __attribute__((format (printf ,  2,3))); 
 
-//! Apply log level with the right color  
+/**
+ * @fn minilog_apply_lglvl(int)
+ * @brief  Apply log level with the right termcap color  
+ * @param  int  -- log level 
+ * */
 static   __always_inline int minilog_apply_lglvl(int __log_level)  
 {
   int what_happen = 0 ; 
@@ -246,6 +362,14 @@ static   __always_inline int minilog_apply_lglvl(int __log_level)
    return what_happen ; 
 }
 
+/** 
+ * @fn minilog_syncom(unsigned char) 
+ * @brief check  ascii character to symbolise wich type of communication
+ *        user desired : e.g  : '|' symbolise the  pipe communicaion 
+ *                              '=' sychronize the socket communication 
+ * @param  unsigned char  -  ascii code  
+ * @return the  communication  type  
+ **/
 static __always_inline int  minilog_syncom(unsigned char  __comtype) 
 {
 
@@ -262,8 +386,19 @@ _defcom:
    
 }
 
-
+/** 
+ * @fn minilog_exit(void)
+ * @brief   basic exit function  
+ * */
 void  minilog_exit(void) __attribute__((noreturn)) ;
+
+/** 
+ * @fn __check_severity(int) 
+ * @brief  check the severity of log 
+ *    in some case when the Compile time flags MINILOG_ALLOW_ABORT_ON_FATAL  is set to > 0 
+ *    this function w'll exit the application  
+ * @param  int  -- severity level 
+ */
 static __always_inline  void  __check_severity(int __severity)  
 {
   /*! Check  special severity flags */ 
@@ -280,34 +415,56 @@ static __always_inline  void  __check_severity(int __severity)
 }
 
 /* @fn minilog_auto_check_program_bn(void) 
- * @brief Detect the program basename  for indication
- *  
+ * @brief Detect the program basename 
  */
 static void  minilog_auto_check_program_bn(void) 
-  __attribute__((constructor)) ; 
-/* @fn __minilog(const char  * , ... ) 
+  __attribute__((constructor)) ;
+
+/**
+ * @fn __minilog(int const char  * , ... ) 
  * @brief write formated log 
- * @param const char *  formated string  
+ * @param int          -   log level 
+ * @param const char * -   formated string  
  * @param ...  variadic parameter   
  * @return int - 0 ok otherwise -1
  */
 static int 
-__minilog (int __log_level  , const char * __restrict__ __fmtstr ,   ... );  
+__minilog (int __log_level  , const char * __restrict__ __fmtstr ,   ... ) 
+  __attribute__((format (printf ,  2,3))); 
+
+/**
+ * @fn __minilog_advanced(int  , struct __minilog_extended *)
+ * @brief just like  __minilog function  but extended 
+ *        to add more flexibility  log formating 
+ *        see  file minilog_overview.c  
+ * @param  int  -  log level 
+ * @param  struct  __minilog_extended *  - minilog extension 
+ */
 
 static int
 __minilog_advanced(int  __log_level ,  struct __minilog_extended *__restrict__ __mlog_extension) ; 
 
+
+/** 
+ * !status @override
+ * @fn  minilog_register(int  , char * ) __user_override 
+ * @brief submit  the formated log  with  combined severity level  
+ * @param  int  - the severity of the log 
+ * @param  char - the buffer  is aligned with  the minilog extension size   see: struct __minilog_extended
+ *                But However  it can be something else  
+ *
+ * @return int  - the submit status 
+ * */
 int 
-minilog_register(int __severity , char  *  __restrict__  __buffer)  ; 
+minilog_register(int __severity , char  *  __restrict__  __buffer) __user_override   ; 
 
 
 /* @fn minilog_perform_locale(char  __parmreq_(1024))) 
- * @brief format time in specific representation  
- * @param  char  strtime_buffer with limited size 1024  null value  is no allowed 
+ * @brief format time in specific representation    
+ * @param  char * -  strtime_buffer with limited size 1024  null value  is no allowed 
  */
 
-
 static ssize_t  
-minilog_perform_locale(char strtime_buffer  __Nonullable_(1024 /*1024 reserved*/)) ; 
+minilog_perform_locale(char strtime_buffer  __Nonullable_(1024/*1024 reserved*/)) ; 
 
 #endif /*! __MINILOG*/
