@@ -330,7 +330,7 @@ __mlog int minilog(int __log_level , const char *__restrict__ __fmtstr , ... )
 
 /**
  * @fn minilog_apply_lglvl(int)
- * @brief  Apply log level with the right color  
+ * @brief  Apply log level with the right termcap color  
  * @param  int  -- log level 
  * */
 static   __always_inline int minilog_apply_lglvl(int __log_level)  
@@ -386,8 +386,19 @@ _defcom:
    
 }
 
-
+/** 
+ * @fn minilog_exit(void)
+ * @brief   basic exit function  
+ * */
 void  minilog_exit(void) __attribute__((noreturn)) ;
+
+/** 
+ * @fn __check_severity(int) 
+ * @brief  check the severity of log 
+ *    in some case when the Compile time flags MINILOG_ALLOW_ABORT_ON_FATAL  is set to > 0 
+ *    this function w'll exit the application  
+ * @param  int  -- severity level 
+ */
 static __always_inline  void  __check_severity(int __severity)  
 {
   /*! Check  special severity flags */ 
@@ -404,14 +415,16 @@ static __always_inline  void  __check_severity(int __severity)
 }
 
 /* @fn minilog_auto_check_program_bn(void) 
- * @brief Detect the program basename  for indication
- *  
+ * @brief Detect the program basename 
  */
 static void  minilog_auto_check_program_bn(void) 
-  __attribute__((constructor)) ; 
-/* @fn __minilog(const char  * , ... ) 
+  __attribute__((constructor)) ;
+
+/**
+ * @fn __minilog(int const char  * , ... ) 
  * @brief write formated log 
- * @param const char *  formated string  
+ * @param int          -   log level 
+ * @param const char * -   formated string  
  * @param ...  variadic parameter   
  * @return int - 0 ok otherwise -1
  */
@@ -419,21 +432,39 @@ static int
 __minilog (int __log_level  , const char * __restrict__ __fmtstr ,   ... ) 
   __attribute__((format (printf ,  2,3))); 
 
+/**
+ * @fn __minilog_advanced(int  , struct __minilog_extended *)
+ * @brief just like  __minilog function  but extended 
+ *        to add more flexibility  log formating 
+ *        see  file minilog_overview.c  
+ * @param  int  -  log level 
+ * @param  struct  __minilog_extended *  - minilog extension 
+ */
 
 static int
 __minilog_advanced(int  __log_level ,  struct __minilog_extended *__restrict__ __mlog_extension) ; 
 
+
+/** 
+ * !status @override
+ * @fn  minilog_register(int  , char * ) __user_override 
+ * @brief submit  the formated log  with  combined severity level  
+ * @param  int  - the severity of the log 
+ * @param  char - the buffer  is aligned with  the minilog extension size   see: struct __minilog_extended
+ *                But However  it can be something else  
+ *
+ * @return int  - the submit status 
+ * */
 int 
-minilog_register(int __severity , char  *  __restrict__  __buffer)  ; 
+minilog_register(int __severity , char  *  __restrict__  __buffer) __user_override   ; 
 
 
 /* @fn minilog_perform_locale(char  __parmreq_(1024))) 
- * @brief format time in specific representation  
- * @param  char  strtime_buffer with limited size 1024  null value  is no allowed 
+ * @brief format time in specific representation    
+ * @param  char * -  strtime_buffer with limited size 1024  null value  is no allowed 
  */
 
-
 static ssize_t  
-minilog_perform_locale(char strtime_buffer  __Nonullable_(1024 /*1024 reserved*/)) ; 
+minilog_perform_locale(char strtime_buffer  __Nonullable_(1024/*1024 reserved*/)) ; 
 
 #endif /*! __MINILOG*/
