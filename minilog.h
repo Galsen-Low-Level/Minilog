@@ -370,7 +370,7 @@ static   __always_inline int minilog_apply_lglvl(int __log_level)
  * @param  unsigned char  -  ascii code  
  * @return the  communication  type  
  **/
-static __always_inline __minilog_record_comtype   minilog_syncom(unsigned char  __comtype) 
+static __always_inline int  minilog_syncom(unsigned char  __comtype) 
 {
 
    /*By default  PIPE communication is used  to sychronize terminal log & logfile*/
