@@ -2,7 +2,7 @@
  * @brief A minimalistic log print 
  * @author Umar Ba  <jUmarB@protonmail.com> 
  * */
-
+#define  _GNU_SOURCE 
 #include<stdlib.h> 
 #include<unistd.h> 
 #include<stdio.h> 
@@ -20,7 +20,6 @@
 #include<signal.h> 
 #include<poll.h> 
 
-#define  __need___va_list  
 #include  <stdarg.h> 
 
 #include  "minilog.h"  
@@ -34,6 +33,9 @@ struct   minilog_pipeline_stream  {
   ._tmpipe = (char *) 00 , 
   0 
 } ; 
+
+/* ! This is used for unamed pipe */
+int channels[2] = {0} ; 
 
 char  *pipefile = (char *)00 ; 
 
@@ -111,14 +113,14 @@ int  minilog_create_record_stream_pipeline(mr_sync * restrict  source)
   }  
 
   /* Terminal < -- > [pipe/socket buffer] =={event pollin event}==>  file.log */
-  dup2((source->_fd_stream_links >> 8) , STDERR_FILENO) ; 
+  dup2((source->_fd_stream_links >> 8) , STDERR_FILENO) ;
   return source->_fd_stream_links ; 
 }
 
 static int minilog_sync_pipe(const char * restrict  source) 
 {
   if(!source) return  ~0 ;
-  
+   
   int  fds = 0 ; 
   char *tmplate  = (char *) calloc(strlen(source)+0x8 , (sizeof(char))) ; 
   if (!tmplate)
@@ -140,7 +142,6 @@ static int minilog_sync_pipe(const char * restrict  source)
  
   if(!(~0 ^ mknod(mps._tmpipe,S_IFIFO|S_IRUSR|S_IWUSR,00)))
   {
-    perror("mknod") ;  
     if ((EEXIST ^ errno)) 
      {
        fds = errno ; 
@@ -149,7 +150,7 @@ static int minilog_sync_pipe(const char * restrict  source)
   } 
 
   fds =  (open(mps._tmpipe,O_RDWR) <<8) | (open(source,O_CREAT|O_APPEND|O_RDWR,S_IRUSR|S_IWUSR)) ; 
-  if (!(~0 ^(fds >> 8) & 0x07)) 
+  if (!(~0 ^((fds >> 8) & 0x07)) ) 
   { 
      if(!!(~0  ^ (fds  & 0x0f)))
        close(fds & 0xff ) ;  
@@ -159,6 +160,31 @@ static int minilog_sync_pipe(const char * restrict  source)
 
 _end: 
   return  fds;  
+}
+
+static bitfs_t minilog_sync_pipe_v2(const char * restrict source ) 
+{
+   if(!source)
+     return -EDESTADDRREQ ; 
+  
+   bitfs_t  fds = 0; 
+   errno =0 ; 
+  
+  if(!(~0^ pipe(channels)))
+    return errno; 
+  
+         /* IN      ->    OUT*/
+  fds =  (CIN << 8) | open(source, O_CREAT|O_APPEND|O_RDWR, S_IRUSR|S_IWUSR); 
+
+  if (!(~0  ^ (fds & 0xff)) || errno) 
+    return errno ;
+
+  /* link  logfile  to  the output of the channel  : *channel   */
+  dup2((fds & 0xff), COUT) ;
+  close((fds & 0xff)) ; 
+
+  return fds ;
+
 }
 
 int  minilog_watchlog(int fds)    
@@ -183,13 +209,12 @@ static void minilog_tail_forward_sync(int fds)
 {
 
   struct  pollfd  evtpolling = { 
-    .fd =  ((fds >> 8) & 0xff)  ,
+    .fd = FDIN(fds) ,  
     .events=POLLIN, 
     .revents= 0 , 
   };
 
-  int rfd =  (fds  & 0xff) ; 
-
+  int rfd =  (fds  & 0xff) ;
   char minilog_buffer_sync[MIBLMT] = {0} ; 
   while(1) 
   {
@@ -201,7 +226,7 @@ static void minilog_tail_forward_sync(int fds)
      if (evtpolling.revents & POLLIN) 
      { 
        read(evtpolling.fd,minilog_buffer_sync , MIBLMT) ;
-       fprintf(stdout , "%s" , minilog_buffer_sync) ; 
+       fprintf(stdout , "%s" , minilog_buffer_sync) ;  
        write(rfd , minilog_buffer_sync  , strlen(minilog_buffer_sync)) ;  
        bzero(minilog_buffer_sync , MIBLMT) ; 
        evtpolling.revents &=~POLLIN ;  
