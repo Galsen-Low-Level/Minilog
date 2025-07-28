@@ -2,8 +2,6 @@
  * @brief a simple logger with termcap embedded  
  * @author  Umar Ba <jUmarB@protonmail.com> 
  *
- *
- *
  * @music: Voyage - Allude ( Electronic Gems  ) 
  */
 
@@ -170,12 +168,21 @@ enum {
   }
 
 extern char  *minilog_basname ;  
-extern int fdstream  ;  
+extern int fdstream  ;
 
+extern  int channels[2] ; 
+#define  CIN  *(channels+01) 
+#define  COUT *(channels) 
+
+#define  FDIN(__fds)  (((__fds) >> 8)  & 0xff)
+#define  FDOUT(__fds) ((__fds) & 0xff)
+
+
+typedef  int  bitfs_t ; 
 /** 
  * Representing  the stream communication 
- * should   handled  using Named Pipe 
- * or  using  Local Socket   
+ * should be  handled  by using Named Pipe 
+ * or  using  Local Socket (Unix Domain Name)  
  **/
 enum __minilog_record_comtype  { 
    PIPE    =  0xC , 
@@ -267,15 +274,24 @@ int  minilog_create_record_stream_pipeline(mr_sync * __restrict__  __source);
  * @param  int   - bit compacted file descritors 
  * @return int   - 0 :OK ; Otherwise error 
  **/
-int  minilog_watchlog(int __bitfds) ;  
+int  minilog_watchlog(bitfs_t __bitfds) ;  
 
 /** 
  * @fn minilog_sync_pipe(const char * )  
  * @brief establish  record stream to logfile but using pipe communication 
  * @param  const char  *  log filename 
- * @int   int    - 0 : OK ;  Otherwise  error  
+ * @int   bitfs_t    - bitfds : OK ;  -1  error  
  **/
-static int minilog_sync_pipe(const char * __restrict__   __source) ; 
+static bitfs_t  minilog_sync_pipe(const char * __restrict__   __source) ;
+
+/*
+ * @fn minilog_sync_pipe_v2 (const char * )
+ * @brief  like minilog_sync_pipe  but using unamed pipe 
+ *         to establish  record stream for logfile 
+ * @return  bitfs_t - bitfds 
+ */
+
+static bitfs_t minilog_sync_pipe_v2(const char * __restrict__ __source) ;
 
 /**  
  * <<!>> : Functions marked  <<__user_override>> can be override 
@@ -308,6 +324,15 @@ minilog_sighdl(int __target_signal) ;
  * @param  int  -- bits compacted fds 
  */
 static void minilog_tail_forward_sync(int __bitfds ) ; 
+
+/**
+ * @fn minilog_tail_forward_sync_v2(int)
+ * @brief like the function  above see minilog_tail_forward_sync
+ *        but instead using named file as buffer stream  this one
+ *        use it in internal by default the buffer stream is hidden 
+ * @param  int -- bit compacted file descriptor 
+ **/
+static void minilog_tail_forward_sync_v2(int __bitfds);  
 
 /* @fn minilog_set_current_locale(void) 
  * @brief apply  current locale  (l18n & l10n) for portability 

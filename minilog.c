@@ -2,7 +2,8 @@
  * @brief A minimalistic log print 
  * @author Umar Ba  <jUmarB@protonmail.com> 
  * */
-
+#define  _GNU_SOURCE
+#define  _XOPEN_SOURCE 
 #include<stdlib.h> 
 #include<unistd.h> 
 #include<stdio.h> 
@@ -20,7 +21,6 @@
 #include<signal.h> 
 #include<poll.h> 
 
-#define  __need___va_list  
 #include  <stdarg.h> 
 
 #include  "minilog.h"  
@@ -34,6 +34,9 @@ struct   minilog_pipeline_stream  {
   ._tmpipe = (char *) 00 , 
   0 
 } ; 
+
+/* ! This is used for unamed pipe */
+int channels[2] = {0} ; 
 
 char  *pipefile = (char *)00 ; 
 
@@ -103,22 +106,23 @@ int  minilog_create_record_stream_pipeline(mr_sync * restrict  source)
   {
     case MINILOG_COM_PIPE: 
       source->_fd_stream_links =  minilog_sync_pipe(source->_record_file) ; 
+      //source->_fd_stream_links =  minilog_sync_pipe_v2(source->_record_file) ; 
       break ; 
-    case MINILOG_COM_SOCKET:
+    case MINILOG_COM_SOCKET:  /* Not Implemented Yet */
       /*source->_fd_stream_links =  minilog_sync_socket(source->_record_file);
        *break;*/
       puts("socket");break ; 
   }  
 
   /* Terminal < -- > [pipe/socket buffer] =={event pollin event}==>  file.log */
-  dup2((source->_fd_stream_links >> 8) , STDERR_FILENO) ; 
+  dup2((source->_fd_stream_links >> 8) , STDERR_FILENO) ;
   return source->_fd_stream_links ; 
 }
 
 static int minilog_sync_pipe(const char * restrict  source) 
 {
   if(!source) return  ~0 ;
-  
+   
   int  fds = 0 ; 
   char *tmplate  = (char *) calloc(strlen(source)+0x8 , (sizeof(char))) ; 
   if (!tmplate)
@@ -140,7 +144,6 @@ static int minilog_sync_pipe(const char * restrict  source)
  
   if(!(~0 ^ mknod(mps._tmpipe,S_IFIFO|S_IRUSR|S_IWUSR,00)))
   {
-    perror("mknod") ;  
     if ((EEXIST ^ errno)) 
      {
        fds = errno ; 
@@ -149,7 +152,7 @@ static int minilog_sync_pipe(const char * restrict  source)
   } 
 
   fds =  (open(mps._tmpipe,O_RDWR) <<8) | (open(source,O_CREAT|O_APPEND|O_RDWR,S_IRUSR|S_IWUSR)) ; 
-  if (!(~0 ^(fds >> 8) & 0x07)) 
+  if (!(~0 ^((fds >> 8) & 0x07)) ) 
   { 
      if(!!(~0  ^ (fds  & 0x0f)))
        close(fds & 0xff ) ;  
@@ -161,9 +164,30 @@ _end:
   return  fds;  
 }
 
+static bitfs_t minilog_sync_pipe_v2(const char * restrict source ) 
+{
+   if(!source)
+     return -EDESTADDRREQ ; 
+  
+   bitfs_t  fds = 0; 
+   errno =0 ; 
+  
+  if(!(~0^ pipe(channels)))
+    return errno; 
+            
+       /* IN  -> ====== ->   OUT*/
+  fds =  (CIN << 8) | open(source, O_CREAT|O_APPEND|O_RDWR, S_IRUSR|S_IWUSR); 
+
+  if (!(~0  ^ FDOUT(fds))  || errno) 
+    return errno ;
+
+  return fds ;
+
+}
+
 int  minilog_watchlog(int fds)    
 {
-  /*! Register predefined  signal before lauching the process */
+  /*! Register predefined  signal handler before lauching the process for early exiting or crashing */
   MLOG_DEFSIGCATCH(DEFAULT_TARGET_SIGNALS) ; 
 
   pid_t subprocess_watcher  =  fork() ;
@@ -174,7 +198,10 @@ int  minilog_watchlog(int fds)
   }
   
   if(!(subprocess_watcher & 0xffff))
+  {
     minilog_tail_forward_sync(fds)  ; /* like tail -f command */
+    //minilog_tail_forward_sync_v2(fds)  ; /* like tail -f command */
+  }
   
   return  0 ;  
 }
@@ -183,33 +210,70 @@ static void minilog_tail_forward_sync(int fds)
 {
 
   struct  pollfd  evtpolling = { 
-    .fd =  ((fds >> 8) & 0xff)  ,
+    .fd = FDIN(fds) ,  
     .events=POLLIN, 
     .revents= 0 , 
   };
 
-  int rfd =  (fds  & 0xff) ; 
-
-  char minilog_buffer_sync[MIBLMT] = {0} ; 
-  while(1) 
+  int rfd =  (fds  & 0xff) ;
+  char minilog_buffer_sync[MIBLMT] = {0} ;
+  int  pollingstsatus = ~0 ;  
+  while(pollingstsatus) 
   {
-     int pollingstsatus =  poll(&evtpolling , 1 , ~0)  ; 
+     pollingstsatus ^=poll(&evtpolling , 1 , ~0)  ; 
      
-     if (!(~0 ^ pollingstsatus))
-       break ; 
-
      if (evtpolling.revents & POLLIN) 
      { 
        read(evtpolling.fd,minilog_buffer_sync , MIBLMT) ;
-       fprintf(stdout , "%s" , minilog_buffer_sync) ; 
+       fprintf(stdout , "%s" , minilog_buffer_sync) ;  
        write(rfd , minilog_buffer_sync  , strlen(minilog_buffer_sync)) ;  
        bzero(minilog_buffer_sync , MIBLMT) ; 
-       evtpolling.revents &=~POLLIN ;  
      }  
   }
 
   exit(1) ; 
 }
+
+static void minilog_tail_forward_sync_v2(int  fds) 
+{ 
+
+  struct pollfd evtunnel[2]= {
+    [0]={
+       .fd =  FDIN(fds),  
+       .events=POLLWRNORM,  /* Looking for  Writing available on  (input  channel) */
+       .revents=0, 
+    }, 
+    [1]={
+       .fd= COUT , 
+       .events=POLLRDNORM, 
+       .revents= 0 
+    }
+  } ; 
+
+  struct pollfd *wchan = (evtunnel+0) ,  /* Write channel  -> input */ 
+                *rchan = (evtunnel+1) ;  /* Read  channel  -> output */
+
+  int pollstatus =~0;  
+  char minilog_buffer_sync[MIBLMT] = {0} ; 
+  while(pollstatus)    
+  { 
+    pollstatus^=(poll(evtunnel , 2 , ~0 ));
+
+    if( wchan->revents & POLLWRNORM)
+    { 
+      if(rchan->revents & POLLRDNORM) 
+      {
+        read(rchan->fd , minilog_buffer_sync , MIBLMT); 
+        fprintf(stdout, "%s",  minilog_buffer_sync) ; 
+        write(FDOUT(fds) ,minilog_buffer_sync ,strlen(minilog_buffer_sync)) ;
+        bzero(minilog_buffer_sync , MIBLMT) ; 
+      }
+    }
+  }
+ 
+  exit(0) ;
+}
+
 
 void  sigcatcher(const int nsigs  , ... )  
 {
