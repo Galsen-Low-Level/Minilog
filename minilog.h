@@ -181,8 +181,8 @@ extern  int channels[2] ;
 typedef  int  bitfs_t ; 
 /** 
  * Representing  the stream communication 
- * should   handled  using Named Pipe 
- * or  using  Local Socket   
+ * should be  handled  by using Named Pipe 
+ * or  using  Local Socket (Unix Domain Name)  
  **/
 enum __minilog_record_comtype  { 
    PIPE    =  0xC , 
@@ -324,6 +324,15 @@ minilog_sighdl(int __target_signal) ;
  * @param  int  -- bits compacted fds 
  */
 static void minilog_tail_forward_sync(int __bitfds ) ; 
+
+/**
+ * @fn minilog_tail_forward_sync_v2(int)
+ * @brief like the function  above see minilog_tail_forward_sync
+ *        but instead using named file as buffer stream  this one
+ *        use it in internal by default the buffer stream is hidden 
+ * @param  int -- bit compacted file descriptor 
+ **/
+static void minilog_tail_forward_sync_v2(int __bitfds);  
 
 /* @fn minilog_set_current_locale(void) 
  * @brief apply  current locale  (l18n & l10n) for portability 
