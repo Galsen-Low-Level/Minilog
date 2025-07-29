@@ -1,0 +1,1568 @@
+.TH "sphinx.application.Sphinx" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.application.Sphinx
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBsphinx\&.testing\&.util\&.SphinxTestApp\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str|os\&.PathLike[str] \fBsrcdir\fP, str|os\&.PathLike[str]|None \fBconfdir\fP, str|os\&.PathLike[str] \fBoutdir\fP, str|os\&.PathLike[str] \fBdoctreedir\fP, str buildername, dict[str, Any]|None confoverrides=None, IO[str]|None status=sys\&.stdout, IO[str]|None warning=sys\&.stderr, bool freshenv=False, bool \fBwarningiserror\fP=False, Sequence[str] \fBtags\fP=(), int \fBverbosity\fP=0, int \fBparallel\fP=0, bool \fBkeep_going\fP=False, bool \fBpdb\fP=False, bool exception_on_warning=False)"
+.br
+.ti -1c
+.RI "bool|None \fBfresh_env_used\fP (self)"
+.br
+.ti -1c
+.RI "None \fBpreload_builder\fP (self, str name)"
+.br
+.ti -1c
+.RI "\fBBuilder\fP \fBcreate_builder\fP (self, str name)"
+.br
+.ti -1c
+.RI "None \fBbuild\fP (self, bool force_all=False, Sequence[Path] filenames=())"
+.br
+.ti -1c
+.RI "None \fBsetup_extension\fP (self, str extname)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['\fBconfig\fP\-inited'] event, Callable[[\fBSphinx\fP, \fBConfig\fP], None] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['\fBbuilder\fP\-inited'] event, Callable[[\fBSphinx\fP], None] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['\fBenv\fP\-get\-outdated'] event, Callable[[\fBSphinx\fP, \fBBuildEnvironment\fP, Set[str], Set[str], Set[str]], Sequence[str]] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['\fBenv\fP\-before\-read\-docs'] event, Callable[[\fBSphinx\fP, \fBBuildEnvironment\fP, list[str]], None] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['\fBenv\fP\-purge\-doc'] event, Callable[[\fBSphinx\fP, \fBBuildEnvironment\fP, str], None] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['source\-read'] event, Callable[[\fBSphinx\fP, str, list[str]], None] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['include\-read'] event, Callable[[\fBSphinx\fP, Path, str, list[str]], None] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['doctree\-read'] event, Callable[[\fBSphinx\fP, nodes\&.document], None] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['\fBenv\fP\-merge\-info'] event, Callable[[\fBSphinx\fP, \fBBuildEnvironment\fP, Set[str], \fBBuildEnvironment\fP], None] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['\fBenv\fP\-updated'] event, Callable[[\fBSphinx\fP, \fBBuildEnvironment\fP], str] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['\fBenv\fP\-get\-updated'] event, Callable[[\fBSphinx\fP, \fBBuildEnvironment\fP], Iterable[str]] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['\fBenv\fP\-\fBcheck\fP\-consistency'] event, Callable[[\fBSphinx\fP, \fBBuildEnvironment\fP], None] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['write\-started'] event, Callable[[\fBSphinx\fP, \fBBuilder\fP], None] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['doctree\-resolved'] event, Callable[[\fBSphinx\fP, nodes\&.document, str], None] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['missing\-reference'] event, Callable[[\fBSphinx\fP, \fBBuildEnvironment\fP, \fBaddnodes\&.pending_xref\fP, nodes\&.TextElement], nodes\&.reference|None,] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['warn\-missing\-reference'] event, Callable[[\fBSphinx\fP, \fBDomain\fP, \fBaddnodes\&.pending_xref\fP], bool|None] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['\fBbuild\fP\-finished'] event, Callable[[\fBSphinx\fP, Exception|None], None] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['html\-collect\-pages'] event, Callable[[\fBSphinx\fP], Iterable[tuple[str, dict[str, Any], str]]] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['html\-page\-context'] event, Callable[[\fBSphinx\fP, str, str, dict[str, Any], nodes\&.document], str|None] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['linkcheck\-process\-uri'] event, Callable[[\fBSphinx\fP, str], str|None] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['object\-description\-transform'] event, Callable[[\fBSphinx\fP, str, str, \fBaddnodes\&.desc_content\fP], None] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['autodoc\-process\-docstring'] event, _AutodocProcessDocstringListener callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['autodoc\-before\-process\-signature'] event, Callable[[\fBSphinx\fP, Any, bool], None] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['autodoc\-process\-signature'] event, Callable[[\fBSphinx\fP, Literal['\fBmodule\fP', 'class', 'exception', 'function', 'method', 'attribute'], str, Any, dict[str, bool], str|None, str|None,], tuple[str|None, str|None]|None,] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['autodoc\-process\-bases'] event, Callable[[\fBSphinx\fP, str, Any, dict[str, bool], list[str]], None] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['autodoc\-skip\-member'] event, Callable[[\fBSphinx\fP, Literal['\fBmodule\fP', 'class', 'exception', 'function', 'method', 'attribute'], str, Any, bool, dict[str, bool],], bool,] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['todo\-defined'] event, Callable[[\fBSphinx\fP, \fBtodo_node\fP], None] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['viewcode\-find\-source'] event, Callable[[\fBSphinx\fP, str], tuple[str, dict[str, tuple[Literal['class', '\fBdef\fP', 'other'], int, int]]],] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, Literal['viewcode\-follow\-imported'] event, Callable[[\fBSphinx\fP, str, str], str|None] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, str event, Callable[\&.\&.\&., Any] callback, int priority=500)"
+.br
+.ti -1c
+.RI "int \fBconnect\fP (self, str event, Callable[\&.\&.\&., Any] callback, int priority=500)"
+.br
+.ti -1c
+.RI "None \fBdisconnect\fP (self, int listener_id)"
+.br
+.ti -1c
+.RI "list[Any] \fBemit\fP (self, str event, *Any args, tuple[type[Exception],\&.\&.\&.] allowed_exceptions=())"
+.br
+.ti -1c
+.RI "Any \fBemit_firstresult\fP (self, str event, *Any args, tuple[type[Exception],\&.\&.\&.] allowed_exceptions=())"
+.br
+.ti -1c
+.RI "None \fBadd_builder\fP (self, type[\fBBuilder\fP] \fBbuilder\fP, bool override=False)"
+.br
+.ti -1c
+.RI "None \fBadd_config_value\fP (self, str name, Any default, _ConfigRebuild rebuild, type|Collection[type]|\fBENUM\fP types=(), str description='')"
+.br
+.ti -1c
+.RI "None \fBadd_event\fP (self, str name)"
+.br
+.ti -1c
+.RI "None \fBset_translator\fP (self, str name, type[nodes\&.NodeVisitor] translator_class, bool override=False)"
+.br
+.ti -1c
+.RI "None \fBadd_node\fP (self, type[\fBElement\fP] node, bool override=False, **_NodeHandlerPair kwargs)"
+.br
+.ti -1c
+.RI "None \fBadd_enumerable_node\fP (self, type[\fBElement\fP] node, str figtype, TitleGetter|None title_getter=None, bool override=False, **tuple[_NodeHandler, _NodeHandler] kwargs)"
+.br
+.ti -1c
+.RI "None \fBadd_directive\fP (self, str name, type[\fBDirective\fP] cls, bool override=False)"
+.br
+.ti -1c
+.RI "None \fBadd_role\fP (self, str name, Any role, bool override=False)"
+.br
+.ti -1c
+.RI "None \fBadd_generic_role\fP (self, str name, type[\fBNode\fP] nodeclass, bool override=False)"
+.br
+.ti -1c
+.RI "None \fBadd_domain\fP (self, type[\fBDomain\fP] domain, bool override=False)"
+.br
+.ti -1c
+.RI "None \fBadd_directive_to_domain\fP (self, str domain, str name, type[\fBDirective\fP] cls, bool override=False)"
+.br
+.ti -1c
+.RI "None \fBadd_role_to_domain\fP (self, str domain, str name, \fBRoleFunction\fP|\fBXRefRole\fP role, bool override=False)"
+.br
+.ti -1c
+.RI "None \fBadd_index_to_domain\fP (self, str domain, type[\fBIndex\fP] index, bool _override=False)"
+.br
+.ti -1c
+.RI "None \fBadd_object_type\fP (self, str directivename, str rolename, str indextemplate='', Callable[[\fBBuildEnvironment\fP, str, \fBaddnodes\&.desc_signature\fP], str]|None parse_node=None, type[nodes\&.TextElement]|None ref_nodeclass=None, str objname='', Sequence[\fBField\fP] doc_field_types=(), bool override=False)"
+.br
+.ti -1c
+.RI "None \fBadd_crossref_type\fP (self, str directivename, str rolename, str indextemplate='', type[nodes\&.TextElement]|None ref_nodeclass=None, str objname='', bool override=False)"
+.br
+.ti -1c
+.RI "None \fBadd_transform\fP (self, type[\fBTransform\fP] transform)"
+.br
+.ti -1c
+.RI "None \fBadd_post_transform\fP (self, type[\fBTransform\fP] transform)"
+.br
+.ti -1c
+.RI "None \fBadd_js_file\fP (self, str|None filename, int priority=500, str|None loading_method=None, **Any kwargs)"
+.br
+.ti -1c
+.RI "None \fBadd_css_file\fP (self, str filename, int priority=500, **Any kwargs)"
+.br
+.ti -1c
+.RI "None \fBadd_latex_package\fP (self, str packagename, str|None options=None, bool after_hyperref=False)"
+.br
+.ti -1c
+.RI "None \fBadd_lexer\fP (self, str alias, type[\fBLexer\fP] lexer)"
+.br
+.ti -1c
+.RI "None \fBadd_autodocumenter\fP (self, type[\fBDocumenter\fP] cls, bool override=False)"
+.br
+.ti -1c
+.RI "None \fBadd_autodoc_attrgetter\fP (self, type typ, Callable[[Any, str, Any], Any] getter)"
+.br
+.ti -1c
+.RI "None \fBadd_search_language\fP (self, type[\fBSearchLanguage\fP] cls)"
+.br
+.ti -1c
+.RI "None \fBadd_source_suffix\fP (self, str suffix, str filetype, bool override=False)"
+.br
+.ti -1c
+.RI "None \fBadd_source_parser\fP (self, type[\fBParser\fP] parser, bool override=False)"
+.br
+.ti -1c
+.RI "None \fBadd_env_collector\fP (self, type[\fBEnvironmentCollector\fP] collector)"
+.br
+.ti -1c
+.RI "None \fBadd_html_theme\fP (self, str name, str|os\&.PathLike[str] theme_path)"
+.br
+.ti -1c
+.RI "None \fBadd_html_math_renderer\fP (self, str name, _MathsInlineRenderers|None inline_renderers=None, _MathsBlockRenderers|None block_renderers=None)"
+.br
+.ti -1c
+.RI "None \fBadd_message_catalog\fP (self, str catalog, str|os\&.PathLike[str] locale_dir)"
+.br
+.ti -1c
+.RI "bool \fBis_parallel_allowed\fP (self, str typ)"
+.br
+.ti -1c
+.RI "None \fBset_html_assets_policy\fP (self, Literal['always', 'per_page'] policy)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBrequire_sphinx\fP (tuple[int, int]|str version)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBphase\fP"
+.br
+.ti -1c
+.RI "\fBverbosity\fP"
+.br
+.ti -1c
+.RI "\fBregistry\fP"
+.br
+.ti -1c
+.RI "\fBparallel\fP"
+.br
+.ti -1c
+.RI "\fBquiet\fP"
+.br
+.ti -1c
+.RI "\fBkeep_going\fP"
+.br
+.ti -1c
+.RI "\fBpdb\fP"
+.br
+.ti -1c
+.RI "\fBevents\fP"
+.br
+.ti -1c
+.RI "\fBstatuscode\fP"
+.br
+.ti -1c
+.RI "\fBtags\fP"
+.br
+.ti -1c
+.RI "\fBconfig\fP"
+.br
+.ti -1c
+.RI "\fBproject\fP"
+.br
+.ti -1c
+.RI "\fBenv\fP"
+.br
+.ti -1c
+.RI "\fBbuilder\fP"
+.br
+.ti -1c
+.RI "\fBtranslator\fP"
+.br
+.ti -1c
+.RI "\fBobjtype\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "Final \fBwarningiserror\fP = False"
+.br
+.ti -1c
+.RI "\fBsrcdir\fP = \fB_StrPathProperty\fP()"
+.br
+.ti -1c
+.RI "\fBconfdir\fP = \fB_StrPathProperty\fP()"
+.br
+.ti -1c
+.RI "\fBoutdir\fP = \fB_StrPathProperty\fP()"
+.br
+.ti -1c
+.RI "\fBdoctreedir\fP = \fB_StrPathProperty\fP()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB_init_i18n\fP (self)"
+.br
+.ti -1c
+.RI "\fBBuildEnvironment\fP \fB_init_env\fP (self, bool freshenv)"
+.br
+.ti -1c
+.RI "\fBBuildEnvironment\fP \fB_create_fresh_env\fP (self)"
+.br
+.ti -1c
+.RI "\fBBuildEnvironment\fP \fB_load_existing_env\fP (self, Path filename)"
+.br
+.ti -1c
+.RI "None \fB_post_init_env\fP (self)"
+.br
+.ti -1c
+.RI "None \fB_init_builder\fP (self)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_status\fP"
+.br
+.ti -1c
+.RI "\fB_warning\fP"
+.br
+.ti -1c
+.RI "\fB_warncount\fP"
+.br
+.ti -1c
+.RI "\fB_fail_on_warnings\fP"
+.br
+.ti -1c
+.RI "\fB_exception_on_warning\fP"
+.br
+.ti -1c
+.RI "\fB_fresh_env_used\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fB_warncount\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+The main application class and extensibility interface\&.
+
+:ivar srcdir: Directory containing source\&.
+:ivar confdir: Directory containing ``conf\&.py``\&.
+:ivar doctreedir: Directory for storing pickled doctrees\&.
+:ivar outdir: Directory for storing build documents\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.application\&.Sphinx\&.__init__ ( self, str | os\&.PathLike[str] srcdir, str | os\&.PathLike[str] | None confdir, str | os\&.PathLike[str] outdir, str | os\&.PathLike[str] doctreedir, str buildername, dict[str, Any] | None  confoverrides = \fCNone\fP, IO[str] | None  status = \fCsys\&.stdout\fP, IO[str] | None  warning = \fCsys\&.stderr\fP, bool  freshenv = \fCFalse\fP, bool  warningiserror = \fCFalse\fP, Sequence[str]  tags = \fC()\fP, int  verbosity = \fC0\fP, int  parallel = \fC0\fP, bool  keep_going = \fCFalse\fP, bool  pdb = \fCFalse\fP, bool  exception_on_warning = \fCFalse\fP)"
+
+.PP
+.nf
+Initialize the Sphinx application\&.
+
+:param srcdir: The path to the source directory\&.
+:param confdir: The path to the configuration directory\&.
+    If not given, it is assumed to be the same as ``srcdir``\&.
+:param outdir: Directory for storing build documents\&.
+:param doctreedir: Directory for caching pickled doctrees\&.
+:param buildername: The name of the builder to use\&.
+:param confoverrides: A dictionary of configuration settings that override the
+    settings in the configuration file\&.
+:param status: A file-like object to write status messages to\&.
+:param warning: A file-like object to write warnings to\&.
+:param freshenv: If true, clear the cached environment\&.
+:param warningiserror: If true, warnings become errors\&.
+:param tags: A list of tags to apply\&.
+:param verbosity: The verbosity level\&.
+:param parallel: The maximum number of parallel jobs to use
+    when reading/writing documents\&.
+:param keep_going: Unused\&.
+:param pdb: If true, enable the Python debugger on an exception\&.
+:param exception_on_warning: If true, raise an exception on warnings\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.testing\&.util\&.SphinxTestApp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " \fBBuildEnvironment\fP sphinx\&.application\&.Sphinx\&._create_fresh_env ( self)\fC [protected]\fP"
+
+.SS " None sphinx\&.application\&.Sphinx\&._init_builder ( self)\fC [protected]\fP"
+
+.PP
+Reimplemented in \fBsphinx\&.testing\&.util\&.SphinxTestApp\fP\&.
+.SS " \fBBuildEnvironment\fP sphinx\&.application\&.Sphinx\&._init_env ( self, bool freshenv)\fC [protected]\fP"
+
+.SS " None sphinx\&.application\&.Sphinx\&._init_i18n ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Load translated strings from the configured localedirs if enabled in
+the configuration\&.
+
+.fi
+.PP
+ 
+.SS " \fBBuildEnvironment\fP sphinx\&.application\&.Sphinx\&._load_existing_env ( self, Path filename)\fC [protected]\fP"
+
+.SS " None sphinx\&.application\&.Sphinx\&._post_init_env ( self)\fC [protected]\fP"
+
+.SS " None sphinx\&.application\&.Sphinx\&.add_autodoc_attrgetter ( self, type typ, Callable[[Any, str, Any], Any]
+     getter)"
+
+.PP
+.nf
+Register a new ``getattr``-like function for the autodoc extension\&.
+
+Add *getter*, which must be a function with an interface compatible to
+the :func:`getattr` builtin, as the autodoc attribute getter for
+objects that are instances of *typ*\&.  All cases where autodoc needs to
+get an attribute of a type are then handled by this function instead of
+:func:`getattr`\&.
+
+\&.\&. versionadded:: 0\&.6
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_autodocumenter ( self, type[\fBDocumenter\fP] cls, bool  override = \fCFalse\fP)"
+
+.PP
+.nf
+Register a new documenter class for the autodoc extension\&.
+
+Add *cls* as a new documenter class for the :mod:`sphinx\&.ext\&.autodoc`
+extension\&.  It must be a subclass of
+:class:`sphinx\&.ext\&.autodoc\&.Documenter`\&.  This allows auto-documenting
+new types of objects\&.  See the source of the autodoc module for
+examples on how to subclass :class:`~sphinx\&.ext\&.autodoc\&.Documenter`\&.
+
+If *override* is True, the given *cls* is forcedly installed even if
+a documenter having the same name is already installed\&.
+
+See :ref:`autodoc_ext_tutorial`\&.
+
+\&.\&. versionadded:: 0\&.6
+\&.\&. versionchanged:: 2\&.2
+   Add *override* keyword\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_builder ( self, type[\fBBuilder\fP] builder, bool  override = \fCFalse\fP)"
+
+.PP
+.nf
+Register a new builder\&.
+
+:param builder: A builder class
+:param override: If true, install the builder forcedly even if another builder
+                 is already installed as the same name
+
+\&.\&. versionchanged:: 1\&.8
+   Add *override* keyword\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_config_value ( self, str name, Any default, _ConfigRebuild rebuild, type | Collection[type] | \fBENUM\fP  types = \fC()\fP, str  description = \fC''\fP)"
+
+.PP
+.nf
+Register a configuration value\&.
+
+This is necessary for Sphinx to recognize new values and set default
+values accordingly\&.
+
+
+:param name: The name of the configuration value\&.  It is recommended to be prefixed
+             with the extension name (ex\&. ``html_logo``, ``epub_title``)
+:param default: The default value of the configuration\&.
+:param rebuild: The condition of rebuild\&.  It must be one of those values:
+
+                * ``'env'`` if a change in the setting only takes effect when a
+                  document is parsed -- this means that the whole environment must be
+                  rebuilt\&.
+                * ``'html'`` if a change in the setting needs a full rebuild of HTML
+                  documents\&.
+                * ``''`` if a change in the setting will not need any special rebuild\&.
+:param types: The type of configuration value\&.  A list of types can be specified\&.  For
+              example, ``[str]`` is used to describe a configuration that takes string
+              value\&.
+:param description: A short description of the configuration value\&.
+
+\&.\&. versionchanged:: 0\&.4
+   If the *default* value is a callable, it will be called with the
+   config object as its argument in order to get the default value\&.
+   This can be used to implement config values whose default depends on
+   other values\&.
+
+\&.\&. versionchanged:: 0\&.6
+   Changed *rebuild* from a simple boolean (equivalent to ``''`` or
+   ``'env'``) to a string\&.  However, booleans are still accepted and
+   converted internally\&.
+
+\&.\&. versionadded:: 7\&.4
+   The *description* parameter\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_crossref_type ( self, str directivename, str rolename, str  indextemplate = \fC''\fP, type[nodes\&.TextElement] | None  ref_nodeclass = \fCNone\fP, str  objname = \fC''\fP, bool  override = \fCFalse\fP)"
+
+.PP
+.nf
+Register a new crossref object type\&.
+
+This method is very similar to :meth:`~Sphinx\&.add_object_type` except that the
+directive it generates must be empty, and will produce no output\&.
+
+That means that you can add semantic targets to your sources, and refer
+to them using custom roles instead of generic ones (like
+:rst:role:`ref`)\&.  Example call::
+
+   app\&.add_crossref_type(
+       'topic', 'topic', 'single: %s', docutils\&.nodes\&.emphasis
+   )
+
+Example usage::
+
+   \&.\&. topic:: application API
+
+   The application API
+   -------------------
+
+   Some random text here\&.
+
+   See also :topic:`this section <application API>`\&.
+
+(Of course, the element following the ``topic`` directive needn't be a
+section\&.)
+
+
+:param override: If false, do not install it if another cross-reference type
+                 is already installed as the same name
+                 If true, unconditionally install the cross-reference type\&.
+
+\&.\&. versionchanged:: 1\&.8
+   Add *override* keyword\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_css_file ( self, str filename, int  priority = \fC500\fP, **Any kwargs)"
+
+.PP
+.nf
+Register a stylesheet to include in the HTML output\&.
+
+:param filename: The name of a CSS file that the default HTML
+                 template will include\&. It must be relative to the HTML
+                 static path, or a full URI with scheme\&.
+:param priority: Files are included in ascending order of priority\&. If
+                 multiple CSS files have the same priority,
+                 those files will be included in order of registration\&.
+                 See list of 'priority range for CSS files' below\&.
+:param kwargs: Extra keyword arguments are included as attributes of the
+               ``<link>`` tag\&.
+
+Example::
+
+    app\&.add_css_file('custom\&.css')
+    # => <link rel='stylesheet' href='_static/custom\&.css' type='text/css' />
+
+    app\&.add_css_file('print\&.css', media='print')
+    # => <link rel='stylesheet' href='_static/print\&.css'
+    #          type='text/css' media='print' />
+
+    app\&.add_css_file('fancy\&.css', rel='alternate stylesheet', title='fancy')
+    # => <link rel='alternate stylesheet' href='_static/fancy\&.css'
+    #          type='text/css' title='fancy' />
+
+\&.\&. list-table:: priority range for CSS files
+   :widths: 20,80
+
+   * - Priority
+     - Main purpose in Sphinx
+   * - 200
+     - default priority for built-in CSS files
+   * - 500
+     - default priority for extensions
+   * - 800
+     - default priority for :confval:`html_css_files`
+
+A CSS file can be added to the specific HTML page when an extension calls
+this method on :event:`html-page-context` event\&.
+
+\&.\&. versionadded:: 1\&.0
+
+\&.\&. versionchanged:: 1\&.6
+   Optional ``alternate`` and/or ``title`` attributes can be supplied
+   with the arguments *alternate* (a Boolean) and *title* (a string)\&.
+   The default is no title and *alternate* = ``False``\&. For
+   more information, refer to the `documentation
+   <https://mdn\&.io/Web/CSS/Alternative_style_sheets>`__\&.
+
+\&.\&. versionchanged:: 1\&.8
+   Renamed from ``app\&.add_stylesheet()``\&.
+   And it allows keyword arguments as attributes of link tag\&.
+
+\&.\&. versionchanged:: 3\&.5
+   Take priority argument\&.  Allow to add a CSS file to the specific page\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_directive ( self, str name, type[\fBDirective\fP] cls, bool  override = \fCFalse\fP)"
+
+.PP
+.nf
+Register a Docutils directive\&.
+
+:param name: The name of the directive
+:param cls: A directive class
+:param override: If false, do not install it if another directive
+                 is already installed as the same name
+                 If true, unconditionally install the directive\&.
+
+For example, a custom directive named ``my-directive`` would be added
+like this:
+
+\&.\&. code-block:: python
+
+   from docutils\&.parsers\&.rst import Directive, directives
+
+   class MyDirective(Directive):
+       has_content = True
+       required_arguments = 1
+       optional_arguments = 0
+       final_argument_whitespace = True
+       option_spec = {
+           'class': directives\&.class_option,
+           'name': directives\&.unchanged,
+       }
+
+       def run(self):
+           pass
+
+   def setup(app):
+       app\&.add_directive('my-directive', MyDirective)
+
+For more details, see `the Docutils docs
+<https://docutils\&.sourceforge\&.io/docs/howto/rst-directives\&.html>`__ \&.
+
+\&.\&. versionchanged:: 0\&.6
+   Docutils 0\&.5-style directive classes are now supported\&.
+\&.\&. deprecated:: 1\&.8
+   Docutils 0\&.4-style (function based) directives support is deprecated\&.
+\&.\&. versionchanged:: 1\&.8
+   Add *override* keyword\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_directive_to_domain ( self, str domain, str name, type[\fBDirective\fP] cls, bool  override = \fCFalse\fP)"
+
+.PP
+.nf
+Register a Docutils directive in a domain\&.
+
+Like :meth:`add_directive`, but the directive is added to the domain
+named *domain*\&.
+
+:param domain: The name of target domain
+:param name: A name of directive
+:param cls: A directive class
+:param override: If false, do not install it if another directive
+                 is already installed as the same name
+                 If true, unconditionally install the directive\&.
+
+\&.\&. versionadded:: 1\&.0
+\&.\&. versionchanged:: 1\&.8
+   Add *override* keyword\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_domain ( self, type[\fBDomain\fP] domain, bool  override = \fCFalse\fP)"
+
+.PP
+.nf
+Register a domain\&.
+
+:param domain: A domain class
+:param override: If false, do not install it if another domain
+                 is already installed as the same name
+                 If true, unconditionally install the domain\&.
+
+\&.\&. versionadded:: 1\&.0
+\&.\&. versionchanged:: 1\&.8
+   Add *override* keyword\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_enumerable_node ( self, type[\fBElement\fP] node, str figtype, TitleGetter | None  title_getter = \fCNone\fP, bool  override = \fCFalse\fP, **tuple[_NodeHandler, _NodeHandler] kwargs)"
+
+.PP
+.nf
+Register a Docutils node class as a numfig target\&.
+
+Sphinx numbers the node automatically\&. And then the users can refer it
+using :rst:role:`numref`\&.
+
+:param node: A node class
+:param figtype: The type of enumerable nodes\&.  Each figtype has individual numbering
+                sequences\&.  As system figtypes, ``figure``, ``table`` and
+                ``code-block`` are defined\&.  It is possible to add custom nodes to
+                these default figtypes\&.  It is also possible to define new custom
+                figtype if a new figtype is given\&.
+:param title_getter: A getter function to obtain the title of node\&.  It takes an
+                     instance of the enumerable node, and it must return its title as
+                     string\&.  The title is used to the default title of references for
+                     :rst:role:`ref`\&.  By default, Sphinx searches
+                     ``docutils\&.nodes\&.caption`` or ``docutils\&.nodes\&.title`` from the
+                     node as a title\&.
+:param kwargs: Visitor functions for each builder (same as :meth:`add_node`)
+:param override: If true, install the node forcedly even if another node is already
+                 installed as the same name
+
+\&.\&. versionadded:: 1\&.4
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_env_collector ( self, type[\fBEnvironmentCollector\fP] collector)"
+
+.PP
+.nf
+Register an environment collector class\&.
+
+Refer to :ref:`collector-api`\&.
+
+\&.\&. versionadded:: 1\&.6
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_event ( self, str name)"
+
+.PP
+.nf
+Register an event called *name*\&.
+
+This is needed to be able to emit it\&.
+
+:param name: The name of the event
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_generic_role ( self, str name, type[\fBNode\fP] nodeclass, bool  override = \fCFalse\fP)"
+
+.PP
+.nf
+Register a generic Docutils role\&.
+
+Register a Docutils role that does nothing but wrap its contents in the
+node given by *nodeclass*\&.
+
+:param override: If false, do not install it if another role
+                 is already installed as the same name
+                 If true, unconditionally install the role\&.
+
+\&.\&. versionadded:: 0\&.6
+\&.\&. versionchanged:: 1\&.8
+   Add *override* keyword\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_html_math_renderer ( self, str name, _MathsInlineRenderers | None  inline_renderers = \fCNone\fP, _MathsBlockRenderers | None  block_renderers = \fCNone\fP)"
+
+.PP
+.nf
+Register a math renderer for HTML\&.
+
+The *name* is a name of math renderer\&.  Both *inline_renderers* and
+*block_renderers* are used as visitor functions for the HTML writer:
+the former for inline math node (``nodes\&.math``), the latter for
+block math node (``nodes\&.math_block``)\&.  Regarding visitor functions,
+see :meth:`add_node` for details\&.
+
+\&.\&. versionadded:: 1\&.8
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_html_theme ( self, str name, str | os\&.PathLike[str] theme_path)"
+
+.PP
+.nf
+Register a HTML Theme\&.
+
+The *name* is a name of theme, and *theme_path* is a full path to the
+theme (refs: :ref:`distribute-your-theme`)\&.
+
+\&.\&. versionadded:: 1\&.6
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_index_to_domain ( self, str domain, type[\fBIndex\fP] index, bool  _override = \fCFalse\fP)"
+
+.PP
+.nf
+Register a custom index for a domain\&.
+
+Add a custom *index* class to the domain named *domain*\&.
+
+:param domain: The name of the target domain
+:param index: The index class
+:param override: If false, do not install it if another index
+                 is already installed as the same name
+                 If true, unconditionally install the index\&.
+
+\&.\&. versionadded:: 1\&.0
+\&.\&. versionchanged:: 1\&.8
+   Add *override* keyword\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_js_file ( self, str | None filename, int  priority = \fC500\fP, str | None  loading_method = \fCNone\fP, **Any kwargs)"
+
+.PP
+.nf
+Register a JavaScript file to include in the HTML output\&.
+
+:param filename: The name of a JavaScript file that the default HTML
+                 template will include\&. It must be relative to the HTML
+                 static path, or a full URI with scheme, or ``None`` \&.
+                 The ``None`` value is used to create an inline
+                 ``<script>`` tag\&.  See the description of *kwargs*
+                 below\&.
+:param priority: Files are included in ascending order of priority\&. If
+                 multiple JavaScript files have the same priority,
+                 those files will be included in order of registration\&.
+                 See list of 'priority range for JavaScript files' below\&.
+:param loading_method: The loading method for the JavaScript file\&.
+                       Either ``'async'`` or ``'defer'`` are allowed\&.
+:param kwargs: Extra keyword arguments are included as attributes of the
+               ``<script>`` tag\&.  If the special keyword argument
+               ``body`` is given, its value will be added as the content
+               of the  ``<script>`` tag\&.
+
+Example::
+
+    app\&.add_js_file('example\&.js')
+    # => <script src='_static/example\&.js'></script>
+
+    app\&.add_js_file('example\&.js', loading_method='async')
+    # => <script src='_static/example\&.js' async='async'></script>
+
+    app\&.add_js_file(None, body='var myVariable = 'foo';')
+    # => <script>var myVariable = 'foo';</script>
+
+\&.\&. list-table:: priority range for JavaScript files
+   :widths: 20,80
+
+   * - Priority
+     - Main purpose in Sphinx
+   * - 200
+     - default priority for built-in JavaScript files
+   * - 500
+     - default priority for extensions
+   * - 800
+     - default priority for :confval:`html_js_files`
+
+A JavaScript file can be added to the specific HTML page when an extension
+calls this method on :event:`html-page-context` event\&.
+
+\&.\&. versionadded:: 0\&.5
+
+\&.\&. versionchanged:: 1\&.8
+   Renamed from ``app\&.add_javascript()``\&.
+   And it allows keyword arguments as attributes of script tag\&.
+
+\&.\&. versionchanged:: 3\&.5
+   Take priority argument\&.  Allow to add a JavaScript file to the specific page\&.
+\&.\&. versionchanged:: 4\&.4
+   Take loading_method argument\&.  Allow to change the loading method of the
+   JavaScript file\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_latex_package ( self, str packagename, str | None  options = \fCNone\fP, bool  after_hyperref = \fCFalse\fP)"
+
+.PP
+.nf
+Register a package to include in the LaTeX source code\&.
+
+Add *packagename* to the list of packages that LaTeX source code will
+include\&.  If you provide *options*, it will be taken to the `\\usepackage`
+declaration\&.  If you set *after_hyperref* truthy, the package will be
+loaded after ``hyperref`` package\&.
+
+\&.\&. code-block:: python
+
+app\&.add_latex_package('mypackage')
+# => \\usepackage{mypackage}
+app\&.add_latex_package('mypackage', 'foo,bar')
+# => \\usepackage[foo,bar]{mypackage}
+
+\&.\&. versionadded:: 1\&.3
+\&.\&. versionadded:: 3\&.1
+
+*after_hyperref* option\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_lexer ( self, str alias, type[\fBLexer\fP] lexer)"
+
+.PP
+.nf
+Register a new lexer for source code\&.
+
+Use *lexer* to highlight code blocks with the given language *alias*\&.
+
+\&.\&. versionadded:: 0\&.6
+\&.\&. versionchanged:: 2\&.1
+   Take a lexer class as an argument\&.
+\&.\&. versionchanged:: 4\&.0
+   Removed support for lexer instances as an argument\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_message_catalog ( self, str catalog, str | os\&.PathLike[str]
+     locale_dir)"
+
+.PP
+.nf
+Register a message catalog\&.
+
+:param catalog: The name of the catalog
+:param locale_dir: The base path of the message catalog
+
+For more details, see :func:`sphinx\&.locale\&.get_translation()`\&.
+
+\&.\&. versionadded:: 1\&.8
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_node ( self, type[\fBElement\fP] node, bool  override = \fCFalse\fP, **_NodeHandlerPair kwargs)"
+
+.PP
+.nf
+Register a Docutils node class\&.
+
+This is necessary for Docutils internals\&.  It may also be used in the
+future to validate nodes in the parsed documents\&.
+
+:param node: A node class
+:param kwargs: Visitor functions for each builder (see below)
+:param override: If true, install the node forcedly even if another node is already
+                 installed as the same name
+
+Node visitor functions for the Sphinx HTML, LaTeX, text and manpage
+writers can be given as keyword arguments: the keyword should be one or
+more of ``'html'``, ``'latex'``, ``'text'``, ``'man'``, ``'texinfo'``
+or any other supported translators, the value a 2-tuple of ``(visit,
+depart)`` methods\&.  ``depart`` can be ``None`` if the ``visit``
+function raises :exc:`docutils\&.nodes\&.SkipNode`\&.  Example:
+
+\&.\&. code-block:: python
+
+   class math(docutils\&.nodes\&.Element): \&.\&.\&.
+
+   def visit_math_html(self, node):
+       self\&.body\&.append(self\&.starttag(node, 'math'))
+
+   def depart_math_html(self, node):
+       self\&.body\&.append('</math>')
+
+   app\&.add_node(math, html=(visit_math_html, depart_math_html))
+
+Obviously, translators for which you don't specify visitor methods will
+choke on the node when encountered in a document to translate\&.
+
+\&.\&. versionchanged:: 0\&.5
+   Added the support for keyword arguments giving visit functions\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_object_type ( self, str directivename, str rolename, str  indextemplate = \fC''\fP, Callable[[\fBBuildEnvironment\fP, str, \fBaddnodes\&.desc_signature\fP], str]
+        | None  parse_node = \fCNone\fP, type[nodes\&.TextElement] | None  ref_nodeclass = \fCNone\fP, str  objname = \fC''\fP, Sequence[\fBField\fP]  doc_field_types = \fC()\fP, bool  override = \fCFalse\fP)"
+
+.PP
+.nf
+Register a new object type\&.
+
+This method is a very convenient way to add a new :term:`object` type
+that can be cross-referenced\&.  It will do this:
+
+- Create a new directive (called *directivename*) for documenting an
+  object\&.  It will automatically add index entries if *indextemplate*
+  is nonempty; if given, it must contain exactly one instance of
+  ``%s``\&.  See the example below for how the template will be
+  interpreted\&.
+- Create a new role (called *rolename*) to cross-reference to these
+  object descriptions\&.
+- If you provide *parse_node*, it must be a function that takes a
+  string and a docutils node, and it must populate the node with
+  children parsed from the string\&.  It must then return the name of the
+  item to be used in cross-referencing and index entries\&.  See the
+  :file:`conf\&.py` file in the source for this documentation for an
+  example\&.
+- The *objname* (if not given, will default to *directivename*) names
+  the type of object\&.  It is used when listing objects, e\&.g\&. in search
+  results\&.
+
+For example, if you have this call in a custom Sphinx extension::
+
+   app\&.add_object_type('directive', 'dir', 'pair: %s; directive')
+
+you can use this markup in your documents::
+
+   \&.\&. rst:directive:: function
+
+      Document a function\&.
+
+   <\&.\&.\&.>
+
+   See also the :rst:dir:`function` directive\&.
+
+For the directive, an index entry will be generated as if you had prepended ::
+
+   \&.\&. index:: pair: function; directive
+
+The reference node will be of class ``literal`` (so it will be rendered
+in a proportional font, as appropriate for code) unless you give the
+*ref_nodeclass* argument, which must be a docutils node class\&.  Most
+useful are ``docutils\&.nodes\&.emphasis`` or ``docutils\&.nodes\&.strong`` --
+you can also use ``docutils\&.nodes\&.generated`` if you want no further
+text decoration\&.  If the text should be treated as literal (e\&.g\&. no
+smart quote replacement), but not have typewriter styling, use
+``sphinx\&.addnodes\&.literal_emphasis`` or
+``sphinx\&.addnodes\&.literal_strong``\&.
+
+For the role content, you have the same syntactical possibilities as
+for standard Sphinx roles (see :ref:`xref-syntax`)\&.
+
+If *override* is True, the given object_type is forcedly installed even if
+an object_type having the same name is already installed\&.
+
+\&.\&. versionchanged:: 1\&.8
+   Add *override* keyword\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_post_transform ( self, type[\fBTransform\fP] transform)"
+
+.PP
+.nf
+Register a Docutils transform to be applied before writing\&.
+
+Add the standard docutils :class:`~docutils\&.transforms\&.Transform`
+subclass *transform* to the list of transforms that are applied before
+Sphinx writes a document\&.
+
+:param transform: A transform class
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_role ( self, str name, Any role, bool  override = \fCFalse\fP)"
+
+.PP
+.nf
+Register a Docutils role\&.
+
+:param name: The name of role
+:param role: A role function
+:param override: If false, do not install it if another role
+                 is already installed as the same name
+                 If true, unconditionally install the role\&.
+
+For more details about role functions, see `the Docutils docs
+<https://docutils\&.sourceforge\&.io/docs/howto/rst-roles\&.html>`__ \&.
+
+\&.\&. versionchanged:: 1\&.8
+   Add *override* keyword\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_role_to_domain ( self, str domain, str name, \fBRoleFunction\fP | \fBXRefRole\fP role, bool  override = \fCFalse\fP)"
+
+.PP
+.nf
+Register a Docutils role in a domain\&.
+
+Like :meth:`add_role`, but the role is added to the domain named
+*domain*\&.
+
+:param domain: The name of the target domain
+:param name: The name of the role
+:param role: The role function
+:param override: If false, do not install it if another role
+                 is already installed as the same name
+                 If true, unconditionally install the role\&.
+
+\&.\&. versionadded:: 1\&.0
+\&.\&. versionchanged:: 1\&.8
+   Add *override* keyword\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_search_language ( self, type[\fBSearchLanguage\fP] cls)"
+
+.PP
+.nf
+Register a new language for the HTML search index\&.
+
+Add *cls*, which must be a subclass of
+:class:`sphinx\&.search\&.SearchLanguage`, as a support language for
+building the HTML full-text search index\&.  The class must have a *lang*
+attribute that indicates the language it should be used for\&.  See
+:confval:`html_search_language`\&.
+
+\&.\&. versionadded:: 1\&.1
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_source_parser ( self, type[\fBParser\fP] parser, bool  override = \fCFalse\fP)"
+
+.PP
+.nf
+Register a parser class\&.
+
+:param override: If false, do not install it if another parser
+                 is already installed for the same suffix\&.
+                 If true, unconditionally install the parser\&.
+
+\&.\&. versionadded:: 1\&.4
+\&.\&. versionchanged:: 1\&.8
+   *suffix* argument is deprecated\&.  It only accepts *parser* argument\&.
+   Use :meth:`add_source_suffix` API to register suffix instead\&.
+\&.\&. versionchanged:: 1\&.8
+   Add *override* keyword\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_source_suffix ( self, str suffix, str filetype, bool  override = \fCFalse\fP)"
+
+.PP
+.nf
+Register a suffix of source files\&.
+
+Same as :confval:`source_suffix`\&.  The users can override this
+using the config setting\&.
+
+:param override: If false, do not install it the same suffix
+                 is already installed\&.
+                 If true, unconditionally install the suffix\&.
+
+\&.\&. versionadded:: 1\&.8
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.add_transform ( self, type[\fBTransform\fP] transform)"
+
+.PP
+.nf
+Register a Docutils transform to be applied after parsing\&.
+
+Add the standard docutils :class:`~docutils\&.transforms\&.Transform`
+subclass *transform* to the list of transforms that are applied after
+Sphinx parses a reST document\&.
+
+:param transform: A transform class
+
+\&.\&. list-table:: priority range categories for Sphinx transforms
+   :widths: 20,80
+
+   * - Priority
+     - Main purpose in Sphinx
+   * - 0-99
+     - Fix invalid nodes by docutils\&. Translate a doctree\&.
+   * - 100-299
+     - Preparation
+   * - 300-399
+     - early
+   * - 400-699
+     - main
+   * - 700-799
+     - Post processing\&. Deadline to modify text and referencing\&.
+   * - 800-899
+     - Collect referencing and referenced nodes\&. Domain processing\&.
+   * - 900-999
+     - Finalize and clean up\&.
+
+refs: `Transform Priority Range Categories`__
+
+__ https://docutils\&.sourceforge\&.io/docs/ref/transforms\&.html#transform-priority-range-categories
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.build ( self, bool  force_all = \fCFalse\fP, Sequence[Path]  filenames = \fC()\fP)"
+
+.PP
+Reimplemented in \fBsphinx\&.testing\&.util\&.SphinxTestApp\fP, and \fBsphinx\&.testing\&.util\&.SphinxTestAppWrapperForSkipBuilding\fP\&.
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['autodoc\-before\-process\-signature'] event, Callable[[\fBSphinx\fP, Any, bool], None] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['autodoc\-process\-bases'] event, Callable[[\fBSphinx\fP, str, Any, dict[str, bool], list[str]], None] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['autodoc\-process\-docstring'] event, _AutodocProcessDocstringListener callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['autodoc\-process\-signature'] event, Callable[
+            [
+                \fBSphinx\fP,
+                Literal[
+                    '\fBmodule\fP', 'class', 'exception', 'function', 'method', 'attribute'
+                ],
+                str,
+                Any,
+                dict[str, bool],
+                str | None,
+                str | None,
+            ],
+            tuple[str | None, str | None] | None,
+        ] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['autodoc\-skip\-member'] event, Callable[
+            [
+                \fBSphinx\fP,
+                Literal[
+                    '\fBmodule\fP', 'class', 'exception', 'function', 'method', 'attribute'
+                ],
+                str,
+                Any,
+                bool,
+                dict[str, bool],
+            ],
+            bool,
+        ] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['\fBbuild\fP\-finished'] event, Callable[[\fBSphinx\fP, Exception | None], None] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['\fBbuilder\fP\-inited'] event, Callable[[\fBSphinx\fP], None] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['\fBconfig\fP\-inited'] event, Callable[[\fBSphinx\fP, \fBConfig\fP], None] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['doctree\-read'] event, Callable[[\fBSphinx\fP, nodes\&.document], None] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['doctree\-resolved'] event, Callable[[\fBSphinx\fP, nodes\&.document, str], None] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['\fBenv\fP\-before\-read\-docs'] event, Callable[[\fBSphinx\fP, \fBBuildEnvironment\fP, list[str]], None] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['\fBenv\fP\-\fBcheck\fP\-consistency'] event, Callable[[\fBSphinx\fP, \fBBuildEnvironment\fP], None] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['\fBenv\fP\-get\-outdated'] event, Callable[
+            [\fBSphinx\fP, \fBBuildEnvironment\fP, Set[str], Set[str], Set[str]], Sequence[str]
+        ] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['\fBenv\fP\-get\-updated'] event, Callable[[\fBSphinx\fP, \fBBuildEnvironment\fP], Iterable[str]] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['\fBenv\fP\-merge\-info'] event, Callable[
+            [\fBSphinx\fP, \fBBuildEnvironment\fP, Set[str], \fBBuildEnvironment\fP], None
+        ] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['\fBenv\fP\-purge\-doc'] event, Callable[[\fBSphinx\fP, \fBBuildEnvironment\fP, str], None] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['\fBenv\fP\-updated'] event, Callable[[\fBSphinx\fP, \fBBuildEnvironment\fP], str] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['html\-collect\-pages'] event, Callable[[\fBSphinx\fP], Iterable[tuple[str, dict[str, Any], str]]] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['html\-page\-context'] event, Callable[
+            [\fBSphinx\fP, str, str, dict[str, Any], nodes\&.document], str | None
+        ] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['include\-read'] event, Callable[[\fBSphinx\fP, Path, str, list[str]], None] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['linkcheck\-process\-uri'] event, Callable[[\fBSphinx\fP, str], str | None] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['missing\-reference'] event, Callable[
+            [\fBSphinx\fP, \fBBuildEnvironment\fP, \fBaddnodes\&.pending_xref\fP, nodes\&.TextElement],
+            nodes\&.reference | None,
+        ] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['object\-description\-transform'] event, Callable[[\fBSphinx\fP, str, str, \fBaddnodes\&.desc_content\fP], None] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['source\-read'] event, Callable[[\fBSphinx\fP, str, list[str]], None] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['todo\-defined'] event, Callable[[\fBSphinx\fP, \fBtodo_node\fP], None] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['viewcode\-find\-source'] event, Callable[
+            [\fBSphinx\fP, str],
+            tuple[str, dict[str, tuple[Literal['class', '\fBdef\fP', 'other'], int, int]]],
+        ] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['viewcode\-follow\-imported'] event, Callable[[\fBSphinx\fP, str, str], str | None] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['warn\-missing\-reference'] event, Callable[[\fBSphinx\fP, \fBDomain\fP, \fBaddnodes\&.pending_xref\fP], bool | None] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, Literal['write\-started'] event, Callable[[\fBSphinx\fP, \fBBuilder\fP], None] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, str event, Callable[\&.\&.\&., Any] callback, int  priority = \fC500\fP)"
+
+.SS " int sphinx\&.application\&.Sphinx\&.connect ( self, str event, Callable[\&.\&.\&., Any] callback, int  priority = \fC500\fP)"
+
+.PP
+.nf
+Register *callback* to be called when *event* is emitted\&.
+
+For details on available core events and the arguments of callback
+functions, please see :ref:`events`\&.
+
+:param event: The name of target event
+:param callback: Callback function for the event
+:param priority: The priority of the callback\&.  The callbacks will be invoked
+                 in order of *priority* (ascending)\&.
+:return: A listener ID\&.  It can be used for :meth:`disconnect`\&.
+
+\&.\&. versionchanged:: 3\&.0
+
+   Support *priority*
+
+.fi
+.PP
+ 
+.SS " \fBBuilder\fP sphinx\&.application\&.Sphinx\&.create_builder ( self, str name)"
+
+.SS " None sphinx\&.application\&.Sphinx\&.disconnect ( self, int listener_id)"
+
+.PP
+.nf
+Unregister callback by *listener_id*\&.
+
+:param listener_id: A listener_id that :meth:`connect` returns
+
+.fi
+.PP
+ 
+.SS " list[Any] sphinx\&.application\&.Sphinx\&.emit ( self, str event, *Any args, tuple[type[Exception], \&.\&.\&.]  allowed_exceptions = \fC()\fP)"
+
+.PP
+.nf
+Emit *event* and pass *arguments* to the callback functions\&.
+
+Return the return values of all callbacks as a list\&.  Do not emit core
+Sphinx events in extensions!
+
+:param event: The name of event that will be emitted
+:param args: The arguments for the event
+:param allowed_exceptions: The list of exceptions that are allowed in the callbacks
+
+\&.\&. versionchanged:: 3\&.1
+
+   Added *allowed_exceptions* to specify path-through exceptions
+
+.fi
+.PP
+ 
+.SS " Any sphinx\&.application\&.Sphinx\&.emit_firstresult ( self, str event, *Any args, tuple[type[Exception], \&.\&.\&.]  allowed_exceptions = \fC()\fP)"
+
+.PP
+.nf
+Emit *event* and pass *arguments* to the callback functions\&.
+
+Return the result of the first callback that doesn't return ``None``\&.
+
+:param event: The name of event that will be emitted
+:param args: The arguments for the event
+:param allowed_exceptions: The list of exceptions that are allowed in the callbacks
+
+\&.\&. versionadded:: 0\&.5
+\&.\&. versionchanged:: 3\&.1
+
+   Added *allowed_exceptions* to specify path-through exceptions
+
+.fi
+.PP
+ 
+.SS " bool | None sphinx\&.application\&.Sphinx\&.fresh_env_used ( self)"
+
+.PP
+.nf
+True/False as to whether a new environment was created for this build,
+or None if the environment has not been initialised yet\&.
+
+.fi
+.PP
+ 
+.SS " bool sphinx\&.application\&.Sphinx\&.is_parallel_allowed ( self, str typ)"
+
+.PP
+.nf
+Check whether parallel processing is allowed or not\&.
+
+:param typ: A type of processing; ``'read'`` or ``'write'``\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.preload_builder ( self, str name)"
+
+.SS " None sphinx\&.application\&.Sphinx\&.require_sphinx (tuple[int, int] | str version)\fC [static]\fP"
+
+.PP
+.nf
+Check the Sphinx version if requested\&.
+
+Compare *version* with the version of the running Sphinx, and abort the
+build when it is too old\&.
+
+:param version: The required version in the form of ``major\&.minor`` or
+                ``(major, minor)``\&.
+
+\&.\&. versionadded:: 1\&.0
+\&.\&. versionchanged:: 7\&.1
+   Type of *version* now allows ``(major, minor)`` form\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.set_html_assets_policy ( self, Literal['always', 'per_page'] policy)"
+
+.PP
+.nf
+Set the policy to include assets in HTML pages\&.
+
+- always: include the assets in all the pages
+- per_page: include the assets only in pages where they are used
+
+\&.\&. versionadded: 4\&.1
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.set_translator ( self, str name, type[nodes\&.NodeVisitor] translator_class, bool  override = \fCFalse\fP)"
+
+.PP
+.nf
+Register or override a Docutils translator class\&.
+
+This is used to register a custom output translator or to replace a
+builtin translator\&.  This allows extensions to use a custom translator
+and define custom nodes for the translator (see :meth:`add_node`)\&.
+
+:param name: The name of the builder for the translator
+:param translator_class: A translator class
+:param override: If true, install the translator forcedly even if another translator
+                 is already installed as the same name
+
+\&.\&. versionadded:: 1\&.3
+\&.\&. versionchanged:: 1\&.8
+   Add *override* keyword\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.application\&.Sphinx\&.setup_extension ( self, str extname)"
+
+.PP
+.nf
+Import and setup a Sphinx extension module\&.
+
+Load the extension given by the module *name*\&.  Use this if your
+extension needs the features provided by another extension\&.  No-op if
+called twice\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.application\&.Sphinx\&._exception_on_warning\fC [protected]\fP"
+
+.SS "sphinx\&.application\&.Sphinx\&._fail_on_warnings\fC [protected]\fP"
+
+.SS "sphinx\&.application\&.Sphinx\&._fresh_env_used\fC [protected]\fP"
+
+.SS "sphinx\&.application\&.Sphinx\&._status\fC [protected]\fP"
+
+.SS "int sphinx\&.application\&.Sphinx\&._warncount\fC [static]\fP, \fC [protected]\fP"
+
+.SS "sphinx\&.application\&.Sphinx\&._warncount\fC [protected]\fP"
+
+.SS "sphinx\&.application\&.Sphinx\&._warning\fC [protected]\fP"
+
+.SS "sphinx\&.application\&.Sphinx\&.builder"
+
+.SS "sphinx\&.application\&.Sphinx\&.confdir = \fB_StrPathProperty\fP()\fC [static]\fP"
+
+.SS "sphinx\&.application\&.Sphinx\&.config"
+
+.SS "sphinx\&.application\&.Sphinx\&.doctreedir = \fB_StrPathProperty\fP()\fC [static]\fP"
+
+.SS "sphinx\&.application\&.Sphinx\&.env"
+
+.SS "sphinx\&.application\&.Sphinx\&.events"
+
+.SS "sphinx\&.application\&.Sphinx\&.keep_going"
+
+.SS "sphinx\&.application\&.Sphinx\&.objtype"
+
+.SS "sphinx\&.application\&.Sphinx\&.outdir = \fB_StrPathProperty\fP()\fC [static]\fP"
+
+.SS "sphinx\&.application\&.Sphinx\&.parallel"
+
+.SS "sphinx\&.application\&.Sphinx\&.pdb"
+
+.SS "sphinx\&.application\&.Sphinx\&.phase"
+
+.SS "sphinx\&.application\&.Sphinx\&.project"
+
+.SS "sphinx\&.application\&.Sphinx\&.quiet"
+
+.SS "sphinx\&.application\&.Sphinx\&.registry"
+
+.SS "sphinx\&.application\&.Sphinx\&.srcdir = \fB_StrPathProperty\fP()\fC [static]\fP"
+
+.SS "sphinx\&.application\&.Sphinx\&.statuscode"
+
+.SS "sphinx\&.application\&.Sphinx\&.tags"
+
+.SS "sphinx\&.application\&.Sphinx\&.translator"
+
+.SS "sphinx\&.application\&.Sphinx\&.verbosity"
+
+.SS "Final sphinx\&.application\&.Sphinx\&.warningiserror = False\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,96 @@
+.TH "pip._vendor.platformdirs.windows" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.platformdirs.windows
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBWindows\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fBget_win_folder_from_env_vars\fP (str csidl_name)"
+.br
+.ti -1c
+.RI "str|None \fBget_win_folder_if_csidl_name_not_env_var\fP (str csidl_name)"
+.br
+.ti -1c
+.RI "str \fBget_win_folder_from_registry\fP (str csidl_name)"
+.br
+.ti -1c
+.RI "str \fBget_win_folder_via_ctypes\fP (str csidl_name)"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fB_pick_get_win_folder\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBget_win_folder\fP = lru_cache(maxsize=None)(\fB_pick_get_win_folder\fP())"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Windows\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " Callable[[str], str] pip\&._vendor\&.platformdirs\&.windows\&._pick_get_win_folder ()\fC [protected]\fP"
+
+.SS " str pip\&._vendor\&.platformdirs\&.windows\&.get_win_folder_from_env_vars (str csidl_name)"
+
+.PP
+.nf
+Get folder from environment variables\&.
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.platformdirs\&.windows\&.get_win_folder_from_registry (str csidl_name)"
+
+.PP
+.nf
+Get folder from the registry\&.
+
+This is a fallback technique at best\&. I'm not sure if using the registry for these guarantees us the correct answer
+for all CSIDL_* names\&.
+.fi
+.PP
+ 
+.SS " str | None pip\&._vendor\&.platformdirs\&.windows\&.get_win_folder_if_csidl_name_not_env_var (str csidl_name)"
+
+.PP
+.nf
+Get a folder for a CSIDL name that does not exist as an environment variable\&.
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.platformdirs\&.windows\&.get_win_folder_via_ctypes (str csidl_name)"
+
+.PP
+.nf
+Get folder with ctypes\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._vendor\&.platformdirs\&.windows\&.get_win_folder = lru_cache(maxsize=None)(\fB_pick_get_win_folder\fP())"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,158 @@
+\doxysection{docutils.\+transforms.\+universal.\+Smart\+Quotes Class Reference}
+\hypertarget{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes}{}\label{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes}\index{docutils.transforms.universal.SmartQuotes@{docutils.transforms.universal.SmartQuotes}}
+Inheritance diagram for docutils.\+transforms.\+universal.\+Smart\+Quotes\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a8e75c69cdcc7c55718107a1a95cf0bb8}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_ad3aaf46a728e4300b65a525b2c35c5dd}{document}}, \mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_aa3b293e3c50fc8701e4fcbb2c86b32dc}{startnode}})
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_acb52f1b9c05bf5f23f575b84755e165a}{get\+\_\+tokens}} (self, txtnodes)
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a0a2fd5e27089d441ddf2a872a6ebb064}{apply}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a70f1bc0e776609899ca430e72ed40d4e}{unsupported\+\_\+languages}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a34cc7658220963ee38f2992ba6dd1033}{literal\+\_\+nodes}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a5f00e158edc45b1399b474faa12a50f9}{nodes\+\_\+to\+\_\+skip}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform}{docutils.\+transforms.\+Transform}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_ad3aaf46a728e4300b65a525b2c35c5dd}{document}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_aa3b293e3c50fc8701e4fcbb2c86b32dc}{startnode}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_ac4deb10345409110344aa2d0d060e2e3}{language}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a04a88f63d0d9aaa1b47ac2a3b547ca77}{default\+\_\+priority}} = 855
+\item 
+tuple \mbox{\hyperlink{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a44254e58ed246e26789de7d824930e52}{nodes\+\_\+to\+\_\+skip}} = (\mbox{\hyperlink{classdocutils_1_1nodes_1_1FixedTextElement}{nodes.\+Fixed\+Text\+Element}}, \mbox{\hyperlink{classdocutils_1_1nodes_1_1Special}{nodes.\+Special}})
+\item 
+tuple \mbox{\hyperlink{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_ad50b80e2075c50ef202a62d993431743}{literal\+\_\+nodes}}
+\item 
+str \mbox{\hyperlink{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a31d28ff9868dc5acd5ce112e0b2867a3}{smartquotes\+\_\+action}} = \textquotesingle{}q\+De\textquotesingle{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform}{docutils.\+transforms.\+Transform}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_a942614b593b43d29ea9edce9ae763c49}{default\+\_\+priority}} = None
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Replace ASCII quotation marks with typographic form.
+
+Also replace multiple dashes with em-dash/en-dash characters.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a8e75c69cdcc7c55718107a1a95cf0bb8}\label{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a8e75c69cdcc7c55718107a1a95cf0bb8} 
+\index{docutils.transforms.universal.SmartQuotes@{docutils.transforms.universal.SmartQuotes}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!docutils.transforms.universal.SmartQuotes@{docutils.transforms.universal.SmartQuotes}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily docutils.\+transforms.\+universal.\+Smart\+Quotes.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{document,  }\item[{}]{startnode }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initial setup for in-place document transforms.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_ab1ceb3a09ea1b3fc6256c2e536f82d6c}{docutils.\+transforms.\+Transform}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a0a2fd5e27089d441ddf2a872a6ebb064}\label{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a0a2fd5e27089d441ddf2a872a6ebb064} 
+\index{docutils.transforms.universal.SmartQuotes@{docutils.transforms.universal.SmartQuotes}!apply@{apply}}
+\index{apply@{apply}!docutils.transforms.universal.SmartQuotes@{docutils.transforms.universal.SmartQuotes}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily docutils.\+transforms.\+universal.\+Smart\+Quotes.\+apply (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Override to apply the transform to the document tree.\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_a0a9e91ca01b2b5377cb61a18d8914f34}{docutils.\+transforms.\+Transform}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1transforms_1_1SphinxSmartQuotes_a71b6f6bd10bd0e476d15f373bf6f2ed7}{sphinx.\+transforms.\+Sphinx\+Smart\+Quotes}}.
+
+\Hypertarget{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_acb52f1b9c05bf5f23f575b84755e165a}\label{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_acb52f1b9c05bf5f23f575b84755e165a} 
+\index{docutils.transforms.universal.SmartQuotes@{docutils.transforms.universal.SmartQuotes}!get\_tokens@{get\_tokens}}
+\index{get\_tokens@{get\_tokens}!docutils.transforms.universal.SmartQuotes@{docutils.transforms.universal.SmartQuotes}}
+\doxysubsubsection{\texorpdfstring{get\_tokens()}{get\_tokens()}}
+{\footnotesize\ttfamily docutils.\+transforms.\+universal.\+Smart\+Quotes.\+get\+\_\+tokens (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{txtnodes }\end{DoxyParamCaption})}
+
+
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1transforms_1_1SphinxSmartQuotes_a7248197ee6fde87c577eece8e83cb2b7}{sphinx.\+transforms.\+Sphinx\+Smart\+Quotes}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a04a88f63d0d9aaa1b47ac2a3b547ca77}\label{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a04a88f63d0d9aaa1b47ac2a3b547ca77} 
+\index{docutils.transforms.universal.SmartQuotes@{docutils.transforms.universal.SmartQuotes}!default\_priority@{default\_priority}}
+\index{default\_priority@{default\_priority}!docutils.transforms.universal.SmartQuotes@{docutils.transforms.universal.SmartQuotes}}
+\doxysubsubsection{\texorpdfstring{default\_priority}{default\_priority}}
+{\footnotesize\ttfamily int docutils.\+transforms.\+universal.\+Smart\+Quotes.\+default\+\_\+priority = 855\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_ad50b80e2075c50ef202a62d993431743}\label{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_ad50b80e2075c50ef202a62d993431743} 
+\index{docutils.transforms.universal.SmartQuotes@{docutils.transforms.universal.SmartQuotes}!literal\_nodes@{literal\_nodes}}
+\index{literal\_nodes@{literal\_nodes}!docutils.transforms.universal.SmartQuotes@{docutils.transforms.universal.SmartQuotes}}
+\doxysubsubsection{\texorpdfstring{literal\_nodes}{literal\_nodes}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily tuple docutils.\+transforms.\+universal.\+Smart\+Quotes.\+literal\+\_\+nodes\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ (nodes.FixedTextElement,\ nodes.Special,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nodes.image,\ nodes.literal,\ nodes.math,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nodes.raw,\ nodes.problematic)}
+
+\end{DoxyCode}
+\Hypertarget{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a34cc7658220963ee38f2992ba6dd1033}\label{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a34cc7658220963ee38f2992ba6dd1033} 
+\index{docutils.transforms.universal.SmartQuotes@{docutils.transforms.universal.SmartQuotes}!literal\_nodes@{literal\_nodes}}
+\index{literal\_nodes@{literal\_nodes}!docutils.transforms.universal.SmartQuotes@{docutils.transforms.universal.SmartQuotes}}
+\doxysubsubsection{\texorpdfstring{literal\_nodes}{literal\_nodes}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily docutils.\+transforms.\+universal.\+Smart\+Quotes.\+literal\+\_\+nodes}
+
+\Hypertarget{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a44254e58ed246e26789de7d824930e52}\label{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a44254e58ed246e26789de7d824930e52} 
+\index{docutils.transforms.universal.SmartQuotes@{docutils.transforms.universal.SmartQuotes}!nodes\_to\_skip@{nodes\_to\_skip}}
+\index{nodes\_to\_skip@{nodes\_to\_skip}!docutils.transforms.universal.SmartQuotes@{docutils.transforms.universal.SmartQuotes}}
+\doxysubsubsection{\texorpdfstring{nodes\_to\_skip}{nodes\_to\_skip}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily tuple docutils.\+transforms.\+universal.\+Smart\+Quotes.\+nodes\+\_\+to\+\_\+skip = (\mbox{\hyperlink{classdocutils_1_1nodes_1_1FixedTextElement}{nodes.\+Fixed\+Text\+Element}}, \mbox{\hyperlink{classdocutils_1_1nodes_1_1Special}{nodes.\+Special}})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a5f00e158edc45b1399b474faa12a50f9}\label{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a5f00e158edc45b1399b474faa12a50f9} 
+\index{docutils.transforms.universal.SmartQuotes@{docutils.transforms.universal.SmartQuotes}!nodes\_to\_skip@{nodes\_to\_skip}}
+\index{nodes\_to\_skip@{nodes\_to\_skip}!docutils.transforms.universal.SmartQuotes@{docutils.transforms.universal.SmartQuotes}}
+\doxysubsubsection{\texorpdfstring{nodes\_to\_skip}{nodes\_to\_skip}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily docutils.\+transforms.\+universal.\+Smart\+Quotes.\+nodes\+\_\+to\+\_\+skip}
+
+\Hypertarget{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a31d28ff9868dc5acd5ce112e0b2867a3}\label{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a31d28ff9868dc5acd5ce112e0b2867a3} 
+\index{docutils.transforms.universal.SmartQuotes@{docutils.transforms.universal.SmartQuotes}!smartquotes\_action@{smartquotes\_action}}
+\index{smartquotes\_action@{smartquotes\_action}!docutils.transforms.universal.SmartQuotes@{docutils.transforms.universal.SmartQuotes}}
+\doxysubsubsection{\texorpdfstring{smartquotes\_action}{smartquotes\_action}}
+{\footnotesize\ttfamily str docutils.\+transforms.\+universal.\+Smart\+Quotes.\+smartquotes\+\_\+action = \textquotesingle{}q\+De\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a70f1bc0e776609899ca430e72ed40d4e}\label{classdocutils_1_1transforms_1_1universal_1_1SmartQuotes_a70f1bc0e776609899ca430e72ed40d4e} 
+\index{docutils.transforms.universal.SmartQuotes@{docutils.transforms.universal.SmartQuotes}!unsupported\_languages@{unsupported\_languages}}
+\index{unsupported\_languages@{unsupported\_languages}!docutils.transforms.universal.SmartQuotes@{docutils.transforms.universal.SmartQuotes}}
+\doxysubsubsection{\texorpdfstring{unsupported\_languages}{unsupported\_languages}}
+{\footnotesize\ttfamily docutils.\+transforms.\+universal.\+Smart\+Quotes.\+unsupported\+\_\+languages}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/docutils/transforms/\mbox{\hyperlink{universal_8py}{universal.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,59 @@
+.TH "pip._vendor.cachecontrol.heuristics.OneDayCache" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.cachecontrol.heuristics.OneDayCache
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._vendor\&.cachecontrol\&.heuristics\&.BaseHeuristic\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "dict[str, str] \fBupdate_headers\fP (self, \fBHTTPResponse\fP response)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._vendor\&.cachecontrol\&.heuristics\&.BaseHeuristic\fP
+.in +1c
+.ti -1c
+.RI "str|None \fBwarning\fP (self, \fBHTTPResponse\fP response)"
+.br
+.ti -1c
+.RI "\fBHTTPResponse\fP \fBapply\fP (self, \fBHTTPResponse\fP response)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Cache the response by providing an expires 1 day in the
+future\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " dict[str, str] pip\&._vendor\&.cachecontrol\&.heuristics\&.OneDayCache\&.update_headers ( self, \fBHTTPResponse\fP response)"
+
+.PP
+.nf
+Update the response headers with any new headers\&.
+
+NOTE: This SHOULD always include some Warning header to
+      signify that the response was cached by the client, not
+      by way of the provided headers\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._vendor\&.cachecontrol\&.heuristics\&.BaseHeuristic\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

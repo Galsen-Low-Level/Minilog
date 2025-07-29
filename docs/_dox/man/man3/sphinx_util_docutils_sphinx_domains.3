@@ -1,0 +1,108 @@
+.TH "sphinx.util.docutils.sphinx_domains" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.util.docutils.sphinx_domains
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.util\&.docutils\&.CustomReSTDispatcher\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, \fBBuildEnvironment\fP env)"
+.br
+.ti -1c
+.RI "tuple[type[\fBDirective\fP]|None, list[\fBsystem_message\fP]] \fBdirective\fP (self, str directive_name, ModuleType language_module, nodes\&.document document)"
+.br
+.ti -1c
+.RI "tuple[\fBRoleFunction\fP, list[\fBsystem_message\fP]] \fBrole\fP (self, str role_name, ModuleType language_module, int lineno, \fBReporter\fP reporter)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.util\&.docutils\&.CustomReSTDispatcher\fP
+.in +1c
+.ti -1c
+.RI "None \fB__enter__\fP (self)"
+.br
+.ti -1c
+.RI "None \fB__exit__\fP (self, type[BaseException]|None exc_type, BaseException|None exc_value, TracebackType|None traceback)"
+.br
+.ti -1c
+.RI "None \fBenable\fP (self)"
+.br
+.ti -1c
+.RI "None \fBdisable\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdomains\fP"
+.br
+.ti -1c
+.RI "\fBcurrent_document\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsphinx\&.util\&.docutils\&.CustomReSTDispatcher\fP
+.in +1c
+.ti -1c
+.RI "\fBdirective_func\fP"
+.br
+.ti -1c
+.RI "\fBrole_func\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Monkey-patch directive and role dispatch, so that domain-specific
+markup takes precedence\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.util\&.docutils\&.sphinx_domains\&.__init__ ( self, \fBBuildEnvironment\fP env)"
+
+.PP
+Reimplemented from \fBsphinx\&.util\&.docutils\&.CustomReSTDispatcher\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " tuple[type[\fBDirective\fP] | None, list[\fBsystem_message\fP]] sphinx\&.util\&.docutils\&.sphinx_domains\&.directive ( self, str directive_name, ModuleType language_module, nodes\&.document document)"
+
+.PP
+.nf
+Lookup a directive, given its name which can include a domain\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.util\&.docutils\&.CustomReSTDispatcher\fP\&.
+.SS " tuple[\fBRoleFunction\fP, list[\fBsystem_message\fP]] sphinx\&.util\&.docutils\&.sphinx_domains\&.role ( self, str role_name, ModuleType language_module, int lineno, \fBReporter\fP reporter)"
+
+.PP
+.nf
+Lookup a role, given its name which can include a domain\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.util\&.docutils\&.CustomReSTDispatcher\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.util\&.docutils\&.sphinx_domains\&.current_document"
+
+.SS "sphinx\&.util\&.docutils\&.sphinx_domains\&.domains"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

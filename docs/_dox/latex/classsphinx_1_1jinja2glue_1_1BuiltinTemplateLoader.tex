@@ -1,0 +1,188 @@
+\doxysection{sphinx.\+jinja2glue.\+Builtin\+Template\+Loader Class Reference}
+\hypertarget{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader}{}\label{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader}\index{sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}}
+Inheritance diagram for sphinx.\+jinja2glue.\+Builtin\+Template\+Loader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a871c1ce79da8c17476d1cfd43af7e05c}{init}} (self, \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}} builder, \mbox{\hyperlink{classsphinx_1_1theming_1_1Theme}{Theme}}\texorpdfstring{$\vert$}{|}None theme=None, list\mbox{[}str\mbox{]}\texorpdfstring{$\vert$}{|}None dirs=None)
+\item 
+str \mbox{\hyperlink{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a558f7872c32d2481f935304cf107d4e5}{render}} (self, str template, dict\mbox{[}str, Any\mbox{]} context)
+\item 
+str \mbox{\hyperlink{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a9c5d3e2141b76288bfe88ce94436471e}{render\+\_\+string}} (self, str source, dict\mbox{[}str, Any\mbox{]} context)
+\item 
+float \mbox{\hyperlink{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a4c330f9ea19431f2613c4ebcde5c938d}{newest\+\_\+template\+\_\+mtime}} (self)
+\item 
+str \mbox{\hyperlink{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a8a5e0e8ded00d8e9c9291d4121898a64}{newest\+\_\+template\+\_\+name}} (self)
+\item 
+tuple\mbox{[}str, str, Callable\mbox{[}\mbox{[}$\,$\mbox{]}, bool\mbox{]}\mbox{]} \mbox{\hyperlink{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_ab8814764ad16f6432d7ddec118e249c9}{get\+\_\+source}} (self, \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment}{Environment}} \mbox{\hyperlink{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a0eaa7d6eac124417be964b1790d76d00}{environment}}, str template)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classjinja2_1_1loaders_1_1BaseLoader}{jinja2.\+loaders.\+Base\+Loader}}}
+\begin{DoxyCompactItemize}
+\item 
+t.\+List\mbox{[}str\mbox{]} \mbox{\hyperlink{classjinja2_1_1loaders_1_1BaseLoader_acb576631d9b98370780cf622e2433992}{list\+\_\+templates}} (self)
+\item 
+"{}Template"{} \mbox{\hyperlink{classjinja2_1_1loaders_1_1BaseLoader_aec17b1b1367164ea6cb8c532b8033255}{load}} (self, "{}Environment"{} environment, str name, t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} globals=None)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a20fd598729a2edbe83c4ef4ca3c5b747}{templatepathlen}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a4668a8c264f522001a06b2f9b2513caf}{pathchain}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a1409b253711845cb8456c93f3fab5bfa}{loaders}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a0eaa7d6eac124417be964b1790d76d00}{environment}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+tuple\mbox{[}float, str\mbox{]} \mbox{\hyperlink{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a7fbc9830913481fe078dd8189ecd0f55}{\+\_\+newest\+\_\+template\+\_\+mtime\+\_\+name}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classjinja2_1_1loaders_1_1BaseLoader}{jinja2.\+loaders.\+Base\+Loader}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classjinja2_1_1loaders_1_1BaseLoader_ac9d3885a6dc14640fa415810264721ee}{has\+\_\+source\+\_\+access}} = True
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Interfaces the rendering environment of jinja2 for use in Sphinx.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a7fbc9830913481fe078dd8189ecd0f55}\label{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a7fbc9830913481fe078dd8189ecd0f55} 
+\index{sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}!\_newest\_template\_mtime\_name@{\_newest\_template\_mtime\_name}}
+\index{\_newest\_template\_mtime\_name@{\_newest\_template\_mtime\_name}!sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}}
+\doxysubsubsection{\texorpdfstring{\_newest\_template\_mtime\_name()}{\_newest\_template\_mtime\_name()}}
+{\footnotesize\ttfamily  tuple\mbox{[}float, str\mbox{]} sphinx.\+jinja2glue.\+Builtin\+Template\+Loader.\+\_\+newest\+\_\+template\+\_\+mtime\+\_\+name (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_ab8814764ad16f6432d7ddec118e249c9}\label{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_ab8814764ad16f6432d7ddec118e249c9} 
+\index{sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}!get\_source@{get\_source}}
+\index{get\_source@{get\_source}!sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}}
+\doxysubsubsection{\texorpdfstring{get\_source()}{get\_source()}}
+{\footnotesize\ttfamily  tuple\mbox{[}str, str, Callable\mbox{[}\mbox{[}$\,$\mbox{]}, bool\mbox{]}\mbox{]} sphinx.\+jinja2glue.\+Builtin\+Template\+Loader.\+get\+\_\+source (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment}{Environment}}}]{environment,  }\item[{str     }]{template }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the template source, filename and reload helper for a template.
+It's passed the environment and template name and has to return a
+tuple in the form ``(source, filename, uptodate)`` or raise a
+`TemplateNotFound` error if it can't locate the template.
+
+The source part of the returned tuple must be the source of the
+template as a string. The filename should be the name of the
+file on the filesystem if it was loaded from there, otherwise
+``None``. The filename is used by Python for the tracebacks
+if no loader extension is used.
+
+The last item in the tuple is the `uptodate` function.  If auto
+reloading is enabled it's always called to check if the template
+changed.  No arguments are passed so the function must store the
+old state somewhere (for example in a closure).  If it returns `False`
+the template will be reloaded.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classjinja2_1_1loaders_1_1BaseLoader_a7e222ad2ab60e2cfd58c11822b0c4951}{jinja2.\+loaders.\+Base\+Loader}}.
+
+\Hypertarget{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a871c1ce79da8c17476d1cfd43af7e05c}\label{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a871c1ce79da8c17476d1cfd43af7e05c} 
+\index{sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}!init@{init}}
+\index{init@{init}!sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily  None sphinx.\+jinja2glue.\+Builtin\+Template\+Loader.\+init (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}}}]{builder,  }\item[{\mbox{\hyperlink{classsphinx_1_1theming_1_1Theme}{Theme}} \texorpdfstring{$\vert$}{|} None }]{theme = {\ttfamily None},  }\item[{list\mbox{[}str\mbox{]} \texorpdfstring{$\vert$}{|} None }]{dirs = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Called by the builder to initialize the template system.
+
+*builder* is the builder object; you'll probably want to look at the
+value of ``builder.config.templates_path``.
+
+*theme* is a :class:`sphinx.theming.Theme` object or None; in the latter
+case, *dirs* can be list of fixed directories to look for templates.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classsphinx_1_1application_1_1TemplateBridge_a2d054c4a6ef5aa227fe72f3f088450b3}{sphinx.\+application.\+Template\+Bridge}}.
+
+\Hypertarget{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a4c330f9ea19431f2613c4ebcde5c938d}\label{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a4c330f9ea19431f2613c4ebcde5c938d} 
+\index{sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}!newest\_template\_mtime@{newest\_template\_mtime}}
+\index{newest\_template\_mtime@{newest\_template\_mtime}!sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}}
+\doxysubsubsection{\texorpdfstring{newest\_template\_mtime()}{newest\_template\_mtime()}}
+{\footnotesize\ttfamily  float sphinx.\+jinja2glue.\+Builtin\+Template\+Loader.\+newest\+\_\+template\+\_\+mtime (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Called by the builder to determine if output files are outdated
+because of template changes.  Return the mtime of the newest template
+file that was changed.  The default implementation returns ``0``.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classsphinx_1_1application_1_1TemplateBridge_ae35e332919adf688ca290f0957c5deeb}{sphinx.\+application.\+Template\+Bridge}}.
+
+\Hypertarget{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a8a5e0e8ded00d8e9c9291d4121898a64}\label{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a8a5e0e8ded00d8e9c9291d4121898a64} 
+\index{sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}!newest\_template\_name@{newest\_template\_name}}
+\index{newest\_template\_name@{newest\_template\_name}!sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}}
+\doxysubsubsection{\texorpdfstring{newest\_template\_name()}{newest\_template\_name()}}
+{\footnotesize\ttfamily  str sphinx.\+jinja2glue.\+Builtin\+Template\+Loader.\+newest\+\_\+template\+\_\+name (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a558f7872c32d2481f935304cf107d4e5}\label{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a558f7872c32d2481f935304cf107d4e5} 
+\index{sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}!render@{render}}
+\index{render@{render}!sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily  str sphinx.\+jinja2glue.\+Builtin\+Template\+Loader.\+render (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{template,  }\item[{dict\mbox{[}str, Any\mbox{]}}]{context }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Called by the builder to render a template given as a filename with
+a specified context (a Python dictionary).
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classsphinx_1_1application_1_1TemplateBridge_a98905403a6b45a97dda798d792d13f1a}{sphinx.\+application.\+Template\+Bridge}}.
+
+\Hypertarget{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a9c5d3e2141b76288bfe88ce94436471e}\label{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a9c5d3e2141b76288bfe88ce94436471e} 
+\index{sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}!render\_string@{render\_string}}
+\index{render\_string@{render\_string}!sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}}
+\doxysubsubsection{\texorpdfstring{render\_string()}{render\_string()}}
+{\footnotesize\ttfamily  str sphinx.\+jinja2glue.\+Builtin\+Template\+Loader.\+render\+\_\+string (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{template,  }\item[{dict\mbox{[}str, Any\mbox{]}}]{context }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Called by the builder to render a template given as a string with a
+specified context (a Python dictionary).
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classsphinx_1_1application_1_1TemplateBridge_abeb3280094e147d0febde9febf255f7d}{sphinx.\+application.\+Template\+Bridge}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a0eaa7d6eac124417be964b1790d76d00}\label{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a0eaa7d6eac124417be964b1790d76d00} 
+\index{sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}!environment@{environment}}
+\index{environment@{environment}!sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}}
+\doxysubsubsection{\texorpdfstring{environment}{environment}}
+{\footnotesize\ttfamily sphinx.\+jinja2glue.\+Builtin\+Template\+Loader.\+environment}
+
+\Hypertarget{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a1409b253711845cb8456c93f3fab5bfa}\label{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a1409b253711845cb8456c93f3fab5bfa} 
+\index{sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}!loaders@{loaders}}
+\index{loaders@{loaders}!sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}}
+\doxysubsubsection{\texorpdfstring{loaders}{loaders}}
+{\footnotesize\ttfamily sphinx.\+jinja2glue.\+Builtin\+Template\+Loader.\+loaders}
+
+\Hypertarget{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a4668a8c264f522001a06b2f9b2513caf}\label{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a4668a8c264f522001a06b2f9b2513caf} 
+\index{sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}!pathchain@{pathchain}}
+\index{pathchain@{pathchain}!sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}}
+\doxysubsubsection{\texorpdfstring{pathchain}{pathchain}}
+{\footnotesize\ttfamily sphinx.\+jinja2glue.\+Builtin\+Template\+Loader.\+pathchain}
+
+\Hypertarget{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a20fd598729a2edbe83c4ef4ca3c5b747}\label{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a20fd598729a2edbe83c4ef4ca3c5b747} 
+\index{sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}!templatepathlen@{templatepathlen}}
+\index{templatepathlen@{templatepathlen}!sphinx.jinja2glue.BuiltinTemplateLoader@{sphinx.jinja2glue.BuiltinTemplateLoader}}
+\doxysubsubsection{\texorpdfstring{templatepathlen}{templatepathlen}}
+{\footnotesize\ttfamily sphinx.\+jinja2glue.\+Builtin\+Template\+Loader.\+templatepathlen}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/sphinx/\mbox{\hyperlink{jinja2glue_8py}{jinja2glue.\+py}}\end{DoxyCompactItemize}

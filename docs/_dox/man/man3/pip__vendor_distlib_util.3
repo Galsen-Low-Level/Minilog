@@ -1,0 +1,536 @@
+.TH "pip._vendor.distlib.util" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.distlib.util
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBCache\fP"
+.br
+.ti -1c
+.RI "class \fBcached_property\fP"
+.br
+.ti -1c
+.RI "class \fBConfigurator\fP"
+.br
+.ti -1c
+.RI "class \fBCSVBase\fP"
+.br
+.ti -1c
+.RI "class \fBCSVReader\fP"
+.br
+.ti -1c
+.RI "class \fBCSVWriter\fP"
+.br
+.ti -1c
+.RI "class \fBEventMixin\fP"
+.br
+.ti -1c
+.RI "class \fBExportEntry\fP"
+.br
+.ti -1c
+.RI "class \fBFileOperator\fP"
+.br
+.ti -1c
+.RI "class \fBHTTPSConnection\fP"
+.br
+.ti -1c
+.RI "class \fBHTTPSHandler\fP"
+.br
+.ti -1c
+.RI "class \fBHTTPSOnlyHandler\fP"
+.br
+.ti -1c
+.RI "class \fBProgress\fP"
+.br
+.ti -1c
+.RI "class \fBPyPIRCFile\fP"
+.br
+.ti -1c
+.RI "class \fBSafeTransport\fP"
+.br
+.ti -1c
+.RI "class \fBSequencer\fP"
+.br
+.ti -1c
+.RI "class \fBServerProxy\fP"
+.br
+.ti -1c
+.RI "class \fBSubprocessMixin\fP"
+.br
+.ti -1c
+.RI "class \fBTransport\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBparse_marker\fP (marker_string)"
+.br
+.ti -1c
+.RI "\fBparse_requirement\fP (req)"
+.br
+.ti -1c
+.RI "\fBget_resources_dests\fP (resources_root, rules)"
+.br
+.ti -1c
+.RI "\fBin_venv\fP ()"
+.br
+.ti -1c
+.RI "\fBget_executable\fP ()"
+.br
+.ti -1c
+.RI "\fBproceed\fP (prompt, allowed_chars, error_prompt=None, default=None)"
+.br
+.ti -1c
+.RI "\fBextract_by_key\fP (d, keys)"
+.br
+.ti -1c
+.RI "\fBread_exports\fP (stream)"
+.br
+.ti -1c
+.RI "\fBwrite_exports\fP (exports, stream)"
+.br
+.ti -1c
+.RI "\fBtempdir\fP ()"
+.br
+.ti -1c
+.RI "\fBchdir\fP (d)"
+.br
+.ti -1c
+.RI "\fBsocket_timeout\fP (seconds=15)"
+.br
+.ti -1c
+.RI "\fBconvert_path\fP (pathname)"
+.br
+.ti -1c
+.RI "\fBresolve\fP (module_name, dotted_path)"
+.br
+.ti -1c
+.RI "\fBget_export_entry\fP (specification)"
+.br
+.ti -1c
+.RI "\fBget_cache_base\fP (suffix=None)"
+.br
+.ti -1c
+.RI "\fBpath_to_cache_dir\fP (path, use_abspath=True)"
+.br
+.ti -1c
+.RI "\fBensure_slash\fP (s)"
+.br
+.ti -1c
+.RI "\fBparse_credentials\fP (netloc)"
+.br
+.ti -1c
+.RI "\fBget_process_umask\fP ()"
+.br
+.ti -1c
+.RI "\fBis_string_sequence\fP (seq)"
+.br
+.ti -1c
+.RI "\fBsplit_filename\fP (filename, project_name=None)"
+.br
+.ti -1c
+.RI "\fBparse_name_and_version\fP (p)"
+.br
+.ti -1c
+.RI "\fBget_extras\fP (requested, available)"
+.br
+.ti -1c
+.RI "\fB_get_external_data\fP (url)"
+.br
+.ti -1c
+.RI "\fBget_project_data\fP (name)"
+.br
+.ti -1c
+.RI "\fBget_package_data\fP (name, version)"
+.br
+.ti -1c
+.RI "\fBunarchive\fP (archive_filename, dest_dir, format=None, check=True)"
+.br
+.ti -1c
+.RI "\fBzip_dir\fP (directory)"
+.br
+.ti -1c
+.RI "\fBiglob\fP (path_glob)"
+.br
+.ti -1c
+.RI "\fB_iglob\fP (path_glob)"
+.br
+.ti -1c
+.RI "\fB_csv_open\fP (fn, mode, **kwargs)"
+.br
+.ti -1c
+.RI "\fBnormalize_name\fP (name)"
+.br
+.ti -1c
+.RI "\fB_load_pypirc\fP (index)"
+.br
+.ti -1c
+.RI "\fB_store_pypirc\fP (index)"
+.br
+.ti -1c
+.RI "\fBget_host_platform\fP ()"
+.br
+.ti -1c
+.RI "\fBget_platform\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBssl\fP = None"
+.br
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "\fBIDENTIFIER\fP = re\&.compile(r'^([\\w\\\&.\-]+)\\s*')"
+.br
+.ti -1c
+.RI "\fBVERSION_IDENTIFIER\fP = re\&.compile(r'^([\\w\\\&.*+\-]+)\\s*')"
+.br
+.ti -1c
+.RI "\fBCOMPARE_OP\fP = re\&.compile(r'^(<=?|>=?|={2,3}|[~!]=)\\s*')"
+.br
+.ti -1c
+.RI "\fBMARKER_OP\fP = re\&.compile(r'^((<=?)|(>=?)|={2,3}|[~!]=|in|not\\s+in)\\s*')"
+.br
+.ti -1c
+.RI "\fBOR\fP = re\&.compile(r'^or\\b\\s*')"
+.br
+.ti -1c
+.RI "\fBAND\fP = re\&.compile(r'^and\\b\\s*')"
+.br
+.ti -1c
+.RI "\fBNON_SPACE\fP = re\&.compile(r'(\\S+)\\s*')"
+.br
+.ti -1c
+.RI "\fBSTRING_CHUNK\fP = re\&.compile(r'([\\s\\w\\\&.{}()*+#:;,/?!~`@$%^&=|<>\\[\\]\-]+)')"
+.br
+.ti -1c
+.RI "\fBENTRY_RE\fP"
+.br
+.ti -1c
+.RI "\fBPROJECT_NAME_AND_VERSION\fP"
+.br
+.ti -1c
+.RI "\fBPYTHON_VERSION\fP = re\&.compile(r'\-py(\\d\\\&.?\\d?)')"
+.br
+.ti -1c
+.RI "\fBNAME_VERSION_RE\fP"
+.br
+.ti -1c
+.RI "str \fB_external_data_base_url\fP = 'https://www\&.red\-dove\&.com/pypi/projects/'"
+.br
+.ti -1c
+.RI "tuple \fBARCHIVE_EXTENSIONS\fP = ('\&.tar\&.gz', '\&.tar\&.bz2', '\&.tar', '\&.zip', '\&.tgz', '\&.tbz', '\&.whl')"
+.br
+.ti -1c
+.RI "tuple \fBUNITS\fP = ('', 'K', 'M', 'G', 'T', 'P')"
+.br
+.ti -1c
+.RI "\fBRICH_GLOB\fP = re\&.compile(r'\\{([^}]*)\\}')"
+.br
+.ti -1c
+.RI "\fB_CHECK_RECURSIVE_GLOB\fP = re\&.compile(r'[^/\\\\,{]\\*\\*|\\*\\*[^/\\\\,}]')"
+.br
+.ti -1c
+.RI "\fB_CHECK_MISMATCH_SET\fP = re\&.compile(r'^[^{]*\\}|\\{[^}]*$')"
+.br
+.ti -1c
+.RI "dict \fB_TARGET_TO_PLAT\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.util\&._csv_open ( fn,  mode, ** kwargs)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.util\&._get_external_data ( url)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.util\&._iglob ( path_glob)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.util\&._load_pypirc ( index)\fC [protected]\fP"
+
+.PP
+.nf
+Read the PyPI access configuration as supported by distutils\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.util\&._store_pypirc ( index)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.chdir ( d)"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.convert_path ( pathname)"
+
+.PP
+.nf
+Return 'pathname' as a name that will work on the native filesystem\&.
+
+The path is split on '/' and put back together again using the current
+directory separator\&.  Needed because filenames in the setup script are
+always supplied in Unix style, and have to be converted to the local
+convention before we can actually use them in the filesystem\&.  Raises
+ValueError on non-Unix-ish systems if 'pathname' either starts or
+ends with a slash\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.util\&.ensure_slash ( s)"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.extract_by_key ( d,  keys)"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.get_cache_base ( suffix = \fCNone\fP)"
+
+.PP
+.nf
+Return the default base location for distlib caches\&. If the directory does
+not exist, it is created\&. Use the suffix provided for the base directory,
+and default to '\&.distlib' if it isn't provided\&.
+
+On Windows, if LOCALAPPDATA is defined in the environment, then it is
+assumed to be a directory, and will be the parent directory of the result\&.
+On POSIX, and on Windows if LOCALAPPDATA is not defined, the user's home
+directory - using os\&.expanduser('~') - will be the parent directory of
+the result\&.
+
+The result is just the directory '\&.distlib' in the parent directory as
+determined above, or with the name specified with ``suffix``\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.util\&.get_executable ()"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.get_export_entry ( specification)"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.get_extras ( requested,  available)"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.get_host_platform ()"
+
+.PP
+.nf
+Return a string that identifies the current platform\&.  This is used mainly to
+distinguish platform-specific build directories and platform-specific built
+distributions\&.  Typically includes the OS name and version and the
+architecture (as supplied by 'os\&.uname()'), although the exact information
+included depends on the OS; eg\&. on Linux, the kernel version isn't
+particularly important\&.
+
+Examples of returned values:
+   linux-i586
+   linux-alpha (?)
+   solaris-2\&.6-sun4u
+
+Windows will return one of:
+   win-amd64 (64bit Windows on AMD64 (aka x86_64, Intel64, EM64T, etc)
+   win32 (all others - specifically, sys\&.platform is returned)
+
+For other non-POSIX platforms, currently just returns 'sys\&.platform'\&.
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.util\&.get_package_data ( name,  version)"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.get_platform ()"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.get_process_umask ()"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.get_project_data ( name)"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.get_resources_dests ( resources_root,  rules)"
+
+.PP
+.nf
+Find destinations for resources files
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.util\&.iglob ( path_glob)"
+
+.PP
+.nf
+Extended globbing function that supports ** and {opt1,opt2,opt3}\&.
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.util\&.in_venv ()"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.is_string_sequence ( seq)"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.normalize_name ( name)"
+
+.PP
+.nf
+Normalize a python package name a la PEP 503
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.util\&.parse_credentials ( netloc)"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.parse_marker ( marker_string)"
+
+.PP
+.nf
+Parse a marker string and return a dictionary containing a marker expression\&.
+
+The dictionary will contain keys 'op', 'lhs' and 'rhs' for non-terminals in
+the expression grammar, or strings\&. A string contained in quotes is to be
+interpreted as a literal string, and a string not contained in quotes is a
+variable (such as os_name)\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.util\&.parse_name_and_version ( p)"
+
+.PP
+.nf
+A utility method used to get name and version from a string\&.
+
+From e\&.g\&. a Provides-Dist value\&.
+
+:param p: A value in a form 'foo (1\&.0)'
+:return: The name and version as a tuple\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.util\&.parse_requirement ( req)"
+
+.PP
+.nf
+Parse a requirement passed in as a string\&. Return a Container
+whose attributes contain the various parts of the requirement\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.util\&.path_to_cache_dir ( path,  use_abspath = \fCTrue\fP)"
+
+.PP
+.nf
+Convert an absolute path to a directory name for use in a cache\&.
+
+The algorithm used is:
+
+#\&. On Windows, any ``':'`` in the drive is replaced with ``'---'``\&.
+#\&. Any occurrence of ``os\&.sep`` is replaced with ``'--'``\&.
+#\&. ``'\&.cache'`` is appended\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.util\&.proceed ( prompt,  allowed_chars,  error_prompt = \fCNone\fP,  default = \fCNone\fP)"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.read_exports ( stream)"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.resolve ( module_name,  dotted_path)"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.socket_timeout ( seconds = \fC15\fP)"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.split_filename ( filename,  project_name = \fCNone\fP)"
+
+.PP
+.nf
+Extract name, version, python version from a filename (no extension)
+
+Return name, version, pyver or None
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.util\&.tempdir ()"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.unarchive ( archive_filename,  dest_dir,  format = \fCNone\fP,  check = \fCTrue\fP)"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.write_exports ( exports,  stream)"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.zip_dir ( directory)"
+
+.PP
+.nf
+zip a directory tree into a BytesIO object
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.util\&._CHECK_MISMATCH_SET = re\&.compile(r'^[^{]*\\}|\\{[^}]*$')\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.util\&._CHECK_RECURSIVE_GLOB = re\&.compile(r'[^/\\\\,{]\\*\\*|\\*\\*[^/\\\\,}]')\fC [protected]\fP"
+
+.SS "str pip\&._vendor\&.distlib\&.util\&._external_data_base_url = 'https://www\&.red\-dove\&.com/pypi/projects/'\fC [protected]\fP"
+
+.SS "dict pip\&._vendor\&.distlib\&.util\&._TARGET_TO_PLAT\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     'x86': 'win32',
+3     'x64': 'win\-amd64',
+4     'arm': 'win\-arm32',
+5 }
+.fi
+
+.SS "pip\&._vendor\&.distlib\&.util\&.AND = re\&.compile(r'^and\\b\\s*')"
+
+.SS "tuple pip\&._vendor\&.distlib\&.util\&.ARCHIVE_EXTENSIONS = ('\&.tar\&.gz', '\&.tar\&.bz2', '\&.tar', '\&.zip', '\&.tgz', '\&.tbz', '\&.whl')"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.COMPARE_OP = re\&.compile(r'^(<=?|>=?|={2,3}|[~!]=)\\s*')"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.ENTRY_RE"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(
+2     , re\&.VERBOSE)
+.fi
+
+.SS "pip\&._vendor\&.distlib\&.util\&.IDENTIFIER = re\&.compile(r'^([\\w\\\&.\-]+)\\s*')"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.logger = logging\&.getLogger(__name__)"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.MARKER_OP = re\&.compile(r'^((<=?)|(>=?)|={2,3}|[~!]=|in|not\\s+in)\\s*')"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.NAME_VERSION_RE"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(r'(?P<name>[\\w \&.\-]+)\\s*'
+2                              r'\\(\\s*(?P<ver>[^\\s)]+)\\)$')
+.fi
+
+.SS "pip\&._vendor\&.distlib\&.util\&.NON_SPACE = re\&.compile(r'(\\S+)\\s*')"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.OR = re\&.compile(r'^or\\b\\s*')"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.PROJECT_NAME_AND_VERSION"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile('([a\-z0\-9_]+([\&.\-][a\-z_][a\-z0\-9_]*)*)\-'
+2                                       '([a\-z0\-9_\&.+\-]+)', re\&.I)
+.fi
+
+.SS "pip\&._vendor\&.distlib\&.util\&.PYTHON_VERSION = re\&.compile(r'\-py(\\d\\\&.?\\d?)')"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.RICH_GLOB = re\&.compile(r'\\{([^}]*)\\}')"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.ssl = None"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.STRING_CHUNK = re\&.compile(r'([\\s\\w\\\&.{}()*+#:;,/?!~`@$%^&=|<>\\[\\]\-]+)')"
+
+.SS "tuple pip\&._vendor\&.distlib\&.util\&.UNITS = ('', 'K', 'M', 'G', 'T', 'P')"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.VERSION_IDENTIFIER = re\&.compile(r'^([\\w\\\&.*+\-]+)\\s*')"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

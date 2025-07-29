@@ -1,0 +1,216 @@
+.TH "sphinx.domains.std.TokenXRefRole" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.domains.std.TokenXRefRole
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.roles\&.XRefRole\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "tuple[str, str] \fBprocess_link\fP (self, \fBBuildEnvironment\fP \fBenv\fP, \fBElement\fP refnode, bool \fBhas_explicit_title\fP, str \fBtitle\fP, str \fBtarget\fP)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.roles\&.XRefRole\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, bool \fBfix_parens\fP=False, bool \fBlowercase\fP=False, type[\fBElement\fP]|None \fBnodeclass\fP=None, type[\fBTextElement\fP]|None \fBinnernodeclass\fP=None, bool \fBwarn_dangling\fP=False)"
+.br
+.ti -1c
+.RI "tuple[str, str] \fBupdate_title_and_target\fP (self, str \fBtitle\fP, str \fBtarget\fP)"
+.br
+.ti -1c
+.RI "tuple[list[\fBNode\fP], list[\fBsystem_message\fP]] \fBrun\fP (self)"
+.br
+.ti -1c
+.RI "tuple[list[\fBNode\fP], list[\fBsystem_message\fP]] \fBcreate_non_xref_node\fP (self)"
+.br
+.ti -1c
+.RI "tuple[list[\fBNode\fP], list[\fBsystem_message\fP]] \fBcreate_xref_node\fP (self)"
+.br
+.ti -1c
+.RI "tuple[list[\fBNode\fP], list[\fBsystem_message\fP]] \fBresult_nodes\fP (self, nodes\&.document document, \fBBuildEnvironment\fP \fBenv\fP, \fBElement\fP node, bool is_ref)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.util\&.docutils\&.ReferenceRole\fP
+.in +1c
+.ti -1c
+.RI "tuple[list[\fBNode\fP], list[\fBsystem_message\fP]] \fB__call__\fP (self, str \fBname\fP, str \fBrawtext\fP, str \fBtext\fP, int \fBlineno\fP, \fBInliner\fP \fBinliner\fP, dict[str, Any]|None \fBoptions\fP=None, Sequence[str] \fBcontent\fP=())"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.util\&.docutils\&.SphinxRole\fP
+.in +1c
+.ti -1c
+.RI "\fBBuildEnvironment\fP \fBenv\fP (self)"
+.br
+.ti -1c
+.RI "\fBConfig\fP \fBconfig\fP (self)"
+.br
+.ti -1c
+.RI "tuple[str, int] \fBget_source_info\fP (self, int|None \fBlineno\fP=None)"
+.br
+.ti -1c
+.RI "None \fBset_source_info\fP (self, \fBNode\fP node, int|None \fBlineno\fP=None)"
+.br
+.ti -1c
+.RI "str \fBget_location\fP (self)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBsphinx\&.roles\&.XRefRole\fP
+.in +1c
+.ti -1c
+.RI "\fBfix_parens\fP"
+.br
+.ti -1c
+.RI "\fBlowercase\fP"
+.br
+.ti -1c
+.RI "\fBwarn_dangling\fP"
+.br
+.ti -1c
+.RI "\fBnodeclass\fP"
+.br
+.ti -1c
+.RI "\fBinnernodeclass\fP"
+.br
+.ti -1c
+.RI "\fBrefdomain\fP"
+.br
+.ti -1c
+.RI "\fBreftype\fP"
+.br
+.ti -1c
+.RI "\fBclasses\fP"
+.br
+.ti -1c
+.RI "\fBhas_explicit_title\fP"
+.br
+.ti -1c
+.RI "\fBenv\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsphinx\&.util\&.docutils\&.ReferenceRole\fP
+.in +1c
+.ti -1c
+.RI "\fBdisabled\fP"
+.br
+.ti -1c
+.RI "\fBhas_explicit_title\fP"
+.br
+.ti -1c
+.RI "\fBtitle\fP"
+.br
+.ti -1c
+.RI "\fBtarget\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsphinx\&.util\&.docutils\&.SphinxRole\fP
+.in +1c
+.ti -1c
+.RI "\fBrawtext\fP"
+.br
+.ti -1c
+.RI "\fBtext\fP"
+.br
+.ti -1c
+.RI "\fBlineno\fP"
+.br
+.ti -1c
+.RI "\fBinliner\fP"
+.br
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBcontent\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBsphinx\&.roles\&.XRefRole\fP
+.in +1c
+.ti -1c
+.RI "type \fBnodeclass\fP = \fBaddnodes\&.pending_xref\fP"
+.br
+.ti -1c
+.RI "type \fBinnernodeclass\fP = nodes\&.literal"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBsphinx\&.util\&.docutils\&.ReferenceRole\fP
+.in +1c
+.ti -1c
+.RI "bool \fBhas_explicit_title\fP"
+.br
+.ti -1c
+.RI "bool \fBdisabled\fP"
+.br
+.ti -1c
+.RI "str \fBtitle\fP"
+.br
+.ti -1c
+.RI "str \fBtarget\fP"
+.br
+.ti -1c
+.RI "\fBexplicit_title_re\fP = re\&.compile(r'^(\&.+?)\\s*(?<!\\x00)<(\&.*?)>$', re\&.DOTALL)"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBsphinx\&.util\&.docutils\&.SphinxRole\fP
+.in +1c
+.ti -1c
+.RI "str \fBname\fP"
+.br
+.ti -1c
+.RI "str \fBrawtext\fP"
+.br
+.ti -1c
+.RI "str \fBtext\fP"
+.br
+.ti -1c
+.RI "int \fBlineno\fP"
+.br
+.ti -1c
+.RI "\fBInliner\fP \fBinliner\fP"
+.br
+.ti -1c
+.RI "dict \fBoptions\fP [str, Any]"
+.br
+.ti -1c
+.RI "Sequence \fBcontent\fP [str]"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS " tuple[str, str] sphinx\&.domains\&.std\&.TokenXRefRole\&.process_link ( self, \fBBuildEnvironment\fP env, \fBElement\fP refnode, bool has_explicit_title, str title, str target)"
+
+.PP
+.nf
+Called after parsing title and target text, and creating the
+reference node (given in *refnode*)\&.  This method can alter the
+reference node and must return a new (or the same) ``(title, target)``
+tuple\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.roles\&.XRefRole\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

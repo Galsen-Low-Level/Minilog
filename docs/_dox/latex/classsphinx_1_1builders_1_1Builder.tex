@@ -1,0 +1,675 @@
+\doxysection{sphinx.\+builders.\+Builder Class Reference}
+\hypertarget{classsphinx_1_1builders_1_1Builder}{}\label{classsphinx_1_1builders_1_1Builder}\index{sphinx.builders.Builder@{sphinx.builders.Builder}}
+Inheritance diagram for sphinx.\+builders.\+Builder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classsphinx_1_1builders_1_1Builder}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a1b3c069cd63050d71e638f6bab41f6e8}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}} \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_ad3762c2225f749723f0da8acda3b85f5}{app}}, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}} \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_ad68fe04e7411678e648039a311b49520}{env}})
+\item 
+type\mbox{[}nodes.\+Node\+Visitor\mbox{]} \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_aeb92abf87f4ef1e6033573ae4046bb35}{get\+\_\+translator\+\_\+class}} (self, \texorpdfstring{$\ast$}{*}Any args)
+\item 
+nodes.\+Node\+Visitor \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a6c54030fdb7476c78fc6d18df2cce42c}{create\+\_\+translator}} (self, \texorpdfstring{$\ast$}{*}Any args)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a3a3338352ca4084aff4fa1d67c1dbf29}{init}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a777ec6918e2c7a91eb2373d6fa1b22e8}{create\+\_\+template\+\_\+bridge}} (self)
+\item 
+str \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a76def68326a1d6bd664c0d1b98803a97}{get\+\_\+target\+\_\+uri}} (self, str docname, str\texorpdfstring{$\vert$}{|}None typ=None)
+\item 
+str \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_aba1e325ab3ab6521cdfa194286240798}{get\+\_\+relative\+\_\+uri}} (self, str from\+\_\+, str to, str\texorpdfstring{$\vert$}{|}None typ=None)
+\item 
+str\texorpdfstring{$\vert$}{|}Iterable\mbox{[}str\mbox{]} \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a0c12e2255176dcc8ae899dd0d486e68f}{get\+\_\+outdated\+\_\+docs}} (self)
+\item 
+list\mbox{[}str\mbox{]} \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_ae3e99f79ef17782912659d4f9f461830}{get\+\_\+asset\+\_\+paths}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_ac47924773ce09d810e04bf852e270018}{post\+\_\+process\+\_\+images}} (self, \mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}} doctree)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a7315870f39330408ec2ca53b91780c6c}{compile\+\_\+catalogs}} (self, set\mbox{[}\mbox{\hyperlink{classsphinx_1_1util_1_1i18n_1_1CatalogInfo}{Catalog\+Info}}\mbox{]} catalogs, str message)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a0d4af5a2785056d0c8df04d23ff0fce0}{compile\+\_\+all\+\_\+catalogs}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_ad125c4ec57c0b86ad7715d9f44e9e92f}{compile\+\_\+specific\+\_\+catalogs}} (self, Iterable\mbox{[}Path\mbox{]} specified\+\_\+files)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_abfc4e1d3f179fc94e5b4d514b80052f9}{compile\+\_\+update\+\_\+catalogs}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a078e301df92248c02021b2730a1bc7b1}{build\+\_\+all}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a053684305a173fcd6c13b3cd98fa3874}{build\+\_\+specific}} (self, Sequence\mbox{[}Path\mbox{]} filenames)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a20c019b06fce2e1aac52aae9ca53e216}{build\+\_\+update}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a3a6c9217e71926c846b2f580f1eea6c3}{build}} (self, Iterable\mbox{[}str\mbox{]}\texorpdfstring{$\vert$}{|}None docnames, str\texorpdfstring{$\vert$}{|}None summary=None, Literal\mbox{[}\textquotesingle{}all\textquotesingle{}, \textquotesingle{}specific\textquotesingle{}, \textquotesingle{}update\textquotesingle{}\mbox{]} method=\textquotesingle{}update\textquotesingle{})
+\item 
+list\mbox{[}str\mbox{]} \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_ae7e96d5a20869692388c4af80b913b04}{read}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a979e839731ac0ab8dc5264ccc9fd1a31}{read\+\_\+doc}} (self, str docname, \texorpdfstring{$\ast$}{*}bool \+\_\+cache=True)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a17405c55a4df299e2021443a3d01ea1c}{write\+\_\+doctree}} (self, str docname, nodes.\+document doctree, \texorpdfstring{$\ast$}{*}bool \+\_\+cache=True)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a0cd25b37da7f78216f2e356f83fef910}{write}} (self, Iterable\mbox{[}str\mbox{]}\texorpdfstring{$\vert$}{|}None build\+\_\+docnames, Iterable\mbox{[}str\mbox{]} updated\+\_\+docnames, Literal\mbox{[}\textquotesingle{}all\textquotesingle{}, \textquotesingle{}specific\textquotesingle{}, \textquotesingle{}update\textquotesingle{}\mbox{]} method=\textquotesingle{}update\textquotesingle{})
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_aeb476e0ce33dcb388010dd93ffb7780c}{write\+\_\+documents}} (self, Set\mbox{[}str\mbox{]} docnames)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a7a9b5f62382c631803acb5dd7ae128b3}{prepare\+\_\+writing}} (self, Set\mbox{[}str\mbox{]} docnames)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_ac067f9fe46076dd8e43e4dc260abe482}{copy\+\_\+assets}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a471469e1b31b6f0350e9069f22f15f40}{write\+\_\+doc}} (self, str docname, nodes.\+document doctree)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_ab1a5d03a8978c00796cd4c82e00eccfc}{write\+\_\+doc\+\_\+serialized}} (self, str docname, nodes.\+document doctree)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a43e2013572c826d5991e0003ec8c49bc}{finish}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_afc4367f8469962f9a707cfe7292192f5}{cleanup}} (self)
+\item 
+Any \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a311ea3d3808ae0055195608e554617b5}{get\+\_\+builder\+\_\+config}} (self, str option, str default)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a7e77488b9dfa17b5fb4b0989ad626bda}{versioning\+\_\+method}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_afb35ae513b53b3a371f9b139fe0145ee}{versioning\+\_\+compare}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_afe088f44ad56d39c182d9c81c2ea9679}{format}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_aa2d64b7ed500d0515aa89995110781f4}{name}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a795665d02cc61cad152c58c299790d0f}{imagedir}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a251556b7ec3d46b3aab729adf15b1a18}{imgpath}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_ae4e131d2e3a374a4e2c28a29b492dd55}{parallel\+\_\+ok}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a8381b53716b81005e6a2bf7f4ab912d9}{templates}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_ad3762c2225f749723f0da8acda3b85f5}{app}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_ad68fe04e7411678e648039a311b49520}{env}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a846d2ee477fea51f6821cfece7aecc0b}{finish\+\_\+tasks}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_aaabfb720f11a0ae83f3d664e4a498e1e}{config}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_adb6f92e004e62fbf499fc170bd75d17a}{name}} = \textquotesingle{}\textquotesingle{}
+\item 
+str \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a6ef807c77bb603ed30e9c873f5b5f685}{format}} = \textquotesingle{}\textquotesingle{}
+\item 
+str \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a5fd1df9e7a5eece73fa9360ec2359c9b}{epilog}} = \textquotesingle{}\textquotesingle{}
+\item 
+type \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a32f018d372dc4d7029403241bfcd4a90}{default\+\_\+translator\+\_\+class}} \mbox{[}nodes.\+Node\+Visitor\mbox{]}
+\item 
+str \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_ad74eacab6d72f30958d9983d394aa0ef}{versioning\+\_\+method}} = \textquotesingle{}none\textquotesingle{}
+\item 
+bool \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a2e195ab431f3dfd93bb8eda8753653ec}{versioning\+\_\+compare}} = False
+\item 
+bool \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a1adfa57a38ee2391a12681aa81c8de46}{allow\+\_\+parallel}} = False
+\item 
+bool \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a9cd2950f229062ea02fec2a6dabd7434}{use\+\_\+message\+\_\+catalog}} = True
+\item 
+list \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a9db17eda9ad084c5855ae3a3211bc951}{supported\+\_\+image\+\_\+types}} = \mbox{[}$\,$\mbox{]}
+\item 
+bool \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_aab2fc2f59076ffa13fe679d49b6c0345}{supported\+\_\+remote\+\_\+images}} = False
+\item 
+bool \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a8d9b921970150735605c38850d6eb642}{supported\+\_\+data\+\_\+uri\+\_\+images}} = False
+\item 
+\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a1288e42f3a398015135831e15c61559b}{srcdir}} = \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPathProperty}{\+\_\+\+Str\+Path\+Property}}()
+\item 
+\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a7c955ad858c74ff97174a9300ffc5fd7}{confdir}} = \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPathProperty}{\+\_\+\+Str\+Path\+Property}}()
+\item 
+\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_aafb484a11980d39c99bf0d8c1ca29891}{outdir}} = \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPathProperty}{\+\_\+\+Str\+Path\+Property}}()
+\item 
+\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_aa824e5cd2a57f1a81409a603d1fb06bd}{doctreedir}} = \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPathProperty}{\+\_\+\+Str\+Path\+Property}}()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Null\+Translations\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a58a79cb71cdd918931d0054107b63113}{\+\_\+translator}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a485c012a0d8e75a74a70083847949a8a}{\+\_\+read\+\_\+serial}} (self, list\mbox{[}str\mbox{]} docnames)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a8062dd737be02c3001a0ddd8e8d034d0}{\+\_\+read\+\_\+parallel}} (self, list\mbox{[}str\mbox{]} docnames, int nproc)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a9eb46b77ef4bb772d984452be3b4f871}{\+\_\+write\+\_\+serial}} (self, Sequence\mbox{[}str\mbox{]} docnames)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder_a072f673bb28a74488e0e89fc6595cf25}{\+\_\+write\+\_\+parallel}} (self, Sequence\mbox{[}str\mbox{]} docnames, int nproc)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Builds target formats from the reST sources.\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a1b3c069cd63050d71e638f6bab41f6e8}\label{classsphinx_1_1builders_1_1Builder_a1b3c069cd63050d71e638f6bab41f6e8} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}}]{app,  }\item[{\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}}]{env }\end{DoxyParamCaption})}
+
+
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1builders_1_1html_1_1StandaloneHTMLBuilder_a2a8b89bd747f7886e6a6465427d7aab7}{sphinx.\+builders.\+html.\+Standalone\+HTMLBuilder}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a8062dd737be02c3001a0ddd8e8d034d0}\label{classsphinx_1_1builders_1_1Builder_a8062dd737be02c3001a0ddd8e8d034d0} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!\_read\_parallel@{\_read\_parallel}}
+\index{\_read\_parallel@{\_read\_parallel}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{\_read\_parallel()}{\_read\_parallel()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+\_\+read\+\_\+parallel (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{list\mbox{[}str\mbox{]}}]{docnames,  }\item[{int}]{nproc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a485c012a0d8e75a74a70083847949a8a}\label{classsphinx_1_1builders_1_1Builder_a485c012a0d8e75a74a70083847949a8a} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!\_read\_serial@{\_read\_serial}}
+\index{\_read\_serial@{\_read\_serial}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{\_read\_serial()}{\_read\_serial()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+\_\+read\+\_\+serial (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{list\mbox{[}str\mbox{]}}]{docnames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a58a79cb71cdd918931d0054107b63113}\label{classsphinx_1_1builders_1_1Builder_a58a79cb71cdd918931d0054107b63113} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!\_translator@{\_translator}}
+\index{\_translator@{\_translator}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{\_translator()}{\_translator()}}
+{\footnotesize\ttfamily  Null\+Translations \texorpdfstring{$\vert$}{|} None sphinx.\+builders.\+Builder.\+\_\+translator (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a072f673bb28a74488e0e89fc6595cf25}\label{classsphinx_1_1builders_1_1Builder_a072f673bb28a74488e0e89fc6595cf25} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!\_write\_parallel@{\_write\_parallel}}
+\index{\_write\_parallel@{\_write\_parallel}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{\_write\_parallel()}{\_write\_parallel()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+\_\+write\+\_\+parallel (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Sequence\mbox{[}str\mbox{]}}]{docnames,  }\item[{int}]{nproc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a9eb46b77ef4bb772d984452be3b4f871}\label{classsphinx_1_1builders_1_1Builder_a9eb46b77ef4bb772d984452be3b4f871} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!\_write\_serial@{\_write\_serial}}
+\index{\_write\_serial@{\_write\_serial}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{\_write\_serial()}{\_write\_serial()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+\_\+write\+\_\+serial (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Sequence\mbox{[}str\mbox{]}}]{docnames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a3a6c9217e71926c846b2f580f1eea6c3}\label{classsphinx_1_1builders_1_1Builder_a3a6c9217e71926c846b2f580f1eea6c3} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!build@{build}}
+\index{build@{build}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+build (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Iterable\mbox{[}str\mbox{]} \texorpdfstring{$\vert$}{|} None}]{docnames,  }\item[{str \texorpdfstring{$\vert$}{|} None }]{summary = {\ttfamily None},  }\item[{Literal\mbox{[}\textquotesingle{}all\textquotesingle{}, \textquotesingle{}specific\textquotesingle{}, \textquotesingle{}update\textquotesingle{}\mbox{]} }]{method = {\ttfamily \textquotesingle{}update\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Main build method, usually called by a specific ``build_*`` method.
+
+First updates the environment, and then calls
+:meth:`!write`.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1builders_1_1gettext_1_1MessageCatalogBuilder_afe8e1e065bfda54f368f0c233dfb504c}{sphinx.\+builders.\+gettext.\+Message\+Catalog\+Builder}}.
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a078e301df92248c02021b2730a1bc7b1}\label{classsphinx_1_1builders_1_1Builder_a078e301df92248c02021b2730a1bc7b1} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!build\_all@{build\_all}}
+\index{build\_all@{build\_all}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{build\_all()}{build\_all()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+build\+\_\+all (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Build all source files.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1builders_1_1Builder_a053684305a173fcd6c13b3cd98fa3874}\label{classsphinx_1_1builders_1_1Builder_a053684305a173fcd6c13b3cd98fa3874} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!build\_specific@{build\_specific}}
+\index{build\_specific@{build\_specific}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{build\_specific()}{build\_specific()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+build\+\_\+specific (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Sequence\mbox{[}Path\mbox{]}}]{filenames }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Only rebuild as much as needed for changes in the *filenames*.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1builders_1_1Builder_a20c019b06fce2e1aac52aae9ca53e216}\label{classsphinx_1_1builders_1_1Builder_a20c019b06fce2e1aac52aae9ca53e216} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!build\_update@{build\_update}}
+\index{build\_update@{build\_update}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{build\_update()}{build\_update()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+build\+\_\+update (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Only rebuild what was changed or added since last build.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1builders_1_1Builder_afc4367f8469962f9a707cfe7292192f5}\label{classsphinx_1_1builders_1_1Builder_afc4367f8469962f9a707cfe7292192f5} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{cleanup()}{cleanup()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+cleanup (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Cleanup any resources.
+
+The default implementation does nothing.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1builders_1_1html_1_1StandaloneHTMLBuilder_a5c0f29bc2b44d2d2f6544c674912e648}{sphinx.\+builders.\+html.\+Standalone\+HTMLBuilder}}.
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a0d4af5a2785056d0c8df04d23ff0fce0}\label{classsphinx_1_1builders_1_1Builder_a0d4af5a2785056d0c8df04d23ff0fce0} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!compile\_all\_catalogs@{compile\_all\_catalogs}}
+\index{compile\_all\_catalogs@{compile\_all\_catalogs}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{compile\_all\_catalogs()}{compile\_all\_catalogs()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+compile\+\_\+all\+\_\+catalogs (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a7315870f39330408ec2ca53b91780c6c}\label{classsphinx_1_1builders_1_1Builder_a7315870f39330408ec2ca53b91780c6c} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!compile\_catalogs@{compile\_catalogs}}
+\index{compile\_catalogs@{compile\_catalogs}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{compile\_catalogs()}{compile\_catalogs()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+compile\+\_\+catalogs (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{set\mbox{[}\mbox{\hyperlink{classsphinx_1_1util_1_1i18n_1_1CatalogInfo}{Catalog\+Info}}\mbox{]}}]{catalogs,  }\item[{str}]{message }\end{DoxyParamCaption})}
+
+
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1builders_1_1gettext_1_1I18nBuilder_a57ea3b83e30683aeacc5c5fde64b914d}{sphinx.\+builders.\+gettext.\+I18n\+Builder}}.
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_ad125c4ec57c0b86ad7715d9f44e9e92f}\label{classsphinx_1_1builders_1_1Builder_ad125c4ec57c0b86ad7715d9f44e9e92f} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!compile\_specific\_catalogs@{compile\_specific\_catalogs}}
+\index{compile\_specific\_catalogs@{compile\_specific\_catalogs}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{compile\_specific\_catalogs()}{compile\_specific\_catalogs()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+compile\+\_\+specific\+\_\+catalogs (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Iterable\mbox{[}Path\mbox{]}}]{specified\+\_\+files }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_abfc4e1d3f179fc94e5b4d514b80052f9}\label{classsphinx_1_1builders_1_1Builder_abfc4e1d3f179fc94e5b4d514b80052f9} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!compile\_update\_catalogs@{compile\_update\_catalogs}}
+\index{compile\_update\_catalogs@{compile\_update\_catalogs}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{compile\_update\_catalogs()}{compile\_update\_catalogs()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+compile\+\_\+update\+\_\+catalogs (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_ac067f9fe46076dd8e43e4dc260abe482}\label{classsphinx_1_1builders_1_1Builder_ac067f9fe46076dd8e43e4dc260abe482} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!copy\_assets@{copy\_assets}}
+\index{copy\_assets@{copy\_assets}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{copy\_assets()}{copy\_assets()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+copy\+\_\+assets (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Where assets (images, static files, etc) are copied before writing\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1builders_1_1html_1_1StandaloneHTMLBuilder_a6377133f82c97eff21e57d7fc7d31cae}{sphinx.\+builders.\+html.\+Standalone\+HTMLBuilder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1latex_1_1LaTeXBuilder_afa2b9166ae7ce037f8b2f54253ff9a26}{sphinx.\+builders.\+latex.\+La\+Te\+XBuilder}}, and \mbox{\hyperlink{classsphinx_1_1builders_1_1texinfo_1_1TexinfoBuilder_a39db176cd39186dbf1c4b48051b36226}{sphinx.\+builders.\+texinfo.\+Texinfo\+Builder}}.
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a777ec6918e2c7a91eb2373d6fa1b22e8}\label{classsphinx_1_1builders_1_1Builder_a777ec6918e2c7a91eb2373d6fa1b22e8} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!create\_template\_bridge@{create\_template\_bridge}}
+\index{create\_template\_bridge@{create\_template\_bridge}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{create\_template\_bridge()}{create\_template\_bridge()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+create\+\_\+template\+\_\+bridge (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the template bridge configured.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1builders_1_1Builder_a6c54030fdb7476c78fc6d18df2cce42c}\label{classsphinx_1_1builders_1_1Builder_a6c54030fdb7476c78fc6d18df2cce42c} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!create\_translator@{create\_translator}}
+\index{create\_translator@{create\_translator}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{create\_translator()}{create\_translator()}}
+{\footnotesize\ttfamily  nodes.\+Node\+Visitor sphinx.\+builders.\+Builder.\+create\+\_\+translator (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\texorpdfstring{$\ast$}{*}Any}]{args }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return an instance of translator.
+
+This method returns an instance of ``default_translator_class`` by default.
+Users can replace the translator class with ``app.set_translator()`` API.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1builders_1_1Builder_a43e2013572c826d5991e0003ec8c49bc}\label{classsphinx_1_1builders_1_1Builder_a43e2013572c826d5991e0003ec8c49bc} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!finish@{finish}}
+\index{finish@{finish}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{finish()}{finish()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+finish (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Finish the building process.
+
+The default implementation does nothing.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1builders_1_1changes_1_1ChangesBuilder_a8cabc2164f4865c1a4e15a28494a1553}{sphinx.\+builders.\+changes.\+Changes\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1dummy_1_1DummyBuilder_a09c4b8c19b8e4d763d01aff8a585512b}{sphinx.\+builders.\+dummy.\+Dummy\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1gettext_1_1MessageCatalogBuilder_a6b95ca94b4ac0d54655337fb442f1487}{sphinx.\+builders.\+gettext.\+Message\+Catalog\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1html_1_1StandaloneHTMLBuilder_a56bfa5b539fa2308e8bf9076ff0945ef}{sphinx.\+builders.\+html.\+Standalone\+HTMLBuilder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1latex_1_1LaTeXBuilder_ae6ab954f385704c8759bcdea2d1a5989}{sphinx.\+builders.\+latex.\+La\+Te\+XBuilder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1linkcheck_1_1CheckExternalLinksBuilder_aa4962c11e0c3b6a751f1f37979091ef0}{sphinx.\+builders.\+linkcheck.\+Check\+External\+Links\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1manpage_1_1ManualPageBuilder_a2bee4b6aa225e2749ab439d8329f8f04}{sphinx.\+builders.\+manpage.\+Manual\+Page\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1singlehtml_1_1SingleFileHTMLBuilder_a2b5d3b2c0caf8b48d68de56344c8548b}{sphinx.\+builders.\+singlehtml.\+Single\+File\+HTMLBuilder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1text_1_1TextBuilder_a66ce02e4197fb010334f68a33298d403}{sphinx.\+builders.\+text.\+Text\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1xml_1_1XMLBuilder_a7ea6a09859b3b793d67ff378f115866f}{sphinx.\+builders.\+xml.\+XMLBuilder}}, \mbox{\hyperlink{classsphinx_1_1ext_1_1coverage_1_1CoverageBuilder_aa17c5012b6ff505abeeca3d63a1443e9}{sphinx.\+ext.\+coverage.\+Coverage\+Builder}}, and \mbox{\hyperlink{classsphinx_1_1ext_1_1doctest_1_1DocTestBuilder_a7ceef975ee7917fd40d471e9ef6bc2ee}{sphinx.\+ext.\+doctest.\+Doc\+Test\+Builder}}.
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_ae3e99f79ef17782912659d4f9f461830}\label{classsphinx_1_1builders_1_1Builder_ae3e99f79ef17782912659d4f9f461830} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!get\_asset\_paths@{get\_asset\_paths}}
+\index{get\_asset\_paths@{get\_asset\_paths}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{get\_asset\_paths()}{get\_asset\_paths()}}
+{\footnotesize\ttfamily  list\mbox{[}str\mbox{]} sphinx.\+builders.\+Builder.\+get\+\_\+asset\+\_\+paths (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return list of paths for assets (ex. templates, CSS, etc.).\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1builders_1_1html_1_1StandaloneHTMLBuilder_afd72826f78413bb601c98e217f279474}{sphinx.\+builders.\+html.\+Standalone\+HTMLBuilder}}.
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a311ea3d3808ae0055195608e554617b5}\label{classsphinx_1_1builders_1_1Builder_a311ea3d3808ae0055195608e554617b5} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!get\_builder\_config@{get\_builder\_config}}
+\index{get\_builder\_config@{get\_builder\_config}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{get\_builder\_config()}{get\_builder\_config()}}
+{\footnotesize\ttfamily  Any sphinx.\+builders.\+Builder.\+get\+\_\+builder\+\_\+config (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{option,  }\item[{str}]{default }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a builder specific option.
+
+This method allows customization of common builder settings by
+inserting the name of the current builder in the option key.
+If the key does not exist, use default as builder name.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1builders_1_1Builder_a0c12e2255176dcc8ae899dd0d486e68f}\label{classsphinx_1_1builders_1_1Builder_a0c12e2255176dcc8ae899dd0d486e68f} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!get\_outdated\_docs@{get\_outdated\_docs}}
+\index{get\_outdated\_docs@{get\_outdated\_docs}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{get\_outdated\_docs()}{get\_outdated\_docs()}}
+{\footnotesize\ttfamily  str \texorpdfstring{$\vert$}{|} Iterable\mbox{[}str\mbox{]} sphinx.\+builders.\+Builder.\+get\+\_\+outdated\+\_\+docs (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return an iterable of output files that are outdated, or a string
+describing what an update build will build.
+
+If the builder does not output individual files corresponding to
+source files, return a string here.  If it does, return an iterable
+of those files that need to be written.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1builders_1_1changes_1_1ChangesBuilder_aec9c80e3bbd586cd8f0bcba34523c616}{sphinx.\+builders.\+changes.\+Changes\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1dummy_1_1DummyBuilder_affbc9616ee6a58c441c59bd35983579f}{sphinx.\+builders.\+dummy.\+Dummy\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1gettext_1_1I18nBuilder_ace4b8a81e07d07011f3d4e261604468e}{sphinx.\+builders.\+gettext.\+I18n\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1html_1_1StandaloneHTMLBuilder_a3a0c5dce042743e472f1dc424dceba3f}{sphinx.\+builders.\+html.\+Standalone\+HTMLBuilder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1latex_1_1LaTeXBuilder_aab1e680b91e507a9649756376fbfebbf}{sphinx.\+builders.\+latex.\+La\+Te\+XBuilder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1manpage_1_1ManualPageBuilder_a3bd8c0d90a851bc43eeb7f52c69b5f93}{sphinx.\+builders.\+manpage.\+Manual\+Page\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1singlehtml_1_1SingleFileHTMLBuilder_a4d2342f83d73ad70f908f267a15786e1}{sphinx.\+builders.\+singlehtml.\+Single\+File\+HTMLBuilder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1texinfo_1_1TexinfoBuilder_a79c882ab84105910b619a67c16004eee}{sphinx.\+builders.\+texinfo.\+Texinfo\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1text_1_1TextBuilder_ad6dd8da69b275b7193732139b49711a4}{sphinx.\+builders.\+text.\+Text\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1xml_1_1XMLBuilder_a6fe8c8587f1871f209ba42e54825f7ed}{sphinx.\+builders.\+xml.\+XMLBuilder}}, \mbox{\hyperlink{classsphinx_1_1ext_1_1coverage_1_1CoverageBuilder_aaca22bb0525945bfac3900378eff5a13}{sphinx.\+ext.\+coverage.\+Coverage\+Builder}}, and \mbox{\hyperlink{classsphinx_1_1ext_1_1doctest_1_1DocTestBuilder_a71e6b81982f967a0f7df476f8bcc9d5e}{sphinx.\+ext.\+doctest.\+Doc\+Test\+Builder}}.
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_aba1e325ab3ab6521cdfa194286240798}\label{classsphinx_1_1builders_1_1Builder_aba1e325ab3ab6521cdfa194286240798} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!get\_relative\_uri@{get\_relative\_uri}}
+\index{get\_relative\_uri@{get\_relative\_uri}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{get\_relative\_uri()}{get\_relative\_uri()}}
+{\footnotesize\ttfamily  str sphinx.\+builders.\+Builder.\+get\+\_\+relative\+\_\+uri (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{from\+\_\+,  }\item[{str}]{to,  }\item[{str \texorpdfstring{$\vert$}{|} None }]{typ = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a relative URI between two source filenames.
+
+:raises: :exc:`!NoUri` if there's no way to return a sensible URI.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1builders_1_1latex_1_1LaTeXBuilder_aa69244da9cebf281458ba98bc8feb6c7}{sphinx.\+builders.\+latex.\+La\+Te\+XBuilder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1singlehtml_1_1SingleFileHTMLBuilder_a1104ad1e1f0827c925a9ab4ad278df59}{sphinx.\+builders.\+singlehtml.\+Single\+File\+HTMLBuilder}}, and \mbox{\hyperlink{classsphinx_1_1builders_1_1texinfo_1_1TexinfoBuilder_a1c13d2c79119cf4db810f02eb0df1b59}{sphinx.\+builders.\+texinfo.\+Texinfo\+Builder}}.
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a76def68326a1d6bd664c0d1b98803a97}\label{classsphinx_1_1builders_1_1Builder_a76def68326a1d6bd664c0d1b98803a97} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!get\_target\_uri@{get\_target\_uri}}
+\index{get\_target\_uri@{get\_target\_uri}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{get\_target\_uri()}{get\_target\_uri()}}
+{\footnotesize\ttfamily  str sphinx.\+builders.\+Builder.\+get\+\_\+target\+\_\+uri (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{docname,  }\item[{str \texorpdfstring{$\vert$}{|} None }]{typ = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the target URI for a document name.
+
+*typ* can be used to qualify the link characteristic for individual
+builders.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1builders_1_1dirhtml_1_1DirectoryHTMLBuilder_a06d1dd8a22465dcc39ee6e46efa0b785}{sphinx.\+builders.\+dirhtml.\+Directory\+HTMLBuilder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1dummy_1_1DummyBuilder_ac3ce6674ecea2f0e968eb1e8e4adfc12}{sphinx.\+builders.\+dummy.\+Dummy\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1gettext_1_1I18nBuilder_a61c0a067549ca2bf102ba41147186831}{sphinx.\+builders.\+gettext.\+I18n\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1html_1_1StandaloneHTMLBuilder_ac01426ceb573be4f02a23667917d734a}{sphinx.\+builders.\+html.\+Standalone\+HTMLBuilder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1latex_1_1LaTeXBuilder_a9aa37030c3d86cc21fa0d1007956606d}{sphinx.\+builders.\+latex.\+La\+Te\+XBuilder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1manpage_1_1ManualPageBuilder_af215625b6d20eacbbf0460f6bf95908b}{sphinx.\+builders.\+manpage.\+Manual\+Page\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1singlehtml_1_1SingleFileHTMLBuilder_ae6ce4ef593a7e4ff7bb29f8ab7eb2741}{sphinx.\+builders.\+singlehtml.\+Single\+File\+HTMLBuilder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1texinfo_1_1TexinfoBuilder_a980a8cab230829a216d97b185aa6e80b}{sphinx.\+builders.\+texinfo.\+Texinfo\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1text_1_1TextBuilder_a79944181990760f6be5941730351ee79}{sphinx.\+builders.\+text.\+Text\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1xml_1_1XMLBuilder_a8d70961a3d80a4fef585604e8eb15513}{sphinx.\+builders.\+xml.\+XMLBuilder}}, \mbox{\hyperlink{classsphinx_1_1ext_1_1doctest_1_1DocTestBuilder_a2b0f67cf2774747e5ba196d37f447ed8}{sphinx.\+ext.\+doctest.\+Doc\+Test\+Builder}}, and \mbox{\hyperlink{classserializinghtml_1_1SerializingHTMLBuilder_a0101d59f40ad1acd88bab30ad3de9332}{serializinghtml.\+Serializing\+HTMLBuilder}}.
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_aeb92abf87f4ef1e6033573ae4046bb35}\label{classsphinx_1_1builders_1_1Builder_aeb92abf87f4ef1e6033573ae4046bb35} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!get\_translator\_class@{get\_translator\_class}}
+\index{get\_translator\_class@{get\_translator\_class}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{get\_translator\_class()}{get\_translator\_class()}}
+{\footnotesize\ttfamily  type\mbox{[}nodes.\+Node\+Visitor\mbox{]} sphinx.\+builders.\+Builder.\+get\+\_\+translator\+\_\+class (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\texorpdfstring{$\ast$}{*}Any}]{args }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a class of translator.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1builders_1_1Builder_a3a3338352ca4084aff4fa1d67c1dbf29}\label{classsphinx_1_1builders_1_1Builder_a3a3338352ca4084aff4fa1d67c1dbf29} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!init@{init}}
+\index{init@{init}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+init (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load necessary templates and perform initialization.  The default
+implementation does nothing.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1builders_1_1__epub__base_1_1EpubBuilder_a48e6f66f12b811c4d77386e4bc7d0ea3}{sphinx.\+builders.\+\_\+epub\+\_\+base.\+Epub\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1changes_1_1ChangesBuilder_a8de2a604d87996ad072f7fc8a79843af}{sphinx.\+builders.\+changes.\+Changes\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1dummy_1_1DummyBuilder_acb1e9ed230b49446e31eaddf75f343d1}{sphinx.\+builders.\+dummy.\+Dummy\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1gettext_1_1I18nBuilder_a6bfe80f879b42b5215e698b570c5ee0c}{sphinx.\+builders.\+gettext.\+I18n\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1gettext_1_1MessageCatalogBuilder_a29fc773ad0ab9bd0c65e2bf4b167c034}{sphinx.\+builders.\+gettext.\+Message\+Catalog\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1html_1_1StandaloneHTMLBuilder_a38542eaec543ce37e1660d43bfa7e0ab}{sphinx.\+builders.\+html.\+Standalone\+HTMLBuilder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1latex_1_1LaTeXBuilder_ab46ede23ded0a1caeb43080fe44c2cf0}{sphinx.\+builders.\+latex.\+La\+Te\+XBuilder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1linkcheck_1_1CheckExternalLinksBuilder_aeefdcfffba355c747ac1113139cd3ebe}{sphinx.\+builders.\+linkcheck.\+Check\+External\+Links\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1manpage_1_1ManualPageBuilder_a2ad1ef42dc1b671d8f06f3838533b5d6}{sphinx.\+builders.\+manpage.\+Manual\+Page\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1texinfo_1_1TexinfoBuilder_a8f5d5a4ba394e1ca198667a2fb67cb1d}{sphinx.\+builders.\+texinfo.\+Texinfo\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1text_1_1TextBuilder_a0f469d56789a7a04670cd26af44e8a32}{sphinx.\+builders.\+text.\+Text\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1xml_1_1XMLBuilder_a737e07da8a3ca0c683b6aa24bd7d05b6}{sphinx.\+builders.\+xml.\+XMLBuilder}}, \mbox{\hyperlink{classsphinx_1_1ext_1_1coverage_1_1CoverageBuilder_a7edd5686d0595b830a1739d48268bb75}{sphinx.\+ext.\+coverage.\+Coverage\+Builder}}, \mbox{\hyperlink{classsphinx_1_1ext_1_1doctest_1_1DocTestBuilder_aa2e38ee95dab1ceda5da7155f4017bec}{sphinx.\+ext.\+doctest.\+Doc\+Test\+Builder}}, \mbox{\hyperlink{classapplehelp_1_1AppleHelpBuilder_aa8f3c20122b3534cfd78f9bc9bafb61c}{applehelp.\+Apple\+Help\+Builder}}, \mbox{\hyperlink{classdevhelp_1_1DevhelpBuilder_a7a360bb117d495a0581f11acf7a237e4}{devhelp.\+Devhelp\+Builder}}, \mbox{\hyperlink{classhtmlhelp_1_1HTMLHelpBuilder_a1ca9defb452248ff18a05d82faa71e12}{htmlhelp.\+HTMLHelp\+Builder}}, \mbox{\hyperlink{classqthelp_1_1QtHelpBuilder_aaee430814129537d6bec5f705bccf1e4}{qthelp.\+Qt\+Help\+Builder}}, and \mbox{\hyperlink{classserializinghtml_1_1SerializingHTMLBuilder_a7762ad1f12dd93ad1b830b7735000610}{serializinghtml.\+Serializing\+HTMLBuilder}}.
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_ac47924773ce09d810e04bf852e270018}\label{classsphinx_1_1builders_1_1Builder_ac47924773ce09d810e04bf852e270018} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!post\_process\_images@{post\_process\_images}}
+\index{post\_process\_images@{post\_process\_images}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{post\_process\_images()}{post\_process\_images()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+post\+\_\+process\+\_\+images (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}}}]{doctree }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Pick the best candidate for all image URIs.\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1builders_1_1html_1_1StandaloneHTMLBuilder_ab22d4795452a3478e08b36f152a09fa3}{sphinx.\+builders.\+html.\+Standalone\+HTMLBuilder}}.
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a7a9b5f62382c631803acb5dd7ae128b3}\label{classsphinx_1_1builders_1_1Builder_a7a9b5f62382c631803acb5dd7ae128b3} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!prepare\_writing@{prepare\_writing}}
+\index{prepare\_writing@{prepare\_writing}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{prepare\_writing()}{prepare\_writing()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+prepare\+\_\+writing (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Set\mbox{[}str\mbox{]}}]{docnames }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A place where you can add logic before :meth:`write_doc` is run\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1builders_1_1texinfo_1_1TexinfoBuilder_a997b71d886f3244bae0ad3e438f90ccd}{sphinx.\+builders.\+texinfo.\+Texinfo\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1epub3_1_1Epub3Builder_a316de1662166633ee4bd98afc70f8874}{sphinx.\+builders.\+epub3.\+Epub3\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1html_1_1StandaloneHTMLBuilder_a34d30242e6f7ac0c4be3b19311dcefe6}{sphinx.\+builders.\+html.\+Standalone\+HTMLBuilder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1latex_1_1LaTeXBuilder_ae4bf73bc351bc1db5fdb0df69762e96d}{sphinx.\+builders.\+latex.\+La\+Te\+XBuilder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1text_1_1TextBuilder_a562d8387e586713281d3dc75689c0451}{sphinx.\+builders.\+text.\+Text\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1xml_1_1XMLBuilder_a58482bc67cd1fbfbb221e6f7e2cd92a1}{sphinx.\+builders.\+xml.\+XMLBuilder}}, and \mbox{\hyperlink{classhtmlhelp_1_1HTMLHelpBuilder_a80e83876d47df262581eae5032ef8ab3}{htmlhelp.\+HTMLHelp\+Builder}}.
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_ae7e96d5a20869692388c4af80b913b04}\label{classsphinx_1_1builders_1_1Builder_ae7e96d5a20869692388c4af80b913b04} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!read@{read}}
+\index{read@{read}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily  list\mbox{[}str\mbox{]} sphinx.\+builders.\+Builder.\+read (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}(Re-)read all files new or changed since last update.
+
+Store all environment docnames in the canonical format (ie using SEP as
+a separator in place of os.path.sep).
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1builders_1_1Builder_a979e839731ac0ab8dc5264ccc9fd1a31}\label{classsphinx_1_1builders_1_1Builder_a979e839731ac0ab8dc5264ccc9fd1a31} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!read\_doc@{read\_doc}}
+\index{read\_doc@{read\_doc}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{read\_doc()}{read\_doc()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+read\+\_\+doc (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{docname,  }\item[{\texorpdfstring{$\ast$}{*}bool }]{\+\_\+cache = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse a file and add/update inventory entries for the doctree.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1builders_1_1Builder_a0cd25b37da7f78216f2e356f83fef910}\label{classsphinx_1_1builders_1_1Builder_a0cd25b37da7f78216f2e356f83fef910} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!write@{write}}
+\index{write@{write}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+write (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Iterable\mbox{[}str\mbox{]} \texorpdfstring{$\vert$}{|} None}]{build\+\_\+docnames,  }\item[{Iterable\mbox{[}str\mbox{]}}]{updated\+\_\+docnames,  }\item[{Literal\mbox{[}\textquotesingle{}all\textquotesingle{}, \textquotesingle{}specific\textquotesingle{}, \textquotesingle{}update\textquotesingle{}\mbox{]} }]{method = {\ttfamily \textquotesingle{}update\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write builder specific output files.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1builders_1_1Builder_a471469e1b31b6f0350e9069f22f15f40}\label{classsphinx_1_1builders_1_1Builder_a471469e1b31b6f0350e9069f22f15f40} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!write\_doc@{write\_doc}}
+\index{write\_doc@{write\_doc}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{write\_doc()}{write\_doc()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+write\+\_\+doc (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{docname,  }\item[{nodes.\+document}]{doctree }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write the output file for the document
+
+:param docname: the :term:`docname <document name>`.
+:param doctree: defines the content to be written.
+
+The output filename must be determined within this method,
+typically by calling :meth:`~.Builder.get_target_uri`
+or :meth:`~.Builder.get_relative_uri`.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1builders_1_1__epub__base_1_1EpubBuilder_affc473680b9c9db63771c3f922922f60}{sphinx.\+builders.\+\_\+epub\+\_\+base.\+Epub\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1dummy_1_1DummyBuilder_aa89bfd0301162fde0d4c222cc43a2795}{sphinx.\+builders.\+dummy.\+Dummy\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1gettext_1_1I18nBuilder_a4a306aaedb1c063ab29000d3aeecb547}{sphinx.\+builders.\+gettext.\+I18n\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1html_1_1StandaloneHTMLBuilder_a3befa9ac9e524665a0fc04bf69c31f8c}{sphinx.\+builders.\+html.\+Standalone\+HTMLBuilder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1text_1_1TextBuilder_a8e910386c8357c1cd711f73f2103e68c}{sphinx.\+builders.\+text.\+Text\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1xml_1_1XMLBuilder_aa176c0b5e4b0a56ba76af1b205691478}{sphinx.\+builders.\+xml.\+XMLBuilder}}, and \mbox{\hyperlink{classhtmlhelp_1_1HTMLHelpBuilder_ac2fa9ac7197d7e51d78e9235aa999071}{htmlhelp.\+HTMLHelp\+Builder}}.
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_ab1a5d03a8978c00796cd4c82e00eccfc}\label{classsphinx_1_1builders_1_1Builder_ab1a5d03a8978c00796cd4c82e00eccfc} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!write\_doc\_serialized@{write\_doc\_serialized}}
+\index{write\_doc\_serialized@{write\_doc\_serialized}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{write\_doc\_serialized()}{write\_doc\_serialized()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+write\+\_\+doc\+\_\+serialized (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{docname,  }\item[{nodes.\+document}]{doctree }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Handle parts of write_doc that must be called in the main process
+if parallel build is active.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1builders_1_1html_1_1StandaloneHTMLBuilder_ae9fdad962dee4b53aab159c935b12360}{sphinx.\+builders.\+html.\+Standalone\+HTMLBuilder}}.
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a17405c55a4df299e2021443a3d01ea1c}\label{classsphinx_1_1builders_1_1Builder_a17405c55a4df299e2021443a3d01ea1c} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!write\_doctree@{write\_doctree}}
+\index{write\_doctree@{write\_doctree}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{write\_doctree()}{write\_doctree()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+write\+\_\+doctree (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{docname,  }\item[{nodes.\+document}]{doctree,  }\item[{\texorpdfstring{$\ast$}{*}bool }]{\+\_\+cache = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write the doctree to a file, to be used as a cache by re-builds.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1builders_1_1Builder_aeb476e0ce33dcb388010dd93ffb7780c}\label{classsphinx_1_1builders_1_1Builder_aeb476e0ce33dcb388010dd93ffb7780c} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!write\_documents@{write\_documents}}
+\index{write\_documents@{write\_documents}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{write\_documents()}{write\_documents()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+Builder.\+write\+\_\+documents (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Set\mbox{[}str\mbox{]}}]{docnames }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write all documents in *docnames*.
+
+This method can be overridden if a builder does not create
+output files for each document.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1builders_1_1changes_1_1ChangesBuilder_af53789c4ec219ea24ca017c0b0fc8c32}{sphinx.\+builders.\+changes.\+Changes\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1latex_1_1LaTeXBuilder_a6a13e9f68c717d30f7b62b6b3138284a}{sphinx.\+builders.\+latex.\+La\+Te\+XBuilder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1manpage_1_1ManualPageBuilder_a566a1a5474eb570409f0e9b6f6ceb596}{sphinx.\+builders.\+manpage.\+Manual\+Page\+Builder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1singlehtml_1_1SingleFileHTMLBuilder_ab0ef430b7b70b49f81ac0f3adad05013}{sphinx.\+builders.\+singlehtml.\+Single\+File\+HTMLBuilder}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1texinfo_1_1TexinfoBuilder_a27640d8f9c3fdad70ef307d45792d636}{sphinx.\+builders.\+texinfo.\+Texinfo\+Builder}}, \mbox{\hyperlink{classsphinx_1_1ext_1_1coverage_1_1CoverageBuilder_a0ccfe0cd5b0594c4298b2e4d43bc0d69}{sphinx.\+ext.\+coverage.\+Coverage\+Builder}}, and \mbox{\hyperlink{classsphinx_1_1ext_1_1doctest_1_1DocTestBuilder_a62746caa96a846893517d7ce0b9ed0e7}{sphinx.\+ext.\+doctest.\+Doc\+Test\+Builder}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a1adfa57a38ee2391a12681aa81c8de46}\label{classsphinx_1_1builders_1_1Builder_a1adfa57a38ee2391a12681aa81c8de46} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!allow\_parallel@{allow\_parallel}}
+\index{allow\_parallel@{allow\_parallel}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{allow\_parallel}{allow\_parallel}}
+{\footnotesize\ttfamily bool sphinx.\+builders.\+Builder.\+allow\+\_\+parallel = False\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_ad3762c2225f749723f0da8acda3b85f5}\label{classsphinx_1_1builders_1_1Builder_ad3762c2225f749723f0da8acda3b85f5} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!app@{app}}
+\index{app@{app}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{app}{app}}
+{\footnotesize\ttfamily sphinx.\+builders.\+Builder.\+app}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a7c955ad858c74ff97174a9300ffc5fd7}\label{classsphinx_1_1builders_1_1Builder_a7c955ad858c74ff97174a9300ffc5fd7} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!confdir@{confdir}}
+\index{confdir@{confdir}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{confdir}{confdir}}
+{\footnotesize\ttfamily sphinx.\+builders.\+Builder.\+confdir = \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPathProperty}{\+\_\+\+Str\+Path\+Property}}()\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_aaabfb720f11a0ae83f3d664e4a498e1e}\label{classsphinx_1_1builders_1_1Builder_aaabfb720f11a0ae83f3d664e4a498e1e} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!config@{config}}
+\index{config@{config}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{config}{config}}
+{\footnotesize\ttfamily sphinx.\+builders.\+Builder.\+config}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a32f018d372dc4d7029403241bfcd4a90}\label{classsphinx_1_1builders_1_1Builder_a32f018d372dc4d7029403241bfcd4a90} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!default\_translator\_class@{default\_translator\_class}}
+\index{default\_translator\_class@{default\_translator\_class}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{default\_translator\_class}{default\_translator\_class}}
+{\footnotesize\ttfamily type sphinx.\+builders.\+Builder.\+default\+\_\+translator\+\_\+class \mbox{[}nodes.\+Node\+Visitor\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_aa824e5cd2a57f1a81409a603d1fb06bd}\label{classsphinx_1_1builders_1_1Builder_aa824e5cd2a57f1a81409a603d1fb06bd} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!doctreedir@{doctreedir}}
+\index{doctreedir@{doctreedir}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{doctreedir}{doctreedir}}
+{\footnotesize\ttfamily sphinx.\+builders.\+Builder.\+doctreedir = \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPathProperty}{\+\_\+\+Str\+Path\+Property}}()\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_ad68fe04e7411678e648039a311b49520}\label{classsphinx_1_1builders_1_1Builder_ad68fe04e7411678e648039a311b49520} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!env@{env}}
+\index{env@{env}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{env}{env}}
+{\footnotesize\ttfamily sphinx.\+builders.\+Builder.\+env}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a5fd1df9e7a5eece73fa9360ec2359c9b}\label{classsphinx_1_1builders_1_1Builder_a5fd1df9e7a5eece73fa9360ec2359c9b} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!epilog@{epilog}}
+\index{epilog@{epilog}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{epilog}{epilog}}
+{\footnotesize\ttfamily str sphinx.\+builders.\+Builder.\+epilog = \textquotesingle{}\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a846d2ee477fea51f6821cfece7aecc0b}\label{classsphinx_1_1builders_1_1Builder_a846d2ee477fea51f6821cfece7aecc0b} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!finish\_tasks@{finish\_tasks}}
+\index{finish\_tasks@{finish\_tasks}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{finish\_tasks}{finish\_tasks}}
+{\footnotesize\ttfamily sphinx.\+builders.\+Builder.\+finish\+\_\+tasks}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a6ef807c77bb603ed30e9c873f5b5f685}\label{classsphinx_1_1builders_1_1Builder_a6ef807c77bb603ed30e9c873f5b5f685} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!format@{format}}
+\index{format@{format}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{format}{format}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily str sphinx.\+builders.\+Builder.\+format = \textquotesingle{}\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_afe088f44ad56d39c182d9c81c2ea9679}\label{classsphinx_1_1builders_1_1Builder_afe088f44ad56d39c182d9c81c2ea9679} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!format@{format}}
+\index{format@{format}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{format}{format}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sphinx.\+builders.\+Builder.\+format}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a795665d02cc61cad152c58c299790d0f}\label{classsphinx_1_1builders_1_1Builder_a795665d02cc61cad152c58c299790d0f} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!imagedir@{imagedir}}
+\index{imagedir@{imagedir}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{imagedir}{imagedir}}
+{\footnotesize\ttfamily sphinx.\+builders.\+Builder.\+imagedir}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a251556b7ec3d46b3aab729adf15b1a18}\label{classsphinx_1_1builders_1_1Builder_a251556b7ec3d46b3aab729adf15b1a18} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!imgpath@{imgpath}}
+\index{imgpath@{imgpath}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{imgpath}{imgpath}}
+{\footnotesize\ttfamily sphinx.\+builders.\+Builder.\+imgpath}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_adb6f92e004e62fbf499fc170bd75d17a}\label{classsphinx_1_1builders_1_1Builder_adb6f92e004e62fbf499fc170bd75d17a} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!name@{name}}
+\index{name@{name}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{name}{name}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily str sphinx.\+builders.\+Builder.\+name = \textquotesingle{}\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_aa2d64b7ed500d0515aa89995110781f4}\label{classsphinx_1_1builders_1_1Builder_aa2d64b7ed500d0515aa89995110781f4} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!name@{name}}
+\index{name@{name}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{name}{name}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sphinx.\+builders.\+Builder.\+name}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_aafb484a11980d39c99bf0d8c1ca29891}\label{classsphinx_1_1builders_1_1Builder_aafb484a11980d39c99bf0d8c1ca29891} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!outdir@{outdir}}
+\index{outdir@{outdir}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{outdir}{outdir}}
+{\footnotesize\ttfamily sphinx.\+builders.\+Builder.\+outdir = \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPathProperty}{\+\_\+\+Str\+Path\+Property}}()\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_ae4e131d2e3a374a4e2c28a29b492dd55}\label{classsphinx_1_1builders_1_1Builder_ae4e131d2e3a374a4e2c28a29b492dd55} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!parallel\_ok@{parallel\_ok}}
+\index{parallel\_ok@{parallel\_ok}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{parallel\_ok}{parallel\_ok}}
+{\footnotesize\ttfamily sphinx.\+builders.\+Builder.\+parallel\+\_\+ok}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a1288e42f3a398015135831e15c61559b}\label{classsphinx_1_1builders_1_1Builder_a1288e42f3a398015135831e15c61559b} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!srcdir@{srcdir}}
+\index{srcdir@{srcdir}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{srcdir}{srcdir}}
+{\footnotesize\ttfamily sphinx.\+builders.\+Builder.\+srcdir = \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPathProperty}{\+\_\+\+Str\+Path\+Property}}()\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a8d9b921970150735605c38850d6eb642}\label{classsphinx_1_1builders_1_1Builder_a8d9b921970150735605c38850d6eb642} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!supported\_data\_uri\_images@{supported\_data\_uri\_images}}
+\index{supported\_data\_uri\_images@{supported\_data\_uri\_images}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{supported\_data\_uri\_images}{supported\_data\_uri\_images}}
+{\footnotesize\ttfamily bool sphinx.\+builders.\+Builder.\+supported\+\_\+data\+\_\+uri\+\_\+images = False\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a9db17eda9ad084c5855ae3a3211bc951}\label{classsphinx_1_1builders_1_1Builder_a9db17eda9ad084c5855ae3a3211bc951} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!supported\_image\_types@{supported\_image\_types}}
+\index{supported\_image\_types@{supported\_image\_types}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{supported\_image\_types}{supported\_image\_types}}
+{\footnotesize\ttfamily list sphinx.\+builders.\+Builder.\+supported\+\_\+image\+\_\+types = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_aab2fc2f59076ffa13fe679d49b6c0345}\label{classsphinx_1_1builders_1_1Builder_aab2fc2f59076ffa13fe679d49b6c0345} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!supported\_remote\_images@{supported\_remote\_images}}
+\index{supported\_remote\_images@{supported\_remote\_images}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{supported\_remote\_images}{supported\_remote\_images}}
+{\footnotesize\ttfamily bool sphinx.\+builders.\+Builder.\+supported\+\_\+remote\+\_\+images = False\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a8381b53716b81005e6a2bf7f4ab912d9}\label{classsphinx_1_1builders_1_1Builder_a8381b53716b81005e6a2bf7f4ab912d9} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!templates@{templates}}
+\index{templates@{templates}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{templates}{templates}}
+{\footnotesize\ttfamily sphinx.\+builders.\+Builder.\+templates}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a9cd2950f229062ea02fec2a6dabd7434}\label{classsphinx_1_1builders_1_1Builder_a9cd2950f229062ea02fec2a6dabd7434} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!use\_message\_catalog@{use\_message\_catalog}}
+\index{use\_message\_catalog@{use\_message\_catalog}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{use\_message\_catalog}{use\_message\_catalog}}
+{\footnotesize\ttfamily bool sphinx.\+builders.\+Builder.\+use\+\_\+message\+\_\+catalog = True\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a2e195ab431f3dfd93bb8eda8753653ec}\label{classsphinx_1_1builders_1_1Builder_a2e195ab431f3dfd93bb8eda8753653ec} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!versioning\_compare@{versioning\_compare}}
+\index{versioning\_compare@{versioning\_compare}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{versioning\_compare}{versioning\_compare}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool sphinx.\+builders.\+Builder.\+versioning\+\_\+compare = False\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_afb35ae513b53b3a371f9b139fe0145ee}\label{classsphinx_1_1builders_1_1Builder_afb35ae513b53b3a371f9b139fe0145ee} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!versioning\_compare@{versioning\_compare}}
+\index{versioning\_compare@{versioning\_compare}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{versioning\_compare}{versioning\_compare}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sphinx.\+builders.\+Builder.\+versioning\+\_\+compare}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_ad74eacab6d72f30958d9983d394aa0ef}\label{classsphinx_1_1builders_1_1Builder_ad74eacab6d72f30958d9983d394aa0ef} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!versioning\_method@{versioning\_method}}
+\index{versioning\_method@{versioning\_method}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{versioning\_method}{versioning\_method}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily str sphinx.\+builders.\+Builder.\+versioning\+\_\+method = \textquotesingle{}none\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1builders_1_1Builder_a7e77488b9dfa17b5fb4b0989ad626bda}\label{classsphinx_1_1builders_1_1Builder_a7e77488b9dfa17b5fb4b0989ad626bda} 
+\index{sphinx.builders.Builder@{sphinx.builders.Builder}!versioning\_method@{versioning\_method}}
+\index{versioning\_method@{versioning\_method}!sphinx.builders.Builder@{sphinx.builders.Builder}}
+\doxysubsubsection{\texorpdfstring{versioning\_method}{versioning\_method}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sphinx.\+builders.\+Builder.\+versioning\+\_\+method}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/sphinx/builders/\mbox{\hyperlink{sphinx_2builders_2____init_____8py}{\+\_\+\+\_\+init\+\_\+\+\_\+.\+py}}\end{DoxyCompactItemize}

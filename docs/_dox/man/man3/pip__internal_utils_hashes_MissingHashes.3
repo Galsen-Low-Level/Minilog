@@ -1,0 +1,101 @@
+.TH "pip._internal.utils.hashes.MissingHashes" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.utils.hashes.MissingHashes
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._internal\&.utils\&.hashes\&.Hashes\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._internal\&.utils\&.hashes\&.Hashes\fP
+.in +1c
+.ti -1c
+.RI "'Hashes' \fB__and__\fP (self, 'Hashes' other)"
+.br
+.ti -1c
+.RI "int \fBdigest_count\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBis_hash_allowed\fP (self, str hash_name, str hex_digest)"
+.br
+.ti -1c
+.RI "None \fBcheck_against_chunks\fP (self, Iterable[bytes] chunks)"
+.br
+.ti -1c
+.RI "None \fBcheck_against_file\fP (self, BinaryIO file)"
+.br
+.ti -1c
+.RI "None \fBcheck_against_path\fP (self, str path)"
+.br
+.ti -1c
+.RI "bool \fBhas_one_of\fP (self, Dict[str, str] hashes)"
+.br
+.ti -1c
+.RI "bool \fB__bool__\fP (self)"
+.br
+.ti -1c
+.RI "bool \fB__eq__\fP (self, object other)"
+.br
+.ti -1c
+.RI "int \fB__hash__\fP (self)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "'NoReturn' \fB_raise\fP (self, Dict[str, '_Hash'] gots)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Attributes inherited from \fBpip\&._internal\&.utils\&.hashes\&.Hashes\fP
+.in +1c
+.ti -1c
+.RI "\fB_allowed\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A workalike for Hashes used when we're missing a hash for a requirement
+
+It computes the actual hash of the requirement and raises a HashMissing
+exception showing it to the user\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._internal\&.utils\&.hashes\&.MissingHashes\&.__init__ ( self)"
+
+.PP
+.nf
+Don't offer the ``hashes`` kwarg\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.utils\&.hashes\&.Hashes\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " 'NoReturn' pip\&._internal\&.utils\&.hashes\&.MissingHashes\&._raise ( self, Dict[str, '_Hash'] gots)\fC [protected]\fP"
+
+.PP
+Reimplemented from \fBpip\&._internal\&.utils\&.hashes\&.Hashes\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

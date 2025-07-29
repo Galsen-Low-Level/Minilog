@@ -1,0 +1,123 @@
+.TH "waitress.adjustments" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+waitress.adjustments
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_int_marker\fP"
+.br
+.ti -1c
+.RI "class \fB_str_marker\fP"
+.br
+.ti -1c
+.RI "class \fBAdjustments\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBasbool\fP (s)"
+.br
+.ti -1c
+.RI "\fBasoctal\fP (s)"
+.br
+.ti -1c
+.RI "\fBaslist_cronly\fP (value)"
+.br
+.ti -1c
+.RI "\fBaslist\fP (value)"
+.br
+.ti -1c
+.RI "\fBasset\fP (value)"
+.br
+.ti -1c
+.RI "\fBslash_fixed_str\fP (s)"
+.br
+.ti -1c
+.RI "\fBstr_iftruthy\fP (s)"
+.br
+.ti -1c
+.RI "\fBas_socket_list\fP (sockets)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBtruthy\fP = frozenset(('t', 'true', 'y', 'yes', 'on', '1'))"
+.br
+.ti -1c
+.RI "\fBKNOWN_PROXY_HEADERS\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "waitress\&.adjustments\&.as_socket_list ( sockets)"
+
+.PP
+.nf
+Checks if the elements in the list are of type socket and
+removes them if not\&.
+.fi
+.PP
+ 
+.SS "waitress\&.adjustments\&.asbool ( s)"
+
+.PP
+.nf
+Return the boolean value ``True`` if the case-lowered value of string
+input ``s`` is any of ``t``, ``true``, ``y``, ``on``, or ``1``, otherwise
+return the boolean value ``False``\&.  If ``s`` is the value ``None``,
+return ``False``\&.  If ``s`` is already one of the boolean values ``True``
+or ``False``, return it\&.
+.fi
+.PP
+ 
+.SS "waitress\&.adjustments\&.aslist ( value)"
+
+.PP
+.nf
+Return a list of strings, separating the input based on newlines
+and, if flatten=True (the default), also split on spaces within
+each line\&.
+.fi
+.PP
+ 
+.SS "waitress\&.adjustments\&.aslist_cronly ( value)"
+
+.SS "waitress\&.adjustments\&.asoctal ( s)"
+
+.PP
+.nf
+Convert the given octal string to an actual number\&.
+.fi
+.PP
+ 
+.SS "waitress\&.adjustments\&.asset ( value)"
+
+.SS "waitress\&.adjustments\&.slash_fixed_str ( s)"
+
+.SS "waitress\&.adjustments\&.str_iftruthy ( s)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "waitress\&.adjustments\&.KNOWN_PROXY_HEADERS"
+\fBInitial value:\fP.PP
+.nf
+1 =  frozenset(
+2     header\&.lower()\&.replace("_", "\-") for header in PROXY_HEADERS
+3 )
+.fi
+
+.SS "waitress\&.adjustments\&.truthy = frozenset(('t', 'true', 'y', 'yes', 'on', '1'))"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

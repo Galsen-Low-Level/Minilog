@@ -1,0 +1,58 @@
+.TH "sphinx.writers.manpage.NestedInlineTransform" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.writers.manpage.NestedInlineTransform
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, nodes\&.document \fBdocument\fP)"
+.br
+.ti -1c
+.RI "None \fBapply\fP (self, **Any kwargs)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Flatten nested inline nodes:
+
+Before:
+    <strong>foo=<emphasis>1</emphasis>
+    &bar=<emphasis>2</emphasis></strong>
+After:
+    <strong>foo=</strong><emphasis>var</emphasis>
+    <strong>&bar=</strong><emphasis>2</emphasis>
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.writers\&.manpage\&.NestedInlineTransform\&.__init__ ( self, nodes\&.document document)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " None sphinx\&.writers\&.manpage\&.NestedInlineTransform\&.apply ( self, **Any kwargs)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.writers\&.manpage\&.NestedInlineTransform\&.document"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

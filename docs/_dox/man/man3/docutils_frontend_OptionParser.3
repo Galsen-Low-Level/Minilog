@@ -1,0 +1,293 @@
+.TH "docutils.frontend.OptionParser" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.frontend.OptionParser
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits optparse\&.OptionParser, and \fBdocutils\&.SettingsSpec\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBcomponents\fP=(), defaults=None, read_config_files=False, *args, **kwargs)"
+.br
+.ti -1c
+.RI "\fBpopulate_from_components\fP (self, \fBcomponents\fP)"
+.br
+.ti -1c
+.RI "\fBget_standard_config_files\fP (cls)"
+.br
+.ti -1c
+.RI "\fBget_standard_config_settings\fP (self)"
+.br
+.ti -1c
+.RI "\fBget_config_file_settings\fP (self, config_file)"
+.br
+.ti -1c
+.RI "\fBcheck_values\fP (self, values, args)"
+.br
+.ti -1c
+.RI "\fBcheck_args\fP (self, args)"
+.br
+.ti -1c
+.RI "\fBset_defaults_from_dict\fP (self, defaults)"
+.br
+.ti -1c
+.RI "\fBget_default_values\fP (self)"
+.br
+.ti -1c
+.RI "\fBget_option_by_dest\fP (self, dest)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBlists\fP"
+.br
+.ti -1c
+.RI "\fBconfig_files\fP"
+.br
+.ti -1c
+.RI "\fBrelative_path_settings\fP"
+.br
+.ti -1c
+.RI "\fBversion\fP"
+.br
+.ti -1c
+.RI "\fBcomponents\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "list \fBstandard_config_files\fP"
+.br
+.ti -1c
+.RI "str \fBthreshold_choices\fP = 'info 1 warning 2 error 3 severe 4 none 5'\&.split()"
+.br
+.ti -1c
+.RI "dict \fBthresholds\fP = {'info': 1, 'warning': 2, 'error': 3, 'severe': 4, 'none': 5}"
+.br
+.ti -1c
+.RI "dict \fBbooleans\fP"
+.br
+.ti -1c
+.RI "tuple \fBdefault_error_encoding\fP"
+.br
+.ti -1c
+.RI "str \fBdefault_error_encoding_error_handler\fP = 'backslashreplace'"
+.br
+.ti -1c
+.RI "tuple \fBsettings_spec\fP"
+.br
+.ti -1c
+.RI "dict \fBsettings_defaults\fP"
+.br
+.ti -1c
+.RI "str \fBconfig_section\fP = 'general'"
+.br
+.ti -1c
+.RI "tuple \fBversion_template\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.SettingsSpec\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBsettings_spec\fP = ()"
+.br
+.ti -1c
+.RI "\fBsettings_defaults\fP = None"
+.br
+.ti -1c
+.RI "\fBsettings_default_overrides\fP = None"
+.br
+.ti -1c
+.RI "tuple \fBrelative_path_settings\fP = ()"
+.br
+.ti -1c
+.RI "\fBconfig_section\fP = None"
+.br
+.ti -1c
+.RI "\fBconfig_section_dependencies\fP = None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Settings parser for command-line and library use\&.
+
+The `settings_spec` specification here and in other Docutils components
+are merged to build the set of command-line options and runtime settings
+for this process\&.
+
+Common settings (defined below) and component-specific settings must not
+conflict\&.  Short options are reserved for common settings, and components
+are restricted to using long options\&.
+
+Deprecated\&.
+Will be replaced by a subclass of `argparse\&.ArgumentParser`\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.frontend\&.OptionParser\&.__init__ ( self,  components = \fC()\fP,  defaults = \fCNone\fP,  read_config_files = \fCFalse\fP, * args, ** kwargs)"
+
+.PP
+.nf
+Set up OptionParser instance\&.
+
+`components` is a list of Docutils components each containing a
+``\&.settings_spec`` attribute\&.
+`defaults` is a mapping of setting default overrides\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.frontend\&.OptionParser\&.check_args ( self,  args)"
+
+.SS "docutils\&.frontend\&.OptionParser\&.check_values ( self,  values,  args)"
+
+.PP
+.nf
+Store positional arguments as runtime settings\&.
+.fi
+.PP
+ 
+.SS "docutils\&.frontend\&.OptionParser\&.get_config_file_settings ( self,  config_file)"
+
+.PP
+.nf
+Returns a dictionary containing appropriate config file settings\&.
+.fi
+.PP
+ 
+.SS "docutils\&.frontend\&.OptionParser\&.get_default_values ( self)"
+
+.PP
+.nf
+Needed to get custom `Values` instances\&.
+.fi
+.PP
+ 
+.SS "docutils\&.frontend\&.OptionParser\&.get_option_by_dest ( self,  dest)"
+
+.PP
+.nf
+Get an option by its dest\&.
+
+If you're supplying a dest which is shared by several options,
+it is undefined which option of those is returned\&.
+
+A KeyError is raised if there is no option with the supplied
+dest\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.frontend\&.OptionParser\&.get_standard_config_files ( cls)"
+
+.PP
+.nf
+Return list of config files, from environment or standard\&.
+.fi
+.PP
+ 
+.SS "docutils\&.frontend\&.OptionParser\&.get_standard_config_settings ( self)"
+
+.SS "docutils\&.frontend\&.OptionParser\&.populate_from_components ( self,  components)"
+
+.PP
+.nf
+Collect settings specification from components\&.
+
+For each component, populate from the `SettingsSpec\&.settings_spec`
+structure, then from the `SettingsSpec\&.settings_defaults` dictionary\&.
+After all components have been processed, check for and populate from
+each component's `SettingsSpec\&.settings_default_overrides` dictionary\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.frontend\&.OptionParser\&.set_defaults_from_dict ( self,  defaults)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "dict docutils\&.frontend\&.OptionParser\&.booleans\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {'1': True, 'on': True, 'yes': True, 'true': True, '0': False,
+                'off': False, 'no': False, 'false': False, '': False}
+.fi
+
+.SS "docutils\&.frontend\&.OptionParser\&.components"
+
+.SS "docutils\&.frontend\&.OptionParser\&.config_files"
+
+.SS "str docutils\&.frontend\&.OptionParser\&.config_section = 'general'\fC [static]\fP"
+
+.SS "tuple docutils\&.frontend\&.OptionParser\&.default_error_encoding\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  (getattr(sys\&.stderr, 'encoding', None)
+                              or io\&._locale_encoding  # noqa
+                              or 'ascii')
+.fi
+
+.SS "str docutils\&.frontend\&.OptionParser\&.default_error_encoding_error_handler = 'backslashreplace'\fC [static]\fP"
+
+.SS "docutils\&.frontend\&.OptionParser\&.lists"
+
+.SS "docutils\&.frontend\&.OptionParser\&.relative_path_settings"
+
+.SS "dict docutils\&.frontend\&.OptionParser\&.settings_defaults\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {'_disable_config': None,
+                         '_source': None,
+                         '_destination': None,
+                         '_config_files': None}
+.fi
+
+.SS "tuple docutils\&.frontend\&.OptionParser\&.settings_spec\fC [static]\fP"
+
+.SS "list docutils\&.frontend\&.OptionParser\&.standard_config_files\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        '/etc/docutils\&.conf',           # system\-wide
+        '\&./docutils\&.conf',              # project\-specific
+        '~/\&.docutils']
+.fi
+
+.SS "str docutils\&.frontend\&.OptionParser\&.threshold_choices = 'info 1 warning 2 error 3 severe 4 none 5'\&.split()\fC [static]\fP"
+
+.SS "dict docutils\&.frontend\&.OptionParser\&.thresholds = {'info': 1, 'warning': 2, 'error': 3, 'severe': 4, 'none': 5}\fC [static]\fP"
+
+.SS "docutils\&.frontend\&.OptionParser\&.version"
+
+.SS "tuple docutils\&.frontend\&.OptionParser\&.version_template\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  ('%%prog (Docutils %s%s, Python %s, on %s)'
+                        % (docutils\&.__version__,
+                           docutils\&.__version_details__
+                           and ' [%s]'%docutils\&.__version_details__ or '',
+                           sys\&.version\&.split()[0], sys\&.platform))
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

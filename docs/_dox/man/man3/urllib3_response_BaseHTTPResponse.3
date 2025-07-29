@@ -1,0 +1,335 @@
+.TH "urllib3.response.BaseHTTPResponse" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+urllib3.response.BaseHTTPResponse
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits io\&.IOBase\&.
+.PP
+Inherited by \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP, \fBurllib3\&.http2\&.connection\&.HTTP2Response\fP, and \fBurllib3\&.response\&.HTTPResponse\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, *typing\&.Mapping[str, str]|typing\&.Mapping[bytes, bytes]|None \fBheaders\fP=None, int \fBstatus\fP, int \fBversion\fP, str \fBversion_string\fP, str|None \fBreason\fP, bool \fBdecode_content\fP, str|None request_url, \fBRetry\fP|None \fBretries\fP=None)"
+.br
+.ti -1c
+.RI "str|None|typing\&.Literal[False] \fBget_redirect_location\fP (self)"
+.br
+.ti -1c
+.RI "bytes \fBdata\fP (self)"
+.br
+.ti -1c
+.RI "typing\&.Any \fBjson\fP (self)"
+.br
+.ti -1c
+.RI "str|None \fBurl\fP (self)"
+.br
+.ti -1c
+.RI "None \fBurl\fP (self, str|None url)"
+.br
+.ti -1c
+.RI "\fBBaseHTTPConnection\fP|None \fBconnection\fP (self)"
+.br
+.ti -1c
+.RI "\fBRetry\fP|None \fBretries\fP (self)"
+.br
+.ti -1c
+.RI "None \fBretries\fP (self, \fBRetry\fP|None retries)"
+.br
+.ti -1c
+.RI "typing\&.Iterator[bytes] \fBstream\fP (self, int|None amt=2 **16, bool|None \fBdecode_content\fP=None)"
+.br
+.ti -1c
+.RI "bytes \fBread\fP (self, int|None amt=None, bool|None \fBdecode_content\fP=None, bool cache_content=False)"
+.br
+.ti -1c
+.RI "bytes \fBread1\fP (self, int|None amt=None, bool|None \fBdecode_content\fP=None)"
+.br
+.ti -1c
+.RI "typing\&.Iterator[bytes] \fBread_chunked\fP (self, int|None amt=None, bool|None \fBdecode_content\fP=None)"
+.br
+.ti -1c
+.RI "None \fBrelease_conn\fP (self)"
+.br
+.ti -1c
+.RI "None \fBdrain_conn\fP (self)"
+.br
+.ti -1c
+.RI "None \fBshutdown\fP (self)"
+.br
+.ti -1c
+.RI "None \fBclose\fP (self)"
+.br
+.ti -1c
+.RI "int \fBreadinto\fP (self, bytearray b)"
+.br
+.ti -1c
+.RI "\fBHTTPHeaderDict\fP \fBgetheaders\fP (self)"
+.br
+.ti -1c
+.RI "str|None \fBgetheader\fP (self, str name, str|None default=None)"
+.br
+.ti -1c
+.RI "\fBHTTPHeaderDict\fP \fBinfo\fP (self)"
+.br
+.ti -1c
+.RI "str|None \fBgeturl\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBheaders\fP"
+.br
+.ti -1c
+.RI "\fBstatus\fP"
+.br
+.ti -1c
+.RI "\fBversion\fP"
+.br
+.ti -1c
+.RI "\fBversion_string\fP"
+.br
+.ti -1c
+.RI "\fBreason\fP"
+.br
+.ti -1c
+.RI "\fBdecode_content\fP"
+.br
+.ti -1c
+.RI "\fBretries\fP"
+.br
+.ti -1c
+.RI "\fBchunked\fP"
+.br
+.ti -1c
+.RI "\fBurl\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "list \fBCONTENT_DECODERS\fP = ['gzip', 'x\-gzip', 'deflate']"
+.br
+.ti -1c
+.RI "list \fBREDIRECT_STATUSES\fP = [301, 302, 303, 307, 308]"
+.br
+.ti -1c
+.RI "tuple \fBDECODER_ERROR_CLASSES\fP = (IOError, zlib\&.error)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB_init_decoder\fP (self)"
+.br
+.ti -1c
+.RI "bytes \fB_decode\fP (self, bytes \fBdata\fP, bool|None \fBdecode_content\fP, bool flush_decoder)"
+.br
+.ti -1c
+.RI "bytes \fB_flush_decoder\fP (self)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_has_decoded_content\fP"
+.br
+.ti -1c
+.RI "\fB_retries\fP"
+.br
+.ti -1c
+.RI "\fB_decoder\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None urllib3\&.response\&.BaseHTTPResponse\&.__init__ ( self, *typing\&.Mapping[str, str] | typing\&.Mapping[bytes, bytes] | None  headers = \fCNone\fP, int status, int version, str version_string, str | None reason, bool decode_content, str | None request_url, \fBRetry\fP | None  retries = \fCNone\fP)"
+
+.PP
+Reimplemented in \fBurllib3\&.response\&.HTTPResponse\fP, \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP, and \fBurllib3\&.http2\&.connection\&.HTTP2Response\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " bytes urllib3\&.response\&.BaseHTTPResponse\&._decode ( self, bytes data, bool | None decode_content, bool
+     flush_decoder)\fC [protected]\fP"
+
+.PP
+.nf
+Decode the data passed in and potentially flush the decoder\&.
+
+.fi
+.PP
+ 
+.SS " bytes urllib3\&.response\&.BaseHTTPResponse\&._flush_decoder ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Flushes the decoder\&. Should only be called if the decoder is actually
+being used\&.
+
+.fi
+.PP
+ 
+.SS " None urllib3\&.response\&.BaseHTTPResponse\&._init_decoder ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Set-up the _decoder attribute if necessary\&.
+
+.fi
+.PP
+ 
+.SS " None urllib3\&.response\&.BaseHTTPResponse\&.close ( self)"
+
+.PP
+Reimplemented in \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP, \fBurllib3\&.http2\&.connection\&.HTTP2Response\fP, and \fBurllib3\&.response\&.HTTPResponse\fP\&.
+.SS " \fBBaseHTTPConnection\fP | None urllib3\&.response\&.BaseHTTPResponse\&.connection ( self)"
+
+.PP
+Reimplemented in \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP, and \fBurllib3\&.response\&.HTTPResponse\fP\&.
+.SS " bytes urllib3\&.response\&.BaseHTTPResponse\&.data ( self)"
+
+.PP
+Reimplemented in \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP, \fBurllib3\&.http2\&.connection\&.HTTP2Response\fP, and \fBurllib3\&.response\&.HTTPResponse\fP\&.
+.SS " None urllib3\&.response\&.BaseHTTPResponse\&.drain_conn ( self)"
+
+.PP
+Reimplemented in \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP, and \fBurllib3\&.response\&.HTTPResponse\fP\&.
+.SS " str | None | typing\&.Literal[False] urllib3\&.response\&.BaseHTTPResponse\&.get_redirect_location ( self)"
+
+.PP
+.nf
+Should we redirect and where to?
+
+:returns: Truthy redirect location string if we got a redirect status
+    code and valid location\&. ``None`` if redirect status and no
+    location\&. ``False`` if not a redirect status code\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBurllib3\&.http2\&.connection\&.HTTP2Response\fP\&.
+.SS " str | None urllib3\&.response\&.BaseHTTPResponse\&.getheader ( self, str name, str | None  default = \fCNone\fP)"
+
+.SS " \fBHTTPHeaderDict\fP urllib3\&.response\&.BaseHTTPResponse\&.getheaders ( self)"
+
+.SS " str | None urllib3\&.response\&.BaseHTTPResponse\&.geturl ( self)"
+
+.SS " \fBHTTPHeaderDict\fP urllib3\&.response\&.BaseHTTPResponse\&.info ( self)"
+
+.SS " typing\&.Any urllib3\&.response\&.BaseHTTPResponse\&.json ( self)"
+
+.PP
+.nf
+Deserializes the body of the HTTP response as a Python object\&.
+
+The body of the HTTP response must be encoded using UTF-8, as per
+`RFC 8529 Section 8\&.1 <https://www\&.rfc-editor\&.org/rfc/rfc8259#section-8\&.1>`_\&.
+
+To use a custom JSON decoder pass the result of :attr:`HTTPResponse\&.data` to
+your custom decoder instead\&.
+
+If the body of the HTTP response is not decodable to UTF-8, a
+`UnicodeDecodeError` will be raised\&. If the body of the HTTP response is not a
+valid JSON document, a `json\&.JSONDecodeError` will be raised\&.
+
+Read more :ref:`here <json_content>`\&.
+
+:returns: The body of the HTTP response as a Python object\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP\&.
+.SS " bytes urllib3\&.response\&.BaseHTTPResponse\&.read ( self, int | None  amt = \fCNone\fP, bool | None  decode_content = \fCNone\fP, bool  cache_content = \fCFalse\fP)"
+
+.PP
+Reimplemented in \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP, and \fBurllib3\&.response\&.HTTPResponse\fP\&.
+.SS " bytes urllib3\&.response\&.BaseHTTPResponse\&.read1 ( self, int | None  amt = \fCNone\fP, bool | None  decode_content = \fCNone\fP)"
+
+.PP
+Reimplemented in \fBurllib3\&.response\&.HTTPResponse\fP\&.
+.SS " typing\&.Iterator[bytes] urllib3\&.response\&.BaseHTTPResponse\&.read_chunked ( self, int | None  amt = \fCNone\fP, bool | None  decode_content = \fCNone\fP)"
+
+.PP
+Reimplemented in \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP, and \fBurllib3\&.response\&.HTTPResponse\fP\&.
+.SS " int urllib3\&.response\&.BaseHTTPResponse\&.readinto ( self, bytearray b)"
+
+.SS " None urllib3\&.response\&.BaseHTTPResponse\&.release_conn ( self)"
+
+.PP
+Reimplemented in \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP, and \fBurllib3\&.response\&.HTTPResponse\fP\&.
+.SS " \fBRetry\fP | None urllib3\&.response\&.BaseHTTPResponse\&.retries ( self)"
+
+.PP
+Reimplemented in \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP, and \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP\&.
+.SS " None urllib3\&.response\&.BaseHTTPResponse\&.retries ( self, \fBRetry\fP | None retries)"
+
+.PP
+Reimplemented in \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP, and \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP\&.
+.SS " None urllib3\&.response\&.BaseHTTPResponse\&.shutdown ( self)"
+
+.PP
+Reimplemented in \fBurllib3\&.response\&.HTTPResponse\fP\&.
+.SS " typing\&.Iterator[bytes] urllib3\&.response\&.BaseHTTPResponse\&.stream ( self, int | None  amt = \fC2**16\fP, bool | None  decode_content = \fCNone\fP)"
+
+.PP
+Reimplemented in \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP, and \fBurllib3\&.response\&.HTTPResponse\fP\&.
+.SS " str | None urllib3\&.response\&.BaseHTTPResponse\&.url ( self)"
+
+.PP
+Reimplemented in \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP, \fBurllib3\&.response\&.HTTPResponse\fP, \fBurllib3\&.response\&.HTTPResponse\fP, and \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP\&.
+.SS " None urllib3\&.response\&.BaseHTTPResponse\&.url ( self, str | None url)"
+
+.PP
+Reimplemented in \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP, \fBurllib3\&.response\&.HTTPResponse\fP, \fBurllib3\&.response\&.HTTPResponse\fP, and \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "urllib3\&.response\&.BaseHTTPResponse\&._decoder\fC [protected]\fP"
+
+.SS "urllib3\&.response\&.BaseHTTPResponse\&._has_decoded_content\fC [protected]\fP"
+
+.SS "urllib3\&.response\&.BaseHTTPResponse\&._retries\fC [protected]\fP"
+
+.SS "urllib3\&.response\&.BaseHTTPResponse\&.chunked"
+
+.SS "list urllib3\&.response\&.BaseHTTPResponse\&.CONTENT_DECODERS = ['gzip', 'x\-gzip', 'deflate']\fC [static]\fP"
+
+.SS "urllib3\&.response\&.BaseHTTPResponse\&.decode_content"
+
+.SS "tuple urllib3\&.response\&.BaseHTTPResponse\&.DECODER_ERROR_CLASSES = (IOError, zlib\&.error)\fC [static]\fP"
+
+.SS "urllib3\&.response\&.BaseHTTPResponse\&.headers"
+
+.SS "urllib3\&.response\&.BaseHTTPResponse\&.reason"
+
+.SS "list urllib3\&.response\&.BaseHTTPResponse\&.REDIRECT_STATUSES = [301, 302, 303, 307, 308]\fC [static]\fP"
+
+.SS "urllib3\&.response\&.BaseHTTPResponse\&.retries"
+
+.PP
+Reimplemented in \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP, and \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP\&.
+.SS "urllib3\&.response\&.BaseHTTPResponse\&.status"
+
+.SS "urllib3\&.response\&.BaseHTTPResponse\&.url"
+
+.PP
+Reimplemented in \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP, \fBurllib3\&.response\&.HTTPResponse\fP, \fBurllib3\&.response\&.HTTPResponse\fP, and \fBurllib3\&.contrib\&.emscripten\&.response\&.EmscriptenHttpResponseWrapper\fP\&.
+.SS "urllib3\&.response\&.BaseHTTPResponse\&.version"
+
+.SS "urllib3\&.response\&.BaseHTTPResponse\&.version_string"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

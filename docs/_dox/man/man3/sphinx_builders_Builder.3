@@ -1,0 +1,589 @@
+.TH "sphinx.builders.Builder" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.builders.Builder
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBsphinx\&.builders\&.changes\&.ChangesBuilder\fP, \fBsphinx\&.builders\&.dummy\&.DummyBuilder\fP, \fBsphinx\&.builders\&.gettext\&.I18nBuilder\fP, \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP, \fBsphinx\&.builders\&.latex\&.LaTeXBuilder\fP, \fBsphinx\&.builders\&.manpage\&.ManualPageBuilder\fP, \fBsphinx\&.builders\&.texinfo\&.TexinfoBuilder\fP, \fBsphinx\&.builders\&.text\&.TextBuilder\fP, \fBsphinx\&.builders\&.xml\&.XMLBuilder\fP, \fBsphinx\&.ext\&.coverage\&.CoverageBuilder\fP, and \fBsphinx\&.ext\&.doctest\&.DocTestBuilder\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, \fBSphinx\fP \fBapp\fP, \fBBuildEnvironment\fP \fBenv\fP)"
+.br
+.ti -1c
+.RI "type[nodes\&.NodeVisitor] \fBget_translator_class\fP (self, *Any args)"
+.br
+.ti -1c
+.RI "nodes\&.NodeVisitor \fBcreate_translator\fP (self, *Any args)"
+.br
+.ti -1c
+.RI "None \fBinit\fP (self)"
+.br
+.ti -1c
+.RI "None \fBcreate_template_bridge\fP (self)"
+.br
+.ti -1c
+.RI "str \fBget_target_uri\fP (self, str docname, str|None typ=None)"
+.br
+.ti -1c
+.RI "str \fBget_relative_uri\fP (self, str from_, str to, str|None typ=None)"
+.br
+.ti -1c
+.RI "str|Iterable[str] \fBget_outdated_docs\fP (self)"
+.br
+.ti -1c
+.RI "list[str] \fBget_asset_paths\fP (self)"
+.br
+.ti -1c
+.RI "None \fBpost_process_images\fP (self, \fBNode\fP doctree)"
+.br
+.ti -1c
+.RI "None \fBcompile_catalogs\fP (self, set[\fBCatalogInfo\fP] catalogs, str message)"
+.br
+.ti -1c
+.RI "None \fBcompile_all_catalogs\fP (self)"
+.br
+.ti -1c
+.RI "None \fBcompile_specific_catalogs\fP (self, Iterable[Path] specified_files)"
+.br
+.ti -1c
+.RI "None \fBcompile_update_catalogs\fP (self)"
+.br
+.ti -1c
+.RI "None \fBbuild_all\fP (self)"
+.br
+.ti -1c
+.RI "None \fBbuild_specific\fP (self, Sequence[Path] filenames)"
+.br
+.ti -1c
+.RI "None \fBbuild_update\fP (self)"
+.br
+.ti -1c
+.RI "None \fBbuild\fP (self, Iterable[str]|None docnames, str|None summary=None, Literal['all', 'specific', 'update'] method='update')"
+.br
+.ti -1c
+.RI "list[str] \fBread\fP (self)"
+.br
+.ti -1c
+.RI "None \fBread_doc\fP (self, str docname, *bool _cache=True)"
+.br
+.ti -1c
+.RI "None \fBwrite_doctree\fP (self, str docname, nodes\&.document doctree, *bool _cache=True)"
+.br
+.ti -1c
+.RI "None \fBwrite\fP (self, Iterable[str]|None build_docnames, Iterable[str] updated_docnames, Literal['all', 'specific', 'update'] method='update')"
+.br
+.ti -1c
+.RI "None \fBwrite_documents\fP (self, Set[str] docnames)"
+.br
+.ti -1c
+.RI "None \fBprepare_writing\fP (self, Set[str] docnames)"
+.br
+.ti -1c
+.RI "None \fBcopy_assets\fP (self)"
+.br
+.ti -1c
+.RI "None \fBwrite_doc\fP (self, str docname, nodes\&.document doctree)"
+.br
+.ti -1c
+.RI "None \fBwrite_doc_serialized\fP (self, str docname, nodes\&.document doctree)"
+.br
+.ti -1c
+.RI "None \fBfinish\fP (self)"
+.br
+.ti -1c
+.RI "None \fBcleanup\fP (self)"
+.br
+.ti -1c
+.RI "Any \fBget_builder_config\fP (self, str option, str default)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBversioning_method\fP"
+.br
+.ti -1c
+.RI "\fBversioning_compare\fP"
+.br
+.ti -1c
+.RI "\fBformat\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBimagedir\fP"
+.br
+.ti -1c
+.RI "\fBimgpath\fP"
+.br
+.ti -1c
+.RI "\fBparallel_ok\fP"
+.br
+.ti -1c
+.RI "\fBtemplates\fP"
+.br
+.ti -1c
+.RI "\fBapp\fP"
+.br
+.ti -1c
+.RI "\fBenv\fP"
+.br
+.ti -1c
+.RI "\fBfinish_tasks\fP"
+.br
+.ti -1c
+.RI "\fBconfig\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = ''"
+.br
+.ti -1c
+.RI "str \fBformat\fP = ''"
+.br
+.ti -1c
+.RI "str \fBepilog\fP = ''"
+.br
+.ti -1c
+.RI "type \fBdefault_translator_class\fP [nodes\&.NodeVisitor]"
+.br
+.ti -1c
+.RI "str \fBversioning_method\fP = 'none'"
+.br
+.ti -1c
+.RI "bool \fBversioning_compare\fP = False"
+.br
+.ti -1c
+.RI "bool \fBallow_parallel\fP = False"
+.br
+.ti -1c
+.RI "bool \fBuse_message_catalog\fP = True"
+.br
+.ti -1c
+.RI "list \fBsupported_image_types\fP = []"
+.br
+.ti -1c
+.RI "bool \fBsupported_remote_images\fP = False"
+.br
+.ti -1c
+.RI "bool \fBsupported_data_uri_images\fP = False"
+.br
+.ti -1c
+.RI "\fBsrcdir\fP = \fB_StrPathProperty\fP()"
+.br
+.ti -1c
+.RI "\fBconfdir\fP = \fB_StrPathProperty\fP()"
+.br
+.ti -1c
+.RI "\fBoutdir\fP = \fB_StrPathProperty\fP()"
+.br
+.ti -1c
+.RI "\fBdoctreedir\fP = \fB_StrPathProperty\fP()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "NullTranslations|None \fB_translator\fP (self)"
+.br
+.ti -1c
+.RI "None \fB_read_serial\fP (self, list[str] docnames)"
+.br
+.ti -1c
+.RI "None \fB_read_parallel\fP (self, list[str] docnames, int nproc)"
+.br
+.ti -1c
+.RI "None \fB_write_serial\fP (self, Sequence[str] docnames)"
+.br
+.ti -1c
+.RI "None \fB_write_parallel\fP (self, Sequence[str] docnames, int nproc)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Builds target formats from the reST sources\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.builders\&.Builder\&.__init__ ( self, \fBSphinx\fP app, \fBBuildEnvironment\fP env)"
+
+.PP
+Reimplemented in \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " None sphinx\&.builders\&.Builder\&._read_parallel ( self, list[str] docnames, int nproc)\fC [protected]\fP"
+
+.SS " None sphinx\&.builders\&.Builder\&._read_serial ( self, list[str] docnames)\fC [protected]\fP"
+
+.SS " NullTranslations | None sphinx\&.builders\&.Builder\&._translator ( self)\fC [protected]\fP"
+
+.SS " None sphinx\&.builders\&.Builder\&._write_parallel ( self, Sequence[str] docnames, int nproc)\fC [protected]\fP"
+
+.SS " None sphinx\&.builders\&.Builder\&._write_serial ( self, Sequence[str] docnames)\fC [protected]\fP"
+
+.SS " None sphinx\&.builders\&.Builder\&.build ( self, Iterable[str] | None docnames, str | None  summary = \fCNone\fP, Literal['all', 'specific', 'update']  method = \fC'update'\fP)"
+
+.PP
+.nf
+Main build method, usually called by a specific ``build_*`` method\&.
+
+First updates the environment, and then calls
+:meth:`!write`\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.builders\&.gettext\&.MessageCatalogBuilder\fP\&.
+.SS " None sphinx\&.builders\&.Builder\&.build_all ( self)"
+
+.PP
+.nf
+Build all source files\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.builders\&.Builder\&.build_specific ( self, Sequence[Path] filenames)"
+
+.PP
+.nf
+Only rebuild as much as needed for changes in the *filenames*\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.builders\&.Builder\&.build_update ( self)"
+
+.PP
+.nf
+Only rebuild what was changed or added since last build\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.builders\&.Builder\&.cleanup ( self)"
+
+.PP
+.nf
+Cleanup any resources\&.
+
+The default implementation does nothing\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP\&.
+.SS " None sphinx\&.builders\&.Builder\&.compile_all_catalogs ( self)"
+
+.SS " None sphinx\&.builders\&.Builder\&.compile_catalogs ( self, set[\fBCatalogInfo\fP] catalogs, str message)"
+
+.PP
+Reimplemented in \fBsphinx\&.builders\&.gettext\&.I18nBuilder\fP\&.
+.SS " None sphinx\&.builders\&.Builder\&.compile_specific_catalogs ( self, Iterable[Path] specified_files)"
+
+.SS " None sphinx\&.builders\&.Builder\&.compile_update_catalogs ( self)"
+
+.SS " None sphinx\&.builders\&.Builder\&.copy_assets ( self)"
+
+.PP
+.nf
+Where assets (images, static files, etc) are copied before writing
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP, \fBsphinx\&.builders\&.latex\&.LaTeXBuilder\fP, and \fBsphinx\&.builders\&.texinfo\&.TexinfoBuilder\fP\&.
+.SS " None sphinx\&.builders\&.Builder\&.create_template_bridge ( self)"
+
+.PP
+.nf
+Return the template bridge configured\&.
+.fi
+.PP
+ 
+.SS " nodes\&.NodeVisitor sphinx\&.builders\&.Builder\&.create_translator ( self, *Any args)"
+
+.PP
+.nf
+Return an instance of translator\&.
+
+This method returns an instance of ``default_translator_class`` by default\&.
+Users can replace the translator class with ``app\&.set_translator()`` API\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.builders\&.Builder\&.finish ( self)"
+
+.PP
+.nf
+Finish the building process\&.
+
+The default implementation does nothing\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.builders\&.changes\&.ChangesBuilder\fP, \fBsphinx\&.builders\&.dummy\&.DummyBuilder\fP, \fBsphinx\&.builders\&.gettext\&.MessageCatalogBuilder\fP, \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP, \fBsphinx\&.builders\&.latex\&.LaTeXBuilder\fP, \fBsphinx\&.builders\&.linkcheck\&.CheckExternalLinksBuilder\fP, \fBsphinx\&.builders\&.manpage\&.ManualPageBuilder\fP, \fBsphinx\&.builders\&.singlehtml\&.SingleFileHTMLBuilder\fP, \fBsphinx\&.builders\&.text\&.TextBuilder\fP, \fBsphinx\&.builders\&.xml\&.XMLBuilder\fP, \fBsphinx\&.ext\&.coverage\&.CoverageBuilder\fP, and \fBsphinx\&.ext\&.doctest\&.DocTestBuilder\fP\&.
+.SS " list[str] sphinx\&.builders\&.Builder\&.get_asset_paths ( self)"
+
+.PP
+.nf
+Return list of paths for assets (ex\&. templates, CSS, etc\&.)\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP\&.
+.SS " Any sphinx\&.builders\&.Builder\&.get_builder_config ( self, str option, str default)"
+
+.PP
+.nf
+Return a builder specific option\&.
+
+This method allows customization of common builder settings by
+inserting the name of the current builder in the option key\&.
+If the key does not exist, use default as builder name\&.
+
+.fi
+.PP
+ 
+.SS " str | Iterable[str] sphinx\&.builders\&.Builder\&.get_outdated_docs ( self)"
+
+.PP
+.nf
+Return an iterable of output files that are outdated, or a string
+describing what an update build will build\&.
+
+If the builder does not output individual files corresponding to
+source files, return a string here\&.  If it does, return an iterable
+of those files that need to be written\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.builders\&.changes\&.ChangesBuilder\fP, \fBsphinx\&.builders\&.dummy\&.DummyBuilder\fP, \fBsphinx\&.builders\&.gettext\&.I18nBuilder\fP, \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP, \fBsphinx\&.builders\&.latex\&.LaTeXBuilder\fP, \fBsphinx\&.builders\&.manpage\&.ManualPageBuilder\fP, \fBsphinx\&.builders\&.singlehtml\&.SingleFileHTMLBuilder\fP, \fBsphinx\&.builders\&.texinfo\&.TexinfoBuilder\fP, \fBsphinx\&.builders\&.text\&.TextBuilder\fP, \fBsphinx\&.builders\&.xml\&.XMLBuilder\fP, \fBsphinx\&.ext\&.coverage\&.CoverageBuilder\fP, and \fBsphinx\&.ext\&.doctest\&.DocTestBuilder\fP\&.
+.SS " str sphinx\&.builders\&.Builder\&.get_relative_uri ( self, str from_, str to, str | None  typ = \fCNone\fP)"
+
+.PP
+.nf
+Return a relative URI between two source filenames\&.
+
+:raises: :exc:`!NoUri` if there's no way to return a sensible URI\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.builders\&.latex\&.LaTeXBuilder\fP, \fBsphinx\&.builders\&.singlehtml\&.SingleFileHTMLBuilder\fP, and \fBsphinx\&.builders\&.texinfo\&.TexinfoBuilder\fP\&.
+.SS " str sphinx\&.builders\&.Builder\&.get_target_uri ( self, str docname, str | None  typ = \fCNone\fP)"
+
+.PP
+.nf
+Return the target URI for a document name\&.
+
+*typ* can be used to qualify the link characteristic for individual
+builders\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.builders\&.dirhtml\&.DirectoryHTMLBuilder\fP, \fBsphinx\&.builders\&.dummy\&.DummyBuilder\fP, \fBsphinx\&.builders\&.gettext\&.I18nBuilder\fP, \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP, \fBsphinx\&.builders\&.latex\&.LaTeXBuilder\fP, \fBsphinx\&.builders\&.manpage\&.ManualPageBuilder\fP, \fBsphinx\&.builders\&.singlehtml\&.SingleFileHTMLBuilder\fP, \fBsphinx\&.builders\&.texinfo\&.TexinfoBuilder\fP, \fBsphinx\&.builders\&.text\&.TextBuilder\fP, \fBsphinx\&.builders\&.xml\&.XMLBuilder\fP, \fBsphinx\&.ext\&.doctest\&.DocTestBuilder\fP, and \fBserializinghtml\&.SerializingHTMLBuilder\fP\&.
+.SS " type[nodes\&.NodeVisitor] sphinx\&.builders\&.Builder\&.get_translator_class ( self, *Any args)"
+
+.PP
+.nf
+Return a class of translator\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.builders\&.Builder\&.init ( self)"
+
+.PP
+.nf
+Load necessary templates and perform initialization\&.  The default
+implementation does nothing\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.builders\&._epub_base\&.EpubBuilder\fP, \fBsphinx\&.builders\&.changes\&.ChangesBuilder\fP, \fBsphinx\&.builders\&.dummy\&.DummyBuilder\fP, \fBsphinx\&.builders\&.gettext\&.I18nBuilder\fP, \fBsphinx\&.builders\&.gettext\&.MessageCatalogBuilder\fP, \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP, \fBsphinx\&.builders\&.latex\&.LaTeXBuilder\fP, \fBsphinx\&.builders\&.linkcheck\&.CheckExternalLinksBuilder\fP, \fBsphinx\&.builders\&.manpage\&.ManualPageBuilder\fP, \fBsphinx\&.builders\&.texinfo\&.TexinfoBuilder\fP, \fBsphinx\&.builders\&.text\&.TextBuilder\fP, \fBsphinx\&.builders\&.xml\&.XMLBuilder\fP, \fBsphinx\&.ext\&.coverage\&.CoverageBuilder\fP, \fBsphinx\&.ext\&.doctest\&.DocTestBuilder\fP, \fBapplehelp\&.AppleHelpBuilder\fP, \fBdevhelp\&.DevhelpBuilder\fP, \fBhtmlhelp\&.HTMLHelpBuilder\fP, \fBqthelp\&.QtHelpBuilder\fP, and \fBserializinghtml\&.SerializingHTMLBuilder\fP\&.
+.SS " None sphinx\&.builders\&.Builder\&.post_process_images ( self, \fBNode\fP doctree)"
+
+.PP
+.nf
+Pick the best candidate for all image URIs\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP\&.
+.SS " None sphinx\&.builders\&.Builder\&.prepare_writing ( self, Set[str] docnames)"
+
+.PP
+.nf
+A place where you can add logic before :meth:`write_doc` is run
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.builders\&.texinfo\&.TexinfoBuilder\fP, \fBsphinx\&.builders\&.epub3\&.Epub3Builder\fP, \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP, \fBsphinx\&.builders\&.latex\&.LaTeXBuilder\fP, \fBsphinx\&.builders\&.text\&.TextBuilder\fP, \fBsphinx\&.builders\&.xml\&.XMLBuilder\fP, and \fBhtmlhelp\&.HTMLHelpBuilder\fP\&.
+.SS " list[str] sphinx\&.builders\&.Builder\&.read ( self)"
+
+.PP
+.nf
+(Re-)read all files new or changed since last update\&.
+
+Store all environment docnames in the canonical format (ie using SEP as
+a separator in place of os\&.path\&.sep)\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.builders\&.Builder\&.read_doc ( self, str docname, *bool  _cache = \fCTrue\fP)"
+
+.PP
+.nf
+Parse a file and add/update inventory entries for the doctree\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.builders\&.Builder\&.write ( self, Iterable[str] | None build_docnames, Iterable[str] updated_docnames, Literal['all', 'specific', 'update']  method = \fC'update'\fP)"
+
+.PP
+.nf
+Write builder specific output files\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.builders\&.Builder\&.write_doc ( self, str docname, nodes\&.document doctree)"
+
+.PP
+.nf
+Write the output file for the document
+
+:param docname: the :term:`docname <document name>`\&.
+:param doctree: defines the content to be written\&.
+
+The output filename must be determined within this method,
+typically by calling :meth:`~\&.Builder\&.get_target_uri`
+or :meth:`~\&.Builder\&.get_relative_uri`\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.builders\&._epub_base\&.EpubBuilder\fP, \fBsphinx\&.builders\&.dummy\&.DummyBuilder\fP, \fBsphinx\&.builders\&.gettext\&.I18nBuilder\fP, \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP, \fBsphinx\&.builders\&.text\&.TextBuilder\fP, \fBsphinx\&.builders\&.xml\&.XMLBuilder\fP, and \fBhtmlhelp\&.HTMLHelpBuilder\fP\&.
+.SS " None sphinx\&.builders\&.Builder\&.write_doc_serialized ( self, str docname, nodes\&.document doctree)"
+
+.PP
+.nf
+Handle parts of write_doc that must be called in the main process
+if parallel build is active\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP\&.
+.SS " None sphinx\&.builders\&.Builder\&.write_doctree ( self, str docname, nodes\&.document doctree, *bool  _cache = \fCTrue\fP)"
+
+.PP
+.nf
+Write the doctree to a file, to be used as a cache by re-builds\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.builders\&.Builder\&.write_documents ( self, Set[str] docnames)"
+
+.PP
+.nf
+Write all documents in *docnames*\&.
+
+This method can be overridden if a builder does not create
+output files for each document\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.builders\&.changes\&.ChangesBuilder\fP, \fBsphinx\&.builders\&.latex\&.LaTeXBuilder\fP, \fBsphinx\&.builders\&.manpage\&.ManualPageBuilder\fP, \fBsphinx\&.builders\&.singlehtml\&.SingleFileHTMLBuilder\fP, \fBsphinx\&.builders\&.texinfo\&.TexinfoBuilder\fP, \fBsphinx\&.ext\&.coverage\&.CoverageBuilder\fP, and \fBsphinx\&.ext\&.doctest\&.DocTestBuilder\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool sphinx\&.builders\&.Builder\&.allow_parallel = False\fC [static]\fP"
+
+.SS "sphinx\&.builders\&.Builder\&.app"
+
+.SS "sphinx\&.builders\&.Builder\&.confdir = \fB_StrPathProperty\fP()\fC [static]\fP"
+
+.SS "sphinx\&.builders\&.Builder\&.config"
+
+.SS "type sphinx\&.builders\&.Builder\&.default_translator_class [nodes\&.NodeVisitor]\fC [static]\fP"
+
+.SS "sphinx\&.builders\&.Builder\&.doctreedir = \fB_StrPathProperty\fP()\fC [static]\fP"
+
+.SS "sphinx\&.builders\&.Builder\&.env"
+
+.SS "str sphinx\&.builders\&.Builder\&.epilog = ''\fC [static]\fP"
+
+.SS "sphinx\&.builders\&.Builder\&.finish_tasks"
+
+.SS "str sphinx\&.builders\&.Builder\&.format = ''\fC [static]\fP"
+
+.SS "sphinx\&.builders\&.Builder\&.format"
+
+.SS "sphinx\&.builders\&.Builder\&.imagedir"
+
+.SS "sphinx\&.builders\&.Builder\&.imgpath"
+
+.SS "str sphinx\&.builders\&.Builder\&.name = ''\fC [static]\fP"
+
+.SS "sphinx\&.builders\&.Builder\&.name"
+
+.SS "sphinx\&.builders\&.Builder\&.outdir = \fB_StrPathProperty\fP()\fC [static]\fP"
+
+.SS "sphinx\&.builders\&.Builder\&.parallel_ok"
+
+.SS "sphinx\&.builders\&.Builder\&.srcdir = \fB_StrPathProperty\fP()\fC [static]\fP"
+
+.SS "bool sphinx\&.builders\&.Builder\&.supported_data_uri_images = False\fC [static]\fP"
+
+.SS "list sphinx\&.builders\&.Builder\&.supported_image_types = []\fC [static]\fP"
+
+.SS "bool sphinx\&.builders\&.Builder\&.supported_remote_images = False\fC [static]\fP"
+
+.SS "sphinx\&.builders\&.Builder\&.templates"
+
+.SS "bool sphinx\&.builders\&.Builder\&.use_message_catalog = True\fC [static]\fP"
+
+.SS "bool sphinx\&.builders\&.Builder\&.versioning_compare = False\fC [static]\fP"
+
+.SS "sphinx\&.builders\&.Builder\&.versioning_compare"
+
+.SS "str sphinx\&.builders\&.Builder\&.versioning_method = 'none'\fC [static]\fP"
+
+.SS "sphinx\&.builders\&.Builder\&.versioning_method"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

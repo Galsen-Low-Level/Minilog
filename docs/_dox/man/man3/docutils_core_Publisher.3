@@ -1,0 +1,252 @@
+.TH "docutils.core.Publisher" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.core.Publisher
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBreader\fP=None, \fBparser\fP=None, \fBwriter\fP=None, \fBsource\fP=None, \fBsource_class\fP=\fBio\&.FileInput\fP, \fBdestination\fP=None, \fBdestination_class\fP=\fBio\&.FileOutput\fP, \fBsettings\fP=None)"
+.br
+.ti -1c
+.RI "\fBset_reader\fP (self, reader_name, \fBparser\fP, parser_name)"
+.br
+.ti -1c
+.RI "\fBset_writer\fP (self, writer_name)"
+.br
+.ti -1c
+.RI "\fBset_components\fP (self, reader_name, parser_name, writer_name)"
+.br
+.ti -1c
+.RI "\fBsetup_option_parser\fP (self, usage=None, description=None, settings_spec=None, config_section=None, **defaults)"
+.br
+.ti -1c
+.RI "\fBget_settings\fP (self, usage=None, description=None, settings_spec=None, config_section=None, **defaults)"
+.br
+.ti -1c
+.RI "\fBprocess_programmatic_settings\fP (self, settings_spec, settings_overrides, config_section)"
+.br
+.ti -1c
+.RI "\fBprocess_command_line\fP (self, argv=None, usage=None, description=None, settings_spec=None, config_section=None, **defaults)"
+.br
+.ti -1c
+.RI "\fBset_io\fP (self, source_path=None, destination_path=None)"
+.br
+.ti -1c
+.RI "\fBset_source\fP (self, \fBsource\fP=None, source_path=None)"
+.br
+.ti -1c
+.RI "\fBset_destination\fP (self, \fBdestination\fP=None, destination_path=None)"
+.br
+.ti -1c
+.RI "\fBapply_transforms\fP (self)"
+.br
+.ti -1c
+.RI "\fBpublish\fP (self, argv=None, usage=None, description=None, settings_spec=None, settings_overrides=None, config_section=None, enable_exit_status=False)"
+.br
+.ti -1c
+.RI "\fBdebugging_dumps\fP (self)"
+.br
+.ti -1c
+.RI "\fBprompt\fP (self)"
+.br
+.ti -1c
+.RI "\fBreport_Exception\fP (self, error)"
+.br
+.ti -1c
+.RI "\fBreport_SystemMessage\fP (self, error)"
+.br
+.ti -1c
+.RI "\fBreport_UnicodeError\fP (self, error)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBreader\fP"
+.br
+.ti -1c
+.RI "\fBparser\fP"
+.br
+.ti -1c
+.RI "\fBwriter\fP"
+.br
+.ti -1c
+.RI "\fBsource\fP"
+.br
+.ti -1c
+.RI "\fBsource_class\fP"
+.br
+.ti -1c
+.RI "\fBdestination\fP"
+.br
+.ti -1c
+.RI "\fBdestination_class\fP"
+.br
+.ti -1c
+.RI "\fBsettings\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_setup_settings_parser\fP (self, *args, **kwargs)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_stderr\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A facade encapsulating the high-level logic of a Docutils system\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.core\&.Publisher\&.__init__ ( self,  reader = \fCNone\fP,  parser = \fCNone\fP,  writer = \fCNone\fP,  source = \fCNone\fP,  source_class = \fC\fBio\&.FileInput\fP\fP,  destination = \fCNone\fP,  destination_class = \fC\fBio\&.FileOutput\fP\fP,  settings = \fCNone\fP)"
+
+.PP
+.nf
+Initial setup\&.  If any of `reader`, `parser`, or `writer` are not
+specified, ``set_components()`` or the corresponding ``set_\&.\&.\&.()``
+method should be called with component names
+(`set_reader` sets the parser as well)\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.core\&.Publisher\&._setup_settings_parser ( self, * args, ** kwargs)\fC [protected]\fP"
+
+.SS "docutils\&.core\&.Publisher\&.apply_transforms ( self)"
+
+.SS "docutils\&.core\&.Publisher\&.debugging_dumps ( self)"
+
+.SS "docutils\&.core\&.Publisher\&.get_settings ( self,  usage = \fCNone\fP,  description = \fCNone\fP,  settings_spec = \fCNone\fP,  config_section = \fCNone\fP, ** defaults)"
+
+.PP
+.nf
+Return settings from components and config files\&.
+
+Please set components first (`self\&.set_reader` & `self\&.set_writer`)\&.
+Use keyword arguments to override component defaults
+(before updating from configuration files)\&.
+
+Calling this function also sets `self\&.settings` which makes
+`self\&.publish()` skip parsing command line options\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.core\&.Publisher\&.process_command_line ( self,  argv = \fCNone\fP,  usage = \fCNone\fP,  description = \fCNone\fP,  settings_spec = \fCNone\fP,  config_section = \fCNone\fP, ** defaults)"
+
+.PP
+.nf
+Parse command line arguments and set ``self\&.settings``\&.
+
+Pass an empty sequence to `argv` to avoid reading `sys\&.argv`
+(the default behaviour)\&.
+
+Set components first (`self\&.set_reader` & `self\&.set_writer`)\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.core\&.Publisher\&.process_programmatic_settings ( self,  settings_spec,  settings_overrides,  config_section)"
+
+.SS "docutils\&.core\&.Publisher\&.prompt ( self)"
+
+.PP
+.nf
+Print info and prompt when waiting for input from a terminal\&.
+.fi
+.PP
+ 
+.SS "docutils\&.core\&.Publisher\&.publish ( self,  argv = \fCNone\fP,  usage = \fCNone\fP,  description = \fCNone\fP,  settings_spec = \fCNone\fP,  settings_overrides = \fCNone\fP,  config_section = \fCNone\fP,  enable_exit_status = \fCFalse\fP)"
+
+.PP
+.nf
+Process command line options and arguments (if `self\&.settings` not
+already set), run `self\&.reader` and then `self\&.writer`\&.  Return
+`self\&.writer`'s output\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.core\&.Publisher\&.report_Exception ( self,  error)"
+
+.SS "docutils\&.core\&.Publisher\&.report_SystemMessage ( self,  error)"
+
+.SS "docutils\&.core\&.Publisher\&.report_UnicodeError ( self,  error)"
+
+.SS "docutils\&.core\&.Publisher\&.set_components ( self,  reader_name,  parser_name,  writer_name)"
+
+.SS "docutils\&.core\&.Publisher\&.set_destination ( self,  destination = \fCNone\fP,  destination_path = \fCNone\fP)"
+
+.SS "docutils\&.core\&.Publisher\&.set_io ( self,  source_path = \fCNone\fP,  destination_path = \fCNone\fP)"
+
+.SS "docutils\&.core\&.Publisher\&.set_reader ( self,  reader_name,  parser,  parser_name)"
+
+.PP
+.nf
+Set `self\&.reader` by name\&.
+.fi
+.PP
+ 
+.SS "docutils\&.core\&.Publisher\&.set_source ( self,  source = \fCNone\fP,  source_path = \fCNone\fP)"
+
+.SS "docutils\&.core\&.Publisher\&.set_writer ( self,  writer_name)"
+
+.PP
+.nf
+Set `self\&.writer` by name\&.
+.fi
+.PP
+ 
+.SS "docutils\&.core\&.Publisher\&.setup_option_parser ( self,  usage = \fCNone\fP,  description = \fCNone\fP,  settings_spec = \fCNone\fP,  config_section = \fCNone\fP, ** defaults)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.core\&.Publisher\&._stderr\fC [protected]\fP"
+
+.SS "docutils\&.core\&.Publisher\&.destination"
+
+.SS "docutils\&.core\&.Publisher\&.destination_class"
+
+.SS "docutils\&.core\&.Publisher\&.document"
+
+.SS "docutils\&.core\&.Publisher\&.parser"
+
+.SS "docutils\&.core\&.Publisher\&.reader"
+
+.SS "docutils\&.core\&.Publisher\&.settings"
+
+.SS "docutils\&.core\&.Publisher\&.source"
+
+.SS "docutils\&.core\&.Publisher\&.source_class"
+
+.SS "docutils\&.core\&.Publisher\&.writer"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

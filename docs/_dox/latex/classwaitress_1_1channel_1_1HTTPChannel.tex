@@ -1,0 +1,546 @@
+\doxysection{waitress.\+channel.\+HTTPChannel Class Reference}
+\hypertarget{classwaitress_1_1channel_1_1HTTPChannel}{}\label{classwaitress_1_1channel_1_1HTTPChannel}\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+Inheritance diagram for waitress.\+channel.\+HTTPChannel\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classwaitress_1_1channel_1_1HTTPChannel}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_aa74cf1fe11b37238424175e4fe9c920e}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_aa1c1aa385a4db05ba7c738fff0fe6508}{server}}, sock, \mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_aa8df63beab5b6718008dc30ec8a3a5b3}{addr}}, \mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_aaad3dfa5298d3d5e81aff215a795f4fb}{adj}}, map=None)
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a17bc4dd051ed031c7ff157878f854921}{check\+\_\+client\+\_\+disconnected}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_addd08b8ef8fb0d3b7f82a65f598032c0}{writable}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_abff55c2b0e05538fb65642e5acb74229}{handle\+\_\+write}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_ab78c5fada13e4dce49183385a85ca1bd}{readable}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a1d690aa5821ba04f0e06883c7d5791c1}{handle\+\_\+read}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_aaa901d6ee7325ec9a983e00b67e4959f}{send\+\_\+continue}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a89697e3a427d77b83a38e1305a2a28d7}{received}} (self, data)
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a7a39d8c5e77ff656e2d0a4bbff44853f}{handle\+\_\+close}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a86d9d9db14e9a5ca9eed327b499abbd3}{add\+\_\+channel}} (self, map=None)
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a5219db0592953eaf77ab20257406b399}{del\+\_\+channel}} (self, map=None)
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a7f30bbbec30be603efe026adc8282ef1}{write\+\_\+soon}} (self, data)
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a3ba2eebf430b7b642e713cd23459517d}{service}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_aed45a712540c3596653823e0bf371491}{cancel}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher}{waitress.\+wasyncore.\+dispatcher}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_ae3b3d6b7f81fa58484a6153e68ae9282}{\+\_\+\+\_\+repr\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a222b094a0495bc1122def739023607d9}{create\+\_\+socket}} (self, family=socket.\+AF\+\_\+\+INET, type=socket.\+SOCK\+\_\+\+STREAM)
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a5fa92d8186b5cea3c0cabdf3ab80ae15}{set\+\_\+socket}} (self, sock, map=None)
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a2207f246e84052b01ac118e66afb1897}{set\+\_\+reuse\+\_\+addr}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a2a73c9ad2446562c56c67006744e8c28}{listen}} (self, num)
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_af8c42c4716c0607c08bc46c1b0cc9246}{bind}} (self, \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a53d6c8ccb4987b67b74183e368169c83}{addr}})
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a0b8572a8a7179adf83c942c5a3672237}{accept}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_aa36a1d97600508f07138eab0658775c9}{send}} (self, data, do\+\_\+close=True)
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a2b92c3b16cb7b8d99eecfc9b18fa74f9}{recv}} (self, buffer\+\_\+size)
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a583c436524ac65442f8c2b3785a44b5c}{close}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_ab4786338f40a0cf9e9df45b57d4c0a63}{log}} (self, message)
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a09e7e2acb9ebae7ffe0c5f6cf05a141a}{log\+\_\+info}} (self, message, type="{}info"{})
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a1b0ff9a1c16ffdbba1a6177204c1050e}{handle\+\_\+read\+\_\+event}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_ab1d3a9ab0ed13991e40aadcfc20dd10a}{handle\+\_\+connect\+\_\+event}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_ac5db2ff83f6efd73f621ae6d267d0a32}{handle\+\_\+write\+\_\+event}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a9f2eabad48e02260cfa085678a918955}{handle\+\_\+expt\+\_\+event}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_ac450ef71bd43abf1a828bc23569cf0ba}{handle\+\_\+error}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_af4caf0f2cf73aaaf0a4aa3d7457360f8}{handle\+\_\+expt}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_ad84d783b23119d88a2675115b4ec9120}{handle\+\_\+connect}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_abb651db4478a77832580cb821bf60ca6}{handle\+\_\+accept}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_acda26a16a0af5dd3ec5e92ac517e9368}{handle\+\_\+accepted}} (self, sock, \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a53d6c8ccb4987b67b74183e368169c83}{addr}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_aa1c1aa385a4db05ba7c738fff0fe6508}{server}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_aaad3dfa5298d3d5e81aff215a795f4fb}{adj}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a5222139b7963553bb1476834954ac106}{outbufs}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a55e597e2df53cbc6246a8e2b74f63c1f}{creation\+\_\+time}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a2f3d56da4070e0d8a6ab2874c43a1555}{sendbuf\+\_\+len}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_aa68d7e88bca9df7c71a2e87a2baed041}{requests\+\_\+lock}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a4ef3facb4b2609b759611e16a3bc485f}{outbuf\+\_\+lock}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a0f0f215c46c8e990ef4d9d1ab943c403}{connected}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_aa8df63beab5b6718008dc30ec8a3a5b3}{addr}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a86cf4e9fd5ef38a0c2ef22b54e5e4141}{requests}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a93b4892bf303915ea3a14b702017b15b}{close\+\_\+when\+\_\+flushed}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a61aeb31c5464d9c245085d6c760fca4f}{will\+\_\+close}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a955357ae9ffeea501c4d902a48c9688c}{last\+\_\+activity}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_af749bbe789457ab46523b2de9e962d6b}{sent\+\_\+continue}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a27f822ce6bdbfb2dd4572551c4d1ec76}{total\+\_\+outbufs\+\_\+len}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_ad94ef08be0265e268185894a8cdf56cf}{current\+\_\+outbuf\+\_\+count}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher}{waitress.\+wasyncore.\+dispatcher}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a6df3027f7bc9cfa75c13de9115df0d26}{socket}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a09a9342bc5b800e6138a68d397cf1e78}{family\+\_\+and\+\_\+type}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a62a80bea85723f6028b5cd5fed0c07e6}{accepting}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a6b11cdd71393740b2ce855df42624d9c}{connected}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_ade070e2043fbc0fdaad02f46a26bbfb0}{connecting}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a8b95fdffb93693a0bc7ada043e6de86c}{task\+\_\+class}} = \mbox{\hyperlink{classwaitress_1_1task_1_1WSGITask}{WSGITask}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a3322e57c56bbcffce39385ce53d0c3fb}{error\+\_\+task\+\_\+class}} = \mbox{\hyperlink{classwaitress_1_1task_1_1ErrorTask}{Error\+Task}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a0e58ba1d826e34d600d3c3725b082156}{parser\+\_\+class}} = \mbox{\hyperlink{classwaitress_1_1parser_1_1HTTPRequestParser}{HTTPRequest\+Parser}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_acbfe845da843a2f4abf66654d453bdcd}{request}} = None
+\item 
+int \mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_ae1024c11c17a4ea6ca775fd7a7554d74}{last\+\_\+activity}} = 0
+\item 
+bool \mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a8fefd397c09ef8cb0c1be2b137bf7255}{will\+\_\+close}} = False
+\item 
+bool \mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a32fbf533cee97793dd82d817927917cd}{close\+\_\+when\+\_\+flushed}} = False
+\item 
+bool \mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_ada537b7d8748a15ac44d8395382d09a4}{sent\+\_\+continue}} = False
+\item 
+int \mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a63857cde5258a80db52043a4ecd9ae1e}{total\+\_\+outbufs\+\_\+len}} = 0
+\item 
+int \mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_ac5e8e37f6d275486a66b5728fd9c088e}{current\+\_\+outbuf\+\_\+count}} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher}{waitress.\+wasyncore.\+dispatcher}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_af4e265d19efa9d716b5c981c2b030cda}{debug}} = False
+\item 
+bool \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_ad9ece285c12ba4f58a3e41e307668a65}{connected}} = False
+\item 
+bool \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a7be52091bc93db8160d620a7936866e5}{accepting}} = False
+\item 
+bool \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a6acf8734c24572b6d9e6ef8150f7c8a9}{connecting}} = False
+\item 
+bool \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a8fc6b9f12a53de758277f514312fbc06}{closing}} = False
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a53d6c8ccb4987b67b74183e368169c83}{addr}} = None
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a9ec54757ac156634e6c0297f28faec55}{ignore\+\_\+log\+\_\+types}} = frozenset(\{"{}warning"{}\})
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a743bcd173c41ad3a69280089912b9b8f}{logger}} = utilities.\+logger
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_ae53e6f1eda2cd7f86f73dfbf407a8e1e}{compact\+\_\+traceback}} = staticmethod(compact\+\_\+traceback)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_af2178d18a2f3b93120f8e90a56a0b432}{\+\_\+flush\+\_\+exception}} (self, flush, do\+\_\+close=True)
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a187eba2d736d51b0d2fd6a170965dedb}{\+\_\+flush\+\_\+some\+\_\+if\+\_\+lockable}} (self, do\+\_\+close=True)
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_af4abc69cb0ebdecacfe3e79bda37a43f}{\+\_\+flush\+\_\+some}} (self, do\+\_\+close=True)
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_a08c6e441a5c3f81ea09b64cb6ae49361}{\+\_\+flush\+\_\+outbufs\+\_\+below\+\_\+high\+\_\+watermark}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwaitress_1_1channel_1_1HTTPChannel_aebf43c988313b615859647fe2f7c98f8}{\+\_\+flush\+\_\+some}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher}{waitress.\+wasyncore.\+dispatcher}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a59f5e12aedb200fdb02af5f8fd29a3cf}{\+\_\+map}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a4ad5cd8a5025a9ff8b7f3e2721daa0b1}{\+\_\+fileno}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Setting self.requests = [somerequest] prevents more requests from being
+received until the out buffers have been flushed.
+
+Setting self.requests = [] allows more requests to be received.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_aa74cf1fe11b37238424175e4fe9c920e}\label{classwaitress_1_1channel_1_1HTTPChannel_aa74cf1fe11b37238424175e4fe9c920e} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{server,  }\item[{}]{sock,  }\item[{}]{addr,  }\item[{}]{adj,  }\item[{}]{map = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+Reimplemented from \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a4e91c5b7a63d909616a10564ff4f6e79}{waitress.\+wasyncore.\+dispatcher}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_af2178d18a2f3b93120f8e90a56a0b432}\label{classwaitress_1_1channel_1_1HTTPChannel_af2178d18a2f3b93120f8e90a56a0b432} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!\_flush\_exception@{\_flush\_exception}}
+\index{\_flush\_exception@{\_flush\_exception}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{\_flush\_exception()}{\_flush\_exception()}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+\_\+flush\+\_\+exception (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{flush,  }\item[{}]{do\+\_\+close = {\ttfamily True} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a08c6e441a5c3f81ea09b64cb6ae49361}\label{classwaitress_1_1channel_1_1HTTPChannel_a08c6e441a5c3f81ea09b64cb6ae49361} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!\_flush\_outbufs\_below\_high\_watermark@{\_flush\_outbufs\_below\_high\_watermark}}
+\index{\_flush\_outbufs\_below\_high\_watermark@{\_flush\_outbufs\_below\_high\_watermark}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{\_flush\_outbufs\_below\_high\_watermark()}{\_flush\_outbufs\_below\_high\_watermark()}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+\_\+flush\+\_\+outbufs\+\_\+below\+\_\+high\+\_\+watermark (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_af4abc69cb0ebdecacfe3e79bda37a43f}\label{classwaitress_1_1channel_1_1HTTPChannel_af4abc69cb0ebdecacfe3e79bda37a43f} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!\_flush\_some@{\_flush\_some}}
+\index{\_flush\_some@{\_flush\_some}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{\_flush\_some()}{\_flush\_some()}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+\_\+flush\+\_\+some (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{do\+\_\+close = {\ttfamily True} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a187eba2d736d51b0d2fd6a170965dedb}\label{classwaitress_1_1channel_1_1HTTPChannel_a187eba2d736d51b0d2fd6a170965dedb} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!\_flush\_some\_if\_lockable@{\_flush\_some\_if\_lockable}}
+\index{\_flush\_some\_if\_lockable@{\_flush\_some\_if\_lockable}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{\_flush\_some\_if\_lockable()}{\_flush\_some\_if\_lockable()}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+\_\+flush\+\_\+some\+\_\+if\+\_\+lockable (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{do\+\_\+close = {\ttfamily True} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a86d9d9db14e9a5ca9eed327b499abbd3}\label{classwaitress_1_1channel_1_1HTTPChannel_a86d9d9db14e9a5ca9eed327b499abbd3} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!add\_channel@{add\_channel}}
+\index{add\_channel@{add\_channel}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{add\_channel()}{add\_channel()}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+add\+\_\+channel (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{map = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}See wasyncore.dispatcher
+
+This hook keeps track of opened channels.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_abfba618e9b8210d880bf0c7a51221205}{waitress.\+wasyncore.\+dispatcher}}.
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_aed45a712540c3596653823e0bf371491}\label{classwaitress_1_1channel_1_1HTTPChannel_aed45a712540c3596653823e0bf371491} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!cancel@{cancel}}
+\index{cancel@{cancel}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{cancel()}{cancel()}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+cancel (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Cancels all pending / active requests\end{DoxyVerb}
+ \Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a17bc4dd051ed031c7ff157878f854921}\label{classwaitress_1_1channel_1_1HTTPChannel_a17bc4dd051ed031c7ff157878f854921} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!check\_client\_disconnected@{check\_client\_disconnected}}
+\index{check\_client\_disconnected@{check\_client\_disconnected}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{check\_client\_disconnected()}{check\_client\_disconnected()}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+check\+\_\+client\+\_\+disconnected (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This method is inserted into the environment of any created task so it
+may occasionally check if the client has disconnected and interrupt
+execution.
+\end{DoxyVerb}
+ \Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a5219db0592953eaf77ab20257406b399}\label{classwaitress_1_1channel_1_1HTTPChannel_a5219db0592953eaf77ab20257406b399} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!del\_channel@{del\_channel}}
+\index{del\_channel@{del\_channel}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{del\_channel()}{del\_channel()}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+del\+\_\+channel (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{map = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}See wasyncore.dispatcher
+
+This hook keeps track of closed channels.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a3fbf664bc8e6848c633cc9cd3ff3ad75}{waitress.\+wasyncore.\+dispatcher}}.
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a7a39d8c5e77ff656e2d0a4bbff44853f}\label{classwaitress_1_1channel_1_1HTTPChannel_a7a39d8c5e77ff656e2d0a4bbff44853f} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!handle\_close@{handle\_close}}
+\index{handle\_close@{handle\_close}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{handle\_close()}{handle\_close()}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+handle\+\_\+close (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Reimplemented from \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a3aa67ce99ade5536c206ebc997189803}{waitress.\+wasyncore.\+dispatcher}}.
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a1d690aa5821ba04f0e06883c7d5791c1}\label{classwaitress_1_1channel_1_1HTTPChannel_a1d690aa5821ba04f0e06883c7d5791c1} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!handle\_read@{handle\_read}}
+\index{handle\_read@{handle\_read}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{handle\_read()}{handle\_read()}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+handle\+\_\+read (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Reimplemented from \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a1b12b5f8aca373b091f81df30f90c4ca}{waitress.\+wasyncore.\+dispatcher}}.
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_abff55c2b0e05538fb65642e5acb74229}\label{classwaitress_1_1channel_1_1HTTPChannel_abff55c2b0e05538fb65642e5acb74229} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!handle\_write@{handle\_write}}
+\index{handle\_write@{handle\_write}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{handle\_write()}{handle\_write()}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+handle\+\_\+write (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Reimplemented from \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a5bc1201bda76d146c823e23ec843f674}{waitress.\+wasyncore.\+dispatcher}}.
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_ab78c5fada13e4dce49183385a85ca1bd}\label{classwaitress_1_1channel_1_1HTTPChannel_ab78c5fada13e4dce49183385a85ca1bd} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!readable@{readable}}
+\index{readable@{readable}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{readable()}{readable()}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+readable (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Reimplemented from \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_a1e8d638be2f79f1f0ecc3b30312ea99d}{waitress.\+wasyncore.\+dispatcher}}.
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a89697e3a427d77b83a38e1305a2a28d7}\label{classwaitress_1_1channel_1_1HTTPChannel_a89697e3a427d77b83a38e1305a2a28d7} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!received@{received}}
+\index{received@{received}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{received()}{received()}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+received (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Receives input asynchronously and assigns one or more requests to the
+channel.
+\end{DoxyVerb}
+ \Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_aaa901d6ee7325ec9a983e00b67e4959f}\label{classwaitress_1_1channel_1_1HTTPChannel_aaa901d6ee7325ec9a983e00b67e4959f} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!send\_continue@{send\_continue}}
+\index{send\_continue@{send\_continue}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{send\_continue()}{send\_continue()}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+send\+\_\+continue (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Send a 100-Continue header to the client. This is either called from
+receive (if no requests are running and the client expects it) or at
+the end of service (if no more requests are queued and a request has
+been read partially that expects it).
+\end{DoxyVerb}
+ \Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a3ba2eebf430b7b642e713cd23459517d}\label{classwaitress_1_1channel_1_1HTTPChannel_a3ba2eebf430b7b642e713cd23459517d} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!service@{service}}
+\index{service@{service}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{service()}{service()}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+service (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Execute one request. If there are more, we add another task to the
+server at the end.\end{DoxyVerb}
+ \Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_addd08b8ef8fb0d3b7f82a65f598032c0}\label{classwaitress_1_1channel_1_1HTTPChannel_addd08b8ef8fb0d3b7f82a65f598032c0} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!writable@{writable}}
+\index{writable@{writable}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{writable()}{writable()}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+writable (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Reimplemented from \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher_addde53d853292402cbcf9b52a44d5227}{waitress.\+wasyncore.\+dispatcher}}.
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a7f30bbbec30be603efe026adc8282ef1}\label{classwaitress_1_1channel_1_1HTTPChannel_a7f30bbbec30be603efe026adc8282ef1} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!write\_soon@{write\_soon}}
+\index{write\_soon@{write\_soon}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{write\_soon()}{write\_soon()}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+write\+\_\+soon (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_aebf43c988313b615859647fe2f7c98f8}\label{classwaitress_1_1channel_1_1HTTPChannel_aebf43c988313b615859647fe2f7c98f8} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!\_flush\_some@{\_flush\_some}}
+\index{\_flush\_some@{\_flush\_some}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{\_flush\_some}{\_flush\_some}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+\_\+flush\+\_\+some\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_aa8df63beab5b6718008dc30ec8a3a5b3}\label{classwaitress_1_1channel_1_1HTTPChannel_aa8df63beab5b6718008dc30ec8a3a5b3} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!addr@{addr}}
+\index{addr@{addr}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{addr}{addr}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+addr}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_aaad3dfa5298d3d5e81aff215a795f4fb}\label{classwaitress_1_1channel_1_1HTTPChannel_aaad3dfa5298d3d5e81aff215a795f4fb} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!adj@{adj}}
+\index{adj@{adj}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{adj}{adj}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+adj}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a32fbf533cee97793dd82d817927917cd}\label{classwaitress_1_1channel_1_1HTTPChannel_a32fbf533cee97793dd82d817927917cd} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!close\_when\_flushed@{close\_when\_flushed}}
+\index{close\_when\_flushed@{close\_when\_flushed}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{close\_when\_flushed}{close\_when\_flushed}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool waitress.\+channel.\+HTTPChannel.\+close\+\_\+when\+\_\+flushed = False\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a93b4892bf303915ea3a14b702017b15b}\label{classwaitress_1_1channel_1_1HTTPChannel_a93b4892bf303915ea3a14b702017b15b} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!close\_when\_flushed@{close\_when\_flushed}}
+\index{close\_when\_flushed@{close\_when\_flushed}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{close\_when\_flushed}{close\_when\_flushed}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+close\+\_\+when\+\_\+flushed}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a0f0f215c46c8e990ef4d9d1ab943c403}\label{classwaitress_1_1channel_1_1HTTPChannel_a0f0f215c46c8e990ef4d9d1ab943c403} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!connected@{connected}}
+\index{connected@{connected}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{connected}{connected}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+connected}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a55e597e2df53cbc6246a8e2b74f63c1f}\label{classwaitress_1_1channel_1_1HTTPChannel_a55e597e2df53cbc6246a8e2b74f63c1f} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!creation\_time@{creation\_time}}
+\index{creation\_time@{creation\_time}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{creation\_time}{creation\_time}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+creation\+\_\+time}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_ac5e8e37f6d275486a66b5728fd9c088e}\label{classwaitress_1_1channel_1_1HTTPChannel_ac5e8e37f6d275486a66b5728fd9c088e} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!current\_outbuf\_count@{current\_outbuf\_count}}
+\index{current\_outbuf\_count@{current\_outbuf\_count}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{current\_outbuf\_count}{current\_outbuf\_count}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int waitress.\+channel.\+HTTPChannel.\+current\+\_\+outbuf\+\_\+count = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_ad94ef08be0265e268185894a8cdf56cf}\label{classwaitress_1_1channel_1_1HTTPChannel_ad94ef08be0265e268185894a8cdf56cf} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!current\_outbuf\_count@{current\_outbuf\_count}}
+\index{current\_outbuf\_count@{current\_outbuf\_count}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{current\_outbuf\_count}{current\_outbuf\_count}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+current\+\_\+outbuf\+\_\+count}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a3322e57c56bbcffce39385ce53d0c3fb}\label{classwaitress_1_1channel_1_1HTTPChannel_a3322e57c56bbcffce39385ce53d0c3fb} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!error\_task\_class@{error\_task\_class}}
+\index{error\_task\_class@{error\_task\_class}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{error\_task\_class}{error\_task\_class}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+error\+\_\+task\+\_\+class = \mbox{\hyperlink{classwaitress_1_1task_1_1ErrorTask}{Error\+Task}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_ae1024c11c17a4ea6ca775fd7a7554d74}\label{classwaitress_1_1channel_1_1HTTPChannel_ae1024c11c17a4ea6ca775fd7a7554d74} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!last\_activity@{last\_activity}}
+\index{last\_activity@{last\_activity}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{last\_activity}{last\_activity}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int waitress.\+channel.\+HTTPChannel.\+last\+\_\+activity = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a955357ae9ffeea501c4d902a48c9688c}\label{classwaitress_1_1channel_1_1HTTPChannel_a955357ae9ffeea501c4d902a48c9688c} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!last\_activity@{last\_activity}}
+\index{last\_activity@{last\_activity}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{last\_activity}{last\_activity}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+last\+\_\+activity}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a4ef3facb4b2609b759611e16a3bc485f}\label{classwaitress_1_1channel_1_1HTTPChannel_a4ef3facb4b2609b759611e16a3bc485f} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!outbuf\_lock@{outbuf\_lock}}
+\index{outbuf\_lock@{outbuf\_lock}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{outbuf\_lock}{outbuf\_lock}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+outbuf\+\_\+lock}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a5222139b7963553bb1476834954ac106}\label{classwaitress_1_1channel_1_1HTTPChannel_a5222139b7963553bb1476834954ac106} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!outbufs@{outbufs}}
+\index{outbufs@{outbufs}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{outbufs}{outbufs}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+outbufs}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a0e58ba1d826e34d600d3c3725b082156}\label{classwaitress_1_1channel_1_1HTTPChannel_a0e58ba1d826e34d600d3c3725b082156} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!parser\_class@{parser\_class}}
+\index{parser\_class@{parser\_class}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{parser\_class}{parser\_class}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+parser\+\_\+class = \mbox{\hyperlink{classwaitress_1_1parser_1_1HTTPRequestParser}{HTTPRequest\+Parser}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_acbfe845da843a2f4abf66654d453bdcd}\label{classwaitress_1_1channel_1_1HTTPChannel_acbfe845da843a2f4abf66654d453bdcd} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!request@{request}}
+\index{request@{request}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{request}{request}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+request = None\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a86cf4e9fd5ef38a0c2ef22b54e5e4141}\label{classwaitress_1_1channel_1_1HTTPChannel_a86cf4e9fd5ef38a0c2ef22b54e5e4141} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!requests@{requests}}
+\index{requests@{requests}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{requests}{requests}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+requests}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_aa68d7e88bca9df7c71a2e87a2baed041}\label{classwaitress_1_1channel_1_1HTTPChannel_aa68d7e88bca9df7c71a2e87a2baed041} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!requests\_lock@{requests\_lock}}
+\index{requests\_lock@{requests\_lock}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{requests\_lock}{requests\_lock}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+requests\+\_\+lock}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a2f3d56da4070e0d8a6ab2874c43a1555}\label{classwaitress_1_1channel_1_1HTTPChannel_a2f3d56da4070e0d8a6ab2874c43a1555} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!sendbuf\_len@{sendbuf\_len}}
+\index{sendbuf\_len@{sendbuf\_len}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{sendbuf\_len}{sendbuf\_len}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+sendbuf\+\_\+len}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_ada537b7d8748a15ac44d8395382d09a4}\label{classwaitress_1_1channel_1_1HTTPChannel_ada537b7d8748a15ac44d8395382d09a4} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!sent\_continue@{sent\_continue}}
+\index{sent\_continue@{sent\_continue}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{sent\_continue}{sent\_continue}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool waitress.\+channel.\+HTTPChannel.\+sent\+\_\+continue = False\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_af749bbe789457ab46523b2de9e962d6b}\label{classwaitress_1_1channel_1_1HTTPChannel_af749bbe789457ab46523b2de9e962d6b} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!sent\_continue@{sent\_continue}}
+\index{sent\_continue@{sent\_continue}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{sent\_continue}{sent\_continue}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+sent\+\_\+continue}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_aa1c1aa385a4db05ba7c738fff0fe6508}\label{classwaitress_1_1channel_1_1HTTPChannel_aa1c1aa385a4db05ba7c738fff0fe6508} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!server@{server}}
+\index{server@{server}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{server}{server}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+server}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a8b95fdffb93693a0bc7ada043e6de86c}\label{classwaitress_1_1channel_1_1HTTPChannel_a8b95fdffb93693a0bc7ada043e6de86c} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!task\_class@{task\_class}}
+\index{task\_class@{task\_class}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{task\_class}{task\_class}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+task\+\_\+class = \mbox{\hyperlink{classwaitress_1_1task_1_1WSGITask}{WSGITask}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a63857cde5258a80db52043a4ecd9ae1e}\label{classwaitress_1_1channel_1_1HTTPChannel_a63857cde5258a80db52043a4ecd9ae1e} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!total\_outbufs\_len@{total\_outbufs\_len}}
+\index{total\_outbufs\_len@{total\_outbufs\_len}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{total\_outbufs\_len}{total\_outbufs\_len}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int waitress.\+channel.\+HTTPChannel.\+total\+\_\+outbufs\+\_\+len = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a27f822ce6bdbfb2dd4572551c4d1ec76}\label{classwaitress_1_1channel_1_1HTTPChannel_a27f822ce6bdbfb2dd4572551c4d1ec76} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!total\_outbufs\_len@{total\_outbufs\_len}}
+\index{total\_outbufs\_len@{total\_outbufs\_len}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{total\_outbufs\_len}{total\_outbufs\_len}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+total\+\_\+outbufs\+\_\+len}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a8fefd397c09ef8cb0c1be2b137bf7255}\label{classwaitress_1_1channel_1_1HTTPChannel_a8fefd397c09ef8cb0c1be2b137bf7255} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!will\_close@{will\_close}}
+\index{will\_close@{will\_close}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{will\_close}{will\_close}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool waitress.\+channel.\+HTTPChannel.\+will\+\_\+close = False\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classwaitress_1_1channel_1_1HTTPChannel_a61aeb31c5464d9c245085d6c760fca4f}\label{classwaitress_1_1channel_1_1HTTPChannel_a61aeb31c5464d9c245085d6c760fca4f} 
+\index{waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}!will\_close@{will\_close}}
+\index{will\_close@{will\_close}!waitress.channel.HTTPChannel@{waitress.channel.HTTPChannel}}
+\doxysubsubsection{\texorpdfstring{will\_close}{will\_close}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily waitress.\+channel.\+HTTPChannel.\+will\+\_\+close}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/waitress/\mbox{\hyperlink{channel_8py}{channel.\+py}}\end{DoxyCompactItemize}

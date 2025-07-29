@@ -1,0 +1,108 @@
+.TH "pip._internal.exceptions.DiagnosticPipError" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.exceptions.DiagnosticPipError
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._internal\&.exceptions\&.PipError\fP\&.
+.PP
+Inherited by \fBpip\&._internal\&.exceptions\&.ExternallyManagedEnvironment\fP, \fBpip\&._internal\&.exceptions\&.InstallationSubprocessError\fP, \fBpip\&._internal\&.exceptions\&.InvalidInstalledPackage\fP, \fBpip\&._internal\&.exceptions\&.InvalidPyProjectBuildRequires\fP, \fBpip\&._internal\&.exceptions\&.LegacyDistutilsInstall\fP, \fBpip\&._internal\&.exceptions\&.MissingPyProjectBuildRequires\fP, and \fBpip\&._internal\&.exceptions\&.UninstallMissingRecord\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, *'Literal['error', 'warning']' \fBkind\fP='error', Optional[str] \fBreference\fP=None, Union[str, \fBText\fP] \fBmessage\fP, Optional[Union[str, \fBText\fP]] \fBcontext\fP, Optional[Union[str, \fBText\fP]] \fBhint_stmt\fP, Optional[Union[str, \fBText\fP]] \fBnote_stmt\fP=None, Optional[str] \fBlink\fP=None)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "RenderResult \fB__rich_console__\fP (self, \fBConsole\fP console, \fBConsoleOptions\fP options)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBkind\fP"
+.br
+.ti -1c
+.RI "\fBreference\fP"
+.br
+.ti -1c
+.RI "\fBmessage\fP"
+.br
+.ti -1c
+.RI "\fBcontext\fP"
+.br
+.ti -1c
+.RI "\fBnote_stmt\fP"
+.br
+.ti -1c
+.RI "\fBhint_stmt\fP"
+.br
+.ti -1c
+.RI "\fBlink\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBreference\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+An error, that presents diagnostic information to the user\&.
+
+This contains a bunch of logic, to enable pretty presentation of our error
+messages\&. Each error gets a unique reference\&. Each error can also include
+additional context, a hint and/or a note -- which are presented with the
+main error message in a consistent style\&.
+
+This is adapted from the error output styling in `sphinx-theme-builder`\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._internal\&.exceptions\&.DiagnosticPipError\&.__init__ ( self, *'Literal['error', 'warning']'  kind = \fC'error'\fP, Optional[str]  reference = \fCNone\fP, Union[str, \fBText\fP] message, Optional[Union[str, \fBText\fP]] context, Optional[Union[str, \fBText\fP]] hint_stmt, Optional[Union[str, \fBText\fP]]  note_stmt = \fCNone\fP, Optional[str]  link = \fCNone\fP)"
+
+.PP
+Reimplemented in \fBpip\&._internal\&.exceptions\&.InvalidInstalledPackage\fP, \fBpip\&._internal\&.exceptions\&.UninstallMissingRecord\fP, \fBpip\&._internal\&.exceptions\&.LegacyDistutilsInstall\fP, \fBpip\&._internal\&.exceptions\&.InstallationSubprocessError\fP, \fBpip\&._internal\&.exceptions\&.MissingPyProjectBuildRequires\fP, \fBpip\&._internal\&.exceptions\&.InvalidPyProjectBuildRequires\fP, \fBpip\&._internal\&.exceptions\&.MetadataGenerationFailed\fP, and \fBpip\&._internal\&.exceptions\&.ExternallyManagedEnvironment\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " str pip\&._internal\&.exceptions\&.DiagnosticPipError\&.__repr__ ( self)"
+
+.SS " RenderResult pip\&._internal\&.exceptions\&.DiagnosticPipError\&.__rich_console__ ( self, \fBConsole\fP console, \fBConsoleOptions\fP options)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._internal\&.exceptions\&.DiagnosticPipError\&.context"
+
+.SS "pip\&._internal\&.exceptions\&.DiagnosticPipError\&.hint_stmt"
+
+.SS "pip\&._internal\&.exceptions\&.DiagnosticPipError\&.kind"
+
+.SS "pip\&._internal\&.exceptions\&.DiagnosticPipError\&.link"
+
+.SS "pip\&._internal\&.exceptions\&.DiagnosticPipError\&.message"
+
+.SS "pip\&._internal\&.exceptions\&.DiagnosticPipError\&.note_stmt"
+
+.SS "str pip\&._internal\&.exceptions\&.DiagnosticPipError\&.reference\fC [static]\fP"
+
+.SS "pip\&._internal\&.exceptions\&.DiagnosticPipError\&.reference"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

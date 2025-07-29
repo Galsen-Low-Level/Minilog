@@ -1,0 +1,253 @@
+.TH "babel.support.Format" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+babel.support.Format
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, \fBLocale\fP|str \fBlocale\fP, _datetime\&.tzinfo|None \fBtzinfo\fP=None, *Literal['default']|str \fBnumbering_system\fP='latn')"
+.br
+.ti -1c
+.RI "str \fBdate\fP (self, _datetime\&.date|None date=None, _PredefinedTimeFormat|str format='medium')"
+.br
+.ti -1c
+.RI "str \fBdatetime\fP (self, _datetime\&.date|None datetime=None, _PredefinedTimeFormat|str format='medium')"
+.br
+.ti -1c
+.RI "str \fBtime\fP (self, _datetime\&.time|_datetime\&.datetime|None time=None, _PredefinedTimeFormat|str format='medium')"
+.br
+.ti -1c
+.RI "str \fBtimedelta\fP (self, _datetime\&.timedelta|int delta, Literal['year', 'month', 'week', 'day', 'hour', 'minute', 'second'] granularity='second', float threshold=0\&.85, Literal['narrow', 'short', 'medium', 'long'] format='long', bool add_direction=False)"
+.br
+.ti -1c
+.RI "str \fBnumber\fP (self, float|Decimal|str number)"
+.br
+.ti -1c
+.RI "str \fBdecimal\fP (self, float|Decimal|str \fBnumber\fP, str|None format=None)"
+.br
+.ti -1c
+.RI "str \fBcompact_decimal\fP (self, float|Decimal|str \fBnumber\fP, Literal['short', 'long'] format_type='short', int fraction_digits=0)"
+.br
+.ti -1c
+.RI "str \fBcurrency\fP (self, float|Decimal|str \fBnumber\fP, str currency)"
+.br
+.ti -1c
+.RI "str \fBcompact_currency\fP (self, float|Decimal|str \fBnumber\fP, str \fBcurrency\fP, Literal['short'] format_type='short', int fraction_digits=0)"
+.br
+.ti -1c
+.RI "str \fBpercent\fP (self, float|Decimal|str \fBnumber\fP, str|None format=None)"
+.br
+.ti -1c
+.RI "str \fBscientific\fP (self, float|Decimal|str \fBnumber\fP)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBlocale\fP"
+.br
+.ti -1c
+.RI "\fBtzinfo\fP"
+.br
+.ti -1c
+.RI "\fBnumbering_system\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Wrapper class providing the various date and number formatting functions
+bound to a specific locale and time-zone\&.
+
+>>> from babel\&.util import UTC
+>>> from datetime import date
+>>> fmt = Format('en_US', UTC)
+>>> fmt\&.date(date(2007, 4, 1))
+u'Apr 1, 2007'
+>>> fmt\&.decimal(1\&.2345)
+u'1\&.234'
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None babel\&.support\&.Format\&.__init__ ( self, \fBLocale\fP | str locale, _datetime\&.tzinfo | None  tzinfo = \fCNone\fP, *Literal['default'] | str  numbering_system = \fC'latn'\fP)"
+
+.PP
+.nf
+Initialize the formatter\&.
+
+:param locale: the locale identifier or `Locale` instance
+:param tzinfo: the time-zone info (a `tzinfo` instance or `None`)
+:param numbering_system: The numbering system used for formatting number symbols\&. Defaults to 'latn'\&.
+                         The special value 'default' will use the default numbering system of the locale\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " str babel\&.support\&.Format\&.compact_currency ( self, float | Decimal | str number, str currency, Literal['short']  format_type = \fC'short'\fP, int  fraction_digits = \fC0\fP)"
+
+.PP
+.nf
+Return a number in the given currency formatted for the locale
+using the compact number format\&.
+
+>>> Format('en_US')\&.compact_currency(1234567, 'USD', format_type='short', fraction_digits=2)
+'$1\&.23M'
+
+.fi
+.PP
+ 
+.SS " str babel\&.support\&.Format\&.compact_decimal ( self, float | Decimal | str number, Literal['short', 'long']  format_type = \fC'short'\fP, int  fraction_digits = \fC0\fP)"
+
+.PP
+.nf
+Return a number formatted in compact form for the locale\&.
+
+>>> fmt = Format('en_US')
+>>> fmt\&.compact_decimal(123456789)
+u'123M'
+>>> fmt\&.compact_decimal(1234567, format_type='long', fraction_digits=2)
+'1\&.23 million'
+
+.fi
+.PP
+ 
+.SS " str babel\&.support\&.Format\&.currency ( self, float | Decimal | str number, str currency)"
+
+.PP
+.nf
+Return a number in the given currency formatted for the locale\&.
+
+.fi
+.PP
+ 
+.SS " str babel\&.support\&.Format\&.date ( self, _datetime\&.date | None  date = \fCNone\fP, _PredefinedTimeFormat | str  format = \fC'medium'\fP)"
+
+.PP
+.nf
+Return a date formatted according to the given pattern\&.
+
+>>> from datetime import date
+>>> fmt = Format('en_US')
+>>> fmt\&.date(date(2007, 4, 1))
+u'Apr 1, 2007'
+
+.fi
+.PP
+ 
+.SS " str babel\&.support\&.Format\&.datetime ( self, _datetime\&.date | None  datetime = \fCNone\fP, _PredefinedTimeFormat | str  format = \fC'medium'\fP)"
+
+.PP
+.nf
+Return a date and time formatted according to the given pattern\&.
+
+>>> from datetime import datetime
+>>> from babel\&.dates import get_timezone
+>>> fmt = Format('en_US', tzinfo=get_timezone('US/Eastern'))
+>>> fmt\&.datetime(datetime(2007, 4, 1, 15, 30))
+u'Apr 1, 2007, 11:30:00\\u202fAM'
+
+.fi
+.PP
+ 
+.SS " str babel\&.support\&.Format\&.decimal ( self, float | Decimal | str number, str | None  format = \fCNone\fP)"
+
+.PP
+.nf
+Return a decimal number formatted for the locale\&.
+
+>>> fmt = Format('en_US')
+>>> fmt\&.decimal(1\&.2345)
+u'1\&.234'
+
+.fi
+.PP
+ 
+.SS " str babel\&.support\&.Format\&.number ( self, float | Decimal | str number)"
+
+.PP
+.nf
+Return an integer number formatted for the locale\&.
+
+>>> fmt = Format('en_US')
+>>> fmt\&.number(1099)
+u'1,099'
+
+.fi
+.PP
+ 
+.SS " str babel\&.support\&.Format\&.percent ( self, float | Decimal | str number, str | None  format = \fCNone\fP)"
+
+.PP
+.nf
+Return a number formatted as percentage for the locale\&.
+
+>>> fmt = Format('en_US')
+>>> fmt\&.percent(0\&.34)
+u'34%'
+
+.fi
+.PP
+ 
+.SS " str babel\&.support\&.Format\&.scientific ( self, float | Decimal | str number)"
+
+.PP
+.nf
+Return a number formatted using scientific notation for the locale\&.
+
+.fi
+.PP
+ 
+.SS " str babel\&.support\&.Format\&.time ( self, _datetime\&.time | _datetime\&.datetime | None  time = \fCNone\fP, _PredefinedTimeFormat | str  format = \fC'medium'\fP)"
+
+.PP
+.nf
+Return a time formatted according to the given pattern\&.
+
+>>> from datetime import datetime
+>>> from babel\&.dates import get_timezone
+>>> fmt = Format('en_US', tzinfo=get_timezone('US/Eastern'))
+>>> fmt\&.time(datetime(2007, 4, 1, 15, 30))
+u'11:30:00\\u202fAM'
+
+.fi
+.PP
+ 
+.SS " str babel\&.support\&.Format\&.timedelta ( self, _datetime\&.timedelta | int delta, Literal['year', 'month', 'week', 'day', 'hour', 'minute', 'second']  granularity = \fC'second'\fP, float  threshold = \fC0\&.85\fP, Literal['narrow', 'short', 'medium', 'long']  format = \fC'long'\fP, bool  add_direction = \fCFalse\fP)"
+
+.PP
+.nf
+Return a time delta according to the rules of the given locale\&.
+
+>>> from datetime import timedelta
+>>> fmt = Format('en_US')
+>>> fmt\&.timedelta(timedelta(weeks=11))
+u'3 months'
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "babel\&.support\&.Format\&.locale"
+
+.SS "babel\&.support\&.Format\&.numbering_system"
+
+.SS "babel\&.support\&.Format\&.tzinfo"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

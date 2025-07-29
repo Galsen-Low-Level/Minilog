@@ -1,0 +1,249 @@
+.TH "pip._internal.operations.prepare.RequirementPreparer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.operations.prepare.RequirementPreparer
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str \fBbuild_dir\fP, Optional[str] \fBdownload_dir\fP, str \fBsrc_dir\fP, bool \fBbuild_isolation\fP, bool \fBcheck_build_deps\fP, \fBBuildTracker\fP \fBbuild_tracker\fP, PipSession session, str progress_bar, \fBPackageFinder\fP \fBfinder\fP, bool \fBrequire_hashes\fP, bool \fBuse_user_site\fP, bool lazy_wheel, int \fBverbosity\fP, bool \fBlegacy_resolver\fP)"
+.br
+.ti -1c
+.RI "\fBBaseDistribution\fP \fBprepare_linked_requirement\fP (self, \fBInstallRequirement\fP req, bool parallel_builds=False)"
+.br
+.ti -1c
+.RI "None \fBprepare_linked_requirements_more\fP (self, Iterable[\fBInstallRequirement\fP] reqs, bool parallel_builds=False)"
+.br
+.ti -1c
+.RI "None \fBsave_linked_requirement\fP (self, \fBInstallRequirement\fP req)"
+.br
+.ti -1c
+.RI "\fBBaseDistribution\fP \fBprepare_editable_requirement\fP (self, \fBInstallRequirement\fP req)"
+.br
+.ti -1c
+.RI "\fBBaseDistribution\fP \fBprepare_installed_requirement\fP (self, \fBInstallRequirement\fP req, str skip_reason)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsrc_dir\fP"
+.br
+.ti -1c
+.RI "\fBbuild_dir\fP"
+.br
+.ti -1c
+.RI "\fBbuild_tracker\fP"
+.br
+.ti -1c
+.RI "\fBfinder\fP"
+.br
+.ti -1c
+.RI "\fBdownload_dir\fP"
+.br
+.ti -1c
+.RI "\fBbuild_isolation\fP"
+.br
+.ti -1c
+.RI "\fBcheck_build_deps\fP"
+.br
+.ti -1c
+.RI "\fBrequire_hashes\fP"
+.br
+.ti -1c
+.RI "\fBuse_user_site\fP"
+.br
+.ti -1c
+.RI "\fBuse_lazy_wheel\fP"
+.br
+.ti -1c
+.RI "\fBverbosity\fP"
+.br
+.ti -1c
+.RI "\fBlegacy_resolver\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB_log_preparing_link\fP (self, \fBInstallRequirement\fP req)"
+.br
+.ti -1c
+.RI "None \fB_ensure_link_req_src_dir\fP (self, \fBInstallRequirement\fP req, bool parallel_builds)"
+.br
+.ti -1c
+.RI "\fBHashes\fP \fB_get_linked_req_hashes\fP (self, \fBInstallRequirement\fP req)"
+.br
+.ti -1c
+.RI "Optional[\fBBaseDistribution\fP] \fB_fetch_metadata_only\fP (self, \fBInstallRequirement\fP req)"
+.br
+.ti -1c
+.RI "Optional[\fBBaseDistribution\fP] \fB_fetch_metadata_using_link_data_attr\fP (self, \fBInstallRequirement\fP req)"
+.br
+.ti -1c
+.RI "Optional[\fBBaseDistribution\fP] \fB_fetch_metadata_using_lazy_wheel\fP (self, \fBLink\fP link)"
+.br
+.ti -1c
+.RI "None \fB_complete_partial_requirements\fP (self, Iterable[\fBInstallRequirement\fP] partially_downloaded_reqs, bool parallel_builds=False)"
+.br
+.ti -1c
+.RI "\fBBaseDistribution\fP \fB_prepare_linked_requirement\fP (self, \fBInstallRequirement\fP req, bool parallel_builds)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_session\fP"
+.br
+.ti -1c
+.RI "\fB_download\fP"
+.br
+.ti -1c
+.RI "\fB_batch_download\fP"
+.br
+.ti -1c
+.RI "\fB_previous_requirement_header\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Prepares a Requirement
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&.__init__ ( self, str build_dir, Optional[str] download_dir, str src_dir, bool build_isolation, bool check_build_deps, \fBBuildTracker\fP build_tracker, PipSession session, str progress_bar, \fBPackageFinder\fP finder, bool require_hashes, bool use_user_site, bool lazy_wheel, int verbosity, bool legacy_resolver)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " None pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&._complete_partial_requirements ( self, Iterable[\fBInstallRequirement\fP] partially_downloaded_reqs, bool  parallel_builds = \fCFalse\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Download any requirements which were only fetched by metadata\&.
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&._ensure_link_req_src_dir ( self, \fBInstallRequirement\fP req, bool
+     parallel_builds)\fC [protected]\fP"
+
+.PP
+.nf
+Ensure source_dir of a linked InstallRequirement\&.
+.fi
+.PP
+ 
+.SS " Optional[\fBBaseDistribution\fP] pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&._fetch_metadata_only ( self, \fBInstallRequirement\fP req)\fC [protected]\fP"
+
+.SS " Optional[\fBBaseDistribution\fP] pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&._fetch_metadata_using_lazy_wheel ( self, \fBLink\fP link)\fC [protected]\fP"
+
+.PP
+.nf
+Fetch metadata using lazy wheel, if possible\&.
+.fi
+.PP
+ 
+.SS " Optional[\fBBaseDistribution\fP] pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&._fetch_metadata_using_link_data_attr ( self, \fBInstallRequirement\fP req)\fC [protected]\fP"
+
+.PP
+.nf
+Fetch metadata from the data-dist-info-metadata attribute, if possible\&.
+.fi
+.PP
+ 
+.SS " \fBHashes\fP pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&._get_linked_req_hashes ( self, \fBInstallRequirement\fP req)\fC [protected]\fP"
+
+.SS " None pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&._log_preparing_link ( self, \fBInstallRequirement\fP req)\fC [protected]\fP"
+
+.PP
+.nf
+Provide context for the requirement being prepared\&.
+.fi
+.PP
+ 
+.SS " \fBBaseDistribution\fP pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&._prepare_linked_requirement ( self, \fBInstallRequirement\fP req, bool
+     parallel_builds)\fC [protected]\fP"
+
+.SS " \fBBaseDistribution\fP pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&.prepare_editable_requirement ( self, \fBInstallRequirement\fP req)"
+
+.PP
+.nf
+Prepare an editable requirement\&.
+.fi
+.PP
+ 
+.SS " \fBBaseDistribution\fP pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&.prepare_installed_requirement ( self, \fBInstallRequirement\fP req, str skip_reason)"
+
+.PP
+.nf
+Prepare an already-installed requirement\&.
+.fi
+.PP
+ 
+.SS " \fBBaseDistribution\fP pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&.prepare_linked_requirement ( self, \fBInstallRequirement\fP req, bool  parallel_builds = \fCFalse\fP)"
+
+.PP
+.nf
+Prepare a requirement to be obtained from req\&.link\&.
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&.prepare_linked_requirements_more ( self, Iterable[\fBInstallRequirement\fP] reqs, bool  parallel_builds = \fCFalse\fP)"
+
+.PP
+.nf
+Prepare linked requirements more, if needed\&.
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&.save_linked_requirement ( self, \fBInstallRequirement\fP req)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&._batch_download\fC [protected]\fP"
+
+.SS "pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&._download\fC [protected]\fP"
+
+.SS "pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&._previous_requirement_header\fC [protected]\fP"
+
+.SS "pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&._session\fC [protected]\fP"
+
+.SS "pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&.build_dir"
+
+.SS "pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&.build_isolation"
+
+.SS "pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&.build_tracker"
+
+.SS "pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&.check_build_deps"
+
+.SS "pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&.download_dir"
+
+.SS "pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&.finder"
+
+.SS "pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&.legacy_resolver"
+
+.SS "pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&.require_hashes"
+
+.SS "pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&.src_dir"
+
+.SS "pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&.use_lazy_wheel"
+
+.SS "pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&.use_user_site"
+
+.SS "pip\&._internal\&.operations\&.prepare\&.RequirementPreparer\&.verbosity"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

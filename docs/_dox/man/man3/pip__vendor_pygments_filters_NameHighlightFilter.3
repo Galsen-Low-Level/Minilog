@@ -1,0 +1,89 @@
+.TH "pip._vendor.pygments.filters.NameHighlightFilter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.pygments.filters.NameHighlightFilter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._vendor\&.pygments\&.filter\&.Filter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fBfilter\fP (self, lexer, stream)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBnames\fP"
+.br
+.ti -1c
+.RI "\fBtokentype\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpip\&._vendor\&.pygments\&.filter\&.Filter\fP
+.in +1c
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Highlight a normal Name (and Name\&.*) token with a different token type\&.
+
+Example::
+
+    filter = NameHighlightFilter(
+        names=['foo', 'bar', 'baz'],
+        tokentype=Name\&.Function,
+    )
+
+This would highlight the names 'foo', 'bar' and 'baz'
+as functions\&. `Name\&.Function` is the default token type\&.
+
+Options accepted:
+
+`names` : list of strings
+  A list of names that should be given the different token type\&.
+  There is no default\&.
+`tokentype` : TokenType or string
+  A token type or a string containing a token type name that is
+  used for highlighting the strings in `names`\&.  The default is
+  `Name\&.Function`\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.pygments\&.filters\&.NameHighlightFilter\&.__init__ ( self, ** options)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.pygments\&.filter\&.Filter\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.pygments\&.filters\&.NameHighlightFilter\&.filter ( self,  lexer,  stream)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.pygments\&.filter\&.Filter\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.pygments\&.filters\&.NameHighlightFilter\&.names"
+
+.SS "pip\&._vendor\&.pygments\&.filters\&.NameHighlightFilter\&.tokentype"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

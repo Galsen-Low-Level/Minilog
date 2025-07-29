@@ -1,0 +1,91 @@
+.TH "pip._vendor.pkg_resources.IMetadataProvider" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.pkg_resources.IMetadataProvider
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Protocol\&.
+.PP
+Inherited by \fBpip\&._vendor\&.pkg_resources\&.IResourceProvider\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBhas_metadata\fP (self, str name)"
+.br
+.ti -1c
+.RI "str \fBget_metadata\fP (self, str name)"
+.br
+.ti -1c
+.RI "Iterator[str] \fBget_metadata_lines\fP (self, str name)"
+.br
+.ti -1c
+.RI "bool \fBmetadata_isdir\fP (self, str name)"
+.br
+.ti -1c
+.RI "list[str] \fBmetadata_listdir\fP (self, str name)"
+.br
+.ti -1c
+.RI "None \fBrun_script\fP (self, str script_name, dict[str, Any] namespace)"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS " str pip\&._vendor\&.pkg_resources\&.IMetadataProvider\&.get_metadata ( self, str name)"
+
+.PP
+.nf
+The named metadata resource as a string
+.fi
+.PP
+ 
+.SS " Iterator[str] pip\&._vendor\&.pkg_resources\&.IMetadataProvider\&.get_metadata_lines ( self, str name)"
+
+.PP
+.nf
+Yield named metadata resource as list of non-blank non-comment lines
+
+Leading and trailing whitespace is stripped from each line, and lines
+with ``#`` as the first non-blank character are omitted\&.
+.fi
+.PP
+ 
+.SS " bool pip\&._vendor\&.pkg_resources\&.IMetadataProvider\&.has_metadata ( self, str name)"
+
+.PP
+.nf
+Does the package's distribution contain the named metadata?
+.fi
+.PP
+ 
+.SS " bool pip\&._vendor\&.pkg_resources\&.IMetadataProvider\&.metadata_isdir ( self, str name)"
+
+.PP
+.nf
+Is the named metadata a directory?  (like ``os\&.path\&.isdir()``)
+.fi
+.PP
+ 
+.SS " list[str] pip\&._vendor\&.pkg_resources\&.IMetadataProvider\&.metadata_listdir ( self, str name)"
+
+.PP
+.nf
+List of metadata names in the directory (like ``os\&.listdir()``)
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.pkg_resources\&.IMetadataProvider\&.run_script ( self, str script_name, dict[str, Any] namespace)"
+
+.PP
+.nf
+Execute the named script in the supplied namespace dictionary
+.fi
+.PP
+ 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

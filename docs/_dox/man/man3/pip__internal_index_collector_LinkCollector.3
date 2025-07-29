@@ -1,0 +1,90 @@
+.TH "pip._internal.index.collector.LinkCollector" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.index.collector.LinkCollector
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, PipSession \fBsession\fP, \fBSearchScope\fP \fBsearch_scope\fP)"
+.br
+.ti -1c
+.RI "'LinkCollector' \fBcreate\fP (cls, PipSession \fBsession\fP, Values options, bool suppress_no_index=False)"
+.br
+.ti -1c
+.RI "List[str] \fBfind_links\fP (self)"
+.br
+.ti -1c
+.RI "Optional[\fBIndexContent\fP] \fBfetch_response\fP (self, \fBLink\fP location)"
+.br
+.ti -1c
+.RI "\fBCollectedSources\fP \fBcollect_sources\fP (self, str project_name, CandidatesFromPage candidates_from_page)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsearch_scope\fP"
+.br
+.ti -1c
+.RI "\fBsession\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Responsible for collecting Link objects from all configured locations,
+making network requests as needed\&.
+
+The class's main method is its collect_sources() method\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._internal\&.index\&.collector\&.LinkCollector\&.__init__ ( self, PipSession session, \fBSearchScope\fP search_scope)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " \fBCollectedSources\fP pip\&._internal\&.index\&.collector\&.LinkCollector\&.collect_sources ( self, str project_name, CandidatesFromPage candidates_from_page)"
+
+.SS " 'LinkCollector' pip\&._internal\&.index\&.collector\&.LinkCollector\&.create ( cls, PipSession session, Values options, bool  suppress_no_index = \fCFalse\fP)"
+
+.PP
+.nf
+:param session: The Session to use to make requests\&.
+:param suppress_no_index: Whether to ignore the --no-index option
+    when constructing the SearchScope object\&.
+
+.fi
+.PP
+ 
+.SS " Optional[\fBIndexContent\fP] pip\&._internal\&.index\&.collector\&.LinkCollector\&.fetch_response ( self, \fBLink\fP location)"
+
+.PP
+.nf
+Fetch an HTML page containing package links\&.
+
+.fi
+.PP
+ 
+.SS " List[str] pip\&._internal\&.index\&.collector\&.LinkCollector\&.find_links ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._internal\&.index\&.collector\&.LinkCollector\&.search_scope"
+
+.SS "pip\&._internal\&.index\&.collector\&.LinkCollector\&.session"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

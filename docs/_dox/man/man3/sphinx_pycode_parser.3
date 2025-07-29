@@ -1,0 +1,114 @@
+.TH "sphinx.pycode.parser" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.pycode.parser
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAfterCommentParser\fP"
+.br
+.ti -1c
+.RI "class \fBDefinitionFinder\fP"
+.br
+.ti -1c
+.RI "class \fBParser\fP"
+.br
+.ti -1c
+.RI "class \fBToken\fP"
+.br
+.ti -1c
+.RI "class \fBTokenProcessor\fP"
+.br
+.ti -1c
+.RI "class \fBVariableCommentPicker\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fBfilter_whitespace\fP (str code)"
+.br
+.ti -1c
+.RI "list[ast\&.expr] \fBget_assign_targets\fP (ast\&.AST node)"
+.br
+.ti -1c
+.RI "list[str] \fBget_lvar_names\fP (ast\&.AST node, ast\&.arg|None self=None)"
+.br
+.ti -1c
+.RI "str \fBdedent_docstring\fP (str s)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBcomment_re\fP = re\&.compile('^\\\\s*#: ?(\&.*)\\r?\\n?$')"
+.br
+.ti -1c
+.RI "\fBindent_re\fP = re\&.compile('^\\\\s*$')"
+.br
+.ti -1c
+.RI "\fBemptyline_re\fP = re\&.compile('^\\\\s*(#\&.*)?$')"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Utilities parsing and analyzing Python code\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " str sphinx\&.pycode\&.parser\&.dedent_docstring (str s)"
+
+.PP
+.nf
+Remove common leading indentation from docstring\&.
+.fi
+.PP
+ 
+.SS " str sphinx\&.pycode\&.parser\&.filter_whitespace (str code)"
+
+.SS " list[ast\&.expr] sphinx\&.pycode\&.parser\&.get_assign_targets (ast\&.AST node)"
+
+.PP
+.nf
+Get list of targets from Assign and AnnAssign node\&.
+.fi
+.PP
+ 
+.SS " list[str] sphinx\&.pycode\&.parser\&.get_lvar_names (ast\&.AST node, ast\&.arg | None  self = \fCNone\fP)"
+
+.PP
+.nf
+Convert assignment-AST to variable names\&.
+
+This raises `TypeError` if the assignment does not create new variable::
+
+    ary[0] = 'foo'
+    dic['bar'] = 'baz'
+    # => TypeError
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "sphinx\&.pycode\&.parser\&.comment_re = re\&.compile('^\\\\s*#: ?(\&.*)\\r?\\n?$')"
+
+.SS "sphinx\&.pycode\&.parser\&.emptyline_re = re\&.compile('^\\\\s*(#\&.*)?$')"
+
+.SS "sphinx\&.pycode\&.parser\&.indent_re = re\&.compile('^\\\\s*$')"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

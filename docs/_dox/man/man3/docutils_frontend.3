@@ -1,0 +1,318 @@
+.TH "docutils.frontend" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.frontend
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBConfigDeprecationWarning\fP"
+.br
+.ti -1c
+.RI "class \fBConfigParser\fP"
+.br
+.ti -1c
+.RI "class \fBOption\fP"
+.br
+.ti -1c
+.RI "class \fBOptionParser\fP"
+.br
+.ti -1c
+.RI "class \fBValues\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBstore_multiple\fP (option, \fBopt\fP, value, parser, *args, **kwargs)"
+.br
+.ti -1c
+.RI "\fBread_config_file\fP (option, \fBopt\fP, value, parser)"
+.br
+.ti -1c
+.RI "\fBvalidate_encoding\fP (setting, value=None, option_parser=None, config_parser=None, config_section=None)"
+.br
+.ti -1c
+.RI "\fBvalidate_encoding_error_handler\fP (setting, value=None, option_parser=None, config_parser=None, config_section=None)"
+.br
+.ti -1c
+.RI "\fBvalidate_encoding_and_error_handler\fP (setting, value, option_parser, config_parser=None, config_section=None)"
+.br
+.ti -1c
+.RI "\fBvalidate_boolean\fP (setting, value=None, option_parser=None, config_parser=None, config_section=None)"
+.br
+.ti -1c
+.RI "\fBvalidate_ternary\fP (setting, value=None, option_parser=None, config_parser=None, config_section=None)"
+.br
+.ti -1c
+.RI "\fBvalidate_nonnegative_int\fP (setting, value=None, option_parser=None, config_parser=None, config_section=None)"
+.br
+.ti -1c
+.RI "\fBvalidate_threshold\fP (setting, value=None, option_parser=None, config_parser=None, config_section=None)"
+.br
+.ti -1c
+.RI "\fBvalidate_colon_separated_string_list\fP (setting, value=None, option_parser=None, config_parser=None, config_section=None)"
+.br
+.ti -1c
+.RI "\fBvalidate_comma_separated_list\fP (setting, value=None, option_parser=None, config_parser=None, config_section=None)"
+.br
+.ti -1c
+.RI "\fBvalidate_math_output\fP (setting, value=None, option_parser=None, config_parser=None, config_section=None)"
+.br
+.ti -1c
+.RI "\fBvalidate_url_trailing_slash\fP (setting, value=None, option_parser=None, config_parser=None, config_section=None)"
+.br
+.ti -1c
+.RI "\fBvalidate_dependency_file\fP (setting, value=None, option_parser=None, config_parser=None, config_section=None)"
+.br
+.ti -1c
+.RI "\fBvalidate_strip_class\fP (setting, value=None, option_parser=None, config_parser=None, config_section=None)"
+.br
+.ti -1c
+.RI "\fBvalidate_smartquotes_locales\fP (setting, value=None, option_parser=None, config_parser=None, config_section=None)"
+.br
+.ti -1c
+.RI "\fBmake_paths_absolute\fP (pathdict, keys, base_path=None)"
+.br
+.ti -1c
+.RI "\fBmake_one_path_absolute\fP (base_path, path)"
+.br
+.ti -1c
+.RI "\fBfilter_settings_spec\fP (settings_spec, *exclude, **replace)"
+.br
+.ti -1c
+.RI "\fBget_default_settings\fP (*components)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Command-line and common processing for Docutils front-end tools\&.
+
+This module is provisional\&.
+Major changes will happen with the switch from the deprecated
+'optparse' module to 'arparse'\&.
+
+Applications should use the high-level API provided by `docutils\&.core`\&.
+See https://docutils\&.sourceforge\&.io/docs/api/runtime-settings\&.html\&.
+
+Exports the following classes:
+
+* `OptionParser`: Standard Docutils command-line processing\&.
+  Deprecated\&. Will be replaced by an ArgumentParser\&.
+* `Option`: Customized version of `optparse\&.Option`; validation support\&.
+  Deprecated\&. Will be removed\&.
+* `Values`: Runtime settings; objects are simple structs
+  (``object\&.attribute``)\&.  Supports cumulative list settings (attributes)\&.
+  Deprecated\&. Will be removed\&.
+* `ConfigParser`: Standard Docutils config file processing\&.
+  Provisional\&. Details will change\&.
+
+Also exports the following functions:
+
+Interface function:
+  `get_default_settings()`\&.  New in 0\&.19\&.
+
+Option callbacks:
+  `store_multiple()`, `read_config_file()`\&. Deprecated\&.
+
+Setting validators:
+  `validate_encoding()`, `validate_encoding_error_handler()`,
+  `validate_encoding_and_error_handler()`,
+  `validate_boolean()`, `validate_ternary()`,
+  `validate_nonnegative_int()`, `validate_threshold()`,
+  `validate_colon_separated_string_list()`,
+  `validate_comma_separated_list()`,
+  `validate_url_trailing_slash()`,
+  `validate_dependency_file()`,
+  `validate_strip_class()`
+  `validate_smartquotes_locales()`\&.
+
+  Provisional\&.
+
+Misc:
+  `make_paths_absolute()`, `filter_settings_spec()`\&. Provisional\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "docutils\&.frontend\&.filter_settings_spec ( settings_spec, * exclude, ** replace)"
+
+.PP
+.nf
+Return a copy of `settings_spec` excluding/replacing some settings\&.
+
+`settings_spec` is a tuple of configuration settings
+(cf\&. `docutils\&.SettingsSpec\&.settings_spec`)\&.
+
+Optional positional arguments are names of to-be-excluded settings\&.
+Keyword arguments are option specification replacements\&.
+(See the html4strict writer for an example\&.)
+
+.fi
+.PP
+ 
+.SS "docutils\&.frontend\&.get_default_settings (* components)"
+
+.PP
+.nf
+Return default runtime settings for `components`\&.
+
+Return a `frontend\&.Values` instance with defaults for generic Docutils
+settings and settings from the `components` (`SettingsSpec` instances)\&.
+
+This corresponds to steps 1 and 2 in the `runtime settings priority`__\&.
+
+__ https://docutils\&.sourceforge\&.io/docs/api/runtime-settings\&.html
+   #settings-priority
+
+.fi
+.PP
+ 
+.SS "docutils\&.frontend\&.make_one_path_absolute ( base_path,  path)"
+
+.SS "docutils\&.frontend\&.make_paths_absolute ( pathdict,  keys,  base_path = \fCNone\fP)"
+
+.PP
+.nf
+Interpret filesystem path settings relative to the `base_path` given\&.
+
+Paths are values in `pathdict` whose keys are in `keys`\&.  Get `keys` from
+`OptionParser\&.relative_path_settings`\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.frontend\&.read_config_file ( option,  opt,  value,  parser)"
+
+.PP
+.nf
+Read a configuration file during option processing\&.  (Option callback\&.)
+
+.fi
+.PP
+ 
+.SS "docutils\&.frontend\&.store_multiple ( option,  opt,  value,  parser, * args, ** kwargs)"
+
+.PP
+.nf
+Store multiple values in `parser\&.values`\&.  (Option callback\&.)
+
+Store `None` for each attribute named in `args`, and store the value for
+each key (attribute name) in `kwargs`\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.frontend\&.validate_boolean ( setting,  value = \fCNone\fP,  option_parser = \fCNone\fP,  config_parser = \fCNone\fP,  config_section = \fCNone\fP)"
+
+.PP
+.nf
+Check/normalize boolean settings:
+     True:  '1', 'on', 'yes', 'true'
+     False: '0', 'off', 'no','false', ''
+
+All arguments except `value` are ignored
+(kept for compatibility with 'optparse' module)\&.
+If there is only one positional argument, it is interpreted as `value`\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.frontend\&.validate_colon_separated_string_list ( setting,  value = \fCNone\fP,  option_parser = \fCNone\fP,  config_parser = \fCNone\fP,  config_section = \fCNone\fP)"
+
+.SS "docutils\&.frontend\&.validate_comma_separated_list ( setting,  value = \fCNone\fP,  option_parser = \fCNone\fP,  config_parser = \fCNone\fP,  config_section = \fCNone\fP)"
+
+.PP
+.nf
+Check/normalize list arguments (split at ',' and strip whitespace)\&.
+
+All arguments except `value` are ignored
+(kept for compatibility with 'optparse' module)\&.
+If there is only one positional argument, it is interpreted as `value`\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.frontend\&.validate_dependency_file ( setting,  value = \fCNone\fP,  option_parser = \fCNone\fP,  config_parser = \fCNone\fP,  config_section = \fCNone\fP)"
+
+.SS "docutils\&.frontend\&.validate_encoding ( setting,  value = \fCNone\fP,  option_parser = \fCNone\fP,  config_parser = \fCNone\fP,  config_section = \fCNone\fP)"
+
+.SS "docutils\&.frontend\&.validate_encoding_and_error_handler ( setting,  value,  option_parser,  config_parser = \fCNone\fP,  config_section = \fCNone\fP)"
+
+.PP
+.nf
+Side-effect: if an error handler is included in the value, it is inserted
+into the appropriate place as if it were a separate setting/option\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.frontend\&.validate_encoding_error_handler ( setting,  value = \fCNone\fP,  option_parser = \fCNone\fP,  config_parser = \fCNone\fP,  config_section = \fCNone\fP)"
+
+.SS "docutils\&.frontend\&.validate_math_output ( setting,  value = \fCNone\fP,  option_parser = \fCNone\fP,  config_parser = \fCNone\fP,  config_section = \fCNone\fP)"
+
+.PP
+.nf
+Check 'math-output' setting, return list with 'format' and 'options'\&.
+
+See also https://docutils\&.sourceforge\&.io/docs/user/config\&.html#math-output
+
+Argument list for compatibility with 'optparse' module\&.
+All arguments except `value` are ignored\&.
+If there is only one positional argument, it is interpreted as `value`\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.frontend\&.validate_nonnegative_int ( setting,  value = \fCNone\fP,  option_parser = \fCNone\fP,  config_parser = \fCNone\fP,  config_section = \fCNone\fP)"
+
+.SS "docutils\&.frontend\&.validate_smartquotes_locales ( setting,  value = \fCNone\fP,  option_parser = \fCNone\fP,  config_parser = \fCNone\fP,  config_section = \fCNone\fP)"
+
+.PP
+.nf
+Check/normalize a comma separated list of smart quote definitions\&.
+
+Return a list of (language-tag, quotes) string tuples\&.
+
+All arguments except `value` are ignored
+(kept for compatibility with 'optparse' module)\&.
+If there is only one positional argument, it is interpreted as `value`\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.frontend\&.validate_strip_class ( setting,  value = \fCNone\fP,  option_parser = \fCNone\fP,  config_parser = \fCNone\fP,  config_section = \fCNone\fP)"
+
+.SS "docutils\&.frontend\&.validate_ternary ( setting,  value = \fCNone\fP,  option_parser = \fCNone\fP,  config_parser = \fCNone\fP,  config_section = \fCNone\fP)"
+
+.PP
+.nf
+Check/normalize three-value settings:
+     True:  '1', 'on', 'yes', 'true'
+     False: '0', 'off', 'no','false', ''
+     any other value: returned as-is\&.
+
+All arguments except `value` are ignored
+(kept for compatibility with 'optparse' module)\&.
+If there is only one positional argument, it is interpreted as `value`\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.frontend\&.validate_threshold ( setting,  value = \fCNone\fP,  option_parser = \fCNone\fP,  config_parser = \fCNone\fP,  config_section = \fCNone\fP)"
+
+.SS "docutils\&.frontend\&.validate_url_trailing_slash ( setting,  value = \fCNone\fP,  option_parser = \fCNone\fP,  config_parser = \fCNone\fP,  config_section = \fCNone\fP)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

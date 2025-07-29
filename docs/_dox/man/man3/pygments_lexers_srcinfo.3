@@ -1,0 +1,72 @@
+.TH "pygments.lexers.srcinfo" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.lexers.srcinfo
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSrcinfoLexer\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBkeywords\fP"
+.br
+.ti -1c
+.RI "tuple \fBarchitecture_dependent_keywords\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+    pygments\&.lexers\&.srcinfo
+    ~~~~~~~~~~~~~~~~~~~~~~~
+
+    Lexers for \&.SRCINFO files used by Arch Linux Packages\&.
+
+    The description of the format can be found in the wiki:
+    https://wiki\&.archlinux\&.org/title/\&.SRCINFO
+
+    :copyright: Copyright 2006-2025 by the Pygments team, see AUTHORS\&.
+    :license: BSD, see LICENSE for details\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "tuple pygments\&.lexers\&.srcinfo\&.architecture_dependent_keywords"
+\fBInitial value:\fP.PP
+.nf
+1 =  (
+2     'source', 'depends', 'checkdepends', 'makedepends', 'optdepends',
+3     'provides', 'conflicts', 'replaces',
+4     'md5sums', 'sha1sums', 'sha224sums', 'sha256sums', 'sha384sums',
+5     'sha512sums',
+6 )
+.fi
+
+.SS "tuple pygments\&.lexers\&.srcinfo\&.keywords"
+\fBInitial value:\fP.PP
+.nf
+1 =  (
+2     'pkgbase', 'pkgname',
+3     'pkgver', 'pkgrel', 'epoch',
+4     'pkgdesc', 'url', 'install', 'changelog',
+5     'arch', 'groups', 'license', 'noextract', 'options', 'backup',
+6     'validpgpkeys',
+7 )
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

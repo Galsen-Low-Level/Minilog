@@ -1,0 +1,82 @@
+.TH "pip._internal.models.selection_prefs.SelectionPreferences" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.models.selection_prefs.SelectionPreferences
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, bool \fBallow_yanked\fP, bool \fBallow_all_prereleases\fP=False, Optional[\fBFormatControl\fP] \fBformat_control\fP=None, bool \fBprefer_binary\fP=False, Optional[bool] \fBignore_requires_python\fP=None)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBallow_yanked\fP"
+.br
+.ti -1c
+.RI "\fBallow_all_prereleases\fP"
+.br
+.ti -1c
+.RI "\fBformat_control\fP"
+.br
+.ti -1c
+.RI "\fBprefer_binary\fP"
+.br
+.ti -1c
+.RI "\fBignore_requires_python\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Encapsulates the candidate selection preferences for downloading
+and installing files\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._internal\&.models\&.selection_prefs\&.SelectionPreferences\&.__init__ ( self, bool allow_yanked, bool  allow_all_prereleases = \fCFalse\fP, Optional[\fBFormatControl\fP]  format_control = \fCNone\fP, bool  prefer_binary = \fCFalse\fP, Optional[bool]  ignore_requires_python = \fCNone\fP)"
+
+.PP
+.nf
+Create a SelectionPreferences object\&.
+
+:param allow_yanked: Whether files marked as yanked (in the sense
+    of PEP 592) are permitted to be candidates for install\&.
+:param format_control: A FormatControl object or None\&. Used to control
+    the selection of source packages / binary packages when consulting
+    the index and links\&.
+:param prefer_binary: Whether to prefer an old, but valid, binary
+    dist over a new source dist\&.
+:param ignore_requires_python: Whether to ignore incompatible
+    'Requires-Python' values in links\&. Defaults to False\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._internal\&.models\&.selection_prefs\&.SelectionPreferences\&.allow_all_prereleases"
+
+.SS "pip\&._internal\&.models\&.selection_prefs\&.SelectionPreferences\&.allow_yanked"
+
+.SS "pip\&._internal\&.models\&.selection_prefs\&.SelectionPreferences\&.format_control"
+
+.SS "pip\&._internal\&.models\&.selection_prefs\&.SelectionPreferences\&.ignore_requires_python"
+
+.SS "pip\&._internal\&.models\&.selection_prefs\&.SelectionPreferences\&.prefer_binary"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

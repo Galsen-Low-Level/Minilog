@@ -1,0 +1,130 @@
+\doxysection{sphinx.\+project.\+Project Class Reference}
+\hypertarget{classsphinx_1_1project_1_1Project}{}\label{classsphinx_1_1project_1_1Project}\index{sphinx.project.Project@{sphinx.project.Project}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classsphinx_1_1project_1_1Project_a3a9539cf0433b17e85b1855feb40fe28}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]} \mbox{\hyperlink{classsphinx_1_1project_1_1Project_af8aaabe0db2c8d61bcd91b40132209fc}{srcdir}}, Iterable\mbox{[}str\mbox{]} \mbox{\hyperlink{classsphinx_1_1project_1_1Project_abef554ebed86d440db27d5767beae9ea}{source\+\_\+suffix}})
+\item 
+None \mbox{\hyperlink{classsphinx_1_1project_1_1Project_a503367e184bfd927a80070de3ee18401}{restore}} (self, \mbox{\hyperlink{classsphinx_1_1project_1_1Project}{Project}} other)
+\item 
+set\mbox{[}str\mbox{]} \mbox{\hyperlink{classsphinx_1_1project_1_1Project_a4c7fc4a9cbf45bac0c3b9af2dbed5591}{discover}} (self, Iterable\mbox{[}str\mbox{]} exclude\+\_\+paths=(), Iterable\mbox{[}str\mbox{]} include\+\_\+paths=(\textquotesingle{} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\textquotesingle{},))
+\item 
+str\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classsphinx_1_1project_1_1Project_a1c933d080431e6165934404641146bd0}{path2doc}} (self, str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]} filename)
+\item 
+\mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPath}{\+\_\+\+Str\+Path}} \mbox{\hyperlink{classsphinx_1_1project_1_1Project_ac9c1c1d74b45b16a6861fff7b748b3d0}{doc2path}} (self, str docname, bool absolute)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsphinx_1_1project_1_1Project_af8aaabe0db2c8d61bcd91b40132209fc}{srcdir}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1project_1_1Project_abef554ebed86d440db27d5767beae9ea}{source\+\_\+suffix}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1project_1_1Project_a181d0aa3a511a536b0fc74ef3ca52185}{docnames}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsphinx_1_1project_1_1Project_a871172091544c112c7ffcebb32325803}{\+\_\+first\+\_\+source\+\_\+suffix}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1project_1_1Project_a79d753c2a37a528c265f6c40c4713cc4}{\+\_\+path\+\_\+to\+\_\+docname}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1project_1_1Project_ace672f4446856c2e43be8a99c51f1a57}{\+\_\+docname\+\_\+to\+\_\+path}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A project is the source code set of the Sphinx document(s).\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsphinx_1_1project_1_1Project_a3a9539cf0433b17e85b1855feb40fe28}\label{classsphinx_1_1project_1_1Project_a3a9539cf0433b17e85b1855feb40fe28} 
+\index{sphinx.project.Project@{sphinx.project.Project}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!sphinx.project.Project@{sphinx.project.Project}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None sphinx.\+project.\+Project.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}}]{srcdir,  }\item[{Iterable\mbox{[}str\mbox{]}     }]{source\+\_\+suffix }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsphinx_1_1project_1_1Project_a4c7fc4a9cbf45bac0c3b9af2dbed5591}\label{classsphinx_1_1project_1_1Project_a4c7fc4a9cbf45bac0c3b9af2dbed5591} 
+\index{sphinx.project.Project@{sphinx.project.Project}!discover@{discover}}
+\index{discover@{discover}!sphinx.project.Project@{sphinx.project.Project}}
+\doxysubsubsection{\texorpdfstring{discover()}{discover()}}
+{\footnotesize\ttfamily  set\mbox{[}str\mbox{]} sphinx.\+project.\+Project.\+discover (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Iterable\mbox{[}str\mbox{]} }]{exclude\+\_\+paths = {\ttfamily ()},  }\item[{Iterable\mbox{[}str\mbox{]} }]{include\+\_\+paths = {\ttfamily (\textquotesingle{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\textquotesingle{},)} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find all document files in the source directory and put them in
+:attr:`docnames`.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1project_1_1Project_ac9c1c1d74b45b16a6861fff7b748b3d0}\label{classsphinx_1_1project_1_1Project_ac9c1c1d74b45b16a6861fff7b748b3d0} 
+\index{sphinx.project.Project@{sphinx.project.Project}!doc2path@{doc2path}}
+\index{doc2path@{doc2path}!sphinx.project.Project@{sphinx.project.Project}}
+\doxysubsubsection{\texorpdfstring{doc2path()}{doc2path()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPath}{\+\_\+\+Str\+Path}} sphinx.\+project.\+Project.\+doc2path (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{docname,  }\item[{bool}]{absolute }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the filename for the document name.
+
+If *absolute* is True, return as an absolute path.
+Else, return as a relative path to the source directory.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1project_1_1Project_a1c933d080431e6165934404641146bd0}\label{classsphinx_1_1project_1_1Project_a1c933d080431e6165934404641146bd0} 
+\index{sphinx.project.Project@{sphinx.project.Project}!path2doc@{path2doc}}
+\index{path2doc@{path2doc}!sphinx.project.Project@{sphinx.project.Project}}
+\doxysubsubsection{\texorpdfstring{path2doc()}{path2doc()}}
+{\footnotesize\ttfamily  str \texorpdfstring{$\vert$}{|} None sphinx.\+project.\+Project.\+path2doc (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the docname for the filename if the file is a document.
+
+*filename* should be absolute or relative to the source directory.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1project_1_1Project_a503367e184bfd927a80070de3ee18401}\label{classsphinx_1_1project_1_1Project_a503367e184bfd927a80070de3ee18401} 
+\index{sphinx.project.Project@{sphinx.project.Project}!restore@{restore}}
+\index{restore@{restore}!sphinx.project.Project@{sphinx.project.Project}}
+\doxysubsubsection{\texorpdfstring{restore()}{restore()}}
+{\footnotesize\ttfamily  None sphinx.\+project.\+Project.\+restore (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsphinx_1_1project_1_1Project}{Project}}}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Take over a result of last build.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsphinx_1_1project_1_1Project_ace672f4446856c2e43be8a99c51f1a57}\label{classsphinx_1_1project_1_1Project_ace672f4446856c2e43be8a99c51f1a57} 
+\index{sphinx.project.Project@{sphinx.project.Project}!\_docname\_to\_path@{\_docname\_to\_path}}
+\index{\_docname\_to\_path@{\_docname\_to\_path}!sphinx.project.Project@{sphinx.project.Project}}
+\doxysubsubsection{\texorpdfstring{\_docname\_to\_path}{\_docname\_to\_path}}
+{\footnotesize\ttfamily sphinx.\+project.\+Project.\+\_\+docname\+\_\+to\+\_\+path\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1project_1_1Project_a871172091544c112c7ffcebb32325803}\label{classsphinx_1_1project_1_1Project_a871172091544c112c7ffcebb32325803} 
+\index{sphinx.project.Project@{sphinx.project.Project}!\_first\_source\_suffix@{\_first\_source\_suffix}}
+\index{\_first\_source\_suffix@{\_first\_source\_suffix}!sphinx.project.Project@{sphinx.project.Project}}
+\doxysubsubsection{\texorpdfstring{\_first\_source\_suffix}{\_first\_source\_suffix}}
+{\footnotesize\ttfamily sphinx.\+project.\+Project.\+\_\+first\+\_\+source\+\_\+suffix\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1project_1_1Project_a79d753c2a37a528c265f6c40c4713cc4}\label{classsphinx_1_1project_1_1Project_a79d753c2a37a528c265f6c40c4713cc4} 
+\index{sphinx.project.Project@{sphinx.project.Project}!\_path\_to\_docname@{\_path\_to\_docname}}
+\index{\_path\_to\_docname@{\_path\_to\_docname}!sphinx.project.Project@{sphinx.project.Project}}
+\doxysubsubsection{\texorpdfstring{\_path\_to\_docname}{\_path\_to\_docname}}
+{\footnotesize\ttfamily sphinx.\+project.\+Project.\+\_\+path\+\_\+to\+\_\+docname\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1project_1_1Project_a181d0aa3a511a536b0fc74ef3ca52185}\label{classsphinx_1_1project_1_1Project_a181d0aa3a511a536b0fc74ef3ca52185} 
+\index{sphinx.project.Project@{sphinx.project.Project}!docnames@{docnames}}
+\index{docnames@{docnames}!sphinx.project.Project@{sphinx.project.Project}}
+\doxysubsubsection{\texorpdfstring{docnames}{docnames}}
+{\footnotesize\ttfamily sphinx.\+project.\+Project.\+docnames}
+
+\Hypertarget{classsphinx_1_1project_1_1Project_abef554ebed86d440db27d5767beae9ea}\label{classsphinx_1_1project_1_1Project_abef554ebed86d440db27d5767beae9ea} 
+\index{sphinx.project.Project@{sphinx.project.Project}!source\_suffix@{source\_suffix}}
+\index{source\_suffix@{source\_suffix}!sphinx.project.Project@{sphinx.project.Project}}
+\doxysubsubsection{\texorpdfstring{source\_suffix}{source\_suffix}}
+{\footnotesize\ttfamily sphinx.\+project.\+Project.\+source\+\_\+suffix}
+
+\Hypertarget{classsphinx_1_1project_1_1Project_af8aaabe0db2c8d61bcd91b40132209fc}\label{classsphinx_1_1project_1_1Project_af8aaabe0db2c8d61bcd91b40132209fc} 
+\index{sphinx.project.Project@{sphinx.project.Project}!srcdir@{srcdir}}
+\index{srcdir@{srcdir}!sphinx.project.Project@{sphinx.project.Project}}
+\doxysubsubsection{\texorpdfstring{srcdir}{srcdir}}
+{\footnotesize\ttfamily sphinx.\+project.\+Project.\+srcdir}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/sphinx/\mbox{\hyperlink{sphinx_2project_8py}{project.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,102 @@
+.TH "pip._vendor.distlib.markers" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.distlib.markers
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBEvaluator\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_is_version_marker\fP (s)"
+.br
+.ti -1c
+.RI "\fB_is_literal\fP (o)"
+.br
+.ti -1c
+.RI "\fB_get_versions\fP (s)"
+.br
+.ti -1c
+.RI "\fBdefault_context\fP ()"
+.br
+.ti -1c
+.RI "\fBinterpret\fP (marker, execution_context=None)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB_VERSION_PATTERN\fP = re\&.compile(r'((\\d+(\\\&.\\d+)*\\w*)|\\'(\\d+(\\\&.\\d+)*\\w*)\\'|\\'(\\d+(\\\&.\\d+)*\\w*)\\')')"
+.br
+.ti -1c
+.RI "dict \fB_VERSION_MARKERS\fP = {'python_version', 'python_full_version'}"
+.br
+.ti -1c
+.RI "\fB_DIGITS\fP = re\&.compile(r'\\d+\\\&.\\d+')"
+.br
+.ti -1c
+.RI "\fBDEFAULT_CONTEXT\fP = \fBdefault_context\fP()"
+.br
+.ti -1c
+.RI "\fBevaluator\fP = \fBEvaluator\fP()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Parser for the environment markers micro-language defined in PEP 508\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.markers\&._get_versions ( s)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.markers\&._is_literal ( o)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.markers\&._is_version_marker ( s)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.markers\&.default_context ()"
+
+.SS "pip\&._vendor\&.distlib\&.markers\&.interpret ( marker,  execution_context = \fCNone\fP)"
+
+.PP
+.nf
+Interpret a marker and return a result depending on environment\&.
+
+:param marker: The marker to interpret\&.
+:type marker: str
+:param execution_context: The context used for name lookup\&.
+:type execution_context: mapping
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.markers\&._DIGITS = re\&.compile(r'\\d+\\\&.\\d+')\fC [protected]\fP"
+
+.SS "dict pip\&._vendor\&.distlib\&.markers\&._VERSION_MARKERS = {'python_version', 'python_full_version'}\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.markers\&._VERSION_PATTERN = re\&.compile(r'((\\d+(\\\&.\\d+)*\\w*)|\\'(\\d+(\\\&.\\d+)*\\w*)\\'|\\'(\\d+(\\\&.\\d+)*\\w*)\\')')\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.markers\&.DEFAULT_CONTEXT = \fBdefault_context\fP()"
+
+.SS "pip\&._vendor\&.distlib\&.markers\&.evaluator = \fBEvaluator\fP()"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

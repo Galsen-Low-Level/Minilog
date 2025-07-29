@@ -1,0 +1,326 @@
+.TH "sphinx.domains.python.PyVariable" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.domains.python.PyVariable
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.domains\&.python\&._object\&.PyObject\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "tuple[str, str] \fBhandle_signature\fP (self, str sig, \fBdesc_signature\fP signode)"
+.br
+.ti -1c
+.RI "str \fBget_index_text\fP (self, str modname, tuple[str, str] name_cls)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.domains\&.python\&._object\&.PyObject\fP
+.in +1c
+.ti -1c
+.RI "Sequence[nodes\&.Node] \fBget_signature_prefix\fP (self, str sig)"
+.br
+.ti -1c
+.RI "bool \fBneeds_arglist\fP (self)"
+.br
+.ti -1c
+.RI "None \fBadd_target_and_index\fP (self, tuple[str, str] name_cls, str sig, \fBdesc_signature\fP signode)"
+.br
+.ti -1c
+.RI "None \fBbefore_content\fP (self)"
+.br
+.ti -1c
+.RI "None \fBafter_content\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.directives\&.ObjectDescription\fP
+.in +1c
+.ti -1c
+.RI "dict[str, tuple[\fBField\fP, bool]] \fBget_field_type_map\fP (self)"
+.br
+.ti -1c
+.RI "list[str] \fBget_signatures\fP (self)"
+.br
+.ti -1c
+.RI "None \fBtransform_content\fP (self, \fBaddnodes\&.desc_content\fP content_node)"
+.br
+.ti -1c
+.RI "list[\fBNode\fP] \fBrun\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.util\&.docutils\&.SphinxDirective\fP
+.in +1c
+.ti -1c
+.RI "\fBBuildEnvironment\fP \fBenv\fP (self)"
+.br
+.ti -1c
+.RI "\fBConfig\fP \fBconfig\fP (self)"
+.br
+.ti -1c
+.RI "tuple[str, int] \fBget_source_info\fP (self)"
+.br
+.ti -1c
+.RI "None \fBset_source_info\fP (self, \fBNode\fP node)"
+.br
+.ti -1c
+.RI "str \fBget_location\fP (self)"
+.br
+.ti -1c
+.RI "list[\fBNode\fP] \fBparse_content_to_nodes\fP (self, bool allow_section_headings=False)"
+.br
+.ti -1c
+.RI "list[\fBNode\fP] \fBparse_text_to_nodes\fP (self, str text='', *int offset=\-1, bool allow_section_headings=False)"
+.br
+.ti -1c
+.RI "tuple[list[\fBNode\fP], list[\fBsystem_message\fP]] \fBparse_inline\fP (self, str text, *int \fBlineno\fP=\-1)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.parsers\&.rst\&.Directive\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBname\fP, \fBarguments\fP, \fBoptions\fP, \fBcontent\fP, \fBlineno\fP, \fBcontent_offset\fP, \fBblock_text\fP, \fBstate\fP, \fBstate_machine\fP)"
+.br
+.ti -1c
+.RI "\fBdirective_error\fP (self, level, message)"
+.br
+.ti -1c
+.RI "\fBdebug\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBinfo\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBwarning\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBerror\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBsevere\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBassert_has_content\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd_name\fP (self, node)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "ClassVar \fBoption_spec\fP = PyObject\&.option_spec\&.copy()"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBsphinx\&.domains\&.python\&._object\&.PyObject\fP
+.in +1c
+.ti -1c
+.RI "dict \fBoption_spec\fP"
+.br
+.ti -1c
+.RI "list \fBdoc_field_types\fP"
+.br
+.ti -1c
+.RI "bool \fBallow_nesting\fP = False"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBsphinx\&.directives\&.ObjectDescription\fP
+.in +1c
+.ti -1c
+.RI "bool \fBhas_content\fP = True"
+.br
+.ti -1c
+.RI "int \fBrequired_arguments\fP = 1"
+.br
+.ti -1c
+.RI "int \fBoptional_arguments\fP = 0"
+.br
+.ti -1c
+.RI "bool \fBfinal_argument_whitespace\fP = True"
+.br
+.ti -1c
+.RI "dict \fBoption_spec\fP"
+.br
+.ti -1c
+.RI "list \fBdoc_field_types\fP = []"
+.br
+.ti -1c
+.RI "str \fBdomain\fP = None"
+.br
+.ti -1c
+.RI "str \fBobjtype\fP"
+.br
+.ti -1c
+.RI "addnodes \fBindexnode\fP \&.index"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.parsers\&.rst\&.Directive\fP
+.in +1c
+.ti -1c
+.RI "int \fBrequired_arguments\fP = 0"
+.br
+.ti -1c
+.RI "int \fBoptional_arguments\fP = 0"
+.br
+.ti -1c
+.RI "bool \fBfinal_argument_whitespace\fP = False"
+.br
+.ti -1c
+.RI "\fBoption_spec\fP = None"
+.br
+.ti -1c
+.RI "bool \fBhas_content\fP = False"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBsphinx\&.domains\&.python\&._object\&.PyObject\fP
+.in +1c
+.ti -1c
+.RI "\fBenv\fP"
+.br
+.ti -1c
+.RI "\fBobjtype\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsphinx\&.directives\&.ObjectDescription\fP
+.in +1c
+.ti -1c
+.RI "\fBdomain\fP"
+.br
+.ti -1c
+.RI "\fBobjtype\fP"
+.br
+.ti -1c
+.RI "\fBindexnode\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsphinx\&.util\&.docutils\&.SphinxDirective\fP
+.in +1c
+.ti -1c
+.RI "\fBlineno\fP"
+.br
+.ti -1c
+.RI "\fBstate\fP"
+.br
+.ti -1c
+.RI "\fBcontent\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.parsers\&.rst\&.Directive\fP
+.in +1c
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBarguments\fP"
+.br
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBcontent\fP"
+.br
+.ti -1c
+.RI "\fBlineno\fP"
+.br
+.ti -1c
+.RI "\fBcontent_offset\fP"
+.br
+.ti -1c
+.RI "\fBblock_text\fP"
+.br
+.ti -1c
+.RI "\fBstate\fP"
+.br
+.ti -1c
+.RI "\fBstate_machine\fP"
+.br
+.ti -1c
+.RI "\fBreporter\fP"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBsphinx\&.domains\&.python\&._object\&.PyObject\fP
+.in +1c
+.ti -1c
+.RI "tuple[str,\&.\&.\&.] \fB_object_hierarchy_parts\fP (self, \fBdesc_signature\fP sig_node)"
+.br
+.ti -1c
+.RI "str \fB_toc_entry_name\fP (self, \fBdesc_signature\fP sig_node)"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBsphinx\&.directives\&.ObjectDescription\fP
+.in +1c
+.ti -1c
+.RI "\fB_doc_field_type_map\fP"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBsphinx\&.directives\&.ObjectDescription\fP
+.in +1c
+.ti -1c
+.RI "dict \fB_doc_field_type_map\fP = {}"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Description of a variable\&.
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " str sphinx\&.domains\&.python\&.PyVariable\&.get_index_text ( self, str modname, tuple[str, str] name)"
+
+.PP
+.nf
+Return the text for the index entry of the object\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.domains\&.python\&._object\&.PyObject\fP\&.
+.SS " tuple[str, str] sphinx\&.domains\&.python\&.PyVariable\&.handle_signature ( self, str sig, \fBdesc_signature\fP signode)"
+
+.PP
+.nf
+Transform a Python signature into RST nodes\&.
+
+Return (fully qualified name of the thing, classname if any)\&.
+
+If inside a class, the current class name is handled intelligently:
+* it is stripped from the displayed name if present
+* it is added to the full name (return value) if not present
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.domains\&.python\&._object\&.PyObject\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "ClassVar sphinx\&.domains\&.python\&.PyVariable\&.option_spec = PyObject\&.option_spec\&.copy()\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

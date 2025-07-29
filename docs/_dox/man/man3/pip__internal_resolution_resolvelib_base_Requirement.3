@@ -1,0 +1,76 @@
+.TH "pip._internal.resolution.resolvelib.base.Requirement" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.resolution.resolvelib.base.Requirement
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.ExplicitRequirement\fP, \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.RequiresPythonRequirement\fP, \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.SpecifierRequirement\fP, and \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.UnsatisfiableRequirement\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "NormalizedName \fBproject_name\fP (self)"
+.br
+.ti -1c
+.RI "str \fBname\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBis_satisfied_by\fP (self, 'Candidate' candidate)"
+.br
+.ti -1c
+.RI "\fBCandidateLookup\fP \fBget_candidate_lookup\fP (self)"
+.br
+.ti -1c
+.RI "str \fBformat_for_error\fP (self)"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS " str pip\&._internal\&.resolution\&.resolvelib\&.base\&.Requirement\&.format_for_error ( self)"
+
+.PP
+Reimplemented in \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.ExplicitRequirement\fP, \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.SpecifierRequirement\fP, \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.RequiresPythonRequirement\fP, and \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.UnsatisfiableRequirement\fP\&.
+.SS " \fBCandidateLookup\fP pip\&._internal\&.resolution\&.resolvelib\&.base\&.Requirement\&.get_candidate_lookup ( self)"
+
+.PP
+Reimplemented in \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.ExplicitRequirement\fP, \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.SpecifierRequirement\fP, \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.RequiresPythonRequirement\fP, and \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.UnsatisfiableRequirement\fP\&.
+.SS " bool pip\&._internal\&.resolution\&.resolvelib\&.base\&.Requirement\&.is_satisfied_by ( self, 'Candidate' candidate)"
+
+.PP
+Reimplemented in \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.ExplicitRequirement\fP, \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.SpecifierRequirement\fP, \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.RequiresPythonRequirement\fP, and \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.UnsatisfiableRequirement\fP\&.
+.SS " str pip\&._internal\&.resolution\&.resolvelib\&.base\&.Requirement\&.name ( self)"
+
+.PP
+.nf
+The name identifying this requirement in the resolver\&.
+
+This is different from ``project_name`` if this requirement contains
+extras, where ``project_name`` would not contain the ``[\&.\&.\&.]`` part\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.ExplicitRequirement\fP, \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.SpecifierRequirement\fP, \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.RequiresPythonRequirement\fP, and \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.UnsatisfiableRequirement\fP\&.
+.SS " NormalizedName pip\&._internal\&.resolution\&.resolvelib\&.base\&.Requirement\&.project_name ( self)"
+
+.PP
+.nf
+The 'project name' of a requirement\&.
+
+This is different from ``name`` if this requirement contains extras,
+in which case ``name`` would contain the ``[\&.\&.\&.]`` part, while this
+refers to the name of the project\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.ExplicitRequirement\fP, \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.SpecifierRequirement\fP, \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.RequiresPythonRequirement\fP, and \fBpip\&._internal\&.resolution\&.resolvelib\&.requirements\&.UnsatisfiableRequirement\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

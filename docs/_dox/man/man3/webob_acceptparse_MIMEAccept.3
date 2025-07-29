@@ -1,0 +1,258 @@
+.TH "webob.acceptparse.MIMEAccept" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webob.acceptparse.MIMEAccept
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBwebob\&.acceptparse\&.Accept\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, header_value)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__iter__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__add__\fP (self, other)"
+.br
+.ti -1c
+.RI "\fB__radd__\fP (self, other)"
+.br
+.ti -1c
+.RI "\fB__contains__\fP (self, offer)"
+.br
+.ti -1c
+.RI "\fBquality\fP (self, offer)"
+.br
+.ti -1c
+.RI "\fBbest_match\fP (self, offers, default_match=None)"
+.br
+.ti -1c
+.RI "\fBaccept_html\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBwebob\&.acceptparse\&.Accept\fP
+.in +1c
+.ti -1c
+.RI "\fBparse_offer\fP (cls, offer)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBparse\fP (value)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_accept\fP"
+.br
+.ti -1c
+.RI "\fB_parsed\fP"
+.br
+.ti -1c
+.RI "\fB_parsed_nonzero\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Attributes inherited from \fBwebob\&.acceptparse\&.Accept\fP
+.in +1c
+.ti -1c
+.RI "str \fBvchar_re\fP = '\\x21\-\\x7e'"
+.br
+.ti -1c
+.RI "str \fBobs_text_re\fP = '\\x80\-\\xff'"
+.br
+.ti -1c
+.RI "str \fBqdtext_re\fP = '[\\t \\x21\\x23\-\\x5b\\\\\\x5d\-\\x7e' + \fBobs_text_re\fP + ']'"
+.br
+.ti -1c
+.RI "str \fBquoted_pair_re\fP = r'\\\\' + '[\\t ' + \fBvchar_re\fP + \fBobs_text_re\fP + ']'"
+.br
+.ti -1c
+.RI "str \fBquoted_string_re\fP"
+.br
+.ti -1c
+.RI "\fBtype_re\fP = \fBtoken_re\fP"
+.br
+.ti -1c
+.RI "\fBsubtype_re\fP = \fBtoken_re\fP"
+.br
+.ti -1c
+.RI "str \fBparameter_re\fP"
+.br
+.ti -1c
+.RI "tuple \fBmedia_range_re\fP"
+.br
+.ti -1c
+.RI "tuple \fBaccept_ext_re\fP"
+.br
+.ti -1c
+.RI "str \fBaccept_params_re\fP = \fBweight_re\fP + '((?:' + \fBaccept_ext_re\fP + ')*)'"
+.br
+.ti -1c
+.RI "tuple \fBmedia_range_n_accept_params_re\fP"
+.br
+.ti -1c
+.RI "\fBmedia_range_n_accept_params_compiled_re\fP"
+.br
+.ti -1c
+.RI "\fBaccept_compiled_re\fP"
+.br
+.ti -1c
+.RI "\fBparameters_compiled_re\fP"
+.br
+.ti -1c
+.RI "\fBaccept_ext_compiled_re\fP"
+.br
+.ti -1c
+.RI "tuple \fBmedia_type_re\fP = \fBmedia_range_re\fP"
+.br
+.ti -1c
+.RI "\fBmedia_type_compiled_re\fP = re\&.compile('^' + \fBmedia_type_re\fP + '$')"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBwebob\&.acceptparse\&.Accept\fP
+.in +1c
+.ti -1c
+.RI "\fB_escape_and_quote_parameter_value\fP (cls, param_value)"
+.br
+.ti -1c
+.RI "\fB_form_extension_params_segment\fP (cls, extension_params)"
+.br
+.ti -1c
+.RI "\fB_form_media_range\fP (cls, type_subtype, media_type_params)"
+.br
+.ti -1c
+.RI "\fB_iterable_to_header_element\fP (cls, iterable)"
+.br
+.ti -1c
+.RI "\fB_parse_media_type_params\fP (cls, media_type_params_segment)"
+.br
+.ti -1c
+.RI "\fB_process_quoted_string_token\fP (cls, token)"
+.br
+.ti -1c
+.RI "\fB_python_value_to_header_str\fP (cls, value)"
+.br
+.ti -1c
+.RI "\fB_parse_and_normalize_offers\fP (cls, offers)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Backwards compatibility shim for the new functionality provided by
+AcceptValidHeader, AcceptInvalidHeader, or AcceptNoHeader, that acts like
+the old MIMEAccept from WebOb version 1\&.7 or lower\&.
+
+This shim does use the newer Accept header parsing, which will mean your
+application may be less liberal in what Accept headers are correctly
+parsed\&. It is recommended that user agents be updated to send appropriate
+Accept headers that are valid according to rfc:`RFC 7231, section 5\&.3\&.2
+<7231#section-5\&.3\&.2>`
+
+\&.\&. deprecated:: 1\&.8
+
+   Instead of directly creating the Accept object, please see:
+   :func:`create_accept_header(header_value)
+   <webob\&.acceptparse\&.create_accept_header>`, which will create the
+   appropriate object\&.
+
+   This shim has an extended deprecation period to allow for application
+   developers to switch the to new API\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "webob\&.acceptparse\&.MIMEAccept\&.__init__ ( self,  header_value)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "webob\&.acceptparse\&.MIMEAccept\&.__add__ ( self,  other)"
+
+.SS "webob\&.acceptparse\&.MIMEAccept\&.__contains__ ( self,  offer)"
+
+.SS "webob\&.acceptparse\&.MIMEAccept\&.__iter__ ( self)"
+
+.SS "webob\&.acceptparse\&.MIMEAccept\&.__radd__ ( self,  other)"
+
+.SS "webob\&.acceptparse\&.MIMEAccept\&.__repr__ ( self)"
+
+.SS "webob\&.acceptparse\&.MIMEAccept\&.__str__ ( self)"
+
+.SS "webob\&.acceptparse\&.MIMEAccept\&.accept_html ( self)"
+
+.SS "webob\&.acceptparse\&.MIMEAccept\&.best_match ( self,  offers,  default_match = \fCNone\fP)"
+
+.SS "webob\&.acceptparse\&.MIMEAccept\&.parse ( cls)\fC [static]\fP"
+
+.PP
+.nf
+Parse an ``Accept`` header\&.
+
+:param value: (``str``) header value
+:return: If `value` is a valid ``Accept`` header, returns an iterator
+         of (*media_range*, *qvalue*, *media_type_params*,
+         *extension_params*) tuples, as parsed from the header from
+         left to right\&.
+
+         | *media_range* is the media range, including any media type
+           parameters\&. The media range is returned in a canonicalised
+           form (except the case of the characters are unchanged):
+           unnecessary spaces around the semicolons before media type
+           parameters are removed; the parameter values are returned in
+           a form where only the '``\\\\``' and '``'``' characters are
+           escaped, and the values are quoted with double quotes only
+           if they need to be quoted\&.
+
+         | *qvalue* is the quality value of the media range\&.
+
+         | *media_type_params* is the media type parameters, as a list
+           of (parameter name, value) tuples\&.
+
+         | *extension_params* is the extension parameters, as a list
+           where each item is either a parameter string or a (parameter
+           name, value) tuple\&.
+:raises ValueError: if `value` is an invalid header
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBwebob\&.acceptparse\&.Accept\fP\&.
+.SS "webob\&.acceptparse\&.MIMEAccept\&.quality ( self,  offer)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "webob\&.acceptparse\&.MIMEAccept\&._accept\fC [protected]\fP"
+
+.SS "webob\&.acceptparse\&.MIMEAccept\&._parsed\fC [protected]\fP"
+
+.SS "webob\&.acceptparse\&.MIMEAccept\&._parsed_nonzero\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

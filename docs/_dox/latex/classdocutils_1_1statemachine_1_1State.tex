@@ -1,0 +1,342 @@
+\doxysection{docutils.\+statemachine.\+State Class Reference}
+\hypertarget{classdocutils_1_1statemachine_1_1State}{}\label{classdocutils_1_1statemachine_1_1State}\index{docutils.statemachine.State@{docutils.statemachine.State}}
+Inheritance diagram for docutils.\+statemachine.\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.717208cm]{classdocutils_1_1statemachine_1_1State}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a329a30ece2d9d8cf1ef2b099591e089f}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a53b7644cdad55f7cf544d7431b021571}{state\+\_\+machine}}, \mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a21c75bc16ebc63ea1559189f1acc3802}{debug}}=False)
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a6f8f62f0289a2146f19b6569fb1458ea}{runtime\+\_\+init}} (self)
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a6db48e395c75525d7816ed88e040eddc}{unlink}} (self)
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_af56469bf67c9f86cd01af73410635f55}{add\+\_\+initial\+\_\+transitions}} (self)
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a9f5a70e75c1894e9c57ee5d9ba403f7a}{add\+\_\+transitions}} (self, names, \mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a30dfc9f8434dbf8ed896c5015a1c9427}{transitions}})
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a58d83467faf42d8418d6b976a64327a8}{add\+\_\+transition}} (self, name, transition)
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_ad670027811b24b16e424eaf53929e4d8}{remove\+\_\+transition}} (self, name)
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_aeb9038f788ecca07bc5d1fd991e8eae6}{make\+\_\+transition}} (self, name, next\+\_\+state=None)
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_aff2aac70c600496bdbeedf279a39f614}{make\+\_\+transitions}} (self, name\+\_\+list)
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a46de5b1150d3d01e25fe46bf30f51afc}{no\+\_\+match}} (self, context, \mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a30dfc9f8434dbf8ed896c5015a1c9427}{transitions}})
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a07ba97dcba3191bdfe3b3ce443c33452}{bof}} (self, context)
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a18d3688aab84c3a85bdbb90cf2973571}{eof}} (self, context)
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a7639ca87032af9710344388d6c855da4}{nop}} (self, match, context, next\+\_\+state)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_abeafa0b68c982f201ed7eef4959d23be}{transition\+\_\+order}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a30dfc9f8434dbf8ed896c5015a1c9427}{transitions}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a53b7644cdad55f7cf544d7431b021571}{state\+\_\+machine}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a21c75bc16ebc63ea1559189f1acc3802}{debug}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_afe67b8c87d88d72ea07a294bd17d485e}{patterns}} = None
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a81bb6b19c7f1393f208f54abe6163fac}{initial\+\_\+transitions}} = None
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a757e253962c6f52d7fbbbf953469fe57}{nested\+\_\+sm}} = None
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a3b88332e8abfaf195b4b89594fed53d1}{nested\+\_\+sm\+\_\+kwargs}} = None
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}State superclass. Contains a list of transitions, and transition methods.
+
+Transition methods all have the same signature. They take 3 parameters:
+
+- An `re` match object. ``match.string`` contains the matched input line,
+  ``match.start()`` gives the start index of the match, and
+  ``match.end()`` gives the end index.
+- A context object, whose meaning is application-defined (initial value
+  ``None``). It can be used to store any information required by the state
+  machine, and the returned context is passed on to the next transition
+  method unchanged.
+- The name of the next state, a string, taken from the transitions list;
+  normally it is returned unchanged, but it may be altered by the
+  transition method if necessary.
+
+Transition methods all return a 3-tuple:
+
+- A context object, as (potentially) modified by the transition method.
+- The next state name (a return value of ``None`` means no state change).
+- The processing result, a list, which is accumulated by the state
+  machine.
+
+Transition methods may raise an `EOFError` to cut processing short.
+
+There are two implicit transitions, and corresponding transition methods
+are defined: `bof()` handles the beginning-of-file, and `eof()` handles
+the end-of-file. These methods have non-standard signatures and return
+values. `bof()` returns the initial context and results, and may be used
+to return a header string, or do any other processing needed. `eof()`
+should handle any remaining context and wrap things up; it returns the
+final processing result.
+
+Typical applications need only subclass `State` (or a subclass), set the
+`patterns` and `initial_transitions` class attributes, and provide
+corresponding transition methods. The default object initialization will
+take care of constructing the list of transitions.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classdocutils_1_1statemachine_1_1State_a329a30ece2d9d8cf1ef2b099591e089f}\label{classdocutils_1_1statemachine_1_1State_a329a30ece2d9d8cf1ef2b099591e089f} 
+\index{docutils.statemachine.State@{docutils.statemachine.State}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!docutils.statemachine.State@{docutils.statemachine.State}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+State.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{state\+\_\+machine,  }\item[{}]{debug = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize a `State` object; make & add initial transitions.
+
+Parameters:
+
+- `statemachine`: the controlling `StateMachine` object.
+- `debug`: a boolean; produce verbose output if true.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_a2baca5762327f76433445e87dd7e3fc7}{docutils.\+parsers.\+rst.\+states.\+RSTState}}, \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1QuotedLiteralBlock_ab3021b07bfd98eb22f0b0b8c85eefea1}{docutils.\+parsers.\+rst.\+states.\+Quoted\+Literal\+Block}}, and \mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS_aedcda59b9a844a7cf098e50febecadde}{docutils.\+statemachine.\+State\+WS}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdocutils_1_1statemachine_1_1State_af56469bf67c9f86cd01af73410635f55}\label{classdocutils_1_1statemachine_1_1State_af56469bf67c9f86cd01af73410635f55} 
+\index{docutils.statemachine.State@{docutils.statemachine.State}!add\_initial\_transitions@{add\_initial\_transitions}}
+\index{add\_initial\_transitions@{add\_initial\_transitions}!docutils.statemachine.State@{docutils.statemachine.State}}
+\doxysubsubsection{\texorpdfstring{add\_initial\_transitions()}{add\_initial\_transitions()}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+State.\+add\+\_\+initial\+\_\+transitions (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Make and add transitions listed in `self.initial_transitions`.\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS_ac17bffcd9eebc22d43d79972639fce3a}{docutils.\+statemachine.\+State\+WS}}.
+
+\Hypertarget{classdocutils_1_1statemachine_1_1State_a58d83467faf42d8418d6b976a64327a8}\label{classdocutils_1_1statemachine_1_1State_a58d83467faf42d8418d6b976a64327a8} 
+\index{docutils.statemachine.State@{docutils.statemachine.State}!add\_transition@{add\_transition}}
+\index{add\_transition@{add\_transition}!docutils.statemachine.State@{docutils.statemachine.State}}
+\doxysubsubsection{\texorpdfstring{add\_transition()}{add\_transition()}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+State.\+add\+\_\+transition (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{transition }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a transition to the start of the transition list.
+
+Parameter `transition`: a ready-made transition 3-tuple.
+
+Exception: `DuplicateTransitionError`.
+\end{DoxyVerb}
+ \Hypertarget{classdocutils_1_1statemachine_1_1State_a9f5a70e75c1894e9c57ee5d9ba403f7a}\label{classdocutils_1_1statemachine_1_1State_a9f5a70e75c1894e9c57ee5d9ba403f7a} 
+\index{docutils.statemachine.State@{docutils.statemachine.State}!add\_transitions@{add\_transitions}}
+\index{add\_transitions@{add\_transitions}!docutils.statemachine.State@{docutils.statemachine.State}}
+\doxysubsubsection{\texorpdfstring{add\_transitions()}{add\_transitions()}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+State.\+add\+\_\+transitions (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{names,  }\item[{}]{transitions }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a list of transitions to the start of the transition list.
+
+Parameters:
+
+- `names`: a list of transition names.
+- `transitions`: a mapping of names to transition tuples.
+
+Exceptions: `DuplicateTransitionError`, `UnknownTransitionError`.
+\end{DoxyVerb}
+ \Hypertarget{classdocutils_1_1statemachine_1_1State_a07ba97dcba3191bdfe3b3ce443c33452}\label{classdocutils_1_1statemachine_1_1State_a07ba97dcba3191bdfe3b3ce443c33452} 
+\index{docutils.statemachine.State@{docutils.statemachine.State}!bof@{bof}}
+\index{bof@{bof}!docutils.statemachine.State@{docutils.statemachine.State}}
+\doxysubsubsection{\texorpdfstring{bof()}{bof()}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+State.\+bof (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{context }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Handle beginning-of-file. Return unchanged `context`, empty result.
+
+Override in subclasses.
+
+Parameter `context`: application-defined storage.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_ab3f956ae81f4abf6b272a731f79222ac}{docutils.\+parsers.\+rst.\+states.\+RSTState}}.
+
+\Hypertarget{classdocutils_1_1statemachine_1_1State_a18d3688aab84c3a85bdbb90cf2973571}\label{classdocutils_1_1statemachine_1_1State_a18d3688aab84c3a85bdbb90cf2973571} 
+\index{docutils.statemachine.State@{docutils.statemachine.State}!eof@{eof}}
+\index{eof@{eof}!docutils.statemachine.State@{docutils.statemachine.State}}
+\doxysubsubsection{\texorpdfstring{eof()}{eof()}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+State.\+eof (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{context }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Handle end-of-file. Return empty result.
+
+Override in subclasses.
+
+Parameter `context`: application-defined storage.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classbreathe_1_1renderer_1_1sphinxrenderer_1_1InlineText_a9caf61404fd3fc22e3f2296433ac68fb}{breathe.\+renderer.\+sphinxrenderer.\+Inline\+Text}}, \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a0800dd94a11174ad3c500e9fee215b48}{docutils.\+parsers.\+rst.\+states.\+Text}}, \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1SpecializedText_ab886270193bb78077515bdb62528f083}{docutils.\+parsers.\+rst.\+states.\+Specialized\+Text}}, \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Definition_ad3ebd1794c051c835ff40d79a155a78f}{docutils.\+parsers.\+rst.\+states.\+Definition}}, \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Line_ac7195cad5fe0a562b3b03a7120974ee4}{docutils.\+parsers.\+rst.\+states.\+Line}}, and \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1QuotedLiteralBlock_a05f0821b8190958572c36af6c865a151}{docutils.\+parsers.\+rst.\+states.\+Quoted\+Literal\+Block}}.
+
+\Hypertarget{classdocutils_1_1statemachine_1_1State_aeb9038f788ecca07bc5d1fd991e8eae6}\label{classdocutils_1_1statemachine_1_1State_aeb9038f788ecca07bc5d1fd991e8eae6} 
+\index{docutils.statemachine.State@{docutils.statemachine.State}!make\_transition@{make\_transition}}
+\index{make\_transition@{make\_transition}!docutils.statemachine.State@{docutils.statemachine.State}}
+\doxysubsubsection{\texorpdfstring{make\_transition()}{make\_transition()}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+State.\+make\+\_\+transition (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{next\+\_\+state = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Make & return a transition tuple based on `name`.
+
+This is a convenience function to simplify transition creation.
+
+Parameters:
+
+- `name`: a string, the name of the transition pattern & method. This
+  `State` object must have a method called '`name`', and a dictionary
+  `self.patterns` containing a key '`name`'.
+- `next_state`: a string, the name of the next `State` object for this
+  transition. A value of ``None`` (or absent) implies no state change
+  (i.e., continue with the same state).
+
+Exceptions: `TransitionPatternNotFound`, `TransitionMethodNotFound`.
+\end{DoxyVerb}
+ \Hypertarget{classdocutils_1_1statemachine_1_1State_aff2aac70c600496bdbeedf279a39f614}\label{classdocutils_1_1statemachine_1_1State_aff2aac70c600496bdbeedf279a39f614} 
+\index{docutils.statemachine.State@{docutils.statemachine.State}!make\_transitions@{make\_transitions}}
+\index{make\_transitions@{make\_transitions}!docutils.statemachine.State@{docutils.statemachine.State}}
+\doxysubsubsection{\texorpdfstring{make\_transitions()}{make\_transitions()}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+State.\+make\+\_\+transitions (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name\+\_\+list }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a list of transition names and a transition mapping.
+
+Parameter `name_list`: a list, where each entry is either a transition
+name string, or a 1- or 2-tuple (transition name, optional next state
+name).
+\end{DoxyVerb}
+ \Hypertarget{classdocutils_1_1statemachine_1_1State_a46de5b1150d3d01e25fe46bf30f51afc}\label{classdocutils_1_1statemachine_1_1State_a46de5b1150d3d01e25fe46bf30f51afc} 
+\index{docutils.statemachine.State@{docutils.statemachine.State}!no\_match@{no\_match}}
+\index{no\_match@{no\_match}!docutils.statemachine.State@{docutils.statemachine.State}}
+\doxysubsubsection{\texorpdfstring{no\_match()}{no\_match()}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+State.\+no\+\_\+match (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{context,  }\item[{}]{transitions }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Called when there is no match from `StateMachine.check_line()`.
+
+Return the same values returned by transition methods:
+
+- context: unchanged;
+- next state name: ``None``;
+- empty result list.
+
+Override in subclasses to catch this event.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_a9232fa00eea49924667c9baea0779781}{docutils.\+parsers.\+rst.\+states.\+RSTState}}.
+
+\Hypertarget{classdocutils_1_1statemachine_1_1State_a7639ca87032af9710344388d6c855da4}\label{classdocutils_1_1statemachine_1_1State_a7639ca87032af9710344388d6c855da4} 
+\index{docutils.statemachine.State@{docutils.statemachine.State}!nop@{nop}}
+\index{nop@{nop}!docutils.statemachine.State@{docutils.statemachine.State}}
+\doxysubsubsection{\texorpdfstring{nop()}{nop()}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+State.\+nop (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{match,  }\item[{}]{context,  }\item[{}]{next\+\_\+state }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A "do nothing" transition method.
+
+Return unchanged `context` & `next_state`, empty result. Useful for
+simple state changes (actionless transitions).
+\end{DoxyVerb}
+ \Hypertarget{classdocutils_1_1statemachine_1_1State_ad670027811b24b16e424eaf53929e4d8}\label{classdocutils_1_1statemachine_1_1State_ad670027811b24b16e424eaf53929e4d8} 
+\index{docutils.statemachine.State@{docutils.statemachine.State}!remove\_transition@{remove\_transition}}
+\index{remove\_transition@{remove\_transition}!docutils.statemachine.State@{docutils.statemachine.State}}
+\doxysubsubsection{\texorpdfstring{remove\_transition()}{remove\_transition()}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+State.\+remove\+\_\+transition (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove a transition by `name`.
+
+Exception: `UnknownTransitionError`.
+\end{DoxyVerb}
+ \Hypertarget{classdocutils_1_1statemachine_1_1State_a6f8f62f0289a2146f19b6569fb1458ea}\label{classdocutils_1_1statemachine_1_1State_a6f8f62f0289a2146f19b6569fb1458ea} 
+\index{docutils.statemachine.State@{docutils.statemachine.State}!runtime\_init@{runtime\_init}}
+\index{runtime\_init@{runtime\_init}!docutils.statemachine.State@{docutils.statemachine.State}}
+\doxysubsubsection{\texorpdfstring{runtime\_init()}{runtime\_init()}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+State.\+runtime\+\_\+init (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize this `State` before running the state machine; called from
+`self.state_machine.run()`.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_acf7cbc46f2e2065f638dd640b0392ed4}{docutils.\+parsers.\+rst.\+states.\+RSTState}}.
+
+\Hypertarget{classdocutils_1_1statemachine_1_1State_a6db48e395c75525d7816ed88e040eddc}\label{classdocutils_1_1statemachine_1_1State_a6db48e395c75525d7816ed88e040eddc} 
+\index{docutils.statemachine.State@{docutils.statemachine.State}!unlink@{unlink}}
+\index{unlink@{unlink}!docutils.statemachine.State@{docutils.statemachine.State}}
+\doxysubsubsection{\texorpdfstring{unlink()}{unlink()}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+State.\+unlink (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove circular references to objects no longer required.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classdocutils_1_1statemachine_1_1State_a21c75bc16ebc63ea1559189f1acc3802}\label{classdocutils_1_1statemachine_1_1State_a21c75bc16ebc63ea1559189f1acc3802} 
+\index{docutils.statemachine.State@{docutils.statemachine.State}!debug@{debug}}
+\index{debug@{debug}!docutils.statemachine.State@{docutils.statemachine.State}}
+\doxysubsubsection{\texorpdfstring{debug}{debug}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+State.\+debug}
+
+\Hypertarget{classdocutils_1_1statemachine_1_1State_a81bb6b19c7f1393f208f54abe6163fac}\label{classdocutils_1_1statemachine_1_1State_a81bb6b19c7f1393f208f54abe6163fac} 
+\index{docutils.statemachine.State@{docutils.statemachine.State}!initial\_transitions@{initial\_transitions}}
+\index{initial\_transitions@{initial\_transitions}!docutils.statemachine.State@{docutils.statemachine.State}}
+\doxysubsubsection{\texorpdfstring{initial\_transitions}{initial\_transitions}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+State.\+initial\+\_\+transitions = None\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1statemachine_1_1State_a757e253962c6f52d7fbbbf953469fe57}\label{classdocutils_1_1statemachine_1_1State_a757e253962c6f52d7fbbbf953469fe57} 
+\index{docutils.statemachine.State@{docutils.statemachine.State}!nested\_sm@{nested\_sm}}
+\index{nested\_sm@{nested\_sm}!docutils.statemachine.State@{docutils.statemachine.State}}
+\doxysubsubsection{\texorpdfstring{nested\_sm}{nested\_sm}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+State.\+nested\+\_\+sm = None\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1statemachine_1_1State_a3b88332e8abfaf195b4b89594fed53d1}\label{classdocutils_1_1statemachine_1_1State_a3b88332e8abfaf195b4b89594fed53d1} 
+\index{docutils.statemachine.State@{docutils.statemachine.State}!nested\_sm\_kwargs@{nested\_sm\_kwargs}}
+\index{nested\_sm\_kwargs@{nested\_sm\_kwargs}!docutils.statemachine.State@{docutils.statemachine.State}}
+\doxysubsubsection{\texorpdfstring{nested\_sm\_kwargs}{nested\_sm\_kwargs}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+State.\+nested\+\_\+sm\+\_\+kwargs = None\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1statemachine_1_1State_afe67b8c87d88d72ea07a294bd17d485e}\label{classdocutils_1_1statemachine_1_1State_afe67b8c87d88d72ea07a294bd17d485e} 
+\index{docutils.statemachine.State@{docutils.statemachine.State}!patterns@{patterns}}
+\index{patterns@{patterns}!docutils.statemachine.State@{docutils.statemachine.State}}
+\doxysubsubsection{\texorpdfstring{patterns}{patterns}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+State.\+patterns = None\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1statemachine_1_1State_a53b7644cdad55f7cf544d7431b021571}\label{classdocutils_1_1statemachine_1_1State_a53b7644cdad55f7cf544d7431b021571} 
+\index{docutils.statemachine.State@{docutils.statemachine.State}!state\_machine@{state\_machine}}
+\index{state\_machine@{state\_machine}!docutils.statemachine.State@{docutils.statemachine.State}}
+\doxysubsubsection{\texorpdfstring{state\_machine}{state\_machine}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+State.\+state\+\_\+machine}
+
+\Hypertarget{classdocutils_1_1statemachine_1_1State_abeafa0b68c982f201ed7eef4959d23be}\label{classdocutils_1_1statemachine_1_1State_abeafa0b68c982f201ed7eef4959d23be} 
+\index{docutils.statemachine.State@{docutils.statemachine.State}!transition\_order@{transition\_order}}
+\index{transition\_order@{transition\_order}!docutils.statemachine.State@{docutils.statemachine.State}}
+\doxysubsubsection{\texorpdfstring{transition\_order}{transition\_order}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+State.\+transition\+\_\+order}
+
+\Hypertarget{classdocutils_1_1statemachine_1_1State_a30dfc9f8434dbf8ed896c5015a1c9427}\label{classdocutils_1_1statemachine_1_1State_a30dfc9f8434dbf8ed896c5015a1c9427} 
+\index{docutils.statemachine.State@{docutils.statemachine.State}!transitions@{transitions}}
+\index{transitions@{transitions}!docutils.statemachine.State@{docutils.statemachine.State}}
+\doxysubsubsection{\texorpdfstring{transitions}{transitions}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+State.\+transitions}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/docutils/\mbox{\hyperlink{statemachine_8py}{statemachine.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,148 @@
+.TH "pip._vendor.rich.padding.Padding" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.rich.padding.Padding
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._vendor\&.rich\&.jupyter\&.JupyterMixin\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, 'RenderableType' \fBrenderable\fP, 'PaddingDimensions' pad=(0, 0, 0, 0), *Union[str, \fBStyle\fP] \fBstyle\fP='none', bool \fBexpand\fP=True)"
+.br
+.ti -1c
+.RI "'Padding' \fBindent\fP (cls, 'RenderableType' \fBrenderable\fP, int level)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "'RenderResult' \fB__rich_console__\fP (self, 'Console' console, 'ConsoleOptions' options)"
+.br
+.ti -1c
+.RI "'Measurement' \fB__rich_measure__\fP (self, 'Console' console, 'ConsoleOptions' options)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Tuple[int, int, int, int] \fBunpack\fP ('PaddingDimensions' pad)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBrenderable\fP"
+.br
+.ti -1c
+.RI "\fBtop\fP"
+.br
+.ti -1c
+.RI "\fBright\fP"
+.br
+.ti -1c
+.RI "\fBbottom\fP"
+.br
+.ti -1c
+.RI "\fBleft\fP"
+.br
+.ti -1c
+.RI "\fBstyle\fP"
+.br
+.ti -1c
+.RI "\fBexpand\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Member Functions inherited from \fBpip\&._vendor\&.rich\&.jupyter\&.JupyterMixin\fP
+.in +1c
+.ti -1c
+.RI "Dict[str, str] \fB_repr_mimebundle_\fP ('ConsoleRenderable' self, Sequence[str] include, Sequence[str] exclude, **Any kwargs)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Draw space around content\&.
+
+Example:
+    >>> print(Padding('Hello', (2, 4), style='on blue'))
+
+Args:
+    renderable (RenderableType): String or other renderable\&.
+    pad (Union[int, Tuple[int]]): Padding for top, right, bottom, and left borders\&.
+        May be specified with 1, 2, or 4 integers (CSS style)\&.
+    style (Union[str, Style], optional): Style for padding characters\&. Defaults to 'none'\&.
+    expand (bool, optional): Expand padding to fit available width\&. Defaults to True\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.rich\&.padding\&.Padding\&.__init__ ( self, 'RenderableType' renderable, 'PaddingDimensions'  pad = \fC(0, 0, 0, 0)\fP, *Union[str, \fBStyle\fP]  style = \fC'none'\fP, bool  expand = \fCTrue\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " str pip\&._vendor\&.rich\&.padding\&.Padding\&.__repr__ ( self)"
+
+.SS " 'RenderResult' pip\&._vendor\&.rich\&.padding\&.Padding\&.__rich_console__ ( self, 'Console' console, 'ConsoleOptions'
+     options)"
+
+.SS " 'Measurement' pip\&._vendor\&.rich\&.padding\&.Padding\&.__rich_measure__ ( self, 'Console' console, 'ConsoleOptions'
+     options)"
+
+.SS " 'Padding' pip\&._vendor\&.rich\&.padding\&.Padding\&.indent ( cls, 'RenderableType' renderable, int level)"
+
+.PP
+.nf
+Make padding instance to render an indent\&.
+
+Args:
+    renderable (RenderableType): String or other renderable\&.
+    level (int): Number of characters to indent\&.
+
+Returns:
+    Padding: A Padding instance\&.
+
+.fi
+.PP
+ 
+.SS " Tuple[int, int, int, int] pip\&._vendor\&.rich\&.padding\&.Padding\&.unpack ('PaddingDimensions' pad)\fC [static]\fP"
+
+.PP
+.nf
+Unpack padding specified in CSS style\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.rich\&.padding\&.Padding\&.bottom"
+
+.SS "pip\&._vendor\&.rich\&.padding\&.Padding\&.expand"
+
+.SS "pip\&._vendor\&.rich\&.padding\&.Padding\&.left"
+
+.SS "pip\&._vendor\&.rich\&.padding\&.Padding\&.renderable"
+
+.SS "pip\&._vendor\&.rich\&.padding\&.Padding\&.right"
+
+.SS "pip\&._vendor\&.rich\&.padding\&.Padding\&.style"
+
+.SS "pip\&._vendor\&.rich\&.padding\&.Padding\&.top"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

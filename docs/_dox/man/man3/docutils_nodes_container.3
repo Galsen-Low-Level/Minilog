@@ -1,0 +1,307 @@
+.TH "docutils.nodes.container" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.nodes.container
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.nodes\&.General\fP, and \fBdocutils\&.nodes\&.Element\fP\&.
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBdocutils\&.nodes\&.Element\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBrawsource\fP='', *\fBchildren\fP, **\fBattributes\fP)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBshortrepr\fP (self)"
+.br
+.ti -1c
+.RI "\fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "\fBstarttag\fP (self, quoteattr=None)"
+.br
+.ti -1c
+.RI "\fBendtag\fP (self)"
+.br
+.ti -1c
+.RI "\fBemptytag\fP (self)"
+.br
+.ti -1c
+.RI "\fB__len__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__contains__\fP (self, key)"
+.br
+.ti -1c
+.RI "\fB__getitem__\fP (self, key)"
+.br
+.ti -1c
+.RI "\fB__setitem__\fP (self, key, item)"
+.br
+.ti -1c
+.RI "\fB__delitem__\fP (self, key)"
+.br
+.ti -1c
+.RI "\fB__add__\fP (self, other)"
+.br
+.ti -1c
+.RI "\fB__radd__\fP (self, other)"
+.br
+.ti -1c
+.RI "\fB__iadd__\fP (self, other)"
+.br
+.ti -1c
+.RI "\fBastext\fP (self)"
+.br
+.ti -1c
+.RI "\fBnon_default_attributes\fP (self)"
+.br
+.ti -1c
+.RI "\fBattlist\fP (self)"
+.br
+.ti -1c
+.RI "\fBget\fP (self, key, failobj=None)"
+.br
+.ti -1c
+.RI "\fBhasattr\fP (self, attr)"
+.br
+.ti -1c
+.RI "\fBdelattr\fP (self, attr)"
+.br
+.ti -1c
+.RI "\fBsetdefault\fP (self, key, failobj=None)"
+.br
+.ti -1c
+.RI "\fBget_language_code\fP (self, fallback='')"
+.br
+.ti -1c
+.RI "\fBappend\fP (self, item)"
+.br
+.ti -1c
+.RI "\fBextend\fP (self, item)"
+.br
+.ti -1c
+.RI "\fBinsert\fP (self, \fBindex\fP, item)"
+.br
+.ti -1c
+.RI "\fBpop\fP (self, i=\-1)"
+.br
+.ti -1c
+.RI "\fBremove\fP (self, item)"
+.br
+.ti -1c
+.RI "\fBindex\fP (self, item, start=0, stop=sys\&.maxsize)"
+.br
+.ti -1c
+.RI "\fBprevious_sibling\fP (self)"
+.br
+.ti -1c
+.RI "\fBis_not_default\fP (self, key)"
+.br
+.ti -1c
+.RI "\fBupdate_basic_atts\fP (self, dict_)"
+.br
+.ti -1c
+.RI "\fBappend_attr_list\fP (self, attr, values)"
+.br
+.ti -1c
+.RI "\fBcoerce_append_attr_list\fP (self, attr, value)"
+.br
+.ti -1c
+.RI "\fBreplace_attr\fP (self, attr, value, force=True)"
+.br
+.ti -1c
+.RI "\fBcopy_attr_convert\fP (self, attr, value, \fBreplace\fP=True)"
+.br
+.ti -1c
+.RI "\fBcopy_attr_coerce\fP (self, attr, value, \fBreplace\fP)"
+.br
+.ti -1c
+.RI "\fBcopy_attr_concatenate\fP (self, attr, value, \fBreplace\fP)"
+.br
+.ti -1c
+.RI "\fBcopy_attr_consistent\fP (self, attr, value, \fBreplace\fP)"
+.br
+.ti -1c
+.RI "\fBupdate_all_atts\fP (self, dict_, update_fun=\fBcopy_attr_consistent\fP, \fBreplace\fP=True, and_source=False)"
+.br
+.ti -1c
+.RI "\fBupdate_all_atts_consistantly\fP (self, dict_, \fBreplace\fP=True, and_source=False)"
+.br
+.ti -1c
+.RI "\fBupdate_all_atts_concatenating\fP (self, dict_, \fBreplace\fP=True, and_source=False)"
+.br
+.ti -1c
+.RI "\fBupdate_all_atts_coercion\fP (self, dict_, \fBreplace\fP=True, and_source=False)"
+.br
+.ti -1c
+.RI "\fBupdate_all_atts_convert\fP (self, dict_, and_source=False)"
+.br
+.ti -1c
+.RI "\fBclear\fP (self)"
+.br
+.ti -1c
+.RI "\fBreplace\fP (self, old, new)"
+.br
+.ti -1c
+.RI "\fBreplace_self\fP (self, new)"
+.br
+.ti -1c
+.RI "\fBfirst_child_matching_class\fP (self, childclass, start=0, end=sys\&.maxsize)"
+.br
+.ti -1c
+.RI "\fBfirst_child_not_matching_class\fP (self, childclass, start=0, end=sys\&.maxsize)"
+.br
+.ti -1c
+.RI "\fBpformat\fP (self, indent=' ', level=0)"
+.br
+.ti -1c
+.RI "\fBcopy\fP (self)"
+.br
+.ti -1c
+.RI "\fBdeepcopy\fP (self)"
+.br
+.ti -1c
+.RI "\fBset_class\fP (self, name)"
+.br
+.ti -1c
+.RI "\fBnote_referenced_by\fP (self, name=None, id=None)"
+.br
+.ti -1c
+.RI "\fBis_not_list_attribute\fP (cls, attr)"
+.br
+.ti -1c
+.RI "\fBis_not_known_attribute\fP (cls, attr)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.nodes\&.Node\fP
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP (self)"
+.br
+.ti -1c
+.RI "\fBdocument\fP (self, value)"
+.br
+.ti -1c
+.RI "\fB__bool__\fP (self)"
+.br
+.ti -1c
+.RI "\fBasdom\fP (self, dom=None)"
+.br
+.ti -1c
+.RI "\fBsetup_child\fP (self, child)"
+.br
+.ti -1c
+.RI "\fBwalk\fP (self, visitor)"
+.br
+.ti -1c
+.RI "\fBwalkabout\fP (self, visitor)"
+.br
+.ti -1c
+.RI "\fBtraverse\fP (self, condition=None, include_self=True, descend=True, siblings=False, ascend=False)"
+.br
+.ti -1c
+.RI "\fBfindall\fP (self, condition=None, include_self=True, descend=True, siblings=False, ascend=False)"
+.br
+.ti -1c
+.RI "\fBnext_node\fP (self, condition=None, include_self=False, descend=True, siblings=False, ascend=False)"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.nodes\&.Element\fP
+.in +1c
+.ti -1c
+.RI "\fBrawsource\fP"
+.br
+.ti -1c
+.RI "\fBchildren\fP"
+.br
+.ti -1c
+.RI "\fBattributes\fP"
+.br
+.ti -1c
+.RI "\fBreferenced\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.nodes\&.Node\fP
+.in +1c
+.ti -1c
+.RI "\fBchildren\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.nodes\&.Element\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBbasic_attributes\fP = ('ids', 'classes', 'names', 'dupnames')"
+.br
+.ti -1c
+.RI "tuple \fBlocal_attributes\fP = ('backrefs',)"
+.br
+.ti -1c
+.RI "tuple \fBlist_attributes\fP = \fBbasic_attributes\fP + \fBlocal_attributes\fP"
+.br
+.ti -1c
+.RI "tuple \fBknown_attributes\fP = \fBlist_attributes\fP + ('\fBsource\fP',)"
+.br
+.ti -1c
+.RI "\fBtagname\fP = None"
+.br
+.ti -1c
+.RI "str \fBchild_text_separator\fP = '\\n\\n'"
+.br
+.ti -1c
+.RI "\fBhas_key\fP = \fBhasattr\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.nodes\&.Node\fP
+.in +1c
+.ti -1c
+.RI "\fBparent\fP = None"
+.br
+.ti -1c
+.RI "\fBsource\fP = None"
+.br
+.ti -1c
+.RI "\fBline\fP = None"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBdocutils\&.nodes\&.Element\fP
+.in +1c
+.ti -1c
+.RI "\fB_dom_node\fP (self, domroot)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBdocutils\&.nodes\&.Node\fP
+.in +1c
+.ti -1c
+.RI "\fB_fast_findall\fP (self, cls)"
+.br
+.ti -1c
+.RI "\fB_superfast_findall\fP (self)"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBdocutils\&.nodes\&.Node\fP
+.in +1c
+.ti -1c
+.RI "\fB_document\fP = None"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

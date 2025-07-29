@@ -1,0 +1,76 @@
+.TH "waitress.parser" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+waitress.parser
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBHTTPRequestParser\fP"
+.br
+.ti -1c
+.RI "class \fBParsingError\fP"
+.br
+.ti -1c
+.RI "class \fBTransferEncodingNotImplemented\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBunquote_bytes_to_wsgi\fP (bytestring)"
+.br
+.ti -1c
+.RI "\fBsplit_uri\fP (uri)"
+.br
+.ti -1c
+.RI "\fBget_header_lines\fP (header)"
+.br
+.ti -1c
+.RI "\fBcrack_first_line\fP (line)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBfirst_line_re\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "waitress\&.parser\&.crack_first_line ( line)"
+
+.SS "waitress\&.parser\&.get_header_lines ( header)"
+
+.PP
+.nf
+Splits the header into lines, putting multi-line headers together\&.
+
+.fi
+.PP
+ 
+.SS "waitress\&.parser\&.split_uri ( uri)"
+
+.SS "waitress\&.parser\&.unquote_bytes_to_wsgi ( bytestring)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "waitress\&.parser\&.first_line_re"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(
+2     rb"(?P<method>[!#$%&'*+\\\-\&.^_`|~0\-9A\-Za\-z]+) "
+3     rb"(?P<uri>(?:[^ :?#]+://[^ ?#/]*(?:[0\-9]{1,5})?)?[^ ]+)"
+4     rb"(?: HTTP/(?P<version>[0\-9]\\\&.[0\-9]))?"
+5 )
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

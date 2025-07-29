@@ -1,0 +1,81 @@
+\doxysection{bs4.\+dammit Namespace Reference}
+\hypertarget{namespacebs4_1_1dammit}{}\label{namespacebs4_1_1dammit}\index{bs4.dammit@{bs4.dammit}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classbs4_1_1dammit_1_1EncodingDetector}{Encoding\+Detector}}
+\item 
+class \mbox{\hyperlink{classbs4_1_1dammit_1_1EntitySubstitution}{Entity\+Substitution}}
+\item 
+class \mbox{\hyperlink{classbs4_1_1dammit_1_1UnicodeDammit}{Unicode\+Dammit}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Optional\mbox{[}str\mbox{]} \mbox{\hyperlink{namespacebs4_1_1dammit_a37d5adde1089ccec7fa836e42d53cef9}{\+\_\+chardet\+\_\+dammit}} (bytes s)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Optional \mbox{\hyperlink{namespacebs4_1_1dammit_a909712bf6496ddc965c1d9fefb2f877e}{chardet\+\_\+module}} = None
+\item 
+str \mbox{\hyperlink{namespacebs4_1_1dammit_a189a1b8c610d57f06cd17f6533bbfc17}{xml\+\_\+encoding}} = "{}\texorpdfstring{$^\wedge$}{\string^}\textbackslash{}\textbackslash{}s\texorpdfstring{$\ast$}{*}$<$\textbackslash{}\textbackslash{}?.\texorpdfstring{$\ast$}{*}encoding=\mbox{[}\textquotesingle{}\textbackslash{}"{}\mbox{]}(.\texorpdfstring{$\ast$}{*}?)\mbox{[}\textquotesingle{}\textbackslash{}"{}\mbox{]}.\texorpdfstring{$\ast$}{*}\textbackslash{}\textbackslash{}?$>$"{}
+\item 
+tuple \mbox{\hyperlink{namespacebs4_1_1dammit_ab72d875cbd5722aa153668efb372b77b}{html\+\_\+meta}}
+\item 
+Dict \mbox{\hyperlink{namespacebs4_1_1dammit_a12f2cd766a4c0a96282e41af88faaaad}{encoding\+\_\+res}} = dict()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Beautiful Soup bonus library: Unicode, Dammit
+
+This library converts a bytestream to Unicode through any means
+necessary. It is heavily based on code from Mark Pilgrim's `Universal
+Feed Parser <https://pypi.org/project/feedparser/>`_, now maintained
+by Kurt McKee. It does not rewrite the body of an XML or HTML document
+to reflect a new encoding; that's the job of `TreeBuilder`.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacebs4_1_1dammit_a37d5adde1089ccec7fa836e42d53cef9}\label{namespacebs4_1_1dammit_a37d5adde1089ccec7fa836e42d53cef9} 
+\index{bs4.dammit@{bs4.dammit}!\_chardet\_dammit@{\_chardet\_dammit}}
+\index{\_chardet\_dammit@{\_chardet\_dammit}!bs4.dammit@{bs4.dammit}}
+\doxysubsubsection{\texorpdfstring{\_chardet\_dammit()}{\_chardet\_dammit()}}
+{\footnotesize\ttfamily  Optional\mbox{[}str\mbox{]} bs4.\+dammit.\+\_\+chardet\+\_\+dammit (\begin{DoxyParamCaption}\item[{bytes}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Try as hard as possible to detect the encoding of a bytestring.\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacebs4_1_1dammit_a909712bf6496ddc965c1d9fefb2f877e}\label{namespacebs4_1_1dammit_a909712bf6496ddc965c1d9fefb2f877e} 
+\index{bs4.dammit@{bs4.dammit}!chardet\_module@{chardet\_module}}
+\index{chardet\_module@{chardet\_module}!bs4.dammit@{bs4.dammit}}
+\doxysubsubsection{\texorpdfstring{chardet\_module}{chardet\_module}}
+{\footnotesize\ttfamily bs4.\+dammit.\+chardet\+\_\+module = None}
+
+\Hypertarget{namespacebs4_1_1dammit_a12f2cd766a4c0a96282e41af88faaaad}\label{namespacebs4_1_1dammit_a12f2cd766a4c0a96282e41af88faaaad} 
+\index{bs4.dammit@{bs4.dammit}!encoding\_res@{encoding\_res}}
+\index{encoding\_res@{encoding\_res}!bs4.dammit@{bs4.dammit}}
+\doxysubsubsection{\texorpdfstring{encoding\_res}{encoding\_res}}
+{\footnotesize\ttfamily Dict bs4.\+dammit.\+encoding\+\_\+res = dict()}
+
+\Hypertarget{namespacebs4_1_1dammit_ab72d875cbd5722aa153668efb372b77b}\label{namespacebs4_1_1dammit_ab72d875cbd5722aa153668efb372b77b} 
+\index{bs4.dammit@{bs4.dammit}!html\_meta@{html\_meta}}
+\index{html\_meta@{html\_meta}!bs4.dammit@{bs4.dammit}}
+\doxysubsubsection{\texorpdfstring{html\_meta}{html\_meta}}
+{\footnotesize\ttfamily tuple bs4.\+dammit.\+html\+\_\+meta}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ (}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{"{}<\(\backslash\)\(\backslash\)s*meta[\string^>]+charset\(\backslash\)\(\backslash\)s*=\(\backslash\)\(\backslash\)s*[\(\backslash\)"{}']?([\string^>]*?)[\ /;'\(\backslash\)"{}>]"{}}\ \ \textcolor{comment}{\#:\ :meta\ private:}}
+\DoxyCodeLine{00003\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacebs4_1_1dammit_a189a1b8c610d57f06cd17f6533bbfc17}\label{namespacebs4_1_1dammit_a189a1b8c610d57f06cd17f6533bbfc17} 
+\index{bs4.dammit@{bs4.dammit}!xml\_encoding@{xml\_encoding}}
+\index{xml\_encoding@{xml\_encoding}!bs4.dammit@{bs4.dammit}}
+\doxysubsubsection{\texorpdfstring{xml\_encoding}{xml\_encoding}}
+{\footnotesize\ttfamily str bs4.\+dammit.\+xml\+\_\+encoding = "{}\texorpdfstring{$^\wedge$}{\string^}\textbackslash{}\textbackslash{}s\texorpdfstring{$\ast$}{*}$<$\textbackslash{}\textbackslash{}?.\texorpdfstring{$\ast$}{*}encoding=\mbox{[}\textquotesingle{}\textbackslash{}"{}\mbox{]}(.\texorpdfstring{$\ast$}{*}?)\mbox{[}\textquotesingle{}\textbackslash{}"{}\mbox{]}.\texorpdfstring{$\ast$}{*}\textbackslash{}\textbackslash{}?$>$"{}}
+

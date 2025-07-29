@@ -1,0 +1,88 @@
+\doxysection{docutils.\+transforms.\+references.\+Propagate\+Targets Class Reference}
+\hypertarget{classdocutils_1_1transforms_1_1references_1_1PropagateTargets}{}\label{classdocutils_1_1transforms_1_1references_1_1PropagateTargets}\index{docutils.transforms.references.PropagateTargets@{docutils.transforms.references.PropagateTargets}}
+Inheritance diagram for docutils.\+transforms.\+references.\+Propagate\+Targets\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdocutils_1_1transforms_1_1references_1_1PropagateTargets}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1references_1_1PropagateTargets_ac050d0704fff32ff512703dcc153194a}{apply}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform}{docutils.\+transforms.\+Transform}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_ab1ceb3a09ea1b3fc6256c2e536f82d6c}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_ad3aaf46a728e4300b65a525b2c35c5dd}{document}}, \mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_aa3b293e3c50fc8701e4fcbb2c86b32dc}{startnode}}=None)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classdocutils_1_1transforms_1_1references_1_1PropagateTargets_a6b8518be14c6dea26d378d5cac05f06d}{default\+\_\+priority}} = 260
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform}{docutils.\+transforms.\+Transform}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_a942614b593b43d29ea9edce9ae763c49}{default\+\_\+priority}} = None
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform}{docutils.\+transforms.\+Transform}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_ad3aaf46a728e4300b65a525b2c35c5dd}{document}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_aa3b293e3c50fc8701e4fcbb2c86b32dc}{startnode}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_ac4deb10345409110344aa2d0d060e2e3}{language}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Propagate empty internal targets to the next element.
+
+Given the following nodes::
+
+    <target ids="internal1" names="internal1">
+    <target anonymous="1" ids="id1">
+    <target ids="internal2" names="internal2">
+    <paragraph>
+        This is a test.
+
+`PropagateTargets` propagates the ids and names of the internal
+targets preceding the paragraph to the paragraph itself::
+
+    <target refid="internal1">
+    <target anonymous="1" refid="id1">
+    <target refid="internal2">
+    <paragraph ids="internal2 id1 internal1" names="internal2 internal1">
+        This is a test.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdocutils_1_1transforms_1_1references_1_1PropagateTargets_ac050d0704fff32ff512703dcc153194a}\label{classdocutils_1_1transforms_1_1references_1_1PropagateTargets_ac050d0704fff32ff512703dcc153194a} 
+\index{docutils.transforms.references.PropagateTargets@{docutils.transforms.references.PropagateTargets}!apply@{apply}}
+\index{apply@{apply}!docutils.transforms.references.PropagateTargets@{docutils.transforms.references.PropagateTargets}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily docutils.\+transforms.\+references.\+Propagate\+Targets.\+apply (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Override to apply the transform to the document tree.\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_a0a9e91ca01b2b5377cb61a18d8914f34}{docutils.\+transforms.\+Transform}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classdocutils_1_1transforms_1_1references_1_1PropagateTargets_a6b8518be14c6dea26d378d5cac05f06d}\label{classdocutils_1_1transforms_1_1references_1_1PropagateTargets_a6b8518be14c6dea26d378d5cac05f06d} 
+\index{docutils.transforms.references.PropagateTargets@{docutils.transforms.references.PropagateTargets}!default\_priority@{default\_priority}}
+\index{default\_priority@{default\_priority}!docutils.transforms.references.PropagateTargets@{docutils.transforms.references.PropagateTargets}}
+\doxysubsubsection{\texorpdfstring{default\_priority}{default\_priority}}
+{\footnotesize\ttfamily int docutils.\+transforms.\+references.\+Propagate\+Targets.\+default\+\_\+priority = 260\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/docutils/transforms/\mbox{\hyperlink{docutils_2transforms_2references_8py}{references.\+py}}\end{DoxyCompactItemize}

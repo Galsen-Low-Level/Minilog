@@ -1,0 +1,58 @@
+.TH "pip._vendor.distro.distro.cached_property" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.distro.distro.cached_property
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, Callable[[Any], Any] f)"
+.br
+.ti -1c
+.RI "Any \fB__get__\fP (self, Any obj, Type[Any] owner)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_fname\fP"
+.br
+.ti -1c
+.RI "\fB_f\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A version of @property which caches the value\&.  On access, it calls the
+underlying function and sets the value in `__dict__` so future accesses
+will not re-call the property\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._vendor\&.distro\&.distro\&.cached_property\&.__init__ ( self, Callable[[Any], Any] f)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " Any pip\&._vendor\&.distro\&.distro\&.cached_property\&.__get__ ( self, Any obj, Type[Any] owner)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.distro\&.distro\&.cached_property\&._f\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distro\&.distro\&.cached_property\&._fname\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

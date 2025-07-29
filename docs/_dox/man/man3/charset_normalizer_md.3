@@ -1,0 +1,76 @@
+.TH "charset_normalizer.md" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+charset_normalizer.md
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBArabicIsolatedFormPlugin\fP"
+.br
+.ti -1c
+.RI "class \fBArchaicUpperLowerPlugin\fP"
+.br
+.ti -1c
+.RI "class \fBCjkUncommonPlugin\fP"
+.br
+.ti -1c
+.RI "class \fBMessDetectorPlugin\fP"
+.br
+.ti -1c
+.RI "class \fBSuperWeirdWordPlugin\fP"
+.br
+.ti -1c
+.RI "class \fBSuspiciousDuplicateAccentPlugin\fP"
+.br
+.ti -1c
+.RI "class \fBSuspiciousRange\fP"
+.br
+.ti -1c
+.RI "class \fBTooManyAccentuatedPlugin\fP"
+.br
+.ti -1c
+.RI "class \fBTooManySymbolOrPunctuationPlugin\fP"
+.br
+.ti -1c
+.RI "class \fBUnprintablePlugin\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBis_suspiciously_successive_range\fP (str|None unicode_range_a, str|None unicode_range_b)"
+.br
+.ti -1c
+.RI "float \fBmess_ratio\fP (str decoded_sequence, float maximum_threshold=0\&.2, bool debug=False)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " bool charset_normalizer\&.md\&.is_suspiciously_successive_range (str | None unicode_range_a, str | None
+ unicode_range_b)"
+
+.PP
+.nf
+Determine if two Unicode range seen next to each other can be considered as suspicious\&.
+
+.fi
+.PP
+ 
+.SS " float charset_normalizer\&.md\&.mess_ratio (str decoded_sequence, float  maximum_threshold = \fC0\&.2\fP, bool  debug = \fCFalse\fP)"
+
+.PP
+.nf
+Compute a mess ratio given a decoded bytes sequence\&. The maximum threshold does stop the computation earlier\&.
+
+.fi
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

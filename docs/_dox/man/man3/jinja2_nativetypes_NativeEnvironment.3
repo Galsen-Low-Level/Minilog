@@ -1,0 +1,252 @@
+.TH "jinja2.nativetypes.NativeEnvironment" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.nativetypes.NativeEnvironment
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBjinja2\&.environment\&.Environment\fP\&.
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcode_generator_class\fP = \fBNativeCodeGenerator\fP"
+.br
+.ti -1c
+.RI "\fBconcat\fP = staticmethod(\fBnative_concat\fP)"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBjinja2\&.environment\&.Environment\fP
+.in +1c
+.ti -1c
+.RI "bool \fBsandboxed\fP = False"
+.br
+.ti -1c
+.RI "bool \fBoverlayed\fP = False"
+.br
+.ti -1c
+.RI "t \fBlinked_to\fP = None"
+.br
+.ti -1c
+.RI "bool \fBshared\fP = False"
+.br
+.ti -1c
+.RI "t \fBcode_generator_class\fP = \fBCodeGenerator\fP"
+.br
+.ti -1c
+.RI "str \fBconcat\fP = ''\&.join"
+.br
+.ti -1c
+.RI "t \fBcontext_class\fP = \fBContext\fP"
+.br
+.ti -1c
+.RI "t \fBtemplate_class\fP \&.Type['Template']"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBjinja2\&.environment\&.Environment\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, str \fBblock_start_string\fP=BLOCK_START_STRING, str \fBblock_end_string\fP=BLOCK_END_STRING, str \fBvariable_start_string\fP=VARIABLE_START_STRING, str \fBvariable_end_string\fP=VARIABLE_END_STRING, str \fBcomment_start_string\fP=COMMENT_START_STRING, str \fBcomment_end_string\fP=COMMENT_END_STRING, t\&.Optional[str] \fBline_statement_prefix\fP=LINE_STATEMENT_PREFIX, t\&.Optional[str] \fBline_comment_prefix\fP=LINE_COMMENT_PREFIX, bool \fBtrim_blocks\fP=TRIM_BLOCKS, bool \fBlstrip_blocks\fP=LSTRIP_BLOCKS, 'te\&.Literal['\\\\n', '\\\\r\\\\n', '\\\\r']' newline_sequence=NEWLINE_SEQUENCE, bool \fBkeep_trailing_newline\fP=KEEP_TRAILING_NEWLINE, t\&.Sequence[t\&.Union[str, t\&.Type['Extension']]] \fBextensions\fP=(), bool \fBoptimized\fP=True, t\&.Type[\fBUndefined\fP] undefined=\fBUndefined\fP, t\&.Optional[t\&.Callable[\&.\&.\&., t\&.Any]] \fBfinalize\fP=None, t\&.Union[bool, t\&.Callable[[t\&.Optional[str]], bool]] \fBautoescape\fP=False, t\&.Optional['BaseLoader'] \fBloader\fP=None, int cache_size=400, bool \fBauto_reload\fP=True, t\&.Optional['BytecodeCache'] \fBbytecode_cache\fP=None, bool enable_async=False)"
+.br
+.ti -1c
+.RI "None \fBadd_extension\fP (self, t\&.Union[str, t\&.Type['Extension']] extension)"
+.br
+.ti -1c
+.RI "None \fBextend\fP (self, **t\&.Any attributes)"
+.br
+.ti -1c
+.RI "'te\&.Self' \fBoverlay\fP (self, str \fBblock_start_string\fP=missing, str \fBblock_end_string\fP=missing, str \fBvariable_start_string\fP=missing, str \fBvariable_end_string\fP=missing, str \fBcomment_start_string\fP=missing, str \fBcomment_end_string\fP=missing, t\&.Optional[str] \fBline_statement_prefix\fP=missing, t\&.Optional[str] \fBline_comment_prefix\fP=missing, bool \fBtrim_blocks\fP=missing, bool \fBlstrip_blocks\fP=missing, 'te\&.Literal['\\\\n', '\\\\r\\\\n', '\\\\r']' newline_sequence=missing, bool \fBkeep_trailing_newline\fP=missing, t\&.Sequence[t\&.Union[str, t\&.Type['Extension']]] \fBextensions\fP=missing, bool \fBoptimized\fP=missing, t\&.Type[\fBUndefined\fP] undefined=missing, t\&.Optional[t\&.Callable[\&.\&.\&., t\&.Any]] \fBfinalize\fP=missing, t\&.Union[bool, t\&.Callable[[t\&.Optional[str]], bool]] \fBautoescape\fP=missing, t\&.Optional['BaseLoader'] \fBloader\fP=missing, int cache_size=missing, bool \fBauto_reload\fP=missing, t\&.Optional['BytecodeCache'] \fBbytecode_cache\fP=missing, bool enable_async=missing)"
+.br
+.ti -1c
+.RI "\fBLexer\fP \fBlexer\fP (self)"
+.br
+.ti -1c
+.RI "t\&.Iterator['Extension'] \fBiter_extensions\fP (self)"
+.br
+.ti -1c
+.RI "t\&.Union[t\&.Any, \fBUndefined\fP] \fBgetitem\fP (self, t\&.Any obj, t\&.Union[str, t\&.Any] argument)"
+.br
+.ti -1c
+.RI "t\&.Any \fBgetattr\fP (self, t\&.Any obj, str attribute)"
+.br
+.ti -1c
+.RI "t\&.Any \fBcall_filter\fP (self, str name, t\&.Any value, t\&.Optional[t\&.Sequence[t\&.Any]] args=None, t\&.Optional[t\&.Mapping[str, t\&.Any]] kwargs=None, t\&.Optional[\fBContext\fP] context=None, t\&.Optional[\fBEvalContext\fP] eval_ctx=None)"
+.br
+.ti -1c
+.RI "t\&.Any \fBcall_test\fP (self, str name, t\&.Any value, t\&.Optional[t\&.Sequence[t\&.Any]] args=None, t\&.Optional[t\&.Mapping[str, t\&.Any]] kwargs=None, t\&.Optional[\fBContext\fP] context=None, t\&.Optional[\fBEvalContext\fP] eval_ctx=None)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Template\fP \fBparse\fP (self, str source, t\&.Optional[str] name=None, t\&.Optional[str] filename=None)"
+.br
+.ti -1c
+.RI "t\&.Iterator[t\&.Tuple[int, str, str]] \fBlex\fP (self, str source, t\&.Optional[str] name=None, t\&.Optional[str] filename=None)"
+.br
+.ti -1c
+.RI "str \fBpreprocess\fP (self, str source, t\&.Optional[str] name=None, t\&.Optional[str] filename=None)"
+.br
+.ti -1c
+.RI "CodeType \fBcompile\fP (self, t\&.Union[str, \fBnodes\&.Template\fP] source, t\&.Optional[str] name=None, t\&.Optional[str] filename=None, 'te\&.Literal[False]' raw=False, bool defer_init=False)"
+.br
+.ti -1c
+.RI "str \fBcompile\fP (self, t\&.Union[str, \fBnodes\&.Template\fP] source, t\&.Optional[str] name=None, t\&.Optional[str] filename=None, 'te\&.Literal[True]' raw=\&.\&.\&., bool defer_init=False)"
+.br
+.ti -1c
+.RI "t\&.Union[str, CodeType] \fBcompile\fP (self, t\&.Union[str, \fBnodes\&.Template\fP] source, t\&.Optional[str] name=None, t\&.Optional[str] filename=None, bool raw=False, bool defer_init=False)"
+.br
+.ti -1c
+.RI "'TemplateExpression' \fBcompile_expression\fP (self, str source, bool undefined_to_none=True)"
+.br
+.ti -1c
+.RI "None \fBcompile_templates\fP (self, t\&.Union[str, 'os\&.PathLike[str]'] target, t\&.Optional[t\&.Collection[str]] \fBextensions\fP=None, t\&.Optional[t\&.Callable[[str], bool]] filter_func=None, t\&.Optional[str] zip='deflated', t\&.Optional[t\&.Callable[[str], None]] log_function=None, bool ignore_errors=True)"
+.br
+.ti -1c
+.RI "t\&.List[str] \fBlist_templates\fP (self, t\&.Optional[t\&.Collection[str]] \fBextensions\fP=None, t\&.Optional[t\&.Callable[[str], bool]] filter_func=None)"
+.br
+.ti -1c
+.RI "'te\&.NoReturn' \fBhandle_exception\fP (self, t\&.Optional[str] source=None)"
+.br
+.ti -1c
+.RI "str \fBjoin_path\fP (self, str template, str parent)"
+.br
+.ti -1c
+.RI "'Template' \fBget_template\fP (self, t\&.Union[str, 'Template'] name, t\&.Optional[str] parent=None, t\&.Optional[t\&.MutableMapping[str, t\&.Any]] \fBglobals\fP=None)"
+.br
+.ti -1c
+.RI "'Template' \fBselect_template\fP (self, t\&.Iterable[t\&.Union[str, 'Template']] names, t\&.Optional[str] parent=None, t\&.Optional[t\&.MutableMapping[str, t\&.Any]] \fBglobals\fP=None)"
+.br
+.ti -1c
+.RI "'Template' \fBget_or_select_template\fP (self, t\&.Union[str, 'Template', t\&.List[t\&.Union[str, 'Template']]] template_name_or_list, t\&.Optional[str] parent=None, t\&.Optional[t\&.MutableMapping[str, t\&.Any]] \fBglobals\fP=None)"
+.br
+.ti -1c
+.RI "'Template' \fBfrom_string\fP (self, t\&.Union[str, \fBnodes\&.Template\fP] source, t\&.Optional[t\&.MutableMapping[str, t\&.Any]] \fBglobals\fP=None, t\&.Optional[t\&.Type['Template']] \fBtemplate_class\fP=None)"
+.br
+.ti -1c
+.RI "t\&.MutableMapping[str, t\&.Any] \fBmake_globals\fP (self, t\&.Optional[t\&.MutableMapping[str, t\&.Any]] d)"
+.br
+.in -1c
+
+Public Attributes inherited from \fBjinja2\&.environment\&.Environment\fP
+.in +1c
+.ti -1c
+.RI "\fBblock_start_string\fP"
+.br
+.ti -1c
+.RI "\fBblock_end_string\fP"
+.br
+.ti -1c
+.RI "\fBvariable_start_string\fP"
+.br
+.ti -1c
+.RI "\fBvariable_end_string\fP"
+.br
+.ti -1c
+.RI "\fBcomment_start_string\fP"
+.br
+.ti -1c
+.RI "\fBcomment_end_string\fP"
+.br
+.ti -1c
+.RI "\fBline_statement_prefix\fP"
+.br
+.ti -1c
+.RI "\fBline_comment_prefix\fP"
+.br
+.ti -1c
+.RI "\fBtrim_blocks\fP"
+.br
+.ti -1c
+.RI "\fBlstrip_blocks\fP"
+.br
+.ti -1c
+.RI "\fBnewline_sequence\fP"
+.br
+.ti -1c
+.RI "\fBkeep_trailing_newline\fP"
+.br
+.ti -1c
+.RI "\fBoptimized\fP"
+.br
+.ti -1c
+.RI "\fBfinalize\fP"
+.br
+.ti -1c
+.RI "\fBautoescape\fP"
+.br
+.ti -1c
+.RI "\fBfilters\fP"
+.br
+.ti -1c
+.RI "\fBtests\fP"
+.br
+.ti -1c
+.RI "\fBglobals\fP"
+.br
+.ti -1c
+.RI "\fBloader\fP"
+.br
+.ti -1c
+.RI "\fBcache\fP"
+.br
+.ti -1c
+.RI "\fBbytecode_cache\fP"
+.br
+.ti -1c
+.RI "\fBauto_reload\fP"
+.br
+.ti -1c
+.RI "\fBpolicies\fP"
+.br
+.ti -1c
+.RI "\fBextensions\fP"
+.br
+.ti -1c
+.RI "\fBis_async\fP"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBjinja2\&.environment\&.Environment\fP
+.in +1c
+.ti -1c
+.RI "t\&.Any \fB_filter_test_common\fP (self, t\&.Union[str, \fBUndefined\fP] name, t\&.Any value, t\&.Optional[t\&.Sequence[t\&.Any]] args, t\&.Optional[t\&.Mapping[str, t\&.Any]] kwargs, t\&.Optional[\fBContext\fP] context, t\&.Optional[\fBEvalContext\fP] eval_ctx, bool is_filter)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Template\fP \fB_parse\fP (self, str source, t\&.Optional[str] name, t\&.Optional[str] filename)"
+.br
+.ti -1c
+.RI "\fBTokenStream\fP \fB_tokenize\fP (self, str source, t\&.Optional[str] name, t\&.Optional[str] filename=None, t\&.Optional[str] state=None)"
+.br
+.ti -1c
+.RI "str \fB_generate\fP (self, \fBnodes\&.Template\fP source, t\&.Optional[str] name, t\&.Optional[str] filename, bool defer_init=False)"
+.br
+.ti -1c
+.RI "CodeType \fB_compile\fP (self, str source, str filename)"
+.br
+.ti -1c
+.RI "'Template' \fB_load_template\fP (self, str name, t\&.Optional[t\&.MutableMapping[str, t\&.Any]] \fBglobals\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+An environment that renders templates to native Python types\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "jinja2\&.nativetypes\&.NativeEnvironment\&.code_generator_class = \fBNativeCodeGenerator\fP\fC [static]\fP"
+
+.SS "jinja2\&.nativetypes\&.NativeEnvironment\&.concat = staticmethod(\fBnative_concat\fP)\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,141 @@
+.TH "docutils.io.StringOutput" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.io.StringOutput
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.io\&.Output\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBwrite\fP (self, data)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.io\&.Output\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdestination\fP=None, \fBdestination_path\fP=None, \fBencoding\fP=None, \fBerror_handler\fP='strict')"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBencode\fP (self, data)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "\fBget_transforms\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdestination\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.io\&.Output\fP
+.in +1c
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBerror_handler\fP"
+.br
+.ti -1c
+.RI "\fBdestination\fP"
+.br
+.ti -1c
+.RI "\fBdestination_path\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_transforms\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBdefault_destination_path\fP = '<string>'"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.io\&.Output\fP
+.in +1c
+.ti -1c
+.RI "str \fBcomponent_type\fP = 'output'"
+.br
+.ti -1c
+.RI "\fBdefault_destination_path\fP = None"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBdefault_transforms\fP = ()"
+.br
+.ti -1c
+.RI "tuple \fBunknown_reference_resolvers\fP = ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Output to a `bytes` or `str` instance\&.
+
+Provisional\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.io\&.StringOutput\&.write ( self,  data)"
+
+.PP
+.nf
+Store `data` in `self\&.destination`, and return it\&.
+
+If `self\&.encoding` is set to the pseudo encoding name 'unicode',
+`data` must be a `str` instance and is stored/returned unchanged
+(cf\&. `Output\&.encode`)\&.
+
+Otherwise, `data` can be a `bytes` or `str` instance and is
+stored/returned as a `bytes` instance
+(`str` data is encoded with `self\&.encode()`)\&.
+
+Attention: the `output_encoding`_ setting may affect the content
+of the output (e\&.g\&. an encoding declaration in HTML or XML or the
+representation of characters as LaTeX macro vs\&. literal character)\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.io\&.Output\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "str docutils\&.io\&.StringOutput\&.default_destination_path = '<string>'\fC [static]\fP"
+
+.SS "docutils\&.io\&.StringOutput\&.destination"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

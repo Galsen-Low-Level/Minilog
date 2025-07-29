@@ -1,0 +1,439 @@
+\doxysection{snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer Class Reference}
+\hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer}{}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer}\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+Inheritance diagram for snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_acb856d616a02d36e4456e899ec7f9026}{I\+\_\+p1}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a805a9b40da3048068902f774f26d9019}{I\+\_\+p2}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a107eb9d5a8fa70046d79b78cc6515139}{limit\+\_\+backward}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a4836c113a1fb03b36cf03ed27cf1e507}{ket}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a0a473cbf7e44d4cf6869e17a1211cb98}{bra}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a3cc46ce0f09031eb7d48680861d3f667}{cursor}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a2d2a81b16277f3fb6a328ca8e5490072}{B\+\_\+ending\+\_\+removed}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a996e5d2d92abea7d733b2c12af33b13a}{S\+\_\+x}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer}{snowballstemmer.\+basestemmer.\+Base\+Stemmer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a4dd996864d5bc805e20f7ba5166114fd}{current}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a29de33eb9838ee5f3b71242fe3680384}{cursor}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a156c8d8aec4e620bc257e2151977d9a9}{limit}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a8afe4054297dada32956749f231cf5ba}{limit\+\_\+backward}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_aab37b4f60243c871c4117158c23db1ac}{bra}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_abfcee0a5012ea9d57a7099f8cdbd95c4}{ket}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+dict \mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a84539e2d44493c31290488a155c5bd79}{g\+\_\+\+AEI}} = \{u"{}a"{}, u"{}ä"{}, u"{}e"{}, u"{}i"{}\}
+\item 
+dict \mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a56a03c657efdd2af68261236fd5419da}{g\+\_\+C}} = \{u"{}b"{}, u"{}c"{}, u"{}d"{}, u"{}f"{}, u"{}g"{}, u"{}h"{}, u"{}j"{}, u"{}k"{}, u"{}l"{}, u"{}m"{}, u"{}n"{}, u"{}p"{}, u"{}q"{}, u"{}r"{}, u"{}s"{}, u"{}t"{}, u"{}v"{}, u"{}w"{}, u"{}x"{}, u"{}z"{}\}
+\item 
+dict \mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a7ea4c6122a519589f275c220f16bd629}{g\+\_\+\+V1}} = \{u"{}a"{}, u"{}e"{}, u"{}i"{}, u"{}o"{}, u"{}u"{}, u"{}y"{}, u"{}ä"{}, u"{}ö"{}\}
+\item 
+dict \mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a2bb96ad7f710d5e058e9ba8855cb7484}{g\+\_\+\+V2}} = \{u"{}a"{}, u"{}e"{}, u"{}i"{}, u"{}o"{}, u"{}u"{}, u"{}ä"{}, u"{}ö"{}\}
+\item 
+dict \mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a793e80643c6d0f97a2be68377fd3832f}{g\+\_\+particle\+\_\+end}} = \{u"{}a"{}, u"{}e"{}, u"{}i"{}, u"{}o"{}, u"{}u"{}, u"{}y"{}, u"{}ä"{}, u"{}ö"{}, u"{}n"{}, u"{}t"{}\}
+\item 
+bool \mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_ab219afc30dcc00f92dc80bd2503ae505}{B\+\_\+ending\+\_\+removed}} = False
+\item 
+str \mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_adf463e9bb37a6fc301309ac46987427f}{S\+\_\+x}} = "{}"{}
+\item 
+int \mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a337756bd9eeb8e71a72d6fe2cf147ca4}{I\+\_\+p2}} = 0
+\item 
+int \mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a958eaabdcb8b9f86d3e510ee43617272}{I\+\_\+p1}} = 0
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_ad42f0030cd48016dd2fca6c927b74d9b}{a\+\_\+0}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a5f38fd04246736a6c7cfe77d8a228f5f}{a\+\_\+1}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_ab87ec1d832c952a0a5e352784cbc1d23}{a\+\_\+2}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a3c83a74918bb9c809e67d462a7f97916}{a\+\_\+3}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a24058f42b864be7f0a6ebddcc35395bd}{a\+\_\+4}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_ad30cd76d8415618521e1c2f8c8cfdaeb}{a\+\_\+5}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a4a98881b91dde992170e0ffb3c71edd4}{a\+\_\+6}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_adf69b407bbe0c26d8337544aeaca74bf}{a\+\_\+7}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a89e56aec6f591985f05bd0c67b7414f5}{a\+\_\+8}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_ad3b475071e837462ef5c0fe55a2431ab}{a\+\_\+9}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_aac5e0b40446696cb469961a6e123b9f1}{\+\_\+stem}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer}{snowballstemmer.\+basestemmer.\+Base\+Stemmer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a946aadb1b65cc09cb7be0f3e5b2578ba}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_af2b4b12103cfbad140bf4ba04ca5bab4}{set\+\_\+current}} (self, value)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_aa1c57b767cc7f6323430f086f57d330d}{get\+\_\+current}} (self)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a64b0362bcb14704b1fed13ecea03422c}{copy\+\_\+from}} (self, other)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_adba1e64dd68dc014b860a8c39a95e528}{in\+\_\+grouping}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a71dad02f76e631e4e7ed8e24c0daf692}{go\+\_\+in\+\_\+grouping}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a56d434f3840ffa4ea8190e00aade598a}{in\+\_\+grouping\+\_\+b}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a429d15e2be31c20cc6e18c0e138bb592}{go\+\_\+in\+\_\+grouping\+\_\+b}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_aa67344aa3bb2e366a322889839e1c87c}{out\+\_\+grouping}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a66b164efb1a9678372b0b47a470a0a1f}{go\+\_\+out\+\_\+grouping}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a4a40031078593bcfc7a6090bef2571ba}{out\+\_\+grouping\+\_\+b}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a16410205c519d6ff1d14a6c448632a4d}{go\+\_\+out\+\_\+grouping\+\_\+b}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_ac7fbae2d63612fb0fb8cf05dd715adfd}{eq\+\_\+s}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_ac9836ac8040a8ac7c1ac0e525bf5692e}{eq\+\_\+s\+\_\+b}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a75baf55663459dffb8031fedfe47339d}{find\+\_\+among}} (self, v)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a2e78e825421c01b6a472151453f9af2c}{find\+\_\+among\+\_\+b}} (self, v)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a99547582c5e3614ceeb6cea4a1d5d2c3}{replace\+\_\+s}} (self, c\+\_\+bra, c\+\_\+ket, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_ad04ae9586fd7dafbc6ed1a316acc3d58}{slice\+\_\+check}} (self)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a9707720d9832fcb5736c5df0adc62d4f}{slice\+\_\+from}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a76f589f10815ba777fb1f95eb1e124d8}{slice\+\_\+del}} (self)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a7915fb6f3f835aa48b3f666ea9e3aab9}{insert}} (self, c\+\_\+bra, c\+\_\+ket, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a292676eda1d346649a6d9f25d32b134d}{slice\+\_\+to}} (self)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a358eed487416c5b680cfc36748f1ab15}{assign\+\_\+to}} (self)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a11aca0892bbe67c2f48a6d59e61463eb}{stem\+Word}} (self, word)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a0641066c1cb26043923e7f9e966e5cfa}{stem\+Words}} (self, words)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}This class implements the stemming algorithm defined by a snowball script.
+Generated from finnish.sbl by Snowball 3.0.1 - https://snowballstem.org/
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_aac5e0b40446696cb469961a6e123b9f1}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_aac5e0b40446696cb469961a6e123b9f1} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!\_stem@{\_stem}}
+\index{\_stem@{\_stem}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{\_stem()}{\_stem()}}
+{\footnotesize\ttfamily snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+\_\+stem (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_ad42f0030cd48016dd2fca6c927b74d9b}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_ad42f0030cd48016dd2fca6c927b74d9b} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!a\_0@{a\_0}}
+\index{a\_0@{a\_0}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_0}{a\_0}}
+{\footnotesize\ttfamily list snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+a\+\_\+0\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}pa"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}sti"{}},\ -\/1,\ 2),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}kaan"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}han"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}kin"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}hän"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}kään"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ko"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}pä"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}kö"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a5f38fd04246736a6c7cfe77d8a228f5f}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a5f38fd04246736a6c7cfe77d8a228f5f} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!a\_1@{a\_1}}
+\index{a\_1@{a\_1}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_1}{a\_1}}
+{\footnotesize\ttfamily list snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+a\+\_\+1\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}lla"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}na"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ssa"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ta"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}lta"{}},\ 3,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}sta"{}},\ 3,\ -\/1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_ab87ec1d832c952a0a5e352784cbc1d23}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_ab87ec1d832c952a0a5e352784cbc1d23} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!a\_2@{a\_2}}
+\index{a\_2@{a\_2}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_2}{a\_2}}
+{\footnotesize\ttfamily list snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+a\+\_\+2\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}llä"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}nä"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ssä"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}tä"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ltä"{}},\ 3,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}stä"{}},\ 3,\ -\/1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a3c83a74918bb9c809e67d462a7f97916}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a3c83a74918bb9c809e67d462a7f97916} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!a\_3@{a\_3}}
+\index{a\_3@{a\_3}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_3}{a\_3}}
+{\footnotesize\ttfamily list snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+a\+\_\+3\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}lle"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ine"{}},\ -\/1,\ -\/1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a24058f42b864be7f0a6ebddcc35395bd}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a24058f42b864be7f0a6ebddcc35395bd} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!a\_4@{a\_4}}
+\index{a\_4@{a\_4}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_4}{a\_4}}
+{\footnotesize\ttfamily list snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+a\+\_\+4\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}nsa"{}},\ -\/1,\ 3),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}mme"{}},\ -\/1,\ 3),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}nne"{}},\ -\/1,\ 3),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ni"{}},\ -\/1,\ 2),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}si"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}an"{}},\ -\/1,\ 4),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}en"{}},\ -\/1,\ 6),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}än"{}},\ -\/1,\ 5),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}nsä"{}},\ -\/1,\ 3)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_ad30cd76d8415618521e1c2f8c8cfdaeb}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_ad30cd76d8415618521e1c2f8c8cfdaeb} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!a\_5@{a\_5}}
+\index{a\_5@{a\_5}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_5}{a\_5}}
+{\footnotesize\ttfamily list snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+a\+\_\+5\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}aa"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ee"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ii"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}oo"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}uu"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ää"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}öö"{}},\ -\/1,\ -\/1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a4a98881b91dde992170e0ffb3c71edd4}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a4a98881b91dde992170e0ffb3c71edd4} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!a\_6@{a\_6}}
+\index{a\_6@{a\_6}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_6}{a\_6}}
+{\footnotesize\ttfamily list snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+a\+\_\+6\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_adf69b407bbe0c26d8337544aeaca74bf}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_adf69b407bbe0c26d8337544aeaca74bf} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!a\_7@{a\_7}}
+\index{a\_7@{a\_7}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_7}{a\_7}}
+{\footnotesize\ttfamily list snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+a\+\_\+7\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}eja"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}mma"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}imma"{}},\ 1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}mpa"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}impa"{}},\ 3,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}mmi"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}immi"{}},\ 5,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}mpi"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}impi"{}},\ 7,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ejä"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}mmä"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}immä"{}},\ 10,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}mpä"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}impä"{}},\ 12,\ -\/1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a89e56aec6f591985f05bd0c67b7414f5}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a89e56aec6f591985f05bd0c67b7414f5} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!a\_8@{a\_8}}
+\index{a\_8@{a\_8}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_8}{a\_8}}
+{\footnotesize\ttfamily list snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+a\+\_\+8\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}i"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}j"{}},\ -\/1,\ -\/1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_ad3b475071e837462ef5c0fe55a2431ab}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_ad3b475071e837462ef5c0fe55a2431ab} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!a\_9@{a\_9}}
+\index{a\_9@{a\_9}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_9}{a\_9}}
+{\footnotesize\ttfamily list snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+a\+\_\+9\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}mma"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}imma"{}},\ 0,\ -\/1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_ab219afc30dcc00f92dc80bd2503ae505}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_ab219afc30dcc00f92dc80bd2503ae505} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!B\_ending\_removed@{B\_ending\_removed}}
+\index{B\_ending\_removed@{B\_ending\_removed}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{B\_ending\_removed}{B\_ending\_removed}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+B\+\_\+ending\+\_\+removed = False\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a2d2a81b16277f3fb6a328ca8e5490072}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a2d2a81b16277f3fb6a328ca8e5490072} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!B\_ending\_removed@{B\_ending\_removed}}
+\index{B\_ending\_removed@{B\_ending\_removed}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{B\_ending\_removed}{B\_ending\_removed}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+B\+\_\+ending\+\_\+removed}
+
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a0a473cbf7e44d4cf6869e17a1211cb98}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a0a473cbf7e44d4cf6869e17a1211cb98} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!bra@{bra}}
+\index{bra@{bra}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{bra}{bra}}
+{\footnotesize\ttfamily snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+bra}
+
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a3cc46ce0f09031eb7d48680861d3f667}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a3cc46ce0f09031eb7d48680861d3f667} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!cursor@{cursor}}
+\index{cursor@{cursor}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{cursor}{cursor}}
+{\footnotesize\ttfamily snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+cursor}
+
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a84539e2d44493c31290488a155c5bd79}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a84539e2d44493c31290488a155c5bd79} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!g\_AEI@{g\_AEI}}
+\index{g\_AEI@{g\_AEI}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{g\_AEI}{g\_AEI}}
+{\footnotesize\ttfamily dict snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+g\+\_\+\+AEI = \{u"{}a"{}, u"{}ä"{}, u"{}e"{}, u"{}i"{}\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a56a03c657efdd2af68261236fd5419da}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a56a03c657efdd2af68261236fd5419da} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!g\_C@{g\_C}}
+\index{g\_C@{g\_C}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{g\_C}{g\_C}}
+{\footnotesize\ttfamily dict snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+g\+\_\+C = \{u"{}b"{}, u"{}c"{}, u"{}d"{}, u"{}f"{}, u"{}g"{}, u"{}h"{}, u"{}j"{}, u"{}k"{}, u"{}l"{}, u"{}m"{}, u"{}n"{}, u"{}p"{}, u"{}q"{}, u"{}r"{}, u"{}s"{}, u"{}t"{}, u"{}v"{}, u"{}w"{}, u"{}x"{}, u"{}z"{}\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a793e80643c6d0f97a2be68377fd3832f}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a793e80643c6d0f97a2be68377fd3832f} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!g\_particle\_end@{g\_particle\_end}}
+\index{g\_particle\_end@{g\_particle\_end}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{g\_particle\_end}{g\_particle\_end}}
+{\footnotesize\ttfamily dict snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+g\+\_\+particle\+\_\+end = \{u"{}a"{}, u"{}e"{}, u"{}i"{}, u"{}o"{}, u"{}u"{}, u"{}y"{}, u"{}ä"{}, u"{}ö"{}, u"{}n"{}, u"{}t"{}\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a7ea4c6122a519589f275c220f16bd629}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a7ea4c6122a519589f275c220f16bd629} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!g\_V1@{g\_V1}}
+\index{g\_V1@{g\_V1}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{g\_V1}{g\_V1}}
+{\footnotesize\ttfamily dict snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+g\+\_\+\+V1 = \{u"{}a"{}, u"{}e"{}, u"{}i"{}, u"{}o"{}, u"{}u"{}, u"{}y"{}, u"{}ä"{}, u"{}ö"{}\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a2bb96ad7f710d5e058e9ba8855cb7484}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a2bb96ad7f710d5e058e9ba8855cb7484} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!g\_V2@{g\_V2}}
+\index{g\_V2@{g\_V2}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{g\_V2}{g\_V2}}
+{\footnotesize\ttfamily dict snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+g\+\_\+\+V2 = \{u"{}a"{}, u"{}e"{}, u"{}i"{}, u"{}o"{}, u"{}u"{}, u"{}ä"{}, u"{}ö"{}\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a958eaabdcb8b9f86d3e510ee43617272}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a958eaabdcb8b9f86d3e510ee43617272} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!I\_p1@{I\_p1}}
+\index{I\_p1@{I\_p1}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{I\_p1}{I\_p1}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+I\+\_\+p1 = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_acb856d616a02d36e4456e899ec7f9026}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_acb856d616a02d36e4456e899ec7f9026} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!I\_p1@{I\_p1}}
+\index{I\_p1@{I\_p1}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{I\_p1}{I\_p1}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+I\+\_\+p1}
+
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a337756bd9eeb8e71a72d6fe2cf147ca4}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a337756bd9eeb8e71a72d6fe2cf147ca4} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!I\_p2@{I\_p2}}
+\index{I\_p2@{I\_p2}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{I\_p2}{I\_p2}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+I\+\_\+p2 = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a805a9b40da3048068902f774f26d9019}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a805a9b40da3048068902f774f26d9019} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!I\_p2@{I\_p2}}
+\index{I\_p2@{I\_p2}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{I\_p2}{I\_p2}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+I\+\_\+p2}
+
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a4836c113a1fb03b36cf03ed27cf1e507}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a4836c113a1fb03b36cf03ed27cf1e507} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!ket@{ket}}
+\index{ket@{ket}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{ket}{ket}}
+{\footnotesize\ttfamily snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+ket}
+
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a107eb9d5a8fa70046d79b78cc6515139}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a107eb9d5a8fa70046d79b78cc6515139} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!limit\_backward@{limit\_backward}}
+\index{limit\_backward@{limit\_backward}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{limit\_backward}{limit\_backward}}
+{\footnotesize\ttfamily snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+limit\+\_\+backward}
+
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_adf463e9bb37a6fc301309ac46987427f}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_adf463e9bb37a6fc301309ac46987427f} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!S\_x@{S\_x}}
+\index{S\_x@{S\_x}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{S\_x}{S\_x}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily str snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+S\+\_\+x = "{}"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a996e5d2d92abea7d733b2c12af33b13a}\label{classsnowballstemmer_1_1finnish__stemmer_1_1FinnishStemmer_a996e5d2d92abea7d733b2c12af33b13a} 
+\index{snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}!S\_x@{S\_x}}
+\index{S\_x@{S\_x}!snowballstemmer.finnish\_stemmer.FinnishStemmer@{snowballstemmer.finnish\_stemmer.FinnishStemmer}}
+\doxysubsubsection{\texorpdfstring{S\_x}{S\_x}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily snowballstemmer.\+finnish\+\_\+stemmer.\+Finnish\+Stemmer.\+S\+\_\+x}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/snowballstemmer/\mbox{\hyperlink{finnish__stemmer_8py}{finnish\+\_\+stemmer.\+py}}\end{DoxyCompactItemize}

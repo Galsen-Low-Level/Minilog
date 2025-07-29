@@ -1,0 +1,79 @@
+.TH "qthelp" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+qthelp
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBQtHelpBuilder\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fBrender_file\fP (str filename, **Any kwargs)"
+.br
+.ti -1c
+.RI "dict[str, Any] \fBsetup\fP (\fBSphinx\fP app)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "\fBpackage_dir\fP = path\&.abspath(path\&.dirname(__file__))"
+.br
+.ti -1c
+.RI "\fB_idpattern\fP"
+.br
+.ti -1c
+.RI "str \fBsection_template\fP = '<section title='%(title)s' ref='%(ref)s'/>'"
+.br
+.ti -1c
+.RI "\fBproject\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Build input files for the Qt collection generator\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " str qthelp\&.render_file (str filename, **Any kwargs)"
+
+.SS " dict[str, Any] qthelp\&.setup (\fBSphinx\fP app)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "qthelp\&._idpattern\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(
+2     r'(?P<title>\&.+) (\\((class in )?(?P<id>[\\w\\\&.]+)( (?P<descr>\\w+))?\\))$')
+.fi
+
+.SS "qthelp\&.logger = logging\&.getLogger(__name__)"
+
+.SS "qthelp\&.package_dir = path\&.abspath(path\&.dirname(__file__))"
+
+.SS "qthelp\&.project"
+
+.SS "str qthelp\&.section_template = '<section title='%(title)s' ref='%(ref)s'/>'"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,139 @@
+.TH "sphinx.ext.intersphinx._resolve" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.ext.intersphinx._resolve
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBIntersphinxDispatcher\fP"
+.br
+.ti -1c
+.RI "class \fBIntersphinxRole\fP"
+.br
+.ti -1c
+.RI "class \fBIntersphinxRoleResolver\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "nodes\&.reference \fB_create_element_from_result\fP (str domain_name, InventoryName|None inv_name, \fB_InventoryItem\fP inv_item, \fBpending_xref\fP node, \fBTextElement\fP contnode)"
+.br
+.ti -1c
+.RI "nodes\&.reference|None \fB_resolve_reference_in_domain_by_target\fP (InventoryName|None inv_name, Inventory inventory, str domain_name, Iterable[str] objtypes, str target, \fBpending_xref\fP node, \fBTextElement\fP contnode)"
+.br
+.ti -1c
+.RI "nodes\&.reference|None \fB_resolve_reference_in_domain\fP (InventoryName|None inv_name, Inventory inventory, bool honor_disabled_refs, Set[str] disabled_reftypes, \fBDomain\fP domain, Iterable[str] objtypes, \fBpending_xref\fP node, \fBTextElement\fP contnode)"
+.br
+.ti -1c
+.RI "nodes\&.reference|None \fB_resolve_reference\fP (InventoryName|None inv_name, \fB_DomainsContainer\fP domains, Inventory inventory, bool honor_disabled_refs, Set[str] disabled_reftypes, \fBpending_xref\fP node, \fBTextElement\fP contnode)"
+.br
+.ti -1c
+.RI "bool \fBinventory_exists\fP (\fBBuildEnvironment\fP env, InventoryName inv_name)"
+.br
+.ti -1c
+.RI "nodes\&.reference|None \fBresolve_reference_in_inventory\fP (\fBBuildEnvironment\fP env, InventoryName inv_name, \fBpending_xref\fP node, \fBTextElement\fP contnode)"
+.br
+.ti -1c
+.RI "nodes\&.reference|None \fBresolve_reference_any_inventory\fP (\fBBuildEnvironment\fP env, bool honor_disabled_refs, \fBpending_xref\fP node, \fBTextElement\fP contnode)"
+.br
+.ti -1c
+.RI "nodes\&.reference|None \fBresolve_reference_detect_inventory\fP (\fBBuildEnvironment\fP env, \fBpending_xref\fP node, \fBTextElement\fP contnode)"
+.br
+.ti -1c
+.RI "nodes\&.reference|None \fBmissing_reference\fP (\fBSphinx\fP app, \fBBuildEnvironment\fP env, \fBpending_xref\fP node, \fBTextElement\fP contnode)"
+.br
+.ti -1c
+.RI "None \fBinstall_dispatcher\fP (\fBSphinx\fP app, str docname, list[str] source)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This module provides logic for resolving references to intersphinx targets\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " nodes\&.reference sphinx\&.ext\&.intersphinx\&._resolve\&._create_element_from_result (str domain_name, InventoryName | None inv_name, \fB_InventoryItem\fP inv_item, \fBpending_xref\fP node, \fBTextElement\fP contnode)\fC [protected]\fP"
+
+.SS " nodes\&.reference | None sphinx\&.ext\&.intersphinx\&._resolve\&._resolve_reference (InventoryName | None inv_name, \fB_DomainsContainer\fP domains, Inventory inventory, bool honor_disabled_refs, Set[str] disabled_reftypes, \fBpending_xref\fP node, \fBTextElement\fP contnode)\fC [protected]\fP"
+
+.SS " nodes\&.reference | None sphinx\&.ext\&.intersphinx\&._resolve\&._resolve_reference_in_domain (InventoryName | None inv_name, Inventory inventory, bool honor_disabled_refs, Set[str] disabled_reftypes, \fBDomain\fP domain, Iterable[str] objtypes, \fBpending_xref\fP node, \fBTextElement\fP contnode)\fC [protected]\fP"
+
+.SS " nodes\&.reference | None sphinx\&.ext\&.intersphinx\&._resolve\&._resolve_reference_in_domain_by_target (InventoryName | None inv_name, Inventory inventory, str domain_name, Iterable[str] objtypes, str target, \fBpending_xref\fP node, \fBTextElement\fP contnode)\fC [protected]\fP"
+
+.SS " None sphinx\&.ext\&.intersphinx\&._resolve\&.install_dispatcher (\fBSphinx\fP app, str docname, list[str] source)"
+
+.PP
+.nf
+Enable IntersphinxDispatcher\&.
+
+\&.\&. note:: The installed dispatcher will be uninstalled on disabling sphinx_domain
+          automatically\&.
+
+.fi
+.PP
+ 
+.SS " bool sphinx\&.ext\&.intersphinx\&._resolve\&.inventory_exists (\fBBuildEnvironment\fP env, InventoryName inv_name)"
+
+.SS " nodes\&.reference | None sphinx\&.ext\&.intersphinx\&._resolve\&.missing_reference (\fBSphinx\fP app, \fBBuildEnvironment\fP env, \fBpending_xref\fP node, \fBTextElement\fP
+ contnode)"
+
+.PP
+.nf
+Attempt to resolve a missing reference via intersphinx references\&.
+.fi
+.PP
+ 
+.SS " nodes\&.reference | None sphinx\&.ext\&.intersphinx\&._resolve\&.resolve_reference_any_inventory (\fBBuildEnvironment\fP env, bool honor_disabled_refs, \fBpending_xref\fP node, \fBTextElement\fP contnode)"
+
+.PP
+.nf
+Attempt to resolve a missing reference via intersphinx references\&.
+
+Resolution is tried with the target as is in any inventory\&.
+
+.fi
+.PP
+ 
+.SS " nodes\&.reference | None sphinx\&.ext\&.intersphinx\&._resolve\&.resolve_reference_detect_inventory (\fBBuildEnvironment\fP env, \fBpending_xref\fP node, \fBTextElement\fP
+ contnode)"
+
+.PP
+.nf
+Attempt to resolve a missing reference via intersphinx references\&.
+
+Resolution is tried first with the target as is in any inventory\&.
+If this does not succeed, then the target is split by the first ``:``,
+to form ``inv_name:new_target``\&. If ``inv_name`` is a named inventory, then resolution
+is tried in that inventory with the new target\&.
+
+.fi
+.PP
+ 
+.SS " nodes\&.reference | None sphinx\&.ext\&.intersphinx\&._resolve\&.resolve_reference_in_inventory (\fBBuildEnvironment\fP env, InventoryName inv_name, \fBpending_xref\fP node, \fBTextElement\fP contnode)"
+
+.PP
+.nf
+Attempt to resolve a missing reference via intersphinx references\&.
+
+Resolution is tried in the given inventory with the target as is\&.
+
+Requires ``inventory_exists(env, inv_name)``\&.
+
+.fi
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

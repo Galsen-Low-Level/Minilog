@@ -1,0 +1,175 @@
+.TH "pip._vendor.rich._inspect.Inspect" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.rich._inspect.Inspect
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._vendor\&.rich\&.jupyter\&.JupyterMixin\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, Any \fBobj\fP, *Optional[TextType] \fBtitle\fP=None, bool \fBhelp\fP=False, bool \fBmethods\fP=False, bool \fBdocs\fP=True, bool \fBprivate\fP=False, bool \fBdunder\fP=False, bool \fBsort\fP=True, bool all=True, bool \fBvalue\fP=True)"
+.br
+.ti -1c
+.RI "\fBPanel\fP \fB__rich__\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBhighlighter\fP"
+.br
+.ti -1c
+.RI "\fBobj\fP"
+.br
+.ti -1c
+.RI "\fBtitle\fP"
+.br
+.ti -1c
+.RI "\fBhelp\fP"
+.br
+.ti -1c
+.RI "\fBmethods\fP"
+.br
+.ti -1c
+.RI "\fBdocs\fP"
+.br
+.ti -1c
+.RI "\fBprivate\fP"
+.br
+.ti -1c
+.RI "\fBdunder\fP"
+.br
+.ti -1c
+.RI "\fBsort\fP"
+.br
+.ti -1c
+.RI "\fBvalue\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBText\fP \fB_make_title\fP (self, Any \fBobj\fP)"
+.br
+.ti -1c
+.RI "Optional[\fBText\fP] \fB_get_signature\fP (self, str name, Any \fBobj\fP)"
+.br
+.ti -1c
+.RI "Iterable[RenderableType] \fB_render\fP (self)"
+.br
+.ti -1c
+.RI "Optional[str] \fB_get_formatted_doc\fP (self, Any object_)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpip\&._vendor\&.rich\&.jupyter\&.JupyterMixin\fP
+.in +1c
+.ti -1c
+.RI "Dict[str, str] \fB_repr_mimebundle_\fP ('ConsoleRenderable' self, Sequence[str] include, Sequence[str] exclude, **Any kwargs)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A renderable to inspect any Python Object\&.
+
+Args:
+    obj (Any): An object to inspect\&.
+    title (str, optional): Title to display over inspect result, or None use type\&. Defaults to None\&.
+    help (bool, optional): Show full help text rather than just first paragraph\&. Defaults to False\&.
+    methods (bool, optional): Enable inspection of callables\&. Defaults to False\&.
+    docs (bool, optional): Also render doc strings\&. Defaults to True\&.
+    private (bool, optional): Show private attributes (beginning with underscore)\&. Defaults to False\&.
+    dunder (bool, optional): Show attributes starting with double underscore\&. Defaults to False\&.
+    sort (bool, optional): Sort attributes alphabetically\&. Defaults to True\&.
+    all (bool, optional): Show all attributes\&. Defaults to False\&.
+    value (bool, optional): Pretty print value of object\&. Defaults to True\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._vendor\&.rich\&._inspect\&.Inspect\&.__init__ ( self, Any obj, *Optional[TextType]  title = \fCNone\fP, bool  help = \fCFalse\fP, bool  methods = \fCFalse\fP, bool  docs = \fCTrue\fP, bool  private = \fCFalse\fP, bool  dunder = \fCFalse\fP, bool  sort = \fCTrue\fP, bool  all = \fCTrue\fP, bool  value = \fCTrue\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " \fBPanel\fP pip\&._vendor\&.rich\&._inspect\&.Inspect\&.__rich__ ( self)"
+
+.SS " Optional[str] pip\&._vendor\&.rich\&._inspect\&.Inspect\&._get_formatted_doc ( self, Any object_)\fC [protected]\fP"
+
+.PP
+.nf
+Extract the docstring of an object, process it and returns it\&.
+The processing consists in cleaning up the doctring's indentation,
+taking only its 1st paragraph if `self\&.help` is not True,
+and escape its control codes\&.
+
+Args:
+    object_ (Any): the object to get the docstring from\&.
+
+Returns:
+    Optional[str]: the processed docstring, or None if no docstring was found\&.
+
+.fi
+.PP
+ 
+.SS " Optional[\fBText\fP] pip\&._vendor\&.rich\&._inspect\&.Inspect\&._get_signature ( self, str name, Any obj)\fC [protected]\fP"
+
+.PP
+.nf
+Get a signature for a callable\&.
+.fi
+.PP
+ 
+.SS " \fBText\fP pip\&._vendor\&.rich\&._inspect\&.Inspect\&._make_title ( self, Any obj)\fC [protected]\fP"
+
+.PP
+.nf
+Make a default title\&.
+.fi
+.PP
+ 
+.SS " Iterable[RenderableType] pip\&._vendor\&.rich\&._inspect\&.Inspect\&._render ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Render object\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.rich\&._inspect\&.Inspect\&.docs"
+
+.SS "pip\&._vendor\&.rich\&._inspect\&.Inspect\&.dunder"
+
+.SS "pip\&._vendor\&.rich\&._inspect\&.Inspect\&.help"
+
+.SS "pip\&._vendor\&.rich\&._inspect\&.Inspect\&.highlighter"
+
+.SS "pip\&._vendor\&.rich\&._inspect\&.Inspect\&.methods"
+
+.SS "pip\&._vendor\&.rich\&._inspect\&.Inspect\&.obj"
+
+.SS "pip\&._vendor\&.rich\&._inspect\&.Inspect\&.private"
+
+.SS "pip\&._vendor\&.rich\&._inspect\&.Inspect\&.sort"
+
+.SS "pip\&._vendor\&.rich\&._inspect\&.Inspect\&.title"
+
+.SS "pip\&._vendor\&.rich\&._inspect\&.Inspect\&.value"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

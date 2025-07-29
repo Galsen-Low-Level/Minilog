@@ -1,0 +1,185 @@
+\doxysection{urllib3.\+contrib.\+socks.\+SOCKSHTTPSConnection\+Pool Class Reference}
+\hypertarget{classurllib3_1_1contrib_1_1socks_1_1SOCKSHTTPSConnectionPool}{}\label{classurllib3_1_1contrib_1_1socks_1_1SOCKSHTTPSConnectionPool}\index{urllib3.contrib.socks.SOCKSHTTPSConnectionPool@{urllib3.contrib.socks.SOCKSHTTPSConnectionPool}}
+Inheritance diagram for urllib3.\+contrib.\+socks.\+SOCKSHTTPSConnection\+Pool\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.624595cm]{classurllib3_1_1contrib_1_1socks_1_1SOCKSHTTPSConnectionPool}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classurllib3_1_1contrib_1_1socks_1_1SOCKSHTTPSConnectionPool_ab6dde46751eb1e563f7f73ca4affe710}{Connection\+Cls}} = \mbox{\hyperlink{classurllib3_1_1contrib_1_1socks_1_1SOCKSHTTPSConnection}{SOCKSHTTPSConnection}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool}{urllib3.\+connectionpool.\+HTTPSConnection\+Pool}}}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_adf9c3774aa3cea772a3506b0f93df2a5}{scheme}} = "{}https"{}
+\item 
+type \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a94ca839e70bbe6ecf58a91f8cd5b3701}{Connection\+Cls}} = \mbox{\hyperlink{classurllib3_1_1connection_1_1HTTPSConnection}{HTTPSConnection}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool}{urllib3.\+connectionpool.\+HTTPConnection\+Pool}}}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_ae892da689a6b451e21cdf1c74de1977f}{scheme}} = "{}http"{}
+\item 
+type \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_ae815c1b904039749fd1033a064d15526}{Connection\+Cls}} = \mbox{\hyperlink{classurllib3_1_1connection_1_1HTTPConnection}{HTTPConnection}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1ConnectionPool}{urllib3.\+connectionpool.\+Connection\+Pool}}}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1ConnectionPool_aaea9446885938f94c71b7e22f333690f}{scheme}} = None
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1ConnectionPool_a1e29b16da956a3233bfb5fd15bc972b7}{Queue\+Cls}} = queue.\+Lifo\+Queue
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool}{urllib3.\+connectionpool.\+HTTPSConnection\+Pool}}}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a6b0d11d8f87745c6ab9d39332b04851a}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, str \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a0bcd5e0c383d0e85702ea80b8217d775}{host}}, int\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_a0bfb1f02d76bcb9009571e9d29bba0e4}{port}}=None, \mbox{\hyperlink{namespaceurllib3_1_1connectionpool_a8159338578aaf6402de8ed2733661236}{\+\_\+\+TYPE\+\_\+\+TIMEOUT}}\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_ad380cdff92eb98455fac09b2444e54ca}{timeout}}=\+\_\+\+DEFAULT\+\_\+\+TIMEOUT, int maxsize=1, bool \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_a73e91b02bf9024f0f21fe76d484e7415}{block}}=False, typing.\+Mapping\mbox{[}str, str\mbox{]}\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1__request__methods_1_1RequestMethods_a1c6141ddb4fc0b12bfa19fa6a6be8aa8}{headers}}=None, \mbox{\hyperlink{classurllib3_1_1util_1_1retry_1_1Retry}{Retry}}\texorpdfstring{$\vert$}{|}bool\texorpdfstring{$\vert$}{|}int\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_a15340818f31d469705bf0f5cbe249d1b}{retries}}=None, \mbox{\hyperlink{classurllib3_1_1util_1_1url_1_1Url}{Url}}\texorpdfstring{$\vert$}{|}None \+\_\+proxy=None, typing.\+Mapping\mbox{[}str, str\mbox{]}\texorpdfstring{$\vert$}{|}None \+\_\+proxy\+\_\+headers=None, str\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a055d620389246cfd0058cb5e51fd2543}{key\+\_\+file}}=None, str\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a9725e15b578c86f8edabd68badba76a7}{cert\+\_\+file}}=None, int\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a87421d4b8fed654117f289face297e88}{cert\+\_\+reqs}}=None, str\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_ae415f349c16d09515a2d7da1d737d4d0}{key\+\_\+password}}=None, str\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a019c739f1b1cbe78d0165014ff853e2f}{ca\+\_\+certs}}=None, int\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a20e5ed6093cf846b9c63d038cf50c77c}{ssl\+\_\+version}}=None, ssl.\+TLSVersion\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a4a11bb92f5219faf000a5f9b77b98dc2}{ssl\+\_\+minimum\+\_\+version}}=None, ssl.\+TLSVersion\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a25a0d95288c9111ddd1fd3f56d11ba54}{ssl\+\_\+maximum\+\_\+version}}=None, str\texorpdfstring{$\vert$}{|}typing.\+Literal\mbox{[}False\mbox{]}\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_ab7d703b580a2c651c1a286d332ca6ec4}{assert\+\_\+hostname}}=None, str\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_acb7f94858970a6aa67a14f5b2f4a0c7f}{assert\+\_\+fingerprint}}=None, str\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a7ac21ec6444c0ee18cfe595655829534}{ca\+\_\+cert\+\_\+dir}}=None, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}typing.\+Any \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a09e9a7bc175ca2f62de8c8e71d202cb3}{conn\+\_\+kw}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool}{urllib3.\+connectionpool.\+HTTPConnection\+Pool}}}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_af6e2528de56463e1285980c5d707374b}{close}} (self)
+\item 
+bool \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_a3bc2cffbc42cebc28a541ec1e0b62ec6}{is\+\_\+same\+\_\+host}} (self, str url)
+\item 
+\mbox{\hyperlink{classurllib3_1_1response_1_1BaseHTTPResponse}{Base\+HTTPResponse}} \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_a6b3e823eb76e87d1e8e8723660634e6f}{urlopen}} (self, str method, str url, \+\_\+\+TYPE\+\_\+\+BODY\texorpdfstring{$\vert$}{|}None body=None, typing.\+Mapping\mbox{[}str, str\mbox{]}\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1__request__methods_1_1RequestMethods_a1c6141ddb4fc0b12bfa19fa6a6be8aa8}{headers}}=None, \mbox{\hyperlink{classurllib3_1_1util_1_1retry_1_1Retry}{Retry}}\texorpdfstring{$\vert$}{|}bool\texorpdfstring{$\vert$}{|}int\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_a15340818f31d469705bf0f5cbe249d1b}{retries}}=None, bool redirect=True, bool assert\+\_\+same\+\_\+host=True, \mbox{\hyperlink{namespaceurllib3_1_1connectionpool_a8159338578aaf6402de8ed2733661236}{\+\_\+\+TYPE\+\_\+\+TIMEOUT}} \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_ad380cdff92eb98455fac09b2444e54ca}{timeout}}=\+\_\+\+DEFAULT\+\_\+\+TIMEOUT, int\texorpdfstring{$\vert$}{|}None pool\+\_\+timeout=None, bool\texorpdfstring{$\vert$}{|}None release\+\_\+conn=None, bool chunked=False, \+\_\+\+TYPE\+\_\+\+BODY\+\_\+\+POSITION\texorpdfstring{$\vert$}{|}None body\+\_\+pos=None, bool preload\+\_\+content=True, bool decode\+\_\+content=True, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}typing.\+Any response\+\_\+kw)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1ConnectionPool}{urllib3.\+connectionpool.\+Connection\+Pool}}}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1ConnectionPool_aeb0d072a2568908dc2cd0e1138ba0db6}{\+\_\+\+\_\+str\+\_\+\+\_\+}} (self)
+\item 
+Self \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1ConnectionPool_ab8f57f075a61df0e832d279e71b00751}{\+\_\+\+\_\+enter\+\_\+\+\_\+}} (self)
+\item 
+typing.\+Literal\mbox{[}False\mbox{]} \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1ConnectionPool_a17e513d85ac836576cc8244132d3045a}{\+\_\+\+\_\+exit\+\_\+\+\_\+}} (self, type\mbox{[}Base\+Exception\mbox{]}\texorpdfstring{$\vert$}{|}None exc\+\_\+type, Base\+Exception\texorpdfstring{$\vert$}{|}None exc\+\_\+val, Traceback\+Type\texorpdfstring{$\vert$}{|}None exc\+\_\+tb)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classurllib3_1_1__request__methods_1_1RequestMethods}{urllib3.\+\_\+request\+\_\+methods.\+Request\+Methods}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classurllib3_1_1response_1_1BaseHTTPResponse}{Base\+HTTPResponse}} \mbox{\hyperlink{classurllib3_1_1__request__methods_1_1RequestMethods_aa960469d9fbd20c86ae018e8b1c22eda}{request}} (self, str method, str url, \+\_\+\+TYPE\+\_\+\+BODY\texorpdfstring{$\vert$}{|}None body=None, \+\_\+\+TYPE\+\_\+\+FIELDS\texorpdfstring{$\vert$}{|}None fields=None, typing.\+Mapping\mbox{[}str, str\mbox{]}\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1__request__methods_1_1RequestMethods_a1c6141ddb4fc0b12bfa19fa6a6be8aa8}{headers}}=None, typing.\+Any\texorpdfstring{$\vert$}{|}None json=None, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}typing.\+Any urlopen\+\_\+kw)
+\item 
+\mbox{\hyperlink{classurllib3_1_1response_1_1BaseHTTPResponse}{Base\+HTTPResponse}} \mbox{\hyperlink{classurllib3_1_1__request__methods_1_1RequestMethods_a07da4bf2f77104c62b660d671c1c1d5f}{request\+\_\+encode\+\_\+url}} (self, str method, str url, \mbox{\hyperlink{namespaceurllib3_1_1__request__methods_aa155b09bc9810481745ca4d09de90a1d}{\+\_\+\+TYPE\+\_\+\+ENCODE\+\_\+\+URL\+\_\+\+FIELDS}}\texorpdfstring{$\vert$}{|}None fields=None, typing.\+Mapping\mbox{[}str, str\mbox{]}\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1__request__methods_1_1RequestMethods_a1c6141ddb4fc0b12bfa19fa6a6be8aa8}{headers}}=None, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}str urlopen\+\_\+kw)
+\item 
+\mbox{\hyperlink{classurllib3_1_1response_1_1BaseHTTPResponse}{Base\+HTTPResponse}} \mbox{\hyperlink{classurllib3_1_1__request__methods_1_1RequestMethods_aa106f3922a0986cc8ae9f63ed4c2dd80}{request\+\_\+encode\+\_\+body}} (self, str method, str url, \+\_\+\+TYPE\+\_\+\+FIELDS\texorpdfstring{$\vert$}{|}None fields=None, typing.\+Mapping\mbox{[}str, str\mbox{]}\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1__request__methods_1_1RequestMethods_a1c6141ddb4fc0b12bfa19fa6a6be8aa8}{headers}}=None, bool encode\+\_\+multipart=True, str\texorpdfstring{$\vert$}{|}None multipart\+\_\+boundary=None, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}str urlopen\+\_\+kw)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool}{urllib3.\+connectionpool.\+HTTPSConnection\+Pool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a055d620389246cfd0058cb5e51fd2543}{key\+\_\+file}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a9725e15b578c86f8edabd68badba76a7}{cert\+\_\+file}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a87421d4b8fed654117f289face297e88}{cert\+\_\+reqs}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_ae415f349c16d09515a2d7da1d737d4d0}{key\+\_\+password}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a019c739f1b1cbe78d0165014ff853e2f}{ca\+\_\+certs}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a7ac21ec6444c0ee18cfe595655829534}{ca\+\_\+cert\+\_\+dir}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a20e5ed6093cf846b9c63d038cf50c77c}{ssl\+\_\+version}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a4a11bb92f5219faf000a5f9b77b98dc2}{ssl\+\_\+minimum\+\_\+version}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a25a0d95288c9111ddd1fd3f56d11ba54}{ssl\+\_\+maximum\+\_\+version}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_ab7d703b580a2c651c1a286d332ca6ec4}{assert\+\_\+hostname}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_acb7f94858970a6aa67a14f5b2f4a0c7f}{assert\+\_\+fingerprint}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a2e0a5433c612fb822ccd4cb39667609f}{num\+\_\+connections}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a0bcd5e0c383d0e85702ea80b8217d775}{host}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a09e9a7bc175ca2f62de8c8e71d202cb3}{conn\+\_\+kw}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool}{urllib3.\+connectionpool.\+HTTPConnection\+Pool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_ad380cdff92eb98455fac09b2444e54ca}{timeout}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_a15340818f31d469705bf0f5cbe249d1b}{retries}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_a73e91b02bf9024f0f21fe76d484e7415}{block}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_adec6156b37f8754d61064d917f7b7c71}{proxy}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_a6ac652e40abb4196b3289d184d43608a}{proxy\+\_\+headers}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_a07e1650f21ded2eb749f2e23031e959e}{proxy\+\_\+config}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_a3ca229f00cc5ad0ffdb195b452542dff}{num\+\_\+connections}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_aefe0ce92cbd8c8fcde87dca7b93cc18d}{num\+\_\+requests}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_a69a83a1a6aea521c378877564388e626}{conn\+\_\+kw}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_a6122f208d96af0529803704a63454a2b}{host}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_a9c9d8f02358bea7b1e3a58f418526960}{scheme}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_a0bfb1f02d76bcb9009571e9d29bba0e4}{port}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_afc4cf6e516b43cecc715cd20d9203e01}{pool}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1ConnectionPool}{urllib3.\+connectionpool.\+Connection\+Pool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1ConnectionPool_ac7f63f2acfc75b3e17067c5316855b7b}{host}}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1ConnectionPool_abee00ec03f5642813c838c50c8ab5385}{port}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classurllib3_1_1__request__methods_1_1RequestMethods}{urllib3.\+\_\+request\+\_\+methods.\+Request\+Methods}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classurllib3_1_1__request__methods_1_1RequestMethods_a1c6141ddb4fc0b12bfa19fa6a6be8aa8}{headers}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool}{urllib3.\+connectionpool.\+HTTPSConnection\+Pool}}}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_a5b18237bbe9999b64d993e150ec7361b}{\+\_\+prepare\+\_\+proxy}} (self, \mbox{\hyperlink{classurllib3_1_1connection_1_1HTTPSConnection}{HTTPSConnection}} conn)
+\item 
+\mbox{\hyperlink{classurllib3_1_1__base__connection_1_1BaseHTTPSConnection}{Base\+HTTPSConnection}} \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_ab4a6b23e1b61ee3cbbef590f078bfa75}{\+\_\+new\+\_\+conn}} (self)
+\item 
+None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPSConnectionPool_ae55334611b1b8a9bbe881193514a0c8a}{\+\_\+validate\+\_\+conn}} (self, \mbox{\hyperlink{classurllib3_1_1__base__connection_1_1BaseHTTPConnection}{Base\+HTTPConnection}} conn)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool}{urllib3.\+connectionpool.\+HTTPConnection\+Pool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classurllib3_1_1__base__connection_1_1BaseHTTPConnection}{Base\+HTTPConnection}} \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_a5efd5b2d4ba34cb3ed58c2b7a7bca2f7}{\+\_\+get\+\_\+conn}} (self, float\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_ad380cdff92eb98455fac09b2444e54ca}{timeout}}=None)
+\item 
+None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_adeb75808c5f3b81a6496747f9caa014e}{\+\_\+put\+\_\+conn}} (self, \mbox{\hyperlink{classurllib3_1_1__base__connection_1_1BaseHTTPConnection}{Base\+HTTPConnection}}\texorpdfstring{$\vert$}{|}None conn)
+\item 
+\mbox{\hyperlink{classurllib3_1_1util_1_1timeout_1_1Timeout}{Timeout}} \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_a736c1a691d63f6c34b665cf0c11269d7}{\+\_\+get\+\_\+timeout}} (self, \mbox{\hyperlink{namespaceurllib3_1_1connectionpool_a8159338578aaf6402de8ed2733661236}{\+\_\+\+TYPE\+\_\+\+TIMEOUT}} \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_ad380cdff92eb98455fac09b2444e54ca}{timeout}})
+\item 
+None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_afa74bacf49a423eed0af4007f2e81049}{\+\_\+raise\+\_\+timeout}} (self, \mbox{\hyperlink{classurllib3_1_1connection_1_1BaseSSLError}{Base\+SSLError}}\texorpdfstring{$\vert$}{|}OSError\texorpdfstring{$\vert$}{|}Socket\+Timeout err, str url, \mbox{\hyperlink{namespaceurllib3_1_1connectionpool_a8159338578aaf6402de8ed2733661236}{\+\_\+\+TYPE\+\_\+\+TIMEOUT}}\texorpdfstring{$\vert$}{|}None timeout\+\_\+value)
+\item 
+\mbox{\hyperlink{classurllib3_1_1response_1_1BaseHTTPResponse}{Base\+HTTPResponse}} \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_a8a53d97f313b5d158966a5a0b8eb3017}{\+\_\+make\+\_\+request}} (self, \mbox{\hyperlink{classurllib3_1_1__base__connection_1_1BaseHTTPConnection}{Base\+HTTPConnection}} conn, str method, str url, \+\_\+\+TYPE\+\_\+\+BODY\texorpdfstring{$\vert$}{|}None body=None, typing.\+Mapping\mbox{[}str, str\mbox{]}\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1__request__methods_1_1RequestMethods_a1c6141ddb4fc0b12bfa19fa6a6be8aa8}{headers}}=None, \mbox{\hyperlink{classurllib3_1_1util_1_1retry_1_1Retry}{Retry}}\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_a15340818f31d469705bf0f5cbe249d1b}{retries}}=None, \mbox{\hyperlink{namespaceurllib3_1_1connectionpool_a8159338578aaf6402de8ed2733661236}{\+\_\+\+TYPE\+\_\+\+TIMEOUT}} \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1HTTPConnectionPool_ad380cdff92eb98455fac09b2444e54ca}{timeout}}=\+\_\+\+DEFAULT\+\_\+\+TIMEOUT, bool chunked=False, \mbox{\hyperlink{classurllib3_1_1__base__connection_1_1BaseHTTPConnection}{Base\+HTTPConnection}}\texorpdfstring{$\vert$}{|}None response\+\_\+conn=None, bool preload\+\_\+content=True, bool decode\+\_\+content=True, bool enforce\+\_\+content\+\_\+length=True)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classurllib3_1_1connectionpool_1_1ConnectionPool}{urllib3.\+connectionpool.\+Connection\+Pool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classurllib3_1_1connectionpool_1_1ConnectionPool_a99844097ec6cee30964c17dad74b21d3}{\+\_\+tunnel\+\_\+host}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classurllib3_1_1__request__methods_1_1RequestMethods}{urllib3.\+\_\+request\+\_\+methods.\+Request\+Methods}}}
+\begin{DoxyCompactItemize}
+\item 
+dict \mbox{\hyperlink{classurllib3_1_1__request__methods_1_1RequestMethods_a195694a8cf6f1b78f20bd84f20b530c0}{\+\_\+encode\+\_\+url\+\_\+methods}} = \{"{}DELETE"{}, "{}GET"{}, "{}HEAD"{}, "{}OPTIONS"{}\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classurllib3_1_1contrib_1_1socks_1_1SOCKSHTTPSConnectionPool_ab6dde46751eb1e563f7f73ca4affe710}\label{classurllib3_1_1contrib_1_1socks_1_1SOCKSHTTPSConnectionPool_ab6dde46751eb1e563f7f73ca4affe710} 
+\index{urllib3.contrib.socks.SOCKSHTTPSConnectionPool@{urllib3.contrib.socks.SOCKSHTTPSConnectionPool}!ConnectionCls@{ConnectionCls}}
+\index{ConnectionCls@{ConnectionCls}!urllib3.contrib.socks.SOCKSHTTPSConnectionPool@{urllib3.contrib.socks.SOCKSHTTPSConnectionPool}}
+\doxysubsubsection{\texorpdfstring{ConnectionCls}{ConnectionCls}}
+{\footnotesize\ttfamily urllib3.\+contrib.\+socks.\+SOCKSHTTPSConnection\+Pool.\+Connection\+Cls = \mbox{\hyperlink{classurllib3_1_1contrib_1_1socks_1_1SOCKSHTTPSConnection}{SOCKSHTTPSConnection}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/urllib3/contrib/\mbox{\hyperlink{urllib3_2contrib_2socks_8py}{socks.\+py}}\end{DoxyCompactItemize}

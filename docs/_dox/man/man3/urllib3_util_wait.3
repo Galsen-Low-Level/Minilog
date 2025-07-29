@@ -1,0 +1,63 @@
+.TH "urllib3.util.wait" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+urllib3.util.wait
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBselect_wait_for_socket\fP (socket\&.socket sock, bool read=False, bool write=False, float|None timeout=None)"
+.br
+.ti -1c
+.RI "bool \fBpoll_wait_for_socket\fP (socket\&.socket sock, bool read=False, bool write=False, float|None timeout=None)"
+.br
+.ti -1c
+.RI "bool \fB_have_working_poll\fP ()"
+.br
+.ti -1c
+.RI "bool \fBwait_for_socket\fP (socket\&.socket sock, bool read=False, bool write=False, float|None timeout=None)"
+.br
+.ti -1c
+.RI "bool \fBwait_for_read\fP (socket\&.socket sock, float|None timeout=None)"
+.br
+.ti -1c
+.RI "bool \fBwait_for_write\fP (socket\&.socket sock, float|None timeout=None)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " bool urllib3\&.util\&.wait\&._have_working_poll ()\fC [protected]\fP"
+
+.SS " bool urllib3\&.util\&.wait\&.poll_wait_for_socket (socket\&.socket sock, bool  read = \fCFalse\fP, bool  write = \fCFalse\fP, float | None  timeout = \fCNone\fP)"
+
+.SS " bool urllib3\&.util\&.wait\&.select_wait_for_socket (socket\&.socket sock, bool  read = \fCFalse\fP, bool  write = \fCFalse\fP, float | None  timeout = \fCNone\fP)"
+
+.SS " bool urllib3\&.util\&.wait\&.wait_for_read (socket\&.socket sock, float | None  timeout = \fCNone\fP)"
+
+.PP
+.nf
+Waits for reading to be available on a given socket\&.
+Returns True if the socket is readable, or False if the timeout expired\&.
+
+.fi
+.PP
+ 
+.SS " bool urllib3\&.util\&.wait\&.wait_for_socket (socket\&.socket sock, bool  read = \fCFalse\fP, bool  write = \fCFalse\fP, float | None  timeout = \fCNone\fP)"
+
+.SS " bool urllib3\&.util\&.wait\&.wait_for_write (socket\&.socket sock, float | None  timeout = \fCNone\fP)"
+
+.PP
+.nf
+Waits for writing to be available on a given socket\&.
+Returns True if the socket is readable, or False if the timeout expired\&.
+
+.fi
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

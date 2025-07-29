@@ -1,0 +1,186 @@
+\doxysection{decorator.\+Function\+Maker Class Reference}
+\hypertarget{classdecorator_1_1FunctionMaker}{}\label{classdecorator_1_1FunctionMaker}\index{decorator.FunctionMaker@{decorator.FunctionMaker}}
+Inheritance diagram for decorator.\+Function\+Maker\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdecorator_1_1FunctionMaker}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdecorator_1_1FunctionMaker_ad52996239772f61551d423aad9ede885}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, func=None, \mbox{\hyperlink{classdecorator_1_1FunctionMaker_a684664ba928a7103ed22fd48d74b5ebe}{name}}=None, \mbox{\hyperlink{classdecorator_1_1FunctionMaker_acf47a9416397356902c0b2789f1bd0b5}{signature}}=None, \mbox{\hyperlink{classdecorator_1_1FunctionMaker_a6f9664516c230c1d61b6f42eeab4ffb5}{defaults}}=None, \mbox{\hyperlink{classdecorator_1_1FunctionMaker_a0a610068e1c8a9ca3cd310b9274f3e38}{doc}}=None, \mbox{\hyperlink{classdecorator_1_1FunctionMaker_a141e756f0da2942b0fb4cf476bc14189}{module}}=None, funcdict=None)
+\item 
+\mbox{\hyperlink{classdecorator_1_1FunctionMaker_a8a320110699f6de7ed5a248c832c2e0c}{update}} (self, func, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}kw)
+\item 
+\mbox{\hyperlink{classdecorator_1_1FunctionMaker_a86ed1dc946f91cd89678e1e0e4f46145}{make}} (self, src\+\_\+templ, evaldict=None, addsource=False, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}attrs)
+\item 
+\mbox{\hyperlink{classdecorator_1_1FunctionMaker_a86bd9d2cea6d5f02c2f3ea43fa911828}{create}} (cls, obj, body, evaldict, \mbox{\hyperlink{classdecorator_1_1FunctionMaker_a6f9664516c230c1d61b6f42eeab4ffb5}{defaults}}=None, \mbox{\hyperlink{classdecorator_1_1FunctionMaker_a0a610068e1c8a9ca3cd310b9274f3e38}{doc}}=None, \mbox{\hyperlink{classdecorator_1_1FunctionMaker_a141e756f0da2942b0fb4cf476bc14189}{module}}=None, addsource=True, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}attrs)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdecorator_1_1FunctionMaker_a253ae84a7cd890384d6083c52298002f}{shortsignature}}
+\item 
+\mbox{\hyperlink{classdecorator_1_1FunctionMaker_a684664ba928a7103ed22fd48d74b5ebe}{name}}
+\item 
+\mbox{\hyperlink{classdecorator_1_1FunctionMaker_a0a610068e1c8a9ca3cd310b9274f3e38}{doc}}
+\item 
+\mbox{\hyperlink{classdecorator_1_1FunctionMaker_a141e756f0da2942b0fb4cf476bc14189}{module}}
+\item 
+\mbox{\hyperlink{classdecorator_1_1FunctionMaker_aa65241b21789f1e7210ea5addc07eba9}{annotations}}
+\item 
+\mbox{\hyperlink{classdecorator_1_1FunctionMaker_a737497f006bbfa18dfbcb6bd4eebb641}{args}}
+\item 
+\mbox{\hyperlink{classdecorator_1_1FunctionMaker_adc64c4ef9464f33c39caf49ab2ef67c8}{varargs}}
+\item 
+\mbox{\hyperlink{classdecorator_1_1FunctionMaker_a530988e80c9cda375538a4b9c7c1466b}{varkw}}
+\item 
+\mbox{\hyperlink{classdecorator_1_1FunctionMaker_acf47a9416397356902c0b2789f1bd0b5}{signature}}
+\item 
+\mbox{\hyperlink{classdecorator_1_1FunctionMaker_a30d1fc0a4fd6a54215e16c8e6a82b8bf}{dict}}
+\item 
+\mbox{\hyperlink{classdecorator_1_1FunctionMaker_a6f9664516c230c1d61b6f42eeab4ffb5}{defaults}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tuple \mbox{\hyperlink{classdecorator_1_1FunctionMaker_afc994cf2a273a16a151c91136ffaa8f1}{args}} = ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdecorator_1_1FunctionMaker_a2c3b181fb53d2960819ce94c3d5e588a}{\+\_\+compile\+\_\+count}} = itertools.\+count()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}An object with the ability to create functions with a given signature.
+It has attributes name, doc, module, signature, defaults, dict and
+methods update and make.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classdecorator_1_1FunctionMaker_ad52996239772f61551d423aad9ede885}\label{classdecorator_1_1FunctionMaker_ad52996239772f61551d423aad9ede885} 
+\index{decorator.FunctionMaker@{decorator.FunctionMaker}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!decorator.FunctionMaker@{decorator.FunctionMaker}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily decorator.\+Function\+Maker.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{func = {\ttfamily None},  }\item[{}]{name = {\ttfamily None},  }\item[{}]{signature = {\ttfamily None},  }\item[{}]{defaults = {\ttfamily None},  }\item[{}]{doc = {\ttfamily None},  }\item[{}]{module = {\ttfamily None},  }\item[{}]{funcdict = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdecorator_1_1FunctionMaker_a86bd9d2cea6d5f02c2f3ea43fa911828}\label{classdecorator_1_1FunctionMaker_a86bd9d2cea6d5f02c2f3ea43fa911828} 
+\index{decorator.FunctionMaker@{decorator.FunctionMaker}!create@{create}}
+\index{create@{create}!decorator.FunctionMaker@{decorator.FunctionMaker}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily decorator.\+Function\+Maker.\+create (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{obj,  }\item[{}]{body,  }\item[{}]{evaldict,  }\item[{}]{defaults = {\ttfamily None},  }\item[{}]{doc = {\ttfamily None},  }\item[{}]{module = {\ttfamily None},  }\item[{}]{addsource = {\ttfamily True},  }\item[{\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{attrs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a function from the strings name, signature and body.
+evaldict is the evaluation dictionary. If addsource is true an
+attribute __source__ is added to the result. The attributes attrs
+are added, if any.
+\end{DoxyVerb}
+ \Hypertarget{classdecorator_1_1FunctionMaker_a86ed1dc946f91cd89678e1e0e4f46145}\label{classdecorator_1_1FunctionMaker_a86ed1dc946f91cd89678e1e0e4f46145} 
+\index{decorator.FunctionMaker@{decorator.FunctionMaker}!make@{make}}
+\index{make@{make}!decorator.FunctionMaker@{decorator.FunctionMaker}}
+\doxysubsubsection{\texorpdfstring{make()}{make()}}
+{\footnotesize\ttfamily decorator.\+Function\+Maker.\+make (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{src\+\_\+templ,  }\item[{}]{evaldict = {\ttfamily None},  }\item[{}]{addsource = {\ttfamily False},  }\item[{\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{attrs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Make a new function from a given template and update the signature
+\end{DoxyVerb}
+ \Hypertarget{classdecorator_1_1FunctionMaker_a8a320110699f6de7ed5a248c832c2e0c}\label{classdecorator_1_1FunctionMaker_a8a320110699f6de7ed5a248c832c2e0c} 
+\index{decorator.FunctionMaker@{decorator.FunctionMaker}!update@{update}}
+\index{update@{update}!decorator.FunctionMaker@{decorator.FunctionMaker}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily decorator.\+Function\+Maker.\+update (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{func,  }\item[{\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{kw }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update the signature of func with the data in self
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classdecorator_1_1FunctionMaker_a2c3b181fb53d2960819ce94c3d5e588a}\label{classdecorator_1_1FunctionMaker_a2c3b181fb53d2960819ce94c3d5e588a} 
+\index{decorator.FunctionMaker@{decorator.FunctionMaker}!\_compile\_count@{\_compile\_count}}
+\index{\_compile\_count@{\_compile\_count}!decorator.FunctionMaker@{decorator.FunctionMaker}}
+\doxysubsubsection{\texorpdfstring{\_compile\_count}{\_compile\_count}}
+{\footnotesize\ttfamily decorator.\+Function\+Maker.\+\_\+compile\+\_\+count = itertools.\+count()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\Hypertarget{classdecorator_1_1FunctionMaker_aa65241b21789f1e7210ea5addc07eba9}\label{classdecorator_1_1FunctionMaker_aa65241b21789f1e7210ea5addc07eba9} 
+\index{decorator.FunctionMaker@{decorator.FunctionMaker}!annotations@{annotations}}
+\index{annotations@{annotations}!decorator.FunctionMaker@{decorator.FunctionMaker}}
+\doxysubsubsection{\texorpdfstring{annotations}{annotations}}
+{\footnotesize\ttfamily decorator.\+Function\+Maker.\+annotations}
+
+\Hypertarget{classdecorator_1_1FunctionMaker_afc994cf2a273a16a151c91136ffaa8f1}\label{classdecorator_1_1FunctionMaker_afc994cf2a273a16a151c91136ffaa8f1} 
+\index{decorator.FunctionMaker@{decorator.FunctionMaker}!args@{args}}
+\index{args@{args}!decorator.FunctionMaker@{decorator.FunctionMaker}}
+\doxysubsubsection{\texorpdfstring{args}{args}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily tuple decorator.\+Function\+Maker.\+args = ()\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdecorator_1_1FunctionMaker_a737497f006bbfa18dfbcb6bd4eebb641}\label{classdecorator_1_1FunctionMaker_a737497f006bbfa18dfbcb6bd4eebb641} 
+\index{decorator.FunctionMaker@{decorator.FunctionMaker}!args@{args}}
+\index{args@{args}!decorator.FunctionMaker@{decorator.FunctionMaker}}
+\doxysubsubsection{\texorpdfstring{args}{args}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily decorator.\+Function\+Maker.\+args}
+
+\Hypertarget{classdecorator_1_1FunctionMaker_a6f9664516c230c1d61b6f42eeab4ffb5}\label{classdecorator_1_1FunctionMaker_a6f9664516c230c1d61b6f42eeab4ffb5} 
+\index{decorator.FunctionMaker@{decorator.FunctionMaker}!defaults@{defaults}}
+\index{defaults@{defaults}!decorator.FunctionMaker@{decorator.FunctionMaker}}
+\doxysubsubsection{\texorpdfstring{defaults}{defaults}}
+{\footnotesize\ttfamily decorator.\+Function\+Maker.\+defaults}
+
+\Hypertarget{classdecorator_1_1FunctionMaker_a30d1fc0a4fd6a54215e16c8e6a82b8bf}\label{classdecorator_1_1FunctionMaker_a30d1fc0a4fd6a54215e16c8e6a82b8bf} 
+\index{decorator.FunctionMaker@{decorator.FunctionMaker}!dict@{dict}}
+\index{dict@{dict}!decorator.FunctionMaker@{decorator.FunctionMaker}}
+\doxysubsubsection{\texorpdfstring{dict}{dict}}
+{\footnotesize\ttfamily decorator.\+Function\+Maker.\+dict}
+
+\Hypertarget{classdecorator_1_1FunctionMaker_a0a610068e1c8a9ca3cd310b9274f3e38}\label{classdecorator_1_1FunctionMaker_a0a610068e1c8a9ca3cd310b9274f3e38} 
+\index{decorator.FunctionMaker@{decorator.FunctionMaker}!doc@{doc}}
+\index{doc@{doc}!decorator.FunctionMaker@{decorator.FunctionMaker}}
+\doxysubsubsection{\texorpdfstring{doc}{doc}}
+{\footnotesize\ttfamily decorator.\+Function\+Maker.\+doc}
+
+\Hypertarget{classdecorator_1_1FunctionMaker_a141e756f0da2942b0fb4cf476bc14189}\label{classdecorator_1_1FunctionMaker_a141e756f0da2942b0fb4cf476bc14189} 
+\index{decorator.FunctionMaker@{decorator.FunctionMaker}!module@{module}}
+\index{module@{module}!decorator.FunctionMaker@{decorator.FunctionMaker}}
+\doxysubsubsection{\texorpdfstring{module}{module}}
+{\footnotesize\ttfamily decorator.\+Function\+Maker.\+module}
+
+\Hypertarget{classdecorator_1_1FunctionMaker_a684664ba928a7103ed22fd48d74b5ebe}\label{classdecorator_1_1FunctionMaker_a684664ba928a7103ed22fd48d74b5ebe} 
+\index{decorator.FunctionMaker@{decorator.FunctionMaker}!name@{name}}
+\index{name@{name}!decorator.FunctionMaker@{decorator.FunctionMaker}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily decorator.\+Function\+Maker.\+name}
+
+\Hypertarget{classdecorator_1_1FunctionMaker_a253ae84a7cd890384d6083c52298002f}\label{classdecorator_1_1FunctionMaker_a253ae84a7cd890384d6083c52298002f} 
+\index{decorator.FunctionMaker@{decorator.FunctionMaker}!shortsignature@{shortsignature}}
+\index{shortsignature@{shortsignature}!decorator.FunctionMaker@{decorator.FunctionMaker}}
+\doxysubsubsection{\texorpdfstring{shortsignature}{shortsignature}}
+{\footnotesize\ttfamily decorator.\+Function\+Maker.\+shortsignature}
+
+\Hypertarget{classdecorator_1_1FunctionMaker_acf47a9416397356902c0b2789f1bd0b5}\label{classdecorator_1_1FunctionMaker_acf47a9416397356902c0b2789f1bd0b5} 
+\index{decorator.FunctionMaker@{decorator.FunctionMaker}!signature@{signature}}
+\index{signature@{signature}!decorator.FunctionMaker@{decorator.FunctionMaker}}
+\doxysubsubsection{\texorpdfstring{signature}{signature}}
+{\footnotesize\ttfamily decorator.\+Function\+Maker.\+signature}
+
+\Hypertarget{classdecorator_1_1FunctionMaker_adc64c4ef9464f33c39caf49ab2ef67c8}\label{classdecorator_1_1FunctionMaker_adc64c4ef9464f33c39caf49ab2ef67c8} 
+\index{decorator.FunctionMaker@{decorator.FunctionMaker}!varargs@{varargs}}
+\index{varargs@{varargs}!decorator.FunctionMaker@{decorator.FunctionMaker}}
+\doxysubsubsection{\texorpdfstring{varargs}{varargs}}
+{\footnotesize\ttfamily decorator.\+Function\+Maker.\+varargs}
+
+\Hypertarget{classdecorator_1_1FunctionMaker_a530988e80c9cda375538a4b9c7c1466b}\label{classdecorator_1_1FunctionMaker_a530988e80c9cda375538a4b9c7c1466b} 
+\index{decorator.FunctionMaker@{decorator.FunctionMaker}!varkw@{varkw}}
+\index{varkw@{varkw}!decorator.FunctionMaker@{decorator.FunctionMaker}}
+\doxysubsubsection{\texorpdfstring{varkw}{varkw}}
+{\footnotesize\ttfamily decorator.\+Function\+Maker.\+varkw}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/\mbox{\hyperlink{decorator_8py}{decorator.\+py}}\end{DoxyCompactItemize}

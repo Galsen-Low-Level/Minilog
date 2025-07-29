@@ -1,0 +1,126 @@
+.TH "pip._internal.vcs.versioncontrol.VcsSupport" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.vcs.versioncontrol.VcsSupport
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[str] \fB__iter__\fP (self)"
+.br
+.ti -1c
+.RI "List['VersionControl'] \fBbackends\fP (self)"
+.br
+.ti -1c
+.RI "List[str] \fBdirnames\fP (self)"
+.br
+.ti -1c
+.RI "List[str] \fBall_schemes\fP (self)"
+.br
+.ti -1c
+.RI "None \fBregister\fP (self, Type['VersionControl'] cls)"
+.br
+.ti -1c
+.RI "None \fBunregister\fP (self, str \fBname\fP)"
+.br
+.ti -1c
+.RI "Optional['VersionControl'] \fBget_backend_for_dir\fP (self, str location)"
+.br
+.ti -1c
+.RI "Optional['VersionControl'] \fBget_backend_for_scheme\fP (self, str scheme)"
+.br
+.ti -1c
+.RI "Optional['VersionControl'] \fBget_backend\fP (self, str \fBname\fP)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBschemes\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "list \fBschemes\fP = ['ssh', 'git', 'hg', 'bzr', 'sftp', 'svn']"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fB_registry\fP = {}"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._internal\&.vcs\&.versioncontrol\&.VcsSupport\&.__init__ ( self)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " Iterator[str] pip\&._internal\&.vcs\&.versioncontrol\&.VcsSupport\&.__iter__ ( self)"
+
+.SS " List[str] pip\&._internal\&.vcs\&.versioncontrol\&.VcsSupport\&.all_schemes ( self)"
+
+.SS " List['VersionControl'] pip\&._internal\&.vcs\&.versioncontrol\&.VcsSupport\&.backends ( self)"
+
+.SS " List[str] pip\&._internal\&.vcs\&.versioncontrol\&.VcsSupport\&.dirnames ( self)"
+
+.SS " Optional['VersionControl'] pip\&._internal\&.vcs\&.versioncontrol\&.VcsSupport\&.get_backend ( self, str name)"
+
+.PP
+.nf
+Return a VersionControl object or None\&.
+
+.fi
+.PP
+ 
+.SS " Optional['VersionControl'] pip\&._internal\&.vcs\&.versioncontrol\&.VcsSupport\&.get_backend_for_dir ( self, str location)"
+
+.PP
+.nf
+Return a VersionControl object if a repository of that type is found
+at the given directory\&.
+
+.fi
+.PP
+ 
+.SS " Optional['VersionControl'] pip\&._internal\&.vcs\&.versioncontrol\&.VcsSupport\&.get_backend_for_scheme ( self, str scheme)"
+
+.PP
+.nf
+Return a VersionControl object or None\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.vcs\&.versioncontrol\&.VcsSupport\&.register ( self, Type['VersionControl'] cls)"
+
+.SS " None pip\&._internal\&.vcs\&.versioncontrol\&.VcsSupport\&.unregister ( self, str name)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "dict pip\&._internal\&.vcs\&.versioncontrol\&.VcsSupport\&._registry = {}\fC [static]\fP, \fC [protected]\fP"
+
+.SS "pip\&._internal\&.vcs\&.versioncontrol\&.VcsSupport\&.name"
+
+.SS "list pip\&._internal\&.vcs\&.versioncontrol\&.VcsSupport\&.schemes = ['ssh', 'git', 'hg', 'bzr', 'sftp', 'svn']\fC [static]\fP"
+
+.SS "pip\&._internal\&.vcs\&.versioncontrol\&.VcsSupport\&.schemes"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

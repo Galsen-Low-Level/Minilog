@@ -1,0 +1,89 @@
+.TH "sphinx.cmd.make_mode" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.cmd.make_mode
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBMake\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBrun_make_mode\fP (Sequence[str] args)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "list \fBBUILDERS\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+sphinx-build -M command-line handling\&.
+
+This replaces the old, platform-dependent and once-generated content
+of Makefile / make\&.bat\&.
+
+This is in its own module so that importing it is fast\&.  It should not
+import the main Sphinx modules (like sphinx\&.applications, sphinx\&.builders)\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " int sphinx\&.cmd\&.make_mode\&.run_make_mode (Sequence[str] args)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "list sphinx\&.cmd\&.make_mode\&.BUILDERS"
+\fBInitial value:\fP.PP
+.nf
+1 =  [
+2     ('', 'html', 'to make standalone HTML files'),
+3     ('', 'dirhtml', 'to make HTML files named index\&.html in directories'),
+4     ('', 'singlehtml', 'to make a single large HTML file'),
+5     ('', 'pickle', 'to make pickle files'),
+6     ('', 'json', 'to make JSON files'),
+7     ('', 'htmlhelp', 'to make HTML files and an HTML help project'),
+8     ('', 'qthelp', 'to make HTML files and a qthelp project'),
+9     ('', 'devhelp', 'to make HTML files and a Devhelp project'),
+10     ('', 'epub', 'to make an epub'),
+11     ('', 'latex', 'to make LaTeX files, you can set PAPER=a4 or PAPER=letter'),
+12     ('posix', 'latexpdf', 'to make LaTeX and PDF files (default pdflatex)'),
+13     ('posix', 'latexpdfja', 'to make LaTeX files and run them through platex/dvipdfmx'),
+14     ('', 'text', 'to make text files'),
+15     ('', 'man', 'to make manual pages'),
+16     ('', 'texinfo', 'to make Texinfo files'),
+17     ('posix', 'info', 'to make Texinfo files and run them through makeinfo'),
+18     ('', 'gettext', 'to make PO message catalogs'),
+19     ('', 'changes', 'to make an overview of all changed/added/deprecated items'),
+20     ('', 'xml', 'to make Docutils\-native XML files'),
+21     ('', 'pseudoxml', 'to make pseudoxml\-XML files for display purposes'),
+22     ('', 'linkcheck', 'to check all external links for integrity'),
+23     (
+24         '',
+25         'doctest',
+26         'to run all doctests embedded in the documentation (if enabled)',
+27     ),
+28     ('', 'coverage', 'to run coverage check of the documentation (if enabled)'),
+29     ('', 'clean', 'to remove everything in the build directory'),
+30 ]
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

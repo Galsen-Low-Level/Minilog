@@ -1,0 +1,202 @@
+.TH "docutils.io.FileInput" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.io.FileInput
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.io\&.Input\fP\&.
+.PP
+Inherited by \fBsphinx\&.io\&.SphinxFileInput\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBsource\fP=None, \fBsource_path\fP=None, \fBencoding\fP=None, \fBerror_handler\fP='strict', \fBautoclose\fP=True, mode='r')"
+.br
+.ti -1c
+.RI "\fBread\fP (self)"
+.br
+.ti -1c
+.RI "\fBreadlines\fP (self)"
+.br
+.ti -1c
+.RI "\fBclose\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.io\&.Input\fP
+.in +1c
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBdecode\fP (self, data)"
+.br
+.ti -1c
+.RI "\fBdetermine_encoding_from_data\fP (self, data)"
+.br
+.ti -1c
+.RI "\fBisatty\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "\fBget_transforms\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBautoclose\fP"
+.br
+.ti -1c
+.RI "\fBsource\fP"
+.br
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBsource_path\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.io\&.Input\fP
+.in +1c
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBerror_handler\fP"
+.br
+.ti -1c
+.RI "\fBsource\fP"
+.br
+.ti -1c
+.RI "\fBsource_path\fP"
+.br
+.ti -1c
+.RI "\fBsuccessful_encoding\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_transforms\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_stderr\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Attributes inherited from \fBdocutils\&.io\&.Input\fP
+.in +1c
+.ti -1c
+.RI "str \fBcomponent_type\fP = 'input'"
+.br
+.ti -1c
+.RI "\fBdefault_source_path\fP = None"
+.br
+.ti -1c
+.RI "\fBcoding_slug\fP = re\&.compile(br'coding[:=]\\s*([\-\\w\&.]+)')"
+.br
+.ti -1c
+.RI "tuple \fBbyte_order_marks\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBdefault_transforms\fP = ()"
+.br
+.ti -1c
+.RI "tuple \fBunknown_reference_resolvers\fP = ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Input for single, simple file-like objects\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.io\&.FileInput\&.__init__ ( self,  source = \fCNone\fP,  source_path = \fCNone\fP,  encoding = \fCNone\fP,  error_handler = \fC'strict'\fP,  autoclose = \fCTrue\fP,  mode = \fC'r'\fP)"
+
+.PP
+.nf
+:Parameters:
+    - `source`: either a file-like object (which is read directly), or
+      `None` (which implies `sys\&.stdin` if no `source_path` given)\&.
+    - `source_path`: a path to a file, which is opened for reading\&.
+    - `encoding`: the expected text encoding of the input file\&.
+    - `error_handler`: the encoding error handler to use\&.
+    - `autoclose`: close automatically after read (except when
+      `sys\&.stdin` is the source)\&.
+    - `mode`: how the file is to be opened (see standard function
+      `open`)\&. The default is read only ('r')\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.io\&.Input\fP\&.
+.PP
+Reimplemented in \fBsphinx\&.io\&.SphinxFileInput\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.io\&.FileInput\&.close ( self)"
+
+.SS "docutils\&.io\&.FileInput\&.read ( self)"
+
+.PP
+.nf
+Read and decode a single file, return as `str`\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.io\&.Input\fP\&.
+.SS "docutils\&.io\&.FileInput\&.readlines ( self)"
+
+.PP
+.nf
+Return lines of a single file as list of strings\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.io\&.FileInput\&._stderr\fC [protected]\fP"
+
+.SS "docutils\&.io\&.FileInput\&.autoclose"
+
+.SS "docutils\&.io\&.FileInput\&.encoding"
+
+.SS "docutils\&.io\&.FileInput\&.source"
+
+.SS "docutils\&.io\&.FileInput\&.source_path"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

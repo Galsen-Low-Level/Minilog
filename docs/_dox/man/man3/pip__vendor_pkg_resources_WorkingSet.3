@@ -1,0 +1,373 @@
+.TH "pip._vendor.pkg_resources.WorkingSet" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.pkg_resources.WorkingSet
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, Iterable[str]|None \fBentries\fP=None)"
+.br
+.ti -1c
+.RI "\fBadd_entry\fP (self, str entry)"
+.br
+.ti -1c
+.RI "bool \fB__contains__\fP (self, \fBDistribution\fP dist)"
+.br
+.ti -1c
+.RI "\fBDistribution\fP|None \fBfind\fP (self, \fBRequirement\fP req)"
+.br
+.ti -1c
+.RI "\fBiter_entry_points\fP (self, str group, str|None name=None)"
+.br
+.ti -1c
+.RI "\fBrun_script\fP (self, str requires, str script_name)"
+.br
+.ti -1c
+.RI "Iterator[\fBDistribution\fP] \fB__iter__\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd\fP (self, \fBDistribution\fP dist, str|None entry=None, bool insert=True, bool replace=False)"
+.br
+.ti -1c
+.RI "list[\fB_DistributionT\fP] \fBresolve\fP (self, Iterable[\fBRequirement\fP] requirements, \fBEnvironment\fP|None env, \fB_InstallerTypeT\fP[\fB_DistributionT\fP] installer, bool replace_conflicting=False, tuple[str,\&.\&.\&.]|None extras=None)"
+.br
+.ti -1c
+.RI "list[\fB_DistributionT\fP] \fBresolve\fP (self, Iterable[\fBRequirement\fP] requirements, \fBEnvironment\fP|None env=None, *\fB_InstallerTypeT\fP[\fB_DistributionT\fP] installer, bool replace_conflicting=False, tuple[str,\&.\&.\&.]|None extras=None)"
+.br
+.ti -1c
+.RI "list[\fBDistribution\fP] \fBresolve\fP (self, Iterable[\fBRequirement\fP] requirements, \fBEnvironment\fP|None env=None, \fB_InstallerType\fP|None installer=None, bool replace_conflicting=False, tuple[str,\&.\&.\&.]|None extras=None)"
+.br
+.ti -1c
+.RI "list[\fBDistribution\fP]|list[\fB_DistributionT\fP] \fBresolve\fP (self, Iterable[\fBRequirement\fP] requirements, \fBEnvironment\fP|None env=None, \fB_InstallerType\fP|None|\fB_InstallerTypeT\fP[\fB_DistributionT\fP] installer=None, bool replace_conflicting=False, tuple[str,\&.\&.\&.]|None extras=None)"
+.br
+.ti -1c
+.RI "tuple[list[\fB_DistributionT\fP], dict[\fBDistribution\fP, Exception]] \fBfind_plugins\fP (self, \fBEnvironment\fP plugin_env, \fBEnvironment\fP|None full_env, \fB_InstallerTypeT\fP[\fB_DistributionT\fP] installer, bool fallback=True)"
+.br
+.ti -1c
+.RI "tuple[list[\fB_DistributionT\fP], dict[\fBDistribution\fP, Exception]] \fBfind_plugins\fP (self, \fBEnvironment\fP plugin_env, \fBEnvironment\fP|None full_env=None, *\fB_InstallerTypeT\fP[\fB_DistributionT\fP] installer, bool fallback=True)"
+.br
+.ti -1c
+.RI "tuple[list[\fBDistribution\fP], dict[\fBDistribution\fP, Exception]] \fBfind_plugins\fP (self, \fBEnvironment\fP plugin_env, \fBEnvironment\fP|None full_env=None, \fB_InstallerType\fP|None installer=None, bool fallback=True)"
+.br
+.ti -1c
+.RI "tuple[ list[\fBDistribution\fP]|list[\fB_DistributionT\fP], dict[\fBDistribution\fP, Exception],] \fBfind_plugins\fP (self, \fBEnvironment\fP plugin_env, \fBEnvironment\fP|None full_env=None, \fB_InstallerType\fP|None|\fB_InstallerTypeT\fP[\fB_DistributionT\fP] installer=None, bool fallback=True)"
+.br
+.ti -1c
+.RI "\fBrequire\fP (self, *\fB_NestedStr\fP requirements)"
+.br
+.ti -1c
+.RI "\fBsubscribe\fP (self, Callable[[\fBDistribution\fP], object] callback, bool existing=True)"
+.br
+.ti -1c
+.RI "\fB__getstate__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__setstate__\fP (self, e_k_b_n_c)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBentry_keys\fP"
+.br
+.ti -1c
+.RI "\fBby_key\fP"
+.br
+.ti -1c
+.RI "\fBnormalized_to_canonical_keys\fP"
+.br
+.ti -1c
+.RI "\fBcallbacks\fP"
+.br
+.ti -1c
+.RI "\fBentries\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_build_master\fP (cls)"
+.br
+.ti -1c
+.RI "\fB_build_from_requirements\fP (cls, req_spec)"
+.br
+.ti -1c
+.RI "\fBDistribution\fP \fB_resolve_dist\fP (self, req, best, replace_conflicting, env, installer, required_by, to_activate)"
+.br
+.ti -1c
+.RI "\fB_added_new\fP (self, dist)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A collection of active distributions on sys\&.path (or a similar list)
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.pkg_resources\&.WorkingSet\&.__init__ ( self, Iterable[str] | None  entries = \fCNone\fP)"
+
+.PP
+.nf
+Create working set from list of path entries (default=sys\&.path)
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " bool pip\&._vendor\&.pkg_resources\&.WorkingSet\&.__contains__ ( self, \fBDistribution\fP dist)"
+
+.PP
+.nf
+True if `dist` is the active distribution for its project
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.WorkingSet\&.__getstate__ ( self)"
+
+.SS " Iterator[\fBDistribution\fP] pip\&._vendor\&.pkg_resources\&.WorkingSet\&.__iter__ ( self)"
+
+.PP
+.nf
+Yield distributions for non-duplicate projects in the working set
+
+The yield order is the order in which the items' path entries were
+added to the working set\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.WorkingSet\&.__setstate__ ( self,  e_k_b_n_c)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.WorkingSet\&._added_new ( self,  dist)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.WorkingSet\&._build_from_requirements ( cls,  req_spec)\fC [protected]\fP"
+
+.PP
+.nf
+Build a working set from a requirement spec\&. Rewrites sys\&.path\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.WorkingSet\&._build_master ( cls)\fC [protected]\fP"
+
+.PP
+.nf
+Prepare the master working set\&.
+
+.fi
+.PP
+ 
+.SS " \fBDistribution\fP pip\&._vendor\&.pkg_resources\&.WorkingSet\&._resolve_dist ( self,  req,  best,  replace_conflicting,  env,  installer,  required_by,  to_activate)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.WorkingSet\&.add ( self, \fBDistribution\fP dist, str | None  entry = \fCNone\fP, bool  insert = \fCTrue\fP, bool  replace = \fCFalse\fP)"
+
+.PP
+.nf
+Add `dist` to working set, associated with `entry`
+
+If `entry` is unspecified, it defaults to the ``\&.location`` of `dist`\&.
+On exit from this routine, `entry` is added to the end of the working
+set's ``\&.entries`` (if it wasn't already present)\&.
+
+`dist` is only added to the working set if it's for a project that
+doesn't already have a distribution in the set, unless `replace=True`\&.
+If it's added, any callbacks registered with the ``subscribe()`` method
+will be called\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.WorkingSet\&.add_entry ( self, str entry)"
+
+.PP
+.nf
+Add a path item to ``\&.entries``, finding any distributions on it
+
+``find_distributions(entry, True)`` is used to find distributions
+corresponding to the path entry, and they are added\&.  `entry` is
+always appended to ``\&.entries``, even if it is already present\&.
+(This is because ``sys\&.path`` can contain the same value more than
+once, and the ``\&.entries`` of the ``sys\&.path`` WorkingSet should always
+equal ``sys\&.path``\&.)
+
+.fi
+.PP
+ 
+.SS " \fBDistribution\fP | None pip\&._vendor\&.pkg_resources\&.WorkingSet\&.find ( self, \fBRequirement\fP req)"
+
+.PP
+.nf
+Find a distribution matching requirement `req`
+
+If there is an active distribution for the requested project, this
+returns it as long as it meets the version requirement specified by
+`req`\&.  But, if there is an active distribution for the project and it
+does *not* meet the `req` requirement, ``VersionConflict`` is raised\&.
+If there is no active distribution for the requested project, ``None``
+is returned\&.
+
+.fi
+.PP
+ 
+.SS " tuple[list[\fB_DistributionT\fP], dict[\fBDistribution\fP, Exception]] pip\&._vendor\&.pkg_resources\&.WorkingSet\&.find_plugins ( self, \fBEnvironment\fP plugin_env, \fBEnvironment\fP | None full_env, \fB_InstallerTypeT\fP[\fB_DistributionT\fP] installer, bool  fallback = \fCTrue\fP)"
+
+.SS " tuple[list[\fB_DistributionT\fP], dict[\fBDistribution\fP, Exception]] pip\&._vendor\&.pkg_resources\&.WorkingSet\&.find_plugins ( self, \fBEnvironment\fP plugin_env, \fBEnvironment\fP | None  full_env = \fCNone\fP, *\fB_InstallerTypeT\fP[\fB_DistributionT\fP] installer, bool  fallback = \fCTrue\fP)"
+
+.SS " tuple[list[\fBDistribution\fP], dict[\fBDistribution\fP, Exception]] pip\&._vendor\&.pkg_resources\&.WorkingSet\&.find_plugins ( self, \fBEnvironment\fP plugin_env, \fBEnvironment\fP | None  full_env = \fCNone\fP, \fB_InstallerType\fP | None  installer = \fCNone\fP, bool  fallback = \fCTrue\fP)"
+
+.SS " tuple[
+        list[\fBDistribution\fP] | list[\fB_DistributionT\fP],
+        dict[\fBDistribution\fP, Exception],
+    ] pip\&._vendor\&.pkg_resources\&.WorkingSet\&.find_plugins ( self, \fBEnvironment\fP plugin_env, \fBEnvironment\fP | None  full_env = \fCNone\fP, \fB_InstallerType\fP | None | \fB_InstallerTypeT\fP[\fB_DistributionT\fP]  installer = \fCNone\fP, bool  fallback = \fCTrue\fP)"
+
+.PP
+.nf
+Find all activatable distributions in `plugin_env`
+
+Example usage::
+
+    distributions, errors = working_set\&.find_plugins(
+        Environment(plugin_dirlist)
+    )
+    # add plugins+libs to sys\&.path
+    map(working_set\&.add, distributions)
+    # display errors
+    print('Could not load', errors)
+
+The `plugin_env` should be an ``Environment`` instance that contains
+only distributions that are in the project's 'plugin directory' or
+directories\&. The `full_env`, if supplied, should be an ``Environment``
+contains all currently-available distributions\&.  If `full_env` is not
+supplied, one is created automatically from the ``WorkingSet`` this
+method is called on, which will typically mean that every directory on
+``sys\&.path`` will be scanned for distributions\&.
+
+`installer` is a standard installer callback as used by the
+``resolve()`` method\&. The `fallback` flag indicates whether we should
+attempt to resolve older versions of a plugin if the newest version
+cannot be resolved\&.
+
+This method returns a 2-tuple: (`distributions`, `error_info`), where
+`distributions` is a list of the distributions found in `plugin_env`
+that were loadable, along with any other distributions that are needed
+to resolve their dependencies\&.  `error_info` is a dictionary mapping
+unloadable plugin distributions to an exception instance describing the
+error that occurred\&. Usually this will be a ``DistributionNotFound`` or
+``VersionConflict`` instance\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.WorkingSet\&.iter_entry_points ( self, str group, str | None  name = \fCNone\fP)"
+
+.PP
+.nf
+Yield entry point objects from `group` matching `name`
+
+If `name` is None, yields all entry points in `group` from all
+distributions in the working set, otherwise only ones matching
+both `group` and `name` are yielded (in distribution order)\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.WorkingSet\&.require ( self, *\fB_NestedStr\fP requirements)"
+
+.PP
+.nf
+Ensure that distributions matching `requirements` are activated
+
+`requirements` must be a string or a (possibly-nested) sequence
+thereof, specifying the distributions and versions required\&.  The
+return value is a sequence of the distributions that needed to be
+activated to fulfill the requirements; all relevant distributions are
+included, even if they were already activated in this working set\&.
+
+.fi
+.PP
+ 
+.SS " list[\fB_DistributionT\fP] pip\&._vendor\&.pkg_resources\&.WorkingSet\&.resolve ( self, Iterable[\fBRequirement\fP] requirements, \fBEnvironment\fP | None env, \fB_InstallerTypeT\fP[\fB_DistributionT\fP] installer, bool  replace_conflicting = \fCFalse\fP, tuple[str, \&.\&.\&.] | None  extras = \fCNone\fP)"
+
+.SS " list[\fB_DistributionT\fP] pip\&._vendor\&.pkg_resources\&.WorkingSet\&.resolve ( self, Iterable[\fBRequirement\fP] requirements, \fBEnvironment\fP | None  env = \fCNone\fP, *\fB_InstallerTypeT\fP[\fB_DistributionT\fP] installer, bool  replace_conflicting = \fCFalse\fP, tuple[str, \&.\&.\&.] | None  extras = \fCNone\fP)"
+
+.SS " list[\fBDistribution\fP] pip\&._vendor\&.pkg_resources\&.WorkingSet\&.resolve ( self, Iterable[\fBRequirement\fP] requirements, \fBEnvironment\fP | None  env = \fCNone\fP, \fB_InstallerType\fP | None  installer = \fCNone\fP, bool  replace_conflicting = \fCFalse\fP, tuple[str, \&.\&.\&.] | None  extras = \fCNone\fP)"
+
+.SS " list[\fBDistribution\fP] | list[\fB_DistributionT\fP] pip\&._vendor\&.pkg_resources\&.WorkingSet\&.resolve ( self, Iterable[\fBRequirement\fP] requirements, \fBEnvironment\fP | None  env = \fCNone\fP, \fB_InstallerType\fP | None | \fB_InstallerTypeT\fP[\fB_DistributionT\fP]  installer = \fCNone\fP, bool  replace_conflicting = \fCFalse\fP, tuple[str, \&.\&.\&.] | None  extras = \fCNone\fP)"
+
+.PP
+.nf
+List all distributions needed to (recursively) meet `requirements`
+
+`requirements` must be a sequence of ``Requirement`` objects\&.  `env`,
+if supplied, should be an ``Environment`` instance\&.  If
+not supplied, it defaults to all distributions available within any
+entry or distribution in the working set\&.  `installer`, if supplied,
+will be invoked with each requirement that cannot be met by an
+already-installed distribution; it should return a ``Distribution`` or
+``None``\&.
+
+Unless `replace_conflicting=True`, raises a VersionConflict exception
+if
+any requirements are found on the path that have the correct name but
+the wrong version\&.  Otherwise, if an `installer` is supplied it will be
+invoked to obtain the correct version of the requirement and activate
+it\&.
+
+`extras` is a list of the extras to be used with these requirements\&.
+This is important because extra requirements may look like `my_req;
+extra = 'my_extra'`, which would otherwise be interpreted as a purely
+optional requirement\&.  Instead, we want to be able to assert that these
+requirements are truly required\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.WorkingSet\&.run_script ( self, str requires, str script_name)"
+
+.PP
+.nf
+Locate distribution for `requires` and run `script_name` script
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.WorkingSet\&.subscribe ( self, Callable[[\fBDistribution\fP], object] callback, bool  existing = \fCTrue\fP)"
+
+.PP
+.nf
+Invoke `callback` for all distributions
+
+If `existing=True` (default),
+call on all existing ones, as well\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.pkg_resources\&.WorkingSet\&.by_key"
+
+.SS "pip\&._vendor\&.pkg_resources\&.WorkingSet\&.callbacks"
+
+.SS "pip\&._vendor\&.pkg_resources\&.WorkingSet\&.entries"
+
+.SS "pip\&._vendor\&.pkg_resources\&.WorkingSet\&.entry_keys"
+
+.SS "pip\&._vendor\&.pkg_resources\&.WorkingSet\&.normalized_to_canonical_keys"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

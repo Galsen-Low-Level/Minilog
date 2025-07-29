@@ -1,0 +1,691 @@
+.TH "sphinx.util.inspect" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.util.inspect
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_AttrGetter\fP"
+.br
+.ti -1c
+.RI "class \fB_SupportsDelete\fP"
+.br
+.ti -1c
+.RI "class \fB_SupportsGet\fP"
+.br
+.ti -1c
+.RI "class \fB_SupportsSet\fP"
+.br
+.ti -1c
+.RI "class \fBDefaultValue\fP"
+.br
+.ti -1c
+.RI "class \fBTypeAliasForwardRef\fP"
+.br
+.ti -1c
+.RI "class \fBTypeAliasModule\fP"
+.br
+.ti -1c
+.RI "class \fBTypeAliasNamespace\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "Any \fBunwrap\fP (Any obj)"
+.br
+.ti -1c
+.RI "Any \fBunwrap_all\fP (Any obj, *Callable[[Any], bool]|None stop=None)"
+.br
+.ti -1c
+.RI "Sequence[str]|None \fBgetall\fP (Any obj)"
+.br
+.ti -1c
+.RI "Mapping[str, Any] \fBgetannotations\fP (Any obj)"
+.br
+.ti -1c
+.RI "Mapping[str, Any] \fBgetglobals\fP (Any obj)"
+.br
+.ti -1c
+.RI "tuple[type,\&.\&.\&.] \fBgetmro\fP (Any obj)"
+.br
+.ti -1c
+.RI "tuple[Any,\&.\&.\&.]|None \fBgetorigbases\fP (Any obj)"
+.br
+.ti -1c
+.RI "dict[str, Any]|dict[str, None]|None \fBgetslots\fP (Any obj)"
+.br
+.ti -1c
+.RI "TypeIs[type[enum\&.Enum]] \fBisenumclass\fP (Any x)"
+.br
+.ti -1c
+.RI "TypeIs[enum\&.Enum] \fBisenumattribute\fP (Any x)"
+.br
+.ti -1c
+.RI "Any \fBunpartial\fP (Any obj)"
+.br
+.ti -1c
+.RI "TypeIs[partial[Any]|partialmethod[Any]] \fBispartial\fP (Any obj)"
+.br
+.ti -1c
+.RI "TypeIs[classmethod[Any, Any, Any]] \fBisclassmethod\fP (Any obj, Any cls=None, str|None name=None)"
+.br
+.ti -1c
+.RI "TypeIs[types\&.ClassMethodDescriptorType] \fBis_classmethod_descriptor\fP (Any obj, Any cls=None, str|None name=None)"
+.br
+.ti -1c
+.RI "bool \fBis_builtin_classmethod_like\fP (Any obj, Any cls=None, str|None name=None)"
+.br
+.ti -1c
+.RI "bool \fBis_classmethod_like\fP (Any obj, Any cls=None, str|None name=None)"
+.br
+.ti -1c
+.RI "TypeIs[staticmethod[Any, Any]] \fBisstaticmethod\fP (Any obj, Any cls=None, str|None name=None)"
+.br
+.ti -1c
+.RI "TypeIs[\fB_SupportsGet\fP|\fB_SupportsSet\fP|\fB_SupportsDelete\fP] \fBisdescriptor\fP (Any x)"
+.br
+.ti -1c
+.RI "bool \fBisabstractmethod\fP (Any obj)"
+.br
+.ti -1c
+.RI "bool \fBisboundmethod\fP (MethodType method)"
+.br
+.ti -1c
+.RI "bool \fBis_cython_function_or_method\fP (Any obj)"
+.br
+.ti -1c
+.RI "bool \fBisattributedescriptor\fP (Any obj)"
+.br
+.ti -1c
+.RI "bool \fBis_singledispatch_function\fP (Any obj)"
+.br
+.ti -1c
+.RI "TypeIs[singledispatchmethod[Any]] \fBis_singledispatch_method\fP (Any obj)"
+.br
+.ti -1c
+.RI "TypeIs[types\&.FunctionType] \fBisfunction\fP (Any obj)"
+.br
+.ti -1c
+.RI "TypeIs[types\&.BuiltinFunctionType] \fBisbuiltin\fP (Any obj)"
+.br
+.ti -1c
+.RI "TypeIs[_RoutineType] \fBisroutine\fP (Any obj)"
+.br
+.ti -1c
+.RI "TypeIs[Callable[\&.\&.\&., types\&.CoroutineType[Any, Any, Any]]] \fBiscoroutinefunction\fP (Any obj)"
+.br
+.ti -1c
+.RI "bool \fB_is_wrapped_coroutine\fP (Any obj)"
+.br
+.ti -1c
+.RI "TypeIs[property|cached_property[Any]] \fBisproperty\fP (Any obj)"
+.br
+.ti -1c
+.RI "TypeIs[types\&.GenericAlias] \fBisgenericalias\fP (Any obj)"
+.br
+.ti -1c
+.RI "Any \fBsafe_getattr\fP (Any obj, str name, *Any defargs)"
+.br
+.ti -1c
+.RI "str \fBobject_description\fP (Any obj, *frozenset[int] _seen=frozenset())"
+.br
+.ti -1c
+.RI "bool \fBis_builtin_class_method\fP (Any obj, str attr_name)"
+.br
+.ti -1c
+.RI "bool \fB_should_unwrap\fP (\fB_SignatureType\fP subject)"
+.br
+.ti -1c
+.RI "Signature \fBsignature\fP (\fB_SignatureType\fP subject, bool bound_method=False, Mapping[str, str]|None type_aliases=None)"
+.br
+.ti -1c
+.RI "Signature \fBevaluate_signature\fP (Signature sig, dict[str, Any]|None globalns=None, dict[str, Any]|None localns=None)"
+.br
+.ti -1c
+.RI "Any \fB_evaluate_forwardref\fP (ForwardRef ref, dict[str, Any]|None globalns, dict[str, Any]|None localns)"
+.br
+.ti -1c
+.RI "Any \fB_evaluate\fP (Any annotation, dict[str, Any] globalns, dict[str, Any] localns)"
+.br
+.ti -1c
+.RI "str \fBstringify_signature\fP (Signature sig, bool show_annotation=True, bool show_return_annotation=True, bool unqualified_typehints=False, bool short_literals=False)"
+.br
+.ti -1c
+.RI "Signature \fBsignature_from_str\fP (str \fBsignature\fP)"
+.br
+.ti -1c
+.RI "Signature \fBsignature_from_ast\fP (ast\&.FunctionDef node, str code='')"
+.br
+.ti -1c
+.RI "Parameter \fB_define\fP (_ParameterKind kind, ast\&.arg arg, str code, *ast\&.expr|None defexpr)"
+.br
+.ti -1c
+.RI "str|None \fBgetdoc\fP (Any obj, \fB_AttrGetter\fP attrgetter=\fBsafe_getattr\fP, bool allow_inherited=False, Any cls=None, str|None name=None)"
+.br
+.ti -1c
+.RI "str|None \fB_getdoc_internal\fP (Any obj, Callable[[Any, str, Any], Any] attrgetter=\fBsafe_getattr\fP)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBTypeAlias\fP"
+.br
+.ti -1c
+.RI "tuple \fB_SignatureType\fP"
+.br
+.ti -1c
+.RI "\fBlogger\fP = \fBlogging\&.getLogger\fP(__name__)"
+.br
+.ti -1c
+.RI "\fBmemory_address_re\fP = re\&.compile(r' at 0x[0\-9a\-f]{8,16}(?=>)', re\&.IGNORECASE)"
+.br
+.ti -1c
+.RI "\fBisasyncgenfunction\fP = inspect\&.isasyncgenfunction"
+.br
+.ti -1c
+.RI "\fBismethod\fP = inspect\&.ismethod"
+.br
+.ti -1c
+.RI "\fBismethoddescriptor\fP = inspect\&.ismethoddescriptor"
+.br
+.ti -1c
+.RI "\fBisclass\fP = inspect\&.isclass"
+.br
+.ti -1c
+.RI "\fBismodule\fP = inspect\&.ismodule"
+.br
+.ti -1c
+.RI "tuple \fB_DESCRIPTOR_LIKE\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Helpers for inspecting Python modules\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " Parameter sphinx\&.util\&.inspect\&._define (_ParameterKind kind, ast\&.arg arg, str code, *ast\&.expr | None defexpr)\fC [protected]\fP"
+
+.SS " Any sphinx\&.util\&.inspect\&._evaluate (Any annotation, dict[str, Any] globalns, dict[str, Any] localns)\fC [protected]\fP"
+
+.PP
+.nf
+Evaluate unresolved type annotation\&.
+.fi
+.PP
+ 
+.SS " Any sphinx\&.util\&.inspect\&._evaluate_forwardref (ForwardRef ref, dict[str, Any] | None globalns, dict[str, Any] | None localns)\fC [protected]\fP"
+
+.PP
+.nf
+Evaluate a forward reference\&.
+.fi
+.PP
+ 
+.SS " str | None sphinx\&.util\&.inspect\&._getdoc_internal (Any obj, Callable[[Any, str, Any], Any]  attrgetter = \fC\fBsafe_getattr\fP\fP)\fC [protected]\fP"
+
+.SS " bool sphinx\&.util\&.inspect\&._is_wrapped_coroutine (Any obj)\fC [protected]\fP"
+
+.PP
+.nf
+Check if the object is wrapped coroutine-function\&.
+.fi
+.PP
+ 
+.SS " bool sphinx\&.util\&.inspect\&._should_unwrap (\fB_SignatureType\fP subject)\fC [protected]\fP"
+
+.PP
+.nf
+Check the function should be unwrapped on getting signature\&.
+.fi
+.PP
+ 
+.SS " Signature sphinx\&.util\&.inspect\&.evaluate_signature (Signature sig, dict[str, Any] | None  globalns = \fCNone\fP, dict[str, Any] | None  localns = \fCNone\fP)"
+
+.PP
+.nf
+Evaluate unresolved type annotations in a signature object\&.
+.fi
+.PP
+ 
+.SS " Sequence[str] | None sphinx\&.util\&.inspect\&.getall (Any obj)"
+
+.PP
+.nf
+Get the ``__all__`` attribute of an object as a sequence\&.
+
+This returns ``None`` if the given ``obj\&.__all__`` does not exist and
+raises :exc:`ValueError` if ``obj\&.__all__`` is not a list or tuple of
+strings\&.
+
+.fi
+.PP
+ 
+.SS " Mapping[str, Any] sphinx\&.util\&.inspect\&.getannotations (Any obj)"
+
+.PP
+.nf
+Safely get the ``__annotations__`` attribute of an object\&.
+.fi
+.PP
+ 
+.SS " str | None sphinx\&.util\&.inspect\&.getdoc (Any obj, \fB_AttrGetter\fP  attrgetter = \fC\fBsafe_getattr\fP\fP, bool  allow_inherited = \fCFalse\fP, Any  cls = \fCNone\fP, str | None  name = \fCNone\fP)"
+
+.PP
+.nf
+Get the docstring for the object\&.
+
+This tries to obtain the docstring for some kind of objects additionally:
+
+* partial functions
+* inherited docstring
+* inherited decorated methods
+
+.fi
+.PP
+ 
+.SS " Mapping[str, Any] sphinx\&.util\&.inspect\&.getglobals (Any obj)"
+
+.PP
+.nf
+Safely get :attr:`obj\&.__globals__ <function\&.__globals__>`\&.
+.fi
+.PP
+ 
+.SS " tuple[type, \&.\&.\&.] sphinx\&.util\&.inspect\&.getmro (Any obj)"
+
+.PP
+.nf
+Safely get :attr:`obj\&.__mro__ <class\&.__mro__>`\&.
+.fi
+.PP
+ 
+.SS " tuple[Any, \&.\&.\&.] | None sphinx\&.util\&.inspect\&.getorigbases (Any obj)"
+
+.PP
+.nf
+Safely get ``obj\&.__orig_bases__``\&.
+
+This returns ``None`` if the object is not a class or if ``__orig_bases__``
+is not well-defined (e\&.g\&., a non-tuple object or an empty sequence)\&.
+
+.fi
+.PP
+ 
+.SS " dict[str, Any] | dict[str, None] | None sphinx\&.util\&.inspect\&.getslots (Any obj)"
+
+.PP
+.nf
+Safely get :term:`obj\&.__slots__ <__slots__>` as a dictionary if any\&.
+
+- This returns ``None`` if ``obj\&.__slots__`` does not exist\&.
+- This raises a :exc:`TypeError` if *obj* is not a class\&.
+- This raises a :exc:`ValueError` if ``obj\&.__slots__`` is invalid\&.
+
+.fi
+.PP
+ 
+.SS " bool sphinx\&.util\&.inspect\&.is_builtin_class_method (Any obj, str attr_name)"
+
+.PP
+.nf
+Check whether *attr_name* is implemented on a builtin class\&.
+
+    >>> is_builtin_class_method(int, '__init__')
+    True
+
+
+This function is needed since CPython implements ``int\&.__init__`` via
+descriptors, but PyPy implementation is written in pure Python code\&.
+
+.fi
+.PP
+ 
+.SS " bool sphinx\&.util\&.inspect\&.is_builtin_classmethod_like (Any obj, Any  cls = \fCNone\fP, str | None  name = \fCNone\fP)"
+
+.PP
+.nf
+Check if the object looks like a class method implemented in C\&.
+
+This is equivalent to test that *obj* is a class method descriptor
+or is a built-in object with a ``__self__`` attribute that is a type,
+or that ``parent_class\&.__dict__[name]`` satisfies those properties
+for some parent class in *cls* MRO\&.
+
+.fi
+.PP
+ 
+.SS " TypeIs[types\&.ClassMethodDescriptorType] sphinx\&.util\&.inspect\&.is_classmethod_descriptor (Any obj, Any  cls = \fCNone\fP, str | None  name = \fCNone\fP)"
+
+.PP
+.nf
+Check if the object is a :class:`~types\&.ClassMethodDescriptorType`\&.
+
+This check is stricter than :func:`is_builtin_classmethod_like` as
+a classmethod descriptor does not have a ``__func__`` attribute\&.
+
+.fi
+.PP
+ 
+.SS " bool sphinx\&.util\&.inspect\&.is_classmethod_like (Any obj, Any  cls = \fCNone\fP, str | None  name = \fCNone\fP)"
+
+.PP
+.nf
+Check if the object looks like a class method\&.
+.fi
+.PP
+ 
+.SS " bool sphinx\&.util\&.inspect\&.is_cython_function_or_method (Any obj)"
+
+.PP
+.nf
+Check if the object is a function or method in cython\&.
+.fi
+.PP
+ 
+.SS " bool sphinx\&.util\&.inspect\&.is_singledispatch_function (Any obj)"
+
+.PP
+.nf
+Check if the object is a :func:`~functools\&.singledispatch` function\&.
+.fi
+.PP
+ 
+.SS " TypeIs[singledispatchmethod[Any]] sphinx\&.util\&.inspect\&.is_singledispatch_method (Any obj)"
+
+.PP
+.nf
+Check if the object is a :class:`~functools\&.singledispatchmethod`\&.
+.fi
+.PP
+ 
+.SS " bool sphinx\&.util\&.inspect\&.isabstractmethod (Any obj)"
+
+.PP
+.nf
+Check if the object is an :func:`abstractmethod`\&.
+.fi
+.PP
+ 
+.SS " bool sphinx\&.util\&.inspect\&.isattributedescriptor (Any obj)"
+
+.PP
+.nf
+Check if the object is an attribute-like descriptor\&.
+.fi
+.PP
+ 
+.SS " bool sphinx\&.util\&.inspect\&.isboundmethod (MethodType method)"
+
+.PP
+.nf
+Check if the method is a bound method\&.
+.fi
+.PP
+ 
+.SS " TypeIs[types\&.BuiltinFunctionType] sphinx\&.util\&.inspect\&.isbuiltin (Any obj)"
+
+.PP
+.nf
+Check if the object is a built-in function or method\&.
+
+Partial objects are unwrapped before checking them\&.
+
+\&.\&. seealso:: :external+python:func:`inspect\&.isbuiltin`
+
+.fi
+.PP
+ 
+.SS " TypeIs[classmethod[Any, Any, Any]] sphinx\&.util\&.inspect\&.isclassmethod (Any obj, Any  cls = \fCNone\fP, str | None  name = \fCNone\fP)"
+
+.PP
+.nf
+Check if the object is a :class:`classmethod`\&.
+.fi
+.PP
+ 
+.SS " TypeIs[Callable[\&.\&.\&., types\&.CoroutineType[Any, Any, Any]]] sphinx\&.util\&.inspect\&.iscoroutinefunction (Any obj)"
+
+.PP
+.nf
+Check if the object is a :external+python:term:`coroutine` function\&.
+.fi
+.PP
+ 
+.SS " TypeIs[\fB_SupportsGet\fP | \fB_SupportsSet\fP | \fB_SupportsDelete\fP] sphinx\&.util\&.inspect\&.isdescriptor (Any x)"
+
+.PP
+.nf
+Check if the object is a :external+python:term:`descriptor`\&.
+.fi
+.PP
+ 
+.SS " TypeIs[enum\&.Enum] sphinx\&.util\&.inspect\&.isenumattribute (Any x)"
+
+.PP
+.nf
+Check if the object is an enumeration attribute\&.
+.fi
+.PP
+ 
+.SS " TypeIs[type[enum\&.Enum]] sphinx\&.util\&.inspect\&.isenumclass (Any x)"
+
+.PP
+.nf
+Check if the object is an :class:`enumeration class <enum\&.Enum>`\&.
+.fi
+.PP
+ 
+.SS " TypeIs[types\&.FunctionType] sphinx\&.util\&.inspect\&.isfunction (Any obj)"
+
+.PP
+.nf
+Check if the object is a user-defined function\&.
+
+Partial objects are unwrapped before checking them\&.
+
+\&.\&. seealso:: :external+python:func:`inspect\&.isfunction`
+
+.fi
+.PP
+ 
+.SS " TypeIs[types\&.GenericAlias] sphinx\&.util\&.inspect\&.isgenericalias (Any obj)"
+
+.PP
+.nf
+Check if the object is a generic alias\&.
+.fi
+.PP
+ 
+.SS " TypeIs[partial[Any] | partialmethod[Any]] sphinx\&.util\&.inspect\&.ispartial (Any obj)"
+
+.PP
+.nf
+Check if the object is a partial function or method\&.
+.fi
+.PP
+ 
+.SS " TypeIs[property | cached_property[Any]] sphinx\&.util\&.inspect\&.isproperty (Any obj)"
+
+.PP
+.nf
+Check if the object is property (possibly cached)\&.
+.fi
+.PP
+ 
+.SS " TypeIs[_RoutineType] sphinx\&.util\&.inspect\&.isroutine (Any obj)"
+
+.PP
+.nf
+Check if the object is a kind of function or method\&.
+
+Partial objects are unwrapped before checking them\&.
+
+\&.\&. seealso:: :external+python:func:`inspect\&.isroutine`
+
+.fi
+.PP
+ 
+.SS " TypeIs[staticmethod[Any, Any]] sphinx\&.util\&.inspect\&.isstaticmethod (Any obj, Any  cls = \fCNone\fP, str | None  name = \fCNone\fP)"
+
+.PP
+.nf
+Check if the object is a :class:`staticmethod`\&.
+.fi
+.PP
+ 
+.SS " str sphinx\&.util\&.inspect\&.object_description (Any obj, *frozenset[int]  _seen = \fCfrozenset()\fP)"
+
+.PP
+.nf
+A repr() implementation that returns text safe to use in reST context\&.
+
+Maintains a set of 'seen' object IDs to detect and avoid infinite recursion\&.
+
+.fi
+.PP
+ 
+.SS " Any sphinx\&.util\&.inspect\&.safe_getattr (Any obj, str name, *Any defargs)"
+
+.PP
+.nf
+A getattr() that turns all exceptions into AttributeErrors\&.
+.fi
+.PP
+ 
+.SS " Signature sphinx\&.util\&.inspect\&.signature (\fB_SignatureType\fP subject, bool  bound_method = \fCFalse\fP, Mapping[str, str] | None  type_aliases = \fCNone\fP)"
+
+.PP
+.nf
+Return a Signature object for the given *subject*\&.
+
+:param bound_method: Specify *subject* is a bound method or not\&.
+
+When *subject* is a built-in callable, *bound_method* is ignored\&.
+
+.fi
+.PP
+ 
+.SS " Signature sphinx\&.util\&.inspect\&.signature_from_ast (ast\&.FunctionDef node, str  code = \fC''\fP)"
+
+.PP
+.nf
+Create a :class:`~inspect\&.Signature` object from an AST node\&.
+.fi
+.PP
+ 
+.SS " Signature sphinx\&.util\&.inspect\&.signature_from_str (str signature)"
+
+.PP
+.nf
+Create a :class:`~inspect\&.Signature` object from a string\&.
+.fi
+.PP
+ 
+.SS " str sphinx\&.util\&.inspect\&.stringify_signature (Signature sig, bool  show_annotation = \fCTrue\fP, bool  show_return_annotation = \fCTrue\fP, bool  unqualified_typehints = \fCFalse\fP, bool  short_literals = \fCFalse\fP)"
+
+.PP
+.nf
+Stringify a :class:`~inspect\&.Signature` object\&.
+
+:param show_annotation: If enabled, show annotations on the signature
+:param show_return_annotation: If enabled, show annotation of the return value
+:param unqualified_typehints: If enabled, show annotations as unqualified
+                              (ex\&. io\&.StringIO -> StringIO)
+:param short_literals: If enabled, use short literal types\&.
+
+.fi
+.PP
+ 
+.SS " Any sphinx\&.util\&.inspect\&.unpartial (Any obj)"
+
+.PP
+.nf
+Get an original object from a partial-like object\&.
+
+If *obj* is not a partial object, it is returned as is\&.
+
+\&.\&. seealso:: :func:`ispartial`
+
+.fi
+.PP
+ 
+.SS " Any sphinx\&.util\&.inspect\&.unwrap (Any obj)"
+
+.PP
+.nf
+Get an original object from wrapped object (wrapped functions)\&.
+
+Mocked objects are returned as is\&.
+
+.fi
+.PP
+ 
+.SS " Any sphinx\&.util\&.inspect\&.unwrap_all (Any obj, *Callable[[Any], bool] | None  stop = \fCNone\fP)"
+
+.PP
+.nf
+Get an original object from wrapped object\&.
+
+Unlike :func:`unwrap`, this unwraps partial functions, wrapped functions,
+class methods and static methods\&.
+
+When specified, *stop* is a predicate indicating whether an object should
+be unwrapped or not\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "tuple sphinx\&.util\&.inspect\&._DESCRIPTOR_LIKE\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  (
+2     ClassMethodDescriptorType,
+3     MethodDescriptorType,
+4     WrapperDescriptorType,
+5 )
+.fi
+
+.SS "tuple sphinx\&.util\&.inspect\&._SignatureType\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  (
+2         Callable[\&.\&.\&., Any] | staticmethod[Any, Any] | classmethod[Any, Any, Any]
+3     )
+.fi
+
+.SS "sphinx\&.util\&.inspect\&.isasyncgenfunction = inspect\&.isasyncgenfunction"
+
+.SS "sphinx\&.util\&.inspect\&.isclass = inspect\&.isclass"
+
+.SS "sphinx\&.util\&.inspect\&.ismethod = inspect\&.ismethod"
+
+.SS "sphinx\&.util\&.inspect\&.ismethoddescriptor = inspect\&.ismethoddescriptor"
+
+.SS "sphinx\&.util\&.inspect\&.ismodule = inspect\&.ismodule"
+
+.SS "sphinx\&.util\&.inspect\&.logger = \fBlogging\&.getLogger\fP(__name__)"
+
+.SS "sphinx\&.util\&.inspect\&.memory_address_re = re\&.compile(r' at 0x[0\-9a\-f]{8,16}(?=>)', re\&.IGNORECASE)"
+
+.SS "sphinx\&.util\&.inspect\&.TypeAlias"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

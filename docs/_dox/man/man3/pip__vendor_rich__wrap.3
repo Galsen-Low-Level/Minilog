@@ -1,0 +1,69 @@
+.TH "pip._vendor.rich._wrap" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.rich._wrap
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "Iterable[tuple[int, int, str]] \fBwords\fP (str text)"
+.br
+.ti -1c
+.RI "list[int] \fBdivide_line\fP (str text, int width, bool fold=True)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBre_word\fP = re\&.compile(r'\\s*\\S+\\s*')"
+.br
+.ti -1c
+.RI "\fBconsole\fP = \fBConsole\fP(width=10)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " list[int] pip\&._vendor\&.rich\&._wrap\&.divide_line (str text, int width, bool  fold = \fCTrue\fP)"
+
+.PP
+.nf
+Given a string of text, and a width (measured in cells), return a list
+of cell offsets which the string should be split at in order for it to fit
+within the given width\&.
+
+Args:
+    text: The text to examine\&.
+    width: The available cell width\&.
+    fold: If True, words longer than `width` will be folded onto a new line\&.
+
+Returns:
+    A list of indices to break the line at\&.
+
+.fi
+.PP
+ 
+.SS " Iterable[tuple[int, int, str]] pip\&._vendor\&.rich\&._wrap\&.words (str text)"
+
+.PP
+.nf
+Yields each word from the text as a tuple
+containing (start_index, end_index, word)\&. A 'word' in this context may
+include the actual word and any whitespace to the right\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._vendor\&.rich\&._wrap\&.console = \fBConsole\fP(width=10)"
+
+.SS "pip\&._vendor\&.rich\&._wrap\&.re_word = re\&.compile(r'\\s*\\S+\\s*')"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

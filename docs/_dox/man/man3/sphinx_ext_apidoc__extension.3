@@ -1,0 +1,104 @@
+.TH "sphinx.ext.apidoc._extension" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.ext.apidoc._extension
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBrun_apidoc\fP (\fBSphinx\fP app)"
+.br
+.ti -1c
+.RI "None \fB_run_apidoc_module\fP (int i, *dict[str, Any] options, \fBApidocDefaults\fP defaults, Path srcdir, Path confdir)"
+.br
+.ti -1c
+.RI "\fBApidocOptions\fP|None \fB_parse_module_options\fP (int i, *dict[str, Any] options, \fBApidocDefaults\fP defaults, Path srcdir, Path confdir)"
+.br
+.ti -1c
+.RI "Collection[str] \fB_check_collection_of_strings\fP (int index, dict[str, Any] options, *str key, Collection[str] default)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB_BOOL_KEYS\fP"
+.br
+.ti -1c
+.RI "\fB_ALLOWED_KEYS\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Sphinx extension for auto-generating API documentation\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " Collection[str] sphinx\&.ext\&.apidoc\&._extension\&._check_collection_of_strings (int index, dict[str, Any] options, *str key, Collection[str] default)\fC [protected]\fP"
+
+.PP
+.nf
+Check that a key's value is a collection of strings in the options\&.
+
+:returns: The value of the key, or None if invalid\&.
+
+.fi
+.PP
+ 
+.SS " \fBApidocOptions\fP | None sphinx\&.ext\&.apidoc\&._extension\&._parse_module_options (int i, *dict[str, Any] options, \fBApidocDefaults\fP defaults, Path srcdir, Path confdir)\fC [protected]\fP"
+
+.SS " None sphinx\&.ext\&.apidoc\&._extension\&._run_apidoc_module (int i, *dict[str, Any] options, \fBApidocDefaults\fP defaults, Path srcdir, Path confdir)\fC [protected]\fP"
+
+.PP
+.nf
+Run apidoc for a single module\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.ext\&.apidoc\&._extension\&.run_apidoc (\fBSphinx\fP app)"
+
+.PP
+.nf
+Run the apidoc extension\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "sphinx\&.ext\&.apidoc\&._extension\&._ALLOWED_KEYS\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  _BOOL_KEYS | frozenset({
+2     'path',
+3     'destination',
+4     'exclude_patterns',
+5     'automodule_options',
+6     'max_depth',
+7 })
+.fi
+
+.SS "sphinx\&.ext\&.apidoc\&._extension\&._BOOL_KEYS\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  frozenset({
+2     'follow_links',
+3     'separate_modules',
+4     'include_private',
+5     'no_headings',
+6     'module_first',
+7     'implicit_namespaces',
+8 })
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

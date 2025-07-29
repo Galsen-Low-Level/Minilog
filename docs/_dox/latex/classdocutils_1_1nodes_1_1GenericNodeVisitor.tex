@@ -1,0 +1,88 @@
+\doxysection{docutils.\+nodes.\+Generic\+Node\+Visitor Class Reference}
+\hypertarget{classdocutils_1_1nodes_1_1GenericNodeVisitor}{}\label{classdocutils_1_1nodes_1_1GenericNodeVisitor}\index{docutils.nodes.GenericNodeVisitor@{docutils.nodes.GenericNodeVisitor}}
+Inheritance diagram for docutils.\+nodes.\+Generic\+Node\+Visitor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.500000cm]{classdocutils_1_1nodes_1_1GenericNodeVisitor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1nodes_1_1GenericNodeVisitor_a8003a898de85f02e8856c4dbf3f622a3}{default\+\_\+visit}} (self, node)
+\item 
+\mbox{\hyperlink{classdocutils_1_1nodes_1_1GenericNodeVisitor_a9765bcf33cf6ba9a18de957d1311f2da}{default\+\_\+departure}} (self, node)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor}{docutils.\+nodes.\+Node\+Visitor}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor_a79dc86c6947a392e378c002c2b73304c}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classdocutils_1_1nodes_1_1document}{document}})
+\item 
+\mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor_ac9e537d23d3903c550699c40c58b15f6}{dispatch\+\_\+visit}} (self, node)
+\item 
+\mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor_ac77125a62dc8a4f1403aa9279f19360a}{dispatch\+\_\+departure}} (self, node)
+\item 
+\mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor_a1e3bb6077880ca35118ba60eb464354c}{unknown\+\_\+visit}} (self, node)
+\item 
+\mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor_a575e2750c162e528737ceeb8d49787b4}{unknown\+\_\+departure}} (self, node)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor}{docutils.\+nodes.\+Node\+Visitor}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor_a3c594de0457219c7836d4c53d9398cdc}{document}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor_a4ef22d9109ba64a13a3b67e49cdd6e41}{optional}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor}{docutils.\+nodes.\+Node\+Visitor}}}
+\begin{DoxyCompactItemize}
+\item 
+tuple \mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor_affa8b471d2c760b6978e38b4d91f2e0f}{optional}} = (\textquotesingle{}\mbox{\hyperlink{classdocutils_1_1nodes_1_1meta}{meta}}\textquotesingle{},)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Generic "Visitor" abstract superclass, for simple traversals.
+
+Unless overridden, each ``visit_...`` method calls `default_visit()`, and
+each ``depart_...`` method (when using `Node.walkabout()`) calls
+`default_departure()`. `default_visit()` (and `default_departure()`) must
+be overridden in subclasses.
+
+Define fully generic visitors by overriding `default_visit()` (and
+`default_departure()`) only. Define semi-generic visitors by overriding
+individual ``visit_...()`` (and ``depart_...()``) methods also.
+
+`NodeVisitor.unknown_visit()` (`NodeVisitor.unknown_departure()`) should
+be overridden for default behavior.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdocutils_1_1nodes_1_1GenericNodeVisitor_a9765bcf33cf6ba9a18de957d1311f2da}\label{classdocutils_1_1nodes_1_1GenericNodeVisitor_a9765bcf33cf6ba9a18de957d1311f2da} 
+\index{docutils.nodes.GenericNodeVisitor@{docutils.nodes.GenericNodeVisitor}!default\_departure@{default\_departure}}
+\index{default\_departure@{default\_departure}!docutils.nodes.GenericNodeVisitor@{docutils.nodes.GenericNodeVisitor}}
+\doxysubsubsection{\texorpdfstring{default\_departure()}{default\_departure()}}
+{\footnotesize\ttfamily docutils.\+nodes.\+Generic\+Node\+Visitor.\+default\+\_\+departure (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{node }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Override for generic, uniform traversals.\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classdocutils_1_1nodes_1_1TreeCopyVisitor_a991826ce0dc6ec503883b3ff6a64b2de}{docutils.\+nodes.\+Tree\+Copy\+Visitor}}, \mbox{\hyperlink{classdocutils_1_1writers_1_1docutils__xml_1_1XMLTranslator_aad0c49e44c868779715fa45babec0ee7}{docutils.\+writers.\+docutils\+\_\+xml.\+XMLTranslator}}, and \mbox{\hyperlink{classdocutils_1_1writers_1_1odf__odt_1_1ODFTranslator_affd528321c5946a1baf7b5248d35e381}{docutils.\+writers.\+odf\+\_\+odt.\+ODFTranslator}}.
+
+\Hypertarget{classdocutils_1_1nodes_1_1GenericNodeVisitor_a8003a898de85f02e8856c4dbf3f622a3}\label{classdocutils_1_1nodes_1_1GenericNodeVisitor_a8003a898de85f02e8856c4dbf3f622a3} 
+\index{docutils.nodes.GenericNodeVisitor@{docutils.nodes.GenericNodeVisitor}!default\_visit@{default\_visit}}
+\index{default\_visit@{default\_visit}!docutils.nodes.GenericNodeVisitor@{docutils.nodes.GenericNodeVisitor}}
+\doxysubsubsection{\texorpdfstring{default\_visit()}{default\_visit()}}
+{\footnotesize\ttfamily docutils.\+nodes.\+Generic\+Node\+Visitor.\+default\+\_\+visit (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{node }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Override for generic, uniform traversals.\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classdocutils_1_1nodes_1_1TreeCopyVisitor_a26cec04ef7c3f224a07095706c63b229}{docutils.\+nodes.\+Tree\+Copy\+Visitor}}, \mbox{\hyperlink{classdocutils_1_1writers_1_1__html__base_1_1SimpleListChecker_a7ef66b83fc47d3e38dbe7378eb6347e3}{docutils.\+writers.\+\_\+html\+\_\+base.\+Simple\+List\+Checker}}, \mbox{\hyperlink{classdocutils_1_1writers_1_1docutils__xml_1_1XMLTranslator_a3b7332e42513220ed0dcdc22ad2ed907}{docutils.\+writers.\+docutils\+\_\+xml.\+XMLTranslator}}, and \mbox{\hyperlink{classdocutils_1_1writers_1_1odf__odt_1_1ODFTranslator_ad7e156e622ba30290deecfce13b86e92}{docutils.\+writers.\+odf\+\_\+odt.\+ODFTranslator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/docutils/\mbox{\hyperlink{docutils_2nodes_8py}{nodes.\+py}}\end{DoxyCompactItemize}

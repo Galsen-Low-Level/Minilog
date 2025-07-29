@@ -1,0 +1,83 @@
+.TH "urllib3.http2.probe._HTTP2ProbeCache" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+urllib3.http2.probe._HTTP2ProbeCache
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "bool|None \fBacquire_and_get\fP (self, str host, int port)"
+.br
+.ti -1c
+.RI "None \fBset_and_release\fP (self, str host, int port, bool|None supports_http2)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "dict[tuple[str, int], bool|None] \fB_values\fP (self)"
+.br
+.ti -1c
+.RI "None \fB_reset\fP (self)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_lock\fP"
+.br
+.ti -1c
+.RI "\fB_cache_locks\fP"
+.br
+.ti -1c
+.RI "\fB_cache_values\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None urllib3\&.http2\&.probe\&._HTTP2ProbeCache\&.__init__ ( self)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " None urllib3\&.http2\&.probe\&._HTTP2ProbeCache\&._reset ( self)\fC [protected]\fP"
+
+.PP
+.nf
+This function is for testing purposes only\&. Reset the cache values
+.fi
+.PP
+ 
+.SS " dict[tuple[str, int], bool | None] urllib3\&.http2\&.probe\&._HTTP2ProbeCache\&._values ( self)\fC [protected]\fP"
+
+.PP
+.nf
+This function is for testing purposes only\&. Gets the current state of the probe cache
+.fi
+.PP
+ 
+.SS " bool | None urllib3\&.http2\&.probe\&._HTTP2ProbeCache\&.acquire_and_get ( self, str host, int port)"
+
+.SS " None urllib3\&.http2\&.probe\&._HTTP2ProbeCache\&.set_and_release ( self, str host, int port, bool | None
+     supports_http2)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "urllib3\&.http2\&.probe\&._HTTP2ProbeCache\&._cache_locks\fC [protected]\fP"
+
+.SS "urllib3\&.http2\&.probe\&._HTTP2ProbeCache\&._cache_values\fC [protected]\fP"
+
+.SS "urllib3\&.http2\&.probe\&._HTTP2ProbeCache\&._lock\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

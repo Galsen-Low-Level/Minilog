@@ -1,0 +1,154 @@
+.TH "sphinx.domains.python" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.domains.python
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fB_annotations\fP"
+.br
+.ti -1c
+.RI "namespace \fB_object\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_PyDecoXRefRole\fP"
+.br
+.ti -1c
+.RI "class \fBModuleEntry\fP"
+.br
+.ti -1c
+.RI "class \fBObjectEntry\fP"
+.br
+.ti -1c
+.RI "class \fBPyAttribute\fP"
+.br
+.ti -1c
+.RI "class \fBPyClasslike\fP"
+.br
+.ti -1c
+.RI "class \fBPyClassMethod\fP"
+.br
+.ti -1c
+.RI "class \fBPyCurrentModule\fP"
+.br
+.ti -1c
+.RI "class \fBPyDecoratorFunction\fP"
+.br
+.ti -1c
+.RI "class \fBPyDecoratorMethod\fP"
+.br
+.ti -1c
+.RI "class \fBPyFunction\fP"
+.br
+.ti -1c
+.RI "class \fBPyMethod\fP"
+.br
+.ti -1c
+.RI "class \fBPyModule\fP"
+.br
+.ti -1c
+.RI "class \fBPyProperty\fP"
+.br
+.ti -1c
+.RI "class \fBPyStaticMethod\fP"
+.br
+.ti -1c
+.RI "class \fBPythonDomain\fP"
+.br
+.ti -1c
+.RI "class \fBPythonModuleIndex\fP"
+.br
+.ti -1c
+.RI "class \fBPyTypeAlias\fP"
+.br
+.ti -1c
+.RI "class \fBPyVariable\fP"
+.br
+.ti -1c
+.RI "class \fBPyXRefRole\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBfilter_meta_fields\fP (\fBSphinx\fP app, str domain, str objtype, \fBElement\fP content)"
+.br
+.ti -1c
+.RI "\fBElement\fP|None \fBbuiltin_resolver\fP (\fBSphinx\fP app, \fBBuildEnvironment\fP env, \fBpending_xref\fP node, \fBElement\fP contnode)"
+.br
+.ti -1c
+.RI "\fBExtensionMetadata\fP \fBsetup\fP (\fBSphinx\fP app)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "dict \fBpairindextypes\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+The Python domain\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " \fBElement\fP | None sphinx\&.domains\&.python\&.builtin_resolver (\fBSphinx\fP app, \fBBuildEnvironment\fP env, \fBpending_xref\fP node, \fBElement\fP
+ contnode)"
+
+.PP
+.nf
+Do not emit nitpicky warnings for built-in types\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.domains\&.python\&.filter_meta_fields (\fBSphinx\fP app, str domain, str objtype, \fBElement\fP
+ content)"
+
+.PP
+.nf
+Filter ``:meta:`` field from its docstring\&.
+.fi
+.PP
+ 
+.SS " \fBExtensionMetadata\fP sphinx\&.domains\&.python\&.setup (\fBSphinx\fP app)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "sphinx\&.domains\&.python\&.logger = logging\&.getLogger(__name__)"
+
+.SS "dict sphinx\&.domains\&.python\&.pairindextypes"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     'module': 'module',
+3     'keyword': 'keyword',
+4     'operator': 'operator',
+5     'object': 'object',
+6     'exception': 'exception',
+7     'statement': 'statement',
+8     'builtin': 'built\-in function',
+9 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

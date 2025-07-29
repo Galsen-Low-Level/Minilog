@@ -1,0 +1,55 @@
+\doxysection{jinja2.\+loaders Namespace Reference}
+\hypertarget{namespacejinja2_1_1loaders}{}\label{namespacejinja2_1_1loaders}\index{jinja2.loaders@{jinja2.loaders}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classjinja2_1_1loaders_1_1__TemplateModule}{\+\_\+\+Template\+Module}}
+\item 
+class \mbox{\hyperlink{classjinja2_1_1loaders_1_1BaseLoader}{Base\+Loader}}
+\item 
+class \mbox{\hyperlink{classjinja2_1_1loaders_1_1ChoiceLoader}{Choice\+Loader}}
+\item 
+class \mbox{\hyperlink{classjinja2_1_1loaders_1_1DictLoader}{Dict\+Loader}}
+\item 
+class \mbox{\hyperlink{classjinja2_1_1loaders_1_1FileSystemLoader}{File\+System\+Loader}}
+\item 
+class \mbox{\hyperlink{classjinja2_1_1loaders_1_1FunctionLoader}{Function\+Loader}}
+\item 
+class \mbox{\hyperlink{classjinja2_1_1loaders_1_1ModuleLoader}{Module\+Loader}}
+\item 
+class \mbox{\hyperlink{classjinja2_1_1loaders_1_1PackageLoader}{Package\+Loader}}
+\item 
+class \mbox{\hyperlink{classjinja2_1_1loaders_1_1PrefixLoader}{Prefix\+Loader}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+t.\+List\mbox{[}str\mbox{]} \mbox{\hyperlink{namespacejinja2_1_1loaders_a18b430f0013bc6b197ba4e574e8583cb}{split\+\_\+template\+\_\+path}} (str template)
+\item 
+t.\+Dict\mbox{[}str, object\mbox{]} \mbox{\hyperlink{namespacejinja2_1_1loaders_a66599cb063e37677246830595ab7443d}{\+\_\+get\+\_\+zipimporter\+\_\+files}} (t.\+Any z)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}API and implementations for loading templates from different data
+sources.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacejinja2_1_1loaders_a66599cb063e37677246830595ab7443d}\label{namespacejinja2_1_1loaders_a66599cb063e37677246830595ab7443d} 
+\index{jinja2.loaders@{jinja2.loaders}!\_get\_zipimporter\_files@{\_get\_zipimporter\_files}}
+\index{\_get\_zipimporter\_files@{\_get\_zipimporter\_files}!jinja2.loaders@{jinja2.loaders}}
+\doxysubsubsection{\texorpdfstring{\_get\_zipimporter\_files()}{\_get\_zipimporter\_files()}}
+{\footnotesize\ttfamily  t.\+Dict\mbox{[}str, object\mbox{]} jinja2.\+loaders.\+\_\+get\+\_\+zipimporter\+\_\+files (\begin{DoxyParamCaption}\item[{t.\+Any}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacejinja2_1_1loaders_a18b430f0013bc6b197ba4e574e8583cb}\label{namespacejinja2_1_1loaders_a18b430f0013bc6b197ba4e574e8583cb} 
+\index{jinja2.loaders@{jinja2.loaders}!split\_template\_path@{split\_template\_path}}
+\index{split\_template\_path@{split\_template\_path}!jinja2.loaders@{jinja2.loaders}}
+\doxysubsubsection{\texorpdfstring{split\_template\_path()}{split\_template\_path()}}
+{\footnotesize\ttfamily  t.\+List\mbox{[}str\mbox{]} jinja2.\+loaders.\+split\+\_\+template\+\_\+path (\begin{DoxyParamCaption}\item[{str}]{template }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Split a path into segments and perform a sanity check.  If it detects
+'..' in the path it will raise a `TemplateNotFound` error.
+\end{DoxyVerb}
+ 

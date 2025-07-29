@@ -1,0 +1,467 @@
+.TH "babel.messages.extract" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+babel.messages.extract
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_FileObj\fP"
+.br
+.ti -1c
+.RI "class \fB_JSOptions\fP"
+.br
+.ti -1c
+.RI "class \fB_PyOptions\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_strip_comment_tags\fP (MutableSequence[str] comments, Iterable[str] tags)"
+.br
+.ti -1c
+.RI "bool \fBdefault_directory_filter\fP (str|os\&.PathLike[str] dirpath)"
+.br
+.ti -1c
+.RI "Generator[\fB_FileExtractionResult\fP, None, None] \fBextract_from_dir\fP (str|os\&.PathLike[str]|None dirname=None, Iterable[tuple[str, str]] method_map=\fBDEFAULT_MAPPING\fP, SupportsItems[str, dict[str, Any]]|None options_map=None, Mapping[str, \fB_Keyword\fP] keywords=\fBDEFAULT_KEYWORDS\fP, Collection[str] comment_tags=(), Callable[[str, str, dict[str, Any]], object]|None callback=None, bool strip_comment_tags=False, Callable[[str], bool]|None directory_filter=None)"
+.br
+.ti -1c
+.RI "Generator[\fB_FileExtractionResult\fP, None, None] \fBcheck_and_call_extract_file\fP (str|os\&.PathLike[str] filepath, Iterable[tuple[str, str]] method_map, SupportsItems[str, dict[str, Any]] options_map, Callable[[str, str, dict[str, Any]], object]|None callback, Mapping[str, \fB_Keyword\fP] keywords, Collection[str] comment_tags, bool strip_comment_tags, str|os\&.PathLike[str]|None dirpath=None)"
+.br
+.ti -1c
+.RI "list[\fB_ExtractionResult\fP] \fBextract_from_file\fP (\fB_ExtractionMethod\fP method, str|os\&.PathLike[str] filename, Mapping[str, \fB_Keyword\fP] keywords=\fBDEFAULT_KEYWORDS\fP, Collection[str] comment_tags=(), Mapping[str, Any]|None options=None, bool strip_comment_tags=False)"
+.br
+.ti -1c
+.RI "\fB_match_messages_against_spec\fP (int lineno, list[str|None] messages, list[str] comments, \fB_FileObj\fP fileobj, tuple[int|tuple[int, str],\&.\&.\&.] spec)"
+.br
+.ti -1c
+.RI "\fB_find_extractor\fP (str name)"
+.br
+.ti -1c
+.RI "Generator[\fB_ExtractionResult\fP, None, None] \fBextract\fP (\fB_ExtractionMethod\fP method, \fB_FileObj\fP fileobj, Mapping[str, \fB_Keyword\fP] keywords=\fBDEFAULT_KEYWORDS\fP, Collection[str] comment_tags=(), Mapping[str, Any]|None options=None, bool strip_comment_tags=False)"
+.br
+.ti -1c
+.RI "list[\fB_ExtractionResult\fP] \fBextract_nothing\fP (\fB_FileObj\fP fileobj, Mapping[str, \fB_Keyword\fP] keywords, Collection[str] comment_tags, Mapping[str, Any] options)"
+.br
+.ti -1c
+.RI "Generator[\fB_ExtractionResult\fP, None, None] \fBextract_python\fP (IO[bytes] fileobj, Mapping[str, \fB_Keyword\fP] keywords, Collection[str] comment_tags, \fB_PyOptions\fP options)"
+.br
+.ti -1c
+.RI "str|None \fB_parse_python_string\fP (str value, str encoding, int future_flags)"
+.br
+.ti -1c
+.RI "Generator[\fB_ExtractionResult\fP, None, None] \fBextract_javascript\fP (\fB_FileObj\fP fileobj, Mapping[str, \fB_Keyword\fP] keywords, Collection[str] comment_tags, \fB_JSOptions\fP options, int lineno=1)"
+.br
+.ti -1c
+.RI "Generator[\fB_ExtractionResult\fP, None, None] \fBparse_template_string\fP (str template_string, Mapping[str, \fB_Keyword\fP] keywords, Collection[str] comment_tags, \fB_JSOptions\fP options, int lineno=1)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBTypeAlias\fP"
+.br
+.ti -1c
+.RI "TypeAlias \fB_Keyword\fP = dict[int | None, _SimpleKeyword] | _SimpleKeyword"
+.br
+.ti -1c
+.RI "TypeAlias \fB_FileExtractionResult\fP = tuple[str, int, str | tuple[str, \&.\&.\&.], list[str], str | None]"
+.br
+.ti -1c
+.RI "TypeAlias \fB_ExtractionResult\fP = tuple[int, str | tuple[str, \&.\&.\&.], list[str], str | None]"
+.br
+.ti -1c
+.RI "TypeAlias \fB_CallableExtractionMethod\fP"
+.br
+.ti -1c
+.RI "TypeAlias \fB_ExtractionMethod\fP = \fB_CallableExtractionMethod\fP | str"
+.br
+.ti -1c
+.RI "Final \fBGROUP_NAME\fP = 'babel\&.extractors'"
+.br
+.ti -1c
+.RI "dict \fBDEFAULT_KEYWORDS\fP"
+.br
+.ti -1c
+.RI "list \fBDEFAULT_MAPPING\fP = [('**\&.py', 'python')]"
+.br
+.ti -1c
+.RI "\fBFSTRING_START\fP = getattr(tokenize, 'FSTRING_START', None)"
+.br
+.ti -1c
+.RI "\fBFSTRING_MIDDLE\fP = getattr(tokenize, 'FSTRING_MIDDLE', None)"
+.br
+.ti -1c
+.RI "\fBFSTRING_END\fP = getattr(tokenize, 'FSTRING_END', None)"
+.br
+.ti -1c
+.RI "dict \fB_BUILTIN_EXTRACTORS\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+    babel\&.messages\&.extract
+    ~~~~~~~~~~~~~~~~~~~~~~
+
+    Basic infrastructure for extracting localizable messages from source files\&.
+
+    This module defines an extensible system for collecting localizable message
+    strings from a variety of sources\&. A native extractor for Python source
+    files is builtin, extractors for other sources can be added using very
+    simple plugins\&.
+
+    The main entry points into the extraction functionality are the functions
+    `extract_from_dir` and `extract_from_file`\&.
+
+    :copyright: (c) 2013-2025 by the Babel Team\&.
+    :license: BSD, see LICENSE for more details\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "babel\&.messages\&.extract\&._find_extractor (str name)\fC [protected]\fP"
+
+.SS "babel\&.messages\&.extract\&._match_messages_against_spec (int lineno, list[str | None] messages, list[str] comments, \fB_FileObj\fP fileobj, tuple[int | tuple[int, str], \&.\&.\&.] spec)\fC [protected]\fP"
+
+.SS " str | None babel\&.messages\&.extract\&._parse_python_string (str value, str encoding, int future_flags)\fC [protected]\fP"
+
+.SS "babel\&.messages\&.extract\&._strip_comment_tags (MutableSequence[str] comments, Iterable[str] tags)\fC [protected]\fP"
+
+.PP
+.nf
+Helper function for `extract` that strips comment tags from strings
+in a list of comment lines\&.  This functions operates in-place\&.
+
+.fi
+.PP
+ 
+.SS " Generator[\fB_FileExtractionResult\fP, None, None] babel\&.messages\&.extract\&.check_and_call_extract_file (str | os\&.PathLike[str] filepath, Iterable[tuple[str, str]] method_map, SupportsItems[str, dict[str, Any]] options_map, Callable[[str, str, dict[str, Any]], object] | None callback, Mapping[str, \fB_Keyword\fP] keywords, Collection[str] comment_tags, bool strip_comment_tags, str | os\&.PathLike[str] | None  dirpath = \fCNone\fP)"
+
+.PP
+.nf
+Checks if the given file matches an extraction method mapping, and if so, calls extract_from_file\&.
+
+Note that the extraction method mappings are based relative to dirpath\&.
+So, given an absolute path to a file `filepath`, we want to check using
+just the relative path from `dirpath` to `filepath`\&.
+
+Yields 5-tuples (filename, lineno, messages, comments, context)\&.
+
+:param filepath: An absolute path to a file that exists\&.
+:param method_map: a list of ``(pattern, method)`` tuples that maps of
+                   extraction method names to extended glob patterns
+:param options_map: a dictionary of additional options (optional)
+:param callback: a function that is called for every file that message are
+                 extracted from, just before the extraction itself is
+                 performed; the function is passed the filename, the name
+                 of the extraction method and and the options dictionary as
+                 positional arguments, in that order
+:param keywords: a dictionary mapping keywords (i\&.e\&. names of functions
+                 that should be recognized as translation functions) to
+                 tuples that specify which of their arguments contain
+                 localizable strings
+:param comment_tags: a list of tags of translator comments to search for
+                     and include in the results
+:param strip_comment_tags: a flag that if set to `True` causes all comment
+                           tags to be removed from the collected comments\&.
+:param dirpath: the path to the directory to extract messages from\&.
+:return: iterable of 5-tuples (filename, lineno, messages, comments, context)
+:rtype: Iterable[tuple[str, int, str|tuple[str], list[str], str|None]
+
+.fi
+.PP
+ 
+.SS " bool babel\&.messages\&.extract\&.default_directory_filter (str | os\&.PathLike[str] dirpath)"
+
+.SS " Generator[\fB_ExtractionResult\fP, None, None] babel\&.messages\&.extract\&.extract (\fB_ExtractionMethod\fP method, \fB_FileObj\fP fileobj, Mapping[str, \fB_Keyword\fP]  keywords = \fC\fBDEFAULT_KEYWORDS\fP\fP, Collection[str]  comment_tags = \fC()\fP, Mapping[str, Any] | None  options = \fCNone\fP, bool  strip_comment_tags = \fCFalse\fP)"
+
+.PP
+.nf
+Extract messages from the given file-like object using the specified
+extraction method\&.
+
+This function returns tuples of the form ``(lineno, message, comments, context)``\&.
+
+The implementation dispatches the actual extraction to plugins, based on the
+value of the ``method`` parameter\&.
+
+>>> source = b'''# foo module
+\&.\&.\&. def run(argv):
+\&.\&.\&.    print(_('Hello, world!'))
+\&.\&.\&. '''
+
+>>> from io import BytesIO
+>>> for message in extract('python', BytesIO(source)):
+\&.\&.\&.     print(message)
+(3, u'Hello, world!', [], None)
+
+:param method: an extraction method (a callable), or
+               a string specifying the extraction method (\&.e\&.g\&. 'python');
+               if this is a simple name, the extraction function will be
+               looked up by entry point; if it is an explicit reference
+               to a function (of the form ``package\&.module:funcname`` or
+               ``package\&.module\&.funcname``), the corresponding function
+               will be imported and used
+:param fileobj: the file-like object the messages should be extracted from
+:param keywords: a dictionary mapping keywords (i\&.e\&. names of functions
+                 that should be recognized as translation functions) to
+                 tuples that specify which of their arguments contain
+                 localizable strings
+:param comment_tags: a list of translator tags to search for and include
+                     in the results
+:param options: a dictionary of additional options (optional)
+:param strip_comment_tags: a flag that if set to `True` causes all comment
+                           tags to be removed from the collected comments\&.
+:raise ValueError: if the extraction method is not registered
+:returns: iterable of tuples of the form ``(lineno, message, comments, context)``
+:rtype: Iterable[tuple[int, str|tuple[str], list[str], str|None]
+
+.fi
+.PP
+ 
+.SS " Generator[\fB_FileExtractionResult\fP, None, None] babel\&.messages\&.extract\&.extract_from_dir (str | os\&.PathLike[str] | None  dirname = \fCNone\fP, Iterable[tuple[str, str]]  method_map = \fC\fBDEFAULT_MAPPING\fP\fP, SupportsItems[str, dict[str, Any]] | None  options_map = \fCNone\fP, Mapping[str, \fB_Keyword\fP]  keywords = \fC\fBDEFAULT_KEYWORDS\fP\fP, Collection[str]  comment_tags = \fC()\fP, Callable[[str, str, dict[str, Any]], object] | None  callback = \fCNone\fP, bool  strip_comment_tags = \fCFalse\fP, Callable[[str], bool] | None  directory_filter = \fCNone\fP)"
+
+.PP
+.nf
+Extract messages from any source files found in the given directory\&.
+
+This function generates tuples of the form ``(filename, lineno, message,
+comments, context)``\&.
+
+Which extraction method is used per file is determined by the `method_map`
+parameter, which maps extended glob patterns to extraction method names\&.
+For example, the following is the default mapping:
+
+>>> method_map = [
+\&.\&.\&.     ('**\&.py', 'python')
+\&.\&.\&. ]
+
+This basically says that files with the filename extension '\&.py' at any
+level inside the directory should be processed by the 'python' extraction
+method\&. Files that don't match any of the mapping patterns are ignored\&. See
+the documentation of the `pathmatch` function for details on the pattern
+syntax\&.
+
+The following extended mapping would also use the 'genshi' extraction
+method on any file in 'templates' subdirectory:
+
+>>> method_map = [
+\&.\&.\&.     ('**/templates/**\&.*', 'genshi'),
+\&.\&.\&.     ('**\&.py', 'python')
+\&.\&.\&. ]
+
+The dictionary provided by the optional `options_map` parameter augments
+these mappings\&. It uses extended glob patterns as keys, and the values are
+dictionaries mapping options names to option values (both strings)\&.
+
+The glob patterns of the `options_map` do not necessarily need to be the
+same as those used in the method mapping\&. For example, while all files in
+the ``templates`` folders in an application may be Genshi applications, the
+options for those files may differ based on extension:
+
+>>> options_map = {
+\&.\&.\&.     '**/templates/**\&.txt': {
+\&.\&.\&.         'template_class': 'genshi\&.template:TextTemplate',
+\&.\&.\&.         'encoding': 'latin-1'
+\&.\&.\&.     },
+\&.\&.\&.     '**/templates/**\&.html': {
+\&.\&.\&.         'include_attrs': ''
+\&.\&.\&.     }
+\&.\&.\&. }
+
+:param dirname: the path to the directory to extract messages from\&.  If
+                not given the current working directory is used\&.
+:param method_map: a list of ``(pattern, method)`` tuples that maps of
+                   extraction method names to extended glob patterns
+:param options_map: a dictionary of additional options (optional)
+:param keywords: a dictionary mapping keywords (i\&.e\&. names of functions
+                 that should be recognized as translation functions) to
+                 tuples that specify which of their arguments contain
+                 localizable strings
+:param comment_tags: a list of tags of translator comments to search for
+                     and include in the results
+:param callback: a function that is called for every file that message are
+                 extracted from, just before the extraction itself is
+                 performed; the function is passed the filename, the name
+                 of the extraction method and and the options dictionary as
+                 positional arguments, in that order
+:param strip_comment_tags: a flag that if set to `True` causes all comment
+                           tags to be removed from the collected comments\&.
+:param directory_filter: a callback to determine whether a directory should
+                         be recursed into\&. Receives the full directory path;
+                         should return True if the directory is valid\&.
+:see: `pathmatch`
+
+.fi
+.PP
+ 
+.SS " list[\fB_ExtractionResult\fP] babel\&.messages\&.extract\&.extract_from_file (\fB_ExtractionMethod\fP method, str | os\&.PathLike[str] filename, Mapping[str, \fB_Keyword\fP]  keywords = \fC\fBDEFAULT_KEYWORDS\fP\fP, Collection[str]  comment_tags = \fC()\fP, Mapping[str, Any] | None  options = \fCNone\fP, bool  strip_comment_tags = \fCFalse\fP)"
+
+.PP
+.nf
+Extract messages from a specific file\&.
+
+This function returns a list of tuples of the form ``(lineno, message, comments, context)``\&.
+
+:param filename: the path to the file to extract messages from
+:param method: a string specifying the extraction method (\&.e\&.g\&. 'python')
+:param keywords: a dictionary mapping keywords (i\&.e\&. names of functions
+                 that should be recognized as translation functions) to
+                 tuples that specify which of their arguments contain
+                 localizable strings
+:param comment_tags: a list of translator tags to search for and include
+                     in the results
+:param strip_comment_tags: a flag that if set to `True` causes all comment
+                           tags to be removed from the collected comments\&.
+:param options: a dictionary of additional options (optional)
+:returns: list of tuples of the form ``(lineno, message, comments, context)``
+:rtype: list[tuple[int, str|tuple[str], list[str], str|None]
+
+.fi
+.PP
+ 
+.SS " Generator[\fB_ExtractionResult\fP, None, None] babel\&.messages\&.extract\&.extract_javascript (\fB_FileObj\fP fileobj, Mapping[str, \fB_Keyword\fP] keywords, Collection[str] comment_tags, \fB_JSOptions\fP options, int  lineno = \fC1\fP)"
+
+.PP
+.nf
+Extract messages from JavaScript source code\&.
+
+:param fileobj: the seekable, file-like object the messages should be
+                extracted from
+:param keywords: a list of keywords (i\&.e\&. function names) that should be
+                 recognized as translation functions
+:param comment_tags: a list of translator tags to search for and include
+                     in the results
+:param options: a dictionary of additional options (optional)
+                Supported options are:
+                * `jsx` -- set to false to disable JSX/E4X support\&.
+                * `template_string` -- if `True`, supports gettext(`key`)
+                * `parse_template_string` -- if `True` will parse the
+                                             contents of javascript
+                                             template strings\&.
+:param lineno: line number offset (for parsing embedded fragments)
+
+.fi
+.PP
+ 
+.SS " list[\fB_ExtractionResult\fP] babel\&.messages\&.extract\&.extract_nothing (\fB_FileObj\fP fileobj, Mapping[str, \fB_Keyword\fP] keywords, Collection[str] comment_tags, Mapping[str, Any] options)"
+
+.PP
+.nf
+Pseudo extractor that does not actually extract anything, but simply
+returns an empty list\&.
+
+.fi
+.PP
+ 
+.SS " Generator[\fB_ExtractionResult\fP, None, None] babel\&.messages\&.extract\&.extract_python (IO[bytes] fileobj, Mapping[str, \fB_Keyword\fP] keywords, Collection[str] comment_tags, \fB_PyOptions\fP options)"
+
+.PP
+.nf
+Extract messages from Python source code\&.
+
+It returns an iterator yielding tuples in the following form ``(lineno,
+funcname, message, comments)``\&.
+
+:param fileobj: the seekable, file-like object the messages should be
+                extracted from
+:param keywords: a list of keywords (i\&.e\&. function names) that should be
+                 recognized as translation functions
+:param comment_tags: a list of translator tags to search for and include
+                     in the results
+:param options: a dictionary of additional options (optional)
+:rtype: ``iterator``
+
+.fi
+.PP
+ 
+.SS " Generator[\fB_ExtractionResult\fP, None, None] babel\&.messages\&.extract\&.parse_template_string (str template_string, Mapping[str, \fB_Keyword\fP] keywords, Collection[str] comment_tags, \fB_JSOptions\fP options, int  lineno = \fC1\fP)"
+
+.PP
+.nf
+Parse JavaScript template string\&.
+
+:param template_string: the template string to be parsed
+:param keywords: a list of keywords (i\&.e\&. function names) that should be
+                 recognized as translation functions
+:param comment_tags: a list of translator tags to search for and include
+                     in the results
+:param options: a dictionary of additional options (optional)
+:param lineno: starting line number (optional)
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "dict babel\&.messages\&.extract\&._BUILTIN_EXTRACTORS\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     'ignore': extract_nothing,
+3     'python': extract_python,
+4     'javascript': extract_javascript,
+5 }
+.fi
+
+.SS "TypeAlias babel\&.messages\&.extract\&._CallableExtractionMethod\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  Callable[
+2         [_FileObj | IO[bytes], Mapping[str, _Keyword], Collection[str], Mapping[str, Any]],
+3         Iterable[_ExtractionResult],
+4     ]
+.fi
+
+.SS "TypeAlias babel\&.messages\&.extract\&._ExtractionMethod = \fB_CallableExtractionMethod\fP | str\fC [protected]\fP"
+
+.SS "TypeAlias babel\&.messages\&.extract\&._ExtractionResult = tuple[int, str | tuple[str, \&.\&.\&.], list[str], str | None]\fC [protected]\fP"
+
+.SS "TypeAlias babel\&.messages\&.extract\&._FileExtractionResult = tuple[str, int, str | tuple[str, \&.\&.\&.], list[str], str | None]\fC [protected]\fP"
+
+.SS "TypeAlias babel\&.messages\&.extract\&._Keyword = dict[int | None, _SimpleKeyword] | _SimpleKeyword\fC [protected]\fP"
+
+.SS "dict babel\&.messages\&.extract\&.DEFAULT_KEYWORDS"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     '_': None,
+3     'gettext': None,
+4     'ngettext': (1, 2),
+5     'ugettext': None,
+6     'ungettext': (1, 2),
+7     'dgettext': (2,),
+8     'dngettext': (2, 3),
+9     'N_': None,
+10     'pgettext': ((1, 'c'), 2),
+11     'npgettext': ((1, 'c'), 2, 3),
+12 }
+.fi
+
+.SS "list babel\&.messages\&.extract\&.DEFAULT_MAPPING = [('**\&.py', 'python')]"
+
+.SS "babel\&.messages\&.extract\&.FSTRING_END = getattr(tokenize, 'FSTRING_END', None)"
+
+.SS "babel\&.messages\&.extract\&.FSTRING_MIDDLE = getattr(tokenize, 'FSTRING_MIDDLE', None)"
+
+.SS "babel\&.messages\&.extract\&.FSTRING_START = getattr(tokenize, 'FSTRING_START', None)"
+
+.SS "Final babel\&.messages\&.extract\&.GROUP_NAME = 'babel\&.extractors'"
+
+.SS "babel\&.messages\&.extract\&.TypeAlias"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

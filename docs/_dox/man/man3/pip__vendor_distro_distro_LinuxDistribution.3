@@ -1,0 +1,651 @@
+.TH "pip._vendor.distro.distro.LinuxDistribution" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.distro.distro.LinuxDistribution
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, Optional[bool] \fBinclude_lsb\fP=None, str \fBos_release_file\fP='', str \fBdistro_release_file\fP='', Optional[bool] \fBinclude_uname\fP=None, Optional[str] \fBroot_dir\fP=None, Optional[bool] \fBinclude_oslevel\fP=None)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "Tuple[str, str, str] \fBlinux_distribution\fP (self, bool full_distribution_name=True)"
+.br
+.ti -1c
+.RI "str \fBid\fP (self)"
+.br
+.ti -1c
+.RI "str \fBname\fP (self, bool pretty=False)"
+.br
+.ti -1c
+.RI "str \fBversion\fP (self, bool pretty=False, bool best=False)"
+.br
+.ti -1c
+.RI "Tuple[str, str, str] \fBversion_parts\fP (self, bool best=False)"
+.br
+.ti -1c
+.RI "str \fBmajor_version\fP (self, bool best=False)"
+.br
+.ti -1c
+.RI "str \fBminor_version\fP (self, bool best=False)"
+.br
+.ti -1c
+.RI "str \fBbuild_number\fP (self, bool best=False)"
+.br
+.ti -1c
+.RI "str \fBlike\fP (self)"
+.br
+.ti -1c
+.RI "str \fBcodename\fP (self)"
+.br
+.ti -1c
+.RI "\fBInfoDict\fP \fBinfo\fP (self, bool pretty=False, bool best=False)"
+.br
+.ti -1c
+.RI "Dict[str, str] \fBos_release_info\fP (self)"
+.br
+.ti -1c
+.RI "Dict[str, str] \fBlsb_release_info\fP (self)"
+.br
+.ti -1c
+.RI "Dict[str, str] \fBdistro_release_info\fP (self)"
+.br
+.ti -1c
+.RI "Dict[str, str] \fBuname_info\fP (self)"
+.br
+.ti -1c
+.RI "str \fBoslevel_info\fP (self)"
+.br
+.ti -1c
+.RI "str \fBos_release_attr\fP (self, str attribute)"
+.br
+.ti -1c
+.RI "str \fBlsb_release_attr\fP (self, str attribute)"
+.br
+.ti -1c
+.RI "str \fBdistro_release_attr\fP (self, str attribute)"
+.br
+.ti -1c
+.RI "str \fBuname_attr\fP (self, str attribute)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBroot_dir\fP"
+.br
+.ti -1c
+.RI "\fBetc_dir\fP"
+.br
+.ti -1c
+.RI "\fBusr_lib_dir\fP"
+.br
+.ti -1c
+.RI "\fBos_release_file\fP"
+.br
+.ti -1c
+.RI "\fBdistro_release_file\fP"
+.br
+.ti -1c
+.RI "\fBinclude_lsb\fP"
+.br
+.ti -1c
+.RI "\fBinclude_uname\fP"
+.br
+.ti -1c
+.RI "\fBinclude_oslevel\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Dict[str, str] \fB_os_release_info\fP (self)"
+.br
+.ti -1c
+.RI "Dict[str, str] \fB_lsb_release_info\fP (self)"
+.br
+.ti -1c
+.RI "Dict[str, str] \fB_uname_info\fP (self)"
+.br
+.ti -1c
+.RI "str \fB_oslevel_info\fP (self)"
+.br
+.ti -1c
+.RI "str \fB_debian_version\fP (self)"
+.br
+.ti -1c
+.RI "Dict[str, str] \fB_distro_release_info\fP (self)"
+.br
+.ti -1c
+.RI "Dict[str, str] \fB_parse_distro_release_file\fP (self, str filepath)"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Dict[str, str] \fB_parse_os_release_content\fP (TextIO lines)"
+.br
+.ti -1c
+.RI "Dict[str, str] \fB_parse_lsb_release_content\fP (Iterable[str] lines)"
+.br
+.ti -1c
+.RI "Dict[str, str] \fB_parse_uname_content\fP (Sequence[str] lines)"
+.br
+.ti -1c
+.RI "str \fB_to_str\fP (bytes bytestring)"
+.br
+.ti -1c
+.RI "Dict[str, str] \fB_parse_distro_release_content\fP (str line)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_debian_version\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Provides information about a OS distribution\&.
+
+This package creates a private module-global instance of this class with
+default initialization arguments, that is used by the
+`consolidated accessor functions`_ and `single source accessor functions`_\&.
+By using default initialization arguments, that module-global instance
+returns data about the current OS distribution (i\&.e\&. the distro this
+package runs on)\&.
+
+Normally, it is not necessary to create additional instances of this class\&.
+However, in situations where control is needed over the exact data sources
+that are used, instances of this class can be created with a specific
+distro release file, or a specific os-release file, or without invoking the
+lsb_release command\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.__init__ ( self, Optional[bool]  include_lsb = \fCNone\fP, str  os_release_file = \fC''\fP, str  distro_release_file = \fC''\fP, Optional[bool]  include_uname = \fCNone\fP, Optional[str]  root_dir = \fCNone\fP, Optional[bool]  include_oslevel = \fCNone\fP)"
+
+.PP
+.nf
+The initialization method of this class gathers information from the
+available data sources, and stores that in private instance attributes\&.
+Subsequent access to the information items uses these private instance
+attributes, so that the data sources are read only once\&.
+
+Parameters:
+
+* ``include_lsb`` (bool): Controls whether the
+  `lsb_release command output`_ is included as a data source\&.
+
+  If the lsb_release command is not available in the program execution
+  path, the data source for the lsb_release command will be empty\&.
+
+* ``os_release_file`` (string): The path name of the
+  `os-release file`_ that is to be used as a data source\&.
+
+  An empty string (the default) will cause the default path name to
+  be used (see `os-release file`_ for details)\&.
+
+  If the specified or defaulted os-release file does not exist, the
+  data source for the os-release file will be empty\&.
+
+* ``distro_release_file`` (string): The path name of the
+  `distro release file`_ that is to be used as a data source\&.
+
+  An empty string (the default) will cause a default search algorithm
+  to be used (see `distro release file`_ for details)\&.
+
+  If the specified distro release file does not exist, or if no default
+  distro release file can be found, the data source for the distro
+  release file will be empty\&.
+
+* ``include_uname`` (bool): Controls whether uname command output is
+  included as a data source\&. If the uname command is not available in
+  the program execution path the data source for the uname command will
+  be empty\&.
+
+* ``root_dir`` (string): The absolute path to the root directory to use
+  to find distro-related information files\&. Note that ``include_*``
+  parameters must not be enabled in combination with ``root_dir``\&.
+
+* ``include_oslevel`` (bool): Controls whether (AIX) oslevel command
+  output is included as a data source\&. If the oslevel command is not
+  available in the program execution path the data source will be
+  empty\&.
+
+Public instance attributes:
+
+* ``os_release_file`` (string): The path name of the
+  `os-release file`_ that is actually used as a data source\&. The
+  empty string if no distro release file is used as a data source\&.
+
+* ``distro_release_file`` (string): The path name of the
+  `distro release file`_ that is actually used as a data source\&. The
+  empty string if no distro release file is used as a data source\&.
+
+* ``include_lsb`` (bool): The result of the ``include_lsb`` parameter\&.
+  This controls whether the lsb information will be loaded\&.
+
+* ``include_uname`` (bool): The result of the ``include_uname``
+  parameter\&. This controls whether the uname information will
+  be loaded\&.
+
+* ``include_oslevel`` (bool): The result of the ``include_oslevel``
+  parameter\&. This controls whether (AIX) oslevel information will be
+  loaded\&.
+
+* ``root_dir`` (string): The result of the ``root_dir`` parameter\&.
+  The absolute path to the root directory to use to find distro-related
+  information files\&.
+
+Raises:
+
+* :py:exc:`ValueError`: Initialization parameters combination is not
+   supported\&.
+
+* :py:exc:`OSError`: Some I/O issue with an os-release file or distro
+  release file\&.
+
+* :py:exc:`UnicodeError`: A data source has unexpected characters or
+  uses an unexpected encoding\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " str pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.__repr__ ( self)"
+
+.PP
+.nf
+Return repr of all info
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&._debian_version ( self)\fC [protected]\fP"
+
+.SS " Dict[str, str] pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&._distro_release_info ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Get the information items from the specified distro release file\&.
+
+Returns:
+    A dictionary containing all information items\&.
+
+.fi
+.PP
+ 
+.SS " Dict[str, str] pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&._lsb_release_info ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Get the information items from the lsb_release command output\&.
+
+Returns:
+    A dictionary containing all information items\&.
+
+.fi
+.PP
+ 
+.SS " Dict[str, str] pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&._os_release_info ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Get the information items from the specified os-release file\&.
+
+Returns:
+    A dictionary containing all information items\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&._oslevel_info ( self)\fC [protected]\fP"
+
+.SS " Dict[str, str] pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&._parse_distro_release_content (str line)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+.nf
+Parse a line from a distro release file\&.
+
+Parameters:
+* line: Line from the distro release file\&. Must be a unicode string
+        or a UTF-8 encoded byte string\&.
+
+Returns:
+    A dictionary containing all information items\&.
+
+.fi
+.PP
+ 
+.SS " Dict[str, str] pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&._parse_distro_release_file ( self, str filepath)\fC [protected]\fP"
+
+.PP
+.nf
+Parse a distro release file\&.
+
+Parameters:
+
+* filepath: Path name of the distro release file\&.
+
+Returns:
+    A dictionary containing all information items\&.
+
+.fi
+.PP
+ 
+.SS " Dict[str, str] pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&._parse_lsb_release_content (Iterable[str] lines)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+.nf
+Parse the output of the lsb_release command\&.
+
+Parameters:
+
+* lines: Iterable through the lines of the lsb_release output\&.
+         Each line must be a unicode string or a UTF-8 encoded byte
+         string\&.
+
+Returns:
+    A dictionary containing all information items\&.
+
+.fi
+.PP
+ 
+.SS " Dict[str, str] pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&._parse_os_release_content (TextIO lines)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+.nf
+Parse the lines of an os-release file\&.
+
+Parameters:
+
+* lines: Iterable through the lines in the os-release file\&.
+         Each line must be a unicode string or a UTF-8 encoded byte
+         string\&.
+
+Returns:
+    A dictionary containing all information items\&.
+
+.fi
+.PP
+ 
+.SS " Dict[str, str] pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&._parse_uname_content (Sequence[str] lines)\fC [static]\fP, \fC [protected]\fP"
+
+.SS " str pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&._to_str (bytes bytestring)\fC [static]\fP, \fC [protected]\fP"
+
+.SS " Dict[str, str] pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&._uname_info ( self)\fC [protected]\fP"
+
+.SS " str pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.build_number ( self, bool  best = \fCFalse\fP)"
+
+.PP
+.nf
+Return the build number of the current distribution\&.
+
+For details, see :func:`distro\&.build_number`\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.codename ( self)"
+
+.PP
+.nf
+Return the codename of the OS distribution\&.
+
+For details, see :func:`distro\&.codename`\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.distro_release_attr ( self, str attribute)"
+
+.PP
+.nf
+Return a single named information item from the distro release file
+data source of the OS distribution\&.
+
+For details, see :func:`distro\&.distro_release_attr`\&.
+
+.fi
+.PP
+ 
+.SS " Dict[str, str] pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.distro_release_info ( self)"
+
+.PP
+.nf
+Return a dictionary containing key-value pairs for the information
+items from the distro release file data source of the OS
+distribution\&.
+
+For details, see :func:`distro\&.distro_release_info`\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.id ( self)"
+
+.PP
+.nf
+Return the distro ID of the OS distribution, as a string\&.
+
+For details, see :func:`distro\&.id`\&.
+
+.fi
+.PP
+ 
+.SS " \fBInfoDict\fP pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.info ( self, bool  pretty = \fCFalse\fP, bool  best = \fCFalse\fP)"
+
+.PP
+.nf
+Return certain machine-readable information about the OS
+distribution\&.
+
+For details, see :func:`distro\&.info`\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.like ( self)"
+
+.PP
+.nf
+Return the IDs of distributions that are like the OS distribution\&.
+
+For details, see :func:`distro\&.like`\&.
+
+.fi
+.PP
+ 
+.SS " Tuple[str, str, str] pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.linux_distribution ( self, bool  full_distribution_name = \fCTrue\fP)"
+
+.PP
+.nf
+Return information about the OS distribution that is compatible
+with Python's :func:`platform\&.linux_distribution`, supporting a subset
+of its parameters\&.
+
+For details, see :func:`distro\&.linux_distribution`\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.lsb_release_attr ( self, str attribute)"
+
+.PP
+.nf
+Return a single named information item from the lsb_release command
+output data source of the OS distribution\&.
+
+For details, see :func:`distro\&.lsb_release_attr`\&.
+
+.fi
+.PP
+ 
+.SS " Dict[str, str] pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.lsb_release_info ( self)"
+
+.PP
+.nf
+Return a dictionary containing key-value pairs for the information
+items from the lsb_release command data source of the OS
+distribution\&.
+
+For details, see :func:`distro\&.lsb_release_info`\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.major_version ( self, bool  best = \fCFalse\fP)"
+
+.PP
+.nf
+Return the major version number of the current distribution\&.
+
+For details, see :func:`distro\&.major_version`\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.minor_version ( self, bool  best = \fCFalse\fP)"
+
+.PP
+.nf
+Return the minor version number of the current distribution\&.
+
+For details, see :func:`distro\&.minor_version`\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.name ( self, bool  pretty = \fCFalse\fP)"
+
+.PP
+.nf
+Return the name of the OS distribution, as a string\&.
+
+For details, see :func:`distro\&.name`\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.os_release_attr ( self, str attribute)"
+
+.PP
+.nf
+Return a single named information item from the os-release file data
+source of the OS distribution\&.
+
+For details, see :func:`distro\&.os_release_attr`\&.
+
+.fi
+.PP
+ 
+.SS " Dict[str, str] pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.os_release_info ( self)"
+
+.PP
+.nf
+Return a dictionary containing key-value pairs for the information
+items from the os-release file data source of the OS distribution\&.
+
+For details, see :func:`distro\&.os_release_info`\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.oslevel_info ( self)"
+
+.PP
+.nf
+Return AIX' oslevel command output\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.uname_attr ( self, str attribute)"
+
+.PP
+.nf
+Return a single named information item from the uname command
+output data source of the OS distribution\&.
+
+For details, see :func:`distro\&.uname_attr`\&.
+
+.fi
+.PP
+ 
+.SS " Dict[str, str] pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.uname_info ( self)"
+
+.PP
+.nf
+Return a dictionary containing key-value pairs for the information
+items from the uname command data source of the OS distribution\&.
+
+For details, see :func:`distro\&.uname_info`\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.version ( self, bool  pretty = \fCFalse\fP, bool  best = \fCFalse\fP)"
+
+.PP
+.nf
+Return the version of the OS distribution, as a string\&.
+
+For details, see :func:`distro\&.version`\&.
+
+.fi
+.PP
+ 
+.SS " Tuple[str, str, str] pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.version_parts ( self, bool  best = \fCFalse\fP)"
+
+.PP
+.nf
+Return the version of the OS distribution, as a tuple of version
+numbers\&.
+
+For details, see :func:`distro\&.version_parts`\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&._debian_version\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.distro_release_file"
+
+.SS "pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.etc_dir"
+
+.SS "pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.include_lsb"
+
+.SS "pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.include_oslevel"
+
+.SS "pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.include_uname"
+
+.SS "pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.os_release_file"
+
+.SS "pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.root_dir"
+
+.SS "pip\&._vendor\&.distro\&.distro\&.LinuxDistribution\&.usr_lib_dir"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

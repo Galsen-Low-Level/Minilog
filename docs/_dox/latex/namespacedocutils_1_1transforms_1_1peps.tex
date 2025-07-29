@@ -1,0 +1,69 @@
+\doxysection{docutils.\+transforms.\+peps Namespace Reference}
+\hypertarget{namespacedocutils_1_1transforms_1_1peps}{}\label{namespacedocutils_1_1transforms_1_1peps}\index{docutils.transforms.peps@{docutils.transforms.peps}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1transforms_1_1peps_1_1Contents}{Contents}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1transforms_1_1peps_1_1Headers}{Headers}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1transforms_1_1peps_1_1PEPZero}{PEPZero}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial}{PEPZero\+Special}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1transforms_1_1peps_1_1TargetNotes}{Target\+Notes}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacedocutils_1_1transforms_1_1peps_aab7547579da929ede1486691ad8440ed}{mask\+\_\+email}} (ref, pepno=None)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+tuple \mbox{\hyperlink{namespacedocutils_1_1transforms_1_1peps_a21a254bb4a67e40fa0deb4d8e86dce19}{non\+\_\+masked\+\_\+addresses}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Transforms for PEP processing.
+
+- `Headers`: Used to transform a PEP's initial RFC-2822 header.  It remains a
+  field list, but some entries get processed.
+- `Contents`: Auto-inserts a table of contents.
+- `PEPZero`: Special processing for PEP 0.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacedocutils_1_1transforms_1_1peps_aab7547579da929ede1486691ad8440ed}\label{namespacedocutils_1_1transforms_1_1peps_aab7547579da929ede1486691ad8440ed} 
+\index{docutils.transforms.peps@{docutils.transforms.peps}!mask\_email@{mask\_email}}
+\index{mask\_email@{mask\_email}!docutils.transforms.peps@{docutils.transforms.peps}}
+\doxysubsubsection{\texorpdfstring{mask\_email()}{mask\_email()}}
+{\footnotesize\ttfamily docutils.\+transforms.\+peps.\+mask\+\_\+email (\begin{DoxyParamCaption}\item[{}]{ref,  }\item[{}]{pepno = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Mask the email address in `ref` and return a replacement node.
+
+`ref` is returned unchanged if it contains no email address.
+
+For email addresses such as "user@host", mask the address as "user at
+host" (text) to thwart simple email address harvesters (except for those
+listed in `non_masked_addresses`).  If a PEP number (`pepno`) is given,
+return a reference including a default email subject.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacedocutils_1_1transforms_1_1peps_a21a254bb4a67e40fa0deb4d8e86dce19}\label{namespacedocutils_1_1transforms_1_1peps_a21a254bb4a67e40fa0deb4d8e86dce19} 
+\index{docutils.transforms.peps@{docutils.transforms.peps}!non\_masked\_addresses@{non\_masked\_addresses}}
+\index{non\_masked\_addresses@{non\_masked\_addresses}!docutils.transforms.peps@{docutils.transforms.peps}}
+\doxysubsubsection{\texorpdfstring{non\_masked\_addresses}{non\_masked\_addresses}}
+{\footnotesize\ttfamily tuple docutils.\+transforms.\+peps.\+non\+\_\+masked\+\_\+addresses}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ (\textcolor{stringliteral}{'peps@python.org'},}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'python-\/list@python.org'},}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'python-\/dev@python.org'})}
+
+\end{DoxyCode}

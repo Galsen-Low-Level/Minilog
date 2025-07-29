@@ -1,0 +1,150 @@
+.TH "idna.core" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+idna.core
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBIDNABidiError\fP"
+.br
+.ti -1c
+.RI "class \fBIDNAError\fP"
+.br
+.ti -1c
+.RI "class \fBInvalidCodepoint\fP"
+.br
+.ti -1c
+.RI "class \fBInvalidCodepointContext\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fB_combining_class\fP (int cp)"
+.br
+.ti -1c
+.RI "bool \fB_is_script\fP (str cp, str script)"
+.br
+.ti -1c
+.RI "bytes \fB_punycode\fP (str s)"
+.br
+.ti -1c
+.RI "str \fB_unot\fP (int s)"
+.br
+.ti -1c
+.RI "bool \fBvalid_label_length\fP (Union[bytes, str] label)"
+.br
+.ti -1c
+.RI "bool \fBvalid_string_length\fP (Union[bytes, str] label, bool trailing_dot)"
+.br
+.ti -1c
+.RI "bool \fBcheck_bidi\fP (str label, bool check_ltr=False)"
+.br
+.ti -1c
+.RI "bool \fBcheck_initial_combiner\fP (str label)"
+.br
+.ti -1c
+.RI "bool \fBcheck_hyphen_ok\fP (str label)"
+.br
+.ti -1c
+.RI "None \fBcheck_nfc\fP (str label)"
+.br
+.ti -1c
+.RI "bool \fBvalid_contextj\fP (str label, int pos)"
+.br
+.ti -1c
+.RI "bool \fBvalid_contexto\fP (str label, int pos, bool exception=False)"
+.br
+.ti -1c
+.RI "None \fBcheck_label\fP (Union[str, bytes, bytearray] label)"
+.br
+.ti -1c
+.RI "bytes \fBalabel\fP (str label)"
+.br
+.ti -1c
+.RI "str \fBulabel\fP (Union[str, bytes, bytearray] label)"
+.br
+.ti -1c
+.RI "str \fButs46_remap\fP (str domain, bool std3_rules=True, bool transitional=False)"
+.br
+.ti -1c
+.RI "bytes \fBencode\fP (Union[str, bytes, bytearray] s, bool strict=False, bool uts46=False, bool std3_rules=False, bool transitional=False)"
+.br
+.ti -1c
+.RI "str \fBdecode\fP (Union[str, bytes, bytearray] s, bool strict=False, bool uts46=False, bool std3_rules=False)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fB_virama_combining_class\fP = 9"
+.br
+.ti -1c
+.RI "str \fB_alabel_prefix\fP = b'xn\-\-'"
+.br
+.ti -1c
+.RI "\fB_unicode_dots_re\fP = re\&.compile('[\\u002e\\u3002\\uff0e\\uff61]')"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " int idna\&.core\&._combining_class (int cp)\fC [protected]\fP"
+
+.SS " bool idna\&.core\&._is_script (str cp, str script)\fC [protected]\fP"
+
+.SS " bytes idna\&.core\&._punycode (str s)\fC [protected]\fP"
+
+.SS " str idna\&.core\&._unot (int s)\fC [protected]\fP"
+
+.SS " bytes idna\&.core\&.alabel (str label)"
+
+.SS " bool idna\&.core\&.check_bidi (str label, bool  check_ltr = \fCFalse\fP)"
+
+.SS " bool idna\&.core\&.check_hyphen_ok (str label)"
+
+.SS " bool idna\&.core\&.check_initial_combiner (str label)"
+
+.SS " None idna\&.core\&.check_label (Union[str, bytes, bytearray] label)"
+
+.SS " None idna\&.core\&.check_nfc (str label)"
+
+.SS " str idna\&.core\&.decode (Union[str, bytes, bytearray] s, bool  strict = \fCFalse\fP, bool  uts46 = \fCFalse\fP, bool  std3_rules = \fCFalse\fP)"
+
+.SS " bytes idna\&.core\&.encode (Union[str, bytes, bytearray] s, bool  strict = \fCFalse\fP, bool  uts46 = \fCFalse\fP, bool  std3_rules = \fCFalse\fP, bool  transitional = \fCFalse\fP)"
+
+.SS " str idna\&.core\&.ulabel (Union[str, bytes, bytearray] label)"
+
+.SS " str idna\&.core\&.uts46_remap (str domain, bool  std3_rules = \fCTrue\fP, bool  transitional = \fCFalse\fP)"
+
+.PP
+.nf
+Re-map the characters in the string according to UTS46 processing\&.
+.fi
+.PP
+ 
+.SS " bool idna\&.core\&.valid_contextj (str label, int pos)"
+
+.SS " bool idna\&.core\&.valid_contexto (str label, int pos, bool  exception = \fCFalse\fP)"
+
+.SS " bool idna\&.core\&.valid_label_length (Union[bytes, str] label)"
+
+.SS " bool idna\&.core\&.valid_string_length (Union[bytes, str] label, bool trailing_dot)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "str idna\&.core\&._alabel_prefix = b'xn\-\-'\fC [protected]\fP"
+
+.SS "idna\&.core\&._unicode_dots_re = re\&.compile('[\\u002e\\u3002\\uff0e\\uff61]')\fC [protected]\fP"
+
+.SS "int idna\&.core\&._virama_combining_class = 9\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,61 @@
+\doxysection{sphinx.\+util.\+docstrings Namespace Reference}
+\hypertarget{namespacesphinx_1_1util_1_1docstrings}{}\label{namespacesphinx_1_1util_1_1docstrings}\index{sphinx.util.docstrings@{sphinx.util.docstrings}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+tuple\mbox{[}str\texorpdfstring{$\vert$}{|}None, dict\mbox{[}str, str\mbox{]}\mbox{]} \mbox{\hyperlink{namespacesphinx_1_1util_1_1docstrings_ade5800e3ea653e4ba9e7a673a63b8731}{separate\+\_\+metadata}} (str\texorpdfstring{$\vert$}{|}None s)
+\item 
+list\mbox{[}str\mbox{]} \mbox{\hyperlink{namespacesphinx_1_1util_1_1docstrings_abb6f4473f9d7319294e36844733a1cc6}{prepare\+\_\+docstring}} (str s, int tabsize=8)
+\item 
+list\mbox{[}str\mbox{]} \mbox{\hyperlink{namespacesphinx_1_1util_1_1docstrings_aa3f9bfaa6010dd66f8c63c828e9c7635}{prepare\+\_\+commentdoc}} (str s)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1docstrings_a873509a27382d3f6fa3710f95c48ce64}{field\+\_\+list\+\_\+item\+\_\+re}} = re.\+compile(\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Body_ae328f36dba41528999500b029e98ca6c}{Body.\+patterns}}\mbox{[}\textquotesingle{}field\+\_\+marker\textquotesingle{}\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Utilities for docstring processing.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesphinx_1_1util_1_1docstrings_aa3f9bfaa6010dd66f8c63c828e9c7635}\label{namespacesphinx_1_1util_1_1docstrings_aa3f9bfaa6010dd66f8c63c828e9c7635} 
+\index{sphinx.util.docstrings@{sphinx.util.docstrings}!prepare\_commentdoc@{prepare\_commentdoc}}
+\index{prepare\_commentdoc@{prepare\_commentdoc}!sphinx.util.docstrings@{sphinx.util.docstrings}}
+\doxysubsubsection{\texorpdfstring{prepare\_commentdoc()}{prepare\_commentdoc()}}
+{\footnotesize\ttfamily  list\mbox{[}str\mbox{]} sphinx.\+util.\+docstrings.\+prepare\+\_\+commentdoc (\begin{DoxyParamCaption}\item[{str}]{s }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Extract documentation comment lines (starting with #:) and return them
+as a list of lines.  Returns an empty list if there is no documentation.
+\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1util_1_1docstrings_abb6f4473f9d7319294e36844733a1cc6}\label{namespacesphinx_1_1util_1_1docstrings_abb6f4473f9d7319294e36844733a1cc6} 
+\index{sphinx.util.docstrings@{sphinx.util.docstrings}!prepare\_docstring@{prepare\_docstring}}
+\index{prepare\_docstring@{prepare\_docstring}!sphinx.util.docstrings@{sphinx.util.docstrings}}
+\doxysubsubsection{\texorpdfstring{prepare\_docstring()}{prepare\_docstring()}}
+{\footnotesize\ttfamily  list\mbox{[}str\mbox{]} sphinx.\+util.\+docstrings.\+prepare\+\_\+docstring (\begin{DoxyParamCaption}\item[{str}]{s,  }\item[{int }]{tabsize = {\ttfamily 8} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert a docstring into lines of parseable reST.  Remove common leading
+indentation, where the indentation of the first line is ignored.
+
+Return the docstring as a list of lines usable for inserting into a docutils
+ViewList (used as argument of nested_parse().)  An empty line is added to
+act as a separator between this docstring and following content.
+\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1util_1_1docstrings_ade5800e3ea653e4ba9e7a673a63b8731}\label{namespacesphinx_1_1util_1_1docstrings_ade5800e3ea653e4ba9e7a673a63b8731} 
+\index{sphinx.util.docstrings@{sphinx.util.docstrings}!separate\_metadata@{separate\_metadata}}
+\index{separate\_metadata@{separate\_metadata}!sphinx.util.docstrings@{sphinx.util.docstrings}}
+\doxysubsubsection{\texorpdfstring{separate\_metadata()}{separate\_metadata()}}
+{\footnotesize\ttfamily  tuple\mbox{[}str \texorpdfstring{$\vert$}{|} None, dict\mbox{[}str, str\mbox{]}\mbox{]} sphinx.\+util.\+docstrings.\+separate\+\_\+metadata (\begin{DoxyParamCaption}\item[{str \texorpdfstring{$\vert$}{|} None}]{s }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Separate docstring into metadata and others.\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacesphinx_1_1util_1_1docstrings_a873509a27382d3f6fa3710f95c48ce64}\label{namespacesphinx_1_1util_1_1docstrings_a873509a27382d3f6fa3710f95c48ce64} 
+\index{sphinx.util.docstrings@{sphinx.util.docstrings}!field\_list\_item\_re@{field\_list\_item\_re}}
+\index{field\_list\_item\_re@{field\_list\_item\_re}!sphinx.util.docstrings@{sphinx.util.docstrings}}
+\doxysubsubsection{\texorpdfstring{field\_list\_item\_re}{field\_list\_item\_re}}
+{\footnotesize\ttfamily sphinx.\+util.\+docstrings.\+field\+\_\+list\+\_\+item\+\_\+re = re.\+compile(\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Body_ae328f36dba41528999500b029e98ca6c}{Body.\+patterns}}\mbox{[}\textquotesingle{}field\+\_\+marker\textquotesingle{}\mbox{]})}
+

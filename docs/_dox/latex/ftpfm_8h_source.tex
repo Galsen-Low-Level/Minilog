@@ -1,0 +1,152 @@
+\doxysection{ftpfm.\+h}
+\hypertarget{ftpfm_8h_source}{}\label{ftpfm_8h_source}\index{/home/umar/Desktop/WorkShop/GLL/Ftp-\/FM/include/ftpfm.h@{/home/umar/Desktop/WorkShop/GLL/Ftp-\/FM/include/ftpfm.h}}
+\mbox{\hyperlink{ftpfm_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ @file\ ftpfm.h\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ @author\ 2025\ Umar\ Ba\ <jUmarB@protonmail.com>\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ */}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#if\ !defined(FTPFM)}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ \ FTPFM}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <sys/cdefs.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stdarg.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}config.h"{}}\ \ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#if\ !defined(\_\_GNUC\_\_)\ }}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#\ error\ \ "{}Require\ GNU\ C\ compiler"{}\ }}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif\ \ }}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#pragma\ \ GCC\ \ diagnostic\ \ ignored\ "{}-\/Wvarargs"{}\ }}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ \ \_\_parmreq\ [static\ 1]\ }}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ \ \_\_parmreq\_(\_\_requested\_size)\ [static\ \_\_requested\_size]\ }}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ \ \_\_null\ \ (\_\_ptr\_t)\ 0\ \ }}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ \ \_\_bunit\ \ 1<<3\ }}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ \ nptr\ \ \_\_null}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{/*NOTICE:\ \ this\ macro\ are\ used\ \ for\ annotation*/}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ \ \_Nullable\ \ }}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ \ \_Opac\ }}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifdef\ \ \_\_unused\_\_\ }}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#\ define\ \_\_maybe\_unused\ \_\_unused\_\_\ }}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#else\ \ \ }}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#\ define\ \_\_maybe\_unused\ }}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ \ EMPTY\_SPACE\ (\ (char[2])\{0x20\}\ \ )\ \ \ }}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ \ DESC(\_\_description)\(\backslash\)}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\ \ \_\_description}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ \ DOM\_TITLE(\_\_title,\ \_\_dump)\(\backslash\)}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\ \ sprintf(\_\_dump\ ,\ HTTP\_DIRENDER\_DOCTYPE\ ,\ \_\_title);}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ \_\_STR(x)\ \ \#x\ }}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ STR(x)\ \_\_STR(x)\ \ }}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ CRLF\ \(\backslash\)r\(\backslash\)n\(\backslash\)r\(\backslash\)n\ \ \ \ \ \ }}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ HTTP\_HEADER\_RESPONSE\_OK\ "{}HTTP/1.1\ 200\ OK"{}\ STR(CRLF)\ }}
+\DoxyCodeLine{00047\ \textcolor{comment}{//TODO\ :\ add\ 404\ NO\ RESOURCE\ FOUND\ \ }}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ \ HTTP\_EXTF\_DEF\ \ \ html}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ \ HTTP\_EXTF\_ATL\ \ \ htm}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#ifndef\ \ HTML\_DEFAULT\_RESSOURCE\ }}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#\ define\ HTML\_DEFAULT\_RESSOURCE\ \ \ \ \ \ \ \ "{}index."{}STR(HTTP\_EXTF\_DEF)\ }}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#\ define\ HTML\_DEFAULT\_RESSOURCE\_ALT\ \ \ \ "{}index."{}STR(HTTP\_EXTF\_ATL)\ }}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif\ \ }}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{enum}\ \{\ }
+\DoxyCodeLine{00057\ \ \ \mbox{\hyperlink{ftpfm_8h_a7acfc6e2f2442cbb9d8657e96d73bbec}{METHOD}},\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ METHOD\ METHOD}}
+\DoxyCodeLine{00059\ \ \ \mbox{\hyperlink{ftpfm_8h_a91d87d905a1a09928658b00f7631e913}{RESOURCE}}\ ,\ \ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ RESOURCE\ RESOURCE\ }}
+\DoxyCodeLine{00061\ \ \ \mbox{\hyperlink{ftpfm_8h_a1c6d5de492ac61ad29aec7aa9a436bbf}{VERSION}}\ \ \ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ VERSION\ VERSION}}
+\DoxyCodeLine{00063\ \};\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ \ hget(\_\_item)\ \ \(\backslash\)}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\ \ htftp\_get\_\#\#\_\_item(htftp\_reqhdr\_t\ *)\ }}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#if\ !defined(LISTEN\_BACKLOG)\ }}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#\ define\ LISTEN\_BACKLOG\ \ 4\ }}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ UA\_CURL\ \ \ (1\ <<\ 1)}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ UA\_WGET\ \ \ (1\ <<\ 2)}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ UA\_ALL\ (UA\_CURL|UA\_WGET)\ }}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ HTTP\_REQUEST\_HEADER\_LINE\ \ \ \ \ \ 3\ }}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ HTTP\_GLOBAL\_CONTENT\_DISPATCH\ \ 3\ \ \ }}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ \ HTTP\_REQST\_BUFF\ \ sizeof(\_\_ptr\_t)\ <<\ \ (\_\_bunit\ <<\ 1)\ \ }}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ \ PATH\_MAX\_LENGHT\ \ 1024\ \ }}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ \ \_rblock(sbyte)\ [(sbyte)]\ \ }}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ \ statops(\_\_ops\ ,\ \ \_\_filed,\ \_\_member)(\{\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\ \ \ \ struct\ stat\ \ \_\_sbuff;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\ \ \ \ \_\_ops(\_\_filed\ ,\ \&\_\_sbuff);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\ \ \ \ \_\_sbuff.\_\_member\ ;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\ \ \ \ \})\ }}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ \_\_habsp\ \ (path+1)\ \ }}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ \ HTFTP\_DEFCFG\ \{PF\_INET,\ htons(DEFAULT\_PORT)\ ,htonl(INADDR\_ANY)\}\ \ \ }}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ \_\_getsockfd(\_\_hf)\ \ ((\_\_hf-\/>\_sp)\ >>\ 0x10)\ }}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ \_\_getportnb(\_\_hf)\ \ ((\_\_hf-\/>\_sp)\ \&\ \ 0xffff)\ \ \ }}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ \ SA\ \ struct\ sockaddr\ }}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \mbox{\hyperlink{ftpfm_8h_a6a9591b2322a272bea5766e16f298997}{\_Opac}}\ \textcolor{keyword}{typedef}\ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct____htftp__protocol__header__t}{\_\_htftp\_protocol\_header\_t}}\ \ \mbox{\hyperlink{ftpfm_8h_a899f323e573d13bafb964705614ed962}{htftp\_protocol\_header\_t}}\ ;\ }
+\DoxyCodeLine{00104\ \mbox{\hyperlink{ftpfm_8h_a6a9591b2322a272bea5766e16f298997}{\_Opac}}\ \textcolor{keyword}{typedef}\ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct____htftp__request__header__t}{\_\_htftp\_request\_header\_t}}\ \ \ \mbox{\hyperlink{ftpfm_8h_a4f95c1f88592b223905ac55c7e4f5174}{htftp\_reqhdr\_t}}\ ;\ }
+\DoxyCodeLine{00105\ \mbox{\hyperlink{ftpfm_8h_a6a9591b2322a272bea5766e16f298997}{\_Opac}}\ \textcolor{keyword}{typedef}\ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct____htftp__t}{\_\_htftp\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ftpfm_8h_abf3952d637b75df7895065b2c182142b}{htftp\_t}};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{keyword}{typedef}\ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct____fobject__t}{\_\_fobject\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct____fobject__t}{fobject\_t}}\ ;\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct____fobject__t}{\_\_fobject\_t}}\ \{}
+\DoxyCodeLine{00109\ \ \ \ \textcolor{keywordtype}{char}\ hr\_time\ \ \mbox{\hyperlink{struct____fobject__t_a0e9bd0282e01a15c09a9bbbf99aa3b31}{\_rblock}}(0xff)\ ;\ \ \ }
+\DoxyCodeLine{00110\ \ \ \ \textcolor{keywordtype}{char}\ hr\_size\ \ \mbox{\hyperlink{struct____fobject__t_a34e47fcedf2a46547d41dc3cfe3694d0}{\_rblock}}(0xff);\ \ \ \ }
+\DoxyCodeLine{00111\ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct____fobject__t_a3cf477d96786dc147f072f2f6eb32149}{fsize}}\ ;\ \ \ \ }
+\DoxyCodeLine{00112\ \ \ \ time\_t\ \mbox{\hyperlink{struct____fobject__t_a26c7c9cc2ad0f9b2c593956b3bce1124}{ftime}}\ ;\ \ }
+\DoxyCodeLine{00113\ \};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{typedef}\ void(*\mbox{\hyperlink{ftpfm_8h_a15c4207ec854392cdd0870f8fca1af49}{\_\_htftp\_fcfg\_t}})(\textcolor{keyword}{struct\ }\mbox{\hyperlink{struct____htftp__t}{\_\_htftp\_t}}\ *\ \_\_restrict\_\_\ ,\ \ \textcolor{keywordtype}{void}\ *\ \mbox{\hyperlink{ftpfm_8h_ab42a43b6291cf51c6c3c85301160c078}{\_\_maybe\_unused}}\ \mbox{\hyperlink{ftpfm_8h_a69f810caaafcb9fc3e535656d1ecd179}{\_Nullable}})\ ;\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ \ htftp\_fcfg\ \ \_\_htftp\_fcfg\_t\ \ }}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ TIME\_ASC\ 1\ \ \ \ }}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ TIME\_NUM\ 2\ \ \ \ }}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00122\ \textcolor{keyword}{static}\ \mbox{\hyperlink{ftpfm_8h_a899f323e573d13bafb964705614ed962}{htftp\_protocol\_header\_t}}\ *explode(\mbox{\hyperlink{ftpfm_8h_a899f323e573d13bafb964705614ed962}{htftp\_protocol\_header\_t}}\ *\ \_\_hproto,\ \textcolor{keywordtype}{char}\ *\_\_restrict\_\_\ \_\_raw\_data\ )\ ;\ \ }
+\DoxyCodeLine{00123\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{char}\ *htftp\_list\_dirent\_content(\textcolor{keywordtype}{char}\ *\_\_ftype\ ,\ \ \textcolor{keywordtype}{char}\ *\_\_dump)\ ;\ }
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \ release\_local\_alloc(\textcolor{keywordtype}{char}\ \ **\_arr)\ \_\_attribute((deprecated));\ }
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \ htftp\_prepare(\textcolor{keywordtype}{char}\ *\_\_restrict\_\_\ \_\_global\_content\ ,\ ...)\ ;\ }
+\DoxyCodeLine{00128\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \ setup\_htftp(\textcolor{keyword}{struct}\ \mbox{\hyperlink{struct____htftp__t}{\_\_htftp\_t}}\ \ *\_\_restrict\_\_\ \_\_hf\ ,\ \textcolor{keywordtype}{int}\ \_\_socket\_fd\ ,\ \textcolor{keywordtype}{int}\ \_\_portnumber)\ ;\ }
+\DoxyCodeLine{00129\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \ \_\_use\_defconfig(\textcolor{keyword}{struct}\ \mbox{\hyperlink{struct____htftp__t}{\_\_htftp\_t}}*\ \_\_restrict\_\_\ \_\_hf\ ,\ \textcolor{keywordtype}{void}\ *\ \mbox{\hyperlink{ftpfm_8h_ab42a43b6291cf51c6c3c85301160c078}{\_\_maybe\_unused}}\ \mbox{\hyperlink{ftpfm_8h_a69f810caaafcb9fc3e535656d1ecd179}{\_Nullable}}\ \_\_xtrargs)\ ;}
+\DoxyCodeLine{00130\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{char}\ *\ file\_size\_human\_readable(\mbox{\hyperlink{struct____fobject__t}{fobject\_t}}\ *\ \_\_restrict\_\_\ \_\_fobj);\ }
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00140\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \ htftp\_detect\_user\_agent(\textcolor{keyword}{struct}\ \mbox{\hyperlink{struct____htftp__request__header__t}{\_\_htftp\_request\_header\_t}}\ *\ \_\_restrict\_\_\ \_\_htfpt\_rh\ ,\ \ \textcolor{keywordtype}{int}\ \_\_ua\_target);\ }
+\DoxyCodeLine{00141\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \ append2tablerow(\textcolor{keywordtype}{char}\ \_\_item\ \mbox{\hyperlink{ftpfm_8h_a0471eaf4e479dfbc5d996d5b5e395e30}{\_\_parmreq}},}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \_\_render\_buffer\ \ \mbox{\hyperlink{ftpfm_8h_a0471eaf4e479dfbc5d996d5b5e395e30}{\_\_parmreq}},\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *\ \mbox{\hyperlink{ftpfm_8h_a69f810caaafcb9fc3e535656d1ecd179}{\_Nullable}}\ \_\_restrict\_\_\ subdirent,\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \_\_\_show\_previous);\ }
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \mbox{\hyperlink{ftpfm_8h_abf3952d637b75df7895065b2c182142b}{htftp\_t}}\ \ *\mbox{\hyperlink{ftpfm_8h_aede805874a1502e5cd549d8652c3e47a}{htftp\_start}}(\textcolor{keywordtype}{int}\ \ \_\_port\_number\ ,\ \ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ftpfm_8h_a15c4207ec854392cdd0870f8fca1af49}{\_\_htftp\_fcfg\_t}}\ \mbox{\hyperlink{ftpfm_8h_a69f810caaafcb9fc3e535656d1ecd179}{\_Nullable}}\ \_\_function\_configuration,\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *\ \mbox{\hyperlink{ftpfm_8h_a69f810caaafcb9fc3e535656d1ecd179}{\_Nullable}}\ \ \_\_restrict\_\_\ \_\_extra\_argument)\ \mbox{\hyperlink{baseconv_2bcvrepl_8h_acc8ab5a1d9918513e22eeb8a80215c7c}{\_\_attribute\_\_}}((weak))\ ;\ }
+\DoxyCodeLine{00149\ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{ftpfm_8h_a4982746b0f9f555136adb33db7dc4035}{htftp\_polling}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{struct____htftp__t}{\_\_htftp\_t}}\ \ *\ \_\_restrict\_\_\ \ \_\_hf);\ }
+\DoxyCodeLine{00150\ \mbox{\hyperlink{ftpfm_8h_a4f95c1f88592b223905ac55c7e4f5174}{htftp\_reqhdr\_t}}*\ \mbox{\hyperlink{ftpfm_8h_a94ae966e74ce4dd845b2ba28401e114a}{htftp\_parse\_request}}(\ \textcolor{keywordtype}{char}\ \_\_htftp\_buffer\ \mbox{\hyperlink{ftpfm_8h_a0471eaf4e479dfbc5d996d5b5e395e30}{\_\_parmreq}});\ }
+\DoxyCodeLine{00151\ \textcolor{keywordtype}{char}\ *\ \mbox{\hyperlink{ftpfm_8h_a2dd02a5ee097a182cbdc28482b9f982f}{htftp\_get\_requested\_content}}(\mbox{\hyperlink{ftpfm_8h_a4f95c1f88592b223905ac55c7e4f5174}{htftp\_reqhdr\_t}}\ *\ \_\_restrict\_\_\ \_\_hproto,}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *\ \_\_restrict\_\_\ \_\_target\_path);\ }
+\DoxyCodeLine{00153\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ftpfm_8h_ab3424af2f0dcfd9d7eec01d46f6afed8}{htftp\_close}}(\textcolor{keyword}{struct}\ \ \mbox{\hyperlink{struct____htftp__t}{\_\_htftp\_t}}\ *\ \_\_restrict\_\_\ \_\_hf\ );}
+\DoxyCodeLine{00154\ \textcolor{keywordtype}{char}\ *\ \mbox{\hyperlink{ftpfm_8h_ae9ff2f69117b2a0375cc55ac1639c410}{htftp\_read\_content}}(\textcolor{keywordtype}{int}\ \_\_user\_agent\ ,\ \textcolor{keywordtype}{char}\ *\_\_restrict\_\_\ \_\_filename\ ,\ \textcolor{keywordtype}{char}\ *\ \_\_restrict\_\_\ \ \_\_dump)\ ;\ }
+\DoxyCodeLine{00155\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ftpfm_8h_a8bbb0d20516992e6cf8cdc6bbb1c6c16}{htftp\_transmission}}(\textcolor{keywordtype}{int}\ \ \_\_user\_agent,\ \textcolor{keywordtype}{char}\ \ \_\_content\_delivry\ \mbox{\hyperlink{ftpfm_8h_a0471eaf4e479dfbc5d996d5b5e395e30}{\_\_parmreq}})\ ;\ }
+\DoxyCodeLine{00156\ \mbox{\hyperlink{struct____fobject__t}{fobject\_t}}\ *\ \mbox{\hyperlink{ftpfm_8h_aadd20b0decc5df25d74d591021cbd129}{file\_detail}}(\mbox{\hyperlink{struct____fobject__t}{fobject\_t}}\ *\_\_restrict\_\_\ \ \_\_fobj\ ,}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *\_\_restrict\_\_\ \_\_fitem,}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_\_tfmtopt);\ }
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

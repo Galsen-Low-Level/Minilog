@@ -1,0 +1,341 @@
+.TH "pygments.formatters.rtf.RtfFormatter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.formatters.rtf.RtfFormatter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpygments\&.formatter\&.Formatter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fBformat_unencoded\fP (self, tokensource, outfile)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.formatter\&.Formatter\fP
+.in +1c
+.ti -1c
+.RI "\fBget_style_defs\fP (self, arg='')"
+.br
+.ti -1c
+.RI "\fBformat\fP (self, tokensource, outfile)"
+.br
+.ti -1c
+.RI "\fB__class_getitem__\fP (cls, \fBname\fP)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBhex_to_rtf_color\fP (hex_color)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBfontface\fP"
+.br
+.ti -1c
+.RI "\fBfontsize\fP"
+.br
+.ti -1c
+.RI "\fBlinenos\fP"
+.br
+.ti -1c
+.RI "\fBlineno_fontsize\fP"
+.br
+.ti -1c
+.RI "\fBlineno_padding\fP"
+.br
+.ti -1c
+.RI "\fBlinenostart\fP"
+.br
+.ti -1c
+.RI "\fBlinenostep\fP"
+.br
+.ti -1c
+.RI "\fBhl_linenostart\fP"
+.br
+.ti -1c
+.RI "\fBhl_color\fP"
+.br
+.ti -1c
+.RI "\fBhl_lines\fP"
+.br
+.ti -1c
+.RI "\fBlineno_color\fP"
+.br
+.ti -1c
+.RI "\fBcolor_mapping\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpygments\&.formatter\&.Formatter\fP
+.in +1c
+.ti -1c
+.RI "\fBstyle\fP"
+.br
+.ti -1c
+.RI "\fBfull\fP"
+.br
+.ti -1c
+.RI "\fBtitle\fP"
+.br
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = 'RTF'"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = ['rtf']"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = ['*\&.rtf']"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpygments\&.formatter\&.Formatter\fP
+.in +1c
+.ti -1c
+.RI "\fBname\fP = None"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = []"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = []"
+.br
+.ti -1c
+.RI "bool \fBunicodeoutput\fP = True"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_escape\fP (self, text)"
+.br
+.ti -1c
+.RI "\fB_escape_text\fP (self, text)"
+.br
+.ti -1c
+.RI "\fB_split_tokens_on_newlines\fP (self, tokensource)"
+.br
+.ti -1c
+.RI "\fB_create_color_mapping\fP (self)"
+.br
+.ti -1c
+.RI "\fB_lineno_template\fP (self)"
+.br
+.ti -1c
+.RI "\fB_hl_open_str\fP (self)"
+.br
+.ti -1c
+.RI "\fB_rtf_header\fP (self)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_hl_open_str\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Format tokens as RTF markup\&. This formatter automatically outputs full RTF
+documents with color information and other useful stuff\&. Perfect for Copy and
+Paste into Microsoft(R) Word(R) documents\&.
+
+Please note that ``encoding`` and ``outencoding`` options are ignored\&.
+The RTF format is ASCII natively, but handles unicode characters correctly
+thanks to escape sequences\&.
+
+\&.\&. versionadded:: 0\&.6
+
+Additional options accepted:
+
+`style`
+    The style to use, can be a string or a Style subclass (default:
+    ``'default'``)\&.
+
+`fontface`
+    The used font family, for example ``Bitstream Vera Sans``\&. Defaults to
+    some generic font which is supposed to have fixed width\&.
+
+`fontsize`
+    Size of the font used\&. Size is specified in half points\&. The
+    default is 24 half-points, giving a size 12 font\&.
+
+    \&.\&. versionadded:: 2\&.0
+
+`linenos`
+    Turn on line numbering (default: ``False``)\&.
+
+    \&.\&. versionadded:: 2\&.18
+
+`lineno_fontsize`
+    Font size for line numbers\&. Size is specified in half points
+    (default: `fontsize`)\&. 
+
+    \&.\&. versionadded:: 2\&.18
+
+`lineno_padding`
+    Number of spaces between the (inline) line numbers and the
+    source code (default: ``2``)\&.
+
+    \&.\&. versionadded:: 2\&.18
+
+`linenostart`
+    The line number for the first line (default: ``1``)\&.
+
+    \&.\&. versionadded:: 2\&.18
+
+`linenostep`
+    If set to a number n > 1, only every nth line number is printed\&.
+
+    \&.\&. versionadded:: 2\&.18
+
+`lineno_color`
+    Color for line numbers specified as a hex triplet, e\&.g\&. ``'5e5e5e'``\&. 
+    Defaults to the style's line number color if it is a hex triplet, 
+    otherwise ansi bright black\&.
+
+    \&.\&. versionadded:: 2\&.18
+
+`hl_lines`
+    Specify a list of lines to be highlighted, as line numbers separated by
+    spaces, e\&.g\&. ``'3 7 8'``\&. The line numbers are relative to the input 
+    (i\&.e\&. the first line is line 1) unless `hl_linenostart` is set\&.
+
+    \&.\&. versionadded:: 2\&.18
+
+`hl_color`
+    Color for highlighting the lines specified in `hl_lines`, specified as 
+    a hex triplet (default: style's `highlight_color`)\&.
+
+    \&.\&. versionadded:: 2\&.18
+
+`hl_linenostart`
+    If set to ``True`` line numbers in `hl_lines` are specified
+    relative to `linenostart` (default ``False``)\&.
+
+    \&.\&. versionadded:: 2\&.18
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&.__init__ ( self, ** options)"
+
+.PP
+.nf
+    Additional options accepted:
+
+    ``fontface``
+        Name of the font used\&. Could for example be ``'Courier New'``
+        to further specify the default which is ``'\\fmodern'``\&. The RTF
+        specification claims that ``\\fmodern`` are 'Fixed-pitch serif
+        and sans serif fonts'\&. Hope every RTF implementation thinks
+        the same about modern\&.\&.\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpygments\&.formatter\&.Formatter\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&._create_color_mapping ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Create a mapping of style hex colors to index/offset in
+the RTF color table\&.
+
+.fi
+.PP
+ 
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&._escape ( self,  text)\fC [protected]\fP"
+
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&._escape_text ( self,  text)\fC [protected]\fP"
+
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&._hl_open_str ( self)\fC [protected]\fP"
+
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&._lineno_template ( self)\fC [protected]\fP"
+
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&._rtf_header ( self)\fC [protected]\fP"
+
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&._split_tokens_on_newlines ( self,  tokensource)\fC [protected]\fP"
+
+.PP
+.nf
+Split tokens containing newline characters into multiple token
+each representing a line of the input file\&. Needed for numbering
+lines of e\&.g\&. multiline comments\&.
+
+.fi
+.PP
+ 
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&.format_unencoded ( self,  tokensource,  outfile)"
+
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&.hex_to_rtf_color ( hex_color)\fC [static]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&._hl_open_str\fC [protected]\fP"
+
+.SS "list pygments\&.formatters\&.rtf\&.RtfFormatter\&.aliases = ['rtf']\fC [static]\fP"
+
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&.color_mapping"
+
+.SS "list pygments\&.formatters\&.rtf\&.RtfFormatter\&.filenames = ['*\&.rtf']\fC [static]\fP"
+
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&.fontface"
+
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&.fontsize"
+
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&.hl_color"
+
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&.hl_linenostart"
+
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&.hl_lines"
+
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&.lineno_color"
+
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&.lineno_fontsize"
+
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&.lineno_padding"
+
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&.linenos"
+
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&.linenostart"
+
+.SS "pygments\&.formatters\&.rtf\&.RtfFormatter\&.linenostep"
+
+.SS "str pygments\&.formatters\&.rtf\&.RtfFormatter\&.name = 'RTF'\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

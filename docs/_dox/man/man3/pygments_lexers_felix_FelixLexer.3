@@ -1,0 +1,351 @@
+.TH "pygments.lexers.felix.FelixLexer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.lexers.felix.FelixLexer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpygments\&.lexer\&.RegexLexer\fP\&.
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = 'Felix'"
+.br
+.ti -1c
+.RI "str \fBurl\fP = 'http://www\&.felix\-lang\&.org'"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = ['felix', 'flx']"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = ['*\&.flx', '*\&.flxh']"
+.br
+.ti -1c
+.RI "list \fBmimetypes\fP = ['text/x\-felix']"
+.br
+.ti -1c
+.RI "str \fBversion_added\fP = '1\&.2'"
+.br
+.ti -1c
+.RI "tuple \fBpreproc\fP"
+.br
+.ti -1c
+.RI "tuple \fBkeywords\fP"
+.br
+.ti -1c
+.RI "tuple \fBkeyword_directives\fP"
+.br
+.ti -1c
+.RI "tuple \fBkeyword_declarations\fP"
+.br
+.ti -1c
+.RI "tuple \fBkeyword_types\fP"
+.br
+.ti -1c
+.RI "tuple \fBkeyword_constants\fP"
+.br
+.ti -1c
+.RI "tuple \fBoperator_words\fP"
+.br
+.ti -1c
+.RI "tuple \fBname_builtins\fP"
+.br
+.ti -1c
+.RI "tuple \fBname_pseudo\fP"
+.br
+.ti -1c
+.RI "str \fBdecimal_suffixes\fP = '([tTsSiIlLvV]|ll|LL|([iIuU])(8|16|32|64))?'"
+.br
+.ti -1c
+.RI "dict \fBtokens\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpygments\&.lexer\&.RegexLexer\fP
+.in +1c
+.ti -1c
+.RI "\fBflags\fP = re\&.MULTILINE"
+.br
+.ti -1c
+.RI "dict \fBtokens\fP = {}"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fBname\fP = None"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = []"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBalias_filenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBmimetypes\fP = []"
+.br
+.ti -1c
+.RI "int \fBpriority\fP = 0"
+.br
+.ti -1c
+.RI "\fBurl\fP = None"
+.br
+.ti -1c
+.RI "\fBversion_added\fP = None"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.RegexLexer\fP
+.in +1c
+.ti -1c
+.RI "\fBget_tokens_unprocessed\fP (self, text, stack=('root',))"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd_filter\fP (self, filter_, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fBanalyse_text\fP (text)"
+.br
+.ti -1c
+.RI "\fBget_tokens\fP (self, text, unfiltered=False)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.LexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fB__new__\fP (mcs, name, bases, d)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.RegexLexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fBprocess_tokendef\fP (cls, name, tokendefs=None)"
+.br
+.ti -1c
+.RI "\fBget_tokendefs\fP (cls)"
+.br
+.ti -1c
+.RI "\fB__call__\fP (cls, *args, **kwds)"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBstripnl\fP"
+.br
+.ti -1c
+.RI "\fBstripall\fP"
+.br
+.ti -1c
+.RI "\fBensurenl\fP"
+.br
+.ti -1c
+.RI "\fBtabsize\fP"
+.br
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBfilters\fP"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB_preprocess_lexer_input\fP (self, text)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpygments\&.lexer\&.RegexLexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fB_process_regex\fP (cls, regex, rflags, state)"
+.br
+.ti -1c
+.RI "\fB_process_token\fP (cls, token)"
+.br
+.ti -1c
+.RI "\fB_process_new_state\fP (cls, new_state, unprocessed, processed)"
+.br
+.ti -1c
+.RI "\fB_process_state\fP (cls, unprocessed, processed, state)"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBpygments\&.lexer\&.RegexLexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fB_all_tokens\fP"
+.br
+.ti -1c
+.RI "\fB_tmpname\fP"
+.br
+.ti -1c
+.RI "\fB_tokens\fP"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB_example\fP = None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+For Felix source code\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "list pygments\&.lexers\&.felix\&.FelixLexer\&.aliases = ['felix', 'flx']\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.felix\&.FelixLexer\&.decimal_suffixes = '([tTsSiIlLvV]|ll|LL|([iIuU])(8|16|32|64))?'\fC [static]\fP"
+
+.SS "list pygments\&.lexers\&.felix\&.FelixLexer\&.filenames = ['*\&.flx', '*\&.flxh']\fC [static]\fP"
+
+.SS "tuple pygments\&.lexers\&.felix\&.FelixLexer\&.keyword_constants\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  (
+        'false', 'true',
+    )
+.fi
+
+.SS "tuple pygments\&.lexers\&.felix\&.FelixLexer\&.keyword_declarations\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  (
+        'def', 'let', 'ref', 'val', 'var',
+    )
+.fi
+
+.SS "tuple pygments\&.lexers\&.felix\&.FelixLexer\&.keyword_directives\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  (
+        '_gc_pointer', '_gc_type', 'body', 'comment', 'const', 'export',
+        'header', 'inline', 'lval', 'macro', 'noinline', 'noreturn',
+        'package', 'private', 'pod', 'property', 'public', 'publish',
+        'requires', 'todo', 'virtual', 'use',
+    )
+.fi
+
+.SS "tuple pygments\&.lexers\&.felix\&.FelixLexer\&.keyword_types\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  (
+        'unit', 'void', 'any', 'bool',
+        'byte',  'offset',
+        'address', 'caddress', 'cvaddress', 'vaddress',
+        'tiny', 'short', 'int', 'long', 'vlong',
+        'utiny', 'ushort', 'vshort', 'uint', 'ulong', 'uvlong',
+        'int8', 'int16', 'int32', 'int64',
+        'uint8', 'uint16', 'uint32', 'uint64',
+        'float', 'double', 'ldouble',
+        'complex', 'dcomplex', 'lcomplex',
+        'imaginary', 'dimaginary', 'limaginary',
+        'char', 'wchar', 'uchar',
+        'charp', 'charcp', 'ucharp', 'ucharcp',
+        'string', 'wstring', 'ustring',
+        'cont',
+        'array', 'varray', 'list',
+        'lvalue', 'opt', 'slice',
+    )
+.fi
+
+.SS "tuple pygments\&.lexers\&.felix\&.FelixLexer\&.keywords\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  (
+        '_', '_deref', 'all', 'as',
+        'assert', 'attempt', 'call', 'callback', 'case', 'caseno', 'cclass',
+        'code', 'compound', 'ctypes', 'do', 'done', 'downto', 'elif', 'else',
+        'endattempt', 'endcase', 'endif', 'endmatch', 'enum', 'except',
+        'exceptions', 'expect', 'finally', 'for', 'forall', 'forget', 'fork',
+        'functor', 'goto', 'ident', 'if', 'incomplete', 'inherit', 'instance',
+        'interface', 'jump', 'lambda', 'loop', 'match', 'module', 'namespace',
+        'new', 'noexpand', 'nonterm', 'obj', 'of', 'open', 'parse', 'raise',
+        'regexp', 'reglex', 'regmatch', 'rename', 'return', 'the', 'then',
+        'to', 'type', 'typecase', 'typedef', 'typematch', 'typeof', 'upto',
+        'when', 'whilst', 'with', 'yield',
+    )
+.fi
+
+.SS "list pygments\&.lexers\&.felix\&.FelixLexer\&.mimetypes = ['text/x\-felix']\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.felix\&.FelixLexer\&.name = 'Felix'\fC [static]\fP"
+
+.SS "tuple pygments\&.lexers\&.felix\&.FelixLexer\&.name_builtins\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  (
+        '_svc', 'while',
+    )
+.fi
+
+.SS "tuple pygments\&.lexers\&.felix\&.FelixLexer\&.name_pseudo\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  (
+        'root', 'self', 'this',
+    )
+.fi
+
+.SS "tuple pygments\&.lexers\&.felix\&.FelixLexer\&.operator_words\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  (
+        'and', 'not', 'in', 'is', 'isin', 'or', 'xor',
+    )
+.fi
+
+.SS "tuple pygments\&.lexers\&.felix\&.FelixLexer\&.preproc\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  (
+        'elif', 'else', 'endif', 'if', 'ifdef', 'ifndef',
+    )
+.fi
+
+.SS "dict pygments\&.lexers\&.felix\&.FelixLexer\&.tokens\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.felix\&.FelixLexer\&.url = 'http://www\&.felix\-lang\&.org'\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.felix\&.FelixLexer\&.version_added = '1\&.2'\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

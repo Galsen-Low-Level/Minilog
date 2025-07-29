@@ -1,0 +1,183 @@
+.TH "pygments.formatter.Formatter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.formatter.Formatter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBdocutils\&.writers\&.odf_odt\&.pygmentsformatter\&.OdtPygmentsFormatter\fP, \fBpygments\&.formatters\&.bbcode\&.BBCodeFormatter\fP, \fBpygments\&.formatters\&.groff\&.GroffFormatter\fP, \fBpygments\&.formatters\&.html\&.HtmlFormatter\fP, \fBpygments\&.formatters\&.img\&.ImageFormatter\fP, \fBpygments\&.formatters\&.irc\&.IRCFormatter\fP, \fBpygments\&.formatters\&.latex\&.LatexFormatter\fP, \fBpygments\&.formatters\&.other\&.NullFormatter\fP, \fBpygments\&.formatters\&.other\&.RawTokenFormatter\fP, \fBpygments\&.formatters\&.other\&.TestcaseFormatter\fP, \fBpygments\&.formatters\&.pangomarkup\&.PangoMarkupFormatter\fP, \fBpygments\&.formatters\&.rtf\&.RtfFormatter\fP, \fBpygments\&.formatters\&.svg\&.SvgFormatter\fP, \fBpygments\&.formatters\&.terminal256\&.Terminal256Formatter\fP, and \fBpygments\&.formatters\&.terminal\&.TerminalFormatter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fBget_style_defs\fP (self, arg='')"
+.br
+.ti -1c
+.RI "\fBformat\fP (self, tokensource, outfile)"
+.br
+.ti -1c
+.RI "\fB__class_getitem__\fP (cls, \fBname\fP)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBstyle\fP"
+.br
+.ti -1c
+.RI "\fBfull\fP"
+.br
+.ti -1c
+.RI "\fBtitle\fP"
+.br
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBname\fP = None"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = []"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = []"
+.br
+.ti -1c
+.RI "bool \fBunicodeoutput\fP = True"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Converts a token stream to text\&.
+
+Formatters should have attributes to help selecting them\&. These
+are similar to the corresponding :class:`~pygments\&.lexer\&.Lexer`
+attributes\&.
+
+\&.\&. autoattribute:: name
+   :no-value:
+
+\&.\&. autoattribute:: aliases
+   :no-value:
+
+\&.\&. autoattribute:: filenames
+   :no-value:
+
+You can pass options as keyword arguments to the constructor\&.
+All formatters accept these basic options:
+
+``style``
+    The style to use, can be a string or a Style subclass
+    (default: 'default')\&. Not used by e\&.g\&. the
+    TerminalFormatter\&.
+``full``
+    Tells the formatter to output a 'full' document, i\&.e\&.
+    a complete self-contained document\&. This doesn't have
+    any effect for some formatters (default: false)\&.
+``title``
+    If ``full`` is true, the title that should be used to
+    caption the document (default: '')\&.
+``encoding``
+    If given, must be an encoding name\&. This will be used to
+    convert the Unicode token strings to byte strings in the
+    output\&. If it is '' or None, Unicode strings will be written
+    to the output file, which most file-like objects do not
+    support (default: None)\&.
+``outencoding``
+    Overrides ``encoding`` if given\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pygments\&.formatter\&.Formatter\&.__init__ ( self, ** options)"
+
+.PP
+.nf
+As with lexers, this constructor takes arbitrary optional arguments,
+and if you override it, you should first process your own options, then
+call the base class implementation\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpygments\&.formatters\&.bbcode\&.BBCodeFormatter\fP, \fBpygments\&.formatters\&.groff\&.GroffFormatter\fP, \fBpygments\&.formatters\&.html\&.HtmlFormatter\fP, \fBpygments\&.formatters\&.img\&.ImageFormatter\fP, \fBpygments\&.formatters\&.irc\&.IRCFormatter\fP, \fBpygments\&.formatters\&.latex\&.LatexFormatter\fP, \fBpygments\&.formatters\&.other\&.RawTokenFormatter\fP, \fBpygments\&.formatters\&.other\&.TestcaseFormatter\fP, \fBpygments\&.formatters\&.pangomarkup\&.PangoMarkupFormatter\fP, \fBpygments\&.formatters\&.rtf\&.RtfFormatter\fP, \fBpygments\&.formatters\&.svg\&.SvgFormatter\fP, \fBpygments\&.formatters\&.terminal\&.TerminalFormatter\fP, \fBpygments\&.formatters\&.terminal256\&.Terminal256Formatter\fP, and \fBdocutils\&.writers\&.odf_odt\&.pygmentsformatter\&.OdtPygmentsFormatter\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "pygments\&.formatter\&.Formatter\&.__class_getitem__ ( cls,  name)"
+
+.SS "pygments\&.formatter\&.Formatter\&.format ( self,  tokensource,  outfile)"
+
+.PP
+.nf
+This method must format the tokens from the `tokensource` iterable and
+write the formatted version to the file object `outfile`\&.
+
+Formatter options can control how exactly the tokens are converted\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBdocutils\&.writers\&.odf_odt\&.pygmentsformatter\&.OdtPygmentsProgFormatter\fP, \fBdocutils\&.writers\&.odf_odt\&.pygmentsformatter\&.OdtPygmentsLaTeXFormatter\fP, \fBpygments\&.formatters\&.img\&.ImageFormatter\fP, \fBpygments\&.formatters\&.other\&.NullFormatter\fP, \fBpygments\&.formatters\&.other\&.RawTokenFormatter\fP, \fBpygments\&.formatters\&.other\&.TestcaseFormatter\fP, \fBpygments\&.formatters\&.terminal\&.TerminalFormatter\fP, and \fBpygments\&.formatters\&.terminal256\&.Terminal256Formatter\fP\&.
+.SS "pygments\&.formatter\&.Formatter\&.get_style_defs ( self,  arg = \fC''\fP)"
+
+.PP
+.nf
+This method must return statements or declarations suitable to define
+the current style for subsequent highlighted text (e\&.g\&. CSS classes
+in the `HTMLFormatter`)\&.
+
+The optional argument `arg` can be used to modify the generation and
+is formatter dependent (it is standardized because it can be given on
+the command line)\&.
+
+This method is called by the ``-S`` :doc:`command-line option <cmdline>`,
+the `arg` is then given by the ``-a`` option\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpygments\&.formatters\&.img\&.ImageFormatter\fP, \fBpygments\&.formatters\&.latex\&.LatexFormatter\fP, and \fBpygments\&.formatters\&.html\&.HtmlFormatter\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "list pygments\&.formatter\&.Formatter\&.aliases = []\fC [static]\fP"
+
+.SS "pygments\&.formatter\&.Formatter\&.encoding"
+
+.SS "list pygments\&.formatter\&.Formatter\&.filenames = []\fC [static]\fP"
+
+.SS "pygments\&.formatter\&.Formatter\&.full"
+
+.SS "pygments\&.formatter\&.Formatter\&.name = None\fC [static]\fP"
+
+.SS "pygments\&.formatter\&.Formatter\&.options"
+
+.SS "pygments\&.formatter\&.Formatter\&.style"
+
+.SS "pygments\&.formatter\&.Formatter\&.title"
+
+.SS "bool pygments\&.formatter\&.Formatter\&.unicodeoutput = True\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

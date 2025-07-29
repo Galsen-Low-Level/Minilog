@@ -1,0 +1,94 @@
+.TH "webob.acceptparse.AcceptEncoding" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webob.acceptparse.AcceptEncoding
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.PP
+Inherited by \fBwebob\&.acceptparse\&.AcceptEncodingValidHeader\fP, and \fBwebob\&.acceptparse\&._AcceptEncodingInvalidOrNoHeader\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBparse\fP (cls, value)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcodings_re\fP = \fBtoken_re\fP"
+.br
+.ti -1c
+.RI "\fBcodings_n_weight_re\fP = \fB_item_n_weight_re\fP(item_re=\fBcodings_re\fP)"
+.br
+.ti -1c
+.RI "\fBcodings_n_weight_compiled_re\fP = re\&.compile(\fBcodings_n_weight_re\fP)"
+.br
+.ti -1c
+.RI "\fBaccept_encoding_compiled_re\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_python_value_to_header_str\fP (cls, value)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Represent an ``Accept-Encoding`` header\&.
+
+Base class for :class:`AcceptEncodingValidHeader`,
+:class:`AcceptEncodingNoHeader`, and :class:`AcceptEncodingInvalidHeader`\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "webob\&.acceptparse\&.AcceptEncoding\&._python_value_to_header_str ( cls,  value)\fC [protected]\fP"
+
+.SS "webob\&.acceptparse\&.AcceptEncoding\&.parse ( cls,  value)"
+
+.PP
+.nf
+Parse an ``Accept-Encoding`` header\&.
+
+:param value: (``str``) header value
+:return: If `value` is a valid ``Accept-Encoding`` header, returns an
+         iterator of (codings, quality value) tuples, as parsed from
+         the header from left to right\&.
+:raises ValueError: if `value` is an invalid header
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "webob\&.acceptparse\&.AcceptEncoding\&.accept_encoding_compiled_re\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  _list_0_or_more__compiled_re(
+        element_re=codings_n_weight_re,
+    )
+.fi
+
+.SS "webob\&.acceptparse\&.AcceptEncoding\&.codings_n_weight_compiled_re = re\&.compile(\fBcodings_n_weight_re\fP)\fC [static]\fP"
+
+.SS "webob\&.acceptparse\&.AcceptEncoding\&.codings_n_weight_re = \fB_item_n_weight_re\fP(item_re=\fBcodings_re\fP)\fC [static]\fP"
+
+.SS "webob\&.acceptparse\&.AcceptEncoding\&.codings_re = \fBtoken_re\fP\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,226 @@
+.TH "webob.cookies.CookieProfile" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webob.cookies.CookieProfile
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.PP
+Inherited by \fBwebob\&.cookies\&.SignedCookieProfile\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBcookie_name\fP, \fBsecure\fP=False, \fBmax_age\fP=None, \fBhttponly\fP=None, \fBsamesite\fP=None, \fBpath\fP='/', \fBdomains\fP=None, \fBserializer\fP=None)"
+.br
+.ti -1c
+.RI "\fB__call__\fP (self, \fBrequest\fP)"
+.br
+.ti -1c
+.RI "\fBbind\fP (self, \fBrequest\fP)"
+.br
+.ti -1c
+.RI "\fBget_value\fP (self)"
+.br
+.ti -1c
+.RI "\fBset_cookies\fP (self, response, value, \fBdomains\fP=\fB_default\fP, \fBmax_age\fP=\fB_default\fP, \fBpath\fP=\fB_default\fP, \fBsecure\fP=\fB_default\fP, \fBhttponly\fP=\fB_default\fP, \fBsamesite\fP=\fB_default\fP)"
+.br
+.ti -1c
+.RI "\fBget_headers\fP (self, value, \fBdomains\fP=\fB_default\fP, \fBmax_age\fP=\fB_default\fP, \fBpath\fP=\fB_default\fP, \fBsecure\fP=\fB_default\fP, \fBhttponly\fP=\fB_default\fP, \fBsamesite\fP=\fB_default\fP)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcookie_name\fP"
+.br
+.ti -1c
+.RI "\fBsecure\fP"
+.br
+.ti -1c
+.RI "\fBmax_age\fP"
+.br
+.ti -1c
+.RI "\fBhttponly\fP"
+.br
+.ti -1c
+.RI "\fBsamesite\fP"
+.br
+.ti -1c
+.RI "\fBpath\fP"
+.br
+.ti -1c
+.RI "\fBdomains\fP"
+.br
+.ti -1c
+.RI "\fBserializer\fP"
+.br
+.ti -1c
+.RI "\fBrequest\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_get_cookies\fP (self, value, \fBdomains\fP, \fBmax_age\fP, \fBpath\fP, \fBsecure\fP, \fBhttponly\fP, \fBsamesite\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A helper class that helps bring some sanity to the insanity that is cookie
+handling\&.
+
+The helper is capable of generating multiple cookies if necessary to
+support subdomains and parent domains\&.
+
+``cookie_name``
+  The name of the cookie used for sessioning\&. Default: ``'session'``\&.
+
+``max_age``
+  The maximum age of the cookie used for sessioning (in seconds)\&.
+  Default: ``None`` (browser scope)\&.
+
+``secure``
+  The 'secure' flag of the session cookie\&. Default: ``False``\&.
+
+``httponly``
+  Hide the cookie from Javascript by setting the 'HttpOnly' flag of the
+  session cookie\&. Default: ``False``\&.
+
+``samesite``
+  The 'SameSite' attribute of the cookie, can be either ``b'strict'``,
+  ``b'lax'``, ``b'none'``, or ``None``\&.
+
+  For more information please see the ``samesite`` documentation in
+  :meth:`webob\&.cookies\&.make_cookie`
+
+``path``
+  The path used for the session cookie\&. Default: ``'/'``\&.
+
+``domains``
+  The domain(s) used for the session cookie\&. Default: ``None`` (no domain)\&.
+  Can be passed an iterable containing multiple domains, this will set
+  multiple cookies one for each domain\&.
+
+``serializer``
+  An object with two methods: ``loads`` and ``dumps``\&.  The ``loads`` method
+  should accept a bytestring and return a Python object\&.  The ``dumps``
+  method should accept a Python object and return bytes\&.  A ``ValueError``
+  should be raised for malformed inputs\&.  Default: ``None``, which will use
+  a derivation of :func:`json\&.dumps` and :func:`json\&.loads`\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "webob\&.cookies\&.CookieProfile\&.__init__ ( self,  cookie_name,  secure = \fCFalse\fP,  max_age = \fCNone\fP,  httponly = \fCNone\fP,  samesite = \fCNone\fP,  path = \fC'/'\fP,  domains = \fCNone\fP,  serializer = \fCNone\fP)"
+
+.PP
+Reimplemented in \fBwebob\&.cookies\&.SignedCookieProfile\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "webob\&.cookies\&.CookieProfile\&.__call__ ( self,  request)"
+
+.PP
+.nf
+ Bind a request to a copy of this instance and return it
+.fi
+.PP
+ 
+.SS "webob\&.cookies\&.CookieProfile\&._get_cookies ( self,  value,  domains,  max_age,  path,  secure,  httponly,  samesite)\fC [protected]\fP"
+
+.PP
+.nf
+Internal function
+
+This returns a list of cookies that are valid HTTP Headers\&.
+
+:environ: The request environment
+:value: The value to store in the cookie
+:domains: The domains, overrides any set in the CookieProfile
+:max_age: The max_age, overrides any set in the CookieProfile
+:path: The path, overrides any set in the CookieProfile
+:secure: Set this cookie to secure, overrides any set in CookieProfile
+:httponly: Set this cookie to HttpOnly, overrides any set in CookieProfile
+:samesite: Set this cookie to be for only the same site, overrides any
+           set in CookieProfile\&.
+.fi
+.PP
+ 
+.SS "webob\&.cookies\&.CookieProfile\&.bind ( self,  request)"
+
+.PP
+.nf
+ Bind a request to a copy of this instance and return it
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBwebob\&.cookies\&.SignedCookieProfile\fP\&.
+.SS "webob\&.cookies\&.CookieProfile\&.get_headers ( self,  value,  domains = \fC\fB_default\fP\fP,  max_age = \fC\fB_default\fP\fP,  path = \fC\fB_default\fP\fP,  secure = \fC\fB_default\fP\fP,  httponly = \fC\fB_default\fP\fP,  samesite = \fC\fB_default\fP\fP)"
+
+.PP
+.nf
+ Retrieve raw headers for setting cookies\&.
+
+Returns a list of headers that should be set for the cookies to
+be correctly tracked\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.cookies\&.CookieProfile\&.get_value ( self)"
+
+.PP
+.nf
+ Looks for a cookie by name in the currently bound request, and
+returns its value\&.  If the cookie profile is not bound to a request,
+this method will raise a :exc:`ValueError`\&.
+
+Looks for the cookie in the cookies jar, and if it can find it it will
+attempt to deserialize it\&.  Returns ``None`` if there is no cookie or
+if the value in the cookie cannot be successfully deserialized\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.cookies\&.CookieProfile\&.set_cookies ( self,  response,  value,  domains = \fC\fB_default\fP\fP,  max_age = \fC\fB_default\fP\fP,  path = \fC\fB_default\fP\fP,  secure = \fC\fB_default\fP\fP,  httponly = \fC\fB_default\fP\fP,  samesite = \fC\fB_default\fP\fP)"
+
+.PP
+.nf
+ Set the cookies on a response\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "webob\&.cookies\&.CookieProfile\&.cookie_name"
+
+.SS "webob\&.cookies\&.CookieProfile\&.domains"
+
+.SS "webob\&.cookies\&.CookieProfile\&.httponly"
+
+.SS "webob\&.cookies\&.CookieProfile\&.max_age"
+
+.SS "webob\&.cookies\&.CookieProfile\&.path"
+
+.SS "webob\&.cookies\&.CookieProfile\&.request"
+
+.SS "webob\&.cookies\&.CookieProfile\&.samesite"
+
+.SS "webob\&.cookies\&.CookieProfile\&.secure"
+
+.SS "webob\&.cookies\&.CookieProfile\&.serializer"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

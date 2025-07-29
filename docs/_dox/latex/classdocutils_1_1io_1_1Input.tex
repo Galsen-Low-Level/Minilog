@@ -1,0 +1,218 @@
+\doxysection{docutils.\+io.\+Input Class Reference}
+\hypertarget{classdocutils_1_1io_1_1Input}{}\label{classdocutils_1_1io_1_1Input}\index{docutils.io.Input@{docutils.io.Input}}
+Inheritance diagram for docutils.\+io.\+Input\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.500000cm]{classdocutils_1_1io_1_1Input}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Input_a739e81310299b4b804ceb96aa6496caf}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classdocutils_1_1io_1_1Input_ab8cda482a89be9866a56a2d9f27000c6}{source}}=None, \mbox{\hyperlink{classdocutils_1_1io_1_1Input_a130f4156a0d1e5f865853d8f8c2b9ea7}{source\+\_\+path}}=None, \mbox{\hyperlink{classdocutils_1_1io_1_1Input_a389e5d324e883aaf7a38cec9fe9956af}{encoding}}=None, \mbox{\hyperlink{classdocutils_1_1io_1_1Input_a388cac78deaa87a18ea52987a15b8bda}{error\+\_\+handler}}=\textquotesingle{}strict\textquotesingle{})
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Input_a68592028d7ea04484ac72b2f29dfde13}{\+\_\+\+\_\+repr\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Input_aee005648928b240d73fbe951cdff1f14}{read}} (self)
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Input_a77819f51c7c6f0936d53d5489d1e3c14}{decode}} (self, data)
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Input_adce99ac4d1bfe4e86b1c575a23b34536}{determine\+\_\+encoding\+\_\+from\+\_\+data}} (self, data)
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Input_a1a9d6ba945e8dc5ffccb959bd59111c2}{isatty}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classdocutils_1_1TransformSpec}{docutils.\+Transform\+Spec}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1TransformSpec_a9d4adc413dafad1c9466af08a303c1d2}{get\+\_\+transforms}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Input_a389e5d324e883aaf7a38cec9fe9956af}{encoding}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Input_a388cac78deaa87a18ea52987a15b8bda}{error\+\_\+handler}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Input_ab8cda482a89be9866a56a2d9f27000c6}{source}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Input_a130f4156a0d1e5f865853d8f8c2b9ea7}{source\+\_\+path}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Input_a7ed55c0acaf26d43197064790f222504}{successful\+\_\+encoding}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classdocutils_1_1TransformSpec}{docutils.\+Transform\+Spec}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1TransformSpec_a6284800f16dad6c8cf5a66b8c75d650f}{default\+\_\+transforms}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{classdocutils_1_1io_1_1Input_a238a8928c2480c1ad6c1529db2d5734e}{component\+\_\+type}} = \textquotesingle{}input\textquotesingle{}
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Input_a39143d77a26eb66935e8f14215e9dfb8}{default\+\_\+source\+\_\+path}} = None
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Input_a5cec76d36c27cd4fd9c9c2dff23025e8}{coding\+\_\+slug}} = re.\+compile(br"{}coding\mbox{[}\+:=\mbox{]}\textbackslash{}s\texorpdfstring{$\ast$}{*}(\mbox{[}-\/\textbackslash{}w.\mbox{]}+)"{})
+\item 
+tuple \mbox{\hyperlink{classdocutils_1_1io_1_1Input_adebc4dfba0ee3197c8f7284a4e8acaef}{byte\+\_\+order\+\_\+marks}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classdocutils_1_1TransformSpec}{docutils.\+Transform\+Spec}}}
+\begin{DoxyCompactItemize}
+\item 
+tuple \mbox{\hyperlink{classdocutils_1_1TransformSpec_ac4a74caa4769cd1a5c97750b124d37f2}{default\+\_\+transforms}} = ()
+\item 
+tuple \mbox{\hyperlink{classdocutils_1_1TransformSpec_a23810603eb1bfbb62657cbd29209b647}{unknown\+\_\+reference\+\_\+resolvers}} = ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Abstract base class for input wrappers.
+
+Docutils input objects must provide a `read()` method that
+returns the source, typically as `str` instance.
+
+Inheriting `TransformSpec` allows input objects to add
+"transforms" and "unknown_reference_resolvers" to the "Transformer".
+(Optional for custom input objects since Docutils 0.19.)
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classdocutils_1_1io_1_1Input_a739e81310299b4b804ceb96aa6496caf}\label{classdocutils_1_1io_1_1Input_a739e81310299b4b804ceb96aa6496caf} 
+\index{docutils.io.Input@{docutils.io.Input}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!docutils.io.Input@{docutils.io.Input}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily docutils.\+io.\+Input.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{source = {\ttfamily None},  }\item[{}]{source\+\_\+path = {\ttfamily None},  }\item[{}]{encoding = {\ttfamily None},  }\item[{}]{error\+\_\+handler = {\ttfamily \textquotesingle{}strict\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1io_1_1SphinxFileInput_aa75322f91896e9628b51270bd00f9863}{sphinx.\+io.\+Sphinx\+File\+Input}}, and \mbox{\hyperlink{classdocutils_1_1io_1_1FileInput_a2279dbde3f9d7f0f5f2f4a55630b6b79}{docutils.\+io.\+File\+Input}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdocutils_1_1io_1_1Input_a68592028d7ea04484ac72b2f29dfde13}\label{classdocutils_1_1io_1_1Input_a68592028d7ea04484ac72b2f29dfde13} 
+\index{docutils.io.Input@{docutils.io.Input}!\_\_repr\_\_@{\_\_repr\_\_}}
+\index{\_\_repr\_\_@{\_\_repr\_\_}!docutils.io.Input@{docutils.io.Input}}
+\doxysubsubsection{\texorpdfstring{\_\_repr\_\_()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily docutils.\+io.\+Input.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classdocutils_1_1io_1_1Input_a77819f51c7c6f0936d53d5489d1e3c14}\label{classdocutils_1_1io_1_1Input_a77819f51c7c6f0936d53d5489d1e3c14} 
+\index{docutils.io.Input@{docutils.io.Input}!decode@{decode}}
+\index{decode@{decode}!docutils.io.Input@{docutils.io.Input}}
+\doxysubsubsection{\texorpdfstring{decode()}{decode()}}
+{\footnotesize\ttfamily docutils.\+io.\+Input.\+decode (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Decode `data` if required.
+
+Return Unicode `str` instances unchanged (nothing to decode).
+
+If `self.encoding` is None, determine encoding from data
+or try UTF-8 and the locale's preferred encoding.
+The client application should call ``locale.setlocale()`` at the
+beginning of processing::
+
+    locale.setlocale(locale.LC_ALL, '')
+
+Raise UnicodeError if unsuccessful.
+
+Provisional: encoding detection will be removed in Docutils 1.0.
+\end{DoxyVerb}
+ \Hypertarget{classdocutils_1_1io_1_1Input_adce99ac4d1bfe4e86b1c575a23b34536}\label{classdocutils_1_1io_1_1Input_adce99ac4d1bfe4e86b1c575a23b34536} 
+\index{docutils.io.Input@{docutils.io.Input}!determine\_encoding\_from\_data@{determine\_encoding\_from\_data}}
+\index{determine\_encoding\_from\_data@{determine\_encoding\_from\_data}!docutils.io.Input@{docutils.io.Input}}
+\doxysubsubsection{\texorpdfstring{determine\_encoding\_from\_data()}{determine\_encoding\_from\_data()}}
+{\footnotesize\ttfamily docutils.\+io.\+Input.\+determine\+\_\+encoding\+\_\+from\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Try to determine the encoding of `data` by looking *in* `data`.
+Check for a byte order mark (BOM) or an encoding declaration.
+\end{DoxyVerb}
+ \Hypertarget{classdocutils_1_1io_1_1Input_a1a9d6ba945e8dc5ffccb959bd59111c2}\label{classdocutils_1_1io_1_1Input_a1a9d6ba945e8dc5ffccb959bd59111c2} 
+\index{docutils.io.Input@{docutils.io.Input}!isatty@{isatty}}
+\index{isatty@{isatty}!docutils.io.Input@{docutils.io.Input}}
+\doxysubsubsection{\texorpdfstring{isatty()}{isatty()}}
+{\footnotesize\ttfamily docutils.\+io.\+Input.\+isatty (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return True, if the input source is connected to a TTY device.\end{DoxyVerb}
+ \Hypertarget{classdocutils_1_1io_1_1Input_aee005648928b240d73fbe951cdff1f14}\label{classdocutils_1_1io_1_1Input_aee005648928b240d73fbe951cdff1f14} 
+\index{docutils.io.Input@{docutils.io.Input}!read@{read}}
+\index{read@{read}!docutils.io.Input@{docutils.io.Input}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily docutils.\+io.\+Input.\+read (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return input as `str`. Define in subclasses.\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classdocutils_1_1io_1_1FileInput_a44d3220f12ce4f3a3f499e506e316fd8}{docutils.\+io.\+File\+Input}}, \mbox{\hyperlink{classdocutils_1_1io_1_1StringInput_a4c2b349487692f3ce53bf1e09440d40f}{docutils.\+io.\+String\+Input}}, \mbox{\hyperlink{classdocutils_1_1io_1_1NullInput_a61950d346c6facdb637597eba95c4eaa}{docutils.\+io.\+Null\+Input}}, and \mbox{\hyperlink{classdocutils_1_1io_1_1DocTreeInput_a0476291a1b50bb01525de4628a24362b}{docutils.\+io.\+Doc\+Tree\+Input}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classdocutils_1_1io_1_1Input_adebc4dfba0ee3197c8f7284a4e8acaef}\label{classdocutils_1_1io_1_1Input_adebc4dfba0ee3197c8f7284a4e8acaef} 
+\index{docutils.io.Input@{docutils.io.Input}!byte\_order\_marks@{byte\_order\_marks}}
+\index{byte\_order\_marks@{byte\_order\_marks}!docutils.io.Input@{docutils.io.Input}}
+\doxysubsubsection{\texorpdfstring{byte\_order\_marks}{byte\_order\_marks}}
+{\footnotesize\ttfamily tuple docutils.\+io.\+Input.\+byte\+\_\+order\+\_\+marks\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ ((codecs.BOM\_UTF32\_BE,\ \textcolor{stringliteral}{'utf-\/32'}),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (codecs.BOM\_UTF32\_LE,\ \textcolor{stringliteral}{'utf-\/32'}),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (codecs.BOM\_UTF8,\ \textcolor{stringliteral}{'utf-\/8-\/sig'}),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (codecs.BOM\_UTF16\_BE,\ \textcolor{stringliteral}{'utf-\/16'}),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (codecs.BOM\_UTF16\_LE,\ \textcolor{stringliteral}{'utf-\/16'}),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{classdocutils_1_1io_1_1Input_a5cec76d36c27cd4fd9c9c2dff23025e8}\label{classdocutils_1_1io_1_1Input_a5cec76d36c27cd4fd9c9c2dff23025e8} 
+\index{docutils.io.Input@{docutils.io.Input}!coding\_slug@{coding\_slug}}
+\index{coding\_slug@{coding\_slug}!docutils.io.Input@{docutils.io.Input}}
+\doxysubsubsection{\texorpdfstring{coding\_slug}{coding\_slug}}
+{\footnotesize\ttfamily docutils.\+io.\+Input.\+coding\+\_\+slug = re.\+compile(br"{}coding\mbox{[}\+:=\mbox{]}\textbackslash{}s\texorpdfstring{$\ast$}{*}(\mbox{[}-\/\textbackslash{}w.\mbox{]}+)"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1io_1_1Input_a238a8928c2480c1ad6c1529db2d5734e}\label{classdocutils_1_1io_1_1Input_a238a8928c2480c1ad6c1529db2d5734e} 
+\index{docutils.io.Input@{docutils.io.Input}!component\_type@{component\_type}}
+\index{component\_type@{component\_type}!docutils.io.Input@{docutils.io.Input}}
+\doxysubsubsection{\texorpdfstring{component\_type}{component\_type}}
+{\footnotesize\ttfamily str docutils.\+io.\+Input.\+component\+\_\+type = \textquotesingle{}input\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1io_1_1Input_a39143d77a26eb66935e8f14215e9dfb8}\label{classdocutils_1_1io_1_1Input_a39143d77a26eb66935e8f14215e9dfb8} 
+\index{docutils.io.Input@{docutils.io.Input}!default\_source\_path@{default\_source\_path}}
+\index{default\_source\_path@{default\_source\_path}!docutils.io.Input@{docutils.io.Input}}
+\doxysubsubsection{\texorpdfstring{default\_source\_path}{default\_source\_path}}
+{\footnotesize\ttfamily docutils.\+io.\+Input.\+default\+\_\+source\+\_\+path = None\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1io_1_1Input_a389e5d324e883aaf7a38cec9fe9956af}\label{classdocutils_1_1io_1_1Input_a389e5d324e883aaf7a38cec9fe9956af} 
+\index{docutils.io.Input@{docutils.io.Input}!encoding@{encoding}}
+\index{encoding@{encoding}!docutils.io.Input@{docutils.io.Input}}
+\doxysubsubsection{\texorpdfstring{encoding}{encoding}}
+{\footnotesize\ttfamily docutils.\+io.\+Input.\+encoding}
+
+\Hypertarget{classdocutils_1_1io_1_1Input_a388cac78deaa87a18ea52987a15b8bda}\label{classdocutils_1_1io_1_1Input_a388cac78deaa87a18ea52987a15b8bda} 
+\index{docutils.io.Input@{docutils.io.Input}!error\_handler@{error\_handler}}
+\index{error\_handler@{error\_handler}!docutils.io.Input@{docutils.io.Input}}
+\doxysubsubsection{\texorpdfstring{error\_handler}{error\_handler}}
+{\footnotesize\ttfamily docutils.\+io.\+Input.\+error\+\_\+handler}
+
+\Hypertarget{classdocutils_1_1io_1_1Input_ab8cda482a89be9866a56a2d9f27000c6}\label{classdocutils_1_1io_1_1Input_ab8cda482a89be9866a56a2d9f27000c6} 
+\index{docutils.io.Input@{docutils.io.Input}!source@{source}}
+\index{source@{source}!docutils.io.Input@{docutils.io.Input}}
+\doxysubsubsection{\texorpdfstring{source}{source}}
+{\footnotesize\ttfamily docutils.\+io.\+Input.\+source}
+
+\Hypertarget{classdocutils_1_1io_1_1Input_a130f4156a0d1e5f865853d8f8c2b9ea7}\label{classdocutils_1_1io_1_1Input_a130f4156a0d1e5f865853d8f8c2b9ea7} 
+\index{docutils.io.Input@{docutils.io.Input}!source\_path@{source\_path}}
+\index{source\_path@{source\_path}!docutils.io.Input@{docutils.io.Input}}
+\doxysubsubsection{\texorpdfstring{source\_path}{source\_path}}
+{\footnotesize\ttfamily docutils.\+io.\+Input.\+source\+\_\+path}
+
+\Hypertarget{classdocutils_1_1io_1_1Input_a7ed55c0acaf26d43197064790f222504}\label{classdocutils_1_1io_1_1Input_a7ed55c0acaf26d43197064790f222504} 
+\index{docutils.io.Input@{docutils.io.Input}!successful\_encoding@{successful\_encoding}}
+\index{successful\_encoding@{successful\_encoding}!docutils.io.Input@{docutils.io.Input}}
+\doxysubsubsection{\texorpdfstring{successful\_encoding}{successful\_encoding}}
+{\footnotesize\ttfamily docutils.\+io.\+Input.\+successful\+\_\+encoding}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/docutils/\mbox{\hyperlink{docutils_2io_8py}{io.\+py}}\end{DoxyCompactItemize}

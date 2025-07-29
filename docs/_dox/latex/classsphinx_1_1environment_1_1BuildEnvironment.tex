@@ -1,0 +1,538 @@
+\doxysection{sphinx.\+environment.\+Build\+Environment Class Reference}
+\hypertarget{classsphinx_1_1environment_1_1BuildEnvironment}{}\label{classsphinx_1_1environment_1_1BuildEnvironment}\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a712673bede7c4b11194cc76881060d93}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}} \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_acb04a4b3a3a7a6d42c6bc19be209721e}{app}})
+\item 
+dict\mbox{[}str, Any\mbox{]} \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_ab994e37d674c41eff78e3cb9c98c6237}{\+\_\+\+\_\+getstate\+\_\+\+\_\+}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_abfd4013ffc45b8f09ed9fe7d0394cc07}{\+\_\+\+\_\+setstate\+\_\+\+\_\+}} (self, dict\mbox{[}str, Any\mbox{]} state)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a13f0d43ae63f8c0bc7a54956880cfa62}{setup}} (self, \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}} \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_acb04a4b3a3a7a6d42c6bc19be209721e}{app}})
+\item 
+None \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_afc65c64d252e8d34e2cde6deec2b2e91}{set\+\_\+versioning\+\_\+method}} (self, str\texorpdfstring{$\vert$}{|}Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}}\mbox{]}, bool\mbox{]} method, bool compare)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a844636987532056e820dae8d251cd819}{clear\+\_\+doc}} (self, str \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a22de11e868126c627530f347fe2272c6}{docname}})
+\item 
+None \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a8211012358c117f0965da3e10bd28069}{merge\+\_\+info\+\_\+from}} (self, Iterable\mbox{[}str\mbox{]} docnames, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}} other, \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}} \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_acb04a4b3a3a7a6d42c6bc19be209721e}{app}})
+\item 
+str\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_aeb05ca8132056adf5cdad316b083634e}{path2doc}} (self, str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]} filename)
+\item 
+\mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPath}{\+\_\+\+Str\+Path}} \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a2abd9ca7366647d0be7e648080e099e7}{doc2path}} (self, str \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a22de11e868126c627530f347fe2272c6}{docname}}, bool base=True)
+\item 
+tuple\mbox{[}str, str\mbox{]} \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a5654bb52fd0f8a197c0387d7596c2399}{relfn2path}} (self, str\texorpdfstring{$\vert$}{|}Path filename, str\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a22de11e868126c627530f347fe2272c6}{docname}}=None)
+\item 
+set\mbox{[}str\mbox{]} \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a14cdd2887b85b2d6a40cd676788df977}{found\+\_\+docs}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a8af3890588f2df5f46bb7be216e3e108}{find\+\_\+files}} (self, \mbox{\hyperlink{classsphinx_1_1config_1_1Config}{Config}} \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_ad21b655ac238a84d1e2b7ac6c432dbfd}{config}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}} builder)
+\item 
+tuple\mbox{[}set\mbox{[}str\mbox{]}, set\mbox{[}str\mbox{]}, set\mbox{[}str\mbox{]}\mbox{]} \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a5e98cdf8e976dcf5e30788ebe64de3f0}{get\+\_\+outdated\+\_\+files}} (self, bool config\+\_\+changed)
+\item 
+Iterator\mbox{[}str\mbox{]} \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a1e659f95fa6433d4265d15c1ad5f0d05}{check\+\_\+dependents}} (self, \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}} \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_acb04a4b3a3a7a6d42c6bc19be209721e}{app}}, set\mbox{[}str\mbox{]} already)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a9e7811226bfaafdb2851a0a9e8d8e2b3}{prepare\+\_\+settings}} (self, str \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a22de11e868126c627530f347fe2272c6}{docname}})
+\item 
+\mbox{\hyperlink{classsphinx_1_1environment_1_1__CurrentDocument}{\+\_\+\+Current\+Document}} \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a43ff127d3e048541b4ed108dac74bd9b}{temp\+\_\+data}} (self)
+\item 
+str \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a322ee4a09aaae77af839fbccbd8d2cac}{docname}} (self)
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1Parser}{Parser}} \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a15b7757d586c968bab6c9710d549b341}{parser}} (self)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_aee8db9668d529eff35c459b92bf9d618}{new\+\_\+serialno}} (self, str category=\textquotesingle{}\textquotesingle{})
+\item 
+None \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_af04ccd2a022fdd60113543d5e61ff9ec}{note\+\_\+dependency}} (self, str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]} filename, \texorpdfstring{$\ast$}{*}str\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a22de11e868126c627530f347fe2272c6}{docname}}=None)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a7e90481ed52c4835e52b41e1e99f2a53}{note\+\_\+included}} (self, str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]} filename)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_ab25f73def6f9c264d8105bedf10bf324}{note\+\_\+reread}} (self)
+\item 
+\mbox{\hyperlink{classsphinx_1_1domains_1_1Domain}{Domain}} \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_ab402fea7e66b6c0af827f9e1fa095839}{get\+\_\+domain}} (self, str domainname)
+\item 
+nodes.\+document \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_ac9ac425f9814c87a30ac3b6ded187807}{get\+\_\+doctree}} (self, str \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a22de11e868126c627530f347fe2272c6}{docname}})
+\item 
+nodes.\+document \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a845d1ee30d5568607856f1f2a6b60cf6}{master\+\_\+doctree}} (self)
+\item 
+nodes.\+document \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a8fda83196d2975e57a19467cc6330fb4}{get\+\_\+and\+\_\+resolve\+\_\+doctree}} (self, str \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a22de11e868126c627530f347fe2272c6}{docname}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}} builder, nodes.\+document\texorpdfstring{$\vert$}{|}None doctree=None, bool prune\+\_\+toctrees=True, bool includehidden=False)
+\item 
+\mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}}\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_ad932f19acdfb1f9f407aeda89115a303}{resolve\+\_\+toctree}} (self, str \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a22de11e868126c627530f347fe2272c6}{docname}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}} builder, \mbox{\hyperlink{classsphinx_1_1addnodes_1_1toctree}{addnodes.\+toctree}} toctree, bool prune=True, int maxdepth=0, bool titles\+\_\+only=False, bool collapse=False, bool includehidden=False)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_ae98891a9f53e30dfe304306715634df3}{resolve\+\_\+references}} (self, nodes.\+document doctree, str fromdocname, \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}} builder)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a27fd6b3a3a475a1799cc45f9f4b742a3}{apply\+\_\+post\+\_\+transforms}} (self, nodes.\+document doctree, str \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a22de11e868126c627530f347fe2272c6}{docname}})
+\item 
+dict\mbox{[}str, list\mbox{[}str\texorpdfstring{$\vert$}{|}None\mbox{]}\mbox{]} \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_ab30e652e94d75a7fe954a7cb98b77835}{collect\+\_\+relations}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a3d00eea17de203ba01ea107dc081eb37}{check\+\_\+consistency}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_ac8ca3b1b0392b73fd8b24cbd39300456}{project}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_acb04a4b3a3a7a6d42c6bc19be209721e}{app}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_ae28bc802cf05c3b50ddc95a75710582d}{events}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a91327cf728e7f3bac97cac8a3c5e1b75}{version}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a9509150e196db43fc03f5bf3094bfce3}{domains}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_af9d19d569e05fc266e9006631c42aa09}{config\+\_\+status}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a823af60e326829a411505a1575d54fde}{config\+\_\+status\+\_\+extra}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_ad21b655ac238a84d1e2b7ac6c432dbfd}{config}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a2b526691a3906eb625f8c0f3c8dba6dc}{versioning\+\_\+condition}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_af6a67bc0db7970e827fec9a9186b5864}{versioning\+\_\+compare}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a326a221d9576031d7190123e0641236e}{current\+\_\+document}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a22de11e868126c627530f347fe2272c6}{docname}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a50f7bbe586262bb9560c500dda0d6674}{all\+\_\+docs}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a6228132ea41cfefad7fe3fab608da102}{toctree\+\_\+includes}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a7ec64f6c2e0934babb58728103317fad}{srcdir}} = \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPathProperty}{\+\_\+\+Str\+Path\+Property}}()
+\item 
+\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a2e3f1740a589270a76ce801d3c047a49}{doctreedir}} = \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPathProperty}{\+\_\+\+Str\+Path\+Property}}()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsphinx_1_1registry_1_1SphinxComponentRegistry}{Sphinx\+Component\+Registry}} \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a25849cb66f07338eb85b944603ead9ed}{\+\_\+registry}} (self)
+\item 
+\mbox{\hyperlink{classsphinx_1_1util_1_1tags_1_1Tags}{Tags}} \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a0b1d75c34a3a07693cfb970104a676db}{\+\_\+tags}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_afecdefe148cc996ce87e110607aad9fb}{\+\_\+update\+\_\+settings}} (self, \mbox{\hyperlink{classsphinx_1_1config_1_1Config}{Config}} \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_ad21b655ac238a84d1e2b7ac6c432dbfd}{config}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+tuple\mbox{[}int, str\mbox{]} \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment_a27e972fa7ae55607a22d32e8710309e5}{\+\_\+config\+\_\+status}} (\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classsphinx_1_1config_1_1Config}{Config}}\texorpdfstring{$\vert$}{|}None old\+\_\+config, \mbox{\hyperlink{classsphinx_1_1config_1_1Config}{Config}} new\+\_\+config, int verbosity)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}The environment in which the ReST files are translated.
+Stores an inventory of cross-file targets and provides doctree
+transformations to resolve links to them.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a712673bede7c4b11194cc76881060d93}\label{classsphinx_1_1environment_1_1BuildEnvironment_a712673bede7c4b11194cc76881060d93} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None sphinx.\+environment.\+Build\+Environment.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}}]{app }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_ab994e37d674c41eff78e3cb9c98c6237}\label{classsphinx_1_1environment_1_1BuildEnvironment_ab994e37d674c41eff78e3cb9c98c6237} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!\_\_getstate\_\_@{\_\_getstate\_\_}}
+\index{\_\_getstate\_\_@{\_\_getstate\_\_}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{\_\_getstate\_\_()}{\_\_getstate\_\_()}}
+{\footnotesize\ttfamily  dict\mbox{[}str, Any\mbox{]} sphinx.\+environment.\+Build\+Environment.\+\_\+\+\_\+getstate\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Obtains serializable data for pickling.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_abfd4013ffc45b8f09ed9fe7d0394cc07}\label{classsphinx_1_1environment_1_1BuildEnvironment_abfd4013ffc45b8f09ed9fe7d0394cc07} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!\_\_setstate\_\_@{\_\_setstate\_\_}}
+\index{\_\_setstate\_\_@{\_\_setstate\_\_}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{\_\_setstate\_\_()}{\_\_setstate\_\_()}}
+{\footnotesize\ttfamily  None sphinx.\+environment.\+Build\+Environment.\+\_\+\+\_\+setstate\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{dict\mbox{[}str, Any\mbox{]}}]{state }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a27e972fa7ae55607a22d32e8710309e5}\label{classsphinx_1_1environment_1_1BuildEnvironment_a27e972fa7ae55607a22d32e8710309e5} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!\_config\_status@{\_config\_status}}
+\index{\_config\_status@{\_config\_status}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{\_config\_status()}{\_config\_status()}}
+{\footnotesize\ttfamily  tuple\mbox{[}int, str\mbox{]} sphinx.\+environment.\+Build\+Environment.\+\_\+config\+\_\+status (\begin{DoxyParamCaption}\item[{\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classsphinx_1_1config_1_1Config}{Config}} \texorpdfstring{$\vert$}{|} None}]{old\+\_\+config,  }\item[{\mbox{\hyperlink{classsphinx_1_1config_1_1Config}{Config}}}]{new\+\_\+config,  }\item[{int     }]{verbosity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\begin{DoxyVerb}Report the differences between two Config objects.
+
+Returns a triple of:
+
+1. The new configuration
+2. A status code indicating how the configuration has changed.
+3. A status message indicating what has changed.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a25849cb66f07338eb85b944603ead9ed}\label{classsphinx_1_1environment_1_1BuildEnvironment_a25849cb66f07338eb85b944603ead9ed} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!\_registry@{\_registry}}
+\index{\_registry@{\_registry}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{\_registry()}{\_registry()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classsphinx_1_1registry_1_1SphinxComponentRegistry}{Sphinx\+Component\+Registry}} sphinx.\+environment.\+Build\+Environment.\+\_\+registry (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a0b1d75c34a3a07693cfb970104a676db}\label{classsphinx_1_1environment_1_1BuildEnvironment_a0b1d75c34a3a07693cfb970104a676db} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!\_tags@{\_tags}}
+\index{\_tags@{\_tags}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{\_tags()}{\_tags()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classsphinx_1_1util_1_1tags_1_1Tags}{Tags}} sphinx.\+environment.\+Build\+Environment.\+\_\+tags (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_afecdefe148cc996ce87e110607aad9fb}\label{classsphinx_1_1environment_1_1BuildEnvironment_afecdefe148cc996ce87e110607aad9fb} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!\_update\_settings@{\_update\_settings}}
+\index{\_update\_settings@{\_update\_settings}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{\_update\_settings()}{\_update\_settings()}}
+{\footnotesize\ttfamily  None sphinx.\+environment.\+Build\+Environment.\+\_\+update\+\_\+settings (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsphinx_1_1config_1_1Config}{Config}}}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Update settings by new config.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a27fd6b3a3a475a1799cc45f9f4b742a3}\label{classsphinx_1_1environment_1_1BuildEnvironment_a27fd6b3a3a475a1799cc45f9f4b742a3} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!apply\_post\_transforms@{apply\_post\_transforms}}
+\index{apply\_post\_transforms@{apply\_post\_transforms}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{apply\_post\_transforms()}{apply\_post\_transforms()}}
+{\footnotesize\ttfamily  None sphinx.\+environment.\+Build\+Environment.\+apply\+\_\+post\+\_\+transforms (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{nodes.\+document}]{doctree,  }\item[{str}]{docname }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Apply all post-transforms.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a3d00eea17de203ba01ea107dc081eb37}\label{classsphinx_1_1environment_1_1BuildEnvironment_a3d00eea17de203ba01ea107dc081eb37} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!check\_consistency@{check\_consistency}}
+\index{check\_consistency@{check\_consistency}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{check\_consistency()}{check\_consistency()}}
+{\footnotesize\ttfamily  None sphinx.\+environment.\+Build\+Environment.\+check\+\_\+consistency (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Do consistency checks.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a1e659f95fa6433d4265d15c1ad5f0d05}\label{classsphinx_1_1environment_1_1BuildEnvironment_a1e659f95fa6433d4265d15c1ad5f0d05} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!check\_dependents@{check\_dependents}}
+\index{check\_dependents@{check\_dependents}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{check\_dependents()}{check\_dependents()}}
+{\footnotesize\ttfamily  Iterator\mbox{[}str\mbox{]} sphinx.\+environment.\+Build\+Environment.\+check\+\_\+dependents (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}}]{app,  }\item[{set\mbox{[}str\mbox{]}}]{already }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a844636987532056e820dae8d251cd819}\label{classsphinx_1_1environment_1_1BuildEnvironment_a844636987532056e820dae8d251cd819} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!clear\_doc@{clear\_doc}}
+\index{clear\_doc@{clear\_doc}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{clear\_doc()}{clear\_doc()}}
+{\footnotesize\ttfamily  None sphinx.\+environment.\+Build\+Environment.\+clear\+\_\+doc (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{docname }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove all traces of a source file in the inventory.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_ab30e652e94d75a7fe954a7cb98b77835}\label{classsphinx_1_1environment_1_1BuildEnvironment_ab30e652e94d75a7fe954a7cb98b77835} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!collect\_relations@{collect\_relations}}
+\index{collect\_relations@{collect\_relations}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{collect\_relations()}{collect\_relations()}}
+{\footnotesize\ttfamily  dict\mbox{[}str, list\mbox{[}str \texorpdfstring{$\vert$}{|} None\mbox{]}\mbox{]} sphinx.\+environment.\+Build\+Environment.\+collect\+\_\+relations (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a2abd9ca7366647d0be7e648080e099e7}\label{classsphinx_1_1environment_1_1BuildEnvironment_a2abd9ca7366647d0be7e648080e099e7} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!doc2path@{doc2path}}
+\index{doc2path@{doc2path}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{doc2path()}{doc2path()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPath}{\+\_\+\+Str\+Path}} sphinx.\+environment.\+Build\+Environment.\+doc2path (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{docname,  }\item[{bool }]{base = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the filename for the document name.
+
+If *base* is True, return absolute path under self.srcdir.
+If *base* is False, return relative path to self.srcdir.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a322ee4a09aaae77af839fbccbd8d2cac}\label{classsphinx_1_1environment_1_1BuildEnvironment_a322ee4a09aaae77af839fbccbd8d2cac} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!docname@{docname}}
+\index{docname@{docname}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{docname()}{docname()}}
+{\footnotesize\ttfamily  str sphinx.\+environment.\+Build\+Environment.\+docname (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the docname of the document currently being parsed.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a8af3890588f2df5f46bb7be216e3e108}\label{classsphinx_1_1environment_1_1BuildEnvironment_a8af3890588f2df5f46bb7be216e3e108} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!find\_files@{find\_files}}
+\index{find\_files@{find\_files}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{find\_files()}{find\_files()}}
+{\footnotesize\ttfamily  None sphinx.\+environment.\+Build\+Environment.\+find\+\_\+files (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsphinx_1_1config_1_1Config}{Config}}}]{config,  }\item[{\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}}}]{builder }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find all source files in the source dir and put them in
+self.found_docs.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a14cdd2887b85b2d6a40cd676788df977}\label{classsphinx_1_1environment_1_1BuildEnvironment_a14cdd2887b85b2d6a40cd676788df977} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!found\_docs@{found\_docs}}
+\index{found\_docs@{found\_docs}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{found\_docs()}{found\_docs()}}
+{\footnotesize\ttfamily  set\mbox{[}str\mbox{]} sphinx.\+environment.\+Build\+Environment.\+found\+\_\+docs (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Contains all existing docnames.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a8fda83196d2975e57a19467cc6330fb4}\label{classsphinx_1_1environment_1_1BuildEnvironment_a8fda83196d2975e57a19467cc6330fb4} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!get\_and\_resolve\_doctree@{get\_and\_resolve\_doctree}}
+\index{get\_and\_resolve\_doctree@{get\_and\_resolve\_doctree}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{get\_and\_resolve\_doctree()}{get\_and\_resolve\_doctree()}}
+{\footnotesize\ttfamily  nodes.\+document sphinx.\+environment.\+Build\+Environment.\+get\+\_\+and\+\_\+resolve\+\_\+doctree (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{docname,  }\item[{\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}}}]{builder,  }\item[{nodes.\+document \texorpdfstring{$\vert$}{|} None }]{doctree = {\ttfamily None},  }\item[{bool }]{prune\+\_\+toctrees = {\ttfamily True},  }\item[{bool }]{includehidden = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read the doctree from the pickle, resolve cross-references and
+toctrees and return it.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_ac9ac425f9814c87a30ac3b6ded187807}\label{classsphinx_1_1environment_1_1BuildEnvironment_ac9ac425f9814c87a30ac3b6ded187807} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!get\_doctree@{get\_doctree}}
+\index{get\_doctree@{get\_doctree}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{get\_doctree()}{get\_doctree()}}
+{\footnotesize\ttfamily  nodes.\+document sphinx.\+environment.\+Build\+Environment.\+get\+\_\+doctree (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{docname }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read the doctree for a file from the pickle and return it.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_ab402fea7e66b6c0af827f9e1fa095839}\label{classsphinx_1_1environment_1_1BuildEnvironment_ab402fea7e66b6c0af827f9e1fa095839} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!get\_domain@{get\_domain}}
+\index{get\_domain@{get\_domain}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{get\_domain()}{get\_domain()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain}{Domain}} sphinx.\+environment.\+Build\+Environment.\+get\+\_\+domain (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{domainname }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the domain instance with the specified name.
+
+Raises an ExtensionError if the domain is not registered.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a5e98cdf8e976dcf5e30788ebe64de3f0}\label{classsphinx_1_1environment_1_1BuildEnvironment_a5e98cdf8e976dcf5e30788ebe64de3f0} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!get\_outdated\_files@{get\_outdated\_files}}
+\index{get\_outdated\_files@{get\_outdated\_files}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{get\_outdated\_files()}{get\_outdated\_files()}}
+{\footnotesize\ttfamily  tuple\mbox{[}set\mbox{[}str\mbox{]}, set\mbox{[}str\mbox{]}, set\mbox{[}str\mbox{]}\mbox{]} sphinx.\+environment.\+Build\+Environment.\+get\+\_\+outdated\+\_\+files (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{bool     }]{config\+\_\+changed }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return (added, changed, removed) sets.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a845d1ee30d5568607856f1f2a6b60cf6}\label{classsphinx_1_1environment_1_1BuildEnvironment_a845d1ee30d5568607856f1f2a6b60cf6} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!master\_doctree@{master\_doctree}}
+\index{master\_doctree@{master\_doctree}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{master\_doctree()}{master\_doctree()}}
+{\footnotesize\ttfamily  nodes.\+document sphinx.\+environment.\+Build\+Environment.\+master\+\_\+doctree (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a8211012358c117f0965da3e10bd28069}\label{classsphinx_1_1environment_1_1BuildEnvironment_a8211012358c117f0965da3e10bd28069} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!merge\_info\_from@{merge\_info\_from}}
+\index{merge\_info\_from@{merge\_info\_from}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{merge\_info\_from()}{merge\_info\_from()}}
+{\footnotesize\ttfamily  None sphinx.\+environment.\+Build\+Environment.\+merge\+\_\+info\+\_\+from (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Iterable\mbox{[}str\mbox{]}}]{docnames,  }\item[{\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}}]{other,  }\item[{\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}     }]{app }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Merge global information gathered about *docnames* while reading them
+from the *other* environment.
+
+This possibly comes from a parallel build process.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_aee8db9668d529eff35c459b92bf9d618}\label{classsphinx_1_1environment_1_1BuildEnvironment_aee8db9668d529eff35c459b92bf9d618} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!new\_serialno@{new\_serialno}}
+\index{new\_serialno@{new\_serialno}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{new\_serialno()}{new\_serialno()}}
+{\footnotesize\ttfamily  int sphinx.\+environment.\+Build\+Environment.\+new\+\_\+serialno (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str }]{category = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a serial number, e.g. for index entry targets.
+
+The number is guaranteed to be unique in the current document.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_af04ccd2a022fdd60113543d5e61ff9ec}\label{classsphinx_1_1environment_1_1BuildEnvironment_af04ccd2a022fdd60113543d5e61ff9ec} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!note\_dependency@{note\_dependency}}
+\index{note\_dependency@{note\_dependency}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{note\_dependency()}{note\_dependency()}}
+{\footnotesize\ttfamily  None sphinx.\+environment.\+Build\+Environment.\+note\+\_\+dependency (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}}]{filename,  }\item[{\texorpdfstring{$\ast$}{*}str \texorpdfstring{$\vert$}{|} None }]{docname = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add *filename* as a dependency of the current document.
+
+This means that the document will be rebuilt if this file changes.
+
+*filename* should be absolute or relative to the source directory.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a7e90481ed52c4835e52b41e1e99f2a53}\label{classsphinx_1_1environment_1_1BuildEnvironment_a7e90481ed52c4835e52b41e1e99f2a53} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!note\_included@{note\_included}}
+\index{note\_included@{note\_included}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{note\_included()}{note\_included()}}
+{\footnotesize\ttfamily  None sphinx.\+environment.\+Build\+Environment.\+note\+\_\+included (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add *filename* as a included from other document.
+
+This means the document is not orphaned.
+
+*filename* should be absolute or relative to the source directory.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_ab25f73def6f9c264d8105bedf10bf324}\label{classsphinx_1_1environment_1_1BuildEnvironment_ab25f73def6f9c264d8105bedf10bf324} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!note\_reread@{note\_reread}}
+\index{note\_reread@{note\_reread}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{note\_reread()}{note\_reread()}}
+{\footnotesize\ttfamily  None sphinx.\+environment.\+Build\+Environment.\+note\+\_\+reread (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add the current document to the list of documents that will
+automatically be re-read at the next build.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a15b7757d586c968bab6c9710d549b341}\label{classsphinx_1_1environment_1_1BuildEnvironment_a15b7757d586c968bab6c9710d549b341} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!parser@{parser}}
+\index{parser@{parser}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{parser()}{parser()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classdocutils_1_1parsers_1_1Parser}{Parser}} sphinx.\+environment.\+Build\+Environment.\+parser (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the parser being used for to parse the current document.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_aeb05ca8132056adf5cdad316b083634e}\label{classsphinx_1_1environment_1_1BuildEnvironment_aeb05ca8132056adf5cdad316b083634e} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!path2doc@{path2doc}}
+\index{path2doc@{path2doc}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{path2doc()}{path2doc()}}
+{\footnotesize\ttfamily  str \texorpdfstring{$\vert$}{|} None sphinx.\+environment.\+Build\+Environment.\+path2doc (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the docname for the filename if the file is document.
+
+*filename* should be absolute or relative to the source directory.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a9e7811226bfaafdb2851a0a9e8d8e2b3}\label{classsphinx_1_1environment_1_1BuildEnvironment_a9e7811226bfaafdb2851a0a9e8d8e2b3} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!prepare\_settings@{prepare\_settings}}
+\index{prepare\_settings@{prepare\_settings}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{prepare\_settings()}{prepare\_settings()}}
+{\footnotesize\ttfamily  None sphinx.\+environment.\+Build\+Environment.\+prepare\+\_\+settings (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{docname }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Prepare to set up environment for reading.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a5654bb52fd0f8a197c0387d7596c2399}\label{classsphinx_1_1environment_1_1BuildEnvironment_a5654bb52fd0f8a197c0387d7596c2399} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!relfn2path@{relfn2path}}
+\index{relfn2path@{relfn2path}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{relfn2path()}{relfn2path()}}
+{\footnotesize\ttfamily  tuple\mbox{[}str, str\mbox{]} sphinx.\+environment.\+Build\+Environment.\+relfn2path (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str \texorpdfstring{$\vert$}{|} Path}]{filename,  }\item[{str \texorpdfstring{$\vert$}{|} None }]{docname = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return paths to a file referenced from a document, relative to
+documentation root and absolute.
+
+In the input "filename", absolute filenames are taken as relative to the
+source dir, while relative filenames are relative to the dir of the
+containing document.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_ae98891a9f53e30dfe304306715634df3}\label{classsphinx_1_1environment_1_1BuildEnvironment_ae98891a9f53e30dfe304306715634df3} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!resolve\_references@{resolve\_references}}
+\index{resolve\_references@{resolve\_references}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{resolve\_references()}{resolve\_references()}}
+{\footnotesize\ttfamily  None sphinx.\+environment.\+Build\+Environment.\+resolve\+\_\+references (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{nodes.\+document}]{doctree,  }\item[{str}]{fromdocname,  }\item[{\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}}     }]{builder }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_ad932f19acdfb1f9f407aeda89115a303}\label{classsphinx_1_1environment_1_1BuildEnvironment_ad932f19acdfb1f9f407aeda89115a303} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!resolve\_toctree@{resolve\_toctree}}
+\index{resolve\_toctree@{resolve\_toctree}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{resolve\_toctree()}{resolve\_toctree()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}} \texorpdfstring{$\vert$}{|} None sphinx.\+environment.\+Build\+Environment.\+resolve\+\_\+toctree (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{docname,  }\item[{\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}}}]{builder,  }\item[{\mbox{\hyperlink{classsphinx_1_1addnodes_1_1toctree}{addnodes.\+toctree}}}]{toctree,  }\item[{bool }]{prune = {\ttfamily True},  }\item[{int }]{maxdepth = {\ttfamily 0},  }\item[{bool }]{titles\+\_\+only = {\ttfamily False},  }\item[{bool }]{collapse = {\ttfamily False},  }\item[{bool }]{includehidden = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Resolve a *toctree* node into individual bullet lists with titles
+as items, returning None (if no containing titles are found) or
+a new node.
+
+If *prune* is True, the tree is pruned to *maxdepth*, or if that is 0,
+to the value of the *maxdepth* option on the *toctree* node.
+If *titles_only* is True, only toplevel document titles will be in the
+resulting tree.
+If *collapse* is True, all branches not containing docname will
+be collapsed.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_afc65c64d252e8d34e2cde6deec2b2e91}\label{classsphinx_1_1environment_1_1BuildEnvironment_afc65c64d252e8d34e2cde6deec2b2e91} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!set\_versioning\_method@{set\_versioning\_method}}
+\index{set\_versioning\_method@{set\_versioning\_method}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{set\_versioning\_method()}{set\_versioning\_method()}}
+{\footnotesize\ttfamily  None sphinx.\+environment.\+Build\+Environment.\+set\+\_\+versioning\+\_\+method (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str \texorpdfstring{$\vert$}{|} Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}}\mbox{]}, bool\mbox{]}}]{method,  }\item[{bool     }]{compare }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the doctree versioning method for this environment.
+
+Versioning methods are a builder property; only builders with the same
+versioning method can share the same doctree directory.  Therefore, we
+raise an exception if the user tries to use an environment with an
+incompatible versioning method.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a13f0d43ae63f8c0bc7a54956880cfa62}\label{classsphinx_1_1environment_1_1BuildEnvironment_a13f0d43ae63f8c0bc7a54956880cfa62} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!setup@{setup}}
+\index{setup@{setup}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily  None sphinx.\+environment.\+Build\+Environment.\+setup (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}}]{app }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set up BuildEnvironment object.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a43ff127d3e048541b4ed108dac74bd9b}\label{classsphinx_1_1environment_1_1BuildEnvironment_a43ff127d3e048541b4ed108dac74bd9b} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!temp\_data@{temp\_data}}
+\index{temp\_data@{temp\_data}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{temp\_data()}{temp\_data()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classsphinx_1_1environment_1_1__CurrentDocument}{\+\_\+\+Current\+Document}} sphinx.\+environment.\+Build\+Environment.\+temp\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the temporary data storage for the current document.
+
+Kept for backwards compatibility.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a50f7bbe586262bb9560c500dda0d6674}\label{classsphinx_1_1environment_1_1BuildEnvironment_a50f7bbe586262bb9560c500dda0d6674} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!all\_docs@{all\_docs}}
+\index{all\_docs@{all\_docs}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{all\_docs}{all\_docs}}
+{\footnotesize\ttfamily sphinx.\+environment.\+Build\+Environment.\+all\+\_\+docs}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_acb04a4b3a3a7a6d42c6bc19be209721e}\label{classsphinx_1_1environment_1_1BuildEnvironment_acb04a4b3a3a7a6d42c6bc19be209721e} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!app@{app}}
+\index{app@{app}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{app}{app}}
+{\footnotesize\ttfamily sphinx.\+environment.\+Build\+Environment.\+app}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_ad21b655ac238a84d1e2b7ac6c432dbfd}\label{classsphinx_1_1environment_1_1BuildEnvironment_ad21b655ac238a84d1e2b7ac6c432dbfd} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!config@{config}}
+\index{config@{config}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{config}{config}}
+{\footnotesize\ttfamily sphinx.\+environment.\+Build\+Environment.\+config}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_af9d19d569e05fc266e9006631c42aa09}\label{classsphinx_1_1environment_1_1BuildEnvironment_af9d19d569e05fc266e9006631c42aa09} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!config\_status@{config\_status}}
+\index{config\_status@{config\_status}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{config\_status}{config\_status}}
+{\footnotesize\ttfamily sphinx.\+environment.\+Build\+Environment.\+config\+\_\+status}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a823af60e326829a411505a1575d54fde}\label{classsphinx_1_1environment_1_1BuildEnvironment_a823af60e326829a411505a1575d54fde} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!config\_status\_extra@{config\_status\_extra}}
+\index{config\_status\_extra@{config\_status\_extra}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{config\_status\_extra}{config\_status\_extra}}
+{\footnotesize\ttfamily sphinx.\+environment.\+Build\+Environment.\+config\+\_\+status\+\_\+extra}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a326a221d9576031d7190123e0641236e}\label{classsphinx_1_1environment_1_1BuildEnvironment_a326a221d9576031d7190123e0641236e} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!current\_document@{current\_document}}
+\index{current\_document@{current\_document}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{current\_document}{current\_document}}
+{\footnotesize\ttfamily sphinx.\+environment.\+Build\+Environment.\+current\+\_\+document}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a22de11e868126c627530f347fe2272c6}\label{classsphinx_1_1environment_1_1BuildEnvironment_a22de11e868126c627530f347fe2272c6} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!docname@{docname}}
+\index{docname@{docname}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{docname}{docname}}
+{\footnotesize\ttfamily sphinx.\+environment.\+Build\+Environment.\+docname}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a2e3f1740a589270a76ce801d3c047a49}\label{classsphinx_1_1environment_1_1BuildEnvironment_a2e3f1740a589270a76ce801d3c047a49} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!doctreedir@{doctreedir}}
+\index{doctreedir@{doctreedir}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{doctreedir}{doctreedir}}
+{\footnotesize\ttfamily sphinx.\+environment.\+Build\+Environment.\+doctreedir = \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPathProperty}{\+\_\+\+Str\+Path\+Property}}()\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a9509150e196db43fc03f5bf3094bfce3}\label{classsphinx_1_1environment_1_1BuildEnvironment_a9509150e196db43fc03f5bf3094bfce3} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!domains@{domains}}
+\index{domains@{domains}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{domains}{domains}}
+{\footnotesize\ttfamily sphinx.\+environment.\+Build\+Environment.\+domains}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_ae28bc802cf05c3b50ddc95a75710582d}\label{classsphinx_1_1environment_1_1BuildEnvironment_ae28bc802cf05c3b50ddc95a75710582d} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!events@{events}}
+\index{events@{events}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{events}{events}}
+{\footnotesize\ttfamily sphinx.\+environment.\+Build\+Environment.\+events}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_ac8ca3b1b0392b73fd8b24cbd39300456}\label{classsphinx_1_1environment_1_1BuildEnvironment_ac8ca3b1b0392b73fd8b24cbd39300456} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!project@{project}}
+\index{project@{project}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{project}{project}}
+{\footnotesize\ttfamily sphinx.\+environment.\+Build\+Environment.\+project}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a7ec64f6c2e0934babb58728103317fad}\label{classsphinx_1_1environment_1_1BuildEnvironment_a7ec64f6c2e0934babb58728103317fad} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!srcdir@{srcdir}}
+\index{srcdir@{srcdir}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{srcdir}{srcdir}}
+{\footnotesize\ttfamily sphinx.\+environment.\+Build\+Environment.\+srcdir = \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPathProperty}{\+\_\+\+Str\+Path\+Property}}()\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a6228132ea41cfefad7fe3fab608da102}\label{classsphinx_1_1environment_1_1BuildEnvironment_a6228132ea41cfefad7fe3fab608da102} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!toctree\_includes@{toctree\_includes}}
+\index{toctree\_includes@{toctree\_includes}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{toctree\_includes}{toctree\_includes}}
+{\footnotesize\ttfamily sphinx.\+environment.\+Build\+Environment.\+toctree\+\_\+includes}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a91327cf728e7f3bac97cac8a3c5e1b75}\label{classsphinx_1_1environment_1_1BuildEnvironment_a91327cf728e7f3bac97cac8a3c5e1b75} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!version@{version}}
+\index{version@{version}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{version}{version}}
+{\footnotesize\ttfamily sphinx.\+environment.\+Build\+Environment.\+version}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_af6a67bc0db7970e827fec9a9186b5864}\label{classsphinx_1_1environment_1_1BuildEnvironment_af6a67bc0db7970e827fec9a9186b5864} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!versioning\_compare@{versioning\_compare}}
+\index{versioning\_compare@{versioning\_compare}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{versioning\_compare}{versioning\_compare}}
+{\footnotesize\ttfamily sphinx.\+environment.\+Build\+Environment.\+versioning\+\_\+compare}
+
+\Hypertarget{classsphinx_1_1environment_1_1BuildEnvironment_a2b526691a3906eb625f8c0f3c8dba6dc}\label{classsphinx_1_1environment_1_1BuildEnvironment_a2b526691a3906eb625f8c0f3c8dba6dc} 
+\index{sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}!versioning\_condition@{versioning\_condition}}
+\index{versioning\_condition@{versioning\_condition}!sphinx.environment.BuildEnvironment@{sphinx.environment.BuildEnvironment}}
+\doxysubsubsection{\texorpdfstring{versioning\_condition}{versioning\_condition}}
+{\footnotesize\ttfamily sphinx.\+environment.\+Build\+Environment.\+versioning\+\_\+condition}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/sphinx/environment/\mbox{\hyperlink{sphinx_2environment_2____init_____8py}{\+\_\+\+\_\+init\+\_\+\+\_\+.\+py}}\end{DoxyCompactItemize}

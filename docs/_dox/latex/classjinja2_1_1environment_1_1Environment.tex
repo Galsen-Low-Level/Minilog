@@ -1,0 +1,947 @@
+\doxysection{jinja2.\+environment.\+Environment Class Reference}
+\hypertarget{classjinja2_1_1environment_1_1Environment}{}\label{classjinja2_1_1environment_1_1Environment}\index{jinja2.environment.Environment@{jinja2.environment.Environment}}
+Inheritance diagram for jinja2.\+environment.\+Environment\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.866894cm]{classjinja2_1_1environment_1_1Environment}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_af758db6473e229538a23236ca94bc5b5}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a21083815f94a638ccf3fe81be3dd16a4}{block\+\_\+start\+\_\+string}}=BLOCK\+\_\+\+START\+\_\+\+STRING, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ae51a1b43158239b18a58e8b5c2ba8b78}{block\+\_\+end\+\_\+string}}=BLOCK\+\_\+\+END\+\_\+\+STRING, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aeb7d43cd6350d87ace77b61fe761191d}{variable\+\_\+start\+\_\+string}}=VARIABLE\+\_\+\+START\+\_\+\+STRING, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_af606e27a375611fb1a176dcb86147350}{variable\+\_\+end\+\_\+string}}=VARIABLE\+\_\+\+END\+\_\+\+STRING, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_abd4d32c8d1b9394968de9fef0fe544f1}{comment\+\_\+start\+\_\+string}}=COMMENT\+\_\+\+START\+\_\+\+STRING, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a50977dcc623b4ccff0b06742b3c78f6b}{comment\+\_\+end\+\_\+string}}=COMMENT\+\_\+\+END\+\_\+\+STRING, t.\+Optional\mbox{[}str\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ab06e678d1be219053a5a33576f96fae5}{line\+\_\+statement\+\_\+prefix}}=LINE\+\_\+\+STATEMENT\+\_\+\+PREFIX, t.\+Optional\mbox{[}str\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a7f56eeff2e41f5790ba2d3146347531a}{line\+\_\+comment\+\_\+prefix}}=LINE\+\_\+\+COMMENT\+\_\+\+PREFIX, bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ae3aa2ae2619df9a2aa744adff8f734bb}{trim\+\_\+blocks}}=TRIM\+\_\+\+BLOCKS, bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a2f841f439d1d015b4e9fbbfdc95cd736}{lstrip\+\_\+blocks}}=LSTRIP\+\_\+\+BLOCKS, "{}te.\+Literal\mbox{[}\textquotesingle{}\textbackslash{}\textbackslash{}n\textquotesingle{}, \textquotesingle{}\textbackslash{}\textbackslash{}r\textbackslash{}\textbackslash{}n\textquotesingle{}, \textquotesingle{}\textbackslash{}\textbackslash{}r\textquotesingle{}\mbox{]}"{} newline\+\_\+sequence=NEWLINE\+\_\+\+SEQUENCE, bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a1ce5f2ab4442fb62c1b27b14836dd8a7}{keep\+\_\+trailing\+\_\+newline}}=KEEP\+\_\+\+TRAILING\+\_\+\+NEWLINE, t.\+Sequence\mbox{[}t.\+Union\mbox{[}str, t.\+Type\mbox{[}"{}Extension"{}\mbox{]}\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ad6e39b8b9cf90d8d1a420a40e29db2c9}{extensions}}=(), bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a89ea29c99256661d4f8812f8668096cf}{optimized}}=True, t.\+Type\mbox{[}\mbox{\hyperlink{classjinja2_1_1runtime_1_1Undefined}{Undefined}}\mbox{]} undefined=\mbox{\hyperlink{classjinja2_1_1runtime_1_1Undefined}{Undefined}}, t.\+Optional\mbox{[}t.\+Callable\mbox{[}..., t.\+Any\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ac812971d13a32a47d9ebd7e994207510}{finalize}}=None, t.\+Union\mbox{[}bool, t.\+Callable\mbox{[}\mbox{[}t.\+Optional\mbox{[}str\mbox{]}\mbox{]}, bool\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a2567fab346f5e368a0d92db284ab30e4}{autoescape}}=False, t.\+Optional\mbox{[}"{}Base\+Loader"{}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a932fcb4327ccfbc91ebe69848556b60e}{loader}}=None, int cache\+\_\+size=400, bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aff8d7153f26480f30ba1b5a544d85eac}{auto\+\_\+reload}}=True, t.\+Optional\mbox{[}"{}Bytecode\+Cache"{}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aa5bc8250b943d3ffd73bab6966f5ee26}{bytecode\+\_\+cache}}=None, bool enable\+\_\+async=False)
+\item 
+None \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aa854f0ad091eb27e4f2025e2d836f898}{add\+\_\+extension}} (self, t.\+Union\mbox{[}str, t.\+Type\mbox{[}"{}Extension"{}\mbox{]}\mbox{]} extension)
+\item 
+None \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_addbbd33e41c262ae115a9f362391a7d5}{extend}} (self, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}t.\+Any attributes)
+\item 
+"{}te.\+Self"{} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_afad4bab9e00f479fbef9b966fd7feeff}{overlay}} (self, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a21083815f94a638ccf3fe81be3dd16a4}{block\+\_\+start\+\_\+string}}=missing, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ae51a1b43158239b18a58e8b5c2ba8b78}{block\+\_\+end\+\_\+string}}=missing, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aeb7d43cd6350d87ace77b61fe761191d}{variable\+\_\+start\+\_\+string}}=missing, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_af606e27a375611fb1a176dcb86147350}{variable\+\_\+end\+\_\+string}}=missing, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_abd4d32c8d1b9394968de9fef0fe544f1}{comment\+\_\+start\+\_\+string}}=missing, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a50977dcc623b4ccff0b06742b3c78f6b}{comment\+\_\+end\+\_\+string}}=missing, t.\+Optional\mbox{[}str\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ab06e678d1be219053a5a33576f96fae5}{line\+\_\+statement\+\_\+prefix}}=missing, t.\+Optional\mbox{[}str\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a7f56eeff2e41f5790ba2d3146347531a}{line\+\_\+comment\+\_\+prefix}}=missing, bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ae3aa2ae2619df9a2aa744adff8f734bb}{trim\+\_\+blocks}}=missing, bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a2f841f439d1d015b4e9fbbfdc95cd736}{lstrip\+\_\+blocks}}=missing, "{}te.\+Literal\mbox{[}\textquotesingle{}\textbackslash{}\textbackslash{}n\textquotesingle{}, \textquotesingle{}\textbackslash{}\textbackslash{}r\textbackslash{}\textbackslash{}n\textquotesingle{}, \textquotesingle{}\textbackslash{}\textbackslash{}r\textquotesingle{}\mbox{]}"{} newline\+\_\+sequence=missing, bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a1ce5f2ab4442fb62c1b27b14836dd8a7}{keep\+\_\+trailing\+\_\+newline}}=missing, t.\+Sequence\mbox{[}t.\+Union\mbox{[}str, t.\+Type\mbox{[}"{}Extension"{}\mbox{]}\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ad6e39b8b9cf90d8d1a420a40e29db2c9}{extensions}}=missing, bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a89ea29c99256661d4f8812f8668096cf}{optimized}}=missing, t.\+Type\mbox{[}\mbox{\hyperlink{classjinja2_1_1runtime_1_1Undefined}{Undefined}}\mbox{]} undefined=missing, t.\+Optional\mbox{[}t.\+Callable\mbox{[}..., t.\+Any\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ac812971d13a32a47d9ebd7e994207510}{finalize}}=missing, t.\+Union\mbox{[}bool, t.\+Callable\mbox{[}\mbox{[}t.\+Optional\mbox{[}str\mbox{]}\mbox{]}, bool\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a2567fab346f5e368a0d92db284ab30e4}{autoescape}}=missing, t.\+Optional\mbox{[}"{}Base\+Loader"{}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a932fcb4327ccfbc91ebe69848556b60e}{loader}}=missing, int cache\+\_\+size=missing, bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aff8d7153f26480f30ba1b5a544d85eac}{auto\+\_\+reload}}=missing, t.\+Optional\mbox{[}"{}Bytecode\+Cache"{}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aa5bc8250b943d3ffd73bab6966f5ee26}{bytecode\+\_\+cache}}=missing, bool enable\+\_\+async=missing)
+\item 
+\mbox{\hyperlink{classjinja2_1_1lexer_1_1Lexer}{Lexer}} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a8ce0539e36f1dc905a740f5495136085}{lexer}} (self)
+\item 
+t.\+Iterator\mbox{[}"{}Extension"{}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a209b2c2cd92f8d7ba75bc226d8792e5a}{iter\+\_\+extensions}} (self)
+\item 
+t.\+Union\mbox{[}t.\+Any, \mbox{\hyperlink{classjinja2_1_1runtime_1_1Undefined}{Undefined}}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_adaac0af940852c76683f69125182a15c}{getitem}} (self, t.\+Any obj, t.\+Union\mbox{[}str, t.\+Any\mbox{]} argument)
+\item 
+t.\+Any \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a7f381581b4a95b1cd53f5fa48e233fe0}{getattr}} (self, t.\+Any obj, str attribute)
+\item 
+t.\+Any \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a9deceba83b2325e48cac0b19cbca82b9}{call\+\_\+filter}} (self, str name, t.\+Any value, t.\+Optional\mbox{[}t.\+Sequence\mbox{[}t.\+Any\mbox{]}\mbox{]} args=None, t.\+Optional\mbox{[}t.\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} kwargs=None, t.\+Optional\mbox{[}\mbox{\hyperlink{classjinja2_1_1runtime_1_1Context}{Context}}\mbox{]} context=None, t.\+Optional\mbox{[}\mbox{\hyperlink{classjinja2_1_1nodes_1_1EvalContext}{Eval\+Context}}\mbox{]} eval\+\_\+ctx=None)
+\item 
+t.\+Any \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a8dc9961dee3839895e4115410dc2abe5}{call\+\_\+test}} (self, str name, t.\+Any value, t.\+Optional\mbox{[}t.\+Sequence\mbox{[}t.\+Any\mbox{]}\mbox{]} args=None, t.\+Optional\mbox{[}t.\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} kwargs=None, t.\+Optional\mbox{[}\mbox{\hyperlink{classjinja2_1_1runtime_1_1Context}{Context}}\mbox{]} context=None, t.\+Optional\mbox{[}\mbox{\hyperlink{classjinja2_1_1nodes_1_1EvalContext}{Eval\+Context}}\mbox{]} eval\+\_\+ctx=None)
+\item 
+\mbox{\hyperlink{classjinja2_1_1nodes_1_1Template}{nodes.\+Template}} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a203dd9cf6165884a55677c5a9aeb3ac9}{parse}} (self, str source, t.\+Optional\mbox{[}str\mbox{]} name=None, t.\+Optional\mbox{[}str\mbox{]} filename=None)
+\item 
+t.\+Iterator\mbox{[}t.\+Tuple\mbox{[}int, str, str\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a0e3c1818fa749b93bb20d2cc96ca0cff}{lex}} (self, str source, t.\+Optional\mbox{[}str\mbox{]} name=None, t.\+Optional\mbox{[}str\mbox{]} filename=None)
+\item 
+str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ada6737748d0d06899ee8c6085dd2fd6b}{preprocess}} (self, str source, t.\+Optional\mbox{[}str\mbox{]} name=None, t.\+Optional\mbox{[}str\mbox{]} filename=None)
+\item 
+Code\+Type \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a7ee42dc831dd9458f8f3ce90d14124b5}{compile}} (self, t.\+Union\mbox{[}str, \mbox{\hyperlink{classjinja2_1_1nodes_1_1Template}{nodes.\+Template}}\mbox{]} source, t.\+Optional\mbox{[}str\mbox{]} name=None, t.\+Optional\mbox{[}str\mbox{]} filename=None, "{}te.\+Literal\mbox{[}False\mbox{]}"{} raw=False, bool defer\+\_\+init=False)
+\item 
+str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aa431cfc54275cf22a54509bc001819be}{compile}} (self, t.\+Union\mbox{[}str, \mbox{\hyperlink{classjinja2_1_1nodes_1_1Template}{nodes.\+Template}}\mbox{]} source, t.\+Optional\mbox{[}str\mbox{]} name=None, t.\+Optional\mbox{[}str\mbox{]} filename=None, "{}te.\+Literal\mbox{[}True\mbox{]}"{} raw=..., bool defer\+\_\+init=False)
+\item 
+t.\+Union\mbox{[}str, Code\+Type\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a66dbeb68d2ccaf508f2f3189da417d8e}{compile}} (self, t.\+Union\mbox{[}str, \mbox{\hyperlink{classjinja2_1_1nodes_1_1Template}{nodes.\+Template}}\mbox{]} source, t.\+Optional\mbox{[}str\mbox{]} name=None, t.\+Optional\mbox{[}str\mbox{]} filename=None, bool raw=False, bool defer\+\_\+init=False)
+\item 
+"{}Template\+Expression"{} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a132aeddd0259cd765a630c3490b122c3}{compile\+\_\+expression}} (self, str source, bool undefined\+\_\+to\+\_\+none=True)
+\item 
+None \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a485a7e65afe00930c1e0b24a5080ed9d}{compile\+\_\+templates}} (self, t.\+Union\mbox{[}str, "{}os.\+Path\+Like\mbox{[}str\mbox{]}"{}\mbox{]} target, t.\+Optional\mbox{[}t.\+Collection\mbox{[}str\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ad6e39b8b9cf90d8d1a420a40e29db2c9}{extensions}}=None, t.\+Optional\mbox{[}t.\+Callable\mbox{[}\mbox{[}str\mbox{]}, bool\mbox{]}\mbox{]} filter\+\_\+func=None, t.\+Optional\mbox{[}str\mbox{]} zip="{}deflated"{}, t.\+Optional\mbox{[}t.\+Callable\mbox{[}\mbox{[}str\mbox{]}, None\mbox{]}\mbox{]} log\+\_\+function=None, bool ignore\+\_\+errors=True)
+\item 
+t.\+List\mbox{[}str\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a4afe517612b9934f476063ccf2489b86}{list\+\_\+templates}} (self, t.\+Optional\mbox{[}t.\+Collection\mbox{[}str\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ad6e39b8b9cf90d8d1a420a40e29db2c9}{extensions}}=None, t.\+Optional\mbox{[}t.\+Callable\mbox{[}\mbox{[}str\mbox{]}, bool\mbox{]}\mbox{]} filter\+\_\+func=None)
+\item 
+"{}te.\+No\+Return"{} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a3d712e74fd0a7db032669b45c916ec85}{handle\+\_\+exception}} (self, t.\+Optional\mbox{[}str\mbox{]} source=None)
+\item 
+str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_adc29a3ae54fdeccc97e991e07953208d}{join\+\_\+path}} (self, str template, str parent)
+\item 
+"{}Template"{} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a01a140012367ce8393fba888374ab66c}{get\+\_\+template}} (self, t.\+Union\mbox{[}str, "{}Template"{}\mbox{]} name, t.\+Optional\mbox{[}str\mbox{]} parent=None, t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a12b3cef13dab3bd1a7c2e3b5f09d3f98}{globals}}=None)
+\item 
+"{}Template"{} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a44b9a9d2e0750926860b40dce708fe4c}{select\+\_\+template}} (self, t.\+Iterable\mbox{[}t.\+Union\mbox{[}str, "{}Template"{}\mbox{]}\mbox{]} names, t.\+Optional\mbox{[}str\mbox{]} parent=None, t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a12b3cef13dab3bd1a7c2e3b5f09d3f98}{globals}}=None)
+\item 
+"{}Template"{} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a193951eb679a2c84de387ca2b66aa27e}{get\+\_\+or\+\_\+select\+\_\+template}} (self, t.\+Union\mbox{[}str, "{}Template"{}, t.\+List\mbox{[}t.\+Union\mbox{[}str, "{}Template"{}\mbox{]}\mbox{]}\mbox{]} template\+\_\+name\+\_\+or\+\_\+list, t.\+Optional\mbox{[}str\mbox{]} parent=None, t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a12b3cef13dab3bd1a7c2e3b5f09d3f98}{globals}}=None)
+\item 
+"{}Template"{} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_af5ea39790a5ba664cc7c0c6e186143e6}{from\+\_\+string}} (self, t.\+Union\mbox{[}str, \mbox{\hyperlink{classjinja2_1_1nodes_1_1Template}{nodes.\+Template}}\mbox{]} source, t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a12b3cef13dab3bd1a7c2e3b5f09d3f98}{globals}}=None, t.\+Optional\mbox{[}t.\+Type\mbox{[}"{}Template"{}\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ad2d7e3f6afdcd5d4a0a41b20a3322dbd}{template\+\_\+class}}=None)
+\item 
+t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a119ee010e7f06e992df8f30974ad1137}{make\+\_\+globals}} (self, t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} d)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a21083815f94a638ccf3fe81be3dd16a4}{block\+\_\+start\+\_\+string}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ae51a1b43158239b18a58e8b5c2ba8b78}{block\+\_\+end\+\_\+string}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aeb7d43cd6350d87ace77b61fe761191d}{variable\+\_\+start\+\_\+string}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_af606e27a375611fb1a176dcb86147350}{variable\+\_\+end\+\_\+string}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_abd4d32c8d1b9394968de9fef0fe544f1}{comment\+\_\+start\+\_\+string}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a50977dcc623b4ccff0b06742b3c78f6b}{comment\+\_\+end\+\_\+string}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ab06e678d1be219053a5a33576f96fae5}{line\+\_\+statement\+\_\+prefix}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a7f56eeff2e41f5790ba2d3146347531a}{line\+\_\+comment\+\_\+prefix}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ae3aa2ae2619df9a2aa744adff8f734bb}{trim\+\_\+blocks}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a2f841f439d1d015b4e9fbbfdc95cd736}{lstrip\+\_\+blocks}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a7051919bf202901ab0cb86db634382ca}{newline\+\_\+sequence}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a1ce5f2ab4442fb62c1b27b14836dd8a7}{keep\+\_\+trailing\+\_\+newline}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a89ea29c99256661d4f8812f8668096cf}{optimized}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ac812971d13a32a47d9ebd7e994207510}{finalize}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a2567fab346f5e368a0d92db284ab30e4}{autoescape}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_af34cc62216dd902073c83b9523d65a31}{filters}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aab1bee5de97fda71dd1983fcea67bdd7}{tests}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a12b3cef13dab3bd1a7c2e3b5f09d3f98}{globals}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a932fcb4327ccfbc91ebe69848556b60e}{loader}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a6b175442c705fa460fbc4478c9cbeb8c}{cache}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aa5bc8250b943d3ffd73bab6966f5ee26}{bytecode\+\_\+cache}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aff8d7153f26480f30ba1b5a544d85eac}{auto\+\_\+reload}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a4734afddfa6a371f9a8abcb4313cf971}{policies}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ad6e39b8b9cf90d8d1a420a40e29db2c9}{extensions}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aa393a275b440f523ec0da88ad25a8b2d}{is\+\_\+async}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a299850b4b15f78a3f0b9eeac4774065b}{sandboxed}} = False
+\item 
+bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a4c9f95a36934895e6d1976c14d8b894f}{overlayed}} = False
+\item 
+t \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a2944894e0bb6facc8b150e880f7d4557}{linked\+\_\+to}} = None
+\item 
+bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ad3c1e56ac606ed76b4708bf19877bd46}{shared}} = False
+\item 
+t \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a64d2246274eff95fed0ed59fdc93f302}{code\+\_\+generator\+\_\+class}} = \mbox{\hyperlink{classjinja2_1_1compiler_1_1CodeGenerator}{Code\+Generator}}
+\item 
+str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_abafe91c81d1c0333873b08096ee81d2c}{concat}} = "{}"{}.join
+\item 
+t \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ae3aae9b2d3d56b961c26464d880f805d}{context\+\_\+class}} = \mbox{\hyperlink{classjinja2_1_1runtime_1_1Context}{Context}}
+\item 
+t \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ad2d7e3f6afdcd5d4a0a41b20a3322dbd}{template\+\_\+class}} .Type\mbox{[}"{}Template"{}\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+t.\+Any \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aad7af4e3ecd8789b53835e13cb5de9e4}{\+\_\+filter\+\_\+test\+\_\+common}} (self, t.\+Union\mbox{[}str, \mbox{\hyperlink{classjinja2_1_1runtime_1_1Undefined}{Undefined}}\mbox{]} name, t.\+Any value, t.\+Optional\mbox{[}t.\+Sequence\mbox{[}t.\+Any\mbox{]}\mbox{]} args, t.\+Optional\mbox{[}t.\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} kwargs, t.\+Optional\mbox{[}\mbox{\hyperlink{classjinja2_1_1runtime_1_1Context}{Context}}\mbox{]} context, t.\+Optional\mbox{[}\mbox{\hyperlink{classjinja2_1_1nodes_1_1EvalContext}{Eval\+Context}}\mbox{]} eval\+\_\+ctx, bool is\+\_\+filter)
+\item 
+\mbox{\hyperlink{classjinja2_1_1nodes_1_1Template}{nodes.\+Template}} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a057c4ff6c081612b3887b33ed3a2751c}{\+\_\+parse}} (self, str source, t.\+Optional\mbox{[}str\mbox{]} name, t.\+Optional\mbox{[}str\mbox{]} filename)
+\item 
+\mbox{\hyperlink{classjinja2_1_1lexer_1_1TokenStream}{Token\+Stream}} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aac91927185252d0a4e5586078d3f9075}{\+\_\+tokenize}} (self, str source, t.\+Optional\mbox{[}str\mbox{]} name, t.\+Optional\mbox{[}str\mbox{]} filename=None, t.\+Optional\mbox{[}str\mbox{]} state=None)
+\item 
+str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a0b1ece45cf192279c5c84bd7336d793e}{\+\_\+generate}} (self, \mbox{\hyperlink{classjinja2_1_1nodes_1_1Template}{nodes.\+Template}} source, t.\+Optional\mbox{[}str\mbox{]} name, t.\+Optional\mbox{[}str\mbox{]} filename, bool defer\+\_\+init=False)
+\item 
+Code\+Type \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aa3bcc2ffaad0a4c65edcd2612ed435e4}{\+\_\+compile}} (self, str source, str filename)
+\item 
+"{}Template"{} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a0e849e5eb6ee0bc5b4a374a486bfa6d1}{\+\_\+load\+\_\+template}} (self, str name, t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a12b3cef13dab3bd1a7c2e3b5f09d3f98}{globals}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}The core component of Jinja is the `Environment`.  It contains
+important shared variables like configuration, filters, tests,
+globals and others.  Instances of this class may be modified if
+they are not shared and if no template was loaded so far.
+Modifications on environments after the first template was loaded
+will lead to surprising effects and undefined behavior.
+
+Here are the possible initialization parameters:
+
+    `block_start_string`
+        The string marking the beginning of a block.  Defaults to ``'{%'``.
+
+    `block_end_string`
+        The string marking the end of a block.  Defaults to ``'%}'``.
+
+    `variable_start_string`
+        The string marking the beginning of a print statement.
+        Defaults to ``'{{'``.
+
+    `variable_end_string`
+        The string marking the end of a print statement.  Defaults to
+        ``'}}'``.
+
+    `comment_start_string`
+        The string marking the beginning of a comment.  Defaults to ``'{#'``.
+
+    `comment_end_string`
+        The string marking the end of a comment.  Defaults to ``'#}'``.
+
+    `line_statement_prefix`
+        If given and a string, this will be used as prefix for line based
+        statements.  See also :ref:`line-statements`.
+
+    `line_comment_prefix`
+        If given and a string, this will be used as prefix for line based
+        comments.  See also :ref:`line-statements`.
+
+        .. versionadded:: 2.2
+
+    `trim_blocks`
+        If this is set to ``True`` the first newline after a block is
+        removed (block, not variable tag!).  Defaults to `False`.
+
+    `lstrip_blocks`
+        If this is set to ``True`` leading spaces and tabs are stripped
+        from the start of a line to a block.  Defaults to `False`.
+
+    `newline_sequence`
+        The sequence that starts a newline.  Must be one of ``'\r'``,
+        ``'\n'`` or ``'\r\n'``.  The default is ``'\n'`` which is a
+        useful default for Linux and OS X systems as well as web
+        applications.
+
+    `keep_trailing_newline`
+        Preserve the trailing newline when rendering templates.
+        The default is ``False``, which causes a single newline,
+        if present, to be stripped from the end of the template.
+
+        .. versionadded:: 2.7
+
+    `extensions`
+        List of Jinja extensions to use.  This can either be import paths
+        as strings or extension classes.  For more information have a
+        look at :ref:`the extensions documentation <jinja-extensions>`.
+
+    `optimized`
+        should the optimizer be enabled?  Default is ``True``.
+
+    `undefined`
+        :class:`Undefined` or a subclass of it that is used to represent
+        undefined values in the template.
+
+    `finalize`
+        A callable that can be used to process the result of a variable
+        expression before it is output.  For example one can convert
+        ``None`` implicitly into an empty string here.
+
+    `autoescape`
+        If set to ``True`` the XML/HTML autoescaping feature is enabled by
+        default.  For more details about autoescaping see
+        :class:`~markupsafe.Markup`.  As of Jinja 2.4 this can also
+        be a callable that is passed the template name and has to
+        return ``True`` or ``False`` depending on autoescape should be
+        enabled by default.
+
+        .. versionchanged:: 2.4
+           `autoescape` can now be a function
+
+    `loader`
+        The template loader for this environment.
+
+    `cache_size`
+        The size of the cache.  Per default this is ``400`` which means
+        that if more than 400 templates are loaded the loader will clean
+        out the least recently used template.  If the cache size is set to
+        ``0`` templates are recompiled all the time, if the cache size is
+        ``-1`` the cache will not be cleaned.
+
+        .. versionchanged:: 2.8
+           The cache size was increased to 400 from a low 50.
+
+    `auto_reload`
+        Some loaders load templates from locations where the template
+        sources may change (ie: file system or database).  If
+        ``auto_reload`` is set to ``True`` (default) every time a template is
+        requested the loader checks if the source changed and if yes, it
+        will reload the template.  For higher performance it's possible to
+        disable that.
+
+    `bytecode_cache`
+        If set to a bytecode cache object, this object will provide a
+        cache for the internal Jinja bytecode so that templates don't
+        have to be parsed if they were not changed.
+
+        See :ref:`bytecode-cache` for more information.
+
+    `enable_async`
+        If set to true this enables async template execution which
+        allows using async functions and generators.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classjinja2_1_1environment_1_1Environment_af758db6473e229538a23236ca94bc5b5}\label{classjinja2_1_1environment_1_1Environment_af758db6473e229538a23236ca94bc5b5} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str }]{block\+\_\+start\+\_\+string = {\ttfamily BLOCK\+\_\+START\+\_\+STRING},  }\item[{str }]{block\+\_\+end\+\_\+string = {\ttfamily BLOCK\+\_\+END\+\_\+STRING},  }\item[{str }]{variable\+\_\+start\+\_\+string = {\ttfamily VARIABLE\+\_\+START\+\_\+STRING},  }\item[{str }]{variable\+\_\+end\+\_\+string = {\ttfamily VARIABLE\+\_\+END\+\_\+STRING},  }\item[{str }]{comment\+\_\+start\+\_\+string = {\ttfamily COMMENT\+\_\+START\+\_\+STRING},  }\item[{str }]{comment\+\_\+end\+\_\+string = {\ttfamily COMMENT\+\_\+END\+\_\+STRING},  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{line\+\_\+statement\+\_\+prefix = {\ttfamily LINE\+\_\+STATEMENT\+\_\+PREFIX},  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{line\+\_\+comment\+\_\+prefix = {\ttfamily LINE\+\_\+COMMENT\+\_\+PREFIX},  }\item[{bool }]{trim\+\_\+blocks = {\ttfamily TRIM\+\_\+BLOCKS},  }\item[{bool }]{lstrip\+\_\+blocks = {\ttfamily LSTRIP\+\_\+BLOCKS},  }\item[{"{}te.\+Literal\mbox{[}\textquotesingle{}\textbackslash{}\textbackslash{}n\textquotesingle{}, \textquotesingle{}\textbackslash{}\textbackslash{}r\textbackslash{}\textbackslash{}n\textquotesingle{}, \textquotesingle{}\textbackslash{}\textbackslash{}r\textquotesingle{}\mbox{]}"{} }]{newline\+\_\+sequence = {\ttfamily NEWLINE\+\_\+SEQUENCE},  }\item[{bool }]{keep\+\_\+trailing\+\_\+newline = {\ttfamily KEEP\+\_\+TRAILING\+\_\+NEWLINE},  }\item[{t.\+Sequence\mbox{[}t.\+Union\mbox{[}str, t.\+Type\mbox{[}"{}Extension"{}\mbox{]}\mbox{]}\mbox{]} }]{extensions = {\ttfamily ()},  }\item[{bool }]{optimized = {\ttfamily True},  }\item[{t.\+Type\mbox{[}\mbox{\hyperlink{classjinja2_1_1runtime_1_1Undefined}{Undefined}}\mbox{]} }]{undefined = {\ttfamily \mbox{\hyperlink{classjinja2_1_1runtime_1_1Undefined}{Undefined}}},  }\item[{t.\+Optional\mbox{[}t.\+Callable\mbox{[}..., t.\+Any\mbox{]}\mbox{]} }]{finalize = {\ttfamily None},  }\item[{t.\+Union\mbox{[}bool, t.\+Callable\mbox{[}\mbox{[}t.\+Optional\mbox{[}str\mbox{]}\mbox{]}, bool\mbox{]}\mbox{]} }]{autoescape = {\ttfamily False},  }\item[{t.\+Optional\mbox{[}"{}Base\+Loader"{}\mbox{]} }]{loader = {\ttfamily None},  }\item[{int }]{cache\+\_\+size = {\ttfamily 400},  }\item[{bool }]{auto\+\_\+reload = {\ttfamily True},  }\item[{t.\+Optional\mbox{[}"{}Bytecode\+Cache"{}\mbox{]} }]{bytecode\+\_\+cache = {\ttfamily None},  }\item[{bool }]{enable\+\_\+async = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+Reimplemented in \mbox{\hyperlink{classjinja2_1_1sandbox_1_1SandboxedEnvironment_a5b7084e92161580b72e9a30cea2d468e}{jinja2.\+sandbox.\+Sandboxed\+Environment}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classjinja2_1_1environment_1_1Environment_aa3bcc2ffaad0a4c65edcd2612ed435e4}\label{classjinja2_1_1environment_1_1Environment_aa3bcc2ffaad0a4c65edcd2612ed435e4} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!\_compile@{\_compile}}
+\index{\_compile@{\_compile}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{\_compile()}{\_compile()}}
+{\footnotesize\ttfamily  Code\+Type jinja2.\+environment.\+Environment.\+\_\+compile (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{source,  }\item[{str}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Internal hook that can be overridden to hook a different compile
+method in.
+
+.. versionadded:: 2.5
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_aad7af4e3ecd8789b53835e13cb5de9e4}\label{classjinja2_1_1environment_1_1Environment_aad7af4e3ecd8789b53835e13cb5de9e4} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!\_filter\_test\_common@{\_filter\_test\_common}}
+\index{\_filter\_test\_common@{\_filter\_test\_common}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{\_filter\_test\_common()}{\_filter\_test\_common()}}
+{\footnotesize\ttfamily  t.\+Any jinja2.\+environment.\+Environment.\+\_\+filter\+\_\+test\+\_\+common (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{t.\+Union\mbox{[}str, \mbox{\hyperlink{classjinja2_1_1runtime_1_1Undefined}{Undefined}}\mbox{]}}]{name,  }\item[{t.\+Any}]{value,  }\item[{t.\+Optional\mbox{[}t.\+Sequence\mbox{[}t.\+Any\mbox{]}\mbox{]}}]{args,  }\item[{t.\+Optional\mbox{[}t.\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]}}]{kwargs,  }\item[{t.\+Optional\mbox{[}\mbox{\hyperlink{classjinja2_1_1runtime_1_1Context}{Context}}\mbox{]}}]{context,  }\item[{t.\+Optional\mbox{[}\mbox{\hyperlink{classjinja2_1_1nodes_1_1EvalContext}{Eval\+Context}}\mbox{]}}]{eval\+\_\+ctx,  }\item[{bool}]{is\+\_\+filter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_a0b1ece45cf192279c5c84bd7336d793e}\label{classjinja2_1_1environment_1_1Environment_a0b1ece45cf192279c5c84bd7336d793e} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!\_generate@{\_generate}}
+\index{\_generate@{\_generate}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{\_generate()}{\_generate()}}
+{\footnotesize\ttfamily  str jinja2.\+environment.\+Environment.\+\_\+generate (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classjinja2_1_1nodes_1_1Template}{nodes.\+Template}}}]{source,  }\item[{t.\+Optional\mbox{[}str\mbox{]}}]{name,  }\item[{t.\+Optional\mbox{[}str\mbox{]}}]{filename,  }\item[{bool }]{defer\+\_\+init = {\ttfamily False} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Internal hook that can be overridden to hook a different generate
+method in.
+
+.. versionadded:: 2.5
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_a0e849e5eb6ee0bc5b4a374a486bfa6d1}\label{classjinja2_1_1environment_1_1Environment_a0e849e5eb6ee0bc5b4a374a486bfa6d1} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!\_load\_template@{\_load\_template}}
+\index{\_load\_template@{\_load\_template}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{\_load\_template()}{\_load\_template()}}
+{\footnotesize\ttfamily  "{}Template"{} jinja2.\+environment.\+Environment.\+\_\+load\+\_\+template (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name,  }\item[{t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]}     }]{globals }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_a057c4ff6c081612b3887b33ed3a2751c}\label{classjinja2_1_1environment_1_1Environment_a057c4ff6c081612b3887b33ed3a2751c} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!\_parse@{\_parse}}
+\index{\_parse@{\_parse}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{\_parse()}{\_parse()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classjinja2_1_1nodes_1_1Template}{nodes.\+Template}} jinja2.\+environment.\+Environment.\+\_\+parse (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{source,  }\item[{t.\+Optional\mbox{[}str\mbox{]}}]{name,  }\item[{t.\+Optional\mbox{[}str\mbox{]}     }]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Internal parsing function used by `parse` and `compile`.\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_aac91927185252d0a4e5586078d3f9075}\label{classjinja2_1_1environment_1_1Environment_aac91927185252d0a4e5586078d3f9075} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!\_tokenize@{\_tokenize}}
+\index{\_tokenize@{\_tokenize}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{\_tokenize()}{\_tokenize()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classjinja2_1_1lexer_1_1TokenStream}{Token\+Stream}} jinja2.\+environment.\+Environment.\+\_\+tokenize (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{source,  }\item[{t.\+Optional\mbox{[}str\mbox{]}}]{name,  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{filename = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{state = {\ttfamily None} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Called by the parser to do the preprocessing and filtering
+for all the extensions.  Returns a :class:`~jinja2.lexer.TokenStream`.
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_aa854f0ad091eb27e4f2025e2d836f898}\label{classjinja2_1_1environment_1_1Environment_aa854f0ad091eb27e4f2025e2d836f898} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!add\_extension@{add\_extension}}
+\index{add\_extension@{add\_extension}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{add\_extension()}{add\_extension()}}
+{\footnotesize\ttfamily  None jinja2.\+environment.\+Environment.\+add\+\_\+extension (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{t.\+Union\mbox{[}str, t.\+Type\mbox{[}"{}Extension"{}\mbox{]}\mbox{]}}]{extension }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds an extension after the environment was created.
+
+.. versionadded:: 2.5
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_a9deceba83b2325e48cac0b19cbca82b9}\label{classjinja2_1_1environment_1_1Environment_a9deceba83b2325e48cac0b19cbca82b9} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!call\_filter@{call\_filter}}
+\index{call\_filter@{call\_filter}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{call\_filter()}{call\_filter()}}
+{\footnotesize\ttfamily  t.\+Any jinja2.\+environment.\+Environment.\+call\+\_\+filter (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name,  }\item[{t.\+Any}]{value,  }\item[{t.\+Optional\mbox{[}t.\+Sequence\mbox{[}t.\+Any\mbox{]}\mbox{]} }]{args = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}t.\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} }]{kwargs = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}\mbox{\hyperlink{classjinja2_1_1runtime_1_1Context}{Context}}\mbox{]} }]{context = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}\mbox{\hyperlink{classjinja2_1_1nodes_1_1EvalContext}{Eval\+Context}}\mbox{]} }]{eval\+\_\+ctx = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Invoke a filter on a value the same way the compiler does.
+
+This might return a coroutine if the filter is running from an
+environment in async mode and the filter supports async
+execution. It's your responsibility to await this if needed.
+
+.. versionadded:: 2.7
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_a8dc9961dee3839895e4115410dc2abe5}\label{classjinja2_1_1environment_1_1Environment_a8dc9961dee3839895e4115410dc2abe5} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!call\_test@{call\_test}}
+\index{call\_test@{call\_test}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{call\_test()}{call\_test()}}
+{\footnotesize\ttfamily  t.\+Any jinja2.\+environment.\+Environment.\+call\+\_\+test (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name,  }\item[{t.\+Any}]{value,  }\item[{t.\+Optional\mbox{[}t.\+Sequence\mbox{[}t.\+Any\mbox{]}\mbox{]} }]{args = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}t.\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} }]{kwargs = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}\mbox{\hyperlink{classjinja2_1_1runtime_1_1Context}{Context}}\mbox{]} }]{context = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}\mbox{\hyperlink{classjinja2_1_1nodes_1_1EvalContext}{Eval\+Context}}\mbox{]} }]{eval\+\_\+ctx = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Invoke a test on a value the same way the compiler does.
+
+This might return a coroutine if the test is running from an
+environment in async mode and the test supports async execution.
+It's your responsibility to await this if needed.
+
+.. versionchanged:: 3.0
+    Tests support ``@pass_context``, etc. decorators. Added
+    the ``context`` and ``eval_ctx`` parameters.
+
+.. versionadded:: 2.7
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_a7ee42dc831dd9458f8f3ce90d14124b5}\label{classjinja2_1_1environment_1_1Environment_a7ee42dc831dd9458f8f3ce90d14124b5} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!compile@{compile}}
+\index{compile@{compile}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{compile()}{compile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily  Code\+Type jinja2.\+environment.\+Environment.\+compile (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{t.\+Union\mbox{[}str, \mbox{\hyperlink{classjinja2_1_1nodes_1_1Template}{nodes.\+Template}}\mbox{]}}]{source,  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{name = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{filename = {\ttfamily None},  }\item[{"{}te.\+Literal\mbox{[}False\mbox{]}"{} }]{raw = {\ttfamily False},  }\item[{bool }]{defer\+\_\+init = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_aa431cfc54275cf22a54509bc001819be}\label{classjinja2_1_1environment_1_1Environment_aa431cfc54275cf22a54509bc001819be} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!compile@{compile}}
+\index{compile@{compile}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{compile()}{compile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily  str jinja2.\+environment.\+Environment.\+compile (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{t.\+Union\mbox{[}str, \mbox{\hyperlink{classjinja2_1_1nodes_1_1Template}{nodes.\+Template}}\mbox{]}}]{source,  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{name = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{filename = {\ttfamily None},  }\item[{"{}te.\+Literal\mbox{[}True\mbox{]}"{} }]{raw = {\ttfamily ...},  }\item[{bool }]{defer\+\_\+init = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_a66dbeb68d2ccaf508f2f3189da417d8e}\label{classjinja2_1_1environment_1_1Environment_a66dbeb68d2ccaf508f2f3189da417d8e} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!compile@{compile}}
+\index{compile@{compile}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{compile()}{compile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily  t.\+Union\mbox{[}str, Code\+Type\mbox{]} jinja2.\+environment.\+Environment.\+compile (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{t.\+Union\mbox{[}str, \mbox{\hyperlink{classjinja2_1_1nodes_1_1Template}{nodes.\+Template}}\mbox{]}}]{source,  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{name = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{filename = {\ttfamily None},  }\item[{bool }]{raw = {\ttfamily False},  }\item[{bool }]{defer\+\_\+init = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compile a node or template source code.  The `name` parameter is
+the load name of the template after it was joined using
+:meth:`join_path` if necessary, not the filename on the file system.
+the `filename` parameter is the estimated filename of the template on
+the file system.  If the template came from a database or memory this
+can be omitted.
+
+The return value of this method is a python code object.  If the `raw`
+parameter is `True` the return value will be a string with python
+code equivalent to the bytecode returned otherwise.  This method is
+mainly used internally.
+
+`defer_init` is use internally to aid the module code generator.  This
+causes the generated code to be able to import without the global
+environment variable to be set.
+
+.. versionadded:: 2.4
+   `defer_init` parameter added.
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_a132aeddd0259cd765a630c3490b122c3}\label{classjinja2_1_1environment_1_1Environment_a132aeddd0259cd765a630c3490b122c3} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!compile\_expression@{compile\_expression}}
+\index{compile\_expression@{compile\_expression}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{compile\_expression()}{compile\_expression()}}
+{\footnotesize\ttfamily  "{}Template\+Expression"{} jinja2.\+environment.\+Environment.\+compile\+\_\+expression (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{source,  }\item[{bool }]{undefined\+\_\+to\+\_\+none = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A handy helper method that returns a callable that accepts keyword
+arguments that appear as variables in the expression.  If called it
+returns the result of the expression.
+
+This is useful if applications want to use the same rules as Jinja
+in template "configuration files" or similar situations.
+
+Example usage:
+
+>>> env = Environment()
+>>> expr = env.compile_expression('foo == 42')
+>>> expr(foo=23)
+False
+>>> expr(foo=42)
+True
+
+Per default the return value is converted to `None` if the
+expression returns an undefined value.  This can be changed
+by setting `undefined_to_none` to `False`.
+
+>>> env.compile_expression('var')() is None
+True
+>>> env.compile_expression('var', undefined_to_none=False)()
+Undefined
+
+.. versionadded:: 2.1
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_a485a7e65afe00930c1e0b24a5080ed9d}\label{classjinja2_1_1environment_1_1Environment_a485a7e65afe00930c1e0b24a5080ed9d} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!compile\_templates@{compile\_templates}}
+\index{compile\_templates@{compile\_templates}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{compile\_templates()}{compile\_templates()}}
+{\footnotesize\ttfamily  None jinja2.\+environment.\+Environment.\+compile\+\_\+templates (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{t.\+Union\mbox{[}str, "{}os.\+Path\+Like\mbox{[}str\mbox{]}"{}\mbox{]}}]{target,  }\item[{t.\+Optional\mbox{[}t.\+Collection\mbox{[}str\mbox{]}\mbox{]} }]{extensions = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}t.\+Callable\mbox{[}\mbox{[}str\mbox{]}, bool\mbox{]}\mbox{]} }]{filter\+\_\+func = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{zip = {\ttfamily "{}deflated"{}},  }\item[{t.\+Optional\mbox{[}t.\+Callable\mbox{[}\mbox{[}str\mbox{]}, None\mbox{]}\mbox{]} }]{log\+\_\+function = {\ttfamily None},  }\item[{bool }]{ignore\+\_\+errors = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Finds all the templates the loader can find, compiles them
+and stores them in `target`.  If `zip` is `None`, instead of in a
+zipfile, the templates will be stored in a directory.
+By default a deflate zip algorithm is used. To switch to
+the stored algorithm, `zip` can be set to ``'stored'``.
+
+`extensions` and `filter_func` are passed to :meth:`list_templates`.
+Each template returned will be compiled to the target folder or
+zipfile.
+
+By default template compilation errors are ignored.  In case a
+log function is provided, errors are logged.  If you want template
+syntax errors to abort the compilation you can set `ignore_errors`
+to `False` and you will get an exception on syntax errors.
+
+.. versionadded:: 2.4
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_addbbd33e41c262ae115a9f362391a7d5}\label{classjinja2_1_1environment_1_1Environment_addbbd33e41c262ae115a9f362391a7d5} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!extend@{extend}}
+\index{extend@{extend}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{extend()}{extend()}}
+{\footnotesize\ttfamily  None jinja2.\+environment.\+Environment.\+extend (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}t.\+Any}]{attributes }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add the items to the instance of the environment if they do not exist
+yet.  This is used by :ref:`extensions <writing-extensions>` to register
+callbacks and configuration values without breaking inheritance.
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_af5ea39790a5ba664cc7c0c6e186143e6}\label{classjinja2_1_1environment_1_1Environment_af5ea39790a5ba664cc7c0c6e186143e6} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!from\_string@{from\_string}}
+\index{from\_string@{from\_string}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{from\_string()}{from\_string()}}
+{\footnotesize\ttfamily  "{}Template"{} jinja2.\+environment.\+Environment.\+from\+\_\+string (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{t.\+Union\mbox{[}str, \mbox{\hyperlink{classjinja2_1_1nodes_1_1Template}{nodes.\+Template}}\mbox{]}}]{source,  }\item[{t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} }]{globals = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}t.\+Type\mbox{[}"{}Template"{}\mbox{]}\mbox{]} }]{template\+\_\+class = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load a template from a source string without using
+:attr:`loader`.
+
+:param source: Jinja source to compile into a template.
+:param globals: Extend the environment :attr:`globals` with
+    these extra variables available for all renders of this
+    template. If the template has already been loaded and
+    cached, its globals are updated with any new items.
+:param template_class: Return an instance of this
+    :class:`Template` class.
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_a193951eb679a2c84de387ca2b66aa27e}\label{classjinja2_1_1environment_1_1Environment_a193951eb679a2c84de387ca2b66aa27e} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!get\_or\_select\_template@{get\_or\_select\_template}}
+\index{get\_or\_select\_template@{get\_or\_select\_template}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{get\_or\_select\_template()}{get\_or\_select\_template()}}
+{\footnotesize\ttfamily  "{}Template"{} jinja2.\+environment.\+Environment.\+get\+\_\+or\+\_\+select\+\_\+template (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{t.\+Union\mbox{[}             str, "{}Template"{}, t.\+List\mbox{[}t.\+Union\mbox{[}str, "{}Template"{}\mbox{]}\mbox{]}         \mbox{]}}]{template\+\_\+name\+\_\+or\+\_\+list,  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{parent = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} }]{globals = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Use :meth:`select_template` if an iterable of template names
+is given, or :meth:`get_template` if one name is given.
+
+.. versionadded:: 2.3
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_a01a140012367ce8393fba888374ab66c}\label{classjinja2_1_1environment_1_1Environment_a01a140012367ce8393fba888374ab66c} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!get\_template@{get\_template}}
+\index{get\_template@{get\_template}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{get\_template()}{get\_template()}}
+{\footnotesize\ttfamily  "{}Template"{} jinja2.\+environment.\+Environment.\+get\+\_\+template (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{t.\+Union\mbox{[}str, "{}Template"{}\mbox{]}}]{name,  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{parent = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} }]{globals = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load a template by name with :attr:`loader` and return a
+:class:`Template`. If the template does not exist a
+:exc:`TemplateNotFound` exception is raised.
+
+:param name: Name of the template to load. When loading
+    templates from the filesystem, "/" is used as the path
+    separator, even on Windows.
+:param parent: The name of the parent template importing this
+    template. :meth:`join_path` can be used to implement name
+    transformations with this.
+:param globals: Extend the environment :attr:`globals` with
+    these extra variables available for all renders of this
+    template. If the template has already been loaded and
+    cached, its globals are updated with any new items.
+
+.. versionchanged:: 3.0
+    If a template is loaded from cache, ``globals`` will update
+    the template's globals instead of ignoring the new values.
+
+.. versionchanged:: 2.4
+    If ``name`` is a :class:`Template` object it is returned
+    unchanged.
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_a7f381581b4a95b1cd53f5fa48e233fe0}\label{classjinja2_1_1environment_1_1Environment_a7f381581b4a95b1cd53f5fa48e233fe0} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!getattr@{getattr}}
+\index{getattr@{getattr}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{getattr()}{getattr()}}
+{\footnotesize\ttfamily  t.\+Any jinja2.\+environment.\+Environment.\+getattr (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{t.\+Any}]{obj,  }\item[{str}]{attribute }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get an item or attribute of an object but prefer the attribute.
+Unlike :meth:`getitem` the attribute *must* be a string.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classjinja2_1_1sandbox_1_1SandboxedEnvironment_aa670244404c96a2201bc9f1c8ab931e7}{jinja2.\+sandbox.\+Sandboxed\+Environment}}.
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_adaac0af940852c76683f69125182a15c}\label{classjinja2_1_1environment_1_1Environment_adaac0af940852c76683f69125182a15c} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!getitem@{getitem}}
+\index{getitem@{getitem}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{getitem()}{getitem()}}
+{\footnotesize\ttfamily  t.\+Union\mbox{[}t.\+Any, \mbox{\hyperlink{classjinja2_1_1runtime_1_1Undefined}{Undefined}}\mbox{]} jinja2.\+environment.\+Environment.\+getitem (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{t.\+Any}]{obj,  }\item[{t.\+Union\mbox{[}str, t.\+Any\mbox{]}     }]{argument }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get an item or attribute of an object but prefer the item.\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classjinja2_1_1sandbox_1_1SandboxedEnvironment_a49f981155f611c092b19b662553ec41f}{jinja2.\+sandbox.\+Sandboxed\+Environment}}.
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_a3d712e74fd0a7db032669b45c916ec85}\label{classjinja2_1_1environment_1_1Environment_a3d712e74fd0a7db032669b45c916ec85} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!handle\_exception@{handle\_exception}}
+\index{handle\_exception@{handle\_exception}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{handle\_exception()}{handle\_exception()}}
+{\footnotesize\ttfamily  "{}te.\+No\+Return"{} jinja2.\+environment.\+Environment.\+handle\+\_\+exception (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{source = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Exception handling helper.  This is used internally to either raise
+rewritten exceptions or return a rendered traceback for the template.
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_a209b2c2cd92f8d7ba75bc226d8792e5a}\label{classjinja2_1_1environment_1_1Environment_a209b2c2cd92f8d7ba75bc226d8792e5a} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!iter\_extensions@{iter\_extensions}}
+\index{iter\_extensions@{iter\_extensions}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{iter\_extensions()}{iter\_extensions()}}
+{\footnotesize\ttfamily  t.\+Iterator\mbox{[}"{}Extension"{}\mbox{]} jinja2.\+environment.\+Environment.\+iter\+\_\+extensions (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Iterates over the extensions by priority.\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_adc29a3ae54fdeccc97e991e07953208d}\label{classjinja2_1_1environment_1_1Environment_adc29a3ae54fdeccc97e991e07953208d} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!join\_path@{join\_path}}
+\index{join\_path@{join\_path}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{join\_path()}{join\_path()}}
+{\footnotesize\ttfamily  str jinja2.\+environment.\+Environment.\+join\+\_\+path (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{template,  }\item[{str}]{parent }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Join a template with the parent.  By default all the lookups are
+relative to the loader root so this method returns the `template`
+parameter unchanged, but if the paths should be relative to the
+parent template, this function can be used to calculate the real
+template name.
+
+Subclasses may override this method and implement template path
+joining here.
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_a0e3c1818fa749b93bb20d2cc96ca0cff}\label{classjinja2_1_1environment_1_1Environment_a0e3c1818fa749b93bb20d2cc96ca0cff} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!lex@{lex}}
+\index{lex@{lex}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{lex()}{lex()}}
+{\footnotesize\ttfamily  t.\+Iterator\mbox{[}t.\+Tuple\mbox{[}int, str, str\mbox{]}\mbox{]} jinja2.\+environment.\+Environment.\+lex (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{source,  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{name = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{filename = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Lex the given sourcecode and return a generator that yields
+tokens as tuples in the form ``(lineno, token_type, value)``.
+This can be useful for :ref:`extension development <writing-extensions>`
+and debugging templates.
+
+This does not perform preprocessing.  If you want the preprocessing
+of the extensions to be applied you have to filter source through
+the :meth:`preprocess` method.
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_a8ce0539e36f1dc905a740f5495136085}\label{classjinja2_1_1environment_1_1Environment_a8ce0539e36f1dc905a740f5495136085} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!lexer@{lexer}}
+\index{lexer@{lexer}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{lexer()}{lexer()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classjinja2_1_1lexer_1_1Lexer}{Lexer}} jinja2.\+environment.\+Environment.\+lexer (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The lexer for this environment.\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_a4afe517612b9934f476063ccf2489b86}\label{classjinja2_1_1environment_1_1Environment_a4afe517612b9934f476063ccf2489b86} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!list\_templates@{list\_templates}}
+\index{list\_templates@{list\_templates}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{list\_templates()}{list\_templates()}}
+{\footnotesize\ttfamily  t.\+List\mbox{[}str\mbox{]} jinja2.\+environment.\+Environment.\+list\+\_\+templates (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{t.\+Optional\mbox{[}t.\+Collection\mbox{[}str\mbox{]}\mbox{]} }]{extensions = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}t.\+Callable\mbox{[}\mbox{[}str\mbox{]}, bool\mbox{]}\mbox{]} }]{filter\+\_\+func = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a list of templates for this environment.  This requires
+that the loader supports the loader's
+:meth:`~BaseLoader.list_templates` method.
+
+If there are other files in the template folder besides the
+actual templates, the returned list can be filtered.  There are two
+ways: either `extensions` is set to a list of file extensions for
+templates, or a `filter_func` can be provided which is a callable that
+is passed a template name and should return `True` if it should end up
+in the result list.
+
+If the loader does not support that, a :exc:`TypeError` is raised.
+
+.. versionadded:: 2.4
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_a119ee010e7f06e992df8f30974ad1137}\label{classjinja2_1_1environment_1_1Environment_a119ee010e7f06e992df8f30974ad1137} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!make\_globals@{make\_globals}}
+\index{make\_globals@{make\_globals}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{make\_globals()}{make\_globals()}}
+{\footnotesize\ttfamily  t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]} jinja2.\+environment.\+Environment.\+make\+\_\+globals (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]}     }]{d }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Make the globals map for a template. Any given template
+globals overlay the environment :attr:`globals`.
+
+Returns a :class:`collections.ChainMap`. This allows any changes
+to a template's globals to only affect that template, while
+changes to the environment's globals are still reflected.
+However, avoid modifying any globals after a template is loaded.
+
+:param d: Dict of template-specific globals.
+
+.. versionchanged:: 3.0
+    Use :class:`collections.ChainMap` to always prevent mutating
+    environment globals.
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_afad4bab9e00f479fbef9b966fd7feeff}\label{classjinja2_1_1environment_1_1Environment_afad4bab9e00f479fbef9b966fd7feeff} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!overlay@{overlay}}
+\index{overlay@{overlay}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{overlay()}{overlay()}}
+{\footnotesize\ttfamily  "{}te.\+Self"{} jinja2.\+environment.\+Environment.\+overlay (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str }]{block\+\_\+start\+\_\+string = {\ttfamily missing},  }\item[{str }]{block\+\_\+end\+\_\+string = {\ttfamily missing},  }\item[{str }]{variable\+\_\+start\+\_\+string = {\ttfamily missing},  }\item[{str }]{variable\+\_\+end\+\_\+string = {\ttfamily missing},  }\item[{str }]{comment\+\_\+start\+\_\+string = {\ttfamily missing},  }\item[{str }]{comment\+\_\+end\+\_\+string = {\ttfamily missing},  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{line\+\_\+statement\+\_\+prefix = {\ttfamily missing},  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{line\+\_\+comment\+\_\+prefix = {\ttfamily missing},  }\item[{bool }]{trim\+\_\+blocks = {\ttfamily missing},  }\item[{bool }]{lstrip\+\_\+blocks = {\ttfamily missing},  }\item[{"{}te.\+Literal\mbox{[}\textquotesingle{}\textbackslash{}\textbackslash{}n\textquotesingle{}, \textquotesingle{}\textbackslash{}\textbackslash{}r\textbackslash{}\textbackslash{}n\textquotesingle{}, \textquotesingle{}\textbackslash{}\textbackslash{}r\textquotesingle{}\mbox{]}"{} }]{newline\+\_\+sequence = {\ttfamily missing},  }\item[{bool }]{keep\+\_\+trailing\+\_\+newline = {\ttfamily missing},  }\item[{t.\+Sequence\mbox{[}t.\+Union\mbox{[}str, t.\+Type\mbox{[}"{}Extension"{}\mbox{]}\mbox{]}\mbox{]} }]{extensions = {\ttfamily missing},  }\item[{bool }]{optimized = {\ttfamily missing},  }\item[{t.\+Type\mbox{[}\mbox{\hyperlink{classjinja2_1_1runtime_1_1Undefined}{Undefined}}\mbox{]} }]{undefined = {\ttfamily missing},  }\item[{t.\+Optional\mbox{[}t.\+Callable\mbox{[}..., t.\+Any\mbox{]}\mbox{]} }]{finalize = {\ttfamily missing},  }\item[{t.\+Union\mbox{[}bool, t.\+Callable\mbox{[}\mbox{[}t.\+Optional\mbox{[}str\mbox{]}\mbox{]}, bool\mbox{]}\mbox{]} }]{autoescape = {\ttfamily missing},  }\item[{t.\+Optional\mbox{[}"{}Base\+Loader"{}\mbox{]} }]{loader = {\ttfamily missing},  }\item[{int }]{cache\+\_\+size = {\ttfamily missing},  }\item[{bool }]{auto\+\_\+reload = {\ttfamily missing},  }\item[{t.\+Optional\mbox{[}"{}Bytecode\+Cache"{}\mbox{]} }]{bytecode\+\_\+cache = {\ttfamily missing},  }\item[{bool }]{enable\+\_\+async = {\ttfamily missing} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a new overlay environment that shares all the data with the
+current environment except for cache and the overridden attributes.
+Extensions cannot be removed for an overlayed environment.  An overlayed
+environment automatically gets all the extensions of the environment it
+is linked to plus optional extra extensions.
+
+Creating overlays should happen after the initial environment was set
+up completely.  Not all attributes are truly linked, some are just
+copied over so modifications on the original environment may not shine
+through.
+
+.. versionchanged:: 3.1.5
+    ``enable_async`` is applied correctly.
+
+.. versionchanged:: 3.1.2
+    Added the ``newline_sequence``, ``keep_trailing_newline``,
+    and ``enable_async`` parameters to match ``__init__``.
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_a203dd9cf6165884a55677c5a9aeb3ac9}\label{classjinja2_1_1environment_1_1Environment_a203dd9cf6165884a55677c5a9aeb3ac9} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!parse@{parse}}
+\index{parse@{parse}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classjinja2_1_1nodes_1_1Template}{nodes.\+Template}} jinja2.\+environment.\+Environment.\+parse (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{source,  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{name = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{filename = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse the sourcecode and return the abstract syntax tree.  This
+tree of nodes is used by the compiler to convert the template into
+executable source- or bytecode.  This is useful for debugging or to
+extract information from templates.
+
+If you are :ref:`developing Jinja extensions <writing-extensions>`
+this gives you a good overview of the node tree generated.
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_ada6737748d0d06899ee8c6085dd2fd6b}\label{classjinja2_1_1environment_1_1Environment_ada6737748d0d06899ee8c6085dd2fd6b} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!preprocess@{preprocess}}
+\index{preprocess@{preprocess}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{preprocess()}{preprocess()}}
+{\footnotesize\ttfamily  str jinja2.\+environment.\+Environment.\+preprocess (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{source,  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{name = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{filename = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Preprocesses the source with all extensions.  This is automatically
+called for all parsing and compiling methods but *not* for :meth:`lex`
+because there you usually only want the actual source tokenized.
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1environment_1_1Environment_a44b9a9d2e0750926860b40dce708fe4c}\label{classjinja2_1_1environment_1_1Environment_a44b9a9d2e0750926860b40dce708fe4c} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!select\_template@{select\_template}}
+\index{select\_template@{select\_template}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{select\_template()}{select\_template()}}
+{\footnotesize\ttfamily  "{}Template"{} jinja2.\+environment.\+Environment.\+select\+\_\+template (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{t.\+Iterable\mbox{[}t.\+Union\mbox{[}str, "{}Template"{}\mbox{]}\mbox{]}}]{names,  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{parent = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} }]{globals = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Like :meth:`get_template`, but tries loading multiple names.
+If none of the names can be loaded a :exc:`TemplatesNotFound`
+exception is raised.
+
+:param names: List of template names to try loading in order.
+:param parent: The name of the parent template importing this
+    template. :meth:`join_path` can be used to implement name
+    transformations with this.
+:param globals: Extend the environment :attr:`globals` with
+    these extra variables available for all renders of this
+    template. If the template has already been loaded and
+    cached, its globals are updated with any new items.
+
+.. versionchanged:: 3.0
+    If a template is loaded from cache, ``globals`` will update
+    the template's globals instead of ignoring the new values.
+
+.. versionchanged:: 2.11
+    If ``names`` is :class:`Undefined`, an :exc:`UndefinedError`
+    is raised instead. If no templates were found and ``names``
+    contains :class:`Undefined`, the message is more helpful.
+
+.. versionchanged:: 2.4
+    If ``names`` contains a :class:`Template` object it is
+    returned unchanged.
+
+.. versionadded:: 2.3
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classjinja2_1_1environment_1_1Environment_aff8d7153f26480f30ba1b5a544d85eac}\label{classjinja2_1_1environment_1_1Environment_aff8d7153f26480f30ba1b5a544d85eac} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!auto\_reload@{auto\_reload}}
+\index{auto\_reload@{auto\_reload}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{auto\_reload}{auto\_reload}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+auto\+\_\+reload}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_a2567fab346f5e368a0d92db284ab30e4}\label{classjinja2_1_1environment_1_1Environment_a2567fab346f5e368a0d92db284ab30e4} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!autoescape@{autoescape}}
+\index{autoescape@{autoescape}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{autoescape}{autoescape}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+autoescape}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_ae51a1b43158239b18a58e8b5c2ba8b78}\label{classjinja2_1_1environment_1_1Environment_ae51a1b43158239b18a58e8b5c2ba8b78} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!block\_end\_string@{block\_end\_string}}
+\index{block\_end\_string@{block\_end\_string}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{block\_end\_string}{block\_end\_string}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+block\+\_\+end\+\_\+string}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_a21083815f94a638ccf3fe81be3dd16a4}\label{classjinja2_1_1environment_1_1Environment_a21083815f94a638ccf3fe81be3dd16a4} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!block\_start\_string@{block\_start\_string}}
+\index{block\_start\_string@{block\_start\_string}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{block\_start\_string}{block\_start\_string}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+block\+\_\+start\+\_\+string}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_aa5bc8250b943d3ffd73bab6966f5ee26}\label{classjinja2_1_1environment_1_1Environment_aa5bc8250b943d3ffd73bab6966f5ee26} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!bytecode\_cache@{bytecode\_cache}}
+\index{bytecode\_cache@{bytecode\_cache}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{bytecode\_cache}{bytecode\_cache}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+bytecode\+\_\+cache}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_a6b175442c705fa460fbc4478c9cbeb8c}\label{classjinja2_1_1environment_1_1Environment_a6b175442c705fa460fbc4478c9cbeb8c} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!cache@{cache}}
+\index{cache@{cache}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{cache}{cache}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+cache}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_a64d2246274eff95fed0ed59fdc93f302}\label{classjinja2_1_1environment_1_1Environment_a64d2246274eff95fed0ed59fdc93f302} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!code\_generator\_class@{code\_generator\_class}}
+\index{code\_generator\_class@{code\_generator\_class}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{code\_generator\_class}{code\_generator\_class}}
+{\footnotesize\ttfamily t jinja2.\+environment.\+Environment.\+code\+\_\+generator\+\_\+class = \mbox{\hyperlink{classjinja2_1_1compiler_1_1CodeGenerator}{Code\+Generator}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_a50977dcc623b4ccff0b06742b3c78f6b}\label{classjinja2_1_1environment_1_1Environment_a50977dcc623b4ccff0b06742b3c78f6b} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!comment\_end\_string@{comment\_end\_string}}
+\index{comment\_end\_string@{comment\_end\_string}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{comment\_end\_string}{comment\_end\_string}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+comment\+\_\+end\+\_\+string}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_abd4d32c8d1b9394968de9fef0fe544f1}\label{classjinja2_1_1environment_1_1Environment_abd4d32c8d1b9394968de9fef0fe544f1} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!comment\_start\_string@{comment\_start\_string}}
+\index{comment\_start\_string@{comment\_start\_string}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{comment\_start\_string}{comment\_start\_string}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+comment\+\_\+start\+\_\+string}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_abafe91c81d1c0333873b08096ee81d2c}\label{classjinja2_1_1environment_1_1Environment_abafe91c81d1c0333873b08096ee81d2c} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!concat@{concat}}
+\index{concat@{concat}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{concat}{concat}}
+{\footnotesize\ttfamily str jinja2.\+environment.\+Environment.\+concat = "{}"{}.join\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_ae3aae9b2d3d56b961c26464d880f805d}\label{classjinja2_1_1environment_1_1Environment_ae3aae9b2d3d56b961c26464d880f805d} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!context\_class@{context\_class}}
+\index{context\_class@{context\_class}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{context\_class}{context\_class}}
+{\footnotesize\ttfamily t jinja2.\+environment.\+Environment.\+context\+\_\+class = \mbox{\hyperlink{classjinja2_1_1runtime_1_1Context}{Context}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_ad6e39b8b9cf90d8d1a420a40e29db2c9}\label{classjinja2_1_1environment_1_1Environment_ad6e39b8b9cf90d8d1a420a40e29db2c9} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!extensions@{extensions}}
+\index{extensions@{extensions}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{extensions}{extensions}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+extensions}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_af34cc62216dd902073c83b9523d65a31}\label{classjinja2_1_1environment_1_1Environment_af34cc62216dd902073c83b9523d65a31} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!filters@{filters}}
+\index{filters@{filters}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{filters}{filters}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+filters}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_ac812971d13a32a47d9ebd7e994207510}\label{classjinja2_1_1environment_1_1Environment_ac812971d13a32a47d9ebd7e994207510} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!finalize@{finalize}}
+\index{finalize@{finalize}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{finalize}{finalize}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+finalize}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_a12b3cef13dab3bd1a7c2e3b5f09d3f98}\label{classjinja2_1_1environment_1_1Environment_a12b3cef13dab3bd1a7c2e3b5f09d3f98} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!globals@{globals}}
+\index{globals@{globals}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{globals}{globals}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+globals}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_aa393a275b440f523ec0da88ad25a8b2d}\label{classjinja2_1_1environment_1_1Environment_aa393a275b440f523ec0da88ad25a8b2d} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!is\_async@{is\_async}}
+\index{is\_async@{is\_async}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{is\_async}{is\_async}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+is\+\_\+async}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_a1ce5f2ab4442fb62c1b27b14836dd8a7}\label{classjinja2_1_1environment_1_1Environment_a1ce5f2ab4442fb62c1b27b14836dd8a7} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!keep\_trailing\_newline@{keep\_trailing\_newline}}
+\index{keep\_trailing\_newline@{keep\_trailing\_newline}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{keep\_trailing\_newline}{keep\_trailing\_newline}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+keep\+\_\+trailing\+\_\+newline}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_a7f56eeff2e41f5790ba2d3146347531a}\label{classjinja2_1_1environment_1_1Environment_a7f56eeff2e41f5790ba2d3146347531a} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!line\_comment\_prefix@{line\_comment\_prefix}}
+\index{line\_comment\_prefix@{line\_comment\_prefix}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{line\_comment\_prefix}{line\_comment\_prefix}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+line\+\_\+comment\+\_\+prefix}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_ab06e678d1be219053a5a33576f96fae5}\label{classjinja2_1_1environment_1_1Environment_ab06e678d1be219053a5a33576f96fae5} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!line\_statement\_prefix@{line\_statement\_prefix}}
+\index{line\_statement\_prefix@{line\_statement\_prefix}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{line\_statement\_prefix}{line\_statement\_prefix}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+line\+\_\+statement\+\_\+prefix}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_a2944894e0bb6facc8b150e880f7d4557}\label{classjinja2_1_1environment_1_1Environment_a2944894e0bb6facc8b150e880f7d4557} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!linked\_to@{linked\_to}}
+\index{linked\_to@{linked\_to}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{linked\_to}{linked\_to}}
+{\footnotesize\ttfamily t jinja2.\+environment.\+Environment.\+linked\+\_\+to = None\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_a932fcb4327ccfbc91ebe69848556b60e}\label{classjinja2_1_1environment_1_1Environment_a932fcb4327ccfbc91ebe69848556b60e} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!loader@{loader}}
+\index{loader@{loader}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{loader}{loader}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+loader}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_a2f841f439d1d015b4e9fbbfdc95cd736}\label{classjinja2_1_1environment_1_1Environment_a2f841f439d1d015b4e9fbbfdc95cd736} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!lstrip\_blocks@{lstrip\_blocks}}
+\index{lstrip\_blocks@{lstrip\_blocks}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{lstrip\_blocks}{lstrip\_blocks}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+lstrip\+\_\+blocks}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_a7051919bf202901ab0cb86db634382ca}\label{classjinja2_1_1environment_1_1Environment_a7051919bf202901ab0cb86db634382ca} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!newline\_sequence@{newline\_sequence}}
+\index{newline\_sequence@{newline\_sequence}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{newline\_sequence}{newline\_sequence}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+newline\+\_\+sequence}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_a89ea29c99256661d4f8812f8668096cf}\label{classjinja2_1_1environment_1_1Environment_a89ea29c99256661d4f8812f8668096cf} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!optimized@{optimized}}
+\index{optimized@{optimized}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{optimized}{optimized}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+optimized}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_a4c9f95a36934895e6d1976c14d8b894f}\label{classjinja2_1_1environment_1_1Environment_a4c9f95a36934895e6d1976c14d8b894f} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!overlayed@{overlayed}}
+\index{overlayed@{overlayed}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{overlayed}{overlayed}}
+{\footnotesize\ttfamily bool jinja2.\+environment.\+Environment.\+overlayed = False\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_a4734afddfa6a371f9a8abcb4313cf971}\label{classjinja2_1_1environment_1_1Environment_a4734afddfa6a371f9a8abcb4313cf971} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!policies@{policies}}
+\index{policies@{policies}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{policies}{policies}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+policies}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_a299850b4b15f78a3f0b9eeac4774065b}\label{classjinja2_1_1environment_1_1Environment_a299850b4b15f78a3f0b9eeac4774065b} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!sandboxed@{sandboxed}}
+\index{sandboxed@{sandboxed}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{sandboxed}{sandboxed}}
+{\footnotesize\ttfamily bool jinja2.\+environment.\+Environment.\+sandboxed = False\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_ad3c1e56ac606ed76b4708bf19877bd46}\label{classjinja2_1_1environment_1_1Environment_ad3c1e56ac606ed76b4708bf19877bd46} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!shared@{shared}}
+\index{shared@{shared}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{shared}{shared}}
+{\footnotesize\ttfamily bool jinja2.\+environment.\+Environment.\+shared = False\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_ad2d7e3f6afdcd5d4a0a41b20a3322dbd}\label{classjinja2_1_1environment_1_1Environment_ad2d7e3f6afdcd5d4a0a41b20a3322dbd} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!template\_class@{template\_class}}
+\index{template\_class@{template\_class}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{template\_class}{template\_class}}
+{\footnotesize\ttfamily t jinja2.\+environment.\+Environment.\+template\+\_\+class .Type\mbox{[}"{}Template"{}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_aab1bee5de97fda71dd1983fcea67bdd7}\label{classjinja2_1_1environment_1_1Environment_aab1bee5de97fda71dd1983fcea67bdd7} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!tests@{tests}}
+\index{tests@{tests}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{tests}{tests}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+tests}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_ae3aa2ae2619df9a2aa744adff8f734bb}\label{classjinja2_1_1environment_1_1Environment_ae3aa2ae2619df9a2aa744adff8f734bb} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!trim\_blocks@{trim\_blocks}}
+\index{trim\_blocks@{trim\_blocks}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{trim\_blocks}{trim\_blocks}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+trim\+\_\+blocks}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_af606e27a375611fb1a176dcb86147350}\label{classjinja2_1_1environment_1_1Environment_af606e27a375611fb1a176dcb86147350} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!variable\_end\_string@{variable\_end\_string}}
+\index{variable\_end\_string@{variable\_end\_string}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{variable\_end\_string}{variable\_end\_string}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+variable\+\_\+end\+\_\+string}
+
+\Hypertarget{classjinja2_1_1environment_1_1Environment_aeb7d43cd6350d87ace77b61fe761191d}\label{classjinja2_1_1environment_1_1Environment_aeb7d43cd6350d87ace77b61fe761191d} 
+\index{jinja2.environment.Environment@{jinja2.environment.Environment}!variable\_start\_string@{variable\_start\_string}}
+\index{variable\_start\_string@{variable\_start\_string}!jinja2.environment.Environment@{jinja2.environment.Environment}}
+\doxysubsubsection{\texorpdfstring{variable\_start\_string}{variable\_start\_string}}
+{\footnotesize\ttfamily jinja2.\+environment.\+Environment.\+variable\+\_\+start\+\_\+string}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/jinja2/\mbox{\hyperlink{environment_8py}{environment.\+py}}\end{DoxyCompactItemize}

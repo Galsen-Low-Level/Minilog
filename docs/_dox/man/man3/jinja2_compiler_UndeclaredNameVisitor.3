@@ -1,0 +1,84 @@
+.TH "jinja2.compiler.UndeclaredNameVisitor" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.compiler.UndeclaredNameVisitor
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBjinja2\&.visitor\&.NodeVisitor\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, t\&.Iterable[str] \fBnames\fP)"
+.br
+.ti -1c
+.RI "None \fBvisit_Name\fP (self, \fBnodes\&.Name\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_Block\fP (self, \fBnodes\&.Block\fP node)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBjinja2\&.visitor\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "'t\&.Optional[\fBVisitCallable\fP]' \fBget_visitor\fP (self, \fBNode\fP node)"
+.br
+.ti -1c
+.RI "t\&.Any \fBvisit\fP (self, \fBNode\fP node, *t\&.Any args, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "t\&.Any \fBgeneric_visit\fP (self, \fBNode\fP node, *t\&.Any args, **t\&.Any kwargs)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBnames\fP"
+.br
+.ti -1c
+.RI "\fBundeclared\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A visitor that checks if a name is accessed without being
+declared\&.  This is different from the frame visitor as it will
+not stop at closure frames\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None jinja2\&.compiler\&.UndeclaredNameVisitor\&.__init__ ( self, t\&.Iterable[str] names)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " None jinja2\&.compiler\&.UndeclaredNameVisitor\&.visit_Block ( self, \fBnodes\&.Block\fP node)"
+
+.PP
+.nf
+Stop visiting a blocks\&.
+.fi
+.PP
+ 
+.SS " None jinja2\&.compiler\&.UndeclaredNameVisitor\&.visit_Name ( self, \fBnodes\&.Name\fP node)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "jinja2\&.compiler\&.UndeclaredNameVisitor\&.names"
+
+.SS "jinja2\&.compiler\&.UndeclaredNameVisitor\&.undeclared"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

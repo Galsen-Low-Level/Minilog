@@ -1,0 +1,98 @@
+.TH "babel.messages.plurals" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+babel.messages.plurals
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_PluralTuple\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_PluralTuple\fP \fBget_plural\fP (\fBLocale\fP|str|None locale=None)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "str \fBLC_CTYPE\fP = default_locale('LC_CTYPE')"
+.br
+.ti -1c
+.RI "dict \fBPLURALS\fP"
+.br
+.ti -1c
+.RI "tuple \fBDEFAULT_PLURAL\fP = (2, '(n != 1)')"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+    babel\&.messages\&.plurals
+    ~~~~~~~~~~~~~~~~~~~~~~
+
+    Plural form definitions\&.
+
+    :copyright: (c) 2013-2025 by the Babel Team\&.
+    :license: BSD, see LICENSE for more details\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " \fB_PluralTuple\fP babel\&.messages\&.plurals\&.get_plural (\fBLocale\fP | str | None  locale = \fCNone\fP)"
+
+.PP
+.nf
+A tuple with the information catalogs need to perform proper
+pluralization\&.  The first item of the tuple is the number of plural
+forms, the second the plural expression\&.
+
+:param locale: the `Locale` object or locale identifier\&. Defaults to the system character type locale\&.
+
+>>> get_plural(locale='en')
+(2, '(n != 1)')
+>>> get_plural(locale='ga')
+(5, '(n==1 ? 0 : n==2 ? 1 : n>=3 && n<=6 ? 2 : n>=7 && n<=10 ? 3 : 4)')
+
+The object returned is a special tuple with additional members:
+
+>>> tup = get_plural('ja')
+>>> tup\&.num_plurals
+1
+>>> tup\&.plural_expr
+'0'
+>>> tup\&.plural_forms
+'nplurals=1; plural=0;'
+
+Converting the tuple into a string prints the plural forms for a
+gettext catalog:
+
+>>> str(tup)
+'nplurals=1; plural=0;'
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "tuple babel\&.messages\&.plurals\&.DEFAULT_PLURAL = (2, '(n != 1)')"
+
+.SS "str babel\&.messages\&.plurals\&.LC_CTYPE = default_locale('LC_CTYPE')"
+
+.SS "dict babel\&.messages\&.plurals\&.PLURALS"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

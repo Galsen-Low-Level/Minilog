@@ -1,0 +1,107 @@
+.TH "docutils.languages.LanguageImporter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.languages.LanguageImporter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBdocutils\&.parsers\&.rst\&.languages\&.RstLanguageImporter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "\fBimport_from_packages\fP (self, name, reporter=None)"
+.br
+.ti -1c
+.RI "\fBcheck_content\fP (self, module)"
+.br
+.ti -1c
+.RI "\fB__call__\fP (self, language_code, reporter=None)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcache\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBpackages\fP = ('docutils\&.languages\&.', '')"
+.br
+.ti -1c
+.RI "tuple \fBwarn_msg\fP"
+.br
+.ti -1c
+.RI "str \fBfallback\fP = 'en'"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Import language modules\&.
+
+When called with a BCP 47 language tag, instances return a module
+with localisations from `docutils\&.languages` or the PYTHONPATH\&.
+
+If there is no matching module, warn (if a `reporter` is passed)
+and fall back to English\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.languages\&.LanguageImporter\&.__init__ ( self)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.languages\&.LanguageImporter\&.__call__ ( self,  language_code,  reporter = \fCNone\fP)"
+
+.SS "docutils\&.languages\&.LanguageImporter\&.check_content ( self,  module)"
+
+.PP
+.nf
+Check if we got a Docutils language module\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBdocutils\&.parsers\&.rst\&.languages\&.RstLanguageImporter\fP\&.
+.SS "docutils\&.languages\&.LanguageImporter\&.import_from_packages ( self,  name,  reporter = \fCNone\fP)"
+
+.PP
+.nf
+Try loading module `name` from `self\&.packages`\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.languages\&.LanguageImporter\&.cache"
+
+.SS "str docutils\&.languages\&.LanguageImporter\&.fallback = 'en'\fC [static]\fP"
+
+.SS "tuple docutils\&.languages\&.LanguageImporter\&.packages = ('docutils\&.languages\&.', '')\fC [static]\fP"
+
+.SS "tuple docutils\&.languages\&.LanguageImporter\&.warn_msg\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  ('Language "%s" not supported: '
+                'Docutils\-generated text will be in English\&.')
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

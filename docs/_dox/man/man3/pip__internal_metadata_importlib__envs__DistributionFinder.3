@@ -1,0 +1,130 @@
+.TH "pip._internal.metadata.importlib._envs._DistributionFinder" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.metadata.importlib._envs._DistributionFinder
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBBaseDistribution\fP] \fBfind\fP (self, str location)"
+.br
+.ti -1c
+.RI "Iterator[\fBBaseDistribution\fP] \fBfind_linked\fP (self, str location)"
+.br
+.ti -1c
+.RI "Iterator[\fBBaseDistribution\fP] \fBfind_eggs\fP (self, str location)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBFoundResult\fP = Tuple[importlib\&.metadata\&.Distribution, Optional[\fBBasePath\fP]]"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Iterator[\fBFoundResult\fP] \fB_find_impl\fP (self, str location)"
+.br
+.ti -1c
+.RI "Iterator[\fBBaseDistribution\fP] \fB_find_eggs_in_dir\fP (self, str location)"
+.br
+.ti -1c
+.RI "Iterator[\fBBaseDistribution\fP] \fB_find_eggs_in_zip\fP (self, str location)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Finder to locate distributions\&.
+
+The main purpose of this class is to memoize found distributions' names, so
+only one distribution is returned for each package name\&. At lot of pip code
+assumes this (because it is setuptools's behavior), and not doing the same
+can potentially cause a distribution in lower precedence path to override a
+higher precedence one if the caller is not careful\&.
+
+Eventually we probably want to make it possible to see lower precedence
+installations as well\&. It's useful feature, after all\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._internal\&.metadata\&.importlib\&._envs\&._DistributionFinder\&.__init__ ( self)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " Iterator[\fBBaseDistribution\fP] pip\&._internal\&.metadata\&.importlib\&._envs\&._DistributionFinder\&._find_eggs_in_dir ( self, str location)\fC [protected]\fP"
+
+.SS " Iterator[\fBBaseDistribution\fP] pip\&._internal\&.metadata\&.importlib\&._envs\&._DistributionFinder\&._find_eggs_in_zip ( self, str location)\fC [protected]\fP"
+
+.SS " Iterator[\fBFoundResult\fP] pip\&._internal\&.metadata\&.importlib\&._envs\&._DistributionFinder\&._find_impl ( self, str location)\fC [protected]\fP"
+
+.PP
+.nf
+Find distributions in a location\&.
+.fi
+.PP
+ 
+.SS " Iterator[\fBBaseDistribution\fP] pip\&._internal\&.metadata\&.importlib\&._envs\&._DistributionFinder\&.find ( self, str location)"
+
+.PP
+.nf
+Find distributions in a location\&.
+
+The path can be either a directory, or a ZIP archive\&.
+
+.fi
+.PP
+ 
+.SS " Iterator[\fBBaseDistribution\fP] pip\&._internal\&.metadata\&.importlib\&._envs\&._DistributionFinder\&.find_eggs ( self, str location)"
+
+.PP
+.nf
+Find eggs in a location\&.
+
+This actually uses the old *pkg_resources* backend\&. We likely want to
+deprecate this so we can eventually remove the *pkg_resources*
+dependency entirely\&. Before that, this should first emit a deprecation
+warning for some versions when using the fallback since importing
+*pkg_resources* is slow for those who don't need it\&.
+
+.fi
+.PP
+ 
+.SS " Iterator[\fBBaseDistribution\fP] pip\&._internal\&.metadata\&.importlib\&._envs\&._DistributionFinder\&.find_linked ( self, str location)"
+
+.PP
+.nf
+Read location in egg-link files and return distributions in there\&.
+
+The path should be a directory; otherwise this returns nothing\&. This
+follows how setuptools does this for compatibility\&. The first non-empty
+line in the egg-link is read as a path (resolved against the egg-link's
+containing directory if relative)\&. Distributions found at that linked
+location are returned\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._internal\&.metadata\&.importlib\&._envs\&._DistributionFinder\&.FoundResult = Tuple[importlib\&.metadata\&.Distribution, Optional[\fBBasePath\fP]]\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

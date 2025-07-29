@@ -1,0 +1,234 @@
+\doxysection{/home/umar/\+Desktop/\+Work\+Shop/\+GLL/centry/centry.h File Reference}
+\hypertarget{centry_8h}{}\label{centry_8h}\index{/home/umar/Desktop/WorkShop/GLL/centry/centry.h@{/home/umar/Desktop/WorkShop/GLL/centry/centry.h}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct____ns__info__t}{\+\_\+\+\_\+ns\+\_\+info\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{centry_8h_af0ecbcab5c985108aea37f1bb45eb8ad}{\+\_\+\+\_\+nptr}}~(void \texorpdfstring{$\ast$}{*}) 0
+\item 
+\#define \mbox{\hyperlink{centry_8h_a12a768b7f5942a57aa8b25665bf71125}{\+\_\+\+\_\+ctor}}~/\texorpdfstring{$\ast$}{*} Nothing \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{centry_8h_a5b6df4fe38493e14648842364a76075f}{\+\_\+\+\_\+noreturn}}~/\texorpdfstring{$\ast$}{*} Nothing \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{centry_8h_ad94d19709beaa51ccee2df5aae024224}{\+\_\+\+\_\+\+BEGIN\+\_\+\+SPAWN\+\_\+\+CONTEXT}}(\+\_\+\+\_\+sbp\+\_\+identifier)~if( 0 ==\+\_\+\+\_\+sbp\+\_\+identifier ) \{
+\item 
+\#define \mbox{\hyperlink{centry_8h_a2d1a0574f8c73ac19533718445d27edd}{\+\_\+\+\_\+\+END\+\_\+\+SPAWN\+\_\+\+CONTEXT}}~\}
+\item 
+\#define \mbox{\hyperlink{centry_8h_a215cecdaf622686a4400b57858b88504}{\+\_\+\+\_\+\+OTHERWISE}}~else
+\item 
+\#define \mbox{\hyperlink{centry_8h_a73c37d885af221ee843eca1a1f39549a}{USUALSYS\+\_\+\+UNIX\+\_\+\+PATH}}
+\item 
+\#define \mbox{\hyperlink{centry_8h_a69f810caaafcb9fc3e535656d1ecd179}{\+\_\+\+Nullable}}
+\item 
+\#define \mbox{\hyperlink{centry_8h_afb16412b0be2b2b63bca973165a9a4aa}{DEFAULT\+\_\+\+SHELL}}~"{}/bin/sh"{}
+\item 
+\#define \mbox{\hyperlink{centry_8h_ad411d38c6aa39fca24943f1d177b3d02}{DOCKER\+\_\+\+INSPECT}}(\+\_\+\+\_\+cid)~  "{}docker"{},"{}inspect"{},"{}-\/-\/format"{},"{}\{\{.State.\+Pid\}\}"{},\+\_\+\+\_\+cid,\mbox{\hyperlink{baseconv_2bcvrepl_8h_af0ecbcab5c985108aea37f1bb45eb8ad}{\+\_\+\+\_\+nptr}}
+\item 
+\#define \mbox{\hyperlink{centry_8h_ac19eb83983f75f11404fe6cf207e0f7b}{perr}}(\+\_\+\+\_\+fcall)~  do \{ perror(\#\+\_\+\+\_\+fcall); exit(EXIT\+\_\+\+FAILURE); \}while(0)
+\item 
+\#define \mbox{\hyperlink{centry_8h_aac86b8ee2750cbf577c59311c11f930b}{\+\_\+\+\_\+inline\+\_\+char}}(\+\_\+\+\_\+charval)~(const char\mbox{[}$\,$\mbox{]})\{ (\+\_\+\+\_\+charval) \& 0xff\}
+\item 
+\#define \mbox{\hyperlink{centry_8h_adda546458c522b9f0541fdc4e3d692b3}{NS\+\_\+\+DEFINITIONS}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct____ns__info__t}{\+\_\+\+\_\+ns\+\_\+info\+\_\+t}} \mbox{\hyperlink{centry_8h_af804a073671eeedd64cf80a0fdd707bf}{ns\+\_\+info\+\_\+t}}
+\item 
+typedef pid\+\_\+t \mbox{\hyperlink{centry_8h_a4e0534062b817130668cec7bc64556d3}{cpid\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{centry_8h_aacad508bf9ea6d89fdbcf9f716216938}{has\+\_\+command}} (const char \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+restrict\+\_\+\+\_\+ \+\_\+\+\_\+host\+\_\+command)
+\item 
+\mbox{\hyperlink{centry_8h_a4e0534062b817130668cec7bc64556d3}{cpid\+\_\+t}} \mbox{\hyperlink{centry_8h_afd56f71e5e5da7fbf7da8844303719c8}{container\+\_\+process\+\_\+id}} (char \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+container\+\_\+id)
+\item 
+void \mbox{\hyperlink{centry_8h_ab06069893a5ad93273caf4e30a96c26c}{load\+\_\+ns\+\_\+for}} (\mbox{\hyperlink{centry_8h_a4e0534062b817130668cec7bc64556d3}{cpid\+\_\+t}})
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{centry_8h_abb81d5d41f0ca160b0fd2765f52b8f9c}{centry\+\_\+check\+\_\+running\+\_\+container\+\_\+for}} (const char \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+container\+\_\+engine)
+\item 
+void \mbox{\hyperlink{centry_8h_abf1a6f04a0f0e81d86e821486c2aa8ac}{centry\+\_\+curses\+\_\+select}} (char(\texorpdfstring{$\ast$}{*}\+\_\+\+\_\+buffer\+\_\+result)\mbox{[}0xff\mbox{]}, int size)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct____ns__info__t}{\+\_\+\+\_\+ns\+\_\+info\+\_\+t}} \mbox{\hyperlink{centry_8h_a370b85889bab6ba391f01f550d10a95b}{nsinfo}} \mbox{[}6\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{centry_8h_ad94d19709beaa51ccee2df5aae024224}\label{centry_8h_ad94d19709beaa51ccee2df5aae024224} 
+\index{centry.h@{centry.h}!\_\_BEGIN\_SPAWN\_CONTEXT@{\_\_BEGIN\_SPAWN\_CONTEXT}}
+\index{\_\_BEGIN\_SPAWN\_CONTEXT@{\_\_BEGIN\_SPAWN\_CONTEXT}!centry.h@{centry.h}}
+\doxysubsubsection{\texorpdfstring{\_\_BEGIN\_SPAWN\_CONTEXT}{\_\_BEGIN\_SPAWN\_CONTEXT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+BEGIN\+\_\+\+SPAWN\+\_\+\+CONTEXT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+sbp\+\_\+identifier }\end{DoxyParamCaption})~if( 0 ==\+\_\+\+\_\+sbp\+\_\+identifier ) \{}
+
+\Hypertarget{centry_8h_a12a768b7f5942a57aa8b25665bf71125}\label{centry_8h_a12a768b7f5942a57aa8b25665bf71125} 
+\index{centry.h@{centry.h}!\_\_ctor@{\_\_ctor}}
+\index{\_\_ctor@{\_\_ctor}!centry.h@{centry.h}}
+\doxysubsubsection{\texorpdfstring{\_\_ctor}{\_\_ctor}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+ctor~/\texorpdfstring{$\ast$}{*} Nothing \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{centry_8h_a2d1a0574f8c73ac19533718445d27edd}\label{centry_8h_a2d1a0574f8c73ac19533718445d27edd} 
+\index{centry.h@{centry.h}!\_\_END\_SPAWN\_CONTEXT@{\_\_END\_SPAWN\_CONTEXT}}
+\index{\_\_END\_SPAWN\_CONTEXT@{\_\_END\_SPAWN\_CONTEXT}!centry.h@{centry.h}}
+\doxysubsubsection{\texorpdfstring{\_\_END\_SPAWN\_CONTEXT}{\_\_END\_SPAWN\_CONTEXT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+END\+\_\+\+SPAWN\+\_\+\+CONTEXT~\}}
+
+\Hypertarget{centry_8h_aac86b8ee2750cbf577c59311c11f930b}\label{centry_8h_aac86b8ee2750cbf577c59311c11f930b} 
+\index{centry.h@{centry.h}!\_\_inline\_char@{\_\_inline\_char}}
+\index{\_\_inline\_char@{\_\_inline\_char}!centry.h@{centry.h}}
+\doxysubsubsection{\texorpdfstring{\_\_inline\_char}{\_\_inline\_char}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+inline\+\_\+char(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+charval }\end{DoxyParamCaption})~(const char\mbox{[}$\,$\mbox{]})\{ (\+\_\+\+\_\+charval) \& 0xff\}}
+
+\Hypertarget{centry_8h_a5b6df4fe38493e14648842364a76075f}\label{centry_8h_a5b6df4fe38493e14648842364a76075f} 
+\index{centry.h@{centry.h}!\_\_noreturn@{\_\_noreturn}}
+\index{\_\_noreturn@{\_\_noreturn}!centry.h@{centry.h}}
+\doxysubsubsection{\texorpdfstring{\_\_noreturn}{\_\_noreturn}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+noreturn~/\texorpdfstring{$\ast$}{*} Nothing \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{centry_8h_af0ecbcab5c985108aea37f1bb45eb8ad}\label{centry_8h_af0ecbcab5c985108aea37f1bb45eb8ad} 
+\index{centry.h@{centry.h}!\_\_nptr@{\_\_nptr}}
+\index{\_\_nptr@{\_\_nptr}!centry.h@{centry.h}}
+\doxysubsubsection{\texorpdfstring{\_\_nptr}{\_\_nptr}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+nptr~(void \texorpdfstring{$\ast$}{*}) 0}
+
+\Hypertarget{centry_8h_a215cecdaf622686a4400b57858b88504}\label{centry_8h_a215cecdaf622686a4400b57858b88504} 
+\index{centry.h@{centry.h}!\_\_OTHERWISE@{\_\_OTHERWISE}}
+\index{\_\_OTHERWISE@{\_\_OTHERWISE}!centry.h@{centry.h}}
+\doxysubsubsection{\texorpdfstring{\_\_OTHERWISE}{\_\_OTHERWISE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+OTHERWISE~else}
+
+\Hypertarget{centry_8h_a69f810caaafcb9fc3e535656d1ecd179}\label{centry_8h_a69f810caaafcb9fc3e535656d1ecd179} 
+\index{centry.h@{centry.h}!\_Nullable@{\_Nullable}}
+\index{\_Nullable@{\_Nullable}!centry.h@{centry.h}}
+\doxysubsubsection{\texorpdfstring{\_Nullable}{\_Nullable}}
+{\footnotesize\ttfamily \#define \+\_\+\+Nullable}
+
+\Hypertarget{centry_8h_afb16412b0be2b2b63bca973165a9a4aa}\label{centry_8h_afb16412b0be2b2b63bca973165a9a4aa} 
+\index{centry.h@{centry.h}!DEFAULT\_SHELL@{DEFAULT\_SHELL}}
+\index{DEFAULT\_SHELL@{DEFAULT\_SHELL}!centry.h@{centry.h}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_SHELL}{DEFAULT\_SHELL}}
+{\footnotesize\ttfamily \#define DEFAULT\+\_\+\+SHELL~"{}/bin/sh"{}}
+
+\Hypertarget{centry_8h_ad411d38c6aa39fca24943f1d177b3d02}\label{centry_8h_ad411d38c6aa39fca24943f1d177b3d02} 
+\index{centry.h@{centry.h}!DOCKER\_INSPECT@{DOCKER\_INSPECT}}
+\index{DOCKER\_INSPECT@{DOCKER\_INSPECT}!centry.h@{centry.h}}
+\doxysubsubsection{\texorpdfstring{DOCKER\_INSPECT}{DOCKER\_INSPECT}}
+{\footnotesize\ttfamily \#define DOCKER\+\_\+\+INSPECT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+cid }\end{DoxyParamCaption})~  "{}docker"{},"{}inspect"{},"{}-\/-\/format"{},"{}\{\{.State.\+Pid\}\}"{},\+\_\+\+\_\+cid,\mbox{\hyperlink{baseconv_2bcvrepl_8h_af0ecbcab5c985108aea37f1bb45eb8ad}{\+\_\+\+\_\+nptr}}}
+
+\Hypertarget{centry_8h_adda546458c522b9f0541fdc4e3d692b3}\label{centry_8h_adda546458c522b9f0541fdc4e3d692b3} 
+\index{centry.h@{centry.h}!NS\_DEFINITIONS@{NS\_DEFINITIONS}}
+\index{NS\_DEFINITIONS@{NS\_DEFINITIONS}!centry.h@{centry.h}}
+\doxysubsubsection{\texorpdfstring{NS\_DEFINITIONS}{NS\_DEFINITIONS}}
+{\footnotesize\ttfamily \#define NS\+\_\+\+DEFINITIONS}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \{\ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \{\textcolor{stringliteral}{"{}ipc"{}}\ ,\ CLONE\_NEWIPC\}\ ,\ \(\backslash\)}
+\DoxyCodeLine{\ \ \{\textcolor{stringliteral}{"{}uts"{}}\ ,\ CLONE\_NEWUTS\}\ ,\ \(\backslash\)}
+\DoxyCodeLine{\ \ \{\textcolor{stringliteral}{"{}net"{}}\ ,\ CLONE\_NEWNET\}\ ,\ \(\backslash\)}
+\DoxyCodeLine{\ \ \{\textcolor{stringliteral}{"{}pid"{}}\ ,\ CLONE\_NEWPID\}\ ,\ \(\backslash\)}
+\DoxyCodeLine{\ \ \{\textcolor{stringliteral}{"{}mnt"{}}\ ,\ CLONE\_NEWNS\}\ \ ,\ \(\backslash\)}
+\DoxyCodeLine{\ \ \{\mbox{\hyperlink{centry_8h_af0ecbcab5c985108aea37f1bb45eb8ad}{\_\_nptr}},\string~0\}\(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{centry_8h_ac19eb83983f75f11404fe6cf207e0f7b}\label{centry_8h_ac19eb83983f75f11404fe6cf207e0f7b} 
+\index{centry.h@{centry.h}!perr@{perr}}
+\index{perr@{perr}!centry.h@{centry.h}}
+\doxysubsubsection{\texorpdfstring{perr}{perr}}
+{\footnotesize\ttfamily \#define perr(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+fcall }\end{DoxyParamCaption})~  do \{ perror(\#\+\_\+\+\_\+fcall); exit(EXIT\+\_\+\+FAILURE); \}while(0)}
+
+\Hypertarget{centry_8h_a73c37d885af221ee843eca1a1f39549a}\label{centry_8h_a73c37d885af221ee843eca1a1f39549a} 
+\index{centry.h@{centry.h}!USUALSYS\_UNIX\_PATH@{USUALSYS\_UNIX\_PATH}}
+\index{USUALSYS\_UNIX\_PATH@{USUALSYS\_UNIX\_PATH}!centry.h@{centry.h}}
+\doxysubsubsection{\texorpdfstring{USUALSYS\_UNIX\_PATH}{USUALSYS\_UNIX\_PATH}}
+{\footnotesize\ttfamily \#define USUALSYS\+\_\+\+UNIX\+\_\+\+PATH}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \textcolor{stringliteral}{"{}/usr/bin/"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \textcolor{stringliteral}{"{}/usr/sbin/"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \textcolor{stringliteral}{"{}/usr/local/bin/"{}},\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \textcolor{stringliteral}{"{}/sbin/"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \textcolor{stringliteral}{"{}/bin/"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{centry_8h_af0ecbcab5c985108aea37f1bb45eb8ad}{\_\_nptr}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{centry_8h_a4e0534062b817130668cec7bc64556d3}\label{centry_8h_a4e0534062b817130668cec7bc64556d3} 
+\index{centry.h@{centry.h}!cpid\_t@{cpid\_t}}
+\index{cpid\_t@{cpid\_t}!centry.h@{centry.h}}
+\doxysubsubsection{\texorpdfstring{cpid\_t}{cpid\_t}}
+{\footnotesize\ttfamily typedef pid\+\_\+t \mbox{\hyperlink{centry_8h_a4e0534062b817130668cec7bc64556d3}{cpid\+\_\+t}}}
+
+\Hypertarget{centry_8h_af804a073671eeedd64cf80a0fdd707bf}\label{centry_8h_af804a073671eeedd64cf80a0fdd707bf} 
+\index{centry.h@{centry.h}!ns\_info\_t@{ns\_info\_t}}
+\index{ns\_info\_t@{ns\_info\_t}!centry.h@{centry.h}}
+\doxysubsubsection{\texorpdfstring{ns\_info\_t}{ns\_info\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct____ns__info__t}{\+\_\+\+\_\+ns\+\_\+info\+\_\+t}} \mbox{\hyperlink{centry_8h_af804a073671eeedd64cf80a0fdd707bf}{ns\+\_\+info\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{centry_8h_abb81d5d41f0ca160b0fd2765f52b8f9c}\label{centry_8h_abb81d5d41f0ca160b0fd2765f52b8f9c} 
+\index{centry.h@{centry.h}!centry\_check\_running\_container\_for@{centry\_check\_running\_container\_for}}
+\index{centry\_check\_running\_container\_for@{centry\_check\_running\_container\_for}!centry.h@{centry.h}}
+\doxysubsubsection{\texorpdfstring{centry\_check\_running\_container\_for()}{centry\_check\_running\_container\_for()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} centry\+\_\+check\+\_\+running\+\_\+container\+\_\+for (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{\+\_\+\+\_\+container\+\_\+engine }\end{DoxyParamCaption})}
+
+shorten outbuffer i just need the container id and images name TODO \+: put this in speciale function\Hypertarget{centry_8h_abf1a6f04a0f0e81d86e821486c2aa8ac}\label{centry_8h_abf1a6f04a0f0e81d86e821486c2aa8ac} 
+\index{centry.h@{centry.h}!centry\_curses\_select@{centry\_curses\_select}}
+\index{centry\_curses\_select@{centry\_curses\_select}!centry.h@{centry.h}}
+\doxysubsubsection{\texorpdfstring{centry\_curses\_select()}{centry\_curses\_select()}}
+{\footnotesize\ttfamily void centry\+\_\+curses\+\_\+select (\begin{DoxyParamCaption}\item[{char(\texorpdfstring{$\ast$}{*})}]{\+\_\+\+\_\+buffer\+\_\+result\mbox{[}0xff\mbox{]},  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+Initialising polling on keyboard ~\newline
+
+
+Term dimension
+
+Initial setup
+
+start listening in keyboard
+
+Big apologies to azerty users TODO \+:Implement navigation keys for AZERTY users or
+
+TODO \+: Make more clear\Hypertarget{centry_8h_afd56f71e5e5da7fbf7da8844303719c8}\label{centry_8h_afd56f71e5e5da7fbf7da8844303719c8} 
+\index{centry.h@{centry.h}!container\_process\_id@{container\_process\_id}}
+\index{container\_process\_id@{container\_process\_id}!centry.h@{centry.h}}
+\doxysubsubsection{\texorpdfstring{container\_process\_id()}{container\_process\_id()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{centry_8h_a4e0534062b817130668cec7bc64556d3}{cpid\+\_\+t}} container\+\_\+process\+\_\+id (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{\+\_\+\+\_\+container\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{centry_8h_aacad508bf9ea6d89fdbcf9f716216938}\label{centry_8h_aacad508bf9ea6d89fdbcf9f716216938} 
+\index{centry.h@{centry.h}!has\_command@{has\_command}}
+\index{has\_command@{has\_command}!centry.h@{centry.h}}
+\doxysubsubsection{\texorpdfstring{has\_command()}{has\_command()}}
+{\footnotesize\ttfamily int has\+\_\+command (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+restrict\+\_\+\+\_\+}]{\+\_\+\+\_\+host\+\_\+command }\end{DoxyParamCaption})}
+
+\Hypertarget{centry_8h_ab06069893a5ad93273caf4e30a96c26c}\label{centry_8h_ab06069893a5ad93273caf4e30a96c26c} 
+\index{centry.h@{centry.h}!load\_ns\_for@{load\_ns\_for}}
+\index{load\_ns\_for@{load\_ns\_for}!centry.h@{centry.h}}
+\doxysubsubsection{\texorpdfstring{load\_ns\_for()}{load\_ns\_for()}}
+{\footnotesize\ttfamily void load\+\_\+ns\+\_\+for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{centry_8h_a4e0534062b817130668cec7bc64556d3}{cpid\+\_\+t}}}]{container\+\_\+process\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{centry_8h_a370b85889bab6ba391f01f550d10a95b}\label{centry_8h_a370b85889bab6ba391f01f550d10a95b} 
+\index{centry.h@{centry.h}!nsinfo@{nsinfo}}
+\index{nsinfo@{nsinfo}!centry.h@{centry.h}}
+\doxysubsubsection{\texorpdfstring{nsinfo}{nsinfo}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct____ns__info__t}{\+\_\+\+\_\+ns\+\_\+info\+\_\+t}} nsinfo\mbox{[}6\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+

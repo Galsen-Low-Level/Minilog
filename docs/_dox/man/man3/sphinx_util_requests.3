@@ -1,0 +1,93 @@
+.TH "sphinx.util.requests" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.util.requests
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_IgnoredRedirection\fP"
+.br
+.ti -1c
+.RI "class \fB_Session\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "str|bool \fB_get_tls_cacert\fP (str url, str|dict[str, str]|None certs)"
+.br
+.ti -1c
+.RI "\fBrequests\&.Response\fP \fBget\fP (str url, **Any kwargs)"
+.br
+.ti -1c
+.RI "\fBrequests\&.Response\fP \fBhead\fP (str url, **Any kwargs)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tuple \fB_USER_AGENT\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Simple requests package loader
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " str | bool sphinx\&.util\&.requests\&._get_tls_cacert (str url, str | dict[str, str] | None certs)\fC [protected]\fP"
+
+.PP
+.nf
+Get additional CA cert for a specific URL\&.
+.fi
+.PP
+ 
+.SS " \fBrequests\&.Response\fP sphinx\&.util\&.requests\&.get (str url, **Any kwargs)"
+
+.PP
+.nf
+Sends a GET request like ``requests\&.get()``\&.
+
+This sets up User-Agent header and TLS verification automatically\&.
+
+.fi
+.PP
+ 
+.SS " \fBrequests\&.Response\fP sphinx\&.util\&.requests\&.head (str url, **Any kwargs)"
+
+.PP
+.nf
+Sends a HEAD request like ``requests\&.head()``\&.
+
+This sets up User-Agent header and TLS verification automatically\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "tuple sphinx\&.util\&.requests\&._USER_AGENT\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  (
+2     f'Mozilla/5\&.0 (X11; Linux x86_64; rv:100\&.0) Gecko/20100101 Firefox/100\&.0 '
+3     f'Sphinx/{sphinx\&.__version__}'
+4 )
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

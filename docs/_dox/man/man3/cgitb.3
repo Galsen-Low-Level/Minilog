@@ -1,0 +1,149 @@
+.TH "cgitb" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cgitb
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBHook\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBreset\fP ()"
+.br
+.ti -1c
+.RI "\fBsmall\fP (\fBtext\fP)"
+.br
+.ti -1c
+.RI "\fBstrong\fP (\fBtext\fP)"
+.br
+.ti -1c
+.RI "\fBgrey\fP (\fBtext\fP)"
+.br
+.ti -1c
+.RI "\fBlookup\fP (name, frame, locals)"
+.br
+.ti -1c
+.RI "\fBscanvars\fP (reader, frame, locals)"
+.br
+.ti -1c
+.RI "\fBhtml\fP (einfo, context=5)"
+.br
+.ti -1c
+.RI "\fBtext\fP (einfo, context=5)"
+.br
+.ti -1c
+.RI "\fBenable\fP (display=1, logdir=None, context=5, format='html')"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBhandler\fP = \fBHook\fP()\&.handle"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+More comprehensive traceback formatting for Python scripts\&.
+
+To enable this module, do:
+
+    import cgitb; cgitb\&.enable()
+
+at the top of your script\&.  The optional arguments to enable() are:
+
+    display     - if true, tracebacks are displayed in the web browser
+    logdir      - if set, tracebacks are written to files in this directory
+    context     - number of lines of source code to show for each stack frame
+    format      - 'text' or 'html' controls the output format
+
+By default, tracebacks are displayed but not saved, the context is 5 lines
+and the output format is 'html' (for backwards compatibility with the
+original use of this module)
+
+Alternatively, if you have caught an exception and want cgitb to display it
+for you, call cgitb\&.handler()\&.  The optional argument to handler() is a
+3-item tuple (etype, evalue, etb) just like the value of sys\&.exc_info()\&.
+The default handler displays output as HTML\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "cgitb\&.enable ( display = \fC1\fP,  logdir = \fCNone\fP,  context = \fC5\fP,  format = \fC'html'\fP)"
+
+.PP
+.nf
+Install an exception handler that formats tracebacks as HTML\&.
+
+The optional argument 'display' can be set to 0 to suppress sending the
+traceback to the browser, and 'logdir' can be set to a directory to cause
+tracebacks to be written to files there\&.
+.fi
+.PP
+ 
+.SS "cgitb\&.grey ( text)"
+
+.SS "cgitb\&.html ( einfo,  context = \fC5\fP)"
+
+.PP
+.nf
+Return a nice HTML document describing a given traceback\&.
+.fi
+.PP
+ 
+.SS "cgitb\&.lookup ( name,  frame,  locals)"
+
+.PP
+.nf
+Find the value for a given name in the given environment\&.
+.fi
+.PP
+ 
+.SS "cgitb\&.reset ()"
+
+.PP
+.nf
+Return a string that resets the CGI and browser to a known state\&.
+.fi
+.PP
+ 
+.SS "cgitb\&.scanvars ( reader,  frame,  locals)"
+
+.PP
+.nf
+Scan one logical line of Python and look up values of variables used\&.
+.fi
+.PP
+ 
+.SS "cgitb\&.small ( text)"
+
+.SS "cgitb\&.strong ( text)"
+
+.SS "cgitb\&.text ( einfo,  context = \fC5\fP)"
+
+.PP
+.nf
+Return a plain text document describing a given traceback\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "cgitb\&.handler = \fBHook\fP()\&.handle"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,77 @@
+.TH "jinja2.visitor.NodeTransformer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.visitor.NodeTransformer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBjinja2\&.visitor\&.NodeVisitor\fP\&.
+.PP
+Inherited by \fBjinja2\&.optimizer\&.Optimizer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNode\fP \fBgeneric_visit\fP (self, \fBNode\fP node, *t\&.Any args, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "t\&.List[\fBNode\fP] \fBvisit_list\fP (self, \fBNode\fP node, *t\&.Any args, **t\&.Any kwargs)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBjinja2\&.visitor\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "'t\&.Optional[\fBVisitCallable\fP]' \fBget_visitor\fP (self, \fBNode\fP node)"
+.br
+.ti -1c
+.RI "t\&.Any \fBvisit\fP (self, \fBNode\fP node, *t\&.Any args, **t\&.Any kwargs)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Walks the abstract syntax tree and allows modifications of nodes\&.
+
+The `NodeTransformer` will walk the AST and use the return value of the
+visitor functions to replace or remove the old node\&.  If the return
+value of the visitor function is `None` the node will be removed
+from the previous location otherwise it's replaced with the return
+value\&.  The return value may be the original node in which case no
+replacement takes place\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " \fBNode\fP jinja2\&.visitor\&.NodeTransformer\&.generic_visit ( self, \fBNode\fP node, *t\&.Any args, **t\&.Any kwargs)"
+
+.PP
+.nf
+Called if no explicit visitor function exists for a node\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.visitor\&.NodeVisitor\fP\&.
+.PP
+Reimplemented in \fBjinja2\&.optimizer\&.Optimizer\fP\&.
+.SS " t\&.List[\fBNode\fP] jinja2\&.visitor\&.NodeTransformer\&.visit_list ( self, \fBNode\fP node, *t\&.Any args, **t\&.Any kwargs)"
+
+.PP
+.nf
+As transformers may return lists in some places this method
+can be used to enforce a list as return value\&.
+
+.fi
+.PP
+ 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

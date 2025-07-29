@@ -1,0 +1,122 @@
+\doxysection{arghlp.\+h}
+\hypertarget{libarghlp_2arghlp_8h_source}{}\label{libarghlp_2arghlp_8h_source}\index{/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.h@{/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.h}}
+\mbox{\hyperlink{libarghlp_2arghlp_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#if!defined\ \ (\_\_argument\_helper)\ \ }}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ \_\_argument\_helper\ \ }}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#if\ \_\_GNUC\_PREREQ(3,4)\ }}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#\ pragma\ once\ }}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <getopt.h>}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus\ \ }}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#\ define\ ARGHLP\ \ extern\ "{}C"{}\ \ }}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#else\ }}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#\ define\ ARGHLP\ }}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ \ nullable\ NULL\ }}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ \ MAX\_BUFF\ \ \ 255}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ \ USAGE\_BUFF}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ \ USAGE\_BUFF\ 5000\ }}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ \ OPT\_END\ \ \{\ nullable,0,nullable,0\}\ }}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ \ OPTX\_END\ \{OPT\_END,0\}\ }}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ \ OPT\_END\_DEF\ \ \ (struct\ option)\ OPT\_END\ }}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ \ OPTX\_END\_DEF\ \ (struct\ optionx)\ OPTX\_END\ }}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ \ def(\_\_option)\ \_\_option\#\#\_DEF}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#ifndef\ BUILD\_FROM\_SNAME}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#\ define\ BUILD\_FROM\_SVAL}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ ARGENTRY\_SYMB\ 58\ \ }}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#if\ !defined(HELPER\_FRMT)}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#\ define\ HELPER\_FRMT\ \ "{}\ -\/\%c,\ -\/-\/\%s\ \%s"{}\ }}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#if\ !defined(USAGE\_FRMT)\ }}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#\ define\ USAGE\_FRMT\ \ "{}USAGE:\ \%s\ \(\backslash\)n"{}}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ \_\_help\_\_\ fprintf(stdout\ ,"{}\%s\(\backslash\)n"{},\ \_\_usage)}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ \_\_usage\_\_\ \ \_\_help\_\_}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ \_\_display\_usage\_\_\ \_\_help\_\_}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{enum}\ \{\ }
+\DoxyCodeLine{00073\ \ \ \mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_adf764cbdea00d65edcd07bb9953ad2b7a779613937a96dc934924d48a0e29e154}{REQUIRED}},}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#ifdef\ \ required\_argument\ \ }}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#\ define\ REQUIRED\ \ required\_argument\ }}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_adf764cbdea00d65edcd07bb9953ad2b7a468b290a6b16925fa56374f74698a9d7}{OPTIONAL}}\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#ifdef\ optional\_argument\ }}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#\ define\ OPTIONAL\ optional\_argument\ }}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00082\ \};\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{enum}\ \{\ }
+\DoxyCodeLine{00085\ \ \ \ \mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_a3e5f6c4f65ff30925daede553537ac89}{ARGREQUIERED}}\ ,\ \ \ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ ARGREQUIERED\ \ (1\ <<\ ARGREQUIERED)}}
+\DoxyCodeLine{00087\ \ \ \ \mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_aa6874d6497b38745692b63a883f1f3c4}{ARGOPTIONAL}}\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ ARGOPTIONAL\ \ \ (1\ <<\ ARGOPTIONAL)\ }}
+\DoxyCodeLine{00089\ \};\ }
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ \_\_attribute\_option(\_\_attr\_\_)\ ARG\#\_\_attr\_\_\ }}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct____flags__t}{\_\_flags\_t}}\ \mbox{\hyperlink{struct____flags__t}{flags\_t}}\ \ \ ;\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}\ \ \ \ \mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_afeeaad3bd76fc89a5aa1867b278556b5}{\_\_usage}}[\mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_a8a3cb5d23a8fa97623868f7f64177d14}{USAGE\_BUFF}}]\ ;\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}\ \ \ \ \mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_a8204888e047645546da90e30dba4bea8}{\_\_shopt}}[\mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_a4b70916bdf28ed7afd94e4fb98230a90}{MAX\_BUFF}}]\ ;\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{extern}\ \textcolor{keyword}{struct\ \ }option\ \ \mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_abca8ea6c078d042d8266d9669597c11d}{\_\_optl}}[\mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_a4b70916bdf28ed7afd94e4fb98230a90}{MAX\_BUFF}}]\ ;\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_a85f7bea2c17145feaba5eba7c7e7ccca}{\_\_nargp}}\ ;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{keyword}{struct\ \ }\mbox{\hyperlink{structoptionx}{optionx}}\ \{\ }
+\DoxyCodeLine{00102\ \ \ \textcolor{keyword}{struct\ }option\ \mbox{\hyperlink{structoptionx_a08fb872becc6f8d541e83d812b432fe7}{optlong}}\ ;\ }
+\DoxyCodeLine{00103\ \ \ \textcolor{keywordtype}{char}\ \ \ \mbox{\hyperlink{structoptionx_a6b54ca762e78ca1fab938226717015bc}{optdesc}}[\mbox{\hyperlink{libarghlp_2arghlp_8h_a4b70916bdf28ed7afd94e4fb98230a90}{MAX\_BUFF}}];\ }
+\DoxyCodeLine{00104\ \};\ }
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsynopsys__t}{synopsys\_t}}\ \{\ }
+\DoxyCodeLine{00107\ \ \ \textcolor{keywordtype}{char}\ *\ \mbox{\hyperlink{structsynopsys__t_afacf4e85b03e563d3b6f96b1a0b62543}{header\_description}}\ ;}
+\DoxyCodeLine{00108\ \ \ \textcolor{keywordtype}{char}\ *\ \mbox{\hyperlink{structsynopsys__t_a9a669cbd71231795c04dd58cbc47ec9c}{footer\_description}}\ ;\ \ }
+\DoxyCodeLine{00109\ \};\ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structarghlp}{arghlp}}\ \ \mbox{\hyperlink{structarghlp}{arghlp}};\ \ }
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{typedef}\ \ \textcolor{keywordtype}{void}\ *(*arghlp\_handler)(\textcolor{keywordtype}{int}\ \_\_ac\ ,\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ *\ \_\_av\ ,\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \ \ \ *\ \ \_\_shortopt\ ,\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{struct\ }option\ *\ \ \_\_longoption\ \ ,\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ *\ \_\_wur\ \_\_args)\ ;\ \ \ }
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structarghlp}{arghlp}}\ \{\ }
+\DoxyCodeLine{00120\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsynopsys__t}{synopsys\_t}}\ \mbox{\hyperlink{structarghlp_a46af361a1e788a3f95d207ba35ced47a}{synopsys}}\ ;\ }
+\DoxyCodeLine{00121\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structoptionx}{optionx}}\ *\ \mbox{\hyperlink{structarghlp_abd2e4eafa2ac21ff44e5d3fde4555d66}{options}};\ }
+\DoxyCodeLine{00122\ \ \ \mbox{\hyperlink{libarghlp_2arghlp_8h_a9dc05b130da81a432eb3accd20fb59be}{arghlp\_handler}}\ \ \mbox{\hyperlink{structarghlp_ae889f39b2abf2140ccb12a23ed762fea}{ah\_handler}};\ \ \ }
+\DoxyCodeLine{00123\ \};\ \ }
+\DoxyCodeLine{00124\ \ }
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_a30187d56cc745d62ba5023d97c213e70}{ARGHLP}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{char}\ \ *\ get\_program\_basename(\textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ \ *\ \_\_argument\_vector)\ \_\_wur\ \_\_nonnull((1));\ }
+\DoxyCodeLine{00127\ \mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_a30187d56cc745d62ba5023d97c213e70}{ARGHLP}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \ *\ set\_option(\ \textcolor{keywordtype}{char}\ \ *\ \_\_shortopt\ ,\ \ \ \textcolor{keywordtype}{int}\ \_\_has\_arg\ )\ ;\ }
+\DoxyCodeLine{00128\ \mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_a30187d56cc745d62ba5023d97c213e70}{ARGHLP}}\ \textcolor{keyword}{static}\ \ \textcolor{keywordtype}{char}\ *\ build\_short\_option(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structoptionx}{optionx}}\ *\ \_\_raw\_optionx)\ \_\_wur\ \_\_nonnull((1));\ }
+\DoxyCodeLine{00129\ \mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_a30187d56cc745d62ba5023d97c213e70}{ARGHLP}}\ \textcolor{keywordtype}{void}\ \textcolor{keyword}{static}\ build\_usage\_helper(\textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct____flags__t}{flags\_t}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \_\_flag\_description)\ \_\_nonnull((1,2));\ }
+\DoxyCodeLine{00130\ \mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_a30187d56cc745d62ba5023d97c213e70}{ARGHLP}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{char}\ *\ make\_sysnopsys(\textcolor{keywordtype}{char}\ *\_\_basename,\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structarghlp}{arghlp}}\ *\ \_\_synopsys,\ \textcolor{keywordtype}{char}\ *\ \_\_usage\_body)\ \_\_nonnull((1,2,3))\ ;\ }
+\DoxyCodeLine{00131\ \mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_a30187d56cc745d62ba5023d97c213e70}{ARGHLP}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{namespacepygments_1_1lexers_1_1__vim__builtins_a35fb6c63c47b348b0000b0ad3fb0e8c2}{option}}\ *\ extract\_getopt\_option(\textcolor{keyword}{struct}\ \ option\ *\ \ \_\_g\_option)\ \_\_nonnull(())\ ;}
+\DoxyCodeLine{00132\ \mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_a30187d56cc745d62ba5023d97c213e70}{ARGHLP}}\ \textcolor{keywordtype}{void}\ \ *\mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_a4e8d4a4af46a834c5693d2b3df56d49d}{arghlp\_context}}\ (\ \textcolor{keywordtype}{int}\ \_\_argcounter,\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ *\_\_argvector\ ,\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structarghlp}{arghlp}}\ *\_\_arghlp\ ,\ \textcolor{keywordtype}{void}\ *\ \_\_wur\ \_\_argxtra)\ \_\_nonnull((2,3));}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_a30187d56cc745d62ba5023d97c213e70}{ARGHLP}}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_ab9db89ae2f607340c89f811e60e5b9aa}{optentry}}(\textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ *\ \_\_av\ ,\textcolor{keywordtype}{int}\ \_\_ac\ \ ,\ \textcolor{keywordtype}{int}\ \_\_optindex)\ ;\ \ }
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

@@ -1,0 +1,413 @@
+.TH "pip._internal.vcs.subversion.Subversion" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.vcs.subversion.Subversion
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._internal\&.vcs\&.versioncontrol\&.VersionControl\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBshould_add_vcs_url_prefix\fP (cls, str remote_url)"
+.br
+.ti -1c
+.RI "str \fBget_revision\fP (cls, str location)"
+.br
+.ti -1c
+.RI "Tuple[str, Tuple[Optional[str], Optional[str]]] \fBget_netloc_and_auth\fP (cls, str netloc, str scheme)"
+.br
+.ti -1c
+.RI "Tuple[str, Optional[str], AuthInfo] \fBget_url_rev_and_auth\fP (cls, str url)"
+.br
+.ti -1c
+.RI "str \fBget_remote_url\fP (cls, str location)"
+.br
+.ti -1c
+.RI "bool \fBis_commit_id_equal\fP (cls, str dest, Optional[str] \fBname\fP)"
+.br
+.ti -1c
+.RI "None \fB__init__\fP (self, Optional[bool] \fBuse_interactive\fP=None)"
+.br
+.ti -1c
+.RI "Tuple[int,\&.\&.\&.] \fBcall_vcs_version\fP (self)"
+.br
+.ti -1c
+.RI "Tuple[int,\&.\&.\&.] \fBget_vcs_version\fP (self)"
+.br
+.ti -1c
+.RI "CommandArgs \fBget_remote_call_options\fP (self)"
+.br
+.ti -1c
+.RI "None \fBfetch_new\fP (self, str dest, \fBHiddenText\fP url, \fBRevOptions\fP rev_options, int verbosity)"
+.br
+.ti -1c
+.RI "None \fBswitch\fP (self, str dest, \fBHiddenText\fP url, \fBRevOptions\fP rev_options)"
+.br
+.ti -1c
+.RI "None \fBupdate\fP (self, str dest, \fBHiddenText\fP url, \fBRevOptions\fP rev_options)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._internal\&.vcs\&.versioncontrol\&.VersionControl\fP
+.in +1c
+.ti -1c
+.RI "Optional[str] \fBget_subdirectory\fP (cls, str location)"
+.br
+.ti -1c
+.RI "str \fBget_requirement_revision\fP (cls, str repo_dir)"
+.br
+.ti -1c
+.RI "str \fBget_src_requirement\fP (cls, str repo_dir, str project_name)"
+.br
+.ti -1c
+.RI "bool \fBis_immutable_rev_checkout\fP (self, str url, str dest)"
+.br
+.ti -1c
+.RI "\fBRevOptions\fP \fBmake_rev_options\fP (cls, Optional[str] rev=None, Optional[CommandArgs] extra_args=None)"
+.br
+.ti -1c
+.RI "Tuple[\fBHiddenText\fP, \fBRevOptions\fP] \fBget_url_rev_options\fP (self, \fBHiddenText\fP url)"
+.br
+.ti -1c
+.RI "bool \fBcompare_urls\fP (cls, str url1, str url2)"
+.br
+.ti -1c
+.RI "None \fBobtain\fP (self, str dest, \fBHiddenText\fP url, int verbosity)"
+.br
+.ti -1c
+.RI "None \fBunpack\fP (self, str location, \fBHiddenText\fP url, int verbosity)"
+.br
+.ti -1c
+.RI "str \fBrun_command\fP (cls, Union[List[str], CommandArgs] cmd, bool show_stdout=True, Optional[str] cwd=None, 'Literal['raise', 'warn', 'ignore']' on_returncode='raise', Optional[Iterable[int]] extra_ok_returncodes=None, Optional[str] command_desc=None, Optional[Mapping[str, Any]] extra_environ=None, Optional[\fBSpinnerInterface\fP] spinner=None, bool log_failed_cmd=True, bool stdout_only=False)"
+.br
+.ti -1c
+.RI "bool \fBis_repository_directory\fP (cls, str path)"
+.br
+.ti -1c
+.RI "Optional[str] \fBget_repository_root\fP (cls, str location)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "List[str] \fBget_base_rev_args\fP (str rev)"
+.br
+.ti -1c
+.RI "CommandArgs \fBmake_rev_args\fP (Optional[str] username, Optional[\fBHiddenText\fP] password)"
+.br
+.in -1c
+
+Static Public Member Functions inherited from \fBpip\&._internal\&.vcs\&.versioncontrol\&.VersionControl\fP
+.in +1c
+.ti -1c
+.RI "str \fBnormalize_url\fP (str url)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdirname\fP"
+.br
+.ti -1c
+.RI "\fBuse_interactive\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpip\&._internal\&.vcs\&.versioncontrol\&.VersionControl\fP
+.in +1c
+.ti -1c
+.RI "\fBrepo_name\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBdirname\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = 'svn'"
+.br
+.ti -1c
+.RI "str \fBdirname\fP = '\&.svn'"
+.br
+.ti -1c
+.RI "str \fBrepo_name\fP = 'checkout'"
+.br
+.ti -1c
+.RI "tuple \fBschemes\fP = ('svn+ssh', 'svn+http', 'svn+https', 'svn+svn', 'svn+file')"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpip\&._internal\&.vcs\&.versioncontrol\&.VersionControl\fP
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = ''"
+.br
+.ti -1c
+.RI "str \fBdirname\fP = ''"
+.br
+.ti -1c
+.RI "str \fBrepo_name\fP = ''"
+.br
+.ti -1c
+.RI "tuple \fBschemes\fP = ()"
+.br
+.ti -1c
+.RI "tuple \fBunset_environ\fP = ()"
+.br
+.ti -1c
+.RI "Optional \fBdefault_arg_rev\fP = None"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Tuple[Optional[str], int] \fB_get_svn_url_rev\fP (cls, str location)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpip\&._internal\&.vcs\&.versioncontrol\&.VersionControl\fP
+.in +1c
+.ti -1c
+.RI "bool \fB_is_local_repository\fP (cls, str repo)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_vcs_version\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._internal\&.vcs\&.subversion\&.Subversion\&.__init__ ( self, Optional[bool]  use_interactive = \fCNone\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " Tuple[Optional[str], int] pip\&._internal\&.vcs\&.subversion\&.Subversion\&._get_svn_url_rev ( cls, str location)\fC [protected]\fP"
+
+.SS " Tuple[int, \&.\&.\&.] pip\&._internal\&.vcs\&.subversion\&.Subversion\&.call_vcs_version ( self)"
+
+.PP
+.nf
+Query the version of the currently installed Subversion client\&.
+
+:return: A tuple containing the parts of the version information or
+    ``()`` if the version returned from ``svn`` could not be parsed\&.
+:raises: BadCommand: If ``svn`` is not installed\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.vcs\&.subversion\&.Subversion\&.fetch_new ( self, str dest, \fBHiddenText\fP url, \fBRevOptions\fP rev_options, int
+     verbosity)"
+
+.PP
+.nf
+Fetch a revision from a repository, in the case that this is the
+first fetch from the repository\&.
+
+Args:
+  dest: the directory to fetch the repository to\&.
+  rev_options: a RevOptions object\&.
+  verbosity: verbosity level\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.vcs\&.versioncontrol\&.VersionControl\fP\&.
+.SS " List[str] pip\&._internal\&.vcs\&.subversion\&.Subversion\&.get_base_rev_args (str rev)\fC [static]\fP"
+
+.PP
+.nf
+Return the base revision arguments for a vcs command\&.
+
+Args:
+  rev: the name of a revision to install\&.  Cannot be None\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.vcs\&.versioncontrol\&.VersionControl\fP\&.
+.SS " Tuple[str, Tuple[Optional[str], Optional[str]]] pip\&._internal\&.vcs\&.subversion\&.Subversion\&.get_netloc_and_auth ( cls, str netloc, str
+     scheme)"
+
+.PP
+.nf
+This override allows the auth information to be passed to svn via the
+--username and --password options instead of via the URL\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.vcs\&.versioncontrol\&.VersionControl\fP\&.
+.SS " CommandArgs pip\&._internal\&.vcs\&.subversion\&.Subversion\&.get_remote_call_options ( self)"
+
+.PP
+.nf
+Return options to be used on calls to Subversion that contact the server\&.
+
+These options are applicable for the following ``svn`` subcommands used
+in this class\&.
+
+    - checkout
+    - switch
+    - update
+
+:return: A list of command line arguments to pass to ``svn``\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._internal\&.vcs\&.subversion\&.Subversion\&.get_remote_url ( cls, str location)"
+
+.PP
+.nf
+Return the url used at location
+
+Raises RemoteNotFoundError if the repository does not have a remote
+url configured\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.vcs\&.versioncontrol\&.VersionControl\fP\&.
+.SS " str pip\&._internal\&.vcs\&.subversion\&.Subversion\&.get_revision ( cls, str location)"
+
+.PP
+.nf
+Return the maximum revision for all files under a given location
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.vcs\&.versioncontrol\&.VersionControl\fP\&.
+.SS " Tuple[str, Optional[str], AuthInfo] pip\&._internal\&.vcs\&.subversion\&.Subversion\&.get_url_rev_and_auth ( cls, str url)"
+
+.PP
+.nf
+Parse the repository URL to use, and return the URL, revision,
+and auth info to use\&.
+
+Returns: (url, rev, (username, password))\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.vcs\&.versioncontrol\&.VersionControl\fP\&.
+.SS " Tuple[int, \&.\&.\&.] pip\&._internal\&.vcs\&.subversion\&.Subversion\&.get_vcs_version ( self)"
+
+.PP
+.nf
+Return the version of the currently installed Subversion client\&.
+
+If the version of the Subversion client has already been queried,
+a cached value will be used\&.
+
+:return: A tuple containing the parts of the version information or
+    ``()`` if the version returned from ``svn`` could not be parsed\&.
+:raises: BadCommand: If ``svn`` is not installed\&.
+
+.fi
+.PP
+ 
+.SS " bool pip\&._internal\&.vcs\&.subversion\&.Subversion\&.is_commit_id_equal ( cls, str dest, Optional[str] name)"
+
+.PP
+.nf
+Always assume the versions don't match
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.vcs\&.versioncontrol\&.VersionControl\fP\&.
+.SS " CommandArgs pip\&._internal\&.vcs\&.subversion\&.Subversion\&.make_rev_args (Optional[str] username, Optional[\fBHiddenText\fP]
+     password)\fC [static]\fP"
+
+.PP
+.nf
+Return the RevOptions 'extra arguments' to use in obtain()\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.vcs\&.versioncontrol\&.VersionControl\fP\&.
+.SS " bool pip\&._internal\&.vcs\&.subversion\&.Subversion\&.should_add_vcs_url_prefix ( cls, str remote_url)"
+
+.PP
+.nf
+Return whether the vcs prefix (e\&.g\&. 'git+') should be added to a
+repository's remote url when used in a requirement\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.vcs\&.versioncontrol\&.VersionControl\fP\&.
+.SS " None pip\&._internal\&.vcs\&.subversion\&.Subversion\&.switch ( self, str dest, \fBHiddenText\fP url, \fBRevOptions\fP rev_options)"
+
+.PP
+.nf
+Switch the repo at ``dest`` to point to ``URL``\&.
+
+Args:
+  rev_options: a RevOptions object\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.vcs\&.versioncontrol\&.VersionControl\fP\&.
+.SS " None pip\&._internal\&.vcs\&.subversion\&.Subversion\&.update ( self, str dest, \fBHiddenText\fP url, \fBRevOptions\fP rev_options)"
+
+.PP
+.nf
+Update an already-existing repo to the given ``rev_options``\&.
+
+Args:
+  rev_options: a RevOptions object\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.vcs\&.versioncontrol\&.VersionControl\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._internal\&.vcs\&.subversion\&.Subversion\&._vcs_version\fC [protected]\fP"
+
+.SS "str pip\&._internal\&.vcs\&.subversion\&.Subversion\&.dirname = '\&.svn'\fC [static]\fP"
+
+.SS "pip\&._internal\&.vcs\&.subversion\&.Subversion\&.dirname"
+
+.SS "str pip\&._internal\&.vcs\&.subversion\&.Subversion\&.name = 'svn'\fC [static]\fP"
+
+.SS "str pip\&._internal\&.vcs\&.subversion\&.Subversion\&.repo_name = 'checkout'\fC [static]\fP"
+
+.SS "tuple pip\&._internal\&.vcs\&.subversion\&.Subversion\&.schemes = ('svn+ssh', 'svn+http', 'svn+https', 'svn+svn', 'svn+file')\fC [static]\fP"
+
+.SS "pip\&._internal\&.vcs\&.subversion\&.Subversion\&.use_interactive"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

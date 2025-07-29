@@ -1,0 +1,160 @@
+.TH "sphinx.builders.linkcheck.HyperlinkCollector" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.builders.linkcheck.HyperlinkCollector
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.transforms\&.post_transforms\&.SphinxPostTransform\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBrun\fP (self, **Any kwargs)"
+.br
+.ti -1c
+.RI "str|None \fBfind_uri\fP (self, nodes\&.Element node)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.transforms\&.post_transforms\&.SphinxPostTransform\fP
+.in +1c
+.ti -1c
+.RI "None \fBapply\fP (self, **Any kwargs)"
+.br
+.ti -1c
+.RI "bool \fBis_supported\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.transforms\&.SphinxTransform\fP
+.in +1c
+.ti -1c
+.RI "\fBSphinx\fP \fBapp\fP (self)"
+.br
+.ti -1c
+.RI "\fBBuildEnvironment\fP \fBenv\fP (self)"
+.br
+.ti -1c
+.RI "\fBConfig\fP \fBconfig\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdocument\fP, \fBstartnode\fP=None)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBbuilders\fP = ('linkcheck',)"
+.br
+.ti -1c
+.RI "int \fBdefault_priority\fP = 800"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBsphinx\&.transforms\&.post_transforms\&.SphinxPostTransform\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBbuilders\fP = ()"
+.br
+.ti -1c
+.RI "tuple \fBformats\fP = ()"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_priority\fP = None"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB_add_uri\fP (self, str uri, nodes\&.Element node)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBstartnode\fP"
+.br
+.ti -1c
+.RI "\fBlanguage\fP"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS " None sphinx\&.builders\&.linkcheck\&.HyperlinkCollector\&._add_uri ( self, str uri, nodes\&.Element node)\fC [protected]\fP"
+
+.PP
+.nf
+Registers a node's URI into a builder's collection of hyperlinks\&.
+
+Provides the ability to register a URI value determined from a node
+into the linkcheck's builder\&. URI's processed through this call can
+be manipulated through a ``linkcheck-process-uri`` event before the
+builder attempts to validate\&.
+
+:param uri: URI to add
+:param node: A node class where the URI was found
+
+.fi
+.PP
+ 
+.SS " str | None sphinx\&.builders\&.linkcheck\&.HyperlinkCollector\&.find_uri ( self, nodes\&.Element node)"
+
+.PP
+.nf
+Find a URI for a given node\&.
+
+This call can be used to retrieve a URI from a provided node\&. If no
+URI exists for a provided node, this call will return ``None``\&.
+
+This method can be useful for extension developers who wish to
+easily inject hyperlinks into a builder by only needing to override
+this method\&.
+
+:param node: A node class
+:returns: URI of the node
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.builders\&.linkcheck\&.HyperlinkCollector\&.run ( self, **Any kwargs)"
+
+.PP
+.nf
+Main method of post transforms\&.
+
+Subclasses should override this method instead of ``apply()``\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.transforms\&.post_transforms\&.SphinxPostTransform\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "tuple sphinx\&.builders\&.linkcheck\&.HyperlinkCollector\&.builders = ('linkcheck',)\fC [static]\fP"
+
+.SS "int sphinx\&.builders\&.linkcheck\&.HyperlinkCollector\&.default_priority = 800\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

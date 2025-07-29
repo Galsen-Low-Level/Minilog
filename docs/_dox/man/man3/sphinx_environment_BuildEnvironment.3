@@ -1,0 +1,537 @@
+.TH "sphinx.environment.BuildEnvironment" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.environment.BuildEnvironment
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, \fBSphinx\fP \fBapp\fP)"
+.br
+.ti -1c
+.RI "dict[str, Any] \fB__getstate__\fP (self)"
+.br
+.ti -1c
+.RI "None \fB__setstate__\fP (self, dict[str, Any] state)"
+.br
+.ti -1c
+.RI "None \fBsetup\fP (self, \fBSphinx\fP \fBapp\fP)"
+.br
+.ti -1c
+.RI "None \fBset_versioning_method\fP (self, str|Callable[[\fBNode\fP], bool] method, bool compare)"
+.br
+.ti -1c
+.RI "None \fBclear_doc\fP (self, str \fBdocname\fP)"
+.br
+.ti -1c
+.RI "None \fBmerge_info_from\fP (self, Iterable[str] docnames, \fBBuildEnvironment\fP other, \fBSphinx\fP \fBapp\fP)"
+.br
+.ti -1c
+.RI "str|None \fBpath2doc\fP (self, str|os\&.PathLike[str] filename)"
+.br
+.ti -1c
+.RI "\fB_StrPath\fP \fBdoc2path\fP (self, str \fBdocname\fP, bool base=True)"
+.br
+.ti -1c
+.RI "tuple[str, str] \fBrelfn2path\fP (self, str|Path filename, str|None \fBdocname\fP=None)"
+.br
+.ti -1c
+.RI "set[str] \fBfound_docs\fP (self)"
+.br
+.ti -1c
+.RI "None \fBfind_files\fP (self, \fBConfig\fP \fBconfig\fP, \fBBuilder\fP builder)"
+.br
+.ti -1c
+.RI "tuple[set[str], set[str], set[str]] \fBget_outdated_files\fP (self, bool config_changed)"
+.br
+.ti -1c
+.RI "Iterator[str] \fBcheck_dependents\fP (self, \fBSphinx\fP \fBapp\fP, set[str] already)"
+.br
+.ti -1c
+.RI "None \fBprepare_settings\fP (self, str \fBdocname\fP)"
+.br
+.ti -1c
+.RI "\fB_CurrentDocument\fP \fBtemp_data\fP (self)"
+.br
+.ti -1c
+.RI "str \fBdocname\fP (self)"
+.br
+.ti -1c
+.RI "\fBParser\fP \fBparser\fP (self)"
+.br
+.ti -1c
+.RI "int \fBnew_serialno\fP (self, str category='')"
+.br
+.ti -1c
+.RI "None \fBnote_dependency\fP (self, str|os\&.PathLike[str] filename, *str|None \fBdocname\fP=None)"
+.br
+.ti -1c
+.RI "None \fBnote_included\fP (self, str|os\&.PathLike[str] filename)"
+.br
+.ti -1c
+.RI "None \fBnote_reread\fP (self)"
+.br
+.ti -1c
+.RI "\fBDomain\fP \fBget_domain\fP (self, str domainname)"
+.br
+.ti -1c
+.RI "nodes\&.document \fBget_doctree\fP (self, str \fBdocname\fP)"
+.br
+.ti -1c
+.RI "nodes\&.document \fBmaster_doctree\fP (self)"
+.br
+.ti -1c
+.RI "nodes\&.document \fBget_and_resolve_doctree\fP (self, str \fBdocname\fP, \fBBuilder\fP builder, nodes\&.document|None doctree=None, bool prune_toctrees=True, bool includehidden=False)"
+.br
+.ti -1c
+.RI "\fBNode\fP|None \fBresolve_toctree\fP (self, str \fBdocname\fP, \fBBuilder\fP builder, \fBaddnodes\&.toctree\fP toctree, bool prune=True, int maxdepth=0, bool titles_only=False, bool collapse=False, bool includehidden=False)"
+.br
+.ti -1c
+.RI "None \fBresolve_references\fP (self, nodes\&.document doctree, str fromdocname, \fBBuilder\fP builder)"
+.br
+.ti -1c
+.RI "None \fBapply_post_transforms\fP (self, nodes\&.document doctree, str \fBdocname\fP)"
+.br
+.ti -1c
+.RI "dict[str, list[str|None]] \fBcollect_relations\fP (self)"
+.br
+.ti -1c
+.RI "None \fBcheck_consistency\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBproject\fP"
+.br
+.ti -1c
+.RI "\fBapp\fP"
+.br
+.ti -1c
+.RI "\fBevents\fP"
+.br
+.ti -1c
+.RI "\fBversion\fP"
+.br
+.ti -1c
+.RI "\fBdomains\fP"
+.br
+.ti -1c
+.RI "\fBconfig_status\fP"
+.br
+.ti -1c
+.RI "\fBconfig_status_extra\fP"
+.br
+.ti -1c
+.RI "\fBconfig\fP"
+.br
+.ti -1c
+.RI "\fBversioning_condition\fP"
+.br
+.ti -1c
+.RI "\fBversioning_compare\fP"
+.br
+.ti -1c
+.RI "\fBcurrent_document\fP"
+.br
+.ti -1c
+.RI "\fBdocname\fP"
+.br
+.ti -1c
+.RI "\fBall_docs\fP"
+.br
+.ti -1c
+.RI "\fBtoctree_includes\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsrcdir\fP = \fB_StrPathProperty\fP()"
+.br
+.ti -1c
+.RI "\fBdoctreedir\fP = \fB_StrPathProperty\fP()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSphinxComponentRegistry\fP \fB_registry\fP (self)"
+.br
+.ti -1c
+.RI "\fBTags\fP \fB_tags\fP (self)"
+.br
+.ti -1c
+.RI "None \fB_update_settings\fP (self, \fBConfig\fP \fBconfig\fP)"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "tuple[int, str] \fB_config_status\fP (*\fBConfig\fP|None old_config, \fBConfig\fP new_config, int verbosity)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+The environment in which the ReST files are translated\&.
+Stores an inventory of cross-file targets and provides doctree
+transformations to resolve links to them\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.environment\&.BuildEnvironment\&.__init__ ( self, \fBSphinx\fP app)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " dict[str, Any] sphinx\&.environment\&.BuildEnvironment\&.__getstate__ ( self)"
+
+.PP
+.nf
+Obtains serializable data for pickling\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.environment\&.BuildEnvironment\&.__setstate__ ( self, dict[str, Any] state)"
+
+.SS " tuple[int, str] sphinx\&.environment\&.BuildEnvironment\&._config_status (*\fBConfig\fP | None old_config, \fBConfig\fP new_config, int
+     verbosity)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+.nf
+Report the differences between two Config objects\&.
+
+Returns a triple of:
+
+1\&. The new configuration
+2\&. A status code indicating how the configuration has changed\&.
+3\&. A status message indicating what has changed\&.
+
+.fi
+.PP
+ 
+.SS " \fBSphinxComponentRegistry\fP sphinx\&.environment\&.BuildEnvironment\&._registry ( self)\fC [protected]\fP"
+
+.SS " \fBTags\fP sphinx\&.environment\&.BuildEnvironment\&._tags ( self)\fC [protected]\fP"
+
+.SS " None sphinx\&.environment\&.BuildEnvironment\&._update_settings ( self, \fBConfig\fP config)\fC [protected]\fP"
+
+.PP
+.nf
+Update settings by new config\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.environment\&.BuildEnvironment\&.apply_post_transforms ( self, nodes\&.document doctree, str docname)"
+
+.PP
+.nf
+Apply all post-transforms\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.environment\&.BuildEnvironment\&.check_consistency ( self)"
+
+.PP
+.nf
+Do consistency checks\&.
+.fi
+.PP
+ 
+.SS " Iterator[str] sphinx\&.environment\&.BuildEnvironment\&.check_dependents ( self, \fBSphinx\fP app, set[str] already)"
+
+.SS " None sphinx\&.environment\&.BuildEnvironment\&.clear_doc ( self, str docname)"
+
+.PP
+.nf
+Remove all traces of a source file in the inventory\&.
+.fi
+.PP
+ 
+.SS " dict[str, list[str | None]] sphinx\&.environment\&.BuildEnvironment\&.collect_relations ( self)"
+
+.SS " \fB_StrPath\fP sphinx\&.environment\&.BuildEnvironment\&.doc2path ( self, str docname, bool  base = \fCTrue\fP)"
+
+.PP
+.nf
+Return the filename for the document name\&.
+
+If *base* is True, return absolute path under self\&.srcdir\&.
+If *base* is False, return relative path to self\&.srcdir\&.
+
+.fi
+.PP
+ 
+.SS " str sphinx\&.environment\&.BuildEnvironment\&.docname ( self)"
+
+.PP
+.nf
+Returns the docname of the document currently being parsed\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.environment\&.BuildEnvironment\&.find_files ( self, \fBConfig\fP config, \fBBuilder\fP builder)"
+
+.PP
+.nf
+Find all source files in the source dir and put them in
+self\&.found_docs\&.
+
+.fi
+.PP
+ 
+.SS " set[str] sphinx\&.environment\&.BuildEnvironment\&.found_docs ( self)"
+
+.PP
+.nf
+Contains all existing docnames\&.
+.fi
+.PP
+ 
+.SS " nodes\&.document sphinx\&.environment\&.BuildEnvironment\&.get_and_resolve_doctree ( self, str docname, \fBBuilder\fP builder, nodes\&.document | None  doctree = \fCNone\fP, bool  prune_toctrees = \fCTrue\fP, bool  includehidden = \fCFalse\fP)"
+
+.PP
+.nf
+Read the doctree from the pickle, resolve cross-references and
+toctrees and return it\&.
+
+.fi
+.PP
+ 
+.SS " nodes\&.document sphinx\&.environment\&.BuildEnvironment\&.get_doctree ( self, str docname)"
+
+.PP
+.nf
+Read the doctree for a file from the pickle and return it\&.
+.fi
+.PP
+ 
+.SS " \fBDomain\fP sphinx\&.environment\&.BuildEnvironment\&.get_domain ( self, str domainname)"
+
+.PP
+.nf
+Return the domain instance with the specified name\&.
+
+Raises an ExtensionError if the domain is not registered\&.
+
+.fi
+.PP
+ 
+.SS " tuple[set[str], set[str], set[str]] sphinx\&.environment\&.BuildEnvironment\&.get_outdated_files ( self, bool
+     config_changed)"
+
+.PP
+.nf
+Return (added, changed, removed) sets\&.
+.fi
+.PP
+ 
+.SS " nodes\&.document sphinx\&.environment\&.BuildEnvironment\&.master_doctree ( self)"
+
+.SS " None sphinx\&.environment\&.BuildEnvironment\&.merge_info_from ( self, Iterable[str] docnames, \fBBuildEnvironment\fP other, \fBSphinx\fP
+     app)"
+
+.PP
+.nf
+Merge global information gathered about *docnames* while reading them
+from the *other* environment\&.
+
+This possibly comes from a parallel build process\&.
+
+.fi
+.PP
+ 
+.SS " int sphinx\&.environment\&.BuildEnvironment\&.new_serialno ( self, str  category = \fC''\fP)"
+
+.PP
+.nf
+Return a serial number, e\&.g\&. for index entry targets\&.
+
+The number is guaranteed to be unique in the current document\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.environment\&.BuildEnvironment\&.note_dependency ( self, str | os\&.PathLike[str] filename, *str | None  docname = \fCNone\fP)"
+
+.PP
+.nf
+Add *filename* as a dependency of the current document\&.
+
+This means that the document will be rebuilt if this file changes\&.
+
+*filename* should be absolute or relative to the source directory\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.environment\&.BuildEnvironment\&.note_included ( self, str | os\&.PathLike[str] filename)"
+
+.PP
+.nf
+Add *filename* as a included from other document\&.
+
+This means the document is not orphaned\&.
+
+*filename* should be absolute or relative to the source directory\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.environment\&.BuildEnvironment\&.note_reread ( self)"
+
+.PP
+.nf
+Add the current document to the list of documents that will
+automatically be re-read at the next build\&.
+
+.fi
+.PP
+ 
+.SS " \fBParser\fP sphinx\&.environment\&.BuildEnvironment\&.parser ( self)"
+
+.PP
+.nf
+Returns the parser being used for to parse the current document\&.
+.fi
+.PP
+ 
+.SS " str | None sphinx\&.environment\&.BuildEnvironment\&.path2doc ( self, str | os\&.PathLike[str] filename)"
+
+.PP
+.nf
+Return the docname for the filename if the file is document\&.
+
+*filename* should be absolute or relative to the source directory\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.environment\&.BuildEnvironment\&.prepare_settings ( self, str docname)"
+
+.PP
+.nf
+Prepare to set up environment for reading\&.
+.fi
+.PP
+ 
+.SS " tuple[str, str] sphinx\&.environment\&.BuildEnvironment\&.relfn2path ( self, str | Path filename, str | None  docname = \fCNone\fP)"
+
+.PP
+.nf
+Return paths to a file referenced from a document, relative to
+documentation root and absolute\&.
+
+In the input 'filename', absolute filenames are taken as relative to the
+source dir, while relative filenames are relative to the dir of the
+containing document\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.environment\&.BuildEnvironment\&.resolve_references ( self, nodes\&.document doctree, str fromdocname, \fBBuilder\fP
+     builder)"
+
+.SS " \fBNode\fP | None sphinx\&.environment\&.BuildEnvironment\&.resolve_toctree ( self, str docname, \fBBuilder\fP builder, \fBaddnodes\&.toctree\fP toctree, bool  prune = \fCTrue\fP, int  maxdepth = \fC0\fP, bool  titles_only = \fCFalse\fP, bool  collapse = \fCFalse\fP, bool  includehidden = \fCFalse\fP)"
+
+.PP
+.nf
+Resolve a *toctree* node into individual bullet lists with titles
+as items, returning None (if no containing titles are found) or
+a new node\&.
+
+If *prune* is True, the tree is pruned to *maxdepth*, or if that is 0,
+to the value of the *maxdepth* option on the *toctree* node\&.
+If *titles_only* is True, only toplevel document titles will be in the
+resulting tree\&.
+If *collapse* is True, all branches not containing docname will
+be collapsed\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.environment\&.BuildEnvironment\&.set_versioning_method ( self, str | Callable[[\fBNode\fP], bool] method, bool
+     compare)"
+
+.PP
+.nf
+Set the doctree versioning method for this environment\&.
+
+Versioning methods are a builder property; only builders with the same
+versioning method can share the same doctree directory\&.  Therefore, we
+raise an exception if the user tries to use an environment with an
+incompatible versioning method\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.environment\&.BuildEnvironment\&.setup ( self, \fBSphinx\fP app)"
+
+.PP
+.nf
+Set up BuildEnvironment object\&.
+.fi
+.PP
+ 
+.SS " \fB_CurrentDocument\fP sphinx\&.environment\&.BuildEnvironment\&.temp_data ( self)"
+
+.PP
+.nf
+Returns the temporary data storage for the current document\&.
+
+Kept for backwards compatibility\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.environment\&.BuildEnvironment\&.all_docs"
+
+.SS "sphinx\&.environment\&.BuildEnvironment\&.app"
+
+.SS "sphinx\&.environment\&.BuildEnvironment\&.config"
+
+.SS "sphinx\&.environment\&.BuildEnvironment\&.config_status"
+
+.SS "sphinx\&.environment\&.BuildEnvironment\&.config_status_extra"
+
+.SS "sphinx\&.environment\&.BuildEnvironment\&.current_document"
+
+.SS "sphinx\&.environment\&.BuildEnvironment\&.docname"
+
+.SS "sphinx\&.environment\&.BuildEnvironment\&.doctreedir = \fB_StrPathProperty\fP()\fC [static]\fP"
+
+.SS "sphinx\&.environment\&.BuildEnvironment\&.domains"
+
+.SS "sphinx\&.environment\&.BuildEnvironment\&.events"
+
+.SS "sphinx\&.environment\&.BuildEnvironment\&.project"
+
+.SS "sphinx\&.environment\&.BuildEnvironment\&.srcdir = \fB_StrPathProperty\fP()\fC [static]\fP"
+
+.SS "sphinx\&.environment\&.BuildEnvironment\&.toctree_includes"
+
+.SS "sphinx\&.environment\&.BuildEnvironment\&.version"
+
+.SS "sphinx\&.environment\&.BuildEnvironment\&.versioning_compare"
+
+.SS "sphinx\&.environment\&.BuildEnvironment\&.versioning_condition"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

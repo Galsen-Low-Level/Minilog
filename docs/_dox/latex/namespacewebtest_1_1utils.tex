@@ -1,0 +1,88 @@
+\doxysection{webtest.\+utils Namespace Reference}
+\hypertarget{namespacewebtest_1_1utils}{}\label{namespacewebtest_1_1utils}\index{webtest.utils@{webtest.utils}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classwebtest_1_1utils_1_1__RequestCookieAdapter}{\+\_\+\+Request\+Cookie\+Adapter}}
+\item 
+class \mbox{\hyperlink{classwebtest_1_1utils_1_1__ResponseCookieAdapter}{\+\_\+\+Response\+Cookie\+Adapter}}
+\item 
+class \mbox{\hyperlink{classwebtest_1_1utils_1_1NoDefault}{No\+Default}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacewebtest_1_1utils_a76ed58a3e653eaf0bc48b1999680d080}{json\+\_\+method}} (method)
+\item 
+\mbox{\hyperlink{namespacewebtest_1_1utils_ae5edd455ec292bf5ea301db8fd004ae9}{stringify}} (value)
+\item 
+\mbox{\hyperlink{namespacewebtest_1_1utils_a45ca3ab074b64ef5f420c15433591890}{encode\+\_\+params}} (params, content\+\_\+type)
+\item 
+\mbox{\hyperlink{namespacewebtest_1_1utils_aee450223c0d29840d8f0e4bd557930c9}{build\+\_\+params}} (url, params)
+\item 
+\mbox{\hyperlink{namespacewebtest_1_1utils_a5bcf9a8a9c1fd22a7cee8b05c116eef6}{make\+\_\+pattern}} (pat)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacewebtest_1_1utils_a43ec2e911c2dfd13255768b5eadca03f}{No\+Default}} = \mbox{\hyperlink{classwebtest_1_1utils_1_1NoDefault}{No\+Default}}()
+\item 
+\mbox{\hyperlink{namespacewebtest_1_1utils_a554041bb2d85369cdb282d83556ff31c}{entity\+\_\+pattern}} = re.\+compile(r"{}\&(\textbackslash{}w+\texorpdfstring{$\vert$}{|}\#\textbackslash{}d+\texorpdfstring{$\vert$}{|}\#\mbox{[}xX\mbox{]}\mbox{[}a-\/fA-\/F0-\/9\mbox{]}+);"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacewebtest_1_1utils_aee450223c0d29840d8f0e4bd557930c9}\label{namespacewebtest_1_1utils_aee450223c0d29840d8f0e4bd557930c9} 
+\index{webtest.utils@{webtest.utils}!build\_params@{build\_params}}
+\index{build\_params@{build\_params}!webtest.utils@{webtest.utils}}
+\doxysubsubsection{\texorpdfstring{build\_params()}{build\_params()}}
+{\footnotesize\ttfamily webtest.\+utils.\+build\+\_\+params (\begin{DoxyParamCaption}\item[{}]{url,  }\item[{}]{params }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacewebtest_1_1utils_a45ca3ab074b64ef5f420c15433591890}\label{namespacewebtest_1_1utils_a45ca3ab074b64ef5f420c15433591890} 
+\index{webtest.utils@{webtest.utils}!encode\_params@{encode\_params}}
+\index{encode\_params@{encode\_params}!webtest.utils@{webtest.utils}}
+\doxysubsubsection{\texorpdfstring{encode\_params()}{encode\_params()}}
+{\footnotesize\ttfamily webtest.\+utils.\+encode\+\_\+params (\begin{DoxyParamCaption}\item[{}]{params,  }\item[{}]{content\+\_\+type }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacewebtest_1_1utils_a76ed58a3e653eaf0bc48b1999680d080}\label{namespacewebtest_1_1utils_a76ed58a3e653eaf0bc48b1999680d080} 
+\index{webtest.utils@{webtest.utils}!json\_method@{json\_method}}
+\index{json\_method@{json\_method}!webtest.utils@{webtest.utils}}
+\doxysubsubsection{\texorpdfstring{json\_method()}{json\_method()}}
+{\footnotesize\ttfamily webtest.\+utils.\+json\+\_\+method (\begin{DoxyParamCaption}\item[{}]{method }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Do a %(method)s request.  Very like the
+:class:`~webtest.TestApp.%(lmethod)s` method.
+
+``params`` are dumped to json and put in the body of the request.
+Content-Type is set to ``application/json``.
+
+Returns a :class:`webtest.TestResponse` object.
+\end{DoxyVerb}
+ \Hypertarget{namespacewebtest_1_1utils_a5bcf9a8a9c1fd22a7cee8b05c116eef6}\label{namespacewebtest_1_1utils_a5bcf9a8a9c1fd22a7cee8b05c116eef6} 
+\index{webtest.utils@{webtest.utils}!make\_pattern@{make\_pattern}}
+\index{make\_pattern@{make\_pattern}!webtest.utils@{webtest.utils}}
+\doxysubsubsection{\texorpdfstring{make\_pattern()}{make\_pattern()}}
+{\footnotesize\ttfamily webtest.\+utils.\+make\+\_\+pattern (\begin{DoxyParamCaption}\item[{}]{pat }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find element pattern can be a regex or a callable.\end{DoxyVerb}
+ \Hypertarget{namespacewebtest_1_1utils_ae5edd455ec292bf5ea301db8fd004ae9}\label{namespacewebtest_1_1utils_ae5edd455ec292bf5ea301db8fd004ae9} 
+\index{webtest.utils@{webtest.utils}!stringify@{stringify}}
+\index{stringify@{stringify}!webtest.utils@{webtest.utils}}
+\doxysubsubsection{\texorpdfstring{stringify()}{stringify()}}
+{\footnotesize\ttfamily webtest.\+utils.\+stringify (\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacewebtest_1_1utils_a554041bb2d85369cdb282d83556ff31c}\label{namespacewebtest_1_1utils_a554041bb2d85369cdb282d83556ff31c} 
+\index{webtest.utils@{webtest.utils}!entity\_pattern@{entity\_pattern}}
+\index{entity\_pattern@{entity\_pattern}!webtest.utils@{webtest.utils}}
+\doxysubsubsection{\texorpdfstring{entity\_pattern}{entity\_pattern}}
+{\footnotesize\ttfamily webtest.\+utils.\+entity\+\_\+pattern = re.\+compile(r"{}\&(\textbackslash{}w+\texorpdfstring{$\vert$}{|}\#\textbackslash{}d+\texorpdfstring{$\vert$}{|}\#\mbox{[}xX\mbox{]}\mbox{[}a-\/fA-\/F0-\/9\mbox{]}+);"{})}
+
+\Hypertarget{namespacewebtest_1_1utils_a43ec2e911c2dfd13255768b5eadca03f}\label{namespacewebtest_1_1utils_a43ec2e911c2dfd13255768b5eadca03f} 
+\index{webtest.utils@{webtest.utils}!NoDefault@{NoDefault}}
+\index{NoDefault@{NoDefault}!webtest.utils@{webtest.utils}}
+\doxysubsubsection{\texorpdfstring{NoDefault}{NoDefault}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classwebtest_1_1utils_1_1NoDefault}{webtest.\+utils.\+No\+Default}} = \mbox{\hyperlink{classwebtest_1_1utils_1_1NoDefault}{No\+Default}}()}
+

@@ -1,0 +1,460 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespacesoupsieve_1_1css__match" kind="namespace" language="Python">
+    <compoundname>soupsieve::css_match</compoundname>
+    <innerclass refid="classsoupsieve_1_1css__match_1_1__DocumentNav" prot="protected">soupsieve::css_match::_DocumentNav</innerclass>
+    <innerclass refid="classsoupsieve_1_1css__match_1_1__FakeParent" prot="protected">soupsieve::css_match::_FakeParent</innerclass>
+    <innerclass refid="classsoupsieve_1_1css__match_1_1CSSMatch" prot="public">soupsieve::css_match::CSSMatch</innerclass>
+    <innerclass refid="classsoupsieve_1_1css__match_1_1Inputs" prot="public">soupsieve::css_match::Inputs</innerclass>
+    <innerclass refid="classsoupsieve_1_1css__match_1_1SoupSieve" prot="public">soupsieve::css_match::SoupSieve</innerclass>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1aa63254c2d48e629708c884d59cffccc6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_match.RE_NOT_EMPTY</definition>
+        <argsstring></argsstring>
+        <name>RE_NOT_EMPTY</name>
+        <qualifiedname>soupsieve.css_match.RE_NOT_EMPTY</qualifiedname>
+        <initializer>=  re.compile(&apos;[^ \t\r\n\f]&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="12" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1a230212aaf6fb8b4f1c06cec00bcfc1ef" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_match.RE_NOT_WS</definition>
+        <argsstring></argsstring>
+        <name>RE_NOT_WS</name>
+        <qualifiedname>soupsieve.css_match.RE_NOT_WS</qualifiedname>
+        <initializer>=  re.compile(&apos;[^ \t\r\n\f]+&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="14" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1aafaeef56982876f51faf9762e560bbc9" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_match.REL_PARENT</definition>
+        <argsstring></argsstring>
+        <name>REL_PARENT</name>
+        <qualifiedname>soupsieve.css_match.REL_PARENT</qualifiedname>
+        <initializer>=  &apos; &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="17" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1ab2384d1d695d541b838de2e61edd392f" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_match.REL_CLOSE_PARENT</definition>
+        <argsstring></argsstring>
+        <name>REL_CLOSE_PARENT</name>
+        <qualifiedname>soupsieve.css_match.REL_CLOSE_PARENT</qualifiedname>
+        <initializer>=  &apos;&gt;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="18" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1aa834b0893e9ef1c2ac13b17415a7d0ce" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_match.REL_SIBLING</definition>
+        <argsstring></argsstring>
+        <name>REL_SIBLING</name>
+        <qualifiedname>soupsieve.css_match.REL_SIBLING</qualifiedname>
+        <initializer>=  &apos;~&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="19" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1a71d04ec16c411b452dfd5e8acdc3f775" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_match.REL_CLOSE_SIBLING</definition>
+        <argsstring></argsstring>
+        <name>REL_CLOSE_SIBLING</name>
+        <qualifiedname>soupsieve.css_match.REL_CLOSE_SIBLING</qualifiedname>
+        <initializer>=  &apos;+&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="20" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1aa1c36bfe13c6101a32a56d47829cd62d" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_match.REL_HAS_PARENT</definition>
+        <argsstring></argsstring>
+        <name>REL_HAS_PARENT</name>
+        <qualifiedname>soupsieve.css_match.REL_HAS_PARENT</qualifiedname>
+        <initializer>=  &apos;: &apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="23" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1a22fc5a31ccf25b6f087baf6b190136d1" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_match.REL_HAS_CLOSE_PARENT</definition>
+        <argsstring></argsstring>
+        <name>REL_HAS_CLOSE_PARENT</name>
+        <qualifiedname>soupsieve.css_match.REL_HAS_CLOSE_PARENT</qualifiedname>
+        <initializer>=  &apos;:&gt;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="24" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1aa95aa7f0427e2a0b99d2b2e649f7f0bb" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_match.REL_HAS_SIBLING</definition>
+        <argsstring></argsstring>
+        <name>REL_HAS_SIBLING</name>
+        <qualifiedname>soupsieve.css_match.REL_HAS_SIBLING</qualifiedname>
+        <initializer>=  &apos;:~&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="25" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1aabfb5fb740332fa6dc89abd68af1e5fe" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_match.REL_HAS_CLOSE_SIBLING</definition>
+        <argsstring></argsstring>
+        <name>REL_HAS_CLOSE_SIBLING</name>
+        <qualifiedname>soupsieve.css_match.REL_HAS_CLOSE_SIBLING</qualifiedname>
+        <initializer>=  &apos;:+&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="26" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1a0be0f3c002840263afaf93e02cb44bb4" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_match.NS_XHTML</definition>
+        <argsstring></argsstring>
+        <name>NS_XHTML</name>
+        <qualifiedname>soupsieve.css_match.NS_XHTML</qualifiedname>
+        <initializer>=  &apos;http://www.w3.org/1999/xhtml&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="28" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1ab122442f695f90f2d1f8fc23e28fddd0" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_match.NS_XML</definition>
+        <argsstring></argsstring>
+        <name>NS_XML</name>
+        <qualifiedname>soupsieve.css_match.NS_XML</qualifiedname>
+        <initializer>=  &apos;http://www.w3.org/XML/1998/namespace&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="29" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1a61c9e1a4a77b22b5b34e477ecce8ca2b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_match.DIR_FLAGS</definition>
+        <argsstring></argsstring>
+        <name>DIR_FLAGS</name>
+        <qualifiedname>soupsieve.css_match.DIR_FLAGS</qualifiedname>
+        <initializer>=  ct.SEL_DIR_LTR | ct.SEL_DIR_RTL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="31" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1ad0513c5185723b2d7b10a4211307cf99" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_match.RANGES</definition>
+        <argsstring></argsstring>
+        <name>RANGES</name>
+        <qualifiedname>soupsieve.css_match.RANGES</qualifiedname>
+        <initializer>=  ct.SEL_IN_RANGE | ct.SEL_OUT_OF_RANGE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="32" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1a2d27a4386437a119b630e951a16b77c0" prot="public" static="no" mutable="no">
+        <type>dict</type>
+        <definition>dict soupsieve::css_match.DIR_MAP</definition>
+        <argsstring></argsstring>
+        <name>DIR_MAP</name>
+        <qualifiedname>soupsieve.css_match.DIR_MAP</qualifiedname>
+        <initializer>=  {
+    &apos;ltr&apos;: ct.SEL_DIR_LTR,
+    &apos;rtl&apos;: ct.SEL_DIR_RTL,
+    &apos;auto&apos;: 0
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="34" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1a4c3d2af08ecd1c0a900a9f92098d0d2b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_match.RE_NUM</definition>
+        <argsstring></argsstring>
+        <name>RE_NUM</name>
+        <qualifiedname>soupsieve.css_match.RE_NUM</qualifiedname>
+        <initializer>=  re.compile(r&quot;^(?P&lt;value&gt;-?(?:[0-9]{1,}(\.[0-9]+)?|\.[0-9]+))$&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="40" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1a7bf127271232f705f0962cf802fc315c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_match.RE_TIME</definition>
+        <argsstring></argsstring>
+        <name>RE_TIME</name>
+        <qualifiedname>soupsieve.css_match.RE_TIME</qualifiedname>
+        <initializer>=  re.compile(r&apos;^(?P&lt;hour&gt;[0-9]{2}):(?P&lt;minutes&gt;[0-9]{2})$&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="41" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1ab00077dfc1ae828bac4198f94b883437" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_match.RE_MONTH</definition>
+        <argsstring></argsstring>
+        <name>RE_MONTH</name>
+        <qualifiedname>soupsieve.css_match.RE_MONTH</qualifiedname>
+        <initializer>=  re.compile(r&apos;^(?P&lt;year&gt;[0-9]{4,})-(?P&lt;month&gt;[0-9]{2})$&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="42" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1a6a273a8a51a751b4524bac4adac8a89c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_match.RE_WEEK</definition>
+        <argsstring></argsstring>
+        <name>RE_WEEK</name>
+        <qualifiedname>soupsieve.css_match.RE_WEEK</qualifiedname>
+        <initializer>=  re.compile(r&apos;^(?P&lt;year&gt;[0-9]{4,})-W(?P&lt;week&gt;[0-9]{2})$&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="43" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1ac6bcb96ea8140b37a30c678e45001206" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_match.RE_DATE</definition>
+        <argsstring></argsstring>
+        <name>RE_DATE</name>
+        <qualifiedname>soupsieve.css_match.RE_DATE</qualifiedname>
+        <initializer>=  re.compile(r&apos;^(?P&lt;year&gt;[0-9]{4,})-(?P&lt;month&gt;[0-9]{2})-(?P&lt;day&gt;[0-9]{2})$&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="44" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1aeeb84ba8b5915ef765629f083f063eed" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_match.RE_DATETIME</definition>
+        <argsstring></argsstring>
+        <name>RE_DATETIME</name>
+        <qualifiedname>soupsieve.css_match.RE_DATETIME</qualifiedname>
+        <initializer>=  re.compile(
+    r&apos;^(?P&lt;year&gt;[0-9]{4,})-(?P&lt;month&gt;[0-9]{2})-(?P&lt;day&gt;[0-9]{2})T(?P&lt;hour&gt;[0-9]{2}):(?P&lt;minutes&gt;[0-9]{2})$&apos;
+)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="45" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1a042b561e752d004f2891d50eec5c4aca" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_match.RE_WILD_STRIP</definition>
+        <argsstring></argsstring>
+        <name>RE_WILD_STRIP</name>
+        <qualifiedname>soupsieve.css_match.RE_WILD_STRIP</qualifiedname>
+        <initializer>=  re.compile(r&apos;(?:(?:-\*-)(?:\*(?:-|$))*|-\*$)&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="48" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1a062cbdca5a4e4bb7bc1da6c3aaf65a32" prot="public" static="no" mutable="no">
+        <type>tuple</type>
+        <definition>tuple soupsieve::css_match.MONTHS_30</definition>
+        <argsstring></argsstring>
+        <name>MONTHS_30</name>
+        <qualifiedname>soupsieve.css_match.MONTHS_30</qualifiedname>
+        <initializer>=  (4, 6, 9, 11)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="50" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1aa8d2a13d03585a6857a695fd8897bcba" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int soupsieve::css_match.FEB</definition>
+        <argsstring></argsstring>
+        <name>FEB</name>
+        <qualifiedname>soupsieve.css_match.FEB</qualifiedname>
+        <initializer>=  2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="51" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1ac32e69d5d79d56df87971ac5a37a2cf3" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int soupsieve::css_match.SHORT_MONTH</definition>
+        <argsstring></argsstring>
+        <name>SHORT_MONTH</name>
+        <qualifiedname>soupsieve.css_match.SHORT_MONTH</qualifiedname>
+        <initializer>=  30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="52" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1a33bbb3a56fc4687352264c496d45b80b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int soupsieve::css_match.LONG_MONTH</definition>
+        <argsstring></argsstring>
+        <name>LONG_MONTH</name>
+        <qualifiedname>soupsieve.css_match.LONG_MONTH</qualifiedname>
+        <initializer>=  31</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="53" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1a7144b5604d6e5e649c080b842e82be8b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int soupsieve::css_match.FEB_MONTH</definition>
+        <argsstring></argsstring>
+        <name>FEB_MONTH</name>
+        <qualifiedname>soupsieve.css_match.FEB_MONTH</qualifiedname>
+        <initializer>=  28</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="54" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1af739fcd5dcfc192a420971911c68838a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int soupsieve::css_match.FEB_LEAP_MONTH</definition>
+        <argsstring></argsstring>
+        <name>FEB_LEAP_MONTH</name>
+        <qualifiedname>soupsieve.css_match.FEB_LEAP_MONTH</qualifiedname>
+        <initializer>=  29</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="55" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__match_1a4ac01ffd6fce175644913663c1b009ed" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int soupsieve::css_match.DAYS_IN_WEEK</definition>
+        <argsstring></argsstring>
+        <name>DAYS_IN_WEEK</name>
+        <qualifiedname>soupsieve.css_match.DAYS_IN_WEEK</qualifiedname>
+        <initializer>=  7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="56" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="56" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>CSS matcher.</verbatim> </para>
+    </detaileddescription>
+    <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

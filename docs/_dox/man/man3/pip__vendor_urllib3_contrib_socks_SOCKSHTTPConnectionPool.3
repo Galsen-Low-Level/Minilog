@@ -1,0 +1,200 @@
+.TH "pip._vendor.urllib3.contrib.socks.SOCKSHTTPConnectionPool" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.urllib3.contrib.socks.SOCKSHTTPConnectionPool
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\fP\&.
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBConnectionCls\fP = \fBSOCKSConnection\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\fP
+.in +1c
+.ti -1c
+.RI "str \fBscheme\fP = 'http'"
+.br
+.ti -1c
+.RI "\fBConnectionCls\fP = \fBHTTPConnection\fP"
+.br
+.ti -1c
+.RI "\fBResponseCls\fP = \fBHTTPResponse\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpip\&._vendor\&.urllib3\&.connectionpool\&.ConnectionPool\fP
+.in +1c
+.ti -1c
+.RI "\fBscheme\fP = None"
+.br
+.ti -1c
+.RI "\fBQueueCls\fP = \fBLifoQueue\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBpip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBhost\fP, \fBport\fP=None, \fBstrict\fP=False, \fBtimeout\fP=\fBTimeout\&.DEFAULT_TIMEOUT\fP, maxsize=1, \fBblock\fP=False, \fBheaders\fP=None, \fBretries\fP=None, _proxy=None, _proxy_headers=None, _proxy_config=None, **\fBconn_kw\fP)"
+.br
+.ti -1c
+.RI "\fBclose\fP (self)"
+.br
+.ti -1c
+.RI "\fBis_same_host\fP (self, url)"
+.br
+.ti -1c
+.RI "\fBurlopen\fP (self, method, url, body=None, \fBheaders\fP=None, \fBretries\fP=None, redirect=True, assert_same_host=True, \fBtimeout\fP=\fB_Default\fP, pool_timeout=None, release_conn=None, chunked=False, body_pos=None, **response_kw)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._vendor\&.urllib3\&.connectionpool\&.ConnectionPool\fP
+.in +1c
+.ti -1c
+.RI "\fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__enter__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__exit__\fP (self, exc_type, exc_val, exc_tb)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._vendor\&.urllib3\&.request\&.RequestMethods\fP
+.in +1c
+.ti -1c
+.RI "\fBrequest\fP (self, method, url, fields=None, \fBheaders\fP=None, **urlopen_kw)"
+.br
+.ti -1c
+.RI "\fBrequest_encode_url\fP (self, method, url, fields=None, \fBheaders\fP=None, **urlopen_kw)"
+.br
+.ti -1c
+.RI "\fBrequest_encode_body\fP (self, method, url, fields=None, \fBheaders\fP=None, encode_multipart=True, multipart_boundary=None, **urlopen_kw)"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\fP
+.in +1c
+.ti -1c
+.RI "\fBstrict\fP"
+.br
+.ti -1c
+.RI "\fBtimeout\fP"
+.br
+.ti -1c
+.RI "\fBretries\fP"
+.br
+.ti -1c
+.RI "\fBpool\fP"
+.br
+.ti -1c
+.RI "\fBblock\fP"
+.br
+.ti -1c
+.RI "\fBproxy\fP"
+.br
+.ti -1c
+.RI "\fBproxy_headers\fP"
+.br
+.ti -1c
+.RI "\fBproxy_config\fP"
+.br
+.ti -1c
+.RI "\fBnum_connections\fP"
+.br
+.ti -1c
+.RI "\fBnum_requests\fP"
+.br
+.ti -1c
+.RI "\fBconn_kw\fP"
+.br
+.ti -1c
+.RI "\fBhost\fP"
+.br
+.ti -1c
+.RI "\fBscheme\fP"
+.br
+.ti -1c
+.RI "\fBport\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpip\&._vendor\&.urllib3\&.connectionpool\&.ConnectionPool\fP
+.in +1c
+.ti -1c
+.RI "\fBhost\fP"
+.br
+.ti -1c
+.RI "\fBport\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpip\&._vendor\&.urllib3\&.request\&.RequestMethods\fP
+.in +1c
+.ti -1c
+.RI "\fBheaders\fP"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\fP
+.in +1c
+.ti -1c
+.RI "\fB_new_conn\fP (self)"
+.br
+.ti -1c
+.RI "\fB_get_conn\fP (self, \fBtimeout\fP=None)"
+.br
+.ti -1c
+.RI "\fB_put_conn\fP (self, conn)"
+.br
+.ti -1c
+.RI "\fB_validate_conn\fP (self, conn)"
+.br
+.ti -1c
+.RI "\fB_prepare_proxy\fP (self, conn)"
+.br
+.ti -1c
+.RI "\fB_get_timeout\fP (self, \fBtimeout\fP)"
+.br
+.ti -1c
+.RI "\fB_raise_timeout\fP (self, err, url, timeout_value)"
+.br
+.ti -1c
+.RI "\fB_make_request\fP (self, conn, method, url, \fBtimeout\fP=\fB_Default\fP, chunked=False, **httplib_request_kw)"
+.br
+.ti -1c
+.RI "\fB_absolute_url\fP (self, path)"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBpip\&._vendor\&.urllib3\&.connectionpool\&.ConnectionPool\fP
+.in +1c
+.ti -1c
+.RI "\fB_proxy_host\fP"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBpip\&._vendor\&.urllib3\&.request\&.RequestMethods\fP
+.in +1c
+.ti -1c
+.RI "dict \fB_encode_url_methods\fP = {'DELETE', 'GET', 'HEAD', 'OPTIONS'}"
+.br
+.in -1c
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.socks\&.SOCKSHTTPConnectionPool\&.ConnectionCls = \fBSOCKSConnection\fP\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,297 @@
+.TH "jinja2.runtime.AsyncLoopContext" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.runtime.AsyncLoopContext
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBjinja2\&.runtime\&.LoopContext\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBlength\fP (self)"
+.br
+.ti -1c
+.RI "int \fBrevindex0\fP (self)"
+.br
+.ti -1c
+.RI "int \fBrevindex\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBlast\fP (self)"
+.br
+.ti -1c
+.RI "t\&.Union[t\&.Any, 'Undefined'] \fBnextitem\fP (self)"
+.br
+.ti -1c
+.RI "'AsyncLoopContext' \fB__aiter__\fP (self)"
+.br
+.ti -1c
+.RI "t\&.Tuple[t\&.Any, 'AsyncLoopContext'] \fB__anext__\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBjinja2\&.runtime\&.LoopContext\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, t\&.Iterable[\fBV\fP] iterable, t\&.Type['Undefined'] undefined, t\&.Optional['LoopRenderFunc'] recurse=None, int \fBdepth0\fP=0)"
+.br
+.ti -1c
+.RI "int \fB__len__\fP (self)"
+.br
+.ti -1c
+.RI "int \fBdepth\fP (self)"
+.br
+.ti -1c
+.RI "int \fBindex\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBfirst\fP (self)"
+.br
+.ti -1c
+.RI "t\&.Union[t\&.Any, 'Undefined'] \fBprevitem\fP (self)"
+.br
+.ti -1c
+.RI "\fBV\fP \fBcycle\fP (self, *\fBV\fP args)"
+.br
+.ti -1c
+.RI "bool \fBchanged\fP (self, *t\&.Any value)"
+.br
+.ti -1c
+.RI "'LoopContext' \fB__iter__\fP (self)"
+.br
+.ti -1c
+.RI "t\&.Tuple[t\&.Any, 'LoopContext'] \fB__next__\fP (self)"
+.br
+.ti -1c
+.RI "str \fB__call__\fP (self, t\&.Iterable[\fBV\fP] iterable)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "t\&.Any \fB_peek_next\fP (self)"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "t\&.AsyncIterator[\fBV\fP] \fB_to_iterator\fP (t\&.Union[t\&.Iterable[\fBV\fP], t\&.AsyncIterable[\fBV\fP]] iterable)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_length\fP"
+.br
+.ti -1c
+.RI "\fB_iterator\fP"
+.br
+.ti -1c
+.RI "\fB_after\fP"
+.br
+.ti -1c
+.RI "\fB_before\fP"
+.br
+.ti -1c
+.RI "\fB_current\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBjinja2\&.runtime\&.LoopContext\fP
+.in +1c
+.ti -1c
+.RI "\fB_iterable\fP"
+.br
+.ti -1c
+.RI "\fB_iterator\fP"
+.br
+.ti -1c
+.RI "\fB_undefined\fP"
+.br
+.ti -1c
+.RI "\fB_recurse\fP"
+.br
+.ti -1c
+.RI "\fB_length\fP"
+.br
+.ti -1c
+.RI "\fB_after\fP"
+.br
+.ti -1c
+.RI "\fB_last_changed_value\fP"
+.br
+.ti -1c
+.RI "\fB_before\fP"
+.br
+.ti -1c
+.RI "\fB_current\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "t \fB_iterator\fP \&.AsyncIterator[t\&.Any]"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBjinja2\&.runtime\&.LoopContext\fP
+.in +1c
+.ti -1c
+.RI "t \fB_length\fP = None"
+.br
+.ti -1c
+.RI "t \fB_after\fP = missing"
+.br
+.ti -1c
+.RI "t \fB_current\fP = missing"
+.br
+.ti -1c
+.RI "t \fB_before\fP = missing"
+.br
+.ti -1c
+.RI "t \fB_last_changed_value\fP = missing"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBjinja2\&.runtime\&.LoopContext\fP
+.in +1c
+.ti -1c
+.RI "\fBdepth0\fP"
+.br
+.ti -1c
+.RI "\fBindex0\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBjinja2\&.runtime\&.LoopContext\fP
+.in +1c
+.ti -1c
+.RI "int \fBindex0\fP = \-1"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS " 'AsyncLoopContext' jinja2\&.runtime\&.AsyncLoopContext\&.__aiter__ ( self)"
+
+.SS " t\&.Tuple[t\&.Any, 'AsyncLoopContext'] jinja2\&.runtime\&.AsyncLoopContext\&.__anext__ ( self)"
+
+.SS " t\&.Any jinja2\&.runtime\&.AsyncLoopContext\&._peek_next ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Return the next element in the iterable, or :data:`missing`
+if the iterable is exhausted\&. Only peeks one item ahead, caching
+the result in :attr:`_last` for use in subsequent checks\&. The
+cache is reset when :meth:`__next__` is called\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.runtime\&.LoopContext\fP\&.
+.SS " t\&.AsyncIterator[\fBV\fP] jinja2\&.runtime\&.AsyncLoopContext\&._to_iterator (t\&.Union[t\&.Iterable[\fBV\fP], t\&.AsyncIterable[\fBV\fP]] iterable)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Reimplemented from \fBjinja2\&.runtime\&.LoopContext\fP\&.
+.SS " bool jinja2\&.runtime\&.AsyncLoopContext\&.last ( self)"
+
+.PP
+.nf
+Whether this is the last iteration of the loop\&.
+
+Causes the iterable to advance early\&. See
+:func:`itertools\&.groupby` for issues this can cause\&.
+The :func:`groupby` filter avoids that issue\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.runtime\&.LoopContext\fP\&.
+.SS " int jinja2\&.runtime\&.AsyncLoopContext\&.length ( self)"
+
+.PP
+.nf
+Length of the iterable\&.
+
+If the iterable is a generator or otherwise does not have a
+size, it is eagerly evaluated to get a size\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.runtime\&.LoopContext\fP\&.
+.SS " t\&.Union[t\&.Any, 'Undefined'] jinja2\&.runtime\&.AsyncLoopContext\&.nextitem ( self)"
+
+.PP
+.nf
+The item in the next iteration\&. Undefined during the last
+iteration\&.
+
+Causes the iterable to advance early\&. See
+:func:`itertools\&.groupby` for issues this can cause\&.
+The :func:`jinja-filters\&.groupby` filter avoids that issue\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.runtime\&.LoopContext\fP\&.
+.SS " int jinja2\&.runtime\&.AsyncLoopContext\&.revindex ( self)"
+
+.PP
+.nf
+Number of iterations from the end of the loop, ending at 1\&.
+
+Requires calculating :attr:`length`\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.runtime\&.LoopContext\fP\&.
+.SS " int jinja2\&.runtime\&.AsyncLoopContext\&.revindex0 ( self)"
+
+.PP
+.nf
+Number of iterations from the end of the loop, ending at 0\&.
+
+Requires calculating :attr:`length`\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.runtime\&.LoopContext\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "jinja2\&.runtime\&.AsyncLoopContext\&._after\fC [protected]\fP"
+
+.SS "jinja2\&.runtime\&.AsyncLoopContext\&._before\fC [protected]\fP"
+
+.SS "jinja2\&.runtime\&.AsyncLoopContext\&._current\fC [protected]\fP"
+
+.SS "t jinja2\&.runtime\&.AsyncLoopContext\&._iterator \&.AsyncIterator[t\&.Any]\fC [static]\fP, \fC [protected]\fP"
+
+.SS "jinja2\&.runtime\&.AsyncLoopContext\&._iterator\fC [protected]\fP"
+
+.SS "jinja2\&.runtime\&.AsyncLoopContext\&._length\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

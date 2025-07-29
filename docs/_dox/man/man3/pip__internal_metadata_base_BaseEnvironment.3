@@ -1,0 +1,119 @@
+.TH "pip._internal.metadata.base.BaseEnvironment" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.metadata.base.BaseEnvironment
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBpip\&._internal\&.metadata\&.importlib\&._envs\&.Environment\fP, and \fBpip\&._internal\&.metadata\&.pkg_resources\&.Environment\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "'BaseEnvironment' \fBdefault\fP (cls)"
+.br
+.ti -1c
+.RI "'BaseEnvironment' \fBfrom_paths\fP (cls, Optional[List[str]] paths)"
+.br
+.ti -1c
+.RI "Optional['BaseDistribution'] \fBget_distribution\fP (self, str name)"
+.br
+.ti -1c
+.RI "Iterator[\fBBaseDistribution\fP] \fBiter_all_distributions\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBBaseDistribution\fP] \fBiter_installed_distributions\fP (self, bool local_only=True, Container[str] skip=stdlib_pkgs, bool include_editables=True, bool editables_only=False, bool user_only=False)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Iterator['BaseDistribution'] \fB_iter_distributions\fP (self)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+An environment containing distributions to introspect\&.
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " Iterator['BaseDistribution'] pip\&._internal\&.metadata\&.base\&.BaseEnvironment\&._iter_distributions ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Iterate through installed distributions\&.
+
+This function should be implemented by subclass, but never called
+directly\&. Use the public ``iter_distribution()`` instead, which
+implements additional logic to make sure the distributions are valid\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._internal\&.metadata\&.importlib\&._envs\&.Environment\fP, and \fBpip\&._internal\&.metadata\&.pkg_resources\&.Environment\fP\&.
+.SS " 'BaseEnvironment' pip\&._internal\&.metadata\&.base\&.BaseEnvironment\&.default ( cls)"
+
+.PP
+Reimplemented in \fBpip\&._internal\&.metadata\&.importlib\&._envs\&.Environment\fP, and \fBpip\&._internal\&.metadata\&.pkg_resources\&.Environment\fP\&.
+.SS " 'BaseEnvironment' pip\&._internal\&.metadata\&.base\&.BaseEnvironment\&.from_paths ( cls, Optional[List[str]] paths)"
+
+.PP
+Reimplemented in \fBpip\&._internal\&.metadata\&.importlib\&._envs\&.Environment\fP, and \fBpip\&._internal\&.metadata\&.pkg_resources\&.Environment\fP\&.
+.SS " Optional['BaseDistribution'] pip\&._internal\&.metadata\&.base\&.BaseEnvironment\&.get_distribution ( self, str name)"
+
+.PP
+.nf
+Given a requirement name, return the installed distributions\&.
+
+The name may not be normalized\&. The implementation must canonicalize
+it for lookup\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._internal\&.metadata\&.importlib\&._envs\&.Environment\fP, and \fBpip\&._internal\&.metadata\&.pkg_resources\&.Environment\fP\&.
+.SS " Iterator[\fBBaseDistribution\fP] pip\&._internal\&.metadata\&.base\&.BaseEnvironment\&.iter_all_distributions ( self)"
+
+.PP
+.nf
+Iterate through all installed distributions without any filtering\&.
+.fi
+.PP
+ 
+.SS " Iterator[\fBBaseDistribution\fP] pip\&._internal\&.metadata\&.base\&.BaseEnvironment\&.iter_installed_distributions ( self, bool  local_only = \fCTrue\fP, Container[str]  skip = \fCstdlib_pkgs\fP, bool  include_editables = \fCTrue\fP, bool  editables_only = \fCFalse\fP, bool  user_only = \fCFalse\fP)"
+
+.PP
+.nf
+Return a list of installed distributions\&.
+
+This is based on ``iter_all_distributions()`` with additional filtering
+options\&. Note that ``iter_installed_distributions()`` without arguments
+is *not* equal to ``iter_all_distributions()``, since some of the
+configurations exclude packages by default\&.
+
+:param local_only: If True (default), only return installations
+local to the current virtualenv, if in a virtualenv\&.
+:param skip: An iterable of canonicalized project names to ignore;
+    defaults to ``stdlib_pkgs``\&.
+:param include_editables: If False, don't report editables\&.
+:param editables_only: If True, only report editables\&.
+:param user_only: If True, only report installations in the user
+site directory\&.
+
+.fi
+.PP
+ 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,56 @@
+.TH "sphinx.errors.SphinxError" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.errors.SphinxError
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Exception\&.
+.PP
+Inherited by \fBapplehelp\&.AppleHelpCodeSigningFailed\fP, \fBapplehelp\&.AppleHelpIndexerFailed\fP, \fBsphinx\&.errors\&.ApplicationError\fP, \fBsphinx\&.errors\&.BuildEnvironmentError\fP, \fBsphinx\&.errors\&.ConfigError\fP, \fBsphinx\&.errors\&.DocumentError\fP, \fBsphinx\&.errors\&.ExtensionError\fP, \fBsphinx\&.errors\&.SphinxParallelError\fP, \fBsphinx\&.errors\&.SphinxWarning\fP, \fBsphinx\&.errors\&.ThemeError\fP, \fBsphinx\&.errors\&.VersionRequirementError\fP, \fBsphinx\&.ext\&.graphviz\&.GraphvizError\fP, \fBsphinx\&.ext\&.imgmath\&.InvokeError\fP, \fBsphinx\&.ext\&.imgmath\&.MathExtError\fP, \fBsphinx\&.ext\&.linkcode\&.LinkcodeError\fP, and \fBsphinx\&.writers\&.latex\&.UnsupportedError\fP\&.
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBcategory\fP = 'Sphinx error'"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Base class for Sphinx errors\&.
+
+This is the base class for 'nice' exceptions\&.  When such an exception is
+raised, Sphinx will abort the build and present the exception category and
+message to the user\&.
+
+Extensions are encouraged to derive from this exception for their custom
+errors\&.
+
+Exceptions *not* derived from :exc:`SphinxError` are treated as unexpected
+and shown to the user with a part of the traceback (and the full traceback
+saved in a temporary file)\&.
+
+\&.\&. attribute:: category
+
+   Description of the exception 'category', used in converting the
+   exception to a string ('category: message')\&.  Should be set accordingly
+   in subclasses\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "str sphinx\&.errors\&.SphinxError\&.category = 'Sphinx error'\fC [static]\fP"
+
+.PP
+Reimplemented in \fBsphinx\&.errors\&.ExtensionError\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

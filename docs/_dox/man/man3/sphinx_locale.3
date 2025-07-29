@@ -1,0 +1,142 @@
+.TH "sphinx.locale" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.locale
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_TranslationProxy\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "tuple[NullTranslations, bool] \fBinit\fP (Iterable[str|os\&.PathLike[str]|None] locale_dirs, str|None language, str catalog='sphinx', str namespace='general')"
+.br
+.ti -1c
+.RI "tuple[NullTranslations, bool] \fBinit_console\fP (str|os\&.PathLike[str]|None locale_dir=None, str catalog='sphinx')"
+.br
+.ti -1c
+.RI "NullTranslations \fBget_translator\fP (str catalog='sphinx', str namespace='general')"
+.br
+.ti -1c
+.RI "bool \fBis_translator_registered\fP (str catalog='sphinx', str namespace='general')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBget_translation\fP (str catalog, str namespace='general')"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB_LOCALE_DIR\fP = Path(package_dir, 'locale')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fB_\fP = \fBget_translation\fP('sphinx')"
+.br
+.ti -1c
+.RI "dict \fBadmonitionlabels\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Locale utilities\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " Callable[[str], str] sphinx\&.locale\&.get_translation (str catalog, str  namespace = \fC'general'\fP)"
+
+.PP
+.nf
+Get a translation function based on the *catalog* and *namespace*\&.
+
+The extension can use this API to translate the messages on the
+extension::
+
+    from pathlib import Path
+    from sphinx\&.locale import get_translation
+
+    MESSAGE_CATALOG_NAME = 'myextension'  # name of *\&.pot, *\&.po and *\&.mo files
+    _ = get_translation(MESSAGE_CATALOG_NAME)
+    text = _('Hello Sphinx!')
+
+
+    def setup(app):
+        package_dir = Path(__file__)\&.resolve()\&.parent
+        locale_dir = package_dir / 'locales'
+        app\&.add_message_catalog(MESSAGE_CATALOG_NAME, locale_dir)
+
+With this code, sphinx searches a message catalog from
+``${package_dir}/locales/${language}/LC_MESSAGES/myextension\&.mo``\&.
+The :confval:`language` is used for the searching\&.
+
+\&.\&. versionadded:: 1\&.8
+
+.fi
+.PP
+ 
+.SS " NullTranslations sphinx\&.locale\&.get_translator (str  catalog = \fC'sphinx'\fP, str  namespace = \fC'general'\fP)"
+
+.SS " tuple[NullTranslations, bool] sphinx\&.locale\&.init (Iterable[str | os\&.PathLike[str] | None] locale_dirs, str | None language, str  catalog = \fC'sphinx'\fP, str  namespace = \fC'general'\fP)"
+
+.PP
+.nf
+Look for message catalogs in `locale_dirs` and *ensure* that there is at
+least a NullTranslations catalog set in `translators`\&. If called multiple
+times or if several ``\&.mo`` files are found, their contents are merged
+together (thus making ``init`` reentrant)\&.
+
+.fi
+.PP
+ 
+.SS " tuple[NullTranslations, bool] sphinx\&.locale\&.init_console (str | os\&.PathLike[str] | None  locale_dir = \fCNone\fP, str  catalog = \fC'sphinx'\fP)"
+
+.PP
+.nf
+Initialize locale for console\&.
+
+\&.\&. versionadded:: 1\&.8
+
+.fi
+.PP
+ 
+.SS " bool sphinx\&.locale\&.is_translator_registered (str  catalog = \fC'sphinx'\fP, str  namespace = \fC'general'\fP)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "Callable[[str], str] sphinx\&.locale\&._ = \fBget_translation\fP('sphinx')\fC [protected]\fP"
+
+.SS "sphinx\&.locale\&._LOCALE_DIR = Path(package_dir, 'locale')\fC [protected]\fP"
+
+.SS "dict sphinx\&.locale\&.admonitionlabels"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     'attention': _('Attention'),
+3     'caution': _('Caution'),
+4     'danger': _('Danger'),
+5     'error': _('Error'),
+6     'hint': _('Hint'),
+7     'important': _('Important'),
+8     'note': _('Note'),
+9     'seealso': _('See also'),
+10     'tip': _('Tip'),
+11     'warning': _('Warning'),
+12 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

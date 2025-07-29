@@ -1,0 +1,46 @@
+\doxysection{sphinx.\+util.\+\_\+serialise Namespace Reference}
+\hypertarget{namespacesphinx_1_1util_1_1__serialise}{}\label{namespacesphinx_1_1util_1_1__serialise}\index{sphinx.util.\_serialise@{sphinx.util.\_serialise}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1util_1_1__serialise_abe95859296800e650677a011f23c6831}{stable\+\_\+hash}} (Any obj)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1util_1_1__serialise_a7951b334e5ba80429c51d5b4972c9315}{stable\+\_\+str}} (Any obj, \texorpdfstring{$\ast$}{*}int\texorpdfstring{$\vert$}{|}None indent=None)
+\item 
+dict\mbox{[}str, Any\mbox{]}\texorpdfstring{$\vert$}{|}list\mbox{[}Any\mbox{]}\texorpdfstring{$\vert$}{|}str \mbox{\hyperlink{namespacesphinx_1_1util_1_1__serialise_a8fb1289fdf4042a9d4e682ef3e234243}{\+\_\+stable\+\_\+str\+\_\+prep}} (Any obj)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Serialise objects to a stable representation.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesphinx_1_1util_1_1__serialise_a8fb1289fdf4042a9d4e682ef3e234243}\label{namespacesphinx_1_1util_1_1__serialise_a8fb1289fdf4042a9d4e682ef3e234243} 
+\index{sphinx.util.\_serialise@{sphinx.util.\_serialise}!\_stable\_str\_prep@{\_stable\_str\_prep}}
+\index{\_stable\_str\_prep@{\_stable\_str\_prep}!sphinx.util.\_serialise@{sphinx.util.\_serialise}}
+\doxysubsubsection{\texorpdfstring{\_stable\_str\_prep()}{\_stable\_str\_prep()}}
+{\footnotesize\ttfamily  dict\mbox{[}str, Any\mbox{]} \texorpdfstring{$\vert$}{|} list\mbox{[}Any\mbox{]} \texorpdfstring{$\vert$}{|} str sphinx.\+util.\+\_\+serialise.\+\_\+stable\+\_\+str\+\_\+prep (\begin{DoxyParamCaption}\item[{Any}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1util_1_1__serialise_abe95859296800e650677a011f23c6831}\label{namespacesphinx_1_1util_1_1__serialise_abe95859296800e650677a011f23c6831} 
+\index{sphinx.util.\_serialise@{sphinx.util.\_serialise}!stable\_hash@{stable\_hash}}
+\index{stable\_hash@{stable\_hash}!sphinx.util.\_serialise@{sphinx.util.\_serialise}}
+\doxysubsubsection{\texorpdfstring{stable\_hash()}{stable\_hash()}}
+{\footnotesize\ttfamily  str sphinx.\+util.\+\_\+serialise.\+stable\+\_\+hash (\begin{DoxyParamCaption}\item[{Any}]{obj }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a stable hash for a Python data structure.
+
+We can't just use the md5 of str(obj) as the order of collections
+may be random.
+\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1util_1_1__serialise_a7951b334e5ba80429c51d5b4972c9315}\label{namespacesphinx_1_1util_1_1__serialise_a7951b334e5ba80429c51d5b4972c9315} 
+\index{sphinx.util.\_serialise@{sphinx.util.\_serialise}!stable\_str@{stable\_str}}
+\index{stable\_str@{stable\_str}!sphinx.util.\_serialise@{sphinx.util.\_serialise}}
+\doxysubsubsection{\texorpdfstring{stable\_str()}{stable\_str()}}
+{\footnotesize\ttfamily  str sphinx.\+util.\+\_\+serialise.\+stable\+\_\+str (\begin{DoxyParamCaption}\item[{Any}]{obj,  }\item[{\texorpdfstring{$\ast$}{*}int \texorpdfstring{$\vert$}{|} None }]{indent = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a stable string representation of a Python data structure.
+
+We can't just use ``str(obj)`` as the order of collections may be random.
+\end{DoxyVerb}
+ 

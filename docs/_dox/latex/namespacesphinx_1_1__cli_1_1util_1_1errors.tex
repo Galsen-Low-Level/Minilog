@@ -1,0 +1,95 @@
+\doxysection{sphinx.\+\_\+cli.\+util.\+errors Namespace Reference}
+\hypertarget{namespacesphinx_1_1__cli_1_1util_1_1errors}{}\label{namespacesphinx_1_1__cli_1_1util_1_1errors}\index{sphinx.\_cli.util.errors@{sphinx.\_cli.util.errors}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1__cli_1_1util_1_1errors_1_1SupportsWrite}{Supports\+Write}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1__cli_1_1util_1_1errors_a301775ebb461d92b14149c00850034fd}{terminal\+\_\+safe}} (str s)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1__cli_1_1util_1_1errors_ac84ea796c6c87250bd83bf3aa429389e}{strip\+\_\+escape\+\_\+sequences}} (str text)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1__cli_1_1util_1_1errors_a0e33219713db315947c760f188b4b74b}{full\+\_\+exception\+\_\+context}} (Base\+Exception exception, \texorpdfstring{$\ast$}{*}Collection\mbox{[}str\mbox{]} message\+\_\+log=(), Collection\mbox{[}\mbox{\hyperlink{classsphinx_1_1extension_1_1Extension}{Extension}}\mbox{]} extensions=(), bool full\+\_\+traceback=True)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1__cli_1_1util_1_1errors_ae3da128511ceed87d161955046aaf1ce}{format\+\_\+traceback}} (Base\+Exception exception, \texorpdfstring{$\ast$}{*}bool short\+\_\+traceback=False)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1__cli_1_1util_1_1errors_a8c82e885c5cb4af938a497bb455db92c}{error\+\_\+info}} (str messages, str extensions, str traceback)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1__cli_1_1util_1_1errors_aacfbf9b8770f37cabf1e03b327d87e26}{save\+\_\+traceback}} (Base\+Exception exception, \texorpdfstring{$\ast$}{*}Collection\mbox{[}str\mbox{]} message\+\_\+log=(), Collection\mbox{[}\mbox{\hyperlink{classsphinx_1_1extension_1_1Extension}{Extension}}\mbox{]} extensions=())
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1__cli_1_1util_1_1errors_aa149c9248172037038975dae9854dd46}{write\+\_\+temporary\+\_\+file}} (str content)
+\item 
+None \mbox{\hyperlink{namespacesphinx_1_1__cli_1_1util_1_1errors_ad1155c1fb10f516c4ccafc83423d8b66}{handle\+\_\+exception}} (Base\+Exception exception, \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classsphinx_1_1__cli_1_1util_1_1errors_1_1SupportsWrite}{Supports\+Write}} stderr=sys.\+stderr, bool use\+\_\+pdb=False, bool print\+\_\+traceback=False, Collection\mbox{[}str\mbox{]} message\+\_\+log=(), Collection\mbox{[}\mbox{\hyperlink{classsphinx_1_1extension_1_1Extension}{Extension}}\mbox{]} extensions=())
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesphinx_1_1__cli_1_1util_1_1errors_a8c82e885c5cb4af938a497bb455db92c}\label{namespacesphinx_1_1__cli_1_1util_1_1errors_a8c82e885c5cb4af938a497bb455db92c} 
+\index{sphinx.\_cli.util.errors@{sphinx.\_cli.util.errors}!error\_info@{error\_info}}
+\index{error\_info@{error\_info}!sphinx.\_cli.util.errors@{sphinx.\_cli.util.errors}}
+\doxysubsubsection{\texorpdfstring{error\_info()}{error\_info()}}
+{\footnotesize\ttfamily  str sphinx.\+\_\+cli.\+util.\+errors.\+error\+\_\+info (\begin{DoxyParamCaption}\item[{str}]{messages,  }\item[{str}]{extensions,  }\item[{str}]{traceback }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Format the traceback and extensions list with environment information.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1__cli_1_1util_1_1errors_ae3da128511ceed87d161955046aaf1ce}\label{namespacesphinx_1_1__cli_1_1util_1_1errors_ae3da128511ceed87d161955046aaf1ce} 
+\index{sphinx.\_cli.util.errors@{sphinx.\_cli.util.errors}!format\_traceback@{format\_traceback}}
+\index{format\_traceback@{format\_traceback}!sphinx.\_cli.util.errors@{sphinx.\_cli.util.errors}}
+\doxysubsubsection{\texorpdfstring{format\_traceback()}{format\_traceback()}}
+{\footnotesize\ttfamily  str sphinx.\+\_\+cli.\+util.\+errors.\+format\+\_\+traceback (\begin{DoxyParamCaption}\item[{Base\+Exception}]{exception,  }\item[{\texorpdfstring{$\ast$}{*}bool }]{short\+\_\+traceback = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Format the given exception's traceback.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1__cli_1_1util_1_1errors_a0e33219713db315947c760f188b4b74b}\label{namespacesphinx_1_1__cli_1_1util_1_1errors_a0e33219713db315947c760f188b4b74b} 
+\index{sphinx.\_cli.util.errors@{sphinx.\_cli.util.errors}!full\_exception\_context@{full\_exception\_context}}
+\index{full\_exception\_context@{full\_exception\_context}!sphinx.\_cli.util.errors@{sphinx.\_cli.util.errors}}
+\doxysubsubsection{\texorpdfstring{full\_exception\_context()}{full\_exception\_context()}}
+{\footnotesize\ttfamily  str sphinx.\+\_\+cli.\+util.\+errors.\+full\+\_\+exception\+\_\+context (\begin{DoxyParamCaption}\item[{Base\+Exception}]{exception,  }\item[{\texorpdfstring{$\ast$}{*}Collection\mbox{[}str\mbox{]} }]{message\+\_\+log = {\ttfamily ()},  }\item[{Collection\mbox{[}\mbox{\hyperlink{classsphinx_1_1extension_1_1Extension}{Extension}}\mbox{]} }]{extensions = {\ttfamily ()},  }\item[{bool }]{full\+\_\+traceback = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a formatted message containing useful debugging context.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1__cli_1_1util_1_1errors_ad1155c1fb10f516c4ccafc83423d8b66}\label{namespacesphinx_1_1__cli_1_1util_1_1errors_ad1155c1fb10f516c4ccafc83423d8b66} 
+\index{sphinx.\_cli.util.errors@{sphinx.\_cli.util.errors}!handle\_exception@{handle\_exception}}
+\index{handle\_exception@{handle\_exception}!sphinx.\_cli.util.errors@{sphinx.\_cli.util.errors}}
+\doxysubsubsection{\texorpdfstring{handle\_exception()}{handle\_exception()}}
+{\footnotesize\ttfamily  None sphinx.\+\_\+cli.\+util.\+errors.\+handle\+\_\+exception (\begin{DoxyParamCaption}\item[{Base\+Exception}]{exception,  }\item[{\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classsphinx_1_1__cli_1_1util_1_1errors_1_1SupportsWrite}{Supports\+Write}} }]{stderr = {\ttfamily sys.stderr},  }\item[{bool }]{use\+\_\+pdb = {\ttfamily False},  }\item[{bool }]{print\+\_\+traceback = {\ttfamily False},  }\item[{Collection\mbox{[}str\mbox{]} }]{message\+\_\+log = {\ttfamily ()},  }\item[{Collection\mbox{[}\mbox{\hyperlink{classsphinx_1_1extension_1_1Extension}{Extension}}\mbox{]} }]{extensions = {\ttfamily ()} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1__cli_1_1util_1_1errors_aacfbf9b8770f37cabf1e03b327d87e26}\label{namespacesphinx_1_1__cli_1_1util_1_1errors_aacfbf9b8770f37cabf1e03b327d87e26} 
+\index{sphinx.\_cli.util.errors@{sphinx.\_cli.util.errors}!save\_traceback@{save\_traceback}}
+\index{save\_traceback@{save\_traceback}!sphinx.\_cli.util.errors@{sphinx.\_cli.util.errors}}
+\doxysubsubsection{\texorpdfstring{save\_traceback()}{save\_traceback()}}
+{\footnotesize\ttfamily  str sphinx.\+\_\+cli.\+util.\+errors.\+save\+\_\+traceback (\begin{DoxyParamCaption}\item[{Base\+Exception}]{exception,  }\item[{\texorpdfstring{$\ast$}{*}Collection\mbox{[}str\mbox{]} }]{message\+\_\+log = {\ttfamily ()},  }\item[{Collection\mbox{[}\mbox{\hyperlink{classsphinx_1_1extension_1_1Extension}{Extension}}\mbox{]} }]{extensions = {\ttfamily ()} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Save the given exception's traceback in a temporary file.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1__cli_1_1util_1_1errors_ac84ea796c6c87250bd83bf3aa429389e}\label{namespacesphinx_1_1__cli_1_1util_1_1errors_ac84ea796c6c87250bd83bf3aa429389e} 
+\index{sphinx.\_cli.util.errors@{sphinx.\_cli.util.errors}!strip\_escape\_sequences@{strip\_escape\_sequences}}
+\index{strip\_escape\_sequences@{strip\_escape\_sequences}!sphinx.\_cli.util.errors@{sphinx.\_cli.util.errors}}
+\doxysubsubsection{\texorpdfstring{strip\_escape\_sequences()}{strip\_escape\_sequences()}}
+{\footnotesize\ttfamily  str sphinx.\+\_\+cli.\+util.\+errors.\+strip\+\_\+escape\+\_\+sequences (\begin{DoxyParamCaption}\item[{str}]{text }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove the ANSI CSI colors and "erase in line" sequences.
+
+Other `escape sequences <https://en.wikipedia.org/wiki/ANSI_escape_code>`_
+(e.g., VT100-specific functions) are not supported. Only control sequences
+*natively* known to Sphinx (i.e., colour sequences used in Sphinx
+and "erase entire line" (``'\x1b[2K'``)) are stripped by this function.
+
+.. warning:: This function only for use within Sphinx..
+
+__ https://en.wikipedia.org/wiki/ANSI_escape_code
+\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1__cli_1_1util_1_1errors_a301775ebb461d92b14149c00850034fd}\label{namespacesphinx_1_1__cli_1_1util_1_1errors_a301775ebb461d92b14149c00850034fd} 
+\index{sphinx.\_cli.util.errors@{sphinx.\_cli.util.errors}!terminal\_safe@{terminal\_safe}}
+\index{terminal\_safe@{terminal\_safe}!sphinx.\_cli.util.errors@{sphinx.\_cli.util.errors}}
+\doxysubsubsection{\texorpdfstring{terminal\_safe()}{terminal\_safe()}}
+{\footnotesize\ttfamily  str sphinx.\+\_\+cli.\+util.\+errors.\+terminal\+\_\+safe (\begin{DoxyParamCaption}\item[{str}]{s }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Safely encode a string for printing to the terminal.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1__cli_1_1util_1_1errors_aa149c9248172037038975dae9854dd46}\label{namespacesphinx_1_1__cli_1_1util_1_1errors_aa149c9248172037038975dae9854dd46} 
+\index{sphinx.\_cli.util.errors@{sphinx.\_cli.util.errors}!write\_temporary\_file@{write\_temporary\_file}}
+\index{write\_temporary\_file@{write\_temporary\_file}!sphinx.\_cli.util.errors@{sphinx.\_cli.util.errors}}
+\doxysubsubsection{\texorpdfstring{write\_temporary\_file()}{write\_temporary\_file()}}
+{\footnotesize\ttfamily  str sphinx.\+\_\+cli.\+util.\+errors.\+write\+\_\+temporary\+\_\+file (\begin{DoxyParamCaption}\item[{str}]{content }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write content to a temporary file and return the filename.\end{DoxyVerb}
+ 

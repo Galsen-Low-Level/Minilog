@@ -1,0 +1,105 @@
+\doxysection{webob.\+static.\+Directory\+App Class Reference}
+\hypertarget{classwebob_1_1static_1_1DirectoryApp}{}\label{classwebob_1_1static_1_1DirectoryApp}\index{webob.static.DirectoryApp@{webob.static.DirectoryApp}}
+Inheritance diagram for webob.\+static.\+Directory\+App\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classwebob_1_1static_1_1DirectoryApp}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwebob_1_1static_1_1DirectoryApp_a5e68826d8bc468a620420a0db28f9ae1}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classwebob_1_1static_1_1DirectoryApp_a7a2b959ace5d10e99b0a674e37cf9753}{path}}, \mbox{\hyperlink{classwebob_1_1static_1_1DirectoryApp_ae8b51fa9a8743e0395d51b781d9ff26c}{index\+\_\+page}}=\textquotesingle{}index.\+html\textquotesingle{}, \mbox{\hyperlink{classwebob_1_1static_1_1DirectoryApp_a8a05ecae48d0944f63c56aed83c9a770}{hide\+\_\+index\+\_\+with\+\_\+redirect}}=False, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}kw)
+\item 
+\mbox{\hyperlink{classwebob_1_1static_1_1DirectoryApp_a0c3f83559cb449ab0147369e813ac59b}{make\+\_\+fileapp}} (self, \mbox{\hyperlink{classwebob_1_1static_1_1DirectoryApp_a7a2b959ace5d10e99b0a674e37cf9753}{path}})
+\item 
+\mbox{\hyperlink{classwebob_1_1static_1_1DirectoryApp_a3aa4108d860e07cacf6d0fdc6400e8a9}{\+\_\+\+\_\+call\+\_\+\+\_\+}} (self, req)
+\item 
+\mbox{\hyperlink{classwebob_1_1static_1_1DirectoryApp_a3798b57f78ac63a741c571ead5e19123}{index}} (self, req, \mbox{\hyperlink{classwebob_1_1static_1_1DirectoryApp_a7a2b959ace5d10e99b0a674e37cf9753}{path}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwebob_1_1static_1_1DirectoryApp_a7a2b959ace5d10e99b0a674e37cf9753}{path}}
+\item 
+\mbox{\hyperlink{classwebob_1_1static_1_1DirectoryApp_ae8b51fa9a8743e0395d51b781d9ff26c}{index\+\_\+page}}
+\item 
+\mbox{\hyperlink{classwebob_1_1static_1_1DirectoryApp_a8a05ecae48d0944f63c56aed83c9a770}{hide\+\_\+index\+\_\+with\+\_\+redirect}}
+\item 
+\mbox{\hyperlink{classwebob_1_1static_1_1DirectoryApp_a9cabeaee6c6ed731966cf7f9d87b67f8}{fileapp\+\_\+kw}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}An application that serves up the files in a given directory.
+
+This will serve index files (by default ``index.html``), or set
+``index_page=None`` to disable this.  If you set
+``hide_index_with_redirect=True`` (it defaults to False) then
+requests to, e.g., ``/index.html`` will be redirected to ``/``.
+
+To customize `FileApp` instances creation (which is what actually
+serves the responses), override the `make_fileapp` method.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classwebob_1_1static_1_1DirectoryApp_a5e68826d8bc468a620420a0db28f9ae1}\label{classwebob_1_1static_1_1DirectoryApp_a5e68826d8bc468a620420a0db28f9ae1} 
+\index{webob.static.DirectoryApp@{webob.static.DirectoryApp}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!webob.static.DirectoryApp@{webob.static.DirectoryApp}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily webob.\+static.\+Directory\+App.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path,  }\item[{}]{index\+\_\+page = {\ttfamily \textquotesingle{}index.html\textquotesingle{}},  }\item[{}]{hide\+\_\+index\+\_\+with\+\_\+redirect = {\ttfamily False},  }\item[{\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{kw }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classwebob_1_1static_1_1DirectoryApp_a3aa4108d860e07cacf6d0fdc6400e8a9}\label{classwebob_1_1static_1_1DirectoryApp_a3aa4108d860e07cacf6d0fdc6400e8a9} 
+\index{webob.static.DirectoryApp@{webob.static.DirectoryApp}!\_\_call\_\_@{\_\_call\_\_}}
+\index{\_\_call\_\_@{\_\_call\_\_}!webob.static.DirectoryApp@{webob.static.DirectoryApp}}
+\doxysubsubsection{\texorpdfstring{\_\_call\_\_()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily webob.\+static.\+Directory\+App.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{req }\end{DoxyParamCaption})}
+
+\Hypertarget{classwebob_1_1static_1_1DirectoryApp_a3798b57f78ac63a741c571ead5e19123}\label{classwebob_1_1static_1_1DirectoryApp_a3798b57f78ac63a741c571ead5e19123} 
+\index{webob.static.DirectoryApp@{webob.static.DirectoryApp}!index@{index}}
+\index{index@{index}!webob.static.DirectoryApp@{webob.static.DirectoryApp}}
+\doxysubsubsection{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily webob.\+static.\+Directory\+App.\+index (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{req,  }\item[{}]{path }\end{DoxyParamCaption})}
+
+\Hypertarget{classwebob_1_1static_1_1DirectoryApp_a0c3f83559cb449ab0147369e813ac59b}\label{classwebob_1_1static_1_1DirectoryApp_a0c3f83559cb449ab0147369e813ac59b} 
+\index{webob.static.DirectoryApp@{webob.static.DirectoryApp}!make\_fileapp@{make\_fileapp}}
+\index{make\_fileapp@{make\_fileapp}!webob.static.DirectoryApp@{webob.static.DirectoryApp}}
+\doxysubsubsection{\texorpdfstring{make\_fileapp()}{make\_fileapp()}}
+{\footnotesize\ttfamily webob.\+static.\+Directory\+App.\+make\+\_\+fileapp (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classwebob_1_1static_1_1DirectoryApp_a9cabeaee6c6ed731966cf7f9d87b67f8}\label{classwebob_1_1static_1_1DirectoryApp_a9cabeaee6c6ed731966cf7f9d87b67f8} 
+\index{webob.static.DirectoryApp@{webob.static.DirectoryApp}!fileapp\_kw@{fileapp\_kw}}
+\index{fileapp\_kw@{fileapp\_kw}!webob.static.DirectoryApp@{webob.static.DirectoryApp}}
+\doxysubsubsection{\texorpdfstring{fileapp\_kw}{fileapp\_kw}}
+{\footnotesize\ttfamily webob.\+static.\+Directory\+App.\+fileapp\+\_\+kw}
+
+\Hypertarget{classwebob_1_1static_1_1DirectoryApp_a8a05ecae48d0944f63c56aed83c9a770}\label{classwebob_1_1static_1_1DirectoryApp_a8a05ecae48d0944f63c56aed83c9a770} 
+\index{webob.static.DirectoryApp@{webob.static.DirectoryApp}!hide\_index\_with\_redirect@{hide\_index\_with\_redirect}}
+\index{hide\_index\_with\_redirect@{hide\_index\_with\_redirect}!webob.static.DirectoryApp@{webob.static.DirectoryApp}}
+\doxysubsubsection{\texorpdfstring{hide\_index\_with\_redirect}{hide\_index\_with\_redirect}}
+{\footnotesize\ttfamily webob.\+static.\+Directory\+App.\+hide\+\_\+index\+\_\+with\+\_\+redirect}
+
+\Hypertarget{classwebob_1_1static_1_1DirectoryApp_ae8b51fa9a8743e0395d51b781d9ff26c}\label{classwebob_1_1static_1_1DirectoryApp_ae8b51fa9a8743e0395d51b781d9ff26c} 
+\index{webob.static.DirectoryApp@{webob.static.DirectoryApp}!index\_page@{index\_page}}
+\index{index\_page@{index\_page}!webob.static.DirectoryApp@{webob.static.DirectoryApp}}
+\doxysubsubsection{\texorpdfstring{index\_page}{index\_page}}
+{\footnotesize\ttfamily webob.\+static.\+Directory\+App.\+index\+\_\+page}
+
+\Hypertarget{classwebob_1_1static_1_1DirectoryApp_a7a2b959ace5d10e99b0a674e37cf9753}\label{classwebob_1_1static_1_1DirectoryApp_a7a2b959ace5d10e99b0a674e37cf9753} 
+\index{webob.static.DirectoryApp@{webob.static.DirectoryApp}!path@{path}}
+\index{path@{path}!webob.static.DirectoryApp@{webob.static.DirectoryApp}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily webob.\+static.\+Directory\+App.\+path}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/webob/\mbox{\hyperlink{static_8py}{static.\+py}}\end{DoxyCompactItemize}

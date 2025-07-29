@@ -1,0 +1,178 @@
+.TH "webtest.forms.Select" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webtest.forms.Select
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBwebtest\&.forms\&.Field\fP\&.
+.PP
+Inherited by \fBwebtest\&.forms\&.Radio\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, *args, **\fBattrs\fP)"
+.br
+.ti -1c
+.RI "\fBforce_value\fP (self, \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBselect\fP (self, \fBvalue\fP=None, text=None)"
+.br
+.ti -1c
+.RI "\fBvalue__set\fP (self, \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBvalue__get\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBwebtest\&.forms\&.Field\fP
+.in +1c
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBoptionPositions\fP"
+.br
+.ti -1c
+.RI "\fBselectedIndex\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBwebtest\&.forms\&.Field\fP
+.in +1c
+.ti -1c
+.RI "\fBform\fP"
+.br
+.ti -1c
+.RI "\fBtag\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBpos\fP"
+.br
+.ti -1c
+.RI "\fBid\fP"
+.br
+.ti -1c
+.RI "\fBattrs\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_get_value_for_text\fP (self, text)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_forced_value\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBwebtest\&.forms\&.Field\fP
+.in +1c
+.ti -1c
+.RI "\fB_value\fP"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBvalue\fP = property(\fBvalue__get\fP, \fBvalue__set\fP)"
+.br
+.in -1c
+
+Properties inherited from \fBwebtest\&.forms\&.Field\fP
+.in +1c
+.ti -1c
+.RI "\fBvalue\fP = property(\fBvalue__get\fP, \fBvalue__set\fP)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Attributes inherited from \fBwebtest\&.forms\&.Field\fP
+.in +1c
+.ti -1c
+.RI "dict \fBclasses\fP = {}"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Field representing ``<select />`` form element\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "webtest\&.forms\&.Select\&.__init__ ( self, * args, ** attrs)"
+
+.PP
+Reimplemented from \fBwebtest\&.forms\&.Field\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "webtest\&.forms\&.Select\&._get_value_for_text ( self,  text)\fC [protected]\fP"
+
+.SS "webtest\&.forms\&.Select\&.force_value ( self,  value)"
+
+.PP
+.nf
+Like setting a value, except forces it (even for, say, hidden
+fields)\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBwebtest\&.forms\&.Field\fP\&.
+.SS "webtest\&.forms\&.Select\&.select ( self,  value = \fCNone\fP,  text = \fCNone\fP)"
+
+.SS "webtest\&.forms\&.Select\&.value__get ( self)"
+
+.PP
+Reimplemented from \fBwebtest\&.forms\&.Field\fP\&.
+.PP
+Reimplemented in \fBwebtest\&.forms\&.Radio\fP\&.
+.SS "webtest\&.forms\&.Select\&.value__set ( self,  value)"
+
+.PP
+Reimplemented from \fBwebtest\&.forms\&.Field\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "webtest\&.forms\&.Select\&._forced_value\fC [protected]\fP"
+
+.SS "webtest\&.forms\&.Select\&.optionPositions"
+
+.SS "webtest\&.forms\&.Select\&.options"
+
+.SS "webtest\&.forms\&.Select\&.selectedIndex"
+
+.SH "Property Documentation"
+.PP 
+.SS "webtest\&.forms\&.Select\&.value = property(\fBvalue__get\fP, \fBvalue__set\fP)\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

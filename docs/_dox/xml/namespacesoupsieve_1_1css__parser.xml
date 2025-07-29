@@ -1,0 +1,1324 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespacesoupsieve_1_1css__parser" kind="namespace" language="Python">
+    <compoundname>soupsieve::css_parser</compoundname>
+    <innerclass refid="classsoupsieve_1_1css__parser_1_1__Selector" prot="protected">soupsieve::css_parser::_Selector</innerclass>
+    <innerclass refid="classsoupsieve_1_1css__parser_1_1CSSParser" prot="public">soupsieve::css_parser::CSSParser</innerclass>
+    <innerclass refid="classsoupsieve_1_1css__parser_1_1SelectorPattern" prot="public">soupsieve::css_parser::SelectorPattern</innerclass>
+    <innerclass refid="classsoupsieve_1_1css__parser_1_1SpecialPseudoPattern" prot="public">soupsieve::css_parser::SpecialPseudoPattern</innerclass>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a8c9e63f5b434e9241a5c2752fc0b85ef" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int soupsieve::css_parser.UNICODE_REPLACEMENT_CHAR</definition>
+        <argsstring></argsstring>
+        <name>UNICODE_REPLACEMENT_CHAR</name>
+        <qualifiedname>soupsieve.css_parser.UNICODE_REPLACEMENT_CHAR</qualifiedname>
+        <initializer>=  0xFFFD</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="12" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1aa627ccf8cc8eb7c0b9ac3676938ade8f" prot="public" static="no" mutable="no">
+        <type>dict</type>
+        <definition>dict soupsieve::css_parser.PSEUDO_SIMPLE</definition>
+        <argsstring></argsstring>
+        <name>PSEUDO_SIMPLE</name>
+        <qualifiedname>soupsieve.css_parser.PSEUDO_SIMPLE</qualifiedname>
+        <initializer>=  {
+    &quot;:any-link&quot;,
+    &quot;:empty&quot;,
+    &quot;:first-child&quot;,
+    &quot;:first-of-type&quot;,
+    &quot;:in-range&quot;,
+    &quot;:open&quot;,
+    &quot;:out-of-range&quot;,
+    &quot;:last-child&quot;,
+    &quot;:last-of-type&quot;,
+    &quot;:link&quot;,
+    &quot;:only-child&quot;,
+    &quot;:only-of-type&quot;,
+    &quot;:root&quot;,
+    &apos;:checked&apos;,
+    &apos;:default&apos;,
+    &apos;:disabled&apos;,
+    &apos;:enabled&apos;,
+    &apos;:indeterminate&apos;,
+    &apos;:optional&apos;,
+    &apos;:placeholder-shown&apos;,
+    &apos;:read-only&apos;,
+    &apos;:read-write&apos;,
+    &apos;:required&apos;,
+    &apos;:scope&apos;,
+    &apos;:defined&apos;,
+    &apos;:muted&apos;
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="15" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a3d2fe3ea89cea40953583e94103c3f0e" prot="public" static="no" mutable="no">
+        <type>dict</type>
+        <definition>dict soupsieve::css_parser.PSEUDO_SIMPLE_NO_MATCH</definition>
+        <argsstring></argsstring>
+        <name>PSEUDO_SIMPLE_NO_MATCH</name>
+        <qualifiedname>soupsieve.css_parser.PSEUDO_SIMPLE_NO_MATCH</qualifiedname>
+        <initializer>=  {
+    &apos;:active&apos;,
+    &apos;:autofill&apos;,
+    &apos;:buffering&apos;,
+    &apos;:current&apos;,
+    &apos;:focus&apos;,
+    &apos;:focus-visible&apos;,
+    &apos;:focus-within&apos;,
+    &apos;:fullscreen&apos;,
+    &apos;:future&apos;,
+    &apos;:host&apos;,
+    &apos;:hover&apos;,
+    &apos;:local-link&apos;,
+    &apos;:past&apos;,
+    &apos;:paused&apos;,
+    &apos;:picture-in-picture&apos;,
+    &apos;:playing&apos;,
+    &apos;:popover-open&apos;,
+    &apos;:seeking&apos;,
+    &apos;:stalled&apos;,
+    &apos;:target&apos;,
+    &apos;:target-within&apos;,
+    &apos;:user-invalid&apos;,
+    &apos;:volume-locked&apos;,
+    &apos;:visited&apos;
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="45" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a54ddec09c849a0a8d835d519c4c0e727" prot="public" static="no" mutable="no">
+        <type>dict</type>
+        <definition>dict soupsieve::css_parser.PSEUDO_COMPLEX</definition>
+        <argsstring></argsstring>
+        <name>PSEUDO_COMPLEX</name>
+        <qualifiedname>soupsieve.css_parser.PSEUDO_COMPLEX</qualifiedname>
+        <initializer>=  {
+    &apos;:contains&apos;,
+    &apos;:-soup-contains&apos;,
+    &apos;:-soup-contains-own&apos;,
+    &apos;:has&apos;,
+    &apos;:is&apos;,
+    &apos;:matches&apos;,
+    &apos;:not&apos;,
+    &apos;:where&apos;
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="73" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a09ffbd2e178ae6fe90209db2de485dee" prot="public" static="no" mutable="no">
+        <type>dict</type>
+        <definition>dict soupsieve::css_parser.PSEUDO_COMPLEX_NO_MATCH</definition>
+        <argsstring></argsstring>
+        <name>PSEUDO_COMPLEX_NO_MATCH</name>
+        <qualifiedname>soupsieve.css_parser.PSEUDO_COMPLEX_NO_MATCH</qualifiedname>
+        <initializer>=  {
+    &apos;:current&apos;,
+    &apos;:host&apos;,
+    &apos;:host-context&apos;
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="84" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a47f425a41ad682f098dc0a3c9e7e4f9a" prot="public" static="no" mutable="no">
+        <type>dict</type>
+        <definition>dict soupsieve::css_parser.PSEUDO_SPECIAL</definition>
+        <argsstring></argsstring>
+        <name>PSEUDO_SPECIAL</name>
+        <qualifiedname>soupsieve.css_parser.PSEUDO_SPECIAL</qualifiedname>
+        <initializer>=  {
+    &apos;:dir&apos;,
+    &apos;:lang&apos;,
+    &apos;:nth-child&apos;,
+    &apos;:nth-last-child&apos;,
+    &apos;:nth-last-of-type&apos;,
+    &apos;:nth-of-type&apos;
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="91" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a036c0cefd69721d951efddac2cea6657" prot="public" static="no" mutable="no">
+        <type>dict</type>
+        <definition>dict soupsieve::css_parser.PSEUDO_SUPPORTED</definition>
+        <argsstring></argsstring>
+        <name>PSEUDO_SUPPORTED</name>
+        <qualifiedname>soupsieve.css_parser.PSEUDO_SUPPORTED</qualifiedname>
+        <initializer>=  <ref refid="namespacesoupsieve_1_1css__parser_1aa627ccf8cc8eb7c0b9ac3676938ade8f" kindref="member">PSEUDO_SIMPLE</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1a3d2fe3ea89cea40953583e94103c3f0e" kindref="member">PSEUDO_SIMPLE_NO_MATCH</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1a54ddec09c849a0a8d835d519c4c0e727" kindref="member">PSEUDO_COMPLEX</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1a09ffbd2e178ae6fe90209db2de485dee" kindref="member">PSEUDO_COMPLEX_NO_MATCH</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1a47f425a41ad682f098dc0a3c9e7e4f9a" kindref="member">PSEUDO_SPECIAL</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="100" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a3433de07e0f4392f1057ac59aa94f362" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.NEWLINE</definition>
+        <argsstring></argsstring>
+        <name>NEWLINE</name>
+        <qualifiedname>soupsieve.css_parser.NEWLINE</qualifiedname>
+        <initializer>=  r&apos;(?:\r\n|(?!\r\n)[\n\f\r])&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="104" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1ad586bf593611e07cd209d7cc48500729" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.WS</definition>
+        <argsstring></argsstring>
+        <name>WS</name>
+        <qualifiedname>soupsieve.css_parser.WS</qualifiedname>
+        <initializer>=  fr&apos;(?:[ \t]|{<ref refid="namespacesoupsieve_1_1css__parser_1a3433de07e0f4392f1057ac59aa94f362" kindref="member">NEWLINE</ref>})&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="105" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1ac50a1897af01dd4a817637cb60555584" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.COMMENTS</definition>
+        <argsstring></argsstring>
+        <name>COMMENTS</name>
+        <qualifiedname>soupsieve.css_parser.COMMENTS</qualifiedname>
+        <initializer>=  r&apos;(?:/\*[^*]*\*+(?:[^/*][^*]*\*+)*/)&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="107" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.WSC</definition>
+        <argsstring></argsstring>
+        <name>WSC</name>
+        <qualifiedname>soupsieve.css_parser.WSC</qualifiedname>
+        <initializer>=  fr&apos;(?:{<ref refid="namespacesoupsieve_1_1css__parser_1ad586bf593611e07cd209d7cc48500729" kindref="member">WS</ref>}|{<ref refid="namespacesoupsieve_1_1css__parser_1ac50a1897af01dd4a817637cb60555584" kindref="member">COMMENTS</ref>})&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="109" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1ae2c0b7970eb5ee2f07247ce4864785c1" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.CSS_ESCAPES</definition>
+        <argsstring></argsstring>
+        <name>CSS_ESCAPES</name>
+        <qualifiedname>soupsieve.css_parser.CSS_ESCAPES</qualifiedname>
+        <initializer>=  fr&apos;(?:\\(?:[a-f0-9]{{1,6}}{<ref refid="namespacesoupsieve_1_1css__parser_1ad586bf593611e07cd209d7cc48500729" kindref="member">WS</ref>}?|[^\r\n\f]|$))&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="111" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a26172a4da670540b81af6d29fb944851" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.CSS_STRING_ESCAPES</definition>
+        <argsstring></argsstring>
+        <name>CSS_STRING_ESCAPES</name>
+        <qualifiedname>soupsieve.css_parser.CSS_STRING_ESCAPES</qualifiedname>
+        <initializer>=  fr&apos;(?:\\(?:[a-f0-9]{{1,6}}{<ref refid="namespacesoupsieve_1_1css__parser_1ad586bf593611e07cd209d7cc48500729" kindref="member">WS</ref>}?|[^\r\n\f]|$|{<ref refid="namespacesoupsieve_1_1css__parser_1a3433de07e0f4392f1057ac59aa94f362" kindref="member">NEWLINE</ref>}))&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="112" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1ac002eed03abc06e900bd099179860077" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.IDENTIFIER</definition>
+        <argsstring></argsstring>
+        <name>IDENTIFIER</name>
+        <qualifiedname>soupsieve.css_parser.IDENTIFIER</qualifiedname>
+        <initializer>=  fr&apos;&apos;&apos;
+(?:(?:-?(?:[^\x00-\x2f\x30-\x40\x5B-\x5E\x60\x7B-\x9f]|{<ref refid="namespacesoupsieve_1_1css__parser_1ae2c0b7970eb5ee2f07247ce4864785c1" kindref="member">CSS_ESCAPES</ref>})+|--)
+(?:[^\x00-\x2c\x2e\x2f\x3A-\x40\x5B-\x5E\x60\x7B-\x9f]|{<ref refid="namespacesoupsieve_1_1css__parser_1ae2c0b7970eb5ee2f07247ce4864785c1" kindref="member">CSS_ESCAPES</ref>})*)
+&apos;&apos;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="114" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a439f8debf34c4d1817ff9ccda0c50b6f" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.NTH</definition>
+        <argsstring></argsstring>
+        <name>NTH</name>
+        <qualifiedname>soupsieve.css_parser.NTH</qualifiedname>
+        <initializer>=  fr&apos;(?:[-+])?(?:[0-9]+n?|n)(?:(?&lt;=n){<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*(?:[-+]){<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*(?:[0-9]+))?&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="119" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a5c95e9e56fdae1af2f85abd55a4776b2" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.VALUE</definition>
+        <argsstring></argsstring>
+        <name>VALUE</name>
+        <qualifiedname>soupsieve.css_parser.VALUE</qualifiedname>
+        <initializer>=  fr&apos;&apos;&apos;(?:&quot;(?:\\(?:.|{NEWLINE})|[^\\&quot;\r\n\f]+)*?&quot;|&apos;(?:\\(?:.|{NEWLINE})|[^\\&apos;\r\n\f]+)*?&apos;|{<ref refid="namespacesoupsieve_1_1css__parser_1ac002eed03abc06e900bd099179860077" kindref="member">IDENTIFIER</ref>}+)&apos;&apos;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="121" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a51460d5a0f143592ff577d9421ecd0d7" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.ATTR</definition>
+        <argsstring></argsstring>
+        <name>ATTR</name>
+        <qualifiedname>soupsieve.css_parser.ATTR</qualifiedname>
+        <initializer>=  fr&apos;(?:{<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*(?P&lt;cmp&gt;[!~^|*$]?=){<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*(?P&lt;value&gt;{<ref refid="namespacesoupsieve_1_1css__parser_1a5c95e9e56fdae1af2f85abd55a4776b2" kindref="member">VALUE</ref>})(?:{<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*(?P&lt;case&gt;[is]))?)?{<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*\]&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="123" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a4d783fac16b2b5dccbb457c9d7718fbe" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.PAT_ID</definition>
+        <argsstring></argsstring>
+        <name>PAT_ID</name>
+        <qualifiedname>soupsieve.css_parser.PAT_ID</qualifiedname>
+        <initializer>=  fr&apos;\#{<ref refid="namespacesoupsieve_1_1css__parser_1ac002eed03abc06e900bd099179860077" kindref="member">IDENTIFIER</ref>}&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="127" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a57bf9b4482c62192a420238647bb5bbe" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.PAT_CLASS</definition>
+        <argsstring></argsstring>
+        <name>PAT_CLASS</name>
+        <qualifiedname>soupsieve.css_parser.PAT_CLASS</qualifiedname>
+        <initializer>=  fr&apos;\.{<ref refid="namespacesoupsieve_1_1css__parser_1ac002eed03abc06e900bd099179860077" kindref="member">IDENTIFIER</ref>}&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="129" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a7470700c23dacc12085ebb038f1d101b" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.PAT_TAG</definition>
+        <argsstring></argsstring>
+        <name>PAT_TAG</name>
+        <qualifiedname>soupsieve.css_parser.PAT_TAG</qualifiedname>
+        <initializer>=  fr&apos;(?P&lt;tag_ns&gt;(?:{<ref refid="namespacesoupsieve_1_1css__parser_1ac002eed03abc06e900bd099179860077" kindref="member">IDENTIFIER</ref>}|\*)?\|)?(?P&lt;tag_name&gt;{<ref refid="namespacesoupsieve_1_1css__parser_1ac002eed03abc06e900bd099179860077" kindref="member">IDENTIFIER</ref>}|\*)&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="131" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a6ff45522c36434ed238f64a1bb4cdf3b" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.PAT_ATTR</definition>
+        <argsstring></argsstring>
+        <name>PAT_ATTR</name>
+        <qualifiedname>soupsieve.css_parser.PAT_ATTR</qualifiedname>
+        <initializer>=  fr&apos;\[{<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*(?P&lt;attr_ns&gt;(?:{<ref refid="namespacesoupsieve_1_1css__parser_1ac002eed03abc06e900bd099179860077" kindref="member">IDENTIFIER</ref>}|\*)?\|)?(?P&lt;attr_name&gt;{<ref refid="namespacesoupsieve_1_1css__parser_1ac002eed03abc06e900bd099179860077" kindref="member">IDENTIFIER</ref>}){<ref refid="namespacesoupsieve_1_1css__parser_1a51460d5a0f143592ff577d9421ecd0d7" kindref="member">ATTR</ref>}&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="133" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a145c738e81390413dde0025218031d9b" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.PAT_PSEUDO_CLASS</definition>
+        <argsstring></argsstring>
+        <name>PAT_PSEUDO_CLASS</name>
+        <qualifiedname>soupsieve.css_parser.PAT_PSEUDO_CLASS</qualifiedname>
+        <initializer>=  fr&apos;(?P&lt;name&gt;:{<ref refid="namespacesoupsieve_1_1css__parser_1ac002eed03abc06e900bd099179860077" kindref="member">IDENTIFIER</ref>})(?P&lt;open&gt;\({<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*)?&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="135" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1aafc18d89ae43bb8fa9341ffd52defa26" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.PAT_PSEUDO_CLASS_SPECIAL</definition>
+        <argsstring></argsstring>
+        <name>PAT_PSEUDO_CLASS_SPECIAL</name>
+        <qualifiedname>soupsieve.css_parser.PAT_PSEUDO_CLASS_SPECIAL</qualifiedname>
+        <initializer>=  fr&apos;(?P&lt;name&gt;:{<ref refid="namespacesoupsieve_1_1css__parser_1ac002eed03abc06e900bd099179860077" kindref="member">IDENTIFIER</ref>})(?P&lt;open&gt;\({<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*)&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="137" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a391ca33f4752a5026886dedea8c0b3e8" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.PAT_PSEUDO_CLASS_CUSTOM</definition>
+        <argsstring></argsstring>
+        <name>PAT_PSEUDO_CLASS_CUSTOM</name>
+        <qualifiedname>soupsieve.css_parser.PAT_PSEUDO_CLASS_CUSTOM</qualifiedname>
+        <initializer>=  fr&apos;(?P&lt;name&gt;:(?=--){<ref refid="namespacesoupsieve_1_1css__parser_1ac002eed03abc06e900bd099179860077" kindref="member">IDENTIFIER</ref>})&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="139" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a346d9858f8eeb31065198e3069bb2d93" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.PAT_AMP</definition>
+        <argsstring></argsstring>
+        <name>PAT_AMP</name>
+        <qualifiedname>soupsieve.css_parser.PAT_AMP</qualifiedname>
+        <initializer>=  r&apos;&amp;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="141" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1abd084b4a56de83729788c3fac49edac6" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.PAT_PSEUDO_CLOSE</definition>
+        <argsstring></argsstring>
+        <name>PAT_PSEUDO_CLOSE</name>
+        <qualifiedname>soupsieve.css_parser.PAT_PSEUDO_CLOSE</qualifiedname>
+        <initializer>=  fr&apos;{<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*\)&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="143" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a842cb94788790cbea4da9b2d3a238c87" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.PAT_PSEUDO_ELEMENT</definition>
+        <argsstring></argsstring>
+        <name>PAT_PSEUDO_ELEMENT</name>
+        <qualifiedname>soupsieve.css_parser.PAT_PSEUDO_ELEMENT</qualifiedname>
+        <initializer>=  fr&apos;:{<ref refid="namespacesoupsieve_1_1css__parser_1a145c738e81390413dde0025218031d9b" kindref="member">PAT_PSEUDO_CLASS</ref>}&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="145" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1ae25e8c2db2e4fc8cfa0c27057dec4abe" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.PAT_AT_RULE</definition>
+        <argsstring></argsstring>
+        <name>PAT_AT_RULE</name>
+        <qualifiedname>soupsieve.css_parser.PAT_AT_RULE</qualifiedname>
+        <initializer>=  fr&apos;@P{<ref refid="namespacesoupsieve_1_1css__parser_1ac002eed03abc06e900bd099179860077" kindref="member">IDENTIFIER</ref>}&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="147" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a9bf519cea507d75eec831143f03e887d" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.PAT_PSEUDO_NTH_CHILD</definition>
+        <argsstring></argsstring>
+        <name>PAT_PSEUDO_NTH_CHILD</name>
+        <qualifiedname>soupsieve.css_parser.PAT_PSEUDO_NTH_CHILD</qualifiedname>
+        <initializer>=  fr&apos;&apos;&apos;
+(?P&lt;pseudo_nth_child&gt;{<ref refid="namespacesoupsieve_1_1css__parser_1aafc18d89ae43bb8fa9341ffd52defa26" kindref="member">PAT_PSEUDO_CLASS_SPECIAL</ref>}
+(?P&lt;nth_child&gt;{<ref refid="namespacesoupsieve_1_1css__parser_1a439f8debf34c4d1817ff9ccda0c50b6f" kindref="member">NTH</ref>}|even|odd))(?:{<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*\)|(?P&lt;of&gt;{<ref refid="namespacesoupsieve_1_1css__parser_1ac50a1897af01dd4a817637cb60555584" kindref="member">COMMENTS</ref>}*{<ref refid="namespacesoupsieve_1_1css__parser_1ad586bf593611e07cd209d7cc48500729" kindref="member">WS</ref>}{<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*of{<ref refid="namespacesoupsieve_1_1css__parser_1ac50a1897af01dd4a817637cb60555584" kindref="member">COMMENTS</ref>}*{<ref refid="namespacesoupsieve_1_1css__parser_1ad586bf593611e07cd209d7cc48500729" kindref="member">WS</ref>}{<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*))
+&apos;&apos;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="149" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a456187ff7c3d6c3fc24bf2ae31f9cb81" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.PAT_PSEUDO_NTH_TYPE</definition>
+        <argsstring></argsstring>
+        <name>PAT_PSEUDO_NTH_TYPE</name>
+        <qualifiedname>soupsieve.css_parser.PAT_PSEUDO_NTH_TYPE</qualifiedname>
+        <initializer>=  fr&apos;&apos;&apos;
+(?P&lt;pseudo_nth_type&gt;{<ref refid="namespacesoupsieve_1_1css__parser_1aafc18d89ae43bb8fa9341ffd52defa26" kindref="member">PAT_PSEUDO_CLASS_SPECIAL</ref>}
+(?P&lt;nth_type&gt;{<ref refid="namespacesoupsieve_1_1css__parser_1a439f8debf34c4d1817ff9ccda0c50b6f" kindref="member">NTH</ref>}|even|odd)){<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*\)
+&apos;&apos;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="154" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a67d766f159bfa883a562898a0da4b48e" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.PAT_PSEUDO_LANG</definition>
+        <argsstring></argsstring>
+        <name>PAT_PSEUDO_LANG</name>
+        <qualifiedname>soupsieve.css_parser.PAT_PSEUDO_LANG</qualifiedname>
+        <initializer>=  fr&apos;{<ref refid="namespacesoupsieve_1_1css__parser_1aafc18d89ae43bb8fa9341ffd52defa26" kindref="member">PAT_PSEUDO_CLASS_SPECIAL</ref>}(?P&lt;values&gt;{<ref refid="namespacesoupsieve_1_1css__parser_1a5c95e9e56fdae1af2f85abd55a4776b2" kindref="member">VALUE</ref>}(?:{<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*,{<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*{<ref refid="namespacesoupsieve_1_1css__parser_1a5c95e9e56fdae1af2f85abd55a4776b2" kindref="member">VALUE</ref>})*){<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*\)&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="159" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a624928bd43854f1be79096fcd765dbc4" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.PAT_PSEUDO_DIR</definition>
+        <argsstring></argsstring>
+        <name>PAT_PSEUDO_DIR</name>
+        <qualifiedname>soupsieve.css_parser.PAT_PSEUDO_DIR</qualifiedname>
+        <initializer>=  fr&apos;{<ref refid="namespacesoupsieve_1_1css__parser_1aafc18d89ae43bb8fa9341ffd52defa26" kindref="member">PAT_PSEUDO_CLASS_SPECIAL</ref>}(?P&lt;dir&gt;ltr|rtl){<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*\)&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="161" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a659e9804f412aea14c79629090b272f4" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.PAT_COMBINE</definition>
+        <argsstring></argsstring>
+        <name>PAT_COMBINE</name>
+        <qualifiedname>soupsieve.css_parser.PAT_COMBINE</qualifiedname>
+        <initializer>=  fr&apos;{<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*?(?P&lt;relation&gt;[,+&gt;~]|{<ref refid="namespacesoupsieve_1_1css__parser_1ad586bf593611e07cd209d7cc48500729" kindref="member">WS</ref>}(?![,+&gt;~])){<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="163" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a4f8454fb6d606c4cb286f15eba50aead" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.PAT_PSEUDO_CONTAINS</definition>
+        <argsstring></argsstring>
+        <name>PAT_PSEUDO_CONTAINS</name>
+        <qualifiedname>soupsieve.css_parser.PAT_PSEUDO_CONTAINS</qualifiedname>
+        <initializer>=  fr&apos;{<ref refid="namespacesoupsieve_1_1css__parser_1aafc18d89ae43bb8fa9341ffd52defa26" kindref="member">PAT_PSEUDO_CLASS_SPECIAL</ref>}(?P&lt;values&gt;{<ref refid="namespacesoupsieve_1_1css__parser_1a5c95e9e56fdae1af2f85abd55a4776b2" kindref="member">VALUE</ref>}(?:{<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*,{<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*{<ref refid="namespacesoupsieve_1_1css__parser_1a5c95e9e56fdae1af2f85abd55a4776b2" kindref="member">VALUE</ref>})*){<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*\)&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="165" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a5be729476d788198fb274d9c718450bb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.RE_CSS_ESC</definition>
+        <argsstring></argsstring>
+        <name>RE_CSS_ESC</name>
+        <qualifiedname>soupsieve.css_parser.RE_CSS_ESC</qualifiedname>
+        <initializer>=  re.compile(fr&apos;(?:(\\[a-f0-9]{{1,6}}{<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}?)|(\\[^\r\n\f])|(\\$))&apos;, re.I)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="169" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a6b1c9701bca4517a0b0bfab4e57ed54e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.RE_CSS_STR_ESC</definition>
+        <argsstring></argsstring>
+        <name>RE_CSS_STR_ESC</name>
+        <qualifiedname>soupsieve.css_parser.RE_CSS_STR_ESC</qualifiedname>
+        <initializer>=  re.compile(fr&apos;(?:(\\[a-f0-9]{{1,6}}{<ref refid="namespacesoupsieve_1_1css__parser_1ad586bf593611e07cd209d7cc48500729" kindref="member">WS</ref>}?)|(\\[^\r\n\f])|(\\$)|(\\{<ref refid="namespacesoupsieve_1_1css__parser_1a3433de07e0f4392f1057ac59aa94f362" kindref="member">NEWLINE</ref>}))&apos;, re.I)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="170" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a476a6b699d57e634c19befb5c5d7e382" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.RE_NTH</definition>
+        <argsstring></argsstring>
+        <name>RE_NTH</name>
+        <qualifiedname>soupsieve.css_parser.RE_NTH</qualifiedname>
+        <initializer>=  re.compile(fr&apos;(?P&lt;s1&gt;[-+])?(?P&lt;a&gt;[0-9]+n?|n)(?:(?&lt;=n){<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*(?P&lt;s2&gt;[-+]){<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*(?P&lt;b&gt;[0-9]+))?&apos;, re.I)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="172" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a3440c89d313cefdf805d02b15c27779c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.RE_VALUES</definition>
+        <argsstring></argsstring>
+        <name>RE_VALUES</name>
+        <qualifiedname>soupsieve.css_parser.RE_VALUES</qualifiedname>
+        <initializer>=  re.compile(fr&apos;(?:(?P&lt;value&gt;{<ref refid="namespacesoupsieve_1_1css__parser_1a5c95e9e56fdae1af2f85abd55a4776b2" kindref="member">VALUE</ref>})|(?P&lt;split&gt;{<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*,{<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*))&apos;, re.X)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="174" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a665e6fdc531be114e00dbfa839b5cb03" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.RE_WS</definition>
+        <argsstring></argsstring>
+        <name>RE_WS</name>
+        <qualifiedname>soupsieve.css_parser.RE_WS</qualifiedname>
+        <initializer>=  re.compile(<ref refid="namespacesoupsieve_1_1css__parser_1ad586bf593611e07cd209d7cc48500729" kindref="member">WS</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="176" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a5cf64de5c5d53a1f7a8e6a9ca05f99bf" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.RE_WS_BEGIN</definition>
+        <argsstring></argsstring>
+        <name>RE_WS_BEGIN</name>
+        <qualifiedname>soupsieve.css_parser.RE_WS_BEGIN</qualifiedname>
+        <initializer>=  re.compile(fr&apos;^{<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="177" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a218b413ad125ebd08227006a851ba5dd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.RE_WS_END</definition>
+        <argsstring></argsstring>
+        <name>RE_WS_END</name>
+        <qualifiedname>soupsieve.css_parser.RE_WS_END</qualifiedname>
+        <initializer>=  re.compile(fr&apos;{<ref refid="namespacesoupsieve_1_1css__parser_1a695ef105dfce9d4fe57cbae9a646429b" kindref="member">WSC</ref>}*$&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="178" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a3de8f493168a4652a728ac1c87df7575" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.RE_CUSTOM</definition>
+        <argsstring></argsstring>
+        <name>RE_CUSTOM</name>
+        <qualifiedname>soupsieve.css_parser.RE_CUSTOM</qualifiedname>
+        <initializer>=  re.compile(fr&apos;^{<ref refid="namespacesoupsieve_1_1css__parser_1a391ca33f4752a5026886dedea8c0b3e8" kindref="member">PAT_PSEUDO_CLASS_CUSTOM</ref>}$&apos;, re.X)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="179" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1ab9b476311a9cd8675729c8d3815b0b82" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.COMMA_COMBINATOR</definition>
+        <argsstring></argsstring>
+        <name>COMMA_COMBINATOR</name>
+        <qualifiedname>soupsieve.css_parser.COMMA_COMBINATOR</qualifiedname>
+        <initializer>=  &apos;,&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="183" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a69be560b6b7a4995691ae5b4c59442ed" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str soupsieve::css_parser.WS_COMBINATOR</definition>
+        <argsstring></argsstring>
+        <name>WS_COMBINATOR</name>
+        <qualifiedname>soupsieve.css_parser.WS_COMBINATOR</qualifiedname>
+        <initializer>=  &quot; &quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="185" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a61749468cbf2b130fc23352b310ae790" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int soupsieve::css_parser.FLG_PSEUDO</definition>
+        <argsstring></argsstring>
+        <name>FLG_PSEUDO</name>
+        <qualifiedname>soupsieve.css_parser.FLG_PSEUDO</qualifiedname>
+        <initializer>=  0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="188" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a25c9561cd6520290759f865f4dcb0e2b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int soupsieve::css_parser.FLG_NOT</definition>
+        <argsstring></argsstring>
+        <name>FLG_NOT</name>
+        <qualifiedname>soupsieve.css_parser.FLG_NOT</qualifiedname>
+        <initializer>=  0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="189" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1aeb0fc672da7e7ff57bf68a24cdf73620" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int soupsieve::css_parser.FLG_RELATIVE</definition>
+        <argsstring></argsstring>
+        <name>FLG_RELATIVE</name>
+        <qualifiedname>soupsieve.css_parser.FLG_RELATIVE</qualifiedname>
+        <initializer>=  0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="190" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a7e09c52d3c13bf5df069553ff3740adb" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int soupsieve::css_parser.FLG_DEFAULT</definition>
+        <argsstring></argsstring>
+        <name>FLG_DEFAULT</name>
+        <qualifiedname>soupsieve.css_parser.FLG_DEFAULT</qualifiedname>
+        <initializer>=  0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="191" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1ae1a5aed3b147fcba6773a6b31734c347" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int soupsieve::css_parser.FLG_HTML</definition>
+        <argsstring></argsstring>
+        <name>FLG_HTML</name>
+        <qualifiedname>soupsieve.css_parser.FLG_HTML</qualifiedname>
+        <initializer>=  0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="192" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a7d469b731171800e0e9ad7c4e339bb66" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int soupsieve::css_parser.FLG_INDETERMINATE</definition>
+        <argsstring></argsstring>
+        <name>FLG_INDETERMINATE</name>
+        <qualifiedname>soupsieve.css_parser.FLG_INDETERMINATE</qualifiedname>
+        <initializer>=  0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="193" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a4fd3c47ed860315356d0b59cbff03c0c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int soupsieve::css_parser.FLG_OPEN</definition>
+        <argsstring></argsstring>
+        <name>FLG_OPEN</name>
+        <qualifiedname>soupsieve.css_parser.FLG_OPEN</qualifiedname>
+        <initializer>=  0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="194" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1aa033614066f752a655f58c7fc64f3ee4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int soupsieve::css_parser.FLG_IN_RANGE</definition>
+        <argsstring></argsstring>
+        <name>FLG_IN_RANGE</name>
+        <qualifiedname>soupsieve.css_parser.FLG_IN_RANGE</qualifiedname>
+        <initializer>=  0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="195" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1ae5e526e7280f09dc00636e5d47edaaac" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int soupsieve::css_parser.FLG_OUT_OF_RANGE</definition>
+        <argsstring></argsstring>
+        <name>FLG_OUT_OF_RANGE</name>
+        <qualifiedname>soupsieve.css_parser.FLG_OUT_OF_RANGE</qualifiedname>
+        <initializer>=  0x100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="196" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a25556ee51c8584ecc8e05a4663b34313" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int soupsieve::css_parser.FLG_PLACEHOLDER_SHOWN</definition>
+        <argsstring></argsstring>
+        <name>FLG_PLACEHOLDER_SHOWN</name>
+        <qualifiedname>soupsieve.css_parser.FLG_PLACEHOLDER_SHOWN</qualifiedname>
+        <initializer>=  0x200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="197" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a96a0e132b529c71edc087e8b8b24b6df" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int soupsieve::css_parser.FLG_FORGIVE</definition>
+        <argsstring></argsstring>
+        <name>FLG_FORGIVE</name>
+        <qualifiedname>soupsieve.css_parser.FLG_FORGIVE</qualifiedname>
+        <initializer>=  0x400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="198" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a9bad01e927ebc919ea5ccb4ff0819546" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int soupsieve::css_parser._MAXCACHE</definition>
+        <argsstring></argsstring>
+        <name>_MAXCACHE</name>
+        <qualifiedname>soupsieve.css_parser._MAXCACHE</qualifiedname>
+        <initializer>=  500</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="201" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a975c58a482fc7bf2b9b8c603312c3771" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.CSS_LINK</definition>
+        <argsstring></argsstring>
+        <name>CSS_LINK</name>
+        <qualifiedname>soupsieve.css_parser.CSS_LINK</qualifiedname>
+        <initializer>=  <ref refid="classsoupsieve_1_1css__parser_1_1CSSParser" kindref="compound">CSSParser</ref>(
+    &apos;html|*:is(a, area)[href]&apos;
+).process_selectors(flags=<ref refid="namespacesoupsieve_1_1css__parser_1a61749468cbf2b130fc23352b310ae790" kindref="member">FLG_PSEUDO</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1ae1a5aed3b147fcba6773a6b31734c347" kindref="member">FLG_HTML</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="1159" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="1159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a2343cbffe6c0ac09be7e2809f1d9fa48" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.CSS_CHECKED</definition>
+        <argsstring></argsstring>
+        <name>CSS_CHECKED</name>
+        <qualifiedname>soupsieve.css_parser.CSS_CHECKED</qualifiedname>
+        <initializer>=  <ref refid="classsoupsieve_1_1css__parser_1_1CSSParser" kindref="compound">CSSParser</ref>(
+    
+).process_selectors(flags=<ref refid="namespacesoupsieve_1_1css__parser_1a61749468cbf2b130fc23352b310ae790" kindref="member">FLG_PSEUDO</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1ae1a5aed3b147fcba6773a6b31734c347" kindref="member">FLG_HTML</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="1163" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="1163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a0275835ff12b300233be1809fef8177d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.CSS_DEFAULT</definition>
+        <argsstring></argsstring>
+        <name>CSS_DEFAULT</name>
+        <qualifiedname>soupsieve.css_parser.CSS_DEFAULT</qualifiedname>
+        <initializer>=  <ref refid="classsoupsieve_1_1css__parser_1_1CSSParser" kindref="compound">CSSParser</ref>(
+    
+).process_selectors(flags=<ref refid="namespacesoupsieve_1_1css__parser_1a61749468cbf2b130fc23352b310ae790" kindref="member">FLG_PSEUDO</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1ae1a5aed3b147fcba6773a6b31734c347" kindref="member">FLG_HTML</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1a7e09c52d3c13bf5df069553ff3740adb" kindref="member">FLG_DEFAULT</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="1169" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="1169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a9c3c8eae5b92c72ec53d7437e7428587" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.CSS_INDETERMINATE</definition>
+        <argsstring></argsstring>
+        <name>CSS_INDETERMINATE</name>
+        <qualifiedname>soupsieve.css_parser.CSS_INDETERMINATE</qualifiedname>
+        <initializer>=  <ref refid="classsoupsieve_1_1css__parser_1_1CSSParser" kindref="compound">CSSParser</ref>(
+    
+).process_selectors(flags=<ref refid="namespacesoupsieve_1_1css__parser_1a61749468cbf2b130fc23352b310ae790" kindref="member">FLG_PSEUDO</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1ae1a5aed3b147fcba6773a6b31734c347" kindref="member">FLG_HTML</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1a7d469b731171800e0e9ad7c4e339bb66" kindref="member">FLG_INDETERMINATE</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="1181" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="1181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a245299749f141dea9c222606bc95c472" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.CSS_DISABLED</definition>
+        <argsstring></argsstring>
+        <name>CSS_DISABLED</name>
+        <qualifiedname>soupsieve.css_parser.CSS_DISABLED</qualifiedname>
+        <initializer>=  <ref refid="classsoupsieve_1_1css__parser_1_1CSSParser" kindref="compound">CSSParser</ref>(
+    
+).process_selectors(flags=<ref refid="namespacesoupsieve_1_1css__parser_1a61749468cbf2b130fc23352b310ae790" kindref="member">FLG_PSEUDO</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1ae1a5aed3b147fcba6773a6b31734c347" kindref="member">FLG_HTML</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="1195" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="1195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1af646363cdc50acfd1f1d05407be8135f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.CSS_ENABLED</definition>
+        <argsstring></argsstring>
+        <name>CSS_ENABLED</name>
+        <qualifiedname>soupsieve.css_parser.CSS_ENABLED</qualifiedname>
+        <initializer>=  <ref refid="classsoupsieve_1_1css__parser_1_1CSSParser" kindref="compound">CSSParser</ref>(
+    
+).process_selectors(flags=<ref refid="namespacesoupsieve_1_1css__parser_1a61749468cbf2b130fc23352b310ae790" kindref="member">FLG_PSEUDO</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1ae1a5aed3b147fcba6773a6b31734c347" kindref="member">FLG_HTML</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="1205" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="1205" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1abdc4b70c83ebeefa8a5e9f4880b7810f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.CSS_REQUIRED</definition>
+        <argsstring></argsstring>
+        <name>CSS_REQUIRED</name>
+        <qualifiedname>soupsieve.css_parser.CSS_REQUIRED</qualifiedname>
+        <initializer>=  <ref refid="classsoupsieve_1_1css__parser_1_1CSSParser" kindref="compound">CSSParser</ref>(
+    &apos;html|*:is(input, textarea, <ref refid="namespacesoupsieve_1ad1fcb723c783f72065e3f3f36ce69bf6" kindref="member">select</ref>)[required]&apos;
+).process_selectors(flags=<ref refid="namespacesoupsieve_1_1css__parser_1a61749468cbf2b130fc23352b310ae790" kindref="member">FLG_PSEUDO</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1ae1a5aed3b147fcba6773a6b31734c347" kindref="member">FLG_HTML</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="1211" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="1211" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a00d57a88db3830b836a77d8af9d8b7a2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.CSS_OPTIONAL</definition>
+        <argsstring></argsstring>
+        <name>CSS_OPTIONAL</name>
+        <qualifiedname>soupsieve.css_parser.CSS_OPTIONAL</qualifiedname>
+        <initializer>=  <ref refid="classsoupsieve_1_1css__parser_1_1CSSParser" kindref="compound">CSSParser</ref>(
+    &apos;html|*:is(input, textarea, <ref refid="namespacesoupsieve_1ad1fcb723c783f72065e3f3f36ce69bf6" kindref="member">select</ref>):not([required])&apos;
+).process_selectors(flags=<ref refid="namespacesoupsieve_1_1css__parser_1a61749468cbf2b130fc23352b310ae790" kindref="member">FLG_PSEUDO</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1ae1a5aed3b147fcba6773a6b31734c347" kindref="member">FLG_HTML</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="1215" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="1215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1ad35ed292d8b861b2b6bd9aff838c1fa6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.CSS_PLACEHOLDER_SHOWN</definition>
+        <argsstring></argsstring>
+        <name>CSS_PLACEHOLDER_SHOWN</name>
+        <qualifiedname>soupsieve.css_parser.CSS_PLACEHOLDER_SHOWN</qualifiedname>
+        <initializer>=  <ref refid="classsoupsieve_1_1css__parser_1_1CSSParser" kindref="compound">CSSParser</ref>(
+    
+).process_selectors(flags=<ref refid="namespacesoupsieve_1_1css__parser_1a61749468cbf2b130fc23352b310ae790" kindref="member">FLG_PSEUDO</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1ae1a5aed3b147fcba6773a6b31734c347" kindref="member">FLG_HTML</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1a25556ee51c8584ecc8e05a4663b34313" kindref="member">FLG_PLACEHOLDER_SHOWN</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="1219" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="1219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1ab3846740cd5ac5d77c34cc1ca1b568a1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.CSS_NTH_OF_S_DEFAULT</definition>
+        <argsstring></argsstring>
+        <name>CSS_NTH_OF_S_DEFAULT</name>
+        <qualifiedname>soupsieve.css_parser.CSS_NTH_OF_S_DEFAULT</qualifiedname>
+        <initializer>=  <ref refid="classsoupsieve_1_1css__parser_1_1CSSParser" kindref="compound">CSSParser</ref>(
+    &apos;*|*&apos;
+).process_selectors(flags=<ref refid="namespacesoupsieve_1_1css__parser_1a61749468cbf2b130fc23352b310ae790" kindref="member">FLG_PSEUDO</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="1236" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="1236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1abf33ed671b84d6612ca72c0b1b444f31" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.CSS_READ_WRITE</definition>
+        <argsstring></argsstring>
+        <name>CSS_READ_WRITE</name>
+        <qualifiedname>soupsieve.css_parser.CSS_READ_WRITE</qualifiedname>
+        <initializer>=  <ref refid="classsoupsieve_1_1css__parser_1_1CSSParser" kindref="compound">CSSParser</ref>(
+    
+).process_selectors(flags=<ref refid="namespacesoupsieve_1_1css__parser_1a61749468cbf2b130fc23352b310ae790" kindref="member">FLG_PSEUDO</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1ae1a5aed3b147fcba6773a6b31734c347" kindref="member">FLG_HTML</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="1240" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="1240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1abaf303396f975f759392fa3353f35410" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.CSS_READ_ONLY</definition>
+        <argsstring></argsstring>
+        <name>CSS_READ_ONLY</name>
+        <qualifiedname>soupsieve.css_parser.CSS_READ_ONLY</qualifiedname>
+        <initializer>=  <ref refid="classsoupsieve_1_1css__parser_1_1CSSParser" kindref="compound">CSSParser</ref>(
+    
+).process_selectors(flags=<ref refid="namespacesoupsieve_1_1css__parser_1a61749468cbf2b130fc23352b310ae790" kindref="member">FLG_PSEUDO</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1ae1a5aed3b147fcba6773a6b31734c347" kindref="member">FLG_HTML</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="1265" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="1265" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1ae6d40d7325be24751bf383cd24174c0c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.CSS_IN_RANGE</definition>
+        <argsstring></argsstring>
+        <name>CSS_IN_RANGE</name>
+        <qualifiedname>soupsieve.css_parser.CSS_IN_RANGE</qualifiedname>
+        <initializer>=  <ref refid="classsoupsieve_1_1css__parser_1_1CSSParser" kindref="compound">CSSParser</ref>(
+    
+).process_selectors(flags=<ref refid="namespacesoupsieve_1_1css__parser_1a61749468cbf2b130fc23352b310ae790" kindref="member">FLG_PSEUDO</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1aa033614066f752a655f58c7fc64f3ee4" kindref="member">FLG_IN_RANGE</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1ae1a5aed3b147fcba6773a6b31734c347" kindref="member">FLG_HTML</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="1271" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="1271" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1a9ae1ddfc568908e55b0f9bd316e70d57" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.CSS_OUT_OF_RANGE</definition>
+        <argsstring></argsstring>
+        <name>CSS_OUT_OF_RANGE</name>
+        <qualifiedname>soupsieve.css_parser.CSS_OUT_OF_RANGE</qualifiedname>
+        <initializer>=  <ref refid="classsoupsieve_1_1css__parser_1_1CSSParser" kindref="compound">CSSParser</ref>(
+    
+).process_selectors(flags=<ref refid="namespacesoupsieve_1_1css__parser_1a61749468cbf2b130fc23352b310ae790" kindref="member">FLG_PSEUDO</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1ae5e526e7280f09dc00636e5d47edaaac" kindref="member">FLG_OUT_OF_RANGE</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1ae1a5aed3b147fcba6773a6b31734c347" kindref="member">FLG_HTML</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="1288" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="1288" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1adf7489e2d3130ce750e60cb80f0bdf16" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.CSS_OPEN</definition>
+        <argsstring></argsstring>
+        <name>CSS_OPEN</name>
+        <qualifiedname>soupsieve.css_parser.CSS_OPEN</qualifiedname>
+        <initializer>=  <ref refid="classsoupsieve_1_1css__parser_1_1CSSParser" kindref="compound">CSSParser</ref>(
+    
+).process_selectors(flags=<ref refid="namespacesoupsieve_1_1css__parser_1a61749468cbf2b130fc23352b310ae790" kindref="member">FLG_PSEUDO</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1ae1a5aed3b147fcba6773a6b31734c347" kindref="member">FLG_HTML</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="1306" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="1306" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacesoupsieve_1_1css__parser_1aa738b64f4646f41bad758ba99b098389" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve::css_parser.CSS_MUTED</definition>
+        <argsstring></argsstring>
+        <name>CSS_MUTED</name>
+        <qualifiedname>soupsieve.css_parser.CSS_MUTED</qualifiedname>
+        <initializer>=  <ref refid="classsoupsieve_1_1css__parser_1_1CSSParser" kindref="compound">CSSParser</ref>(
+    
+).process_selectors(flags=<ref refid="namespacesoupsieve_1_1css__parser_1a61749468cbf2b130fc23352b310ae790" kindref="member">FLG_PSEUDO</ref> | <ref refid="namespacesoupsieve_1_1css__parser_1ae1a5aed3b147fcba6773a6b31734c347" kindref="member">FLG_HTML</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="1314" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="1314" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacesoupsieve_1_1css__parser_1a57d07d1f3b0178396c2e900103aa0850" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cm.SoupSieve</type>
+        <definition> cm.SoupSieve soupsieve.css_parser._cached_css_compile</definition>
+        <argsstring>(str pattern, ct.Namespaces|None namespaces, ct.CustomSelectors|None custom, int flags)</argsstring>
+        <name>_cached_css_compile</name>
+        <qualifiedname>soupsieve.css_parser._cached_css_compile</qualifiedname>
+        <param>
+          <type>str</type>
+          <declname>pattern</declname>
+        </param>
+        <param>
+          <type>ct.Namespaces|None</type>
+          <declname>namespaces</declname>
+        </param>
+        <param>
+          <type>ct.CustomSelectors|None</type>
+          <declname>custom</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Cached CSS compile.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="205" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="210" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacesoupsieve_1_1css__parser_1a3bacd42193859bd408df61cd5312079a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>None</type>
+        <definition> None soupsieve.css_parser._purge_cache</definition>
+        <argsstring>()</argsstring>
+        <name>_purge_cache</name>
+        <qualifiedname>soupsieve.css_parser._purge_cache</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Purge the cache.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="227" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="227" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacesoupsieve_1_1css__parser_1a85996da2da29999940db8075eebe304c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>dict[str, str|ct.SelectorList]</type>
+        <definition> dict[str, str | ct.SelectorList] soupsieve.css_parser.process_custom</definition>
+        <argsstring>(ct.CustomSelectors|None custom)</argsstring>
+        <name>process_custom</name>
+        <qualifiedname>soupsieve.css_parser.process_custom</qualifiedname>
+        <param>
+          <type>ct.CustomSelectors|None</type>
+          <declname>custom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Process custom.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="233" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="233" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacesoupsieve_1_1css__parser_1a3a5ce911583b87a68981ef88aebe1cec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>str</type>
+        <definition> str soupsieve.css_parser.css_unescape</definition>
+        <argsstring>(str content, bool string=False)</argsstring>
+        <name>css_unescape</name>
+        <qualifiedname>soupsieve.css_parser.css_unescape</qualifiedname>
+        <param>
+          <type>str</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>string</declname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Unescape CSS value.
+
+Strings allow for spanning the value on multiple strings by escaping a new line.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="248" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="248" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacesoupsieve_1_1css__parser_1ad348ba3047813ea88f16f221b48400ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>str</type>
+        <definition> str soupsieve.css_parser.escape</definition>
+        <argsstring>(str ident)</argsstring>
+        <name>escape</name>
+        <qualifiedname>soupsieve.css_parser.escape</qualifiedname>
+        <param>
+          <type>str</type>
+          <declname>ident</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Escape identifier.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="275" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="275" bodyend="302"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>CSS selector parser.</verbatim> </para>
+    </detaileddescription>
+    <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

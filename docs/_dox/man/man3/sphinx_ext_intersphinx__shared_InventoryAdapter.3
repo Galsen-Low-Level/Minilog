@@ -1,0 +1,77 @@
+.TH "sphinx.ext.intersphinx._shared.InventoryAdapter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.ext.intersphinx._shared.InventoryAdapter
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, \fBBuildEnvironment\fP \fBenv\fP)"
+.br
+.ti -1c
+.RI "dict[\fBInventoryURI\fP, \fBInventoryCacheEntry\fP] \fBcache\fP (self)"
+.br
+.ti -1c
+.RI "Inventory \fBmain_inventory\fP (self)"
+.br
+.ti -1c
+.RI "dict[\fBInventoryName\fP, Inventory] \fBnamed_inventory\fP (self)"
+.br
+.ti -1c
+.RI "None \fBclear\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBenv\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Inventory adapter for environment
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.ext\&.intersphinx\&._shared\&.InventoryAdapter\&.__init__ ( self, \fBBuildEnvironment\fP env)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " dict[\fBInventoryURI\fP, \fBInventoryCacheEntry\fP] sphinx\&.ext\&.intersphinx\&._shared\&.InventoryAdapter\&.cache ( self)"
+
+.PP
+.nf
+Intersphinx cache\&.
+
+- Key is the URI of the remote inventory\&.
+- Element one is the key given in the Sphinx :confval:`intersphinx_mapping`\&.
+- Element two is a time value for cache invalidation, an integer\&.
+- Element three is the loaded remote inventory of type :class:`!Inventory`\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.ext\&.intersphinx\&._shared\&.InventoryAdapter\&.clear ( self)"
+
+.SS " Inventory sphinx\&.ext\&.intersphinx\&._shared\&.InventoryAdapter\&.main_inventory ( self)"
+
+.SS " dict[\fBInventoryName\fP, Inventory] sphinx\&.ext\&.intersphinx\&._shared\&.InventoryAdapter\&.named_inventory ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.ext\&.intersphinx\&._shared\&.InventoryAdapter\&.env"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

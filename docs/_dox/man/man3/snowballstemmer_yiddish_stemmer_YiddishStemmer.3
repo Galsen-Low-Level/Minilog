@@ -1,0 +1,317 @@
+.TH "snowballstemmer.yiddish_stemmer.YiddishStemmer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+snowballstemmer.yiddish_stemmer.YiddishStemmer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP\&.
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBbra\fP"
+.br
+.ti -1c
+.RI "\fBket\fP"
+.br
+.ti -1c
+.RI "\fBcursor\fP"
+.br
+.ti -1c
+.RI "\fBI_p1\fP"
+.br
+.ti -1c
+.RI "\fBI_x\fP"
+.br
+.ti -1c
+.RI "\fBlimit_backward\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP
+.in +1c
+.ti -1c
+.RI "\fBcurrent\fP"
+.br
+.ti -1c
+.RI "\fBcursor\fP"
+.br
+.ti -1c
+.RI "\fBlimit\fP"
+.br
+.ti -1c
+.RI "\fBlimit_backward\fP"
+.br
+.ti -1c
+.RI "\fBbra\fP"
+.br
+.ti -1c
+.RI "\fBket\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBg_niked\fP = {u'\\u05B0', u'\\u05B4', u'\\u05B5', u'\\u05B6', u'\\u05B1', u'\\u05B7', u'\\u05B2', u'\\u05B8', u'\\u05B3', u'\\u05C2', u'\\u05C1', u'\\u05B9', u'\\u05BC', u'\\u05BB', u'\\u05BF'}"
+.br
+.ti -1c
+.RI "dict \fBg_vowel\fP = {u'\\u05D0', u'\\u05D5', u'\\u05D9', u'\\u05E2', u'\\u05F1', u'\\u05F2'}"
+.br
+.ti -1c
+.RI "dict \fBg_consonant\fP = {u'\\u05D1', u'\\u05D2', u'\\u05D3', u'\\u05D4', u'\\u05D6', u'\\u05D7', u'\\u05D8', u'\\u05DA', u'\\u05DB', u'\\u05DC', u'\\u05DD', u'\\u05DE', u'\\u05DF', u'\\u05E0', u'\\u05E1', u'\\u05E3', u'\\u05E4', u'\\u05E5', u'\\u05E6', u'\\u05E7', u'\\u05E8', u'\\u05E9', u'\\u05EA', u'\\u05F0'}"
+.br
+.ti -1c
+.RI "int \fBI_x\fP = 0"
+.br
+.ti -1c
+.RI "int \fBI_p1\fP = 0"
+.br
+.ti -1c
+.RI "list \fBa_0\fP"
+.br
+.ti -1c
+.RI "list \fBa_1\fP"
+.br
+.ti -1c
+.RI "list \fBa_2\fP"
+.br
+.ti -1c
+.RI "list \fBa_3\fP"
+.br
+.ti -1c
+.RI "list \fBa_4\fP"
+.br
+.ti -1c
+.RI "list \fBa_5\fP"
+.br
+.ti -1c
+.RI "list \fBa_6\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_stem\fP (self)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "\fBset_current\fP (self, value)"
+.br
+.ti -1c
+.RI "\fBget_current\fP (self)"
+.br
+.ti -1c
+.RI "\fBcopy_from\fP (self, other)"
+.br
+.ti -1c
+.RI "\fBin_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_in_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBin_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_in_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBout_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_out_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBout_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_out_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBeq_s\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBeq_s_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBfind_among\fP (self, v)"
+.br
+.ti -1c
+.RI "\fBfind_among_b\fP (self, v)"
+.br
+.ti -1c
+.RI "\fBreplace_s\fP (self, c_bra, c_ket, s)"
+.br
+.ti -1c
+.RI "\fBslice_check\fP (self)"
+.br
+.ti -1c
+.RI "\fBslice_from\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBslice_del\fP (self)"
+.br
+.ti -1c
+.RI "\fBinsert\fP (self, c_bra, c_ket, s)"
+.br
+.ti -1c
+.RI "\fBslice_to\fP (self)"
+.br
+.ti -1c
+.RI "\fBassign_to\fP (self)"
+.br
+.ti -1c
+.RI "\fBstemWord\fP (self, word)"
+.br
+.ti -1c
+.RI "\fBstemWords\fP (self, words)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This class implements the stemming algorithm defined by a snowball script\&.
+Generated from yiddish\&.sbl by Snowball 3\&.0\&.1 - https://snowballstem\&.org/
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "snowballstemmer\&.yiddish_stemmer\&.YiddishStemmer\&._stem ( self)\fC [protected]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "list snowballstemmer\&.yiddish_stemmer\&.YiddishStemmer\&.a_0\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"\\u05D5\\u05D5", \-1, 1),
+        Among(u"\\u05D5\\u05D9", \-1, 2),
+        Among(u"\\u05D9\\u05D9", \-1, 3),
+        Among(u"\\u05DA", \-1, 4),
+        Among(u"\\u05DD", \-1, 5),
+        Among(u"\\u05DF", \-1, 6),
+        Among(u"\\u05E3", \-1, 7),
+        Among(u"\\u05E5", \-1, 8)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.yiddish_stemmer\&.YiddishStemmer\&.a_1\fC [static]\fP"
+
+.SS "list snowballstemmer\&.yiddish_stemmer\&.YiddishStemmer\&.a_2\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"\\u05D3\\u05D6\\u05E9", \-1, \-1),
+        Among(u"\\u05E9\\u05D8\\u05E8", \-1, \-1),
+        Among(u"\\u05E9\\u05D8\\u05E9", \-1, \-1),
+        Among(u"\\u05E9\\u05E4\\u05E8", \-1, \-1)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.yiddish_stemmer\&.YiddishStemmer\&.a_3\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"\\u05E7\\u05DC\\u05D9\\u05D1", \-1, 9),
+        Among(u"\\u05E8\\u05D9\\u05D1", \-1, 10),
+        Among(u"\\u05D8\\u05E8\\u05D9\\u05D1", 1, 7),
+        Among(u"\\u05E9\\u05E8\\u05D9\\u05D1", 1, 15),
+        Among(u"\\u05D4\\u05F1\\u05D1", \-1, 23),
+        Among(u"\\u05E9\\u05F0\\u05D9\\u05D2", \-1, 12),
+        Among(u"\\u05D2\\u05D0\\u05E0\\u05D2", \-1, 1),
+        Among(u"\\u05D6\\u05D5\\u05E0\\u05D2", \-1, 18),
+        Among(u"\\u05E9\\u05DC\\u05D5\\u05E0\\u05D2", \-1, 21),
+        Among(u"\\u05E6\\u05F0\\u05D5\\u05E0\\u05D2", \-1, 20),
+        Among(u"\\u05D1\\u05F1\\u05D2", \-1, 22),
+        Among(u"\\u05D1\\u05D5\\u05E0\\u05D3", \-1, 16),
+        Among(u"\\u05F0\\u05D9\\u05D6", \-1, 6),
+        Among(u"\\u05D1\\u05D9\\u05D8", \-1, 4),
+        Among(u"\\u05DC\\u05D9\\u05D8", \-1, 8),
+        Among(u"\\u05DE\\u05D9\\u05D8", \-1, 3),
+        Among(u"\\u05E9\\u05E0\\u05D9\\u05D8", \-1, 14),
+        Among(u"\\u05E0\\u05D5\\u05DE", \-1, 2),
+        Among(u"\\u05E9\\u05D8\\u05D0\\u05E0", \-1, 25),
+        Among(u"\\u05D1\\u05D9\\u05E1", \-1, 5),
+        Among(u"\\u05E9\\u05DE\\u05D9\\u05E1", \-1, 13),
+        Among(u"\\u05E8\\u05D9\\u05E1", \-1, 11),
+        Among(u"\\u05D8\\u05E8\\u05D5\\u05E0\\u05E7", \-1, 19),
+        Among(u"\\u05E4\\u05D0\\u05E8\\u05DC\\u05F1\\u05E8", \-1, 24),
+        Among(u"\\u05E9\\u05F0\\u05F1\\u05E8", \-1, 26),
+        Among(u"\\u05F0\\u05D5\\u05D8\\u05E9", \-1, 17)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.yiddish_stemmer\&.YiddishStemmer\&.a_4\fC [static]\fP"
+
+.SS "list snowballstemmer\&.yiddish_stemmer\&.YiddishStemmer\&.a_5\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"\\u05D5\\u05E0\\u05D2", \-1, 1),
+        Among(u"\\u05E9\\u05D0\\u05E4\\u05D8", \-1, 1),
+        Among(u"\\u05D4\\u05F2\\u05D8", \-1, 1),
+        Among(u"\\u05E7\\u05F2\\u05D8", \-1, 1),
+        Among(u"\\u05D9\\u05E7\\u05F2\\u05D8", 3, 1),
+        Among(u"\\u05DC", \-1, 2)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.yiddish_stemmer\&.YiddishStemmer\&.a_6\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"\\u05D9\\u05D2", \-1, 1),
+        Among(u"\\u05D9\\u05E7", \-1, 1),
+        Among(u"\\u05D3\\u05D9\\u05E7", 1, 1),
+        Among(u"\\u05E0\\u05D3\\u05D9\\u05E7", 2, 1),
+        Among(u"\\u05E2\\u05E0\\u05D3\\u05D9\\u05E7", 3, 1),
+        Among(u"\\u05D1\\u05DC\\u05D9\\u05E7", 1, \-1),
+        Among(u"\\u05D2\\u05DC\\u05D9\\u05E7", 1, \-1),
+        Among(u"\\u05E0\\u05D9\\u05E7", 1, 1),
+        Among(u"\\u05D9\\u05E9", \-1, 1)
+    ]
+.fi
+
+.SS "snowballstemmer\&.yiddish_stemmer\&.YiddishStemmer\&.bra"
+
+.SS "snowballstemmer\&.yiddish_stemmer\&.YiddishStemmer\&.cursor"
+
+.SS "dict snowballstemmer\&.yiddish_stemmer\&.YiddishStemmer\&.g_consonant = {u'\\u05D1', u'\\u05D2', u'\\u05D3', u'\\u05D4', u'\\u05D6', u'\\u05D7', u'\\u05D8', u'\\u05DA', u'\\u05DB', u'\\u05DC', u'\\u05DD', u'\\u05DE', u'\\u05DF', u'\\u05E0', u'\\u05E1', u'\\u05E3', u'\\u05E4', u'\\u05E5', u'\\u05E6', u'\\u05E7', u'\\u05E8', u'\\u05E9', u'\\u05EA', u'\\u05F0'}\fC [static]\fP"
+
+.SS "dict snowballstemmer\&.yiddish_stemmer\&.YiddishStemmer\&.g_niked = {u'\\u05B0', u'\\u05B4', u'\\u05B5', u'\\u05B6', u'\\u05B1', u'\\u05B7', u'\\u05B2', u'\\u05B8', u'\\u05B3', u'\\u05C2', u'\\u05C1', u'\\u05B9', u'\\u05BC', u'\\u05BB', u'\\u05BF'}\fC [static]\fP"
+
+.SS "dict snowballstemmer\&.yiddish_stemmer\&.YiddishStemmer\&.g_vowel = {u'\\u05D0', u'\\u05D5', u'\\u05D9', u'\\u05E2', u'\\u05F1', u'\\u05F2'}\fC [static]\fP"
+
+.SS "int snowballstemmer\&.yiddish_stemmer\&.YiddishStemmer\&.I_p1 = 0\fC [static]\fP"
+
+.SS "snowballstemmer\&.yiddish_stemmer\&.YiddishStemmer\&.I_p1"
+
+.SS "int snowballstemmer\&.yiddish_stemmer\&.YiddishStemmer\&.I_x = 0\fC [static]\fP"
+
+.SS "snowballstemmer\&.yiddish_stemmer\&.YiddishStemmer\&.I_x"
+
+.SS "snowballstemmer\&.yiddish_stemmer\&.YiddishStemmer\&.ket"
+
+.SS "snowballstemmer\&.yiddish_stemmer\&.YiddishStemmer\&.limit_backward"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

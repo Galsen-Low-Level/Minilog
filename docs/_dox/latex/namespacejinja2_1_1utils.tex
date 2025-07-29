@@ -1,0 +1,363 @@
+\doxysection{jinja2.\+utils Namespace Reference}
+\hypertarget{namespacejinja2_1_1utils}{}\label{namespacejinja2_1_1utils}\index{jinja2.utils@{jinja2.utils}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classjinja2_1_1utils_1_1__MissingType}{\+\_\+\+Missing\+Type}}
+\item 
+class \mbox{\hyperlink{classjinja2_1_1utils_1_1__PassArg}{\+\_\+\+Pass\+Arg}}
+\item 
+class \mbox{\hyperlink{classjinja2_1_1utils_1_1Cycler}{Cycler}}
+\item 
+class \mbox{\hyperlink{classjinja2_1_1utils_1_1Joiner}{Joiner}}
+\item 
+class \mbox{\hyperlink{classjinja2_1_1utils_1_1LRUCache}{LRUCache}}
+\item 
+class \mbox{\hyperlink{classjinja2_1_1utils_1_1Namespace}{Namespace}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacejinja2_1_1utils_aabc2ccdfdde56415ed81c13ee6b184e3}{F}} \mbox{\hyperlink{namespacejinja2_1_1utils_a49e137cc8bcc7c398790c85ebc9746d3}{pass\+\_\+context}} (\mbox{\hyperlink{namespacejinja2_1_1utils_aabc2ccdfdde56415ed81c13ee6b184e3}{F}} f)
+\item 
+\mbox{\hyperlink{namespacejinja2_1_1utils_aabc2ccdfdde56415ed81c13ee6b184e3}{F}} \mbox{\hyperlink{namespacejinja2_1_1utils_a0cac7260c6d07a9cd7997444fecb51ad}{pass\+\_\+eval\+\_\+context}} (\mbox{\hyperlink{namespacejinja2_1_1utils_aabc2ccdfdde56415ed81c13ee6b184e3}{F}} f)
+\item 
+\mbox{\hyperlink{namespacejinja2_1_1utils_aabc2ccdfdde56415ed81c13ee6b184e3}{F}} \mbox{\hyperlink{namespacejinja2_1_1utils_a140263ac18ca1f8ed473a553aacb9b2d}{pass\+\_\+environment}} (\mbox{\hyperlink{namespacejinja2_1_1utils_aabc2ccdfdde56415ed81c13ee6b184e3}{F}} f)
+\item 
+\mbox{\hyperlink{namespacejinja2_1_1utils_aabc2ccdfdde56415ed81c13ee6b184e3}{F}} \mbox{\hyperlink{namespacejinja2_1_1utils_a57726a619490c77ba083abc15c43af8a}{internalcode}} (\mbox{\hyperlink{namespacejinja2_1_1utils_aabc2ccdfdde56415ed81c13ee6b184e3}{F}} f)
+\item 
+bool \mbox{\hyperlink{namespacejinja2_1_1utils_a047656bbb31812faf358435f55604731}{is\+\_\+undefined}} (t.\+Any obj)
+\item 
+None \mbox{\hyperlink{namespacejinja2_1_1utils_a9138a7ce9b5625f6fee63896f03ad0d6}{consume}} (t.\+Iterable\mbox{[}t.\+Any\mbox{]} iterable)
+\item 
+None \mbox{\hyperlink{namespacejinja2_1_1utils_a41bc83b2810c0b23d6e5303c9dfa90d1}{clear\+\_\+caches}} ()
+\item 
+t.\+Any \mbox{\hyperlink{namespacejinja2_1_1utils_aab92dffe88edb3857ada241074e905e8}{import\+\_\+string}} (str import\+\_\+name, bool silent=False)
+\item 
+t.\+Optional\mbox{[}t.\+IO\mbox{[}t.\+Any\mbox{]}\mbox{]} \mbox{\hyperlink{namespacejinja2_1_1utils_ab677400698e367de0109fad5d740460b}{open\+\_\+if\+\_\+exists}} (str filename, str mode="{}rb"{})
+\item 
+str \mbox{\hyperlink{namespacejinja2_1_1utils_a8edb666292c59b36941fa144dbe417a5}{object\+\_\+type\+\_\+repr}} (t.\+Any obj)
+\item 
+str \mbox{\hyperlink{namespacejinja2_1_1utils_ad718e9c79906edb3a13a9b4ddefcb6ae}{pformat}} (t.\+Any obj)
+\item 
+str \mbox{\hyperlink{namespacejinja2_1_1utils_a080ecd053856d103759c69f5a3b2e3d2}{urlize}} (str text, t.\+Optional\mbox{[}int\mbox{]} trim\+\_\+url\+\_\+limit=None, t.\+Optional\mbox{[}str\mbox{]} rel=None, t.\+Optional\mbox{[}str\mbox{]} target=None, t.\+Optional\mbox{[}t.\+Iterable\mbox{[}str\mbox{]}\mbox{]} extra\+\_\+schemes=None)
+\item 
+str \mbox{\hyperlink{namespacejinja2_1_1utils_a0ca6fdf6a48c0c779b4e7230c14d4093}{generate\+\_\+lorem\+\_\+ipsum}} (int n=5, bool html=True, int min=20, int max=100)
+\item 
+str \mbox{\hyperlink{namespacejinja2_1_1utils_a19d02197b3329bf612a13e28851fd123}{url\+\_\+quote}} (t.\+Any obj, str charset="{}utf-\/8"{}, bool for\+\_\+qs=False)
+\item 
+t.\+Callable\mbox{[}\mbox{[}t.\+Optional\mbox{[}str\mbox{]}\mbox{]}, bool\mbox{]} \mbox{\hyperlink{namespacejinja2_1_1utils_a9f95ce45ec0b1aef76565b4fb322fdef}{select\+\_\+autoescape}} (t.\+Collection\mbox{[}str\mbox{]} enabled\+\_\+extensions=("{}html"{}, "{}htm"{}, "{}xml"{}), t.\+Collection\mbox{[}str\mbox{]} disabled\+\_\+extensions=(), bool default\+\_\+for\+\_\+string=True, bool default=False)
+\item 
+\mbox{\hyperlink{classmarkupsafe_1_1Markup}{markupsafe.\+Markup}} \mbox{\hyperlink{namespacejinja2_1_1utils_ab9d4595960c42377668f0a001f98d6fe}{htmlsafe\+\_\+json\+\_\+dumps}} (t.\+Any obj, t.\+Optional\mbox{[}t.\+Callable\mbox{[}..., str\mbox{]}\mbox{]} dumps=None, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}t.\+Any kwargs)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacejinja2_1_1utils_aabc2ccdfdde56415ed81c13ee6b184e3}{F}} = t.\+Type\+Var("{}F"{}, bound=t.\+Callable\mbox{[}..., t.\+Any\mbox{]})
+\item 
+str \mbox{\hyperlink{namespacejinja2_1_1utils_a4afd64c4729d98a624c6d5e217654894}{concat}} = "{}"{}.join
+\item 
+\mbox{\hyperlink{namespacejinja2_1_1utils_a8e739886bc6801853e25deb0424f6a5e}{\+\_\+http\+\_\+re}}
+\item 
+\mbox{\hyperlink{namespacejinja2_1_1utils_a5dc9b3b007db23ea86216dedf14decf9}{\+\_\+email\+\_\+re}} = re.\+compile(r"{}\texorpdfstring{$^\wedge$}{\string^}\textbackslash{}S+@\textbackslash{}w\mbox{[}\textbackslash{}w.-\/\mbox{]}\texorpdfstring{$\ast$}{*}\textbackslash{}.\textbackslash{}w+\$"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacejinja2_1_1utils_a41bc83b2810c0b23d6e5303c9dfa90d1}\label{namespacejinja2_1_1utils_a41bc83b2810c0b23d6e5303c9dfa90d1} 
+\index{jinja2.utils@{jinja2.utils}!clear\_caches@{clear\_caches}}
+\index{clear\_caches@{clear\_caches}!jinja2.utils@{jinja2.utils}}
+\doxysubsubsection{\texorpdfstring{clear\_caches()}{clear\_caches()}}
+{\footnotesize\ttfamily  None jinja2.\+utils.\+clear\+\_\+caches (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Jinja keeps internal caches for environments and lexers.  These are
+used so that Jinja doesn't have to recreate environments and lexers all
+the time.  Normally you don't have to care about that but if you are
+measuring memory consumption you may want to clean the caches.
+\end{DoxyVerb}
+ \Hypertarget{namespacejinja2_1_1utils_a9138a7ce9b5625f6fee63896f03ad0d6}\label{namespacejinja2_1_1utils_a9138a7ce9b5625f6fee63896f03ad0d6} 
+\index{jinja2.utils@{jinja2.utils}!consume@{consume}}
+\index{consume@{consume}!jinja2.utils@{jinja2.utils}}
+\doxysubsubsection{\texorpdfstring{consume()}{consume()}}
+{\footnotesize\ttfamily  None jinja2.\+utils.\+consume (\begin{DoxyParamCaption}\item[{t.\+Iterable\mbox{[}t.\+Any\mbox{]}}]{iterable }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Consumes an iterable without doing anything with it.\end{DoxyVerb}
+ \Hypertarget{namespacejinja2_1_1utils_a0ca6fdf6a48c0c779b4e7230c14d4093}\label{namespacejinja2_1_1utils_a0ca6fdf6a48c0c779b4e7230c14d4093} 
+\index{jinja2.utils@{jinja2.utils}!generate\_lorem\_ipsum@{generate\_lorem\_ipsum}}
+\index{generate\_lorem\_ipsum@{generate\_lorem\_ipsum}!jinja2.utils@{jinja2.utils}}
+\doxysubsubsection{\texorpdfstring{generate\_lorem\_ipsum()}{generate\_lorem\_ipsum()}}
+{\footnotesize\ttfamily  str jinja2.\+utils.\+generate\+\_\+lorem\+\_\+ipsum (\begin{DoxyParamCaption}\item[{int }]{n = {\ttfamily 5},  }\item[{bool }]{html = {\ttfamily True},  }\item[{int }]{min = {\ttfamily 20},  }\item[{int }]{max = {\ttfamily 100} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate some lorem ipsum for the template.\end{DoxyVerb}
+ \Hypertarget{namespacejinja2_1_1utils_ab9d4595960c42377668f0a001f98d6fe}\label{namespacejinja2_1_1utils_ab9d4595960c42377668f0a001f98d6fe} 
+\index{jinja2.utils@{jinja2.utils}!htmlsafe\_json\_dumps@{htmlsafe\_json\_dumps}}
+\index{htmlsafe\_json\_dumps@{htmlsafe\_json\_dumps}!jinja2.utils@{jinja2.utils}}
+\doxysubsubsection{\texorpdfstring{htmlsafe\_json\_dumps()}{htmlsafe\_json\_dumps()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classmarkupsafe_1_1Markup}{markupsafe.\+Markup}} jinja2.\+utils.\+htmlsafe\+\_\+json\+\_\+dumps (\begin{DoxyParamCaption}\item[{t.\+Any}]{obj,  }\item[{t.\+Optional\mbox{[}t.\+Callable\mbox{[}..., str\mbox{]}\mbox{]} }]{dumps = {\ttfamily None},  }\item[{\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}t.\+Any }]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Serialize an object to a string of JSON with :func:`json.dumps`,
+then replace HTML-unsafe characters with Unicode escapes and mark
+the result safe with :class:`~markupsafe.Markup`.
+
+This is available in templates as the ``|tojson`` filter.
+
+The following characters are escaped: ``<``, ``>``, ``&``, ``'``.
+
+The returned string is safe to render in HTML documents and
+``<script>`` tags. The exception is in HTML attributes that are
+double quoted; either use single quotes or the ``|forceescape``
+filter.
+
+:param obj: The object to serialize to JSON.
+:param dumps: The ``dumps`` function to use. Defaults to
+    ``env.policies["json.dumps_function"]``, which defaults to
+    :func:`json.dumps`.
+:param kwargs: Extra arguments to pass to ``dumps``. Merged onto
+    ``env.policies["json.dumps_kwargs"]``.
+
+.. versionchanged:: 3.0
+    The ``dumper`` parameter is renamed to ``dumps``.
+
+.. versionadded:: 2.9
+\end{DoxyVerb}
+ \Hypertarget{namespacejinja2_1_1utils_aab92dffe88edb3857ada241074e905e8}\label{namespacejinja2_1_1utils_aab92dffe88edb3857ada241074e905e8} 
+\index{jinja2.utils@{jinja2.utils}!import\_string@{import\_string}}
+\index{import\_string@{import\_string}!jinja2.utils@{jinja2.utils}}
+\doxysubsubsection{\texorpdfstring{import\_string()}{import\_string()}}
+{\footnotesize\ttfamily  t.\+Any jinja2.\+utils.\+import\+\_\+string (\begin{DoxyParamCaption}\item[{str}]{import\+\_\+name,  }\item[{bool }]{silent = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Imports an object based on a string.  This is useful if you want to
+use import paths as endpoints or something similar.  An import path can
+be specified either in dotted notation (``xml.sax.saxutils.escape``)
+or with a colon as object delimiter (``xml.sax.saxutils:escape``).
+
+If the `silent` is True the return value will be `None` if the import
+fails.
+
+:return: imported object
+\end{DoxyVerb}
+ \Hypertarget{namespacejinja2_1_1utils_a57726a619490c77ba083abc15c43af8a}\label{namespacejinja2_1_1utils_a57726a619490c77ba083abc15c43af8a} 
+\index{jinja2.utils@{jinja2.utils}!internalcode@{internalcode}}
+\index{internalcode@{internalcode}!jinja2.utils@{jinja2.utils}}
+\doxysubsubsection{\texorpdfstring{internalcode()}{internalcode()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{namespacejinja2_1_1utils_aabc2ccdfdde56415ed81c13ee6b184e3}{F}} jinja2.\+utils.\+internalcode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacejinja2_1_1utils_aabc2ccdfdde56415ed81c13ee6b184e3}{F}}}]{f }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Marks the function as internally used\end{DoxyVerb}
+ \Hypertarget{namespacejinja2_1_1utils_a047656bbb31812faf358435f55604731}\label{namespacejinja2_1_1utils_a047656bbb31812faf358435f55604731} 
+\index{jinja2.utils@{jinja2.utils}!is\_undefined@{is\_undefined}}
+\index{is\_undefined@{is\_undefined}!jinja2.utils@{jinja2.utils}}
+\doxysubsubsection{\texorpdfstring{is\_undefined()}{is\_undefined()}}
+{\footnotesize\ttfamily  bool jinja2.\+utils.\+is\+\_\+undefined (\begin{DoxyParamCaption}\item[{t.\+Any}]{obj }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if the object passed is undefined.  This does nothing more than
+performing an instance check against :class:`Undefined` but looks nicer.
+This can be used for custom filters or tests that want to react to
+undefined variables.  For example a custom default filter can look like
+this::
+
+    def default(var, default=''):
+        if is_undefined(var):
+            return default
+        return var
+\end{DoxyVerb}
+ \Hypertarget{namespacejinja2_1_1utils_a8edb666292c59b36941fa144dbe417a5}\label{namespacejinja2_1_1utils_a8edb666292c59b36941fa144dbe417a5} 
+\index{jinja2.utils@{jinja2.utils}!object\_type\_repr@{object\_type\_repr}}
+\index{object\_type\_repr@{object\_type\_repr}!jinja2.utils@{jinja2.utils}}
+\doxysubsubsection{\texorpdfstring{object\_type\_repr()}{object\_type\_repr()}}
+{\footnotesize\ttfamily  str jinja2.\+utils.\+object\+\_\+type\+\_\+repr (\begin{DoxyParamCaption}\item[{t.\+Any}]{obj }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the name of the object's type.  For some recognized
+singletons the name of the object is returned instead. (For
+example for `None` and `Ellipsis`).
+\end{DoxyVerb}
+ \Hypertarget{namespacejinja2_1_1utils_ab677400698e367de0109fad5d740460b}\label{namespacejinja2_1_1utils_ab677400698e367de0109fad5d740460b} 
+\index{jinja2.utils@{jinja2.utils}!open\_if\_exists@{open\_if\_exists}}
+\index{open\_if\_exists@{open\_if\_exists}!jinja2.utils@{jinja2.utils}}
+\doxysubsubsection{\texorpdfstring{open\_if\_exists()}{open\_if\_exists()}}
+{\footnotesize\ttfamily  t.\+Optional\mbox{[}t.\+IO\mbox{[}t.\+Any\mbox{]}\mbox{]} jinja2.\+utils.\+open\+\_\+if\+\_\+exists (\begin{DoxyParamCaption}\item[{str}]{filename,  }\item[{str }]{mode = {\ttfamily "{}rb"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a file descriptor for the filename if that file exists,
+otherwise ``None``.
+\end{DoxyVerb}
+ \Hypertarget{namespacejinja2_1_1utils_a49e137cc8bcc7c398790c85ebc9746d3}\label{namespacejinja2_1_1utils_a49e137cc8bcc7c398790c85ebc9746d3} 
+\index{jinja2.utils@{jinja2.utils}!pass\_context@{pass\_context}}
+\index{pass\_context@{pass\_context}!jinja2.utils@{jinja2.utils}}
+\doxysubsubsection{\texorpdfstring{pass\_context()}{pass\_context()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{namespacejinja2_1_1utils_aabc2ccdfdde56415ed81c13ee6b184e3}{F}} jinja2.\+utils.\+pass\+\_\+context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacejinja2_1_1utils_aabc2ccdfdde56415ed81c13ee6b184e3}{F}}}]{f }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Pass the :class:`~jinja2.runtime.Context` as the first argument
+to the decorated function when called while rendering a template.
+
+Can be used on functions, filters, and tests.
+
+If only ``Context.eval_context`` is needed, use
+:func:`pass_eval_context`. If only ``Context.environment`` is
+needed, use :func:`pass_environment`.
+
+.. versionadded:: 3.0.0
+    Replaces ``contextfunction`` and ``contextfilter``.
+\end{DoxyVerb}
+ \Hypertarget{namespacejinja2_1_1utils_a140263ac18ca1f8ed473a553aacb9b2d}\label{namespacejinja2_1_1utils_a140263ac18ca1f8ed473a553aacb9b2d} 
+\index{jinja2.utils@{jinja2.utils}!pass\_environment@{pass\_environment}}
+\index{pass\_environment@{pass\_environment}!jinja2.utils@{jinja2.utils}}
+\doxysubsubsection{\texorpdfstring{pass\_environment()}{pass\_environment()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{namespacejinja2_1_1utils_aabc2ccdfdde56415ed81c13ee6b184e3}{F}} jinja2.\+utils.\+pass\+\_\+environment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacejinja2_1_1utils_aabc2ccdfdde56415ed81c13ee6b184e3}{F}}}]{f }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Pass the :class:`~jinja2.Environment` as the first argument to
+the decorated function when called while rendering a template.
+
+Can be used on functions, filters, and tests.
+
+.. versionadded:: 3.0.0
+    Replaces ``environmentfunction`` and ``environmentfilter``.
+\end{DoxyVerb}
+ \Hypertarget{namespacejinja2_1_1utils_a0cac7260c6d07a9cd7997444fecb51ad}\label{namespacejinja2_1_1utils_a0cac7260c6d07a9cd7997444fecb51ad} 
+\index{jinja2.utils@{jinja2.utils}!pass\_eval\_context@{pass\_eval\_context}}
+\index{pass\_eval\_context@{pass\_eval\_context}!jinja2.utils@{jinja2.utils}}
+\doxysubsubsection{\texorpdfstring{pass\_eval\_context()}{pass\_eval\_context()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{namespacejinja2_1_1utils_aabc2ccdfdde56415ed81c13ee6b184e3}{F}} jinja2.\+utils.\+pass\+\_\+eval\+\_\+context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacejinja2_1_1utils_aabc2ccdfdde56415ed81c13ee6b184e3}{F}}}]{f }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Pass the :class:`~jinja2.nodes.EvalContext` as the first argument
+to the decorated function when called while rendering a template.
+See :ref:`eval-context`.
+
+Can be used on functions, filters, and tests.
+
+If only ``EvalContext.environment`` is needed, use
+:func:`pass_environment`.
+
+.. versionadded:: 3.0.0
+    Replaces ``evalcontextfunction`` and ``evalcontextfilter``.
+\end{DoxyVerb}
+ \Hypertarget{namespacejinja2_1_1utils_ad718e9c79906edb3a13a9b4ddefcb6ae}\label{namespacejinja2_1_1utils_ad718e9c79906edb3a13a9b4ddefcb6ae} 
+\index{jinja2.utils@{jinja2.utils}!pformat@{pformat}}
+\index{pformat@{pformat}!jinja2.utils@{jinja2.utils}}
+\doxysubsubsection{\texorpdfstring{pformat()}{pformat()}}
+{\footnotesize\ttfamily  str jinja2.\+utils.\+pformat (\begin{DoxyParamCaption}\item[{t.\+Any}]{obj }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Format an object using :func:`pprint.pformat`.\end{DoxyVerb}
+ \Hypertarget{namespacejinja2_1_1utils_a9f95ce45ec0b1aef76565b4fb322fdef}\label{namespacejinja2_1_1utils_a9f95ce45ec0b1aef76565b4fb322fdef} 
+\index{jinja2.utils@{jinja2.utils}!select\_autoescape@{select\_autoescape}}
+\index{select\_autoescape@{select\_autoescape}!jinja2.utils@{jinja2.utils}}
+\doxysubsubsection{\texorpdfstring{select\_autoescape()}{select\_autoescape()}}
+{\footnotesize\ttfamily  t.\+Callable\mbox{[}\mbox{[}t.\+Optional\mbox{[}str\mbox{]}\mbox{]}, bool\mbox{]} jinja2.\+utils.\+select\+\_\+autoescape (\begin{DoxyParamCaption}\item[{t.\+Collection\mbox{[}str\mbox{]} }]{enabled\+\_\+extensions = {\ttfamily ("{}html"{},~"{}htm"{},~"{}xml"{})},  }\item[{t.\+Collection\mbox{[}str\mbox{]} }]{disabled\+\_\+extensions = {\ttfamily ()},  }\item[{bool }]{default\+\_\+for\+\_\+string = {\ttfamily True},  }\item[{bool }]{default = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Intelligently sets the initial value of autoescaping based on the
+filename of the template.  This is the recommended way to configure
+autoescaping if you do not want to write a custom function yourself.
+
+If you want to enable it for all templates created from strings or
+for all templates with `.html` and `.xml` extensions::
+
+    from jinja2 import Environment, select_autoescape
+    env = Environment(autoescape=select_autoescape(
+        enabled_extensions=('html', 'xml'),
+        default_for_string=True,
+    ))
+
+Example configuration to turn it on at all times except if the template
+ends with `.txt`::
+
+    from jinja2 import Environment, select_autoescape
+    env = Environment(autoescape=select_autoescape(
+        disabled_extensions=('txt',),
+        default_for_string=True,
+        default=True,
+    ))
+
+The `enabled_extensions` is an iterable of all the extensions that
+autoescaping should be enabled for.  Likewise `disabled_extensions` is
+a list of all templates it should be disabled for.  If a template is
+loaded from a string then the default from `default_for_string` is used.
+If nothing matches then the initial value of autoescaping is set to the
+value of `default`.
+
+For security reasons this function operates case insensitive.
+
+.. versionadded:: 2.9
+\end{DoxyVerb}
+ \Hypertarget{namespacejinja2_1_1utils_a19d02197b3329bf612a13e28851fd123}\label{namespacejinja2_1_1utils_a19d02197b3329bf612a13e28851fd123} 
+\index{jinja2.utils@{jinja2.utils}!url\_quote@{url\_quote}}
+\index{url\_quote@{url\_quote}!jinja2.utils@{jinja2.utils}}
+\doxysubsubsection{\texorpdfstring{url\_quote()}{url\_quote()}}
+{\footnotesize\ttfamily  str jinja2.\+utils.\+url\+\_\+quote (\begin{DoxyParamCaption}\item[{t.\+Any}]{obj,  }\item[{str }]{charset = {\ttfamily "{}utf-\/8"{}},  }\item[{bool }]{for\+\_\+qs = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Quote a string for use in a URL using the given charset.
+
+:param obj: String or bytes to quote. Other types are converted to
+    string then encoded to bytes using the given charset.
+:param charset: Encode text to bytes using this charset.
+:param for_qs: Quote "/" and use "+" for spaces.
+\end{DoxyVerb}
+ \Hypertarget{namespacejinja2_1_1utils_a080ecd053856d103759c69f5a3b2e3d2}\label{namespacejinja2_1_1utils_a080ecd053856d103759c69f5a3b2e3d2} 
+\index{jinja2.utils@{jinja2.utils}!urlize@{urlize}}
+\index{urlize@{urlize}!jinja2.utils@{jinja2.utils}}
+\doxysubsubsection{\texorpdfstring{urlize()}{urlize()}}
+{\footnotesize\ttfamily  str jinja2.\+utils.\+urlize (\begin{DoxyParamCaption}\item[{str}]{text,  }\item[{t.\+Optional\mbox{[}int\mbox{]} }]{trim\+\_\+url\+\_\+limit = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{rel = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{target = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}t.\+Iterable\mbox{[}str\mbox{]}\mbox{]} }]{extra\+\_\+schemes = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert URLs in text into clickable links.
+
+This may not recognize links in some situations. Usually, a more
+comprehensive formatter, such as a Markdown library, is a better
+choice.
+
+Works on ``http://``, ``https://``, ``www.``, ``mailto:``, and email
+addresses. Links with trailing punctuation (periods, commas, closing
+parentheses) and leading punctuation (opening parentheses) are
+recognized excluding the punctuation. Email addresses that include
+header fields are not recognized (for example,
+``mailto:address@example.com?cc=copy@example.com``).
+
+:param text: Original text containing URLs to link.
+:param trim_url_limit: Shorten displayed URL values to this length.
+:param target: Add the ``target`` attribute to links.
+:param rel: Add the ``rel`` attribute to links.
+:param extra_schemes: Recognize URLs that start with these schemes
+    in addition to the default behavior.
+
+.. versionchanged:: 3.0
+    The ``extra_schemes`` parameter was added.
+
+.. versionchanged:: 3.0
+    Generate ``https://`` links for URLs without a scheme.
+
+.. versionchanged:: 3.0
+    The parsing rules were updated. Recognize email addresses with
+    or without the ``mailto:`` scheme. Validate IP addresses. Ignore
+    parentheses and brackets in more cases.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacejinja2_1_1utils_a5dc9b3b007db23ea86216dedf14decf9}\label{namespacejinja2_1_1utils_a5dc9b3b007db23ea86216dedf14decf9} 
+\index{jinja2.utils@{jinja2.utils}!\_email\_re@{\_email\_re}}
+\index{\_email\_re@{\_email\_re}!jinja2.utils@{jinja2.utils}}
+\doxysubsubsection{\texorpdfstring{\_email\_re}{\_email\_re}}
+{\footnotesize\ttfamily jinja2.\+utils.\+\_\+email\+\_\+re = re.\+compile(r"{}\texorpdfstring{$^\wedge$}{\string^}\textbackslash{}S+@\textbackslash{}w\mbox{[}\textbackslash{}w.-\/\mbox{]}\texorpdfstring{$\ast$}{*}\textbackslash{}.\textbackslash{}w+\$"{})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacejinja2_1_1utils_a8e739886bc6801853e25deb0424f6a5e}\label{namespacejinja2_1_1utils_a8e739886bc6801853e25deb0424f6a5e} 
+\index{jinja2.utils@{jinja2.utils}!\_http\_re@{\_http\_re}}
+\index{\_http\_re@{\_http\_re}!jinja2.utils@{jinja2.utils}}
+\doxysubsubsection{\texorpdfstring{\_http\_re}{\_http\_re}}
+{\footnotesize\ttfamily jinja2.\+utils.\+\_\+http\+\_\+re\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ re.compile(}
+\DoxyCodeLine{00002\ \ \ \ \ ,}
+\DoxyCodeLine{00003\ \ \ \ \ re.IGNORECASE\ |\ re.VERBOSE,}
+\DoxyCodeLine{00004\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacejinja2_1_1utils_a4afd64c4729d98a624c6d5e217654894}\label{namespacejinja2_1_1utils_a4afd64c4729d98a624c6d5e217654894} 
+\index{jinja2.utils@{jinja2.utils}!concat@{concat}}
+\index{concat@{concat}!jinja2.utils@{jinja2.utils}}
+\doxysubsubsection{\texorpdfstring{concat}{concat}}
+{\footnotesize\ttfamily str jinja2.\+utils.\+concat = "{}"{}.join}
+
+\Hypertarget{namespacejinja2_1_1utils_aabc2ccdfdde56415ed81c13ee6b184e3}\label{namespacejinja2_1_1utils_aabc2ccdfdde56415ed81c13ee6b184e3} 
+\index{jinja2.utils@{jinja2.utils}!F@{F}}
+\index{F@{F}!jinja2.utils@{jinja2.utils}}
+\doxysubsubsection{\texorpdfstring{F}{F}}
+{\footnotesize\ttfamily jinja2.\+utils.\+F = t.\+Type\+Var("{}F"{}, bound=t.\+Callable\mbox{[}..., t.\+Any\mbox{]})}
+

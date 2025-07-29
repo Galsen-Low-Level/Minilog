@@ -1,0 +1,45 @@
+\chapter{CENTRY}
+\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2README}{}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2README}\index{CENTRY@{CENTRY}}
+\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2README_autotoc_md35}%
+\Hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2README_autotoc_md35}%
+ \hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2README_autotoc_md36}{}\doxysubsection{\texorpdfstring{What is Centry}{What is Centry}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2README_autotoc_md36}
+Centry is a simple, lightweight program that lets you access the inside of a running Docker container just like in interactive tty mode. The only prerequisite is to have Docker already available on your system.\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2README_autotoc_md37}{}\doxysubsection{\texorpdfstring{Quick demo}{Quick demo}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2README_autotoc_md37}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ \ center\ \ <short-\/id-\/container\{2-\/3\}>\ }
+
+\end{DoxyCode}
+ Exemple \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$>\ docker\ ps\ }
+\DoxyCodeLine{CONTAINER\ ID\ \ \ IMAGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ COMMAND\ \ \ \ \ \ \ \ \ \ \ CREATED\ \ \ \ \ \ \ \ STATUS\ \ \ \ \ \ \ \ PORTS\ \ \ \ \ NAMES}
+\DoxyCodeLine{c3784c6459b9\ \ \ <image>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}sleep\ 9999999"{}\ \ \ 24\ hours\ ago\ \ \ Up\ 24\ hours\ \ \ \ \ \ \ \ \ \ \ \ festive\_ramanujan}
+\DoxyCodeLine{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#>\ center\ c37\ \ \ }
+
+\end{DoxyCode}
+ For more option use the -\/h or --help command\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2README_autotoc_md38}{}\doxysubsection{\texorpdfstring{COMPILE}{COMPILE}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2README_autotoc_md38}
+Quick and easy to compile 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$>\ gcc\ \ centry.c\ \ -\/o\ <your\_final\_exec>\ }
+
+\end{DoxyCode}
+\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2README_autotoc_md39}{}\doxysubsection{\texorpdfstring{OPTION}{OPTION}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2README_autotoc_md39}
+If you have meson
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$>\ \ meson\ setup\ build\ }
+\DoxyCodeLine{\$>\ \ meson\ compile\ -\/C\ build\ }
+\DoxyCodeLine{\$>\ \ meson\ install\ -\/C\ build\ \ \#To\ install\ localy\ }
+
+\end{DoxyCode}
+
+
+To uninstall 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#>\ ninja\ uninstall\ -\/C\ build\ }
+
+\end{DoxyCode}
+ 

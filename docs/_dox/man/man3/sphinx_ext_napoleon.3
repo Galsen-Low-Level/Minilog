@@ -1,0 +1,168 @@
+.TH "sphinx.ext.napoleon" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.ext.napoleon
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBdocstring\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBConfig\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBExtensionMetadata\fP \fBsetup\fP (\fBSphinx\fP app)"
+.br
+.ti -1c
+.RI "None \fB_patch_python_domain\fP ()"
+.br
+.ti -1c
+.RI "None \fB_process_docstring\fP (\fBSphinx\fP app, str what, str name, Any obj, Any options, list[str] lines)"
+.br
+.ti -1c
+.RI "bool|None \fB_skip_member\fP (\fBSphinx\fP app, str what, str name, Any obj, bool skip, Any options)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Support for NumPy and Google style docstrings\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " None sphinx\&.ext\&.napoleon\&._patch_python_domain ()\fC [protected]\fP"
+
+.SS " None sphinx\&.ext\&.napoleon\&._process_docstring (\fBSphinx\fP app, str what, str name, Any obj, Any options, list[str]
+ lines)\fC [protected]\fP"
+
+.PP
+.nf
+Process the docstring for a given python object\&.
+
+Called when autodoc has read and processed a docstring\&. `lines` is a list
+of docstring lines that `_process_docstring` modifies in place to change
+what Sphinx outputs\&.
+
+The following settings in conf\&.py control what styles of docstrings will
+be parsed:
+
+* ``napoleon_google_docstring`` -- parse Google style docstrings
+* ``napoleon_numpy_docstring`` -- parse NumPy style docstrings
+
+Parameters
+----------
+app : sphinx\&.application\&.Sphinx
+    Application object representing the Sphinx process\&.
+what : str
+    A string specifying the type of the object to which the docstring
+    belongs\&. Valid values: 'module', 'class', 'exception', 'function',
+    'method', 'attribute'\&.
+name : str
+    The fully qualified name of the object\&.
+obj : module, class, exception, function, method, or attribute
+    The object to which the docstring belongs\&.
+options : sphinx\&.ext\&.autodoc\&.Options
+    The options given to the directive: an object with attributes
+    inherited_members, undoc_members, show_inheritance and no_index that
+    are True if the flag option of same name was given to the auto
+    directive\&.
+lines : list of str
+    The lines of the docstring, see above\&.
+
+    \&.\&. note:: `lines` is modified *in place*
+.fi
+.PP
+ 
+.SS " bool | None sphinx\&.ext\&.napoleon\&._skip_member (\fBSphinx\fP app, str what, str name, Any obj, bool skip, Any
+ options)\fC [protected]\fP"
+
+.PP
+.nf
+Determine if private and special class members are included in docs\&.
+
+The following settings in conf\&.py determine if private and special class
+members or init methods are included in the generated documentation:
+
+* ``napoleon_include_init_with_doc`` --
+  include init methods if they have docstrings
+* ``napoleon_include_private_with_doc`` --
+  include private members if they have docstrings
+* ``napoleon_include_special_with_doc`` --
+  include special members if they have docstrings
+
+Parameters
+----------
+app : sphinx\&.application\&.Sphinx
+    Application object representing the Sphinx process
+what : str
+    A string specifying the type of the object to which the member
+    belongs\&. Valid values: 'module', 'class', 'exception', 'function',
+    'method', 'attribute'\&.
+name : str
+    The name of the member\&.
+obj : module, class, exception, function, method, or attribute\&.
+    For example, if the member is the __init__ method of class A, then
+    `obj` will be `A\&.__init__`\&.
+skip : bool
+    A boolean indicating if autodoc will skip this member if `_skip_member`
+    does not override the decision
+options : sphinx\&.ext\&.autodoc\&.Options
+    The options given to the directive: an object with attributes
+    inherited_members, undoc_members, show_inheritance and no_index that
+    are True if the flag option of same name was given to the auto
+    directive\&.
+
+Returns
+-------
+bool
+    True if the member should be skipped during creation of the docs,
+    False if it should be included in the docs\&.
+.fi
+.PP
+ 
+.SS " \fBExtensionMetadata\fP sphinx\&.ext\&.napoleon\&.setup (\fBSphinx\fP app)"
+
+.PP
+.nf
+Sphinx extension setup function\&.
+
+When the extension is loaded, Sphinx imports this module and executes
+the ``setup()`` function, which in turn notifies Sphinx of everything
+the extension offers\&.
+
+Parameters
+----------
+app : sphinx\&.application\&.Sphinx
+    Application object representing the Sphinx process
+
+See Also
+--------
+`The Sphinx documentation on Extensions
+<https://www\&.sphinx-doc\&.org/extensions\&.html>`_
+
+`The Extension Tutorial <https://www\&.sphinx-doc\&.org/extdev/tutorial\&.html>`_
+
+`The Extension API <https://www\&.sphinx-doc\&.org/extdev/appapi\&.html>`_
+.fi
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,54 @@
+.TH "breathe.process" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+breathe.process
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAutoDoxygenProcessHandle\fP"
+.br
+.ti -1c
+.RI "class \fBProjectData\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "str \fBAUTOCFG_TEMPLATE\fP"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "str breathe\&.process\&.AUTOCFG_TEMPLATE"
+\fBInitial value:\fP.PP
+.nf
+1 =  r"""
+2 PROJECT_NAME     = "{project_name}"
+3 OUTPUT_DIRECTORY = {output_dir}
+4 GENERATE_LATEX   = NO
+5 GENERATE_MAN     = NO
+6 GENERATE_RTF     = NO
+7 CASE_SENSE_NAMES = NO
+8 INPUT            = {input}
+9 ENABLE_PREPROCESSING = YES
+10 QUIET            = YES
+11 JAVADOC_AUTOBRIEF = YES
+12 JAVADOC_AUTOBRIEF = NO
+13 GENERATE_HTML = NO
+14 GENERATE_XML = YES
+15 ALIASES = rst="\\verbatim embed:rst"
+16 ALIASES += endrst="\\endverbatim"
+17 ALIASES += inlinerst="\\verbatim embed:rst:inline"
+18 {extra}
+19 """\&.strip()
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

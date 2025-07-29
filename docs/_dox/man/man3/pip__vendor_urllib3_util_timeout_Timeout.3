@@ -1,0 +1,299 @@
+.TH "pip._vendor.urllib3.util.timeout.Timeout" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.urllib3.util.timeout.Timeout
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBtotal\fP=None, connect=\fB_Default\fP, read=\fB_Default\fP)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBresolve_default_timeout\fP (cls, timeout)"
+.br
+.ti -1c
+.RI "\fBfrom_float\fP (cls, timeout)"
+.br
+.ti -1c
+.RI "\fBclone\fP (self)"
+.br
+.ti -1c
+.RI "\fBstart_connect\fP (self)"
+.br
+.ti -1c
+.RI "\fBget_connect_duration\fP (self)"
+.br
+.ti -1c
+.RI "\fBconnect_timeout\fP (self)"
+.br
+.ti -1c
+.RI "\fBread_timeout\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBtotal\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBDEFAULT_TIMEOUT\fP = _GLOBAL_DEFAULT_TIMEOUT"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_validate_timeout\fP (cls, value, name)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_connect\fP"
+.br
+.ti -1c
+.RI "\fB_read\fP"
+.br
+.ti -1c
+.RI "\fB_start_connect\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Timeout configuration\&.
+
+Timeouts can be defined as a default for a pool:
+
+\&.\&. code-block:: python
+
+   timeout = Timeout(connect=2\&.0, read=7\&.0)
+   http = PoolManager(timeout=timeout)
+   response = http\&.request('GET', 'http://example\&.com/')
+
+Or per-request (which overrides the default for the pool):
+
+\&.\&. code-block:: python
+
+   response = http\&.request('GET', 'http://example\&.com/', timeout=Timeout(10))
+
+Timeouts can be disabled by setting all the parameters to ``None``:
+
+\&.\&. code-block:: python
+
+   no_timeout = Timeout(connect=None, read=None)
+   response = http\&.request('GET', 'http://example\&.com/, timeout=no_timeout)
+
+
+:param total:
+    This combines the connect and read timeouts into one; the read timeout
+    will be set to the time leftover from the connect attempt\&. In the
+    event that both a connect timeout and a total are specified, or a read
+    timeout and a total are specified, the shorter timeout will be applied\&.
+
+    Defaults to None\&.
+
+:type total: int, float, or None
+
+:param connect:
+    The maximum amount of time (in seconds) to wait for a connection
+    attempt to a server to succeed\&. Omitting the parameter will default the
+    connect timeout to the system default, probably `the global default
+    timeout in socket\&.py
+    <http://hg\&.python\&.org/cpython/file/603b4d593758/Lib/socket\&.py#l535>`_\&.
+    None will set an infinite timeout for connection attempts\&.
+
+:type connect: int, float, or None
+
+:param read:
+    The maximum amount of time (in seconds) to wait between consecutive
+    read operations for a response from the server\&. Omitting the parameter
+    will default the read timeout to the system default, probably `the
+    global default timeout in socket\&.py
+    <http://hg\&.python\&.org/cpython/file/603b4d593758/Lib/socket\&.py#l535>`_\&.
+    None will set an infinite timeout\&.
+
+:type read: int, float, or None
+
+\&.\&. note::
+
+    Many factors can affect the total amount of time for urllib3 to return
+    an HTTP response\&.
+
+    For example, Python's DNS resolver does not obey the timeout specified
+    on the socket\&. Other factors that can affect total request time include
+    high CPU load, high swap, the program running at a low priority level,
+    or other behaviors\&.
+
+    In addition, the read and total timeouts only measure the time between
+    read operations on the socket connecting the client and the server,
+    not the total amount of time for the request to return a complete
+    response\&. For most requests, the timeout is raised because the server
+    has not sent the first byte in the specified time\&. This is not always
+    the case; if a server streams one byte every fifteen seconds, a timeout
+    of 20 seconds will not trigger, even though the request will take
+    several minutes to complete\&.
+
+    If your goal is to cut off any request after a set amount of wall clock
+    time, consider having a second 'watcher' thread to cut off a slow
+    request\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.util\&.timeout\&.Timeout\&.__init__ ( self,  total = \fCNone\fP,  connect = \fC\fB_Default\fP\fP,  read = \fC\fB_Default\fP\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.util\&.timeout\&.Timeout\&.__repr__ ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.timeout\&.Timeout\&._validate_timeout ( cls,  value,  name)\fC [protected]\fP"
+
+.PP
+.nf
+Check that a timeout attribute is valid\&.
+
+:param value: The timeout value to validate
+:param name: The name of the timeout attribute to validate\&. This is
+    used to specify in error messages\&.
+:return: The validated and casted version of the given value\&.
+:raises ValueError: If it is a numeric value less than or equal to
+    zero, or the type is not an integer, float, or None\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.util\&.timeout\&.Timeout\&.clone ( self)"
+
+.PP
+.nf
+Create a copy of the timeout object
+
+Timeout properties are stored per-pool but each request needs a fresh
+Timeout object to ensure each one has its own start/stop configured\&.
+
+:return: a copy of the timeout object
+:rtype: :class:`Timeout`
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.util\&.timeout\&.Timeout\&.connect_timeout ( self)"
+
+.PP
+.nf
+Get the value to use when setting a connection timeout\&.
+
+This will be a positive float or integer, the value None
+(never timeout), or the default system timeout\&.
+
+:return: Connect timeout\&.
+:rtype: int, float, :attr:`Timeout\&.DEFAULT_TIMEOUT` or None
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.util\&.timeout\&.Timeout\&.from_float ( cls,  timeout)"
+
+.PP
+.nf
+Create a new Timeout from a legacy timeout value\&.
+
+The timeout value used by httplib\&.py sets the same timeout on the
+connect(), and recv() socket requests\&. This creates a :class:`Timeout`
+object that sets the individual timeouts to the ``timeout`` value
+passed to this function\&.
+
+:param timeout: The legacy timeout value\&.
+:type timeout: integer, float, sentinel default object, or None
+:return: Timeout object
+:rtype: :class:`Timeout`
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.util\&.timeout\&.Timeout\&.get_connect_duration ( self)"
+
+.PP
+.nf
+Gets the time elapsed since the call to :meth:`start_connect`\&.
+
+:return: Elapsed time in seconds\&.
+:rtype: float
+:raises urllib3\&.exceptions\&.TimeoutStateError: if you attempt
+    to get duration for a timer that hasn't been started\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.util\&.timeout\&.Timeout\&.read_timeout ( self)"
+
+.PP
+.nf
+Get the value for the read timeout\&.
+
+This assumes some time has elapsed in the connection timeout and
+computes the read timeout appropriately\&.
+
+If self\&.total is set, the read timeout is dependent on the amount of
+time taken by the connect timeout\&. If the connection time has not been
+established, a :exc:`~urllib3\&.exceptions\&.TimeoutStateError` will be
+raised\&.
+
+:return: Value to use for the read timeout\&.
+:rtype: int, float, :attr:`Timeout\&.DEFAULT_TIMEOUT` or None
+:raises urllib3\&.exceptions\&.TimeoutStateError: If :meth:`start_connect`
+    has not yet been called on this object\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.util\&.timeout\&.Timeout\&.resolve_default_timeout ( cls,  timeout)"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.timeout\&.Timeout\&.start_connect ( self)"
+
+.PP
+.nf
+Start the timeout clock, used during a connect() attempt
+
+:raises urllib3\&.exceptions\&.TimeoutStateError: if you attempt
+    to start a timer that has been started already\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.util\&.timeout\&.Timeout\&._connect\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.timeout\&.Timeout\&._read\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.timeout\&.Timeout\&._start_connect\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.timeout\&.Timeout\&.DEFAULT_TIMEOUT = _GLOBAL_DEFAULT_TIMEOUT\fC [static]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.timeout\&.Timeout\&.total"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

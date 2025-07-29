@@ -1,0 +1,93 @@
+.TH "sphinx.util.logging.SphinxLoggerAdapter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.util.logging.SphinxLoggerAdapter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits logging\&.LoggerAdapter, and logging\&.Logger\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBlog\fP (self, int|str level, str msg, *Any args, **Any kwargs)"
+.br
+.ti -1c
+.RI "None \fBverbose\fP (self, str msg, *Any args, **Any kwargs)"
+.br
+.ti -1c
+.RI "tuple[str, dict[str, Any]] \fBprocess\fP (self, str msg, dict[str, Any] kwargs)"
+.br
+.ti -1c
+.RI "None \fBhandle\fP (self, logging\&.LogRecord record)"
+.br
+.ti -1c
+.RI "None \fBwarning\fP (self, object msg, *object args, str|None type=None, str|None subtype=None, str|tuple[str|None, int|None]|\fBNode\fP|None location=None, bool nonl=True, str|None color=None, bool once=False, **Any kwargs)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "list \fBKEYWORDS\fP = ['type', 'subtype', 'location', 'nonl', 'color', 'once']"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+LoggerAdapter allowing ``type`` and ``subtype`` keywords\&.
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " None sphinx\&.util\&.logging\&.SphinxLoggerAdapter\&.handle ( self, logging\&.LogRecord record)"
+
+.SS " None sphinx\&.util\&.logging\&.SphinxLoggerAdapter\&.log ( self, int | str level, str msg, *Any args, **Any
+     kwargs)"
+
+.SS " tuple[str, dict[str, Any]] sphinx\&.util\&.logging\&.SphinxLoggerAdapter\&.process ( self, str msg, dict[str, Any] kwargs)"
+
+.SS " None sphinx\&.util\&.logging\&.SphinxLoggerAdapter\&.verbose ( self, str msg, *Any args, **Any kwargs)"
+
+.SS " None sphinx\&.util\&.logging\&.SphinxLoggerAdapter\&.warning ( self, object msg, *object args, str | None  type = \fCNone\fP, str | None  subtype = \fCNone\fP, str | tuple[str | None, int | None] | \fBNode\fP | None  location = \fCNone\fP, bool  nonl = \fCTrue\fP, str | None  color = \fCNone\fP, bool  once = \fCFalse\fP, **Any kwargs)"
+
+.PP
+.nf
+Log a sphinx warning\&.
+
+It is recommended to include a ``type`` and ``subtype`` for warnings as
+these can be displayed to the user using :confval:`show_warning_types`
+and used in :confval:`suppress_warnings` to suppress specific warnings\&.
+
+It is also recommended to specify a ``location`` whenever possible
+to help users in correcting the warning\&.
+
+:param msg: The message, which may contain placeholders for ``args``\&.
+:param args: The arguments to substitute into ``msg``\&.
+:param type: The type of the warning\&.
+:param subtype: The subtype of the warning\&.
+:param location: The source location of the warning's origin,
+    which can be a string (the ``docname`` or ``docname:lineno``),
+    a tuple of ``(docname, lineno)``,
+    or the docutils node object\&.
+:param nonl: Whether to append a new line terminator to the message\&.
+:param color: A color code for the message\&.
+:param once: Do not log this warning,
+    if a previous warning already has same ``msg``, ``args`` and ``once=True``\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "list sphinx\&.util\&.logging\&.SphinxLoggerAdapter\&.KEYWORDS = ['type', 'subtype', 'location', 'nonl', 'color', 'once']\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

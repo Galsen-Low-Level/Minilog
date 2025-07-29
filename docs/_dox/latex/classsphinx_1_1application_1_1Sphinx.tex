@@ -1,0 +1,1640 @@
+\doxysection{sphinx.\+application.\+Sphinx Class Reference}
+\hypertarget{classsphinx_1_1application_1_1Sphinx}{}\label{classsphinx_1_1application_1_1Sphinx}\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+Inheritance diagram for sphinx.\+application.\+Sphinx\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classsphinx_1_1application_1_1Sphinx}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a12c9d01a0dd3b04ff6103b6ef28faf62}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]} \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a418020ccee536600a1ce7df2e2e143f1}{srcdir}}, str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]}\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_adba5a82f82c5a201a657b73f425ec9c5}{confdir}}, str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]} \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aa5fbbb8a62a9666af63a05c510710f97}{outdir}}, str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]} \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a5625f9cd65a3f8c241090e22918e7912}{doctreedir}}, str buildername, dict\mbox{[}str, Any\mbox{]}\texorpdfstring{$\vert$}{|}None confoverrides=None, IO\mbox{[}str\mbox{]}\texorpdfstring{$\vert$}{|}None status=sys.\+stdout, IO\mbox{[}str\mbox{]}\texorpdfstring{$\vert$}{|}None warning=sys.\+stderr, bool freshenv=False, bool \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ac0aeaf43bf830ad69809c2a790a601f9}{warningiserror}}=False, Sequence\mbox{[}str\mbox{]} \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aecba99b04c5ad7b39f3a123dd1affa82}{tags}}=(), int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a082f1620825887d01030cef6a8e8df5c}{verbosity}}=0, int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a1b6f70617bed2b89d2f5750e1ea65f50}{parallel}}=0, bool \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aaef71742f90b2af6b2b790dbfcfa82e4}{keep\+\_\+going}}=False, bool \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a3ff3136e388b5f45f53528e6b269d13f}{pdb}}=False, bool exception\+\_\+on\+\_\+warning=False)
+\item 
+bool\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ab61d27d5566a438217b6aa432ea7d9d2}{fresh\+\_\+env\+\_\+used}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aeaea679eaec92edcc26ecd71be8ab8fb}{preload\+\_\+builder}} (self, str name)
+\item 
+\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}} \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_af587bc7b8b7a55c5d3b422632395238e}{create\+\_\+builder}} (self, str name)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aeb3c024119d768aa0c5df9f08fddd947}{build}} (self, bool force\+\_\+all=False, Sequence\mbox{[}Path\mbox{]} filenames=())
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aaf4fcec2b095fd43b7445969af84b215}{setup\+\_\+extension}} (self, str extname)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_afd24cd8e2882a11c77666e6beea5e67e}{connect}} (self, Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ad074598f73546a7c3ff76f090711edf6}{config}}-\/inited\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1config_1_1Config}{Config}}\mbox{]}, None\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a39df2fbb8313f036d7b17296df800582}{connect}} (self, Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aca4bb0c0af3e9ca0199b952f0cfb0db3}{builder}}-\/inited\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}\mbox{]}, None\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a97508109a17514ae9160f2e1dfc79ce2}{connect}} (self, Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ac7c96d3c3255b1da758b1dbe11460d04}{env}}-\/get-\/outdated\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}, Set\mbox{[}str\mbox{]}, Set\mbox{[}str\mbox{]}, Set\mbox{[}str\mbox{]}\mbox{]}, Sequence\mbox{[}str\mbox{]}\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a8a3afd3423a7b7f3cb369ee7e03f53fd}{connect}} (self, Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ac7c96d3c3255b1da758b1dbe11460d04}{env}}-\/before-\/read-\/docs\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}, list\mbox{[}str\mbox{]}\mbox{]}, None\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a0f813b5513d7fffc010a27cb79062b2b}{connect}} (self, Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ac7c96d3c3255b1da758b1dbe11460d04}{env}}-\/purge-\/doc\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}, str\mbox{]}, None\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ac2b64ed490828b17e32f5e6ccc62a843}{connect}} (self, Literal\mbox{[}\textquotesingle{}source-\/read\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, str, list\mbox{[}str\mbox{]}\mbox{]}, None\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a6bd78b157baa848db3d36c318c039b57}{connect}} (self, Literal\mbox{[}\textquotesingle{}include-\/read\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, Path, str, list\mbox{[}str\mbox{]}\mbox{]}, None\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ade9628e50c80b8f6737828ae16bb929f}{connect}} (self, Literal\mbox{[}\textquotesingle{}doctree-\/read\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, nodes.\+document\mbox{]}, None\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a621e8849f9c128d8345bf1fe2182db7e}{connect}} (self, Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ac7c96d3c3255b1da758b1dbe11460d04}{env}}-\/merge-\/info\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}, Set\mbox{[}str\mbox{]}, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}\mbox{]}, None\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a3355e8d07e10539d30567e862d4351e3}{connect}} (self, Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ac7c96d3c3255b1da758b1dbe11460d04}{env}}-\/updated\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}\mbox{]}, str\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a26ff496b48bd98e4fb3e7176c41be54f}{connect}} (self, Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ac7c96d3c3255b1da758b1dbe11460d04}{env}}-\/get-\/updated\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}\mbox{]}, Iterable\mbox{[}str\mbox{]}\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a12ea4219fa7ee185ef35e83f88b6dfbc}{connect}} (self, Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ac7c96d3c3255b1da758b1dbe11460d04}{env}}-\/\mbox{\hyperlink{namespacesphinx_afcb8fe6962f0c51b51877e41b032bbbc}{check}}-\/consistency\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}\mbox{]}, None\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ad6da23488517d5e3ec6c753479f820ca}{connect}} (self, Literal\mbox{[}\textquotesingle{}write-\/started\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}}\mbox{]}, None\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a9a5a5449448f56f8fb93a296dfd68d0c}{connect}} (self, Literal\mbox{[}\textquotesingle{}doctree-\/resolved\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, nodes.\+document, str\mbox{]}, None\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a6a368b041249e60bf8de5db2e9b722a5}{connect}} (self, Literal\mbox{[}\textquotesingle{}missing-\/reference\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}, \mbox{\hyperlink{classsphinx_1_1addnodes_1_1pending__xref}{addnodes.\+pending\+\_\+xref}}, nodes.\+Text\+Element\mbox{]}, nodes.\+reference\texorpdfstring{$\vert$}{|}None,\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a437b5daebbe0e4b2f2adc8f5080fc1e8}{connect}} (self, Literal\mbox{[}\textquotesingle{}warn-\/missing-\/reference\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain}{Domain}}, \mbox{\hyperlink{classsphinx_1_1addnodes_1_1pending__xref}{addnodes.\+pending\+\_\+xref}}\mbox{]}, bool\texorpdfstring{$\vert$}{|}None\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ac36298310b065b8710fe87d81985a70f}{connect}} (self, Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aeb3c024119d768aa0c5df9f08fddd947}{build}}-\/finished\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, Exception\texorpdfstring{$\vert$}{|}None\mbox{]}, None\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aa1370b9ca5ee877f8261715079fb1ad2}{connect}} (self, Literal\mbox{[}\textquotesingle{}html-\/collect-\/pages\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}\mbox{]}, Iterable\mbox{[}tuple\mbox{[}str, dict\mbox{[}str, Any\mbox{]}, str\mbox{]}\mbox{]}\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a6d0f7460ed5d0327c688e20dd112fda2}{connect}} (self, Literal\mbox{[}\textquotesingle{}html-\/page-\/context\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, str, str, dict\mbox{[}str, Any\mbox{]}, nodes.\+document\mbox{]}, str\texorpdfstring{$\vert$}{|}None\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a136ffb4b69254b865622e9d61e180f94}{connect}} (self, Literal\mbox{[}\textquotesingle{}linkcheck-\/process-\/uri\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, str\mbox{]}, str\texorpdfstring{$\vert$}{|}None\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a513fafa2f70ccaf44d983febb1fdfd90}{connect}} (self, Literal\mbox{[}\textquotesingle{}object-\/description-\/transform\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, str, str, \mbox{\hyperlink{classsphinx_1_1addnodes_1_1desc__content}{addnodes.\+desc\+\_\+content}}\mbox{]}, None\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a338b25b48ebe64496351aa83be448955}{connect}} (self, Literal\mbox{[}\textquotesingle{}autodoc-\/process-\/docstring\textquotesingle{}\mbox{]} event, \+\_\+\+Autodoc\+Process\+Docstring\+Listener callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a90a52b3647f279049ae160108bab882b}{connect}} (self, Literal\mbox{[}\textquotesingle{}autodoc-\/before-\/process-\/signature\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, Any, bool\mbox{]}, None\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a04f8071afee02ca49ef1385d58d386ed}{connect}} (self, Literal\mbox{[}\textquotesingle{}autodoc-\/process-\/signature\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{namespacesphinx_a6c3718b14467227af280273dfbfc7e8b}{module}}\textquotesingle{}, \textquotesingle{}class\textquotesingle{}, \textquotesingle{}exception\textquotesingle{}, \textquotesingle{}function\textquotesingle{}, \textquotesingle{}method\textquotesingle{}, \textquotesingle{}attribute\textquotesingle{}\mbox{]}, str, Any, dict\mbox{[}str, bool\mbox{]}, str\texorpdfstring{$\vert$}{|}None, str\texorpdfstring{$\vert$}{|}None,\mbox{]}, tuple\mbox{[}str\texorpdfstring{$\vert$}{|}None, str\texorpdfstring{$\vert$}{|}None\mbox{]}\texorpdfstring{$\vert$}{|}None,\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a20464bfdba0985178abd37a815bd19fc}{connect}} (self, Literal\mbox{[}\textquotesingle{}autodoc-\/process-\/bases\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, str, Any, dict\mbox{[}str, bool\mbox{]}, list\mbox{[}str\mbox{]}\mbox{]}, None\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aaa33f5e102c86b5bb24b4a209dd4cff2}{connect}} (self, Literal\mbox{[}\textquotesingle{}autodoc-\/skip-\/member\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{namespacesphinx_a6c3718b14467227af280273dfbfc7e8b}{module}}\textquotesingle{}, \textquotesingle{}class\textquotesingle{}, \textquotesingle{}exception\textquotesingle{}, \textquotesingle{}function\textquotesingle{}, \textquotesingle{}method\textquotesingle{}, \textquotesingle{}attribute\textquotesingle{}\mbox{]}, str, Any, bool, dict\mbox{[}str, bool\mbox{]},\mbox{]}, bool,\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ae28444813856317f2ae9405b1c377094}{connect}} (self, Literal\mbox{[}\textquotesingle{}todo-\/defined\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1ext_1_1todo_1_1todo__node}{todo\+\_\+node}}\mbox{]}, None\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a6a0b9498a627c7b10ac76da6c7828173}{connect}} (self, Literal\mbox{[}\textquotesingle{}viewcode-\/find-\/source\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, str\mbox{]}, tuple\mbox{[}str, dict\mbox{[}str, tuple\mbox{[}Literal\mbox{[}\textquotesingle{}class\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_a0fa868bf2d168787deeba7cdff6f1aed}{def}}\textquotesingle{}, \textquotesingle{}other\textquotesingle{}\mbox{]}, int, int\mbox{]}\mbox{]}\mbox{]},\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_abc19cfa0d5661bf4f46f3805d54da095}{connect}} (self, Literal\mbox{[}\textquotesingle{}viewcode-\/follow-\/imported\textquotesingle{}\mbox{]} event, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, str, str\mbox{]}, str\texorpdfstring{$\vert$}{|}None\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ad1d650c724c6cb4a53e9d7c868a116b8}{connect}} (self, str event, Callable\mbox{[}..., Any\mbox{]} callback, int priority=500)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ad1d650c724c6cb4a53e9d7c868a116b8}{connect}} (self, str event, Callable\mbox{[}..., Any\mbox{]} callback, int priority=500)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a5bb6928e2e0a3fb04794d36fd933becc}{disconnect}} (self, int listener\+\_\+id)
+\item 
+list\mbox{[}Any\mbox{]} \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a24ca6da0080aece00c43172dad9e0111}{emit}} (self, str event, \texorpdfstring{$\ast$}{*}Any args, tuple\mbox{[}type\mbox{[}Exception\mbox{]},...\mbox{]} allowed\+\_\+exceptions=())
+\item 
+Any \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ad9b2043b893113b328de23f6135db291}{emit\+\_\+firstresult}} (self, str event, \texorpdfstring{$\ast$}{*}Any args, tuple\mbox{[}type\mbox{[}Exception\mbox{]},...\mbox{]} allowed\+\_\+exceptions=())
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a7edd0232b77805993ff05f50b3b2efab}{add\+\_\+builder}} (self, type\mbox{[}\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}}\mbox{]} \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aca4bb0c0af3e9ca0199b952f0cfb0db3}{builder}}, bool override=False)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a7d8378a2a9a3a24895cb2d86bf3899a9}{add\+\_\+config\+\_\+value}} (self, str name, Any default, \+\_\+\+Config\+Rebuild rebuild, type\texorpdfstring{$\vert$}{|}Collection\mbox{[}type\mbox{]}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{classsphinx_1_1config_1_1ENUM}{ENUM}} types=(), str description=\textquotesingle{}\textquotesingle{})
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a291d02dd99cc30ea1b9f4478cfe7df1d}{add\+\_\+event}} (self, str name)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ad7144a0e22de0a518df7aa15db98e2ef}{set\+\_\+translator}} (self, str name, type\mbox{[}nodes.\+Node\+Visitor\mbox{]} translator\+\_\+class, bool override=False)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a376d37e0648f097ef088a1533d12cd61}{add\+\_\+node}} (self, type\mbox{[}\mbox{\hyperlink{classdocutils_1_1nodes_1_1Element}{Element}}\mbox{]} node, bool override=False, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+\_\+\+Node\+Handler\+Pair kwargs)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a87099038495a62582c92bdc34efa45fc}{add\+\_\+enumerable\+\_\+node}} (self, type\mbox{[}\mbox{\hyperlink{classdocutils_1_1nodes_1_1Element}{Element}}\mbox{]} node, str figtype, Title\+Getter\texorpdfstring{$\vert$}{|}None title\+\_\+getter=None, bool override=False, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}tuple\mbox{[}\+\_\+\+Node\+Handler, \+\_\+\+Node\+Handler\mbox{]} kwargs)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a1c7cd9889400a021568921454342eb7c}{add\+\_\+directive}} (self, str name, type\mbox{[}\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1Directive}{Directive}}\mbox{]} cls, bool override=False)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a76f28d59726ba5ff80b3759b81612aed}{add\+\_\+role}} (self, str name, Any role, bool override=False)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a284e0d6346f04c0ada80d5524ee3b0c0}{add\+\_\+generic\+\_\+role}} (self, str name, type\mbox{[}\mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}}\mbox{]} nodeclass, bool override=False)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a75169175199cde45b8d3a69d72e665f5}{add\+\_\+domain}} (self, type\mbox{[}\mbox{\hyperlink{classsphinx_1_1domains_1_1Domain}{Domain}}\mbox{]} domain, bool override=False)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a1eed3509fcc140cb05212f310e2ecac0}{add\+\_\+directive\+\_\+to\+\_\+domain}} (self, str domain, str name, type\mbox{[}\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1Directive}{Directive}}\mbox{]} cls, bool override=False)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a952d3f09c61e79a5bbc7add5ca930c00}{add\+\_\+role\+\_\+to\+\_\+domain}} (self, str domain, str name, \mbox{\hyperlink{classsphinx_1_1util_1_1typing_1_1RoleFunction}{Role\+Function}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{classsphinx_1_1roles_1_1XRefRole}{XRef\+Role}} role, bool override=False)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a2d0b28da021aa68bcd5adab2360c730f}{add\+\_\+index\+\_\+to\+\_\+domain}} (self, str domain, type\mbox{[}\mbox{\hyperlink{classsphinx_1_1domains_1_1__index_1_1Index}{Index}}\mbox{]} index, bool \+\_\+override=False)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aa1e9891d99eefb67c0109683bfaee760}{add\+\_\+object\+\_\+type}} (self, str directivename, str rolename, str indextemplate=\textquotesingle{}\textquotesingle{}, Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}, str, \mbox{\hyperlink{classsphinx_1_1addnodes_1_1desc__signature}{addnodes.\+desc\+\_\+signature}}\mbox{]}, str\mbox{]}\texorpdfstring{$\vert$}{|}None parse\+\_\+node=None, type\mbox{[}nodes.\+Text\+Element\mbox{]}\texorpdfstring{$\vert$}{|}None ref\+\_\+nodeclass=None, str objname=\textquotesingle{}\textquotesingle{}, Sequence\mbox{[}\mbox{\hyperlink{classsphinx_1_1util_1_1docfields_1_1Field}{Field}}\mbox{]} doc\+\_\+field\+\_\+types=(), bool override=False)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a907f94ea936850bdb6cb6576557300f0}{add\+\_\+crossref\+\_\+type}} (self, str directivename, str rolename, str indextemplate=\textquotesingle{}\textquotesingle{}, type\mbox{[}nodes.\+Text\+Element\mbox{]}\texorpdfstring{$\vert$}{|}None ref\+\_\+nodeclass=None, str objname=\textquotesingle{}\textquotesingle{}, bool override=False)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a2cbd3bdceae4792453b30285a997cf98}{add\+\_\+transform}} (self, type\mbox{[}\mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform}{Transform}}\mbox{]} transform)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a7a401c1c6ee4661898023694c4720def}{add\+\_\+post\+\_\+transform}} (self, type\mbox{[}\mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform}{Transform}}\mbox{]} transform)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a01ffe884ff1fb17830810180b6d68cb5}{add\+\_\+js\+\_\+file}} (self, str\texorpdfstring{$\vert$}{|}None filename, int priority=500, str\texorpdfstring{$\vert$}{|}None loading\+\_\+method=None, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}Any kwargs)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ad544d2916055228c67dfb560519159d2}{add\+\_\+css\+\_\+file}} (self, str filename, int priority=500, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}Any kwargs)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aeacb8e43a265f47e6e3cbc0db9157eb8}{add\+\_\+latex\+\_\+package}} (self, str packagename, str\texorpdfstring{$\vert$}{|}None options=None, bool after\+\_\+hyperref=False)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a472bfdb005fd979e1acf7bdc6669c2f8}{add\+\_\+lexer}} (self, str alias, type\mbox{[}\mbox{\hyperlink{classpygments_1_1lexer_1_1Lexer}{Lexer}}\mbox{]} lexer)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aaab0dc04aba364c462f9f2e83b7e6e36}{add\+\_\+autodocumenter}} (self, type\mbox{[}\mbox{\hyperlink{classsphinx_1_1ext_1_1autodoc_1_1Documenter}{Documenter}}\mbox{]} cls, bool override=False)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a7662de560ba8f5234c5c3566dbb6ee72}{add\+\_\+autodoc\+\_\+attrgetter}} (self, type typ, Callable\mbox{[}\mbox{[}Any, str, Any\mbox{]}, Any\mbox{]} getter)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_af841ad1d156b8e43daefa77278df2423}{add\+\_\+search\+\_\+language}} (self, type\mbox{[}\mbox{\hyperlink{classsphinx_1_1search_1_1SearchLanguage}{Search\+Language}}\mbox{]} cls)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a83cfd2cd6ba39153d46337e0e2a28b62}{add\+\_\+source\+\_\+suffix}} (self, str suffix, str filetype, bool override=False)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aa7d379530b955397d8ec828382098001}{add\+\_\+source\+\_\+parser}} (self, type\mbox{[}\mbox{\hyperlink{classdocutils_1_1parsers_1_1Parser}{Parser}}\mbox{]} parser, bool override=False)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a918e28fe02b1012abb4d3b04546898c2}{add\+\_\+env\+\_\+collector}} (self, type\mbox{[}\mbox{\hyperlink{classsphinx_1_1environment_1_1collectors_1_1EnvironmentCollector}{Environment\+Collector}}\mbox{]} collector)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ad74e09cb53493fa9f8a88e87c90c4244}{add\+\_\+html\+\_\+theme}} (self, str name, str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]} theme\+\_\+path)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_afe560ceb133c3818c9b0535d37682e84}{add\+\_\+html\+\_\+math\+\_\+renderer}} (self, str name, \+\_\+\+Maths\+Inline\+Renderers\texorpdfstring{$\vert$}{|}None inline\+\_\+renderers=None, \+\_\+\+Maths\+Block\+Renderers\texorpdfstring{$\vert$}{|}None block\+\_\+renderers=None)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aa435eac4269a76571fb7a41ac276dfbf}{add\+\_\+message\+\_\+catalog}} (self, str catalog, str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]} locale\+\_\+dir)
+\item 
+bool \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a11eb76fc0202ea5b8b8b7b370ef9ccb1}{is\+\_\+parallel\+\_\+allowed}} (self, str typ)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aa652b124344092f521cc206eab920156}{set\+\_\+html\+\_\+assets\+\_\+policy}} (self, Literal\mbox{[}\textquotesingle{}always\textquotesingle{}, \textquotesingle{}per\+\_\+page\textquotesingle{}\mbox{]} policy)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a670a13617aa0beb114d045a24530467b}{require\+\_\+sphinx}} (tuple\mbox{[}int, int\mbox{]}\texorpdfstring{$\vert$}{|}str version)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a1314af174a4df7c5955f1ca394a8c68e}{phase}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a082f1620825887d01030cef6a8e8df5c}{verbosity}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a89e3b080d90e064e02e1b07bfd41a3d5}{registry}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a1b6f70617bed2b89d2f5750e1ea65f50}{parallel}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_afb351f89fa606e5ce1b429f75ddc347c}{quiet}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aaef71742f90b2af6b2b790dbfcfa82e4}{keep\+\_\+going}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a3ff3136e388b5f45f53528e6b269d13f}{pdb}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ae1703aaa00f79116b86f9452b9762c58}{events}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a8bd1e6af8be6d7fc503bca6d833b4658}{statuscode}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aecba99b04c5ad7b39f3a123dd1affa82}{tags}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ad074598f73546a7c3ff76f090711edf6}{config}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ad2c8f5d7d463934d4650f6c3915a5d14}{project}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ac7c96d3c3255b1da758b1dbe11460d04}{env}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aca4bb0c0af3e9ca0199b952f0cfb0db3}{builder}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ae6cfb19a764cd38821dee272dcba9268}{translator}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a84d456439bc7df4102e4b9dbbb91c04a}{objtype}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Final \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ac0aeaf43bf830ad69809c2a790a601f9}{warningiserror}} = False
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a418020ccee536600a1ce7df2e2e143f1}{srcdir}} = \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPathProperty}{\+\_\+\+Str\+Path\+Property}}()
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_adba5a82f82c5a201a657b73f425ec9c5}{confdir}} = \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPathProperty}{\+\_\+\+Str\+Path\+Property}}()
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aa5fbbb8a62a9666af63a05c510710f97}{outdir}} = \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPathProperty}{\+\_\+\+Str\+Path\+Property}}()
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a5625f9cd65a3f8c241090e22918e7912}{doctreedir}} = \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPathProperty}{\+\_\+\+Str\+Path\+Property}}()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a6a1e5093ce146b8e52ed60e42046f774}{\+\_\+init\+\_\+i18n}} (self)
+\item 
+\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}} \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a7a3f818bea8ba135520c77b645a701d6}{\+\_\+init\+\_\+env}} (self, bool freshenv)
+\item 
+\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}} \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a51ff11b8c072dafcfd891ea7f2325784}{\+\_\+create\+\_\+fresh\+\_\+env}} (self)
+\item 
+\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}} \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a6c0567f1199dfe60124bb10a53441b16}{\+\_\+load\+\_\+existing\+\_\+env}} (self, Path filename)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a454a8485751a7138a722e17fd97a1d0b}{\+\_\+post\+\_\+init\+\_\+env}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a1e2239fcbf2d743431779013a21cf382}{\+\_\+init\+\_\+builder}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a8f43fd0fddd9f2efa1916e56acc53a08}{\+\_\+status}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ac657250c7f20eb0c3d397865de3ebf01}{\+\_\+warning}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ad46e04132d8603a5fde8527279b83237}{\+\_\+warncount}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_af79931f1e2a466047376ca7d73a56d08}{\+\_\+fail\+\_\+on\+\_\+warnings}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a8b77df96b92d84b88169d2aa736fe7ee}{\+\_\+exception\+\_\+on\+\_\+warning}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a9b717b02c5d6af49d02fe5f90f1164b6}{\+\_\+fresh\+\_\+env\+\_\+used}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_a9b48228a6a45a61890f990c997bcc399}{\+\_\+warncount}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}The main application class and extensibility interface.
+
+:ivar srcdir: Directory containing source.
+:ivar confdir: Directory containing ``conf.py``.
+:ivar doctreedir: Directory for storing pickled doctrees.
+:ivar outdir: Directory for storing build documents.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a12c9d01a0dd3b04ff6103b6ef28faf62}\label{classsphinx_1_1application_1_1Sphinx_a12c9d01a0dd3b04ff6103b6ef28faf62} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}}]{srcdir,  }\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]} \texorpdfstring{$\vert$}{|} None}]{confdir,  }\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}}]{outdir,  }\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}}]{doctreedir,  }\item[{str}]{buildername,  }\item[{dict\mbox{[}str, Any\mbox{]} \texorpdfstring{$\vert$}{|} None }]{confoverrides = {\ttfamily None},  }\item[{IO\mbox{[}str\mbox{]} \texorpdfstring{$\vert$}{|} None }]{status = {\ttfamily sys.stdout},  }\item[{IO\mbox{[}str\mbox{]} \texorpdfstring{$\vert$}{|} None }]{warning = {\ttfamily sys.stderr},  }\item[{bool }]{freshenv = {\ttfamily False},  }\item[{bool }]{warningiserror = {\ttfamily False},  }\item[{Sequence\mbox{[}str\mbox{]} }]{tags = {\ttfamily ()},  }\item[{int }]{verbosity = {\ttfamily 0},  }\item[{int }]{parallel = {\ttfamily 0},  }\item[{bool }]{keep\+\_\+going = {\ttfamily False},  }\item[{bool }]{pdb = {\ttfamily False},  }\item[{bool }]{exception\+\_\+on\+\_\+warning = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize the Sphinx application.
+
+:param srcdir: The path to the source directory.
+:param confdir: The path to the configuration directory.
+    If not given, it is assumed to be the same as ``srcdir``.
+:param outdir: Directory for storing build documents.
+:param doctreedir: Directory for caching pickled doctrees.
+:param buildername: The name of the builder to use.
+:param confoverrides: A dictionary of configuration settings that override the
+    settings in the configuration file.
+:param status: A file-like object to write status messages to.
+:param warning: A file-like object to write warnings to.
+:param freshenv: If true, clear the cached environment.
+:param warningiserror: If true, warnings become errors.
+:param tags: A list of tags to apply.
+:param verbosity: The verbosity level.
+:param parallel: The maximum number of parallel jobs to use
+    when reading/writing documents.
+:param keep_going: Unused.
+:param pdb: If true, enable the Python debugger on an exception.
+:param exception_on_warning: If true, raise an exception on warnings.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1testing_1_1util_1_1SphinxTestApp_a45bb7157f9d19999804d9428a85f22ed}{sphinx.\+testing.\+util.\+Sphinx\+Test\+App}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a51ff11b8c072dafcfd891ea7f2325784}\label{classsphinx_1_1application_1_1Sphinx_a51ff11b8c072dafcfd891ea7f2325784} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!\_create\_fresh\_env@{\_create\_fresh\_env}}
+\index{\_create\_fresh\_env@{\_create\_fresh\_env}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{\_create\_fresh\_env()}{\_create\_fresh\_env()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}} sphinx.\+application.\+Sphinx.\+\_\+create\+\_\+fresh\+\_\+env (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a1e2239fcbf2d743431779013a21cf382}\label{classsphinx_1_1application_1_1Sphinx_a1e2239fcbf2d743431779013a21cf382} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!\_init\_builder@{\_init\_builder}}
+\index{\_init\_builder@{\_init\_builder}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{\_init\_builder()}{\_init\_builder()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+\_\+init\+\_\+builder (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1testing_1_1util_1_1SphinxTestApp_aad6b7a3b115d09863d7498e31eb99b2c}{sphinx.\+testing.\+util.\+Sphinx\+Test\+App}}.
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a7a3f818bea8ba135520c77b645a701d6}\label{classsphinx_1_1application_1_1Sphinx_a7a3f818bea8ba135520c77b645a701d6} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!\_init\_env@{\_init\_env}}
+\index{\_init\_env@{\_init\_env}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{\_init\_env()}{\_init\_env()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}} sphinx.\+application.\+Sphinx.\+\_\+init\+\_\+env (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{bool}]{freshenv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a6a1e5093ce146b8e52ed60e42046f774}\label{classsphinx_1_1application_1_1Sphinx_a6a1e5093ce146b8e52ed60e42046f774} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!\_init\_i18n@{\_init\_i18n}}
+\index{\_init\_i18n@{\_init\_i18n}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{\_init\_i18n()}{\_init\_i18n()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+\_\+init\+\_\+i18n (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Load translated strings from the configured localedirs if enabled in
+the configuration.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a6c0567f1199dfe60124bb10a53441b16}\label{classsphinx_1_1application_1_1Sphinx_a6c0567f1199dfe60124bb10a53441b16} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!\_load\_existing\_env@{\_load\_existing\_env}}
+\index{\_load\_existing\_env@{\_load\_existing\_env}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{\_load\_existing\_env()}{\_load\_existing\_env()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}} sphinx.\+application.\+Sphinx.\+\_\+load\+\_\+existing\+\_\+env (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Path}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a454a8485751a7138a722e17fd97a1d0b}\label{classsphinx_1_1application_1_1Sphinx_a454a8485751a7138a722e17fd97a1d0b} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!\_post\_init\_env@{\_post\_init\_env}}
+\index{\_post\_init\_env@{\_post\_init\_env}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{\_post\_init\_env()}{\_post\_init\_env()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+\_\+post\+\_\+init\+\_\+env (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a7662de560ba8f5234c5c3566dbb6ee72}\label{classsphinx_1_1application_1_1Sphinx_a7662de560ba8f5234c5c3566dbb6ee72} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_autodoc\_attrgetter@{add\_autodoc\_attrgetter}}
+\index{add\_autodoc\_attrgetter@{add\_autodoc\_attrgetter}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_autodoc\_attrgetter()}{add\_autodoc\_attrgetter()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+autodoc\+\_\+attrgetter (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{type}]{typ,  }\item[{Callable\mbox{[}\mbox{[}Any, str, Any\mbox{]}, Any\mbox{]}     }]{getter }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a new ``getattr``-like function for the autodoc extension.
+
+Add *getter*, which must be a function with an interface compatible to
+the :func:`getattr` builtin, as the autodoc attribute getter for
+objects that are instances of *typ*.  All cases where autodoc needs to
+get an attribute of a type are then handled by this function instead of
+:func:`getattr`.
+
+.. versionadded:: 0.6
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_aaab0dc04aba364c462f9f2e83b7e6e36}\label{classsphinx_1_1application_1_1Sphinx_aaab0dc04aba364c462f9f2e83b7e6e36} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_autodocumenter@{add\_autodocumenter}}
+\index{add\_autodocumenter@{add\_autodocumenter}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_autodocumenter()}{add\_autodocumenter()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+autodocumenter (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{type\mbox{[}\mbox{\hyperlink{classsphinx_1_1ext_1_1autodoc_1_1Documenter}{Documenter}}\mbox{]}}]{cls,  }\item[{bool }]{override = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a new documenter class for the autodoc extension.
+
+Add *cls* as a new documenter class for the :mod:`sphinx.ext.autodoc`
+extension.  It must be a subclass of
+:class:`sphinx.ext.autodoc.Documenter`.  This allows auto-documenting
+new types of objects.  See the source of the autodoc module for
+examples on how to subclass :class:`~sphinx.ext.autodoc.Documenter`.
+
+If *override* is True, the given *cls* is forcedly installed even if
+a documenter having the same name is already installed.
+
+See :ref:`autodoc_ext_tutorial`.
+
+.. versionadded:: 0.6
+.. versionchanged:: 2.2
+   Add *override* keyword.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a7edd0232b77805993ff05f50b3b2efab}\label{classsphinx_1_1application_1_1Sphinx_a7edd0232b77805993ff05f50b3b2efab} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_builder@{add\_builder}}
+\index{add\_builder@{add\_builder}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_builder()}{add\_builder()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+builder (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{type\mbox{[}\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}}\mbox{]}}]{builder,  }\item[{bool }]{override = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a new builder.
+
+:param builder: A builder class
+:param override: If true, install the builder forcedly even if another builder
+                 is already installed as the same name
+
+.. versionchanged:: 1.8
+   Add *override* keyword.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a7d8378a2a9a3a24895cb2d86bf3899a9}\label{classsphinx_1_1application_1_1Sphinx_a7d8378a2a9a3a24895cb2d86bf3899a9} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_config\_value@{add\_config\_value}}
+\index{add\_config\_value@{add\_config\_value}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_config\_value()}{add\_config\_value()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+config\+\_\+value (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name,  }\item[{Any}]{default,  }\item[{\+\_\+\+Config\+Rebuild}]{rebuild,  }\item[{type \texorpdfstring{$\vert$}{|} Collection\mbox{[}type\mbox{]} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{classsphinx_1_1config_1_1ENUM}{ENUM}} }]{types = {\ttfamily ()},  }\item[{str }]{description = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a configuration value.
+
+This is necessary for Sphinx to recognize new values and set default
+values accordingly.
+
+
+:param name: The name of the configuration value.  It is recommended to be prefixed
+             with the extension name (ex. ``html_logo``, ``epub_title``)
+:param default: The default value of the configuration.
+:param rebuild: The condition of rebuild.  It must be one of those values:
+
+                * ``'env'`` if a change in the setting only takes effect when a
+                  document is parsed -- this means that the whole environment must be
+                  rebuilt.
+                * ``'html'`` if a change in the setting needs a full rebuild of HTML
+                  documents.
+                * ``''`` if a change in the setting will not need any special rebuild.
+:param types: The type of configuration value.  A list of types can be specified.  For
+              example, ``[str]`` is used to describe a configuration that takes string
+              value.
+:param description: A short description of the configuration value.
+
+.. versionchanged:: 0.4
+   If the *default* value is a callable, it will be called with the
+   config object as its argument in order to get the default value.
+   This can be used to implement config values whose default depends on
+   other values.
+
+.. versionchanged:: 0.6
+   Changed *rebuild* from a simple boolean (equivalent to ``''`` or
+   ``'env'``) to a string.  However, booleans are still accepted and
+   converted internally.
+
+.. versionadded:: 7.4
+   The *description* parameter.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a907f94ea936850bdb6cb6576557300f0}\label{classsphinx_1_1application_1_1Sphinx_a907f94ea936850bdb6cb6576557300f0} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_crossref\_type@{add\_crossref\_type}}
+\index{add\_crossref\_type@{add\_crossref\_type}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_crossref\_type()}{add\_crossref\_type()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+crossref\+\_\+type (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{directivename,  }\item[{str}]{rolename,  }\item[{str }]{indextemplate = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{type\mbox{[}nodes.\+Text\+Element\mbox{]} \texorpdfstring{$\vert$}{|} None }]{ref\+\_\+nodeclass = {\ttfamily None},  }\item[{str }]{objname = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{bool }]{override = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a new crossref object type.
+
+This method is very similar to :meth:`~Sphinx.add_object_type` except that the
+directive it generates must be empty, and will produce no output.
+
+That means that you can add semantic targets to your sources, and refer
+to them using custom roles instead of generic ones (like
+:rst:role:`ref`).  Example call::
+
+   app.add_crossref_type(
+       'topic', 'topic', 'single: %s', docutils.nodes.emphasis
+   )
+
+Example usage::
+
+   .. topic:: application API
+
+   The application API
+   -------------------
+
+   Some random text here.
+
+   See also :topic:`this section <application API>`.
+
+(Of course, the element following the ``topic`` directive needn't be a
+section.)
+
+
+:param override: If false, do not install it if another cross-reference type
+                 is already installed as the same name
+                 If true, unconditionally install the cross-reference type.
+
+.. versionchanged:: 1.8
+   Add *override* keyword.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_ad544d2916055228c67dfb560519159d2}\label{classsphinx_1_1application_1_1Sphinx_ad544d2916055228c67dfb560519159d2} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_css\_file@{add\_css\_file}}
+\index{add\_css\_file@{add\_css\_file}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_css\_file()}{add\_css\_file()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+css\+\_\+file (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{filename,  }\item[{int }]{priority = {\ttfamily 500},  }\item[{\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}Any}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a stylesheet to include in the HTML output.
+
+:param filename: The name of a CSS file that the default HTML
+                 template will include. It must be relative to the HTML
+                 static path, or a full URI with scheme.
+:param priority: Files are included in ascending order of priority. If
+                 multiple CSS files have the same priority,
+                 those files will be included in order of registration.
+                 See list of "priority range for CSS files" below.
+:param kwargs: Extra keyword arguments are included as attributes of the
+               ``<link>`` tag.
+
+Example::
+
+    app.add_css_file('custom.css')
+    # => <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+    app.add_css_file('print.css', media='print')
+    # => <link rel="stylesheet" href="_static/print.css"
+    #          type="text/css" media="print" />
+
+    app.add_css_file('fancy.css', rel='alternate stylesheet', title='fancy')
+    # => <link rel="alternate stylesheet" href="_static/fancy.css"
+    #          type="text/css" title="fancy" />
+
+.. list-table:: priority range for CSS files
+   :widths: 20,80
+
+   * - Priority
+     - Main purpose in Sphinx
+   * - 200
+     - default priority for built-in CSS files
+   * - 500
+     - default priority for extensions
+   * - 800
+     - default priority for :confval:`html_css_files`
+
+A CSS file can be added to the specific HTML page when an extension calls
+this method on :event:`html-page-context` event.
+
+.. versionadded:: 1.0
+
+.. versionchanged:: 1.6
+   Optional ``alternate`` and/or ``title`` attributes can be supplied
+   with the arguments *alternate* (a Boolean) and *title* (a string).
+   The default is no title and *alternate* = ``False``. For
+   more information, refer to the `documentation
+   <https://mdn.io/Web/CSS/Alternative_style_sheets>`__.
+
+.. versionchanged:: 1.8
+   Renamed from ``app.add_stylesheet()``.
+   And it allows keyword arguments as attributes of link tag.
+
+.. versionchanged:: 3.5
+   Take priority argument.  Allow to add a CSS file to the specific page.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a1c7cd9889400a021568921454342eb7c}\label{classsphinx_1_1application_1_1Sphinx_a1c7cd9889400a021568921454342eb7c} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_directive@{add\_directive}}
+\index{add\_directive@{add\_directive}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_directive()}{add\_directive()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+directive (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name,  }\item[{type\mbox{[}\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1Directive}{Directive}}\mbox{]}}]{cls,  }\item[{bool }]{override = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a Docutils directive.
+
+:param name: The name of the directive
+:param cls: A directive class
+:param override: If false, do not install it if another directive
+                 is already installed as the same name
+                 If true, unconditionally install the directive.
+
+For example, a custom directive named ``my-directive`` would be added
+like this:
+
+.. code-block:: python
+
+   from docutils.parsers.rst import Directive, directives
+
+   class MyDirective(Directive):
+       has_content = True
+       required_arguments = 1
+       optional_arguments = 0
+       final_argument_whitespace = True
+       option_spec = {
+           'class': directives.class_option,
+           'name': directives.unchanged,
+       }
+
+       def run(self):
+           pass
+
+   def setup(app):
+       app.add_directive('my-directive', MyDirective)
+
+For more details, see `the Docutils docs
+<https://docutils.sourceforge.io/docs/howto/rst-directives.html>`__ .
+
+.. versionchanged:: 0.6
+   Docutils 0.5-style directive classes are now supported.
+.. deprecated:: 1.8
+   Docutils 0.4-style (function based) directives support is deprecated.
+.. versionchanged:: 1.8
+   Add *override* keyword.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a1eed3509fcc140cb05212f310e2ecac0}\label{classsphinx_1_1application_1_1Sphinx_a1eed3509fcc140cb05212f310e2ecac0} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_directive\_to\_domain@{add\_directive\_to\_domain}}
+\index{add\_directive\_to\_domain@{add\_directive\_to\_domain}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_directive\_to\_domain()}{add\_directive\_to\_domain()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+directive\+\_\+to\+\_\+domain (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{domain,  }\item[{str}]{name,  }\item[{type\mbox{[}\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1Directive}{Directive}}\mbox{]}}]{cls,  }\item[{bool }]{override = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a Docutils directive in a domain.
+
+Like :meth:`add_directive`, but the directive is added to the domain
+named *domain*.
+
+:param domain: The name of target domain
+:param name: A name of directive
+:param cls: A directive class
+:param override: If false, do not install it if another directive
+                 is already installed as the same name
+                 If true, unconditionally install the directive.
+
+.. versionadded:: 1.0
+.. versionchanged:: 1.8
+   Add *override* keyword.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a75169175199cde45b8d3a69d72e665f5}\label{classsphinx_1_1application_1_1Sphinx_a75169175199cde45b8d3a69d72e665f5} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_domain@{add\_domain}}
+\index{add\_domain@{add\_domain}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_domain()}{add\_domain()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+domain (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{type\mbox{[}\mbox{\hyperlink{classsphinx_1_1domains_1_1Domain}{Domain}}\mbox{]}}]{domain,  }\item[{bool }]{override = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a domain.
+
+:param domain: A domain class
+:param override: If false, do not install it if another domain
+                 is already installed as the same name
+                 If true, unconditionally install the domain.
+
+.. versionadded:: 1.0
+.. versionchanged:: 1.8
+   Add *override* keyword.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a87099038495a62582c92bdc34efa45fc}\label{classsphinx_1_1application_1_1Sphinx_a87099038495a62582c92bdc34efa45fc} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_enumerable\_node@{add\_enumerable\_node}}
+\index{add\_enumerable\_node@{add\_enumerable\_node}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_enumerable\_node()}{add\_enumerable\_node()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+enumerable\+\_\+node (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{type\mbox{[}\mbox{\hyperlink{classdocutils_1_1nodes_1_1Element}{Element}}\mbox{]}}]{node,  }\item[{str}]{figtype,  }\item[{Title\+Getter \texorpdfstring{$\vert$}{|} None }]{title\+\_\+getter = {\ttfamily None},  }\item[{bool }]{override = {\ttfamily False},  }\item[{\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}tuple\mbox{[}\+\_\+\+Node\+Handler, \+\_\+\+Node\+Handler\mbox{]}}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a Docutils node class as a numfig target.
+
+Sphinx numbers the node automatically. And then the users can refer it
+using :rst:role:`numref`.
+
+:param node: A node class
+:param figtype: The type of enumerable nodes.  Each figtype has individual numbering
+                sequences.  As system figtypes, ``figure``, ``table`` and
+                ``code-block`` are defined.  It is possible to add custom nodes to
+                these default figtypes.  It is also possible to define new custom
+                figtype if a new figtype is given.
+:param title_getter: A getter function to obtain the title of node.  It takes an
+                     instance of the enumerable node, and it must return its title as
+                     string.  The title is used to the default title of references for
+                     :rst:role:`ref`.  By default, Sphinx searches
+                     ``docutils.nodes.caption`` or ``docutils.nodes.title`` from the
+                     node as a title.
+:param kwargs: Visitor functions for each builder (same as :meth:`add_node`)
+:param override: If true, install the node forcedly even if another node is already
+                 installed as the same name
+
+.. versionadded:: 1.4
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a918e28fe02b1012abb4d3b04546898c2}\label{classsphinx_1_1application_1_1Sphinx_a918e28fe02b1012abb4d3b04546898c2} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_env\_collector@{add\_env\_collector}}
+\index{add\_env\_collector@{add\_env\_collector}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_env\_collector()}{add\_env\_collector()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+env\+\_\+collector (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{type\mbox{[}\mbox{\hyperlink{classsphinx_1_1environment_1_1collectors_1_1EnvironmentCollector}{Environment\+Collector}}\mbox{]}}]{collector }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register an environment collector class.
+
+Refer to :ref:`collector-api`.
+
+.. versionadded:: 1.6
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a291d02dd99cc30ea1b9f4478cfe7df1d}\label{classsphinx_1_1application_1_1Sphinx_a291d02dd99cc30ea1b9f4478cfe7df1d} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_event@{add\_event}}
+\index{add\_event@{add\_event}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_event()}{add\_event()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+event (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register an event called *name*.
+
+This is needed to be able to emit it.
+
+:param name: The name of the event
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a284e0d6346f04c0ada80d5524ee3b0c0}\label{classsphinx_1_1application_1_1Sphinx_a284e0d6346f04c0ada80d5524ee3b0c0} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_generic\_role@{add\_generic\_role}}
+\index{add\_generic\_role@{add\_generic\_role}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_generic\_role()}{add\_generic\_role()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+generic\+\_\+role (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name,  }\item[{type\mbox{[}\mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}}\mbox{]}}]{nodeclass,  }\item[{bool }]{override = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a generic Docutils role.
+
+Register a Docutils role that does nothing but wrap its contents in the
+node given by *nodeclass*.
+
+:param override: If false, do not install it if another role
+                 is already installed as the same name
+                 If true, unconditionally install the role.
+
+.. versionadded:: 0.6
+.. versionchanged:: 1.8
+   Add *override* keyword.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_afe560ceb133c3818c9b0535d37682e84}\label{classsphinx_1_1application_1_1Sphinx_afe560ceb133c3818c9b0535d37682e84} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_html\_math\_renderer@{add\_html\_math\_renderer}}
+\index{add\_html\_math\_renderer@{add\_html\_math\_renderer}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_html\_math\_renderer()}{add\_html\_math\_renderer()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+html\+\_\+math\+\_\+renderer (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name,  }\item[{\+\_\+\+Maths\+Inline\+Renderers \texorpdfstring{$\vert$}{|} None }]{inline\+\_\+renderers = {\ttfamily None},  }\item[{\+\_\+\+Maths\+Block\+Renderers \texorpdfstring{$\vert$}{|} None }]{block\+\_\+renderers = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a math renderer for HTML.
+
+The *name* is a name of math renderer.  Both *inline_renderers* and
+*block_renderers* are used as visitor functions for the HTML writer:
+the former for inline math node (``nodes.math``), the latter for
+block math node (``nodes.math_block``).  Regarding visitor functions,
+see :meth:`add_node` for details.
+
+.. versionadded:: 1.8\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_ad74e09cb53493fa9f8a88e87c90c4244}\label{classsphinx_1_1application_1_1Sphinx_ad74e09cb53493fa9f8a88e87c90c4244} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_html\_theme@{add\_html\_theme}}
+\index{add\_html\_theme@{add\_html\_theme}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_html\_theme()}{add\_html\_theme()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+html\+\_\+theme (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name,  }\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}}]{theme\+\_\+path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a HTML Theme.
+
+The *name* is a name of theme, and *theme_path* is a full path to the
+theme (refs: :ref:`distribute-your-theme`).
+
+.. versionadded:: 1.6
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a2d0b28da021aa68bcd5adab2360c730f}\label{classsphinx_1_1application_1_1Sphinx_a2d0b28da021aa68bcd5adab2360c730f} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_index\_to\_domain@{add\_index\_to\_domain}}
+\index{add\_index\_to\_domain@{add\_index\_to\_domain}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_index\_to\_domain()}{add\_index\_to\_domain()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+index\+\_\+to\+\_\+domain (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{domain,  }\item[{type\mbox{[}\mbox{\hyperlink{classsphinx_1_1domains_1_1__index_1_1Index}{Index}}\mbox{]}}]{index,  }\item[{bool }]{\+\_\+override = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a custom index for a domain.
+
+Add a custom *index* class to the domain named *domain*.
+
+:param domain: The name of the target domain
+:param index: The index class
+:param override: If false, do not install it if another index
+                 is already installed as the same name
+                 If true, unconditionally install the index.
+
+.. versionadded:: 1.0
+.. versionchanged:: 1.8
+   Add *override* keyword.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a01ffe884ff1fb17830810180b6d68cb5}\label{classsphinx_1_1application_1_1Sphinx_a01ffe884ff1fb17830810180b6d68cb5} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_js\_file@{add\_js\_file}}
+\index{add\_js\_file@{add\_js\_file}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_js\_file()}{add\_js\_file()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+js\+\_\+file (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str \texorpdfstring{$\vert$}{|} None}]{filename,  }\item[{int }]{priority = {\ttfamily 500},  }\item[{str \texorpdfstring{$\vert$}{|} None }]{loading\+\_\+method = {\ttfamily None},  }\item[{\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}Any}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a JavaScript file to include in the HTML output.
+
+:param filename: The name of a JavaScript file that the default HTML
+                 template will include. It must be relative to the HTML
+                 static path, or a full URI with scheme, or ``None`` .
+                 The ``None`` value is used to create an inline
+                 ``<script>`` tag.  See the description of *kwargs*
+                 below.
+:param priority: Files are included in ascending order of priority. If
+                 multiple JavaScript files have the same priority,
+                 those files will be included in order of registration.
+                 See list of "priority range for JavaScript files" below.
+:param loading_method: The loading method for the JavaScript file.
+                       Either ``'async'`` or ``'defer'`` are allowed.
+:param kwargs: Extra keyword arguments are included as attributes of the
+               ``<script>`` tag.  If the special keyword argument
+               ``body`` is given, its value will be added as the content
+               of the  ``<script>`` tag.
+
+Example::
+
+    app.add_js_file('example.js')
+    # => <script src="_static/example.js"></script>
+
+    app.add_js_file('example.js', loading_method='async')
+    # => <script src="_static/example.js" async="async"></script>
+
+    app.add_js_file(None, body="var myVariable = 'foo';")
+    # => <script>var myVariable = 'foo';</script>
+
+.. list-table:: priority range for JavaScript files
+   :widths: 20,80
+
+   * - Priority
+     - Main purpose in Sphinx
+   * - 200
+     - default priority for built-in JavaScript files
+   * - 500
+     - default priority for extensions
+   * - 800
+     - default priority for :confval:`html_js_files`
+
+A JavaScript file can be added to the specific HTML page when an extension
+calls this method on :event:`html-page-context` event.
+
+.. versionadded:: 0.5
+
+.. versionchanged:: 1.8
+   Renamed from ``app.add_javascript()``.
+   And it allows keyword arguments as attributes of script tag.
+
+.. versionchanged:: 3.5
+   Take priority argument.  Allow to add a JavaScript file to the specific page.
+.. versionchanged:: 4.4
+   Take loading_method argument.  Allow to change the loading method of the
+   JavaScript file.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_aeacb8e43a265f47e6e3cbc0db9157eb8}\label{classsphinx_1_1application_1_1Sphinx_aeacb8e43a265f47e6e3cbc0db9157eb8} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_latex\_package@{add\_latex\_package}}
+\index{add\_latex\_package@{add\_latex\_package}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_latex\_package()}{add\_latex\_package()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+latex\+\_\+package (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{packagename,  }\item[{str \texorpdfstring{$\vert$}{|} None }]{options = {\ttfamily None},  }\item[{bool }]{after\+\_\+hyperref = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a package to include in the LaTeX source code.
+
+Add *packagename* to the list of packages that LaTeX source code will
+include.  If you provide *options*, it will be taken to the `\usepackage`
+declaration.  If you set *after_hyperref* truthy, the package will be
+loaded after ``hyperref`` package.
+
+.. code-block:: python
+
+app.add_latex_package('mypackage')
+# => \usepackage{mypackage}
+app.add_latex_package('mypackage', 'foo,bar')
+# => \usepackage[foo,bar]{mypackage}
+
+.. versionadded:: 1.3
+.. versionadded:: 3.1
+
+*after_hyperref* option.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a472bfdb005fd979e1acf7bdc6669c2f8}\label{classsphinx_1_1application_1_1Sphinx_a472bfdb005fd979e1acf7bdc6669c2f8} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_lexer@{add\_lexer}}
+\index{add\_lexer@{add\_lexer}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_lexer()}{add\_lexer()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+lexer (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{alias,  }\item[{type\mbox{[}\mbox{\hyperlink{classpygments_1_1lexer_1_1Lexer}{Lexer}}\mbox{]}}]{lexer }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a new lexer for source code.
+
+Use *lexer* to highlight code blocks with the given language *alias*.
+
+.. versionadded:: 0.6
+.. versionchanged:: 2.1
+   Take a lexer class as an argument.
+.. versionchanged:: 4.0
+   Removed support for lexer instances as an argument.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_aa435eac4269a76571fb7a41ac276dfbf}\label{classsphinx_1_1application_1_1Sphinx_aa435eac4269a76571fb7a41ac276dfbf} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_message\_catalog@{add\_message\_catalog}}
+\index{add\_message\_catalog@{add\_message\_catalog}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_message\_catalog()}{add\_message\_catalog()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+message\+\_\+catalog (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{catalog,  }\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}     }]{locale\+\_\+dir }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a message catalog.
+
+:param catalog: The name of the catalog
+:param locale_dir: The base path of the message catalog
+
+For more details, see :func:`sphinx.locale.get_translation()`.
+
+.. versionadded:: 1.8
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a376d37e0648f097ef088a1533d12cd61}\label{classsphinx_1_1application_1_1Sphinx_a376d37e0648f097ef088a1533d12cd61} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_node@{add\_node}}
+\index{add\_node@{add\_node}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_node()}{add\_node()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+node (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{type\mbox{[}\mbox{\hyperlink{classdocutils_1_1nodes_1_1Element}{Element}}\mbox{]}}]{node,  }\item[{bool }]{override = {\ttfamily False},  }\item[{\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+\_\+\+Node\+Handler\+Pair}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a Docutils node class.
+
+This is necessary for Docutils internals.  It may also be used in the
+future to validate nodes in the parsed documents.
+
+:param node: A node class
+:param kwargs: Visitor functions for each builder (see below)
+:param override: If true, install the node forcedly even if another node is already
+                 installed as the same name
+
+Node visitor functions for the Sphinx HTML, LaTeX, text and manpage
+writers can be given as keyword arguments: the keyword should be one or
+more of ``'html'``, ``'latex'``, ``'text'``, ``'man'``, ``'texinfo'``
+or any other supported translators, the value a 2-tuple of ``(visit,
+depart)`` methods.  ``depart`` can be ``None`` if the ``visit``
+function raises :exc:`docutils.nodes.SkipNode`.  Example:
+
+.. code-block:: python
+
+   class math(docutils.nodes.Element): ...
+
+   def visit_math_html(self, node):
+       self.body.append(self.starttag(node, 'math'))
+
+   def depart_math_html(self, node):
+       self.body.append('</math>')
+
+   app.add_node(math, html=(visit_math_html, depart_math_html))
+
+Obviously, translators for which you don't specify visitor methods will
+choke on the node when encountered in a document to translate.
+
+.. versionchanged:: 0.5
+   Added the support for keyword arguments giving visit functions.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_aa1e9891d99eefb67c0109683bfaee760}\label{classsphinx_1_1application_1_1Sphinx_aa1e9891d99eefb67c0109683bfaee760} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_object\_type@{add\_object\_type}}
+\index{add\_object\_type@{add\_object\_type}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_object\_type()}{add\_object\_type()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+object\+\_\+type (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{directivename,  }\item[{str}]{rolename,  }\item[{str }]{indextemplate = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}, str, \mbox{\hyperlink{classsphinx_1_1addnodes_1_1desc__signature}{addnodes.\+desc\+\_\+signature}}\mbox{]}, str\mbox{]}         \texorpdfstring{$\vert$}{|} None }]{parse\+\_\+node = {\ttfamily None},  }\item[{type\mbox{[}nodes.\+Text\+Element\mbox{]} \texorpdfstring{$\vert$}{|} None }]{ref\+\_\+nodeclass = {\ttfamily None},  }\item[{str }]{objname = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{Sequence\mbox{[}\mbox{\hyperlink{classsphinx_1_1util_1_1docfields_1_1Field}{Field}}\mbox{]} }]{doc\+\_\+field\+\_\+types = {\ttfamily ()},  }\item[{bool }]{override = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a new object type.
+
+This method is a very convenient way to add a new :term:`object` type
+that can be cross-referenced.  It will do this:
+
+- Create a new directive (called *directivename*) for documenting an
+  object.  It will automatically add index entries if *indextemplate*
+  is nonempty; if given, it must contain exactly one instance of
+  ``%s``.  See the example below for how the template will be
+  interpreted.
+- Create a new role (called *rolename*) to cross-reference to these
+  object descriptions.
+- If you provide *parse_node*, it must be a function that takes a
+  string and a docutils node, and it must populate the node with
+  children parsed from the string.  It must then return the name of the
+  item to be used in cross-referencing and index entries.  See the
+  :file:`conf.py` file in the source for this documentation for an
+  example.
+- The *objname* (if not given, will default to *directivename*) names
+  the type of object.  It is used when listing objects, e.g. in search
+  results.
+
+For example, if you have this call in a custom Sphinx extension::
+
+   app.add_object_type('directive', 'dir', 'pair: %s; directive')
+
+you can use this markup in your documents::
+
+   .. rst:directive:: function
+
+      Document a function.
+
+   <...>
+
+   See also the :rst:dir:`function` directive.
+
+For the directive, an index entry will be generated as if you had prepended ::
+
+   .. index:: pair: function; directive
+
+The reference node will be of class ``literal`` (so it will be rendered
+in a proportional font, as appropriate for code) unless you give the
+*ref_nodeclass* argument, which must be a docutils node class.  Most
+useful are ``docutils.nodes.emphasis`` or ``docutils.nodes.strong`` --
+you can also use ``docutils.nodes.generated`` if you want no further
+text decoration.  If the text should be treated as literal (e.g. no
+smart quote replacement), but not have typewriter styling, use
+``sphinx.addnodes.literal_emphasis`` or
+``sphinx.addnodes.literal_strong``.
+
+For the role content, you have the same syntactical possibilities as
+for standard Sphinx roles (see :ref:`xref-syntax`).
+
+If *override* is True, the given object_type is forcedly installed even if
+an object_type having the same name is already installed.
+
+.. versionchanged:: 1.8
+   Add *override* keyword.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a7a401c1c6ee4661898023694c4720def}\label{classsphinx_1_1application_1_1Sphinx_a7a401c1c6ee4661898023694c4720def} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_post\_transform@{add\_post\_transform}}
+\index{add\_post\_transform@{add\_post\_transform}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_post\_transform()}{add\_post\_transform()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+post\+\_\+transform (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{type\mbox{[}\mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform}{Transform}}\mbox{]}}]{transform }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a Docutils transform to be applied before writing.
+
+Add the standard docutils :class:`~docutils.transforms.Transform`
+subclass *transform* to the list of transforms that are applied before
+Sphinx writes a document.
+
+:param transform: A transform class
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a76f28d59726ba5ff80b3759b81612aed}\label{classsphinx_1_1application_1_1Sphinx_a76f28d59726ba5ff80b3759b81612aed} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_role@{add\_role}}
+\index{add\_role@{add\_role}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_role()}{add\_role()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+role (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name,  }\item[{Any}]{role,  }\item[{bool }]{override = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a Docutils role.
+
+:param name: The name of role
+:param role: A role function
+:param override: If false, do not install it if another role
+                 is already installed as the same name
+                 If true, unconditionally install the role.
+
+For more details about role functions, see `the Docutils docs
+<https://docutils.sourceforge.io/docs/howto/rst-roles.html>`__ .
+
+.. versionchanged:: 1.8
+   Add *override* keyword.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a952d3f09c61e79a5bbc7add5ca930c00}\label{classsphinx_1_1application_1_1Sphinx_a952d3f09c61e79a5bbc7add5ca930c00} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_role\_to\_domain@{add\_role\_to\_domain}}
+\index{add\_role\_to\_domain@{add\_role\_to\_domain}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_role\_to\_domain()}{add\_role\_to\_domain()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+role\+\_\+to\+\_\+domain (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{domain,  }\item[{str}]{name,  }\item[{\mbox{\hyperlink{classsphinx_1_1util_1_1typing_1_1RoleFunction}{Role\+Function}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{classsphinx_1_1roles_1_1XRefRole}{XRef\+Role}}}]{role,  }\item[{bool }]{override = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a Docutils role in a domain.
+
+Like :meth:`add_role`, but the role is added to the domain named
+*domain*.
+
+:param domain: The name of the target domain
+:param name: The name of the role
+:param role: The role function
+:param override: If false, do not install it if another role
+                 is already installed as the same name
+                 If true, unconditionally install the role.
+
+.. versionadded:: 1.0
+.. versionchanged:: 1.8
+   Add *override* keyword.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_af841ad1d156b8e43daefa77278df2423}\label{classsphinx_1_1application_1_1Sphinx_af841ad1d156b8e43daefa77278df2423} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_search\_language@{add\_search\_language}}
+\index{add\_search\_language@{add\_search\_language}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_search\_language()}{add\_search\_language()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+search\+\_\+language (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{type\mbox{[}\mbox{\hyperlink{classsphinx_1_1search_1_1SearchLanguage}{Search\+Language}}\mbox{]}}]{cls }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a new language for the HTML search index.
+
+Add *cls*, which must be a subclass of
+:class:`sphinx.search.SearchLanguage`, as a support language for
+building the HTML full-text search index.  The class must have a *lang*
+attribute that indicates the language it should be used for.  See
+:confval:`html_search_language`.
+
+.. versionadded:: 1.1
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_aa7d379530b955397d8ec828382098001}\label{classsphinx_1_1application_1_1Sphinx_aa7d379530b955397d8ec828382098001} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_source\_parser@{add\_source\_parser}}
+\index{add\_source\_parser@{add\_source\_parser}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_source\_parser()}{add\_source\_parser()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+source\+\_\+parser (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{type\mbox{[}\mbox{\hyperlink{classdocutils_1_1parsers_1_1Parser}{Parser}}\mbox{]}}]{parser,  }\item[{bool }]{override = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a parser class.
+
+:param override: If false, do not install it if another parser
+                 is already installed for the same suffix.
+                 If true, unconditionally install the parser.
+
+.. versionadded:: 1.4
+.. versionchanged:: 1.8
+   *suffix* argument is deprecated.  It only accepts *parser* argument.
+   Use :meth:`add_source_suffix` API to register suffix instead.
+.. versionchanged:: 1.8
+   Add *override* keyword.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a83cfd2cd6ba39153d46337e0e2a28b62}\label{classsphinx_1_1application_1_1Sphinx_a83cfd2cd6ba39153d46337e0e2a28b62} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_source\_suffix@{add\_source\_suffix}}
+\index{add\_source\_suffix@{add\_source\_suffix}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_source\_suffix()}{add\_source\_suffix()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+source\+\_\+suffix (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{suffix,  }\item[{str}]{filetype,  }\item[{bool }]{override = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a suffix of source files.
+
+Same as :confval:`source_suffix`.  The users can override this
+using the config setting.
+
+:param override: If false, do not install it the same suffix
+                 is already installed.
+                 If true, unconditionally install the suffix.
+
+.. versionadded:: 1.8
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a2cbd3bdceae4792453b30285a997cf98}\label{classsphinx_1_1application_1_1Sphinx_a2cbd3bdceae4792453b30285a997cf98} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!add\_transform@{add\_transform}}
+\index{add\_transform@{add\_transform}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{add\_transform()}{add\_transform()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+add\+\_\+transform (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{type\mbox{[}\mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform}{Transform}}\mbox{]}}]{transform }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register a Docutils transform to be applied after parsing.
+
+Add the standard docutils :class:`~docutils.transforms.Transform`
+subclass *transform* to the list of transforms that are applied after
+Sphinx parses a reST document.
+
+:param transform: A transform class
+
+.. list-table:: priority range categories for Sphinx transforms
+   :widths: 20,80
+
+   * - Priority
+     - Main purpose in Sphinx
+   * - 0-99
+     - Fix invalid nodes by docutils. Translate a doctree.
+   * - 100-299
+     - Preparation
+   * - 300-399
+     - early
+   * - 400-699
+     - main
+   * - 700-799
+     - Post processing. Deadline to modify text and referencing.
+   * - 800-899
+     - Collect referencing and referenced nodes. Domain processing.
+   * - 900-999
+     - Finalize and clean up.
+
+refs: `Transform Priority Range Categories`__
+
+__ https://docutils.sourceforge.io/docs/ref/transforms.html#transform-priority-range-categories
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_aeb3c024119d768aa0c5df9f08fddd947}\label{classsphinx_1_1application_1_1Sphinx_aeb3c024119d768aa0c5df9f08fddd947} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!build@{build}}
+\index{build@{build}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+build (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{bool }]{force\+\_\+all = {\ttfamily False},  }\item[{Sequence\mbox{[}Path\mbox{]} }]{filenames = {\ttfamily ()} }\end{DoxyParamCaption})}
+
+
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1testing_1_1util_1_1SphinxTestApp_afc66470e6f6715030bad36e3c36d9caf}{sphinx.\+testing.\+util.\+Sphinx\+Test\+App}}, and \mbox{\hyperlink{classsphinx_1_1testing_1_1util_1_1SphinxTestAppWrapperForSkipBuilding_a3da287ad0fdf7f0df0fd091dc2377223}{sphinx.\+testing.\+util.\+Sphinx\+Test\+App\+Wrapper\+For\+Skip\+Building}}.
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a90a52b3647f279049ae160108bab882b}\label{classsphinx_1_1application_1_1Sphinx_a90a52b3647f279049ae160108bab882b} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}autodoc-\/before-\/process-\/signature\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, Any, bool\mbox{]}, None\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a20464bfdba0985178abd37a815bd19fc}\label{classsphinx_1_1application_1_1Sphinx_a20464bfdba0985178abd37a815bd19fc} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}autodoc-\/process-\/bases\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, str, Any, dict\mbox{[}str, bool\mbox{]}, list\mbox{[}str\mbox{]}\mbox{]}, None\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a338b25b48ebe64496351aa83be448955}\label{classsphinx_1_1application_1_1Sphinx_a338b25b48ebe64496351aa83be448955} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [3/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}autodoc-\/process-\/docstring\textquotesingle{}\mbox{]}}]{event,  }\item[{\+\_\+\+Autodoc\+Process\+Docstring\+Listener}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a04f8071afee02ca49ef1385d58d386ed}\label{classsphinx_1_1application_1_1Sphinx_a04f8071afee02ca49ef1385d58d386ed} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [4/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}autodoc-\/process-\/signature\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}             \mbox{[}                 \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}},                 Literal\mbox{[}                     \textquotesingle{}\mbox{\hyperlink{namespacesphinx_a6c3718b14467227af280273dfbfc7e8b}{module}}\textquotesingle{}, \textquotesingle{}class\textquotesingle{}, \textquotesingle{}exception\textquotesingle{}, \textquotesingle{}function\textquotesingle{}, \textquotesingle{}method\textquotesingle{}, \textquotesingle{}attribute\textquotesingle{}                 \mbox{]},                 str,                 Any,                 dict\mbox{[}str, bool\mbox{]},                 str \texorpdfstring{$\vert$}{|} None,                 str \texorpdfstring{$\vert$}{|} None,             \mbox{]},             tuple\mbox{[}str \texorpdfstring{$\vert$}{|} None, str \texorpdfstring{$\vert$}{|} None\mbox{]} \texorpdfstring{$\vert$}{|} None,         \mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_aaa33f5e102c86b5bb24b4a209dd4cff2}\label{classsphinx_1_1application_1_1Sphinx_aaa33f5e102c86b5bb24b4a209dd4cff2} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [5/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}autodoc-\/skip-\/member\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}             \mbox{[}                 \mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}},                 Literal\mbox{[}                     \textquotesingle{}\mbox{\hyperlink{namespacesphinx_a6c3718b14467227af280273dfbfc7e8b}{module}}\textquotesingle{}, \textquotesingle{}class\textquotesingle{}, \textquotesingle{}exception\textquotesingle{}, \textquotesingle{}function\textquotesingle{}, \textquotesingle{}method\textquotesingle{}, \textquotesingle{}attribute\textquotesingle{}                 \mbox{]},                 str,                 Any,                 bool,                 dict\mbox{[}str, bool\mbox{]},             \mbox{]},             bool,         \mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_ac36298310b065b8710fe87d81985a70f}\label{classsphinx_1_1application_1_1Sphinx_ac36298310b065b8710fe87d81985a70f} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [6/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aeb3c024119d768aa0c5df9f08fddd947}{build}}-\/finished\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, Exception \texorpdfstring{$\vert$}{|} None\mbox{]}, None\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a39df2fbb8313f036d7b17296df800582}\label{classsphinx_1_1application_1_1Sphinx_a39df2fbb8313f036d7b17296df800582} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [7/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_aca4bb0c0af3e9ca0199b952f0cfb0db3}{builder}}-\/inited\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}\mbox{]}, None\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_afd24cd8e2882a11c77666e6beea5e67e}\label{classsphinx_1_1application_1_1Sphinx_afd24cd8e2882a11c77666e6beea5e67e} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [8/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ad074598f73546a7c3ff76f090711edf6}{config}}-\/inited\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1config_1_1Config}{Config}}\mbox{]}, None\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_ade9628e50c80b8f6737828ae16bb929f}\label{classsphinx_1_1application_1_1Sphinx_ade9628e50c80b8f6737828ae16bb929f} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [9/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}doctree-\/read\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, nodes.\+document\mbox{]}, None\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a9a5a5449448f56f8fb93a296dfd68d0c}\label{classsphinx_1_1application_1_1Sphinx_a9a5a5449448f56f8fb93a296dfd68d0c} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [10/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}doctree-\/resolved\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, nodes.\+document, str\mbox{]}, None\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a8a3afd3423a7b7f3cb369ee7e03f53fd}\label{classsphinx_1_1application_1_1Sphinx_a8a3afd3423a7b7f3cb369ee7e03f53fd} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [11/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ac7c96d3c3255b1da758b1dbe11460d04}{env}}-\/before-\/read-\/docs\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}, list\mbox{[}str\mbox{]}\mbox{]}, None\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a12ea4219fa7ee185ef35e83f88b6dfbc}\label{classsphinx_1_1application_1_1Sphinx_a12ea4219fa7ee185ef35e83f88b6dfbc} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [12/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ac7c96d3c3255b1da758b1dbe11460d04}{env}}-\/\mbox{\hyperlink{namespacesphinx_afcb8fe6962f0c51b51877e41b032bbbc}{check}}-\/consistency\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}\mbox{]}, None\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a97508109a17514ae9160f2e1dfc79ce2}\label{classsphinx_1_1application_1_1Sphinx_a97508109a17514ae9160f2e1dfc79ce2} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [13/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ac7c96d3c3255b1da758b1dbe11460d04}{env}}-\/get-\/outdated\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}             \mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}, Set\mbox{[}str\mbox{]}, Set\mbox{[}str\mbox{]}, Set\mbox{[}str\mbox{]}\mbox{]}, Sequence\mbox{[}str\mbox{]}         \mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a26ff496b48bd98e4fb3e7176c41be54f}\label{classsphinx_1_1application_1_1Sphinx_a26ff496b48bd98e4fb3e7176c41be54f} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [14/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ac7c96d3c3255b1da758b1dbe11460d04}{env}}-\/get-\/updated\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}\mbox{]}, Iterable\mbox{[}str\mbox{]}\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a621e8849f9c128d8345bf1fe2182db7e}\label{classsphinx_1_1application_1_1Sphinx_a621e8849f9c128d8345bf1fe2182db7e} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [15/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ac7c96d3c3255b1da758b1dbe11460d04}{env}}-\/merge-\/info\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}             \mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}, Set\mbox{[}str\mbox{]}, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}\mbox{]}, None         \mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a0f813b5513d7fffc010a27cb79062b2b}\label{classsphinx_1_1application_1_1Sphinx_a0f813b5513d7fffc010a27cb79062b2b} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [16/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ac7c96d3c3255b1da758b1dbe11460d04}{env}}-\/purge-\/doc\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}, str\mbox{]}, None\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a3355e8d07e10539d30567e862d4351e3}\label{classsphinx_1_1application_1_1Sphinx_a3355e8d07e10539d30567e862d4351e3} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [17/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx_ac7c96d3c3255b1da758b1dbe11460d04}{env}}-\/updated\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}\mbox{]}, str\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_aa1370b9ca5ee877f8261715079fb1ad2}\label{classsphinx_1_1application_1_1Sphinx_aa1370b9ca5ee877f8261715079fb1ad2} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [18/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}html-\/collect-\/pages\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}\mbox{]}, Iterable\mbox{[}tuple\mbox{[}str, dict\mbox{[}str, Any\mbox{]}, str\mbox{]}\mbox{]}\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a6d0f7460ed5d0327c688e20dd112fda2}\label{classsphinx_1_1application_1_1Sphinx_a6d0f7460ed5d0327c688e20dd112fda2} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [19/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}html-\/page-\/context\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}             \mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, str, str, dict\mbox{[}str, Any\mbox{]}, nodes.\+document\mbox{]}, str \texorpdfstring{$\vert$}{|} None         \mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a6bd78b157baa848db3d36c318c039b57}\label{classsphinx_1_1application_1_1Sphinx_a6bd78b157baa848db3d36c318c039b57} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [20/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}include-\/read\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, Path, str, list\mbox{[}str\mbox{]}\mbox{]}, None\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a136ffb4b69254b865622e9d61e180f94}\label{classsphinx_1_1application_1_1Sphinx_a136ffb4b69254b865622e9d61e180f94} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [21/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}linkcheck-\/process-\/uri\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, str\mbox{]}, str \texorpdfstring{$\vert$}{|} None\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a6a368b041249e60bf8de5db2e9b722a5}\label{classsphinx_1_1application_1_1Sphinx_a6a368b041249e60bf8de5db2e9b722a5} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [22/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}missing-\/reference\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}             \mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}, \mbox{\hyperlink{classsphinx_1_1addnodes_1_1pending__xref}{addnodes.\+pending\+\_\+xref}}, nodes.\+Text\+Element\mbox{]},             nodes.\+reference \texorpdfstring{$\vert$}{|} None,         \mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a513fafa2f70ccaf44d983febb1fdfd90}\label{classsphinx_1_1application_1_1Sphinx_a513fafa2f70ccaf44d983febb1fdfd90} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [23/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}object-\/description-\/transform\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, str, str, \mbox{\hyperlink{classsphinx_1_1addnodes_1_1desc__content}{addnodes.\+desc\+\_\+content}}\mbox{]}, None\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_ac2b64ed490828b17e32f5e6ccc62a843}\label{classsphinx_1_1application_1_1Sphinx_ac2b64ed490828b17e32f5e6ccc62a843} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [24/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}source-\/read\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, str, list\mbox{[}str\mbox{]}\mbox{]}, None\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_ae28444813856317f2ae9405b1c377094}\label{classsphinx_1_1application_1_1Sphinx_ae28444813856317f2ae9405b1c377094} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [25/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}todo-\/defined\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1ext_1_1todo_1_1todo__node}{todo\+\_\+node}}\mbox{]}, None\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a6a0b9498a627c7b10ac76da6c7828173}\label{classsphinx_1_1application_1_1Sphinx_a6a0b9498a627c7b10ac76da6c7828173} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [26/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}viewcode-\/find-\/source\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}             \mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, str\mbox{]},             tuple\mbox{[}str, dict\mbox{[}str, tuple\mbox{[}Literal\mbox{[}\textquotesingle{}class\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_a0fa868bf2d168787deeba7cdff6f1aed}{def}}\textquotesingle{}, \textquotesingle{}other\textquotesingle{}\mbox{]}, int, int\mbox{]}\mbox{]}\mbox{]},         \mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_abc19cfa0d5661bf4f46f3805d54da095}\label{classsphinx_1_1application_1_1Sphinx_abc19cfa0d5661bf4f46f3805d54da095} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [27/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}viewcode-\/follow-\/imported\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, str, str\mbox{]}, str \texorpdfstring{$\vert$}{|} None\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a437b5daebbe0e4b2f2adc8f5080fc1e8}\label{classsphinx_1_1application_1_1Sphinx_a437b5daebbe0e4b2f2adc8f5080fc1e8} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [28/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}warn-\/missing-\/reference\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain}{Domain}}, \mbox{\hyperlink{classsphinx_1_1addnodes_1_1pending__xref}{addnodes.\+pending\+\_\+xref}}\mbox{]}, bool \texorpdfstring{$\vert$}{|} None\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_ad6da23488517d5e3ec6c753479f820ca}\label{classsphinx_1_1application_1_1Sphinx_ad6da23488517d5e3ec6c753479f820ca} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [29/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}write-\/started\textquotesingle{}\mbox{]}}]{event,  }\item[{Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}, \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}}\mbox{]}, None\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_ad1d650c724c6cb4a53e9d7c868a116b8}\label{classsphinx_1_1application_1_1Sphinx_ad1d650c724c6cb4a53e9d7c868a116b8} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [30/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{event,  }\item[{Callable\mbox{[}..., Any\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_ad1d650c724c6cb4a53e9d7c868a116b8}\label{classsphinx_1_1application_1_1Sphinx_ad1d650c724c6cb4a53e9d7c868a116b8} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!connect@{connect}}
+\index{connect@{connect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [31/31]}}
+{\footnotesize\ttfamily  int sphinx.\+application.\+Sphinx.\+connect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{event,  }\item[{Callable\mbox{[}..., Any\mbox{]}}]{callback,  }\item[{int }]{priority = {\ttfamily 500} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register *callback* to be called when *event* is emitted.
+
+For details on available core events and the arguments of callback
+functions, please see :ref:`events`.
+
+:param event: The name of target event
+:param callback: Callback function for the event
+:param priority: The priority of the callback.  The callbacks will be invoked
+                 in order of *priority* (ascending).
+:return: A listener ID.  It can be used for :meth:`disconnect`.
+
+.. versionchanged:: 3.0
+
+   Support *priority*
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_af587bc7b8b7a55c5d3b422632395238e}\label{classsphinx_1_1application_1_1Sphinx_af587bc7b8b7a55c5d3b422632395238e} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!create\_builder@{create\_builder}}
+\index{create\_builder@{create\_builder}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{create\_builder()}{create\_builder()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}} sphinx.\+application.\+Sphinx.\+create\+\_\+builder (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a5bb6928e2e0a3fb04794d36fd933becc}\label{classsphinx_1_1application_1_1Sphinx_a5bb6928e2e0a3fb04794d36fd933becc} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+disconnect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{listener\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Unregister callback by *listener_id*.
+
+:param listener_id: A listener_id that :meth:`connect` returns
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a24ca6da0080aece00c43172dad9e0111}\label{classsphinx_1_1application_1_1Sphinx_a24ca6da0080aece00c43172dad9e0111} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!emit@{emit}}
+\index{emit@{emit}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{emit()}{emit()}}
+{\footnotesize\ttfamily  list\mbox{[}Any\mbox{]} sphinx.\+application.\+Sphinx.\+emit (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{event,  }\item[{\texorpdfstring{$\ast$}{*}Any}]{args,  }\item[{tuple\mbox{[}type\mbox{[}Exception\mbox{]}, ...\mbox{]} }]{allowed\+\_\+exceptions = {\ttfamily ()} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Emit *event* and pass *arguments* to the callback functions.
+
+Return the return values of all callbacks as a list.  Do not emit core
+Sphinx events in extensions!
+
+:param event: The name of event that will be emitted
+:param args: The arguments for the event
+:param allowed_exceptions: The list of exceptions that are allowed in the callbacks
+
+.. versionchanged:: 3.1
+
+   Added *allowed_exceptions* to specify path-through exceptions
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_ad9b2043b893113b328de23f6135db291}\label{classsphinx_1_1application_1_1Sphinx_ad9b2043b893113b328de23f6135db291} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!emit\_firstresult@{emit\_firstresult}}
+\index{emit\_firstresult@{emit\_firstresult}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{emit\_firstresult()}{emit\_firstresult()}}
+{\footnotesize\ttfamily  Any sphinx.\+application.\+Sphinx.\+emit\+\_\+firstresult (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{event,  }\item[{\texorpdfstring{$\ast$}{*}Any}]{args,  }\item[{tuple\mbox{[}type\mbox{[}Exception\mbox{]}, ...\mbox{]} }]{allowed\+\_\+exceptions = {\ttfamily ()} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Emit *event* and pass *arguments* to the callback functions.
+
+Return the result of the first callback that doesn't return ``None``.
+
+:param event: The name of event that will be emitted
+:param args: The arguments for the event
+:param allowed_exceptions: The list of exceptions that are allowed in the callbacks
+
+.. versionadded:: 0.5
+.. versionchanged:: 3.1
+
+   Added *allowed_exceptions* to specify path-through exceptions
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_ab61d27d5566a438217b6aa432ea7d9d2}\label{classsphinx_1_1application_1_1Sphinx_ab61d27d5566a438217b6aa432ea7d9d2} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!fresh\_env\_used@{fresh\_env\_used}}
+\index{fresh\_env\_used@{fresh\_env\_used}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{fresh\_env\_used()}{fresh\_env\_used()}}
+{\footnotesize\ttfamily  bool \texorpdfstring{$\vert$}{|} None sphinx.\+application.\+Sphinx.\+fresh\+\_\+env\+\_\+used (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}True/False as to whether a new environment was created for this build,
+or None if the environment has not been initialised yet.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_a11eb76fc0202ea5b8b8b7b370ef9ccb1}\label{classsphinx_1_1application_1_1Sphinx_a11eb76fc0202ea5b8b8b7b370ef9ccb1} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!is\_parallel\_allowed@{is\_parallel\_allowed}}
+\index{is\_parallel\_allowed@{is\_parallel\_allowed}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{is\_parallel\_allowed()}{is\_parallel\_allowed()}}
+{\footnotesize\ttfamily  bool sphinx.\+application.\+Sphinx.\+is\+\_\+parallel\+\_\+allowed (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{typ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check whether parallel processing is allowed or not.
+
+:param typ: A type of processing; ``'read'`` or ``'write'``.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_aeaea679eaec92edcc26ecd71be8ab8fb}\label{classsphinx_1_1application_1_1Sphinx_aeaea679eaec92edcc26ecd71be8ab8fb} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!preload\_builder@{preload\_builder}}
+\index{preload\_builder@{preload\_builder}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{preload\_builder()}{preload\_builder()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+preload\+\_\+builder (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a670a13617aa0beb114d045a24530467b}\label{classsphinx_1_1application_1_1Sphinx_a670a13617aa0beb114d045a24530467b} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!require\_sphinx@{require\_sphinx}}
+\index{require\_sphinx@{require\_sphinx}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{require\_sphinx()}{require\_sphinx()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+require\+\_\+sphinx (\begin{DoxyParamCaption}\item[{tuple\mbox{[}int, int\mbox{]} \texorpdfstring{$\vert$}{|} str}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Check the Sphinx version if requested.
+
+Compare *version* with the version of the running Sphinx, and abort the
+build when it is too old.
+
+:param version: The required version in the form of ``major.minor`` or
+                ``(major, minor)``.
+
+.. versionadded:: 1.0
+.. versionchanged:: 7.1
+   Type of *version* now allows ``(major, minor)`` form.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_aa652b124344092f521cc206eab920156}\label{classsphinx_1_1application_1_1Sphinx_aa652b124344092f521cc206eab920156} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!set\_html\_assets\_policy@{set\_html\_assets\_policy}}
+\index{set\_html\_assets\_policy@{set\_html\_assets\_policy}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{set\_html\_assets\_policy()}{set\_html\_assets\_policy()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+set\+\_\+html\+\_\+assets\+\_\+policy (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Literal\mbox{[}\textquotesingle{}always\textquotesingle{}, \textquotesingle{}per\+\_\+page\textquotesingle{}\mbox{]}}]{policy }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set the policy to include assets in HTML pages.
+
+- always: include the assets in all the pages
+- per_page: include the assets only in pages where they are used
+
+.. versionadded: 4.1
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_ad7144a0e22de0a518df7aa15db98e2ef}\label{classsphinx_1_1application_1_1Sphinx_ad7144a0e22de0a518df7aa15db98e2ef} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!set\_translator@{set\_translator}}
+\index{set\_translator@{set\_translator}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{set\_translator()}{set\_translator()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+set\+\_\+translator (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name,  }\item[{type\mbox{[}nodes.\+Node\+Visitor\mbox{]}}]{translator\+\_\+class,  }\item[{bool }]{override = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register or override a Docutils translator class.
+
+This is used to register a custom output translator or to replace a
+builtin translator.  This allows extensions to use a custom translator
+and define custom nodes for the translator (see :meth:`add_node`).
+
+:param name: The name of the builder for the translator
+:param translator_class: A translator class
+:param override: If true, install the translator forcedly even if another translator
+                 is already installed as the same name
+
+.. versionadded:: 1.3
+.. versionchanged:: 1.8
+   Add *override* keyword.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1application_1_1Sphinx_aaf4fcec2b095fd43b7445969af84b215}\label{classsphinx_1_1application_1_1Sphinx_aaf4fcec2b095fd43b7445969af84b215} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!setup\_extension@{setup\_extension}}
+\index{setup\_extension@{setup\_extension}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{setup\_extension()}{setup\_extension()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Sphinx.\+setup\+\_\+extension (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{extname }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Import and setup a Sphinx extension module.
+
+Load the extension given by the module *name*.  Use this if your
+extension needs the features provided by another extension.  No-op if
+called twice.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a8b77df96b92d84b88169d2aa736fe7ee}\label{classsphinx_1_1application_1_1Sphinx_a8b77df96b92d84b88169d2aa736fe7ee} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!\_exception\_on\_warning@{\_exception\_on\_warning}}
+\index{\_exception\_on\_warning@{\_exception\_on\_warning}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{\_exception\_on\_warning}{\_exception\_on\_warning}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+\_\+exception\+\_\+on\+\_\+warning\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_af79931f1e2a466047376ca7d73a56d08}\label{classsphinx_1_1application_1_1Sphinx_af79931f1e2a466047376ca7d73a56d08} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!\_fail\_on\_warnings@{\_fail\_on\_warnings}}
+\index{\_fail\_on\_warnings@{\_fail\_on\_warnings}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{\_fail\_on\_warnings}{\_fail\_on\_warnings}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+\_\+fail\+\_\+on\+\_\+warnings\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a9b717b02c5d6af49d02fe5f90f1164b6}\label{classsphinx_1_1application_1_1Sphinx_a9b717b02c5d6af49d02fe5f90f1164b6} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!\_fresh\_env\_used@{\_fresh\_env\_used}}
+\index{\_fresh\_env\_used@{\_fresh\_env\_used}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{\_fresh\_env\_used}{\_fresh\_env\_used}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+\_\+fresh\+\_\+env\+\_\+used\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a8f43fd0fddd9f2efa1916e56acc53a08}\label{classsphinx_1_1application_1_1Sphinx_a8f43fd0fddd9f2efa1916e56acc53a08} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!\_status@{\_status}}
+\index{\_status@{\_status}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{\_status}{\_status}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+\_\+status\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a9b48228a6a45a61890f990c997bcc399}\label{classsphinx_1_1application_1_1Sphinx_a9b48228a6a45a61890f990c997bcc399} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!\_warncount@{\_warncount}}
+\index{\_warncount@{\_warncount}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{\_warncount}{\_warncount}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int sphinx.\+application.\+Sphinx.\+\_\+warncount\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_ad46e04132d8603a5fde8527279b83237}\label{classsphinx_1_1application_1_1Sphinx_ad46e04132d8603a5fde8527279b83237} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!\_warncount@{\_warncount}}
+\index{\_warncount@{\_warncount}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{\_warncount}{\_warncount}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+\_\+warncount\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_ac657250c7f20eb0c3d397865de3ebf01}\label{classsphinx_1_1application_1_1Sphinx_ac657250c7f20eb0c3d397865de3ebf01} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!\_warning@{\_warning}}
+\index{\_warning@{\_warning}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{\_warning}{\_warning}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+\_\+warning\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_aca4bb0c0af3e9ca0199b952f0cfb0db3}\label{classsphinx_1_1application_1_1Sphinx_aca4bb0c0af3e9ca0199b952f0cfb0db3} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!builder@{builder}}
+\index{builder@{builder}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{builder}{builder}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+builder}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_adba5a82f82c5a201a657b73f425ec9c5}\label{classsphinx_1_1application_1_1Sphinx_adba5a82f82c5a201a657b73f425ec9c5} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!confdir@{confdir}}
+\index{confdir@{confdir}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{confdir}{confdir}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+confdir = \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPathProperty}{\+\_\+\+Str\+Path\+Property}}()\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_ad074598f73546a7c3ff76f090711edf6}\label{classsphinx_1_1application_1_1Sphinx_ad074598f73546a7c3ff76f090711edf6} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!config@{config}}
+\index{config@{config}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{config}{config}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+config}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a5625f9cd65a3f8c241090e22918e7912}\label{classsphinx_1_1application_1_1Sphinx_a5625f9cd65a3f8c241090e22918e7912} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!doctreedir@{doctreedir}}
+\index{doctreedir@{doctreedir}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{doctreedir}{doctreedir}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+doctreedir = \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPathProperty}{\+\_\+\+Str\+Path\+Property}}()\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_ac7c96d3c3255b1da758b1dbe11460d04}\label{classsphinx_1_1application_1_1Sphinx_ac7c96d3c3255b1da758b1dbe11460d04} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!env@{env}}
+\index{env@{env}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{env}{env}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+env}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_ae1703aaa00f79116b86f9452b9762c58}\label{classsphinx_1_1application_1_1Sphinx_ae1703aaa00f79116b86f9452b9762c58} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!events@{events}}
+\index{events@{events}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{events}{events}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+events}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_aaef71742f90b2af6b2b790dbfcfa82e4}\label{classsphinx_1_1application_1_1Sphinx_aaef71742f90b2af6b2b790dbfcfa82e4} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!keep\_going@{keep\_going}}
+\index{keep\_going@{keep\_going}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{keep\_going}{keep\_going}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+keep\+\_\+going}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a84d456439bc7df4102e4b9dbbb91c04a}\label{classsphinx_1_1application_1_1Sphinx_a84d456439bc7df4102e4b9dbbb91c04a} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!objtype@{objtype}}
+\index{objtype@{objtype}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{objtype}{objtype}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+objtype}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_aa5fbbb8a62a9666af63a05c510710f97}\label{classsphinx_1_1application_1_1Sphinx_aa5fbbb8a62a9666af63a05c510710f97} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!outdir@{outdir}}
+\index{outdir@{outdir}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{outdir}{outdir}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+outdir = \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPathProperty}{\+\_\+\+Str\+Path\+Property}}()\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a1b6f70617bed2b89d2f5750e1ea65f50}\label{classsphinx_1_1application_1_1Sphinx_a1b6f70617bed2b89d2f5750e1ea65f50} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!parallel@{parallel}}
+\index{parallel@{parallel}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{parallel}{parallel}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+parallel}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a3ff3136e388b5f45f53528e6b269d13f}\label{classsphinx_1_1application_1_1Sphinx_a3ff3136e388b5f45f53528e6b269d13f} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!pdb@{pdb}}
+\index{pdb@{pdb}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{pdb}{pdb}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+pdb}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a1314af174a4df7c5955f1ca394a8c68e}\label{classsphinx_1_1application_1_1Sphinx_a1314af174a4df7c5955f1ca394a8c68e} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!phase@{phase}}
+\index{phase@{phase}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{phase}{phase}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+phase}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_ad2c8f5d7d463934d4650f6c3915a5d14}\label{classsphinx_1_1application_1_1Sphinx_ad2c8f5d7d463934d4650f6c3915a5d14} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!project@{project}}
+\index{project@{project}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{project}{project}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+project}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_afb351f89fa606e5ce1b429f75ddc347c}\label{classsphinx_1_1application_1_1Sphinx_afb351f89fa606e5ce1b429f75ddc347c} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!quiet@{quiet}}
+\index{quiet@{quiet}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{quiet}{quiet}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+quiet}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a89e3b080d90e064e02e1b07bfd41a3d5}\label{classsphinx_1_1application_1_1Sphinx_a89e3b080d90e064e02e1b07bfd41a3d5} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!registry@{registry}}
+\index{registry@{registry}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{registry}{registry}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+registry}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a418020ccee536600a1ce7df2e2e143f1}\label{classsphinx_1_1application_1_1Sphinx_a418020ccee536600a1ce7df2e2e143f1} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!srcdir@{srcdir}}
+\index{srcdir@{srcdir}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{srcdir}{srcdir}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+srcdir = \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPathProperty}{\+\_\+\+Str\+Path\+Property}}()\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a8bd1e6af8be6d7fc503bca6d833b4658}\label{classsphinx_1_1application_1_1Sphinx_a8bd1e6af8be6d7fc503bca6d833b4658} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!statuscode@{statuscode}}
+\index{statuscode@{statuscode}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{statuscode}{statuscode}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+statuscode}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_aecba99b04c5ad7b39f3a123dd1affa82}\label{classsphinx_1_1application_1_1Sphinx_aecba99b04c5ad7b39f3a123dd1affa82} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!tags@{tags}}
+\index{tags@{tags}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{tags}{tags}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+tags}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_ae6cfb19a764cd38821dee272dcba9268}\label{classsphinx_1_1application_1_1Sphinx_ae6cfb19a764cd38821dee272dcba9268} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!translator@{translator}}
+\index{translator@{translator}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{translator}{translator}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+translator}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_a082f1620825887d01030cef6a8e8df5c}\label{classsphinx_1_1application_1_1Sphinx_a082f1620825887d01030cef6a8e8df5c} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!verbosity@{verbosity}}
+\index{verbosity@{verbosity}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{verbosity}{verbosity}}
+{\footnotesize\ttfamily sphinx.\+application.\+Sphinx.\+verbosity}
+
+\Hypertarget{classsphinx_1_1application_1_1Sphinx_ac0aeaf43bf830ad69809c2a790a601f9}\label{classsphinx_1_1application_1_1Sphinx_ac0aeaf43bf830ad69809c2a790a601f9} 
+\index{sphinx.application.Sphinx@{sphinx.application.Sphinx}!warningiserror@{warningiserror}}
+\index{warningiserror@{warningiserror}!sphinx.application.Sphinx@{sphinx.application.Sphinx}}
+\doxysubsubsection{\texorpdfstring{warningiserror}{warningiserror}}
+{\footnotesize\ttfamily Final sphinx.\+application.\+Sphinx.\+warningiserror = False\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/sphinx/\mbox{\hyperlink{application_8py}{application.\+py}}\end{DoxyCompactItemize}

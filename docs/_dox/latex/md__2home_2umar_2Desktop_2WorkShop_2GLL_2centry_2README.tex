@@ -1,0 +1,61 @@
+\chapter{CENTRY}
+\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2centry_2README}{}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2centry_2README}\index{CENTRY@{CENTRY}}
+\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2centry_2README_autotoc_md11}%
+\Hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2centry_2README_autotoc_md11}%
+ 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{+\ For\ the\ moment,\ this\ is\ an\ experimental\ phase,\ a\ proof\ of\ concept,\ using\ Docker\ as\ a\ combaye.}
+\DoxyCodeLine{+\ But\ in\ the\ future,\ we're\ going\ to\ extend\ it\ to\ other\ types\ of\ containerization,\ such\ as\ LXC\ Chroot\ and\ others.\ }
+
+\end{DoxyCode}
+\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2centry_2README_autotoc_md12}{}\doxysubsection{\texorpdfstring{What is Centry}{What is Centry}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2centry_2README_autotoc_md12}
+Centry is a simple, lightweight program that {\bfseries{lets you access the inside of a running Docker container}} just like in {\itshape interactive tty mode}. The only prerequisite is to have Docker already available on your system.\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2centry_2README_autotoc_md13}{}\doxysubsection{\texorpdfstring{Quick demo}{Quick demo}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2centry_2README_autotoc_md13}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ \ center\ \ <short-\/id-\/container\{2-\/3\}>\ }
+
+\end{DoxyCode}
+ Exemple \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$>\ docker\ ps\ }
+\DoxyCodeLine{CONTAINER\ ID\ \ \ IMAGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ COMMAND\ \ \ \ \ \ \ \ \ \ \ CREATED\ \ \ \ \ \ \ \ STATUS\ \ \ \ \ \ \ \ PORTS\ \ \ \ \ NAMES}
+\DoxyCodeLine{c3784c6459b9\ \ \ <image>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}sleep\ 9999999"{}\ \ \ 24\ hours\ ago\ \ \ Up\ 24\ hours\ \ \ \ \ \ \ \ \ \ \ \ festive\_ramanujan}
+\DoxyCodeLine{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#>\ center\ c37\ \ \ }
+
+\end{DoxyCode}
+ However ,If no arguments are supplied , an interface (TUI) will be proposed, allowing you to choose your target use $<$\+WASD$>$ to move up and down
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ centry}
+
+\end{DoxyCode}
+ 
+
+{\itshape For Any issue happening after centry tui type {\ttfamily reset} to restore your terminal}\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2centry_2README_autotoc_md14}{}\doxysubsection{\texorpdfstring{COMPILE}{COMPILE}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2centry_2README_autotoc_md14}
+{\bfseries{We strongly recommend using the \href{https://mesonbuild.com/}{\texttt{ Meson Build System}} to build the project.}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$>\ \ meson\ setup\ build\ }
+\DoxyCodeLine{\$>\ \ meson\ compile\ -\/C\ build\ }
+\DoxyCodeLine{\$>\ \ meson\ install\ -\/C\ build\ \ \#To\ install\ localy\ }
+
+\end{DoxyCode}
+
+
+To uninstall 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#>\ ninja\ uninstall\ -\/C\ build\ }
+
+\end{DoxyCode}
+\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2centry_2README_autotoc_md15}{}\doxysubsubsection{\texorpdfstring{NOTE \+:}{NOTE :}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2centry_2README_autotoc_md15}
+If you notice any problems, please open an issue and we will be happy to correct them. If you have the opportunity to do so, we encourage you to submit a PR.
+
+Thank you in advance for your cooperation.
+
+Appreciate Computer at all levels 🇸🇳 

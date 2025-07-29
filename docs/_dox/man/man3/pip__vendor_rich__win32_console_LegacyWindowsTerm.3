@@ -1,0 +1,345 @@
+.TH "pip._vendor.rich._win32_console.LegacyWindowsTerm" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.rich._win32_console.LegacyWindowsTerm
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, 'IO[str]' file)"
+.br
+.ti -1c
+.RI "\fBWindowsCoordinates\fP \fBcursor_position\fP (self)"
+.br
+.ti -1c
+.RI "\fBWindowsCoordinates\fP \fBscreen_size\fP (self)"
+.br
+.ti -1c
+.RI "None \fBwrite_text\fP (self, str text)"
+.br
+.ti -1c
+.RI "None \fBwrite_styled\fP (self, str text, \fBStyle\fP \fBstyle\fP)"
+.br
+.ti -1c
+.RI "None \fBmove_cursor_to\fP (self, \fBWindowsCoordinates\fP new_position)"
+.br
+.ti -1c
+.RI "None \fBerase_line\fP (self)"
+.br
+.ti -1c
+.RI "None \fBerase_end_of_line\fP (self)"
+.br
+.ti -1c
+.RI "None \fBerase_start_of_line\fP (self)"
+.br
+.ti -1c
+.RI "None \fBmove_cursor_up\fP (self)"
+.br
+.ti -1c
+.RI "None \fBmove_cursor_down\fP (self)"
+.br
+.ti -1c
+.RI "None \fBmove_cursor_forward\fP (self)"
+.br
+.ti -1c
+.RI "None \fBmove_cursor_to_column\fP (self, int column)"
+.br
+.ti -1c
+.RI "None \fBmove_cursor_backward\fP (self)"
+.br
+.ti -1c
+.RI "None \fBhide_cursor\fP (self)"
+.br
+.ti -1c
+.RI "None \fBshow_cursor\fP (self)"
+.br
+.ti -1c
+.RI "None \fBset_title\fP (self, str title)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBwrite\fP"
+.br
+.ti -1c
+.RI "\fBflush\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBBRIGHT_BIT\fP = 8"
+.br
+.ti -1c
+.RI "list \fBANSI_TO_WINDOWS\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fB_get_cursor_size\fP (self)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_handle\fP"
+.br
+.ti -1c
+.RI "\fB_default_text\fP"
+.br
+.ti -1c
+.RI "\fB_default_fore\fP"
+.br
+.ti -1c
+.RI "\fB_default_back\fP"
+.br
+.ti -1c
+.RI "\fB_default_attrs\fP"
+.br
+.ti -1c
+.RI "\fB_file\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This class allows interaction with the legacy Windows Console API\&. It should only be used in the context
+of environments where virtual terminal processing is not available\&. However, if it is used in a Windows environment,
+the entire API should work\&.
+
+Args:
+    file (IO[str]): The file which the Windows Console API HANDLE is retrieved from, defaults to sys\&.stdout\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&.__init__ ( self, 'IO[str]' file)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " int pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&._get_cursor_size ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Get the percentage of the character cell that is filled by the cursor
+.fi
+.PP
+ 
+.SS " \fBWindowsCoordinates\fP pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&.cursor_position ( self)"
+
+.PP
+.nf
+Returns the current position of the cursor (0-based)
+
+Returns:
+    WindowsCoordinates: The current cursor position\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&.erase_end_of_line ( self)"
+
+.PP
+.nf
+Erase all content from the cursor position to the end of that line
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&.erase_line ( self)"
+
+.PP
+.nf
+Erase all content on the line the cursor is currently located at
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&.erase_start_of_line ( self)"
+
+.PP
+.nf
+Erase all content from the cursor position to the start of that line
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&.hide_cursor ( self)"
+
+.PP
+.nf
+Hide the cursor
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&.move_cursor_backward ( self)"
+
+.PP
+.nf
+Move the cursor backward a single cell\&. Wrap to the previous line if required\&.
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&.move_cursor_down ( self)"
+
+.PP
+.nf
+Move the cursor down a single cell
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&.move_cursor_forward ( self)"
+
+.PP
+.nf
+Move the cursor forward a single cell\&. Wrap to the next line if required\&.
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&.move_cursor_to ( self, \fBWindowsCoordinates\fP new_position)"
+
+.PP
+.nf
+Set the position of the cursor
+
+Args:
+    new_position (WindowsCoordinates): The WindowsCoordinates representing the new position of the cursor\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&.move_cursor_to_column ( self, int column)"
+
+.PP
+.nf
+Move cursor to the column specified by the zero-based column index, staying on the same row
+
+Args:
+    column (int): The zero-based column index to move the cursor to\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&.move_cursor_up ( self)"
+
+.PP
+.nf
+Move the cursor up a single cell
+.fi
+.PP
+ 
+.SS " \fBWindowsCoordinates\fP pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&.screen_size ( self)"
+
+.PP
+.nf
+Returns the current size of the console screen buffer, in character columns and rows
+
+Returns:
+    WindowsCoordinates: The width and height of the screen as WindowsCoordinates\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&.set_title ( self, str title)"
+
+.PP
+.nf
+Set the title of the terminal window
+
+Args:
+    title (str): The new title of the console window
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&.show_cursor ( self)"
+
+.PP
+.nf
+Show the cursor
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&.write_styled ( self, str text, \fBStyle\fP style)"
+
+.PP
+.nf
+Write styled text to the terminal\&.
+
+Args:
+    text (str): The text to write
+    style (Style): The style of the text
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&.write_text ( self, str text)"
+
+.PP
+.nf
+Write text directly to the terminal without any modification of styles
+
+Args:
+    text (str): The text to write to the console
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&._default_attrs\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&._default_back\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&._default_fore\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&._default_text\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&._file\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&._handle\fC [protected]\fP"
+
+.SS "list pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&.ANSI_TO_WINDOWS\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        0,  # black                      The Windows colours are defined in wincon\&.h as follows:
+        4,  # red                         define FOREGROUND_BLUE            0x0001 \-\- 0000 0001
+        2,  # green                       define FOREGROUND_GREEN           0x0002 \-\- 0000 0010
+        6,  # yellow                      define FOREGROUND_RED             0x0004 \-\- 0000 0100
+        1,  # blue                        define FOREGROUND_INTENSITY       0x0008 \-\- 0000 1000
+        5,  # magenta                     define BACKGROUND_BLUE            0x0010 \-\- 0001 0000
+        3,  # cyan                        define BACKGROUND_GREEN           0x0020 \-\- 0010 0000
+        7,  # white                       define BACKGROUND_RED             0x0040 \-\- 0100 0000
+        8,  # bright black (grey)         define BACKGROUND_INTENSITY       0x0080 \-\- 1000 0000
+        12,  # bright red
+        10,  # bright green
+        14,  # bright yellow
+        9,  # bright blue
+        13,  # bright magenta
+        11,  # bright cyan
+        15,  # bright white
+    ]
+.fi
+
+.SS "int pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&.BRIGHT_BIT = 8\fC [static]\fP"
+
+.SS "pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&.flush"
+
+.SS "pip\&._vendor\&.rich\&._win32_console\&.LegacyWindowsTerm\&.write"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

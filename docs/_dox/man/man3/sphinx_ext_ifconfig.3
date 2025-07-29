@@ -1,0 +1,60 @@
+.TH "sphinx.ext.ifconfig" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.ext.ifconfig
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBifconfig\fP"
+.br
+.ti -1c
+.RI "class \fBIfConfig\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBprocess_ifconfig_nodes\fP (\fBSphinx\fP app, nodes\&.document doctree, str docname)"
+.br
+.ti -1c
+.RI "\fBExtensionMetadata\fP \fBsetup\fP (\fBSphinx\fP app)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Provides the ``ifconfig`` directive\&.
+
+The ``ifconfig`` directive enables writing documentation
+that is included depending on configuration variables\&.
+
+Usage::
+
+    \&.\&. ifconfig:: releaselevel in ('alpha', 'beta', 'rc')
+
+       This stuff is only included in the built docs for unstable versions\&.
+
+The argument for ``ifconfig`` is a plain Python expression, evaluated in the
+namespace of the project configuration (that is, all variables from
+``conf\&.py`` are available\&.)
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " None sphinx\&.ext\&.ifconfig\&.process_ifconfig_nodes (\fBSphinx\fP app, nodes\&.document doctree, str docname)"
+
+.SS " \fBExtensionMetadata\fP sphinx\&.ext\&.ifconfig\&.setup (\fBSphinx\fP app)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

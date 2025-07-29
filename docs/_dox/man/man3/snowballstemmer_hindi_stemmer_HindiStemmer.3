@@ -1,0 +1,179 @@
+.TH "snowballstemmer.hindi_stemmer.HindiStemmer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+snowballstemmer.hindi_stemmer.HindiStemmer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP\&.
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBlimit_backward\fP"
+.br
+.ti -1c
+.RI "\fBcursor\fP"
+.br
+.ti -1c
+.RI "\fBket\fP"
+.br
+.ti -1c
+.RI "\fBbra\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP
+.in +1c
+.ti -1c
+.RI "\fBcurrent\fP"
+.br
+.ti -1c
+.RI "\fBcursor\fP"
+.br
+.ti -1c
+.RI "\fBlimit\fP"
+.br
+.ti -1c
+.RI "\fBlimit_backward\fP"
+.br
+.ti -1c
+.RI "\fBbra\fP"
+.br
+.ti -1c
+.RI "\fBket\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBg_consonant\fP = {u'\\u0915', u'\\u0916', u'\\u0917', u'\\u0918', u'\\u0919', u'\\u091A', u'\\u091B', u'\\u091C', u'\\u091D', u'\\u091E', u'\\u091F', u'\\u0920', u'\\u0921', u'\\u0922', u'\\u0923', u'\\u0924', u'\\u0925', u'\\u0926', u'\\u0927', u'\\u0928', u'\\u092A', u'\\u092B', u'\\u092C', u'\\u092D', u'\\u092E', u'\\u092F', u'\\u0930', u'\\u0932', u'\\u0935', u'\\u0936', u'\\u0937', u'\\u0938', u'\\u0939', u'\\u0933', u'\\u093C', u'\\u0929', u'\\u0931', u'\\u0934', u'\\u0958', u'\\u0959', u'\\u095A', u'\\u095B', u'\\u095C', u'\\u095D', u'\\u095E', u'\\u095F'}"
+.br
+.ti -1c
+.RI "list \fBa_0\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_stem\fP (self)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "\fBset_current\fP (self, value)"
+.br
+.ti -1c
+.RI "\fBget_current\fP (self)"
+.br
+.ti -1c
+.RI "\fBcopy_from\fP (self, other)"
+.br
+.ti -1c
+.RI "\fBin_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_in_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBin_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_in_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBout_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_out_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBout_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_out_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBeq_s\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBeq_s_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBfind_among\fP (self, v)"
+.br
+.ti -1c
+.RI "\fBfind_among_b\fP (self, v)"
+.br
+.ti -1c
+.RI "\fBreplace_s\fP (self, c_bra, c_ket, s)"
+.br
+.ti -1c
+.RI "\fBslice_check\fP (self)"
+.br
+.ti -1c
+.RI "\fBslice_from\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBslice_del\fP (self)"
+.br
+.ti -1c
+.RI "\fBinsert\fP (self, c_bra, c_ket, s)"
+.br
+.ti -1c
+.RI "\fBslice_to\fP (self)"
+.br
+.ti -1c
+.RI "\fBassign_to\fP (self)"
+.br
+.ti -1c
+.RI "\fBstemWord\fP (self, word)"
+.br
+.ti -1c
+.RI "\fBstemWords\fP (self, words)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This class implements the stemming algorithm defined by a snowball script\&.
+Generated from hindi\&.sbl by Snowball 3\&.0\&.1 - https://snowballstem\&.org/
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "snowballstemmer\&.hindi_stemmer\&.HindiStemmer\&._stem ( self)\fC [protected]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "list snowballstemmer\&.hindi_stemmer\&.HindiStemmer\&.a_0\fC [static]\fP"
+
+.SS "snowballstemmer\&.hindi_stemmer\&.HindiStemmer\&.bra"
+
+.SS "snowballstemmer\&.hindi_stemmer\&.HindiStemmer\&.cursor"
+
+.SS "dict snowballstemmer\&.hindi_stemmer\&.HindiStemmer\&.g_consonant = {u'\\u0915', u'\\u0916', u'\\u0917', u'\\u0918', u'\\u0919', u'\\u091A', u'\\u091B', u'\\u091C', u'\\u091D', u'\\u091E', u'\\u091F', u'\\u0920', u'\\u0921', u'\\u0922', u'\\u0923', u'\\u0924', u'\\u0925', u'\\u0926', u'\\u0927', u'\\u0928', u'\\u092A', u'\\u092B', u'\\u092C', u'\\u092D', u'\\u092E', u'\\u092F', u'\\u0930', u'\\u0932', u'\\u0935', u'\\u0936', u'\\u0937', u'\\u0938', u'\\u0939', u'\\u0933', u'\\u093C', u'\\u0929', u'\\u0931', u'\\u0934', u'\\u0958', u'\\u0959', u'\\u095A', u'\\u095B', u'\\u095C', u'\\u095D', u'\\u095E', u'\\u095F'}\fC [static]\fP"
+
+.SS "snowballstemmer\&.hindi_stemmer\&.HindiStemmer\&.ket"
+
+.SS "snowballstemmer\&.hindi_stemmer\&.HindiStemmer\&.limit_backward"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

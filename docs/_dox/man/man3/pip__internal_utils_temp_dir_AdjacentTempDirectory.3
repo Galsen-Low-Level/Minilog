@@ -1,0 +1,151 @@
+.TH "pip._internal.utils.temp_dir.AdjacentTempDirectory" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.utils.temp_dir.AdjacentTempDirectory
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._internal\&.utils\&.temp_dir\&.TempDirectory\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str \fBoriginal\fP, Optional[bool] \fBdelete\fP=None)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._internal\&.utils\&.temp_dir\&.TempDirectory\fP
+.in +1c
+.ti -1c
+.RI "str \fBpath\fP (self)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fB_T\fP \fB__enter__\fP (\fB_T\fP self)"
+.br
+.ti -1c
+.RI "None \fB__exit__\fP (self, Any exc, Any value, Any tb)"
+.br
+.ti -1c
+.RI "None \fBcleanup\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBoriginal\fP"
+.br
+.ti -1c
+.RI "\fBLEADING_CHARS\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpip\&._internal\&.utils\&.temp_dir\&.TempDirectory\fP
+.in +1c
+.ti -1c
+.RI "\fBdelete\fP"
+.br
+.ti -1c
+.RI "\fBkind\fP"
+.br
+.ti -1c
+.RI "\fBignore_cleanup_errors\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBLEADING_CHARS\fP = '\-~\&.=%0123456789'"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Generator[str, None, None] \fB_generate_names\fP (cls, str name)"
+.br
+.ti -1c
+.RI "str \fB_create\fP (self, str \fBkind\fP)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Attributes inherited from \fBpip\&._internal\&.utils\&.temp_dir\&.TempDirectory\fP
+.in +1c
+.ti -1c
+.RI "\fB_path\fP"
+.br
+.ti -1c
+.RI "\fB_deleted\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Helper class that creates a temporary directory adjacent to a real one\&.
+
+Attributes:
+    original
+        The original directory to create a temp directory for\&.
+    path
+        After calling create() or entering, contains the full
+        path to the temporary directory\&.
+    delete
+        Whether the directory should be deleted when exiting
+        (when used as a contextmanager)
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._internal\&.utils\&.temp_dir\&.AdjacentTempDirectory\&.__init__ ( self, str original, Optional[bool]  delete = \fCNone\fP)"
+
+.PP
+Reimplemented from \fBpip\&._internal\&.utils\&.temp_dir\&.TempDirectory\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " str pip\&._internal\&.utils\&.temp_dir\&.AdjacentTempDirectory\&._create ( self, str kind)\fC [protected]\fP"
+
+.PP
+.nf
+Create a temporary directory and store its path in self\&.path
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.utils\&.temp_dir\&.TempDirectory\fP\&.
+.SS " Generator[str, None, None] pip\&._internal\&.utils\&.temp_dir\&.AdjacentTempDirectory\&._generate_names ( cls, str name)\fC [protected]\fP"
+
+.PP
+.nf
+Generates a series of temporary names\&.
+
+The algorithm replaces the leading characters in the name
+with ones that are valid filesystem characters, but are not
+valid package names (for both Python and pip definitions of
+package)\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "str pip\&._internal\&.utils\&.temp_dir\&.AdjacentTempDirectory\&.LEADING_CHARS = '\-~\&.=%0123456789'\fC [static]\fP"
+
+.SS "pip\&._internal\&.utils\&.temp_dir\&.AdjacentTempDirectory\&.LEADING_CHARS"
+
+.SS "pip\&._internal\&.utils\&.temp_dir\&.AdjacentTempDirectory\&.original"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

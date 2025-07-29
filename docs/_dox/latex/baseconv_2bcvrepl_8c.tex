@@ -1,0 +1,56 @@
+\doxysection{/home/umar/\+Desktop/\+Work\+Shop/\+GLL/baseconv/bcvrepl.c File Reference}
+\hypertarget{baseconv_2bcvrepl_8c}{}\label{baseconv_2bcvrepl_8c}\index{/home/umar/Desktop/WorkShop/GLL/baseconv/bcvrepl.c@{/home/umar/Desktop/WorkShop/GLL/baseconv/bcvrepl.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include "{}bcvrepl.\+h"{}}\newline
+{\ttfamily \#include "{}baseconv.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{baseconv_2bcvrepl_8c_adf2ae91cfe31b49cf8318fe238e4d128}{bcrepl\+\_\+shell}} (const char \texorpdfstring{$\ast$}{*}prompt)
+\item 
+void \mbox{\hyperlink{baseconv_2bcvrepl_8c_a4c1b9a94b635b9971c4ec8feef03f230}{bcrepl\+\_\+customize}} (void(\texorpdfstring{$\ast$}{*}custom\+\_\+user\+\_\+shell)(const char \texorpdfstring{$\ast$}{*}user\+\_\+custom\+\_\+prompt), const char \texorpdfstring{$\ast$}{*}prompt)
+\item 
+void \mbox{\hyperlink{baseconv_2bcvrepl_8c_af7a9d6e5896691eda87e30c1e5690117}{bcrepl\+\_\+compute}} (const char \texorpdfstring{$\ast$}{*}buffer)
+\item 
+void \mbox{\hyperlink{baseconv_2bcvrepl_8c_abe83b0a83a02bc3d33baf56b42766818}{bcrepl\+\_\+listen\+\_\+special\+\_\+cmd}} (const char \texorpdfstring{$\ast$}{*}buffer)
+\item 
+void \mbox{\hyperlink{baseconv_2bcvrepl_8c_ae117e5918a9cae5e4694e4e4d9be77b1}{\+\_\+\+\_\+trimlower}} (char \texorpdfstring{$\ast$}{*}bcv\+\_\+cmd)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{baseconv_2bcvrepl_8c_ae117e5918a9cae5e4694e4e4d9be77b1}\label{baseconv_2bcvrepl_8c_ae117e5918a9cae5e4694e4e4d9be77b1} 
+\index{bcvrepl.c@{bcvrepl.c}!\_\_trimlower@{\_\_trimlower}}
+\index{\_\_trimlower@{\_\_trimlower}!bcvrepl.c@{bcvrepl.c}}
+\doxysubsubsection{\texorpdfstring{\_\_trimlower()}{\_\_trimlower()}}
+{\footnotesize\ttfamily void \+\_\+\+\_\+trimlower (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{bcv\+\_\+cmd }\end{DoxyParamCaption})}
+
+\Hypertarget{baseconv_2bcvrepl_8c_af7a9d6e5896691eda87e30c1e5690117}\label{baseconv_2bcvrepl_8c_af7a9d6e5896691eda87e30c1e5690117} 
+\index{bcvrepl.c@{bcvrepl.c}!bcrepl\_compute@{bcrepl\_compute}}
+\index{bcrepl\_compute@{bcrepl\_compute}!bcvrepl.c@{bcvrepl.c}}
+\doxysubsubsection{\texorpdfstring{bcrepl\_compute()}{bcrepl\_compute()}}
+{\footnotesize\ttfamily void bcrepl\+\_\+compute (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{buffer }\end{DoxyParamCaption})}
+
+\Hypertarget{baseconv_2bcvrepl_8c_a4c1b9a94b635b9971c4ec8feef03f230}\label{baseconv_2bcvrepl_8c_a4c1b9a94b635b9971c4ec8feef03f230} 
+\index{bcvrepl.c@{bcvrepl.c}!bcrepl\_customize@{bcrepl\_customize}}
+\index{bcrepl\_customize@{bcrepl\_customize}!bcvrepl.c@{bcvrepl.c}}
+\doxysubsubsection{\texorpdfstring{bcrepl\_customize()}{bcrepl\_customize()}}
+{\footnotesize\ttfamily void bcrepl\+\_\+customize (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})(const char \texorpdfstring{$\ast$}{*}user\+\_\+custom\+\_\+prompt)}]{custom\+\_\+user\+\_\+shell,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{prompt }\end{DoxyParamCaption})}
+
+\Hypertarget{baseconv_2bcvrepl_8c_abe83b0a83a02bc3d33baf56b42766818}\label{baseconv_2bcvrepl_8c_abe83b0a83a02bc3d33baf56b42766818} 
+\index{bcvrepl.c@{bcvrepl.c}!bcrepl\_listen\_special\_cmd@{bcrepl\_listen\_special\_cmd}}
+\index{bcrepl\_listen\_special\_cmd@{bcrepl\_listen\_special\_cmd}!bcvrepl.c@{bcvrepl.c}}
+\doxysubsubsection{\texorpdfstring{bcrepl\_listen\_special\_cmd()}{bcrepl\_listen\_special\_cmd()}}
+{\footnotesize\ttfamily void bcrepl\+\_\+listen\+\_\+special\+\_\+cmd (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{buffer }\end{DoxyParamCaption})}
+
+\Hypertarget{baseconv_2bcvrepl_8c_adf2ae91cfe31b49cf8318fe238e4d128}\label{baseconv_2bcvrepl_8c_adf2ae91cfe31b49cf8318fe238e4d128} 
+\index{bcvrepl.c@{bcvrepl.c}!bcrepl\_shell@{bcrepl\_shell}}
+\index{bcrepl\_shell@{bcrepl\_shell}!bcvrepl.c@{bcvrepl.c}}
+\doxysubsubsection{\texorpdfstring{bcrepl\_shell()}{bcrepl\_shell()}}
+{\footnotesize\ttfamily void bcrepl\+\_\+shell (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{prompt }\end{DoxyParamCaption})}
+
+repl\+\_\+promt

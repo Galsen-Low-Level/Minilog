@@ -1,0 +1,111 @@
+.TH "pip._internal.index.sources._FlatDirectorySource" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.index.sources._FlatDirectorySource
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._internal\&.index\&.sources\&.LinkSource\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, \fBCandidatesFromPage\fP candidates_from_page, str path, str project_name)"
+.br
+.ti -1c
+.RI "Optional[\fBLink\fP] \fBlink\fP (self)"
+.br
+.ti -1c
+.RI "\fBFoundCandidates\fP \fBpage_candidates\fP (self)"
+.br
+.ti -1c
+.RI "\fBFoundLinks\fP \fBfile_links\fP (self)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_candidates_from_page\fP"
+.br
+.ti -1c
+.RI "\fB_project_name\fP"
+.br
+.ti -1c
+.RI "\fB_path_to_urls\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fB_paths_to_urls\fP = {}"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Link source specified by ``--find-links=<path-to-dir>``\&.
+
+This looks the content of the directory, and returns:
+
+* ``page_candidates``: Links listed on each HTML file in the directory\&.
+* ``file_candidates``: Archives in the directory\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._internal\&.index\&.sources\&._FlatDirectorySource\&.__init__ ( self, \fBCandidatesFromPage\fP candidates_from_page, str path, str project_name)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " \fBFoundLinks\fP pip\&._internal\&.index\&.sources\&._FlatDirectorySource\&.file_links ( self)"
+
+.PP
+.nf
+Links found by specifying archives directly\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.index\&.sources\&.LinkSource\fP\&.
+.SS " Optional[\fBLink\fP] pip\&._internal\&.index\&.sources\&._FlatDirectorySource\&.link ( self)"
+
+.PP
+.nf
+Returns the underlying link, if there's one\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.index\&.sources\&.LinkSource\fP\&.
+.SS " \fBFoundCandidates\fP pip\&._internal\&.index\&.sources\&._FlatDirectorySource\&.page_candidates ( self)"
+
+.PP
+.nf
+Candidates found by parsing an archive listing HTML file\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.index\&.sources\&.LinkSource\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._internal\&.index\&.sources\&._FlatDirectorySource\&._candidates_from_page\fC [protected]\fP"
+
+.SS "pip\&._internal\&.index\&.sources\&._FlatDirectorySource\&._path_to_urls\fC [protected]\fP"
+
+.SS "dict pip\&._internal\&.index\&.sources\&._FlatDirectorySource\&._paths_to_urls = {}\fC [static]\fP, \fC [protected]\fP"
+
+.SS "pip\&._internal\&.index\&.sources\&._FlatDirectorySource\&._project_name\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

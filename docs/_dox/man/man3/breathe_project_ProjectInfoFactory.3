@@ -1,0 +1,105 @@
+.TH "breathe.project.ProjectInfoFactory" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+breathe.project.ProjectInfoFactory
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBSphinx\fP \fBapp\fP)"
+.br
+.ti -1c
+.RI "str \fBbuild_dir\fP (self)"
+.br
+.ti -1c
+.RI "str \fBdefault_path\fP (self)"
+.br
+.ti -1c
+.RI "\fBProjectInfo\fP \fBcreate_project_info\fP (self, options)"
+.br
+.ti -1c
+.RI "None \fBstore_project_info_for_auto\fP (self, str name, \fBAutoProjectInfo\fP project_info)"
+.br
+.ti -1c
+.RI "\fBAutoProjectInfo\fP \fBretrieve_project_info_for_auto\fP (self, options)"
+.br
+.ti -1c
+.RI "\fBAutoProjectInfo\fP \fBcreate_auto_project_info\fP (self, str name, source_path)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBapp\fP"
+.br
+.ti -1c
+.RI "\fBproject_count\fP"
+.br
+.ti -1c
+.RI "\fBbuild_dir\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_default_build_dir\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "breathe\&.project\&.ProjectInfoFactory\&.__init__ ( self, \fBSphinx\fP app)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " str breathe\&.project\&.ProjectInfoFactory\&.build_dir ( self)"
+
+.SS " \fBAutoProjectInfo\fP breathe\&.project\&.ProjectInfoFactory\&.create_auto_project_info ( self, str name,  source_path)"
+
+.SS " \fBProjectInfo\fP breathe\&.project\&.ProjectInfoFactory\&.create_project_info ( self,  options)"
+
+.SS " str breathe\&.project\&.ProjectInfoFactory\&.default_path ( self)"
+
+.SS " \fBAutoProjectInfo\fP breathe\&.project\&.ProjectInfoFactory\&.retrieve_project_info_for_auto ( self,  options)"
+
+.PP
+.nf
+Retrieves the project info by name for later extraction by the auto directives\&.
+
+Looks for the 'project' entry in the options dictionary\&. This is a less than ideal API but
+it is designed to match the use of 'create_project_info' above for which it makes much more
+sense\&.
+
+.fi
+.PP
+ 
+.SS " None breathe\&.project\&.ProjectInfoFactory\&.store_project_info_for_auto ( self, str name, \fBAutoProjectInfo\fP project_info)"
+
+.PP
+.nf
+Stores the project info by name for later extraction by the auto directives\&.
+
+Stored separately to the non-auto project info objects as they should never overlap\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "breathe\&.project\&.ProjectInfoFactory\&._default_build_dir\fC [protected]\fP"
+
+.SS "breathe\&.project\&.ProjectInfoFactory\&.app"
+
+.SS "breathe\&.project\&.ProjectInfoFactory\&.build_dir"
+
+.SS "breathe\&.project\&.ProjectInfoFactory\&.project_count"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

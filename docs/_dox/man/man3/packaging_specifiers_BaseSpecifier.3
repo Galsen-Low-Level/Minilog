@@ -1,0 +1,130 @@
+.TH "packaging.specifiers.BaseSpecifier" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+packaging.specifiers.BaseSpecifier
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits metaclass, and abc\&.ABCMeta\&.
+.PP
+Inherited by \fBpackaging\&.specifiers\&.Specifier\fP, and \fBpackaging\&.specifiers\&.SpecifierSet\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "int \fB__hash__\fP (self)"
+.br
+.ti -1c
+.RI "bool \fB__eq__\fP (self, object other)"
+.br
+.ti -1c
+.RI "bool|None \fBprereleases\fP (self)"
+.br
+.ti -1c
+.RI "None \fBprereleases\fP (self, bool value)"
+.br
+.ti -1c
+.RI "bool \fBcontains\fP (self, str item, bool|None \fBprereleases\fP=None)"
+.br
+.ti -1c
+.RI "Iterator[\fBUnparsedVersionVar\fP] \fBfilter\fP (self, Iterable[\fBUnparsedVersionVar\fP] iterable, bool|None \fBprereleases\fP=None)"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS " bool packaging\&.specifiers\&.BaseSpecifier\&.__eq__ ( self, object other)"
+
+.PP
+.nf
+Returns a boolean representing whether or not the two Specifier-like
+objects are equal\&.
+
+:param other: The other object to check against\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpackaging\&.specifiers\&.Specifier\fP, and \fBpackaging\&.specifiers\&.SpecifierSet\fP\&.
+.SS " int packaging\&.specifiers\&.BaseSpecifier\&.__hash__ ( self)"
+
+.PP
+.nf
+Returns a hash value for this Specifier-like object\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpackaging\&.specifiers\&.Specifier\fP, and \fBpackaging\&.specifiers\&.SpecifierSet\fP\&.
+.SS " str packaging\&.specifiers\&.BaseSpecifier\&.__str__ ( self)"
+
+.PP
+.nf
+Returns the str representation of this Specifier-like object\&. This
+should be representative of the Specifier itself\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpackaging\&.specifiers\&.Specifier\fP, and \fBpackaging\&.specifiers\&.SpecifierSet\fP\&.
+.SS " bool packaging\&.specifiers\&.BaseSpecifier\&.contains ( self, str item, bool | None  prereleases = \fCNone\fP)"
+
+.PP
+.nf
+Determines if the given item is contained within this specifier\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpackaging\&.specifiers\&.Specifier\fP, and \fBpackaging\&.specifiers\&.SpecifierSet\fP\&.
+.SS " Iterator[\fBUnparsedVersionVar\fP] packaging\&.specifiers\&.BaseSpecifier\&.filter ( self, Iterable[\fBUnparsedVersionVar\fP] iterable, bool | None  prereleases = \fCNone\fP)"
+
+.PP
+.nf
+Takes an iterable of items and filters them so that only items which
+are contained within this specifier are allowed in it\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpackaging\&.specifiers\&.Specifier\fP, and \fBpackaging\&.specifiers\&.SpecifierSet\fP\&.
+.SS " bool | None packaging\&.specifiers\&.BaseSpecifier\&.prereleases ( self)"
+
+.PP
+.nf
+Whether or not pre-releases as a whole are allowed\&.
+
+This can be set to either ``True`` or ``False`` to explicitly enable or disable
+prereleases or it can be set to ``None`` (the default) to use default semantics\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpackaging\&.specifiers\&.Specifier\fP, \fBpackaging\&.specifiers\&.SpecifierSet\fP, \fBpackaging\&.specifiers\&.Specifier\fP, and \fBpackaging\&.specifiers\&.SpecifierSet\fP\&.
+.SS " None packaging\&.specifiers\&.BaseSpecifier\&.prereleases ( self, bool value)"
+
+.PP
+.nf
+Setter for :attr:`prereleases`\&.
+
+:param value: The value to set\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpackaging\&.specifiers\&.Specifier\fP, \fBpackaging\&.specifiers\&.SpecifierSet\fP, \fBpackaging\&.specifiers\&.Specifier\fP, and \fBpackaging\&.specifiers\&.SpecifierSet\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

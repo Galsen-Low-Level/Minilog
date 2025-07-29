@@ -1,0 +1,149 @@
+\doxysection{docutils.\+transforms.\+peps.\+PEPZero\+Special Class Reference}
+\hypertarget{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial}{}\label{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial}\index{docutils.transforms.peps.PEPZeroSpecial@{docutils.transforms.peps.PEPZeroSpecial}}
+Inheritance diagram for docutils.\+transforms.\+peps.\+PEPZero\+Special\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_a1fdfe1f38344c6beb036c02a29165a83}{unknown\+\_\+visit}} (self, node)
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_ad070917fb7b27587839d84c50c021ecb}{visit\+\_\+reference}} (self, node)
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_a6fca08ed3887b58f44fb361d3f2e697b}{visit\+\_\+field\+\_\+list}} (self, node)
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_ae5f4050b537c7a1f75ce85f4d28e230b}{visit\+\_\+tgroup}} (self, node)
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_a2502a742d452f23bdb898185aea155cd}{visit\+\_\+colspec}} (self, node)
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_a3ef06088146165300b849fa6c3b01146}{visit\+\_\+row}} (self, node)
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_aeeb46f8808385c724057b4b7fbb5c0af}{visit\+\_\+entry}} (self, node)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor}{docutils.\+nodes.\+Node\+Visitor}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor_a79dc86c6947a392e378c002c2b73304c}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classdocutils_1_1nodes_1_1document}{document}})
+\item 
+\mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor_ac9e537d23d3903c550699c40c58b15f6}{dispatch\+\_\+visit}} (self, node)
+\item 
+\mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor_ac77125a62dc8a4f1403aa9279f19360a}{dispatch\+\_\+departure}} (self, node)
+\item 
+\mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor_a575e2750c162e528737ceeb8d49787b4}{unknown\+\_\+departure}} (self, node)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_a84d2b35d90c2fcfc3d251a5448581538}{pep\+\_\+table}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_a05aef4af7d7a63abb23a0dc0e931d142}{entry}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor}{docutils.\+nodes.\+Node\+Visitor}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor_a3c594de0457219c7836d4c53d9398cdc}{document}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor_a4ef22d9109ba64a13a3b67e49cdd6e41}{optional}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_a8f00ef2211c76528e40c538d39d4bc93}{pep\+\_\+url}} = Headers.\+pep\+\_\+url
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor}{docutils.\+nodes.\+Node\+Visitor}}}
+\begin{DoxyCompactItemize}
+\item 
+tuple \mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor_affa8b471d2c760b6978e38b4d91f2e0f}{optional}} = (\textquotesingle{}\mbox{\hyperlink{classdocutils_1_1nodes_1_1meta}{meta}}\textquotesingle{},)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Perform the special processing needed by PEP 0:
+
+- Mask email addresses.
+
+- Link PEP numbers in the second column of 4-column tables to the PEPs
+  themselves.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_a1fdfe1f38344c6beb036c02a29165a83}\label{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_a1fdfe1f38344c6beb036c02a29165a83} 
+\index{docutils.transforms.peps.PEPZeroSpecial@{docutils.transforms.peps.PEPZeroSpecial}!unknown\_visit@{unknown\_visit}}
+\index{unknown\_visit@{unknown\_visit}!docutils.transforms.peps.PEPZeroSpecial@{docutils.transforms.peps.PEPZeroSpecial}}
+\doxysubsubsection{\texorpdfstring{unknown\_visit()}{unknown\_visit()}}
+{\footnotesize\ttfamily docutils.\+transforms.\+peps.\+PEPZero\+Special.\+unknown\+\_\+visit (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{node }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Called when entering unknown `Node` types.
+
+Raise an exception unless overridden.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classdocutils_1_1nodes_1_1NodeVisitor_a1e3bb6077880ca35118ba60eb464354c}{docutils.\+nodes.\+Node\+Visitor}}.
+
+\Hypertarget{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_a2502a742d452f23bdb898185aea155cd}\label{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_a2502a742d452f23bdb898185aea155cd} 
+\index{docutils.transforms.peps.PEPZeroSpecial@{docutils.transforms.peps.PEPZeroSpecial}!visit\_colspec@{visit\_colspec}}
+\index{visit\_colspec@{visit\_colspec}!docutils.transforms.peps.PEPZeroSpecial@{docutils.transforms.peps.PEPZeroSpecial}}
+\doxysubsubsection{\texorpdfstring{visit\_colspec()}{visit\_colspec()}}
+{\footnotesize\ttfamily docutils.\+transforms.\+peps.\+PEPZero\+Special.\+visit\+\_\+colspec (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{node }\end{DoxyParamCaption})}
+
+\Hypertarget{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_aeeb46f8808385c724057b4b7fbb5c0af}\label{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_aeeb46f8808385c724057b4b7fbb5c0af} 
+\index{docutils.transforms.peps.PEPZeroSpecial@{docutils.transforms.peps.PEPZeroSpecial}!visit\_entry@{visit\_entry}}
+\index{visit\_entry@{visit\_entry}!docutils.transforms.peps.PEPZeroSpecial@{docutils.transforms.peps.PEPZeroSpecial}}
+\doxysubsubsection{\texorpdfstring{visit\_entry()}{visit\_entry()}}
+{\footnotesize\ttfamily docutils.\+transforms.\+peps.\+PEPZero\+Special.\+visit\+\_\+entry (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{node }\end{DoxyParamCaption})}
+
+\Hypertarget{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_a6fca08ed3887b58f44fb361d3f2e697b}\label{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_a6fca08ed3887b58f44fb361d3f2e697b} 
+\index{docutils.transforms.peps.PEPZeroSpecial@{docutils.transforms.peps.PEPZeroSpecial}!visit\_field\_list@{visit\_field\_list}}
+\index{visit\_field\_list@{visit\_field\_list}!docutils.transforms.peps.PEPZeroSpecial@{docutils.transforms.peps.PEPZeroSpecial}}
+\doxysubsubsection{\texorpdfstring{visit\_field\_list()}{visit\_field\_list()}}
+{\footnotesize\ttfamily docutils.\+transforms.\+peps.\+PEPZero\+Special.\+visit\+\_\+field\+\_\+list (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{node }\end{DoxyParamCaption})}
+
+\Hypertarget{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_ad070917fb7b27587839d84c50c021ecb}\label{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_ad070917fb7b27587839d84c50c021ecb} 
+\index{docutils.transforms.peps.PEPZeroSpecial@{docutils.transforms.peps.PEPZeroSpecial}!visit\_reference@{visit\_reference}}
+\index{visit\_reference@{visit\_reference}!docutils.transforms.peps.PEPZeroSpecial@{docutils.transforms.peps.PEPZeroSpecial}}
+\doxysubsubsection{\texorpdfstring{visit\_reference()}{visit\_reference()}}
+{\footnotesize\ttfamily docutils.\+transforms.\+peps.\+PEPZero\+Special.\+visit\+\_\+reference (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{node }\end{DoxyParamCaption})}
+
+\Hypertarget{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_a3ef06088146165300b849fa6c3b01146}\label{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_a3ef06088146165300b849fa6c3b01146} 
+\index{docutils.transforms.peps.PEPZeroSpecial@{docutils.transforms.peps.PEPZeroSpecial}!visit\_row@{visit\_row}}
+\index{visit\_row@{visit\_row}!docutils.transforms.peps.PEPZeroSpecial@{docutils.transforms.peps.PEPZeroSpecial}}
+\doxysubsubsection{\texorpdfstring{visit\_row()}{visit\_row()}}
+{\footnotesize\ttfamily docutils.\+transforms.\+peps.\+PEPZero\+Special.\+visit\+\_\+row (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{node }\end{DoxyParamCaption})}
+
+\Hypertarget{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_ae5f4050b537c7a1f75ce85f4d28e230b}\label{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_ae5f4050b537c7a1f75ce85f4d28e230b} 
+\index{docutils.transforms.peps.PEPZeroSpecial@{docutils.transforms.peps.PEPZeroSpecial}!visit\_tgroup@{visit\_tgroup}}
+\index{visit\_tgroup@{visit\_tgroup}!docutils.transforms.peps.PEPZeroSpecial@{docutils.transforms.peps.PEPZeroSpecial}}
+\doxysubsubsection{\texorpdfstring{visit\_tgroup()}{visit\_tgroup()}}
+{\footnotesize\ttfamily docutils.\+transforms.\+peps.\+PEPZero\+Special.\+visit\+\_\+tgroup (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{node }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_a05aef4af7d7a63abb23a0dc0e931d142}\label{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_a05aef4af7d7a63abb23a0dc0e931d142} 
+\index{docutils.transforms.peps.PEPZeroSpecial@{docutils.transforms.peps.PEPZeroSpecial}!entry@{entry}}
+\index{entry@{entry}!docutils.transforms.peps.PEPZeroSpecial@{docutils.transforms.peps.PEPZeroSpecial}}
+\doxysubsubsection{\texorpdfstring{entry}{entry}}
+{\footnotesize\ttfamily docutils.\+transforms.\+peps.\+PEPZero\+Special.\+entry}
+
+\Hypertarget{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_a84d2b35d90c2fcfc3d251a5448581538}\label{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_a84d2b35d90c2fcfc3d251a5448581538} 
+\index{docutils.transforms.peps.PEPZeroSpecial@{docutils.transforms.peps.PEPZeroSpecial}!pep\_table@{pep\_table}}
+\index{pep\_table@{pep\_table}!docutils.transforms.peps.PEPZeroSpecial@{docutils.transforms.peps.PEPZeroSpecial}}
+\doxysubsubsection{\texorpdfstring{pep\_table}{pep\_table}}
+{\footnotesize\ttfamily docutils.\+transforms.\+peps.\+PEPZero\+Special.\+pep\+\_\+table}
+
+\Hypertarget{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_a8f00ef2211c76528e40c538d39d4bc93}\label{classdocutils_1_1transforms_1_1peps_1_1PEPZeroSpecial_a8f00ef2211c76528e40c538d39d4bc93} 
+\index{docutils.transforms.peps.PEPZeroSpecial@{docutils.transforms.peps.PEPZeroSpecial}!pep\_url@{pep\_url}}
+\index{pep\_url@{pep\_url}!docutils.transforms.peps.PEPZeroSpecial@{docutils.transforms.peps.PEPZeroSpecial}}
+\doxysubsubsection{\texorpdfstring{pep\_url}{pep\_url}}
+{\footnotesize\ttfamily docutils.\+transforms.\+peps.\+PEPZero\+Special.\+pep\+\_\+url = Headers.\+pep\+\_\+url\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/docutils/transforms/\mbox{\hyperlink{peps_8py}{peps.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,136 @@
+\doxysection{decorator Namespace Reference}
+\hypertarget{namespacedecorator}{}\label{namespacedecorator}\index{decorator@{decorator}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classdecorator_1_1ContextManager}{Context\+Manager}}
+\item 
+class \mbox{\hyperlink{classdecorator_1_1FunctionMaker}{Function\+Maker}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacedecorator_a4383eb7449e78fda7e855c43e7b8129e}{fix}} (args, kwargs, sig)
+\item 
+\mbox{\hyperlink{namespacedecorator_afd90e02a542ada9123d80ad86518bc3a}{decorate}} (func, caller, extras=(), kwsyntax=False)
+\item 
+\mbox{\hyperlink{namespacedecorator_a30ac06a831b126ae0d33d2a8ec86ef33}{decoratorx}} (caller)
+\item 
+\mbox{\hyperlink{namespacedecorator_ac70eb79af75539c50cc5883b7c359490}{decorator}} (caller, \+\_\+func=None, kwsyntax=False)
+\item 
+\mbox{\hyperlink{namespacedecorator_aec56fa776490ed53db65f8bfdb4f5f1a}{contextmanager}} (func)
+\item 
+\mbox{\hyperlink{namespacedecorator_af6e955620020a63811cacdcc9d452a19}{append}} (a, vancestors)
+\item 
+\mbox{\hyperlink{namespacedecorator_a8696e0ee1b090ba2fcb83536c79676bf}{dispatch\+\_\+on}} (\texorpdfstring{$\ast$}{*}dispatch\+\_\+args)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacedecorator_a73b01a56be9c4d697274a158694ea46e}{DEF}} = re.\+compile(r\textquotesingle{}\textbackslash{}s\texorpdfstring{$\ast$}{*}def\textbackslash{}s\texorpdfstring{$\ast$}{*}(\mbox{[}\+\_\+\textbackslash{}w\mbox{]}\mbox{[}\+\_\+\textbackslash{}w\textbackslash{}d\mbox{]}\texorpdfstring{$\ast$}{*})\textbackslash{}s\texorpdfstring{$\ast$}{*}\textbackslash{}(\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacedecorator_af326bc3c9436019f924e21cbbdd07aec}{POS}} = inspect.\+Parameter.\+POSITIONAL\+\_\+\+OR\+\_\+\+KEYWORD
+\item 
+\mbox{\hyperlink{namespacedecorator_a909064bb1b5f47ddf9d7a49d88e813ca}{EMPTY}} = inspect.\+Parameter.\+empty
+\item 
+\mbox{\hyperlink{namespacedecorator_afad3f4a30f116652690ec269ef3a56ee}{\+\_\+contextmanager}} = \mbox{\hyperlink{namespacedecorator_ac70eb79af75539c50cc5883b7c359490}{decorator}}(\mbox{\hyperlink{classdecorator_1_1ContextManager}{Context\+Manager}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Decorator module, see
+https://github.com/micheles/decorator/blob/master/docs/documentation.md
+for the documentation.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacedecorator_af6e955620020a63811cacdcc9d452a19}\label{namespacedecorator_af6e955620020a63811cacdcc9d452a19} 
+\index{decorator@{decorator}!append@{append}}
+\index{append@{append}!decorator@{decorator}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily decorator.\+append (\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{vancestors }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Append ``a`` to the list of the virtual ancestors, unless it is already
+included.
+\end{DoxyVerb}
+ \Hypertarget{namespacedecorator_aec56fa776490ed53db65f8bfdb4f5f1a}\label{namespacedecorator_aec56fa776490ed53db65f8bfdb4f5f1a} 
+\index{decorator@{decorator}!contextmanager@{contextmanager}}
+\index{contextmanager@{contextmanager}!decorator@{decorator}}
+\doxysubsubsection{\texorpdfstring{contextmanager()}{contextmanager()}}
+{\footnotesize\ttfamily decorator.\+contextmanager (\begin{DoxyParamCaption}\item[{}]{func }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacedecorator_afd90e02a542ada9123d80ad86518bc3a}\label{namespacedecorator_afd90e02a542ada9123d80ad86518bc3a} 
+\index{decorator@{decorator}!decorate@{decorate}}
+\index{decorate@{decorate}!decorator@{decorator}}
+\doxysubsubsection{\texorpdfstring{decorate()}{decorate()}}
+{\footnotesize\ttfamily decorator.\+decorate (\begin{DoxyParamCaption}\item[{}]{func,  }\item[{}]{caller,  }\item[{}]{extras = {\ttfamily ()},  }\item[{}]{kwsyntax = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Decorates a function/generator/coroutine using a caller.
+If kwsyntax is True calling the decorated functions with keyword
+syntax will pass the named arguments inside the ``kw`` dictionary,
+even if such argument are positional, similarly to what functools.wraps
+does. By default kwsyntax is False and the the arguments are untouched.
+\end{DoxyVerb}
+ \Hypertarget{namespacedecorator_ac70eb79af75539c50cc5883b7c359490}\label{namespacedecorator_ac70eb79af75539c50cc5883b7c359490} 
+\index{decorator@{decorator}!decorator@{decorator}}
+\index{decorator@{decorator}!decorator@{decorator}}
+\doxysubsubsection{\texorpdfstring{decorator()}{decorator()}}
+{\footnotesize\ttfamily decorator.\+decorator (\begin{DoxyParamCaption}\item[{}]{caller,  }\item[{}]{\+\_\+func = {\ttfamily None},  }\item[{}]{kwsyntax = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}decorator(caller) converts a caller function into a decorator
+\end{DoxyVerb}
+ \Hypertarget{namespacedecorator_a30ac06a831b126ae0d33d2a8ec86ef33}\label{namespacedecorator_a30ac06a831b126ae0d33d2a8ec86ef33} 
+\index{decorator@{decorator}!decoratorx@{decoratorx}}
+\index{decoratorx@{decoratorx}!decorator@{decorator}}
+\doxysubsubsection{\texorpdfstring{decoratorx()}{decoratorx()}}
+{\footnotesize\ttfamily decorator.\+decoratorx (\begin{DoxyParamCaption}\item[{}]{caller }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A version of "decorator" implemented via "exec" and not via the
+Signature object. Use this if you are want to preserve the `.__code__`
+object properties (https://github.com/micheles/decorator/issues/129).
+\end{DoxyVerb}
+ \Hypertarget{namespacedecorator_a8696e0ee1b090ba2fcb83536c79676bf}\label{namespacedecorator_a8696e0ee1b090ba2fcb83536c79676bf} 
+\index{decorator@{decorator}!dispatch\_on@{dispatch\_on}}
+\index{dispatch\_on@{dispatch\_on}!decorator@{decorator}}
+\doxysubsubsection{\texorpdfstring{dispatch\_on()}{dispatch\_on()}}
+{\footnotesize\ttfamily decorator.\+dispatch\+\_\+on (\begin{DoxyParamCaption}\item[{\texorpdfstring{$\ast$}{*}}]{dispatch\+\_\+args }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Factory of decorators turning a function into a generic function
+dispatching on the given arguments.
+\end{DoxyVerb}
+ \Hypertarget{namespacedecorator_a4383eb7449e78fda7e855c43e7b8129e}\label{namespacedecorator_a4383eb7449e78fda7e855c43e7b8129e} 
+\index{decorator@{decorator}!fix@{fix}}
+\index{fix@{fix}!decorator@{decorator}}
+\doxysubsubsection{\texorpdfstring{fix()}{fix()}}
+{\footnotesize\ttfamily decorator.\+fix (\begin{DoxyParamCaption}\item[{}]{args,  }\item[{}]{kwargs,  }\item[{}]{sig }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Fix args and kwargs to be consistent with the signature
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacedecorator_afad3f4a30f116652690ec269ef3a56ee}\label{namespacedecorator_afad3f4a30f116652690ec269ef3a56ee} 
+\index{decorator@{decorator}!\_contextmanager@{\_contextmanager}}
+\index{\_contextmanager@{\_contextmanager}!decorator@{decorator}}
+\doxysubsubsection{\texorpdfstring{\_contextmanager}{\_contextmanager}}
+{\footnotesize\ttfamily decorator.\+\_\+contextmanager = \mbox{\hyperlink{namespacedecorator_ac70eb79af75539c50cc5883b7c359490}{decorator}}(\mbox{\hyperlink{classdecorator_1_1ContextManager}{Context\+Manager}})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacedecorator_a73b01a56be9c4d697274a158694ea46e}\label{namespacedecorator_a73b01a56be9c4d697274a158694ea46e} 
+\index{decorator@{decorator}!DEF@{DEF}}
+\index{DEF@{DEF}!decorator@{decorator}}
+\doxysubsubsection{\texorpdfstring{DEF}{DEF}}
+{\footnotesize\ttfamily decorator.\+DEF = re.\+compile(r\textquotesingle{}\textbackslash{}s\texorpdfstring{$\ast$}{*}def\textbackslash{}s\texorpdfstring{$\ast$}{*}(\mbox{[}\+\_\+\textbackslash{}w\mbox{]}\mbox{[}\+\_\+\textbackslash{}w\textbackslash{}d\mbox{]}\texorpdfstring{$\ast$}{*})\textbackslash{}s\texorpdfstring{$\ast$}{*}\textbackslash{}(\textquotesingle{})}
+
+\Hypertarget{namespacedecorator_a909064bb1b5f47ddf9d7a49d88e813ca}\label{namespacedecorator_a909064bb1b5f47ddf9d7a49d88e813ca} 
+\index{decorator@{decorator}!EMPTY@{EMPTY}}
+\index{EMPTY@{EMPTY}!decorator@{decorator}}
+\doxysubsubsection{\texorpdfstring{EMPTY}{EMPTY}}
+{\footnotesize\ttfamily decorator.\+EMPTY = inspect.\+Parameter.\+empty}
+
+\Hypertarget{namespacedecorator_af326bc3c9436019f924e21cbbdd07aec}\label{namespacedecorator_af326bc3c9436019f924e21cbbdd07aec} 
+\index{decorator@{decorator}!POS@{POS}}
+\index{POS@{POS}!decorator@{decorator}}
+\doxysubsubsection{\texorpdfstring{POS}{POS}}
+{\footnotesize\ttfamily decorator.\+POS = inspect.\+Parameter.\+POSITIONAL\+\_\+\+OR\+\_\+\+KEYWORD}
+

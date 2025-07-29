@@ -1,0 +1,706 @@
+.TH "pip._vendor.rich.style.Style" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.rich.style.Style
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, *Optional[Union[\fBColor\fP, str]] \fBcolor\fP=None, Optional[Union[\fBColor\fP, str]] \fBbgcolor\fP=None, Optional[bool] \fBbold\fP=None, Optional[bool] \fBdim\fP=None, Optional[bool] \fBitalic\fP=None, Optional[bool] \fBunderline\fP=None, Optional[bool] \fBblink\fP=None, Optional[bool] \fBblink2\fP=None, Optional[bool] \fBreverse\fP=None, Optional[bool] \fBconceal\fP=None, Optional[bool] \fBstrike\fP=None, Optional[bool] \fBunderline2\fP=None, Optional[bool] \fBframe\fP=None, Optional[bool] \fBencircle\fP=None, Optional[bool] \fBoverline\fP=None, Optional[str] \fBlink\fP=None, Optional[Dict[str, Any]] \fBmeta\fP=None)"
+.br
+.ti -1c
+.RI "'Style' \fBnull\fP (cls)"
+.br
+.ti -1c
+.RI "'Style' \fBfrom_color\fP (cls, Optional[\fBColor\fP] \fBcolor\fP=None, Optional[\fBColor\fP] \fBbgcolor\fP=None)"
+.br
+.ti -1c
+.RI "'Style' \fBfrom_meta\fP (cls, Optional[Dict[str, Any]] \fBmeta\fP)"
+.br
+.ti -1c
+.RI "'Style' \fBon\fP (cls, Optional[Dict[str, Any]] \fBmeta\fP=None, **Any handlers)"
+.br
+.ti -1c
+.RI "str \fBlink_id\fP (self)"
+.br
+.ti -1c
+.RI "str \fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "bool \fB__bool__\fP (self)"
+.br
+.ti -1c
+.RI "str \fBnormalize\fP (cls, str style)"
+.br
+.ti -1c
+.RI "\fBStyleType\fP \fBpick_first\fP (cls, *Optional[\fBStyleType\fP] values)"
+.br
+.ti -1c
+.RI "Result \fB__rich_repr__\fP (self)"
+.br
+.ti -1c
+.RI "bool \fB__eq__\fP (self, Any other)"
+.br
+.ti -1c
+.RI "bool \fB__ne__\fP (self, Any other)"
+.br
+.ti -1c
+.RI "int \fB__hash__\fP (self)"
+.br
+.ti -1c
+.RI "Optional[\fBColor\fP] \fBcolor\fP (self)"
+.br
+.ti -1c
+.RI "Optional[\fBColor\fP] \fBbgcolor\fP (self)"
+.br
+.ti -1c
+.RI "Optional[str] \fBlink\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBtransparent_background\fP (self)"
+.br
+.ti -1c
+.RI "'Style' \fBbackground_style\fP (self)"
+.br
+.ti -1c
+.RI "Dict[str, Any] \fBmeta\fP (self)"
+.br
+.ti -1c
+.RI "'Style' \fBwithout_color\fP (self)"
+.br
+.ti -1c
+.RI "'Style' \fBparse\fP (cls, str style_definition)"
+.br
+.ti -1c
+.RI "str \fBget_html_style\fP (self, Optional[\fBTerminalTheme\fP] theme=None)"
+.br
+.ti -1c
+.RI "'Style' \fBcombine\fP (cls, Iterable['Style'] styles)"
+.br
+.ti -1c
+.RI "'Style' \fBchain\fP (cls, *'Style' styles)"
+.br
+.ti -1c
+.RI "'Style' \fBcopy\fP (self)"
+.br
+.ti -1c
+.RI "'Style' \fBclear_meta_and_links\fP (self)"
+.br
+.ti -1c
+.RI "'Style' \fBupdate_link\fP (self, Optional[str] \fBlink\fP=None)"
+.br
+.ti -1c
+.RI "str \fBrender\fP (self, str text='', *Optional[\fBColorSystem\fP] color_system=\fBColorSystem\&.TRUECOLOR\fP, bool legacy_windows=False)"
+.br
+.ti -1c
+.RI "None \fBtest\fP (self, Optional[str] text=None)"
+.br
+.ti -1c
+.RI "'Style' \fB__add__\fP (self, Optional['Style'] style)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcolor\fP"
+.br
+.ti -1c
+.RI "\fBbgcolor\fP"
+.br
+.ti -1c
+.RI "\fBlink\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBSTYLE_ATTRIBUTES\fP"
+.br
+.ti -1c
+.RI "\fBbold\fP = \fB_Bit\fP(0)"
+.br
+.ti -1c
+.RI "\fBdim\fP = \fB_Bit\fP(1)"
+.br
+.ti -1c
+.RI "\fBitalic\fP = \fB_Bit\fP(2)"
+.br
+.ti -1c
+.RI "\fBunderline\fP = \fB_Bit\fP(3)"
+.br
+.ti -1c
+.RI "\fBblink\fP = \fB_Bit\fP(4)"
+.br
+.ti -1c
+.RI "\fBblink2\fP = \fB_Bit\fP(5)"
+.br
+.ti -1c
+.RI "\fBreverse\fP = \fB_Bit\fP(6)"
+.br
+.ti -1c
+.RI "\fBconceal\fP = \fB_Bit\fP(7)"
+.br
+.ti -1c
+.RI "\fBstrike\fP = \fB_Bit\fP(8)"
+.br
+.ti -1c
+.RI "\fBunderline2\fP = \fB_Bit\fP(9)"
+.br
+.ti -1c
+.RI "\fBframe\fP = \fB_Bit\fP(10)"
+.br
+.ti -1c
+.RI "\fBencircle\fP = \fB_Bit\fP(11)"
+.br
+.ti -1c
+.RI "\fBoverline\fP = \fB_Bit\fP(12)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fB_make_ansi_codes\fP (self, \fBColorSystem\fP color_system)"
+.br
+.ti -1c
+.RI "'Style' \fB_add\fP (self, Optional['Style'] style)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_color\fP"
+.br
+.ti -1c
+.RI "\fB_bgcolor\fP"
+.br
+.ti -1c
+.RI "\fB_set_attributes\fP"
+.br
+.ti -1c
+.RI "\fB_attributes\fP"
+.br
+.ti -1c
+.RI "\fB_link\fP"
+.br
+.ti -1c
+.RI "\fB_meta\fP"
+.br
+.ti -1c
+.RI "\fB_link_id\fP"
+.br
+.ti -1c
+.RI "\fB_null\fP"
+.br
+.ti -1c
+.RI "\fB_style_definition\fP"
+.br
+.ti -1c
+.RI "\fB_ansi\fP"
+.br
+.ti -1c
+.RI "\fB_hash\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "Optional \fB_color\fP [\fBColor\fP]"
+.br
+.ti -1c
+.RI "Optional \fB_bgcolor\fP [\fBColor\fP]"
+.br
+.ti -1c
+.RI "int \fB_attributes\fP"
+.br
+.ti -1c
+.RI "int \fB_set_attributes\fP"
+.br
+.ti -1c
+.RI "Optional \fB_hash\fP [int]"
+.br
+.ti -1c
+.RI "bool \fB_null\fP"
+.br
+.ti -1c
+.RI "Optional \fB_meta\fP [bytes]"
+.br
+.ti -1c
+.RI "dict \fB_style_map\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A terminal style\&.
+
+A terminal style consists of a color (`color`), a background color (`bgcolor`), and a number of attributes, such
+as bold, italic etc\&. The attributes have 3 states: they can either be on
+(``True``), off (``False``), or not set (``None``)\&.
+
+Args:
+    color (Union[Color, str], optional): Color of terminal text\&. Defaults to None\&.
+    bgcolor (Union[Color, str], optional): Color of terminal background\&. Defaults to None\&.
+    bold (bool, optional): Enable bold text\&. Defaults to None\&.
+    dim (bool, optional): Enable dim text\&. Defaults to None\&.
+    italic (bool, optional): Enable italic text\&. Defaults to None\&.
+    underline (bool, optional): Enable underlined text\&. Defaults to None\&.
+    blink (bool, optional): Enabled blinking text\&. Defaults to None\&.
+    blink2 (bool, optional): Enable fast blinking text\&. Defaults to None\&.
+    reverse (bool, optional): Enabled reverse text\&. Defaults to None\&.
+    conceal (bool, optional): Enable concealed text\&. Defaults to None\&.
+    strike (bool, optional): Enable strikethrough text\&. Defaults to None\&.
+    underline2 (bool, optional): Enable doubly underlined text\&. Defaults to None\&.
+    frame (bool, optional): Enable framed text\&. Defaults to None\&.
+    encircle (bool, optional): Enable encircled text\&. Defaults to None\&.
+    overline (bool, optional): Enable overlined text\&. Defaults to None\&.
+    link (str, link): Link URL\&. Defaults to None\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&.__init__ ( self, *Optional[Union[\fBColor\fP, str]]  color = \fCNone\fP, Optional[Union[\fBColor\fP, str]]  bgcolor = \fCNone\fP, Optional[bool]  bold = \fCNone\fP, Optional[bool]  dim = \fCNone\fP, Optional[bool]  italic = \fCNone\fP, Optional[bool]  underline = \fCNone\fP, Optional[bool]  blink = \fCNone\fP, Optional[bool]  blink2 = \fCNone\fP, Optional[bool]  reverse = \fCNone\fP, Optional[bool]  conceal = \fCNone\fP, Optional[bool]  strike = \fCNone\fP, Optional[bool]  underline2 = \fCNone\fP, Optional[bool]  frame = \fCNone\fP, Optional[bool]  encircle = \fCNone\fP, Optional[bool]  overline = \fCNone\fP, Optional[str]  link = \fCNone\fP, Optional[Dict[str, Any]]  meta = \fCNone\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " 'Style' pip\&._vendor\&.rich\&.style\&.Style\&.__add__ ( self, Optional['Style'] style)"
+
+.SS " bool pip\&._vendor\&.rich\&.style\&.Style\&.__bool__ ( self)"
+
+.PP
+.nf
+A Style is false if it has no attributes, colors, or links\&.
+.fi
+.PP
+ 
+.SS " bool pip\&._vendor\&.rich\&.style\&.Style\&.__eq__ ( self, Any other)"
+
+.SS " int pip\&._vendor\&.rich\&.style\&.Style\&.__hash__ ( self)"
+
+.SS " bool pip\&._vendor\&.rich\&.style\&.Style\&.__ne__ ( self, Any other)"
+
+.SS " Result pip\&._vendor\&.rich\&.style\&.Style\&.__rich_repr__ ( self)"
+
+.SS " str pip\&._vendor\&.rich\&.style\&.Style\&.__str__ ( self)"
+
+.PP
+.nf
+Re-generate style definition from attributes\&.
+.fi
+.PP
+ 
+.SS " 'Style' pip\&._vendor\&.rich\&.style\&.Style\&._add ( self, Optional['Style'] style)\fC [protected]\fP"
+
+.SS " str pip\&._vendor\&.rich\&.style\&.Style\&._make_ansi_codes ( self, \fBColorSystem\fP color_system)\fC [protected]\fP"
+
+.PP
+.nf
+Generate ANSI codes for this style\&.
+
+Args:
+    color_system (ColorSystem): Color system\&.
+
+Returns:
+    str: String containing codes\&.
+
+.fi
+.PP
+ 
+.SS " 'Style' pip\&._vendor\&.rich\&.style\&.Style\&.background_style ( self)"
+
+.PP
+.nf
+A Style with background only\&.
+.fi
+.PP
+ 
+.SS " Optional[\fBColor\fP] pip\&._vendor\&.rich\&.style\&.Style\&.bgcolor ( self)"
+
+.PP
+.nf
+The background color or None if it is not set\&.
+.fi
+.PP
+ 
+.SS " 'Style' pip\&._vendor\&.rich\&.style\&.Style\&.chain ( cls, *'Style' styles)"
+
+.PP
+.nf
+Combine styles from positional argument in to a single style\&.
+
+Args:
+    *styles (Iterable[Style]): Styles to combine\&.
+
+Returns:
+    Style: A new style instance\&.
+
+.fi
+.PP
+ 
+.SS " 'Style' pip\&._vendor\&.rich\&.style\&.Style\&.clear_meta_and_links ( self)"
+
+.PP
+.nf
+Get a copy of this style with link and meta information removed\&.
+
+Returns:
+    Style: New style object\&.
+
+.fi
+.PP
+ 
+.SS " Optional[\fBColor\fP] pip\&._vendor\&.rich\&.style\&.Style\&.color ( self)"
+
+.PP
+.nf
+The foreground color or None if it is not set\&.
+.fi
+.PP
+ 
+.SS " 'Style' pip\&._vendor\&.rich\&.style\&.Style\&.combine ( cls, Iterable['Style'] styles)"
+
+.PP
+.nf
+Combine styles and get result\&.
+
+Args:
+    styles (Iterable[Style]): Styles to combine\&.
+
+Returns:
+    Style: A new style instance\&.
+
+.fi
+.PP
+ 
+.SS " 'Style' pip\&._vendor\&.rich\&.style\&.Style\&.copy ( self)"
+
+.PP
+.nf
+Get a copy of this style\&.
+
+Returns:
+    Style: A new Style instance with identical attributes\&.
+
+.fi
+.PP
+ 
+.SS " 'Style' pip\&._vendor\&.rich\&.style\&.Style\&.from_color ( cls, Optional[\fBColor\fP]  color = \fCNone\fP, Optional[\fBColor\fP]  bgcolor = \fCNone\fP)"
+
+.PP
+.nf
+Create a new style with colors and no attributes\&.
+
+Returns:
+    color (Optional[Color]): A (foreground) color, or None for no color\&. Defaults to None\&.
+    bgcolor (Optional[Color]): A (background) color, or None for no color\&. Defaults to None\&.
+
+.fi
+.PP
+ 
+.SS " 'Style' pip\&._vendor\&.rich\&.style\&.Style\&.from_meta ( cls, Optional[Dict[str, Any]] meta)"
+
+.PP
+.nf
+Create a new style with meta data\&.
+
+Returns:
+    meta (Optional[Dict[str, Any]]): A dictionary of meta data\&. Defaults to None\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.rich\&.style\&.Style\&.get_html_style ( self, Optional[\fBTerminalTheme\fP]  theme = \fCNone\fP)"
+
+.PP
+.nf
+Get a CSS style rule\&.
+.fi
+.PP
+ 
+.SS " Optional[str] pip\&._vendor\&.rich\&.style\&.Style\&.link ( self)"
+
+.PP
+.nf
+Link text, if set\&.
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.rich\&.style\&.Style\&.link_id ( self)"
+
+.PP
+.nf
+Get a link id, used in ansi code for links\&.
+.fi
+.PP
+ 
+.SS " Dict[str, Any] pip\&._vendor\&.rich\&.style\&.Style\&.meta ( self)"
+
+.PP
+.nf
+Get meta information (can not be changed after construction)\&.
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.rich\&.style\&.Style\&.normalize ( cls, str style)"
+
+.PP
+.nf
+Normalize a style definition so that styles with the same effect have the same string
+representation\&.
+
+Args:
+    style (str): A style definition\&.
+
+Returns:
+    str: Normal form of style definition\&.
+
+.fi
+.PP
+ 
+.SS " 'Style' pip\&._vendor\&.rich\&.style\&.Style\&.null ( cls)"
+
+.PP
+.nf
+Create an 'null' style, equivalent to Style(), but more performant\&.
+.fi
+.PP
+ 
+.SS " 'Style' pip\&._vendor\&.rich\&.style\&.Style\&.on ( cls, Optional[Dict[str, Any]]  meta = \fCNone\fP, **Any handlers)"
+
+.PP
+.nf
+Create a blank style with meta information\&.
+
+Example:
+    style = Style\&.on(click=self\&.on_click)
+
+Args:
+    meta (Optional[Dict[str, Any]], optional): An optional dict of meta information\&.
+    **handlers (Any): Keyword arguments are translated in to handlers\&.
+
+Returns:
+    Style: A Style with meta information attached\&.
+
+.fi
+.PP
+ 
+.SS " 'Style' pip\&._vendor\&.rich\&.style\&.Style\&.parse ( cls, str style_definition)"
+
+.PP
+.nf
+Parse a style definition\&.
+
+Args:
+    style_definition (str): A string containing a style\&.
+
+Raises:
+    errors\&.StyleSyntaxError: If the style definition syntax is invalid\&.
+
+Returns:
+    `Style`: A Style instance\&.
+
+.fi
+.PP
+ 
+.SS " \fBStyleType\fP pip\&._vendor\&.rich\&.style\&.Style\&.pick_first ( cls, *Optional[\fBStyleType\fP] values)"
+
+.PP
+.nf
+Pick first non-None style\&.
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.rich\&.style\&.Style\&.render ( self, str  text = \fC''\fP, *Optional[\fBColorSystem\fP]  color_system = \fC\fBColorSystem\&.TRUECOLOR\fP\fP, bool  legacy_windows = \fCFalse\fP)"
+
+.PP
+.nf
+Render the ANSI codes for the style\&.
+
+Args:
+    text (str, optional): A string to style\&. Defaults to ''\&.
+    color_system (Optional[ColorSystem], optional): Color system to render to\&. Defaults to ColorSystem\&.TRUECOLOR\&.
+
+Returns:
+    str: A string containing ANSI style codes\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.style\&.Style\&.test ( self, Optional[str]  text = \fCNone\fP)"
+
+.PP
+.nf
+Write text with style directly to terminal\&.
+
+This method is for testing purposes only\&.
+
+Args:
+    text (Optional[str], optional): Text to style or None for style name\&.
+.fi
+.PP
+ 
+.SS " bool pip\&._vendor\&.rich\&.style\&.Style\&.transparent_background ( self)"
+
+.PP
+.nf
+Check if the style specified a transparent background\&.
+.fi
+.PP
+ 
+.SS " 'Style' pip\&._vendor\&.rich\&.style\&.Style\&.update_link ( self, Optional[str]  link = \fCNone\fP)"
+
+.PP
+.nf
+Get a copy with a different value for link\&.
+
+Args:
+    link (str, optional): New value for link\&. Defaults to None\&.
+
+Returns:
+    Style: A new Style instance\&.
+
+.fi
+.PP
+ 
+.SS " 'Style' pip\&._vendor\&.rich\&.style\&.Style\&.without_color ( self)"
+
+.PP
+.nf
+Get a copy of the style with color removed\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&._ansi\fC [protected]\fP"
+
+.SS "int pip\&._vendor\&.rich\&.style\&.Style\&._attributes\fC [static]\fP, \fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&._attributes\fC [protected]\fP"
+
+.SS "Optional pip\&._vendor\&.rich\&.style\&.Style\&._bgcolor [\fBColor\fP]\fC [static]\fP, \fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&._bgcolor\fC [protected]\fP"
+
+.SS "Optional pip\&._vendor\&.rich\&.style\&.Style\&._color [\fBColor\fP]\fC [static]\fP, \fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&._color\fC [protected]\fP"
+
+.SS "Optional pip\&._vendor\&.rich\&.style\&.Style\&._hash [int]\fC [static]\fP, \fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&._hash\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&._link\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&._link_id\fC [protected]\fP"
+
+.SS "Optional pip\&._vendor\&.rich\&.style\&.Style\&._meta [bytes]\fC [static]\fP, \fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&._meta\fC [protected]\fP"
+
+.SS "bool pip\&._vendor\&.rich\&.style\&.Style\&._null\fC [static]\fP, \fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&._null\fC [protected]\fP"
+
+.SS "int pip\&._vendor\&.rich\&.style\&.Style\&._set_attributes\fC [static]\fP, \fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&._set_attributes\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&._style_definition\fC [protected]\fP"
+
+.SS "dict pip\&._vendor\&.rich\&.style\&.Style\&._style_map\fC [static]\fP, \fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        0: "1",
+        1: "2",
+        2: "3",
+        3: "4",
+        4: "5",
+        5: "6",
+        6: "7",
+        7: "8",
+        8: "9",
+        9: "21",
+        10: "51",
+        11: "52",
+        12: "53",
+    }
+.fi
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&.bgcolor"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&.blink = \fB_Bit\fP(4)\fC [static]\fP"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&.blink2 = \fB_Bit\fP(5)\fC [static]\fP"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&.bold = \fB_Bit\fP(0)\fC [static]\fP"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&.color"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&.conceal = \fB_Bit\fP(7)\fC [static]\fP"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&.dim = \fB_Bit\fP(1)\fC [static]\fP"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&.encircle = \fB_Bit\fP(11)\fC [static]\fP"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&.frame = \fB_Bit\fP(10)\fC [static]\fP"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&.italic = \fB_Bit\fP(2)\fC [static]\fP"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&.link"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&.overline = \fB_Bit\fP(12)\fC [static]\fP"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&.reverse = \fB_Bit\fP(6)\fC [static]\fP"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&.strike = \fB_Bit\fP(8)\fC [static]\fP"
+
+.SS "dict pip\&._vendor\&.rich\&.style\&.Style\&.STYLE_ATTRIBUTES\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        "dim": "dim",
+        "d": "dim",
+        "bold": "bold",
+        "b": "bold",
+        "italic": "italic",
+        "i": "italic",
+        "underline": "underline",
+        "u": "underline",
+        "blink": "blink",
+        "blink2": "blink2",
+        "reverse": "reverse",
+        "r": "reverse",
+        "conceal": "conceal",
+        "c": "conceal",
+        "strike": "strike",
+        "s": "strike",
+        "underline2": "underline2",
+        "uu": "underline2",
+        "frame": "frame",
+        "encircle": "encircle",
+        "overline": "overline",
+        "o": "overline",
+    }
+.fi
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&.underline = \fB_Bit\fP(3)\fC [static]\fP"
+
+.SS "pip\&._vendor\&.rich\&.style\&.Style\&.underline2 = \fB_Bit\fP(9)\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

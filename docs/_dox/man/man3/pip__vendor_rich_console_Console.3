@@ -1,0 +1,1433 @@
+.TH "pip._vendor.rich.console.Console" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.rich.console.Console
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, *Optional[Literal['auto', 'standard', '256', 'truecolor', 'windows']] \fBcolor_system\fP='auto', Optional[bool] force_terminal=None, Optional[bool] force_jupyter=None, Optional[bool] force_interactive=None, bool \fBsoft_wrap\fP=False, Optional[\fBTheme\fP] theme=None, bool \fBstderr\fP=False, Optional[IO[str]] \fBfile\fP=None, bool \fBquiet\fP=False, Optional[int] \fBwidth\fP=None, Optional[int] \fBheight\fP=None, Optional[StyleType] \fBstyle\fP=None, Optional[bool] \fBno_color\fP=None, int \fBtab_size\fP=8, bool \fBrecord\fP=False, bool markup=True, bool emoji=True, Optional[EmojiVariant] emoji_variant=None, bool highlight=True, bool log_time=True, bool log_path=True, Union[str, FormatTimeCallable] log_time_format='[%X]', Optional['HighlighterType'] highlighter=\fBReprHighlighter\fP(), Optional[bool] \fBlegacy_windows\fP=None, bool \fBsafe_box\fP=True, Optional[Callable[[], datetime]] \fBget_datetime\fP=None, Optional[Callable[[], float]] \fBget_time\fP=None, Optional[Mapping[str, str]] \fB_environ\fP=None)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "IO[str] \fBfile\fP (self)"
+.br
+.ti -1c
+.RI "None \fBfile\fP (self, IO[str] new_file)"
+.br
+.ti -1c
+.RI "None \fBset_live\fP (self, 'Live' live)"
+.br
+.ti -1c
+.RI "None \fBclear_live\fP (self)"
+.br
+.ti -1c
+.RI "None \fBpush_render_hook\fP (self, \fBRenderHook\fP hook)"
+.br
+.ti -1c
+.RI "None \fBpop_render_hook\fP (self)"
+.br
+.ti -1c
+.RI "'Console' \fB__enter__\fP (self)"
+.br
+.ti -1c
+.RI "None \fB__exit__\fP (self, Any exc_type, Any exc_value, Any traceback)"
+.br
+.ti -1c
+.RI "None \fBbegin_capture\fP (self)"
+.br
+.ti -1c
+.RI "str \fBend_capture\fP (self)"
+.br
+.ti -1c
+.RI "None \fBpush_theme\fP (self, \fBTheme\fP theme, *bool inherit=True)"
+.br
+.ti -1c
+.RI "None \fBpop_theme\fP (self)"
+.br
+.ti -1c
+.RI "\fBThemeContext\fP \fBuse_theme\fP (self, \fBTheme\fP theme, *bool inherit=True)"
+.br
+.ti -1c
+.RI "Optional[str] \fBcolor_system\fP (self)"
+.br
+.ti -1c
+.RI "str \fBencoding\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBis_terminal\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBis_dumb_terminal\fP (self)"
+.br
+.ti -1c
+.RI "\fBConsoleOptions\fP \fBoptions\fP (self)"
+.br
+.ti -1c
+.RI "\fBConsoleDimensions\fP \fBsize\fP (self)"
+.br
+.ti -1c
+.RI "None \fBsize\fP (self, Tuple[int, int] new_size)"
+.br
+.ti -1c
+.RI "int \fBwidth\fP (self)"
+.br
+.ti -1c
+.RI "None \fBwidth\fP (self, int width)"
+.br
+.ti -1c
+.RI "int \fBheight\fP (self)"
+.br
+.ti -1c
+.RI "None \fBheight\fP (self, int height)"
+.br
+.ti -1c
+.RI "None \fBbell\fP (self)"
+.br
+.ti -1c
+.RI "\fBCapture\fP \fBcapture\fP (self)"
+.br
+.ti -1c
+.RI "\fBPagerContext\fP \fBpager\fP (self, Optional[\fBPager\fP] pager=None, bool styles=False, bool links=False)"
+.br
+.ti -1c
+.RI "None \fBline\fP (self, int count=1)"
+.br
+.ti -1c
+.RI "None \fBclear\fP (self, bool home=True)"
+.br
+.ti -1c
+.RI "'Status' \fBstatus\fP (self, \fBRenderableType\fP status, *str spinner='dots', StyleType spinner_style='status\&.spinner', float speed=1\&.0, float refresh_per_second=12\&.5)"
+.br
+.ti -1c
+.RI "bool \fBshow_cursor\fP (self, bool show=True)"
+.br
+.ti -1c
+.RI "bool \fBset_alt_screen\fP (self, bool enable=True)"
+.br
+.ti -1c
+.RI "bool \fBis_alt_screen\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBset_window_title\fP (self, str title)"
+.br
+.ti -1c
+.RI "'ScreenContext' \fBscreen\fP (self, bool hide_cursor=True, Optional[StyleType] \fBstyle\fP=None)"
+.br
+.ti -1c
+.RI "\fBMeasurement\fP \fBmeasure\fP (self, \fBRenderableType\fP renderable, *Optional[\fBConsoleOptions\fP] \fBoptions\fP=None)"
+.br
+.ti -1c
+.RI "Iterable[\fBSegment\fP] \fBrender\fP (self, \fBRenderableType\fP renderable, Optional[\fBConsoleOptions\fP] \fBoptions\fP=None)"
+.br
+.ti -1c
+.RI "List[List[\fBSegment\fP]] \fBrender_lines\fP (self, \fBRenderableType\fP renderable, Optional[\fBConsoleOptions\fP] \fBoptions\fP=None, *Optional[\fBStyle\fP] \fBstyle\fP=None, bool pad=True, bool new_lines=False)"
+.br
+.ti -1c
+.RI "'Text' \fBrender_str\fP (self, str text, *Union[str, \fBStyle\fP] \fBstyle\fP='', Optional[\fBJustifyMethod\fP] justify=None, Optional[\fBOverflowMethod\fP] overflow=None, Optional[bool] emoji=None, Optional[bool] markup=None, Optional[bool] highlight=None, Optional[\fBHighlighterType\fP] highlighter=None)"
+.br
+.ti -1c
+.RI "\fBStyle\fP \fBget_style\fP (self, Union[str, \fBStyle\fP] name, *Optional[Union[\fBStyle\fP, str]] default=None)"
+.br
+.ti -1c
+.RI "None \fBrule\fP (self, TextType title='', *str characters='─', Union[str, \fBStyle\fP] \fBstyle\fP='rule\&.line', AlignMethod align='center')"
+.br
+.ti -1c
+.RI "None \fBcontrol\fP (self, *\fBControl\fP control)"
+.br
+.ti -1c
+.RI "None \fBout\fP (self, *Any objects, str sep=' ', str end='\\n', Optional[Union[str, \fBStyle\fP]] \fBstyle\fP=None, Optional[bool] highlight=None)"
+.br
+.ti -1c
+.RI "None \fBprint\fP (self, *Any objects, str sep=' ', str end='\\n', Optional[Union[str, \fBStyle\fP]] \fBstyle\fP=None, Optional[\fBJustifyMethod\fP] justify=None, Optional[\fBOverflowMethod\fP] overflow=None, Optional[bool] no_wrap=None, Optional[bool] emoji=None, Optional[bool] markup=None, Optional[bool] highlight=None, Optional[int] \fBwidth\fP=None, Optional[int] \fBheight\fP=None, bool crop=True, Optional[bool] \fBsoft_wrap\fP=None, bool new_line_start=False)"
+.br
+.ti -1c
+.RI "None \fBprint_json\fP (self, Optional[str] json=None, *Any data=None, Union[None, int, str] indent=2, bool highlight=True, bool skip_keys=False, bool ensure_ascii=False, bool check_circular=True, bool allow_nan=True, Optional[Callable[[Any], Any]] default=None, bool sort_keys=False)"
+.br
+.ti -1c
+.RI "None \fBupdate_screen\fP (self, \fBRenderableType\fP renderable, *Optional[\fBRegion\fP] region=None, Optional[\fBConsoleOptions\fP] \fBoptions\fP=None)"
+.br
+.ti -1c
+.RI "None \fBupdate_screen_lines\fP (self, List[List[\fBSegment\fP]] lines, int x=0, int y=0)"
+.br
+.ti -1c
+.RI "None \fBprint_exception\fP (self, *Optional[int] \fBwidth\fP=100, int extra_lines=3, Optional[str] theme=None, bool word_wrap=False, bool show_locals=False, Iterable[Union[str, ModuleType]] suppress=(), int max_frames=100)"
+.br
+.ti -1c
+.RI "None \fBlog\fP (self, *Any objects, str sep=' ', str end='\\n', Optional[Union[str, \fBStyle\fP]] \fBstyle\fP=None, Optional[\fBJustifyMethod\fP] justify=None, Optional[bool] emoji=None, Optional[bool] markup=None, Optional[bool] highlight=None, bool log_locals=False, int _stack_offset=1)"
+.br
+.ti -1c
+.RI "str \fBinput\fP (self, TextType prompt='', *bool markup=True, bool emoji=True, bool password=False, Optional[TextIO] stream=None)"
+.br
+.ti -1c
+.RI "str \fBexport_text\fP (self, *bool \fBclear\fP=True, bool styles=False)"
+.br
+.ti -1c
+.RI "None \fBsave_text\fP (self, str path, *bool \fBclear\fP=True, bool styles=False)"
+.br
+.ti -1c
+.RI "str \fBexport_html\fP (self, *Optional[\fBTerminalTheme\fP] theme=None, bool \fBclear\fP=True, Optional[str] code_format=None, bool inline_styles=False)"
+.br
+.ti -1c
+.RI "None \fBsave_html\fP (self, str path, *Optional[\fBTerminalTheme\fP] theme=None, bool \fBclear\fP=True, str code_format=CONSOLE_HTML_FORMAT, bool inline_styles=False)"
+.br
+.ti -1c
+.RI "str \fBexport_svg\fP (self, *str title='Rich', Optional[\fBTerminalTheme\fP] theme=None, bool \fBclear\fP=True, str code_format=CONSOLE_SVG_FORMAT, float font_aspect_ratio=0\&.61, Optional[str] unique_id=None)"
+.br
+.ti -1c
+.RI "None \fBsave_svg\fP (self, str path, *str title='Rich', Optional[\fBTerminalTheme\fP] theme=None, bool \fBclear\fP=True, str code_format=CONSOLE_SVG_FORMAT, float font_aspect_ratio=0\&.61, Optional[str] unique_id=None)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBis_jupyter\fP"
+.br
+.ti -1c
+.RI "\fBtab_size\fP"
+.br
+.ti -1c
+.RI "\fBrecord\fP"
+.br
+.ti -1c
+.RI "\fBsoft_wrap\fP"
+.br
+.ti -1c
+.RI "\fBquiet\fP"
+.br
+.ti -1c
+.RI "\fBstderr\fP"
+.br
+.ti -1c
+.RI "\fBsafe_box\fP"
+.br
+.ti -1c
+.RI "\fBget_datetime\fP"
+.br
+.ti -1c
+.RI "\fBget_time\fP"
+.br
+.ti -1c
+.RI "\fBstyle\fP"
+.br
+.ti -1c
+.RI "\fBno_color\fP"
+.br
+.ti -1c
+.RI "\fBis_interactive\fP"
+.br
+.ti -1c
+.RI "\fBis_dumb_terminal\fP"
+.br
+.ti -1c
+.RI "\fBfile\fP"
+.br
+.ti -1c
+.RI "\fBlegacy_windows\fP"
+.br
+.ti -1c
+.RI "\fBwidth\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "List[\fBSegment\fP] \fB_buffer\fP (self)"
+.br
+.ti -1c
+.RI "int \fB_buffer_index\fP (self)"
+.br
+.ti -1c
+.RI "None \fB_buffer_index\fP (self, int value)"
+.br
+.ti -1c
+.RI "\fBThemeStack\fP \fB_theme_stack\fP (self)"
+.br
+.ti -1c
+.RI "Optional[\fBColorSystem\fP] \fB_detect_color_system\fP (self)"
+.br
+.ti -1c
+.RI "None \fB_enter_buffer\fP (self)"
+.br
+.ti -1c
+.RI "None \fB_exit_buffer\fP (self)"
+.br
+.ti -1c
+.RI "List[\fBConsoleRenderable\fP] \fB_collect_renderables\fP (self, Iterable[Any] objects, str sep, str end, *Optional[\fBJustifyMethod\fP] justify=None, Optional[bool] emoji=None, Optional[bool] markup=None, Optional[bool] highlight=None)"
+.br
+.ti -1c
+.RI "None \fB_check_buffer\fP (self)"
+.br
+.ti -1c
+.RI "str \fB_render_buffer\fP (self, Iterable[\fBSegment\fP] buffer)"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Tuple[str, int, Dict[str, Any]] \fB_caller_frame_info\fP (int offset, Callable[[], Optional[FrameType]] currentframe=inspect\&.currentframe)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_environ\fP"
+.br
+.ti -1c
+.RI "\fB_markup\fP"
+.br
+.ti -1c
+.RI "\fB_emoji\fP"
+.br
+.ti -1c
+.RI "\fB_highlight\fP"
+.br
+.ti -1c
+.RI "\fB_width\fP"
+.br
+.ti -1c
+.RI "\fB_height\fP"
+.br
+.ti -1c
+.RI "\fB_force_terminal\fP"
+.br
+.ti -1c
+.RI "\fB_file\fP"
+.br
+.ti -1c
+.RI "\fB_color_system\fP"
+.br
+.ti -1c
+.RI "\fB_lock\fP"
+.br
+.ti -1c
+.RI "\fB_log_render\fP"
+.br
+.ti -1c
+.RI "\fB_record_buffer_lock\fP"
+.br
+.ti -1c
+.RI "\fB_thread_locals\fP"
+.br
+.ti -1c
+.RI "\fB_is_alt_screen\fP"
+.br
+.ti -1c
+.RI "\fB_live\fP"
+.br
+.ti -1c
+.RI "\fB_buffer_index\fP"
+.br
+.ti -1c
+.RI "\fB_buffer\fP"
+.br
+.ti -1c
+.RI "\fB_record_buffer\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "Mapping \fB_environ\fP = os\&.environ"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A high level console interface\&.
+
+Args:
+    color_system (str, optional): The color system supported by your terminal,
+        either ``'standard'``, ``'256'`` or ``'truecolor'``\&. Leave as ``'auto'`` to autodetect\&.
+    force_terminal (Optional[bool], optional): Enable/disable terminal control codes, or None to auto-detect terminal\&. Defaults to None\&.
+    force_jupyter (Optional[bool], optional): Enable/disable Jupyter rendering, or None to auto-detect Jupyter\&. Defaults to None\&.
+    force_interactive (Optional[bool], optional): Enable/disable interactive mode, or None to auto detect\&. Defaults to None\&.
+    soft_wrap (Optional[bool], optional): Set soft wrap default on print method\&. Defaults to False\&.
+    theme (Theme, optional): An optional style theme object, or ``None`` for default theme\&.
+    stderr (bool, optional): Use stderr rather than stdout if ``file`` is not specified\&. Defaults to False\&.
+    file (IO, optional): A file object where the console should write to\&. Defaults to stdout\&.
+    quiet (bool, Optional): Boolean to suppress all output\&. Defaults to False\&.
+    width (int, optional): The width of the terminal\&. Leave as default to auto-detect width\&.
+    height (int, optional): The height of the terminal\&. Leave as default to auto-detect height\&.
+    style (StyleType, optional): Style to apply to all output, or None for no style\&. Defaults to None\&.
+    no_color (Optional[bool], optional): Enabled no color mode, or None to auto detect\&. Defaults to None\&.
+    tab_size (int, optional): Number of spaces used to replace a tab character\&. Defaults to 8\&.
+    record (bool, optional): Boolean to enable recording of terminal output,
+        required to call :meth:`export_html`, :meth:`export_svg`, and :meth:`export_text`\&. Defaults to False\&.
+    markup (bool, optional): Boolean to enable :ref:`console_markup`\&. Defaults to True\&.
+    emoji (bool, optional): Enable emoji code\&. Defaults to True\&.
+    emoji_variant (str, optional): Optional emoji variant, either 'text' or 'emoji'\&. Defaults to None\&.
+    highlight (bool, optional): Enable automatic highlighting\&. Defaults to True\&.
+    log_time (bool, optional): Boolean to enable logging of time by :meth:`log` methods\&. Defaults to True\&.
+    log_path (bool, optional): Boolean to enable the logging of the caller by :meth:`log`\&. Defaults to True\&.
+    log_time_format (Union[str, TimeFormatterCallable], optional): If ``log_time`` is enabled, either string for strftime or callable that formats the time\&. Defaults to '[%X] '\&.
+    highlighter (HighlighterType, optional): Default highlighter\&.
+    legacy_windows (bool, optional): Enable legacy Windows mode, or ``None`` to auto detect\&. Defaults to ``None``\&.
+    safe_box (bool, optional): Restrict box options that don't render on legacy Windows\&.
+    get_datetime (Callable[[], datetime], optional): Callable that gets the current time as a datetime\&.datetime object (used by Console\&.log),
+        or None for datetime\&.now\&.
+    get_time (Callable[[], time], optional): Callable that gets the current time in seconds, default uses time\&.monotonic\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&.__init__ ( self, *Optional[
+            Literal['auto', 'standard', '256', 'truecolor', 'windows']
+        ]  color_system = \fC'auto'\fP, Optional[bool]  force_terminal = \fCNone\fP, Optional[bool]  force_jupyter = \fCNone\fP, Optional[bool]  force_interactive = \fCNone\fP, bool  soft_wrap = \fCFalse\fP, Optional[\fBTheme\fP]  theme = \fCNone\fP, bool  stderr = \fCFalse\fP, Optional[IO[str]]  file = \fCNone\fP, bool  quiet = \fCFalse\fP, Optional[int]  width = \fCNone\fP, Optional[int]  height = \fCNone\fP, Optional[StyleType]  style = \fCNone\fP, Optional[bool]  no_color = \fCNone\fP, int  tab_size = \fC8\fP, bool  record = \fCFalse\fP, bool  markup = \fCTrue\fP, bool  emoji = \fCTrue\fP, Optional[EmojiVariant]  emoji_variant = \fCNone\fP, bool  highlight = \fCTrue\fP, bool  log_time = \fCTrue\fP, bool  log_path = \fCTrue\fP, Union[str, FormatTimeCallable]  log_time_format = \fC'[%X]'\fP, Optional['HighlighterType']  highlighter = \fC\fBReprHighlighter\fP()\fP, Optional[bool]  legacy_windows = \fCNone\fP, bool  safe_box = \fCTrue\fP, Optional[Callable[[], datetime]]  get_datetime = \fCNone\fP, Optional[Callable[[], float]]  get_time = \fCNone\fP, Optional[Mapping[str, str]]  _environ = \fCNone\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " 'Console' pip\&._vendor\&.rich\&.console\&.Console\&.__enter__ ( self)"
+
+.PP
+.nf
+Own context manager to enter buffer context\&.
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.__exit__ ( self, Any exc_type, Any exc_value, Any traceback)"
+
+.PP
+.nf
+Exit buffer context\&.
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.rich\&.console\&.Console\&.__repr__ ( self)"
+
+.SS " List[\fBSegment\fP] pip\&._vendor\&.rich\&.console\&.Console\&._buffer ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Get a thread local buffer\&.
+.fi
+.PP
+ 
+.SS " int pip\&._vendor\&.rich\&.console\&.Console\&._buffer_index ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Get a thread local buffer\&.
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&._buffer_index ( self, int value)\fC [protected]\fP"
+
+.SS " Tuple[str, int, Dict[str, Any]] pip\&._vendor\&.rich\&.console\&.Console\&._caller_frame_info (int offset, Callable[[], Optional[FrameType]]  currentframe = \fCinspect\&.currentframe\fP)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+.nf
+Get caller frame information\&.
+
+Args:
+    offset (int): the caller offset within the current frame stack\&.
+    currentframe (Callable[[], Optional[FrameType]], optional): the callable to use to
+        retrieve the current frame\&. Defaults to ``inspect\&.currentframe``\&.
+
+Returns:
+    Tuple[str, int, Dict[str, Any]]: A tuple containing the filename, the line number and
+        the dictionary of local variables associated with the caller frame\&.
+
+Raises:
+    RuntimeError: If the stack offset is invalid\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&._check_buffer ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Check if the buffer may be rendered\&. Render it if it can (e\&.g\&. Console\&.quiet is False)
+Rendering is supported on Windows, Unix and Jupyter environments\&. For
+legacy Windows consoles, the win32 API is called directly\&.
+This method will also record what it renders if recording is enabled via Console\&.record\&.
+
+.fi
+.PP
+ 
+.SS " List[\fBConsoleRenderable\fP] pip\&._vendor\&.rich\&.console\&.Console\&._collect_renderables ( self, Iterable[Any] objects, str sep, str end, *Optional[\fBJustifyMethod\fP]  justify = \fCNone\fP, Optional[bool]  emoji = \fCNone\fP, Optional[bool]  markup = \fCNone\fP, Optional[bool]  highlight = \fCNone\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Combine a number of renderables and text into one renderable\&.
+
+Args:
+    objects (Iterable[Any]): Anything that Rich can render\&.
+    sep (str): String to write between print data\&.
+    end (str): String to write at end of print data\&.
+    justify (str, optional): One of 'left', 'right', 'center', or 'full'\&. Defaults to ``None``\&.
+    emoji (Optional[bool], optional): Enable emoji code, or ``None`` to use console default\&.
+    markup (Optional[bool], optional): Enable markup, or ``None`` to use console default\&.
+    highlight (Optional[bool], optional): Enable automatic highlighting, or ``None`` to use console default\&.
+
+Returns:
+    List[ConsoleRenderable]: A list of things to render\&.
+
+.fi
+.PP
+ 
+.SS " Optional[\fBColorSystem\fP] pip\&._vendor\&.rich\&.console\&.Console\&._detect_color_system ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Detect color system from env vars\&.
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&._enter_buffer ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Enter in to a buffer context, and buffer all output\&.
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&._exit_buffer ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Leave buffer context, and render content if required\&.
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.rich\&.console\&.Console\&._render_buffer ( self, Iterable[\fBSegment\fP] buffer)\fC [protected]\fP"
+
+.PP
+.nf
+Render buffered output, and clear buffer\&.
+.fi
+.PP
+ 
+.SS " \fBThemeStack\fP pip\&._vendor\&.rich\&.console\&.Console\&._theme_stack ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Get the thread local theme stack\&.
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.begin_capture ( self)"
+
+.PP
+.nf
+Begin capturing console output\&. Call :meth:`end_capture` to exit capture mode and return output\&.
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.bell ( self)"
+
+.PP
+.nf
+Play a 'bell' sound (if supported by the terminal)\&.
+.fi
+.PP
+ 
+.SS " \fBCapture\fP pip\&._vendor\&.rich\&.console\&.Console\&.capture ( self)"
+
+.PP
+.nf
+A context manager to *capture* the result of print() or log() in a string,
+rather than writing it to the console\&.
+
+Example:
+    >>> from rich\&.console import Console
+    >>> console = Console()
+    >>> with console\&.capture() as capture:
+    \&.\&.\&.     console\&.print('[bold magenta]Hello World[/]')
+    >>> print(capture\&.get())
+
+Returns:
+    Capture: Context manager with disables writing to the terminal\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.clear ( self, bool  home = \fCTrue\fP)"
+
+.PP
+.nf
+Clear the screen\&.
+
+Args:
+    home (bool, optional): Also move the cursor to 'home' position\&. Defaults to True\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.clear_live ( self)"
+
+.PP
+.nf
+Clear the Live instance\&.
+.fi
+.PP
+ 
+.SS " Optional[str] pip\&._vendor\&.rich\&.console\&.Console\&.color_system ( self)"
+
+.PP
+.nf
+Get color system string\&.
+
+Returns:
+    Optional[str]: 'standard', '256' or 'truecolor'\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.control ( self, *\fBControl\fP control)"
+
+.PP
+.nf
+Insert non-printing control codes\&.
+
+Args:
+    control_codes (str): Control codes, such as those that may move the cursor\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.rich\&.console\&.Console\&.encoding ( self)"
+
+.PP
+.nf
+Get the encoding of the console file, e\&.g\&. ``'utf-8'``\&.
+
+Returns:
+    str: A standard encoding string\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.rich\&.console\&.Console\&.end_capture ( self)"
+
+.PP
+.nf
+End capture mode and return captured string\&.
+
+Returns:
+    str: Console output\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.rich\&.console\&.Console\&.export_html ( self, *Optional[\fBTerminalTheme\fP]  theme = \fCNone\fP, bool  clear = \fCTrue\fP, Optional[str]  code_format = \fCNone\fP, bool  inline_styles = \fCFalse\fP)"
+
+.PP
+.nf
+Generate HTML from console contents (requires record=True argument in constructor)\&.
+
+Args:
+    theme (TerminalTheme, optional): TerminalTheme object containing console colors\&.
+    clear (bool, optional): Clear record buffer after exporting\&. Defaults to ``True``\&.
+    code_format (str, optional): Format string to render HTML\&. In addition to '{foreground}',
+        '{background}', and '{code}', should contain '{stylesheet}' if inline_styles is ``False``\&.
+    inline_styles (bool, optional): If ``True`` styles will be inlined in to spans, which makes files
+        larger but easier to cut and paste markup\&. If ``False``, styles will be embedded in a style tag\&.
+        Defaults to False\&.
+
+Returns:
+    str: String containing console contents as HTML\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.rich\&.console\&.Console\&.export_svg ( self, *str  title = \fC'Rich'\fP, Optional[\fBTerminalTheme\fP]  theme = \fCNone\fP, bool  clear = \fCTrue\fP, str  code_format = \fCCONSOLE_SVG_FORMAT\fP, float  font_aspect_ratio = \fC0\&.61\fP, Optional[str]  unique_id = \fCNone\fP)"
+
+.PP
+.nf
+Generate an SVG from the console contents (requires record=True in Console constructor)\&.
+
+Args:
+    title (str, optional): The title of the tab in the output image
+    theme (TerminalTheme, optional): The ``TerminalTheme`` object to use to style the terminal
+    clear (bool, optional): Clear record buffer after exporting\&. Defaults to ``True``
+    code_format (str, optional): Format string used to generate the SVG\&. Rich will inject a number of variables
+        into the string in order to form the final SVG output\&. The default template used and the variables
+        injected by Rich can be found by inspecting the ``console\&.CONSOLE_SVG_FORMAT`` variable\&.
+    font_aspect_ratio (float, optional): The width to height ratio of the font used in the ``code_format``
+        string\&. Defaults to 0\&.61, which is the width to height ratio of Fira Code (the default font)\&.
+        If you aren't specifying a different font inside ``code_format``, you probably don't need this\&.
+    unique_id (str, optional): unique id that is used as the prefix for various elements (CSS styles, node
+        ids)\&. If not set, this defaults to a computed value based on the recorded content\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.rich\&.console\&.Console\&.export_text ( self, *bool  clear = \fCTrue\fP, bool  styles = \fCFalse\fP)"
+
+.PP
+.nf
+Generate text from console contents (requires record=True argument in constructor)\&.
+
+Args:
+    clear (bool, optional): Clear record buffer after exporting\&. Defaults to ``True``\&.
+    styles (bool, optional): If ``True``, ansi escape codes will be included\&. ``False`` for plain text\&.
+        Defaults to ``False``\&.
+
+Returns:
+    str: String containing console contents\&.
+.fi
+.PP
+ 
+.SS " IO[str] pip\&._vendor\&.rich\&.console\&.Console\&.file ( self)"
+
+.PP
+.nf
+Get the file object to write to\&.
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.file ( self, IO[str] new_file)"
+
+.PP
+.nf
+Set a new file object\&.
+.fi
+.PP
+ 
+.SS " \fBStyle\fP pip\&._vendor\&.rich\&.console\&.Console\&.get_style ( self, Union[str, \fBStyle\fP] name, *Optional[Union[\fBStyle\fP, str]]  default = \fCNone\fP)"
+
+.PP
+.nf
+Get a Style instance by its theme name or parse a definition\&.
+
+Args:
+    name (str): The name of a style or a style definition\&.
+
+Returns:
+    Style: A Style object\&.
+
+Raises:
+    MissingStyle: If no style could be parsed from name\&.
+.fi
+.PP
+ 
+.SS " int pip\&._vendor\&.rich\&.console\&.Console\&.height ( self)"
+
+.PP
+.nf
+Get the height of the console\&.
+
+Returns:
+    int: The height (in lines) of the console\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.height ( self, int height)"
+
+.PP
+.nf
+Set height\&.
+
+Args:
+    height (int): new height\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.rich\&.console\&.Console\&.input ( self, TextType  prompt = \fC''\fP, *bool  markup = \fCTrue\fP, bool  emoji = \fCTrue\fP, bool  password = \fCFalse\fP, Optional[TextIO]  stream = \fCNone\fP)"
+
+.PP
+.nf
+Displays a prompt and waits for input from the user\&. The prompt may contain color / style\&.
+
+It works in the same way as Python's builtin :func:`input` function and provides elaborate line editing and history features if Python's builtin :mod:`readline` module is previously loaded\&.
+
+Args:
+    prompt (Union[str, Text]): Text to render in the prompt\&.
+    markup (bool, optional): Enable console markup (requires a str prompt)\&. Defaults to True\&.
+    emoji (bool, optional): Enable emoji (requires a str prompt)\&. Defaults to True\&.
+    password: (bool, optional): Hide typed text\&. Defaults to False\&.
+    stream: (TextIO, optional): Optional file to read input from (rather than stdin)\&. Defaults to None\&.
+
+Returns:
+    str: Text read from stdin\&.
+
+.fi
+.PP
+ 
+.SS " bool pip\&._vendor\&.rich\&.console\&.Console\&.is_alt_screen ( self)"
+
+.PP
+.nf
+Check if the alt screen was enabled\&.
+
+Returns:
+    bool: True if the alt screen was enabled, otherwise False\&.
+
+.fi
+.PP
+ 
+.SS " bool pip\&._vendor\&.rich\&.console\&.Console\&.is_dumb_terminal ( self)"
+
+.PP
+.nf
+Detect dumb terminal\&.
+
+Returns:
+    bool: True if writing to a dumb terminal, otherwise False\&.
+.fi
+.PP
+ 
+.SS " bool pip\&._vendor\&.rich\&.console\&.Console\&.is_terminal ( self)"
+
+.PP
+.nf
+Check if the console is writing to a terminal\&.
+
+Returns:
+    bool: True if the console writing to a device capable of
+    understanding terminal codes, otherwise False\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.line ( self, int  count = \fC1\fP)"
+
+.PP
+.nf
+Write new line(s)\&.
+
+Args:
+    count (int, optional): Number of new lines\&. Defaults to 1\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.log ( self, *Any objects, str  sep = \fC' '\fP, str  end = \fC'\\n'\fP, Optional[Union[str, \fBStyle\fP]]  style = \fCNone\fP, Optional[\fBJustifyMethod\fP]  justify = \fCNone\fP, Optional[bool]  emoji = \fCNone\fP, Optional[bool]  markup = \fCNone\fP, Optional[bool]  highlight = \fCNone\fP, bool  log_locals = \fCFalse\fP, int  _stack_offset = \fC1\fP)"
+
+.PP
+.nf
+Log rich content to the terminal\&.
+
+Args:
+    objects (positional args): Objects to log to the terminal\&.
+    sep (str, optional): String to write between print data\&. Defaults to ' '\&.
+    end (str, optional): String to write at end of print data\&. Defaults to '\\\\\\\\n'\&.
+    style (Union[str, Style], optional): A style to apply to output\&. Defaults to None\&.
+    justify (str, optional): One of 'left', 'right', 'center', or 'full'\&. Defaults to ``None``\&.
+    emoji (Optional[bool], optional): Enable emoji code, or ``None`` to use console default\&. Defaults to None\&.
+    markup (Optional[bool], optional): Enable markup, or ``None`` to use console default\&. Defaults to None\&.
+    highlight (Optional[bool], optional): Enable automatic highlighting, or ``None`` to use console default\&. Defaults to None\&.
+    log_locals (bool, optional): Boolean to enable logging of locals where ``log()``
+        was called\&. Defaults to False\&.
+    _stack_offset (int, optional): Offset of caller from end of call stack\&. Defaults to 1\&.
+
+.fi
+.PP
+ 
+.SS " \fBMeasurement\fP pip\&._vendor\&.rich\&.console\&.Console\&.measure ( self, \fBRenderableType\fP renderable, *Optional[\fBConsoleOptions\fP]  options = \fCNone\fP)"
+
+.PP
+.nf
+Measure a renderable\&. Returns a :class:`~rich\&.measure\&.Measurement` object which contains
+information regarding the number of characters required to print the renderable\&.
+
+Args:
+    renderable (RenderableType): Any renderable or string\&.
+    options (Optional[ConsoleOptions], optional): Options to use when measuring, or None
+        to use default options\&. Defaults to None\&.
+
+Returns:
+    Measurement: A measurement of the renderable\&.
+
+.fi
+.PP
+ 
+.SS " \fBConsoleOptions\fP pip\&._vendor\&.rich\&.console\&.Console\&.options ( self)"
+
+.PP
+.nf
+Get default console options\&.
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.out ( self, *Any objects, str  sep = \fC' '\fP, str  end = \fC'\\n'\fP, Optional[Union[str, \fBStyle\fP]]  style = \fCNone\fP, Optional[bool]  highlight = \fCNone\fP)"
+
+.PP
+.nf
+Output to the terminal\&. This is a low-level way of writing to the terminal which unlike
+:meth:`~rich\&.console\&.Console\&.print` won't pretty print, wrap text, or apply markup, but will
+optionally apply highlighting and a basic style\&.
+
+Args:
+    sep (str, optional): String to write between print data\&. Defaults to ' '\&.
+    end (str, optional): String to write at end of print data\&. Defaults to '\\\\\\\\n'\&.
+    style (Union[str, Style], optional): A style to apply to output\&. Defaults to None\&.
+    highlight (Optional[bool], optional): Enable automatic highlighting, or ``None`` to use
+        console default\&. Defaults to ``None``\&.
+
+.fi
+.PP
+ 
+.SS " \fBPagerContext\fP pip\&._vendor\&.rich\&.console\&.Console\&.pager ( self, Optional[\fBPager\fP]  pager = \fCNone\fP, bool  styles = \fCFalse\fP, bool  links = \fCFalse\fP)"
+
+.PP
+.nf
+A context manager to display anything printed within a 'pager'\&. The pager application
+is defined by the system and will typically support at least pressing a key to scroll\&.
+
+Args:
+    pager (Pager, optional): A pager object, or None to use :class:`~rich\&.pager\&.SystemPager`\&. Defaults to None\&.
+    styles (bool, optional): Show styles in pager\&. Defaults to False\&.
+    links (bool, optional): Show links in pager\&. Defaults to False\&.
+
+Example:
+    >>> from rich\&.console import Console
+    >>> from rich\&.__main__ import make_test_card
+    >>> console = Console()
+    >>> with console\&.pager():
+            console\&.print(make_test_card())
+
+Returns:
+    PagerContext: A context manager\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.pop_render_hook ( self)"
+
+.PP
+.nf
+Pop the last renderhook from the stack\&.
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.pop_theme ( self)"
+
+.PP
+.nf
+Remove theme from top of stack, restoring previous theme\&.
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.print ( self, *Any objects, str  sep = \fC' '\fP, str  end = \fC'\\n'\fP, Optional[Union[str, \fBStyle\fP]]  style = \fCNone\fP, Optional[\fBJustifyMethod\fP]  justify = \fCNone\fP, Optional[\fBOverflowMethod\fP]  overflow = \fCNone\fP, Optional[bool]  no_wrap = \fCNone\fP, Optional[bool]  emoji = \fCNone\fP, Optional[bool]  markup = \fCNone\fP, Optional[bool]  highlight = \fCNone\fP, Optional[int]  width = \fCNone\fP, Optional[int]  height = \fCNone\fP, bool  crop = \fCTrue\fP, Optional[bool]  soft_wrap = \fCNone\fP, bool  new_line_start = \fCFalse\fP)"
+
+.PP
+.nf
+Print to the console\&.
+
+Args:
+    objects (positional args): Objects to log to the terminal\&.
+    sep (str, optional): String to write between print data\&. Defaults to ' '\&.
+    end (str, optional): String to write at end of print data\&. Defaults to '\\\\\\\\n'\&.
+    style (Union[str, Style], optional): A style to apply to output\&. Defaults to None\&.
+    justify (str, optional): Justify method: 'default', 'left', 'right', 'center', or 'full'\&. Defaults to ``None``\&.
+    overflow (str, optional): Overflow method: 'ignore', 'crop', 'fold', or 'ellipsis'\&. Defaults to None\&.
+    no_wrap (Optional[bool], optional): Disable word wrapping\&. Defaults to None\&.
+    emoji (Optional[bool], optional): Enable emoji code, or ``None`` to use console default\&. Defaults to ``None``\&.
+    markup (Optional[bool], optional): Enable markup, or ``None`` to use console default\&. Defaults to ``None``\&.
+    highlight (Optional[bool], optional): Enable automatic highlighting, or ``None`` to use console default\&. Defaults to ``None``\&.
+    width (Optional[int], optional): Width of output, or ``None`` to auto-detect\&. Defaults to ``None``\&.
+    crop (Optional[bool], optional): Crop output to width of terminal\&. Defaults to True\&.
+    soft_wrap (bool, optional): Enable soft wrap mode which disables word wrapping and cropping of text or ``None`` for
+        Console default\&. Defaults to ``None``\&.
+    new_line_start (bool, False): Insert a new line at the start if the output contains more than one line\&. Defaults to ``False``\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.print_exception ( self, *Optional[int]  width = \fC100\fP, int  extra_lines = \fC3\fP, Optional[str]  theme = \fCNone\fP, bool  word_wrap = \fCFalse\fP, bool  show_locals = \fCFalse\fP, Iterable[Union[str, ModuleType]]  suppress = \fC()\fP, int  max_frames = \fC100\fP)"
+
+.PP
+.nf
+Prints a rich render of the last exception and traceback\&.
+
+Args:
+    width (Optional[int], optional): Number of characters used to render code\&. Defaults to 100\&.
+    extra_lines (int, optional): Additional lines of code to render\&. Defaults to 3\&.
+    theme (str, optional): Override pygments theme used in traceback
+    word_wrap (bool, optional): Enable word wrapping of long lines\&. Defaults to False\&.
+    show_locals (bool, optional): Enable display of local variables\&. Defaults to False\&.
+    suppress (Iterable[Union[str, ModuleType]]): Optional sequence of modules or paths to exclude from traceback\&.
+    max_frames (int): Maximum number of frames to show in a traceback, 0 for no maximum\&. Defaults to 100\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.print_json ( self, Optional[str]  json = \fCNone\fP, *Any  data = \fCNone\fP, Union[None, int, str]  indent = \fC2\fP, bool  highlight = \fCTrue\fP, bool  skip_keys = \fCFalse\fP, bool  ensure_ascii = \fCFalse\fP, bool  check_circular = \fCTrue\fP, bool  allow_nan = \fCTrue\fP, Optional[Callable[[Any], Any]]  default = \fCNone\fP, bool  sort_keys = \fCFalse\fP)"
+
+.PP
+.nf
+Pretty prints JSON\&. Output will be valid JSON\&.
+
+Args:
+    json (Optional[str]): A string containing JSON\&.
+    data (Any): If json is not supplied, then encode this data\&.
+    indent (Union[None, int, str], optional): Number of spaces to indent\&. Defaults to 2\&.
+    highlight (bool, optional): Enable highlighting of output: Defaults to True\&.
+    skip_keys (bool, optional): Skip keys not of a basic type\&. Defaults to False\&.
+    ensure_ascii (bool, optional): Escape all non-ascii characters\&. Defaults to False\&.
+    check_circular (bool, optional): Check for circular references\&. Defaults to True\&.
+    allow_nan (bool, optional): Allow NaN and Infinity values\&. Defaults to True\&.
+    default (Callable, optional): A callable that converts values that can not be encoded
+        in to something that can be JSON encoded\&. Defaults to None\&.
+    sort_keys (bool, optional): Sort dictionary keys\&. Defaults to False\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.push_render_hook ( self, \fBRenderHook\fP hook)"
+
+.PP
+.nf
+Add a new render hook to the stack\&.
+
+Args:
+    hook (RenderHook): Render hook instance\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.push_theme ( self, \fBTheme\fP theme, *bool  inherit = \fCTrue\fP)"
+
+.PP
+.nf
+Push a new theme on to the top of the stack, replacing the styles from the previous theme\&.
+Generally speaking, you should call :meth:`~rich\&.console\&.Console\&.use_theme` to get a context manager, rather
+than calling this method directly\&.
+
+Args:
+    theme (Theme): A theme instance\&.
+    inherit (bool, optional): Inherit existing styles\&. Defaults to True\&.
+
+.fi
+.PP
+ 
+.SS " Iterable[\fBSegment\fP] pip\&._vendor\&.rich\&.console\&.Console\&.render ( self, \fBRenderableType\fP renderable, Optional[\fBConsoleOptions\fP]  options = \fCNone\fP)"
+
+.PP
+.nf
+Render an object in to an iterable of `Segment` instances\&.
+
+This method contains the logic for rendering objects with the console protocol\&.
+You are unlikely to need to use it directly, unless you are extending the library\&.
+
+Args:
+    renderable (RenderableType): An object supporting the console protocol, or
+        an object that may be converted to a string\&.
+    options (ConsoleOptions, optional): An options object, or None to use self\&.options\&. Defaults to None\&.
+
+Returns:
+    Iterable[Segment]: An iterable of segments that may be rendered\&.
+
+.fi
+.PP
+ 
+.SS " List[List[\fBSegment\fP]] pip\&._vendor\&.rich\&.console\&.Console\&.render_lines ( self, \fBRenderableType\fP renderable, Optional[\fBConsoleOptions\fP]  options = \fCNone\fP, *Optional[\fBStyle\fP]  style = \fCNone\fP, bool  pad = \fCTrue\fP, bool  new_lines = \fCFalse\fP)"
+
+.PP
+.nf
+Render objects in to a list of lines\&.
+
+The output of render_lines is useful when further formatting of rendered console text
+is required, such as the Panel class which draws a border around any renderable object\&.
+
+Args:
+    renderable (RenderableType): Any object renderable in the console\&.
+    options (Optional[ConsoleOptions], optional): Console options, or None to use self\&.options\&. Default to ``None``\&.
+    style (Style, optional): Optional style to apply to renderables\&. Defaults to ``None``\&.
+    pad (bool, optional): Pad lines shorter than render width\&. Defaults to ``True``\&.
+    new_lines (bool, optional): Include '\\n' characters at end of lines\&.
+
+Returns:
+    List[List[Segment]]: A list of lines, where a line is a list of Segment objects\&.
+
+.fi
+.PP
+ 
+.SS " 'Text' pip\&._vendor\&.rich\&.console\&.Console\&.render_str ( self, str text, *Union[str, \fBStyle\fP]  style = \fC''\fP, Optional[\fBJustifyMethod\fP]  justify = \fCNone\fP, Optional[\fBOverflowMethod\fP]  overflow = \fCNone\fP, Optional[bool]  emoji = \fCNone\fP, Optional[bool]  markup = \fCNone\fP, Optional[bool]  highlight = \fCNone\fP, Optional[\fBHighlighterType\fP]  highlighter = \fCNone\fP)"
+
+.PP
+.nf
+Convert a string to a Text instance\&. This is called automatically if
+you print or log a string\&.
+
+Args:
+    text (str): Text to render\&.
+    style (Union[str, Style], optional): Style to apply to rendered text\&.
+    justify (str, optional): Justify method: 'default', 'left', 'center', 'full', or 'right'\&. Defaults to ``None``\&.
+    overflow (str, optional): Overflow method: 'crop', 'fold', or 'ellipsis'\&. Defaults to ``None``\&.
+    emoji (Optional[bool], optional): Enable emoji, or ``None`` to use Console default\&.
+    markup (Optional[bool], optional): Enable markup, or ``None`` to use Console default\&.
+    highlight (Optional[bool], optional): Enable highlighting, or ``None`` to use Console default\&.
+    highlighter (HighlighterType, optional): Optional highlighter to apply\&.
+Returns:
+    ConsoleRenderable: Renderable object\&.
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.rule ( self, TextType  title = \fC''\fP, *str  characters = \fC'─'\fP, Union[str, \fBStyle\fP]  style = \fC'rule\&.line'\fP, AlignMethod  align = \fC'center'\fP)"
+
+.PP
+.nf
+Draw a line with optional centered title\&.
+
+Args:
+    title (str, optional): Text to render over the rule\&. Defaults to ''\&.
+    characters (str, optional): Character(s) to form the line\&. Defaults to '─'\&.
+    style (str, optional): Style of line\&. Defaults to 'rule\&.line'\&.
+    align (str, optional): How to align the title, one of 'left', 'center', or 'right'\&. Defaults to 'center'\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.save_html ( self, str path, *Optional[\fBTerminalTheme\fP]  theme = \fCNone\fP, bool  clear = \fCTrue\fP, str  code_format = \fCCONSOLE_HTML_FORMAT\fP, bool  inline_styles = \fCFalse\fP)"
+
+.PP
+.nf
+Generate HTML from console contents and write to a file (requires record=True argument in constructor)\&.
+
+Args:
+    path (str): Path to write html file\&.
+    theme (TerminalTheme, optional): TerminalTheme object containing console colors\&.
+    clear (bool, optional): Clear record buffer after exporting\&. Defaults to ``True``\&.
+    code_format (str, optional): Format string to render HTML\&. In addition to '{foreground}',
+        '{background}', and '{code}', should contain '{stylesheet}' if inline_styles is ``False``\&.
+    inline_styles (bool, optional): If ``True`` styles will be inlined in to spans, which makes files
+        larger but easier to cut and paste markup\&. If ``False``, styles will be embedded in a style tag\&.
+        Defaults to False\&.
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.save_svg ( self, str path, *str  title = \fC'Rich'\fP, Optional[\fBTerminalTheme\fP]  theme = \fCNone\fP, bool  clear = \fCTrue\fP, str  code_format = \fCCONSOLE_SVG_FORMAT\fP, float  font_aspect_ratio = \fC0\&.61\fP, Optional[str]  unique_id = \fCNone\fP)"
+
+.PP
+.nf
+Generate an SVG file from the console contents (requires record=True in Console constructor)\&.
+
+Args:
+    path (str): The path to write the SVG to\&.
+    title (str, optional): The title of the tab in the output image
+    theme (TerminalTheme, optional): The ``TerminalTheme`` object to use to style the terminal
+    clear (bool, optional): Clear record buffer after exporting\&. Defaults to ``True``
+    code_format (str, optional): Format string used to generate the SVG\&. Rich will inject a number of variables
+        into the string in order to form the final SVG output\&. The default template used and the variables
+        injected by Rich can be found by inspecting the ``console\&.CONSOLE_SVG_FORMAT`` variable\&.
+    font_aspect_ratio (float, optional): The width to height ratio of the font used in the ``code_format``
+        string\&. Defaults to 0\&.61, which is the width to height ratio of Fira Code (the default font)\&.
+        If you aren't specifying a different font inside ``code_format``, you probably don't need this\&.
+    unique_id (str, optional): unique id that is used as the prefix for various elements (CSS styles, node
+        ids)\&. If not set, this defaults to a computed value based on the recorded content\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.save_text ( self, str path, *bool  clear = \fCTrue\fP, bool  styles = \fCFalse\fP)"
+
+.PP
+.nf
+Generate text from console and save to a given location (requires record=True argument in constructor)\&.
+
+Args:
+    path (str): Path to write text files\&.
+    clear (bool, optional): Clear record buffer after exporting\&. Defaults to ``True``\&.
+    styles (bool, optional): If ``True``, ansi style codes will be included\&. ``False`` for plain text\&.
+        Defaults to ``False``\&.
+.fi
+.PP
+ 
+.SS " 'ScreenContext' pip\&._vendor\&.rich\&.console\&.Console\&.screen ( self, bool  hide_cursor = \fCTrue\fP, Optional[StyleType]  style = \fCNone\fP)"
+
+.PP
+.nf
+Context manager to enable and disable 'alternative screen' mode\&.
+
+Args:
+    hide_cursor (bool, optional): Also hide the cursor\&. Defaults to False\&.
+    style (Style, optional): Optional style for screen\&. Defaults to None\&.
+
+Returns:
+    ~ScreenContext: Context which enables alternate screen on enter, and disables it on exit\&.
+
+.fi
+.PP
+ 
+.SS " bool pip\&._vendor\&.rich\&.console\&.Console\&.set_alt_screen ( self, bool  enable = \fCTrue\fP)"
+
+.PP
+.nf
+Enables alternative screen mode\&.
+
+Note, if you enable this mode, you should ensure that is disabled before
+the application exits\&. See :meth:`~rich\&.Console\&.screen` for a context manager
+that handles this for you\&.
+
+Args:
+    enable (bool, optional): Enable (True) or disable (False) alternate screen\&. Defaults to True\&.
+
+Returns:
+    bool: True if the control codes were written\&.
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.set_live ( self, 'Live' live)"
+
+.PP
+.nf
+Set Live instance\&. Used by Live context manager\&.
+
+Args:
+    live (Live): Live instance using this Console\&.
+
+Raises:
+    errors\&.LiveError: If this Console has a Live context currently active\&.
+
+.fi
+.PP
+ 
+.SS " bool pip\&._vendor\&.rich\&.console\&.Console\&.set_window_title ( self, str title)"
+
+.PP
+.nf
+Set the title of the console terminal window\&.
+
+Warning: There is no means within Rich of 'resetting' the window title to its
+previous value, meaning the title you set will persist even after your application
+exits\&.
+
+``fish`` shell resets the window title before and after each command by default,
+negating this issue\&. Windows Terminal and command prompt will also reset the title for you\&.
+Most other shells and terminals, however, do not do this\&.
+
+Some terminals may require configuration changes before you can set the title\&.
+Some terminals may not support setting the title at all\&.
+
+Other software (including the terminal itself, the shell, custom prompts, plugins, etc\&.)
+may also set the terminal window title\&. This could result in whatever value you write
+using this method being overwritten\&.
+
+Args:
+    title (str): The new title of the terminal window\&.
+
+Returns:
+    bool: True if the control code to change the terminal title was
+        written, otherwise False\&. Note that a return value of True
+        does not guarantee that the window title has actually changed,
+        since the feature may be unsupported/disabled in some terminals\&.
+
+.fi
+.PP
+ 
+.SS " bool pip\&._vendor\&.rich\&.console\&.Console\&.show_cursor ( self, bool  show = \fCTrue\fP)"
+
+.PP
+.nf
+Show or hide the cursor\&.
+
+Args:
+    show (bool, optional): Set visibility of the cursor\&.
+
+.fi
+.PP
+ 
+.SS " \fBConsoleDimensions\fP pip\&._vendor\&.rich\&.console\&.Console\&.size ( self)"
+
+.PP
+.nf
+Get the size of the console\&.
+
+Returns:
+    ConsoleDimensions: A named tuple containing the dimensions\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.size ( self, Tuple[int, int] new_size)"
+
+.PP
+.nf
+Set a new size for the terminal\&.
+
+Args:
+    new_size (Tuple[int, int]): New width and height\&.
+
+.fi
+.PP
+ 
+.SS " 'Status' pip\&._vendor\&.rich\&.console\&.Console\&.status ( self, \fBRenderableType\fP status, *str  spinner = \fC'dots'\fP, StyleType  spinner_style = \fC'status\&.spinner'\fP, float  speed = \fC1\&.0\fP, float  refresh_per_second = \fC12\&.5\fP)"
+
+.PP
+.nf
+Display a status and spinner\&.
+
+Args:
+    status (RenderableType): A status renderable (str or Text typically)\&.
+    spinner (str, optional): Name of spinner animation (see python -m rich\&.spinner)\&. Defaults to 'dots'\&.
+    spinner_style (StyleType, optional): Style of spinner\&. Defaults to 'status\&.spinner'\&.
+    speed (float, optional): Speed factor for spinner animation\&. Defaults to 1\&.0\&.
+    refresh_per_second (float, optional): Number of refreshes per second\&. Defaults to 12\&.5\&.
+
+Returns:
+    Status: A Status object that may be used as a context manager\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.update_screen ( self, \fBRenderableType\fP renderable, *Optional[\fBRegion\fP]  region = \fCNone\fP, Optional[\fBConsoleOptions\fP]  options = \fCNone\fP)"
+
+.PP
+.nf
+Update the screen at a given offset\&.
+
+Args:
+    renderable (RenderableType): A Rich renderable\&.
+    region (Region, optional): Region of screen to update, or None for entire screen\&. Defaults to None\&.
+    x (int, optional): x offset\&. Defaults to 0\&.
+    y (int, optional): y offset\&. Defaults to 0\&.
+
+Raises:
+    errors\&.NoAltScreen: If the Console isn't in alt screen mode\&.
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.update_screen_lines ( self, List[List[\fBSegment\fP]] lines, int  x = \fC0\fP, int  y = \fC0\fP)"
+
+.PP
+.nf
+Update lines of the screen at a given offset\&.
+
+Args:
+    lines (List[List[Segment]]): Rendered lines (as produced by :meth:`~rich\&.Console\&.render_lines`)\&.
+    x (int, optional): x offset (column no)\&. Defaults to 0\&.
+    y (int, optional): y offset (column no)\&. Defaults to 0\&.
+
+Raises:
+    errors\&.NoAltScreen: If the Console isn't in alt screen mode\&.
+
+.fi
+.PP
+ 
+.SS " \fBThemeContext\fP pip\&._vendor\&.rich\&.console\&.Console\&.use_theme ( self, \fBTheme\fP theme, *bool  inherit = \fCTrue\fP)"
+
+.PP
+.nf
+Use a different theme for the duration of the context manager\&.
+
+Args:
+    theme (Theme): Theme instance to user\&.
+    inherit (bool, optional): Inherit existing console styles\&. Defaults to True\&.
+
+Returns:
+    ThemeContext: [description]
+
+.fi
+.PP
+ 
+.SS " int pip\&._vendor\&.rich\&.console\&.Console\&.width ( self)"
+
+.PP
+.nf
+Get the width of the console\&.
+
+Returns:
+    int: The width (in characters) of the console\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.console\&.Console\&.width ( self, int width)"
+
+.PP
+.nf
+Set width\&.
+
+Args:
+    width (int): New width\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&._buffer\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&._buffer_index\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&._color_system\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&._emoji\fC [protected]\fP"
+
+.SS "Mapping pip\&._vendor\&.rich\&.console\&.Console\&._environ = os\&.environ\fC [static]\fP, \fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&._environ\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&._file\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&._force_terminal\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&._height\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&._highlight\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&._is_alt_screen\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&._live\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&._lock\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&._log_render\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&._markup\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&._record_buffer\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&._record_buffer_lock\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&._thread_locals\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&._width\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&.file"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&.get_datetime"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&.get_time"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&.is_dumb_terminal"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&.is_interactive"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&.is_jupyter"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&.legacy_windows"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&.no_color"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&.quiet"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&.record"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&.safe_box"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&.soft_wrap"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&.stderr"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&.style"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&.tab_size"
+
+.SS "pip\&._vendor\&.rich\&.console\&.Console\&.width"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

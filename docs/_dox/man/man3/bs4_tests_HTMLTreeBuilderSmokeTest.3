@@ -1,0 +1,555 @@
+.TH "bs4.tests.HTMLTreeBuilderSmokeTest" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bs4.tests.HTMLTreeBuilderSmokeTest
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBbs4\&.tests\&.TreeBuilderSmokeTest\fP\&.
+.PP
+Inherited by \fBbs4\&.tests\&.HTML5TreeBuilderSmokeTest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBtest_empty_element_tags\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_special_string_containers\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_pickle_and_unpickle_identity\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_pickle_and_unpickle_bad_markup\fP (self)"
+.br
+.ti -1c
+.RI "None \fBassertDoctypeHandled\fP (self, str doctype_fragment)"
+.br
+.ti -1c
+.RI "\fBtest_normal_doctypes\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_empty_doctype\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_mixed_case_doctype\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_public_doctype_with_url\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_system_doctype\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_namespaced_system_doctype\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_namespaced_public_doctype\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_real_xhtml_document\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_namespaced_html\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_detect_xml_parsed_as_html\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_processing_instruction\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_deepcopy\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_p_tag_is_never_empty_element\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_unclosed_tags_get_closed\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_br_is_always_empty_element_tag\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_nested_formatting_elements\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_double_head\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_comment\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_preserved_whitespace_in_pre_and_textarea\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_nested_inline_elements\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_nested_block_level_elements\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_correctly_nested_tables\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_multivalued_attribute_with_whitespace\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_deeply_nested_multivalued_attribute\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_multivalued_attribute_on_html\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_angle_brackets_in_attribute_values_are_escaped\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_strings_resembling_character_entity_references\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_apos_entity\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_entities_in_foreign_document_encoding\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_entities_in_attributes_converted_to_unicode\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_entities_in_text_converted_to_unicode\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_quot_entity_converted_to_quotation_mark\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_out_of_range_entity\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_multipart_strings\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_invalid_html_entity\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_head_tag_between_head_and_body\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_multiple_copies_of_a_tag\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_basic_namespaces\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_multivalued_attribute_value_becomes_list\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_can_parse_unicode_document\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_soupstrainer\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_single_quote_attribute_values_become_double_quotes\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_attribute_values_with_nested_quotes_are_left_alone\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_attribute_values_with_double_nested_quotes_get_quoted\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_ampersand_in_attribute_value_gets_escaped\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_escaped_ampersand_in_attribute_value_is_left_alone\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_entities_in_strings_converted_during_parsing\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_smart_quotes_converted_on_the_way_in\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_non_breaking_spaces_converted_on_the_way_in\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_entities_converted_on_the_way_out\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_real_iso_8859_document\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_real_shift_jis_document\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_real_hebrew_document\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_meta_tag_reflects_current_encoding\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_html5_style_meta_tag_reflects_current_encoding\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_python_specific_encodings_not_used_in_charset\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_tag_with_no_attributes_can_have_attributes_added\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_closing_tag_with_no_opening_tag\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_worst_case\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBbs4\&.tests\&.TreeBuilderSmokeTest\fP
+.in +1c
+.ti -1c
+.RI "\fBtest_attribute_not_multi_valued\fP (self, multi_valued_attributes)"
+.br
+.ti -1c
+.RI "\fBtest_attribute_multi_valued\fP (self, multi_valued_attributes)"
+.br
+.ti -1c
+.RI "\fBtest_invalid_doctype\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_doctype_filtered\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_custom_attribute_dict_class\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_custom_attribute_value_list_class\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBbs4\&.tests\&.SoupTest\fP
+.in +1c
+.ti -1c
+.RI "Type[\fBTreeBuilder\fP] \fBdefault_builder\fP (self)"
+.br
+.ti -1c
+.RI "\fBBeautifulSoup\fP \fBsoup\fP (self, _IncomingMarkup markup, **Any kwargs)"
+.br
+.ti -1c
+.RI "str \fBdocument_for\fP (self, str markup, **Any kwargs)"
+.br
+.ti -1c
+.RI "None \fBassert_soup\fP (self, _IncomingMarkup to_parse, Optional[str] compare_parsed_to=None)"
+.br
+.ti -1c
+.RI "None \fBassertConnectedness\fP (self, \fBTag\fP element)"
+.br
+.ti -1c
+.RI "Optional[\fBPageElement\fP] \fBlinkage_validator\fP (self, \fBTag\fP el, bool _recursive_call=False)"
+.br
+.ti -1c
+.RI "None \fBassert_selects\fP (self, Iterable[\fBTag\fP] tags, Iterable[str] should_match)"
+.br
+.ti -1c
+.RI "None \fBassert_selects_ids\fP (self, Iterable[\fBTag\fP] tags, Iterable[str] should_match)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdefault_builder\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Tuple[bytes, \fBBeautifulSoup\fP] \fB_document_with_doctype\fP (self, str doctype_fragment, str doctype_string='DOCTYPE')"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Attributes inherited from \fBbs4\&.tests\&.SoupTest\fP
+.in +1c
+.ti -1c
+.RI "None \fBassertSoupEquals\fP = \fBassert_soup\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A basic test of a treebuilder's competence\&.
+
+Any HTML treebuilder, present or future, should be able to pass
+these tests\&. With invalid markup, there's room for interpretation,
+and different parsers can handle it differently\&. But with the
+markup in these tests, there's not much room for interpretation\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " Tuple[bytes, \fBBeautifulSoup\fP] bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&._document_with_doctype ( self, str doctype_fragment, str  doctype_string = \fC'DOCTYPE'\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Generate and parse a document with the given doctype\&.
+.fi
+.PP
+ 
+.SS " None bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.assertDoctypeHandled ( self, str doctype_fragment)"
+
+.PP
+.nf
+Assert that a given doctype string is handled correctly\&.
+.fi
+.PP
+ 
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_ampersand_in_attribute_value_gets_escaped ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_angle_brackets_in_attribute_values_are_escaped ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_apos_entity ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_attribute_values_with_double_nested_quotes_get_quoted ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_attribute_values_with_nested_quotes_are_left_alone ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_basic_namespaces ( self)"
+
+.PP
+.nf
+Parsers don't need to *understand* namespaces, but at the
+very least they should not choke on namespaces or lose
+data\&.
+.fi
+.PP
+ 
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_br_is_always_empty_element_tag ( self)"
+
+.PP
+.nf
+A <br> tag is designated as an empty-element tag\&.
+
+Some parsers treat <br></br> as one <br/> tag, some parsers as
+two tags, but it should always be an empty-element tag\&.
+
+.fi
+.PP
+ 
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_can_parse_unicode_document ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_closing_tag_with_no_opening_tag ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_comment ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_correctly_nested_tables ( self)"
+
+.PP
+.nf
+One table can go inside another one\&.
+.fi
+.PP
+ 
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_deepcopy ( self)"
+
+.PP
+.nf
+Make sure you can copy the tree builder\&.
+
+This is important because the builder is part of a
+BeautifulSoup object, and we want to be able to copy that\&.
+
+.fi
+.PP
+ 
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_deeply_nested_multivalued_attribute ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_detect_xml_parsed_as_html ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_double_head ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_empty_doctype ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_empty_element_tags ( self)"
+
+.PP
+.nf
+Verify that all HTML4 and HTML5 empty element (aka void element) tags
+are handled correctly\&.
+
+.fi
+.PP
+ 
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_entities_converted_on_the_way_out ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_entities_in_attributes_converted_to_unicode ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_entities_in_foreign_document_encoding ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_entities_in_strings_converted_during_parsing ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_entities_in_text_converted_to_unicode ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_escaped_ampersand_in_attribute_value_is_left_alone ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_head_tag_between_head_and_body ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_html5_style_meta_tag_reflects_current_encoding ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_invalid_html_entity ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_meta_tag_reflects_current_encoding ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_mixed_case_doctype ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_multipart_strings ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_multiple_copies_of_a_tag ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_multivalued_attribute_on_html ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_multivalued_attribute_value_becomes_list ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_multivalued_attribute_with_whitespace ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_namespaced_html ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_namespaced_public_doctype ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_namespaced_system_doctype ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_nested_block_level_elements ( self)"
+
+.PP
+.nf
+Block elements can be nested\&.
+.fi
+.PP
+ 
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_nested_formatting_elements ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_nested_inline_elements ( self)"
+
+.PP
+.nf
+Inline elements can be nested indefinitely\&.
+.fi
+.PP
+ 
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_non_breaking_spaces_converted_on_the_way_in ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_normal_doctypes ( self)"
+
+.PP
+.nf
+Make sure normal, everyday HTML doctypes are handled correctly\&.
+.fi
+.PP
+ 
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_out_of_range_entity ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_p_tag_is_never_empty_element ( self)"
+
+.PP
+.nf
+A <p> tag is never designated as an empty-element tag\&.
+
+Even if the markup shows it as an empty-element tag, it
+shouldn't be presented that way\&.
+
+.fi
+.PP
+ 
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_pickle_and_unpickle_bad_markup ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_pickle_and_unpickle_identity ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_preserved_whitespace_in_pre_and_textarea ( self)"
+
+.PP
+.nf
+Whitespace must be preserved in <pre> and <textarea> tags,
+even if that would mean not prettifying the markup\&.
+
+.fi
+.PP
+ 
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_processing_instruction ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_public_doctype_with_url ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_python_specific_encodings_not_used_in_charset ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_quot_entity_converted_to_quotation_mark ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_real_hebrew_document ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_real_iso_8859_document ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_real_shift_jis_document ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_real_xhtml_document ( self)"
+
+.PP
+.nf
+A real XHTML document should come out more or less the same as it went in\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBbs4\&.tests\&.HTML5TreeBuilderSmokeTest\fP\&.
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_single_quote_attribute_values_become_double_quotes ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_smart_quotes_converted_on_the_way_in ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_soupstrainer ( self)"
+
+.PP
+.nf
+Parsers should be able to work with SoupStrainers\&.
+.fi
+.PP
+ 
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_special_string_containers ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_strings_resembling_character_entity_references ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_system_doctype ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_tag_with_no_attributes_can_have_attributes_added ( self)"
+
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_unclosed_tags_get_closed ( self)"
+
+.PP
+.nf
+A tag that's not closed by the end of the document should be closed\&.
+
+This applies to all tags except empty-element tags\&.
+
+.fi
+.PP
+ 
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.test_worst_case ( self)"
+
+.PP
+.nf
+Test the worst case (currently) for linking issues\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "bs4\&.tests\&.HTMLTreeBuilderSmokeTest\&.default_builder"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

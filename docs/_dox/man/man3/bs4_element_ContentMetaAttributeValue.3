@@ -1,0 +1,87 @@
+.TH "bs4.element.ContentMetaAttributeValue" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bs4.element.ContentMetaAttributeValue
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBbs4\&.element\&.AttributeValueWithCharsetSubstitution\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Self \fB__new__\fP (cls, str \fBoriginal_value\fP)"
+.br
+.ti -1c
+.RI "str \fBsubstitute_encoding\fP (self, _Encoding eventual_encoding='utf\-8')"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBoriginal_value\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "Pattern \fBCHARSET_RE\fP = re\&.compile(r'((^|;)\\s*charset=)([^;]*)', re\&.M)"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBbs4\&.element\&.AttributeValueWithCharsetSubstitution\fP
+.in +1c
+.ti -1c
+.RI "str \fBoriginal_value\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A generic stand-in for the value of a ``<meta>`` tag's ``content``
+attribute\&.
+
+When Beautiful Soup parses the markup:
+ ``<meta http-equiv='content-type' content='text/html; charset=utf8'>``
+
+The value of the ``content`` attribute will become one of these objects\&.
+
+If the document is later encoded to an encoding other than UTF-8, its
+``<meta>`` tag will mention the new encoding instead of ``utf8``\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " Self bs4\&.element\&.ContentMetaAttributeValue\&.__new__ ( cls, str original_value)"
+
+.SS " str bs4\&.element\&.ContentMetaAttributeValue\&.substitute_encoding ( self, _Encoding  eventual_encoding = \fC'utf\-8'\fP)"
+
+.PP
+.nf
+When an HTML document is being encoded to a given encoding, the
+value of the ``charset=`` in a ``<meta>`` tag's ``content`` becomes
+the name of the encoding\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBbs4\&.element\&.AttributeValueWithCharsetSubstitution\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "Pattern bs4\&.element\&.ContentMetaAttributeValue\&.CHARSET_RE = re\&.compile(r'((^|;)\\s*charset=)([^;]*)', re\&.M)\fC [static]\fP"
+
+.SS "bs4\&.element\&.ContentMetaAttributeValue\&.original_value"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

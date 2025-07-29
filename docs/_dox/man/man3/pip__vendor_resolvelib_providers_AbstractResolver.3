@@ -1,0 +1,86 @@
+.TH "pip._vendor.resolvelib.providers.AbstractResolver" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.resolvelib.providers.AbstractResolver
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.PP
+Inherited by \fBpip\&._vendor\&.resolvelib\&.resolvers\&.Resolver\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBprovider\fP, \fBreporter\fP)"
+.br
+.ti -1c
+.RI "\fBresolve\fP (self, requirements, **kwargs)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBprovider\fP"
+.br
+.ti -1c
+.RI "\fBreporter\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBbase_exception\fP = Exception"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+The thing that performs the actual resolution work\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.resolvelib\&.providers\&.AbstractResolver\&.__init__ ( self,  provider,  reporter)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.resolvelib\&.providers\&.AbstractResolver\&.resolve ( self,  requirements, ** kwargs)"
+
+.PP
+.nf
+Take a collection of constraints, spit out the resolution result\&.
+
+This returns a representation of the final resolution state, with one
+guarenteed attribute ``mapping`` that contains resolved candidates as
+values\&. The keys are their respective identifiers\&.
+
+:param requirements: A collection of constraints\&.
+:param kwargs: Additional keyword arguments that subclasses may accept\&.
+
+:raises: ``self\&.base_exception`` or its subclass\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._vendor\&.resolvelib\&.resolvers\&.Resolver\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.resolvelib\&.providers\&.AbstractResolver\&.base_exception = Exception\fC [static]\fP"
+
+.SS "pip\&._vendor\&.resolvelib\&.providers\&.AbstractResolver\&.provider"
+
+.SS "pip\&._vendor\&.resolvelib\&.providers\&.AbstractResolver\&.reporter"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

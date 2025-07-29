@@ -1,0 +1,73 @@
+.TH "jinja2.debug" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.debug
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "BaseException \fBrewrite_traceback_stack\fP (t\&.Optional[str] source=None)"
+.br
+.ti -1c
+.RI "TracebackType \fBfake_traceback\fP (BaseException exc_value, t\&.Optional[TracebackType] tb, str filename, int lineno)"
+.br
+.ti -1c
+.RI "t\&.Dict[str, t\&.Any] \fBget_template_locals\fP (t\&.Mapping[str, t\&.Any] real_locals)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " TracebackType jinja2\&.debug\&.fake_traceback (BaseException exc_value, t\&.Optional[TracebackType] tb, str filename, int
+ lineno)"
+
+.PP
+.nf
+Produce a new traceback object that looks like it came from the
+template source instead of the compiled code\&. The filename, line
+number, and location name will point to the template, and the local
+variables will be the current template context\&.
+
+:param exc_value: The original exception to be re-raised to create
+    the new traceback\&.
+:param tb: The original traceback to get the local variables and
+    code info from\&.
+:param filename: The template filename\&.
+:param lineno: The line number in the template source\&.
+
+.fi
+.PP
+ 
+.SS " t\&.Dict[str, t\&.Any] jinja2\&.debug\&.get_template_locals (t\&.Mapping[str, t\&.Any] real_locals)"
+
+.PP
+.nf
+Based on the runtime locals, get the context that would be
+available at that point in the template\&.
+
+.fi
+.PP
+ 
+.SS " BaseException jinja2\&.debug\&.rewrite_traceback_stack (t\&.Optional[str]  source = \fCNone\fP)"
+
+.PP
+.nf
+Rewrite the current exception to replace any tracebacks from
+within compiled template code with tracebacks that look like they
+came from the template source\&.
+
+This must be called within an ``except`` block\&.
+
+:param source: For ``TemplateSyntaxError``, the original source if
+    known\&.
+:return: The original exception with the rewritten traceback\&.
+
+.fi
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

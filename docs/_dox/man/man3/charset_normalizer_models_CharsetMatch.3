@@ -1,0 +1,251 @@
+.TH "charset_normalizer.models.CharsetMatch" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+charset_normalizer.models.CharsetMatch
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, bytes payload, str guessed_encoding, float mean_mess_ratio, bool has_sig_or_bom, \fBCoherenceMatches\fP \fBlanguages\fP, str|None decoded_payload=None, str|None preemptive_declaration=None)"
+.br
+.ti -1c
+.RI "bool \fB__eq__\fP (self, object other)"
+.br
+.ti -1c
+.RI "bool \fB__lt__\fP (self, object other)"
+.br
+.ti -1c
+.RI "float \fBmulti_byte_usage\fP (self)"
+.br
+.ti -1c
+.RI "str \fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "None \fBadd_submatch\fP (self, \fBCharsetMatch\fP other)"
+.br
+.ti -1c
+.RI "str \fBencoding\fP (self)"
+.br
+.ti -1c
+.RI "list[str] \fBencoding_aliases\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBbom\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBbyte_order_mark\fP (self)"
+.br
+.ti -1c
+.RI "list[str] \fBlanguages\fP (self)"
+.br
+.ti -1c
+.RI "str \fBlanguage\fP (self)"
+.br
+.ti -1c
+.RI "float \fBchaos\fP (self)"
+.br
+.ti -1c
+.RI "float \fBcoherence\fP (self)"
+.br
+.ti -1c
+.RI "float \fBpercent_chaos\fP (self)"
+.br
+.ti -1c
+.RI "float \fBpercent_coherence\fP (self)"
+.br
+.ti -1c
+.RI "bytes \fBraw\fP (self)"
+.br
+.ti -1c
+.RI "list[\fBCharsetMatch\fP] \fBsubmatch\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBhas_submatch\fP (self)"
+.br
+.ti -1c
+.RI "list[str] \fBalphabets\fP (self)"
+.br
+.ti -1c
+.RI "list[str] \fBcould_be_from_charset\fP (self)"
+.br
+.ti -1c
+.RI "bytes \fBoutput\fP (self, str \fBencoding\fP='utf_8')"
+.br
+.ti -1c
+.RI "str \fBfingerprint\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBraw\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_payload\fP"
+.br
+.ti -1c
+.RI "\fB_string\fP"
+.br
+.ti -1c
+.RI "\fB_leaves\fP"
+.br
+.ti -1c
+.RI "\fB_unicode_ranges\fP"
+.br
+.ti -1c
+.RI "\fB_output_encoding\fP"
+.br
+.ti -1c
+.RI "\fB_output_payload\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "charset_normalizer\&.models\&.CharsetMatch\&.__init__ ( self, bytes payload, str guessed_encoding, float mean_mess_ratio, bool has_sig_or_bom, \fBCoherenceMatches\fP languages, str | None  decoded_payload = \fCNone\fP, str | None  preemptive_declaration = \fCNone\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " bool charset_normalizer\&.models\&.CharsetMatch\&.__eq__ ( self, object other)"
+
+.SS " bool charset_normalizer\&.models\&.CharsetMatch\&.__lt__ ( self, object other)"
+
+.PP
+.nf
+Implemented to make sorted available upon CharsetMatches items\&.
+
+.fi
+.PP
+ 
+.SS " str charset_normalizer\&.models\&.CharsetMatch\&.__repr__ ( self)"
+
+.SS " str charset_normalizer\&.models\&.CharsetMatch\&.__str__ ( self)"
+
+.SS " None charset_normalizer\&.models\&.CharsetMatch\&.add_submatch ( self, \fBCharsetMatch\fP other)"
+
+.SS " list[str] charset_normalizer\&.models\&.CharsetMatch\&.alphabets ( self)"
+
+.SS " bool charset_normalizer\&.models\&.CharsetMatch\&.bom ( self)"
+
+.SS " bool charset_normalizer\&.models\&.CharsetMatch\&.byte_order_mark ( self)"
+
+.SS " float charset_normalizer\&.models\&.CharsetMatch\&.chaos ( self)"
+
+.SS " float charset_normalizer\&.models\&.CharsetMatch\&.coherence ( self)"
+
+.SS " list[str] charset_normalizer\&.models\&.CharsetMatch\&.could_be_from_charset ( self)"
+
+.PP
+.nf
+The complete list of encoding that output the exact SAME str result and therefore could be the originating
+encoding\&.
+This list does include the encoding available in property 'encoding'\&.
+
+.fi
+.PP
+ 
+.SS " str charset_normalizer\&.models\&.CharsetMatch\&.encoding ( self)"
+
+.SS " list[str] charset_normalizer\&.models\&.CharsetMatch\&.encoding_aliases ( self)"
+
+.PP
+.nf
+Encoding name are known by many name, using this could help when searching for IBM855 when it's listed as CP855\&.
+
+.fi
+.PP
+ 
+.SS " str charset_normalizer\&.models\&.CharsetMatch\&.fingerprint ( self)"
+
+.PP
+.nf
+Retrieve the unique SHA256 computed using the transformed (re-encoded) payload\&. Not the original one\&.
+
+.fi
+.PP
+ 
+.SS " bool charset_normalizer\&.models\&.CharsetMatch\&.has_submatch ( self)"
+
+.SS " str charset_normalizer\&.models\&.CharsetMatch\&.language ( self)"
+
+.PP
+.nf
+Most probable language found in decoded sequence\&. If none were detected or inferred, the property will return
+'Unknown'\&.
+
+.fi
+.PP
+ 
+.SS " list[str] charset_normalizer\&.models\&.CharsetMatch\&.languages ( self)"
+
+.PP
+.nf
+Return the complete list of possible languages found in decoded sequence\&.
+Usually not really useful\&. Returned list may be empty even if 'language' property return something != 'Unknown'\&.
+
+.fi
+.PP
+ 
+.SS " float charset_normalizer\&.models\&.CharsetMatch\&.multi_byte_usage ( self)"
+
+.SS " bytes charset_normalizer\&.models\&.CharsetMatch\&.output ( self, str  encoding = \fC'utf_8'\fP)"
+
+.PP
+.nf
+Method to get re-encoded bytes payload using given target encoding\&. Default to UTF-8\&.
+Any errors will be simply ignored by the encoder NOT replaced\&.
+
+.fi
+.PP
+ 
+.SS " float charset_normalizer\&.models\&.CharsetMatch\&.percent_chaos ( self)"
+
+.SS " float charset_normalizer\&.models\&.CharsetMatch\&.percent_coherence ( self)"
+
+.SS " bytes charset_normalizer\&.models\&.CharsetMatch\&.raw ( self)"
+
+.PP
+.nf
+Original untouched bytes\&.
+
+.fi
+.PP
+ 
+.SS " list[\fBCharsetMatch\fP] charset_normalizer\&.models\&.CharsetMatch\&.submatch ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "charset_normalizer\&.models\&.CharsetMatch\&._leaves\fC [protected]\fP"
+
+.SS "charset_normalizer\&.models\&.CharsetMatch\&._output_encoding\fC [protected]\fP"
+
+.SS "charset_normalizer\&.models\&.CharsetMatch\&._output_payload\fC [protected]\fP"
+
+.SS "charset_normalizer\&.models\&.CharsetMatch\&._payload\fC [protected]\fP"
+
+.SS "charset_normalizer\&.models\&.CharsetMatch\&._string\fC [protected]\fP"
+
+.SS "charset_normalizer\&.models\&.CharsetMatch\&._unicode_ranges\fC [protected]\fP"
+
+.SS "charset_normalizer\&.models\&.CharsetMatch\&.encoding"
+
+.SS "charset_normalizer\&.models\&.CharsetMatch\&.raw"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,475 @@
+.TH "urllib3.util.retry.Retry" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+urllib3.util.retry.Retry
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, bool|int|None \fBtotal\fP=10, int|None \fBconnect\fP=None, int|None \fBread\fP=None, bool|int|None \fBredirect\fP=None, int|None \fBstatus\fP=None, int|None \fBother\fP=None, typing\&.Collection[str]|None \fBallowed_methods\fP=\fBDEFAULT_ALLOWED_METHODS\fP, typing\&.Collection[int]|None \fBstatus_forcelist\fP=None, float \fBbackoff_factor\fP=0, float \fBbackoff_max\fP=\fBDEFAULT_BACKOFF_MAX\fP, bool \fBraise_on_redirect\fP=True, bool \fBraise_on_status\fP=True, tuple[\fBRequestHistory\fP,\&.\&.\&.]|None \fBhistory\fP=None, bool \fBrespect_retry_after_header\fP=True, typing\&.Collection[str] \fBremove_headers_on_redirect\fP=\fBDEFAULT_REMOVE_HEADERS_ON_REDIRECT\fP, float \fBbackoff_jitter\fP=0\&.0)"
+.br
+.ti -1c
+.RI "Self \fBnew\fP (self, **typing\&.Any kw)"
+.br
+.ti -1c
+.RI "\fBRetry\fP \fBfrom_int\fP (cls, \fBRetry\fP|bool|int|None retries, bool|int|None \fBredirect\fP=True, \fBRetry\fP|bool|int|None default=None)"
+.br
+.ti -1c
+.RI "float \fBget_backoff_time\fP (self)"
+.br
+.ti -1c
+.RI "float \fBparse_retry_after\fP (self, str retry_after)"
+.br
+.ti -1c
+.RI "float|None \fBget_retry_after\fP (self, \fBBaseHTTPResponse\fP response)"
+.br
+.ti -1c
+.RI "bool \fBsleep_for_retry\fP (self, \fBBaseHTTPResponse\fP response)"
+.br
+.ti -1c
+.RI "None \fBsleep\fP (self, \fBBaseHTTPResponse\fP|None response=None)"
+.br
+.ti -1c
+.RI "bool \fBis_retry\fP (self, str method, int status_code, bool has_retry_after=False)"
+.br
+.ti -1c
+.RI "bool \fBis_exhausted\fP (self)"
+.br
+.ti -1c
+.RI "Self \fBincrement\fP (self, str|None method=None, str|None url=None, \fBBaseHTTPResponse\fP|None response=None, Exception|None error=None, \fBConnectionPool\fP|None _pool=None, TracebackType|None _stacktrace=None)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBtotal\fP"
+.br
+.ti -1c
+.RI "\fBconnect\fP"
+.br
+.ti -1c
+.RI "\fBread\fP"
+.br
+.ti -1c
+.RI "\fBstatus\fP"
+.br
+.ti -1c
+.RI "\fBother\fP"
+.br
+.ti -1c
+.RI "\fBredirect\fP"
+.br
+.ti -1c
+.RI "\fBstatus_forcelist\fP"
+.br
+.ti -1c
+.RI "\fBallowed_methods\fP"
+.br
+.ti -1c
+.RI "\fBbackoff_factor\fP"
+.br
+.ti -1c
+.RI "\fBbackoff_max\fP"
+.br
+.ti -1c
+.RI "\fBraise_on_redirect\fP"
+.br
+.ti -1c
+.RI "\fBraise_on_status\fP"
+.br
+.ti -1c
+.RI "\fBhistory\fP"
+.br
+.ti -1c
+.RI "\fBrespect_retry_after_header\fP"
+.br
+.ti -1c
+.RI "\fBremove_headers_on_redirect\fP"
+.br
+.ti -1c
+.RI "\fBbackoff_jitter\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBDEFAULT_ALLOWED_METHODS\fP"
+.br
+.ti -1c
+.RI "\fBRETRY_AFTER_STATUS_CODES\fP = frozenset([413, 429, 503])"
+.br
+.ti -1c
+.RI "\fBDEFAULT_REMOVE_HEADERS_ON_REDIRECT\fP"
+.br
+.ti -1c
+.RI "int \fBDEFAULT_BACKOFF_MAX\fP = 120"
+.br
+.ti -1c
+.RI "typing \fBDEFAULT\fP \&.ClassVar[\fBRetry\fP]"
+.br
+.ti -1c
+.RI "\fBDEFAULT\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB_sleep_backoff\fP (self)"
+.br
+.ti -1c
+.RI "bool \fB_is_connection_error\fP (self, Exception err)"
+.br
+.ti -1c
+.RI "bool \fB_is_read_error\fP (self, Exception err)"
+.br
+.ti -1c
+.RI "bool \fB_is_method_retryable\fP (self, str method)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Retry configuration\&.
+
+Each retry attempt will create a new Retry object with updated values, so
+they can be safely reused\&.
+
+Retries can be defined as a default for a pool:
+
+\&.\&. code-block:: python
+
+    retries = Retry(connect=5, read=2, redirect=5)
+    http = PoolManager(retries=retries)
+    response = http\&.request('GET', 'https://example\&.com/')
+
+Or per-request (which overrides the default for the pool):
+
+\&.\&. code-block:: python
+
+    response = http\&.request('GET', 'https://example\&.com/', retries=Retry(10))
+
+Retries can be disabled by passing ``False``:
+
+\&.\&. code-block:: python
+
+    response = http\&.request('GET', 'https://example\&.com/', retries=False)
+
+Errors will be wrapped in :class:`~urllib3\&.exceptions\&.MaxRetryError` unless
+retries are disabled, in which case the causing exception will be raised\&.
+
+:param int total:
+    Total number of retries to allow\&. Takes precedence over other counts\&.
+
+    Set to ``None`` to remove this constraint and fall back on other
+    counts\&.
+
+    Set to ``0`` to fail on the first retry\&.
+
+    Set to ``False`` to disable and imply ``raise_on_redirect=False``\&.
+
+:param int connect:
+    How many connection-related errors to retry on\&.
+
+    These are errors raised before the request is sent to the remote server,
+    which we assume has not triggered the server to process the request\&.
+
+    Set to ``0`` to fail on the first retry of this type\&.
+
+:param int read:
+    How many times to retry on read errors\&.
+
+    These errors are raised after the request was sent to the server, so the
+    request may have side-effects\&.
+
+    Set to ``0`` to fail on the first retry of this type\&.
+
+:param int redirect:
+    How many redirects to perform\&. Limit this to avoid infinite redirect
+    loops\&.
+
+    A redirect is a HTTP response with a status code 301, 302, 303, 307 or
+    308\&.
+
+    Set to ``0`` to fail on the first retry of this type\&.
+
+    Set to ``False`` to disable and imply ``raise_on_redirect=False``\&.
+
+:param int status:
+    How many times to retry on bad status codes\&.
+
+    These are retries made on responses, where status code matches
+    ``status_forcelist``\&.
+
+    Set to ``0`` to fail on the first retry of this type\&.
+
+:param int other:
+    How many times to retry on other errors\&.
+
+    Other errors are errors that are not connect, read, redirect or status errors\&.
+    These errors might be raised after the request was sent to the server, so the
+    request might have side-effects\&.
+
+    Set to ``0`` to fail on the first retry of this type\&.
+
+    If ``total`` is not set, it's a good idea to set this to 0 to account
+    for unexpected edge cases and avoid infinite retry loops\&.
+
+:param Collection allowed_methods:
+    Set of uppercased HTTP method verbs that we should retry on\&.
+
+    By default, we only retry on methods which are considered to be
+    idempotent (multiple requests with the same parameters end with the
+    same state)\&. See :attr:`Retry\&.DEFAULT_ALLOWED_METHODS`\&.
+
+    Set to a ``None`` value to retry on any verb\&.
+
+:param Collection status_forcelist:
+    A set of integer HTTP status codes that we should force a retry on\&.
+    A retry is initiated if the request method is in ``allowed_methods``
+    and the response status code is in ``status_forcelist``\&.
+
+    By default, this is disabled with ``None``\&.
+
+:param float backoff_factor:
+    A backoff factor to apply between attempts after the second try
+    (most errors are resolved immediately by a second try without a
+    delay)\&. urllib3 will sleep for::
+
+        {backoff factor} * (2 ** ({number of previous retries}))
+
+    seconds\&. If `backoff_jitter` is non-zero, this sleep is extended by::
+
+        random\&.uniform(0, {backoff jitter})
+
+    seconds\&. For example, if the backoff_factor is 0\&.1, then :func:`Retry\&.sleep` will
+    sleep for [0\&.0s, 0\&.2s, 0\&.4s, 0\&.8s, \&.\&.\&.] between retries\&. No backoff will ever
+    be longer than `backoff_max`\&.
+
+    By default, backoff is disabled (factor set to 0)\&.
+
+:param bool raise_on_redirect: Whether, if the number of redirects is
+    exhausted, to raise a MaxRetryError, or to return a response with a
+    response code in the 3xx range\&.
+
+:param bool raise_on_status: Similar meaning to ``raise_on_redirect``:
+    whether we should raise an exception, or return a response,
+    if status falls in ``status_forcelist`` range and retries have
+    been exhausted\&.
+
+:param tuple history: The history of the request encountered during
+    each call to :meth:`~Retry\&.increment`\&. The list is in the order
+    the requests occurred\&. Each list item is of class :class:`RequestHistory`\&.
+
+:param bool respect_retry_after_header:
+    Whether to respect Retry-After header on status codes defined as
+    :attr:`Retry\&.RETRY_AFTER_STATUS_CODES` or not\&.
+
+:param Collection remove_headers_on_redirect:
+    Sequence of headers to remove from the request when a response
+    indicating a redirect is returned before firing off the redirected
+    request\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None urllib3\&.util\&.retry\&.Retry\&.__init__ ( self, bool | int | None  total = \fC10\fP, int | None  connect = \fCNone\fP, int | None  read = \fCNone\fP, bool | int | None  redirect = \fCNone\fP, int | None  status = \fCNone\fP, int | None  other = \fCNone\fP, typing\&.Collection[str] | None  allowed_methods = \fC\fBDEFAULT_ALLOWED_METHODS\fP\fP, typing\&.Collection[int] | None  status_forcelist = \fCNone\fP, float  backoff_factor = \fC0\fP, float  backoff_max = \fC\fBDEFAULT_BACKOFF_MAX\fP\fP, bool  raise_on_redirect = \fCTrue\fP, bool  raise_on_status = \fCTrue\fP, tuple[\fBRequestHistory\fP, \&.\&.\&.] | None  history = \fCNone\fP, bool  respect_retry_after_header = \fCTrue\fP, typing\&.Collection[
+            str
+        ]  remove_headers_on_redirect = \fC\fBDEFAULT_REMOVE_HEADERS_ON_REDIRECT\fP\fP, float  backoff_jitter = \fC0\&.0\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " str urllib3\&.util\&.retry\&.Retry\&.__repr__ ( self)"
+
+.SS " bool urllib3\&.util\&.retry\&.Retry\&._is_connection_error ( self, Exception err)\fC [protected]\fP"
+
+.PP
+.nf
+Errors when we're fairly sure that the server did not receive the
+request, so it should be safe to retry\&.
+
+.fi
+.PP
+ 
+.SS " bool urllib3\&.util\&.retry\&.Retry\&._is_method_retryable ( self, str method)\fC [protected]\fP"
+
+.PP
+.nf
+Checks if a given HTTP method should be retried upon, depending if
+it is included in the allowed_methods
+
+.fi
+.PP
+ 
+.SS " bool urllib3\&.util\&.retry\&.Retry\&._is_read_error ( self, Exception err)\fC [protected]\fP"
+
+.PP
+.nf
+Errors that occur after the request has been started, so we should
+assume that the server began processing it\&.
+
+.fi
+.PP
+ 
+.SS " None urllib3\&.util\&.retry\&.Retry\&._sleep_backoff ( self)\fC [protected]\fP"
+
+.SS " \fBRetry\fP urllib3\&.util\&.retry\&.Retry\&.from_int ( cls, \fBRetry\fP | bool | int | None retries, bool | int | None  redirect = \fCTrue\fP, \fBRetry\fP | bool | int | None  default = \fCNone\fP)"
+
+.PP
+.nf
+Backwards-compatibility for the old retries format\&.
+.fi
+.PP
+ 
+.SS " float urllib3\&.util\&.retry\&.Retry\&.get_backoff_time ( self)"
+
+.PP
+.nf
+Formula for computing the current backoff
+
+:rtype: float
+
+.fi
+.PP
+ 
+.SS " float | None urllib3\&.util\&.retry\&.Retry\&.get_retry_after ( self, \fBBaseHTTPResponse\fP response)"
+
+.PP
+.nf
+Get the value of Retry-After in seconds\&.
+.fi
+.PP
+ 
+.SS " Self urllib3\&.util\&.retry\&.Retry\&.increment ( self, str | None  method = \fCNone\fP, str | None  url = \fCNone\fP, \fBBaseHTTPResponse\fP | None  response = \fCNone\fP, Exception | None  error = \fCNone\fP, \fBConnectionPool\fP | None  _pool = \fCNone\fP, TracebackType | None  _stacktrace = \fCNone\fP)"
+
+.PP
+.nf
+Return a new Retry object with incremented retry counters\&.
+
+:param response: A response object, or None, if the server did not
+    return a response\&.
+:type response: :class:`~urllib3\&.response\&.BaseHTTPResponse`
+:param Exception error: An error encountered during the request, or
+    None if the response was received successfully\&.
+
+:return: A new ``Retry`` object\&.
+
+.fi
+.PP
+ 
+.SS " bool urllib3\&.util\&.retry\&.Retry\&.is_exhausted ( self)"
+
+.PP
+.nf
+Are we out of retries?
+.fi
+.PP
+ 
+.SS " bool urllib3\&.util\&.retry\&.Retry\&.is_retry ( self, str method, int status_code, bool  has_retry_after = \fCFalse\fP)"
+
+.PP
+.nf
+Is this method/status code retryable? (Based on allowlists and control
+variables such as the number of total retries to allow, whether to
+respect the Retry-After header, whether this header is present, and
+whether the returned status code is on the list of status codes to
+be retried upon on the presence of the aforementioned header)
+
+.fi
+.PP
+ 
+.SS " Self urllib3\&.util\&.retry\&.Retry\&.new ( self, **typing\&.Any kw)"
+
+.SS " float urllib3\&.util\&.retry\&.Retry\&.parse_retry_after ( self, str retry_after)"
+
+.SS " None urllib3\&.util\&.retry\&.Retry\&.sleep ( self, \fBBaseHTTPResponse\fP | None  response = \fCNone\fP)"
+
+.PP
+.nf
+Sleep between retry attempts\&.
+
+This method will respect a server's ``Retry-After`` response header
+and sleep the duration of the time requested\&. If that is not present, it
+will use an exponential backoff\&. By default, the backoff factor is 0 and
+this method will return immediately\&.
+
+.fi
+.PP
+ 
+.SS " bool urllib3\&.util\&.retry\&.Retry\&.sleep_for_retry ( self, \fBBaseHTTPResponse\fP response)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "urllib3\&.util\&.retry\&.Retry\&.allowed_methods"
+
+.SS "urllib3\&.util\&.retry\&.Retry\&.backoff_factor"
+
+.SS "urllib3\&.util\&.retry\&.Retry\&.backoff_jitter"
+
+.SS "urllib3\&.util\&.retry\&.Retry\&.backoff_max"
+
+.SS "urllib3\&.util\&.retry\&.Retry\&.connect"
+
+.SS "typing urllib3\&.util\&.retry\&.Retry\&.DEFAULT \&.ClassVar[\fBRetry\fP]\fC [static]\fP"
+
+.SS "urllib3\&.util\&.retry\&.Retry\&.DEFAULT\fC [static]\fP"
+
+.SS "urllib3\&.util\&.retry\&.Retry\&.DEFAULT_ALLOWED_METHODS\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  frozenset(
+        ["HEAD", "GET", "PUT", "DELETE", "OPTIONS", "TRACE"]
+    )
+.fi
+
+.SS "int urllib3\&.util\&.retry\&.Retry\&.DEFAULT_BACKOFF_MAX = 120\fC [static]\fP"
+
+.SS "urllib3\&.util\&.retry\&.Retry\&.DEFAULT_REMOVE_HEADERS_ON_REDIRECT\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  frozenset(
+        ["Cookie", "Authorization", "Proxy\-Authorization"]
+    )
+.fi
+
+.SS "urllib3\&.util\&.retry\&.Retry\&.history"
+
+.SS "urllib3\&.util\&.retry\&.Retry\&.other"
+
+.SS "urllib3\&.util\&.retry\&.Retry\&.raise_on_redirect"
+
+.SS "urllib3\&.util\&.retry\&.Retry\&.raise_on_status"
+
+.SS "urllib3\&.util\&.retry\&.Retry\&.read"
+
+.SS "urllib3\&.util\&.retry\&.Retry\&.redirect"
+
+.SS "urllib3\&.util\&.retry\&.Retry\&.remove_headers_on_redirect"
+
+.SS "urllib3\&.util\&.retry\&.Retry\&.respect_retry_after_header"
+
+.SS "urllib3\&.util\&.retry\&.Retry\&.RETRY_AFTER_STATUS_CODES = frozenset([413, 429, 503])\fC [static]\fP"
+
+.SS "urllib3\&.util\&.retry\&.Retry\&.status"
+
+.SS "urllib3\&.util\&.retry\&.Retry\&.status_forcelist"
+
+.SS "urllib3\&.util\&.retry\&.Retry\&.total"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

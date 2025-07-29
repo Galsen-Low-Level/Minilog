@@ -1,0 +1,95 @@
+.TH "pip._internal.utils.logging" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.utils.logging
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBBetterRotatingFileHandler\fP"
+.br
+.ti -1c
+.RI "class \fBBrokenStdoutLoggingError\fP"
+.br
+.ti -1c
+.RI "class \fBExcludeLoggerFilter\fP"
+.br
+.ti -1c
+.RI "class \fBIndentedRenderable\fP"
+.br
+.ti -1c
+.RI "class \fBIndentingFormatter\fP"
+.br
+.ti -1c
+.RI "class \fBMaxLevelFilter\fP"
+.br
+.ti -1c
+.RI "class \fBRichPipStreamHandler\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fB_is_broken_pipe_error\fP (Type[BaseException] exc_class, BaseException exc)"
+.br
+.ti -1c
+.RI "Generator[None, None, None] \fBindent_log\fP (int num=2)"
+.br
+.ti -1c
+.RI "int \fBget_indentation\fP ()"
+.br
+.ti -1c
+.RI "int \fBsetup_logging\fP (int verbosity, bool no_color, Optional[str] user_log_file)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB_log_state\fP = threading\&.local()"
+.br
+.ti -1c
+.RI "\fBsubprocess_logger\fP = getLogger('pip\&.subprocessor')"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " bool pip\&._internal\&.utils\&.logging\&._is_broken_pipe_error (Type[BaseException] exc_class, BaseException exc)\fC [protected]\fP"
+
+.SS " int pip\&._internal\&.utils\&.logging\&.get_indentation ()"
+
+.SS " Generator[None, None, None] pip\&._internal\&.utils\&.logging\&.indent_log (int  num = \fC2\fP)"
+
+.PP
+.nf
+A context manager which will cause the log output to be indented for any
+log messages emitted inside it\&.
+
+.fi
+.PP
+ 
+.SS " int pip\&._internal\&.utils\&.logging\&.setup_logging (int verbosity, bool no_color, Optional[str] user_log_file)"
+
+.PP
+.nf
+Configures and sets up all of the logging
+
+Returns the requested logging level, as its integer value\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._internal\&.utils\&.logging\&._log_state = threading\&.local()\fC [protected]\fP"
+
+.SS "pip\&._internal\&.utils\&.logging\&.subprocess_logger = getLogger('pip\&.subprocessor')"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

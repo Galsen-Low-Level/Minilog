@@ -1,0 +1,112 @@
+.TH "webob.byterange.Range" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webob.byterange.Range
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBstart\fP, \fBend\fP)"
+.br
+.ti -1c
+.RI "\fBrange_for_length\fP (self, length)"
+.br
+.ti -1c
+.RI "\fBcontent_range\fP (self, length)"
+.br
+.ti -1c
+.RI "\fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__iter__\fP (self)"
+.br
+.ti -1c
+.RI "\fBparse\fP (cls, header)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBstart\fP"
+.br
+.ti -1c
+.RI "\fBend\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+    Represents the Range header\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "webob\&.byterange\&.Range\&.__init__ ( self,  start,  end)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "webob\&.byterange\&.Range\&.__iter__ ( self)"
+
+.SS "webob\&.byterange\&.Range\&.__repr__ ( self)"
+
+.SS "webob\&.byterange\&.Range\&.__str__ ( self)"
+
+.SS "webob\&.byterange\&.Range\&.content_range ( self,  length)"
+
+.PP
+.nf
+    Works like range_for_length; returns None or a ContentRange object
+
+    You can use it like::
+
+        response\&.content_range = req\&.range\&.content_range(response\&.content_length)
+
+    Though it's still up to you to actually serve that content range!
+
+.fi
+.PP
+ 
+.SS "webob\&.byterange\&.Range\&.parse ( cls,  header)"
+
+.PP
+.nf
+    Parse the header; may return None if header is invalid
+
+.fi
+.PP
+ 
+.SS "webob\&.byterange\&.Range\&.range_for_length ( self,  length)"
+
+.PP
+.nf
+    *If* there is only one range, and *if* it is satisfiable by
+    the given length, then return a (start, end) non-inclusive range
+    of bytes to serve\&.  Otherwise return None
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "webob\&.byterange\&.Range\&.end"
+
+.SS "webob\&.byterange\&.Range\&.start"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,135 @@
+.TH "waitress.receiver.ChunkedReceiver" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+waitress.receiver.ChunkedReceiver
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBbuf\fP)"
+.br
+.ti -1c
+.RI "\fB__len__\fP (self)"
+.br
+.ti -1c
+.RI "\fBreceived\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgetfile\fP (self)"
+.br
+.ti -1c
+.RI "\fBgetbuf\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBbuf\fP"
+.br
+.ti -1c
+.RI "\fBchunk_remainder\fP"
+.br
+.ti -1c
+.RI "\fBvalidate_chunk_end\fP"
+.br
+.ti -1c
+.RI "\fBchunk_end\fP"
+.br
+.ti -1c
+.RI "\fBall_chunks_received\fP"
+.br
+.ti -1c
+.RI "\fBcontrol_line\fP"
+.br
+.ti -1c
+.RI "\fBcompleted\fP"
+.br
+.ti -1c
+.RI "\fBtrailer\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBchunk_remainder\fP = 0"
+.br
+.ti -1c
+.RI "bool \fBvalidate_chunk_end\fP = False"
+.br
+.ti -1c
+.RI "str \fBcontrol_line\fP = b''"
+.br
+.ti -1c
+.RI "str \fBchunk_end\fP = b''"
+.br
+.ti -1c
+.RI "bool \fBall_chunks_received\fP = False"
+.br
+.ti -1c
+.RI "str \fBtrailer\fP = b''"
+.br
+.ti -1c
+.RI "bool \fBcompleted\fP = False"
+.br
+.ti -1c
+.RI "\fBerror\fP = None"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "waitress\&.receiver\&.ChunkedReceiver\&.__init__ ( self,  buf)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "waitress\&.receiver\&.ChunkedReceiver\&.__len__ ( self)"
+
+.SS "waitress\&.receiver\&.ChunkedReceiver\&.getbuf ( self)"
+
+.SS "waitress\&.receiver\&.ChunkedReceiver\&.getfile ( self)"
+
+.SS "waitress\&.receiver\&.ChunkedReceiver\&.received ( self,  s)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "bool waitress\&.receiver\&.ChunkedReceiver\&.all_chunks_received = False\fC [static]\fP"
+
+.SS "waitress\&.receiver\&.ChunkedReceiver\&.all_chunks_received"
+
+.SS "waitress\&.receiver\&.ChunkedReceiver\&.buf"
+
+.SS "str waitress\&.receiver\&.ChunkedReceiver\&.chunk_end = b''\fC [static]\fP"
+
+.SS "waitress\&.receiver\&.ChunkedReceiver\&.chunk_end"
+
+.SS "int waitress\&.receiver\&.ChunkedReceiver\&.chunk_remainder = 0\fC [static]\fP"
+
+.SS "waitress\&.receiver\&.ChunkedReceiver\&.chunk_remainder"
+
+.SS "bool waitress\&.receiver\&.ChunkedReceiver\&.completed = False\fC [static]\fP"
+
+.SS "waitress\&.receiver\&.ChunkedReceiver\&.completed"
+
+.SS "str waitress\&.receiver\&.ChunkedReceiver\&.control_line = b''\fC [static]\fP"
+
+.SS "waitress\&.receiver\&.ChunkedReceiver\&.control_line"
+
+.SS "waitress\&.receiver\&.ChunkedReceiver\&.error = None\fC [static]\fP"
+
+.SS "str waitress\&.receiver\&.ChunkedReceiver\&.trailer = b''\fC [static]\fP"
+
+.SS "waitress\&.receiver\&.ChunkedReceiver\&.trailer"
+
+.SS "bool waitress\&.receiver\&.ChunkedReceiver\&.validate_chunk_end = False\fC [static]\fP"
+
+.SS "waitress\&.receiver\&.ChunkedReceiver\&.validate_chunk_end"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,111 @@
+\doxysection{docutils.\+io.\+Error\+Output Class Reference}
+\hypertarget{classdocutils_1_1io_1_1ErrorOutput}{}\label{classdocutils_1_1io_1_1ErrorOutput}\index{docutils.io.ErrorOutput@{docutils.io.ErrorOutput}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1ErrorOutput_afcf47148e4c2bb92ac308d088437c97b}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classdocutils_1_1io_1_1ErrorOutput_a8119f1c83d7f2154d9f40f8ee27f3fbc}{destination}}=None, \mbox{\hyperlink{classdocutils_1_1io_1_1ErrorOutput_ae520995bd7fafe9c12ae668fe9835ee3}{encoding}}=None, \mbox{\hyperlink{classdocutils_1_1io_1_1ErrorOutput_ae5775d6eba3a72115b38f7e15e4dd43a}{encoding\+\_\+errors}}=\textquotesingle{}backslashreplace\textquotesingle{}, \mbox{\hyperlink{classdocutils_1_1io_1_1ErrorOutput_a6fe8fa21e13d2355df548ae43e7914ba}{decoding\+\_\+errors}}=\textquotesingle{}replace\textquotesingle{})
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1ErrorOutput_a871d0e4ef304cf9c4c592813a7aa82f3}{write}} (self, data)
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1ErrorOutput_a349fb642e0b06993af3df5facbec9258}{close}} (self)
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1ErrorOutput_a283b346ee0d3ca060619bf4195d860b0}{isatty}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1ErrorOutput_a8119f1c83d7f2154d9f40f8ee27f3fbc}{destination}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1ErrorOutput_ae520995bd7fafe9c12ae668fe9835ee3}{encoding}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1ErrorOutput_ae5775d6eba3a72115b38f7e15e4dd43a}{encoding\+\_\+errors}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1ErrorOutput_a6fe8fa21e13d2355df548ae43e7914ba}{decoding\+\_\+errors}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Wrapper class for file-like error streams with
+failsafe de- and encoding of `str`, `bytes`, `unicode` and
+`Exception` instances.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classdocutils_1_1io_1_1ErrorOutput_afcf47148e4c2bb92ac308d088437c97b}\label{classdocutils_1_1io_1_1ErrorOutput_afcf47148e4c2bb92ac308d088437c97b} 
+\index{docutils.io.ErrorOutput@{docutils.io.ErrorOutput}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!docutils.io.ErrorOutput@{docutils.io.ErrorOutput}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily docutils.\+io.\+Error\+Output.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{destination = {\ttfamily None},  }\item[{}]{encoding = {\ttfamily None},  }\item[{}]{encoding\+\_\+errors = {\ttfamily \textquotesingle{}backslashreplace\textquotesingle{}},  }\item[{}]{decoding\+\_\+errors = {\ttfamily \textquotesingle{}replace\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}:Parameters:
+    - `destination`: a file-like object,
+                a string (path to a file),
+                `None` (write to `sys.stderr`, default), or
+                evaluating to `False` (write() requests are ignored).
+    - `encoding`: `destination` text encoding. Guessed if None.
+    - `encoding_errors`: how to treat encoding errors.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdocutils_1_1io_1_1ErrorOutput_a349fb642e0b06993af3df5facbec9258}\label{classdocutils_1_1io_1_1ErrorOutput_a349fb642e0b06993af3df5facbec9258} 
+\index{docutils.io.ErrorOutput@{docutils.io.ErrorOutput}!close@{close}}
+\index{close@{close}!docutils.io.ErrorOutput@{docutils.io.ErrorOutput}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily docutils.\+io.\+Error\+Output.\+close (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Close the error-output stream.
+
+Ignored if the destination is` sys.stderr` or `sys.stdout` or has no
+close() method.
+\end{DoxyVerb}
+ \Hypertarget{classdocutils_1_1io_1_1ErrorOutput_a283b346ee0d3ca060619bf4195d860b0}\label{classdocutils_1_1io_1_1ErrorOutput_a283b346ee0d3ca060619bf4195d860b0} 
+\index{docutils.io.ErrorOutput@{docutils.io.ErrorOutput}!isatty@{isatty}}
+\index{isatty@{isatty}!docutils.io.ErrorOutput@{docutils.io.ErrorOutput}}
+\doxysubsubsection{\texorpdfstring{isatty()}{isatty()}}
+{\footnotesize\ttfamily docutils.\+io.\+Error\+Output.\+isatty (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return True, if the destination is connected to a TTY device.\end{DoxyVerb}
+ \Hypertarget{classdocutils_1_1io_1_1ErrorOutput_a871d0e4ef304cf9c4c592813a7aa82f3}\label{classdocutils_1_1io_1_1ErrorOutput_a871d0e4ef304cf9c4c592813a7aa82f3} 
+\index{docutils.io.ErrorOutput@{docutils.io.ErrorOutput}!write@{write}}
+\index{write@{write}!docutils.io.ErrorOutput@{docutils.io.ErrorOutput}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily docutils.\+io.\+Error\+Output.\+write (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write `data` to self.destination. Ignore, if self.destination is False.
+
+`data` can be a `bytes`, `str`, or `Exception` instance.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classdocutils_1_1io_1_1ErrorOutput_a6fe8fa21e13d2355df548ae43e7914ba}\label{classdocutils_1_1io_1_1ErrorOutput_a6fe8fa21e13d2355df548ae43e7914ba} 
+\index{docutils.io.ErrorOutput@{docutils.io.ErrorOutput}!decoding\_errors@{decoding\_errors}}
+\index{decoding\_errors@{decoding\_errors}!docutils.io.ErrorOutput@{docutils.io.ErrorOutput}}
+\doxysubsubsection{\texorpdfstring{decoding\_errors}{decoding\_errors}}
+{\footnotesize\ttfamily docutils.\+io.\+Error\+Output.\+decoding\+\_\+errors}
+
+\Hypertarget{classdocutils_1_1io_1_1ErrorOutput_a8119f1c83d7f2154d9f40f8ee27f3fbc}\label{classdocutils_1_1io_1_1ErrorOutput_a8119f1c83d7f2154d9f40f8ee27f3fbc} 
+\index{docutils.io.ErrorOutput@{docutils.io.ErrorOutput}!destination@{destination}}
+\index{destination@{destination}!docutils.io.ErrorOutput@{docutils.io.ErrorOutput}}
+\doxysubsubsection{\texorpdfstring{destination}{destination}}
+{\footnotesize\ttfamily docutils.\+io.\+Error\+Output.\+destination}
+
+\Hypertarget{classdocutils_1_1io_1_1ErrorOutput_ae520995bd7fafe9c12ae668fe9835ee3}\label{classdocutils_1_1io_1_1ErrorOutput_ae520995bd7fafe9c12ae668fe9835ee3} 
+\index{docutils.io.ErrorOutput@{docutils.io.ErrorOutput}!encoding@{encoding}}
+\index{encoding@{encoding}!docutils.io.ErrorOutput@{docutils.io.ErrorOutput}}
+\doxysubsubsection{\texorpdfstring{encoding}{encoding}}
+{\footnotesize\ttfamily docutils.\+io.\+Error\+Output.\+encoding}
+
+\Hypertarget{classdocutils_1_1io_1_1ErrorOutput_ae5775d6eba3a72115b38f7e15e4dd43a}\label{classdocutils_1_1io_1_1ErrorOutput_ae5775d6eba3a72115b38f7e15e4dd43a} 
+\index{docutils.io.ErrorOutput@{docutils.io.ErrorOutput}!encoding\_errors@{encoding\_errors}}
+\index{encoding\_errors@{encoding\_errors}!docutils.io.ErrorOutput@{docutils.io.ErrorOutput}}
+\doxysubsubsection{\texorpdfstring{encoding\_errors}{encoding\_errors}}
+{\footnotesize\ttfamily docutils.\+io.\+Error\+Output.\+encoding\+\_\+errors}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/docutils/\mbox{\hyperlink{docutils_2io_8py}{io.\+py}}\end{DoxyCompactItemize}

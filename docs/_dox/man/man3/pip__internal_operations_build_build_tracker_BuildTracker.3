@@ -1,0 +1,111 @@
+.TH "pip._internal.operations.build.build_tracker.BuildTracker" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.operations.build.build_tracker.BuildTracker
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str root)"
+.br
+.ti -1c
+.RI "'BuildTracker' \fB__enter__\fP (self)"
+.br
+.ti -1c
+.RI "None \fB__exit__\fP (self, Optional[Type[BaseException]] exc_type, Optional[BaseException] exc_val, Optional[TracebackType] exc_tb)"
+.br
+.ti -1c
+.RI "None \fBadd\fP (self, \fBInstallRequirement\fP req, \fBTrackerId\fP key)"
+.br
+.ti -1c
+.RI "None \fBremove\fP (self, \fBInstallRequirement\fP req, \fBTrackerId\fP key)"
+.br
+.ti -1c
+.RI "None \fBcleanup\fP (self)"
+.br
+.ti -1c
+.RI "Generator[None, None, None] \fBtrack\fP (self, \fBInstallRequirement\fP req, str key)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fB_entry_path\fP (self, \fBTrackerId\fP key)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_root\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Ensure that an sdist cannot request itself as a setup requirement\&.
+
+When an sdist is prepared, it identifies its setup requirements in the
+context of ``BuildTracker\&.track()``\&. If a requirement shows up recursively, this
+raises an exception\&.
+
+This stops fork bombs embedded in malicious packages\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._internal\&.operations\&.build\&.build_tracker\&.BuildTracker\&.__init__ ( self, str root)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " 'BuildTracker' pip\&._internal\&.operations\&.build\&.build_tracker\&.BuildTracker\&.__enter__ ( self)"
+
+.SS " None pip\&._internal\&.operations\&.build\&.build_tracker\&.BuildTracker\&.__exit__ ( self, Optional[Type[BaseException]] exc_type, Optional[BaseException] exc_val, Optional[TracebackType] exc_tb)"
+
+.SS " str pip\&._internal\&.operations\&.build\&.build_tracker\&.BuildTracker\&._entry_path ( self, \fBTrackerId\fP key)\fC [protected]\fP"
+
+.SS " None pip\&._internal\&.operations\&.build\&.build_tracker\&.BuildTracker\&.add ( self, \fBInstallRequirement\fP req, \fBTrackerId\fP key)"
+
+.PP
+.nf
+Add an InstallRequirement to build tracking\&.
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.operations\&.build\&.build_tracker\&.BuildTracker\&.cleanup ( self)"
+
+.SS " None pip\&._internal\&.operations\&.build\&.build_tracker\&.BuildTracker\&.remove ( self, \fBInstallRequirement\fP req, \fBTrackerId\fP key)"
+
+.PP
+.nf
+Remove an InstallRequirement from build tracking\&.
+.fi
+.PP
+ 
+.SS " Generator[None, None, None] pip\&._internal\&.operations\&.build\&.build_tracker\&.BuildTracker\&.track ( self, \fBInstallRequirement\fP req, str key)"
+
+.PP
+.nf
+Ensure that `key` cannot install itself as a setup requirement\&.
+
+:raises LookupError: If `key` was already provided in a parent invocation of
+                     the context introduced by this method\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._internal\&.operations\&.build\&.build_tracker\&.BuildTracker\&._root\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,279 @@
+.TH "soupsieve.css_parser.CSSParser" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+soupsieve.css_parser.CSSParser
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str selector, dict[str, str|ct\&.SelectorList]|None \fBcustom\fP=None, int \fBflags\fP=0)"
+.br
+.ti -1c
+.RI "bool \fBparse_attribute_selector\fP (self, \fB_Selector\fP sel, Match[str] m, bool has_selector)"
+.br
+.ti -1c
+.RI "bool \fBparse_tag_pattern\fP (self, \fB_Selector\fP sel, Match[str] m, bool has_selector)"
+.br
+.ti -1c
+.RI "bool \fBparse_pseudo_class_custom\fP (self, \fB_Selector\fP sel, Match[str] m, bool has_selector)"
+.br
+.ti -1c
+.RI "tuple[bool, bool] \fBparse_pseudo_class\fP (self, \fB_Selector\fP sel, Match[str] m, bool has_selector, Iterator[tuple[str, Match[str]]] iselector, bool is_html)"
+.br
+.ti -1c
+.RI "bool \fBparse_pseudo_nth\fP (self, \fB_Selector\fP sel, Match[str] m, bool has_selector, Iterator[tuple[str, Match[str]]] iselector)"
+.br
+.ti -1c
+.RI "bool \fBparse_pseudo_open\fP (self, \fB_Selector\fP sel, str name, bool has_selector, Iterator[tuple[str, Match[str]]] iselector, int index)"
+.br
+.ti -1c
+.RI "tuple[bool, \fB_Selector\fP, str] \fBparse_has_combinator\fP (self, \fB_Selector\fP sel, Match[str] m, bool has_selector, list[\fB_Selector\fP] selectors, str rel_type, int index)"
+.br
+.ti -1c
+.RI "tuple[bool, \fB_Selector\fP] \fBparse_combinator\fP (self, \fB_Selector\fP sel, Match[str] m, bool has_selector, list[\fB_Selector\fP] selectors, list[\fB_Selector\fP] relations, bool is_pseudo, bool is_forgive, int index)"
+.br
+.ti -1c
+.RI "bool \fBparse_class_id\fP (self, \fB_Selector\fP sel, Match[str] m, bool has_selector)"
+.br
+.ti -1c
+.RI "bool \fBparse_pseudo_contains\fP (self, \fB_Selector\fP sel, Match[str] m, bool has_selector)"
+.br
+.ti -1c
+.RI "bool \fBparse_pseudo_lang\fP (self, \fB_Selector\fP sel, Match[str] m, bool has_selector)"
+.br
+.ti -1c
+.RI "bool \fBparse_pseudo_dir\fP (self, \fB_Selector\fP sel, Match[str] m, bool has_selector)"
+.br
+.ti -1c
+.RI "ct\&.SelectorList \fBparse_selectors\fP (self, Iterator[tuple[str, Match[str]]] iselector, int index=0, int \fBflags\fP=0)"
+.br
+.ti -1c
+.RI "Iterator[tuple[str, Match[str]]] \fBselector_iter\fP (self, str \fBpattern\fP)"
+.br
+.ti -1c
+.RI "ct\&.SelectorList \fBprocess_selectors\fP (self, int index=0, int \fBflags\fP=0)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBpattern\fP"
+.br
+.ti -1c
+.RI "\fBflags\fP"
+.br
+.ti -1c
+.RI "\fBdebug\fP"
+.br
+.ti -1c
+.RI "\fBcustom\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBcss_tokens\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Parse CSS selectors\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None soupsieve\&.css_parser\&.CSSParser\&.__init__ ( self, str selector, dict[str, str | ct\&.SelectorList] | None  custom = \fCNone\fP, int  flags = \fC0\fP)"
+
+.PP
+.nf
+Initialize\&.
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " bool soupsieve\&.css_parser\&.CSSParser\&.parse_attribute_selector ( self, \fB_Selector\fP sel, Match[str] m, bool has_selector)"
+
+.PP
+.nf
+Create attribute selector from the returned regex match\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_parser\&.CSSParser\&.parse_class_id ( self, \fB_Selector\fP sel, Match[str] m, bool has_selector)"
+
+.PP
+.nf
+Parse HTML classes and ids\&.
+.fi
+.PP
+ 
+.SS " tuple[bool, \fB_Selector\fP] soupsieve\&.css_parser\&.CSSParser\&.parse_combinator ( self, \fB_Selector\fP sel, Match[str] m, bool has_selector, list[\fB_Selector\fP] selectors, list[\fB_Selector\fP] relations, bool is_pseudo, bool is_forgive, int
+     index)"
+
+.PP
+.nf
+Parse combinator tokens\&.
+.fi
+.PP
+ 
+.SS " tuple[bool, \fB_Selector\fP, str] soupsieve\&.css_parser\&.CSSParser\&.parse_has_combinator ( self, \fB_Selector\fP sel, Match[str] m, bool has_selector, list[\fB_Selector\fP] selectors, str rel_type, int
+     index)"
+
+.PP
+.nf
+Parse combinator tokens\&.
+.fi
+.PP
+ 
+.SS " tuple[bool, bool] soupsieve\&.css_parser\&.CSSParser\&.parse_pseudo_class ( self, \fB_Selector\fP sel, Match[str] m, bool has_selector, Iterator[tuple[str, Match[str]]] iselector, bool
+     is_html)"
+
+.PP
+.nf
+Parse pseudo class\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_parser\&.CSSParser\&.parse_pseudo_class_custom ( self, \fB_Selector\fP sel, Match[str] m, bool has_selector)"
+
+.PP
+.nf
+Parse custom pseudo class alias\&.
+
+Compile custom selectors as we need them\&. When compiling a custom selector,
+set it to `None` in the dictionary so we can avoid an infinite loop\&.
+
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_parser\&.CSSParser\&.parse_pseudo_contains ( self, \fB_Selector\fP sel, Match[str] m, bool has_selector)"
+
+.PP
+.nf
+Parse contains\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_parser\&.CSSParser\&.parse_pseudo_dir ( self, \fB_Selector\fP sel, Match[str] m, bool has_selector)"
+
+.PP
+.nf
+Parse pseudo direction\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_parser\&.CSSParser\&.parse_pseudo_lang ( self, \fB_Selector\fP sel, Match[str] m, bool has_selector)"
+
+.PP
+.nf
+Parse pseudo language\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_parser\&.CSSParser\&.parse_pseudo_nth ( self, \fB_Selector\fP sel, Match[str] m, bool has_selector, Iterator[tuple[str, Match[str]]]
+     iselector)"
+
+.PP
+.nf
+Parse `nth` pseudo\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_parser\&.CSSParser\&.parse_pseudo_open ( self, \fB_Selector\fP sel, str name, bool has_selector, Iterator[tuple[str, Match[str]]] iselector, int
+     index)"
+
+.PP
+.nf
+Parse pseudo with opening bracket\&.
+.fi
+.PP
+ 
+.SS " ct\&.SelectorList soupsieve\&.css_parser\&.CSSParser\&.parse_selectors ( self, Iterator[tuple[str, Match[str]]] iselector, int  index = \fC0\fP, int  flags = \fC0\fP)"
+
+.PP
+.nf
+Parse selectors\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_parser\&.CSSParser\&.parse_tag_pattern ( self, \fB_Selector\fP sel, Match[str] m, bool has_selector)"
+
+.PP
+.nf
+Parse tag pattern from regex match\&.
+.fi
+.PP
+ 
+.SS " ct\&.SelectorList soupsieve\&.css_parser\&.CSSParser\&.process_selectors ( self, int  index = \fC0\fP, int  flags = \fC0\fP)"
+
+.PP
+.nf
+Process selectors\&.
+.fi
+.PP
+ 
+.SS " Iterator[tuple[str, Match[str]]] soupsieve\&.css_parser\&.CSSParser\&.selector_iter ( self, str pattern)"
+
+.PP
+.nf
+Iterate selector tokens\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "tuple soupsieve\&.css_parser\&.CSSParser\&.css_tokens\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  (
+        SelectorPattern("pseudo_close", PAT_PSEUDO_CLOSE),
+        SpecialPseudoPattern(
+            (
+                (
+                    "pseudo_contains",
+                    (':contains', ':\-soup\-contains', ':\-soup\-contains\-own'),
+                    PAT_PSEUDO_CONTAINS,
+                    SelectorPattern
+                ),
+                ("pseudo_nth_child", (':nth\-child', ':nth\-last\-child'), PAT_PSEUDO_NTH_CHILD, SelectorPattern),
+                ("pseudo_nth_type", (':nth\-of\-type', ':nth\-last\-of\-type'), PAT_PSEUDO_NTH_TYPE, SelectorPattern),
+                ("pseudo_lang", (':lang',), PAT_PSEUDO_LANG, SelectorPattern),
+                ("pseudo_dir", (':dir',), PAT_PSEUDO_DIR, SelectorPattern)
+            )
+        ),
+        SelectorPattern("pseudo_class_custom", PAT_PSEUDO_CLASS_CUSTOM),
+        SelectorPattern("pseudo_class", PAT_PSEUDO_CLASS),
+        SelectorPattern("pseudo_element", PAT_PSEUDO_ELEMENT),
+        SelectorPattern("amp", PAT_AMP),
+        SelectorPattern("at_rule", PAT_AT_RULE),
+        SelectorPattern("id", PAT_ID),
+        SelectorPattern("class", PAT_CLASS),
+        SelectorPattern("tag", PAT_TAG),
+        SelectorPattern("attribute", PAT_ATTR),
+        SelectorPattern("combine", PAT_COMBINE)
+    )
+.fi
+
+.SS "soupsieve\&.css_parser\&.CSSParser\&.custom"
+
+.SS "soupsieve\&.css_parser\&.CSSParser\&.debug"
+
+.SS "soupsieve\&.css_parser\&.CSSParser\&.flags"
+
+.SS "soupsieve\&.css_parser\&.CSSParser\&.pattern"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

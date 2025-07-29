@@ -1,0 +1,68 @@
+.TH "urllib3.util.response" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+urllib3.util.response
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBis_fp_closed\fP (object obj)"
+.br
+.ti -1c
+.RI "None \fBassert_header_parsing\fP (httplib\&.HTTPMessage headers)"
+.br
+.ti -1c
+.RI "bool \fBis_response_to_head\fP (httplib\&.HTTPResponse response)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " None urllib3\&.util\&.response\&.assert_header_parsing (httplib\&.HTTPMessage headers)"
+
+.PP
+.nf
+Asserts whether all headers have been successfully parsed\&.
+Extracts encountered errors from the result of parsing headers\&.
+
+Only works on Python 3\&.
+
+:param http\&.client\&.HTTPMessage headers: Headers to verify\&.
+
+:raises urllib3\&.exceptions\&.HeaderParsingError:
+    If parsing errors are found\&.
+
+.fi
+.PP
+ 
+.SS " bool urllib3\&.util\&.response\&.is_fp_closed (object obj)"
+
+.PP
+.nf
+Checks whether a given file-like object is closed\&.
+
+:param obj:
+    The file-like object to check\&.
+
+.fi
+.PP
+ 
+.SS " bool urllib3\&.util\&.response\&.is_response_to_head (httplib\&.HTTPResponse response)"
+
+.PP
+.nf
+Checks whether the request of a response has been a HEAD-request\&.
+
+:param http\&.client\&.HTTPResponse response:
+    Response to check if the originating request
+    used 'HEAD' as a method\&.
+
+.fi
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

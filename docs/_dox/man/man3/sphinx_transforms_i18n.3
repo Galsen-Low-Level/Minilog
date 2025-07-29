@@ -1,0 +1,100 @@
+.TH "sphinx.transforms.i18n" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.transforms.i18n
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_NodeUpdater\fP"
+.br
+.ti -1c
+.RI "class \fBAddTranslationClasses\fP"
+.br
+.ti -1c
+.RI "class \fBLocale\fP"
+.br
+.ti -1c
+.RI "class \fBPreserveTranslatableMessages\fP"
+.br
+.ti -1c
+.RI "class \fBRemoveTranslatableInline\fP"
+.br
+.ti -1c
+.RI "class \fBTranslationProgressTotaliser\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "nodes\&.Element \fBpublish_msgstr\fP (\fBSphinx\fP app, str source, str source_path, int source_line, \fBConfig\fP config, Any settings)"
+.br
+.ti -1c
+.RI "tuple[str, bool] \fBparse_noqa\fP (str source)"
+.br
+.ti -1c
+.RI "\fBExtensionMetadata\fP \fBsetup\fP (\fBSphinx\fP app)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "tuple \fBEXCLUDED_PENDING_XREF_ATTRIBUTES\fP = ('refexplicit',)"
+.br
+.ti -1c
+.RI "\fBN\fP = TypeVar('N', bound=nodes\&.Node)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Docutils transforms used by Sphinx when reading documents\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " tuple[str, bool] sphinx\&.transforms\&.i18n\&.parse_noqa (str source)"
+
+.SS " nodes\&.Element sphinx\&.transforms\&.i18n\&.publish_msgstr (\fBSphinx\fP app, str source, str source_path, int source_line, \fBConfig\fP config, Any settings)"
+
+.PP
+.nf
+Publish msgstr (single line) into docutils document
+
+:param sphinx\&.application\&.Sphinx app: sphinx application
+:param str source: source text
+:param str source_path: source path for warning indication
+:param source_line: source line for warning indication
+:param sphinx\&.config\&.Config config: sphinx config
+:param docutils\&.frontend\&.Values settings: docutils settings
+:return: document
+:rtype: docutils\&.nodes\&.document
+
+.fi
+.PP
+ 
+.SS " \fBExtensionMetadata\fP sphinx\&.transforms\&.i18n\&.setup (\fBSphinx\fP app)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "tuple sphinx\&.transforms\&.i18n\&.EXCLUDED_PENDING_XREF_ATTRIBUTES = ('refexplicit',)"
+
+.SS "sphinx\&.transforms\&.i18n\&.logger = logging\&.getLogger(__name__)"
+
+.SS "sphinx\&.transforms\&.i18n\&.N = TypeVar('N', bound=nodes\&.Node)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

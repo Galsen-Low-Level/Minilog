@@ -1,0 +1,170 @@
+\doxysection{baseconv.\+h}
+\hypertarget{baseconv_2baseconv_8h_source}{}\label{baseconv_2baseconv_8h_source}\index{/home/umar/Desktop/WorkShop/GLL/baseconv/baseconv.h@{/home/umar/Desktop/WorkShop/GLL/baseconv/baseconv.h}}
+\mbox{\hyperlink{baseconv_2baseconv_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ @file\ baseconv.h\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ @brief\ base\ convertion\ header\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ @author\ Umar\ Ba\ <jUmarB@protonmail.com>\ <github/Jukoo>\ }}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#if\ !defined(\_\_BASECONV)}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ \ \_\_BASECONV\ }}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdio.h>}\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#if\ defined(\_\_linux\_\_)\ }}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#\ if\ \_\_glibc\_has\_attribute(warn\_unused\_result)\ \ }}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#\ \ \ define\ \ \_\_mustcheck\ \_\_attribute\_\_((warn\_unused\_result))\ }}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#\ else}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#\ \ \ define\ \ \_\_mustcheck\ }\textcolor{comment}{/*\ \ NOTHING\ */}\textcolor{preprocessor}{\ }}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#\ endif\ }\textcolor{comment}{//\ \_\_glibc\_has\_attribute\ }}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#else\ \ }}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#\ define\ \ \_\_mustcheck\ \ }\textcolor{comment}{/*\ NOTHING\ */}\textcolor{preprocessor}{\ }}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#if\ defined(\_\_cpluscplus)}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#\ define\ \ \_\_BCEXPORT\ \ extern\ "{}C"{}\ }}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#else\ }}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#\ define\ \ \_\_BCEXPORT\ \ }\textcolor{comment}{/*\ !NOTHING\ */}\textcolor{preprocessor}{\ }}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ \ \_\_BCX(\_\_type\_return\_function)\(\backslash\)}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \ \_\_BCEXPORT\ \_\_type\_return\_function\ }}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#if\ !defined(\_\_symbole\_sep)\ \ \ }}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#\ define\ \_\_symbole\_sep\ \ 0x2e\ \ }}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif\ \ }}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ BYTE\_UNIT\ sizeof(void\ *)\ \ }}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ \_SIZE(\_\_value)\ \ sizeof(\_\_value)\ *\ BYTE\_UNIT\ \ }}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ BITSET(\_\_value\ ,\ \_\_index)\ \ (\ \ ((\_\_value)\ >>\ (\_\_index\ -\/1\ ))\ \ \ \&\ 0x1)}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ SHOWBITREP(\_\_expr)\ printf("{}\%i"{},\_\_expr)\ \ }}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ SHOWBASE\_EXPR(\_\_expr,\ \_\_it\ ,\ \_\_prefix\ ,\_\_fmt,\ \_\_out)\{\(\backslash\)}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\ \ strcat(\_\_out\ ,\ \_\_prefix);\ \(\backslash\)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\ \ int\ i\ =strlen(\_\_prefix);\ \(\backslash\)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\ \ while(0\ !=\ \_\_it)\{\(\backslash\)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\ \ \ \ sprintf(\ (\_\_out+i)\ ,\_\_fmt,\ *(\_\_expr+\ \_\_it-\/1));\(\backslash\)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\ \ \ \ \_\_it+=\string~(\_\_it\string^\_\_it),\ \ i=-\/\string~i\ ;\(\backslash\)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\ \ \}\(\backslash\)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ SHOWHEX(\_\_expr,\ \_\_it\ ,\_\_out)\ \(\backslash\)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\ \ SHOWBASE\_EXPR(\_\_expr\ ,\_\_it,\ "{}0x"{},"{}\%c"{},\ \_\_out)\ }}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ SHOWOCT(\_\_expr\ ,\_\_it\ ,\ \_\_out)\ \(\backslash\)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ SHOWBASE\_EXPR(\_\_expr\ ,\_\_it,\ "{}0o"{},"{}\%i"{},\ \_\_out)\ }}
+\DoxyCodeLine{00053\ \ \ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ SHOWBIN(\_\_expr\ ,\ \_\_it,\_\_out)\(\backslash\)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\ \ SHOWBASE\_EXPR(\_\_expr\ ,\_\_it,\ "{}0b"{},"{}\%i"{},\ \ \_\_out)\ }}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ \ USAGE\ "{}\(\backslash\)}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\ \ Usage\ :\ bcv\ [OPTION]\ ...\ <NUMBER>\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\ \ Convert\ Number\ to\ specific\ base\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\ \ inline\ \ \ \ \ \ |\ interactive\ |\ description\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\ \ -\/b\ <number>\ \ \ b/<number>\ \ \ \ Convert\ to\ binary\ Base\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\ \ -\/x\ <number>\ \ \ x/<number>\ \ \ \ Convert\ to\ hexadecimal\ Base\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\ \ -\/o\ <number>\ \ \ o/<number>\ \ \ \ Convert\ to\ Octal\ Base\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exit\ or\ quit\ \ To\ exit\ \ interactive\ shell\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\ \ -\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\ \ -\/v,\ 'v'\ or\ '!'\ Version\ of\ the\ Program\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\ \ -\/h,\ 'h'\ or\ '?'\ Print\ \ this\ help\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\ \ "{}}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct____bcb__t}{\_\_bcb\_t}}\ }
+\DoxyCodeLine{00072\ \{}
+\DoxyCodeLine{00073\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct____bcb__t_a002e79613fab7d68e4a7abcbbd742bb6}{\_buff}}[0xff];\ }
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{struct____bcb__t_af5ee95fa86a158b74626e42965f0b265}{\_index}}\ ;\ }
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{baseconv_2baseconv_8h_aa8615d5eb5759731508ab0be06422364}{bc\_global\_buffer}}[0xff]\ ;\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{comment}{/*\ @fn\ detect\_bit\_section\_starting\_group(int)\ }}
+\DoxyCodeLine{00080\ \textcolor{comment}{\ *\ @brief\ \ detect\ wich\ section\ group\ of\ binary\ \ contain\ the\ first\ value\ \ }}
+\DoxyCodeLine{00081\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ e.g\ \ 0000.0000.0000.0010.0000.0111\ \ }}
+\DoxyCodeLine{00082\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ |xxxxxxxxxxxxx|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|}}
+\DoxyCodeLine{00083\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ escaped\ \ \ \ \ conserved\ }}
+\DoxyCodeLine{00084\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ This\ function\ is\ used\ by\ bc\_binv2\ }}
+\DoxyCodeLine{00085\ \textcolor{comment}{\ *\ @param\ \ int\ -\/\ the\ value\ }}
+\DoxyCodeLine{00086\ \textcolor{comment}{\ *\ @return\ int\ -\/\ the\ section(th)\ index\ that\ contain\ the\ value\ }}
+\DoxyCodeLine{00087\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00088\ \textcolor{keyword}{static}\ \_\_inline\_\_\ \textcolor{keywordtype}{int}\ detect\_bit\_section\_starting\_group(\textcolor{keywordtype}{int}\ value)\ }
+\DoxyCodeLine{00089\ \{}
+\DoxyCodeLine{00090\ \ \ }
+\DoxyCodeLine{00091\ \ \ \textcolor{keywordtype}{size\_t}\ vsize\ =\ \ \mbox{\hyperlink{baseconv_2baseconv_8h_af72a33f5bd1b42c9fce277c20898843f}{\_SIZE}}(value)\ ;\ }
+\DoxyCodeLine{00092\ \ \ \textcolor{keywordtype}{int}\ group\ =\ 0\ ,\ section\ =\ 1,\ section\_start\_bit\ =0\ ;\ }
+\DoxyCodeLine{00093\ \ \ \textcolor{keywordflow}{while}(\ 0\ <\ vsize\ \ )\ \ \ }
+\DoxyCodeLine{00094\ \ \ \{\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{if}(group\ ==\ 4)}
+\DoxyCodeLine{00096\ \ \ \ \ \{\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ group\&=\string~group\ ;\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ section=-\/\string~section;\ }
+\DoxyCodeLine{00099\ \ \ \ \ \}\ }
+\DoxyCodeLine{00100\ \ \ \ \ section\_start\_bit\ =\ \mbox{\hyperlink{baseconv_2baseconv_8h_a1e74abb29b634bcfb710a863dd3fb7e1}{BITSET}}(value\ ,\ vsize)\ ;\ \ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordflow}{if}\ (section\_start\_bit\ ==\ 1)\ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ break\ ;\ }
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ group=-\/\string~group\ ;\ }
+\DoxyCodeLine{00105\ \ \ \ \ vsize+=\string~(vsize\string^vsize);}
+\DoxyCodeLine{00106\ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \textcolor{keywordflow}{return}\ section\ +(\string~0);\ \ }
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{comment}{/*\ @fn\ print\_dot()\ }}
+\DoxyCodeLine{00113\ \textcolor{comment}{\ *\ @brief\ \ Just\ print\ "{}."{}\ \ e.g\ :\ 0000.0000.\ .....\ }}
+\DoxyCodeLine{00114\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ This\ function\ is\ used\ by\ bc\_binv2\ }}
+\DoxyCodeLine{00115\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00116\ \textcolor{keyword}{static}\ \_\_inline\_\_\ \textcolor{keywordtype}{void}\ print\_symbol\_seperation(\textcolor{keywordtype}{void})\ }
+\DoxyCodeLine{00117\ \{}
+\DoxyCodeLine{00118\ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00119\ \ \ \ \textcolor{keywordflow}{if}\ (i==4)}
+\DoxyCodeLine{00120\ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%c"{}},\ \ \mbox{\hyperlink{baseconv_2baseconv_8h_a2f6792b770c0e434cf9cf634c91d2cd0}{\_\_symbole\_sep}})\ ;}
+\DoxyCodeLine{00122\ \ \ \ \ \ i\&=\string~i\ ;\ }
+\DoxyCodeLine{00123\ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ i=-\/\string~i;\ }
+\DoxyCodeLine{00125\ \}\ \ }
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{comment}{/*\ @fn\ \_\_common\_prototype\_base\_convertion(int\ \ ,\ int\ \ ,\ struct\ \_\_bcb\_t*)\ }}
+\DoxyCodeLine{00130\ \textcolor{comment}{\ *\ @brief\ \ common\ logic\ \ used\ by\ the\ bc\_*\ function\ to\ convert\ \ }}
+\DoxyCodeLine{00131\ \textcolor{comment}{\ *\ @param\ \ int\ \ -\/\ the\ value\ }}
+\DoxyCodeLine{00132\ \textcolor{comment}{\ *\ @param\ \ int\ \ -\/\ the\ base\ }}
+\DoxyCodeLine{00133\ \textcolor{comment}{\ *\ @param\ \ struct\ \_\_bcb\_t\ *\ \ -\/\ bcb\ data\ structure\ \ hold\ the\ buffer\ in\ \ the\ length\ }}
+\DoxyCodeLine{00134\ \textcolor{comment}{\ */}\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \_\_common\_prototype\_base\_convertion(\textcolor{keywordtype}{int}\ value\ ,\ \textcolor{keywordtype}{int}\ base\ ,\ \ \textcolor{keyword}{struct}\ \mbox{\hyperlink{struct____bcb__t}{\_\_bcb\_t}}\ \ *\ \ bcb)\ \ }
+\DoxyCodeLine{00136\ \{\ }
+\DoxyCodeLine{00137\ \ \ \ \textcolor{keywordtype}{int}\ \ remain\ \ =\ 0;\ \ }
+\DoxyCodeLine{00138\ \ \ \ \textcolor{keywordflow}{while}\ (0!=\ value)\ }
+\DoxyCodeLine{00139\ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ remain\ =\ \mbox{\hyperlink{namespacewebob_1_1request_adbafe2ffe970e4cf5ad12e2ac95c3ee8}{value}}\ \%\ base,\ \mbox{\hyperlink{namespacewebob_1_1request_adbafe2ffe970e4cf5ad12e2ac95c3ee8}{value}}/=base\ ;\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \textcolor{keywordflow}{if}(base\ ==\ \ 0x10)\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ remain+=\ \ 0xa\ >\ remain?\ 0x30\ :\ 0x37\ ;\ \ }
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ *(bcb-\/>\mbox{\hyperlink{struct____bcb__t_a002e79613fab7d68e4a7abcbbd742bb6}{\_buff}}+bcb-\/>\mbox{\hyperlink{struct____bcb__t_af5ee95fa86a158b74626e42965f0b265}{\_index}}++)\ =\ \ remain\ ;\ }
+\DoxyCodeLine{00145\ \ \ \ \}\ }
+\DoxyCodeLine{00146\ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{comment}{/*\ the\ exposed\ function\ */}\ \ }
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{comment}{/*\ @fn\ bc\_binv2(int\ \ ,\ int\ )\ }}
+\DoxyCodeLine{00152\ \textcolor{comment}{\ *\ @brief\ \ binray\ \ convertion\ \ version\ 2\ }}
+\DoxyCodeLine{00153\ \textcolor{comment}{\ *\ @param\ \ \ int\ \ -\/\ \ the\ value\ \ }}
+\DoxyCodeLine{00154\ \textcolor{comment}{\ *\ @param\ \ \ int\ \ -\/\ \ would\ doyou\ like\ to\ show\ annotation\ dot\ "{}."{}}}
+\DoxyCodeLine{00155\ \textcolor{comment}{\ */}\ }
+\DoxyCodeLine{00156\ \mbox{\hyperlink{baseconv_2baseconv_8h_a662a30057d7b4f5d4d7beeb6b0fd4ecb}{\_\_BCX}}(\textcolor{keywordtype}{void})\ \mbox{\hyperlink{baseconv_2baseconv_8c_a82445b5a9be8fda65f094ae0e2a45dc2}{bc\_binv2}}(\textcolor{keywordtype}{int}\ \_\_value,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{baseconv_2baseconv_8h_aa8c3add6b34d527600b6efbf26cb06af}{\_\_show\_notation}})\ ;\ }
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \mbox{\hyperlink{baseconv_2baseconv_8h_a662a30057d7b4f5d4d7beeb6b0fd4ecb}{\_\_BCX}}(\mbox{\hyperlink{baseconv_2baseconv_8h_a7b4a645d59afae98dfc476890ff3b58c}{\_\_mustcheck}}\ \textcolor{keywordtype}{char}\ *)\ \mbox{\hyperlink{baseconv_2baseconv_8c_a4502298da24644539498825ebb38b212}{bc\_bin}}(\textcolor{keywordtype}{int}\ value)\ ;\ \ }
+\DoxyCodeLine{00159\ \mbox{\hyperlink{baseconv_2baseconv_8h_a662a30057d7b4f5d4d7beeb6b0fd4ecb}{\_\_BCX}}(\mbox{\hyperlink{baseconv_2baseconv_8h_a7b4a645d59afae98dfc476890ff3b58c}{\_\_mustcheck}}\ \textcolor{keywordtype}{char}\ *)\ \mbox{\hyperlink{baseconv_2baseconv_8c_a69c96d980a677f402021fccefc894202}{bc\_oct}}(\textcolor{keywordtype}{int}\ \_\_value)\ ;\ }
+\DoxyCodeLine{00160\ \mbox{\hyperlink{baseconv_2baseconv_8h_a662a30057d7b4f5d4d7beeb6b0fd4ecb}{\_\_BCX}}(\mbox{\hyperlink{baseconv_2baseconv_8h_a7b4a645d59afae98dfc476890ff3b58c}{\_\_mustcheck}}\ \textcolor{keywordtype}{char}\ *)\ \mbox{\hyperlink{baseconv_2baseconv_8c_a4e08feb75ce93e977e86bdc1f20596b9}{bc\_hex}}(\textcolor{keywordtype}{int}\ \_\_value)\ \ ;\ }
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

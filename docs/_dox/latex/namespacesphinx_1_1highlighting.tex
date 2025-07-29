@@ -1,0 +1,107 @@
+\doxysection{sphinx.\+highlighting Namespace Reference}
+\hypertarget{namespacesphinx_1_1highlighting}{}\label{namespacesphinx_1_1highlighting}\index{sphinx.highlighting@{sphinx.highlighting}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1highlighting_1_1PygmentsBridge}{Pygments\+Bridge}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1highlighting_acdca45c339ffce3966d96052d93e225c}{logger}} = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\item 
+dict \mbox{\hyperlink{namespacesphinx_1_1highlighting_accfcde9189799f6cd5e1e4b7128c35fd}{lexers}} = \{\}
+\item 
+dict \mbox{\hyperlink{namespacesphinx_1_1highlighting_a190d91884c0e6da534465051371579ac}{lexer\+\_\+classes}}
+\item 
+dict \mbox{\hyperlink{namespacesphinx_1_1highlighting_a2d426b811be0f47e144db87c74d9c427}{escape\+\_\+hl\+\_\+chars}}
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1highlighting_a8f508f6bfae628037f19a787dee1bd5b}{\+\_\+\+LATEX\+\_\+\+ADD\+\_\+\+STYLES}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Highlight code blocks using Pygments.\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacesphinx_1_1highlighting_a8f508f6bfae628037f19a787dee1bd5b}\label{namespacesphinx_1_1highlighting_a8f508f6bfae628037f19a787dee1bd5b} 
+\index{sphinx.highlighting@{sphinx.highlighting}!\_LATEX\_ADD\_STYLES@{\_LATEX\_ADD\_STYLES}}
+\index{\_LATEX\_ADD\_STYLES@{\_LATEX\_ADD\_STYLES}!sphinx.highlighting@{sphinx.highlighting}}
+\doxysubsubsection{\texorpdfstring{\_LATEX\_ADD\_STYLES}{\_LATEX\_ADD\_STYLES}}
+{\footnotesize\ttfamily str sphinx.\+highlighting.\+\_\+\+LATEX\+\_\+\+ADD\+\_\+\+STYLES\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \textcolor{stringliteral}{r"{}"{}"{}}}
+\DoxyCodeLine{00002\ \textcolor{stringliteral}{\%\ Sphinx\ redefinitions}}
+\DoxyCodeLine{00003\ \textcolor{stringliteral}{\%\ Originally\ to\ obtain\ a\ straight\ single\ quote\ via\ package\ textcomp,\ then}}
+\DoxyCodeLine{00004\ \textcolor{stringliteral}{\%\ to\ fix\ problems\ for\ the\ 5.0.0\ inline\ code\ highlighting\ (captions!).}}
+\DoxyCodeLine{00005\ \textcolor{stringliteral}{\%\ The\ \(\backslash\)text\ is\ from\ amstext,\ a\ dependency\ of\ sphinx.sty.\ \ It\ is\ here\ only}}
+\DoxyCodeLine{00006\ \textcolor{stringliteral}{\%\ to\ avoid\ build\ errors\ if\ for\ some\ reason\ expansion\ is\ in\ math\ mode.}}
+\DoxyCodeLine{00007\ \textcolor{stringliteral}{\(\backslash\)def\(\backslash\)PYGZbs\{\(\backslash\)text\(\backslash\)textbackslash\}}}
+\DoxyCodeLine{00008\ \textcolor{stringliteral}{\(\backslash\)def\(\backslash\)PYGZus\{\(\backslash\)\_\}}}
+\DoxyCodeLine{00009\ \textcolor{stringliteral}{\(\backslash\)def\(\backslash\)PYGZob\{\(\backslash\)\{\}}}
+\DoxyCodeLine{00010\ \textcolor{stringliteral}{\(\backslash\)def\(\backslash\)PYGZcb\{\(\backslash\)\}\}}}
+\DoxyCodeLine{00011\ \textcolor{stringliteral}{\(\backslash\)def\(\backslash\)PYGZca\{\(\backslash\)text\(\backslash\)textasciicircum\}}}
+\DoxyCodeLine{00012\ \textcolor{stringliteral}{\(\backslash\)def\(\backslash\)PYGZam\{\(\backslash\)\&\}}}
+\DoxyCodeLine{00013\ \textcolor{stringliteral}{\(\backslash\)def\(\backslash\)PYGZlt\{\(\backslash\)text\(\backslash\)textless\}}}
+\DoxyCodeLine{00014\ \textcolor{stringliteral}{\(\backslash\)def\(\backslash\)PYGZgt\{\(\backslash\)text\(\backslash\)textgreater\}}}
+\DoxyCodeLine{00015\ \textcolor{stringliteral}{\(\backslash\)def\(\backslash\)PYGZsh\{\(\backslash\)\#\}}}
+\DoxyCodeLine{00016\ \textcolor{stringliteral}{\(\backslash\)def\(\backslash\)PYGZpc\{\(\backslash\)\%\}}}
+\DoxyCodeLine{00017\ \textcolor{stringliteral}{\(\backslash\)def\(\backslash\)PYGZdl\{\(\backslash\)\$\}}}
+\DoxyCodeLine{00018\ \textcolor{stringliteral}{\(\backslash\)def\(\backslash\)PYGZhy\{\(\backslash\)sphinxhyphen\}\%\ defined\ in\ sphinxlatexstyletext.sty}}
+\DoxyCodeLine{00019\ \textcolor{stringliteral}{\(\backslash\)def\(\backslash\)PYGZsq\{\(\backslash\)text\(\backslash\)textquotesingle\}}}
+\DoxyCodeLine{00020\ \textcolor{stringliteral}{\(\backslash\)def\(\backslash\)PYGZdq\{"{}\}}}
+\DoxyCodeLine{00021\ \textcolor{stringliteral}{\(\backslash\)def\(\backslash\)PYGZti\{\(\backslash\)text\(\backslash\)textasciitilde\}}}
+\DoxyCodeLine{00022\ \textcolor{stringliteral}{\(\backslash\)makeatletter}}
+\DoxyCodeLine{00023\ \textcolor{stringliteral}{\%\ use\ \(\backslash\)protected\ to\ allow\ syntax\ highlighting\ in\ captions}}
+\DoxyCodeLine{00024\ \textcolor{stringliteral}{\(\backslash\)protected\(\backslash\)def\(\backslash\)PYG\#1\#2\{\(\backslash\)PYG@reset\(\backslash\)PYG@toks\#1+\(\backslash\)relax+\{\(\backslash\)PYG@do\{\#2\}\}\}}}
+\DoxyCodeLine{00025\ \textcolor{stringliteral}{\(\backslash\)makeatother}}
+\DoxyCodeLine{00026\ \textcolor{stringliteral}{"{}"{}"{}}}
+
+\end{DoxyCode}
+\Hypertarget{namespacesphinx_1_1highlighting_a2d426b811be0f47e144db87c74d9c427}\label{namespacesphinx_1_1highlighting_a2d426b811be0f47e144db87c74d9c427} 
+\index{sphinx.highlighting@{sphinx.highlighting}!escape\_hl\_chars@{escape\_hl\_chars}}
+\index{escape\_hl\_chars@{escape\_hl\_chars}!sphinx.highlighting@{sphinx.highlighting}}
+\doxysubsubsection{\texorpdfstring{escape\_hl\_chars}{escape\_hl\_chars}}
+{\footnotesize\ttfamily dict sphinx.\+highlighting.\+escape\+\_\+hl\+\_\+chars}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ ord(\textcolor{stringliteral}{'\(\backslash\)\(\backslash\)'}):\ \textcolor{stringliteral}{'\(\backslash\)\(\backslash\)PYGZbs\{\}'},}
+\DoxyCodeLine{00003\ \ \ \ \ ord(\textcolor{stringliteral}{'\{'}):\ \textcolor{stringliteral}{'\(\backslash\)\(\backslash\)PYGZob\{\}'},}
+\DoxyCodeLine{00004\ \ \ \ \ ord(\textcolor{stringliteral}{'\}'}):\ \textcolor{stringliteral}{'\(\backslash\)\(\backslash\)PYGZcb\{\}'},}
+\DoxyCodeLine{00005\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacesphinx_1_1highlighting_a190d91884c0e6da534465051371579ac}\label{namespacesphinx_1_1highlighting_a190d91884c0e6da534465051371579ac} 
+\index{sphinx.highlighting@{sphinx.highlighting}!lexer\_classes@{lexer\_classes}}
+\index{lexer\_classes@{lexer\_classes}!sphinx.highlighting@{sphinx.highlighting}}
+\doxysubsubsection{\texorpdfstring{lexer\_classes}{lexer\_classes}}
+{\footnotesize\ttfamily dict sphinx.\+highlighting.\+lexer\+\_\+classes}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{'none'}:\ partial(TextLexer,\ stripnl=\textcolor{keyword}{False}),}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{'python'}:\ partial(PythonLexer,\ stripnl=\textcolor{keyword}{False}),}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{'pycon'}:\ partial(PythonConsoleLexer,\ stripnl=\textcolor{keyword}{False}),}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{stringliteral}{'rest'}:\ partial(RstLexer,\ stripnl=\textcolor{keyword}{False}),}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{stringliteral}{'c'}:\ partial(CLexer,\ stripnl=\textcolor{keyword}{False}),}
+\DoxyCodeLine{00007\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacesphinx_1_1highlighting_accfcde9189799f6cd5e1e4b7128c35fd}\label{namespacesphinx_1_1highlighting_accfcde9189799f6cd5e1e4b7128c35fd} 
+\index{sphinx.highlighting@{sphinx.highlighting}!lexers@{lexers}}
+\index{lexers@{lexers}!sphinx.highlighting@{sphinx.highlighting}}
+\doxysubsubsection{\texorpdfstring{lexers}{lexers}}
+{\footnotesize\ttfamily dict sphinx.\+highlighting.\+lexers = \{\}}
+
+\Hypertarget{namespacesphinx_1_1highlighting_acdca45c339ffce3966d96052d93e225c}\label{namespacesphinx_1_1highlighting_acdca45c339ffce3966d96052d93e225c} 
+\index{sphinx.highlighting@{sphinx.highlighting}!logger@{logger}}
+\index{logger@{logger}!sphinx.highlighting@{sphinx.highlighting}}
+\doxysubsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily sphinx.\+highlighting.\+logger = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)}
+

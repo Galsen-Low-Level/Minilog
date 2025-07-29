@@ -1,0 +1,209 @@
+.TH "sphinx.ext.autodoc.ClassLevelDocumenter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.ext.autodoc.ClassLevelDocumenter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.ext\&.autodoc\&.Documenter\fP\&.
+.PP
+Inherited by \fBsphinx\&.ext\&.autodoc\&.MethodDocumenter\fP, and \fBsphinx\&.ext\&.autodoc\&.PropertyDocumenter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "tuple[str|None, list[str]] \fBresolve_name\fP (self, str|None \fBmodname\fP, Any parents, str path, str base)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.ext\&.autodoc\&.Documenter\fP
+.in +1c
+.ti -1c
+.RI "Any \fBget_attr\fP (self, Any obj, str \fBname\fP, *Any defargs)"
+.br
+.ti -1c
+.RI "bool \fBcan_document_member\fP (type[\fBDocumenter\fP] cls, Any member, str membername, bool isattr, Any \fBparent\fP)"
+.br
+.ti -1c
+.RI "None \fB__init__\fP (self, \fBDocumenterBridge\fP \fBdirective\fP, str \fBname\fP, str \fBindent\fP='')"
+.br
+.ti -1c
+.RI "dict[str, type[\fBDocumenter\fP]] \fBdocumenters\fP (self)"
+.br
+.ti -1c
+.RI "None \fBadd_line\fP (self, str line, str source, *int lineno)"
+.br
+.ti -1c
+.RI "bool \fBparse_name\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBimport_object\fP (self, bool raiseerror=False)"
+.br
+.ti -1c
+.RI "str \fBget_real_modname\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBcheck_module\fP (self)"
+.br
+.ti -1c
+.RI "str \fBformat_args\fP (self, **Any kwargs)"
+.br
+.ti -1c
+.RI "str \fBformat_name\fP (self)"
+.br
+.ti -1c
+.RI "str \fBformat_signature\fP (self, **Any kwargs)"
+.br
+.ti -1c
+.RI "None \fBadd_directive_header\fP (self, str sig)"
+.br
+.ti -1c
+.RI "list[list[str]]|None \fBget_doc\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[str] \fBprocess_doc\fP (self, list[list[str]] docstrings)"
+.br
+.ti -1c
+.RI "str \fBget_sourcename\fP (self)"
+.br
+.ti -1c
+.RI "None \fBadd_content\fP (self, \fBStringList\fP|None more_content)"
+.br
+.ti -1c
+.RI "tuple[bool, list[\fBObjectMember\fP]] \fBget_object_members\fP (self, bool want_all)"
+.br
+.ti -1c
+.RI "list[tuple[str, Any, bool]] \fBfilter_members\fP (self, list[\fBObjectMember\fP] members, bool want_all)"
+.br
+.ti -1c
+.RI "None \fBdocument_members\fP (self, bool all_members=False)"
+.br
+.ti -1c
+.RI "list[tuple[\fBDocumenter\fP, bool]] \fBsort_members\fP (self, list[tuple[\fBDocumenter\fP, bool]] \fBdocumenters\fP, str order)"
+.br
+.ti -1c
+.RI "None \fBgenerate\fP (self, \fBStringList\fP|None more_content=None, str|None real_modname=None, bool \fBcheck_module\fP=False, bool all_members=False)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBsphinx\&.ext\&.autodoc\&.Documenter\fP
+.in +1c
+.ti -1c
+.RI "\fBdirective\fP"
+.br
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBindent\fP"
+.br
+.ti -1c
+.RI "\fBfullname\fP"
+.br
+.ti -1c
+.RI "\fBobject_name\fP"
+.br
+.ti -1c
+.RI "\fBobjtype\fP"
+.br
+.ti -1c
+.RI "\fBobjpath\fP"
+.br
+.ti -1c
+.RI "\fBmodname\fP"
+.br
+.ti -1c
+.RI "\fBargs\fP"
+.br
+.ti -1c
+.RI "\fBretann\fP"
+.br
+.ti -1c
+.RI "\fBmodule\fP"
+.br
+.ti -1c
+.RI "\fBparent\fP"
+.br
+.ti -1c
+.RI "\fBobject\fP"
+.br
+.ti -1c
+.RI "\fBget_attr\fP"
+.br
+.ti -1c
+.RI "\fBanalyzer\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBsphinx\&.ext\&.autodoc\&.Documenter\fP
+.in +1c
+.ti -1c
+.RI "str \fBobjtype\fP = '\fBobject\fP'"
+.br
+.ti -1c
+.RI "str \fBcontent_indent\fP = ' '"
+.br
+.ti -1c
+.RI "int \fBpriority\fP = 0"
+.br
+.ti -1c
+.RI "int \fBmember_order\fP = 0"
+.br
+.ti -1c
+.RI "bool \fBtitles_allowed\fP = True"
+.br
+.ti -1c
+.RI "dict \fBoption_spec\fP"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBsphinx\&.ext\&.autodoc\&.Documenter\fP
+.in +1c
+.ti -1c
+.RI "str \fB_call_format_args\fP (self, **Any kwargs)"
+.br
+.ti -1c
+.RI "None \fB_generate\fP (self, \fBStringList\fP|None more_content=None, str|None real_modname=None, bool \fBcheck_module\fP=False, bool all_members=False)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Specialized Documenter subclass for objects on class level (methods,
+attributes)\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " tuple[str | None, list[str]] sphinx\&.ext\&.autodoc\&.ClassLevelDocumenter\&.resolve_name ( self, str | None modname, Any parents, str path, str
+     base)"
+
+.PP
+.nf
+Resolve the module and name of the object to document given by the
+arguments and the current module/class\&.
+
+Must return a pair of the module name and a chain of attributes; for
+example, it would return ``('zipfile', ['ZipFile', 'open'])`` for the
+``zipfile\&.ZipFile\&.open`` method\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.ext\&.autodoc\&.Documenter\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

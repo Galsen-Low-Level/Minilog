@@ -1,0 +1,139 @@
+.TH "sphinx.theming.Theme" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.theming.Theme
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str \fBname\fP, *dict[str, \fB_ConfigFile\fP] configs, list[Path] paths, list[Path] tmp_dirs)"
+.br
+.ti -1c
+.RI "list[\fB_StrPath\fP] \fBget_theme_dirs\fP (self)"
+.br
+.ti -1c
+.RI "Any \fBget_config\fP (self, str section, str \fBname\fP, Any default=\fB_NO_DEFAULT\fP)"
+.br
+.ti -1c
+.RI "dict[str, Any] \fBget_options\fP (self, dict[str, Any]|None overrides=None)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBstylesheets\fP"
+.br
+.ti -1c
+.RI "\fBsidebar_templates\fP"
+.br
+.ti -1c
+.RI "\fBpygments_style_default\fP"
+.br
+.ti -1c
+.RI "\fBpygments_style_dark\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB_cleanup\fP (self)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_dirs\fP"
+.br
+.ti -1c
+.RI "\fB_tmp_dirs\fP"
+.br
+.ti -1c
+.RI "\fB_options\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A Theme is a set of HTML templates and configurations\&.
+
+This class supports both theme directory and theme archive (zipped theme)\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.theming\&.Theme\&.__init__ ( self, str name, *dict[str, \fB_ConfigFile\fP] configs, list[Path] paths, list[Path] tmp_dirs)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " None sphinx\&.theming\&.Theme\&._cleanup ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Remove temporary directories\&.
+.fi
+.PP
+ 
+.SS " Any sphinx\&.theming\&.Theme\&.get_config ( self, str section, str name, Any  default = \fC\fB_NO_DEFAULT\fP\fP)"
+
+.PP
+.nf
+Return the value for a theme configuration setting, searching the
+base theme chain\&.
+
+.fi
+.PP
+ 
+.SS " dict[str, Any] sphinx\&.theming\&.Theme\&.get_options ( self, dict[str, Any] | None  overrides = \fCNone\fP)"
+
+.PP
+.nf
+Return a dictionary of theme options and their values\&.
+.fi
+.PP
+ 
+.SS " list[\fB_StrPath\fP] sphinx\&.theming\&.Theme\&.get_theme_dirs ( self)"
+
+.PP
+.nf
+Return a list of theme directories, beginning with this theme's,
+then the base theme's, then that one's base theme's, etc\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.theming\&.Theme\&._dirs\fC [protected]\fP"
+
+.SS "sphinx\&.theming\&.Theme\&._options\fC [protected]\fP"
+
+.SS "sphinx\&.theming\&.Theme\&._tmp_dirs\fC [protected]\fP"
+
+.SS "sphinx\&.theming\&.Theme\&.name"
+
+.SS "sphinx\&.theming\&.Theme\&.pygments_style_dark"
+
+.SS "sphinx\&.theming\&.Theme\&.pygments_style_default"
+
+.SS "sphinx\&.theming\&.Theme\&.sidebar_templates"
+
+.SS "sphinx\&.theming\&.Theme\&.stylesheets"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

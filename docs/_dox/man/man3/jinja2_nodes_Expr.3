@@ -1,0 +1,149 @@
+.TH "jinja2.nodes.Expr" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.nodes.Expr
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBjinja2\&.nodes\&.Node\fP\&.
+.PP
+Inherited by \fBjinja2\&.nodes\&.BinExpr\fP, \fBjinja2\&.nodes\&.Call\fP, \fBjinja2\&.nodes\&.Compare\fP, \fBjinja2\&.nodes\&.Concat\fP, \fBjinja2\&.nodes\&.CondExpr\fP, \fBjinja2\&.nodes\&.ContextReference\fP, \fBjinja2\&.nodes\&.DerivedContextReference\fP, \fBjinja2\&.nodes\&.EnvironmentAttribute\fP, \fBjinja2\&.nodes\&.ExtensionAttribute\fP, \fBjinja2\&.nodes\&.Getattr\fP, \fBjinja2\&.nodes\&.Getitem\fP, \fBjinja2\&.nodes\&.ImportedName\fP, \fBjinja2\&.nodes\&.InternalName\fP, \fBjinja2\&.nodes\&.Literal\fP, \fBjinja2\&.nodes\&.MarkSafe\fP, \fBjinja2\&.nodes\&.MarkSafeIfAutoescape\fP, \fBjinja2\&.nodes\&.NSRef\fP, \fBjinja2\&.nodes\&.Name\fP, \fBjinja2\&.nodes\&.Slice\fP, \fBjinja2\&.nodes\&.UnaryExpr\fP, and \fBjinja2\&.nodes\&._FilterTestCommon\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "t\&.Any \fBas_const\fP (self, t\&.Optional[\fBEvalContext\fP] eval_ctx=None)"
+.br
+.ti -1c
+.RI "bool \fBcan_assign\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBjinja2\&.nodes\&.Node\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, *t\&.Any \fBfields\fP, **t\&.Any \fBattributes\fP)"
+.br
+.ti -1c
+.RI "t\&.Iterator[t\&.Tuple[str, t\&.Any]] \fBiter_fields\fP (self, t\&.Optional[t\&.Container[str]] exclude=None, t\&.Optional[t\&.Container[str]] only=None)"
+.br
+.ti -1c
+.RI "t\&.Iterator['Node'] \fBiter_child_nodes\fP (self, t\&.Optional[t\&.Container[str]] exclude=None, t\&.Optional[t\&.Container[str]] only=None)"
+.br
+.ti -1c
+.RI "t\&.Optional[\fB_NodeBound\fP] \fBfind\fP (self, t\&.Type[\fB_NodeBound\fP] node_type)"
+.br
+.ti -1c
+.RI "t\&.Iterator[\fB_NodeBound\fP] \fBfind_all\fP (self, t\&.Union[t\&.Type[\fB_NodeBound\fP], t\&.Tuple[t\&.Type[\fB_NodeBound\fP],\&.\&.\&.]] node_type)"
+.br
+.ti -1c
+.RI "'Node' \fBset_ctx\fP (self, str ctx)"
+.br
+.ti -1c
+.RI "'Node' \fBset_lineno\fP (self, int \fBlineno\fP, bool override=False)"
+.br
+.ti -1c
+.RI "'Node' \fBset_environment\fP (self, 'Environment' \fBenvironment\fP)"
+.br
+.ti -1c
+.RI "bool \fB__eq__\fP (self, t\&.Any other)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "str \fBdump\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBjinja2\&.nodes\&.NodeType\fP
+.in +1c
+.ti -1c
+.RI "\fB__new__\fP (mcs, name, bases, d)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBabstract\fP = True"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBjinja2\&.nodes\&.Node\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBfields\fP = ()"
+.br
+.ti -1c
+.RI "tuple \fBattributes\fP = ('lineno', 'environment')"
+.br
+.ti -1c
+.RI "bool \fBabstract\fP = True"
+.br
+.ti -1c
+.RI "int \fBlineno\fP"
+.br
+.ti -1c
+.RI "t \fBenvironment\fP \&.Optional['Environment']"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBjinja2\&.nodes\&.Node\fP
+.in +1c
+.ti -1c
+.RI "\fBfields\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Baseclass for all expressions\&.
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " t\&.Any jinja2\&.nodes\&.Expr\&.as_const ( self, t\&.Optional[\fBEvalContext\fP]  eval_ctx = \fCNone\fP)"
+
+.PP
+.nf
+Return the value of the expression as constant or raise
+:exc:`Impossible` if this was not possible\&.
+
+An :class:`EvalContext` can be provided, if none is given
+a default context is created which requires the nodes to have
+an attached environment\&.
+
+\&.\&. versionchanged:: 2\&.4
+   the `eval_ctx` parameter was added\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBjinja2\&.nodes\&.BinExpr\fP, \fBjinja2\&.nodes\&.UnaryExpr\fP, \fBjinja2\&.nodes\&.Const\fP, \fBjinja2\&.nodes\&.TemplateData\fP, \fBjinja2\&.nodes\&.Tuple\fP, \fBjinja2\&.nodes\&.List\fP, \fBjinja2\&.nodes\&.Dict\fP, \fBjinja2\&.nodes\&.CondExpr\fP, \fBjinja2\&.nodes\&._FilterTestCommon\fP, \fBjinja2\&.nodes\&.Filter\fP, \fBjinja2\&.nodes\&.Getitem\fP, \fBjinja2\&.nodes\&.Getattr\fP, \fBjinja2\&.nodes\&.Slice\fP, \fBjinja2\&.nodes\&.Concat\fP, \fBjinja2\&.nodes\&.Compare\fP, \fBjinja2\&.nodes\&.And\fP, \fBjinja2\&.nodes\&.Or\fP, \fBjinja2\&.nodes\&.MarkSafe\fP, and \fBjinja2\&.nodes\&.MarkSafeIfAutoescape\fP\&.
+.SS " bool jinja2\&.nodes\&.Expr\&.can_assign ( self)"
+
+.PP
+.nf
+Check if it's possible to assign something to this node\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBjinja2\&.nodes\&.Name\fP, \fBjinja2\&.nodes\&.NSRef\fP, and \fBjinja2\&.nodes\&.Tuple\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool jinja2\&.nodes\&.Expr\&.abstract = True\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

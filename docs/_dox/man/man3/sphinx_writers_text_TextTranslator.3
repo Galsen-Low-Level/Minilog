@@ -1,0 +1,1338 @@
+.TH "sphinx.writers.text.TextTranslator" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.writers.text.TextTranslator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.util\&.docutils\&.SphinxTranslator\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, nodes\&.document document, \fBTextBuilder\fP \fBbuilder\fP)"
+.br
+.ti -1c
+.RI "None \fBadd_text\fP (self, str text)"
+.br
+.ti -1c
+.RI "None \fBnew_state\fP (self, int indent=\fBSTDINDENT\fP)"
+.br
+.ti -1c
+.RI "None \fBend_state\fP (self, bool wrap=True, Sequence[str]|None end=('',), str|None first=None)"
+.br
+.ti -1c
+.RI "None \fBvisit_document\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_document\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_section\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_section\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_topic\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_topic\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_rubric\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_rubric\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_compound\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_compound\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_glossary\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_glossary\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_title\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "str \fBget_section_number_string\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_title\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_subtitle\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_subtitle\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_attribution\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_attribution\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_desc\fP (self, \fBElement\fP node)"
+.br
+.RI "Domain-specific object descriptions\&. "
+.ti -1c
+.RI "None \fBdepart_desc\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_desc_signature\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_desc_signature\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_desc_signature_line\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_desc_signature_line\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_desc_content\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_desc_content\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_desc_inline\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_desc_inline\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_desc_name\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_desc_name\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_desc_addname\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_desc_addname\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_desc_type\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_desc_type\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_desc_returns\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_desc_returns\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_desc_parameterlist\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_desc_parameterlist\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_desc_type_parameter_list\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_desc_type_parameter_list\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_desc_parameter\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_desc_type_parameter\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_desc_optional\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_desc_optional\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_desc_annotation\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_desc_annotation\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_figure\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_figure\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_caption\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_caption\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_productionlist\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_productionlist\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_production\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_production\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_footnote\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_footnote\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_citation\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_citation\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_label\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_legend\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_legend\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_option_list\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_option_list\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_option_list_item\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_option_list_item\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_option_group\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_option_group\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_option\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_option\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_option_string\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_option_string\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_option_argument\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_option_argument\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_description\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_description\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_tabular_col_spec\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_colspec\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_tgroup\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_tgroup\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_thead\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_thead\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_tbody\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_tbody\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_row\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_row\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_entry\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_entry\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_table\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_table\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_acks\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_image\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_transition\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_bullet_list\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_bullet_list\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_enumerated_list\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_enumerated_list\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_definition_list\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_definition_list\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_list_item\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_list_item\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_definition_list_item\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_definition_list_item\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_term\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_term\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_classifier\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_classifier\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_definition\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_definition\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_field_list\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_field_list\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_field\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_field\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_field_name\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_field_name\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_field_body\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_field_body\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_centered\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_centered\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_hlist\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_hlist\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_hlistcol\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_hlistcol\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_admonition\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_admonition\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_versionmodified\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_versionmodified\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_literal_block\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_literal_block\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_doctest_block\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_doctest_block\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_line_block\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_line_block\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_line\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_line\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_block_quote\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_block_quote\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_compact_paragraph\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_compact_paragraph\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_paragraph\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_paragraph\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_target\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_index\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_toctree\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_substitution_definition\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_pending_xref\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_pending_xref\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_reference\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_reference\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_number_reference\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_download_reference\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_download_reference\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_emphasis\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_emphasis\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_literal_emphasis\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_literal_emphasis\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_strong\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_strong\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_literal_strong\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_literal_strong\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_abbreviation\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_abbreviation\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_manpage\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_manpage\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_title_reference\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_title_reference\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_literal\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_literal\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_subscript\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_subscript\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_superscript\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_superscript\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_footnote_reference\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_citation_reference\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_Text\fP (self, \fBText\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_Text\fP (self, \fBText\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_generated\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_generated\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_inline\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_inline\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_container\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_container\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_problematic\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_problematic\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_system_message\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_comment\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_meta\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_raw\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_math\fP (self, nodes\&.math node)"
+.br
+.ti -1c
+.RI "None \fBdepart_math\fP (self, nodes\&.math node)"
+.br
+.ti -1c
+.RI "None \fBvisit_math_block\fP (self, nodes\&.math_block node)"
+.br
+.ti -1c
+.RI "None \fBdepart_math_block\fP (self, nodes\&.math_block node)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.util\&.docutils\&.SphinxTranslator\fP
+.in +1c
+.ti -1c
+.RI "None \fBdispatch_visit\fP (self, \fBNode\fP node)"
+.br
+.ti -1c
+.RI "None \fBdispatch_departure\fP (self, \fBNode\fP node)"
+.br
+.ti -1c
+.RI "None \fBunknown_visit\fP (self, \fBNode\fP node)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBnl\fP"
+.br
+.ti -1c
+.RI "\fBsectionchars\fP"
+.br
+.ti -1c
+.RI "\fBadd_secnumbers\fP"
+.br
+.ti -1c
+.RI "\fBsecnumber_suffix\fP"
+.br
+.ti -1c
+.RI "\fBstateindent\fP"
+.br
+.ti -1c
+.RI "\fBsectionlevel\fP"
+.br
+.ti -1c
+.RI "\fBlineblocklevel\fP"
+.br
+.ti -1c
+.RI "\fBin_production_list\fP"
+.br
+.ti -1c
+.RI "\fBbody\fP"
+.br
+.ti -1c
+.RI "\fBstates\fP"
+.br
+.ti -1c
+.RI "\fBis_first_param\fP"
+.br
+.ti -1c
+.RI "\fBoptional_param_level\fP"
+.br
+.ti -1c
+.RI "\fBparams_left_at_level\fP"
+.br
+.ti -1c
+.RI "\fBparam_group_index\fP"
+.br
+.ti -1c
+.RI "\fBlist_is_required_param\fP"
+.br
+.ti -1c
+.RI "\fBrequired_params_left\fP"
+.br
+.ti -1c
+.RI "\fBparam_separator\fP"
+.br
+.ti -1c
+.RI "\fBmulti_line_parameter_list\fP"
+.br
+.ti -1c
+.RI "\fBtrailing_comma\fP"
+.br
+.ti -1c
+.RI "\fBmax_optional_param_level\fP"
+.br
+.ti -1c
+.RI "\fBentry\fP"
+.br
+.ti -1c
+.RI "\fBtable\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsphinx\&.util\&.docutils\&.SphinxTranslator\fP
+.in +1c
+.ti -1c
+.RI "\fBbuilder\fP"
+.br
+.ti -1c
+.RI "\fBconfig\fP"
+.br
+.ti -1c
+.RI "\fBsettings\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBTextBuilder\fP \fBbuilder\fP"
+.br
+.ti -1c
+.RI "None \fBvisit_sidebar\fP = \fBvisit_topic\fP"
+.br
+.ti -1c
+.RI "None \fBdepart_sidebar\fP = \fBdepart_topic\fP"
+.br
+.ti -1c
+.RI "None \fBvisit_attention\fP = \fB_visit_admonition\fP"
+.br
+.ti -1c
+.RI "None \fBdepart_attention\fP = \fB_depart_admonition\fP"
+.br
+.ti -1c
+.RI "None \fBvisit_caution\fP = \fB_visit_admonition\fP"
+.br
+.ti -1c
+.RI "None \fBdepart_caution\fP = \fB_depart_admonition\fP"
+.br
+.ti -1c
+.RI "None \fBvisit_danger\fP = \fB_visit_admonition\fP"
+.br
+.ti -1c
+.RI "None \fBdepart_danger\fP = \fB_depart_admonition\fP"
+.br
+.ti -1c
+.RI "None \fBvisit_error\fP = \fB_visit_admonition\fP"
+.br
+.ti -1c
+.RI "None \fBdepart_error\fP = \fB_depart_admonition\fP"
+.br
+.ti -1c
+.RI "None \fBvisit_hint\fP = \fB_visit_admonition\fP"
+.br
+.ti -1c
+.RI "None \fBdepart_hint\fP = \fB_depart_admonition\fP"
+.br
+.ti -1c
+.RI "None \fBvisit_important\fP = \fB_visit_admonition\fP"
+.br
+.ti -1c
+.RI "None \fBdepart_important\fP = \fB_depart_admonition\fP"
+.br
+.ti -1c
+.RI "None \fBvisit_note\fP = \fB_visit_admonition\fP"
+.br
+.ti -1c
+.RI "None \fBdepart_note\fP = \fB_depart_admonition\fP"
+.br
+.ti -1c
+.RI "None \fBvisit_tip\fP = \fB_visit_admonition\fP"
+.br
+.ti -1c
+.RI "None \fBdepart_tip\fP = \fB_depart_admonition\fP"
+.br
+.ti -1c
+.RI "None \fBvisit_warning\fP = \fB_visit_admonition\fP"
+.br
+.ti -1c
+.RI "None \fBdepart_warning\fP = \fB_depart_admonition\fP"
+.br
+.ti -1c
+.RI "None \fBvisit_seealso\fP = \fB_visit_admonition\fP"
+.br
+.ti -1c
+.RI "None \fBdepart_seealso\fP = \fB_depart_admonition\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB_visit_sig_parameter_list\fP (self, \fBElement\fP node, type[\fBElement\fP] parameter_group, str sig_open_paren, str sig_close_paren)"
+.br
+.ti -1c
+.RI "None \fB_depart_sig_parameter_list\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fB_visit_admonition\fP (self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fB_depart_admonition\fP (self, \fBElement\fP node)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_title_char\fP"
+.br
+.ti -1c
+.RI "\fB_footnote\fP"
+.br
+.ti -1c
+.RI "\fB_citlabel\fP"
+.br
+.ti -1c
+.RI "\fB_firstoption\fP"
+.br
+.ti -1c
+.RI "\fB_classifier_count_in_li\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBsphinx\&.util\&.docutils\&.SphinxTranslator\fP
+.in +1c
+.ti -1c
+.RI "\fB_domains\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.__init__ ( self, nodes\&.document document, \fBTextBuilder\fP builder)"
+
+.PP
+Reimplemented from \fBsphinx\&.util\&.docutils\&.SphinxTranslator\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&._depart_admonition ( self, \fBElement\fP node)\fC [protected]\fP"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&._depart_sig_parameter_list ( self, \fBElement\fP node)\fC [protected]\fP"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&._visit_admonition ( self, \fBElement\fP node)\fC [protected]\fP"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&._visit_sig_parameter_list ( self, \fBElement\fP node, type[\fBElement\fP] parameter_group, str sig_open_paren, str sig_close_paren)\fC [protected]\fP"
+
+.PP
+.nf
+Visit a signature parameters or type parameters list\&.
+
+The *parameter_group* value is the type of a child node acting as a required parameter
+or as a set of contiguous optional parameters\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.add_text ( self, str text)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_abbreviation ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_admonition ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_attribution ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_block_quote ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_bullet_list ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_caption ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_centered ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_citation ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_classifier ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_compact_paragraph ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_compound ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_container ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_definition ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_definition_list ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_definition_list_item ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_desc ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_desc_addname ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_desc_annotation ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_desc_content ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_desc_inline ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_desc_name ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_desc_optional ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_desc_parameterlist ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_desc_returns ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_desc_signature ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_desc_signature_line ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_desc_type ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_desc_type_parameter_list ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_description ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_doctest_block ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_document ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_download_reference ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_emphasis ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_entry ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_enumerated_list ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_field ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_field_body ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_field_list ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_field_name ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_figure ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_footnote ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_generated ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_glossary ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_hlist ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_hlistcol ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_inline ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_legend ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_line ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_line_block ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_list_item ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_literal ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_literal_block ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_literal_emphasis ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_literal_strong ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_manpage ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_math ( self, nodes\&.math node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_math_block ( self, nodes\&.math_block node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_option ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_option_argument ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_option_group ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_option_list ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_option_list_item ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_option_string ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_paragraph ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_pending_xref ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_problematic ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_production ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_productionlist ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_reference ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_row ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_rubric ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_section ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_strong ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_subscript ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_subtitle ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_superscript ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_table ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_tbody ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_term ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_Text ( self, \fBText\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_tgroup ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_thead ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_title ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_title_reference ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_topic ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.depart_versionmodified ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.end_state ( self, bool  wrap = \fCTrue\fP, Sequence[str] | None  end = \fC('',)\fP, str | None  first = \fCNone\fP)"
+
+.SS " str sphinx\&.writers\&.text\&.TextTranslator\&.get_section_number_string ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.new_state ( self, int  indent = \fC\fBSTDINDENT\fP\fP)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_abbreviation ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_acks ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_admonition ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_attribution ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_block_quote ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_bullet_list ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_caption ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_centered ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_citation ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_citation_reference ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_classifier ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_colspec ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_comment ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_compact_paragraph ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_compound ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_container ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_definition ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_definition_list ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_definition_list_item ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_desc ( self, \fBElement\fP node)"
+
+.PP
+Domain-specific object descriptions\&. 
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_desc_addname ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_desc_annotation ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_desc_content ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_desc_inline ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_desc_name ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_desc_optional ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_desc_parameter ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_desc_parameterlist ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_desc_returns ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_desc_signature ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_desc_signature_line ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_desc_type ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_desc_type_parameter ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_desc_type_parameter_list ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_description ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_doctest_block ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_document ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_download_reference ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_emphasis ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_entry ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_enumerated_list ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_field ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_field_body ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_field_list ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_field_name ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_figure ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_footnote ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_footnote_reference ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_generated ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_glossary ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_hlist ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_hlistcol ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_image ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_index ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_inline ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_label ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_legend ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_line ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_line_block ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_list_item ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_literal ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_literal_block ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_literal_emphasis ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_literal_strong ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_manpage ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_math ( self, nodes\&.math node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_math_block ( self, nodes\&.math_block node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_meta ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_number_reference ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_option ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_option_argument ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_option_group ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_option_list ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_option_list_item ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_option_string ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_paragraph ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_pending_xref ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_problematic ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_production ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_productionlist ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_raw ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_reference ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_row ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_rubric ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_section ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_strong ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_subscript ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_substitution_definition ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_subtitle ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_superscript ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_system_message ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_table ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_tabular_col_spec ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_target ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_tbody ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_term ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_Text ( self, \fBText\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_tgroup ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_thead ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_title ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_title_reference ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_toctree ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_topic ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_transition ( self, \fBElement\fP node)"
+
+.SS " None sphinx\&.writers\&.text\&.TextTranslator\&.visit_versionmodified ( self, \fBElement\fP node)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&._citlabel\fC [protected]\fP"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&._classifier_count_in_li\fC [protected]\fP"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&._firstoption\fC [protected]\fP"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&._footnote\fC [protected]\fP"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&._title_char\fC [protected]\fP"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.add_secnumbers"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.body"
+
+.SS "\fBTextBuilder\fP sphinx\&.writers\&.text\&.TextTranslator\&.builder\fC [static]\fP"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.depart_attention = \fB_depart_admonition\fP\fC [static]\fP"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.depart_caution = \fB_depart_admonition\fP\fC [static]\fP"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.depart_danger = \fB_depart_admonition\fP\fC [static]\fP"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.depart_error = \fB_depart_admonition\fP\fC [static]\fP"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.depart_hint = \fB_depart_admonition\fP\fC [static]\fP"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.depart_important = \fB_depart_admonition\fP\fC [static]\fP"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.depart_note = \fB_depart_admonition\fP\fC [static]\fP"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.depart_seealso = \fB_depart_admonition\fP\fC [static]\fP"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.depart_sidebar = \fBdepart_topic\fP\fC [static]\fP"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.depart_tip = \fB_depart_admonition\fP\fC [static]\fP"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.depart_warning = \fB_depart_admonition\fP\fC [static]\fP"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.entry"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.in_production_list"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.is_first_param"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.lineblocklevel"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.list_is_required_param"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.max_optional_param_level"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.multi_line_parameter_list"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.nl"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.optional_param_level"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.param_group_index"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.param_separator"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.params_left_at_level"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.required_params_left"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.secnumber_suffix"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.sectionchars"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.sectionlevel"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.stateindent"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.states"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.table"
+
+.SS "sphinx\&.writers\&.text\&.TextTranslator\&.trailing_comma"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.visit_attention = \fB_visit_admonition\fP\fC [static]\fP"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.visit_caution = \fB_visit_admonition\fP\fC [static]\fP"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.visit_danger = \fB_visit_admonition\fP\fC [static]\fP"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.visit_error = \fB_visit_admonition\fP\fC [static]\fP"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.visit_hint = \fB_visit_admonition\fP\fC [static]\fP"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.visit_important = \fB_visit_admonition\fP\fC [static]\fP"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.visit_note = \fB_visit_admonition\fP\fC [static]\fP"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.visit_seealso = \fB_visit_admonition\fP\fC [static]\fP"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.visit_sidebar = \fBvisit_topic\fP\fC [static]\fP"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.visit_tip = \fB_visit_admonition\fP\fC [static]\fP"
+
+.SS "None sphinx\&.writers\&.text\&.TextTranslator\&.visit_warning = \fB_visit_admonition\fP\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

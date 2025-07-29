@@ -1,0 +1,301 @@
+.TH "bs4.builder._htmlparser.BeautifulSoupHTMLParser" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bs4.builder._htmlparser.BeautifulSoupHTMLParser
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits HTMLParser, and \fBbs4\&.builder\&.DetectsXMLParsedAsHTML\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBBeautifulSoup\fP \fBsoup\fP, *Any args, Union[str, \fB_DuplicateAttributeHandler\fP] \fBon_duplicate_attribute\fP=\fBREPLACE\fP, **Any kwargs)"
+.br
+.ti -1c
+.RI "None \fBerror\fP (self, str message)"
+.br
+.ti -1c
+.RI "None \fBhandle_startendtag\fP (self, str name, List[Tuple[str, Optional[str]]] attrs)"
+.br
+.ti -1c
+.RI "None \fBhandle_starttag\fP (self, str name, List[Tuple[str, Optional[str]]] attrs, bool handle_empty_element=True)"
+.br
+.ti -1c
+.RI "None \fBhandle_endtag\fP (self, str name, bool check_already_closed=True)"
+.br
+.ti -1c
+.RI "None \fBhandle_data\fP (self, str data)"
+.br
+.ti -1c
+.RI "None \fBhandle_charref\fP (self, str name)"
+.br
+.ti -1c
+.RI "None \fBhandle_entityref\fP (self, str name)"
+.br
+.ti -1c
+.RI "None \fBhandle_comment\fP (self, str data)"
+.br
+.ti -1c
+.RI "None \fBhandle_decl\fP (self, str data)"
+.br
+.ti -1c
+.RI "None \fBunknown_decl\fP (self, str data)"
+.br
+.ti -1c
+.RI "None \fBhandle_pi\fP (self, str data)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBbs4\&.builder\&.DetectsXMLParsedAsHTML\fP
+.in +1c
+.ti -1c
+.RI "bool \fBwarn_if_markup_looks_like_xml\fP (cls, Optional[_RawMarkup] markup, int stacklevel=3)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsoup\fP"
+.br
+.ti -1c
+.RI "\fBon_duplicate_attribute\fP"
+.br
+.ti -1c
+.RI "\fBattribute_dict_class\fP"
+.br
+.ti -1c
+.RI "\fBalready_closed_empty_element\fP"
+.br
+.ti -1c
+.RI "\fBREPLACE\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBREPLACE\fP = 'replace'"
+.br
+.ti -1c
+.RI "str \fBIGNORE\fP = 'ignore'"
+.br
+.ti -1c
+.RI "Union \fBon_duplicate_attribute\fP [str, \fB_DuplicateAttributeHandler\fP]"
+.br
+.ti -1c
+.RI "List \fBalready_closed_empty_element\fP [str]"
+.br
+.ti -1c
+.RI "\fBBeautifulSoup\fP \fBsoup\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBbs4\&.builder\&.DetectsXMLParsedAsHTML\fP
+.in +1c
+.ti -1c
+.RI "Pattern \fBLOOKS_LIKE_HTML\fP = re\&.compile('<[^ +]html', re\&.I)"
+.br
+.ti -1c
+.RI "Pattern \fBLOOKS_LIKE_HTML_B\fP = re\&.compile(b'<[^ +]html', re\&.I)"
+.br
+.ti -1c
+.RI "str \fBXML_PREFIX\fP = '<?xml'"
+.br
+.ti -1c
+.RI "bytes \fBXML_PREFIX_B\fP = b'<?xml'"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Member Functions inherited from \fBbs4\&.builder\&.DetectsXMLParsedAsHTML\fP
+.in +1c
+.ti -1c
+.RI "None \fB_warn\fP (cls, int stacklevel=5)"
+.br
+.ti -1c
+.RI "None \fB_initialize_xml_detector\fP (self)"
+.br
+.ti -1c
+.RI "None \fB_document_might_be_xml\fP (self, str processing_instruction)"
+.br
+.ti -1c
+.RI "None \fB_root_tag_encountered\fP (self, str name)"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBbs4\&.builder\&.DetectsXMLParsedAsHTML\fP
+.in +1c
+.ti -1c
+.RI "\fB_first_processing_instruction\fP"
+.br
+.ti -1c
+.RI "\fB_root_tag_name\fP"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBbs4\&.builder\&.DetectsXMLParsedAsHTML\fP
+.in +1c
+.ti -1c
+.RI "Optional \fB_first_processing_instruction\fP [str]"
+.br
+.ti -1c
+.RI "Optional \fB_root_tag_name\fP [str]"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.__init__ ( self, \fBBeautifulSoup\fP soup, *Any args, Union[str, \fB_DuplicateAttributeHandler\fP]  on_duplicate_attribute = \fC\fBREPLACE\fP\fP, **Any kwargs)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " None bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.error ( self, str message)"
+
+.SS " None bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.handle_charref ( self, str name)"
+
+.PP
+.nf
+Handle a numeric character reference by converting it to the
+corresponding Unicode character and treating it as textual
+data\&.
+
+:param name: Character number, possibly in hexadecimal\&.
+
+.fi
+.PP
+ 
+.SS " None bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.handle_comment ( self, str data)"
+
+.PP
+.nf
+Handle an HTML comment\&.
+
+:param data: The text of the comment\&.
+
+.fi
+.PP
+ 
+.SS " None bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.handle_data ( self, str data)"
+
+.PP
+.nf
+Handle some textual data that shows up between tags\&.
+.fi
+.PP
+ 
+.SS " None bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.handle_decl ( self, str data)"
+
+.PP
+.nf
+Handle a DOCTYPE declaration\&.
+
+:param data: The text of the declaration\&.
+
+.fi
+.PP
+ 
+.SS " None bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.handle_endtag ( self, str name, bool  check_already_closed = \fCTrue\fP)"
+
+.PP
+.nf
+Handle a closing tag, e\&.g\&. '</tag>'
+
+:param name: A tag name\&.
+:param check_already_closed: True if this tag is expected to
+   be the closing portion of an empty-element tag,
+   e\&.g\&. '<tag></tag>'\&.
+
+.fi
+.PP
+ 
+.SS " None bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.handle_entityref ( self, str name)"
+
+.PP
+.nf
+Handle a named entity reference by converting it to the
+corresponding Unicode character(s) and treating it as textual
+data\&.
+
+:param name: Name of the entity reference\&.
+
+.fi
+.PP
+ 
+.SS " None bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.handle_pi ( self, str data)"
+
+.PP
+.nf
+Handle a processing instruction\&.
+
+:param data: The text of the instruction\&.
+
+.fi
+.PP
+ 
+.SS " None bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.handle_startendtag ( self, str name, List[Tuple[str, Optional[str]]]
+     attrs)"
+
+.PP
+.nf
+Handle an incoming empty-element tag\&.
+
+html\&.parser only calls this method when the markup looks like
+<tag/>\&.
+
+.fi
+.PP
+ 
+.SS " None bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.handle_starttag ( self, str name, List[Tuple[str, Optional[str]]] attrs, bool  handle_empty_element = \fCTrue\fP)"
+
+.PP
+.nf
+Handle an opening tag, e\&.g\&. '<tag>'
+
+:param handle_empty_element: True if this tag is known to be
+    an empty-element tag (i\&.e\&. there is not expected to be any
+    closing tag)\&.
+
+.fi
+.PP
+ 
+.SS " None bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.unknown_decl ( self, str data)"
+
+.PP
+.nf
+Handle a declaration of unknown type -- probably a CDATA block\&.
+
+:param data: The text of the declaration\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.already_closed_empty_element"
+
+.SS "List bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.already_closed_empty_element [str]\fC [static]\fP"
+
+.SS "bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.attribute_dict_class"
+
+.SS "str bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.IGNORE = 'ignore'\fC [static]\fP"
+
+.SS "bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.on_duplicate_attribute"
+
+.SS "Union bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.on_duplicate_attribute [str, \fB_DuplicateAttributeHandler\fP]\fC [static]\fP"
+
+.SS "str bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.REPLACE = 'replace'\fC [static]\fP"
+
+.SS "bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.REPLACE"
+
+.SS "bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.soup"
+
+.SS "\fBBeautifulSoup\fP bs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\&.soup\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,93 @@
+.TH "sphinx.writers.texinfo" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.writers.texinfo
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBTexinfoTranslator\fP"
+.br
+.ti -1c
+.RI "class \fBTexinfoWriter\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "list[nodes\&.section] \fBfind_subsections\fP (\fBElement\fP section)"
+.br
+.ti -1c
+.RI "str \fBsmart_capwords\fP (str s, str|None sep=None)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "str \fBCOPYING\fP"
+.br
+.ti -1c
+.RI "str \fBTEMPLATE\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Custom docutils writer for Texinfo\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " list[nodes\&.section] sphinx\&.writers\&.texinfo\&.find_subsections (\fBElement\fP section)"
+
+.PP
+.nf
+Return a list of subsections for the given ``section``\&.
+.fi
+.PP
+ 
+.SS " str sphinx\&.writers\&.texinfo\&.smart_capwords (str s, str | None  sep = \fCNone\fP)"
+
+.PP
+.nf
+Like string\&.capwords() but does not capitalize words that already
+contain a capital letter\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "str sphinx\&.writers\&.texinfo\&.COPYING"
+\fBInitial value:\fP.PP
+.nf
+1 =  """\\
+2 @quotation
+3 %(project)s %(release)s, %(date)s
+4 
+5 %(author)s
+6 
+7 Copyright @copyright{} %(copyright)s
+8 @end quotation
+9 """
+.fi
+
+.SS "sphinx\&.writers\&.texinfo\&.logger = logging\&.getLogger(__name__)"
+
+.SS "str sphinx\&.writers\&.texinfo\&.TEMPLATE"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

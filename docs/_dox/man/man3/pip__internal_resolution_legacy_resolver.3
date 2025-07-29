@@ -1,0 +1,80 @@
+.TH "pip._internal.resolution.legacy.resolver" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.resolution.legacy.resolver
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBResolver\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB_check_dist_requires_python\fP (\fBBaseDistribution\fP dist, Tuple[int, int, int] version_info, bool ignore_requires_python=False)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "\fBDiscoveredDependencies\fP = DefaultDict[Optional[str], List[\fBInstallRequirement\fP]]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Dependency Resolution
+
+The dependency resolution in pip is performed as follows:
+
+for top-level requirements:
+    a\&. only one spec allowed per project, regardless of conflicts or not\&.
+       otherwise a 'double requirement' exception is raised
+    b\&. they override sub-dependency requirements\&.
+for sub-dependencies
+    a\&. 'first found, wins' (where the order is breadth first)
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " None pip\&._internal\&.resolution\&.legacy\&.resolver\&._check_dist_requires_python (\fBBaseDistribution\fP dist, Tuple[int, int, int] version_info, bool  ignore_requires_python = \fCFalse\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Check whether the given Python version is compatible with a distribution's
+'Requires-Python' value\&.
+
+:param version_info: A 3-tuple of ints representing the Python
+    major-minor-micro version to check\&.
+:param ignore_requires_python: Whether to ignore the 'Requires-Python'
+    value if the given Python version isn't compatible\&.
+
+:raises UnsupportedPythonVersion: When the given Python version isn't
+    compatible\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._internal\&.resolution\&.legacy\&.resolver\&.DiscoveredDependencies = DefaultDict[Optional[str], List[\fBInstallRequirement\fP]]"
+
+.SS "pip\&._internal\&.resolution\&.legacy\&.resolver\&.logger = logging\&.getLogger(__name__)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

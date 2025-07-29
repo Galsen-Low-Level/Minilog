@@ -1,0 +1,246 @@
+.TH "pip._vendor.urllib3.contrib.securetransport.WrappedSocket" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.urllib3.contrib.securetransport.WrappedSocket
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBsocket\fP)"
+.br
+.ti -1c
+.RI "\fBhandshake\fP (self, server_hostname, verify, trust_bundle, min_version, max_version, client_cert, client_key, client_key_passphrase, alpn_protocols)"
+.br
+.ti -1c
+.RI "\fBfileno\fP (self)"
+.br
+.ti -1c
+.RI "\fBrecv\fP (self, bufsiz)"
+.br
+.ti -1c
+.RI "\fBrecv_into\fP (self, buffer, nbytes=None)"
+.br
+.ti -1c
+.RI "\fBsettimeout\fP (self, timeout)"
+.br
+.ti -1c
+.RI "\fBgettimeout\fP (self)"
+.br
+.ti -1c
+.RI "\fBsend\fP (self, data)"
+.br
+.ti -1c
+.RI "\fBsendall\fP (self, data)"
+.br
+.ti -1c
+.RI "\fBshutdown\fP (self)"
+.br
+.ti -1c
+.RI "\fBclose\fP (self)"
+.br
+.ti -1c
+.RI "\fBgetpeercert\fP (self, binary_form=False)"
+.br
+.ti -1c
+.RI "\fBversion\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsocket\fP"
+.br
+.ti -1c
+.RI "\fBcontext\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_raise_on_error\fP (self)"
+.br
+.ti -1c
+.RI "\fB_set_ciphers\fP (self)"
+.br
+.ti -1c
+.RI "\fB_set_alpn_protocols\fP (self, protocols)"
+.br
+.ti -1c
+.RI "\fB_custom_validate\fP (self, verify, trust_bundle)"
+.br
+.ti -1c
+.RI "\fB_evaluate_trust\fP (self, trust_bundle)"
+.br
+.ti -1c
+.RI "\fB_decref_socketios\fP (self)"
+.br
+.ti -1c
+.RI "\fB_reuse\fP (self)"
+.br
+.ti -1c
+.RI "\fB_drop\fP (self)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_makefile_refs\fP"
+.br
+.ti -1c
+.RI "\fB_closed\fP"
+.br
+.ti -1c
+.RI "\fB_exception\fP"
+.br
+.ti -1c
+.RI "\fB_keychain\fP"
+.br
+.ti -1c
+.RI "\fB_keychain_dir\fP"
+.br
+.ti -1c
+.RI "\fB_client_cert_chain\fP"
+.br
+.ti -1c
+.RI "\fB_timeout\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+API-compatibility wrapper for Python's OpenSSL wrapped socket object\&.
+
+Note: _makefile_refs, _drop(), and _reuse() are needed for the garbage
+collector of PyPy\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&.__init__ ( self,  socket)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&._custom_validate ( self,  verify,  trust_bundle)\fC [protected]\fP"
+
+.PP
+.nf
+Called when we have set custom validation\&. We do this in two cases:
+first, when cert validation is entirely disabled; and second, when
+using a custom trust DB\&.
+Raises an SSLError if the connection is not trusted\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&._decref_socketios ( self)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&._drop ( self)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&._evaluate_trust ( self,  trust_bundle)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&._raise_on_error ( self)\fC [protected]\fP"
+
+.PP
+.nf
+A context manager that can be used to wrap calls that do I/O from
+SecureTransport\&. If any of the I/O callbacks hit an exception, this
+context manager will correctly propagate the exception after the fact\&.
+This avoids silently swallowing those exceptions\&.
+
+It also correctly forces the socket closed\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&._reuse ( self)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&._set_alpn_protocols ( self,  protocols)\fC [protected]\fP"
+
+.PP
+.nf
+Sets up the ALPN protocols on the context\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&._set_ciphers ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Sets up the allowed ciphers\&. By default this matches the set in
+util\&.ssl_\&.DEFAULT_CIPHERS, at least as supported by macOS\&. This is done
+custom and doesn't allow changing at this time, mostly because parsing
+OpenSSL cipher strings is going to be a freaking nightmare\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&.close ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&.fileno ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&.getpeercert ( self,  binary_form = \fCFalse\fP)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&.gettimeout ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&.handshake ( self,  server_hostname,  verify,  trust_bundle,  min_version,  max_version,  client_cert,  client_key,  client_key_passphrase,  alpn_protocols)"
+
+.PP
+.nf
+Actually performs the TLS handshake\&. This is run automatically by
+wrapped socket, and shouldn't be needed in user code\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&.recv ( self,  bufsiz)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&.recv_into ( self,  buffer,  nbytes = \fCNone\fP)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&.send ( self,  data)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&.sendall ( self,  data)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&.settimeout ( self,  timeout)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&.shutdown ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&.version ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&._client_cert_chain\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&._closed\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&._exception\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&._keychain\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&._keychain_dir\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&._makefile_refs\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&._timeout\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&.context"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.WrappedSocket\&.socket"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

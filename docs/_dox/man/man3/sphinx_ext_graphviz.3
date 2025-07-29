@@ -1,0 +1,144 @@
+.TH "sphinx.ext.graphviz" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.ext.graphviz
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBClickableMapDefinition\fP"
+.br
+.ti -1c
+.RI "class \fBgraphviz\fP"
+.br
+.ti -1c
+.RI "class \fBGraphviz\fP"
+.br
+.ti -1c
+.RI "class \fBGraphvizError\fP"
+.br
+.ti -1c
+.RI "class \fBGraphvizSimple\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "nodes\&.figure \fBfigure_wrapper\fP (\fBSphinxDirective\fP directive, \fBgraphviz\fP node, str caption)"
+.br
+.ti -1c
+.RI "str \fBalign_spec\fP (Any argument)"
+.br
+.ti -1c
+.RI "None \fBfix_svg_relative_paths\fP (\fBHTML5Translator\fP|\fBLaTeXTranslator\fP|\fBTexinfoTranslator\fP self, str|os\&.PathLike[str] filepath)"
+.br
+.ti -1c
+.RI "tuple[\fB_StrPath\fP|None, \fB_StrPath\fP|None] \fBrender_dot\fP (\fBHTML5Translator\fP|\fBLaTeXTranslator\fP|\fBTexinfoTranslator\fP self, str code, dict[str, Any] options, str format, str prefix='\fBgraphviz\fP', str|None filename=None)"
+.br
+.ti -1c
+.RI "tuple[str, str] \fBrender_dot_html\fP (\fBHTML5Translator\fP self, \fBgraphviz\fP node, str code, dict[str, Any] options, str prefix='\fBgraphviz\fP', str|None imgcls=None, str|None alt=None, str|None filename=None)"
+.br
+.ti -1c
+.RI "None \fBhtml_visit_graphviz\fP (\fBHTML5Translator\fP self, \fBgraphviz\fP node)"
+.br
+.ti -1c
+.RI "None \fBrender_dot_latex\fP (\fBLaTeXTranslator\fP self, \fBgraphviz\fP node, str code, dict[str, Any] options, str prefix='\fBgraphviz\fP', str|None filename=None)"
+.br
+.ti -1c
+.RI "None \fBlatex_visit_graphviz\fP (\fBLaTeXTranslator\fP self, \fBgraphviz\fP node)"
+.br
+.ti -1c
+.RI "None \fBrender_dot_texinfo\fP (\fBTexinfoTranslator\fP self, \fBgraphviz\fP node, str code, dict[str, Any] options, str prefix='\fBgraphviz\fP')"
+.br
+.ti -1c
+.RI "None \fBtexinfo_visit_graphviz\fP (\fBTexinfoTranslator\fP self, \fBgraphviz\fP node)"
+.br
+.ti -1c
+.RI "None \fBtext_visit_graphviz\fP (\fBTextTranslator\fP self, \fBgraphviz\fP node)"
+.br
+.ti -1c
+.RI "None \fBman_visit_graphviz\fP (\fBManualPageTranslator\fP self, \fBgraphviz\fP node)"
+.br
+.ti -1c
+.RI "None \fBon_config_inited\fP (\fBSphinx\fP _app, \fBConfig\fP config)"
+.br
+.ti -1c
+.RI "\fBExtensionMetadata\fP \fBsetup\fP (\fBSphinx\fP app)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "\fBbuilder\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Allow graphviz-formatted graphs to be included inline in generated documents\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " str sphinx\&.ext\&.graphviz\&.align_spec (Any argument)"
+
+.SS " nodes\&.figure sphinx\&.ext\&.graphviz\&.figure_wrapper (\fBSphinxDirective\fP directive, \fBgraphviz\fP node, str
+ caption)"
+
+.SS " None sphinx\&.ext\&.graphviz\&.fix_svg_relative_paths (\fBHTML5Translator\fP | \fBLaTeXTranslator\fP | \fBTexinfoTranslator\fP self, str | os\&.PathLike[str] filepath)"
+
+.PP
+.nf
+Change relative links in generated svg files to be relative to imgpath\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.ext\&.graphviz\&.html_visit_graphviz (\fBHTML5Translator\fP self, \fBgraphviz\fP node)"
+
+.SS " None sphinx\&.ext\&.graphviz\&.latex_visit_graphviz (\fBLaTeXTranslator\fP self, \fBgraphviz\fP node)"
+
+.SS " None sphinx\&.ext\&.graphviz\&.man_visit_graphviz (\fBManualPageTranslator\fP self, \fBgraphviz\fP node)"
+
+.SS " None sphinx\&.ext\&.graphviz\&.on_config_inited (\fBSphinx\fP _app, \fBConfig\fP config)"
+
+.SS " tuple[\fB_StrPath\fP | None, \fB_StrPath\fP | None] sphinx\&.ext\&.graphviz\&.render_dot (\fBHTML5Translator\fP | \fBLaTeXTranslator\fP | \fBTexinfoTranslator\fP self, str code, dict[str, Any] options, str format, str  prefix = \fC'\fBgraphviz\fP'\fP, str | None  filename = \fCNone\fP)"
+
+.PP
+.nf
+Render graphviz code into a PNG or PDF output file\&.
+.fi
+.PP
+ 
+.SS " tuple[str, str] sphinx\&.ext\&.graphviz\&.render_dot_html (\fBHTML5Translator\fP self, \fBgraphviz\fP node, str code, dict[str, Any] options, str  prefix = \fC'\fBgraphviz\fP'\fP, str | None  imgcls = \fCNone\fP, str | None  alt = \fCNone\fP, str | None  filename = \fCNone\fP)"
+
+.SS " None sphinx\&.ext\&.graphviz\&.render_dot_latex (\fBLaTeXTranslator\fP self, \fBgraphviz\fP node, str code, dict[str, Any] options, str  prefix = \fC'\fBgraphviz\fP'\fP, str | None  filename = \fCNone\fP)"
+
+.SS " None sphinx\&.ext\&.graphviz\&.render_dot_texinfo (\fBTexinfoTranslator\fP self, \fBgraphviz\fP node, str code, dict[str, Any] options, str  prefix = \fC'\fBgraphviz\fP'\fP)"
+
+.SS " \fBExtensionMetadata\fP sphinx\&.ext\&.graphviz\&.setup (\fBSphinx\fP app)"
+
+.SS " None sphinx\&.ext\&.graphviz\&.texinfo_visit_graphviz (\fBTexinfoTranslator\fP self, \fBgraphviz\fP node)"
+
+.SS " None sphinx\&.ext\&.graphviz\&.text_visit_graphviz (\fBTextTranslator\fP self, \fBgraphviz\fP node)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "sphinx\&.ext\&.graphviz\&.builder"
+
+.SS "sphinx\&.ext\&.graphviz\&.logger = logging\&.getLogger(__name__)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

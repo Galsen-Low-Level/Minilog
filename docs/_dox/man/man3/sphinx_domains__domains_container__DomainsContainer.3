@@ -1,0 +1,272 @@
+.TH "sphinx.domains._domains_container._DomainsContainer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.domains._domains_container._DomainsContainer
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, *\fBCDomain\fP c, \fBCPPDomain\fP cpp, \fBJavaScriptDomain\fP js, \fBPythonDomain\fP py, \fBReSTDomain\fP rst, \fBStandardDomain\fP std, \fBChangeSetDomain\fP changeset, \fBCitationDomain\fP citation, \fBIndexDomain\fP index, \fBMathDomain\fP math, **\fBDomain\fP domains)"
+.br
+.ti -1c
+.RI "bool \fB__contains__\fP (self, str key)"
+.br
+.ti -1c
+.RI "bool \fB__eq__\fP (self, object other)"
+.br
+.ti -1c
+.RI "int \fB__hash__\fP (self)"
+.br
+.ti -1c
+.RI "None \fB__setattr__\fP (self, str key, object value)"
+.br
+.ti -1c
+.RI "None \fB__delattr__\fP (self, str key)"
+.br
+.ti -1c
+.RI "\fBCDomain\fP \fB__getitem__\fP (self, Literal['c'] key)"
+.br
+.ti -1c
+.RI "\fBCPPDomain\fP \fB__getitem__\fP (self, Literal['cpp'] key)"
+.br
+.ti -1c
+.RI "\fBChangeSetDomain\fP \fB__getitem__\fP (self, Literal['changeset'] key)"
+.br
+.ti -1c
+.RI "\fBCitationDomain\fP \fB__getitem__\fP (self, Literal['citation'] key)"
+.br
+.ti -1c
+.RI "\fBIndexDomain\fP \fB__getitem__\fP (self, Literal['index'] key)"
+.br
+.ti -1c
+.RI "\fBJavaScriptDomain\fP \fB__getitem__\fP (self, Literal['js'] key)"
+.br
+.ti -1c
+.RI "\fBMathDomain\fP \fB__getitem__\fP (self, Literal['math'] key)"
+.br
+.ti -1c
+.RI "\fBPythonDomain\fP \fB__getitem__\fP (self, Literal['py'] key)"
+.br
+.ti -1c
+.RI "\fBReSTDomain\fP \fB__getitem__\fP (self, Literal['rst'] key)"
+.br
+.ti -1c
+.RI "\fBStandardDomain\fP \fB__getitem__\fP (self, Literal['std'] key)"
+.br
+.ti -1c
+.RI "\fBDurationDomain\fP \fB__getitem__\fP (self, Literal['duration'] key)"
+.br
+.ti -1c
+.RI "\fBTodoDomain\fP \fB__getitem__\fP (self, Literal['todo'] key)"
+.br
+.ti -1c
+.RI "\fBDomain\fP \fB__getitem__\fP (self, str key)"
+.br
+.ti -1c
+.RI "\fBDomain\fP \fB__getitem__\fP (self, str key)"
+.br
+.ti -1c
+.RI "NoReturn \fB__setitem__\fP (self, str key, \fBDomain\fP value)"
+.br
+.ti -1c
+.RI "NoReturn \fB__delitem__\fP (self, str key)"
+.br
+.ti -1c
+.RI "Iterator[str] \fB__iter__\fP (self)"
+.br
+.ti -1c
+.RI "int \fB__len__\fP (self)"
+.br
+.ti -1c
+.RI "\fBDomain\fP|None \fBget\fP (self, str key, \fBDomain\fP|None default=None)"
+.br
+.ti -1c
+.RI "Iterable[str] \fBkeys\fP (self)"
+.br
+.ti -1c
+.RI "Iterable[tuple[str, \fBDomain\fP]] \fBitems\fP (self)"
+.br
+.ti -1c
+.RI "Iterable[\fBDomain\fP] \fBvalues\fP (self)"
+.br
+.ti -1c
+.RI "Iterable[\fBDomain\fP] \fBsorted\fP (self)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Self \fB_from_environment\fP (cls, \fBBuildEnvironment\fP env, *\fBSphinxComponentRegistry\fP registry)"
+.br
+.ti -1c
+.RI "Self \fB_from_environment_default\fP (cls, *\fBBuildEnvironment\fP env)"
+.br
+.ti -1c
+.RI "None \fB_setup\fP (self)"
+.br
+.ti -1c
+.RI "None \fB_process_doc\fP (self, \fBBuildEnvironment\fP env, str docname, nodes\&.document document)"
+.br
+.ti -1c
+.RI "None \fB_clear_doc\fP (self, str docname)"
+.br
+.ti -1c
+.RI "None \fB_merge_domain_data\fP (self, Set[str] docnames, dict[str, Any] domain_data)"
+.br
+.ti -1c
+.RI "None \fB_check_consistency\fP (self)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_domain_instances\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "Final \fB_core_domains\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Container for domain instances\&.
+
+This class is private, including its name, constructor, and all methods\&.
+Any or all of these will change without notice or warning in any release\&.
+
+The public interface is restricted to:
+
+* the``domains\&.['<domain-name>']`` mapping interface
+* the ``domains\&.<core-domain-name>`` attributes for core domains\&.
+* the `\&.get()``, ``\&.keys()``, ``\&.items()``, and ``\&.values()`` methods\&.
+
+Additionally, this class supports ``iter`` and ``len``,
+and provides membership testing via the ``in`` operator\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__init__ ( self, *\fBCDomain\fP c, \fBCPPDomain\fP cpp, \fBJavaScriptDomain\fP js, \fBPythonDomain\fP py, \fBReSTDomain\fP rst, \fBStandardDomain\fP std, \fBChangeSetDomain\fP changeset, \fBCitationDomain\fP citation, \fBIndexDomain\fP index, \fBMathDomain\fP math, **\fBDomain\fP domains)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " bool sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__contains__ ( self, str key)"
+
+.SS " None sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__delattr__ ( self, str key)"
+
+.SS " NoReturn sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__delitem__ ( self, str key)"
+
+.SS " bool sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__eq__ ( self, object other)"
+
+.SS " \fBCDomain\fP sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__getitem__ ( self, Literal['c'] key)"
+
+.SS " \fBChangeSetDomain\fP sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__getitem__ ( self, Literal['changeset'] key)"
+
+.SS " \fBCitationDomain\fP sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__getitem__ ( self, Literal['citation'] key)"
+
+.SS " \fBCPPDomain\fP sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__getitem__ ( self, Literal['cpp'] key)"
+
+.SS " \fBDurationDomain\fP sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__getitem__ ( self, Literal['duration'] key)"
+
+.SS " \fBIndexDomain\fP sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__getitem__ ( self, Literal['index'] key)"
+
+.SS " \fBJavaScriptDomain\fP sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__getitem__ ( self, Literal['js'] key)"
+
+.SS " \fBMathDomain\fP sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__getitem__ ( self, Literal['math'] key)"
+
+.SS " \fBPythonDomain\fP sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__getitem__ ( self, Literal['py'] key)"
+
+.SS " \fBReSTDomain\fP sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__getitem__ ( self, Literal['rst'] key)"
+
+.SS " \fBStandardDomain\fP sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__getitem__ ( self, Literal['std'] key)"
+
+.SS " \fBTodoDomain\fP sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__getitem__ ( self, Literal['todo'] key)"
+
+.SS " \fBDomain\fP sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__getitem__ ( self, str key)"
+
+.SS " \fBDomain\fP sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__getitem__ ( self, str key)"
+
+.SS " int sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__hash__ ( self)"
+
+.SS " Iterator[str] sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__iter__ ( self)"
+
+.SS " int sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__len__ ( self)"
+
+.SS " None sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__setattr__ ( self, str key, object value)"
+
+.SS " NoReturn sphinx\&.domains\&._domains_container\&._DomainsContainer\&.__setitem__ ( self, str key, \fBDomain\fP value)"
+
+.SS " None sphinx\&.domains\&._domains_container\&._DomainsContainer\&._check_consistency ( self)\fC [protected]\fP"
+
+.SS " None sphinx\&.domains\&._domains_container\&._DomainsContainer\&._clear_doc ( self, str docname)\fC [protected]\fP"
+
+.SS " Self sphinx\&.domains\&._domains_container\&._DomainsContainer\&._from_environment ( cls, \fBBuildEnvironment\fP env, *\fBSphinxComponentRegistry\fP
+     registry)\fC [protected]\fP"
+
+.SS " Self sphinx\&.domains\&._domains_container\&._DomainsContainer\&._from_environment_default ( cls, *\fBBuildEnvironment\fP env)\fC [protected]\fP"
+
+.PP
+.nf
+Return a default instance with every domain we require\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.domains\&._domains_container\&._DomainsContainer\&._merge_domain_data ( self, Set[str] docnames, dict[str, Any]
+     domain_data)\fC [protected]\fP"
+
+.SS " None sphinx\&.domains\&._domains_container\&._DomainsContainer\&._process_doc ( self, \fBBuildEnvironment\fP env, str docname, nodes\&.document
+     document)\fC [protected]\fP"
+
+.SS " None sphinx\&.domains\&._domains_container\&._DomainsContainer\&._setup ( self)\fC [protected]\fP"
+
+.SS " \fBDomain\fP | None sphinx\&.domains\&._domains_container\&._DomainsContainer\&.get ( self, str key, \fBDomain\fP | None  default = \fCNone\fP)"
+
+.SS " Iterable[tuple[str, \fBDomain\fP]] sphinx\&.domains\&._domains_container\&._DomainsContainer\&.items ( self)"
+
+.SS " Iterable[str] sphinx\&.domains\&._domains_container\&._DomainsContainer\&.keys ( self)"
+
+.SS " Iterable[\fBDomain\fP] sphinx\&.domains\&._domains_container\&._DomainsContainer\&.sorted ( self)"
+
+.SS " Iterable[\fBDomain\fP] sphinx\&.domains\&._domains_container\&._DomainsContainer\&.values ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "Final sphinx\&.domains\&._domains_container\&._DomainsContainer\&._core_domains\fC [static]\fP, \fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  frozenset({
+        'std',
+        # Language\-specific domains
+        'c',
+        'cpp',
+        'js',
+        'py',
+        'rst',
+        # Other core domains
+        'changeset',
+        'citation',
+        'index',
+        'math',
+    })
+.fi
+
+.SS "sphinx\&.domains\&._domains_container\&._DomainsContainer\&._domain_instances\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

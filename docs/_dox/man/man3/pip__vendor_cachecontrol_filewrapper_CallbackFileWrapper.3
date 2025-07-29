@@ -1,0 +1,74 @@
+.TH "pip._vendor.cachecontrol.filewrapper.CallbackFileWrapper" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.cachecontrol.filewrapper.CallbackFileWrapper
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, HTTPResponse fp, Callable[[bytes], None]|None callback)"
+.br
+.ti -1c
+.RI "Any \fB__getattr__\fP (self, str name)"
+.br
+.ti -1c
+.RI "bytes \fBread\fP (self, int|None amt=None)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB_close\fP (self)"
+.br
+.ti -1c
+.RI "bytes \fB_safe_read\fP (self, int amt)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Small wrapper around a fp object which will tee everything read into a
+buffer, and when that file is closed it will execute a callback with the
+contents of that buffer\&.
+
+All attributes are proxied to the underlying file object\&.
+
+This class uses members with a double underscore (__) leading prefix so as
+not to accidentally shadow an attribute\&.
+
+The data is stored in a temporary file until it is all available\&.  As long
+as the temporary files directory is disk-based (sometimes it's a
+memory-backed-``tmpfs`` on Linux), data will be unloaded to disk if memory
+pressure is high\&.  For small files the disk usually won't be used at all,
+it'll all be in the filesystem memory cache, so there should be no
+performance impact\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._vendor\&.cachecontrol\&.filewrapper\&.CallbackFileWrapper\&.__init__ ( self, HTTPResponse fp, Callable[[bytes], None] | None
+     callback)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " Any pip\&._vendor\&.cachecontrol\&.filewrapper\&.CallbackFileWrapper\&.__getattr__ ( self, str name)"
+
+.SS " None pip\&._vendor\&.cachecontrol\&.filewrapper\&.CallbackFileWrapper\&._close ( self)\fC [protected]\fP"
+
+.SS " bytes pip\&._vendor\&.cachecontrol\&.filewrapper\&.CallbackFileWrapper\&._safe_read ( self, int amt)\fC [protected]\fP"
+
+.SS " bytes pip\&._vendor\&.cachecontrol\&.filewrapper\&.CallbackFileWrapper\&.read ( self, int | None  amt = \fCNone\fP)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

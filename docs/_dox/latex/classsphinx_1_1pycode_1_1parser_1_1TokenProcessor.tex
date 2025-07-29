@@ -1,0 +1,105 @@
+\doxysection{sphinx.\+pycode.\+parser.\+Token\+Processor Class Reference}
+\hypertarget{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor}{}\label{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor}\index{sphinx.pycode.parser.TokenProcessor@{sphinx.pycode.parser.TokenProcessor}}
+Inheritance diagram for sphinx.\+pycode.\+parser.\+Token\+Processor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.990274cm]{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_a37b4f4e7d6f7f281616706e86df137bd}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, list\mbox{[}str\mbox{]} \mbox{\hyperlink{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_a61ffb293cafa84836b65c5f88f9d43ad}{buffers}})
+\item 
+str \mbox{\hyperlink{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_a122c58af523f61309c333f18f70e0844}{get\+\_\+line}} (self, int lineno)
+\item 
+\mbox{\hyperlink{classsphinx_1_1pycode_1_1parser_1_1Token}{Token}}\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_abf83b8fca42572edabc76d3474b5fc53}{fetch\+\_\+token}} (self)
+\item 
+list\mbox{[}\mbox{\hyperlink{classsphinx_1_1pycode_1_1parser_1_1Token}{Token}}\mbox{]} \mbox{\hyperlink{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_afd3a323dde26df0ff99742c39174ec7a}{fetch\+\_\+until}} (self, Any condition)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_a61ffb293cafa84836b65c5f88f9d43ad}{buffers}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_ae6311b5998ed1774b1d8911e7b38c7b9}{tokens}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_a1081f50fd5d200630bdbf6b22d1fc028}{previous}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_aa8c04a71528b56bbf732775a7e3bf2f7}{current}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_a37b4f4e7d6f7f281616706e86df137bd}\label{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_a37b4f4e7d6f7f281616706e86df137bd} 
+\index{sphinx.pycode.parser.TokenProcessor@{sphinx.pycode.parser.TokenProcessor}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!sphinx.pycode.parser.TokenProcessor@{sphinx.pycode.parser.TokenProcessor}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None sphinx.\+pycode.\+parser.\+Token\+Processor.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{list\mbox{[}str\mbox{]}}]{buffers }\end{DoxyParamCaption})}
+
+
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1pycode_1_1parser_1_1AfterCommentParser_afe3ece4c8ffd70d1abbed6dc2250d672}{sphinx.\+pycode.\+parser.\+After\+Comment\+Parser}}, \mbox{\hyperlink{classsphinx_1_1pycode_1_1parser_1_1DefinitionFinder_ae4d1e32a691d328b32a264f15dc9e204}{sphinx.\+pycode.\+parser.\+Definition\+Finder}}, and \mbox{\hyperlink{classsphinx_1_1domains_1_1python_1_1__annotations_1_1__TypeParameterListParser_ae95a607ee5f0b2dcfd966303704c1bf9}{sphinx.\+domains.\+python.\+\_\+annotations.\+\_\+\+Type\+Parameter\+List\+Parser}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_abf83b8fca42572edabc76d3474b5fc53}\label{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_abf83b8fca42572edabc76d3474b5fc53} 
+\index{sphinx.pycode.parser.TokenProcessor@{sphinx.pycode.parser.TokenProcessor}!fetch\_token@{fetch\_token}}
+\index{fetch\_token@{fetch\_token}!sphinx.pycode.parser.TokenProcessor@{sphinx.pycode.parser.TokenProcessor}}
+\doxysubsubsection{\texorpdfstring{fetch\_token()}{fetch\_token()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classsphinx_1_1pycode_1_1parser_1_1Token}{Token}} \texorpdfstring{$\vert$}{|} None sphinx.\+pycode.\+parser.\+Token\+Processor.\+fetch\+\_\+token (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Fetch the next token from source code.
+
+Returns ``None`` if sequence finished.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_afd3a323dde26df0ff99742c39174ec7a}\label{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_afd3a323dde26df0ff99742c39174ec7a} 
+\index{sphinx.pycode.parser.TokenProcessor@{sphinx.pycode.parser.TokenProcessor}!fetch\_until@{fetch\_until}}
+\index{fetch\_until@{fetch\_until}!sphinx.pycode.parser.TokenProcessor@{sphinx.pycode.parser.TokenProcessor}}
+\doxysubsubsection{\texorpdfstring{fetch\_until()}{fetch\_until()}}
+{\footnotesize\ttfamily  list\mbox{[}\mbox{\hyperlink{classsphinx_1_1pycode_1_1parser_1_1Token}{Token}}\mbox{]} sphinx.\+pycode.\+parser.\+Token\+Processor.\+fetch\+\_\+until (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Any}]{condition }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Fetch tokens until specified token appeared.
+
+.. note:: This also handles parenthesis well.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_a122c58af523f61309c333f18f70e0844}\label{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_a122c58af523f61309c333f18f70e0844} 
+\index{sphinx.pycode.parser.TokenProcessor@{sphinx.pycode.parser.TokenProcessor}!get\_line@{get\_line}}
+\index{get\_line@{get\_line}!sphinx.pycode.parser.TokenProcessor@{sphinx.pycode.parser.TokenProcessor}}
+\doxysubsubsection{\texorpdfstring{get\_line()}{get\_line()}}
+{\footnotesize\ttfamily  str sphinx.\+pycode.\+parser.\+Token\+Processor.\+get\+\_\+line (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{lineno }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns specified line.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_a61ffb293cafa84836b65c5f88f9d43ad}\label{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_a61ffb293cafa84836b65c5f88f9d43ad} 
+\index{sphinx.pycode.parser.TokenProcessor@{sphinx.pycode.parser.TokenProcessor}!buffers@{buffers}}
+\index{buffers@{buffers}!sphinx.pycode.parser.TokenProcessor@{sphinx.pycode.parser.TokenProcessor}}
+\doxysubsubsection{\texorpdfstring{buffers}{buffers}}
+{\footnotesize\ttfamily sphinx.\+pycode.\+parser.\+Token\+Processor.\+buffers}
+
+\Hypertarget{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_aa8c04a71528b56bbf732775a7e3bf2f7}\label{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_aa8c04a71528b56bbf732775a7e3bf2f7} 
+\index{sphinx.pycode.parser.TokenProcessor@{sphinx.pycode.parser.TokenProcessor}!current@{current}}
+\index{current@{current}!sphinx.pycode.parser.TokenProcessor@{sphinx.pycode.parser.TokenProcessor}}
+\doxysubsubsection{\texorpdfstring{current}{current}}
+{\footnotesize\ttfamily sphinx.\+pycode.\+parser.\+Token\+Processor.\+current}
+
+\Hypertarget{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_a1081f50fd5d200630bdbf6b22d1fc028}\label{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_a1081f50fd5d200630bdbf6b22d1fc028} 
+\index{sphinx.pycode.parser.TokenProcessor@{sphinx.pycode.parser.TokenProcessor}!previous@{previous}}
+\index{previous@{previous}!sphinx.pycode.parser.TokenProcessor@{sphinx.pycode.parser.TokenProcessor}}
+\doxysubsubsection{\texorpdfstring{previous}{previous}}
+{\footnotesize\ttfamily sphinx.\+pycode.\+parser.\+Token\+Processor.\+previous}
+
+\Hypertarget{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_ae6311b5998ed1774b1d8911e7b38c7b9}\label{classsphinx_1_1pycode_1_1parser_1_1TokenProcessor_ae6311b5998ed1774b1d8911e7b38c7b9} 
+\index{sphinx.pycode.parser.TokenProcessor@{sphinx.pycode.parser.TokenProcessor}!tokens@{tokens}}
+\index{tokens@{tokens}!sphinx.pycode.parser.TokenProcessor@{sphinx.pycode.parser.TokenProcessor}}
+\doxysubsubsection{\texorpdfstring{tokens}{tokens}}
+{\footnotesize\ttfamily sphinx.\+pycode.\+parser.\+Token\+Processor.\+tokens}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/sphinx/pycode/\mbox{\hyperlink{sphinx_2pycode_2parser_8py}{parser.\+py}}\end{DoxyCompactItemize}

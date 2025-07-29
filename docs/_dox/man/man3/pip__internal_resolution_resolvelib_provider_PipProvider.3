@@ -1,0 +1,135 @@
+.TH "pip._internal.resolution.resolvelib.provider.PipProvider" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.resolution.resolvelib.provider.PipProvider
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits _ProviderBase\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, \fBFactory\fP factory, Dict[str, \fBConstraint\fP] constraints, bool ignore_dependencies, str upgrade_strategy, Dict[str, int] user_requested)"
+.br
+.ti -1c
+.RI "str \fBidentify\fP (self, Union[\fBRequirement\fP, \fBCandidate\fP] requirement_or_candidate)"
+.br
+.ti -1c
+.RI "'Preference' \fBget_preference\fP (self, str identifier, Mapping[str, \fBCandidate\fP] resolutions, Mapping[str, Iterator[\fBCandidate\fP]] candidates, Mapping[str, Iterable['PreferenceInformation']] information, Sequence['PreferenceInformation'] backtrack_causes)"
+.br
+.ti -1c
+.RI "Iterable[\fBCandidate\fP] \fBfind_matches\fP (self, str identifier, Mapping[str, Iterator[\fBRequirement\fP]] requirements, Mapping[str, Iterator[\fBCandidate\fP]] incompatibilities)"
+.br
+.ti -1c
+.RI "bool \fBis_satisfied_by\fP (self, \fBRequirement\fP requirement, \fBCandidate\fP candidate)"
+.br
+.ti -1c
+.RI "Sequence[\fBRequirement\fP] \fBget_dependencies\fP (self, \fBCandidate\fP candidate)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBis_backtrack_cause\fP (str identifier, Sequence['PreferenceInformation'] backtrack_causes)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_factory\fP"
+.br
+.ti -1c
+.RI "\fB_constraints\fP"
+.br
+.ti -1c
+.RI "\fB_ignore_dependencies\fP"
+.br
+.ti -1c
+.RI "\fB_upgrade_strategy\fP"
+.br
+.ti -1c
+.RI "\fB_user_requested\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Pip's provider implementation for resolvelib\&.
+
+:params constraints: A mapping of constraints specified by the user\&. Keys
+    are canonicalized project names\&.
+:params ignore_dependencies: Whether the user specified ``--no-deps``\&.
+:params upgrade_strategy: The user-specified upgrade strategy\&.
+:params user_requested: A set of canonicalized package names that the user
+    supplied for pip to install/upgrade\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._internal\&.resolution\&.resolvelib\&.provider\&.PipProvider\&.__init__ ( self, \fBFactory\fP factory, Dict[str, \fBConstraint\fP] constraints, bool ignore_dependencies, str upgrade_strategy, Dict[str, int] user_requested)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " Iterable[\fBCandidate\fP] pip\&._internal\&.resolution\&.resolvelib\&.provider\&.PipProvider\&.find_matches ( self, str identifier, Mapping[str, Iterator[\fBRequirement\fP]] requirements, Mapping[str, Iterator[\fBCandidate\fP]] incompatibilities)"
+
+.SS " Sequence[\fBRequirement\fP] pip\&._internal\&.resolution\&.resolvelib\&.provider\&.PipProvider\&.get_dependencies ( self, \fBCandidate\fP candidate)"
+
+.SS " 'Preference' pip\&._internal\&.resolution\&.resolvelib\&.provider\&.PipProvider\&.get_preference ( self, str identifier, Mapping[str, \fBCandidate\fP] resolutions, Mapping[str, Iterator[\fBCandidate\fP]] candidates, Mapping[str, Iterable['PreferenceInformation']] information, Sequence['PreferenceInformation'] backtrack_causes)"
+
+.PP
+.nf
+Produce a sort key for given requirement based on preference\&.
+
+The lower the return value is, the more preferred this group of
+arguments is\&.
+
+Currently pip considers the following in order:
+
+* Prefer if any of the known requirements is 'direct', e\&.g\&. points to an
+  explicit URL\&.
+* If equal, prefer if any requirement is 'pinned', i\&.e\&. contains
+  operator ``===`` or ``==``\&.
+* If equal, calculate an approximate 'depth' and resolve requirements
+  closer to the user-specified requirements first\&. If the depth cannot
+  by determined (eg: due to no matching parents), it is considered
+  infinite\&.
+* Order user-specified requirements by the order they are specified\&.
+* If equal, prefers 'non-free' requirements, i\&.e\&. contains at least one
+  operator, such as ``>=`` or ``<``\&.
+* If equal, order alphabetically for consistency (helps debuggability)\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._internal\&.resolution\&.resolvelib\&.provider\&.PipProvider\&.identify ( self, Union[\fBRequirement\fP, \fBCandidate\fP] requirement_or_candidate)"
+
+.SS " bool pip\&._internal\&.resolution\&.resolvelib\&.provider\&.PipProvider\&.is_backtrack_cause (str identifier, Sequence['PreferenceInformation']
+     backtrack_causes)\fC [static]\fP"
+
+.SS " bool pip\&._internal\&.resolution\&.resolvelib\&.provider\&.PipProvider\&.is_satisfied_by ( self, \fBRequirement\fP requirement, \fBCandidate\fP candidate)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._internal\&.resolution\&.resolvelib\&.provider\&.PipProvider\&._constraints\fC [protected]\fP"
+
+.SS "pip\&._internal\&.resolution\&.resolvelib\&.provider\&.PipProvider\&._factory\fC [protected]\fP"
+
+.SS "pip\&._internal\&.resolution\&.resolvelib\&.provider\&.PipProvider\&._ignore_dependencies\fC [protected]\fP"
+
+.SS "pip\&._internal\&.resolution\&.resolvelib\&.provider\&.PipProvider\&._upgrade_strategy\fC [protected]\fP"
+
+.SS "pip\&._internal\&.resolution\&.resolvelib\&.provider\&.PipProvider\&._user_requested\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,155 @@
+\doxysection{sphinx.\+theming Namespace Reference}
+\hypertarget{namespacesphinx_1_1theming}{}\label{namespacesphinx_1_1theming}\index{sphinx.theming@{sphinx.theming}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1theming_1_1__ConfigFile}{\+\_\+\+Config\+File}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1theming_1_1__ThemeToml}{\+\_\+\+Theme\+Toml}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1theming_1_1__ThemeTomlTheme}{\+\_\+\+Theme\+Toml\+Theme}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1theming_1_1__ThemeTomlThemePygments}{\+\_\+\+Theme\+Toml\+Theme\+Pygments}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1theming_1_1HTMLThemeFactory}{HTMLTheme\+Factory}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1theming_1_1Theme}{Theme}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacesphinx_1_1theming_a8fc8e87f4582ca7e5186c5178762a1f8}{\+\_\+is\+\_\+archived\+\_\+theme}} (Path filename)
+\item 
+tuple\mbox{[}dict\mbox{[}str, \mbox{\hyperlink{classsphinx_1_1theming_1_1__ConfigFile}{\+\_\+\+Config\+File}}\mbox{]}, list\mbox{[}Path\mbox{]}, list\mbox{[}Path\mbox{]}\mbox{]} \mbox{\hyperlink{namespacesphinx_1_1theming_a97a64c686f68c0e617be8903395ce0a8}{\+\_\+load\+\_\+theme\+\_\+with\+\_\+ancestors}} (str name, dict\mbox{[}str, \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPath}{\+\_\+\+Str\+Path}}\mbox{]} theme\+\_\+paths, dict\mbox{[}str, Callable\mbox{[}\mbox{[}$\,$\mbox{]}, None\mbox{]}\mbox{]} entry\+\_\+point\+\_\+themes)
+\item 
+tuple\mbox{[}str, Path, Path\texorpdfstring{$\vert$}{|}None, \mbox{\hyperlink{classsphinx_1_1theming_1_1__ConfigFile}{\+\_\+\+Config\+File}}\mbox{]} \mbox{\hyperlink{namespacesphinx_1_1theming_ab89e2024b29736a78c160ea6a898c85d}{\+\_\+load\+\_\+theme}} (str name, Path theme\+\_\+path)
+\item 
+None \mbox{\hyperlink{namespacesphinx_1_1theming_a6d5f36191f55824003b4279415fecd4f}{\+\_\+extract\+\_\+zip}} (Path filename, Path target\+\_\+dir)
+\item 
+\mbox{\hyperlink{classsphinx_1_1theming_1_1__ThemeToml}{\+\_\+\+Theme\+Toml}} \mbox{\hyperlink{namespacesphinx_1_1theming_af8f35cdf05aa44512b639b2d430b5dbd}{\+\_\+load\+\_\+theme\+\_\+toml}} (Path config\+\_\+file\+\_\+path)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1theming_a7cab8777756215da6ddc0b98315b9cb1}{\+\_\+validate\+\_\+theme\+\_\+toml}} (\mbox{\hyperlink{classsphinx_1_1theming_1_1__ThemeToml}{\+\_\+\+Theme\+Toml}} cfg, str name)
+\item 
+\mbox{\hyperlink{classsphinx_1_1theming_1_1__ConfigFile}{\+\_\+\+Config\+File}} \mbox{\hyperlink{namespacesphinx_1_1theming_a657eb576b7634e1b35b1f01319fd999b}{\+\_\+convert\+\_\+theme\+\_\+toml}} (\mbox{\hyperlink{classsphinx_1_1theming_1_1__ThemeToml}{\+\_\+\+Theme\+Toml}} cfg)
+\item 
+configparser.\+Raw\+Config\+Parser \mbox{\hyperlink{namespacesphinx_1_1theming_a0da32785ef93c69784ebbacfd0c8aae9}{\+\_\+load\+\_\+theme\+\_\+conf}} (Path config\+\_\+file\+\_\+path)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1theming_a6557549e61c4eb4bfb3ed605cdd6a72b}{\+\_\+validate\+\_\+theme\+\_\+conf}} (configparser.\+Raw\+Config\+Parser cfg, str name)
+\item 
+\mbox{\hyperlink{classsphinx_1_1theming_1_1__ConfigFile}{\+\_\+\+Config\+File}} \mbox{\hyperlink{namespacesphinx_1_1theming_ae97d7c78fd3ebde9f0b89715d2380db9}{\+\_\+convert\+\_\+theme\+\_\+conf}} (configparser.\+Raw\+Config\+Parser cfg)
+\item 
+int \mbox{\hyperlink{namespacesphinx_1_1theming_a3de4a70d11065880f11e51d2d33998d7}{\+\_\+migrate\+\_\+conf\+\_\+to\+\_\+toml}} (list\mbox{[}str\mbox{]} argv)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1theming_a02a383b026c3b43a7eb0af92418493e4}{logger}} = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1theming_a81a2b3545a9575454a332b8095b7598b}{\+\_\+\+NO\+\_\+\+DEFAULT}} = object()
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1theming_aff0387499feee197ab95960a37f9bf9b}{\+\_\+\+THEME\+\_\+\+TOML}} = \textquotesingle{}theme.\+toml\textquotesingle{}
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1theming_ad9556152aabad586ba3ba1b6e16e1bbc}{\+\_\+\+THEME\+\_\+\+CONF}} = \textquotesingle{}theme.\+conf\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Theming support for HTML builders.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesphinx_1_1theming_ae97d7c78fd3ebde9f0b89715d2380db9}\label{namespacesphinx_1_1theming_ae97d7c78fd3ebde9f0b89715d2380db9} 
+\index{sphinx.theming@{sphinx.theming}!\_convert\_theme\_conf@{\_convert\_theme\_conf}}
+\index{\_convert\_theme\_conf@{\_convert\_theme\_conf}!sphinx.theming@{sphinx.theming}}
+\doxysubsubsection{\texorpdfstring{\_convert\_theme\_conf()}{\_convert\_theme\_conf()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classsphinx_1_1theming_1_1__ConfigFile}{\+\_\+\+Config\+File}} sphinx.\+theming.\+\_\+convert\+\_\+theme\+\_\+conf (\begin{DoxyParamCaption}\item[{configparser.\+Raw\+Config\+Parser}]{cfg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1theming_a657eb576b7634e1b35b1f01319fd999b}\label{namespacesphinx_1_1theming_a657eb576b7634e1b35b1f01319fd999b} 
+\index{sphinx.theming@{sphinx.theming}!\_convert\_theme\_toml@{\_convert\_theme\_toml}}
+\index{\_convert\_theme\_toml@{\_convert\_theme\_toml}!sphinx.theming@{sphinx.theming}}
+\doxysubsubsection{\texorpdfstring{\_convert\_theme\_toml()}{\_convert\_theme\_toml()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classsphinx_1_1theming_1_1__ConfigFile}{\+\_\+\+Config\+File}} sphinx.\+theming.\+\_\+convert\+\_\+theme\+\_\+toml (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsphinx_1_1theming_1_1__ThemeToml}{\+\_\+\+Theme\+Toml}}}]{cfg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1theming_a6d5f36191f55824003b4279415fecd4f}\label{namespacesphinx_1_1theming_a6d5f36191f55824003b4279415fecd4f} 
+\index{sphinx.theming@{sphinx.theming}!\_extract\_zip@{\_extract\_zip}}
+\index{\_extract\_zip@{\_extract\_zip}!sphinx.theming@{sphinx.theming}}
+\doxysubsubsection{\texorpdfstring{\_extract\_zip()}{\_extract\_zip()}}
+{\footnotesize\ttfamily  None sphinx.\+theming.\+\_\+extract\+\_\+zip (\begin{DoxyParamCaption}\item[{Path}]{filename,  }\item[{Path}]{target\+\_\+dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Extract zip file to target directory.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1theming_a8fc8e87f4582ca7e5186c5178762a1f8}\label{namespacesphinx_1_1theming_a8fc8e87f4582ca7e5186c5178762a1f8} 
+\index{sphinx.theming@{sphinx.theming}!\_is\_archived\_theme@{\_is\_archived\_theme}}
+\index{\_is\_archived\_theme@{\_is\_archived\_theme}!sphinx.theming@{sphinx.theming}}
+\doxysubsubsection{\texorpdfstring{\_is\_archived\_theme()}{\_is\_archived\_theme()}}
+{\footnotesize\ttfamily  bool sphinx.\+theming.\+\_\+is\+\_\+archived\+\_\+theme (\begin{DoxyParamCaption}\item[{Path}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Check whether the specified file is an archived theme file or not.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1theming_ab89e2024b29736a78c160ea6a898c85d}\label{namespacesphinx_1_1theming_ab89e2024b29736a78c160ea6a898c85d} 
+\index{sphinx.theming@{sphinx.theming}!\_load\_theme@{\_load\_theme}}
+\index{\_load\_theme@{\_load\_theme}!sphinx.theming@{sphinx.theming}}
+\doxysubsubsection{\texorpdfstring{\_load\_theme()}{\_load\_theme()}}
+{\footnotesize\ttfamily  tuple\mbox{[}str, Path, Path \texorpdfstring{$\vert$}{|} None, \mbox{\hyperlink{classsphinx_1_1theming_1_1__ConfigFile}{\+\_\+\+Config\+File}}\mbox{]} sphinx.\+theming.\+\_\+load\+\_\+theme (\begin{DoxyParamCaption}\item[{str}]{name,  }\item[{Path}]{theme\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1theming_a0da32785ef93c69784ebbacfd0c8aae9}\label{namespacesphinx_1_1theming_a0da32785ef93c69784ebbacfd0c8aae9} 
+\index{sphinx.theming@{sphinx.theming}!\_load\_theme\_conf@{\_load\_theme\_conf}}
+\index{\_load\_theme\_conf@{\_load\_theme\_conf}!sphinx.theming@{sphinx.theming}}
+\doxysubsubsection{\texorpdfstring{\_load\_theme\_conf()}{\_load\_theme\_conf()}}
+{\footnotesize\ttfamily  configparser.\+Raw\+Config\+Parser sphinx.\+theming.\+\_\+load\+\_\+theme\+\_\+conf (\begin{DoxyParamCaption}\item[{Path}]{config\+\_\+file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1theming_af8f35cdf05aa44512b639b2d430b5dbd}\label{namespacesphinx_1_1theming_af8f35cdf05aa44512b639b2d430b5dbd} 
+\index{sphinx.theming@{sphinx.theming}!\_load\_theme\_toml@{\_load\_theme\_toml}}
+\index{\_load\_theme\_toml@{\_load\_theme\_toml}!sphinx.theming@{sphinx.theming}}
+\doxysubsubsection{\texorpdfstring{\_load\_theme\_toml()}{\_load\_theme\_toml()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classsphinx_1_1theming_1_1__ThemeToml}{\+\_\+\+Theme\+Toml}} sphinx.\+theming.\+\_\+load\+\_\+theme\+\_\+toml (\begin{DoxyParamCaption}\item[{Path}]{config\+\_\+file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1theming_a97a64c686f68c0e617be8903395ce0a8}\label{namespacesphinx_1_1theming_a97a64c686f68c0e617be8903395ce0a8} 
+\index{sphinx.theming@{sphinx.theming}!\_load\_theme\_with\_ancestors@{\_load\_theme\_with\_ancestors}}
+\index{\_load\_theme\_with\_ancestors@{\_load\_theme\_with\_ancestors}!sphinx.theming@{sphinx.theming}}
+\doxysubsubsection{\texorpdfstring{\_load\_theme\_with\_ancestors()}{\_load\_theme\_with\_ancestors()}}
+{\footnotesize\ttfamily  tuple\mbox{[}dict\mbox{[}str, \mbox{\hyperlink{classsphinx_1_1theming_1_1__ConfigFile}{\+\_\+\+Config\+File}}\mbox{]}, list\mbox{[}Path\mbox{]}, list\mbox{[}Path\mbox{]}\mbox{]} sphinx.\+theming.\+\_\+load\+\_\+theme\+\_\+with\+\_\+ancestors (\begin{DoxyParamCaption}\item[{str}]{name,  }\item[{dict\mbox{[}str, \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPath}{\+\_\+\+Str\+Path}}\mbox{]}}]{theme\+\_\+paths,  }\item[{dict\mbox{[}str, Callable\mbox{[}\mbox{[}$\,$\mbox{]}, None\mbox{]}\mbox{]}}]{entry\+\_\+point\+\_\+themes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1theming_a3de4a70d11065880f11e51d2d33998d7}\label{namespacesphinx_1_1theming_a3de4a70d11065880f11e51d2d33998d7} 
+\index{sphinx.theming@{sphinx.theming}!\_migrate\_conf\_to\_toml@{\_migrate\_conf\_to\_toml}}
+\index{\_migrate\_conf\_to\_toml@{\_migrate\_conf\_to\_toml}!sphinx.theming@{sphinx.theming}}
+\doxysubsubsection{\texorpdfstring{\_migrate\_conf\_to\_toml()}{\_migrate\_conf\_to\_toml()}}
+{\footnotesize\ttfamily  int sphinx.\+theming.\+\_\+migrate\+\_\+conf\+\_\+to\+\_\+toml (\begin{DoxyParamCaption}\item[{list\mbox{[}str\mbox{]}}]{argv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1theming_a6557549e61c4eb4bfb3ed605cdd6a72b}\label{namespacesphinx_1_1theming_a6557549e61c4eb4bfb3ed605cdd6a72b} 
+\index{sphinx.theming@{sphinx.theming}!\_validate\_theme\_conf@{\_validate\_theme\_conf}}
+\index{\_validate\_theme\_conf@{\_validate\_theme\_conf}!sphinx.theming@{sphinx.theming}}
+\doxysubsubsection{\texorpdfstring{\_validate\_theme\_conf()}{\_validate\_theme\_conf()}}
+{\footnotesize\ttfamily  str sphinx.\+theming.\+\_\+validate\+\_\+theme\+\_\+conf (\begin{DoxyParamCaption}\item[{configparser.\+Raw\+Config\+Parser}]{cfg,  }\item[{str}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1theming_a7cab8777756215da6ddc0b98315b9cb1}\label{namespacesphinx_1_1theming_a7cab8777756215da6ddc0b98315b9cb1} 
+\index{sphinx.theming@{sphinx.theming}!\_validate\_theme\_toml@{\_validate\_theme\_toml}}
+\index{\_validate\_theme\_toml@{\_validate\_theme\_toml}!sphinx.theming@{sphinx.theming}}
+\doxysubsubsection{\texorpdfstring{\_validate\_theme\_toml()}{\_validate\_theme\_toml()}}
+{\footnotesize\ttfamily  str sphinx.\+theming.\+\_\+validate\+\_\+theme\+\_\+toml (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsphinx_1_1theming_1_1__ThemeToml}{\+\_\+\+Theme\+Toml}}}]{cfg,  }\item[{str}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacesphinx_1_1theming_a81a2b3545a9575454a332b8095b7598b}\label{namespacesphinx_1_1theming_a81a2b3545a9575454a332b8095b7598b} 
+\index{sphinx.theming@{sphinx.theming}!\_NO\_DEFAULT@{\_NO\_DEFAULT}}
+\index{\_NO\_DEFAULT@{\_NO\_DEFAULT}!sphinx.theming@{sphinx.theming}}
+\doxysubsubsection{\texorpdfstring{\_NO\_DEFAULT}{\_NO\_DEFAULT}}
+{\footnotesize\ttfamily sphinx.\+theming.\+\_\+\+NO\+\_\+\+DEFAULT = object()\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1theming_ad9556152aabad586ba3ba1b6e16e1bbc}\label{namespacesphinx_1_1theming_ad9556152aabad586ba3ba1b6e16e1bbc} 
+\index{sphinx.theming@{sphinx.theming}!\_THEME\_CONF@{\_THEME\_CONF}}
+\index{\_THEME\_CONF@{\_THEME\_CONF}!sphinx.theming@{sphinx.theming}}
+\doxysubsubsection{\texorpdfstring{\_THEME\_CONF}{\_THEME\_CONF}}
+{\footnotesize\ttfamily str sphinx.\+theming.\+\_\+\+THEME\+\_\+\+CONF = \textquotesingle{}theme.\+conf\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1theming_aff0387499feee197ab95960a37f9bf9b}\label{namespacesphinx_1_1theming_aff0387499feee197ab95960a37f9bf9b} 
+\index{sphinx.theming@{sphinx.theming}!\_THEME\_TOML@{\_THEME\_TOML}}
+\index{\_THEME\_TOML@{\_THEME\_TOML}!sphinx.theming@{sphinx.theming}}
+\doxysubsubsection{\texorpdfstring{\_THEME\_TOML}{\_THEME\_TOML}}
+{\footnotesize\ttfamily str sphinx.\+theming.\+\_\+\+THEME\+\_\+\+TOML = \textquotesingle{}theme.\+toml\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1theming_a02a383b026c3b43a7eb0af92418493e4}\label{namespacesphinx_1_1theming_a02a383b026c3b43a7eb0af92418493e4} 
+\index{sphinx.theming@{sphinx.theming}!logger@{logger}}
+\index{logger@{logger}!sphinx.theming@{sphinx.theming}}
+\doxysubsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily sphinx.\+theming.\+logger = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)}
+

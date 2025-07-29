@@ -1,0 +1,225 @@
+.TH "sphinx.writers.text.Table" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.writers.text.Table
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, list[int]|None colwidth=None)"
+.br
+.ti -1c
+.RI "None \fBadd_row\fP (self)"
+.br
+.ti -1c
+.RI "None \fBset_separator\fP (self)"
+.br
+.ti -1c
+.RI "None \fBadd_cell\fP (self, \fBCell\fP cell)"
+.br
+.ti -1c
+.RI "\fBCell\fP \fB__getitem__\fP (self, tuple[int, int] pos)"
+.br
+.ti -1c
+.RI "None \fB__setitem__\fP (self, tuple[int, int] pos, \fBCell\fP cell)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "int \fBcell_width\fP (self, \fBCell\fP cell, list[int] source)"
+.br
+.ti -1c
+.RI "Iterator[\fBCell\fP] \fBcells\fP (self)"
+.br
+.ti -1c
+.RI "None \fBrewrap\fP (self)"
+.br
+.ti -1c
+.RI "int \fBphysical_lines_for_line\fP (self, list[\fBCell\fP] line)"
+.br
+.ti -1c
+.RI "str \fB__str__\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBseparator\fP"
+.br
+.ti -1c
+.RI "\fBcurrent_line\fP"
+.br
+.ti -1c
+.RI "\fBcurrent_col\fP"
+.br
+.ti -1c
+.RI "\fBlines\fP"
+.br
+.ti -1c
+.RI "\fBmeasured_widths\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB_ensure_has_line\fP (self, int line)"
+.br
+.ti -1c
+.RI "None \fB_ensure_has_column\fP (self, int col)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Represents a table, handling cells that can span multiple lines
+or rows, like::
+
+   +-----------+-----+
+   | AAA       | BBB |
+   +-----+-----+     |
+   |     | XXX |     |
+   |     +-----+-----+
+   | DDD | CCC       |
+   +-----+-----------+
+
+This class can be used in two ways, either:
+
+- With absolute positions: call ``table[line, col] = Cell(\&.\&.\&.)``,
+  this overwrites any existing cell(s) at these positions\&.
+
+- With relative positions: call the ``add_row()`` and
+  ``add_cell(Cell(\&.\&.\&.))`` as needed\&.
+
+Cells spanning multiple rows or multiple columns (having a
+colspan or rowspan greater than one) are automatically referenced
+by all the table cells they cover\&. This is a useful
+representation as we can simply check
+``if self[x, y] is self[x, y+1]`` to recognize a rowspan\&.
+
+Colwidth is not automatically computed, it has to be given, either
+at construction time, or during the table construction\&.
+
+Example usage::
+
+   table = Table([6, 6])
+   table\&.add_cell(Cell('foo'))
+   table\&.add_cell(Cell('bar'))
+   table\&.set_separator()
+   table\&.add_row()
+   table\&.add_cell(Cell('FOO'))
+   table\&.add_cell(Cell('BAR'))
+   print(table)
+   +--------+--------+
+   | foo    | bar    |
+   |========|========|
+   | FOO    | BAR    |
+   +--------+--------+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.writers\&.text\&.Table\&.__init__ ( self, list[int] | None  colwidth = \fCNone\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " \fBCell\fP sphinx\&.writers\&.text\&.Table\&.__getitem__ ( self, tuple[int, int] pos)"
+
+.SS " str sphinx\&.writers\&.text\&.Table\&.__repr__ ( self)"
+
+.SS " None sphinx\&.writers\&.text\&.Table\&.__setitem__ ( self, tuple[int, int] pos, \fBCell\fP cell)"
+
+.SS " str sphinx\&.writers\&.text\&.Table\&.__str__ ( self)"
+
+.SS " None sphinx\&.writers\&.text\&.Table\&._ensure_has_column ( self, int col)\fC [protected]\fP"
+
+.SS " None sphinx\&.writers\&.text\&.Table\&._ensure_has_line ( self, int line)\fC [protected]\fP"
+
+.SS " None sphinx\&.writers\&.text\&.Table\&.add_cell ( self, \fBCell\fP cell)"
+
+.PP
+.nf
+Add a cell to the current line, to use with ``add_row()``\&.  To add
+a cell spanning multiple lines or rows, simply set the
+``cell\&.colspan`` or ``cell\&.rowspan`` BEFORE inserting it into
+the table\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.writers\&.text\&.Table\&.add_row ( self)"
+
+.PP
+.nf
+Add a row to the table, to use with ``add_cell()``\&.  It is not needed
+to call ``add_row()`` before the first ``add_cell()``\&.
+
+.fi
+.PP
+ 
+.SS " int sphinx\&.writers\&.text\&.Table\&.cell_width ( self, \fBCell\fP cell, list[int] source)"
+
+.PP
+.nf
+Give the cell width, according to the given source (either
+``self\&.colwidth`` or ``self\&.measured_widths``)\&.
+This takes into account cells spanning multiple columns\&.
+
+.fi
+.PP
+ 
+.SS " Iterator[\fBCell\fP] sphinx\&.writers\&.text\&.Table\&.cells ( self)"
+
+.SS " int sphinx\&.writers\&.text\&.Table\&.physical_lines_for_line ( self, list[\fBCell\fP] line)"
+
+.PP
+.nf
+For a given line, compute the number of physical lines it spans
+due to text wrapping\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.writers\&.text\&.Table\&.rewrap ( self)"
+
+.PP
+.nf
+Call ``cell\&.wrap()`` on all cells, and measure each column width
+after wrapping (result written in ``self\&.measured_widths``)\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.writers\&.text\&.Table\&.set_separator ( self)"
+
+.PP
+.nf
+Sets the separator below the current line\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.writers\&.text\&.Table\&.current_col"
+
+.SS "sphinx\&.writers\&.text\&.Table\&.current_line"
+
+.SS "sphinx\&.writers\&.text\&.Table\&.lines"
+
+.SS "sphinx\&.writers\&.text\&.Table\&.measured_widths"
+
+.SS "sphinx\&.writers\&.text\&.Table\&.separator"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

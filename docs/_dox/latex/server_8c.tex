@@ -1,0 +1,55 @@
+\doxysection{/home/umar/\+Desktop/\+Work\+Shop/\+GLL/waitress/server.c File Reference}
+\hypertarget{server_8c}{}\label{server_8c}\index{/home/umar/Desktop/WorkShop/GLL/waitress/server.c@{/home/umar/Desktop/WorkShop/GLL/waitress/server.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{server_8c_ac19eb83983f75f11404fe6cf207e0f7b}{perr}}(\+\_\+\+\_\+fcall)~  perror(\#\+\_\+\+\_\+fcall)
+\item 
+\#define \mbox{\hyperlink{server_8c_a84b4f887b3a0cd51f4ae674abeea7cd2}{gperr}}(\+\_\+\+\_\+fcall,  \+\_\+\+\_\+returned\+\_\+code,  \+\_\+\+\_\+label)~  do\{\mbox{\hyperlink{centry_8h_ac19eb83983f75f11404fe6cf207e0f7b}{perr}}(\+\_\+\+\_\+fcall); goto \+\_\+\+\_\+label;\}while(0)
+\item 
+\#define \mbox{\hyperlink{server_8c_a614217d263be1fb1a5f76e2ff7be19a2}{PORT}}~8000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{server_8c_a0c99d968a34e803d378692bde2e3f18f}{main}} (int ac, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}av)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{server_8c_a84b4f887b3a0cd51f4ae674abeea7cd2}\label{server_8c_a84b4f887b3a0cd51f4ae674abeea7cd2} 
+\index{server.c@{server.c}!gperr@{gperr}}
+\index{gperr@{gperr}!server.c@{server.c}}
+\doxysubsubsection{\texorpdfstring{gperr}{gperr}}
+{\footnotesize\ttfamily \#define gperr(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+fcall,  }\item[{}]{\+\_\+\+\_\+returned\+\_\+code,  }\item[{}]{\+\_\+\+\_\+label }\end{DoxyParamCaption})~  do\{\mbox{\hyperlink{centry_8h_ac19eb83983f75f11404fe6cf207e0f7b}{perr}}(\+\_\+\+\_\+fcall); goto \+\_\+\+\_\+label;\}while(0)}
+
+\Hypertarget{server_8c_ac19eb83983f75f11404fe6cf207e0f7b}\label{server_8c_ac19eb83983f75f11404fe6cf207e0f7b} 
+\index{server.c@{server.c}!perr@{perr}}
+\index{perr@{perr}!server.c@{server.c}}
+\doxysubsubsection{\texorpdfstring{perr}{perr}}
+{\footnotesize\ttfamily \#define perr(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+fcall }\end{DoxyParamCaption})~  perror(\#\+\_\+\+\_\+fcall)}
+
+\Hypertarget{server_8c_a614217d263be1fb1a5f76e2ff7be19a2}\label{server_8c_a614217d263be1fb1a5f76e2ff7be19a2} 
+\index{server.c@{server.c}!PORT@{PORT}}
+\index{PORT@{PORT}!server.c@{server.c}}
+\doxysubsubsection{\texorpdfstring{PORT}{PORT}}
+{\footnotesize\ttfamily \#define PORT~8000}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{server_8c_a0c99d968a34e803d378692bde2e3f18f}\label{server_8c_a0c99d968a34e803d378692bde2e3f18f} 
+\index{server.c@{server.c}!main@{main}}
+\index{main@{main}!server.c@{server.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{ac,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{av }\end{DoxyParamCaption})}
+

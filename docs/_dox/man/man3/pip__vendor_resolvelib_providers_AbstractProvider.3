@@ -1,0 +1,164 @@
+.TH "pip._vendor.resolvelib.providers.AbstractProvider" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.resolvelib.providers.AbstractProvider
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBidentify\fP (self, requirement_or_candidate)"
+.br
+.ti -1c
+.RI "\fBget_preference\fP (self, identifier, resolutions, candidates, information, backtrack_causes)"
+.br
+.ti -1c
+.RI "\fBfind_matches\fP (self, identifier, requirements, incompatibilities)"
+.br
+.ti -1c
+.RI "\fBis_satisfied_by\fP (self, requirement, candidate)"
+.br
+.ti -1c
+.RI "\fBget_dependencies\fP (self, candidate)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Delegate class to provide the required interface for the resolver\&.
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.resolvelib\&.providers\&.AbstractProvider\&.find_matches ( self,  identifier,  requirements,  incompatibilities)"
+
+.PP
+.nf
+Find all possible candidates that satisfy the given constraints\&.
+
+:param identifier: An identifier as returned by ``identify()``\&. This
+    identifies the dependency matches of which should be returned\&.
+:param requirements: A mapping of requirements that all returned
+    candidates must satisfy\&. Each key is an identifier, and the value
+    an iterator of requirements for that dependency\&.
+:param incompatibilities: A mapping of known incompatibilities of
+    each dependency\&. Each key is an identifier, and the value an
+    iterator of incompatibilities known to the resolver\&. All
+    incompatibilities *must* be excluded from the return value\&.
+
+This should try to get candidates based on the requirements' types\&.
+For VCS, local, and archive requirements, the one-and-only match is
+returned, and for a 'named' requirement, the index(es) should be
+consulted to find concrete candidates for this requirement\&.
+
+The return value should produce candidates ordered by preference; the
+most preferred candidate should come first\&. The return type may be one
+of the following:
+
+* A callable that returns an iterator that yields candidates\&.
+* An collection of candidates\&.
+* An iterable of candidates\&. This will be consumed immediately into a
+  list of candidates\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.resolvelib\&.providers\&.AbstractProvider\&.get_dependencies ( self,  candidate)"
+
+.PP
+.nf
+Get dependencies of a candidate\&.
+
+This should return a collection of requirements that `candidate`
+specifies as its dependencies\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.resolvelib\&.providers\&.AbstractProvider\&.get_preference ( self,  identifier,  resolutions,  candidates,  information,  backtrack_causes)"
+
+.PP
+.nf
+Produce a sort key for given requirement based on preference\&.
+
+The preference is defined as 'I think this requirement should be
+resolved first'\&. The lower the return value is, the more preferred
+this group of arguments is\&.
+
+:param identifier: An identifier as returned by ``identify()``\&. This
+    identifies the dependency matches which should be returned\&.
+:param resolutions: Mapping of candidates currently pinned by the
+    resolver\&. Each key is an identifier, and the value is a candidate\&.
+    The candidate may conflict with requirements from ``information``\&.
+:param candidates: Mapping of each dependency's possible candidates\&.
+    Each value is an iterator of candidates\&.
+:param information: Mapping of requirement information of each package\&.
+    Each value is an iterator of *requirement information*\&.
+:param backtrack_causes: Sequence of requirement information that were
+    the requirements that caused the resolver to most recently backtrack\&.
+
+A *requirement information* instance is a named tuple with two members:
+
+* ``requirement`` specifies a requirement contributing to the current
+  list of candidates\&.
+* ``parent`` specifies the candidate that provides (depended on) the
+  requirement, or ``None`` to indicate a root requirement\&.
+
+The preference could depend on various issues, including (not
+necessarily in this order):
+
+* Is this package pinned in the current resolution result?
+* How relaxed is the requirement? Stricter ones should probably be
+  worked on first? (I don't know, actually\&.)
+* How many possibilities are there to satisfy this requirement? Those
+  with few left should likely be worked on first, I guess?
+* Are there any known conflicts for this requirement? We should
+  probably work on those with the most known conflicts\&.
+
+A sortable value should be returned (this will be used as the ``key``
+parameter of the built-in sorting function)\&. The smaller the value is,
+the more preferred this requirement is (i\&.e\&. the sorting function
+is called with ``reverse=False``)\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.resolvelib\&.providers\&.AbstractProvider\&.identify ( self,  requirement_or_candidate)"
+
+.PP
+.nf
+Given a requirement, return an identifier for it\&.
+
+This is used to identify a requirement, e\&.g\&. whether two requirements
+should have their specifier parts merged\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.resolvelib\&.providers\&.AbstractProvider\&.is_satisfied_by ( self,  requirement,  candidate)"
+
+.PP
+.nf
+Whether the given requirement can be satisfied by a candidate\&.
+
+The candidate is guaranteed to have been generated from the
+requirement\&.
+
+A boolean should be returned to indicate whether ``candidate`` is a
+viable solution to the requirement\&.
+
+.fi
+.PP
+ 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

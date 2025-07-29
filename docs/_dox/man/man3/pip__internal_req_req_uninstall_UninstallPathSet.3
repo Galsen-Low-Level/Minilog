@@ -1,0 +1,142 @@
+.TH "pip._internal.req.req_uninstall.UninstallPathSet" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.req.req_uninstall.UninstallPathSet
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, \fBBaseDistribution\fP dist)"
+.br
+.ti -1c
+.RI "None \fBadd\fP (self, str path)"
+.br
+.ti -1c
+.RI "None \fBadd_pth\fP (self, str pth_file, str entry)"
+.br
+.ti -1c
+.RI "None \fBremove\fP (self, bool auto_confirm=False, bool verbose=False)"
+.br
+.ti -1c
+.RI "None \fBrollback\fP (self)"
+.br
+.ti -1c
+.RI "None \fBcommit\fP (self)"
+.br
+.ti -1c
+.RI "'UninstallPathSet' \fBfrom_dist\fP (cls, \fBBaseDistribution\fP dist)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fB_permitted\fP (self, str path)"
+.br
+.ti -1c
+.RI "bool \fB_allowed_to_proceed\fP (self, bool verbose)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_dist\fP"
+.br
+.ti -1c
+.RI "\fB_moved_paths\fP"
+.br
+.ti -1c
+.RI "\fB_normalize_path_cached\fP"
+.br
+.ti -1c
+.RI "\fB_refuse\fP"
+.br
+.ti -1c
+.RI "\fB_paths\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A set of file paths to be removed in the uninstallation of a
+requirement\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._internal\&.req\&.req_uninstall\&.UninstallPathSet\&.__init__ ( self, \fBBaseDistribution\fP dist)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " bool pip\&._internal\&.req\&.req_uninstall\&.UninstallPathSet\&._allowed_to_proceed ( self, bool verbose)\fC [protected]\fP"
+
+.PP
+.nf
+Display which files would be deleted and prompt for confirmation
+.fi
+.PP
+ 
+.SS " bool pip\&._internal\&.req\&.req_uninstall\&.UninstallPathSet\&._permitted ( self, str path)\fC [protected]\fP"
+
+.PP
+.nf
+Return True if the given path is one we are permitted to
+remove/modify, False otherwise\&.
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.req\&.req_uninstall\&.UninstallPathSet\&.add ( self, str path)"
+
+.SS " None pip\&._internal\&.req\&.req_uninstall\&.UninstallPathSet\&.add_pth ( self, str pth_file, str entry)"
+
+.SS " None pip\&._internal\&.req\&.req_uninstall\&.UninstallPathSet\&.commit ( self)"
+
+.PP
+.nf
+Remove temporary save dir: rollback will no longer be possible\&.
+.fi
+.PP
+ 
+.SS " 'UninstallPathSet' pip\&._internal\&.req\&.req_uninstall\&.UninstallPathSet\&.from_dist ( cls, \fBBaseDistribution\fP dist)"
+
+.SS " None pip\&._internal\&.req\&.req_uninstall\&.UninstallPathSet\&.remove ( self, bool  auto_confirm = \fCFalse\fP, bool  verbose = \fCFalse\fP)"
+
+.PP
+.nf
+Remove paths in ``self\&._paths`` with confirmation (unless
+``auto_confirm`` is True)\&.
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.req\&.req_uninstall\&.UninstallPathSet\&.rollback ( self)"
+
+.PP
+.nf
+Rollback the changes previously made by remove()\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._internal\&.req\&.req_uninstall\&.UninstallPathSet\&._dist\fC [protected]\fP"
+
+.SS "pip\&._internal\&.req\&.req_uninstall\&.UninstallPathSet\&._moved_paths\fC [protected]\fP"
+
+.SS "pip\&._internal\&.req\&.req_uninstall\&.UninstallPathSet\&._normalize_path_cached\fC [protected]\fP"
+
+.SS "pip\&._internal\&.req\&.req_uninstall\&.UninstallPathSet\&._paths\fC [protected]\fP"
+
+.SS "pip\&._internal\&.req\&.req_uninstall\&.UninstallPathSet\&._refuse\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

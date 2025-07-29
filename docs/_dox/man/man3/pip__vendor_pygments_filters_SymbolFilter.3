@@ -1,0 +1,93 @@
+.TH "pip._vendor.pygments.filters.SymbolFilter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.pygments.filters.SymbolFilter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._vendor\&.pygments\&.filter\&.Filter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fBfilter\fP (self, lexer, stream)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsymbols\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpip\&._vendor\&.pygments\&.filter\&.Filter\fP
+.in +1c
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBlatex_symbols\fP"
+.br
+.ti -1c
+.RI "dict \fBisabelle_symbols\fP"
+.br
+.ti -1c
+.RI "dict \fBlang_map\fP = {'isabelle' : \fBisabelle_symbols\fP, 'latex' : \fBlatex_symbols\fP}"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Convert mathematical symbols such as \\\\<longrightarrow> in Isabelle
+or \\\\longrightarrow in LaTeX into Unicode characters\&.
+
+This is mostly useful for HTML or console output when you want to
+approximate the source rendering you'd see in an IDE\&.
+
+Options accepted:
+
+`lang` : string
+   The symbol language\&. Must be one of ``'isabelle'`` or
+   ``'latex'``\&.  The default is ``'isabelle'``\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.pygments\&.filters\&.SymbolFilter\&.__init__ ( self, ** options)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.pygments\&.filter\&.Filter\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.pygments\&.filters\&.SymbolFilter\&.filter ( self,  lexer,  stream)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.pygments\&.filter\&.Filter\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "dict pip\&._vendor\&.pygments\&.filters\&.SymbolFilter\&.isabelle_symbols\fC [static]\fP"
+
+.SS "dict pip\&._vendor\&.pygments\&.filters\&.SymbolFilter\&.lang_map = {'isabelle' : \fBisabelle_symbols\fP, 'latex' : \fBlatex_symbols\fP}\fC [static]\fP"
+
+.SS "dict pip\&._vendor\&.pygments\&.filters\&.SymbolFilter\&.latex_symbols\fC [static]\fP"
+
+.SS "pip\&._vendor\&.pygments\&.filters\&.SymbolFilter\&.symbols"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

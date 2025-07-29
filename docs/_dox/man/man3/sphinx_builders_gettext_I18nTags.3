@@ -1,0 +1,98 @@
+.TH "sphinx.builders.gettext.I18nTags" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.builders.gettext.I18nTags
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.util\&.tags\&.Tags\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBeval_condition\fP (self, Any condition)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.util\&.tags\&.Tags\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, Sequence[str] \fBtags\fP=())"
+.br
+.ti -1c
+.RI "str \fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[str] \fB__iter__\fP (self)"
+.br
+.ti -1c
+.RI "bool \fB__contains__\fP (self, str tag)"
+.br
+.ti -1c
+.RI "bool \fBhas\fP (self, str tag)"
+.br
+.ti -1c
+.RI "None \fBadd\fP (self, str tag)"
+.br
+.ti -1c
+.RI "None \fBremove\fP (self, str tag)"
+.br
+.ti -1c
+.RI "dict[str, Literal[True]] \fBtags\fP (self)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Member Functions inherited from \fBsphinx\&.util\&.tags\&.Tags\fP
+.in +1c
+.ti -1c
+.RI "bool \fB_eval_node\fP (self, \fBjinja2\&.nodes\&.Node\fP|None node)"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBsphinx\&.util\&.tags\&.Tags\fP
+.in +1c
+.ti -1c
+.RI "\fB_tags\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Dummy tags module for I18nBuilder\&.
+
+To ensure that all text inside ``only`` nodes is translated,
+this class always returns ``True`` regardless the defined tags\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " bool sphinx\&.builders\&.gettext\&.I18nTags\&.eval_condition ( self, Any condition)"
+
+.PP
+.nf
+Evaluate a boolean condition\&.
+
+Only conditional expressions and binary operators (and, or, not)
+are permitted, and operate on tag names, where truthy values mean
+the tag is present and vice versa\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.util\&.tags\&.Tags\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

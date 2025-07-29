@@ -1,0 +1,242 @@
+\doxysection{sphinx.\+writers.\+text.\+Table Class Reference}
+\hypertarget{classsphinx_1_1writers_1_1text_1_1Table}{}\label{classsphinx_1_1writers_1_1text_1_1Table}\index{sphinx.writers.text.Table@{sphinx.writers.text.Table}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Table_add83317ee42c759977b8541130a9b618}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, list\mbox{[}int\mbox{]}\texorpdfstring{$\vert$}{|}None colwidth=None)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Table_a3442cc292bd5096974f2a16d25375473}{add\+\_\+row}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Table_ac8a29e0f123bdee79033a8aec7d421a2}{set\+\_\+separator}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Table_afb05d451bb61a0639777d30ea7c68bc8}{add\+\_\+cell}} (self, \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Cell}{Cell}} cell)
+\item 
+\mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Cell}{Cell}} \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Table_a622f2136030237d4f29cf09051af68c2}{\+\_\+\+\_\+getitem\+\_\+\+\_\+}} (self, tuple\mbox{[}int, int\mbox{]} pos)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Table_ab74c0f9261b8a379b3985efd961b9e63}{\+\_\+\+\_\+setitem\+\_\+\+\_\+}} (self, tuple\mbox{[}int, int\mbox{]} pos, \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Cell}{Cell}} cell)
+\item 
+str \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Table_a0b10fc1926ba4beb275d7e8f0ca27969}{\+\_\+\+\_\+repr\+\_\+\+\_\+}} (self)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Table_a557eca75b2da35b5bd927f463cdadb2b}{cell\+\_\+width}} (self, \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Cell}{Cell}} cell, list\mbox{[}int\mbox{]} source)
+\item 
+Iterator\mbox{[}\mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Cell}{Cell}}\mbox{]} \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Table_a774d6385339fb0fe11fd0c565e3235b0}{cells}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Table_adafc6fbba5c51109f249b73a89b146cf}{rewrap}} (self)
+\item 
+int \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Table_a593709ad4b65fd144b7cf195ec8c2135}{physical\+\_\+lines\+\_\+for\+\_\+line}} (self, list\mbox{[}\mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Cell}{Cell}}\mbox{]} line)
+\item 
+str \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Table_a5835a624c9a81d6c9ad493bb4ddff52a}{\+\_\+\+\_\+str\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Table_a4d6a5c419b3d115f38cd5d7c66816c9f}{separator}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Table_a2edc6ef9f98ce1822f5da5a255031a5f}{current\+\_\+line}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Table_a1e613c5ce5c133ca1bdc9837a7989c10}{current\+\_\+col}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Table_a5c7ee88e61d57f55b75fca5d0b40c73c}{lines}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Table_ab8735f3b89d2f75115a18e8616f13f37}{measured\+\_\+widths}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Table_aac96cdb6ee3eb6a96016a9a757e19556}{\+\_\+ensure\+\_\+has\+\_\+line}} (self, int line)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Table_ae2daf41a8c23f8dca5d10c5bb0bf1569}{\+\_\+ensure\+\_\+has\+\_\+column}} (self, int col)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Represents a table, handling cells that can span multiple lines
+or rows, like::
+
+   +-----------+-----+
+   | AAA       | BBB |
+   +-----+-----+     |
+   |     | XXX |     |
+   |     +-----+-----+
+   | DDD | CCC       |
+   +-----+-----------+
+
+This class can be used in two ways, either:
+
+- With absolute positions: call ``table[line, col] = Cell(...)``,
+  this overwrites any existing cell(s) at these positions.
+
+- With relative positions: call the ``add_row()`` and
+  ``add_cell(Cell(...))`` as needed.
+
+Cells spanning multiple rows or multiple columns (having a
+colspan or rowspan greater than one) are automatically referenced
+by all the table cells they cover. This is a useful
+representation as we can simply check
+``if self[x, y] is self[x, y+1]`` to recognize a rowspan.
+
+Colwidth is not automatically computed, it has to be given, either
+at construction time, or during the table construction.
+
+Example usage::
+
+   table = Table([6, 6])
+   table.add_cell(Cell("foo"))
+   table.add_cell(Cell("bar"))
+   table.set_separator()
+   table.add_row()
+   table.add_cell(Cell("FOO"))
+   table.add_cell(Cell("BAR"))
+   print(table)
+   +--------+--------+
+   | foo    | bar    |
+   |========|========|
+   | FOO    | BAR    |
+   +--------+--------+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsphinx_1_1writers_1_1text_1_1Table_add83317ee42c759977b8541130a9b618}\label{classsphinx_1_1writers_1_1text_1_1Table_add83317ee42c759977b8541130a9b618} 
+\index{sphinx.writers.text.Table@{sphinx.writers.text.Table}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!sphinx.writers.text.Table@{sphinx.writers.text.Table}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None sphinx.\+writers.\+text.\+Table.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{list\mbox{[}int\mbox{]} \texorpdfstring{$\vert$}{|} None }]{colwidth = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsphinx_1_1writers_1_1text_1_1Table_a622f2136030237d4f29cf09051af68c2}\label{classsphinx_1_1writers_1_1text_1_1Table_a622f2136030237d4f29cf09051af68c2} 
+\index{sphinx.writers.text.Table@{sphinx.writers.text.Table}!\_\_getitem\_\_@{\_\_getitem\_\_}}
+\index{\_\_getitem\_\_@{\_\_getitem\_\_}!sphinx.writers.text.Table@{sphinx.writers.text.Table}}
+\doxysubsubsection{\texorpdfstring{\_\_getitem\_\_()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Cell}{Cell}} sphinx.\+writers.\+text.\+Table.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{tuple\mbox{[}int, int\mbox{]}}]{pos }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1writers_1_1text_1_1Table_a0b10fc1926ba4beb275d7e8f0ca27969}\label{classsphinx_1_1writers_1_1text_1_1Table_a0b10fc1926ba4beb275d7e8f0ca27969} 
+\index{sphinx.writers.text.Table@{sphinx.writers.text.Table}!\_\_repr\_\_@{\_\_repr\_\_}}
+\index{\_\_repr\_\_@{\_\_repr\_\_}!sphinx.writers.text.Table@{sphinx.writers.text.Table}}
+\doxysubsubsection{\texorpdfstring{\_\_repr\_\_()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily  str sphinx.\+writers.\+text.\+Table.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1writers_1_1text_1_1Table_ab74c0f9261b8a379b3985efd961b9e63}\label{classsphinx_1_1writers_1_1text_1_1Table_ab74c0f9261b8a379b3985efd961b9e63} 
+\index{sphinx.writers.text.Table@{sphinx.writers.text.Table}!\_\_setitem\_\_@{\_\_setitem\_\_}}
+\index{\_\_setitem\_\_@{\_\_setitem\_\_}!sphinx.writers.text.Table@{sphinx.writers.text.Table}}
+\doxysubsubsection{\texorpdfstring{\_\_setitem\_\_()}{\_\_setitem\_\_()}}
+{\footnotesize\ttfamily  None sphinx.\+writers.\+text.\+Table.\+\_\+\+\_\+setitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{tuple\mbox{[}int, int\mbox{]}}]{pos,  }\item[{\mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Cell}{Cell}}}]{cell }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1writers_1_1text_1_1Table_a5835a624c9a81d6c9ad493bb4ddff52a}\label{classsphinx_1_1writers_1_1text_1_1Table_a5835a624c9a81d6c9ad493bb4ddff52a} 
+\index{sphinx.writers.text.Table@{sphinx.writers.text.Table}!\_\_str\_\_@{\_\_str\_\_}}
+\index{\_\_str\_\_@{\_\_str\_\_}!sphinx.writers.text.Table@{sphinx.writers.text.Table}}
+\doxysubsubsection{\texorpdfstring{\_\_str\_\_()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily  str sphinx.\+writers.\+text.\+Table.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1writers_1_1text_1_1Table_ae2daf41a8c23f8dca5d10c5bb0bf1569}\label{classsphinx_1_1writers_1_1text_1_1Table_ae2daf41a8c23f8dca5d10c5bb0bf1569} 
+\index{sphinx.writers.text.Table@{sphinx.writers.text.Table}!\_ensure\_has\_column@{\_ensure\_has\_column}}
+\index{\_ensure\_has\_column@{\_ensure\_has\_column}!sphinx.writers.text.Table@{sphinx.writers.text.Table}}
+\doxysubsubsection{\texorpdfstring{\_ensure\_has\_column()}{\_ensure\_has\_column()}}
+{\footnotesize\ttfamily  None sphinx.\+writers.\+text.\+Table.\+\_\+ensure\+\_\+has\+\_\+column (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1writers_1_1text_1_1Table_aac96cdb6ee3eb6a96016a9a757e19556}\label{classsphinx_1_1writers_1_1text_1_1Table_aac96cdb6ee3eb6a96016a9a757e19556} 
+\index{sphinx.writers.text.Table@{sphinx.writers.text.Table}!\_ensure\_has\_line@{\_ensure\_has\_line}}
+\index{\_ensure\_has\_line@{\_ensure\_has\_line}!sphinx.writers.text.Table@{sphinx.writers.text.Table}}
+\doxysubsubsection{\texorpdfstring{\_ensure\_has\_line()}{\_ensure\_has\_line()}}
+{\footnotesize\ttfamily  None sphinx.\+writers.\+text.\+Table.\+\_\+ensure\+\_\+has\+\_\+line (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1writers_1_1text_1_1Table_afb05d451bb61a0639777d30ea7c68bc8}\label{classsphinx_1_1writers_1_1text_1_1Table_afb05d451bb61a0639777d30ea7c68bc8} 
+\index{sphinx.writers.text.Table@{sphinx.writers.text.Table}!add\_cell@{add\_cell}}
+\index{add\_cell@{add\_cell}!sphinx.writers.text.Table@{sphinx.writers.text.Table}}
+\doxysubsubsection{\texorpdfstring{add\_cell()}{add\_cell()}}
+{\footnotesize\ttfamily  None sphinx.\+writers.\+text.\+Table.\+add\+\_\+cell (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Cell}{Cell}}}]{cell }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a cell to the current line, to use with ``add_row()``.  To add
+a cell spanning multiple lines or rows, simply set the
+``cell.colspan`` or ``cell.rowspan`` BEFORE inserting it into
+the table.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1writers_1_1text_1_1Table_a3442cc292bd5096974f2a16d25375473}\label{classsphinx_1_1writers_1_1text_1_1Table_a3442cc292bd5096974f2a16d25375473} 
+\index{sphinx.writers.text.Table@{sphinx.writers.text.Table}!add\_row@{add\_row}}
+\index{add\_row@{add\_row}!sphinx.writers.text.Table@{sphinx.writers.text.Table}}
+\doxysubsubsection{\texorpdfstring{add\_row()}{add\_row()}}
+{\footnotesize\ttfamily  None sphinx.\+writers.\+text.\+Table.\+add\+\_\+row (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add a row to the table, to use with ``add_cell()``.  It is not needed
+to call ``add_row()`` before the first ``add_cell()``.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1writers_1_1text_1_1Table_a557eca75b2da35b5bd927f463cdadb2b}\label{classsphinx_1_1writers_1_1text_1_1Table_a557eca75b2da35b5bd927f463cdadb2b} 
+\index{sphinx.writers.text.Table@{sphinx.writers.text.Table}!cell\_width@{cell\_width}}
+\index{cell\_width@{cell\_width}!sphinx.writers.text.Table@{sphinx.writers.text.Table}}
+\doxysubsubsection{\texorpdfstring{cell\_width()}{cell\_width()}}
+{\footnotesize\ttfamily  int sphinx.\+writers.\+text.\+Table.\+cell\+\_\+width (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Cell}{Cell}}}]{cell,  }\item[{list\mbox{[}int\mbox{]}}]{source }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Give the cell width, according to the given source (either
+``self.colwidth`` or ``self.measured_widths``).
+This takes into account cells spanning multiple columns.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1writers_1_1text_1_1Table_a774d6385339fb0fe11fd0c565e3235b0}\label{classsphinx_1_1writers_1_1text_1_1Table_a774d6385339fb0fe11fd0c565e3235b0} 
+\index{sphinx.writers.text.Table@{sphinx.writers.text.Table}!cells@{cells}}
+\index{cells@{cells}!sphinx.writers.text.Table@{sphinx.writers.text.Table}}
+\doxysubsubsection{\texorpdfstring{cells()}{cells()}}
+{\footnotesize\ttfamily  Iterator\mbox{[}\mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Cell}{Cell}}\mbox{]} sphinx.\+writers.\+text.\+Table.\+cells (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1writers_1_1text_1_1Table_a593709ad4b65fd144b7cf195ec8c2135}\label{classsphinx_1_1writers_1_1text_1_1Table_a593709ad4b65fd144b7cf195ec8c2135} 
+\index{sphinx.writers.text.Table@{sphinx.writers.text.Table}!physical\_lines\_for\_line@{physical\_lines\_for\_line}}
+\index{physical\_lines\_for\_line@{physical\_lines\_for\_line}!sphinx.writers.text.Table@{sphinx.writers.text.Table}}
+\doxysubsubsection{\texorpdfstring{physical\_lines\_for\_line()}{physical\_lines\_for\_line()}}
+{\footnotesize\ttfamily  int sphinx.\+writers.\+text.\+Table.\+physical\+\_\+lines\+\_\+for\+\_\+line (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{list\mbox{[}\mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1Cell}{Cell}}\mbox{]}}]{line }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}For a given line, compute the number of physical lines it spans
+due to text wrapping.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1writers_1_1text_1_1Table_adafc6fbba5c51109f249b73a89b146cf}\label{classsphinx_1_1writers_1_1text_1_1Table_adafc6fbba5c51109f249b73a89b146cf} 
+\index{sphinx.writers.text.Table@{sphinx.writers.text.Table}!rewrap@{rewrap}}
+\index{rewrap@{rewrap}!sphinx.writers.text.Table@{sphinx.writers.text.Table}}
+\doxysubsubsection{\texorpdfstring{rewrap()}{rewrap()}}
+{\footnotesize\ttfamily  None sphinx.\+writers.\+text.\+Table.\+rewrap (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Call ``cell.wrap()`` on all cells, and measure each column width
+after wrapping (result written in ``self.measured_widths``).
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1writers_1_1text_1_1Table_ac8a29e0f123bdee79033a8aec7d421a2}\label{classsphinx_1_1writers_1_1text_1_1Table_ac8a29e0f123bdee79033a8aec7d421a2} 
+\index{sphinx.writers.text.Table@{sphinx.writers.text.Table}!set\_separator@{set\_separator}}
+\index{set\_separator@{set\_separator}!sphinx.writers.text.Table@{sphinx.writers.text.Table}}
+\doxysubsubsection{\texorpdfstring{set\_separator()}{set\_separator()}}
+{\footnotesize\ttfamily  None sphinx.\+writers.\+text.\+Table.\+set\+\_\+separator (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Sets the separator below the current line.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsphinx_1_1writers_1_1text_1_1Table_a1e613c5ce5c133ca1bdc9837a7989c10}\label{classsphinx_1_1writers_1_1text_1_1Table_a1e613c5ce5c133ca1bdc9837a7989c10} 
+\index{sphinx.writers.text.Table@{sphinx.writers.text.Table}!current\_col@{current\_col}}
+\index{current\_col@{current\_col}!sphinx.writers.text.Table@{sphinx.writers.text.Table}}
+\doxysubsubsection{\texorpdfstring{current\_col}{current\_col}}
+{\footnotesize\ttfamily sphinx.\+writers.\+text.\+Table.\+current\+\_\+col}
+
+\Hypertarget{classsphinx_1_1writers_1_1text_1_1Table_a2edc6ef9f98ce1822f5da5a255031a5f}\label{classsphinx_1_1writers_1_1text_1_1Table_a2edc6ef9f98ce1822f5da5a255031a5f} 
+\index{sphinx.writers.text.Table@{sphinx.writers.text.Table}!current\_line@{current\_line}}
+\index{current\_line@{current\_line}!sphinx.writers.text.Table@{sphinx.writers.text.Table}}
+\doxysubsubsection{\texorpdfstring{current\_line}{current\_line}}
+{\footnotesize\ttfamily sphinx.\+writers.\+text.\+Table.\+current\+\_\+line}
+
+\Hypertarget{classsphinx_1_1writers_1_1text_1_1Table_a5c7ee88e61d57f55b75fca5d0b40c73c}\label{classsphinx_1_1writers_1_1text_1_1Table_a5c7ee88e61d57f55b75fca5d0b40c73c} 
+\index{sphinx.writers.text.Table@{sphinx.writers.text.Table}!lines@{lines}}
+\index{lines@{lines}!sphinx.writers.text.Table@{sphinx.writers.text.Table}}
+\doxysubsubsection{\texorpdfstring{lines}{lines}}
+{\footnotesize\ttfamily sphinx.\+writers.\+text.\+Table.\+lines}
+
+\Hypertarget{classsphinx_1_1writers_1_1text_1_1Table_ab8735f3b89d2f75115a18e8616f13f37}\label{classsphinx_1_1writers_1_1text_1_1Table_ab8735f3b89d2f75115a18e8616f13f37} 
+\index{sphinx.writers.text.Table@{sphinx.writers.text.Table}!measured\_widths@{measured\_widths}}
+\index{measured\_widths@{measured\_widths}!sphinx.writers.text.Table@{sphinx.writers.text.Table}}
+\doxysubsubsection{\texorpdfstring{measured\_widths}{measured\_widths}}
+{\footnotesize\ttfamily sphinx.\+writers.\+text.\+Table.\+measured\+\_\+widths}
+
+\Hypertarget{classsphinx_1_1writers_1_1text_1_1Table_a4d6a5c419b3d115f38cd5d7c66816c9f}\label{classsphinx_1_1writers_1_1text_1_1Table_a4d6a5c419b3d115f38cd5d7c66816c9f} 
+\index{sphinx.writers.text.Table@{sphinx.writers.text.Table}!separator@{separator}}
+\index{separator@{separator}!sphinx.writers.text.Table@{sphinx.writers.text.Table}}
+\doxysubsubsection{\texorpdfstring{separator}{separator}}
+{\footnotesize\ttfamily sphinx.\+writers.\+text.\+Table.\+separator}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/sphinx/writers/\mbox{\hyperlink{sphinx_2writers_2text_8py}{text.\+py}}\end{DoxyCompactItemize}

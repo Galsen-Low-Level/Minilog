@@ -1,0 +1,128 @@
+.TH "sphinx.project.Project" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.project.Project
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str|os\&.PathLike[str] \fBsrcdir\fP, Iterable[str] \fBsource_suffix\fP)"
+.br
+.ti -1c
+.RI "None \fBrestore\fP (self, \fBProject\fP other)"
+.br
+.ti -1c
+.RI "set[str] \fBdiscover\fP (self, Iterable[str] exclude_paths=(), Iterable[str] include_paths=(' **',))"
+.br
+.ti -1c
+.RI "str|None \fBpath2doc\fP (self, str|os\&.PathLike[str] filename)"
+.br
+.ti -1c
+.RI "\fB_StrPath\fP \fBdoc2path\fP (self, str docname, bool absolute)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsrcdir\fP"
+.br
+.ti -1c
+.RI "\fBsource_suffix\fP"
+.br
+.ti -1c
+.RI "\fBdocnames\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_first_source_suffix\fP"
+.br
+.ti -1c
+.RI "\fB_path_to_docname\fP"
+.br
+.ti -1c
+.RI "\fB_docname_to_path\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A project is the source code set of the Sphinx document(s)\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.project\&.Project\&.__init__ ( self, str | os\&.PathLike[str] srcdir, Iterable[str]
+     source_suffix)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " set[str] sphinx\&.project\&.Project\&.discover ( self, Iterable[str]  exclude_paths = \fC()\fP, Iterable[str]  include_paths = \fC('**',)\fP)"
+
+.PP
+.nf
+Find all document files in the source directory and put them in
+:attr:`docnames`\&.
+
+.fi
+.PP
+ 
+.SS " \fB_StrPath\fP sphinx\&.project\&.Project\&.doc2path ( self, str docname, bool absolute)"
+
+.PP
+.nf
+Return the filename for the document name\&.
+
+If *absolute* is True, return as an absolute path\&.
+Else, return as a relative path to the source directory\&.
+
+.fi
+.PP
+ 
+.SS " str | None sphinx\&.project\&.Project\&.path2doc ( self, str | os\&.PathLike[str] filename)"
+
+.PP
+.nf
+Return the docname for the filename if the file is a document\&.
+
+*filename* should be absolute or relative to the source directory\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.project\&.Project\&.restore ( self, \fBProject\fP other)"
+
+.PP
+.nf
+Take over a result of last build\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.project\&.Project\&._docname_to_path\fC [protected]\fP"
+
+.SS "sphinx\&.project\&.Project\&._first_source_suffix\fC [protected]\fP"
+
+.SS "sphinx\&.project\&.Project\&._path_to_docname\fC [protected]\fP"
+
+.SS "sphinx\&.project\&.Project\&.docnames"
+
+.SS "sphinx\&.project\&.Project\&.source_suffix"
+
+.SS "sphinx\&.project\&.Project\&.srcdir"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

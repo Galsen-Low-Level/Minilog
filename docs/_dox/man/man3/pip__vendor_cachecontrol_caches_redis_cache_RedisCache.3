@@ -1,0 +1,84 @@
+.TH "pip._vendor.cachecontrol.caches.redis_cache.RedisCache" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.cachecontrol.caches.redis_cache.RedisCache
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._vendor\&.cachecontrol\&.cache\&.BaseCache\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, Redis[bytes] \fBconn\fP)"
+.br
+.ti -1c
+.RI "bytes|None \fBget\fP (self, str key)"
+.br
+.ti -1c
+.RI "None \fBset\fP (self, str key, bytes value, int|datetime|None expires=None)"
+.br
+.ti -1c
+.RI "None \fBdelete\fP (self, str key)"
+.br
+.ti -1c
+.RI "None \fBclear\fP (self)"
+.br
+.ti -1c
+.RI "None \fBclose\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBconn\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._vendor\&.cachecontrol\&.caches\&.redis_cache\&.RedisCache\&.__init__ ( self, Redis[bytes] conn)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " None pip\&._vendor\&.cachecontrol\&.caches\&.redis_cache\&.RedisCache\&.clear ( self)"
+
+.PP
+.nf
+Helper for clearing all the keys in a database\&. Use with
+caution!
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.cachecontrol\&.caches\&.redis_cache\&.RedisCache\&.close ( self)"
+
+.PP
+.nf
+Redis uses connection pooling, no need to close the connection\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._vendor\&.cachecontrol\&.cache\&.BaseCache\fP\&.
+.SS " None pip\&._vendor\&.cachecontrol\&.caches\&.redis_cache\&.RedisCache\&.delete ( self, str key)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.cachecontrol\&.cache\&.BaseCache\fP\&.
+.SS " bytes | None pip\&._vendor\&.cachecontrol\&.caches\&.redis_cache\&.RedisCache\&.get ( self, str key)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.cachecontrol\&.cache\&.BaseCache\fP\&.
+.SS " None pip\&._vendor\&.cachecontrol\&.caches\&.redis_cache\&.RedisCache\&.set ( self, str key, bytes value, int | datetime | None  expires = \fCNone\fP)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.cachecontrol\&.cache\&.BaseCache\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.cachecontrol\&.caches\&.redis_cache\&.RedisCache\&.conn"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

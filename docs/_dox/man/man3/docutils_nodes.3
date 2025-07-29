@@ -1,0 +1,646 @@
+.TH "docutils.nodes" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.nodes
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBabbreviation\fP"
+.br
+.ti -1c
+.RI "class \fBacronym\fP"
+.br
+.ti -1c
+.RI "class \fBaddress\fP"
+.br
+.ti -1c
+.RI "class \fBAdmonition\fP"
+.br
+.ti -1c
+.RI "class \fBadmonition\fP"
+.br
+.ti -1c
+.RI "class \fBattention\fP"
+.br
+.ti -1c
+.RI "class \fBattribution\fP"
+.br
+.ti -1c
+.RI "class \fBauthor\fP"
+.br
+.ti -1c
+.RI "class \fBauthors\fP"
+.br
+.ti -1c
+.RI "class \fBBackLinkable\fP"
+.br
+.ti -1c
+.RI "class \fBBibliographic\fP"
+.br
+.ti -1c
+.RI "class \fBblock_quote\fP"
+.br
+.ti -1c
+.RI "class \fBBody\fP"
+.br
+.ti -1c
+.RI "class \fBbullet_list\fP"
+.br
+.ti -1c
+.RI "class \fBcaption\fP"
+.br
+.ti -1c
+.RI "class \fBcaution\fP"
+.br
+.ti -1c
+.RI "class \fBcitation\fP"
+.br
+.ti -1c
+.RI "class \fBcitation_reference\fP"
+.br
+.ti -1c
+.RI "class \fBclassifier\fP"
+.br
+.ti -1c
+.RI "class \fBcolspec\fP"
+.br
+.ti -1c
+.RI "class \fBcomment\fP"
+.br
+.ti -1c
+.RI "class \fBcompound\fP"
+.br
+.ti -1c
+.RI "class \fBcontact\fP"
+.br
+.ti -1c
+.RI "class \fBcontainer\fP"
+.br
+.ti -1c
+.RI "class \fBcopyright\fP"
+.br
+.ti -1c
+.RI "class \fBdanger\fP"
+.br
+.ti -1c
+.RI "class \fBdate\fP"
+.br
+.ti -1c
+.RI "class \fBdecoration\fP"
+.br
+.ti -1c
+.RI "class \fBDecorative\fP"
+.br
+.ti -1c
+.RI "class \fBdefinition\fP"
+.br
+.ti -1c
+.RI "class \fBdefinition_list\fP"
+.br
+.ti -1c
+.RI "class \fBdefinition_list_item\fP"
+.br
+.ti -1c
+.RI "class \fBdescription\fP"
+.br
+.ti -1c
+.RI "class \fBdocinfo\fP"
+.br
+.ti -1c
+.RI "class \fBdoctest_block\fP"
+.br
+.ti -1c
+.RI "class \fBdocument\fP"
+.br
+.ti -1c
+.RI "class \fBElement\fP"
+.br
+.ti -1c
+.RI "class \fBemphasis\fP"
+.br
+.ti -1c
+.RI "class \fBentry\fP"
+.br
+.ti -1c
+.RI "class \fBenumerated_list\fP"
+.br
+.ti -1c
+.RI "class \fBerror\fP"
+.br
+.ti -1c
+.RI "class \fBfield\fP"
+.br
+.ti -1c
+.RI "class \fBfield_body\fP"
+.br
+.ti -1c
+.RI "class \fBfield_list\fP"
+.br
+.ti -1c
+.RI "class \fBfield_name\fP"
+.br
+.ti -1c
+.RI "class \fBfigure\fP"
+.br
+.ti -1c
+.RI "class \fBFixedTextElement\fP"
+.br
+.ti -1c
+.RI "class \fBfooter\fP"
+.br
+.ti -1c
+.RI "class \fBfootnote\fP"
+.br
+.ti -1c
+.RI "class \fBfootnote_reference\fP"
+.br
+.ti -1c
+.RI "class \fBGeneral\fP"
+.br
+.ti -1c
+.RI "class \fBgenerated\fP"
+.br
+.ti -1c
+.RI "class \fBGenericNodeVisitor\fP"
+.br
+.ti -1c
+.RI "class \fBheader\fP"
+.br
+.ti -1c
+.RI "class \fBhint\fP"
+.br
+.ti -1c
+.RI "class \fBimage\fP"
+.br
+.ti -1c
+.RI "class \fBimportant\fP"
+.br
+.ti -1c
+.RI "class \fBInline\fP"
+.br
+.ti -1c
+.RI "class \fBinline\fP"
+.br
+.ti -1c
+.RI "class \fBInvisible\fP"
+.br
+.ti -1c
+.RI "class \fBlabel\fP"
+.br
+.ti -1c
+.RI "class \fBLabeled\fP"
+.br
+.ti -1c
+.RI "class \fBlegend\fP"
+.br
+.ti -1c
+.RI "class \fBline\fP"
+.br
+.ti -1c
+.RI "class \fBline_block\fP"
+.br
+.ti -1c
+.RI "class \fBlist_item\fP"
+.br
+.ti -1c
+.RI "class \fBliteral\fP"
+.br
+.ti -1c
+.RI "class \fBliteral_block\fP"
+.br
+.ti -1c
+.RI "class \fBmath\fP"
+.br
+.ti -1c
+.RI "class \fBmath_block\fP"
+.br
+.ti -1c
+.RI "class \fBmeta\fP"
+.br
+.ti -1c
+.RI "class \fBNode\fP"
+.br
+.ti -1c
+.RI "class \fBNodeFound\fP"
+.br
+.ti -1c
+.RI "class \fBNodeVisitor\fP"
+.br
+.ti -1c
+.RI "class \fBnote\fP"
+.br
+.ti -1c
+.RI "class \fBoption\fP"
+.br
+.ti -1c
+.RI "class \fBoption_argument\fP"
+.br
+.ti -1c
+.RI "class \fBoption_group\fP"
+.br
+.ti -1c
+.RI "class \fBoption_list\fP"
+.br
+.ti -1c
+.RI "class \fBoption_list_item\fP"
+.br
+.ti -1c
+.RI "class \fBoption_string\fP"
+.br
+.ti -1c
+.RI "class \fBorganization\fP"
+.br
+.ti -1c
+.RI "class \fBparagraph\fP"
+.br
+.ti -1c
+.RI "class \fBPart\fP"
+.br
+.ti -1c
+.RI "class \fBpending\fP"
+.br
+.ti -1c
+.RI "class \fBPreBibliographic\fP"
+.br
+.ti -1c
+.RI "class \fBproblematic\fP"
+.br
+.ti -1c
+.RI "class \fBraw\fP"
+.br
+.ti -1c
+.RI "class \fBreference\fP"
+.br
+.ti -1c
+.RI "class \fBReferential\fP"
+.br
+.ti -1c
+.RI "class \fBResolvable\fP"
+.br
+.ti -1c
+.RI "class \fBrevision\fP"
+.br
+.ti -1c
+.RI "class \fBRoot\fP"
+.br
+.ti -1c
+.RI "class \fBrow\fP"
+.br
+.ti -1c
+.RI "class \fBrubric\fP"
+.br
+.ti -1c
+.RI "class \fBsection\fP"
+.br
+.ti -1c
+.RI "class \fBSequential\fP"
+.br
+.ti -1c
+.RI "class \fBsidebar\fP"
+.br
+.ti -1c
+.RI "class \fBSkipChildren\fP"
+.br
+.ti -1c
+.RI "class \fBSkipDeparture\fP"
+.br
+.ti -1c
+.RI "class \fBSkipNode\fP"
+.br
+.ti -1c
+.RI "class \fBSkipSiblings\fP"
+.br
+.ti -1c
+.RI "class \fBSparseNodeVisitor\fP"
+.br
+.ti -1c
+.RI "class \fBSpecial\fP"
+.br
+.ti -1c
+.RI "class \fBstatus\fP"
+.br
+.ti -1c
+.RI "class \fBStopTraversal\fP"
+.br
+.ti -1c
+.RI "class \fBstrong\fP"
+.br
+.ti -1c
+.RI "class \fBStructural\fP"
+.br
+.ti -1c
+.RI "class \fBsubscript\fP"
+.br
+.ti -1c
+.RI "class \fBsubstitution_definition\fP"
+.br
+.ti -1c
+.RI "class \fBsubstitution_reference\fP"
+.br
+.ti -1c
+.RI "class \fBsubtitle\fP"
+.br
+.ti -1c
+.RI "class \fBsuperscript\fP"
+.br
+.ti -1c
+.RI "class \fBsystem_message\fP"
+.br
+.ti -1c
+.RI "class \fBtable\fP"
+.br
+.ti -1c
+.RI "class \fBtarget\fP"
+.br
+.ti -1c
+.RI "class \fBTargetable\fP"
+.br
+.ti -1c
+.RI "class \fBtbody\fP"
+.br
+.ti -1c
+.RI "class \fBterm\fP"
+.br
+.ti -1c
+.RI "class \fBText\fP"
+.br
+.ti -1c
+.RI "class \fBTextElement\fP"
+.br
+.ti -1c
+.RI "class \fBtgroup\fP"
+.br
+.ti -1c
+.RI "class \fBthead\fP"
+.br
+.ti -1c
+.RI "class \fBtip\fP"
+.br
+.ti -1c
+.RI "class \fBtitle\fP"
+.br
+.ti -1c
+.RI "class \fBtitle_reference\fP"
+.br
+.ti -1c
+.RI "class \fBTitular\fP"
+.br
+.ti -1c
+.RI "class \fBtopic\fP"
+.br
+.ti -1c
+.RI "class \fBtransition\fP"
+.br
+.ti -1c
+.RI "class \fBTreeCopyVisitor\fP"
+.br
+.ti -1c
+.RI "class \fBTreePruningException\fP"
+.br
+.ti -1c
+.RI "class \fBversion\fP"
+.br
+.ti -1c
+.RI "class \fBwarning\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBunescape\fP (text, restore_backslashes=False, respect_whitespace=False)"
+.br
+.ti -1c
+.RI "\fB_call_default_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fB_call_default_departure\fP (self, node)"
+.br
+.ti -1c
+.RI "\fB_nop\fP (self, node)"
+.br
+.ti -1c
+.RI "\fB_add_node_class_names\fP (names)"
+.br
+.ti -1c
+.RI "\fBmake_id\fP (string)"
+.br
+.ti -1c
+.RI "\fBdupname\fP (node, name)"
+.br
+.ti -1c
+.RI "\fBfully_normalize_name\fP (name)"
+.br
+.ti -1c
+.RI "\fBwhitespace_normalize_name\fP (name)"
+.br
+.ti -1c
+.RI "\fBserial_escape\fP (value)"
+.br
+.ti -1c
+.RI "\fBpseudo_quoteattr\fP (value)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "str \fBnode_class_names\fP"
+.br
+.ti -1c
+.RI "\fB_non_id_chars\fP = re\&.compile('[^a\-z0\-9]+')"
+.br
+.ti -1c
+.RI "\fB_non_id_at_ends\fP = re\&.compile('^[\-0\-9]+|\-+$')"
+.br
+.ti -1c
+.RI "dict \fB_non_id_translate\fP"
+.br
+.ti -1c
+.RI "dict \fB_non_id_translate_digraphs\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Docutils document tree element class library\&.
+
+Classes in CamelCase are abstract base classes or auxiliary classes\&. The one
+exception is `Text`, for a text (PCDATA) node; uppercase is used to
+differentiate from element classes\&.  Classes in lower_case_with_underscores
+are element classes, matching the XML element generic identifiers in the DTD_\&.
+
+The position of each node (the level at which it can occur) is significant and
+is represented by abstract base classes (`Root`, `Structural`, `Body`,
+`Inline`, etc\&.)\&.  Certain transformations will be easier because we can use
+``isinstance(node, base_class)`` to determine the position of the node in the
+hierarchy\&.
+
+\&.\&. _DTD: https://docutils\&.sourceforge\&.io/docs/ref/docutils\&.dtd
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "docutils\&.nodes\&._add_node_class_names ( names)\fC [protected]\fP"
+
+.PP
+.nf
+Save typing with dynamic assignments:
+.fi
+.PP
+ 
+.SS "docutils\&.nodes\&._call_default_departure ( self,  node)\fC [protected]\fP"
+
+.SS "docutils\&.nodes\&._call_default_visit ( self,  node)\fC [protected]\fP"
+
+.SS "docutils\&.nodes\&._nop ( self,  node)\fC [protected]\fP"
+
+.SS "docutils\&.nodes\&.dupname ( node,  name)"
+
+.SS "docutils\&.nodes\&.fully_normalize_name ( name)"
+
+.PP
+.nf
+Return a case- and whitespace-normalized name\&.
+.fi
+.PP
+ 
+.SS "docutils\&.nodes\&.make_id ( string)"
+
+.PP
+.nf
+Convert `string` into an identifier and return it\&.
+
+Docutils identifiers will conform to the regular expression
+``[a-z](-?[a-z0-9]+)*``\&.  For CSS compatibility, identifiers (the 'class'
+and 'id' attributes) should have no underscores, colons, or periods\&.
+Hyphens may be used\&.
+
+- The `HTML 4\&.01 spec`_ defines identifiers based on SGML tokens:
+
+      ID and NAME tokens must begin with a letter ([A-Za-z]) and may be
+      followed by any number of letters, digits ([0-9]), hyphens ('-'),
+      underscores ('_'), colons (':'), and periods ('\&.')\&.
+
+- However the `CSS1 spec`_ defines identifiers based on the 'name' token,
+  a tighter interpretation ('flex' tokenizer notation; 'latin1' and
+  'escape' 8-bit characters have been replaced with entities)::
+
+      unicode     \\\\[0-9a-f]{1,4}
+      latin1      [&iexcl;-&yuml;]
+      escape      {unicode}|\\\\[ -~&iexcl;-&yuml;]
+      nmchar      [-a-z0-9]|{latin1}|{escape}
+      name        {nmchar}+
+
+The CSS1 'nmchar' rule does not include underscores ('_'), colons (':'),
+or periods ('\&.'), therefore 'class' and 'id' attributes should not contain
+these characters\&. They should be replaced with hyphens ('-')\&. Combined
+with HTML's requirements (the first character must be a letter; no
+'unicode', 'latin1', or 'escape' characters), this results in the
+``[a-z](-?[a-z0-9]+)*`` pattern\&.
+
+\&.\&. _HTML 4\&.01 spec: https://www\&.w3\&.org/TR/html401
+\&.\&. _CSS1 spec: https://www\&.w3\&.org/TR/REC-CSS1
+
+.fi
+.PP
+ 
+.SS "docutils\&.nodes\&.pseudo_quoteattr ( value)"
+
+.PP
+.nf
+Quote attributes for pseudo-xml
+.fi
+.PP
+ 
+.SS "docutils\&.nodes\&.serial_escape ( value)"
+
+.PP
+.nf
+Escape string values that are elements of a list, for serialization\&.
+.fi
+.PP
+ 
+.SS "docutils\&.nodes\&.unescape ( text,  restore_backslashes = \fCFalse\fP,  respect_whitespace = \fCFalse\fP)"
+
+.PP
+.nf
+Return a string with nulls removed or restored to backslashes\&.
+Backslash-escaped spaces are also removed\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.nodes\&.whitespace_normalize_name ( name)"
+
+.PP
+.nf
+Return a whitespace-normalized name\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "docutils\&.nodes\&._non_id_at_ends = re\&.compile('^[\-0\-9]+|\-+$')\fC [protected]\fP"
+
+.SS "docutils\&.nodes\&._non_id_chars = re\&.compile('[^a\-z0\-9]+')\fC [protected]\fP"
+
+.SS "dict docutils\&.nodes\&._non_id_translate\fC [protected]\fP"
+
+.SS "dict docutils\&.nodes\&._non_id_translate_digraphs\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     0x00df: 'sz',      # ligature sz
+3     0x00e6: 'ae',      # ae
+4     0x0153: 'oe',      # ligature oe
+5     0x0238: 'db',      # db digraph
+6     0x0239: 'qp',      # qp digraph
+7 }
+.fi
+
+.SS "str docutils\&.nodes\&.node_class_names"
+\fBInitial value:\fP.PP
+.nf
+1 =  """
+2     Text
+3     abbreviation acronym address admonition attention attribution author
+4         authors
+5     block_quote bullet_list
+6     caption caution citation citation_reference classifier colspec comment
+7         compound contact container copyright
+8     danger date decoration definition definition_list definition_list_item
+9         description docinfo doctest_block document
+10     emphasis entry enumerated_list error
+11     field field_body field_list field_name figure footer
+12         footnote footnote_reference
+13     generated
+14     header hint
+15     image important inline
+16     label legend line line_block list_item literal literal_block
+17     math math_block meta
+18     note
+19     option option_argument option_group option_list option_list_item
+20         option_string organization
+21     paragraph pending problematic
+22     raw reference revision row rubric
+23     section sidebar status strong subscript substitution_definition
+24         substitution_reference subtitle superscript system_message
+25     table target tbody term tgroup thead tip title title_reference topic
+26         transition
+27     version
+28     warning"""\&.split()
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

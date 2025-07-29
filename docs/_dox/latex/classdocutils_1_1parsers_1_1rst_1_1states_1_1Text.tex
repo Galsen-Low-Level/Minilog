@@ -1,0 +1,304 @@
+\doxysection{docutils.\+parsers.\+rst.\+states.\+Text Class Reference}
+\hypertarget{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text}{}\label{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text}\index{docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}}
+Inheritance diagram for docutils.\+parsers.\+rst.\+states.\+Text\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.242424cm]{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_ab4146fb10580188defa4b47ad5ea9fa1}{blank}} (self, match, context, next\+\_\+state)
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a0800dd94a11174ad3c500e9fee215b48}{eof}} (self, context)
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a3b8b4f70d44e1cd0350982b967dd0be7}{indent}} (self, match, context, next\+\_\+state)
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a53688a7805027eb37cd74df114c27be8}{underline}} (self, match, context, next\+\_\+state)
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a5dd1a034ebbefc14d10d0e9a8b50a78f}{text}} (self, match, context, next\+\_\+state)
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a14781dcdab7d72f6e170f53fa5a53a2a}{literal\+\_\+block}} (self)
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a3125af66302e633a736bad68063d8b28}{quoted\+\_\+literal\+\_\+block}} (self)
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a53ab2181cf23dc44d739f2e87846f1d7}{definition\+\_\+list\+\_\+item}} (self, termline)
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_aebc50ac5973fcd6a7780f6753227e5d5}{term}} (self, lines, \mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_ae9fd95584c96566be7dc095b64e7c26b}{lineno}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState}{docutils.\+parsers.\+rst.\+states.\+RSTState}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_a2baca5762327f76433445e87dd7e3fc7}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a53b7644cdad55f7cf544d7431b021571}{state\+\_\+machine}}, \mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a21c75bc16ebc63ea1559189f1acc3802}{debug}}=False)
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_acf7cbc46f2e2065f638dd640b0392ed4}{runtime\+\_\+init}} (self)
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_a6a8818a4ab37653cd050ad3c0f08875a}{goto\+\_\+line}} (self, abs\+\_\+line\+\_\+offset)
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_a9232fa00eea49924667c9baea0779781}{no\+\_\+match}} (self, context, \mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a30dfc9f8434dbf8ed896c5015a1c9427}{transitions}})
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_ab3f956ae81f4abf6b272a731f79222ac}{bof}} (self, context)
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_acf826b13abf1d45e97e948d107fef4bb}{nested\+\_\+parse}} (self, block, input\+\_\+offset, node, match\+\_\+titles=False, state\+\_\+machine\+\_\+class=None, state\+\_\+machine\+\_\+kwargs=None)
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_aa87f97b7d8a883b05e519fafb0eff413}{nested\+\_\+list\+\_\+parse}} (self, block, input\+\_\+offset, node, initial\+\_\+state, blank\+\_\+finish, blank\+\_\+finish\+\_\+state=None, extra\+\_\+settings=\{\}, match\+\_\+titles=False, state\+\_\+machine\+\_\+class=None, state\+\_\+machine\+\_\+kwargs=None)
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_a3c950bcb6be79f0d128e79d6ccb50ee7}{section}} (self, title, source, style, \mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_ae9fd95584c96566be7dc095b64e7c26b}{lineno}}, messages)
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_a058f8d8cee8ddc24ac1df292f9ff57f4}{check\+\_\+subsection}} (self, source, style, \mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_ae9fd95584c96566be7dc095b64e7c26b}{lineno}})
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_a6e9e29b350b0ad7ebf1154edd3d44ca9}{title\+\_\+inconsistent}} (self, sourcetext, \mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_ae9fd95584c96566be7dc095b64e7c26b}{lineno}})
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_a8f79efdc9496d89456e964bf3360322e}{new\+\_\+subsection}} (self, title, \mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_ae9fd95584c96566be7dc095b64e7c26b}{lineno}}, messages)
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_a77f9de6f6116937a098014209464db6c}{paragraph}} (self, lines, \mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_ae9fd95584c96566be7dc095b64e7c26b}{lineno}})
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_a7f7691db57b736f35c1ebc6d56a9dff9}{inline\+\_\+text}} (self, text, \mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_ae9fd95584c96566be7dc095b64e7c26b}{lineno}})
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_ab50b597c5a44b4b55c05b274f6d64463}{unindent\+\_\+warning}} (self, node\+\_\+name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS}{docutils.\+statemachine.\+State\+WS}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS_ac17bffcd9eebc22d43d79972639fce3a}{add\+\_\+initial\+\_\+transitions}} (self)
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS_ac02718eaa4933e215e52b1fb98da9cae}{known\+\_\+indent}} (self, match, context, next\+\_\+state)
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS_adc0b6a6d3bc2a98c3b57c1c55d1b1297}{first\+\_\+known\+\_\+indent}} (self, match, context, next\+\_\+state)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classdocutils_1_1statemachine_1_1State}{docutils.\+statemachine.\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a6db48e395c75525d7816ed88e040eddc}{unlink}} (self)
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a9f5a70e75c1894e9c57ee5d9ba403f7a}{add\+\_\+transitions}} (self, names, \mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a30dfc9f8434dbf8ed896c5015a1c9427}{transitions}})
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a58d83467faf42d8418d6b976a64327a8}{add\+\_\+transition}} (self, name, transition)
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_ad670027811b24b16e424eaf53929e4d8}{remove\+\_\+transition}} (self, name)
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_aeb9038f788ecca07bc5d1fd991e8eae6}{make\+\_\+transition}} (self, name, next\+\_\+state=None)
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_aff2aac70c600496bdbeedf279a39f614}{make\+\_\+transitions}} (self, name\+\_\+list)
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a7639ca87032af9710344388d6c855da4}{nop}} (self, match, context, next\+\_\+state)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+dict \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a5ad030c1e10ae061b657ae7e840f0e7e}{patterns}}
+\item 
+list \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_ad558eb43ed85e6e6157536c8d1e7f86d}{initial\+\_\+transitions}} = \mbox{[}(\textquotesingle{}\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a53688a7805027eb37cd74df114c27be8}{underline}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Body}{Body}}\textquotesingle{}), (\textquotesingle{}\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a5dd1a034ebbefc14d10d0e9a8b50a78f}{text}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Body}{Body}}\textquotesingle{})\mbox{]}
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a8df9f3f8cacdda4110b6aa7fd6a18285}{classifier\+\_\+delimiter}} = re.\+compile(\textquotesingle{} +\+: +\textquotesingle{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState}{docutils.\+parsers.\+rst.\+states.\+RSTState}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_a2929822bc21d74c330c524f53aaf599b}{nested\+\_\+sm}} = \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1NestedStateMachine}{Nested\+State\+Machine}}
+\item 
+list \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_a8375fdb87ebbb8e77175f0ed9c0c141a}{nested\+\_\+sm\+\_\+cache}} = \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS}{docutils.\+statemachine.\+State\+WS}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS_a0c29de2845c7370322ee786e8bbc29a9}{indent\+\_\+sm}} = None
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS_ad746a2902d7c1c3d3319867db5afdbf8}{indent\+\_\+sm\+\_\+kwargs}} = None
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS_a42166c5a1ac1da296b5bfbb9faf499d4}{known\+\_\+indent\+\_\+sm}} = None
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS_ad3afee05751480f8a44396f29c752fbd}{known\+\_\+indent\+\_\+sm\+\_\+kwargs}} = None
+\item 
+dict \mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS_a00d23375c4362cf12ce0a50b8001c993}{ws\+\_\+patterns}}
+\item 
+tuple \mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS_aa7890e48b8a568669ff039fd993f2233}{ws\+\_\+initial\+\_\+transitions}} = (\textquotesingle{}\mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS_a2db0563a9c868a20109777f99e1a0f99}{blank}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS_a8cdd4b9f93640f452176c850da564642}{indent}}\textquotesingle{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classdocutils_1_1statemachine_1_1State}{docutils.\+statemachine.\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_afe67b8c87d88d72ea07a294bd17d485e}{patterns}} = None
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a81bb6b19c7f1393f208f54abe6163fac}{initial\+\_\+transitions}} = None
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a757e253962c6f52d7fbbbf953469fe57}{nested\+\_\+sm}} = None
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a3b88332e8abfaf195b4b89594fed53d1}{nested\+\_\+sm\+\_\+kwargs}} = None
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState}{docutils.\+parsers.\+rst.\+states.\+RSTState}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_a35b052d1744b746ca1ed2b36fe1408cf}{nested\+\_\+sm\+\_\+kwargs}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_a697f0286ecb7c2a4d64a7fadec9f98cc}{memo}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_a492316982b5cfd692fe05302d09d70c9}{reporter}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_ab2f32a611bef1b1c6ddbfddd91d58075}{inliner}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_ad05309b955d4186dc04bdf6808f171f2}{document}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1RSTState_aa17ebbfdebc7afa81f28fd0653b83bd9}{parent}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS}{docutils.\+statemachine.\+State\+WS}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS_a6d83ef5ffd07c8cbdba5ff32fd955bb0}{patterns}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS_a521adebafa1b253c4160f0a9038825cf}{ws\+\_\+patterns}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS_aa9bf3ee04bcf8fc200e2fca88670806f}{ws\+\_\+initial\+\_\+transitions}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classdocutils_1_1statemachine_1_1State}{docutils.\+statemachine.\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_abeafa0b68c982f201ed7eef4959d23be}{transition\+\_\+order}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a30dfc9f8434dbf8ed896c5015a1c9427}{transitions}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a53b7644cdad55f7cf544d7431b021571}{state\+\_\+machine}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a21c75bc16ebc63ea1559189f1acc3802}{debug}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Classifier of second line of a text block.
+
+Could be a paragraph, a definition list item, or a title.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_ab4146fb10580188defa4b47ad5ea9fa1}\label{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_ab4146fb10580188defa4b47ad5ea9fa1} 
+\index{docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}!blank@{blank}}
+\index{blank@{blank}!docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}}
+\doxysubsubsection{\texorpdfstring{blank()}{blank()}}
+{\footnotesize\ttfamily docutils.\+parsers.\+rst.\+states.\+Text.\+blank (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{match,  }\item[{}]{context,  }\item[{}]{next\+\_\+state }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}End of paragraph.\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS_a2db0563a9c868a20109777f99e1a0f99}{docutils.\+statemachine.\+State\+WS}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Line_ab85f9a7541198fae85aa32c9f235d213}{docutils.\+parsers.\+rst.\+states.\+Line}}.
+
+\Hypertarget{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a53ab2181cf23dc44d739f2e87846f1d7}\label{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a53ab2181cf23dc44d739f2e87846f1d7} 
+\index{docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}!definition\_list\_item@{definition\_list\_item}}
+\index{definition\_list\_item@{definition\_list\_item}!docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}}
+\doxysubsubsection{\texorpdfstring{definition\_list\_item()}{definition\_list\_item()}}
+{\footnotesize\ttfamily docutils.\+parsers.\+rst.\+states.\+Text.\+definition\+\_\+list\+\_\+item (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{termline }\end{DoxyParamCaption})}
+
+\Hypertarget{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a0800dd94a11174ad3c500e9fee215b48}\label{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a0800dd94a11174ad3c500e9fee215b48} 
+\index{docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}!eof@{eof}}
+\index{eof@{eof}!docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}}
+\doxysubsubsection{\texorpdfstring{eof()}{eof()}}
+{\footnotesize\ttfamily docutils.\+parsers.\+rst.\+states.\+Text.\+eof (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{context }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Handle end-of-file. Return empty result.
+
+Override in subclasses.
+
+Parameter `context`: application-defined storage.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classdocutils_1_1statemachine_1_1State_a18d3688aab84c3a85bdbb90cf2973571}{docutils.\+statemachine.\+State}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classbreathe_1_1renderer_1_1sphinxrenderer_1_1InlineText_a9caf61404fd3fc22e3f2296433ac68fb}{breathe.\+renderer.\+sphinxrenderer.\+Inline\+Text}}, \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1SpecializedText_ab886270193bb78077515bdb62528f083}{docutils.\+parsers.\+rst.\+states.\+Specialized\+Text}}, \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Definition_ad3ebd1794c051c835ff40d79a155a78f}{docutils.\+parsers.\+rst.\+states.\+Definition}}, and \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Line_ac7195cad5fe0a562b3b03a7120974ee4}{docutils.\+parsers.\+rst.\+states.\+Line}}.
+
+\Hypertarget{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a3b8b4f70d44e1cd0350982b967dd0be7}\label{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a3b8b4f70d44e1cd0350982b967dd0be7} 
+\index{docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}!indent@{indent}}
+\index{indent@{indent}!docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}}
+\doxysubsubsection{\texorpdfstring{indent()}{indent()}}
+{\footnotesize\ttfamily docutils.\+parsers.\+rst.\+states.\+Text.\+indent (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{match,  }\item[{}]{context,  }\item[{}]{next\+\_\+state }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Definition list item.\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS_a8cdd4b9f93640f452176c850da564642}{docutils.\+statemachine.\+State\+WS}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classbreathe_1_1renderer_1_1sphinxrenderer_1_1InlineText_a5a606a1546c87a49ad6a5544d3fc09b1}{breathe.\+renderer.\+sphinxrenderer.\+Inline\+Text}}, and \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Definition_ac3996fbb94053ca8c81d62088b4e01cc}{docutils.\+parsers.\+rst.\+states.\+Definition}}.
+
+\Hypertarget{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a14781dcdab7d72f6e170f53fa5a53a2a}\label{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a14781dcdab7d72f6e170f53fa5a53a2a} 
+\index{docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}!literal\_block@{literal\_block}}
+\index{literal\_block@{literal\_block}!docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}}
+\doxysubsubsection{\texorpdfstring{literal\_block()}{literal\_block()}}
+{\footnotesize\ttfamily docutils.\+parsers.\+rst.\+states.\+Text.\+literal\+\_\+block (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a list of nodes.\end{DoxyVerb}
+ \Hypertarget{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a3125af66302e633a736bad68063d8b28}\label{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a3125af66302e633a736bad68063d8b28} 
+\index{docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}!quoted\_literal\_block@{quoted\_literal\_block}}
+\index{quoted\_literal\_block@{quoted\_literal\_block}!docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}}
+\doxysubsubsection{\texorpdfstring{quoted\_literal\_block()}{quoted\_literal\_block()}}
+{\footnotesize\ttfamily docutils.\+parsers.\+rst.\+states.\+Text.\+quoted\+\_\+literal\+\_\+block (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_aebc50ac5973fcd6a7780f6753227e5d5}\label{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_aebc50ac5973fcd6a7780f6753227e5d5} 
+\index{docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}!term@{term}}
+\index{term@{term}!docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}}
+\doxysubsubsection{\texorpdfstring{term()}{term()}}
+{\footnotesize\ttfamily docutils.\+parsers.\+rst.\+states.\+Text.\+term (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{lines,  }\item[{}]{lineno }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a definition_list's term and optional classifiers.\end{DoxyVerb}
+ \Hypertarget{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a5dd1a034ebbefc14d10d0e9a8b50a78f}\label{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a5dd1a034ebbefc14d10d0e9a8b50a78f} 
+\index{docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}!text@{text}}
+\index{text@{text}!docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}}
+\doxysubsubsection{\texorpdfstring{text()}{text()}}
+{\footnotesize\ttfamily docutils.\+parsers.\+rst.\+states.\+Text.\+text (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{match,  }\item[{}]{context,  }\item[{}]{next\+\_\+state }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Paragraph.\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Line_a8f4963153a241e3d7c3cad3454a32ac1}{docutils.\+parsers.\+rst.\+states.\+Line}}.
+
+\Hypertarget{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a53688a7805027eb37cd74df114c27be8}\label{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a53688a7805027eb37cd74df114c27be8} 
+\index{docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}!underline@{underline}}
+\index{underline@{underline}!docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}}
+\doxysubsubsection{\texorpdfstring{underline()}{underline()}}
+{\footnotesize\ttfamily docutils.\+parsers.\+rst.\+states.\+Text.\+underline (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{match,  }\item[{}]{context,  }\item[{}]{next\+\_\+state }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Section title.\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Line_afacf1f7fea2ebec77d46821116430f46}{docutils.\+parsers.\+rst.\+states.\+Line}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a8df9f3f8cacdda4110b6aa7fd6a18285}\label{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a8df9f3f8cacdda4110b6aa7fd6a18285} 
+\index{docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}!classifier\_delimiter@{classifier\_delimiter}}
+\index{classifier\_delimiter@{classifier\_delimiter}!docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}}
+\doxysubsubsection{\texorpdfstring{classifier\_delimiter}{classifier\_delimiter}}
+{\footnotesize\ttfamily docutils.\+parsers.\+rst.\+states.\+Text.\+classifier\+\_\+delimiter = re.\+compile(\textquotesingle{} +\+: +\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_ad558eb43ed85e6e6157536c8d1e7f86d}\label{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_ad558eb43ed85e6e6157536c8d1e7f86d} 
+\index{docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}!initial\_transitions@{initial\_transitions}}
+\index{initial\_transitions@{initial\_transitions}!docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}}
+\doxysubsubsection{\texorpdfstring{initial\_transitions}{initial\_transitions}}
+{\footnotesize\ttfamily list docutils.\+parsers.\+rst.\+states.\+Text.\+initial\+\_\+transitions = \mbox{[}(\textquotesingle{}\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a53688a7805027eb37cd74df114c27be8}{underline}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Body}{Body}}\textquotesingle{}), (\textquotesingle{}\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a5dd1a034ebbefc14d10d0e9a8b50a78f}{text}}\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Body}{Body}}\textquotesingle{})\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a5ad030c1e10ae061b657ae7e840f0e7e}\label{classdocutils_1_1parsers_1_1rst_1_1states_1_1Text_a5ad030c1e10ae061b657ae7e840f0e7e} 
+\index{docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}!patterns@{patterns}}
+\index{patterns@{patterns}!docutils.parsers.rst.states.Text@{docutils.parsers.rst.states.Text}}
+\doxysubsubsection{\texorpdfstring{patterns}{patterns}}
+{\footnotesize\ttfamily dict docutils.\+parsers.\+rst.\+states.\+Text.\+patterns\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ \{\textcolor{stringliteral}{'underline'}:\ Body.patterns[\textcolor{stringliteral}{'line'}],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'text'}:\ \textcolor{stringliteral}{r''}\}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/docutils/parsers/rst/\mbox{\hyperlink{states_8py}{states.\+py}}\end{DoxyCompactItemize}

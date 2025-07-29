@@ -1,0 +1,244 @@
+.TH "pygments.lexers.special.RawTokenLexer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.lexers.special.RawTokenLexer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpygments\&.lexer\&.Lexer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fBget_tokens\fP (self, text)"
+.br
+.ti -1c
+.RI "\fBget_tokens_unprocessed\fP (self, text)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd_filter\fP (self, filter_, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fBanalyse_text\fP (text)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.LexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fB__new__\fP (mcs, name, bases, d)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcompress\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBstripnl\fP"
+.br
+.ti -1c
+.RI "\fBstripall\fP"
+.br
+.ti -1c
+.RI "\fBensurenl\fP"
+.br
+.ti -1c
+.RI "\fBtabsize\fP"
+.br
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBfilters\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = 'Raw token data'"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = []"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBmimetypes\fP = ['application/x\-pygments\-tokens']"
+.br
+.ti -1c
+.RI "str \fBurl\fP = 'https://pygments\&.org/docs/formatters/#RawTokenFormatter'"
+.br
+.ti -1c
+.RI "str \fBversion_added\fP = ''"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fBname\fP = None"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = []"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBalias_filenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBmimetypes\fP = []"
+.br
+.ti -1c
+.RI "int \fBpriority\fP = 0"
+.br
+.ti -1c
+.RI "\fBurl\fP = None"
+.br
+.ti -1c
+.RI "\fBversion_added\fP = None"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Member Functions inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB_preprocess_lexer_input\fP (self, text)"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB_example\fP = None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Recreate a token stream formatted with the `RawTokenFormatter`\&.
+
+Additional options accepted:
+
+`compress`
+    If set to ``'gz'`` or ``'bz2'``, decompress the token stream with
+    the given compression algorithm before lexing (default: ``''``)\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pygments\&.lexers\&.special\&.RawTokenLexer\&.__init__ ( self, ** options)"
+
+.PP
+.nf
+This constructor takes arbitrary options as keyword arguments\&.
+Every subclass must first process its own options and then call
+the `Lexer` constructor, since it processes the basic
+options like `stripnl`\&.
+
+An example looks like this:
+
+\&.\&. sourcecode:: python
+
+   def __init__(self, **options):
+       self\&.compress = options\&.get('compress', '')
+       Lexer\&.__init__(self, **options)
+
+As these options must all be specifiable as strings (due to the
+command line usage), there are various utility functions
+available to help with that, see `Utilities`_\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpygments\&.lexer\&.Lexer\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "pygments\&.lexers\&.special\&.RawTokenLexer\&.get_tokens ( self,  text)"
+
+.PP
+.nf
+This method is the basic interface of a lexer\&. It is called by
+the `highlight()` function\&. It must process the text and return an
+iterable of ``(tokentype, value)`` pairs from `text`\&.
+
+Normally, you don't need to override this method\&. The default
+implementation processes the options recognized by all lexers
+(`stripnl`, `stripall` and so on), and then yields all tokens
+from `get_tokens_unprocessed()`, with the ``index`` dropped\&.
+
+If `unfiltered` is set to `True`, the filtering mechanism is
+bypassed even if filters are defined\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpygments\&.lexer\&.Lexer\fP\&.
+.SS "pygments\&.lexers\&.special\&.RawTokenLexer\&.get_tokens_unprocessed ( self,  text)"
+
+.PP
+.nf
+This method should process the text and return an iterable of
+``(index, tokentype, value)`` tuples where ``index`` is the starting
+position of the token within the input text\&.
+
+It must be overridden by subclasses\&. It is recommended to
+implement it as a generator to maximize effectiveness\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpygments\&.lexer\&.Lexer\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "list pygments\&.lexers\&.special\&.RawTokenLexer\&.aliases = []\fC [static]\fP"
+
+.SS "pygments\&.lexers\&.special\&.RawTokenLexer\&.compress"
+
+.SS "list pygments\&.lexers\&.special\&.RawTokenLexer\&.filenames = []\fC [static]\fP"
+
+.SS "list pygments\&.lexers\&.special\&.RawTokenLexer\&.mimetypes = ['application/x\-pygments\-tokens']\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.special\&.RawTokenLexer\&.name = 'Raw token data'\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.special\&.RawTokenLexer\&.url = 'https://pygments\&.org/docs/formatters/#RawTokenFormatter'\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.special\&.RawTokenLexer\&.version_added = ''\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

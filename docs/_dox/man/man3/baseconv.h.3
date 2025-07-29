@@ -1,0 +1,111 @@
+.TH "/home/umar/Desktop/WorkShop/GLL/bav/baseconv.h" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/umar/Desktop/WorkShop/GLL/bav/baseconv.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fB__bcb_t\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB__BCEXPORT\fP   extern"
+.br
+.ti -1c
+.RI "#define \fB__BCX\fP(__type_return_function)     \fB__BCEXPORT\fP __type_return_function"
+.br
+.ti -1c
+.RI "#define \fB__symbole_sep\fP   0x2e"
+.br
+.ti -1c
+.RI "#define \fBBYTE_UNIT\fP   sizeof(void *)"
+.br
+.ti -1c
+.RI "#define \fB_SIZE\fP(__value)   sizeof(__value) * \fBBYTE_UNIT\fP"
+.br
+.ti -1c
+.RI "#define \fBBITSET\fP(__value,  __index)   ((__value) >> __index \-1 )  & 0x1"
+.br
+.ti -1c
+.RI "#define \fBSHOWBITREP\fP(__expr)   printf('%i',__expr)"
+.br
+.ti -1c
+.RI "#define \fBSHOWBASE_EXPR\fP(__expr,  __it,  __prefix, __fmt)"
+.br
+.ti -1c
+.RI "#define \fBSHOWHEX\fP(__expr,  __it)     \fBSHOWBASE_EXPR\fP(__expr ,__it, '0x','%c')"
+.br
+.ti -1c
+.RI "#define \fBSHOWOCT\fP(__expr, __it)     \fBSHOWBASE_EXPR\fP(__expr ,__it, '0o','%i')"
+.br
+.ti -1c
+.RI "#define \fBSHOWBIN\fP(__expr,  __it)     \fBSHOWBASE_EXPR\fP(__expr ,__it, '0b','%i')"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__BCX\fP (void) \fBbc_binv2\fP(int __value"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fB__show_notation\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define __BCEXPORT   extern"
+
+.SS "#define __BCX(__type_return_function)     \fB__BCEXPORT\fP __type_return_function"
+
+.SS "#define __symbole_sep   0x2e"
+
+.SS "#define _SIZE(__value)   sizeof(__value) * \fBBYTE_UNIT\fP"
+
+.SS "#define BITSET(__value, __index)   ((__value) >> __index \-1 )  & 0x1"
+
+.SS "#define BYTE_UNIT   sizeof(void *)"
+
+.SS "#define SHOWBASE_EXPR(__expr, __it, __prefix, __fmt)"
+\fBValue:\fP.PP
+.nf
+  printf(__prefix);\\
+  while(0 != (__it\-\-))\\
+      printf(__fmt, *(__expr+__it));\\
+  puts("")
+.fi
+
+.SS "#define SHOWBIN(__expr, __it)     \fBSHOWBASE_EXPR\fP(__expr ,__it, '0b','%i')"
+
+.SS "#define SHOWBITREP(__expr)   printf('%i',__expr)"
+
+.SS "#define SHOWHEX(__expr, __it)     \fBSHOWBASE_EXPR\fP(__expr ,__it, '0x','%c')"
+
+.SS "#define SHOWOCT(__expr, __it)     \fBSHOWBASE_EXPR\fP(__expr ,__it, '0o','%i')"
+
+.SH "Function Documentation"
+.PP 
+.SS "__BCX (void)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "int __show_notation"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

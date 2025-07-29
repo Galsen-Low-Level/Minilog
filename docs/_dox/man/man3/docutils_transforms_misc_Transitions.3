@@ -1,0 +1,106 @@
+.TH "docutils.transforms.misc.Transitions" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.transforms.misc.Transitions
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.transforms\&.Transform\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBapply\fP (self)"
+.br
+.ti -1c
+.RI "\fBvisit_transition\fP (self, node)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdocument\fP, \fBstartnode\fP=None)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBdefault_priority\fP = 830"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_priority\fP = None"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBstartnode\fP"
+.br
+.ti -1c
+.RI "\fBlanguage\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Move transitions at the end of sections up the tree\&.  Complain
+on transitions after a title, at the beginning or end of the
+document, and after another transition\&.
+
+For example, transform this::
+
+    <section>
+        \&.\&.\&.
+        <transition>
+    <section>
+        \&.\&.\&.
+
+into this::
+
+    <section>
+        \&.\&.\&.
+    <transition>
+    <section>
+        \&.\&.\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.transforms\&.misc\&.Transitions\&.apply ( self)"
+
+.PP
+.nf
+Override to apply the transform to the document tree\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.transforms\&.Transform\fP\&.
+.SS "docutils\&.transforms\&.misc\&.Transitions\&.visit_transition ( self,  node)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "int docutils\&.transforms\&.misc\&.Transitions\&.default_priority = 830\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

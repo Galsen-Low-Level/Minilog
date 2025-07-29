@@ -1,0 +1,110 @@
+\doxysection{webob.\+acceptparse.\+Accept\+Language Class Reference}
+\hypertarget{classwebob_1_1acceptparse_1_1AcceptLanguage}{}\label{classwebob_1_1acceptparse_1_1AcceptLanguage}\index{webob.acceptparse.AcceptLanguage@{webob.acceptparse.AcceptLanguage}}
+Inheritance diagram for webob.\+acceptparse.\+Accept\+Language\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.145594cm]{classwebob_1_1acceptparse_1_1AcceptLanguage}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwebob_1_1acceptparse_1_1AcceptLanguage_a63eb2fbaaec84f7ae067d66f818c9054}{parse}} (cls, value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tuple \mbox{\hyperlink{classwebob_1_1acceptparse_1_1AcceptLanguage_ae78fd6a59ad24c3fc79e29575cbff68c}{lang\+\_\+range\+\_\+re}}
+\item 
+\mbox{\hyperlink{classwebob_1_1acceptparse_1_1AcceptLanguage_a1a0b7d2279e70fecd6ca8ea608ae6df4}{lang\+\_\+range\+\_\+n\+\_\+weight\+\_\+re}} = \mbox{\hyperlink{namespacewebob_1_1acceptparse_aa13114c6421eb5c591c66565b5042855}{\+\_\+item\+\_\+n\+\_\+weight\+\_\+re}}(item\+\_\+re=\mbox{\hyperlink{classwebob_1_1acceptparse_1_1AcceptLanguage_ae78fd6a59ad24c3fc79e29575cbff68c}{lang\+\_\+range\+\_\+re}})
+\item 
+\mbox{\hyperlink{classwebob_1_1acceptparse_1_1AcceptLanguage_a270bedc4c358f1a88c3559107e61d9af}{lang\+\_\+range\+\_\+n\+\_\+weight\+\_\+compiled\+\_\+re}} = re.\+compile(\mbox{\hyperlink{classwebob_1_1acceptparse_1_1AcceptLanguage_a1a0b7d2279e70fecd6ca8ea608ae6df4}{lang\+\_\+range\+\_\+n\+\_\+weight\+\_\+re}})
+\item 
+\mbox{\hyperlink{classwebob_1_1acceptparse_1_1AcceptLanguage_add9bb45fa90693ff840969666c34ad5f}{accept\+\_\+language\+\_\+compiled\+\_\+re}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwebob_1_1acceptparse_1_1AcceptLanguage_a5d89207bdb9b2226ff00b3923b5cad41}{\+\_\+python\+\_\+value\+\_\+to\+\_\+header\+\_\+str}} (cls, value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Represent an ``Accept-Language`` header.
+
+Base class for :class:`AcceptLanguageValidHeader`,
+:class:`AcceptLanguageNoHeader`, and :class:`AcceptLanguageInvalidHeader`.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classwebob_1_1acceptparse_1_1AcceptLanguage_a5d89207bdb9b2226ff00b3923b5cad41}\label{classwebob_1_1acceptparse_1_1AcceptLanguage_a5d89207bdb9b2226ff00b3923b5cad41} 
+\index{webob.acceptparse.AcceptLanguage@{webob.acceptparse.AcceptLanguage}!\_python\_value\_to\_header\_str@{\_python\_value\_to\_header\_str}}
+\index{\_python\_value\_to\_header\_str@{\_python\_value\_to\_header\_str}!webob.acceptparse.AcceptLanguage@{webob.acceptparse.AcceptLanguage}}
+\doxysubsubsection{\texorpdfstring{\_python\_value\_to\_header\_str()}{\_python\_value\_to\_header\_str()}}
+{\footnotesize\ttfamily webob.\+acceptparse.\+Accept\+Language.\+\_\+python\+\_\+value\+\_\+to\+\_\+header\+\_\+str (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classwebob_1_1acceptparse_1_1AcceptLanguage_a63eb2fbaaec84f7ae067d66f818c9054}\label{classwebob_1_1acceptparse_1_1AcceptLanguage_a63eb2fbaaec84f7ae067d66f818c9054} 
+\index{webob.acceptparse.AcceptLanguage@{webob.acceptparse.AcceptLanguage}!parse@{parse}}
+\index{parse@{parse}!webob.acceptparse.AcceptLanguage@{webob.acceptparse.AcceptLanguage}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily webob.\+acceptparse.\+Accept\+Language.\+parse (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse an ``Accept-Language`` header.
+
+:param value: (``str``) header value
+:return: If `value` is a valid ``Accept-Language`` header, returns an
+         iterator of (language range, quality value) tuples, as parsed
+         from the header from left to right.
+:raises ValueError: if `value` is an invalid header
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classwebob_1_1acceptparse_1_1AcceptLanguage_add9bb45fa90693ff840969666c34ad5f}\label{classwebob_1_1acceptparse_1_1AcceptLanguage_add9bb45fa90693ff840969666c34ad5f} 
+\index{webob.acceptparse.AcceptLanguage@{webob.acceptparse.AcceptLanguage}!accept\_language\_compiled\_re@{accept\_language\_compiled\_re}}
+\index{accept\_language\_compiled\_re@{accept\_language\_compiled\_re}!webob.acceptparse.AcceptLanguage@{webob.acceptparse.AcceptLanguage}}
+\doxysubsubsection{\texorpdfstring{accept\_language\_compiled\_re}{accept\_language\_compiled\_re}}
+{\footnotesize\ttfamily webob.\+acceptparse.\+Accept\+Language.\+accept\+\_\+language\+\_\+compiled\+\_\+re\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ \_list\_1\_or\_more\_\_compiled\_re(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ element\_re=lang\_range\_n\_weight\_re,}
+\DoxyCodeLine{\ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{classwebob_1_1acceptparse_1_1AcceptLanguage_a270bedc4c358f1a88c3559107e61d9af}\label{classwebob_1_1acceptparse_1_1AcceptLanguage_a270bedc4c358f1a88c3559107e61d9af} 
+\index{webob.acceptparse.AcceptLanguage@{webob.acceptparse.AcceptLanguage}!lang\_range\_n\_weight\_compiled\_re@{lang\_range\_n\_weight\_compiled\_re}}
+\index{lang\_range\_n\_weight\_compiled\_re@{lang\_range\_n\_weight\_compiled\_re}!webob.acceptparse.AcceptLanguage@{webob.acceptparse.AcceptLanguage}}
+\doxysubsubsection{\texorpdfstring{lang\_range\_n\_weight\_compiled\_re}{lang\_range\_n\_weight\_compiled\_re}}
+{\footnotesize\ttfamily webob.\+acceptparse.\+Accept\+Language.\+lang\+\_\+range\+\_\+n\+\_\+weight\+\_\+compiled\+\_\+re = re.\+compile(\mbox{\hyperlink{classwebob_1_1acceptparse_1_1AcceptLanguage_a1a0b7d2279e70fecd6ca8ea608ae6df4}{lang\+\_\+range\+\_\+n\+\_\+weight\+\_\+re}})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classwebob_1_1acceptparse_1_1AcceptLanguage_a1a0b7d2279e70fecd6ca8ea608ae6df4}\label{classwebob_1_1acceptparse_1_1AcceptLanguage_a1a0b7d2279e70fecd6ca8ea608ae6df4} 
+\index{webob.acceptparse.AcceptLanguage@{webob.acceptparse.AcceptLanguage}!lang\_range\_n\_weight\_re@{lang\_range\_n\_weight\_re}}
+\index{lang\_range\_n\_weight\_re@{lang\_range\_n\_weight\_re}!webob.acceptparse.AcceptLanguage@{webob.acceptparse.AcceptLanguage}}
+\doxysubsubsection{\texorpdfstring{lang\_range\_n\_weight\_re}{lang\_range\_n\_weight\_re}}
+{\footnotesize\ttfamily webob.\+acceptparse.\+Accept\+Language.\+lang\+\_\+range\+\_\+n\+\_\+weight\+\_\+re = \mbox{\hyperlink{namespacewebob_1_1acceptparse_aa13114c6421eb5c591c66565b5042855}{\+\_\+item\+\_\+n\+\_\+weight\+\_\+re}}(item\+\_\+re=\mbox{\hyperlink{classwebob_1_1acceptparse_1_1AcceptLanguage_ae78fd6a59ad24c3fc79e29575cbff68c}{lang\+\_\+range\+\_\+re}})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classwebob_1_1acceptparse_1_1AcceptLanguage_ae78fd6a59ad24c3fc79e29575cbff68c}\label{classwebob_1_1acceptparse_1_1AcceptLanguage_ae78fd6a59ad24c3fc79e29575cbff68c} 
+\index{webob.acceptparse.AcceptLanguage@{webob.acceptparse.AcceptLanguage}!lang\_range\_re@{lang\_range\_re}}
+\index{lang\_range\_re@{lang\_range\_re}!webob.acceptparse.AcceptLanguage@{webob.acceptparse.AcceptLanguage}}
+\doxysubsubsection{\texorpdfstring{lang\_range\_re}{lang\_range\_re}}
+{\footnotesize\ttfamily tuple webob.\+acceptparse.\+Accept\+Language.\+lang\+\_\+range\+\_\+re\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ (}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{r'\(\backslash\)*|'}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{'(?:'}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{'[A-\/Za-\/z]\{1,8\}'}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{'(?:-\/[A-\/Za-\/z0-\/9]\{1,8\})*'}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{')'}}
+\DoxyCodeLine{\ \ \ \ )}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/webob/\mbox{\hyperlink{acceptparse_8py}{acceptparse.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,258 @@
+.TH "packaging.metadata.Metadata" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+packaging.metadata.Metadata
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMetadata\fP \fBfrom_raw\fP (cls, \fBRawMetadata\fP data, *bool validate=True)"
+.br
+.ti -1c
+.RI "\fBMetadata\fP \fBfrom_email\fP (cls, bytes|str data, *bool validate=True)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_Validator\fP \fBmetadata_version\fP = \fB_Validator\fP()"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBname\fP = \fB_Validator\fP()"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBversion\fP = \fB_Validator\fP()"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBdynamic\fP"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBplatforms\fP = \fB_Validator\fP()"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBsupported_platforms\fP = \fB_Validator\fP(added='1\&.1')"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBsummary\fP = \fB_Validator\fP()"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBdescription\fP = \fB_Validator\fP()"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBdescription_content_type\fP = \fB_Validator\fP(added='2\&.1')"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBkeywords\fP = \fB_Validator\fP()"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBhome_page\fP = \fB_Validator\fP()"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBdownload_url\fP = \fB_Validator\fP(added='1\&.1')"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBauthor\fP = \fB_Validator\fP()"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBauthor_email\fP = \fB_Validator\fP()"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBmaintainer\fP = \fB_Validator\fP(added='1\&.2')"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBmaintainer_email\fP = \fB_Validator\fP(added='1\&.2')"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBlicense\fP = \fB_Validator\fP()"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBlicense_expression\fP"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBlicense_files\fP = \fB_Validator\fP(added='2\&.4')"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBclassifiers\fP = \fB_Validator\fP(added='1\&.1')"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBrequires_dist\fP"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBrequires_python\fP"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBrequires_external\fP = \fB_Validator\fP(added='1\&.2')"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBproject_urls\fP = \fB_Validator\fP(added='1\&.2')"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBprovides_extra\fP"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBprovides_dist\fP = \fB_Validator\fP(added='1\&.2')"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBobsoletes_dist\fP = \fB_Validator\fP(added='1\&.2')"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBrequires\fP = \fB_Validator\fP(added='1\&.1')"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBprovides\fP = \fB_Validator\fP(added='1\&.1')"
+.br
+.ti -1c
+.RI "\fB_Validator\fP \fBobsoletes\fP = \fB_Validator\fP(added='1\&.1')"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBRawMetadata\fP \fB_raw\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Representation of distribution metadata\&.
+
+Compared to :class:`RawMetadata`, this class provides objects representing
+metadata fields instead of only using built-in types\&. Any invalid metadata
+will cause :exc:`InvalidMetadata` to be raised (with a
+:py:attr:`~BaseException\&.__cause__` attribute as appropriate)\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " \fBMetadata\fP packaging\&.metadata\&.Metadata\&.from_email ( cls, bytes | str data, *bool  validate = \fCTrue\fP)"
+
+.PP
+.nf
+Parse metadata from email headers\&.
+
+If *validate* is true, the metadata will be validated\&. All exceptions
+related to validation will be gathered and raised as an :class:`ExceptionGroup`\&.
+
+.fi
+.PP
+ 
+.SS " \fBMetadata\fP packaging\&.metadata\&.Metadata\&.from_raw ( cls, \fBRawMetadata\fP data, *bool  validate = \fCTrue\fP)"
+
+.PP
+.nf
+Create an instance from :class:`RawMetadata`\&.
+
+If *validate* is true, all metadata will be validated\&. All exceptions
+related to validation will be gathered and raised as an :class:`ExceptionGroup`\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBRawMetadata\fP packaging\&.metadata\&.Metadata\&._raw\fC [static]\fP, \fC [protected]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.author = \fB_Validator\fP()\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.author_email = \fB_Validator\fP()\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.classifiers = \fB_Validator\fP(added='1\&.1')\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.description = \fB_Validator\fP()\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.description_content_type = \fB_Validator\fP(added='2\&.1')\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.download_url = \fB_Validator\fP(added='1\&.1')\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.dynamic\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  _Validator(
+        added="2\&.2",
+    )
+.fi
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.home_page = \fB_Validator\fP()\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.keywords = \fB_Validator\fP()\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.license = \fB_Validator\fP()\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.license_expression\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  _Validator(
+        added="2\&.4"
+    )
+.fi
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.license_files = \fB_Validator\fP(added='2\&.4')\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.maintainer = \fB_Validator\fP(added='1\&.2')\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.maintainer_email = \fB_Validator\fP(added='1\&.2')\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.metadata_version = \fB_Validator\fP()\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.name = \fB_Validator\fP()\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.obsoletes = \fB_Validator\fP(added='1\&.1')\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.obsoletes_dist = \fB_Validator\fP(added='1\&.2')\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.platforms = \fB_Validator\fP()\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.project_urls = \fB_Validator\fP(added='1\&.2')\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.provides = \fB_Validator\fP(added='1\&.1')\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.provides_dist = \fB_Validator\fP(added='1\&.2')\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.provides_extra\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  _Validator(
+        added="2\&.1",
+    )
+.fi
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.requires = \fB_Validator\fP(added='1\&.1')\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.requires_dist\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  _Validator(
+        added="1\&.2"
+    )
+.fi
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.requires_external = \fB_Validator\fP(added='1\&.2')\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.requires_python\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  _Validator(
+        added="1\&.2"
+    )
+.fi
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.summary = \fB_Validator\fP()\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.supported_platforms = \fB_Validator\fP(added='1\&.1')\fC [static]\fP"
+
+.SS "\fB_Validator\fP packaging\&.metadata\&.Metadata\&.version = \fB_Validator\fP()\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

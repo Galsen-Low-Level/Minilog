@@ -1,0 +1,53 @@
+.TH "jinja2.optimizer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.optimizer
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBOptimizer\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBnodes\&.Node\fP \fBoptimize\fP (\fBnodes\&.Node\fP node, 'Environment' environment)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+The optimizer tries to constant fold expressions and modify the AST
+in place so that it should be faster to evaluate\&.
+
+Because the AST does not contain all the scoping information and the
+compiler has to find that out, we cannot do all the optimizations we
+want\&. For example, loop unrolling doesn't work because unrolled loops
+would have a different scope\&. The solution would be a second syntax tree
+that stored the scoping rules\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " \fBnodes\&.Node\fP jinja2\&.optimizer\&.optimize (\fBnodes\&.Node\fP node, 'Environment' environment)"
+
+.PP
+.nf
+The context hint can be used to perform an static optimization
+based on the context given\&.
+.fi
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

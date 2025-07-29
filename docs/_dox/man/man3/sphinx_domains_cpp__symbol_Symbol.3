@@ -1,0 +1,252 @@
+.TH "sphinx.domains.cpp._symbol.Symbol" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.domains.cpp._symbol.Symbol
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "NoReturn \fB__copy__\fP (self)"
+.br
+.ti -1c
+.RI "\fBSymbol\fP \fB__deepcopy__\fP (self, Any memo)"
+.br
+.ti -1c
+.RI "None \fB__setattr__\fP (self, str key, Any value)"
+.br
+.ti -1c
+.RI "None \fB__init__\fP (self, \fBSymbol\fP|None \fBparent\fP, \fBASTIdentifier\fP|\fBASTOperator\fP|None \fBidentOrOp\fP, \fBASTTemplateParams\fP|\fBASTTemplateIntroduction\fP|None \fBtemplateParams\fP, Any \fBtemplateArgs\fP, \fBASTDeclaration\fP|None \fBdeclaration\fP, str|None \fBdocname\fP, int|None \fBline\fP)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "None \fBremove\fP (self)"
+.br
+.ti -1c
+.RI "None \fBclear_doc\fP (self, str \fBdocname\fP)"
+.br
+.ti -1c
+.RI "Iterator[Any] \fBget_all_symbols\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBSymbol\fP] \fBchildren_recurse_anon\fP (self)"
+.br
+.ti -1c
+.RI "\fBLookupKey\fP \fBget_lookup_key\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTNestedName\fP \fBget_full_nested_name\fP (self)"
+.br
+.ti -1c
+.RI "None \fBmerge_with\fP (self, \fBSymbol\fP other, list[str] docnames, \fBBuildEnvironment\fP env)"
+.br
+.ti -1c
+.RI "\fBSymbol\fP \fBadd_name\fP (self, \fBASTNestedName\fP nestedName, \fBASTTemplateDeclarationPrefix\fP|None templatePrefix=None)"
+.br
+.ti -1c
+.RI "\fBSymbol\fP \fBadd_declaration\fP (self, \fBASTDeclaration\fP \fBdeclaration\fP, str \fBdocname\fP, int \fBline\fP)"
+.br
+.ti -1c
+.RI "\fBSymbol\fP|None \fBfind_identifier\fP (self, \fBASTIdentifier\fP|\fBASTOperator\fP \fBidentOrOp\fP, bool matchSelf, bool recurseInAnon, bool searchInSiblings)"
+.br
+.ti -1c
+.RI "\fBSymbol\fP \fBdirect_lookup\fP (self, \fBLookupKey\fP key)"
+.br
+.ti -1c
+.RI "tuple[list[\fBSymbol\fP]|None, str] \fBfind_name\fP (self, \fBASTNestedName\fP nestedName, list[Any] templateDecls, str typ, bool templateShorthand, bool matchSelf, bool recurseInAnon, bool searchInSiblings)"
+.br
+.ti -1c
+.RI "\fBSymbol\fP|None \fBfind_declaration\fP (self, \fBASTDeclaration\fP \fBdeclaration\fP, str typ, bool templateShorthand, bool matchSelf, bool recurseInAnon)"
+.br
+.ti -1c
+.RI "str \fBto_string\fP (self, int indent)"
+.br
+.ti -1c
+.RI "str \fBdump\fP (self, int indent)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBdebug_print\fP (*Any args)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBparent\fP"
+.br
+.ti -1c
+.RI "\fBidentOrOp\fP"
+.br
+.ti -1c
+.RI "\fBtemplateParams\fP"
+.br
+.ti -1c
+.RI "\fBtemplateArgs\fP"
+.br
+.ti -1c
+.RI "\fBdeclaration\fP"
+.br
+.ti -1c
+.RI "\fBdocname\fP"
+.br
+.ti -1c
+.RI "\fBline\fP"
+.br
+.ti -1c
+.RI "\fBisRedeclaration\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBdebug_indent\fP = 0"
+.br
+.ti -1c
+.RI "str \fBdebug_indent_string\fP = ' '"
+.br
+.ti -1c
+.RI "bool \fBdebug_lookup\fP = False"
+.br
+.ti -1c
+.RI "bool \fBdebug_show_tree\fP = False"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB_assert_invariants\fP (self)"
+.br
+.ti -1c
+.RI "None \fB_fill_empty\fP (self, \fBASTDeclaration\fP \fBdeclaration\fP, str \fBdocname\fP, int \fBline\fP)"
+.br
+.ti -1c
+.RI "None \fB_add_template_and_function_params\fP (self)"
+.br
+.ti -1c
+.RI "\fBSymbol\fP|None \fB_find_first_named_symbol\fP (self, \fBASTIdentifier\fP|\fBASTOperator\fP ident_or_op, \fBASTTemplateParams\fP|\fBASTTemplateIntroduction\fP template_params, \fBASTTemplateArgs\fP|None template_args, bool template_shorthand, bool match_self, bool recurse_in_anon, bool correct_primary_template_args)"
+.br
+.ti -1c
+.RI "Iterator[\fBSymbol\fP] \fB_find_named_symbols\fP (self, \fBASTIdentifier\fP|\fBASTOperator\fP ident_or_op, \fBASTTemplateParams\fP|\fBASTTemplateIntroduction\fP template_params, \fBASTTemplateArgs\fP template_args, bool template_shorthand, bool match_self, bool recurse_in_anon, bool correct_primary_template_args, bool search_in_siblings)"
+.br
+.ti -1c
+.RI "\fBSymbolLookupResult\fP|None \fB_symbol_lookup\fP (self, \fBASTNestedName\fP nested_name, list[Any] template_decls, Callable[[\fBSymbol\fP, \fBASTIdentifier\fP|\fBASTOperator\fP, Any, \fBASTTemplateArgs\fP], \fBSymbol\fP|None,] on_missing_qualified_symbol, bool strict_template_param_arg_lists, str ancestor_lookup_type, bool template_shorthand, bool match_self, bool recurse_in_anon, bool correct_primary_template_args, bool search_in_siblings)"
+.br
+.ti -1c
+.RI "\fBSymbol\fP \fB_add_symbols\fP (self, \fBASTNestedName\fP nested_name, list[Any] template_decls, \fBASTDeclaration\fP|None \fBdeclaration\fP, str|None \fBdocname\fP, int|None \fBline\fP)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_children\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.__init__ ( self, \fBSymbol\fP | None parent, \fBASTIdentifier\fP | \fBASTOperator\fP | None identOrOp, \fBASTTemplateParams\fP | \fBASTTemplateIntroduction\fP | None templateParams, Any templateArgs, \fBASTDeclaration\fP | None declaration, str | None docname, int | None line)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " NoReturn sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.__copy__ ( self)"
+
+.SS " \fBSymbol\fP sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.__deepcopy__ ( self, Any memo)"
+
+.SS " str sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.__repr__ ( self)"
+
+.SS " None sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.__setattr__ ( self, str key, Any value)"
+
+.SS " \fBSymbol\fP sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&._add_symbols ( self, \fBASTNestedName\fP nested_name, list[Any] template_decls, \fBASTDeclaration\fP | None declaration, str | None docname, int | None line)\fC [protected]\fP"
+
+.SS " None sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&._add_template_and_function_params ( self)\fC [protected]\fP"
+
+.SS " None sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&._assert_invariants ( self)\fC [protected]\fP"
+
+.SS " None sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&._fill_empty ( self, \fBASTDeclaration\fP declaration, str docname, int line)\fC [protected]\fP"
+
+.SS " \fBSymbol\fP | None sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&._find_first_named_symbol ( self, \fBASTIdentifier\fP | \fBASTOperator\fP ident_or_op, \fBASTTemplateParams\fP | \fBASTTemplateIntroduction\fP template_params, \fBASTTemplateArgs\fP | None template_args, bool template_shorthand, bool match_self, bool recurse_in_anon, bool correct_primary_template_args)\fC [protected]\fP"
+
+.SS " Iterator[\fBSymbol\fP] sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&._find_named_symbols ( self, \fBASTIdentifier\fP | \fBASTOperator\fP ident_or_op, \fBASTTemplateParams\fP | \fBASTTemplateIntroduction\fP template_params, \fBASTTemplateArgs\fP template_args, bool template_shorthand, bool match_self, bool recurse_in_anon, bool correct_primary_template_args, bool search_in_siblings)\fC [protected]\fP"
+
+.SS " \fBSymbolLookupResult\fP | None sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&._symbol_lookup ( self, \fBASTNestedName\fP nested_name, list[Any] template_decls, Callable[
+            [\fBSymbol\fP, \fBASTIdentifier\fP | \fBASTOperator\fP, Any, \fBASTTemplateArgs\fP],
+            \fBSymbol\fP | None,
+        ] on_missing_qualified_symbol, bool strict_template_param_arg_lists, str ancestor_lookup_type, bool template_shorthand, bool match_self, bool recurse_in_anon, bool correct_primary_template_args, bool search_in_siblings)\fC [protected]\fP"
+
+.SS " \fBSymbol\fP sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.add_declaration ( self, \fBASTDeclaration\fP declaration, str docname, int
+     line)"
+
+.SS " \fBSymbol\fP sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.add_name ( self, \fBASTNestedName\fP nestedName, \fBASTTemplateDeclarationPrefix\fP | None  templatePrefix = \fCNone\fP)"
+
+.SS " Iterator[\fBSymbol\fP] sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.children_recurse_anon ( self)"
+
+.SS " None sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.clear_doc ( self, str docname)"
+
+.SS " None sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.debug_print (*Any args)\fC [static]\fP"
+
+.SS " \fBSymbol\fP sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.direct_lookup ( self, \fBLookupKey\fP key)"
+
+.SS " str sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.dump ( self, int indent)"
+
+.SS " \fBSymbol\fP | None sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.find_declaration ( self, \fBASTDeclaration\fP declaration, str typ, bool templateShorthand, bool matchSelf, bool recurseInAnon)"
+
+.SS " \fBSymbol\fP | None sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.find_identifier ( self, \fBASTIdentifier\fP | \fBASTOperator\fP identOrOp, bool matchSelf, bool recurseInAnon, bool searchInSiblings)"
+
+.SS " tuple[list[\fBSymbol\fP] | None, str] sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.find_name ( self, \fBASTNestedName\fP nestedName, list[Any] templateDecls, str typ, bool templateShorthand, bool matchSelf, bool recurseInAnon, bool searchInSiblings)"
+
+.SS " Iterator[Any] sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.get_all_symbols ( self)"
+
+.SS " \fBASTNestedName\fP sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.get_full_nested_name ( self)"
+
+.SS " \fBLookupKey\fP sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.get_lookup_key ( self)"
+
+.SS " None sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.merge_with ( self, \fBSymbol\fP other, list[str] docnames, \fBBuildEnvironment\fP
+     env)"
+
+.SS " None sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.remove ( self)"
+
+.SS " str sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.to_string ( self, int indent)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&._children\fC [protected]\fP"
+
+.SS "int sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.debug_indent = 0\fC [static]\fP"
+
+.SS "str sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.debug_indent_string = ' '\fC [static]\fP"
+
+.SS "bool sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.debug_lookup = False\fC [static]\fP"
+
+.SS "bool sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.debug_show_tree = False\fC [static]\fP"
+
+.SS "sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.declaration"
+
+.SS "sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.docname"
+
+.SS "sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.identOrOp"
+
+.SS "sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.isRedeclaration"
+
+.SS "sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.line"
+
+.SS "sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.parent"
+
+.SS "sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.templateArgs"
+
+.SS "sphinx\&.domains\&.cpp\&._symbol\&.Symbol\&.templateParams"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

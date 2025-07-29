@@ -1,0 +1,96 @@
+.TH "sphinx.transforms.post_transforms.images.BaseImageConverter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.transforms.post_transforms.images.BaseImageConverter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.transforms\&.SphinxTransform\fP\&.
+.PP
+Inherited by \fBsphinx\&.transforms\&.post_transforms\&.images\&.DataURIExtractor\fP, \fBsphinx\&.transforms\&.post_transforms\&.images\&.ImageConverter\fP, and \fBsphinx\&.transforms\&.post_transforms\&.images\&.ImageDownloader\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBapply\fP (self, **Any kwargs)"
+.br
+.ti -1c
+.RI "bool \fBmatch\fP (self, nodes\&.image node)"
+.br
+.ti -1c
+.RI "None \fBhandle\fP (self, nodes\&.image node)"
+.br
+.ti -1c
+.RI "\fB_StrPath\fP \fBimagedir\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.transforms\&.SphinxTransform\fP
+.in +1c
+.ti -1c
+.RI "\fBSphinx\fP \fBapp\fP (self)"
+.br
+.ti -1c
+.RI "\fBBuildEnvironment\fP \fBenv\fP (self)"
+.br
+.ti -1c
+.RI "\fBConfig\fP \fBconfig\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdocument\fP, \fBstartnode\fP=None)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBstartnode\fP"
+.br
+.ti -1c
+.RI "\fBlanguage\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_priority\fP = None"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS " None sphinx\&.transforms\&.post_transforms\&.images\&.BaseImageConverter\&.apply ( self, **Any kwargs)"
+
+.PP
+.nf
+Override to apply the transform to the document tree\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.transforms\&.Transform\fP\&.
+.SS " None sphinx\&.transforms\&.post_transforms\&.images\&.BaseImageConverter\&.handle ( self, nodes\&.image node)"
+
+.PP
+Reimplemented in \fBsphinx\&.transforms\&.post_transforms\&.images\&.ImageDownloader\fP, \fBsphinx\&.transforms\&.post_transforms\&.images\&.DataURIExtractor\fP, and \fBsphinx\&.transforms\&.post_transforms\&.images\&.ImageConverter\fP\&.
+.SS " \fB_StrPath\fP sphinx\&.transforms\&.post_transforms\&.images\&.BaseImageConverter\&.imagedir ( self)"
+
+.SS " bool sphinx\&.transforms\&.post_transforms\&.images\&.BaseImageConverter\&.match ( self, nodes\&.image node)"
+
+.PP
+Reimplemented in \fBsphinx\&.transforms\&.post_transforms\&.images\&.ImageDownloader\fP, \fBsphinx\&.transforms\&.post_transforms\&.images\&.DataURIExtractor\fP, and \fBsphinx\&.transforms\&.post_transforms\&.images\&.ImageConverter\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,183 @@
+.TH "webob.cachecontrol.CacheControl" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webob.cachecontrol.CacheControl
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBproperties\fP, \fBtype\fP)"
+.br
+.ti -1c
+.RI "\fBparse\fP (cls, header, updates_to=None, \fBtype\fP=None)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "\fBcopy\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBproperties\fP"
+.br
+.ti -1c
+.RI "\fBtype\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBupdate_dict\fP = \fBUpdateDict\fP"
+.br
+.ti -1c
+.RI "\fBmax_stale\fP = \fBvalue_property\fP('max\-stale', none='*', \fBtype\fP='request')"
+.br
+.ti -1c
+.RI "\fBmin_fresh\fP = \fBvalue_property\fP('min\-fresh', \fBtype\fP='request')"
+.br
+.ti -1c
+.RI "\fBonly_if_cached\fP = \fBexists_property\fP('only\-if\-cached', \fBtype\fP='request')"
+.br
+.ti -1c
+.RI "\fBpublic\fP = \fBexists_property\fP('public', \fBtype\fP='response')"
+.br
+.ti -1c
+.RI "\fBprivate\fP = \fBvalue_property\fP('private', none='*', \fBtype\fP='response')"
+.br
+.ti -1c
+.RI "\fBno_cache\fP = \fBvalue_property\fP('no\-cache', none='*')"
+.br
+.ti -1c
+.RI "\fBno_store\fP = \fBexists_property\fP('no\-store')"
+.br
+.ti -1c
+.RI "\fBno_transform\fP = \fBexists_property\fP('no\-transform')"
+.br
+.ti -1c
+.RI "\fBmust_revalidate\fP = \fBexists_property\fP('must\-revalidate', \fBtype\fP='response')"
+.br
+.ti -1c
+.RI "\fBproxy_revalidate\fP = \fBexists_property\fP('proxy\-revalidate', \fBtype\fP='response')"
+.br
+.ti -1c
+.RI "\fBmax_age\fP = \fBvalue_property\fP('max\-age', none=\-1)"
+.br
+.ti -1c
+.RI "\fBs_maxage\fP = \fBvalue_property\fP('s\-maxage', \fBtype\fP='response')"
+.br
+.ti -1c
+.RI "\fBs_max_age\fP = \fBs_maxage\fP"
+.br
+.ti -1c
+.RI "\fBstale_while_revalidate\fP"
+.br
+.ti -1c
+.RI "\fBstale_if_error\fP = \fBvalue_property\fP('stale\-if\-error', \fBtype\fP='response')"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Represents the Cache-Control header\&.
+
+By giving a type of ``'request'`` or ``'response'`` you can
+control what attributes are allowed (some Cache-Control values
+only apply to requests or responses)\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "webob\&.cachecontrol\&.CacheControl\&.__init__ ( self,  properties,  type)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "webob\&.cachecontrol\&.CacheControl\&.__repr__ ( self)"
+
+.SS "webob\&.cachecontrol\&.CacheControl\&.__str__ ( self)"
+
+.SS "webob\&.cachecontrol\&.CacheControl\&.copy ( self)"
+
+.PP
+.nf
+Returns a copy of this object\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.cachecontrol\&.CacheControl\&.parse ( cls,  header,  updates_to = \fCNone\fP,  type = \fCNone\fP)"
+
+.PP
+.nf
+Parse the header, returning a CacheControl object\&.
+
+The object is bound to the request or response object
+``updates_to``, if that is given\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "webob\&.cachecontrol\&.CacheControl\&.max_age = \fBvalue_property\fP('max\-age', none=\-1)\fC [static]\fP"
+
+.SS "webob\&.cachecontrol\&.CacheControl\&.max_stale = \fBvalue_property\fP('max\-stale', none='*', \fBtype\fP='request')\fC [static]\fP"
+
+.SS "webob\&.cachecontrol\&.CacheControl\&.min_fresh = \fBvalue_property\fP('min\-fresh', \fBtype\fP='request')\fC [static]\fP"
+
+.SS "webob\&.cachecontrol\&.CacheControl\&.must_revalidate = \fBexists_property\fP('must\-revalidate', \fBtype\fP='response')\fC [static]\fP"
+
+.SS "webob\&.cachecontrol\&.CacheControl\&.no_cache = \fBvalue_property\fP('no\-cache', none='*')\fC [static]\fP"
+
+.SS "webob\&.cachecontrol\&.CacheControl\&.no_store = \fBexists_property\fP('no\-store')\fC [static]\fP"
+
+.SS "webob\&.cachecontrol\&.CacheControl\&.no_transform = \fBexists_property\fP('no\-transform')\fC [static]\fP"
+
+.SS "webob\&.cachecontrol\&.CacheControl\&.only_if_cached = \fBexists_property\fP('only\-if\-cached', \fBtype\fP='request')\fC [static]\fP"
+
+.SS "webob\&.cachecontrol\&.CacheControl\&.private = \fBvalue_property\fP('private', none='*', \fBtype\fP='response')\fC [static]\fP"
+
+.SS "webob\&.cachecontrol\&.CacheControl\&.properties"
+
+.SS "webob\&.cachecontrol\&.CacheControl\&.proxy_revalidate = \fBexists_property\fP('proxy\-revalidate', \fBtype\fP='response')\fC [static]\fP"
+
+.SS "webob\&.cachecontrol\&.CacheControl\&.public = \fBexists_property\fP('public', \fBtype\fP='response')\fC [static]\fP"
+
+.SS "webob\&.cachecontrol\&.CacheControl\&.s_max_age = \fBs_maxage\fP\fC [static]\fP"
+
+.SS "webob\&.cachecontrol\&.CacheControl\&.s_maxage = \fBvalue_property\fP('s\-maxage', \fBtype\fP='response')\fC [static]\fP"
+
+.SS "webob\&.cachecontrol\&.CacheControl\&.stale_if_error = \fBvalue_property\fP('stale\-if\-error', \fBtype\fP='response')\fC [static]\fP"
+
+.SS "webob\&.cachecontrol\&.CacheControl\&.stale_while_revalidate\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  value_property(
+        'stale\-while\-revalidate', type='response')
+.fi
+
+.SS "webob\&.cachecontrol\&.CacheControl\&.type"
+
+.SS "webob\&.cachecontrol\&.CacheControl\&.update_dict = \fBUpdateDict\fP\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

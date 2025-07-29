@@ -1,0 +1,157 @@
+\doxysection{docutils.\+io.\+Output Class Reference}
+\hypertarget{classdocutils_1_1io_1_1Output}{}\label{classdocutils_1_1io_1_1Output}\index{docutils.io.Output@{docutils.io.Output}}
+Inheritance diagram for docutils.\+io.\+Output\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.511211cm]{classdocutils_1_1io_1_1Output}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Output_af4b52c9df19fdfc137036624a6b84f70}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classdocutils_1_1io_1_1Output_a30c462efd727a9ea3afd2fe02a882ed1}{destination}}=None, \mbox{\hyperlink{classdocutils_1_1io_1_1Output_abdf0b53d31c74cba96eb40bd1516a197}{destination\+\_\+path}}=None, \mbox{\hyperlink{classdocutils_1_1io_1_1Output_a73562aaee51863ec7bfe3df7d7d5fa8b}{encoding}}=None, \mbox{\hyperlink{classdocutils_1_1io_1_1Output_ac6db74204dc3d2562ff4d5b22b9dad7c}{error\+\_\+handler}}=\textquotesingle{}strict\textquotesingle{})
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Output_a89853d14e77ea69f6db568149496d998}{\+\_\+\+\_\+repr\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Output_a3057354576e63595209de523c7672fa6}{write}} (self, data)
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Output_ad92f7dfc1176ed33988c301129eb7760}{encode}} (self, data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classdocutils_1_1TransformSpec}{docutils.\+Transform\+Spec}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1TransformSpec_a9d4adc413dafad1c9466af08a303c1d2}{get\+\_\+transforms}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Output_a73562aaee51863ec7bfe3df7d7d5fa8b}{encoding}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Output_ac6db74204dc3d2562ff4d5b22b9dad7c}{error\+\_\+handler}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Output_a30c462efd727a9ea3afd2fe02a882ed1}{destination}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Output_abdf0b53d31c74cba96eb40bd1516a197}{destination\+\_\+path}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classdocutils_1_1TransformSpec}{docutils.\+Transform\+Spec}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1TransformSpec_a6284800f16dad6c8cf5a66b8c75d650f}{default\+\_\+transforms}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{classdocutils_1_1io_1_1Output_a6089850318b59aed394338ed075d74f8}{component\+\_\+type}} = \textquotesingle{}output\textquotesingle{}
+\item 
+\mbox{\hyperlink{classdocutils_1_1io_1_1Output_a5a7ea249b62835670a84df9c6c64fa3c}{default\+\_\+destination\+\_\+path}} = None
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classdocutils_1_1TransformSpec}{docutils.\+Transform\+Spec}}}
+\begin{DoxyCompactItemize}
+\item 
+tuple \mbox{\hyperlink{classdocutils_1_1TransformSpec_ac4a74caa4769cd1a5c97750b124d37f2}{default\+\_\+transforms}} = ()
+\item 
+tuple \mbox{\hyperlink{classdocutils_1_1TransformSpec_a23810603eb1bfbb62657cbd29209b647}{unknown\+\_\+reference\+\_\+resolvers}} = ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Abstract base class for output wrappers.
+
+Docutils output objects must provide a `write()` method that
+expects and handles one argument (the output).
+
+Inheriting `TransformSpec` allows output objects to add
+"transforms" and "unknown_reference_resolvers" to the "Transformer".
+(Optional for custom output objects since Docutils 0.19.)
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classdocutils_1_1io_1_1Output_af4b52c9df19fdfc137036624a6b84f70}\label{classdocutils_1_1io_1_1Output_af4b52c9df19fdfc137036624a6b84f70} 
+\index{docutils.io.Output@{docutils.io.Output}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!docutils.io.Output@{docutils.io.Output}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily docutils.\+io.\+Output.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{destination = {\ttfamily None},  }\item[{}]{destination\+\_\+path = {\ttfamily None},  }\item[{}]{encoding = {\ttfamily None},  }\item[{}]{error\+\_\+handler = {\ttfamily \textquotesingle{}strict\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1util_1_1docutils_1_1SphinxFileOutput_a2250c9cfc8ab93d2cec02633395e2fd1}{sphinx.\+util.\+docutils.\+Sphinx\+File\+Output}}, and \mbox{\hyperlink{classdocutils_1_1io_1_1FileOutput_ad94db73d94fd02aacb2f1aa05b1e1426}{docutils.\+io.\+File\+Output}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdocutils_1_1io_1_1Output_a89853d14e77ea69f6db568149496d998}\label{classdocutils_1_1io_1_1Output_a89853d14e77ea69f6db568149496d998} 
+\index{docutils.io.Output@{docutils.io.Output}!\_\_repr\_\_@{\_\_repr\_\_}}
+\index{\_\_repr\_\_@{\_\_repr\_\_}!docutils.io.Output@{docutils.io.Output}}
+\doxysubsubsection{\texorpdfstring{\_\_repr\_\_()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily docutils.\+io.\+Output.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classdocutils_1_1io_1_1Output_ad92f7dfc1176ed33988c301129eb7760}\label{classdocutils_1_1io_1_1Output_ad92f7dfc1176ed33988c301129eb7760} 
+\index{docutils.io.Output@{docutils.io.Output}!encode@{encode}}
+\index{encode@{encode}!docutils.io.Output@{docutils.io.Output}}
+\doxysubsubsection{\texorpdfstring{encode()}{encode()}}
+{\footnotesize\ttfamily docutils.\+io.\+Output.\+encode (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Encode and return `data`.
+
+If `data` is a `bytes` instance, it is returned unchanged.
+Otherwise it is encoded with `self.encoding`.
+
+Provisional: If `self.encoding` is set to the pseudo encoding name
+"unicode", `data` must be a `str` instance and is returned unchanged.
+\end{DoxyVerb}
+ \Hypertarget{classdocutils_1_1io_1_1Output_a3057354576e63595209de523c7672fa6}\label{classdocutils_1_1io_1_1Output_a3057354576e63595209de523c7672fa6} 
+\index{docutils.io.Output@{docutils.io.Output}!write@{write}}
+\index{write@{write}!docutils.io.Output@{docutils.io.Output}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily docutils.\+io.\+Output.\+write (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write `data`. Define in subclasses.\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classdocutils_1_1io_1_1FileOutput_a6f5f11cce5af15b7c1d017c0bf131d3d}{docutils.\+io.\+File\+Output}}, \mbox{\hyperlink{classdocutils_1_1io_1_1StringOutput_afe8a02a1c22136329d31894a525f62f1}{docutils.\+io.\+String\+Output}}, \mbox{\hyperlink{classdocutils_1_1io_1_1NullOutput_a0a1725a57c00fd1f76e546d20eda6e50}{docutils.\+io.\+Null\+Output}}, and \mbox{\hyperlink{classsphinx_1_1util_1_1docutils_1_1SphinxFileOutput_aaa8fdf80a98987fcc1d5f6c8ebaf056f}{sphinx.\+util.\+docutils.\+Sphinx\+File\+Output}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classdocutils_1_1io_1_1Output_a6089850318b59aed394338ed075d74f8}\label{classdocutils_1_1io_1_1Output_a6089850318b59aed394338ed075d74f8} 
+\index{docutils.io.Output@{docutils.io.Output}!component\_type@{component\_type}}
+\index{component\_type@{component\_type}!docutils.io.Output@{docutils.io.Output}}
+\doxysubsubsection{\texorpdfstring{component\_type}{component\_type}}
+{\footnotesize\ttfamily str docutils.\+io.\+Output.\+component\+\_\+type = \textquotesingle{}output\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1io_1_1Output_a5a7ea249b62835670a84df9c6c64fa3c}\label{classdocutils_1_1io_1_1Output_a5a7ea249b62835670a84df9c6c64fa3c} 
+\index{docutils.io.Output@{docutils.io.Output}!default\_destination\_path@{default\_destination\_path}}
+\index{default\_destination\_path@{default\_destination\_path}!docutils.io.Output@{docutils.io.Output}}
+\doxysubsubsection{\texorpdfstring{default\_destination\_path}{default\_destination\_path}}
+{\footnotesize\ttfamily docutils.\+io.\+Output.\+default\+\_\+destination\+\_\+path = None\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1io_1_1Output_a30c462efd727a9ea3afd2fe02a882ed1}\label{classdocutils_1_1io_1_1Output_a30c462efd727a9ea3afd2fe02a882ed1} 
+\index{docutils.io.Output@{docutils.io.Output}!destination@{destination}}
+\index{destination@{destination}!docutils.io.Output@{docutils.io.Output}}
+\doxysubsubsection{\texorpdfstring{destination}{destination}}
+{\footnotesize\ttfamily docutils.\+io.\+Output.\+destination}
+
+\Hypertarget{classdocutils_1_1io_1_1Output_abdf0b53d31c74cba96eb40bd1516a197}\label{classdocutils_1_1io_1_1Output_abdf0b53d31c74cba96eb40bd1516a197} 
+\index{docutils.io.Output@{docutils.io.Output}!destination\_path@{destination\_path}}
+\index{destination\_path@{destination\_path}!docutils.io.Output@{docutils.io.Output}}
+\doxysubsubsection{\texorpdfstring{destination\_path}{destination\_path}}
+{\footnotesize\ttfamily docutils.\+io.\+Output.\+destination\+\_\+path}
+
+\Hypertarget{classdocutils_1_1io_1_1Output_a73562aaee51863ec7bfe3df7d7d5fa8b}\label{classdocutils_1_1io_1_1Output_a73562aaee51863ec7bfe3df7d7d5fa8b} 
+\index{docutils.io.Output@{docutils.io.Output}!encoding@{encoding}}
+\index{encoding@{encoding}!docutils.io.Output@{docutils.io.Output}}
+\doxysubsubsection{\texorpdfstring{encoding}{encoding}}
+{\footnotesize\ttfamily docutils.\+io.\+Output.\+encoding}
+
+\Hypertarget{classdocutils_1_1io_1_1Output_ac6db74204dc3d2562ff4d5b22b9dad7c}\label{classdocutils_1_1io_1_1Output_ac6db74204dc3d2562ff4d5b22b9dad7c} 
+\index{docutils.io.Output@{docutils.io.Output}!error\_handler@{error\_handler}}
+\index{error\_handler@{error\_handler}!docutils.io.Output@{docutils.io.Output}}
+\doxysubsubsection{\texorpdfstring{error\_handler}{error\_handler}}
+{\footnotesize\ttfamily docutils.\+io.\+Output.\+error\+\_\+handler}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/docutils/\mbox{\hyperlink{docutils_2io_8py}{io.\+py}}\end{DoxyCompactItemize}

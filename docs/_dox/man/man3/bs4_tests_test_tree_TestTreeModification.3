@@ -1,0 +1,269 @@
+.TH "bs4.tests.test_tree.TestTreeModification" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bs4.tests.test_tree.TestTreeModification
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits SoupTest\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBtest_attribute_modification\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_new_tag_creation\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_append_to_contents_moves_tag\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_insertion_returns_inserted_things\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_replace_with_returns_thing_that_was_replaced\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_unwrap_returns_thing_that_was_replaced\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_replace_with_and_unwrap_give_useful_exception_when_tag_has_no_parent\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_replace_tag_with_itself\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_replace_tag_with_its_parent_raises_exception\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_insert_tag_into_itself_raises_exception\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_insert_multiple_elements\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_insert_beautifulsoup_object_inserts_children\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_replace_with_maintains_next_element_throughout\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_replace_final_node\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_consecutive_text_nodes\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_insert_string\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_append\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_insert_tag\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_insert_into_the_current_location\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_append_child_thats_already_at_the_end\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_extend_with_a_list_of_elements\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_extend_with_a_list_of_strings\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_extend_with_another_tags_contents\fP (self, get_tags)"
+.br
+.ti -1c
+.RI "\fBtest_extend_with_a_single_non_tag_element\fP (self, string_source, result)"
+.br
+.ti -1c
+.RI "\fBtest_move_tag_to_beginning_of_parent\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_insert_works_on_empty_element_tag\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_insert_before\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_insert_multiple_before\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_insert_after\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_insert_multiple_after\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_insert_after_raises_exception_if_after_has_no_meaning\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_insert_before_raises_notimplementederror_if_before_has_no_meaning\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_replace_with\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_replace_with_errors\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_replace_with_multiple\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_replace_first_child\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_replace_last_child\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_nested_tag_replace_with\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_unwrap\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_wrap\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_wrap_extracts_tag_from_elsewhere\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_wrap_puts_new_contents_at_the_end\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_extract\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_extract_distinguishes_between_identical_strings\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_extract_multiples_of_same_tag\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_extract_works_when_element_is_surrounded_by_identical_strings\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_clear\fP (self)"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_append ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_append_child_thats_already_at_the_end ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_append_to_contents_moves_tag ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_attribute_modification ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_clear ( self)"
+
+.PP
+.nf
+Tag\&.clear()
+.fi
+.PP
+ 
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_consecutive_text_nodes ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_extend_with_a_list_of_elements ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_extend_with_a_list_of_strings ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_extend_with_a_single_non_tag_element ( self,  string_source,  result)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_extend_with_another_tags_contents ( self,  get_tags)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_extract ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_extract_distinguishes_between_identical_strings ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_extract_multiples_of_same_tag ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_extract_works_when_element_is_surrounded_by_identical_strings ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_insert_after ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_insert_after_raises_exception_if_after_has_no_meaning ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_insert_beautifulsoup_object_inserts_children ( self)"
+
+.PP
+.nf
+Inserting one BeautifulSoup object into another actually inserts all
+of its children -- you'll never combine BeautifulSoup objects\&.
+
+.fi
+.PP
+ 
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_insert_before ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_insert_before_raises_notimplementederror_if_before_has_no_meaning ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_insert_into_the_current_location ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_insert_multiple_after ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_insert_multiple_before ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_insert_multiple_elements ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_insert_string ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_insert_tag ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_insert_tag_into_itself_raises_exception ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_insert_works_on_empty_element_tag ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_insertion_returns_inserted_things ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_move_tag_to_beginning_of_parent ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_nested_tag_replace_with ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_new_tag_creation ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_replace_final_node ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_replace_first_child ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_replace_last_child ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_replace_tag_with_its_parent_raises_exception ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_replace_tag_with_itself ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_replace_with ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_replace_with_and_unwrap_give_useful_exception_when_tag_has_no_parent ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_replace_with_errors ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_replace_with_maintains_next_element_throughout ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_replace_with_multiple ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_replace_with_returns_thing_that_was_replaced ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_unwrap ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_unwrap_returns_thing_that_was_replaced ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_wrap ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_wrap_extracts_tag_from_elsewhere ( self)"
+
+.SS "bs4\&.tests\&.test_tree\&.TestTreeModification\&.test_wrap_puts_new_contents_at_the_end ( self)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

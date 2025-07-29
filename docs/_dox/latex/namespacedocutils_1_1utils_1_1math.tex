@@ -1,0 +1,79 @@
+\doxysection{docutils.\+utils.\+math Namespace Reference}
+\hypertarget{namespacedocutils_1_1utils_1_1math}{}\label{namespacedocutils_1_1utils_1_1math}\index{docutils.utils.math@{docutils.utils.math}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacedocutils_1_1utils_1_1math_1_1latex2mathml}{latex2mathml}}
+\item 
+namespace \mbox{\hyperlink{namespacedocutils_1_1utils_1_1math_1_1math2html}{math2html}}
+\item 
+namespace \mbox{\hyperlink{namespacedocutils_1_1utils_1_1math_1_1mathalphabet2unichar}{mathalphabet2unichar}}
+\item 
+namespace \mbox{\hyperlink{namespacedocutils_1_1utils_1_1math_1_1mathml__elements}{mathml\+\_\+elements}}
+\item 
+namespace \mbox{\hyperlink{namespacedocutils_1_1utils_1_1math_1_1tex2mathml__extern}{tex2mathml\+\_\+extern}}
+\item 
+namespace \mbox{\hyperlink{namespacedocutils_1_1utils_1_1math_1_1tex2unichar}{tex2unichar}}
+\item 
+namespace \mbox{\hyperlink{namespacedocutils_1_1utils_1_1math_1_1unichar2tex}{unichar2tex}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1utils_1_1math_1_1MathError}{Math\+Error}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacedocutils_1_1utils_1_1math_a2cf4e821df0b73c63bb076cfe5c16c95}{toplevel\+\_\+code}} (code)
+\item 
+\mbox{\hyperlink{namespacedocutils_1_1utils_1_1math_a59cd9a6f99b643547743f225518b7baf}{pick\+\_\+math\+\_\+environment}} (code, numbered=False)
+\item 
+\mbox{\hyperlink{namespacedocutils_1_1utils_1_1math_a76cc758b6d01043095cd16d1b9d7be77}{wrap\+\_\+math\+\_\+code}} (code, as\+\_\+block)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}This is the Docutils (Python Documentation Utilities) "math" sub-package.
+
+It contains various modules for conversion between different math formats
+(LaTeX, MathML, HTML).
+
+:math2html:    LaTeX math -> HTML conversion from eLyXer
+:latex2mathml: LaTeX math -> presentational MathML
+:unichar2tex:  Unicode character to LaTeX math translation table
+:tex2unichar:  LaTeX math to Unicode character translation dictionaries
+:mathalphabet2unichar:  LaTeX math alphabets to Unicode character translation
+:tex2mathml_extern: Wrapper for 3rd party TeX -> MathML converters
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacedocutils_1_1utils_1_1math_a59cd9a6f99b643547743f225518b7baf}\label{namespacedocutils_1_1utils_1_1math_a59cd9a6f99b643547743f225518b7baf} 
+\index{docutils.utils.math@{docutils.utils.math}!pick\_math\_environment@{pick\_math\_environment}}
+\index{pick\_math\_environment@{pick\_math\_environment}!docutils.utils.math@{docutils.utils.math}}
+\doxysubsubsection{\texorpdfstring{pick\_math\_environment()}{pick\_math\_environment()}}
+{\footnotesize\ttfamily docutils.\+utils.\+math.\+pick\+\_\+math\+\_\+environment (\begin{DoxyParamCaption}\item[{}]{code,  }\item[{}]{numbered = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the right math environment to display `code`.
+
+The test simply looks for line-breaks (``\\``) outside environments.
+Multi-line formulae are set with ``align``, one-liners with
+``equation``.
+
+If `numbered` evaluates to ``False``, the "starred" versions are used
+to suppress numbering.
+\end{DoxyVerb}
+ \Hypertarget{namespacedocutils_1_1utils_1_1math_a2cf4e821df0b73c63bb076cfe5c16c95}\label{namespacedocutils_1_1utils_1_1math_a2cf4e821df0b73c63bb076cfe5c16c95} 
+\index{docutils.utils.math@{docutils.utils.math}!toplevel\_code@{toplevel\_code}}
+\index{toplevel\_code@{toplevel\_code}!docutils.utils.math@{docutils.utils.math}}
+\doxysubsubsection{\texorpdfstring{toplevel\_code()}{toplevel\_code()}}
+{\footnotesize\ttfamily docutils.\+utils.\+math.\+toplevel\+\_\+code (\begin{DoxyParamCaption}\item[{}]{code }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return string (LaTeX math) `code` with environments stripped out.\end{DoxyVerb}
+ \Hypertarget{namespacedocutils_1_1utils_1_1math_a76cc758b6d01043095cd16d1b9d7be77}\label{namespacedocutils_1_1utils_1_1math_a76cc758b6d01043095cd16d1b9d7be77} 
+\index{docutils.utils.math@{docutils.utils.math}!wrap\_math\_code@{wrap\_math\_code}}
+\index{wrap\_math\_code@{wrap\_math\_code}!docutils.utils.math@{docutils.utils.math}}
+\doxysubsubsection{\texorpdfstring{wrap\_math\_code()}{wrap\_math\_code()}}
+{\footnotesize\ttfamily docutils.\+utils.\+math.\+wrap\+\_\+math\+\_\+code (\begin{DoxyParamCaption}\item[{}]{code,  }\item[{}]{as\+\_\+block }\end{DoxyParamCaption})}
+

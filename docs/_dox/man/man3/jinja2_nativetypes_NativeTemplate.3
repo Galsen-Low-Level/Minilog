@@ -1,0 +1,202 @@
+.TH "jinja2.nativetypes.NativeTemplate" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.nativetypes.NativeTemplate
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBjinja2\&.environment\&.Template\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "t\&.Any \fBrender\fP (self, *t\&.Any args, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "t\&.Any \fBrender_async\fP (self, *t\&.Any args, **t\&.Any kwargs)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBjinja2\&.environment\&.Template\fP
+.in +1c
+.ti -1c
+.RI "t\&.Any \fB__new__\fP (cls, t\&.Union[str, \fBnodes\&.Template\fP] source, str block_start_string=BLOCK_START_STRING, str block_end_string=BLOCK_END_STRING, str variable_start_string=VARIABLE_START_STRING, str variable_end_string=VARIABLE_END_STRING, str comment_start_string=COMMENT_START_STRING, str comment_end_string=COMMENT_END_STRING, t\&.Optional[str] line_statement_prefix=LINE_STATEMENT_PREFIX, t\&.Optional[str] line_comment_prefix=LINE_COMMENT_PREFIX, bool trim_blocks=TRIM_BLOCKS, bool lstrip_blocks=LSTRIP_BLOCKS, 'te\&.Literal['\\\\n', '\\\\r\\\\n', '\\\\r']' newline_sequence=NEWLINE_SEQUENCE, bool keep_trailing_newline=KEEP_TRAILING_NEWLINE, t\&.Sequence[t\&.Union[str, t\&.Type['Extension']]] extensions=(), bool optimized=True, t\&.Type[\fBUndefined\fP] undefined=\fBUndefined\fP, t\&.Optional[t\&.Callable[\&.\&.\&., t\&.Any]] finalize=None, t\&.Union[bool, t\&.Callable[[t\&.Optional[str]], bool]] autoescape=False, bool enable_async=False)"
+.br
+.ti -1c
+.RI "'Template' \fBfrom_code\fP (cls, \fBEnvironment\fP \fBenvironment\fP, CodeType code, t\&.MutableMapping[str, t\&.Any] \fBglobals\fP, t\&.Optional[t\&.Callable[[], bool]] uptodate=None)"
+.br
+.ti -1c
+.RI "'Template' \fBfrom_module_dict\fP (cls, \fBEnvironment\fP \fBenvironment\fP, t\&.MutableMapping[str, t\&.Any] module_dict, t\&.MutableMapping[str, t\&.Any] \fBglobals\fP)"
+.br
+.ti -1c
+.RI "'TemplateStream' \fBstream\fP (self, *t\&.Any args, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "t\&.Iterator[str] \fBgenerate\fP (self, *t\&.Any args, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "t\&.AsyncGenerator[str, object] \fBgenerate_async\fP (self, *t\&.Any args, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "\fBContext\fP \fBnew_context\fP (self, t\&.Optional[t\&.Dict[str, t\&.Any]] vars=None, bool shared=False, t\&.Optional[t\&.Mapping[str, t\&.Any]] locals=None)"
+.br
+.ti -1c
+.RI "'TemplateModule' \fBmake_module\fP (self, t\&.Optional[t\&.Dict[str, t\&.Any]] vars=None, bool shared=False, t\&.Optional[t\&.Mapping[str, t\&.Any]] locals=None)"
+.br
+.ti -1c
+.RI "'TemplateModule' \fBmake_module_async\fP (self, t\&.Optional[t\&.Dict[str, t\&.Any]] vars=None, bool shared=False, t\&.Optional[t\&.Mapping[str, t\&.Any]] locals=None)"
+.br
+.ti -1c
+.RI "'TemplateModule' \fBmodule\fP (self)"
+.br
+.ti -1c
+.RI "int \fBget_corresponding_lineno\fP (self, int lineno)"
+.br
+.ti -1c
+.RI "bool \fBis_up_to_date\fP (self)"
+.br
+.ti -1c
+.RI "t\&.List[t\&.Tuple[int, int]] \fBdebug_info\fP (self)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBenvironment_class\fP = \fBNativeEnvironment\fP"
+.br
+.ti -1c
+.RI "\fBtemplate_class\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBjinja2\&.environment\&.Template\fP
+.in +1c
+.ti -1c
+.RI "t \fBenvironment_class\fP = \fBEnvironment\fP"
+.br
+.ti -1c
+.RI "\fBEnvironment\fP \fBenvironment\fP"
+.br
+.ti -1c
+.RI "t \fBglobals\fP \&.MutableMapping[str, t\&.Any]"
+.br
+.ti -1c
+.RI "t \fBname\fP \&.Optional[str]"
+.br
+.ti -1c
+.RI "t \fBfilename\fP \&.Optional[str]"
+.br
+.ti -1c
+.RI "t \fBblocks\fP \&.Dict[str, t\&.Callable[[\fBContext\fP], t\&.Iterator[str]]]"
+.br
+.ti -1c
+.RI "t \fBroot_render_func\fP \&.Callable[[\fBContext\fP], t\&.Iterator[str]]"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBjinja2\&.environment\&.Template\fP
+.in +1c
+.ti -1c
+.RI "\fBenvironment_class\fP"
+.br
+.ti -1c
+.RI "\fBenvironment\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBblocks\fP"
+.br
+.ti -1c
+.RI "\fBglobals\fP"
+.br
+.ti -1c
+.RI "\fBdebug_info\fP"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBjinja2\&.environment\&.Template\fP
+.in +1c
+.ti -1c
+.RI "'Template' \fB_from_namespace\fP (cls, \fBEnvironment\fP \fBenvironment\fP, t\&.MutableMapping[str, t\&.Any] namespace, t\&.MutableMapping[str, t\&.Any] \fBglobals\fP)"
+.br
+.ti -1c
+.RI "'TemplateModule' \fB_get_default_module\fP (self, t\&.Optional[\fBContext\fP] ctx=None)"
+.br
+.ti -1c
+.RI "'TemplateModule' \fB_get_default_module_async\fP (self, t\&.Optional[\fBContext\fP] ctx=None)"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBjinja2\&.environment\&.Template\fP
+.in +1c
+.ti -1c
+.RI "\fB_module\fP"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBjinja2\&.environment\&.Template\fP
+.in +1c
+.ti -1c
+.RI "t \fB_module\fP \&.Optional['TemplateModule']"
+.br
+.ti -1c
+.RI "str \fB_debug_info\fP"
+.br
+.ti -1c
+.RI "t \fB_uptodate\fP \&.Optional[t\&.Callable[[], bool]]"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS " t\&.Any jinja2\&.nativetypes\&.NativeTemplate\&.render ( self, *t\&.Any args, **t\&.Any kwargs)"
+
+.PP
+.nf
+Render the template to produce a native Python type\&. If the
+result is a single node, its value is returned\&. Otherwise, the
+nodes are concatenated as strings\&. If the result can be parsed
+with :func:`ast\&.literal_eval`, the parsed value is returned\&.
+Otherwise, the string is returned\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.environment\&.Template\fP\&.
+.SS " t\&.Any jinja2\&.nativetypes\&.NativeTemplate\&.render_async ( self, *t\&.Any args, **t\&.Any kwargs)"
+
+.PP
+.nf
+This works similar to :meth:`render` but returns a coroutine
+that when awaited returns the entire rendered template string\&.  This
+requires the async feature to be enabled\&.
+
+Example usage::
+
+    await template\&.render_async(knights='that say nih; asynchronously')
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.environment\&.Template\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "jinja2\&.nativetypes\&.NativeTemplate\&.environment_class = \fBNativeEnvironment\fP\fC [static]\fP"
+
+.SS "jinja2\&.nativetypes\&.NativeTemplate\&.template_class\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

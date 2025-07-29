@@ -1,0 +1,310 @@
+.TH "bs4.builder._html5lib.HTML5TreeBuilder" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bs4.builder._html5lib.HTML5TreeBuilder
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBbs4\&.builder\&.HTMLTreeBuilder\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Iterable[Tuple[_RawMarkup, Optional[_Encoding], Optional[_Encoding], bool]] \fBprepare_markup\fP (self, _RawMarkup markup, Optional[_Encoding] \fBuser_specified_encoding\fP=None, Optional[_Encoding] document_declared_encoding=None, Optional[_Encodings] exclude_encodings=None)"
+.br
+.ti -1c
+.RI "None \fBfeed\fP (self, _RawMarkup markup)"
+.br
+.ti -1c
+.RI "'TreeBuilderForHtml5lib' \fBcreate_treebuilder\fP (self, bool namespaceHTMLElements)"
+.br
+.ti -1c
+.RI "str \fBtest_fragment_to_document\fP (self, str fragment)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBbs4\&.builder\&.HTMLTreeBuilder\fP
+.in +1c
+.ti -1c
+.RI "bool \fBset_up_substitutions\fP (self, \fBTag\fP tag)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBbs4\&.builder\&.TreeBuilder\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, Dict[str, Set[str]] multi_valued_attributes=\fBUSE_DEFAULT\fP, Set[str] \fBpreserve_whitespace_tags\fP=\fBUSE_DEFAULT\fP, bool \fBstore_line_numbers\fP=\fBUSE_DEFAULT\fP, Dict[str, Type[\fBNavigableString\fP]] \fBstring_containers\fP=\fBUSE_DEFAULT\fP, Set[str] \fBempty_element_tags\fP=\fBUSE_DEFAULT\fP, Type[\fBAttributeDict\fP] \fBattribute_dict_class\fP=\fBAttributeDict\fP, Type[\fBAttributeValueList\fP] \fBattribute_value_list_class\fP=\fBAttributeValueList\fP)"
+.br
+.ti -1c
+.RI "None \fBinitialize_soup\fP (self, \fBBeautifulSoup\fP \fBsoup\fP)"
+.br
+.ti -1c
+.RI "None \fBreset\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBcan_be_empty_element\fP (self, str tag_name)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBuser_specified_encoding\fP"
+.br
+.ti -1c
+.RI "\fBunderlying_builder\fP"
+.br
+.ti -1c
+.RI "\fBsoup\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBbs4\&.builder\&.TreeBuilder\fP
+.in +1c
+.ti -1c
+.RI "\fBsoup\fP"
+.br
+.ti -1c
+.RI "\fBcdata_list_attributes\fP"
+.br
+.ti -1c
+.RI "\fBpreserve_whitespace_tags\fP"
+.br
+.ti -1c
+.RI "\fBempty_element_tags\fP"
+.br
+.ti -1c
+.RI "\fBstore_line_numbers\fP"
+.br
+.ti -1c
+.RI "\fBstring_containers\fP"
+.br
+.ti -1c
+.RI "\fBattribute_dict_class\fP"
+.br
+.ti -1c
+.RI "\fBattribute_value_list_class\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBNAME\fP = 'html5lib'"
+.br
+.ti -1c
+.RI "list \fBfeatures\fP = [\fBNAME\fP, PERMISSIVE, HTML_5, HTML]"
+.br
+.ti -1c
+.RI "bool \fBTRACKS_LINE_NUMBERS\fP = True"
+.br
+.ti -1c
+.RI "str \fBunderlying_builder\fP : 'TreeBuilderForHtml5lib'"
+.br
+.ti -1c
+.RI "Optional \fBuser_specified_encoding\fP [_Encoding]"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBbs4\&.builder\&.HTMLTreeBuilder\fP
+.in +1c
+.ti -1c
+.RI "Set \fBDEFAULT_EMPTY_ELEMENT_TAGS\fP"
+.br
+.ti -1c
+.RI "Set \fBDEFAULT_BLOCK_ELEMENTS\fP"
+.br
+.ti -1c
+.RI "dict \fBDEFAULT_STRING_CONTAINERS\fP"
+.br
+.ti -1c
+.RI "dict \fBDEFAULT_CDATA_LIST_ATTRIBUTES\fP"
+.br
+.ti -1c
+.RI "set \fBDEFAULT_PRESERVE_WHITESPACE_TAGS\fP = set(['pre', 'textarea'])"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBbs4\&.builder\&.TreeBuilder\fP
+.in +1c
+.ti -1c
+.RI "Any \fBUSE_DEFAULT\fP = object()"
+.br
+.ti -1c
+.RI "str \fBNAME\fP = '[Unknown tree builder]'"
+.br
+.ti -1c
+.RI "list \fBALTERNATE_NAMES\fP = []"
+.br
+.ti -1c
+.RI "list \fBfeatures\fP = []"
+.br
+.ti -1c
+.RI "bool \fBis_xml\fP = False"
+.br
+.ti -1c
+.RI "bool \fBpicklable\fP = False"
+.br
+.ti -1c
+.RI "Optional \fBsoup\fP [\fBBeautifulSoup\fP]"
+.br
+.ti -1c
+.RI "Optional \fBempty_element_tags\fP = None"
+.br
+.ti -1c
+.RI "Dict \fBcdata_list_attributes\fP [str, Set[str]]"
+.br
+.ti -1c
+.RI "Set \fBpreserve_whitespace_tags\fP [str]"
+.br
+.ti -1c
+.RI "Dict \fBstring_containers\fP [str, Type[\fBNavigableString\fP]]"
+.br
+.ti -1c
+.RI "bool \fBtracks_line_numbers\fP"
+.br
+.ti -1c
+.RI "Dict \fBDEFAULT_CDATA_LIST_ATTRIBUTES\fP = defaultdict(set)"
+.br
+.ti -1c
+.RI "Set \fBDEFAULT_PRESERVE_WHITESPACE_TAGS\fP = set()"
+.br
+.ti -1c
+.RI "dict \fBDEFAULT_STRING_CONTAINERS\fP = {}"
+.br
+.ti -1c
+.RI "Optional \fBDEFAULT_EMPTY_ELEMENT_TAGS\fP = None"
+.br
+.ti -1c
+.RI "bool \fBTRACKS_LINE_NUMBERS\fP = False"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Member Functions inherited from \fBbs4\&.builder\&.TreeBuilder\fP
+.in +1c
+.ti -1c
+.RI "_AttributeValues \fB_replace_cdata_list_attribute_values\fP (self, str tag_name, _RawOrProcessedAttributeValues attrs)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Use `html5lib <https://github\&.com/html5lib/html5lib-python>`_ to
+build a tree\&.
+
+Note that `HTML5TreeBuilder` does not support some common HTML
+`TreeBuilder` features\&. Some of these features could theoretically
+be implemented, but at the very least it's quite difficult,
+because html5lib moves the parse tree around as it's being built\&.
+
+Specifically:
+
+* This `TreeBuilder` doesn't use different subclasses of
+  `NavigableString` (e\&.g\&. `Script`) based on the name of the tag
+  in which the string was found\&.
+* You can't use a `SoupStrainer` to parse only part of a document\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " 'TreeBuilderForHtml5lib' bs4\&.builder\&._html5lib\&.HTML5TreeBuilder\&.create_treebuilder ( self, bool
+     namespaceHTMLElements)"
+
+.PP
+.nf
+Called by html5lib to instantiate the kind of class it
+calls a 'TreeBuilder'\&.
+
+:param namespaceHTMLElements: Whether or not to namespace HTML elements\&.
+
+:meta private:
+
+.fi
+.PP
+ 
+.SS " None bs4\&.builder\&._html5lib\&.HTML5TreeBuilder\&.feed ( self, _RawMarkup markup)"
+
+.PP
+.nf
+Run some incoming markup through some parsing process,
+populating the `BeautifulSoup` object in `HTML5TreeBuilder\&.soup`\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBbs4\&.builder\&.TreeBuilder\fP\&.
+.SS " Iterable[Tuple[_RawMarkup, Optional[_Encoding], Optional[_Encoding], bool]] bs4\&.builder\&._html5lib\&.HTML5TreeBuilder\&.prepare_markup ( self, _RawMarkup markup, Optional[_Encoding]  user_specified_encoding = \fCNone\fP, Optional[_Encoding]  document_declared_encoding = \fCNone\fP, Optional[_Encodings]  exclude_encodings = \fCNone\fP)"
+
+.PP
+.nf
+Run any preliminary steps necessary to make incoming markup
+acceptable to the parser\&.
+
+:param markup: The markup that's about to be parsed\&.
+:param user_specified_encoding: The user asked to try this encoding
+   to convert the markup into a Unicode string\&.
+:param document_declared_encoding: The markup itself claims to be
+    in this encoding\&. NOTE: This argument is not used by the
+    calling code and can probably be removed\&.
+:param exclude_encodings: The user asked *not* to try any of
+    these encodings\&.
+
+:yield: A series of 4-tuples: (markup, encoding, declared encoding,
+    has undergone character replacement)
+
+    Each 4-tuple represents a strategy that the parser can try
+    to convert the document to Unicode and parse it\&. Each
+    strategy will be tried in turn\&.
+
+ By default, the only strategy is to parse the markup
+ as-is\&. See `LXMLTreeBuilderForXML` and
+ `HTMLParserTreeBuilder` for implementations that take into
+ account the quirks of particular parsers\&.
+
+:meta private:
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBbs4\&.builder\&.TreeBuilder\fP\&.
+.SS " str bs4\&.builder\&._html5lib\&.HTML5TreeBuilder\&.test_fragment_to_document ( self, str fragment)"
+
+.PP
+.nf
+See `TreeBuilder`\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBbs4\&.builder\&.TreeBuilder\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "list bs4\&.builder\&._html5lib\&.HTML5TreeBuilder\&.features = [\fBNAME\fP, PERMISSIVE, HTML_5, HTML]\fC [static]\fP"
+
+.SS "str bs4\&.builder\&._html5lib\&.HTML5TreeBuilder\&.NAME = 'html5lib'\fC [static]\fP"
+
+.SS "bs4\&.builder\&._html5lib\&.HTML5TreeBuilder\&.soup"
+
+.SS "bool bs4\&.builder\&._html5lib\&.HTML5TreeBuilder\&.TRACKS_LINE_NUMBERS = True\fC [static]\fP"
+
+.SS "str bs4\&.builder\&._html5lib\&.HTML5TreeBuilder\&.underlying_builder : 'TreeBuilderForHtml5lib'\fC [static]\fP"
+
+.SS "bs4\&.builder\&._html5lib\&.HTML5TreeBuilder\&.underlying_builder"
+
+.SS "Optional bs4\&.builder\&._html5lib\&.HTML5TreeBuilder\&.user_specified_encoding [_Encoding]\fC [static]\fP"
+
+.SS "bs4\&.builder\&._html5lib\&.HTML5TreeBuilder\&.user_specified_encoding"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

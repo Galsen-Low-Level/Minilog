@@ -1,0 +1,178 @@
+.TH "urllib3.poolmanager.PoolKey" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+urllib3.poolmanager.PoolKey
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits typing\&.NamedTuple\&.
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBkey_scheme\fP"
+.br
+.ti -1c
+.RI "str \fBkey_host\fP"
+.br
+.ti -1c
+.RI "int \fBkey_port\fP | None"
+.br
+.ti -1c
+.RI "\fBTimeout\fP \fBkey_timeout\fP | float | int | None"
+.br
+.ti -1c
+.RI "\fBRetry\fP \fBkey_retries\fP | bool | int | None"
+.br
+.ti -1c
+.RI "bool \fBkey_block\fP | None"
+.br
+.ti -1c
+.RI "tuple \fBkey_source_address\fP [str, int] | None"
+.br
+.ti -1c
+.RI "str \fBkey_key_file\fP | None"
+.br
+.ti -1c
+.RI "str \fBkey_key_password\fP | None"
+.br
+.ti -1c
+.RI "str \fBkey_cert_file\fP | None"
+.br
+.ti -1c
+.RI "str \fBkey_cert_reqs\fP | None"
+.br
+.ti -1c
+.RI "str \fBkey_ca_certs\fP | None"
+.br
+.ti -1c
+.RI "str \fBkey_ca_cert_data\fP | bytes | None"
+.br
+.ti -1c
+.RI "int \fBkey_ssl_version\fP | str | None"
+.br
+.ti -1c
+.RI "ssl \fBkey_ssl_minimum_version\fP \&.TLSVersion | None"
+.br
+.ti -1c
+.RI "ssl \fBkey_ssl_maximum_version\fP \&.TLSVersion | None"
+.br
+.ti -1c
+.RI "str \fBkey_ca_cert_dir\fP | None"
+.br
+.ti -1c
+.RI "ssl \fBkey_ssl_context\fP \&.SSLContext | None"
+.br
+.ti -1c
+.RI "int \fBkey_maxsize\fP | None"
+.br
+.ti -1c
+.RI "frozenset \fBkey_headers\fP [tuple[str, str]] | None"
+.br
+.ti -1c
+.RI "\fBUrl\fP \fBkey__proxy\fP | None"
+.br
+.ti -1c
+.RI "frozenset \fBkey__proxy_headers\fP [tuple[str, str]] | None"
+.br
+.ti -1c
+.RI "\fBProxyConfig\fP \fBkey__proxy_config\fP | None"
+.br
+.ti -1c
+.RI "_TYPE_SOCKET_OPTIONS \fBkey_socket_options\fP | None"
+.br
+.ti -1c
+.RI "frozenset \fBkey__socks_options\fP [tuple[str, str]] | None"
+.br
+.ti -1c
+.RI "bool \fBkey_assert_hostname\fP | str | None"
+.br
+.ti -1c
+.RI "str \fBkey_assert_fingerprint\fP | None"
+.br
+.ti -1c
+.RI "str \fBkey_server_hostname\fP | None"
+.br
+.ti -1c
+.RI "int \fBkey_blocksize\fP | None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+All known keyword arguments that could be provided to the pool manager, its
+pools, or the underlying connections\&.
+
+All custom key schemes should include the fields in this key at a minimum\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBUrl\fP urllib3\&.poolmanager\&.PoolKey\&.key__proxy | None\fC [static]\fP"
+
+.SS "\fBProxyConfig\fP urllib3\&.poolmanager\&.PoolKey\&.key__proxy_config | None\fC [static]\fP"
+
+.SS "frozenset urllib3\&.poolmanager\&.PoolKey\&.key__proxy_headers [tuple[str, str]] | None\fC [static]\fP"
+
+.SS "frozenset urllib3\&.poolmanager\&.PoolKey\&.key__socks_options [tuple[str, str]] | None\fC [static]\fP"
+
+.SS "str urllib3\&.poolmanager\&.PoolKey\&.key_assert_fingerprint | None\fC [static]\fP"
+
+.SS "bool urllib3\&.poolmanager\&.PoolKey\&.key_assert_hostname | str | None\fC [static]\fP"
+
+.SS "bool urllib3\&.poolmanager\&.PoolKey\&.key_block | None\fC [static]\fP"
+
+.SS "int urllib3\&.poolmanager\&.PoolKey\&.key_blocksize | None\fC [static]\fP"
+
+.SS "str urllib3\&.poolmanager\&.PoolKey\&.key_ca_cert_data | bytes | None\fC [static]\fP"
+
+.SS "str urllib3\&.poolmanager\&.PoolKey\&.key_ca_cert_dir | None\fC [static]\fP"
+
+.SS "str urllib3\&.poolmanager\&.PoolKey\&.key_ca_certs | None\fC [static]\fP"
+
+.SS "str urllib3\&.poolmanager\&.PoolKey\&.key_cert_file | None\fC [static]\fP"
+
+.SS "str urllib3\&.poolmanager\&.PoolKey\&.key_cert_reqs | None\fC [static]\fP"
+
+.SS "frozenset urllib3\&.poolmanager\&.PoolKey\&.key_headers [tuple[str, str]] | None\fC [static]\fP"
+
+.SS "str urllib3\&.poolmanager\&.PoolKey\&.key_host\fC [static]\fP"
+
+.SS "str urllib3\&.poolmanager\&.PoolKey\&.key_key_file | None\fC [static]\fP"
+
+.SS "str urllib3\&.poolmanager\&.PoolKey\&.key_key_password | None\fC [static]\fP"
+
+.SS "int urllib3\&.poolmanager\&.PoolKey\&.key_maxsize | None\fC [static]\fP"
+
+.SS "int urllib3\&.poolmanager\&.PoolKey\&.key_port | None\fC [static]\fP"
+
+.SS "\fBRetry\fP urllib3\&.poolmanager\&.PoolKey\&.key_retries | bool | int | None\fC [static]\fP"
+
+.SS "str urllib3\&.poolmanager\&.PoolKey\&.key_scheme\fC [static]\fP"
+
+.SS "str urllib3\&.poolmanager\&.PoolKey\&.key_server_hostname | None\fC [static]\fP"
+
+.SS "_TYPE_SOCKET_OPTIONS urllib3\&.poolmanager\&.PoolKey\&.key_socket_options | None\fC [static]\fP"
+
+.SS "tuple urllib3\&.poolmanager\&.PoolKey\&.key_source_address [str, int] | None\fC [static]\fP"
+
+.SS "ssl urllib3\&.poolmanager\&.PoolKey\&.key_ssl_context \&.SSLContext | None\fC [static]\fP"
+
+.SS "ssl urllib3\&.poolmanager\&.PoolKey\&.key_ssl_maximum_version \&.TLSVersion | None\fC [static]\fP"
+
+.SS "ssl urllib3\&.poolmanager\&.PoolKey\&.key_ssl_minimum_version \&.TLSVersion | None\fC [static]\fP"
+
+.SS "int urllib3\&.poolmanager\&.PoolKey\&.key_ssl_version | str | None\fC [static]\fP"
+
+.SS "\fBTimeout\fP urllib3\&.poolmanager\&.PoolKey\&.key_timeout | float | int | None\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

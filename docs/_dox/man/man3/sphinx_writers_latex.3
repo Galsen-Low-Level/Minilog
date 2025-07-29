@@ -1,0 +1,140 @@
+.TH "sphinx.writers.latex" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.writers.latex
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBcollected_footnote\fP"
+.br
+.ti -1c
+.RI "class \fBLaTeXTranslator\fP"
+.br
+.ti -1c
+.RI "class \fBLaTeXWriter\fP"
+.br
+.ti -1c
+.RI "class \fBTable\fP"
+.br
+.ti -1c
+.RI "class \fBTableCell\fP"
+.br
+.ti -1c
+.RI "class \fBUnsupportedError\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fBescape_abbr\fP (str text)"
+.br
+.ti -1c
+.RI "str \fBrstdim_to_latexdim\fP (str width_str, int scale=100)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "int \fBMAX_CITATION_LABEL_LENGTH\fP = 8"
+.br
+.ti -1c
+.RI "list \fBLATEXSECTIONNAMES\fP"
+.br
+.ti -1c
+.RI "\fBENUMERATE_LIST_STYLE\fP"
+.br
+.ti -1c
+.RI "str \fBCR\fP = '\\n'"
+.br
+.ti -1c
+.RI "str \fBBLANKLINE\fP = '\\n\\n'"
+.br
+.ti -1c
+.RI "\fBEXTRA_RE\fP = re\&.compile(r'^(\&.*\\S)\\s+\\(([^()]*)\\)\\s*$')"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Custom docutils writer for LaTeX\&.
+
+Much of this code is adapted from Dave Kuhlman's 'docpy' writer from his
+docutils sandbox\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " str sphinx\&.writers\&.latex\&.escape_abbr (str text)"
+
+.PP
+.nf
+Adjust spacing after abbreviations\&.
+.fi
+.PP
+ 
+.SS " str sphinx\&.writers\&.latex\&.rstdim_to_latexdim (str width_str, int  scale = \fC100\fP)"
+
+.PP
+.nf
+Convert `width_str` with rst length to LaTeX length\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "str sphinx\&.writers\&.latex\&.BLANKLINE = '\\n\\n'"
+
+.SS "str sphinx\&.writers\&.latex\&.CR = '\\n'"
+
+.SS "sphinx\&.writers\&.latex\&.ENUMERATE_LIST_STYLE"
+\fBInitial value:\fP.PP
+.nf
+1 =  defaultdict(
+2     lambda: r'\\arabic',
+3     {
+4         'arabic': r'\\arabic',
+5         'loweralpha': r'\\alph',
+6         'upperalpha': r'\\Alph',
+7         'lowerroman': r'\\roman',
+8         'upperroman': r'\\Roman',
+9     },
+10 )
+.fi
+
+.SS "sphinx\&.writers\&.latex\&.EXTRA_RE = re\&.compile(r'^(\&.*\\S)\\s+\\(([^()]*)\\)\\s*$')"
+
+.SS "list sphinx\&.writers\&.latex\&.LATEXSECTIONNAMES"
+\fBInitial value:\fP.PP
+.nf
+1 =  [
+2     'part',
+3     'chapter',
+4     'section',
+5     'subsection',
+6     'subsubsection',
+7     'paragraph',
+8     'subparagraph',
+9 ]
+.fi
+
+.SS "sphinx\&.writers\&.latex\&.logger = logging\&.getLogger(__name__)"
+
+.SS "int sphinx\&.writers\&.latex\&.MAX_CITATION_LABEL_LENGTH = 8"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

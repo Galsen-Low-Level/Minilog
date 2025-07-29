@@ -1,0 +1,132 @@
+.TH "packaging.markers" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+packaging.markers
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBEnvironment\fP"
+.br
+.ti -1c
+.RI "class \fBInvalidMarker\fP"
+.br
+.ti -1c
+.RI "class \fBMarker\fP"
+.br
+.ti -1c
+.RI "class \fBUndefinedComparison\fP"
+.br
+.ti -1c
+.RI "class \fBUndefinedEnvironmentName\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "Any \fB_normalize_extra_values\fP (Any results)"
+.br
+.ti -1c
+.RI "str \fB_format_marker\fP (list[str]|MarkerAtom|str marker, bool|None first=True)"
+.br
+.ti -1c
+.RI "bool \fB_eval_op\fP (str lhs, \fBOp\fP op, str|AbstractSet[str] rhs)"
+.br
+.ti -1c
+.RI "tuple[str, str|AbstractSet[str]] \fB_normalize\fP (str lhs, str|AbstractSet[str] rhs, str key)"
+.br
+.ti -1c
+.RI "bool \fB_evaluate_markers\fP (MarkerList markers, dict[str, str|AbstractSet[str]] environment)"
+.br
+.ti -1c
+.RI "str \fBformat_full_version\fP (sys\&._version_info info)"
+.br
+.ti -1c
+.RI "\fBEnvironment\fP \fBdefault_environment\fP ()"
+.br
+.ti -1c
+.RI "dict[str, str|AbstractSet[str]] \fB_repair_python_full_version\fP (dict[str, str|AbstractSet[str]] env)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBOperator\fP = Callable[[str, Union[str, AbstractSet[str]]], bool]"
+.br
+.ti -1c
+.RI "\fBEvaluateContext\fP = Literal['metadata', 'lock_file', 'requirement']"
+.br
+.ti -1c
+.RI "dict \fBMARKERS_ALLOWING_SET\fP = {'extras', 'dependency_groups'}"
+.br
+.ti -1c
+.RI "dict \fB_operators\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " bool packaging\&.markers\&._eval_op (str lhs, \fBOp\fP op, str | AbstractSet[str] rhs)\fC [protected]\fP"
+
+.SS " bool packaging\&.markers\&._evaluate_markers (MarkerList markers, dict[str, str | AbstractSet[str]]
+ environment)\fC [protected]\fP"
+
+.SS " str packaging\&.markers\&._format_marker (list[str] | MarkerAtom | str marker, bool | None  first = \fCTrue\fP)\fC [protected]\fP"
+
+.SS " tuple[str, str | AbstractSet[str]] packaging\&.markers\&._normalize (str lhs, str | AbstractSet[str] rhs, str
+ key)\fC [protected]\fP"
+
+.SS " Any packaging\&.markers\&._normalize_extra_values (Any results)\fC [protected]\fP"
+
+.PP
+.nf
+Normalize extra values\&.
+
+.fi
+.PP
+ 
+.SS " dict[str, str | AbstractSet[str]] packaging\&.markers\&._repair_python_full_version (dict[str, str | AbstractSet[str]] env)\fC [protected]\fP"
+
+.PP
+.nf
+Work around platform\&.python_version() returning something that is not PEP 440
+compliant for non-tagged Python builds\&.
+
+.fi
+.PP
+ 
+.SS " \fBEnvironment\fP packaging\&.markers\&.default_environment ()"
+
+.SS " str packaging\&.markers\&.format_full_version (sys\&._version_info info)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "dict packaging\&.markers\&._operators\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     "in": lambda lhs, rhs: lhs in rhs,
+3     "not in": lambda lhs, rhs: lhs not in rhs,
+4     "<": operator\&.lt,
+5     "<=": operator\&.le,
+6     "==": operator\&.eq,
+7     "!=": operator\&.ne,
+8     ">=": operator\&.ge,
+9     ">": operator\&.gt,
+10 }
+.fi
+
+.SS "packaging\&.markers\&.EvaluateContext = Literal['metadata', 'lock_file', 'requirement']"
+
+.SS "dict packaging\&.markers\&.MARKERS_ALLOWING_SET = {'extras', 'dependency_groups'}"
+
+.SS "packaging\&.markers\&.Operator = Callable[[str, Union[str, AbstractSet[str]]], bool]"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

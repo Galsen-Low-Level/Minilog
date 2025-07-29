@@ -1,0 +1,118 @@
+.TH "jinja2.lexer.Lexer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.lexer.Lexer
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, 'Environment' environment)"
+.br
+.ti -1c
+.RI "\fBTokenStream\fP \fBtokenize\fP (self, str source, t\&.Optional[str] name=None, t\&.Optional[str] filename=None, t\&.Optional[str] state=None)"
+.br
+.ti -1c
+.RI "t\&.Iterator[\fBToken\fP] \fBwrap\fP (self, t\&.Iterable[t\&.Tuple[int, str, str]] stream, t\&.Optional[str] name=None, t\&.Optional[str] filename=None)"
+.br
+.ti -1c
+.RI "t\&.Iterator[t\&.Tuple[int, str, str]] \fBtokeniter\fP (self, str source, t\&.Optional[str] name, t\&.Optional[str] filename=None, t\&.Optional[str] state=None)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBlstrip_blocks\fP"
+.br
+.ti -1c
+.RI "\fBnewline_sequence\fP"
+.br
+.ti -1c
+.RI "\fBkeep_trailing_newline\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fB_normalize_newlines\fP (self, str value)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Class that implements a lexer for a given environment\&. Automatically
+created by the environment class, usually you don't have to do that\&.
+
+Note that the lexer is not automatically bound to an environment\&.
+Multiple environments can share the same lexer\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None jinja2\&.lexer\&.Lexer\&.__init__ ( self, 'Environment' environment)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " str jinja2\&.lexer\&.Lexer\&._normalize_newlines ( self, str value)\fC [protected]\fP"
+
+.PP
+.nf
+Replace all newlines with the configured sequence in strings
+and template data\&.
+
+.fi
+.PP
+ 
+.SS " t\&.Iterator[t\&.Tuple[int, str, str]] jinja2\&.lexer\&.Lexer\&.tokeniter ( self, str source, t\&.Optional[str] name, t\&.Optional[str]  filename = \fCNone\fP, t\&.Optional[str]  state = \fCNone\fP)"
+
+.PP
+.nf
+This method tokenizes the text and returns the tokens in a
+generator\&. Use this method if you just want to tokenize a template\&.
+
+\&.\&. versionchanged:: 3\&.0
+    Only ``\\\\n``, ``\\\\r\\\\n`` and ``\\\\r`` are treated as line
+    breaks\&.
+
+.fi
+.PP
+ 
+.SS " \fBTokenStream\fP jinja2\&.lexer\&.Lexer\&.tokenize ( self, str source, t\&.Optional[str]  name = \fCNone\fP, t\&.Optional[str]  filename = \fCNone\fP, t\&.Optional[str]  state = \fCNone\fP)"
+
+.PP
+.nf
+Calls tokeniter + tokenize and wraps it in a token stream\&.
+.fi
+.PP
+ 
+.SS " t\&.Iterator[\fBToken\fP] jinja2\&.lexer\&.Lexer\&.wrap ( self, t\&.Iterable[t\&.Tuple[int, str, str]] stream, t\&.Optional[str]  name = \fCNone\fP, t\&.Optional[str]  filename = \fCNone\fP)"
+
+.PP
+.nf
+This is called with the stream as returned by `tokenize` and wraps
+every token in a :class:`Token` and converts the value\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "jinja2\&.lexer\&.Lexer\&.keep_trailing_newline"
+
+.SS "jinja2\&.lexer\&.Lexer\&.lstrip_blocks"
+
+.SS "jinja2\&.lexer\&.Lexer\&.newline_sequence"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

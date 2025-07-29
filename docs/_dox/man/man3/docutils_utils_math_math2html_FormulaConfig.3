@@ -1,0 +1,401 @@
+.TH "docutils.utils.math.math2html.FormulaConfig" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.utils.math.math2html.FormulaConfig
+.SH SYNOPSIS
+.br
+.PP
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBalphacommands\fP"
+.br
+.ti -1c
+.RI "dict \fBarray\fP"
+.br
+.ti -1c
+.RI "dict \fBbigbrackets\fP"
+.br
+.ti -1c
+.RI "dict \fBbracketcommands\fP"
+.br
+.ti -1c
+.RI "dict \fBcombiningfunctions\fP"
+.br
+.ti -1c
+.RI "dict \fBcommands\fP"
+.br
+.ti -1c
+.RI "dict \fBcmddict\fP = {}"
+.br
+.ti -1c
+.RI "dict \fBoversetfunctions\fP"
+.br
+.ti -1c
+.RI "dict \fBundersetfunctions\fP"
+.br
+.ti -1c
+.RI "dict \fBendings\fP"
+.br
+.ti -1c
+.RI "dict \fBenvironments\fP"
+.br
+.ti -1c
+.RI "dict \fBfontfunctions\fP"
+.br
+.ti -1c
+.RI "dict \fBhybridfunctions\fP"
+.br
+.ti -1c
+.RI "dict \fBhybridsizes\fP"
+.br
+.ti -1c
+.RI "dict \fBlabelfunctions\fP"
+.br
+.ti -1c
+.RI "dict \fBlimitcommands\fP"
+.br
+.ti -1c
+.RI "dict \fBmodified\fP"
+.br
+.ti -1c
+.RI "dict \fBonefunctions\fP"
+.br
+.ti -1c
+.RI "dict \fBspacedcommands\fP"
+.br
+.ti -1c
+.RI "dict \fBstarts\fP"
+.br
+.ti -1c
+.RI "dict \fBsymbolfunctions\fP"
+.br
+.ti -1c
+.RI "dict \fBtextfunctions\fP"
+.br
+.ti -1c
+.RI "dict \fBunmodified\fP"
+.br
+.in -1c
+.SH "Member Data Documentation"
+.PP 
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.alphacommands\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        '\\\\AmS': '<span class="textsc">AmS</span>',
+        '\\\\AA':        'Å',
+        '\\\\AE':        'Æ',
+        '\\\\DH':        'Ð',
+        '\\\\L':         'Ł',
+        '\\\\O':         'Ø',
+        '\\\\OE':        'Œ',
+        '\\\\TH':        'Þ',
+        '\\\\aa':        'å',
+        '\\\\ae':        'æ',
+        '\\\\dh':        'ð',
+        '\\\\i':         'ı',
+        '\\\\j':         'ȷ',
+        '\\\\l':         'ł',
+        '\\\\o':         'ø',
+        '\\\\oe':        'œ',
+        '\\\\ss':        'ß',
+        '\\\\th':        'þ',
+        '\\\\hbar':      'ħ',  # cf\&. \\hslash: ℏ in tex2unichar
+    }
+.fi
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.array\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        'begin': r'\\begin',
+        'cellseparator': '&',
+        'end': r'\\end',
+        'rowseparator': r'\\\\',
+    }
+.fi
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.bigbrackets\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {'(': ['⎛', '⎜', '⎝'],
+                   ')': ['⎞', '⎟', '⎠'],
+                   '[': ['⎡', '⎢', '⎣'],
+                   ']': ['⎤', '⎥', '⎦'],
+                   '{': ['⎧', '⎪', '⎨', '⎩'],
+                   '}': ['⎫', '⎪', '⎬', '⎭'],
+                   # TODO: 2\-row brackets with ⎰⎱ (\\lmoustache \\rmoustache)
+                   '|': ['|'],  # 007C VERTICAL LINE
+                   # '|': ['⎮'],  # 23AE INTEGRAL EXTENSION
+                   # '|': ['⎪'],  # 23AA CURLY BRACKET EXTENSION
+                   '‖': ['‖'],  # 2016 DOUBLE VERTICAL LINE
+                   # '∥': ['∥'],  # 2225 PARALLEL TO
+                   }
+.fi
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.bracketcommands\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        '\\\\left': 'span class="stretchy"',
+        '\\\\left\&.': '<span class="leftdot"></span>',
+        '\\\\middle': 'span class="stretchy"',
+        '\\\\right': 'span class="stretchy"',
+        '\\\\right\&.': '<span class="rightdot"></span>',
+    }
+.fi
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.cmddict = {}\fC [static]\fP"
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.combiningfunctions\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        "\\\\'":           '\\u0301',  # x́
+        '\\\\"':           '\\u0308',  # ẍ
+        '\\\\^':           '\\u0302',  # x̂
+        '\\\\`':           '\\u0300',  # x̀
+        '\\\\~':           '\\u0303',  # x̃
+        '\\\\c':           '\\u0327',  # x̧
+        '\\\\r':           '\\u030a',  # x̊
+        '\\\\s':           '\\u0329',  # x̩
+        '\\\\textcircled': '\\u20dd',  # x⃝
+        '\\\\textsubring': '\\u0325',  # x̥
+        '\\\\v':           '\\u030c',  # x̌
+    }
+.fi
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.commands\fC [static]\fP"
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.endings\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        'bracket': '}',
+        'complex': '\\\\]',
+        'endafter': '}',
+        'endbefore': '\\\\end{',
+        'squarebracket': ']',
+    }
+.fi
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.environments\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        'align': ['r', 'l'],
+        'eqnarray': ['r', 'c', 'l'],
+        'gathered': ['l', 'l'],
+        'smallmatrix': ['c', 'c'],
+    }
+.fi
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.fontfunctions\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        '\\\\boldsymbol': 'b', '\\\\mathbb': 'span class="blackboard"',
+        '\\\\mathbb{A}': '𝔸', '\\\\mathbb{B}': '𝔹', '\\\\mathbb{C}': 'ℂ',
+        '\\\\mathbb{D}': '𝔻', '\\\\mathbb{E}': '𝔼', '\\\\mathbb{F}': '𝔽',
+        '\\\\mathbb{G}': '𝔾', '\\\\mathbb{H}': 'ℍ', '\\\\mathbb{J}': '𝕁',
+        '\\\\mathbb{K}': '𝕂', '\\\\mathbb{L}': '𝕃', '\\\\mathbb{N}': 'ℕ',
+        '\\\\mathbb{O}': '𝕆', '\\\\mathbb{P}': 'ℙ', '\\\\mathbb{Q}': 'ℚ',
+        '\\\\mathbb{R}': 'ℝ', '\\\\mathbb{S}': '𝕊', '\\\\mathbb{T}': '𝕋',
+        '\\\\mathbb{W}': '𝕎', '\\\\mathbb{Z}': 'ℤ', '\\\\mathbf': 'b',
+        '\\\\mathcal': 'span class="scriptfont"',
+        '\\\\mathcal{B}': 'ℬ', '\\\\mathcal{E}': 'ℰ', '\\\\mathcal{F}':
+        'ℱ', '\\\\mathcal{H}': 'ℋ', '\\\\mathcal{I}': 'ℐ',
+        '\\\\mathcal{L}': 'ℒ', '\\\\mathcal{M}': 'ℳ', '\\\\mathcal{R}': 'ℛ',
+        '\\\\mathfrak': 'span class="fraktur"',
+        '\\\\mathfrak{C}': 'ℭ', '\\\\mathfrak{F}': '𝔉', '\\\\mathfrak{H}': 'ℌ',
+        '\\\\mathfrak{I}': 'ℑ', '\\\\mathfrak{R}': 'ℜ', '\\\\mathfrak{Z}': 'ℨ',
+        '\\\\mathit': 'i',
+        '\\\\mathring{A}': 'Å', '\\\\mathring{U}': 'Ů',
+        '\\\\mathring{a}': 'å', '\\\\mathring{u}': 'ů', '\\\\mathring{w}': 'ẘ',
+        '\\\\mathring{y}': 'ẙ',
+        '\\\\mathrm': 'span class="mathrm"',
+        '\\\\mathscr': 'span class="mathscr"',
+        '\\\\mathscr{B}': 'ℬ', '\\\\mathscr{E}': 'ℰ', '\\\\mathscr{F}': 'ℱ',
+        '\\\\mathscr{H}': 'ℋ', '\\\\mathscr{I}': 'ℐ', '\\\\mathscr{L}': 'ℒ',
+        '\\\\mathscr{M}': 'ℳ', '\\\\mathscr{R}': 'ℛ',
+        '\\\\mathsf': 'span class="mathsf"',
+        '\\\\mathtt': 'span class="mathtt"',
+        '\\\\operatorname': 'span class="mathrm"',
+    }
+.fi
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.hybridfunctions\fC [static]\fP"
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.hybridsizes\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        '\\\\binom': '$1+$2', '\\\\cfrac': '$1+$2', '\\\\dbinom': '$1+$2+1',
+        '\\\\dfrac': '$1+$2', '\\\\frac': '$1+$2', '\\\\tbinom': '$1+$2+1',
+    }
+.fi
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.labelfunctions\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        '\\\\label': 'a name="#"',
+    }
+.fi
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.limitcommands\fC [static]\fP"
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.modified\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        '\\n': '', ' ': '', '$': '', '&': '  ', '\\'': '’', '+': '\\u2009+\\u2009',
+        ',': ',\\u2009', '\-': '\\u2009−\\u2009', '/': '\\u2009⁄\\u2009', ':': ' : ', '<': '\\u2009&lt;\\u2009',
+        '=': '\\u2009=\\u2009', '>': '\\u2009&gt;\\u2009', '@': '', '~': '\\u00a0',
+    }
+.fi
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.onefunctions\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        '\\\\big': 'span class="bigdelimiter size1"',
+        '\\\\bigl': 'span class="bigdelimiter size1"',
+        '\\\\bigr': 'span class="bigdelimiter size1"',
+        '\\\\Big': 'span class="bigdelimiter size2"',
+        '\\\\Bigl': 'span class="bigdelimiter size2"',
+        '\\\\Bigr': 'span class="bigdelimiter size2"',
+        '\\\\bigg': 'span class="bigdelimiter size3"',
+        '\\\\biggl': 'span class="bigdelimiter size3"',
+        '\\\\biggr': 'span class="bigdelimiter size3"',
+        '\\\\Bigg': 'span class="bigdelimiter size4"',
+        '\\\\Biggl': 'span class="bigdelimiter size4"',
+        '\\\\Biggr': 'span class="bigdelimiter size4"',
+        # '\\\\bar': 'span class="bar"',
+        '\\\\begin{array}': 'span class="arraydef"',
+        '\\\\centering': 'span class="align\-center"',
+        '\\\\ensuremath': 'span class="ensuremath"',
+        '\\\\hphantom': 'span class="phantom"',
+        '\\\\noindent': 'span class="noindent"',
+        '\\\\overbrace': 'span class="overbrace"',
+        '\\\\overline': 'span class="overline"',
+        '\\\\phantom': 'span class="phantom"',
+        '\\\\underbrace': 'span class="underbrace"',
+        '\\\\underline': '',
+        '\\\\vphantom': 'span class="phantom"',
+    }
+.fi
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.oversetfunctions\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        # math accents (cf\&. combiningfunctions)
+        # '\\\\acute':    '´',
+        '\\\\bar':      '‒',  # FIGURE DASH
+        # '\\\\breve':    '˘',
+        # '\\\\check':    'ˇ',
+        '\\\\dddot':    '<span class="smallsymbol">⋯</span>',
+        # '\\\\ddot':     '··', # ¨ too high
+        # '\\\\dot':      '·',
+        # '\\\\grave':    '`',
+        # '\\\\hat':      '^',
+        # '\\\\mathring': '˚',
+        # '\\\\tilde':    '~',
+        '\\\\vec':      '<span class="smallsymbol">→</span>',
+        # embellishments
+        '\\\\overleftarrow': '⟵',
+        '\\\\overleftrightarrow': '⟷',
+        '\\\\overrightarrow': '⟶',
+        '\\\\widehat': '^',
+        '\\\\widetilde': '～',
+    }
+.fi
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.spacedcommands\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        # negated symbols without pre\-composed Unicode character
+        '\\\\nleqq':      '\\u2266\\u0338',  # ≦̸
+        '\\\\ngeqq':      '\\u2267\\u0338',  # ≧̸
+        '\\\\nleqslant':  '\\u2a7d\\u0338',  # ⩽̸
+        '\\\\ngeqslant':  '\\u2a7e\\u0338',  # ⩾̸
+        '\\\\nsubseteqq': '\\u2AC5\\u0338',  # ⫅̸
+        '\\\\nsupseteqq': '\\u2AC6\\u0338',  # ⫆̸
+        '\\\\nsqsubset':  '\\u2276\\u228F',  # ⊏̸
+        # modified glyphs
+        '\\\\shortmid': '<span class="smallsymbol">∣</span>',
+        '\\\\shortparallel': '<span class="smallsymbol">∥</span>',
+        '\\\\nshortmid': '<span class="smallsymbol">∤</span>',
+        '\\\\nshortparallel': '<span class="smallsymbol">∦</span>',
+        '\\\\smallfrown': '<span class="smallsymbol">⌢</span>',
+        '\\\\smallsmile': '<span class="smallsymbol">⌣</span>',
+        '\\\\thickapprox': '<span class="boldsymbol">≈</span>',
+        '\\\\thicksim': '<span class="boldsymbol">∼</span>',
+        '\\\\varpropto': '<span class="mathsf">\\u221d</span>',  # ∝ PROPORTIONAL TO
+    }
+.fi
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.starts\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        'beginafter': '}', 'beginbefore': '\\\\begin{', 'bracket': '{',
+        'command': '\\\\', 'comment': '%', 'complex': '\\\\[', 'simple': '$',
+        'squarebracket': '[', 'unnumbered': '*',
+    }
+.fi
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.symbolfunctions\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        '^': 'sup', '_': 'sub',
+    }
+.fi
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.textfunctions\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        '\\\\mbox': 'span class="mbox"',
+        '\\\\text': 'span class="text"',
+        '\\\\textbf': 'span class="textbf"',
+        '\\\\textit': 'span class="textit"',
+        '\\\\textnormal': 'span class="textnormal"',
+        '\\\\textrm': 'span class="textrm"',
+        '\\\\textsc': 'span class="textsc"',
+        '\\\\textsf': 'span class="textsf"',
+        '\\\\textsl': 'span class="textsl"',
+        '\\\\texttt': 'span class="texttt"',
+        '\\\\textup': 'span class="normal"',
+    }
+.fi
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.undersetfunctions\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        '\\\\underleftarrow': '⟵',
+        '\\\\underleftrightarrow': '⟷',
+        '\\\\underrightarrow': '⟶',
+    }
+.fi
+
+.SS "dict docutils\&.utils\&.math\&.math2html\&.FormulaConfig\&.unmodified\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        'characters': ['\&.', '*', '€', '(', ')', '[', ']',
+                       '·', '!', ';', '|', '§', '"', '?'],
+        }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

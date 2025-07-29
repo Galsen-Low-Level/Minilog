@@ -1,0 +1,476 @@
+\doxysection{sphinx.\+domains.\+Domain Class Reference}
+\hypertarget{classsphinx_1_1domains_1_1Domain}{}\label{classsphinx_1_1domains_1_1Domain}\index{sphinx.domains.Domain@{sphinx.domains.Domain}}
+Inheritance diagram for sphinx.\+domains.\+Domain\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classsphinx_1_1domains_1_1Domain}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_af0817e38d40a0d0b40df0a12d115b7fd}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}} env)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_aa0555db9d5fbeb107facb85a8bd122dc}{setup}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a7de498f17936d53a42926b70384a9f2f}{add\+\_\+object\+\_\+type}} (self, str \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a5b8048d2dbb452069a322d0f88135ba6}{name}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1ObjType}{Obj\+Type}} objtype)
+\item 
+\mbox{\hyperlink{classsphinx_1_1util_1_1typing_1_1RoleFunction}{Role\+Function}}\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_aa1c320c9b1bcab3fd3358aee3f2b7c1a}{role}} (self, str \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a5b8048d2dbb452069a322d0f88135ba6}{name}})
+\item 
+type\mbox{[}\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1Directive}{Directive}}\mbox{]}\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a178c8eb2db36ee98a27fd3c09934bb1a}{directive}} (self, str \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a5b8048d2dbb452069a322d0f88135ba6}{name}})
+\item 
+None \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_adb932713bc61f08923e723da07316c59}{clear\+\_\+doc}} (self, str docname)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a1988da8d57229a156b9d373184e9095e}{merge\+\_\+domaindata}} (self, Set\mbox{[}str\mbox{]} docnames, dict\mbox{[}str, Any\mbox{]} otherdata)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_ae635aec991c0eb02d43fbf20c7cede1e}{process\+\_\+doc}} (self, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}} env, str docname, nodes.\+document document)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a7c88af6a6fd440d4bf480fefc5d37f03}{check\+\_\+consistency}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a8423cbdf773cdb844269a75d9c81afa2}{process\+\_\+field\+\_\+xref}} (self, \mbox{\hyperlink{classsphinx_1_1addnodes_1_1pending__xref}{pending\+\_\+xref}} pnode)
+\item 
+nodes.\+reference\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_ad0ac5968cb378c7d9c428276fcd48098}{resolve\+\_\+xref}} (self, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}} env, str fromdocname, \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}} builder, str typ, str target, \mbox{\hyperlink{classsphinx_1_1addnodes_1_1pending__xref}{pending\+\_\+xref}} node, \mbox{\hyperlink{classdocutils_1_1nodes_1_1Element}{Element}} contnode)
+\item 
+list\mbox{[}tuple\mbox{[}str, nodes.\+reference\mbox{]}\mbox{]} \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a6e624bd0bd638057f5003d15e04fbb90}{resolve\+\_\+any\+\_\+xref}} (self, \mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}} env, str fromdocname, \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}} builder, str target, \mbox{\hyperlink{classsphinx_1_1addnodes_1_1pending__xref}{pending\+\_\+xref}} node, \mbox{\hyperlink{classdocutils_1_1nodes_1_1Element}{Element}} contnode)
+\item 
+Iterable\mbox{[}tuple\mbox{[}str, str, str, str, str, int\mbox{]}\mbox{]} \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_aa0da6ff6dec77ed82a86e4d39b1eaa10}{get\+\_\+objects}} (self)
+\item 
+str \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a2ed876487db75eaeee2eddfbde811b45}{get\+\_\+type\+\_\+name}} (self, \mbox{\hyperlink{classsphinx_1_1domains_1_1ObjType}{Obj\+Type}} type, bool primary=False)
+\item 
+str\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a016c01427ae2aa7148da67e9b84214f3}{get\+\_\+enumerable\+\_\+node\+\_\+type}} (self, \mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}} node)
+\item 
+str\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a94f2f8829129d9b6c8fd0afceea8b2a5}{get\+\_\+full\+\_\+qualified\+\_\+name}} (self, \mbox{\hyperlink{classdocutils_1_1nodes_1_1Element}{Element}} node)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_aae5eee397e496e46d167e2f8fb7d68bf}{object\+\_\+types}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a6c23e1a8cda90f5fb41ad61818da5beb}{directives}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_aad8f3e7e7eddd0c2ccdde1a380902868}{roles}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_ab37fae2b7d93408ae1ccb6efa11b33bb}{indices}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a92953967590359cb7adce3402fdac7f7}{initial\+\_\+data}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_af9b057a92e692416e26d65cad216740d}{data}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_ac0699be8e44f1f43e91dccac1e184ce1}{label}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a4dccce4dff5d205bf1d60a552344eae3}{objtypes\+\_\+for\+\_\+role}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a66bc5abf001da0b88b0a898b2b473fea}{role\+\_\+for\+\_\+objtype}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_ad9db0a4db077fddee5f0fc39e72952af}{name}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a5b8048d2dbb452069a322d0f88135ba6}{name}} = \textquotesingle{}\textquotesingle{}
+\item 
+str \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a5cb485e28a209c4a2ce67e2b43be3dcc}{label}} = \textquotesingle{}\textquotesingle{}
+\item 
+dict \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a06fcd156ee969f6617a40107dcba763f}{object\+\_\+types}} = \{\}
+\item 
+dict \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a726fa30a66fd7c8a3ffb7f635aaed27d}{directives}} = \{\}
+\item 
+dict \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_af496d3e292620d6e06cf78435cb10439}{roles}} = \{\}
+\item 
+list \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a5c1f8980c4c021a1dbcd786d3016747f}{indices}} = \mbox{[}$\,$\mbox{]}
+\item 
+dict \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a8949ce26dd0488cf7fca157a770a08c4}{dangling\+\_\+warnings}} = \{\}
+\item 
+dict \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a619e7a5590ca6cfa44a771832d6dc204}{enumerable\+\_\+nodes}} = \{\}
+\item 
+dict \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_acff1636f1251a6f942d2c30cd74c0489}{initial\+\_\+data}} = \{\}
+\item 
+dict \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_a7d9c48730ecb94b0e9f3b06789efd400}{data}} \mbox{[}str, Any\mbox{]}
+\item 
+int \mbox{\hyperlink{classsphinx_1_1domains_1_1Domain_ac35a18fd79fecd3eb36ed2160f210a49}{data\+\_\+version}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A Domain is meant to be a group of "object" description directives for
+objects of a similar nature, and corresponding roles to create references to
+them.  Examples would be Python modules, classes, functions etc., elements
+of a templating language, Sphinx roles and directives, etc.
+
+Each domain has a separate storage for information about existing objects
+and how to reference them in `self.data`, which must be a dictionary.  It
+also must implement several functions that expose the object information in
+a uniform way to parts of Sphinx that allow the user to reference or search
+for objects in a domain-agnostic way.
+
+About `self.data`: since all object and cross-referencing information is
+stored on a BuildEnvironment instance, the `domain.data` object is also
+stored in the `env.domaindata` dict under the key `domain.name`.  Before the
+build process starts, every active domain is instantiated and given the
+environment object; the `domaindata` dict must then either be nonexistent or
+a dictionary whose 'version' key is equal to the domain class'
+:attr:`data_version` attribute.  Otherwise, `OSError` is raised and the
+pickled environment is discarded.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsphinx_1_1domains_1_1Domain_af0817e38d40a0d0b40df0a12d115b7fd}\label{classsphinx_1_1domains_1_1Domain_af0817e38d40a0d0b40df0a12d115b7fd} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None sphinx.\+domains.\+Domain.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}}]{env }\end{DoxyParamCaption})}
+
+
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1domains_1_1std_1_1StandardDomain_a1148db694de78bfd587692347eeb1400}{sphinx.\+domains.\+std.\+Standard\+Domain}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsphinx_1_1domains_1_1Domain_a7de498f17936d53a42926b70384a9f2f}\label{classsphinx_1_1domains_1_1Domain_a7de498f17936d53a42926b70384a9f2f} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!add\_object\_type@{add\_object\_type}}
+\index{add\_object\_type@{add\_object\_type}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{add\_object\_type()}{add\_object\_type()}}
+{\footnotesize\ttfamily  None sphinx.\+domains.\+Domain.\+add\+\_\+object\+\_\+type (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name,  }\item[{\mbox{\hyperlink{classsphinx_1_1domains_1_1ObjType}{Obj\+Type}}}]{objtype }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Add an object type.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1domains_1_1Domain_a7c88af6a6fd440d4bf480fefc5d37f03}\label{classsphinx_1_1domains_1_1Domain_a7c88af6a6fd440d4bf480fefc5d37f03} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!check\_consistency@{check\_consistency}}
+\index{check\_consistency@{check\_consistency}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{check\_consistency()}{check\_consistency()}}
+{\footnotesize\ttfamily  None sphinx.\+domains.\+Domain.\+check\+\_\+consistency (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Do consistency checks (**experimental**).\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1domains_1_1citation_1_1CitationDomain_a0e11f66bea782c9b7e75f9a962dd1dd7}{sphinx.\+domains.\+citation.\+Citation\+Domain}}.
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_adb932713bc61f08923e723da07316c59}\label{classsphinx_1_1domains_1_1Domain_adb932713bc61f08923e723da07316c59} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!clear\_doc@{clear\_doc}}
+\index{clear\_doc@{clear\_doc}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{clear\_doc()}{clear\_doc()}}
+{\footnotesize\ttfamily  None sphinx.\+domains.\+Domain.\+clear\+\_\+doc (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{docname }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Remove traces of a document in the domain-specific inventories.\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1domains_1_1c_1_1CDomain_add803c5239aea3f0865156fd192274c0}{sphinx.\+domains.\+c.\+CDomain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1changeset_1_1ChangeSetDomain_af8a1cc2f8cdd8103aa7cd1d95b3d6234}{sphinx.\+domains.\+changeset.\+Change\+Set\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1citation_1_1CitationDomain_a87ee2c45177572848666531a09e484a6}{sphinx.\+domains.\+citation.\+Citation\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1cpp_1_1CPPDomain_a2ff8d7782a83388e118dbe4d0c2240e7}{sphinx.\+domains.\+cpp.\+CPPDomain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1index_1_1IndexDomain_a69a41f9ba7823148f4cd10360ed5e2ba}{sphinx.\+domains.\+index.\+Index\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1javascript_1_1JavaScriptDomain_ac09bc090f5e6ad53a8dd299e0435a667}{sphinx.\+domains.\+javascript.\+Java\+Script\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1math_1_1MathDomain_ace0d75e5370f08dbdfc9c909f8da87f5}{sphinx.\+domains.\+math.\+Math\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1python_1_1PythonDomain_aa08051be98684c1d89c17cb8aecb4bfb}{sphinx.\+domains.\+python.\+Python\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1rst_1_1ReSTDomain_a6bdda5d1c006e09a7394b7142771b86c}{sphinx.\+domains.\+rst.\+Re\+STDomain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1std_1_1StandardDomain_a0f096d19a30bf99a0e1538d68c13bf14}{sphinx.\+domains.\+std.\+Standard\+Domain}}, \mbox{\hyperlink{classsphinx_1_1ext_1_1duration_1_1DurationDomain_a05d9f7afa4f41855bcb5565c063dee43}{sphinx.\+ext.\+duration.\+Duration\+Domain}}, and \mbox{\hyperlink{classsphinx_1_1ext_1_1todo_1_1TodoDomain_a8afaed45d4ba4447ce64f13a4728850f}{sphinx.\+ext.\+todo.\+Todo\+Domain}}.
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_a178c8eb2db36ee98a27fd3c09934bb1a}\label{classsphinx_1_1domains_1_1Domain_a178c8eb2db36ee98a27fd3c09934bb1a} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!directive@{directive}}
+\index{directive@{directive}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{directive()}{directive()}}
+{\footnotesize\ttfamily  type\mbox{[}\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1Directive}{Directive}}\mbox{]} \texorpdfstring{$\vert$}{|} None sphinx.\+domains.\+Domain.\+directive (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a directive adapter class that always gives the registered
+directive its full name ('domain:name') as ``self.name``.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1domains_1_1Domain_a016c01427ae2aa7148da67e9b84214f3}\label{classsphinx_1_1domains_1_1Domain_a016c01427ae2aa7148da67e9b84214f3} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!get\_enumerable\_node\_type@{get\_enumerable\_node\_type}}
+\index{get\_enumerable\_node\_type@{get\_enumerable\_node\_type}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{get\_enumerable\_node\_type()}{get\_enumerable\_node\_type()}}
+{\footnotesize\ttfamily  str \texorpdfstring{$\vert$}{|} None sphinx.\+domains.\+Domain.\+get\+\_\+enumerable\+\_\+node\+\_\+type (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}}}]{node }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get type of enumerable nodes (experimental).\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1domains_1_1std_1_1StandardDomain_a5428c408143b9e67c31814715afee264}{sphinx.\+domains.\+std.\+Standard\+Domain}}.
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_a94f2f8829129d9b6c8fd0afceea8b2a5}\label{classsphinx_1_1domains_1_1Domain_a94f2f8829129d9b6c8fd0afceea8b2a5} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!get\_full\_qualified\_name@{get\_full\_qualified\_name}}
+\index{get\_full\_qualified\_name@{get\_full\_qualified\_name}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{get\_full\_qualified\_name()}{get\_full\_qualified\_name()}}
+{\footnotesize\ttfamily  str \texorpdfstring{$\vert$}{|} None sphinx.\+domains.\+Domain.\+get\+\_\+full\+\_\+qualified\+\_\+name (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classdocutils_1_1nodes_1_1Element}{Element}}}]{node }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return full qualified name for given node.\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1domains_1_1cpp_1_1CPPDomain_a7985736016503297ef7937cc27962904}{sphinx.\+domains.\+cpp.\+CPPDomain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1javascript_1_1JavaScriptDomain_adf078e5310f90109a4974abe24bd3763}{sphinx.\+domains.\+javascript.\+Java\+Script\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1python_1_1PythonDomain_aa00940113737b89feaf1281ac12ec1cd}{sphinx.\+domains.\+python.\+Python\+Domain}}, and \mbox{\hyperlink{classsphinx_1_1domains_1_1std_1_1StandardDomain_a7ef7d6241fde205ea7ddd3a6e0f6c157}{sphinx.\+domains.\+std.\+Standard\+Domain}}.
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_aa0da6ff6dec77ed82a86e4d39b1eaa10}\label{classsphinx_1_1domains_1_1Domain_aa0da6ff6dec77ed82a86e4d39b1eaa10} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!get\_objects@{get\_objects}}
+\index{get\_objects@{get\_objects}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{get\_objects()}{get\_objects()}}
+{\footnotesize\ttfamily  Iterable\mbox{[}tuple\mbox{[}str, str, str, str, str, int\mbox{]}\mbox{]} sphinx.\+domains.\+Domain.\+get\+\_\+objects (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return an iterable of "object descriptions".
+
+Object descriptions are tuples with six items:
+
+``name``
+  Fully qualified name.
+
+``dispname``
+  Name to display when searching/linking.
+
+``type``
+  Object type, a key in ``self.object_types``.
+
+``docname``
+  The document where it is to be found.
+
+``anchor``
+  The anchor name for the object.
+
+``priority``
+  How "important" the object is (determines placement in search
+  results). One of:
+
+  ``1``
+    Default priority (placed before full-text matches).
+  ``0``
+    Object is important (placed before default-priority objects).
+  ``2``
+    Object is unimportant (placed after full-text matches).
+  ``-1``
+    Object should not show up in search at all.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1domains_1_1c_1_1CDomain_a46af8a5cf3f798fc4ddd29c9281439ff}{sphinx.\+domains.\+c.\+CDomain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1cpp_1_1CPPDomain_a2f962a65fbfc9a2b924ca5fd459fedf1}{sphinx.\+domains.\+cpp.\+CPPDomain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1javascript_1_1JavaScriptDomain_a7b0fe3c9667d35a3dd123d7d6ba42d0b}{sphinx.\+domains.\+javascript.\+Java\+Script\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1math_1_1MathDomain_a7e3773b2512a9a397772fcfe4f57f30b}{sphinx.\+domains.\+math.\+Math\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1python_1_1PythonDomain_af10de1d3d0e8f660291f6f8569073d6f}{sphinx.\+domains.\+python.\+Python\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1rst_1_1ReSTDomain_a4e3c77446b1fbeb7cda07e5ad71deda6}{sphinx.\+domains.\+rst.\+Re\+STDomain}}, and \mbox{\hyperlink{classsphinx_1_1domains_1_1std_1_1StandardDomain_a43851b7b596a763d546fd64a98cbee68}{sphinx.\+domains.\+std.\+Standard\+Domain}}.
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_a2ed876487db75eaeee2eddfbde811b45}\label{classsphinx_1_1domains_1_1Domain_a2ed876487db75eaeee2eddfbde811b45} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!get\_type\_name@{get\_type\_name}}
+\index{get\_type\_name@{get\_type\_name}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{get\_type\_name()}{get\_type\_name()}}
+{\footnotesize\ttfamily  str sphinx.\+domains.\+Domain.\+get\+\_\+type\+\_\+name (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsphinx_1_1domains_1_1ObjType}{Obj\+Type}}}]{type,  }\item[{bool }]{primary = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return full name for given ObjType.\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1domains_1_1std_1_1StandardDomain_a5098e35a78d5e2dfabd8621c9b55f645}{sphinx.\+domains.\+std.\+Standard\+Domain}}.
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_a1988da8d57229a156b9d373184e9095e}\label{classsphinx_1_1domains_1_1Domain_a1988da8d57229a156b9d373184e9095e} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!merge\_domaindata@{merge\_domaindata}}
+\index{merge\_domaindata@{merge\_domaindata}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{merge\_domaindata()}{merge\_domaindata()}}
+{\footnotesize\ttfamily  None sphinx.\+domains.\+Domain.\+merge\+\_\+domaindata (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Set\mbox{[}str\mbox{]}}]{docnames,  }\item[{dict\mbox{[}str, Any\mbox{]}}]{otherdata }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Merge in data regarding *docnames* from a different domaindata
+inventory (coming from a subprocess in parallel builds).
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1ext_1_1duration_1_1DurationDomain_a8bc443affe81087ac75b6ef2d1d7c4c6}{sphinx.\+ext.\+duration.\+Duration\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1c_1_1CDomain_aa0091f292a9bd3152b67d3c9830aa18f}{sphinx.\+domains.\+c.\+CDomain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1changeset_1_1ChangeSetDomain_a573564938ef773e91de71ee414cb346e}{sphinx.\+domains.\+changeset.\+Change\+Set\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1citation_1_1CitationDomain_a4159cefc0fb07654354f0d50c5563a87}{sphinx.\+domains.\+citation.\+Citation\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1cpp_1_1CPPDomain_abc9eca020ca0453c904b58185d3ea387}{sphinx.\+domains.\+cpp.\+CPPDomain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1index_1_1IndexDomain_adb188ce6b6d29a1056ec26021301eb74}{sphinx.\+domains.\+index.\+Index\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1javascript_1_1JavaScriptDomain_aa198a0a09cbfd0bee730e3cc946fa6c1}{sphinx.\+domains.\+javascript.\+Java\+Script\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1math_1_1MathDomain_ab9ad284cec08bb764305cf2354b2e403}{sphinx.\+domains.\+math.\+Math\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1python_1_1PythonDomain_aa9748abb520cdc24af325f22e9ea979b}{sphinx.\+domains.\+python.\+Python\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1rst_1_1ReSTDomain_a9b1cf6a4d7eb231eadf718306657158b}{sphinx.\+domains.\+rst.\+Re\+STDomain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1std_1_1StandardDomain_a7a4784f03f10d9b9fa2c9558f0a30466}{sphinx.\+domains.\+std.\+Standard\+Domain}}, and \mbox{\hyperlink{classsphinx_1_1ext_1_1todo_1_1TodoDomain_a7caf0ad484740838044a37cefa8f4de5}{sphinx.\+ext.\+todo.\+Todo\+Domain}}.
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_ae635aec991c0eb02d43fbf20c7cede1e}\label{classsphinx_1_1domains_1_1Domain_ae635aec991c0eb02d43fbf20c7cede1e} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!process\_doc@{process\_doc}}
+\index{process\_doc@{process\_doc}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{process\_doc()}{process\_doc()}}
+{\footnotesize\ttfamily  None sphinx.\+domains.\+Domain.\+process\+\_\+doc (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}}]{env,  }\item[{str}]{docname,  }\item[{nodes.\+document     }]{document }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Process a document after it is read by the environment.\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1domains_1_1index_1_1IndexDomain_aebec3ed9e2cc1f9edcea01a6122cf266}{sphinx.\+domains.\+index.\+Index\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1c_1_1CDomain_a2cfe08db819b624ce532edd431124860}{sphinx.\+domains.\+c.\+CDomain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1changeset_1_1ChangeSetDomain_ab15a4f421067af380e06e4b7f1172f8f}{sphinx.\+domains.\+changeset.\+Change\+Set\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1cpp_1_1CPPDomain_a9237143ffc9def5d901c26c5231df74f}{sphinx.\+domains.\+cpp.\+CPPDomain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1std_1_1StandardDomain_a5d2f12a83a29bb51c93750f6b7d17319}{sphinx.\+domains.\+std.\+Standard\+Domain}}, and \mbox{\hyperlink{classsphinx_1_1ext_1_1todo_1_1TodoDomain_ab12a2241f9a1f59fa0b9d6a9e14bc772}{sphinx.\+ext.\+todo.\+Todo\+Domain}}.
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_a8423cbdf773cdb844269a75d9c81afa2}\label{classsphinx_1_1domains_1_1Domain_a8423cbdf773cdb844269a75d9c81afa2} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!process\_field\_xref@{process\_field\_xref}}
+\index{process\_field\_xref@{process\_field\_xref}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{process\_field\_xref()}{process\_field\_xref()}}
+{\footnotesize\ttfamily  None sphinx.\+domains.\+Domain.\+process\+\_\+field\+\_\+xref (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsphinx_1_1addnodes_1_1pending__xref}{pending\+\_\+xref}}}]{pnode }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Process a pending xref created in a doc field.
+For example, attach information about the current scope.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1domains_1_1c_1_1CDomain_af6e9349146f4922515b061bb3060fbda}{sphinx.\+domains.\+c.\+CDomain}}, and \mbox{\hyperlink{classsphinx_1_1domains_1_1cpp_1_1CPPDomain_a64303518d9d57cdce90ce0c57864cabf}{sphinx.\+domains.\+cpp.\+CPPDomain}}.
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_a6e624bd0bd638057f5003d15e04fbb90}\label{classsphinx_1_1domains_1_1Domain_a6e624bd0bd638057f5003d15e04fbb90} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!resolve\_any\_xref@{resolve\_any\_xref}}
+\index{resolve\_any\_xref@{resolve\_any\_xref}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{resolve\_any\_xref()}{resolve\_any\_xref()}}
+{\footnotesize\ttfamily  list\mbox{[}tuple\mbox{[}str, nodes.\+reference\mbox{]}\mbox{]} sphinx.\+domains.\+Domain.\+resolve\+\_\+any\+\_\+xref (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}}]{env,  }\item[{str}]{fromdocname,  }\item[{\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}}}]{builder,  }\item[{str}]{target,  }\item[{\mbox{\hyperlink{classsphinx_1_1addnodes_1_1pending__xref}{pending\+\_\+xref}}}]{node,  }\item[{\mbox{\hyperlink{classdocutils_1_1nodes_1_1Element}{Element}}}]{contnode }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Resolve the pending_xref *node* with the given *target*.
+
+The reference comes from an "any" or similar role, which means that we
+don't know the type.  Otherwise, the arguments are the same as for
+:meth:`resolve_xref`.
+
+The method must return a list (potentially empty) of tuples
+``('domain:role', newnode)``, where ``'domain:role'`` is the name of a
+role that could have created the same reference, e.g. ``'py:func'``.
+``newnode`` is what :meth:`resolve_xref` would return.
+
+.. versionadded:: 1.3
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1domains_1_1c_1_1CDomain_a738df8867c3b1cba9da38483509ad4cf}{sphinx.\+domains.\+c.\+CDomain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1citation_1_1CitationDomain_a6b72518b8081f366334786666a4b833e}{sphinx.\+domains.\+citation.\+Citation\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1cpp_1_1CPPDomain_a64a529ce2cd555a1ea612d97bd3f9bb5}{sphinx.\+domains.\+cpp.\+CPPDomain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1javascript_1_1JavaScriptDomain_a431bfc2851bb436c997d7419f1570a1d}{sphinx.\+domains.\+javascript.\+Java\+Script\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1math_1_1MathDomain_aac355043cdff3e7fc062bd8fe0eaed36}{sphinx.\+domains.\+math.\+Math\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1python_1_1PythonDomain_a49440c2f9f0bbaaa5093ff7179743de6}{sphinx.\+domains.\+python.\+Python\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1rst_1_1ReSTDomain_aa19fcb890579597af84826156c708d0f}{sphinx.\+domains.\+rst.\+Re\+STDomain}}, and \mbox{\hyperlink{classsphinx_1_1domains_1_1std_1_1StandardDomain_aa48a7475af27a8c628adf02fe5dc6cf6}{sphinx.\+domains.\+std.\+Standard\+Domain}}.
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_ad0ac5968cb378c7d9c428276fcd48098}\label{classsphinx_1_1domains_1_1Domain_ad0ac5968cb378c7d9c428276fcd48098} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!resolve\_xref@{resolve\_xref}}
+\index{resolve\_xref@{resolve\_xref}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{resolve\_xref()}{resolve\_xref()}}
+{\footnotesize\ttfamily  nodes.\+reference \texorpdfstring{$\vert$}{|} None sphinx.\+domains.\+Domain.\+resolve\+\_\+xref (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsphinx_1_1environment_1_1BuildEnvironment}{Build\+Environment}}}]{env,  }\item[{str}]{fromdocname,  }\item[{\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}}}]{builder,  }\item[{str}]{typ,  }\item[{str}]{target,  }\item[{\mbox{\hyperlink{classsphinx_1_1addnodes_1_1pending__xref}{pending\+\_\+xref}}}]{node,  }\item[{\mbox{\hyperlink{classdocutils_1_1nodes_1_1Element}{Element}}}]{contnode }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Resolve the pending_xref *node* with the given *typ* and *target*.
+
+This method should return a new node, to replace the xref node,
+containing the *contnode* which is the markup content of the
+cross-reference.
+
+If no resolution can be found, None can be returned; the xref node will
+then given to the :event:`missing-reference` event, and if that yields no
+resolution, replaced by *contnode*.
+
+The method can also raise :exc:`sphinx.environment.NoUri` to suppress
+the :event:`missing-reference` event being emitted.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1domains_1_1c_1_1CDomain_a681a0fbc87b8fc594c73ba14ba0ee5b5}{sphinx.\+domains.\+c.\+CDomain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1citation_1_1CitationDomain_abd89f8659dbd79fb5065db73fc533061}{sphinx.\+domains.\+citation.\+Citation\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1cpp_1_1CPPDomain_aaed5d9582d6a754ae74c3d8176ce79dc}{sphinx.\+domains.\+cpp.\+CPPDomain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1javascript_1_1JavaScriptDomain_a8c64ae22f8938344237c6333e48e4bf6}{sphinx.\+domains.\+javascript.\+Java\+Script\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1math_1_1MathDomain_ab45762aa0a94fda8a65fe62f0b6cf8d9}{sphinx.\+domains.\+math.\+Math\+Domain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1rst_1_1ReSTDomain_ae626b4a357d704cb72024317df83105d}{sphinx.\+domains.\+rst.\+Re\+STDomain}}, \mbox{\hyperlink{classsphinx_1_1domains_1_1std_1_1StandardDomain_adb7e58a75381387130a4270b513bf5d5}{sphinx.\+domains.\+std.\+Standard\+Domain}}, and \mbox{\hyperlink{classsphinx_1_1domains_1_1python_1_1PythonDomain_a89f2546bd154c43283716c3924208089}{sphinx.\+domains.\+python.\+Python\+Domain}}.
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_aa1c320c9b1bcab3fd3358aee3f2b7c1a}\label{classsphinx_1_1domains_1_1Domain_aa1c320c9b1bcab3fd3358aee3f2b7c1a} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!role@{role}}
+\index{role@{role}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{role()}{role()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classsphinx_1_1util_1_1typing_1_1RoleFunction}{Role\+Function}} \texorpdfstring{$\vert$}{|} None sphinx.\+domains.\+Domain.\+role (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a role adapter function that always gives the registered
+role its full name ('domain:name') as the first argument.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1domains_1_1Domain_aa0555db9d5fbeb107facb85a8bd122dc}\label{classsphinx_1_1domains_1_1Domain_aa0555db9d5fbeb107facb85a8bd122dc} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!setup@{setup}}
+\index{setup@{setup}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily  None sphinx.\+domains.\+Domain.\+setup (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set up domain object.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsphinx_1_1domains_1_1Domain_a8949ce26dd0488cf7fca157a770a08c4}\label{classsphinx_1_1domains_1_1Domain_a8949ce26dd0488cf7fca157a770a08c4} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!dangling\_warnings@{dangling\_warnings}}
+\index{dangling\_warnings@{dangling\_warnings}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{dangling\_warnings}{dangling\_warnings}}
+{\footnotesize\ttfamily dict sphinx.\+domains.\+Domain.\+dangling\+\_\+warnings = \{\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_a7d9c48730ecb94b0e9f3b06789efd400}\label{classsphinx_1_1domains_1_1Domain_a7d9c48730ecb94b0e9f3b06789efd400} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!data@{data}}
+\index{data@{data}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{data}{data}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dict sphinx.\+domains.\+Domain.\+data \mbox{[}str, Any\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_af9b057a92e692416e26d65cad216740d}\label{classsphinx_1_1domains_1_1Domain_af9b057a92e692416e26d65cad216740d} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!data@{data}}
+\index{data@{data}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{data}{data}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sphinx.\+domains.\+Domain.\+data}
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_ac35a18fd79fecd3eb36ed2160f210a49}\label{classsphinx_1_1domains_1_1Domain_ac35a18fd79fecd3eb36ed2160f210a49} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!data\_version@{data\_version}}
+\index{data\_version@{data\_version}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{data\_version}{data\_version}}
+{\footnotesize\ttfamily int sphinx.\+domains.\+Domain.\+data\+\_\+version = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_a726fa30a66fd7c8a3ffb7f635aaed27d}\label{classsphinx_1_1domains_1_1Domain_a726fa30a66fd7c8a3ffb7f635aaed27d} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!directives@{directives}}
+\index{directives@{directives}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{directives}{directives}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dict sphinx.\+domains.\+Domain.\+directives = \{\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_a6c23e1a8cda90f5fb41ad61818da5beb}\label{classsphinx_1_1domains_1_1Domain_a6c23e1a8cda90f5fb41ad61818da5beb} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!directives@{directives}}
+\index{directives@{directives}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{directives}{directives}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sphinx.\+domains.\+Domain.\+directives}
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_a619e7a5590ca6cfa44a771832d6dc204}\label{classsphinx_1_1domains_1_1Domain_a619e7a5590ca6cfa44a771832d6dc204} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!enumerable\_nodes@{enumerable\_nodes}}
+\index{enumerable\_nodes@{enumerable\_nodes}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{enumerable\_nodes}{enumerable\_nodes}}
+{\footnotesize\ttfamily dict sphinx.\+domains.\+Domain.\+enumerable\+\_\+nodes = \{\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_a5c1f8980c4c021a1dbcd786d3016747f}\label{classsphinx_1_1domains_1_1Domain_a5c1f8980c4c021a1dbcd786d3016747f} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!indices@{indices}}
+\index{indices@{indices}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{indices}{indices}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily list sphinx.\+domains.\+Domain.\+indices = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_ab37fae2b7d93408ae1ccb6efa11b33bb}\label{classsphinx_1_1domains_1_1Domain_ab37fae2b7d93408ae1ccb6efa11b33bb} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!indices@{indices}}
+\index{indices@{indices}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{indices}{indices}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sphinx.\+domains.\+Domain.\+indices}
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_acff1636f1251a6f942d2c30cd74c0489}\label{classsphinx_1_1domains_1_1Domain_acff1636f1251a6f942d2c30cd74c0489} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!initial\_data@{initial\_data}}
+\index{initial\_data@{initial\_data}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{initial\_data}{initial\_data}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dict sphinx.\+domains.\+Domain.\+initial\+\_\+data = \{\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_a92953967590359cb7adce3402fdac7f7}\label{classsphinx_1_1domains_1_1Domain_a92953967590359cb7adce3402fdac7f7} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!initial\_data@{initial\_data}}
+\index{initial\_data@{initial\_data}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{initial\_data}{initial\_data}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sphinx.\+domains.\+Domain.\+initial\+\_\+data}
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_a5cb485e28a209c4a2ce67e2b43be3dcc}\label{classsphinx_1_1domains_1_1Domain_a5cb485e28a209c4a2ce67e2b43be3dcc} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!label@{label}}
+\index{label@{label}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{label}{label}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily str sphinx.\+domains.\+Domain.\+label = \textquotesingle{}\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_ac0699be8e44f1f43e91dccac1e184ce1}\label{classsphinx_1_1domains_1_1Domain_ac0699be8e44f1f43e91dccac1e184ce1} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!label@{label}}
+\index{label@{label}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{label}{label}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sphinx.\+domains.\+Domain.\+label}
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_a5b8048d2dbb452069a322d0f88135ba6}\label{classsphinx_1_1domains_1_1Domain_a5b8048d2dbb452069a322d0f88135ba6} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!name@{name}}
+\index{name@{name}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{name}{name}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily str sphinx.\+domains.\+Domain.\+name = \textquotesingle{}\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_ad9db0a4db077fddee5f0fc39e72952af}\label{classsphinx_1_1domains_1_1Domain_ad9db0a4db077fddee5f0fc39e72952af} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!name@{name}}
+\index{name@{name}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{name}{name}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sphinx.\+domains.\+Domain.\+name}
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_a06fcd156ee969f6617a40107dcba763f}\label{classsphinx_1_1domains_1_1Domain_a06fcd156ee969f6617a40107dcba763f} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!object\_types@{object\_types}}
+\index{object\_types@{object\_types}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{object\_types}{object\_types}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dict sphinx.\+domains.\+Domain.\+object\+\_\+types = \{\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_aae5eee397e496e46d167e2f8fb7d68bf}\label{classsphinx_1_1domains_1_1Domain_aae5eee397e496e46d167e2f8fb7d68bf} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!object\_types@{object\_types}}
+\index{object\_types@{object\_types}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{object\_types}{object\_types}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sphinx.\+domains.\+Domain.\+object\+\_\+types}
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_a4dccce4dff5d205bf1d60a552344eae3}\label{classsphinx_1_1domains_1_1Domain_a4dccce4dff5d205bf1d60a552344eae3} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!objtypes\_for\_role@{objtypes\_for\_role}}
+\index{objtypes\_for\_role@{objtypes\_for\_role}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{objtypes\_for\_role}{objtypes\_for\_role}}
+{\footnotesize\ttfamily sphinx.\+domains.\+Domain.\+objtypes\+\_\+for\+\_\+role}
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_a66bc5abf001da0b88b0a898b2b473fea}\label{classsphinx_1_1domains_1_1Domain_a66bc5abf001da0b88b0a898b2b473fea} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!role\_for\_objtype@{role\_for\_objtype}}
+\index{role\_for\_objtype@{role\_for\_objtype}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{role\_for\_objtype}{role\_for\_objtype}}
+{\footnotesize\ttfamily sphinx.\+domains.\+Domain.\+role\+\_\+for\+\_\+objtype}
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_af496d3e292620d6e06cf78435cb10439}\label{classsphinx_1_1domains_1_1Domain_af496d3e292620d6e06cf78435cb10439} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!roles@{roles}}
+\index{roles@{roles}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{roles}{roles}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dict sphinx.\+domains.\+Domain.\+roles = \{\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsphinx_1_1domains_1_1Domain_aad8f3e7e7eddd0c2ccdde1a380902868}\label{classsphinx_1_1domains_1_1Domain_aad8f3e7e7eddd0c2ccdde1a380902868} 
+\index{sphinx.domains.Domain@{sphinx.domains.Domain}!roles@{roles}}
+\index{roles@{roles}!sphinx.domains.Domain@{sphinx.domains.Domain}}
+\doxysubsubsection{\texorpdfstring{roles}{roles}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sphinx.\+domains.\+Domain.\+roles}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/sphinx/domains/\mbox{\hyperlink{sphinx_2domains_2____init_____8py}{\+\_\+\+\_\+init\+\_\+\+\_\+.\+py}}\end{DoxyCompactItemize}

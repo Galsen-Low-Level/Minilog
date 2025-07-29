@@ -1,0 +1,106 @@
+\doxysection{sphinx.\+ext.\+doctest Namespace Reference}
+\hypertarget{namespacesphinx_1_1ext_1_1doctest}{}\label{namespacesphinx_1_1ext_1_1doctest}\index{sphinx.ext.doctest@{sphinx.ext.doctest}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1ext_1_1doctest_1_1DocTestBuilder}{Doc\+Test\+Builder}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1ext_1_1doctest_1_1DoctestDirective}{Doctest\+Directive}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1ext_1_1doctest_1_1SphinxDocTestRunner}{Sphinx\+Doc\+Test\+Runner}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1ext_1_1doctest_1_1TestcleanupDirective}{Testcleanup\+Directive}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1ext_1_1doctest_1_1TestCode}{Test\+Code}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1ext_1_1doctest_1_1TestcodeDirective}{Testcode\+Directive}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1ext_1_1doctest_1_1TestDirective}{Test\+Directive}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1ext_1_1doctest_1_1TestGroup}{Test\+Group}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1ext_1_1doctest_1_1TestoutputDirective}{Testoutput\+Directive}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1ext_1_1doctest_1_1TestsetupDirective}{Testsetup\+Directive}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacesphinx_1_1ext_1_1doctest_ad22377d8e1d328229d5a6834f7ad2f93}{is\+\_\+allowed\+\_\+version}} (str spec, str version)
+\item 
+\mbox{\hyperlink{classsphinx_1_1util_1_1typing_1_1ExtensionMetadata}{Extension\+Metadata}} \mbox{\hyperlink{namespacesphinx_1_1ext_1_1doctest_a4b9ed06de2220e877700c4304165f5ab}{setup}} (\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}} app)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1ext_1_1doctest_a07d0c6c3f28e7a467c979ea932b0e61f}{logger}} = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1ext_1_1doctest_a82be6e7dbc1e6cd05ea2f412328e1079}{blankline\+\_\+re}} = re.\+compile(r\textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textbackslash{}s\texorpdfstring{$\ast$}{*}$<$BLANKLINE$>$\textquotesingle{}, re.\+MULTILINE)
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1ext_1_1doctest_ab7b4a54dd56633ea94119ce03645356a}{doctestopt\+\_\+re}} = re.\+compile(r\textquotesingle{}\mbox{[} \textbackslash{}t\mbox{]}\texorpdfstring{$\ast$}{*}\#\textbackslash{}s\texorpdfstring{$\ast$}{*}doctest\+:.+\$\textquotesingle{}, re.\+MULTILINE)
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1ext_1_1doctest_a54a25594e1d4af4adaf11560ef2057da}{parser}} = doctest.\+Doc\+Test\+Parser()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Mimic doctest in Sphinx.
+
+The extension automatically execute code snippets and checks their results.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesphinx_1_1ext_1_1doctest_ad22377d8e1d328229d5a6834f7ad2f93}\label{namespacesphinx_1_1ext_1_1doctest_ad22377d8e1d328229d5a6834f7ad2f93} 
+\index{sphinx.ext.doctest@{sphinx.ext.doctest}!is\_allowed\_version@{is\_allowed\_version}}
+\index{is\_allowed\_version@{is\_allowed\_version}!sphinx.ext.doctest@{sphinx.ext.doctest}}
+\doxysubsubsection{\texorpdfstring{is\_allowed\_version()}{is\_allowed\_version()}}
+{\footnotesize\ttfamily  bool sphinx.\+ext.\+doctest.\+is\+\_\+allowed\+\_\+version (\begin{DoxyParamCaption}\item[{str}]{spec,  }\item[{str}]{version }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check `spec` satisfies `version` or not.
+
+This obeys PEP-440 specifiers:
+https://peps.python.org/pep-0440/#version-specifiers
+
+Some examples:
+
+    >>> is_allowed_version('<=3.5', '3.3')
+    True
+    >>> is_allowed_version('<=3.2', '3.3')
+    False
+    >>> is_allowed_version('>3.2, <4.0', '3.3')
+    True
+\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1ext_1_1doctest_a4b9ed06de2220e877700c4304165f5ab}\label{namespacesphinx_1_1ext_1_1doctest_a4b9ed06de2220e877700c4304165f5ab} 
+\index{sphinx.ext.doctest@{sphinx.ext.doctest}!setup@{setup}}
+\index{setup@{setup}!sphinx.ext.doctest@{sphinx.ext.doctest}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classsphinx_1_1util_1_1typing_1_1ExtensionMetadata}{Extension\+Metadata}} sphinx.\+ext.\+doctest.\+setup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}}]{app }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacesphinx_1_1ext_1_1doctest_a82be6e7dbc1e6cd05ea2f412328e1079}\label{namespacesphinx_1_1ext_1_1doctest_a82be6e7dbc1e6cd05ea2f412328e1079} 
+\index{sphinx.ext.doctest@{sphinx.ext.doctest}!blankline\_re@{blankline\_re}}
+\index{blankline\_re@{blankline\_re}!sphinx.ext.doctest@{sphinx.ext.doctest}}
+\doxysubsubsection{\texorpdfstring{blankline\_re}{blankline\_re}}
+{\footnotesize\ttfamily sphinx.\+ext.\+doctest.\+blankline\+\_\+re = re.\+compile(r\textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textbackslash{}s\texorpdfstring{$\ast$}{*}$<$BLANKLINE$>$\textquotesingle{}, re.\+MULTILINE)}
+
+\Hypertarget{namespacesphinx_1_1ext_1_1doctest_ab7b4a54dd56633ea94119ce03645356a}\label{namespacesphinx_1_1ext_1_1doctest_ab7b4a54dd56633ea94119ce03645356a} 
+\index{sphinx.ext.doctest@{sphinx.ext.doctest}!doctestopt\_re@{doctestopt\_re}}
+\index{doctestopt\_re@{doctestopt\_re}!sphinx.ext.doctest@{sphinx.ext.doctest}}
+\doxysubsubsection{\texorpdfstring{doctestopt\_re}{doctestopt\_re}}
+{\footnotesize\ttfamily sphinx.\+ext.\+doctest.\+doctestopt\+\_\+re = re.\+compile(r\textquotesingle{}\mbox{[} \textbackslash{}t\mbox{]}\texorpdfstring{$\ast$}{*}\#\textbackslash{}s\texorpdfstring{$\ast$}{*}doctest\+:.+\$\textquotesingle{}, re.\+MULTILINE)}
+
+\Hypertarget{namespacesphinx_1_1ext_1_1doctest_a07d0c6c3f28e7a467c979ea932b0e61f}\label{namespacesphinx_1_1ext_1_1doctest_a07d0c6c3f28e7a467c979ea932b0e61f} 
+\index{sphinx.ext.doctest@{sphinx.ext.doctest}!logger@{logger}}
+\index{logger@{logger}!sphinx.ext.doctest@{sphinx.ext.doctest}}
+\doxysubsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily sphinx.\+ext.\+doctest.\+logger = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)}
+
+\Hypertarget{namespacesphinx_1_1ext_1_1doctest_a54a25594e1d4af4adaf11560ef2057da}\label{namespacesphinx_1_1ext_1_1doctest_a54a25594e1d4af4adaf11560ef2057da} 
+\index{sphinx.ext.doctest@{sphinx.ext.doctest}!parser@{parser}}
+\index{parser@{parser}!sphinx.ext.doctest@{sphinx.ext.doctest}}
+\doxysubsubsection{\texorpdfstring{parser}{parser}}
+{\footnotesize\ttfamily sphinx.\+ext.\+doctest.\+parser = doctest.\+Doc\+Test\+Parser()}
+

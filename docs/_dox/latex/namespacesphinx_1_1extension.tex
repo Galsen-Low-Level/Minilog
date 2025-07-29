@@ -1,0 +1,55 @@
+\doxysection{sphinx.\+extension Namespace Reference}
+\hypertarget{namespacesphinx_1_1extension}{}\label{namespacesphinx_1_1extension}\index{sphinx.extension@{sphinx.extension}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1extension_1_1Extension}{Extension}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{namespacesphinx_1_1extension_a4bf0a2cffdd13e8c8cb150b8db2d7fa3}{verify\+\_\+needs\+\_\+extensions}} (\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}} app, \mbox{\hyperlink{classsphinx_1_1config_1_1Config}{Config}} config)
+\item 
+\mbox{\hyperlink{classsphinx_1_1util_1_1typing_1_1ExtensionMetadata}{Extension\+Metadata}} \mbox{\hyperlink{namespacesphinx_1_1extension_acb14302f885d51d52178847c7f937ffe}{setup}} (\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}} app)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1extension_a7f839d7c1a86d73d4c063cc4149580d7}{logger}} = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Utilities for Sphinx extensions.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesphinx_1_1extension_acb14302f885d51d52178847c7f937ffe}\label{namespacesphinx_1_1extension_acb14302f885d51d52178847c7f937ffe} 
+\index{sphinx.extension@{sphinx.extension}!setup@{setup}}
+\index{setup@{setup}!sphinx.extension@{sphinx.extension}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classsphinx_1_1util_1_1typing_1_1ExtensionMetadata}{Extension\+Metadata}} sphinx.\+extension.\+setup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}}]{app }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1extension_a4bf0a2cffdd13e8c8cb150b8db2d7fa3}\label{namespacesphinx_1_1extension_a4bf0a2cffdd13e8c8cb150b8db2d7fa3} 
+\index{sphinx.extension@{sphinx.extension}!verify\_needs\_extensions@{verify\_needs\_extensions}}
+\index{verify\_needs\_extensions@{verify\_needs\_extensions}!sphinx.extension@{sphinx.extension}}
+\doxysubsubsection{\texorpdfstring{verify\_needs\_extensions()}{verify\_needs\_extensions()}}
+{\footnotesize\ttfamily  None sphinx.\+extension.\+verify\+\_\+needs\+\_\+extensions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}}]{app,  }\item[{\mbox{\hyperlink{classsphinx_1_1config_1_1Config}{Config}}}]{config }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check that extensions mentioned in :confval:`needs_extensions` satisfy the version
+requirement, and warn if an extension is not loaded.
+
+Warns if an extension in :confval:`needs_extension` is not loaded.
+
+:raises VersionRequirementError: if the version of an extension in
+:confval:`needs_extension` is unknown or older than the required version.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacesphinx_1_1extension_a7f839d7c1a86d73d4c063cc4149580d7}\label{namespacesphinx_1_1extension_a7f839d7c1a86d73d4c063cc4149580d7} 
+\index{sphinx.extension@{sphinx.extension}!logger@{logger}}
+\index{logger@{logger}!sphinx.extension@{sphinx.extension}}
+\doxysubsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily sphinx.\+extension.\+logger = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)}
+

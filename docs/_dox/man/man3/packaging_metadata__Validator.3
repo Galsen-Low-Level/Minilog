@@ -1,0 +1,164 @@
+.TH "packaging.metadata._Validator" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+packaging.metadata._Validator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Generic, and T\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, *\fB_MetadataVersion\fP \fBadded\fP='1\&.0')"
+.br
+.ti -1c
+.RI "None \fB__set_name__\fP (self, \fBMetadata\fP _owner, str \fBname\fP)"
+.br
+.ti -1c
+.RI "\fBT\fP \fB__get__\fP (self, \fBMetadata\fP instance, type[\fBMetadata\fP] _owner)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBadded\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBraw_name\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBname\fP"
+.br
+.ti -1c
+.RI "str \fBraw_name\fP"
+.br
+.ti -1c
+.RI "\fB_MetadataVersion\fP \fBadded\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInvalidMetadata\fP \fB_invalid_metadata\fP (self, str msg, Exception|None cause=None)"
+.br
+.ti -1c
+.RI "\fB_MetadataVersion\fP \fB_process_metadata_version\fP (self, str value)"
+.br
+.ti -1c
+.RI "str \fB_process_name\fP (self, str value)"
+.br
+.ti -1c
+.RI "version_module\&.Version \fB_process_version\fP (self, str value)"
+.br
+.ti -1c
+.RI "str \fB_process_summary\fP (self, str value)"
+.br
+.ti -1c
+.RI "str \fB_process_description_content_type\fP (self, str value)"
+.br
+.ti -1c
+.RI "list[str] \fB_process_dynamic\fP (self, list[str] value)"
+.br
+.ti -1c
+.RI "list[\fButils\&.NormalizedName\fP] \fB_process_provides_extra\fP (self, list[str] value)"
+.br
+.ti -1c
+.RI "\fBspecifiers\&.SpecifierSet\fP \fB_process_requires_python\fP (self, str value)"
+.br
+.ti -1c
+.RI "list[\fBrequirements\&.Requirement\fP] \fB_process_requires_dist\fP (self, list[str] value)"
+.br
+.ti -1c
+.RI "NormalizedLicenseExpression|None \fB_process_license_expression\fP (self, str value)"
+.br
+.ti -1c
+.RI "list[str] \fB_process_license_files\fP (self, list[str] value)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Validate a metadata field\&.
+
+All _process_*() methods correspond to a core metadata field\&. The method is
+called with the field's raw value\&. If the raw value is valid it is returned
+in its 'enriched' form (e\&.g\&. ``version\&.Version`` for the ``Version`` field)\&.
+If the raw value is invalid, :exc:`InvalidMetadata` is raised (with a cause
+as appropriate)\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None packaging\&.metadata\&._Validator\&.__init__ ( self, *\fB_MetadataVersion\fP  added = \fC'1\&.0'\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " \fBT\fP packaging\&.metadata\&._Validator\&.__get__ ( self, \fBMetadata\fP instance, type[\fBMetadata\fP] _owner)"
+
+.SS " None packaging\&.metadata\&._Validator\&.__set_name__ ( self, \fBMetadata\fP _owner, str name)"
+
+.SS " \fBInvalidMetadata\fP packaging\&.metadata\&._Validator\&._invalid_metadata ( self, str msg, Exception | None  cause = \fCNone\fP)\fC [protected]\fP"
+
+.SS " str packaging\&.metadata\&._Validator\&._process_description_content_type ( self, str value)\fC [protected]\fP"
+
+.SS " list[str] packaging\&.metadata\&._Validator\&._process_dynamic ( self, list[str] value)\fC [protected]\fP"
+
+.SS " NormalizedLicenseExpression | None packaging\&.metadata\&._Validator\&._process_license_expression ( self, str
+     value)\fC [protected]\fP"
+
+.SS " list[str] packaging\&.metadata\&._Validator\&._process_license_files ( self, list[str] value)\fC [protected]\fP"
+
+.SS " \fB_MetadataVersion\fP packaging\&.metadata\&._Validator\&._process_metadata_version ( self, str value)\fC [protected]\fP"
+
+.SS " str packaging\&.metadata\&._Validator\&._process_name ( self, str value)\fC [protected]\fP"
+
+.SS " list[\fButils\&.NormalizedName\fP] packaging\&.metadata\&._Validator\&._process_provides_extra ( self, list[str] value)\fC [protected]\fP"
+
+.SS " list[\fBrequirements\&.Requirement\fP] packaging\&.metadata\&._Validator\&._process_requires_dist ( self, list[str] value)\fC [protected]\fP"
+
+.SS " \fBspecifiers\&.SpecifierSet\fP packaging\&.metadata\&._Validator\&._process_requires_python ( self, str value)\fC [protected]\fP"
+
+.SS " str packaging\&.metadata\&._Validator\&._process_summary ( self, str value)\fC [protected]\fP"
+
+.PP
+.nf
+Check the field contains no newlines\&.
+.fi
+.PP
+ 
+.SS " version_module\&.Version packaging\&.metadata\&._Validator\&._process_version ( self, str value)\fC [protected]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fB_MetadataVersion\fP packaging\&.metadata\&._Validator\&.added\fC [static]\fP"
+
+.SS "packaging\&.metadata\&._Validator\&.added"
+
+.SS "str packaging\&.metadata\&._Validator\&.name\fC [static]\fP"
+
+.SS "packaging\&.metadata\&._Validator\&.name"
+
+.SS "str packaging\&.metadata\&._Validator\&.raw_name\fC [static]\fP"
+
+.SS "packaging\&.metadata\&._Validator\&.raw_name"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

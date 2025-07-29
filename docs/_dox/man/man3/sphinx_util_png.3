@@ -1,0 +1,82 @@
+.TH "sphinx.util.png" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.util.png
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int|None \fBread_png_depth\fP (str|os\&.PathLike[str] filename)"
+.br
+.ti -1c
+.RI "None \fBwrite_png_depth\fP (str|os\&.PathLike[str] filename, int depth)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBLEN_IEND\fP = 12"
+.br
+.ti -1c
+.RI "int \fBLEN_DEPTH\fP = 22"
+.br
+.ti -1c
+.RI "\fBDEPTH_CHUNK_LEN\fP = struct\&.pack('!i', 10)"
+.br
+.ti -1c
+.RI "str \fBDEPTH_CHUNK_START\fP = b'tEXtDepth\\x00'"
+.br
+.ti -1c
+.RI "str \fBIEND_CHUNK\fP = b'\\x00\\x00\\x00\\x00IEND\\xae\\x42\\x60\\x82'"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+PNG image manipulation helpers\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " int | None sphinx\&.util\&.png\&.read_png_depth (str | os\&.PathLike[str] filename)"
+
+.PP
+.nf
+Read the special tEXt chunk indicating the depth from a PNG file\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.util\&.png\&.write_png_depth (str | os\&.PathLike[str] filename, int depth)"
+
+.PP
+.nf
+Write the special tEXt chunk indicating the depth to a PNG file\&.
+
+The chunk is placed immediately before the special IEND chunk\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "sphinx\&.util\&.png\&.DEPTH_CHUNK_LEN = struct\&.pack('!i', 10)"
+
+.SS "str sphinx\&.util\&.png\&.DEPTH_CHUNK_START = b'tEXtDepth\\x00'"
+
+.SS "str sphinx\&.util\&.png\&.IEND_CHUNK = b'\\x00\\x00\\x00\\x00IEND\\xae\\x42\\x60\\x82'"
+
+.SS "int sphinx\&.util\&.png\&.LEN_DEPTH = 22"
+
+.SS "int sphinx\&.util\&.png\&.LEN_IEND = 12"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

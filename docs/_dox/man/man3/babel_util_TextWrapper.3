@@ -1,0 +1,60 @@
+.TH "babel.util.TextWrapper" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+babel.util.TextWrapper
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits textwrap\&.TextWrapper\&.
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBwordsep_re\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_split\fP (self, text)"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_enclosed_filename_re\fP = re\&.compile(r'(\\u2068[^\\u2068]+?\\u2069(?::\-?\\d+)?)')"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "babel\&.util\&.TextWrapper\&._split ( self,  text)\fC [protected]\fP"
+
+.PP
+.nf
+Splits the text into indivisible chunks while ensuring that file names
+containing spaces are not broken up\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "babel\&.util\&.TextWrapper\&._enclosed_filename_re = re\&.compile(r'(\\u2068[^\\u2068]+?\\u2069(?::\-?\\d+)?)')\fC [static]\fP, \fC [protected]\fP"
+
+.SS "babel\&.util\&.TextWrapper\&.wordsep_re\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  re\&.compile(
+        r'(\\s+|'                                  # any whitespace
+        r'(?<=[\\w\\!\\"\\'\\&\\\&.\\,\\?])\-{2,}(?=\\w))',   # em\-dash
+    )
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

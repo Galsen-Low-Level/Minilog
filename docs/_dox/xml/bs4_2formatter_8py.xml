@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="bs4_2formatter_8py" kind="file" language="Python">
+    <compoundname>formatter.py</compoundname>
+    <innerclass refid="classbs4_1_1formatter_1_1Formatter" prot="public">bs4::formatter::Formatter</innerclass>
+    <innerclass refid="classbs4_1_1formatter_1_1HTMLFormatter" prot="public">bs4::formatter::HTMLFormatter</innerclass>
+    <innerclass refid="classbs4_1_1formatter_1_1XMLFormatter" prot="public">bs4::formatter::XMLFormatter</innerclass>
+    <innernamespace refid="namespacebs4">bs4</innernamespace>
+    <innernamespace refid="namespacebs4_1_1formatter">bs4::formatter</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespacebs4_1_1formatter" refkind="compound"><highlight class="keyword">from</highlight><highlight class="normal"><sp/>__future__<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>annotations</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>typing<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Callable,<sp/>Dict,<sp/>Iterable,<sp/>Optional,<sp/>Set,<sp/>Tuple,<sp/>TYPE_CHECKING,<sp/>Union</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>typing_extensions<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>TypeAlias</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/><ref refid="namespacebs4_1_1dammit" kindref="compound">bs4.dammit</ref><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>EntitySubstitution</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>TYPE_CHECKING:</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/><ref refid="namespacebs4_1_1__typing" kindref="compound">bs4._typing</ref><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>_AttributeValue</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="classbs4_1_1formatter_1_1Formatter" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classbs4_1_1formatter_1_1Formatter" kindref="compound">Formatter</ref>(<ref refid="classbs4_1_1dammit_1_1EntitySubstitution" kindref="compound">EntitySubstitution</ref>):</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Describes<sp/>a<sp/>strategy<sp/>to<sp/>use<sp/>when<sp/>outputting<sp/>a<sp/>parse<sp/>tree<sp/>to<sp/>a<sp/>string.</highlight></codeline>
+<codeline lineno="12"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="13"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Some<sp/>parts<sp/>of<sp/>this<sp/>strategy<sp/>come<sp/>from<sp/>the<sp/>distinction<sp/>between</highlight></codeline>
+<codeline lineno="14"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>HTML4,<sp/>HTML5,<sp/>and<sp/>XML.<sp/>Others<sp/>are<sp/>configurable<sp/>by<sp/>the<sp/>user.</highlight></codeline>
+<codeline lineno="15"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="16"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Formatters<sp/>are<sp/>passed<sp/>in<sp/>as<sp/>the<sp/>`formatter`<sp/>argument<sp/>to<sp/>methods</highlight></codeline>
+<codeline lineno="17"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>like<sp/>`bs4.element.Tag.encode`.<sp/>Most<sp/>people<sp/>won&apos;t<sp/>need<sp/>to</highlight></codeline>
+<codeline lineno="18"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>think<sp/>about<sp/>formatters,<sp/>and<sp/>most<sp/>people<sp/>who<sp/>need<sp/>to<sp/>think<sp/>about</highlight></codeline>
+<codeline lineno="19"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>them<sp/>can<sp/>pass<sp/>in<sp/>one<sp/>of<sp/>these<sp/>predefined<sp/>strings<sp/>as<sp/>`formatter`</highlight></codeline>
+<codeline lineno="20"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>rather<sp/>than<sp/>making<sp/>a<sp/>new<sp/>Formatter<sp/>object:</highlight></codeline>
+<codeline lineno="21"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="22"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>For<sp/>HTML<sp/>documents:</highlight></codeline>
+<codeline lineno="23"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>*<sp/>&apos;html&apos;<sp/>-<sp/>HTML<sp/>entity<sp/>substitution<sp/>for<sp/>generic<sp/>HTML<sp/>documents.<sp/>(default)</highlight></codeline>
+<codeline lineno="24"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>*<sp/>&apos;html5&apos;<sp/>-<sp/>HTML<sp/>entity<sp/>substitution<sp/>for<sp/>HTML5<sp/>documents,<sp/>as</highlight></codeline>
+<codeline lineno="25"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>well<sp/>as<sp/>some<sp/>optimizations<sp/>in<sp/>the<sp/>way<sp/>tags<sp/>are<sp/>rendered.</highlight></codeline>
+<codeline lineno="26"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>*<sp/>&apos;html5-4.12.0&apos;<sp/>-<sp/>The<sp/>version<sp/>of<sp/>the<sp/>&apos;html5&apos;<sp/>formatter<sp/>used<sp/>prior<sp/>to</highlight></codeline>
+<codeline lineno="27"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Beautiful<sp/>Soup<sp/>4.13.0.</highlight></codeline>
+<codeline lineno="28"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>*<sp/>&apos;minimal&apos;<sp/>-<sp/>Only<sp/>make<sp/>the<sp/>substitutions<sp/>necessary<sp/>to<sp/>guarantee</highlight></codeline>
+<codeline lineno="29"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>valid<sp/>HTML.</highlight></codeline>
+<codeline lineno="30"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>*<sp/>None<sp/>-<sp/>Do<sp/>not<sp/>perform<sp/>any<sp/>substitution.<sp/>This<sp/>will<sp/>be<sp/>faster</highlight></codeline>
+<codeline lineno="31"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>but<sp/>may<sp/>result<sp/>in<sp/>invalid<sp/>markup.</highlight></codeline>
+<codeline lineno="32"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="33"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>For<sp/>XML<sp/>documents:</highlight></codeline>
+<codeline lineno="34"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>*<sp/>&apos;html&apos;<sp/>-<sp/>Entity<sp/>substitution<sp/>for<sp/>XHTML<sp/>documents.</highlight></codeline>
+<codeline lineno="35"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>*<sp/>&apos;minimal&apos;<sp/>-<sp/>Only<sp/>make<sp/>the<sp/>substitutions<sp/>necessary<sp/>to<sp/>guarantee</highlight></codeline>
+<codeline lineno="36"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>valid<sp/>XML.<sp/>(default)</highlight></codeline>
+<codeline lineno="37"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>*<sp/>None<sp/>-<sp/>Do<sp/>not<sp/>perform<sp/>any<sp/>substitution.<sp/>This<sp/>will<sp/>be<sp/>faster</highlight></codeline>
+<codeline lineno="38"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>but<sp/>may<sp/>result<sp/>in<sp/>invalid<sp/>markup.</highlight></codeline>
+<codeline lineno="39"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="40"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#:<sp/>Constant<sp/>name<sp/>denoting<sp/>HTML<sp/>markup</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>HTML:<sp/>str<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;html&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#:<sp/>Constant<sp/>name<sp/>denoting<sp/>XML<sp/>markup</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>XML:<sp/>str<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;xml&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#:<sp/>Default<sp/>values<sp/>for<sp/>the<sp/>various<sp/>constructor<sp/>options<sp/>when<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#:<sp/>markup<sp/>language<sp/>is<sp/>HTML.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>HTML_DEFAULTS:<sp/>Dict[str,<sp/>Set[str]]<sp/>=<sp/>dict(</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cdata_containing_tags=set([</highlight><highlight class="stringliteral">&quot;script&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;style&quot;</highlight><highlight class="normal">]),</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>language:<sp/>Optional[str]<sp/><sp/></highlight><highlight class="comment">#:<sp/>:meta<sp/>private:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>entity_substitution:<sp/>Optional[_EntitySubstitutionFunction]<sp/><sp/></highlight><highlight class="comment">#:<sp/>:meta<sp/>private:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>void_element_close_prefix:<sp/>str<sp/><sp/></highlight><highlight class="comment">#:<sp/>:meta<sp/>private:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>cdata_containing_tags:<sp/>Set[str]<sp/><sp/></highlight><highlight class="comment">#:<sp/>:meta<sp/>private:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>indent:<sp/>str<sp/><sp/></highlight><highlight class="comment">#:<sp/>:meta<sp/>private:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#:<sp/>If<sp/>this<sp/>is<sp/>set<sp/>to<sp/>true<sp/>by<sp/>the<sp/>constructor,<sp/>then<sp/>attributes<sp/>whose</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#:<sp/>values<sp/>are<sp/>sent<sp/>to<sp/>the<sp/>empty<sp/>string<sp/>will<sp/>be<sp/>treated<sp/>as<sp/>HTML</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#:<sp/>boolean<sp/>attributes.<sp/>(Attributes<sp/>whose<sp/>value<sp/>is<sp/>None<sp/>are<sp/>always</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#:<sp/>rendered<sp/>this<sp/>way.)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>empty_attributes_are_booleans:<sp/>bool</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classbs4_1_1formatter_1_1Formatter_1a91295eeaee402cc426af5870d3bddc88" kindref="member">_default</ref>(</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self,<sp/>language:<sp/>str,<sp/>value:<sp/>Optional[Set[str]],<sp/>kwarg:<sp/>str</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>)<sp/>-&gt;<sp/>Set[str]:</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>value<sp/></highlight><highlight class="keywordflow">is</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>language<sp/>==<sp/>self.<ref refid="classbs4_1_1formatter_1_1Formatter_1ae9c3d8f04f27d4439920a1cc38ff9ebe" kindref="member">XML</ref>:</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>When<sp/>XML<sp/>is<sp/>the<sp/>markup<sp/>language<sp/>in<sp/>use,<sp/>all<sp/>of<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>defaults<sp/>are<sp/>the<sp/>empty<sp/>list.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>set()</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Otherwise,<sp/>it<sp/>depends<sp/>on<sp/>what&apos;s<sp/>in<sp/>HTML_DEFAULTS.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classbs4_1_1formatter_1_1Formatter_1a6bdd2b16b900e7acbb6ef118b8acb0ca" kindref="member">HTML_DEFAULTS</ref>[kwarg]</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classbs4_1_1formatter_1_1Formatter_1ae7e4ed1e9a9680d8947c7d75ac00ce1e" kindref="member">__init__</ref>(</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>language:<sp/>Optional[str]<sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>entity_substitution:<sp/>Optional[_EntitySubstitutionFunction]<sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void_element_close_prefix:<sp/>str<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cdata_containing_tags:<sp/>Optional[Set[str]]<sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>empty_attributes_are_booleans:<sp/>bool<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indent:<sp/>Union[int,str]<sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>):</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">r&quot;&quot;&quot;Constructor.</highlight></codeline>
+<codeline lineno="89"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="90"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>language:<sp/>This<sp/>should<sp/>be<sp/>`Formatter.XML`<sp/>if<sp/>you<sp/>are<sp/>formatting</highlight></codeline>
+<codeline lineno="91"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XML<sp/>markup<sp/>and<sp/>`Formatter.HTML`<sp/>if<sp/>you<sp/>are<sp/>formatting<sp/>HTML<sp/>markup.</highlight></codeline>
+<codeline lineno="92"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="93"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>entity_substitution:<sp/>A<sp/>function<sp/>to<sp/>call<sp/>to<sp/>replace<sp/>special</highlight></codeline>
+<codeline lineno="94"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>characters<sp/>with<sp/>XML/HTML<sp/>entities.<sp/>For<sp/>examples,<sp/>see</highlight></codeline>
+<codeline lineno="95"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bs4.dammit.EntitySubstitution.substitute_html<sp/>and<sp/>substitute_xml.</highlight></codeline>
+<codeline lineno="96"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>void_element_close_prefix:<sp/>By<sp/>default,<sp/>void<sp/>elements</highlight></codeline>
+<codeline lineno="97"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>are<sp/>represented<sp/>as<sp/>&lt;tag/&gt;<sp/>(XML<sp/>rules)<sp/>rather<sp/>than<sp/>&lt;tag&gt;</highlight></codeline>
+<codeline lineno="98"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(HTML<sp/>rules).<sp/>To<sp/>get<sp/>&lt;tag&gt;,<sp/>pass<sp/>in<sp/>the<sp/>empty<sp/>string.</highlight></codeline>
+<codeline lineno="99"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>cdata_containing_tags:<sp/>The<sp/>set<sp/>of<sp/>tags<sp/>that<sp/>are<sp/>defined</highlight></codeline>
+<codeline lineno="100"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>as<sp/>containing<sp/>CDATA<sp/>in<sp/>this<sp/>dialect.<sp/>For<sp/>example,<sp/>in<sp/>HTML,</highlight></codeline>
+<codeline lineno="101"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;script&gt;<sp/>and<sp/>&lt;style&gt;<sp/>tags<sp/>are<sp/>defined<sp/>as<sp/>containing<sp/>CDATA,</highlight></codeline>
+<codeline lineno="102"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>their<sp/>contents<sp/>should<sp/>not<sp/>be<sp/>formatted.</highlight></codeline>
+<codeline lineno="103"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>empty_attributes_are_booleans:<sp/>If<sp/>this<sp/>is<sp/>set<sp/>to<sp/>true,</highlight></codeline>
+<codeline lineno="104"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>then<sp/>attributes<sp/>whose<sp/>values<sp/>are<sp/>sent<sp/>to<sp/>the<sp/>empty<sp/>string</highlight></codeline>
+<codeline lineno="105"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>will<sp/>be<sp/>treated<sp/>as<sp/>`HTML<sp/>boolean</highlight></codeline>
+<codeline lineno="106"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>attributes&lt;https://dev.w3.org/html5/spec-LC/common-microsyntaxes.html#boolean-attributes&gt;`_.<sp/>(Attributes</highlight></codeline>
+<codeline lineno="107"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>whose<sp/>value<sp/>is<sp/>None<sp/>are<sp/>always<sp/>rendered<sp/>this<sp/>way.)</highlight></codeline>
+<codeline lineno="108"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>indent:<sp/>If<sp/>indent<sp/>is<sp/>a<sp/>non-negative<sp/>integer<sp/>or<sp/>string,</highlight></codeline>
+<codeline lineno="109"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>then<sp/>the<sp/>contents<sp/>of<sp/>elements<sp/>will<sp/>be<sp/>indented</highlight></codeline>
+<codeline lineno="110"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>appropriately<sp/>when<sp/>pretty-printing.<sp/>An<sp/>indent<sp/>level<sp/>of<sp/>0,</highlight></codeline>
+<codeline lineno="111"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>negative,<sp/>or<sp/>&quot;&quot;<sp/>will<sp/>only<sp/>insert<sp/>newlines.<sp/>Using<sp/>a</highlight></codeline>
+<codeline lineno="112"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>positive<sp/>integer<sp/>indent<sp/>indents<sp/>that<sp/>many<sp/>spaces<sp/>per</highlight></codeline>
+<codeline lineno="113"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>level.<sp/>If<sp/>indent<sp/>is<sp/>a<sp/>string<sp/>(such<sp/>as<sp/>&quot;\t&quot;),<sp/>that<sp/>string</highlight></codeline>
+<codeline lineno="114"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>used<sp/>to<sp/>indent<sp/>each<sp/>level.<sp/>The<sp/>default<sp/>behavior<sp/>is<sp/>to</highlight></codeline>
+<codeline lineno="115"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indent<sp/>one<sp/>space<sp/>per<sp/>level.</highlight></codeline>
+<codeline lineno="116"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="117"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classbs4_1_1formatter_1_1Formatter_1a8671053a1526c426c71df357e97aa353" kindref="member">language</ref><ref refid="classbs4_1_1formatter_1_1Formatter_1aa6b9ecc3242b6d6fd389ec466ef6a084" kindref="member">language</ref><sp/>=<sp/>language<sp/></highlight><highlight class="keywordflow">or</highlight><highlight class="normal"><sp/>self.<ref refid="classbs4_1_1formatter_1_1Formatter_1a682a0c1b7bcd079c664e3e9f068fe9d3" kindref="member">HTML</ref></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classbs4_1_1formatter_1_1Formatter_1ad505a49d4c64cc2fccf827cd15fadcbf" kindref="member">entity_substitution</ref><ref refid="classbs4_1_1formatter_1_1Formatter_1a5547d37708d7f232d8b3bbcb17fa732e" kindref="member">entity_substitution</ref><sp/>=<sp/>entity_substitution</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classbs4_1_1formatter_1_1Formatter_1a653f618ec831400fe711e1dd2b63a454" kindref="member">void_element_close_prefix</ref><ref refid="classbs4_1_1formatter_1_1Formatter_1abaf91a7bd6d69a71842219a466cbc923" kindref="member">void_element_close_prefix</ref><sp/>=<sp/>void_element_close_prefix</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classbs4_1_1formatter_1_1Formatter_1a3d3cce142c9743e50fface6526e17a4d" kindref="member">cdata_containing_tags</ref><ref refid="classbs4_1_1formatter_1_1Formatter_1a8f25c861ec5ee76385ad11e66c1c52d1" kindref="member">cdata_containing_tags</ref><sp/>=<sp/>self.<ref refid="classbs4_1_1formatter_1_1Formatter_1a91295eeaee402cc426af5870d3bddc88" kindref="member">_default</ref>(</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classbs4_1_1formatter_1_1Formatter_1a8671053a1526c426c71df357e97aa353" kindref="member">language</ref><ref refid="classbs4_1_1formatter_1_1Formatter_1aa6b9ecc3242b6d6fd389ec466ef6a084" kindref="member">language</ref>,<sp/>cdata_containing_tags,<sp/></highlight><highlight class="stringliteral">&quot;cdata_containing_tags&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classbs4_1_1formatter_1_1Formatter_1a826b34f686880592862117bfef82bb7e" kindref="member">empty_attributes_are_booleans</ref><ref refid="classbs4_1_1formatter_1_1Formatter_1a2d32c939e72f74f20a3d297ac2e1c115" kindref="member">empty_attributes_are_booleans</ref><sp/>=<sp/>empty_attributes_are_booleans</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>indent<sp/></highlight><highlight class="keywordflow">is</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indent<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indent_str:<sp/>str</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>isinstance(indent,<sp/>int):</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>indent<sp/>&lt;<sp/>0:</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indent<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indent_str<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>*<sp/>indent</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>isinstance(indent,<sp/>str):</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indent_str<sp/>=<sp/>indent</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indent_str<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classbs4_1_1formatter_1_1Formatter_1a12b458b1df92591fff014b44976473d9" kindref="member">indent</ref><ref refid="classbs4_1_1formatter_1_1Formatter_1a50a85491a428d890d2c18d730224e7f8" kindref="member">indent</ref><sp/>=<sp/>indent_str</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classbs4_1_1formatter_1_1Formatter_1aa4ae85e1e5a0689a88dd7bfd5da04207" kindref="member">substitute</ref>(self,<sp/>ns:<sp/>str)<sp/>-&gt;<sp/>str:</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Process<sp/>a<sp/>string<sp/>that<sp/>needs<sp/>to<sp/>undergo<sp/>entity<sp/>substitution.</highlight></codeline>
+<codeline lineno="140"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>may<sp/>be<sp/>a<sp/>string<sp/>encountered<sp/>in<sp/>an<sp/>attribute<sp/>value<sp/>or<sp/>as</highlight></codeline>
+<codeline lineno="141"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>text.</highlight></codeline>
+<codeline lineno="142"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="143"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>ns:<sp/>A<sp/>string.</highlight></codeline>
+<codeline lineno="144"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>The<sp/>same<sp/>string<sp/>but<sp/>with<sp/>certain<sp/>characters<sp/>replaced<sp/>by<sp/>named</highlight></codeline>
+<codeline lineno="145"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>or<sp/>numeric<sp/>entities.</highlight></codeline>
+<codeline lineno="146"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/>self.<ref refid="classbs4_1_1formatter_1_1Formatter_1ad505a49d4c64cc2fccf827cd15fadcbf" kindref="member">entity_substitution</ref><ref refid="classbs4_1_1formatter_1_1Formatter_1a5547d37708d7f232d8b3bbcb17fa732e" kindref="member">entity_substitution</ref>:</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ns</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>.element<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>NavigableString</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isinstance(ns,<sp/>NavigableString)</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">and</highlight><highlight class="normal"><sp/>ns.parent<sp/></highlight><highlight class="keywordflow">is</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">and</highlight><highlight class="normal"><sp/>ns.parent.name<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>self.<ref refid="classbs4_1_1formatter_1_1Formatter_1a3d3cce142c9743e50fface6526e17a4d" kindref="member">cdata_containing_tags</ref><ref refid="classbs4_1_1formatter_1_1Formatter_1a8f25c861ec5ee76385ad11e66c1c52d1" kindref="member">cdata_containing_tags</ref></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>):</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Do<sp/>nothing.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ns</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Substitute.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classbs4_1_1formatter_1_1Formatter_1ad505a49d4c64cc2fccf827cd15fadcbf" kindref="member">entity_substitution</ref><ref refid="classbs4_1_1formatter_1_1Formatter_1a5547d37708d7f232d8b3bbcb17fa732e" kindref="member">entity_substitution</ref>(ns)</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classbs4_1_1formatter_1_1Formatter_1a33455a9490cff8ad10a7c17c0151b084" kindref="member">attribute_value</ref>(self,<sp/>value:<sp/>str)<sp/>-&gt;<sp/>str:</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Process<sp/>the<sp/>value<sp/>of<sp/>an<sp/>attribute.</highlight></codeline>
+<codeline lineno="163"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="164"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>ns:<sp/>A<sp/>string.</highlight></codeline>
+<codeline lineno="165"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>A<sp/>string<sp/>with<sp/>certain<sp/>characters<sp/>replaced<sp/>by<sp/>named</highlight></codeline>
+<codeline lineno="166"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>or<sp/>numeric<sp/>entities.</highlight></codeline>
+<codeline lineno="167"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>self.<ref refid="classbs4_1_1formatter_1_1Formatter_1aa4ae85e1e5a0689a88dd7bfd5da04207" kindref="member">substitute</ref>(value)</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classbs4_1_1formatter_1_1Formatter_1af40f02acd176bbeb6886f681ebe65dd1" kindref="member">attributes</ref>(</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self,<sp/>tag:<sp/>bs4.<ref refid="classbs4_1_1element_1_1Tag" kindref="compound">element.Tag</ref></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>)<sp/>-&gt;<sp/>Iterable[Tuple[str,<sp/>Optional[_AttributeValue]]]:</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Reorder<sp/>a<sp/>tag&apos;s<sp/>attributes<sp/>however<sp/>you<sp/>want.</highlight></codeline>
+<codeline lineno="174"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="175"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>By<sp/>default,<sp/>attributes<sp/>are<sp/>sorted<sp/>alphabetically.<sp/>This<sp/>makes</highlight></codeline>
+<codeline lineno="176"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>behavior<sp/>consistent<sp/>between<sp/>Python<sp/>2<sp/>and<sp/>Python<sp/>3,<sp/>and<sp/>preserves</highlight></codeline>
+<codeline lineno="177"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>backwards<sp/>compatibility<sp/>with<sp/>older<sp/>versions<sp/>of<sp/>Beautiful<sp/>Soup.</highlight></codeline>
+<codeline lineno="178"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="179"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>If<sp/>`empty_attributes_are_booleans`<sp/>is<sp/>True,<sp/>then</highlight></codeline>
+<codeline lineno="180"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>attributes<sp/>whose<sp/>values<sp/>are<sp/>set<sp/>to<sp/>the<sp/>empty<sp/>string<sp/>will<sp/>be</highlight></codeline>
+<codeline lineno="181"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>treated<sp/>as<sp/>boolean<sp/>attributes.</highlight></codeline>
+<codeline lineno="182"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>tag.attrs<sp/></highlight><highlight class="keywordflow">is</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>[]</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>items:<sp/>Iterable[Tuple[str,<sp/>_AttributeValue]]<sp/>=<sp/>list(tag.attrs.items())</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sorted(</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(k,<sp/>(</highlight><highlight class="keywordtype">None</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>self.<ref refid="classbs4_1_1formatter_1_1Formatter_1a826b34f686880592862117bfef82bb7e" kindref="member">empty_attributes_are_booleans</ref><ref refid="classbs4_1_1formatter_1_1Formatter_1a2d32c939e72f74f20a3d297ac2e1c115" kindref="member">empty_attributes_are_booleans</ref><sp/></highlight><highlight class="keywordflow">and</highlight><highlight class="normal"><sp/>v<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>v))</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>k,<sp/>v<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>items</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193" refid="classbs4_1_1formatter_1_1HTMLFormatter" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classbs4_1_1formatter_1_1HTMLFormatter" kindref="compound">HTMLFormatter</ref>(<ref refid="classbs4_1_1formatter_1_1Formatter" kindref="compound">Formatter</ref>):</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;A<sp/>generic<sp/>Formatter<sp/>for<sp/>HTML.&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTRY:<sp/>Dict[Optional[str],<sp/>HTMLFormatter]<sp/>=<sp/>{}</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classbs4_1_1formatter_1_1HTMLFormatter_1acdf157020a49a5638619d2887dcd77ce" kindref="member">__init__</ref>(</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self,</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>entity_substitution:<sp/>Optional[_EntitySubstitutionFunction]<sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void_element_close_prefix:<sp/>str<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cdata_containing_tags:<sp/>Optional[Set[str]]<sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>empty_attributes_are_booleans:<sp/>bool<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indent:<sp/>Union[int,str]<sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>):</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super(HTMLFormatter,<sp/>self).<ref refid="classbs4_1_1formatter_1_1HTMLFormatter_1acdf157020a49a5638619d2887dcd77ce" kindref="member">__init__</ref>(</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classbs4_1_1formatter_1_1Formatter_1a682a0c1b7bcd079c664e3e9f068fe9d3" kindref="member">HTML</ref><ref refid="classbs4_1_1formatter_1_1HTMLFormatter_1aeb9a1e4be189d7b2f7007924cf098f28" kindref="member">HTML</ref>,</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>entity_substitution,</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void_element_close_prefix,</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cdata_containing_tags,</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>empty_attributes_are_booleans,</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indent=indent</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216" refid="classbs4_1_1formatter_1_1XMLFormatter" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classbs4_1_1formatter_1_1XMLFormatter" kindref="compound">XMLFormatter</ref>(<ref refid="classbs4_1_1formatter_1_1Formatter" kindref="compound">Formatter</ref>):</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;A<sp/>generic<sp/>Formatter<sp/>for<sp/>XML.&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTRY:<sp/>Dict[Optional[str],<sp/>XMLFormatter]<sp/>=<sp/>{}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classbs4_1_1formatter_1_1XMLFormatter_1ac2ffc4ef7fca4e936703f500412c34b2" kindref="member">__init__</ref>(</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self,</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>entity_substitution:<sp/>Optional[_EntitySubstitutionFunction]<sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void_element_close_prefix:<sp/>str<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cdata_containing_tags:<sp/>Optional[Set[str]]<sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>empty_attributes_are_booleans:<sp/>bool<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indent:<sp/>Union[int,str]<sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>):</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super(XMLFormatter,<sp/>self).<ref refid="classbs4_1_1formatter_1_1XMLFormatter_1ac2ffc4ef7fca4e936703f500412c34b2" kindref="member">__init__</ref>(</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classbs4_1_1formatter_1_1Formatter_1ae9c3d8f04f27d4439920a1cc38ff9ebe" kindref="member">XML</ref><ref refid="classbs4_1_1formatter_1_1XMLFormatter_1a8698e67aee559557c4d11a801c650ff7" kindref="member">XML</ref>,</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>entity_substitution,</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void_element_close_prefix,</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cdata_containing_tags,</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>empty_attributes_are_booleans,</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indent=indent,</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Set<sp/>up<sp/>aliases<sp/>for<sp/>the<sp/>default<sp/>formatters.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal">HTMLFormatter.REGISTRY[</highlight><highlight class="stringliteral">&quot;html&quot;</highlight><highlight class="normal">]<sp/>=<sp/><ref refid="classbs4_1_1formatter_1_1HTMLFormatter" kindref="compound">HTMLFormatter</ref>(</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>entity_substitution=EntitySubstitution.substitute_html</highlight></codeline>
+<codeline lineno="242"><highlight class="normal">)</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal">HTMLFormatter.REGISTRY[</highlight><highlight class="stringliteral">&quot;html5&quot;</highlight><highlight class="normal">]<sp/>=<sp/><ref refid="classbs4_1_1formatter_1_1HTMLFormatter" kindref="compound">HTMLFormatter</ref>(</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>entity_substitution=EntitySubstitution.substitute_html5,</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>void_element_close_prefix=</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>empty_attributes_are_booleans=</highlight><highlight class="keyword">True</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="248"><highlight class="normal">)</highlight></codeline>
+<codeline lineno="249"><highlight class="normal">HTMLFormatter.REGISTRY[</highlight><highlight class="stringliteral">&quot;html5-4.12&quot;</highlight><highlight class="normal">]<sp/>=<sp/><ref refid="classbs4_1_1formatter_1_1HTMLFormatter" kindref="compound">HTMLFormatter</ref>(</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>entity_substitution=EntitySubstitution.substitute_html,</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>void_element_close_prefix=</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/>empty_attributes_are_booleans=</highlight><highlight class="keyword">True</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="253"><highlight class="normal">)</highlight></codeline>
+<codeline lineno="254"><highlight class="normal">HTMLFormatter.REGISTRY[</highlight><highlight class="stringliteral">&quot;minimal&quot;</highlight><highlight class="normal">]<sp/>=<sp/><ref refid="classbs4_1_1formatter_1_1HTMLFormatter" kindref="compound">HTMLFormatter</ref>(</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>entity_substitution=EntitySubstitution.substitute_xml</highlight></codeline>
+<codeline lineno="256"><highlight class="normal">)</highlight></codeline>
+<codeline lineno="257"><highlight class="normal">HTMLFormatter.REGISTRY[</highlight><highlight class="keywordtype">None</highlight><highlight class="normal">]<sp/>=<sp/><ref refid="classbs4_1_1formatter_1_1HTMLFormatter" kindref="compound">HTMLFormatter</ref>(entity_substitution=</highlight><highlight class="keywordtype">None</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="258"><highlight class="normal">XMLFormatter.REGISTRY[</highlight><highlight class="stringliteral">&quot;html&quot;</highlight><highlight class="normal">]<sp/>=<sp/><ref refid="classbs4_1_1formatter_1_1XMLFormatter" kindref="compound">XMLFormatter</ref>(</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>entity_substitution=EntitySubstitution.substitute_html</highlight></codeline>
+<codeline lineno="260"><highlight class="normal">)</highlight></codeline>
+<codeline lineno="261"><highlight class="normal">XMLFormatter.REGISTRY[</highlight><highlight class="stringliteral">&quot;minimal&quot;</highlight><highlight class="normal">]<sp/>=<sp/><ref refid="classbs4_1_1formatter_1_1XMLFormatter" kindref="compound">XMLFormatter</ref>(</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>entity_substitution=EntitySubstitution.substitute_xml</highlight></codeline>
+<codeline lineno="263"><highlight class="normal">)</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal">XMLFormatter.REGISTRY[</highlight><highlight class="keywordtype">None</highlight><highlight class="normal">]<sp/>=<sp/><ref refid="classbs4_1_1formatter_1_1XMLFormatter" kindref="compound">XMLFormatter</ref>(entity_substitution=</highlight><highlight class="keywordtype">None</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Define<sp/>type<sp/>aliases<sp/>to<sp/>improve<sp/>readability.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight><highlight class="comment">#:<sp/>A<sp/>function<sp/>to<sp/>call<sp/>to<sp/>replace<sp/>special<sp/>characters<sp/>with<sp/>XML<sp/>or<sp/>HTML</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight><highlight class="comment">#:<sp/>entities.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal">_EntitySubstitutionFunction:<sp/>TypeAlias<sp/>=<sp/>Callable[[str],<sp/>str]</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Many<sp/>of<sp/>the<sp/>output-centered<sp/>methods<sp/>take<sp/>an<sp/>argument<sp/>that<sp/>can<sp/>either</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight><highlight class="comment">#<sp/>be<sp/>a<sp/>Formatter<sp/>object<sp/>or<sp/>the<sp/>name<sp/>of<sp/>a<sp/>Formatter<sp/>to<sp/>be<sp/>looked<sp/>up.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal">_FormatterOrName<sp/>=<sp/>Union[Formatter,<sp/>str]</highlight></codeline>
+    </programlisting>
+    <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/formatter.py"/>
+  </compounddef>
+</doxygen>

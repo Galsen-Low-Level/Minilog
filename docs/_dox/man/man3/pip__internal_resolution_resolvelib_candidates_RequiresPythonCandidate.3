@@ -1,0 +1,133 @@
+.TH "pip._internal.resolution.resolvelib.candidates.RequiresPythonCandidate" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.resolution.resolvelib.candidates.RequiresPythonCandidate
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._internal\&.resolution\&.resolvelib\&.base\&.Candidate\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, Optional[Tuple[int,\&.\&.\&.]] py_version_info)"
+.br
+.ti -1c
+.RI "str \fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "NormalizedName \fBproject_name\fP (self)"
+.br
+.ti -1c
+.RI "str \fBname\fP (self)"
+.br
+.ti -1c
+.RI "\fBVersion\fP \fBversion\fP (self)"
+.br
+.ti -1c
+.RI "str \fBformat_for_error\fP (self)"
+.br
+.ti -1c
+.RI "Iterable[Optional[\fBRequirement\fP]] \fBiter_dependencies\fP (self, bool with_requires)"
+.br
+.ti -1c
+.RI "Optional[\fBInstallRequirement\fP] \fBget_install_requirement\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._internal\&.resolution\&.resolvelib\&.base\&.Candidate\fP
+.in +1c
+.ti -1c
+.RI "bool \fBis_installed\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBis_editable\fP (self)"
+.br
+.ti -1c
+.RI "Optional[\fBLink\fP] \fBsource_link\fP (self)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBis_installed\fP = False"
+.br
+.ti -1c
+.RI "\fBsource_link\fP = None"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_version\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.RequiresPythonCandidate\&.__init__ ( self, Optional[Tuple[int, \&.\&.\&.]] py_version_info)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " str pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.RequiresPythonCandidate\&.__str__ ( self)"
+
+.SS " str pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.RequiresPythonCandidate\&.format_for_error ( self)"
+
+.PP
+Reimplemented from \fBpip\&._internal\&.resolution\&.resolvelib\&.base\&.Candidate\fP\&.
+.SS " Optional[\fBInstallRequirement\fP] pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.RequiresPythonCandidate\&.get_install_requirement ( self)"
+
+.PP
+Reimplemented from \fBpip\&._internal\&.resolution\&.resolvelib\&.base\&.Candidate\fP\&.
+.SS " Iterable[Optional[\fBRequirement\fP]] pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.RequiresPythonCandidate\&.iter_dependencies ( self, bool with_requires)"
+
+.PP
+Reimplemented from \fBpip\&._internal\&.resolution\&.resolvelib\&.base\&.Candidate\fP\&.
+.SS " str pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.RequiresPythonCandidate\&.name ( self)"
+
+.PP
+.nf
+The name identifying this candidate in the resolver\&.
+
+This is different from ``project_name`` if this candidate contains
+extras, where ``project_name`` would not contain the ``[\&.\&.\&.]`` part\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.resolution\&.resolvelib\&.base\&.Candidate\fP\&.
+.SS " NormalizedName pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.RequiresPythonCandidate\&.project_name ( self)"
+
+.PP
+.nf
+The 'project name' of the candidate\&.
+
+This is different from ``name`` if this candidate contains extras,
+in which case ``name`` would contain the ``[\&.\&.\&.]`` part, while this
+refers to the name of the project\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.resolution\&.resolvelib\&.base\&.Candidate\fP\&.
+.SS " \fBVersion\fP pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.RequiresPythonCandidate\&.version ( self)"
+
+.PP
+Reimplemented from \fBpip\&._internal\&.resolution\&.resolvelib\&.base\&.Candidate\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.RequiresPythonCandidate\&._version\fC [protected]\fP"
+
+.SS "bool pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.RequiresPythonCandidate\&.is_installed = False\fC [static]\fP"
+
+.SS "pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.RequiresPythonCandidate\&.source_link = None\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

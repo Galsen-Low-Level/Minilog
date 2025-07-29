@@ -1,0 +1,183 @@
+.TH "/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/truststore/_macos.py" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/truststore/_macos.py
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBpip\&._vendor\&.truststore\&._macos\&.CFConst\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBpip\fP"
+.br
+.ti -1c
+.RI "namespace \fBpip\&._vendor\fP"
+.br
+.ti -1c
+.RI "namespace \fBpip\&._vendor\&.truststore\fP"
+.br
+.ti -1c
+.RI "namespace \fBpip\&._vendor\&.truststore\&._macos\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "CDLL \fBpip\&._vendor\&.truststore\&._macos\&._load_cdll\fP (str name, str macos10_16_path)"
+.br
+.ti -1c
+.RI "typing\&.Any \fBpip\&._vendor\&.truststore\&._macos\&._handle_osstatus\fP (\fBOSStatus\fP result, typing\&.Any _, typing\&.Any args)"
+.br
+.ti -1c
+.RI "\fBCFDataRef\fP \fBpip\&._vendor\&.truststore\&._macos\&._bytes_to_cf_data_ref\fP (bytes value)"
+.br
+.ti -1c
+.RI "\fBCFString\fP \fBpip\&._vendor\&.truststore\&._macos\&._bytes_to_cf_string\fP (bytes value)"
+.br
+.ti -1c
+.RI "str|None \fBpip\&._vendor\&.truststore\&._macos\&._cf_string_ref_to_str\fP (\fBCFStringRef\fP cf_string_ref)"
+.br
+.ti -1c
+.RI "\fBCFMutableArrayRef\fP \fBpip\&._vendor\&.truststore\&._macos\&._der_certs_to_cf_cert_array\fP (list[bytes] certs)"
+.br
+.ti -1c
+.RI "typing\&.Iterator[None] \fBpip\&._vendor\&.truststore\&._macos\&._configure_context\fP (ssl\&.SSLContext ctx)"
+.br
+.ti -1c
+.RI "None \fBpip\&._vendor\&.truststore\&._macos\&._verify_peercerts_impl\fP (ssl\&.SSLContext ssl_context, list[bytes] cert_chain, str|None server_hostname=None)"
+.br
+.ti -1c
+.RI "None \fBpip\&._vendor\&.truststore\&._macos\&._verify_peercerts_impl_macos_10_13\fP (ssl\&.SSLContext ssl_context, typing\&.Any sec_trust_ref)"
+.br
+.ti -1c
+.RI "None \fBpip\&._vendor\&.truststore\&._macos\&._verify_peercerts_impl_macos_10_14\fP (ssl\&.SSLContext ssl_context, typing\&.Any sec_trust_ref)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&._mac_version\fP = platform\&.mac_ver()[0]"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&._mac_version_info\fP = tuple(map(int, _mac_version\&.split('\&.')))"
+.br
+.ti -1c
+.RI "tuple \fBpip\&._vendor\&.truststore\&._macos\&._is_macos_version_10_14_or_later\fP = (10, 14)"
+.br
+.ti -1c
+.RI "CDLL \fBpip\&._vendor\&.truststore\&._macos\&.Security\fP"
+.br
+.ti -1c
+.RI "CDLL \fBpip\&._vendor\&.truststore\&._macos\&.CoreFoundation\fP"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.Boolean\fP = c_bool"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.CFIndex\fP = c_long"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.CFStringEncoding\fP = c_uint32"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.CFData\fP = c_void_p"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.CFString\fP = c_void_p"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.CFArray\fP = c_void_p"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.CFMutableArray\fP = c_void_p"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.CFError\fP = c_void_p"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.CFType\fP = c_void_p"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.CFTypeID\fP = c_ulong"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.CFTypeRef\fP = POINTER(\fBCFType\fP)"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.CFAllocatorRef\fP = c_void_p"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.OSStatus\fP = c_int32"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.CFErrorRef\fP = POINTER(\fBCFError\fP)"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.CFDataRef\fP = POINTER(\fBCFData\fP)"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.CFStringRef\fP = POINTER(\fBCFString\fP)"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.CFArrayRef\fP = POINTER(\fBCFArray\fP)"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.CFMutableArrayRef\fP = POINTER(\fBCFMutableArray\fP)"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.CFArrayCallBacks\fP = c_void_p"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.CFOptionFlags\fP = c_uint32"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.SecCertificateRef\fP = POINTER(c_void_p)"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.SecPolicyRef\fP = POINTER(c_void_p)"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.SecTrustRef\fP = POINTER(c_void_p)"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.SecTrustResultType\fP = c_uint32"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.SecTrustOptionFlags\fP = c_uint32"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.argtypes\fP"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.restype\fP"
+.br
+.ti -1c
+.RI "int \fBpip\&._vendor\&.truststore\&._macos\&.kSecRevocationUseAnyAvailableMethod\fP = 3"
+.br
+.ti -1c
+.RI "int \fBpip\&._vendor\&.truststore\&._macos\&.kSecRevocationRequirePositiveResponse\fP = 8"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.kCFAllocatorDefault\fP"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.kCFTypeArrayCallBacks\fP"
+.br
+.ti -1c
+.RI "\fBpip\&._vendor\&.truststore\&._macos\&.errcheck\fP"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

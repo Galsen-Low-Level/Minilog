@@ -1,0 +1,72 @@
+.TH "babel.localedata.Alias" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+babel.localedata.Alias
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, tuple[str,\&.\&.\&.] \fBkeys\fP)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "Mapping[str|int|None, Any] \fBresolve\fP (self, Mapping[str|int|None, Any] data)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBkeys\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Representation of an alias in the locale data\&.
+
+An alias is a value that refers to some other part of the locale data,
+as specified by the `keys`\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None babel\&.localedata\&.Alias\&.__init__ ( self, tuple[str, \&.\&.\&.] keys)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " str babel\&.localedata\&.Alias\&.__repr__ ( self)"
+
+.SS " Mapping[str | int | None, Any] babel\&.localedata\&.Alias\&.resolve ( self, Mapping[str | int | None, Any] data)"
+
+.PP
+.nf
+Resolve the alias based on the given data\&.
+
+This is done recursively, so if one alias resolves to a second alias,
+that second alias will also be resolved\&.
+
+:param data: the locale data
+:type data: `dict`
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "babel\&.localedata\&.Alias\&.keys"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

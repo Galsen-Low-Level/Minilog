@@ -1,0 +1,139 @@
+.TH "docutils.transforms.peps.PEPZeroSpecial" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.transforms.peps.PEPZeroSpecial
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.nodes\&.SparseNodeVisitor\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBunknown_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_field_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_tgroup\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_colspec\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_row\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_entry\fP (self, node)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdocument\fP)"
+.br
+.ti -1c
+.RI "\fBdispatch_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdispatch_departure\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBunknown_departure\fP (self, node)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBpep_table\fP"
+.br
+.ti -1c
+.RI "\fBentry\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBoptional\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBpep_url\fP = Headers\&.pep_url"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBoptional\fP = ('\fBmeta\fP',)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Perform the special processing needed by PEP 0:
+
+- Mask email addresses\&.
+
+- Link PEP numbers in the second column of 4-column tables to the PEPs
+  themselves\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.transforms\&.peps\&.PEPZeroSpecial\&.unknown_visit ( self,  node)"
+
+.PP
+.nf
+Called when entering unknown `Node` types\&.
+
+Raise an exception unless overridden\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.nodes\&.NodeVisitor\fP\&.
+.SS "docutils\&.transforms\&.peps\&.PEPZeroSpecial\&.visit_colspec ( self,  node)"
+
+.SS "docutils\&.transforms\&.peps\&.PEPZeroSpecial\&.visit_entry ( self,  node)"
+
+.SS "docutils\&.transforms\&.peps\&.PEPZeroSpecial\&.visit_field_list ( self,  node)"
+
+.SS "docutils\&.transforms\&.peps\&.PEPZeroSpecial\&.visit_reference ( self,  node)"
+
+.SS "docutils\&.transforms\&.peps\&.PEPZeroSpecial\&.visit_row ( self,  node)"
+
+.SS "docutils\&.transforms\&.peps\&.PEPZeroSpecial\&.visit_tgroup ( self,  node)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.transforms\&.peps\&.PEPZeroSpecial\&.entry"
+
+.SS "docutils\&.transforms\&.peps\&.PEPZeroSpecial\&.pep_table"
+
+.SS "docutils\&.transforms\&.peps\&.PEPZeroSpecial\&.pep_url = Headers\&.pep_url\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

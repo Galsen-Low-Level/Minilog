@@ -1,0 +1,107 @@
+.TH "sphinx.ext.autodoc.NonDataDescriptorMixin" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.ext.autodoc.NonDataDescriptorMixin
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.ext\&.autodoc\&.DataDocumenterMixinBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBimport_object\fP (self, bool raiseerror=False)"
+.br
+.ti -1c
+.RI "bool \fBshould_suppress_value_header\fP (self)"
+.br
+.ti -1c
+.RI "list[list[str]]|None \fBget_doc\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.ext\&.autodoc\&.DataDocumenterMixinBase\fP
+.in +1c
+.ti -1c
+.RI "bool \fBshould_suppress_directive_header\fP (self)"
+.br
+.ti -1c
+.RI "None \fBupdate_content\fP (self, \fBStringList\fP more_content)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBobject\fP"
+.br
+.ti -1c
+.RI "\fBnon_data_descriptor\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Attributes inherited from \fBsphinx\&.ext\&.autodoc\&.DataDocumenterMixinBase\fP
+.in +1c
+.ti -1c
+.RI "\fBConfig\fP \fBconfig\fP"
+.br
+.ti -1c
+.RI "\fBBuildEnvironment\fP \fBenv\fP"
+.br
+.ti -1c
+.RI "str \fBmodname\fP"
+.br
+.ti -1c
+.RI "Any \fBparent\fP"
+.br
+.ti -1c
+.RI "Any \fBobject\fP"
+.br
+.ti -1c
+.RI "list \fBobjpath\fP [str]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Mixin for AttributeDocumenter to provide the feature for supporting non
+data-descriptors\&.
+
+\&.\&. note:: This mix-in must be inherited after other mix-ins\&.  Otherwise, docstring
+          and :value: header will be suppressed unexpectedly\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " list[list[str]] | None sphinx\&.ext\&.autodoc\&.NonDataDescriptorMixin\&.get_doc ( self)"
+
+.SS " bool sphinx\&.ext\&.autodoc\&.NonDataDescriptorMixin\&.import_object ( self, bool  raiseerror = \fCFalse\fP)"
+
+.SS " bool sphinx\&.ext\&.autodoc\&.NonDataDescriptorMixin\&.should_suppress_value_header ( self)"
+
+.PP
+.nf
+Check :value: header should be suppressed\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.ext\&.autodoc\&.DataDocumenterMixinBase\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.ext\&.autodoc\&.NonDataDescriptorMixin\&.non_data_descriptor"
+
+.SS "sphinx\&.ext\&.autodoc\&.NonDataDescriptorMixin\&.object"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

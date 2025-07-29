@@ -1,0 +1,1125 @@
+.TH "webob.response.Response" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webob.response.Response
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.PP
+Inherited by \fBwebob\&.exc\&.WSGIHTTPException\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBbody\fP=None, \fBstatus\fP=None, \fBheaderlist\fP=None, \fBapp_iter\fP=None, \fBcontent_type\fP=None, \fBconditional_response\fP=None, \fBcharset\fP=\fB_marker\fP, **kw)"
+.br
+.ti -1c
+.RI "\fBfrom_file\fP (cls, fp)"
+.br
+.ti -1c
+.RI "\fBcopy\fP (self)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__str__\fP (self, skip_body=False)"
+.br
+.ti -1c
+.RI "\fBwrite\fP (self, \fBtext\fP)"
+.br
+.ti -1c
+.RI "\fBetag_strong\fP (self)"
+.br
+.ti -1c
+.RI "\fBset_cookie\fP (self, name, value='', max_age=None, path='/', domain=None, secure=False, httponly=False, comment=None, \fBexpires\fP=None, overwrite=False, samesite=None)"
+.br
+.ti -1c
+.RI "\fBdelete_cookie\fP (self, name, path='/', domain=None)"
+.br
+.ti -1c
+.RI "\fBunset_cookie\fP (self, name, strict=True)"
+.br
+.ti -1c
+.RI "\fBmerge_cookies\fP (self, resp)"
+.br
+.ti -1c
+.RI "\fBencode_content\fP (self, encoding='gzip', lazy=False)"
+.br
+.ti -1c
+.RI "\fBdecode_content\fP (self)"
+.br
+.ti -1c
+.RI "\fBmd5_etag\fP (self, \fBbody\fP=None, set_content_md5=False)"
+.br
+.ti -1c
+.RI "\fB__call__\fP (self, \fBenviron\fP, start_response)"
+.br
+.ti -1c
+.RI "\fBconditional_response_app\fP (self, \fBenviron\fP, start_response)"
+.br
+.ti -1c
+.RI "\fBapp_iter_range\fP (self, start, stop)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBconditional_response\fP"
+.br
+.ti -1c
+.RI "\fBunicode_errors\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBdefault_content_type\fP = '\fBtext\fP/html'"
+.br
+.ti -1c
+.RI "str \fBdefault_charset\fP = 'UTF\-8'"
+.br
+.ti -1c
+.RI "str \fBunicode_errors\fP = 'strict'"
+.br
+.ti -1c
+.RI "bool \fBdefault_conditional_response\fP = False"
+.br
+.ti -1c
+.RI "str \fBdefault_body_encoding\fP = 'UTF\-8'"
+.br
+.ti -1c
+.RI "\fBrequest\fP = None"
+.br
+.ti -1c
+.RI "\fBenviron\fP = None"
+.br
+.ti -1c
+.RI "\fBstatus_code\fP"
+.br
+.ti -1c
+.RI "\fBjson\fP = property(\fB_json_body__get\fP, \fB_json_body__set\fP, \fB_json_body__del\fP)"
+.br
+.ti -1c
+.RI "\fBunicode_body\fP"
+.br
+.ti -1c
+.RI "\fBallow\fP = list_header('Allow', '14\&.7')"
+.br
+.ti -1c
+.RI "\fBvary\fP = list_header('Vary', '14\&.44')"
+.br
+.ti -1c
+.RI "\fBcontent_length\fP"
+.br
+.ti -1c
+.RI "\fBcontent_encoding\fP = header_getter('Content\-Encoding', '14\&.11')"
+.br
+.ti -1c
+.RI "\fBcontent_language\fP = list_header('Content\-Language', '14\&.12')"
+.br
+.ti -1c
+.RI "\fBcontent_location\fP = header_getter('Content\-Location', '14\&.14')"
+.br
+.ti -1c
+.RI "\fBcontent_md5\fP = header_getter('Content\-MD5', '14\&.14')"
+.br
+.ti -1c
+.RI "\fBcontent_disposition\fP = header_getter('Content\-Disposition', '19\&.5\&.1')"
+.br
+.ti -1c
+.RI "\fBaccept_ranges\fP = header_getter('Accept\-Ranges', '14\&.5')"
+.br
+.ti -1c
+.RI "\fBcontent_range\fP"
+.br
+.ti -1c
+.RI "\fBdate\fP = date_header('Date', '14\&.18')"
+.br
+.ti -1c
+.RI "\fBexpires\fP = date_header('Expires', '14\&.21')"
+.br
+.ti -1c
+.RI "\fBlast_modified\fP = date_header('Last\-Modified', '14\&.29')"
+.br
+.ti -1c
+.RI "\fBetag\fP"
+.br
+.ti -1c
+.RI "\fBlocation\fP = header_getter('Location', '14\&.30')"
+.br
+.ti -1c
+.RI "\fBpragma\fP = header_getter('Pragma', '14\&.32')"
+.br
+.ti -1c
+.RI "\fBage\fP"
+.br
+.ti -1c
+.RI "\fBretry_after\fP"
+.br
+.ti -1c
+.RI "\fBserver\fP = header_getter('Server', '14\&.38')"
+.br
+.ti -1c
+.RI "\fBwww_authenticate\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_status__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_status__set\fP (self, value)"
+.br
+.ti -1c
+.RI "\fB_status_code__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_status_code__set\fP (self, code)"
+.br
+.ti -1c
+.RI "\fB_headerlist__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_headerlist__set\fP (self, value)"
+.br
+.ti -1c
+.RI "\fB_headerlist__del\fP (self)"
+.br
+.ti -1c
+.RI "\fB_headers__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_headers__set\fP (self, value)"
+.br
+.ti -1c
+.RI "\fB_body__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_body__set\fP (self, value=b'')"
+.br
+.ti -1c
+.RI "\fB_json_body__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_json_body__set\fP (self, value)"
+.br
+.ti -1c
+.RI "\fB_json_body__del\fP (self)"
+.br
+.ti -1c
+.RI "\fB_has_body__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_text__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_text__set\fP (self, value)"
+.br
+.ti -1c
+.RI "\fB_text__del\fP (self)"
+.br
+.ti -1c
+.RI "\fB_body_file__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_body_file__set\fP (self, file)"
+.br
+.ti -1c
+.RI "\fB_body_file__del\fP (self)"
+.br
+.ti -1c
+.RI "\fB_app_iter__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_app_iter__set\fP (self, value)"
+.br
+.ti -1c
+.RI "\fB_app_iter__del\fP (self)"
+.br
+.ti -1c
+.RI "\fB_charset__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_charset__set\fP (self, \fBcharset\fP)"
+.br
+.ti -1c
+.RI "\fB_charset__del\fP (self)"
+.br
+.ti -1c
+.RI "\fB_content_type__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_content_type__set\fP (self, value)"
+.br
+.ti -1c
+.RI "\fB_content_type__del\fP (self)"
+.br
+.ti -1c
+.RI "\fB_content_type_params__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_content_type_params__set\fP (self, value_dict)"
+.br
+.ti -1c
+.RI "\fB_content_type_params__del\fP (self)"
+.br
+.ti -1c
+.RI "\fB_cache_control__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_cache_control__set\fP (self, value)"
+.br
+.ti -1c
+.RI "\fB_cache_control__del\fP (self)"
+.br
+.ti -1c
+.RI "\fB_update_cache_control\fP (self, prop_dict)"
+.br
+.ti -1c
+.RI "\fB_cache_expires\fP (self, seconds=0, **kw)"
+.br
+.ti -1c
+.RI "\fB_abs_headerlist\fP (self, \fBenviron\fP)"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_make_location_absolute\fP (\fBenviron\fP, value)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_status\fP"
+.br
+.ti -1c
+.RI "\fB_headers\fP"
+.br
+.ti -1c
+.RI "\fB_headerlist\fP"
+.br
+.ti -1c
+.RI "\fB_app_iter\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_etag_raw\fP = header_getter('ETag', '14\&.19')"
+.br
+.ti -1c
+.RI "\fB_cache_control_obj\fP = None"
+.br
+.ti -1c
+.RI "tuple \fB_safe_methods\fP = ('GET', 'HEAD')"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBstatus\fP = property(\fB_status__get\fP, \fB_status__set\fP, doc=_status__get\&.__doc__)"
+.br
+.ti -1c
+.RI "\fBheaderlist\fP"
+.br
+.ti -1c
+.RI "\fBheaders\fP = property(\fB_headers__get\fP, \fB_headers__set\fP, doc=_headers__get\&.__doc__)"
+.br
+.ti -1c
+.RI "\fBbody\fP = property(\fB_body__get\fP, \fB_body__set\fP, \fB_body__set\fP)"
+.br
+.ti -1c
+.RI "\fBhas_body\fP = property(\fB_has_body__get\fP)"
+.br
+.ti -1c
+.RI "\fBtext\fP = property(\fB_text__get\fP, \fB_text__set\fP, \fB_text__del\fP, doc=_text__get\&.__doc__)"
+.br
+.ti -1c
+.RI "\fBbody_file\fP"
+.br
+.ti -1c
+.RI "\fBapp_iter\fP"
+.br
+.ti -1c
+.RI "\fBcharset\fP"
+.br
+.ti -1c
+.RI "\fBcontent_type\fP"
+.br
+.ti -1c
+.RI "\fBcontent_type_params\fP"
+.br
+.ti -1c
+.RI "\fBcache_control\fP"
+.br
+.ti -1c
+.RI "\fBcache_expires\fP = property(lambda self: self\&._cache_expires, \fB_cache_expires\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Represents a WSGI response\&.
+
+If no arguments are passed, creates a :class:`~Response` that uses a
+variety of defaults\&. The defaults may be changed by sub-classing the
+:class:`~Response`\&. See the :ref:`sub-classing notes
+<response_subclassing_notes>`\&.
+
+:cvar ~Response\&.body: If ``body`` is a ``text_type``, then it will be
+    encoded using either ``charset`` when provided or ``default_encoding``
+    when ``charset`` is not provided if the ``content_type`` allows for a
+    ``charset``\&. This argument is mutually  exclusive with ``app_iter``\&.
+
+:vartype ~Response\&.body: bytes or text_type
+
+:cvar ~Response\&.status: Either an :class:`int` or a string that is
+    an integer followed by the status text\&. If it is an integer, it will be
+    converted to a proper status that also includes the status text\&.  Any
+    existing status text will be kept\&. Non-standard values are allowed\&.
+
+:vartype ~Response\&.status: int or str
+
+:cvar ~Response\&.headerlist: A list of HTTP headers for the response\&.
+
+:vartype ~Response\&.headerlist: list
+
+:cvar ~Response\&.app_iter: An iterator that is used as the body of the
+    response\&. Should conform to the WSGI requirements and should provide
+    bytes\&. This argument is mutually exclusive with ``body``\&.
+
+:vartype ~Response\&.app_iter: iterable
+
+:cvar ~Response\&.content_type: Sets the ``Content-Type`` header\&. If no
+    ``content_type`` is provided, and there is no ``headerlist``, the
+    ``default_content_type`` will be automatically set\&. If ``headerlist``
+    is provided then this value is ignored\&.
+
+:vartype ~Response\&.content_type: str or None
+
+:cvar conditional_response: Used to change the behavior of the
+    :class:`~Response` to check the original request for conditional
+    response headers\&. See :meth:`~Response\&.conditional_response_app` for
+    more information\&.
+
+:vartype conditional_response: bool
+
+:cvar ~Response\&.charset: Adds a ``charset`` ``Content-Type`` parameter\&. If
+    no ``charset`` is provided and the ``Content-Type`` is text, then the
+    ``default_charset`` will automatically be added\&.  Currently the only
+    ``Content-Type``'s that allow for a ``charset`` are defined to be
+    ``text/*``, ``application/xml``, and ``*/*+xml``\&. Any other
+    ``Content-Type``'s will not have a ``charset`` added\&. If a
+    ``headerlist`` is provided this value is ignored\&.
+
+:vartype ~Response\&.charset: str or None
+
+All other response attributes may be set on the response by providing them
+as keyword arguments\&. A :exc:`TypeError` will be raised for any unexpected
+keywords\&.
+
+\&.\&. _response_subclassing_notes:
+
+**Sub-classing notes:**
+
+* The ``default_content_type`` is used as the default for the
+  ``Content-Type`` header that is returned on the response\&. It is
+  ``text/html``\&.
+
+* The ``default_charset`` is used as the default character set to return on
+  the ``Content-Type`` header, if the ``Content-Type`` allows for a
+  ``charset`` parameter\&. Currently the only ``Content-Type``'s that allow
+  for a ``charset`` are defined to be: ``text/*``, ``application/xml``, and
+  ``*/*+xml``\&. Any other ``Content-Type``'s will not have a ``charset``
+  added\&.
+
+* The ``unicode_errors`` is set to ``strict``, and access on a
+  :attr:`~Response\&.text` will raise an error if it fails to decode the
+  :attr:`~Response\&.body`\&.
+
+* ``default_conditional_response`` is set to ``False``\&. This flag may be
+  set to ``True`` so that all ``Response`` objects will attempt to check
+  the original request for conditional response headers\&. See
+  :meth:`~Response\&.conditional_response_app` for more information\&.
+
+* ``default_body_encoding`` is set to 'UTF-8' by default\&. It exists to
+  allow users to get/set the ``Response`` object using ``\&.text``, even if
+  no ``charset`` has been set for the ``Content-Type``\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "webob\&.response\&.Response\&.__init__ ( self,  body = \fCNone\fP,  status = \fCNone\fP,  headerlist = \fCNone\fP,  app_iter = \fCNone\fP,  content_type = \fCNone\fP,  conditional_response = \fCNone\fP,  charset = \fC\fB_marker\fP\fP, ** kw)"
+
+.PP
+Reimplemented in \fBwebob\&.exc\&.WSGIHTTPException\fP, and \fBwebob\&.exc\&._HTTPMove\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "webob\&.response\&.Response\&.__call__ ( self,  environ,  start_response)"
+
+.PP
+.nf
+WSGI application interface
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBwebob\&.exc\&.WSGIHTTPException\fP, and \fBwebob\&.exc\&._HTTPMove\fP\&.
+.SS "webob\&.response\&.Response\&.__repr__ ( self)"
+
+.SS "webob\&.response\&.Response\&.__str__ ( self,  skip_body = \fCFalse\fP)"
+
+.PP
+Reimplemented in \fBwebob\&.exc\&.WSGIHTTPException\fP\&.
+.SS "webob\&.response\&.Response\&._abs_headerlist ( self,  environ)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._app_iter__del ( self)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._app_iter__get ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Returns the ``app_iter`` of the response\&.
+
+If ``body`` was set, this will create an ``app_iter`` from that
+``body`` (a single-item list)\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&._app_iter__set ( self,  value)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._body__get ( self)\fC [protected]\fP"
+
+.PP
+.nf
+The body of the response, as a :class:`bytes`\&.  This will read in
+the entire app_iter if necessary\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&._body__set ( self,  value = \fCb''\fP)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._body_file__del ( self)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._body_file__get ( self)\fC [protected]\fP"
+
+.PP
+.nf
+A file-like object that can be used to write to the
+body\&.  If you passed in a list ``app_iter``, that ``app_iter`` will be
+modified by writes\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&._body_file__set ( self,  file)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._cache_control__del ( self)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._cache_control__get ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Get/set/modify the Cache-Control header (`HTTP spec section 14\&.9
+<http://www\&.w3\&.org/Protocols/rfc2616/rfc2616-sec14\&.html#sec14\&.9>`_)\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&._cache_control__set ( self,  value)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._cache_expires ( self,  seconds = \fC0\fP, ** kw)\fC [protected]\fP"
+
+.PP
+.nf
+    Set expiration on this request\&.  This sets the response to
+    expire in the given seconds, and any other attributes are used
+    for ``cache_control`` (e\&.g\&., ``private=True``)\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&._charset__del ( self)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._charset__get ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Get/set the ``charset`` specified in ``Content-Type``\&.
+
+There is no checking to validate that a ``content_type`` actually
+allows for a ``charset`` parameter\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&._charset__set ( self,  charset)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._content_type__del ( self)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._content_type__get ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Get/set the ``Content-Type`` header\&. If no ``Content-Type`` header is
+set, this will return ``None``\&.
+
+\&.\&. versionchanged:: 1\&.7
+
+    Setting a new ``Content-Type`` will remove all ``Content-Type``
+    parameters and reset the ``charset`` to the default if the
+    ``Content-Type`` is ``text/*`` or XML (``application/xml`` or
+    ``*/*+xml``)\&.
+
+    To preserve all ``Content-Type`` parameters, you may use the
+    following code:
+
+    \&.\&. code-block:: python
+
+        resp = Response()
+        params = resp\&.content_type_params
+        resp\&.content_type = 'application/something'
+        resp\&.content_type_params = params
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&._content_type__set ( self,  value)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._content_type_params__del ( self)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._content_type_params__get ( self)\fC [protected]\fP"
+
+.PP
+.nf
+A dictionary of all the parameters in the content type\&.
+
+(This is not a view, set to change, modifications of the dict will not
+be applied otherwise\&.)
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&._content_type_params__set ( self,  value_dict)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._has_body__get ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Determine if the the response has a :attr:`~Response\&.body`\&. In
+contrast to simply accessing :attr:`~Response\&.body`, this method
+will **not** read the underlying :attr:`~Response\&.app_iter`\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&._headerlist__del ( self)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._headerlist__get ( self)\fC [protected]\fP"
+
+.PP
+.nf
+The list of response headers\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&._headerlist__set ( self,  value)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._headers__get ( self)\fC [protected]\fP"
+
+.PP
+.nf
+The headers in a dictionary-like object\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&._headers__set ( self,  value)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._json_body__del ( self)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._json_body__get ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Set/get the body of the response as JSON\&.
+
+\&.\&. note::
+
+   This will automatically :meth:`~bytes\&.decode` the
+   :attr:`~Response\&.body` as ``UTF-8`` on get, and
+   :meth:`~str\&.encode` the :meth:`json\&.dumps` as ``UTF-8``
+   before assigning to :attr:`~Response\&.body`\&.
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&._json_body__set ( self,  value)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._make_location_absolute ( environ,  value)\fC [static]\fP, \fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._status__get ( self)\fC [protected]\fP"
+
+.PP
+.nf
+The status string\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&._status__set ( self,  value)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._status_code__get ( self)\fC [protected]\fP"
+
+.PP
+.nf
+The status as an integer\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&._status_code__set ( self,  code)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._text__del ( self)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._text__get ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Get/set the text value of the body using the ``charset`` of the
+``Content-Type`` or the ``default_body_encoding``\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&._text__set ( self,  value)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._update_cache_control ( self,  prop_dict)\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&.app_iter_range ( self,  start,  stop)"
+
+.PP
+.nf
+Return a new ``app_iter`` built from the response ``app_iter``, that
+serves up only the given ``start:stop`` range\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&.conditional_response_app ( self,  environ,  start_response)"
+
+.PP
+.nf
+Like the normal ``__call__`` interface, but checks conditional headers:
+
+    * ``If-Modified-Since``   (``304 Not Modified``; only on ``GET``,
+      ``HEAD``)
+    * ``If-None-Match``       (``304 Not Modified``; only on ``GET``,
+      ``HEAD``)
+    * ``Range``               (``406 Partial Content``; only on ``GET``,
+      ``HEAD``)
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&.copy ( self)"
+
+.PP
+.nf
+Makes a copy of the response\&.
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&.decode_content ( self)"
+
+.SS "webob\&.response\&.Response\&.delete_cookie ( self,  name,  path = \fC'/'\fP,  domain = \fCNone\fP)"
+
+.PP
+.nf
+Delete a cookie from the client\&.  Note that ``path`` and ``domain``
+must match how the cookie was originally set\&.
+
+This sets the cookie to the empty string, and ``max_age=0`` so
+that it should expire immediately\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&.encode_content ( self,  encoding = \fC'gzip'\fP,  lazy = \fCFalse\fP)"
+
+.PP
+.nf
+Encode the content with the given encoding (only ``gzip`` and
+``identity`` are supported)\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&.etag_strong ( self)"
+
+.SS "webob\&.response\&.Response\&.from_file ( cls,  fp)"
+
+.PP
+.nf
+Reads a response from a file-like object (it must implement
+``\&.read(size)`` and ``\&.readline()``)\&.
+
+It will read up to the end of the response, not the end of the
+file\&.
+
+This reads the response as represented by ``str(resp)``; it
+may not read every valid HTTP response properly\&.  Responses
+must have a ``Content-Length``\&.
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&.md5_etag ( self,  body = \fCNone\fP,  set_content_md5 = \fCFalse\fP)"
+
+.PP
+.nf
+Generate an etag for the response object using an MD5 hash of
+the body (the ``body`` parameter, or ``self\&.body`` if not given)\&.
+
+Sets ``self\&.etag``\&.
+
+If ``set_content_md5`` is ``True``, sets ``self\&.content_md5`` as well\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&.merge_cookies ( self,  resp)"
+
+.PP
+.nf
+Merge the cookies that were set on this response with the
+given ``resp`` object (which can be any WSGI application)\&.
+
+If the ``resp`` is a :class:`webob\&.Response` object, then the
+other object will be modified in-place\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&.set_cookie ( self,  name,  value = \fC''\fP,  max_age = \fCNone\fP,  path = \fC'/'\fP,  domain = \fCNone\fP,  secure = \fCFalse\fP,  httponly = \fCFalse\fP,  comment = \fCNone\fP,  expires = \fCNone\fP,  overwrite = \fCFalse\fP,  samesite = \fCNone\fP)"
+
+.PP
+.nf
+Set (add) a cookie for the response\&.
+
+Arguments are:
+
+``name``
+
+   The cookie name\&.
+
+``value``
+
+   The cookie value, which should be a string or ``None``\&.  If
+   ``value`` is ``None``, it's equivalent to calling the
+   :meth:`webob\&.response\&.Response\&.unset_cookie` method for this
+   cookie key (it effectively deletes the cookie on the client)\&.
+
+``max_age``
+
+   An integer representing a number of seconds, ``datetime\&.timedelta``,
+   or ``None``\&. This value is used as the ``Max-Age`` of the generated
+   cookie\&.  If ``expires`` is not passed and this value is not
+   ``None``, the ``max_age`` value will also influence the ``Expires``
+   value of the cookie (``Expires`` will be set to ``now`` +
+   ``max_age``)\&.  If this value is ``None``, the cookie will not have a
+   ``Max-Age`` value (unless ``expires`` is set)\&. If both ``max_age``
+   and ``expires`` are set, this value takes precedence\&.
+
+``path``
+
+   A string representing the cookie ``Path`` value\&.  It defaults to
+   ``/``\&.
+
+``domain``
+
+   A string representing the cookie ``Domain``, or ``None``\&.  If
+   domain is ``None``, no ``Domain`` value will be sent in the
+   cookie\&.
+
+``secure``
+
+   A boolean\&.  If it's ``True``, the ``secure`` flag will be sent in
+   the cookie, if it's ``False``, the ``secure`` flag will not be
+   sent in the cookie\&.
+
+``httponly``
+
+   A boolean\&.  If it's ``True``, the ``HttpOnly`` flag will be sent
+   in the cookie, if it's ``False``, the ``HttpOnly`` flag will not
+   be sent in the cookie\&.
+
+``samesite``
+
+  A string representing the ``SameSite`` attribute of the cookie or
+  ``None``\&. If samesite is ``None`` no ``SameSite`` value will be sent
+  in the cookie\&. Should only be ``'strict'``, ``'lax'``, or ``'none'``\&.
+
+``comment``
+
+   A string representing the cookie ``Comment`` value, or ``None``\&.
+   If ``comment`` is ``None``, no ``Comment`` value will be sent in
+   the cookie\&.
+
+``expires``
+
+   A ``datetime\&.timedelta`` object representing an amount of time,
+   ``datetime\&.datetime`` or ``None``\&. A non-``None`` value is used to
+   generate the ``Expires`` value of the generated cookie\&. If
+   ``max_age`` is not passed, but this value is not ``None``, it will
+   influence the ``Max-Age`` header\&. If this value is ``None``, the
+   ``Expires`` cookie value will be unset (unless ``max_age`` is set)\&.
+   If ``max_age`` is set, it will be used to generate the ``expires``
+   and this value is ignored\&.
+
+   If a ``datetime\&.datetime`` is provided it has to either be timezone
+   aware or be based on UTC\&. ``datetime\&.datetime`` objects that are
+   local time are not supported\&. Timezone aware ``datetime\&.datetime``
+   objects are converted to UTC\&.
+
+   This argument will be removed in future versions of WebOb (version
+   1\&.9)\&.
+
+``overwrite``
+
+   If this key is ``True``, before setting the cookie, unset any
+   existing cookie\&.
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&.unset_cookie ( self,  name,  strict = \fCTrue\fP)"
+
+.PP
+.nf
+Unset a cookie with the given name (remove it from the response)\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.Response\&.write ( self,  text)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "webob\&.response\&.Response\&._app_iter\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._cache_control_obj = None\fC [static]\fP, \fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._etag_raw = header_getter('ETag', '14\&.19')\fC [static]\fP, \fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._headerlist\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._headers\fC [protected]\fP"
+
+.SS "tuple webob\&.response\&.Response\&._safe_methods = ('GET', 'HEAD')\fC [static]\fP, \fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&._status\fC [protected]\fP"
+
+.SS "webob\&.response\&.Response\&.accept_ranges = header_getter('Accept\-Ranges', '14\&.5')\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.age\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  converter(
+        header_getter('Age', '14\&.6'),
+        parse_int_safe, serialize_int, 'int')
+.fi
+
+.SS "webob\&.response\&.Response\&.allow = list_header('Allow', '14\&.7')\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.conditional_response"
+
+.SS "webob\&.response\&.Response\&.content_disposition = header_getter('Content\-Disposition', '19\&.5\&.1')\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.content_encoding = header_getter('Content\-Encoding', '14\&.11')\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.content_language = list_header('Content\-Language', '14\&.12')\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.content_length\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  converter(
+        header_getter('Content\-Length', '14\&.17'),
+        parse_int, serialize_int, 'int')
+.fi
+
+.SS "webob\&.response\&.Response\&.content_location = header_getter('Content\-Location', '14\&.14')\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.content_md5 = header_getter('Content\-MD5', '14\&.14')\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.content_range\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  converter(
+        header_getter('Content\-Range', '14\&.16'),
+        parse_content_range, serialize_content_range, 'ContentRange object')
+.fi
+
+.SS "webob\&.response\&.Response\&.date = date_header('Date', '14\&.18')\fC [static]\fP"
+
+.SS "str webob\&.response\&.Response\&.default_body_encoding = 'UTF\-8'\fC [static]\fP"
+
+.SS "str webob\&.response\&.Response\&.default_charset = 'UTF\-8'\fC [static]\fP"
+
+.SS "bool webob\&.response\&.Response\&.default_conditional_response = False\fC [static]\fP"
+
+.SS "str webob\&.response\&.Response\&.default_content_type = '\fBtext\fP/html'\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.environ = None\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.etag\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  converter(
+        _etag_raw,
+        parse_etag_response, serialize_etag_response,
+        'Entity tag'
+    )
+.fi
+
+.SS "webob\&.response\&.Response\&.expires = date_header('Expires', '14\&.21')\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.json = property(\fB_json_body__get\fP, \fB_json_body__set\fP, \fB_json_body__del\fP)\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.last_modified = date_header('Last\-Modified', '14\&.29')\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.location = header_getter('Location', '14\&.30')\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.pragma = header_getter('Pragma', '14\&.32')\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.request = None\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.retry_after\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  converter(
+        header_getter('Retry\-After', '14\&.37'),
+        parse_date_delta, serialize_date_delta, 'HTTP date or delta seconds')
+.fi
+
+.SS "webob\&.response\&.Response\&.server = header_getter('Server', '14\&.38')\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.status_code\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  property(_status_code__get, _status_code__set,
+                                        doc=_status_code__get\&.__doc__)
+.fi
+
+.SS "webob\&.response\&.Response\&.unicode_body\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  property(_text__get, _text__set, _text__del,
+                                    "Deprecated alias for \&.text")
+.fi
+
+.SS "str webob\&.response\&.Response\&.unicode_errors = 'strict'\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.unicode_errors"
+
+.SS "webob\&.response\&.Response\&.vary = list_header('Vary', '14\&.44')\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.www_authenticate\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  converter(
+        header_getter('WWW\-Authenticate', '14\&.47'),
+        parse_auth, serialize_auth,
+    )
+.fi
+
+.SH "Property Documentation"
+.PP 
+.SS "webob\&.response\&.Response\&.app_iter\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  property(_app_iter__get, _app_iter__set, _app_iter__del,
+                        doc=_app_iter__get\&.__doc__)
+.fi
+
+.SS "webob\&.response\&.Response\&.body = property(\fB_body__get\fP, \fB_body__set\fP, \fB_body__set\fP)\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.body_file\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  property(_body_file__get, _body_file__set, _body_file__del,
+                         doc=_body_file__get\&.__doc__)
+.fi
+
+.SS "webob\&.response\&.Response\&.cache_control\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  property(
+        _cache_control__get, _cache_control__set,
+        _cache_control__del, doc=_cache_control__get\&.__doc__)
+.fi
+
+.SS "webob\&.response\&.Response\&.cache_expires = property(lambda self: self\&._cache_expires, \fB_cache_expires\fP)\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.charset\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  property(_charset__get, _charset__set, _charset__del,
+                       doc=_charset__get\&.__doc__)
+.fi
+
+.SS "webob\&.response\&.Response\&.content_type\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  property(_content_type__get, _content_type__set,
+                            _content_type__del, doc=_content_type__get\&.__doc__)
+.fi
+
+.SS "webob\&.response\&.Response\&.content_type_params\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  property(
+        _content_type_params__get,
+        _content_type_params__set,
+        _content_type_params__del,
+        _content_type_params__get\&.__doc__
+    )
+.fi
+
+.SS "webob\&.response\&.Response\&.has_body = property(\fB_has_body__get\fP)\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.headerlist\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  property(_headerlist__get, _headerlist__set,
+                          _headerlist__del, doc=_headerlist__get\&.__doc__)
+.fi
+
+.SS "webob\&.response\&.Response\&.headers = property(\fB_headers__get\fP, \fB_headers__set\fP, doc=_headers__get\&.__doc__)\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.status = property(\fB_status__get\fP, \fB_status__set\fP, doc=_status__get\&.__doc__)\fC [static]\fP"
+
+.SS "webob\&.response\&.Response\&.text = property(\fB_text__get\fP, \fB_text__set\fP, \fB_text__del\fP, doc=_text__get\&.__doc__)\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

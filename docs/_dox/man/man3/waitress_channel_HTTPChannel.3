@@ -1,0 +1,479 @@
+.TH "waitress.channel.HTTPChannel" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+waitress.channel.HTTPChannel
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBwaitress\&.wasyncore\&.dispatcher\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBserver\fP, sock, \fBaddr\fP, \fBadj\fP, map=None)"
+.br
+.ti -1c
+.RI "\fBcheck_client_disconnected\fP (self)"
+.br
+.ti -1c
+.RI "\fBwritable\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_write\fP (self)"
+.br
+.ti -1c
+.RI "\fBreadable\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_read\fP (self)"
+.br
+.ti -1c
+.RI "\fBsend_continue\fP (self)"
+.br
+.ti -1c
+.RI "\fBreceived\fP (self, data)"
+.br
+.ti -1c
+.RI "\fBhandle_close\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd_channel\fP (self, map=None)"
+.br
+.ti -1c
+.RI "\fBdel_channel\fP (self, map=None)"
+.br
+.ti -1c
+.RI "\fBwrite_soon\fP (self, data)"
+.br
+.ti -1c
+.RI "\fBservice\fP (self)"
+.br
+.ti -1c
+.RI "\fBcancel\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBwaitress\&.wasyncore\&.dispatcher\fP
+.in +1c
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBcreate_socket\fP (self, family=socket\&.AF_INET, type=socket\&.SOCK_STREAM)"
+.br
+.ti -1c
+.RI "\fBset_socket\fP (self, sock, map=None)"
+.br
+.ti -1c
+.RI "\fBset_reuse_addr\fP (self)"
+.br
+.ti -1c
+.RI "\fBlisten\fP (self, num)"
+.br
+.ti -1c
+.RI "\fBbind\fP (self, \fBaddr\fP)"
+.br
+.ti -1c
+.RI "\fBaccept\fP (self)"
+.br
+.ti -1c
+.RI "\fBsend\fP (self, data, do_close=True)"
+.br
+.ti -1c
+.RI "\fBrecv\fP (self, buffer_size)"
+.br
+.ti -1c
+.RI "\fBclose\fP (self)"
+.br
+.ti -1c
+.RI "\fBlog\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBlog_info\fP (self, message, type='info')"
+.br
+.ti -1c
+.RI "\fBhandle_read_event\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_connect_event\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_write_event\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_expt_event\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_error\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_expt\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_connect\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_accept\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_accepted\fP (self, sock, \fBaddr\fP)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBserver\fP"
+.br
+.ti -1c
+.RI "\fBadj\fP"
+.br
+.ti -1c
+.RI "\fBoutbufs\fP"
+.br
+.ti -1c
+.RI "\fBcreation_time\fP"
+.br
+.ti -1c
+.RI "\fBsendbuf_len\fP"
+.br
+.ti -1c
+.RI "\fBrequests_lock\fP"
+.br
+.ti -1c
+.RI "\fBoutbuf_lock\fP"
+.br
+.ti -1c
+.RI "\fBconnected\fP"
+.br
+.ti -1c
+.RI "\fBaddr\fP"
+.br
+.ti -1c
+.RI "\fBrequests\fP"
+.br
+.ti -1c
+.RI "\fBclose_when_flushed\fP"
+.br
+.ti -1c
+.RI "\fBwill_close\fP"
+.br
+.ti -1c
+.RI "\fBlast_activity\fP"
+.br
+.ti -1c
+.RI "\fBsent_continue\fP"
+.br
+.ti -1c
+.RI "\fBtotal_outbufs_len\fP"
+.br
+.ti -1c
+.RI "\fBcurrent_outbuf_count\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBwaitress\&.wasyncore\&.dispatcher\fP
+.in +1c
+.ti -1c
+.RI "\fBsocket\fP"
+.br
+.ti -1c
+.RI "\fBfamily_and_type\fP"
+.br
+.ti -1c
+.RI "\fBaccepting\fP"
+.br
+.ti -1c
+.RI "\fBconnected\fP"
+.br
+.ti -1c
+.RI "\fBconnecting\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBtask_class\fP = \fBWSGITask\fP"
+.br
+.ti -1c
+.RI "\fBerror_task_class\fP = \fBErrorTask\fP"
+.br
+.ti -1c
+.RI "\fBparser_class\fP = \fBHTTPRequestParser\fP"
+.br
+.ti -1c
+.RI "\fBrequest\fP = None"
+.br
+.ti -1c
+.RI "int \fBlast_activity\fP = 0"
+.br
+.ti -1c
+.RI "bool \fBwill_close\fP = False"
+.br
+.ti -1c
+.RI "bool \fBclose_when_flushed\fP = False"
+.br
+.ti -1c
+.RI "bool \fBsent_continue\fP = False"
+.br
+.ti -1c
+.RI "int \fBtotal_outbufs_len\fP = 0"
+.br
+.ti -1c
+.RI "int \fBcurrent_outbuf_count\fP = 0"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBwaitress\&.wasyncore\&.dispatcher\fP
+.in +1c
+.ti -1c
+.RI "bool \fBdebug\fP = False"
+.br
+.ti -1c
+.RI "bool \fBconnected\fP = False"
+.br
+.ti -1c
+.RI "bool \fBaccepting\fP = False"
+.br
+.ti -1c
+.RI "bool \fBconnecting\fP = False"
+.br
+.ti -1c
+.RI "bool \fBclosing\fP = False"
+.br
+.ti -1c
+.RI "\fBaddr\fP = None"
+.br
+.ti -1c
+.RI "\fBignore_log_types\fP = frozenset({'warning'})"
+.br
+.ti -1c
+.RI "\fBlogger\fP = utilities\&.logger"
+.br
+.ti -1c
+.RI "\fBcompact_traceback\fP = staticmethod(compact_traceback)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_flush_exception\fP (self, flush, do_close=True)"
+.br
+.ti -1c
+.RI "\fB_flush_some_if_lockable\fP (self, do_close=True)"
+.br
+.ti -1c
+.RI "\fB_flush_some\fP (self, do_close=True)"
+.br
+.ti -1c
+.RI "\fB_flush_outbufs_below_high_watermark\fP (self)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_flush_some\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBwaitress\&.wasyncore\&.dispatcher\fP
+.in +1c
+.ti -1c
+.RI "\fB_map\fP"
+.br
+.ti -1c
+.RI "\fB_fileno\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Setting self\&.requests = [somerequest] prevents more requests from being
+received until the out buffers have been flushed\&.
+
+Setting self\&.requests = [] allows more requests to be received\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "waitress\&.channel\&.HTTPChannel\&.__init__ ( self,  server,  sock,  addr,  adj,  map = \fCNone\fP)"
+
+.PP
+Reimplemented from \fBwaitress\&.wasyncore\&.dispatcher\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "waitress\&.channel\&.HTTPChannel\&._flush_exception ( self,  flush,  do_close = \fCTrue\fP)\fC [protected]\fP"
+
+.SS "waitress\&.channel\&.HTTPChannel\&._flush_outbufs_below_high_watermark ( self)\fC [protected]\fP"
+
+.SS "waitress\&.channel\&.HTTPChannel\&._flush_some ( self,  do_close = \fCTrue\fP)\fC [protected]\fP"
+
+.SS "waitress\&.channel\&.HTTPChannel\&._flush_some_if_lockable ( self,  do_close = \fCTrue\fP)\fC [protected]\fP"
+
+.SS "waitress\&.channel\&.HTTPChannel\&.add_channel ( self,  map = \fCNone\fP)"
+
+.PP
+.nf
+See wasyncore\&.dispatcher
+
+This hook keeps track of opened channels\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBwaitress\&.wasyncore\&.dispatcher\fP\&.
+.SS "waitress\&.channel\&.HTTPChannel\&.cancel ( self)"
+
+.PP
+.nf
+Cancels all pending / active requests
+.fi
+.PP
+ 
+.SS "waitress\&.channel\&.HTTPChannel\&.check_client_disconnected ( self)"
+
+.PP
+.nf
+This method is inserted into the environment of any created task so it
+may occasionally check if the client has disconnected and interrupt
+execution\&.
+
+.fi
+.PP
+ 
+.SS "waitress\&.channel\&.HTTPChannel\&.del_channel ( self,  map = \fCNone\fP)"
+
+.PP
+.nf
+See wasyncore\&.dispatcher
+
+This hook keeps track of closed channels\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBwaitress\&.wasyncore\&.dispatcher\fP\&.
+.SS "waitress\&.channel\&.HTTPChannel\&.handle_close ( self)"
+
+.PP
+Reimplemented from \fBwaitress\&.wasyncore\&.dispatcher\fP\&.
+.SS "waitress\&.channel\&.HTTPChannel\&.handle_read ( self)"
+
+.PP
+Reimplemented from \fBwaitress\&.wasyncore\&.dispatcher\fP\&.
+.SS "waitress\&.channel\&.HTTPChannel\&.handle_write ( self)"
+
+.PP
+Reimplemented from \fBwaitress\&.wasyncore\&.dispatcher\fP\&.
+.SS "waitress\&.channel\&.HTTPChannel\&.readable ( self)"
+
+.PP
+Reimplemented from \fBwaitress\&.wasyncore\&.dispatcher\fP\&.
+.SS "waitress\&.channel\&.HTTPChannel\&.received ( self,  data)"
+
+.PP
+.nf
+Receives input asynchronously and assigns one or more requests to the
+channel\&.
+
+.fi
+.PP
+ 
+.SS "waitress\&.channel\&.HTTPChannel\&.send_continue ( self)"
+
+.PP
+.nf
+Send a 100-Continue header to the client\&. This is either called from
+receive (if no requests are running and the client expects it) or at
+the end of service (if no more requests are queued and a request has
+been read partially that expects it)\&.
+
+.fi
+.PP
+ 
+.SS "waitress\&.channel\&.HTTPChannel\&.service ( self)"
+
+.PP
+.nf
+Execute one request\&. If there are more, we add another task to the
+server at the end\&.
+.fi
+.PP
+ 
+.SS "waitress\&.channel\&.HTTPChannel\&.writable ( self)"
+
+.PP
+Reimplemented from \fBwaitress\&.wasyncore\&.dispatcher\fP\&.
+.SS "waitress\&.channel\&.HTTPChannel\&.write_soon ( self,  data)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "waitress\&.channel\&.HTTPChannel\&._flush_some\fC [protected]\fP"
+
+.SS "waitress\&.channel\&.HTTPChannel\&.addr"
+
+.SS "waitress\&.channel\&.HTTPChannel\&.adj"
+
+.SS "bool waitress\&.channel\&.HTTPChannel\&.close_when_flushed = False\fC [static]\fP"
+
+.SS "waitress\&.channel\&.HTTPChannel\&.close_when_flushed"
+
+.SS "waitress\&.channel\&.HTTPChannel\&.connected"
+
+.SS "waitress\&.channel\&.HTTPChannel\&.creation_time"
+
+.SS "int waitress\&.channel\&.HTTPChannel\&.current_outbuf_count = 0\fC [static]\fP"
+
+.SS "waitress\&.channel\&.HTTPChannel\&.current_outbuf_count"
+
+.SS "waitress\&.channel\&.HTTPChannel\&.error_task_class = \fBErrorTask\fP\fC [static]\fP"
+
+.SS "int waitress\&.channel\&.HTTPChannel\&.last_activity = 0\fC [static]\fP"
+
+.SS "waitress\&.channel\&.HTTPChannel\&.last_activity"
+
+.SS "waitress\&.channel\&.HTTPChannel\&.outbuf_lock"
+
+.SS "waitress\&.channel\&.HTTPChannel\&.outbufs"
+
+.SS "waitress\&.channel\&.HTTPChannel\&.parser_class = \fBHTTPRequestParser\fP\fC [static]\fP"
+
+.SS "waitress\&.channel\&.HTTPChannel\&.request = None\fC [static]\fP"
+
+.SS "waitress\&.channel\&.HTTPChannel\&.requests"
+
+.SS "waitress\&.channel\&.HTTPChannel\&.requests_lock"
+
+.SS "waitress\&.channel\&.HTTPChannel\&.sendbuf_len"
+
+.SS "bool waitress\&.channel\&.HTTPChannel\&.sent_continue = False\fC [static]\fP"
+
+.SS "waitress\&.channel\&.HTTPChannel\&.sent_continue"
+
+.SS "waitress\&.channel\&.HTTPChannel\&.server"
+
+.SS "waitress\&.channel\&.HTTPChannel\&.task_class = \fBWSGITask\fP\fC [static]\fP"
+
+.SS "int waitress\&.channel\&.HTTPChannel\&.total_outbufs_len = 0\fC [static]\fP"
+
+.SS "waitress\&.channel\&.HTTPChannel\&.total_outbufs_len"
+
+.SS "bool waitress\&.channel\&.HTTPChannel\&.will_close = False\fC [static]\fP"
+
+.SS "waitress\&.channel\&.HTTPChannel\&.will_close"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

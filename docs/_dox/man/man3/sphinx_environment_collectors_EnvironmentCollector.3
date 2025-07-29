@@ -1,0 +1,189 @@
+.TH "sphinx.environment.collectors.EnvironmentCollector" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.environment.collectors.EnvironmentCollector
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBsphinx\&.environment\&.collectors\&.asset\&.DownloadFileCollector\fP, \fBsphinx\&.environment\&.collectors\&.asset\&.ImageCollector\fP, \fBsphinx\&.environment\&.collectors\&.dependencies\&.DependenciesCollector\fP, \fBsphinx\&.environment\&.collectors\&.metadata\&.MetadataCollector\fP, \fBsphinx\&.environment\&.collectors\&.title\&.TitleCollector\fP, and \fBsphinx\&.environment\&.collectors\&.toctree\&.TocTreeCollector\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBenable\fP (self, \fBSphinx\fP app)"
+.br
+.ti -1c
+.RI "None \fBdisable\fP (self, \fBSphinx\fP app)"
+.br
+.ti -1c
+.RI "None \fBclear_doc\fP (self, \fBSphinx\fP app, \fBBuildEnvironment\fP env, str docname)"
+.br
+.ti -1c
+.RI "None \fBmerge_other\fP (self, \fBSphinx\fP app, \fBBuildEnvironment\fP env, Set[str] docnames, \fBBuildEnvironment\fP other)"
+.br
+.ti -1c
+.RI "None \fBprocess_doc\fP (self, \fBSphinx\fP app, nodes\&.document doctree)"
+.br
+.ti -1c
+.RI "list[str] \fBget_updated_docs\fP (self, \fBSphinx\fP app, \fBBuildEnvironment\fP env)"
+.br
+.ti -1c
+.RI "list[str] \fBget_outdated_docs\fP (self, \fBSphinx\fP app, \fBBuildEnvironment\fP env, set[str] added, set[str] changed, set[str] removed)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBlistener_ids\fP"
+.br
+.ti -1c
+.RI "\fBprocess_doc\fP"
+.br
+.ti -1c
+.RI "\fBmerge_other\fP"
+.br
+.ti -1c
+.RI "\fBclear_doc\fP"
+.br
+.ti -1c
+.RI "\fBget_updated_docs\fP"
+.br
+.ti -1c
+.RI "\fBget_outdated_docs\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBlistener_ids\fP = None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+An EnvironmentCollector is a specific data collector from each document\&.
+
+It gathers data and stores :py:class:`BuildEnvironment
+<sphinx\&.environment\&.BuildEnvironment>` as a database\&.
+Examples of specific data would be images, download files, section titles, metadatas, index
+entries and toctrees, etc\&.
+
+\&.\&. note::
+
+    This class essentially wraps a sub-set of :ref:`Sphinx event callbacks <events>`\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " None sphinx\&.environment\&.collectors\&.EnvironmentCollector\&.clear_doc ( self, \fBSphinx\fP app, \fBBuildEnvironment\fP env, str docname)"
+
+.PP
+.nf
+Remove specified data of a document\&.
+
+This method is called on the removal of the document\&.
+
+\&.\&. seealso:: :event:`env-purge-doc`
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.environment\&.collectors\&.asset\&.ImageCollector\fP, \fBsphinx\&.environment\&.collectors\&.asset\&.DownloadFileCollector\fP, \fBsphinx\&.environment\&.collectors\&.dependencies\&.DependenciesCollector\fP, \fBsphinx\&.environment\&.collectors\&.metadata\&.MetadataCollector\fP, \fBsphinx\&.environment\&.collectors\&.title\&.TitleCollector\fP, and \fBsphinx\&.environment\&.collectors\&.toctree\&.TocTreeCollector\fP\&.
+.SS " None sphinx\&.environment\&.collectors\&.EnvironmentCollector\&.disable ( self, \fBSphinx\fP app)"
+
+.SS " None sphinx\&.environment\&.collectors\&.EnvironmentCollector\&.enable ( self, \fBSphinx\fP app)"
+
+.SS " list[str] sphinx\&.environment\&.collectors\&.EnvironmentCollector\&.get_outdated_docs ( self, \fBSphinx\fP app, \fBBuildEnvironment\fP env, set[str] added, set[str] changed, set[str] removed)"
+
+.PP
+.nf
+Return a list of docnames to re-read\&.
+
+This method is called before reading the documents\&.
+
+\&.\&. seealso:: :event:`env-get-outdated`
+
+.fi
+.PP
+ 
+.SS " list[str] sphinx\&.environment\&.collectors\&.EnvironmentCollector\&.get_updated_docs ( self, \fBSphinx\fP app, \fBBuildEnvironment\fP env)"
+
+.PP
+.nf
+Return a list of docnames to re-read\&.
+
+This method is called after reading the whole of documents\&.
+
+\&.\&. seealso:: :event:`env-get-updated`
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.environment\&.collectors\&.toctree\&.TocTreeCollector\fP\&.
+.SS " None sphinx\&.environment\&.collectors\&.EnvironmentCollector\&.merge_other ( self, \fBSphinx\fP app, \fBBuildEnvironment\fP env, Set[str] docnames, \fBBuildEnvironment\fP other)"
+
+.PP
+.nf
+Merge in specified data regarding docnames from a different `BuildEnvironment`
+object which coming from a subprocess in parallel builds\&.
+
+\&.\&. seealso:: :event:`env-merge-info`
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.environment\&.collectors\&.asset\&.ImageCollector\fP, \fBsphinx\&.environment\&.collectors\&.asset\&.DownloadFileCollector\fP, \fBsphinx\&.environment\&.collectors\&.dependencies\&.DependenciesCollector\fP, \fBsphinx\&.environment\&.collectors\&.metadata\&.MetadataCollector\fP, \fBsphinx\&.environment\&.collectors\&.title\&.TitleCollector\fP, and \fBsphinx\&.environment\&.collectors\&.toctree\&.TocTreeCollector\fP\&.
+.SS " None sphinx\&.environment\&.collectors\&.EnvironmentCollector\&.process_doc ( self, \fBSphinx\fP app, nodes\&.document doctree)"
+
+.PP
+.nf
+Process a document and gather specific data from it\&.
+
+This method is called after the document is read\&.
+
+\&.\&. seealso:: :event:`doctree-read`
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.environment\&.collectors\&.asset\&.ImageCollector\fP, \fBsphinx\&.environment\&.collectors\&.asset\&.DownloadFileCollector\fP, \fBsphinx\&.environment\&.collectors\&.dependencies\&.DependenciesCollector\fP, \fBsphinx\&.environment\&.collectors\&.metadata\&.MetadataCollector\fP, \fBsphinx\&.environment\&.collectors\&.title\&.TitleCollector\fP, and \fBsphinx\&.environment\&.collectors\&.toctree\&.TocTreeCollector\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.environment\&.collectors\&.EnvironmentCollector\&.clear_doc"
+
+.PP
+Reimplemented in \fBsphinx\&.environment\&.collectors\&.asset\&.ImageCollector\fP, \fBsphinx\&.environment\&.collectors\&.asset\&.DownloadFileCollector\fP, \fBsphinx\&.environment\&.collectors\&.dependencies\&.DependenciesCollector\fP, \fBsphinx\&.environment\&.collectors\&.metadata\&.MetadataCollector\fP, \fBsphinx\&.environment\&.collectors\&.title\&.TitleCollector\fP, and \fBsphinx\&.environment\&.collectors\&.toctree\&.TocTreeCollector\fP\&.
+.SS "sphinx\&.environment\&.collectors\&.EnvironmentCollector\&.get_outdated_docs"
+
+.SS "sphinx\&.environment\&.collectors\&.EnvironmentCollector\&.get_updated_docs"
+
+.PP
+Reimplemented in \fBsphinx\&.environment\&.collectors\&.toctree\&.TocTreeCollector\fP\&.
+.SS "dict sphinx\&.environment\&.collectors\&.EnvironmentCollector\&.listener_ids = None\fC [static]\fP"
+
+.SS "sphinx\&.environment\&.collectors\&.EnvironmentCollector\&.listener_ids"
+
+.SS "sphinx\&.environment\&.collectors\&.EnvironmentCollector\&.merge_other"
+
+.PP
+Reimplemented in \fBsphinx\&.environment\&.collectors\&.asset\&.ImageCollector\fP, \fBsphinx\&.environment\&.collectors\&.asset\&.DownloadFileCollector\fP, \fBsphinx\&.environment\&.collectors\&.dependencies\&.DependenciesCollector\fP, \fBsphinx\&.environment\&.collectors\&.metadata\&.MetadataCollector\fP, \fBsphinx\&.environment\&.collectors\&.title\&.TitleCollector\fP, and \fBsphinx\&.environment\&.collectors\&.toctree\&.TocTreeCollector\fP\&.
+.SS "sphinx\&.environment\&.collectors\&.EnvironmentCollector\&.process_doc"
+
+.PP
+Reimplemented in \fBsphinx\&.environment\&.collectors\&.asset\&.ImageCollector\fP, \fBsphinx\&.environment\&.collectors\&.asset\&.DownloadFileCollector\fP, \fBsphinx\&.environment\&.collectors\&.dependencies\&.DependenciesCollector\fP, \fBsphinx\&.environment\&.collectors\&.metadata\&.MetadataCollector\fP, \fBsphinx\&.environment\&.collectors\&.title\&.TitleCollector\fP, and \fBsphinx\&.environment\&.collectors\&.toctree\&.TocTreeCollector\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

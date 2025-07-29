@@ -1,0 +1,166 @@
+\doxysection{soupsieve.\+css\+\_\+parser.\+\_\+\+Selector Class Reference}
+\hypertarget{classsoupsieve_1_1css__parser_1_1__Selector}{}\label{classsoupsieve_1_1css__parser_1_1__Selector}\index{soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector_a208aa2398926bd277fa9c2b91e72160c}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}Any kwargs)
+\item 
+ct.\+Selector\texorpdfstring{$\vert$}{|}ct.\+Selector\+Null \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector_a0859751ad5589f0317ddf1bfe151e395}{freeze}} (self)
+\item 
+str \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector_acfe74f7fc3cc1b45a57841522780fcea}{\+\_\+\+\_\+str\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector_a88f6d38c73c124ba6523f5eb150af08e}{tag}}
+\item 
+\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector_a529f1ef073f57418833fb892ae05d335}{ids}}
+\item 
+\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector_a42c557810f145379281f696be975f0eb}{classes}}
+\item 
+\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector_ad6fdb0cfd440eb64ca022a2179f2ab64}{attributes}}
+\item 
+\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector_a2647ed3d78da44843365cc3bf043cb7e}{nth}}
+\item 
+\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector_a26b6507ab6564c9032114760da81323f}{selectors}}
+\item 
+\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector_a74ebef8ceb99b8adc61097309220b852}{relations}}
+\item 
+\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector_a102212b8e42067ea34f857e9144b0759}{rel\+\_\+type}}
+\item 
+\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector_a3457b6089bba2d0bc8bf4232779fb524}{contains}}
+\item 
+\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector_af587a0c806e727e9ea372c97ce895b11}{lang}}
+\item 
+\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector_a362dc81aca90ee0c9bd935df435c35ae}{flags}}
+\item 
+\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector_a8aff11cc7a3cf75f9021ce59fe529ea5}{no\+\_\+match}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+ct.\+Selector\+List \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector_a5cca7354e604db573c0dadcd0474d049}{\+\_\+freeze\+\_\+relations}} (self, list\mbox{[}\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}\mbox{]} \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector_a74ebef8ceb99b8adc61097309220b852}{relations}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Intermediate selector class.
+
+This stores selector data for a compound selector as we are acquiring them.
+Once we are done collecting the data for a compound selector, we freeze
+the data in an object that can be pickled and hashed.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsoupsieve_1_1css__parser_1_1__Selector_a208aa2398926bd277fa9c2b91e72160c}\label{classsoupsieve_1_1css__parser_1_1__Selector_a208aa2398926bd277fa9c2b91e72160c} 
+\index{soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None soupsieve.\+css\+\_\+parser.\+\_\+\+Selector.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}Any}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsoupsieve_1_1css__parser_1_1__Selector_acfe74f7fc3cc1b45a57841522780fcea}\label{classsoupsieve_1_1css__parser_1_1__Selector_acfe74f7fc3cc1b45a57841522780fcea} 
+\index{soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}!\_\_str\_\_@{\_\_str\_\_}}
+\index{\_\_str\_\_@{\_\_str\_\_}!soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}}
+\doxysubsubsection{\texorpdfstring{\_\_str\_\_()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily  str soupsieve.\+css\+\_\+parser.\+\_\+\+Selector.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}String representation.\end{DoxyVerb}
+ \Hypertarget{classsoupsieve_1_1css__parser_1_1__Selector_a5cca7354e604db573c0dadcd0474d049}\label{classsoupsieve_1_1css__parser_1_1__Selector_a5cca7354e604db573c0dadcd0474d049} 
+\index{soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}!\_freeze\_relations@{\_freeze\_relations}}
+\index{\_freeze\_relations@{\_freeze\_relations}!soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}}
+\doxysubsubsection{\texorpdfstring{\_freeze\_relations()}{\_freeze\_relations()}}
+{\footnotesize\ttfamily  ct.\+Selector\+List soupsieve.\+css\+\_\+parser.\+\_\+\+Selector.\+\_\+freeze\+\_\+relations (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{list\mbox{[}\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}\mbox{]}}]{relations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Freeze relation.\end{DoxyVerb}
+ \Hypertarget{classsoupsieve_1_1css__parser_1_1__Selector_a0859751ad5589f0317ddf1bfe151e395}\label{classsoupsieve_1_1css__parser_1_1__Selector_a0859751ad5589f0317ddf1bfe151e395} 
+\index{soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}!freeze@{freeze}}
+\index{freeze@{freeze}!soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}}
+\doxysubsubsection{\texorpdfstring{freeze()}{freeze()}}
+{\footnotesize\ttfamily  ct.\+Selector \texorpdfstring{$\vert$}{|} ct.\+Selector\+Null soupsieve.\+css\+\_\+parser.\+\_\+\+Selector.\+freeze (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Freeze self.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsoupsieve_1_1css__parser_1_1__Selector_ad6fdb0cfd440eb64ca022a2179f2ab64}\label{classsoupsieve_1_1css__parser_1_1__Selector_ad6fdb0cfd440eb64ca022a2179f2ab64} 
+\index{soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}!attributes@{attributes}}
+\index{attributes@{attributes}!soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}}
+\doxysubsubsection{\texorpdfstring{attributes}{attributes}}
+{\footnotesize\ttfamily soupsieve.\+css\+\_\+parser.\+\_\+\+Selector.\+attributes}
+
+\Hypertarget{classsoupsieve_1_1css__parser_1_1__Selector_a42c557810f145379281f696be975f0eb}\label{classsoupsieve_1_1css__parser_1_1__Selector_a42c557810f145379281f696be975f0eb} 
+\index{soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}!classes@{classes}}
+\index{classes@{classes}!soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}}
+\doxysubsubsection{\texorpdfstring{classes}{classes}}
+{\footnotesize\ttfamily soupsieve.\+css\+\_\+parser.\+\_\+\+Selector.\+classes}
+
+\Hypertarget{classsoupsieve_1_1css__parser_1_1__Selector_a3457b6089bba2d0bc8bf4232779fb524}\label{classsoupsieve_1_1css__parser_1_1__Selector_a3457b6089bba2d0bc8bf4232779fb524} 
+\index{soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}!contains@{contains}}
+\index{contains@{contains}!soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}}
+\doxysubsubsection{\texorpdfstring{contains}{contains}}
+{\footnotesize\ttfamily soupsieve.\+css\+\_\+parser.\+\_\+\+Selector.\+contains}
+
+\Hypertarget{classsoupsieve_1_1css__parser_1_1__Selector_a362dc81aca90ee0c9bd935df435c35ae}\label{classsoupsieve_1_1css__parser_1_1__Selector_a362dc81aca90ee0c9bd935df435c35ae} 
+\index{soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}!flags@{flags}}
+\index{flags@{flags}!soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily soupsieve.\+css\+\_\+parser.\+\_\+\+Selector.\+flags}
+
+\Hypertarget{classsoupsieve_1_1css__parser_1_1__Selector_a529f1ef073f57418833fb892ae05d335}\label{classsoupsieve_1_1css__parser_1_1__Selector_a529f1ef073f57418833fb892ae05d335} 
+\index{soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}!ids@{ids}}
+\index{ids@{ids}!soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}}
+\doxysubsubsection{\texorpdfstring{ids}{ids}}
+{\footnotesize\ttfamily soupsieve.\+css\+\_\+parser.\+\_\+\+Selector.\+ids}
+
+\Hypertarget{classsoupsieve_1_1css__parser_1_1__Selector_af587a0c806e727e9ea372c97ce895b11}\label{classsoupsieve_1_1css__parser_1_1__Selector_af587a0c806e727e9ea372c97ce895b11} 
+\index{soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}!lang@{lang}}
+\index{lang@{lang}!soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}}
+\doxysubsubsection{\texorpdfstring{lang}{lang}}
+{\footnotesize\ttfamily soupsieve.\+css\+\_\+parser.\+\_\+\+Selector.\+lang}
+
+\Hypertarget{classsoupsieve_1_1css__parser_1_1__Selector_a8aff11cc7a3cf75f9021ce59fe529ea5}\label{classsoupsieve_1_1css__parser_1_1__Selector_a8aff11cc7a3cf75f9021ce59fe529ea5} 
+\index{soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}!no\_match@{no\_match}}
+\index{no\_match@{no\_match}!soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}}
+\doxysubsubsection{\texorpdfstring{no\_match}{no\_match}}
+{\footnotesize\ttfamily soupsieve.\+css\+\_\+parser.\+\_\+\+Selector.\+no\+\_\+match}
+
+\Hypertarget{classsoupsieve_1_1css__parser_1_1__Selector_a2647ed3d78da44843365cc3bf043cb7e}\label{classsoupsieve_1_1css__parser_1_1__Selector_a2647ed3d78da44843365cc3bf043cb7e} 
+\index{soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}!nth@{nth}}
+\index{nth@{nth}!soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}}
+\doxysubsubsection{\texorpdfstring{nth}{nth}}
+{\footnotesize\ttfamily soupsieve.\+css\+\_\+parser.\+\_\+\+Selector.\+nth}
+
+\Hypertarget{classsoupsieve_1_1css__parser_1_1__Selector_a102212b8e42067ea34f857e9144b0759}\label{classsoupsieve_1_1css__parser_1_1__Selector_a102212b8e42067ea34f857e9144b0759} 
+\index{soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}!rel\_type@{rel\_type}}
+\index{rel\_type@{rel\_type}!soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}}
+\doxysubsubsection{\texorpdfstring{rel\_type}{rel\_type}}
+{\footnotesize\ttfamily soupsieve.\+css\+\_\+parser.\+\_\+\+Selector.\+rel\+\_\+type}
+
+\Hypertarget{classsoupsieve_1_1css__parser_1_1__Selector_a74ebef8ceb99b8adc61097309220b852}\label{classsoupsieve_1_1css__parser_1_1__Selector_a74ebef8ceb99b8adc61097309220b852} 
+\index{soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}!relations@{relations}}
+\index{relations@{relations}!soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}}
+\doxysubsubsection{\texorpdfstring{relations}{relations}}
+{\footnotesize\ttfamily soupsieve.\+css\+\_\+parser.\+\_\+\+Selector.\+relations}
+
+\Hypertarget{classsoupsieve_1_1css__parser_1_1__Selector_a26b6507ab6564c9032114760da81323f}\label{classsoupsieve_1_1css__parser_1_1__Selector_a26b6507ab6564c9032114760da81323f} 
+\index{soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}!selectors@{selectors}}
+\index{selectors@{selectors}!soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}}
+\doxysubsubsection{\texorpdfstring{selectors}{selectors}}
+{\footnotesize\ttfamily soupsieve.\+css\+\_\+parser.\+\_\+\+Selector.\+selectors}
+
+\Hypertarget{classsoupsieve_1_1css__parser_1_1__Selector_a88f6d38c73c124ba6523f5eb150af08e}\label{classsoupsieve_1_1css__parser_1_1__Selector_a88f6d38c73c124ba6523f5eb150af08e} 
+\index{soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}!tag@{tag}}
+\index{tag@{tag}!soupsieve.css\_parser.\_Selector@{soupsieve.css\_parser.\_Selector}}
+\doxysubsubsection{\texorpdfstring{tag}{tag}}
+{\footnotesize\ttfamily soupsieve.\+css\+\_\+parser.\+\_\+\+Selector.\+tag}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/soupsieve/\mbox{\hyperlink{css__parser_8py}{css\+\_\+parser.\+py}}\end{DoxyCompactItemize}

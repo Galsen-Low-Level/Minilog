@@ -1,0 +1,501 @@
+.TH "sphinx.ext.autodoc.ClassDocumenter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.ext.autodoc.ClassDocumenter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.ext\&.autodoc\&.DocstringSignatureMixin\fP, and \fBsphinx\&.ext\&.autodoc\&.ModuleLevelDocumenter\fP\&.
+.PP
+Inherited by \fBsphinx\&.ext\&.autodoc\&.ExceptionDocumenter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, *Any \fBargs\fP)"
+.br
+.ti -1c
+.RI "bool \fBcan_document_member\fP (type[\fBDocumenter\fP] cls, Any member, str membername, bool isattr, Any \fBparent\fP)"
+.br
+.ti -1c
+.RI "bool \fBimport_object\fP (self, bool raiseerror=False)"
+.br
+.ti -1c
+.RI "str \fBformat_args\fP (self, **Any kwargs)"
+.br
+.ti -1c
+.RI "str \fBformat_signature\fP (self, **Any kwargs)"
+.br
+.ti -1c
+.RI "list[Signature] \fBget_overloaded_signatures\fP (self)"
+.br
+.ti -1c
+.RI "str|None \fBget_canonical_fullname\fP (self)"
+.br
+.ti -1c
+.RI "None \fBadd_directive_header\fP (self, str sig)"
+.br
+.ti -1c
+.RI "tuple[bool, list[\fBObjectMember\fP]] \fBget_object_members\fP (self, bool want_all)"
+.br
+.ti -1c
+.RI "list[list[str]]|None \fBget_doc\fP (self)"
+.br
+.ti -1c
+.RI "list[str]|None \fBget_variable_comment\fP (self)"
+.br
+.ti -1c
+.RI "None \fBadd_content\fP (self, \fBStringList\fP|None more_content)"
+.br
+.ti -1c
+.RI "None \fBdocument_members\fP (self, bool all_members=False)"
+.br
+.ti -1c
+.RI "None \fBgenerate\fP (self, \fBStringList\fP|None more_content=None, str|None real_modname=None, bool \fBcheck_module\fP=False, bool all_members=False)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.ext\&.autodoc\&.ModuleLevelDocumenter\fP
+.in +1c
+.ti -1c
+.RI "tuple[str|None, list[str]] \fBresolve_name\fP (self, str|None \fBmodname\fP, Any parents, str path, str base)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.ext\&.autodoc\&.Documenter\fP
+.in +1c
+.ti -1c
+.RI "Any \fBget_attr\fP (self, Any obj, str \fBname\fP, *Any defargs)"
+.br
+.ti -1c
+.RI "dict[str, type[\fBDocumenter\fP]] \fBdocumenters\fP (self)"
+.br
+.ti -1c
+.RI "None \fBadd_line\fP (self, str line, str source, *int lineno)"
+.br
+.ti -1c
+.RI "bool \fBparse_name\fP (self)"
+.br
+.ti -1c
+.RI "str \fBget_real_modname\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBcheck_module\fP (self)"
+.br
+.ti -1c
+.RI "str \fBformat_name\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[str] \fBprocess_doc\fP (self, list[list[str]] docstrings)"
+.br
+.ti -1c
+.RI "str \fBget_sourcename\fP (self)"
+.br
+.ti -1c
+.RI "list[tuple[str, Any, bool]] \fBfilter_members\fP (self, list[\fBObjectMember\fP] members, bool want_all)"
+.br
+.ti -1c
+.RI "list[tuple[\fBDocumenter\fP, bool]] \fBsort_members\fP (self, list[tuple[\fBDocumenter\fP, bool]] \fBdocumenters\fP, str order)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBobject\fP"
+.br
+.ti -1c
+.RI "\fBdoc_as_attr\fP"
+.br
+.ti -1c
+.RI "\fBobjpath\fP"
+.br
+.ti -1c
+.RI "\fBmodname\fP"
+.br
+.ti -1c
+.RI "\fBfullname\fP"
+.br
+.ti -1c
+.RI "\fBdirectivetype\fP"
+.br
+.ti -1c
+.RI "\fBget_attr\fP"
+.br
+.ti -1c
+.RI "\fBanalyzer\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsphinx\&.ext\&.autodoc\&.DocstringSignatureMixin\fP
+.in +1c
+.ti -1c
+.RI "\fBobject\fP"
+.br
+.ti -1c
+.RI "\fBargs\fP"
+.br
+.ti -1c
+.RI "\fBretann\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsphinx\&.ext\&.autodoc\&.Documenter\fP
+.in +1c
+.ti -1c
+.RI "\fBdirective\fP"
+.br
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBindent\fP"
+.br
+.ti -1c
+.RI "\fBfullname\fP"
+.br
+.ti -1c
+.RI "\fBobject_name\fP"
+.br
+.ti -1c
+.RI "\fBobjtype\fP"
+.br
+.ti -1c
+.RI "\fBobjpath\fP"
+.br
+.ti -1c
+.RI "\fBmodname\fP"
+.br
+.ti -1c
+.RI "\fBargs\fP"
+.br
+.ti -1c
+.RI "\fBretann\fP"
+.br
+.ti -1c
+.RI "\fBmodule\fP"
+.br
+.ti -1c
+.RI "\fBparent\fP"
+.br
+.ti -1c
+.RI "\fBobject\fP"
+.br
+.ti -1c
+.RI "\fBget_attr\fP"
+.br
+.ti -1c
+.RI "\fBanalyzer\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBobjtype\fP = 'class'"
+.br
+.ti -1c
+.RI "int \fBmember_order\fP = 20"
+.br
+.ti -1c
+.RI "dict \fBoption_spec\fP"
+.br
+.ti -1c
+.RI "int \fBpriority\fP = 15"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBsphinx\&.ext\&.autodoc\&.Documenter\fP
+.in +1c
+.ti -1c
+.RI "str \fBobjtype\fP = '\fBobject\fP'"
+.br
+.ti -1c
+.RI "str \fBcontent_indent\fP = ' '"
+.br
+.ti -1c
+.RI "int \fBpriority\fP = 0"
+.br
+.ti -1c
+.RI "int \fBmember_order\fP = 0"
+.br
+.ti -1c
+.RI "bool \fBtitles_allowed\fP = True"
+.br
+.ti -1c
+.RI "dict \fBoption_spec\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "tuple[Any|None, str|None, Signature|None] \fB_get_signature\fP (self)"
+.br
+.ti -1c
+.RI "tuple[str|None, str|None]|None \fB_find_signature\fP (self)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBsphinx\&.ext\&.autodoc\&.Documenter\fP
+.in +1c
+.ti -1c
+.RI "str \fB_call_format_args\fP (self, **Any kwargs)"
+.br
+.ti -1c
+.RI "None \fB_generate\fP (self, \fBStringList\fP|None more_content=None, str|None real_modname=None, bool \fBcheck_module\fP=False, bool all_members=False)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_signature_class\fP"
+.br
+.ti -1c
+.RI "\fB_signature_method_name\fP"
+.br
+.ti -1c
+.RI "\fB_signatures\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBsphinx\&.ext\&.autodoc\&.DocstringSignatureMixin\fP
+.in +1c
+.ti -1c
+.RI "\fB_new_docstrings\fP"
+.br
+.ti -1c
+.RI "\fB_signatures\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "Any \fB_signature_class\fP = None"
+.br
+.ti -1c
+.RI "str \fB_signature_method_name\fP = ''"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBsphinx\&.ext\&.autodoc\&.DocstringSignatureMixin\fP
+.in +1c
+.ti -1c
+.RI "list \fB_new_docstrings\fP = None"
+.br
+.ti -1c
+.RI "list \fB_signatures\fP = []"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Specialized Documenter subclass for classes\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.__init__ ( self, *Any args)"
+
+.PP
+Reimplemented from \fBsphinx\&.ext\&.autodoc\&.Documenter\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " tuple[str | None, str | None] | None sphinx\&.ext\&.autodoc\&.ClassDocumenter\&._find_signature ( self)\fC [protected]\fP"
+
+.PP
+Reimplemented from \fBsphinx\&.ext\&.autodoc\&.DocstringSignatureMixin\fP\&.
+.SS " tuple[Any | None, str | None, Signature | None] sphinx\&.ext\&.autodoc\&.ClassDocumenter\&._get_signature ( self)\fC [protected]\fP"
+
+.SS " None sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.add_content ( self, \fBStringList\fP | None more_content)"
+
+.PP
+.nf
+Add content from docstrings, attribute documentation and user\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.ext\&.autodoc\&.Documenter\fP\&.
+.SS " None sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.add_directive_header ( self, str sig)"
+
+.PP
+.nf
+Add the directive header and options to the generated content\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.ext\&.autodoc\&.Documenter\fP\&.
+.SS " bool sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.can_document_member (type[\fBDocumenter\fP] cls, Any member, str membername, bool isattr, Any
+     parent)"
+
+.PP
+.nf
+Called to see if a member can be documented by this Documenter\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.ext\&.autodoc\&.Documenter\fP\&.
+.PP
+Reimplemented in \fBsphinx\&.ext\&.autodoc\&.ExceptionDocumenter\fP\&.
+.SS " None sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.document_members ( self, bool  all_members = \fCFalse\fP)"
+
+.PP
+.nf
+Generate reST for member documentation\&.
+
+If *all_members* is True, document all members, else those given by
+*self\&.options\&.members*\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.ext\&.autodoc\&.Documenter\fP\&.
+.SS " str sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.format_args ( self, **Any kwargs)"
+
+.PP
+.nf
+Format the argument signature of *self\&.object*\&.
+
+Should return None if the object does not have a signature\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.ext\&.autodoc\&.Documenter\fP\&.
+.SS " str sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.format_signature ( self, **Any kwargs)"
+
+.PP
+Reimplemented from \fBsphinx\&.ext\&.autodoc\&.DocstringSignatureMixin\fP\&.
+.SS " None sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.generate ( self, \fBStringList\fP | None  more_content = \fCNone\fP, str | None  real_modname = \fCNone\fP, bool  check_module = \fCFalse\fP, bool  all_members = \fCFalse\fP)"
+
+.PP
+.nf
+Generate reST for the object given by *self\&.name*, and possibly for
+its members\&.
+
+If *more_content* is given, include that content\&. If *real_modname* is
+given, use that module name to find attribute docs\&. If *check_module* is
+True, only generate if the object is defined in the module name it is
+imported from\&. If *all_members* is True, document all members\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.ext\&.autodoc\&.Documenter\fP\&.
+.SS " str | None sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.get_canonical_fullname ( self)"
+
+.SS " list[list[str]] | None sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.get_doc ( self)"
+
+.PP
+Reimplemented from \fBsphinx\&.ext\&.autodoc\&.DocstringSignatureMixin\fP\&.
+.SS " tuple[bool, list[\fBObjectMember\fP]] sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.get_object_members ( self, bool want_all)"
+
+.PP
+.nf
+Return `(members_check_module, members)` where `members` is a
+list of `(membername, member)` pairs of the members of *self\&.object*\&.
+
+If *want_all* is True, return all members\&.  Else, only return those
+members given by *self\&.options\&.members* (which may also be None)\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.ext\&.autodoc\&.Documenter\fP\&.
+.SS " list[Signature] sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.get_overloaded_signatures ( self)"
+
+.SS " list[str] | None sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.get_variable_comment ( self)"
+
+.SS " bool sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.import_object ( self, bool  raiseerror = \fCFalse\fP)"
+
+.PP
+.nf
+Import the object given by *self\&.modname* and *self\&.objpath* and set
+it as *self\&.object*\&.
+
+Returns True if successful, False if an error occurred\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.ext\&.autodoc\&.Documenter\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "Any sphinx\&.ext\&.autodoc\&.ClassDocumenter\&._signature_class = None\fC [static]\fP, \fC [protected]\fP"
+
+.SS "sphinx\&.ext\&.autodoc\&.ClassDocumenter\&._signature_class\fC [protected]\fP"
+
+.SS "str sphinx\&.ext\&.autodoc\&.ClassDocumenter\&._signature_method_name = ''\fC [static]\fP, \fC [protected]\fP"
+
+.SS "sphinx\&.ext\&.autodoc\&.ClassDocumenter\&._signature_method_name\fC [protected]\fP"
+
+.SS "sphinx\&.ext\&.autodoc\&.ClassDocumenter\&._signatures\fC [protected]\fP"
+
+.SS "sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.analyzer"
+
+.SS "sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.directivetype"
+
+.SS "sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.doc_as_attr"
+
+.SS "sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.fullname"
+
+.SS "sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.get_attr"
+
+.SS "int sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.member_order = 20\fC [static]\fP"
+
+.SS "sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.modname"
+
+.SS "sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.object"
+
+.SS "sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.objpath"
+
+.SS "str sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.objtype = 'class'\fC [static]\fP"
+
+.SS "dict sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.option_spec\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        'members': members_option,
+        'undoc\-members': bool_option,
+        'no\-index': bool_option,
+        'no\-index\-entry': bool_option,
+        'inherited\-members': inherited_members_option,
+        'show\-inheritance': bool_option,
+        'member\-order': member_order_option,
+        'exclude\-members': exclude_members_option,
+        'private\-members': members_option,
+        'special\-members': members_option,
+        'class\-doc\-from': class_doc_from_option,
+        'noindex': bool_option,
+    }
+.fi
+
+.SS "sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.options"
+
+.SS "int sphinx\&.ext\&.autodoc\&.ClassDocumenter\&.priority = 15\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

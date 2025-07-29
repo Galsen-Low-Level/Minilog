@@ -1,0 +1,76 @@
+.TH "pip._internal.pyproject" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.pyproject
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fB_is_list_of_str\fP (Any obj)"
+.br
+.ti -1c
+.RI "str \fBmake_pyproject_path\fP (str unpacked_source_directory)"
+.br
+.ti -1c
+.RI "Optional[\fBBuildSystemDetails\fP] \fBload_pyproject_toml\fP (Optional[bool] use_pep517, str pyproject_toml, str setup_py, str req_name)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBBuildSystemDetails\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " bool pip\&._internal\&.pyproject\&._is_list_of_str (Any obj)\fC [protected]\fP"
+
+.SS " Optional[\fBBuildSystemDetails\fP] pip\&._internal\&.pyproject\&.load_pyproject_toml (Optional[bool] use_pep517, str pyproject_toml, str setup_py, str
+ req_name)"
+
+.PP
+.nf
+Load the pyproject\&.toml file\&.
+
+Parameters:
+    use_pep517 - Has the user requested PEP 517 processing? None
+                 means the user hasn't explicitly specified\&.
+    pyproject_toml - Location of the project's pyproject\&.toml file
+    setup_py - Location of the project's setup\&.py file
+    req_name - The name of the requirement we're processing (for
+               error reporting)
+
+Returns:
+    None if we should use the legacy code path, otherwise a tuple
+    (
+        requirements from pyproject\&.toml,
+        name of PEP 517 backend,
+        requirements we should check are installed after setting
+            up the build environment
+        directory paths to import the backend from (backend-path),
+            relative to the project root\&.
+    )
+
+.fi
+.PP
+ 
+.SS " str pip\&._internal\&.pyproject\&.make_pyproject_path (str unpacked_source_directory)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._internal\&.pyproject\&.BuildSystemDetails"
+\fBInitial value:\fP.PP
+.nf
+1 =  namedtuple(
+2     "BuildSystemDetails", ["requires", "backend", "check", "backend_path"]
+3 )
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classwebob_1_1acceptparse_1_1AcceptLanguage" kind="class" language="Python" prot="public">
+    <compoundname>webob::acceptparse::AcceptLanguage</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+    <derivedcompoundref refid="classwebob_1_1acceptparse_1_1AcceptLanguageValidHeader" prot="public" virt="non-virtual">webob.acceptparse.AcceptLanguageValidHeader</derivedcompoundref>
+    <derivedcompoundref refid="classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader" prot="public" virt="non-virtual">webob.acceptparse._AcceptLanguageInvalidOrNoHeader</derivedcompoundref>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classwebob_1_1acceptparse_1_1AcceptLanguage_1ae78fd6a59ad24c3fc79e29575cbff68c" prot="public" static="yes" mutable="no">
+        <type>tuple</type>
+        <definition>tuple webob.acceptparse.AcceptLanguage::lang_range_re</definition>
+        <argsstring></argsstring>
+        <name>lang_range_re</name>
+        <qualifiedname>webob.acceptparse.AcceptLanguage.lang_range_re</qualifiedname>
+        <initializer>=  (
+        r&apos;\*|&apos;
+        &apos;(?:&apos;
+        &apos;[A-Za-z]{1,8}&apos;
+        &apos;(?:-[A-Za-z0-9]{1,8})*&apos;
+        &apos;)&apos;
+    )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" line="3788" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" bodystart="3788" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1acceptparse_1_1AcceptLanguage_1a1a0b7d2279e70fecd6ca8ea608ae6df4" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.acceptparse.AcceptLanguage::lang_range_n_weight_re</definition>
+        <argsstring></argsstring>
+        <name>lang_range_n_weight_re</name>
+        <qualifiedname>webob.acceptparse.AcceptLanguage.lang_range_n_weight_re</qualifiedname>
+        <initializer>=  <ref refid="namespacewebob_1_1acceptparse_1aa13114c6421eb5c591c66565b5042855" kindref="member">_item_n_weight_re</ref>(item_re=<ref refid="classwebob_1_1acceptparse_1_1AcceptLanguage_1ae78fd6a59ad24c3fc79e29575cbff68c" kindref="member">lang_range_re</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" line="3795" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" bodystart="3795" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1acceptparse_1_1AcceptLanguage_1a270bedc4c358f1a88c3559107e61d9af" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.acceptparse.AcceptLanguage::lang_range_n_weight_compiled_re</definition>
+        <argsstring></argsstring>
+        <name>lang_range_n_weight_compiled_re</name>
+        <qualifiedname>webob.acceptparse.AcceptLanguage.lang_range_n_weight_compiled_re</qualifiedname>
+        <initializer>=  re.compile(<ref refid="classwebob_1_1acceptparse_1_1AcceptLanguage_1a1a0b7d2279e70fecd6ca8ea608ae6df4" kindref="member">lang_range_n_weight_re</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" line="3796" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" bodystart="3796" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1acceptparse_1_1AcceptLanguage_1add9bb45fa90693ff840969666c34ad5f" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.acceptparse.AcceptLanguage::accept_language_compiled_re</definition>
+        <argsstring></argsstring>
+        <name>accept_language_compiled_re</name>
+        <qualifiedname>webob.acceptparse.AcceptLanguage.accept_language_compiled_re</qualifiedname>
+        <initializer>=  <ref refid="namespacewebob_1_1acceptparse_1a57ff9a587496140f78578e7b3e4516b4" kindref="member">_list_1_or_more__compiled_re</ref>(
+        element_re=<ref refid="classwebob_1_1acceptparse_1_1AcceptLanguage_1a1a0b7d2279e70fecd6ca8ea608ae6df4" kindref="member">lang_range_n_weight_re</ref>,
+    )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" line="3797" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" bodystart="3797" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classwebob_1_1acceptparse_1_1AcceptLanguage_1a5d89207bdb9b2226ff00b3923b5cad41" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.acceptparse.AcceptLanguage._python_value_to_header_str</definition>
+        <argsstring>(cls, value)</argsstring>
+        <name>_python_value_to_header_str</name>
+        <qualifiedname>webob.acceptparse.AcceptLanguage._python_value_to_header_str</qualifiedname>
+        <param>
+          <type>cls</type>
+          <defname>cls</defname>
+        </param>
+        <param>
+          <type>value</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" line="3802" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" bodystart="3802" bodyend="3824"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwebob_1_1acceptparse_1_1AcceptLanguage_1a63eb2fbaaec84f7ae067d66f818c9054" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.acceptparse.AcceptLanguage.parse</definition>
+        <argsstring>(cls, value)</argsstring>
+        <name>parse</name>
+        <qualifiedname>webob.acceptparse.AcceptLanguage.parse</qualifiedname>
+        <param>
+          <type>cls</type>
+          <defname>cls</defname>
+        </param>
+        <param>
+          <type>value</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Parse an ``Accept-Language`` header.
+
+:param value: (``str``) header value
+:return: If `value` is a valid ``Accept-Language`` header, returns an
+         iterator of (language range, quality value) tuples, as parsed
+         from the header from left to right.
+:raises ValueError: if `value` is an invalid header
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" line="3826" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" bodystart="3826" bodyend="3852"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Represent an ``Accept-Language`` header.
+
+Base class for :class:`AcceptLanguageValidHeader`,
+:class:`AcceptLanguageNoHeader`, and :class:`AcceptLanguageInvalidHeader`.
+</verbatim> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>object</label>
+      </node>
+      <node id="1">
+        <label>webob.acceptparse.AcceptLanguage</label>
+        <link refid="classwebob_1_1acceptparse_1_1AcceptLanguage"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>webob.acceptparse.AcceptLanguageInvalidHeader</label>
+        <link refid="classwebob_1_1acceptparse_1_1AcceptLanguageInvalidHeader"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>webob.acceptparse.AcceptLanguageNoHeader</label>
+        <link refid="classwebob_1_1acceptparse_1_1AcceptLanguageNoHeader"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>webob.acceptparse.AcceptLanguageValidHeader</label>
+        <link refid="classwebob_1_1acceptparse_1_1AcceptLanguageValidHeader"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>webob.acceptparse._AcceptLanguageInvalidOrNoHeader</label>
+        <link refid="classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>object</label>
+      </node>
+      <node id="1">
+        <label>webob.acceptparse.AcceptLanguage</label>
+        <link refid="classwebob_1_1acceptparse_1_1AcceptLanguage"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" line="3773" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" bodystart="3773" bodyend="3852"/>
+    <listofallmembers>
+      <member refid="classwebob_1_1acceptparse_1_1AcceptLanguage_1a5d89207bdb9b2226ff00b3923b5cad41" prot="protected" virt="non-virtual"><scope>webob::acceptparse::AcceptLanguage</scope><name>_python_value_to_header_str</name></member>
+      <member refid="classwebob_1_1acceptparse_1_1AcceptLanguage_1add9bb45fa90693ff840969666c34ad5f" prot="public" virt="non-virtual"><scope>webob::acceptparse::AcceptLanguage</scope><name>accept_language_compiled_re</name></member>
+      <member refid="classwebob_1_1acceptparse_1_1AcceptLanguage_1a270bedc4c358f1a88c3559107e61d9af" prot="public" virt="non-virtual"><scope>webob::acceptparse::AcceptLanguage</scope><name>lang_range_n_weight_compiled_re</name></member>
+      <member refid="classwebob_1_1acceptparse_1_1AcceptLanguage_1a1a0b7d2279e70fecd6ca8ea608ae6df4" prot="public" virt="non-virtual"><scope>webob::acceptparse::AcceptLanguage</scope><name>lang_range_n_weight_re</name></member>
+      <member refid="classwebob_1_1acceptparse_1_1AcceptLanguage_1ae78fd6a59ad24c3fc79e29575cbff68c" prot="public" virt="non-virtual"><scope>webob::acceptparse::AcceptLanguage</scope><name>lang_range_re</name></member>
+      <member refid="classwebob_1_1acceptparse_1_1AcceptLanguage_1a63eb2fbaaec84f7ae067d66f818c9054" prot="public" virt="non-virtual"><scope>webob::acceptparse::AcceptLanguage</scope><name>parse</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

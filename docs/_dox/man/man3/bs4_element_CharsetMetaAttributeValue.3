@@ -1,0 +1,67 @@
+.TH "bs4.element.CharsetMetaAttributeValue" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bs4.element.CharsetMetaAttributeValue
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBbs4\&.element\&.AttributeValueWithCharsetSubstitution\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Self \fB__new__\fP (cls, str \fBoriginal_value\fP)"
+.br
+.ti -1c
+.RI "str \fBsubstitute_encoding\fP (self, _Encoding eventual_encoding='utf\-8')"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Attributes inherited from \fBbs4\&.element\&.AttributeValueWithCharsetSubstitution\fP
+.in +1c
+.ti -1c
+.RI "str \fBoriginal_value\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A generic stand-in for the value of a ``<meta>`` tag's ``charset``
+attribute\&.
+
+When Beautiful Soup parses the markup ``<meta charset='utf8'>``, the
+value of the ``charset`` attribute will become one of these objects\&.
+
+If the document is later encoded to an encoding other than UTF-8, its
+``<meta>`` tag will mention the new encoding instead of ``utf8``\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " Self bs4\&.element\&.CharsetMetaAttributeValue\&.__new__ ( cls, str original_value)"
+
+.SS " str bs4\&.element\&.CharsetMetaAttributeValue\&.substitute_encoding ( self, _Encoding  eventual_encoding = \fC'utf\-8'\fP)"
+
+.PP
+.nf
+When an HTML document is being encoded to a given encoding, the
+value of a ``<meta>`` tag's ``charset`` becomes the name of
+the encoding\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBbs4\&.element\&.AttributeValueWithCharsetSubstitution\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

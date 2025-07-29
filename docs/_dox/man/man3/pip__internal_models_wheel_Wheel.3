@@ -1,0 +1,175 @@
+.TH "pip._internal.models.wheel.Wheel" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.models.wheel.Wheel
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str \fBfilename\fP)"
+.br
+.ti -1c
+.RI "List[str] \fBget_formatted_file_tags\fP (self)"
+.br
+.ti -1c
+.RI "int \fBsupport_index_min\fP (self, List[\fBTag\fP] tags)"
+.br
+.ti -1c
+.RI "int \fBfind_most_preferred_tag\fP (self, List[\fBTag\fP] tags, Dict[\fBTag\fP, int] tag_to_priority)"
+.br
+.ti -1c
+.RI "bool \fBsupported\fP (self, Iterable[\fBTag\fP] tags)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBfilename\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBversion\fP"
+.br
+.ti -1c
+.RI "\fBbuild_tag\fP"
+.br
+.ti -1c
+.RI "\fBpyversions\fP"
+.br
+.ti -1c
+.RI "\fBabis\fP"
+.br
+.ti -1c
+.RI "\fBplats\fP"
+.br
+.ti -1c
+.RI "\fBfile_tags\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBwheel_file_re\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A wheel file
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._internal\&.models\&.wheel\&.Wheel\&.__init__ ( self, str filename)"
+
+.PP
+.nf
+:raises InvalidWheelFilename: when the filename is invalid for a wheel
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " int pip\&._internal\&.models\&.wheel\&.Wheel\&.find_most_preferred_tag ( self, List[\fBTag\fP] tags, Dict[\fBTag\fP, int]
+     tag_to_priority)"
+
+.PP
+.nf
+Return the priority of the most preferred tag that one of the wheel's file
+tag combinations achieves in the given list of supported tags using the given
+tag_to_priority mapping, where lower priorities are more-preferred\&.
+
+This is used in place of support_index_min in some cases in order to avoid
+an expensive linear scan of a large list of tags\&.
+
+:param tags: the PEP 425 tags to check the wheel against\&.
+:param tag_to_priority: a mapping from tag to priority of that tag, where
+    lower is more preferred\&.
+
+:raises ValueError: If none of the wheel's file tags match one of
+    the supported tags\&.
+
+.fi
+.PP
+ 
+.SS " List[str] pip\&._internal\&.models\&.wheel\&.Wheel\&.get_formatted_file_tags ( self)"
+
+.PP
+.nf
+Return the wheel's tags as a sorted list of strings\&.
+.fi
+.PP
+ 
+.SS " int pip\&._internal\&.models\&.wheel\&.Wheel\&.support_index_min ( self, List[\fBTag\fP] tags)"
+
+.PP
+.nf
+Return the lowest index that one of the wheel's file_tag combinations
+achieves in the given list of supported tags\&.
+
+For example, if there are 8 supported tags and one of the file tags
+is first in the list, then return 0\&.
+
+:param tags: the PEP 425 tags to check the wheel against, in order
+    with most preferred first\&.
+
+:raises ValueError: If none of the wheel's file tags match one of
+    the supported tags\&.
+
+.fi
+.PP
+ 
+.SS " bool pip\&._internal\&.models\&.wheel\&.Wheel\&.supported ( self, Iterable[\fBTag\fP] tags)"
+
+.PP
+.nf
+Return whether the wheel is compatible with one of the given tags\&.
+
+:param tags: the PEP 425 tags to check the wheel against\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._internal\&.models\&.wheel\&.Wheel\&.abis"
+
+.SS "pip\&._internal\&.models\&.wheel\&.Wheel\&.build_tag"
+
+.SS "pip\&._internal\&.models\&.wheel\&.Wheel\&.file_tags"
+
+.SS "pip\&._internal\&.models\&.wheel\&.Wheel\&.filename"
+
+.SS "pip\&._internal\&.models\&.wheel\&.Wheel\&.name"
+
+.SS "pip\&._internal\&.models\&.wheel\&.Wheel\&.plats"
+
+.SS "pip\&._internal\&.models\&.wheel\&.Wheel\&.pyversions"
+
+.SS "pip\&._internal\&.models\&.wheel\&.Wheel\&.version"
+
+.SS "pip\&._internal\&.models\&.wheel\&.Wheel\&.wheel_file_re\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  re\&.compile(
+        ,
+        re\&.VERBOSE,
+    )
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

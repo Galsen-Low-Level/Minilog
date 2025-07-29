@@ -1,0 +1,128 @@
+\doxysection{sphinx.\+util.\+docutils.\+Sphinx\+Translator Class Reference}
+\hypertarget{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator}{}\label{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator}\index{sphinx.util.docutils.SphinxTranslator@{sphinx.util.docutils.SphinxTranslator}}
+Inheritance diagram for sphinx.\+util.\+docutils.\+Sphinx\+Translator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.178947cm]{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_a5838f709b87093c479333e2b0ff29eed}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, nodes.\+document document, \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}} \mbox{\hyperlink{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_ab9da5d524beda292657e088fe84fcd7e}{builder}})
+\item 
+None \mbox{\hyperlink{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_a84f9b01df6e9d8488be3235644509d5e}{dispatch\+\_\+visit}} (self, \mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}} node)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_a1c77aaefc3c9b60828e8154611dab5c9}{dispatch\+\_\+departure}} (self, \mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}} node)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_a365f4484324983f701638864fffa0ded}{unknown\+\_\+visit}} (self, \mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}} node)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_ab9da5d524beda292657e088fe84fcd7e}{builder}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_a3652c4ecee4b6260cf1de81d45ffc4c2}{config}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_aba9ab1b569bf7ab5fc032d43cd8ec026}{settings}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_a042f2a1f70802715b74b59fa81c97730}{\+\_\+domains}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A base class for Sphinx translators.
+
+This class adds a support for visitor/departure method for super node class
+if visitor/departure method for node class is not found.
+
+It also provides helper methods for Sphinx translators.
+
+.. versionadded:: 2.0
+
+.. note:: The subclasses of this class might not work with docutils.
+          This class is strongly coupled with Sphinx.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_a5838f709b87093c479333e2b0ff29eed}\label{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_a5838f709b87093c479333e2b0ff29eed} 
+\index{sphinx.util.docutils.SphinxTranslator@{sphinx.util.docutils.SphinxTranslator}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!sphinx.util.docutils.SphinxTranslator@{sphinx.util.docutils.SphinxTranslator}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None sphinx.\+util.\+docutils.\+Sphinx\+Translator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{nodes.\+document}]{document,  }\item[{\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}}}]{builder }\end{DoxyParamCaption})}
+
+
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1writers_1_1html5_1_1HTML5Translator_aa7cb241496fcd597c2627c176889e735}{sphinx.\+writers.\+html5.\+HTML5\+Translator}}, \mbox{\hyperlink{classsphinx_1_1writers_1_1manpage_1_1ManualPageTranslator_a514f2e73218c4c27128db951d10e5d42}{sphinx.\+writers.\+manpage.\+Manual\+Page\+Translator}}, \mbox{\hyperlink{classsphinx_1_1writers_1_1latex_1_1LaTeXTranslator_a61b6a57706089209ac8bd5728f52cde6}{sphinx.\+writers.\+latex.\+La\+Te\+XTranslator}}, \mbox{\hyperlink{classsphinx_1_1writers_1_1texinfo_1_1TexinfoTranslator_a626403f68bef451bc692ae09eb6467c6}{sphinx.\+writers.\+texinfo.\+Texinfo\+Translator}}, and \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1TextTranslator_a40d8cabd91fbf3080769b54c29553fda}{sphinx.\+writers.\+text.\+Text\+Translator}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_a1c77aaefc3c9b60828e8154611dab5c9}\label{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_a1c77aaefc3c9b60828e8154611dab5c9} 
+\index{sphinx.util.docutils.SphinxTranslator@{sphinx.util.docutils.SphinxTranslator}!dispatch\_departure@{dispatch\_departure}}
+\index{dispatch\_departure@{dispatch\_departure}!sphinx.util.docutils.SphinxTranslator@{sphinx.util.docutils.SphinxTranslator}}
+\doxysubsubsection{\texorpdfstring{dispatch\_departure()}{dispatch\_departure()}}
+{\footnotesize\ttfamily  None sphinx.\+util.\+docutils.\+Sphinx\+Translator.\+dispatch\+\_\+departure (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}}}]{node }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Dispatch node to appropriate departure method.
+The priority of departure method is:
+
+1. ``self.depart_{node_class}()``
+2. ``self.depart_{super_node_class}()``
+3. ``self.unknown_departure()``
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_a84f9b01df6e9d8488be3235644509d5e}\label{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_a84f9b01df6e9d8488be3235644509d5e} 
+\index{sphinx.util.docutils.SphinxTranslator@{sphinx.util.docutils.SphinxTranslator}!dispatch\_visit@{dispatch\_visit}}
+\index{dispatch\_visit@{dispatch\_visit}!sphinx.util.docutils.SphinxTranslator@{sphinx.util.docutils.SphinxTranslator}}
+\doxysubsubsection{\texorpdfstring{dispatch\_visit()}{dispatch\_visit()}}
+{\footnotesize\ttfamily  None sphinx.\+util.\+docutils.\+Sphinx\+Translator.\+dispatch\+\_\+visit (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}}}]{node }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Dispatch node to appropriate visitor method.
+The priority of visitor method is:
+
+1. ``self.visit_{node_class}()``
+2. ``self.visit_{super_node_class}()``
+3. ``self.unknown_visit()``
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_a365f4484324983f701638864fffa0ded}\label{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_a365f4484324983f701638864fffa0ded} 
+\index{sphinx.util.docutils.SphinxTranslator@{sphinx.util.docutils.SphinxTranslator}!unknown\_visit@{unknown\_visit}}
+\index{unknown\_visit@{unknown\_visit}!sphinx.util.docutils.SphinxTranslator@{sphinx.util.docutils.SphinxTranslator}}
+\doxysubsubsection{\texorpdfstring{unknown\_visit()}{unknown\_visit()}}
+{\footnotesize\ttfamily  None sphinx.\+util.\+docutils.\+Sphinx\+Translator.\+unknown\+\_\+visit (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}}}]{node }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_a042f2a1f70802715b74b59fa81c97730}\label{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_a042f2a1f70802715b74b59fa81c97730} 
+\index{sphinx.util.docutils.SphinxTranslator@{sphinx.util.docutils.SphinxTranslator}!\_domains@{\_domains}}
+\index{\_domains@{\_domains}!sphinx.util.docutils.SphinxTranslator@{sphinx.util.docutils.SphinxTranslator}}
+\doxysubsubsection{\texorpdfstring{\_domains}{\_domains}}
+{\footnotesize\ttfamily sphinx.\+util.\+docutils.\+Sphinx\+Translator.\+\_\+domains\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_ab9da5d524beda292657e088fe84fcd7e}\label{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_ab9da5d524beda292657e088fe84fcd7e} 
+\index{sphinx.util.docutils.SphinxTranslator@{sphinx.util.docutils.SphinxTranslator}!builder@{builder}}
+\index{builder@{builder}!sphinx.util.docutils.SphinxTranslator@{sphinx.util.docutils.SphinxTranslator}}
+\doxysubsubsection{\texorpdfstring{builder}{builder}}
+{\footnotesize\ttfamily sphinx.\+util.\+docutils.\+Sphinx\+Translator.\+builder}
+
+\Hypertarget{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_a3652c4ecee4b6260cf1de81d45ffc4c2}\label{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_a3652c4ecee4b6260cf1de81d45ffc4c2} 
+\index{sphinx.util.docutils.SphinxTranslator@{sphinx.util.docutils.SphinxTranslator}!config@{config}}
+\index{config@{config}!sphinx.util.docutils.SphinxTranslator@{sphinx.util.docutils.SphinxTranslator}}
+\doxysubsubsection{\texorpdfstring{config}{config}}
+{\footnotesize\ttfamily sphinx.\+util.\+docutils.\+Sphinx\+Translator.\+config}
+
+\Hypertarget{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_aba9ab1b569bf7ab5fc032d43cd8ec026}\label{classsphinx_1_1util_1_1docutils_1_1SphinxTranslator_aba9ab1b569bf7ab5fc032d43cd8ec026} 
+\index{sphinx.util.docutils.SphinxTranslator@{sphinx.util.docutils.SphinxTranslator}!settings@{settings}}
+\index{settings@{settings}!sphinx.util.docutils.SphinxTranslator@{sphinx.util.docutils.SphinxTranslator}}
+\doxysubsubsection{\texorpdfstring{settings}{settings}}
+{\footnotesize\ttfamily sphinx.\+util.\+docutils.\+Sphinx\+Translator.\+settings}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/sphinx/util/\mbox{\hyperlink{docutils_8py}{docutils.\+py}}\end{DoxyCompactItemize}

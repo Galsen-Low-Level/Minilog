@@ -1,0 +1,145 @@
+.TH "sphinx.builders.linkcheck.HyperlinkAvailabilityCheckWorker" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.builders.linkcheck.HyperlinkAvailabilityCheckWorker
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Thread\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, \fBConfig\fP config, Queue[\fBCheckResult\fP] \fBrqueue\fP, Queue[\fBCheckRequest\fP] \fBwqueue\fP, dict[str, \fBRateLimit\fP] \fBrate_limits\fP)"
+.br
+.ti -1c
+.RI "None \fBrun\fP (self)"
+.br
+.ti -1c
+.RI "float|None \fBlimit_rate\fP (self, str response_url, str|None retry_after)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBrate_limits\fP"
+.br
+.ti -1c
+.RI "\fBrqueue\fP"
+.br
+.ti -1c
+.RI "\fBwqueue\fP"
+.br
+.ti -1c
+.RI "\fBauth\fP"
+.br
+.ti -1c
+.RI "\fBallowed_redirects\fP"
+.br
+.ti -1c
+.RI "\fBrate_limit_timeout\fP"
+.br
+.ti -1c
+.RI "\fBuser_agent\fP"
+.br
+.ti -1c
+.RI "\fBtls_verify\fP"
+.br
+.ti -1c
+.RI "\fBtls_cacerts\fP"
+.br
+.ti -1c
+.RI "\fBretries\fP"
+.br
+.ti -1c
+.RI "\fBcheck_anchors\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "_URIProperties \fB_check\fP (self, str docname, str uri, \fBHyperlink\fP hyperlink)"
+.br
+.ti -1c
+.RI "Iterator[tuple[Callable[\&.\&.\&., Response], dict[str, bool]]] \fB_retrieval_methods\fP (self, bool \fBcheck_anchors\fP, str anchor)"
+.br
+.ti -1c
+.RI "_URIProperties \fB_check_uri\fP (self, str uri, \fBHyperlink\fP hyperlink)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_allow_unauthorized\fP"
+.br
+.ti -1c
+.RI "\fB_timeout_status\fP"
+.br
+.ti -1c
+.RI "\fB_session\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A worker class for checking the availability of hyperlinks\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.builders\&.linkcheck\&.HyperlinkAvailabilityCheckWorker\&.__init__ ( self, \fBConfig\fP config, Queue[\fBCheckResult\fP] rqueue, Queue[\fBCheckRequest\fP] wqueue, dict[str, \fBRateLimit\fP] rate_limits)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " _URIProperties sphinx\&.builders\&.linkcheck\&.HyperlinkAvailabilityCheckWorker\&._check ( self, str docname, str uri, \fBHyperlink\fP hyperlink)\fC [protected]\fP"
+
+.SS " _URIProperties sphinx\&.builders\&.linkcheck\&.HyperlinkAvailabilityCheckWorker\&._check_uri ( self, str uri, \fBHyperlink\fP hyperlink)\fC [protected]\fP"
+
+.SS " Iterator[tuple[Callable[\&.\&.\&., Response], dict[str, bool]]] sphinx\&.builders\&.linkcheck\&.HyperlinkAvailabilityCheckWorker\&._retrieval_methods ( self, bool check_anchors, str anchor)\fC [protected]\fP"
+
+.SS " float | None sphinx\&.builders\&.linkcheck\&.HyperlinkAvailabilityCheckWorker\&.limit_rate ( self, str response_url, str | None retry_after)"
+
+.SS " None sphinx\&.builders\&.linkcheck\&.HyperlinkAvailabilityCheckWorker\&.run ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.builders\&.linkcheck\&.HyperlinkAvailabilityCheckWorker\&._allow_unauthorized\fC [protected]\fP"
+
+.SS "sphinx\&.builders\&.linkcheck\&.HyperlinkAvailabilityCheckWorker\&._session\fC [protected]\fP"
+
+.SS "sphinx\&.builders\&.linkcheck\&.HyperlinkAvailabilityCheckWorker\&._timeout_status\fC [protected]\fP"
+
+.SS "sphinx\&.builders\&.linkcheck\&.HyperlinkAvailabilityCheckWorker\&.allowed_redirects"
+
+.SS "sphinx\&.builders\&.linkcheck\&.HyperlinkAvailabilityCheckWorker\&.auth"
+
+.SS "sphinx\&.builders\&.linkcheck\&.HyperlinkAvailabilityCheckWorker\&.check_anchors"
+
+.SS "sphinx\&.builders\&.linkcheck\&.HyperlinkAvailabilityCheckWorker\&.rate_limit_timeout"
+
+.SS "sphinx\&.builders\&.linkcheck\&.HyperlinkAvailabilityCheckWorker\&.rate_limits"
+
+.SS "sphinx\&.builders\&.linkcheck\&.HyperlinkAvailabilityCheckWorker\&.retries"
+
+.SS "sphinx\&.builders\&.linkcheck\&.HyperlinkAvailabilityCheckWorker\&.rqueue"
+
+.SS "sphinx\&.builders\&.linkcheck\&.HyperlinkAvailabilityCheckWorker\&.tls_cacerts"
+
+.SS "sphinx\&.builders\&.linkcheck\&.HyperlinkAvailabilityCheckWorker\&.tls_verify"
+
+.SS "sphinx\&.builders\&.linkcheck\&.HyperlinkAvailabilityCheckWorker\&.user_agent"
+
+.SS "sphinx\&.builders\&.linkcheck\&.HyperlinkAvailabilityCheckWorker\&.wqueue"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

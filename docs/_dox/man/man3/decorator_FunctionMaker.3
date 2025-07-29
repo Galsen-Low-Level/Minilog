@@ -1,0 +1,157 @@
+.TH "decorator.FunctionMaker" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+decorator.FunctionMaker
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, func=None, \fBname\fP=None, \fBsignature\fP=None, \fBdefaults\fP=None, \fBdoc\fP=None, \fBmodule\fP=None, funcdict=None)"
+.br
+.ti -1c
+.RI "\fBupdate\fP (self, func, **kw)"
+.br
+.ti -1c
+.RI "\fBmake\fP (self, src_templ, evaldict=None, addsource=False, **attrs)"
+.br
+.ti -1c
+.RI "\fBcreate\fP (cls, obj, body, evaldict, \fBdefaults\fP=None, \fBdoc\fP=None, \fBmodule\fP=None, addsource=True, **attrs)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBshortsignature\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBdoc\fP"
+.br
+.ti -1c
+.RI "\fBmodule\fP"
+.br
+.ti -1c
+.RI "\fBannotations\fP"
+.br
+.ti -1c
+.RI "\fBargs\fP"
+.br
+.ti -1c
+.RI "\fBvarargs\fP"
+.br
+.ti -1c
+.RI "\fBvarkw\fP"
+.br
+.ti -1c
+.RI "\fBsignature\fP"
+.br
+.ti -1c
+.RI "\fBdict\fP"
+.br
+.ti -1c
+.RI "\fBdefaults\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBargs\fP = ()"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_compile_count\fP = itertools\&.count()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+An object with the ability to create functions with a given signature\&.
+It has attributes name, doc, module, signature, defaults, dict and
+methods update and make\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "decorator\&.FunctionMaker\&.__init__ ( self,  func = \fCNone\fP,  name = \fCNone\fP,  signature = \fCNone\fP,  defaults = \fCNone\fP,  doc = \fCNone\fP,  module = \fCNone\fP,  funcdict = \fCNone\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "decorator\&.FunctionMaker\&.create ( cls,  obj,  body,  evaldict,  defaults = \fCNone\fP,  doc = \fCNone\fP,  module = \fCNone\fP,  addsource = \fCTrue\fP, ** attrs)"
+
+.PP
+.nf
+Create a function from the strings name, signature and body\&.
+evaldict is the evaluation dictionary\&. If addsource is true an
+attribute __source__ is added to the result\&. The attributes attrs
+are added, if any\&.
+
+.fi
+.PP
+ 
+.SS "decorator\&.FunctionMaker\&.make ( self,  src_templ,  evaldict = \fCNone\fP,  addsource = \fCFalse\fP, ** attrs)"
+
+.PP
+.nf
+Make a new function from a given template and update the signature
+
+.fi
+.PP
+ 
+.SS "decorator\&.FunctionMaker\&.update ( self,  func, ** kw)"
+
+.PP
+.nf
+Update the signature of func with the data in self
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "decorator\&.FunctionMaker\&._compile_count = itertools\&.count()\fC [static]\fP, \fC [protected]\fP"
+
+.SS "decorator\&.FunctionMaker\&.annotations"
+
+.SS "tuple decorator\&.FunctionMaker\&.args = ()\fC [static]\fP"
+
+.SS "decorator\&.FunctionMaker\&.args"
+
+.SS "decorator\&.FunctionMaker\&.defaults"
+
+.SS "decorator\&.FunctionMaker\&.dict"
+
+.SS "decorator\&.FunctionMaker\&.doc"
+
+.SS "decorator\&.FunctionMaker\&.module"
+
+.SS "decorator\&.FunctionMaker\&.name"
+
+.SS "decorator\&.FunctionMaker\&.shortsignature"
+
+.SS "decorator\&.FunctionMaker\&.signature"
+
+.SS "decorator\&.FunctionMaker\&.varargs"
+
+.SS "decorator\&.FunctionMaker\&.varkw"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,899 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classwaitress_1_1channel_1_1HTTPChannel" kind="class" language="Python" prot="public">
+    <compoundname>waitress::channel::HTTPChannel</compoundname>
+    <basecompoundref refid="classwaitress_1_1wasyncore_1_1dispatcher" prot="public" virt="non-virtual">waitress.wasyncore.dispatcher</basecompoundref>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1a8b95fdffb93693a0bc7ada043e6de86c" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel::task_class</definition>
+        <argsstring></argsstring>
+        <name>task_class</name>
+        <qualifiedname>waitress.channel.HTTPChannel.task_class</qualifiedname>
+        <initializer>=  <ref refid="classwaitress_1_1task_1_1WSGITask" kindref="compound">WSGITask</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="39" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1a3322e57c56bbcffce39385ce53d0c3fb" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel::error_task_class</definition>
+        <argsstring></argsstring>
+        <name>error_task_class</name>
+        <qualifiedname>waitress.channel.HTTPChannel.error_task_class</qualifiedname>
+        <initializer>=  <ref refid="classwaitress_1_1task_1_1ErrorTask" kindref="compound">ErrorTask</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="40" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1a0e58ba1d826e34d600d3c3725b082156" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel::parser_class</definition>
+        <argsstring></argsstring>
+        <name>parser_class</name>
+        <qualifiedname>waitress.channel.HTTPChannel.parser_class</qualifiedname>
+        <initializer>=  <ref refid="classwaitress_1_1parser_1_1HTTPRequestParser" kindref="compound">HTTPRequestParser</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="41" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1acbfe845da843a2f4abf66654d453bdcd" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel::request</definition>
+        <argsstring></argsstring>
+        <name>request</name>
+        <qualifiedname>waitress.channel.HTTPChannel.request</qualifiedname>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="44" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1ae1024c11c17a4ea6ca775fd7a7554d74" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int waitress.channel.HTTPChannel::last_activity</definition>
+        <argsstring></argsstring>
+        <name>last_activity</name>
+        <qualifiedname>waitress.channel.HTTPChannel.last_activity</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="45" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1a8fefd397c09ef8cb0c1be2b137bf7255" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool waitress.channel.HTTPChannel::will_close</definition>
+        <argsstring></argsstring>
+        <name>will_close</name>
+        <qualifiedname>waitress.channel.HTTPChannel.will_close</qualifiedname>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="46" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1a32fbf533cee97793dd82d817927917cd" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool waitress.channel.HTTPChannel::close_when_flushed</definition>
+        <argsstring></argsstring>
+        <name>close_when_flushed</name>
+        <qualifiedname>waitress.channel.HTTPChannel.close_when_flushed</qualifiedname>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="47" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1ada537b7d8748a15ac44d8395382d09a4" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool waitress.channel.HTTPChannel::sent_continue</definition>
+        <argsstring></argsstring>
+        <name>sent_continue</name>
+        <qualifiedname>waitress.channel.HTTPChannel.sent_continue</qualifiedname>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="48" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1a63857cde5258a80db52043a4ecd9ae1e" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int waitress.channel.HTTPChannel::total_outbufs_len</definition>
+        <argsstring></argsstring>
+        <name>total_outbufs_len</name>
+        <qualifiedname>waitress.channel.HTTPChannel.total_outbufs_len</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="49" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1ac5e8e37f6d275486a66b5728fd9c088e" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int waitress.channel.HTTPChannel::current_outbuf_count</definition>
+        <argsstring></argsstring>
+        <name>current_outbuf_count</name>
+        <qualifiedname>waitress.channel.HTTPChannel.current_outbuf_count</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="50" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="50" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1aa1c1aa385a4db05ba7c738fff0fe6508" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel::server</definition>
+        <argsstring></argsstring>
+        <name>server</name>
+        <qualifiedname>waitress.channel.HTTPChannel.server</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="57" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1aaad3dfa5298d3d5e81aff215a795f4fb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel::adj</definition>
+        <argsstring></argsstring>
+        <name>adj</name>
+        <qualifiedname>waitress.channel.HTTPChannel.adj</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="58" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1a5222139b7963553bb1476834954ac106" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel::outbufs</definition>
+        <argsstring></argsstring>
+        <name>outbufs</name>
+        <qualifiedname>waitress.channel.HTTPChannel.outbufs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="59" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1a55e597e2df53cbc6246a8e2b74f63c1f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel::creation_time</definition>
+        <argsstring></argsstring>
+        <name>creation_time</name>
+        <qualifiedname>waitress.channel.HTTPChannel.creation_time</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="60" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1a2f3d56da4070e0d8a6ab2874c43a1555" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel::sendbuf_len</definition>
+        <argsstring></argsstring>
+        <name>sendbuf_len</name>
+        <qualifiedname>waitress.channel.HTTPChannel.sendbuf_len</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="61" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1aa68d7e88bca9df7c71a2e87a2baed041" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel::requests_lock</definition>
+        <argsstring></argsstring>
+        <name>requests_lock</name>
+        <qualifiedname>waitress.channel.HTTPChannel.requests_lock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="65" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1a4ef3facb4b2609b759611e16a3bc485f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel::outbuf_lock</definition>
+        <argsstring></argsstring>
+        <name>outbuf_lock</name>
+        <qualifiedname>waitress.channel.HTTPChannel.outbuf_lock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="67" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1a0f0f215c46c8e990ef4d9d1ab943c403" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel::connected</definition>
+        <argsstring></argsstring>
+        <name>connected</name>
+        <qualifiedname>waitress.channel.HTTPChannel.connected</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="70" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1aa8df63beab5b6718008dc30ec8a3a5b3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel::addr</definition>
+        <argsstring></argsstring>
+        <name>addr</name>
+        <qualifiedname>waitress.channel.HTTPChannel.addr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="71" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1a86cf4e9fd5ef38a0c2ef22b54e5e4141" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel::requests</definition>
+        <argsstring></argsstring>
+        <name>requests</name>
+        <qualifiedname>waitress.channel.HTTPChannel.requests</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="72" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1a93b4892bf303915ea3a14b702017b15b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel::close_when_flushed</definition>
+        <argsstring></argsstring>
+        <name>close_when_flushed</name>
+        <qualifiedname>waitress.channel.HTTPChannel.close_when_flushed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="116" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1a61aeb31c5464d9c245085d6c760fca4f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel::will_close</definition>
+        <argsstring></argsstring>
+        <name>will_close</name>
+        <qualifiedname>waitress.channel.HTTPChannel.will_close</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="117" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1a955357ae9ffeea501c4d902a48c9688c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel::last_activity</definition>
+        <argsstring></argsstring>
+        <name>last_activity</name>
+        <qualifiedname>waitress.channel.HTTPChannel.last_activity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="165" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1af749bbe789457ab46523b2de9e962d6b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel::sent_continue</definition>
+        <argsstring></argsstring>
+        <name>sent_continue</name>
+        <qualifiedname>waitress.channel.HTTPChannel.sent_continue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="185" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1a27f822ce6bdbfb2dd4572551c4d1ec76" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel::total_outbufs_len</definition>
+        <argsstring></argsstring>
+        <name>total_outbufs_len</name>
+        <qualifiedname>waitress.channel.HTTPChannel.total_outbufs_len</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="316" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="316" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1ad94ef08be0265e268185894a8cdf56cf" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel::current_outbuf_count</definition>
+        <argsstring></argsstring>
+        <name>current_outbuf_count</name>
+        <qualifiedname>waitress.channel.HTTPChannel.current_outbuf_count</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="366" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="366" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classwaitress_1_1channel_1_1HTTPChannel_1aebf43c988313b615859647fe2f7c98f8" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel::_flush_some</definition>
+        <argsstring></argsstring>
+        <name>_flush_some</name>
+        <qualifiedname>waitress.channel.HTTPChannel._flush_some</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="380" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="380" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwaitress_1_1channel_1_1HTTPChannel_1aa74cf1fe11b37238424175e4fe9c920e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel.__init__</definition>
+        <argsstring>(self, server, sock, addr, adj, map=None)</argsstring>
+        <name>__init__</name>
+        <qualifiedname>waitress.channel.HTTPChannel.__init__</qualifiedname>
+        <reimplements refid="classwaitress_1_1wasyncore_1_1dispatcher_1a4e91c5b7a63d909616a10564ff4f6e79">__init__</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classwaitress_1_1channel_1_1HTTPChannel_1aa1c1aa385a4db05ba7c738fff0fe6508" kindref="member">server</ref></type>
+          <defname>server</defname>
+        </param>
+        <param>
+          <type>sock</type>
+          <defname>sock</defname>
+        </param>
+        <param>
+          <type><ref refid="classwaitress_1_1channel_1_1HTTPChannel_1aa8df63beab5b6718008dc30ec8a3a5b3" kindref="member">addr</ref></type>
+          <defname>addr</defname>
+        </param>
+        <param>
+          <type><ref refid="classwaitress_1_1channel_1_1HTTPChannel_1aaad3dfa5298d3d5e81aff215a795f4fb" kindref="member">adj</ref></type>
+          <defname>adj</defname>
+        </param>
+        <param>
+          <type>map</type>
+          <defname>map</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="56" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="56" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1channel_1_1HTTPChannel_1a17bc4dd051ed031c7ff157878f854921" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel.check_client_disconnected</definition>
+        <argsstring>(self)</argsstring>
+        <name>check_client_disconnected</name>
+        <qualifiedname>waitress.channel.HTTPChannel.check_client_disconnected</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>This method is inserted into the environment of any created task so it
+may occasionally check if the client has disconnected and interrupt
+execution.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="74" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="74" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1channel_1_1HTTPChannel_1addd08b8ef8fb0d3b7f82a65f598032c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel.writable</definition>
+        <argsstring>(self)</argsstring>
+        <name>writable</name>
+        <qualifiedname>waitress.channel.HTTPChannel.writable</qualifiedname>
+        <reimplements refid="classwaitress_1_1wasyncore_1_1dispatcher_1addde53d853292402cbcf9b52a44d5227">writable</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="83" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="83" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1channel_1_1HTTPChannel_1abff55c2b0e05538fb65642e5acb74229" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel.handle_write</definition>
+        <argsstring>(self)</argsstring>
+        <name>handle_write</name>
+        <qualifiedname>waitress.channel.HTTPChannel.handle_write</qualifiedname>
+        <reimplements refid="classwaitress_1_1wasyncore_1_1dispatcher_1a5bc1201bda76d146c823e23ec843f674">handle_write</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="90" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="90" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1channel_1_1HTTPChannel_1ab78c5fada13e4dce49183385a85ca1bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel.readable</definition>
+        <argsstring>(self)</argsstring>
+        <name>readable</name>
+        <qualifiedname>waitress.channel.HTTPChannel.readable</qualifiedname>
+        <reimplements refid="classwaitress_1_1wasyncore_1_1dispatcher_1a1e8d638be2f79f1f0ecc3b30312ea99d">readable</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="138" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="138" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1channel_1_1HTTPChannel_1a1d690aa5821ba04f0e06883c7d5791c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel.handle_read</definition>
+        <argsstring>(self)</argsstring>
+        <name>handle_read</name>
+        <qualifiedname>waitress.channel.HTTPChannel.handle_read</qualifiedname>
+        <reimplements refid="classwaitress_1_1wasyncore_1_1dispatcher_1a1b12b5f8aca373b091f81df30f90c4ca">handle_read</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="154" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="154" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1channel_1_1HTTPChannel_1aaa901d6ee7325ec9a983e00b67e4959f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel.send_continue</definition>
+        <argsstring>(self)</argsstring>
+        <name>send_continue</name>
+        <qualifiedname>waitress.channel.HTTPChannel.send_continue</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Send a 100-Continue header to the client. This is either called from
+receive (if no requests are running and the client expects it) or at
+the end of service (if no more requests are queued and a request has
+been read partially that expects it).
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="171" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="171" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1channel_1_1HTTPChannel_1a89697e3a427d77b83a38e1305a2a28d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel.received</definition>
+        <argsstring>(self, data)</argsstring>
+        <name>received</name>
+        <qualifiedname>waitress.channel.HTTPChannel.received</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>data</type>
+          <defname>data</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Receives input asynchronously and assigns one or more requests to the
+channel.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="189" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="189" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1channel_1_1HTTPChannel_1a7a39d8c5e77ff656e2d0a4bbff44853f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel.handle_close</definition>
+        <argsstring>(self)</argsstring>
+        <name>handle_close</name>
+        <qualifiedname>waitress.channel.HTTPChannel.handle_close</qualifiedname>
+        <reimplements refid="classwaitress_1_1wasyncore_1_1dispatcher_1a3aa67ce99ade5536c206ebc997189803">handle_close</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="307" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="307" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1channel_1_1HTTPChannel_1a86d9d9db14e9a5ca9eed327b499abbd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel.add_channel</definition>
+        <argsstring>(self, map=None)</argsstring>
+        <name>add_channel</name>
+        <qualifiedname>waitress.channel.HTTPChannel.add_channel</qualifiedname>
+        <reimplements refid="classwaitress_1_1wasyncore_1_1dispatcher_1abfba618e9b8210d880bf0c7a51221205">add_channel</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>map</type>
+          <defname>map</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>See wasyncore.dispatcher
+
+This hook keeps track of opened channels.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="321" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="321" bodyend="328"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1channel_1_1HTTPChannel_1a5219db0592953eaf77ab20257406b399" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel.del_channel</definition>
+        <argsstring>(self, map=None)</argsstring>
+        <name>del_channel</name>
+        <qualifiedname>waitress.channel.HTTPChannel.del_channel</qualifiedname>
+        <reimplements refid="classwaitress_1_1wasyncore_1_1dispatcher_1a3fbf664bc8e6848c633cc9cd3ff3ad75">del_channel</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>map</type>
+          <defname>map</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>See wasyncore.dispatcher
+
+This hook keeps track of closed channels.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="329" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="329" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1channel_1_1HTTPChannel_1a7f30bbbec30be603efe026adc8282ef1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel.write_soon</definition>
+        <argsstring>(self, data)</argsstring>
+        <name>write_soon</name>
+        <qualifiedname>waitress.channel.HTTPChannel.write_soon</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>data</type>
+          <defname>data</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="345" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="345" bodyend="393"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1channel_1_1HTTPChannel_1a3ba2eebf430b7b642e713cd23459517d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel.service</definition>
+        <argsstring>(self)</argsstring>
+        <name>service</name>
+        <qualifiedname>waitress.channel.HTTPChannel.service</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Execute one request. If there are more, we add another task to the
+server at the end.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="417" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="417" bodyend="515"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1channel_1_1HTTPChannel_1aed45a712540c3596653823e0bf371491" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel.cancel</definition>
+        <argsstring>(self)</argsstring>
+        <name>cancel</name>
+        <qualifiedname>waitress.channel.HTTPChannel.cancel</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Cancels all pending / active requests</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="516" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="516" bodyend="522"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classwaitress_1_1channel_1_1HTTPChannel_1af2178d18a2f3b93120f8e90a56a0b432" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel._flush_exception</definition>
+        <argsstring>(self, flush, do_close=True)</argsstring>
+        <name>_flush_exception</name>
+        <qualifiedname>waitress.channel.HTTPChannel._flush_exception</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>flush</type>
+          <defname>flush</defname>
+        </param>
+        <param>
+          <type>do_close</type>
+          <defname>do_close</defname>
+          <defval>True</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="122" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="122" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1channel_1_1HTTPChannel_1a187eba2d736d51b0d2fd6a170965dedb" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel._flush_some_if_lockable</definition>
+        <argsstring>(self, do_close=True)</argsstring>
+        <name>_flush_some_if_lockable</name>
+        <qualifiedname>waitress.channel.HTTPChannel._flush_some_if_lockable</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>do_close</type>
+          <defname>do_close</defname>
+          <defval>True</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="245" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="245" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1channel_1_1HTTPChannel_1af4abc69cb0ebdecacfe3e79bda37a43f" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel._flush_some</definition>
+        <argsstring>(self, do_close=True)</argsstring>
+        <name>_flush_some</name>
+        <qualifiedname>waitress.channel.HTTPChannel._flush_some</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>do_close</type>
+          <defname>do_close</defname>
+          <defval>True</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="258" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="258" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1channel_1_1HTTPChannel_1a08c6e441a5c3f81ea09b64cb6ae49361" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.channel.HTTPChannel._flush_outbufs_below_high_watermark</definition>
+        <argsstring>(self)</argsstring>
+        <name>_flush_outbufs_below_high_watermark</name>
+        <qualifiedname>waitress.channel.HTTPChannel._flush_outbufs_below_high_watermark</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="394" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="394" bodyend="416"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Setting self.requests = [somerequest] prevents more requests from being
+received until the out buffers have been flushed.
+
+Setting self.requests = [] allows more requests to be received.
+</verbatim> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>waitress.channel.HTTPChannel</label>
+        <link refid="classwaitress_1_1channel_1_1HTTPChannel"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>waitress.wasyncore.dispatcher</label>
+        <link refid="classwaitress_1_1wasyncore_1_1dispatcher"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>waitress.channel.HTTPChannel</label>
+        <link refid="classwaitress_1_1channel_1_1HTTPChannel"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>waitress.wasyncore.dispatcher</label>
+        <link refid="classwaitress_1_1wasyncore_1_1dispatcher"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" line="31" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/channel.py" bodystart="31" bodyend="522"/>
+    <listofallmembers>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1aa74cf1fe11b37238424175e4fe9c920e" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>__init__</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1af2178d18a2f3b93120f8e90a56a0b432" prot="protected" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>_flush_exception</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a08c6e441a5c3f81ea09b64cb6ae49361" prot="protected" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>_flush_outbufs_below_high_watermark</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1aebf43c988313b615859647fe2f7c98f8" prot="protected" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>_flush_some</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1af4abc69cb0ebdecacfe3e79bda37a43f" prot="protected" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>_flush_some</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a187eba2d736d51b0d2fd6a170965dedb" prot="protected" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>_flush_some_if_lockable</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a86d9d9db14e9a5ca9eed327b499abbd3" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>add_channel</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1aa8df63beab5b6718008dc30ec8a3a5b3" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>addr</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1aaad3dfa5298d3d5e81aff215a795f4fb" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>adj</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1aed45a712540c3596653823e0bf371491" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>cancel</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a17bc4dd051ed031c7ff157878f854921" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>check_client_disconnected</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a32fbf533cee97793dd82d817927917cd" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>close_when_flushed</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a93b4892bf303915ea3a14b702017b15b" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>close_when_flushed</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a0f0f215c46c8e990ef4d9d1ab943c403" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>connected</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a55e597e2df53cbc6246a8e2b74f63c1f" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>creation_time</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1ac5e8e37f6d275486a66b5728fd9c088e" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>current_outbuf_count</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1ad94ef08be0265e268185894a8cdf56cf" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>current_outbuf_count</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a5219db0592953eaf77ab20257406b399" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>del_channel</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a3322e57c56bbcffce39385ce53d0c3fb" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>error_task_class</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a7a39d8c5e77ff656e2d0a4bbff44853f" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>handle_close</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a1d690aa5821ba04f0e06883c7d5791c1" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>handle_read</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1abff55c2b0e05538fb65642e5acb74229" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>handle_write</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1ae1024c11c17a4ea6ca775fd7a7554d74" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>last_activity</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a955357ae9ffeea501c4d902a48c9688c" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>last_activity</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a4ef3facb4b2609b759611e16a3bc485f" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>outbuf_lock</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a5222139b7963553bb1476834954ac106" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>outbufs</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a0e58ba1d826e34d600d3c3725b082156" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>parser_class</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1ab78c5fada13e4dce49183385a85ca1bd" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>readable</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a89697e3a427d77b83a38e1305a2a28d7" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>received</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1acbfe845da843a2f4abf66654d453bdcd" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>request</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a86cf4e9fd5ef38a0c2ef22b54e5e4141" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>requests</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1aa68d7e88bca9df7c71a2e87a2baed041" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>requests_lock</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1aaa901d6ee7325ec9a983e00b67e4959f" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>send_continue</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a2f3d56da4070e0d8a6ab2874c43a1555" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>sendbuf_len</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1ada537b7d8748a15ac44d8395382d09a4" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>sent_continue</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1af749bbe789457ab46523b2de9e962d6b" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>sent_continue</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1aa1c1aa385a4db05ba7c738fff0fe6508" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>server</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a3ba2eebf430b7b642e713cd23459517d" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>service</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a8b95fdffb93693a0bc7ada043e6de86c" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>task_class</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a63857cde5258a80db52043a4ecd9ae1e" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>total_outbufs_len</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a27f822ce6bdbfb2dd4572551c4d1ec76" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>total_outbufs_len</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a8fefd397c09ef8cb0c1be2b137bf7255" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>will_close</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a61aeb31c5464d9c245085d6c760fca4f" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>will_close</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1addd08b8ef8fb0d3b7f82a65f598032c0" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>writable</name></member>
+      <member refid="classwaitress_1_1channel_1_1HTTPChannel_1a7f30bbbec30be603efe026adc8282ef1" prot="public" virt="non-virtual"><scope>waitress::channel::HTTPChannel</scope><name>write_soon</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

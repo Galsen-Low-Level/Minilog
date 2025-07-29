@@ -1,0 +1,90 @@
+.TH "docutils.writers.latex2e.DocumentClass" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.writers.latex2e.DocumentClass
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdocument_class\fP, with_part=False)"
+.br
+.ti -1c
+.RI "\fBsection\fP (self, level)"
+.br
+.ti -1c
+.RI "\fBlatex_section_depth\fP (self, depth)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdocument_class\fP"
+.br
+.ti -1c
+.RI "\fBsections\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_with_part\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Details of a LaTeX document class\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.writers\&.latex2e\&.DocumentClass\&.__init__ ( self,  document_class,  with_part = \fCFalse\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.writers\&.latex2e\&.DocumentClass\&.latex_section_depth ( self,  depth)"
+
+.PP
+.nf
+Return LaTeX equivalent of Docutils section level `depth`\&.
+
+Given the value of the ``:depth:`` option of the 'contents' or
+'sectnum' directive, return the corresponding value for the
+LaTeX ``tocdepth`` or ``secnumdepth`` counters\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.DocumentClass\&.section ( self,  level)"
+
+.PP
+.nf
+Return the LaTeX section name for section `level`\&.
+
+The name depends on the specific document class\&.
+Level is 1,2,3\&.\&.\&., as level 0 is the title\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.writers\&.latex2e\&.DocumentClass\&._with_part\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.DocumentClass\&.document_class"
+
+.SS "docutils\&.writers\&.latex2e\&.DocumentClass\&.sections"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

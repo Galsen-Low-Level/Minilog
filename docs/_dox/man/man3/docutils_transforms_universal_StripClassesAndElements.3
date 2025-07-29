@@ -1,0 +1,102 @@
+.TH "docutils.transforms.universal.StripClassesAndElements" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.transforms.universal.StripClassesAndElements
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.transforms\&.Transform\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBapply\fP (self)"
+.br
+.ti -1c
+.RI "\fBcheck_classes\fP (self, node)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdocument\fP, \fBstartnode\fP=None)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBstrip_elements\fP"
+.br
+.ti -1c
+.RI "\fBcheck_classes\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBstartnode\fP"
+.br
+.ti -1c
+.RI "\fBlanguage\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBdefault_priority\fP = 420"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_priority\fP = None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Remove from the document tree all elements with classes in
+`self\&.document\&.settings\&.strip_elements_with_classes` and all 'classes'
+attribute values in `self\&.document\&.settings\&.strip_classes`\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.transforms\&.universal\&.StripClassesAndElements\&.apply ( self)"
+
+.PP
+.nf
+Override to apply the transform to the document tree\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.transforms\&.Transform\fP\&.
+.SS "docutils\&.transforms\&.universal\&.StripClassesAndElements\&.check_classes ( self,  node)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.transforms\&.universal\&.StripClassesAndElements\&.check_classes"
+
+.SS "int docutils\&.transforms\&.universal\&.StripClassesAndElements\&.default_priority = 420\fC [static]\fP"
+
+.SS "docutils\&.transforms\&.universal\&.StripClassesAndElements\&.strip_elements"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

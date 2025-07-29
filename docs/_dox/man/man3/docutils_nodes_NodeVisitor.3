@@ -1,0 +1,152 @@
+.TH "docutils.nodes.NodeVisitor" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.nodes.NodeVisitor
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBdocutils\&.nodes\&.GenericNodeVisitor\fP, \fBdocutils\&.nodes\&.SparseNodeVisitor\fP, \fBdocutils\&.writers\&._html_base\&.HTMLTranslator\fP, \fBdocutils\&.writers\&.latex2e\&.LaTeXTranslator\fP, and \fBdocutils\&.writers\&.manpage\&.Translator\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdocument\fP)"
+.br
+.ti -1c
+.RI "\fBdispatch_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdispatch_departure\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBunknown_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBunknown_departure\fP (self, node)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBoptional\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBoptional\fP = ('\fBmeta\fP',)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A list of names of all concrete Node subclasses\&.
+.fi
+.PP
+.PP
+.PP
+.nf
+'Visitor' pattern [GoF95]_ abstract superclass implementation for
+document tree traversals\&.
+
+Each node class has corresponding methods, doing nothing by
+default; override individual methods for specific and useful
+behaviour\&.  The `dispatch_visit()` method is called by
+`Node\&.walk()` upon entering a node\&.  `Node\&.walkabout()` also calls
+the `dispatch_departure()` method before exiting a node\&.
+
+The dispatch methods call '``visit_`` + node class name' or
+'``depart_`` + node class name', resp\&.
+
+This is a base class for visitors whose ``visit_\&.\&.\&.`` & ``depart_\&.\&.\&.``
+methods must be implemented for *all* compulsory node types encountered
+(such as for `docutils\&.writers\&.Writer` subclasses)\&.
+Unimplemented methods will raise exceptions (except for optional nodes)\&.
+
+For sparse traversals, where only certain node types are of interest, use
+subclass `SparseNodeVisitor` instead\&.  When (mostly or entirely) uniform
+processing is desired, subclass `GenericNodeVisitor`\&.
+
+\&.\&. [GoF95] Gamma, Helm, Johnson, Vlissides\&. *Design Patterns: Elements of
+   Reusable Object-Oriented Software*\&. Addison-Wesley, Reading, MA, USA,
+   1995\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.nodes\&.NodeVisitor\&.__init__ ( self,  document)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.s5_html\&.S5HTMLTranslator\fP, \fBdocutils\&.nodes\&.TreeCopyVisitor\fP, \fBdocutils\&.writers\&._html_base\&.HTMLTranslator\fP, \fBdocutils\&.writers\&.docutils_xml\&.XMLTranslator\fP, \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP, \fBdocutils\&.writers\&.manpage\&.Translator\fP, \fBdocutils\&.writers\&.odf_odt\&.ODFTranslator\fP, \fBdocutils\&.writers\&.xetex\&.XeLaTeXTranslator\fP, \fBdocutils\&.writers\&.latex2e\&.LaTeXTranslator\fP, and \fBdocutils\&.transforms\&.references\&.DanglingReferencesVisitor\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.nodes\&.NodeVisitor\&.dispatch_departure ( self,  node)"
+
+.PP
+.nf
+Call self\&.'``depart_`` + node class name' with `node` as
+parameter\&.  If the ``depart_\&.\&.\&.`` method does not exist, call
+self\&.unknown_departure\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.nodes\&.NodeVisitor\&.dispatch_visit ( self,  node)"
+
+.PP
+.nf
+Call self\&.'``visit_`` + node class name' with `node` as
+parameter\&.  If the ``visit_\&.\&.\&.`` method does not exist, call
+self\&.unknown_visit\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBdocutils\&.writers\&.odf_odt\&.ODFTranslator\fP\&.
+.SS "docutils\&.nodes\&.NodeVisitor\&.unknown_departure ( self,  node)"
+
+.PP
+.nf
+Called before exiting unknown `Node` types\&.
+
+Raise exception unless overridden\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.nodes\&.NodeVisitor\&.unknown_visit ( self,  node)"
+
+.PP
+.nf
+Called when entering unknown `Node` types\&.
+
+Raise an exception unless overridden\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBdocutils\&.transforms\&.peps\&.PEPZeroSpecial\fP, and \fBdocutils\&.transforms\&.references\&.DanglingReferencesVisitor\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.nodes\&.NodeVisitor\&.document"
+
+.SS "tuple docutils\&.nodes\&.NodeVisitor\&.optional = ('\fBmeta\fP',)\fC [static]\fP"
+
+.SS "docutils\&.nodes\&.NodeVisitor\&.optional"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

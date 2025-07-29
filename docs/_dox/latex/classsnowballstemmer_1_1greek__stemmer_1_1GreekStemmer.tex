@@ -1,0 +1,1452 @@
+\doxysection{snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer Class Reference}
+\hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer}{}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer}\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+Inheritance diagram for snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a88e327f31901a239def1256fbe50387b}{current}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a66076384e6e25409a97fa5a6b4eb4bcd}{ket}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a21055cfc944170b441fc3caf80b04dcf}{bra}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a15fcb510304d4e347c4bc537287a30cf}{cursor}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_aaf6ba6bdb7b767dc4a4960c916d5023e}{B\+\_\+test1}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a2d159914fc1923523d8bba2a6e6f10f9}{limit\+\_\+backward}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer}{snowballstemmer.\+basestemmer.\+Base\+Stemmer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a4dd996864d5bc805e20f7ba5166114fd}{current}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a29de33eb9838ee5f3b71242fe3680384}{cursor}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a156c8d8aec4e620bc257e2151977d9a9}{limit}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a8afe4054297dada32956749f231cf5ba}{limit\+\_\+backward}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_aab37b4f60243c871c4117158c23db1ac}{bra}}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_abfcee0a5012ea9d57a7099f8cdbd95c4}{ket}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+dict \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a81431fdb69de6697b7ba145e32c58d19}{g\+\_\+v}} = \{u"{}α"{}, u"{}ε"{}, u"{}η"{}, u"{}ι"{}, u"{}ο"{}, u"{}υ"{}, u"{}ω"{}\}
+\item 
+dict \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a4d2f99de11da066c9e410581d227a493}{g\+\_\+v2}} = \{u"{}α"{}, u"{}ε"{}, u"{}η"{}, u"{}ι"{}, u"{}ο"{}, u"{}ω"{}\}
+\item 
+bool \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a50b71705efb3b6a73faefea32e2876eb}{B\+\_\+test1}} = False
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a3563dca93ab5b0225e10ecfa438b9876}{a\+\_\+0}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a2236a451177ef9fdf28b8a7d0c940ca1}{a\+\_\+1}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a9879a5130d1b5eda0296c73ed04ae670}{a\+\_\+2}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a329561f573a45a816b0379496f889949}{a\+\_\+3}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_aa2310ac97779ebd538ed8ec7bebb603f}{a\+\_\+4}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a6b21ec759dc1faead0a8bf37369c6f76}{a\+\_\+5}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a42b8173f9084cccc6260aad08d42ca0c}{a\+\_\+6}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a658b0be8265fcaf3504855ddbbe7d4fc}{a\+\_\+7}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a0326315bdf0f3e9a849cffe5c207f7d0}{a\+\_\+8}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_adc94d0e9b7c3339e0a7ce2e1f20d9b6c}{a\+\_\+9}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a74dacf599045191ac73f728d6924a4ed}{a\+\_\+10}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a3346fbe0be345b051ff6688b26ee1c0b}{a\+\_\+11}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a0201ef57a0040bcb544b5b14354c2c03}{a\+\_\+12}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a31d4a5e04da33006bd9100c42e3cbe6e}{a\+\_\+13}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_ab0ebb818eb57fe5e762a942026112f0a}{a\+\_\+14}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a6ead45458b4aae9830a5713dddf81ff5}{a\+\_\+15}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a5618d1dfc55ef145d13935f086f85723}{a\+\_\+16}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a42213463ec3075402ff38a3614299f8e}{a\+\_\+17}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a8b91db343dd50901cf71f21f999c29a5}{a\+\_\+18}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a488d8d594f23d0eb72083a5f4198cd7f}{a\+\_\+19}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a8262184ddf1a83dbf23fd245e76e408f}{a\+\_\+20}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a6e1bcd6cc30c5682e33f9975b1198f9e}{a\+\_\+21}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a9839b9e6c6829c3b33c550b0b8bc8e1c}{a\+\_\+22}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a03d4d0563152a112470a31bec91d5d8a}{a\+\_\+23}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_afa6b46508c3fbc642166cd67f01c0340}{a\+\_\+24}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a61857661e3f899740a803e76f60b2805}{a\+\_\+25}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a1ef2bf9503efba1e40c34eb9388e9598}{a\+\_\+26}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a26e4ad1c8f060edb28cb5d5a35bb1319}{a\+\_\+27}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a9e54ec33e7a2606867d8fe03355bc9e0}{a\+\_\+28}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_ad02fb29f4334b8a38e07ec7cb37424cf}{a\+\_\+29}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a618e5354c9fcbbb137d71a4746d70059}{a\+\_\+30}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a9fc36f63fea2ed03338a048b7252ad35}{a\+\_\+31}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a0e4984f78a59b06c1378046ee7621a8d}{a\+\_\+32}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a201fdd9ee8f301135d9f574f67bad65d}{a\+\_\+33}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a71a9f0558a624df57fece7230538e1d9}{a\+\_\+34}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_ae1efb8275ef691ccfc092525d045af4c}{a\+\_\+35}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a6516cb828197541a477b1bfdc9fb2a79}{a\+\_\+36}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a82b9fe188150b84cdeea960dab90c4cd}{a\+\_\+37}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a0f49fbd005a8241360faa05d791f077e}{a\+\_\+38}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a3a4885c41b5e151ee2732b0d0d76730c}{a\+\_\+39}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a7a5c6572dbec08ab780d3e9e82dfefd0}{a\+\_\+40}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a4abe5cfeff5a638c136a4a778b2ca1ed}{a\+\_\+41}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a1786c652c3333b1dd52d131eef8548cf}{a\+\_\+42}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a37ea8f9c533448683f0409ab2b9bb124}{a\+\_\+43}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a3f38b0f2f2a5c6b8cd7854d30aa81db0}{a\+\_\+44}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a1b563eb5713aaf677e886e9e92e1da54}{a\+\_\+45}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_aac5db9cd9d753adb3df7b6cee822dcaa}{a\+\_\+46}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_abde80b0744bad2aa786906aa0234cb1e}{a\+\_\+47}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a7f434ccfbc8d7601728d491b74b39002}{a\+\_\+48}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a303cd0754453eda3faf045868e25b816}{a\+\_\+49}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a0ed0d59d1b439803ddcd3aa74c229b41}{a\+\_\+50}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a2c43412fdf3fee77f58a772386eec9dc}{a\+\_\+51}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a11463341e9406b95333f2ed118362b05}{a\+\_\+52}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a9c8e274fcf5a8e8ad1e422bca99611e7}{a\+\_\+53}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a5187de6e50eade3e12cee4e08d4231fc}{a\+\_\+54}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a52742f11a57a268c3a648ca240baed34}{a\+\_\+55}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_aae76e00ba937b373372879ecffe533f9}{a\+\_\+56}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a111af72804d5a093a9131afc5388a2f4}{a\+\_\+57}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a6074c429a5112d6b2c5a94a4b2b07de4}{a\+\_\+58}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a40952d44da20137d2829768a68a7addd}{a\+\_\+59}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a59afe20cc655ee4258a0790a4ed3606c}{a\+\_\+60}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a0cac056aa10fbfdf94632928a333a08e}{a\+\_\+61}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a2919755e7c05a9625ac729a8605dd1cb}{a\+\_\+62}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a9e335bcb6c2d0c694739a6b8d681eee5}{a\+\_\+63}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a0009785c5f99d4380c89dde23416a249}{a\+\_\+64}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_aa6a30525936443e9f03ee846096a6194}{a\+\_\+65}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a33b0714f7885c5eb0e1c6d1789d0ac92}{a\+\_\+66}}
+\item 
+list \mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a56457ea688474a031d633c63d5726c76}{a\+\_\+67}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_ad6051c59c9fc193326deb942dd573f20}{\+\_\+stem}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer}{snowballstemmer.\+basestemmer.\+Base\+Stemmer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a946aadb1b65cc09cb7be0f3e5b2578ba}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_af2b4b12103cfbad140bf4ba04ca5bab4}{set\+\_\+current}} (self, value)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_aa1c57b767cc7f6323430f086f57d330d}{get\+\_\+current}} (self)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a64b0362bcb14704b1fed13ecea03422c}{copy\+\_\+from}} (self, other)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_adba1e64dd68dc014b860a8c39a95e528}{in\+\_\+grouping}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a71dad02f76e631e4e7ed8e24c0daf692}{go\+\_\+in\+\_\+grouping}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a56d434f3840ffa4ea8190e00aade598a}{in\+\_\+grouping\+\_\+b}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a429d15e2be31c20cc6e18c0e138bb592}{go\+\_\+in\+\_\+grouping\+\_\+b}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_aa67344aa3bb2e366a322889839e1c87c}{out\+\_\+grouping}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a66b164efb1a9678372b0b47a470a0a1f}{go\+\_\+out\+\_\+grouping}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a4a40031078593bcfc7a6090bef2571ba}{out\+\_\+grouping\+\_\+b}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a16410205c519d6ff1d14a6c448632a4d}{go\+\_\+out\+\_\+grouping\+\_\+b}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_ac7fbae2d63612fb0fb8cf05dd715adfd}{eq\+\_\+s}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_ac9836ac8040a8ac7c1ac0e525bf5692e}{eq\+\_\+s\+\_\+b}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a75baf55663459dffb8031fedfe47339d}{find\+\_\+among}} (self, v)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a2e78e825421c01b6a472151453f9af2c}{find\+\_\+among\+\_\+b}} (self, v)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a99547582c5e3614ceeb6cea4a1d5d2c3}{replace\+\_\+s}} (self, c\+\_\+bra, c\+\_\+ket, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_ad04ae9586fd7dafbc6ed1a316acc3d58}{slice\+\_\+check}} (self)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a9707720d9832fcb5736c5df0adc62d4f}{slice\+\_\+from}} (self, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a76f589f10815ba777fb1f95eb1e124d8}{slice\+\_\+del}} (self)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a7915fb6f3f835aa48b3f666ea9e3aab9}{insert}} (self, c\+\_\+bra, c\+\_\+ket, s)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a292676eda1d346649a6d9f25d32b134d}{slice\+\_\+to}} (self)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a358eed487416c5b680cfc36748f1ab15}{assign\+\_\+to}} (self)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a11aca0892bbe67c2f48a6d59e61463eb}{stem\+Word}} (self, word)
+\item 
+\mbox{\hyperlink{classsnowballstemmer_1_1basestemmer_1_1BaseStemmer_a0641066c1cb26043923e7f9e966e5cfa}{stem\+Words}} (self, words)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}This class implements the stemming algorithm defined by a snowball script.
+Generated from greek.sbl by Snowball 3.0.1 - https://snowballstem.org/
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_ad6051c59c9fc193326deb942dd573f20}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_ad6051c59c9fc193326deb942dd573f20} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!\_stem@{\_stem}}
+\index{\_stem@{\_stem}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{\_stem()}{\_stem()}}
+{\footnotesize\ttfamily snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+\_\+stem (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a3563dca93ab5b0225e10ecfa438b9876}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a3563dca93ab5b0225e10ecfa438b9876} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_0@{a\_0}}
+\index{a\_0@{a\_0}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_0}{a\_0}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a2236a451177ef9fdf28b8a7d0c940ca1}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a2236a451177ef9fdf28b8a7d0c940ca1} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_1@{a\_1}}
+\index{a\_1@{a\_1}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_1}{a\_1}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+1\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a74dacf599045191ac73f728d6924a4ed}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a74dacf599045191ac73f728d6924a4ed} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_10@{a\_10}}
+\index{a\_10@{a\_10}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_10}{a\_10}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+10\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a3346fbe0be345b051ff6688b26ee1c0b}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a3346fbe0be345b051ff6688b26ee1c0b} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_11@{a\_11}}
+\index{a\_11@{a\_11}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_11}{a\_11}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+11\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιστα"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιστε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιστη"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιστοι"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιστων"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιστο"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιστεσ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιστησ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιστοσ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιστουσ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιστου"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a0201ef57a0040bcb544b5b14354c2c03}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a0201ef57a0040bcb544b5b14354c2c03} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_12@{a\_12}}
+\index{a\_12@{a\_12}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_12}{a\_12}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+12\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}εγκλε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αποκλε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}δανε"{}},\ -\/1,\ 2),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αντιδανε"{}},\ 2,\ 2),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}σε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}μετασε"{}},\ 4,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}μικροσε"{}},\ 4,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a31d4a5e04da33006bd9100c42e3cbe6e}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a31d4a5e04da33006bd9100c42e3cbe6e} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_13@{a\_13}}
+\index{a\_13@{a\_13}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_13}{a\_13}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+13\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ατομικ"{}},\ -\/1,\ 2),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}εθνικ"{}},\ -\/1,\ 4),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}τοπικ"{}},\ -\/1,\ 7),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}εκλεκτικ"{}},\ -\/1,\ 5),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}σκεπτικ"{}},\ -\/1,\ 6),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}γνωστικ"{}},\ -\/1,\ 3),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αγνωστικ"{}},\ 5,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αλεξανδριν"{}},\ -\/1,\ 8),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}θεατριν"{}},\ -\/1,\ 10),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}βυζαντιν"{}},\ -\/1,\ 9)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_ab0ebb818eb57fe5e762a942026112f0a}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_ab0ebb818eb57fe5e762a942026112f0a} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_14@{a\_14}}
+\index{a\_14@{a\_14}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_14}{a\_14}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+14\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισμοι"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισμων"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισμο"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισμοσ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισμουσ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισμου"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a6ead45458b4aae9830a5713dddf81ff5}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a6ead45458b4aae9830a5713dddf81ff5} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_15@{a\_15}}
+\index{a\_15@{a\_15}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_15}{a\_15}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+15\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}σ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}χ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a5618d1dfc55ef145d13935f086f85723}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a5618d1dfc55ef145d13935f086f85723} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_16@{a\_16}}
+\index{a\_16@{a\_16}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_16}{a\_16}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+16\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ουδακια"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αρακια"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ουδακι"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αρακι"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a42213463ec3075402ff38a3614299f8e}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a42213463ec3075402ff38a3614299f8e} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_17@{a\_17}}
+\index{a\_17@{a\_17}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_17}{a\_17}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+17\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a8b91db343dd50901cf71f21f999c29a5}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a8b91db343dd50901cf71f21f999c29a5} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_18@{a\_18}}
+\index{a\_18@{a\_18}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_18}{a\_18}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+18\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ακια"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αρακια"{}},\ 0,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιτσα"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ακι"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αρακι"{}},\ 3,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιτσων"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιτσασ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιτσεσ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a488d8d594f23d0eb72083a5f4198cd7f}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a488d8d594f23d0eb72083a5f4198cd7f} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_19@{a\_19}}
+\index{a\_19@{a\_19}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_19}{a\_19}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+19\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ψαλ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αιφν"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ολο"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιρ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a9879a5130d1b5eda0296c73ed04ae670}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a9879a5130d1b5eda0296c73ed04ae670} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_2@{a\_2}}
+\index{a\_2@{a\_2}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_2}{a\_2}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+2\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a8262184ddf1a83dbf23fd245e76e408f}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a8262184ddf1a83dbf23fd245e76e408f} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_20@{a\_20}}
+\index{a\_20@{a\_20}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_20}{a\_20}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+20\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}παιχν"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a6e1bcd6cc30c5682e33f9975b1198f9e}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a6e1bcd6cc30c5682e33f9975b1198f9e} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_21@{a\_21}}
+\index{a\_21@{a\_21}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_21}{a\_21}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+21\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιδια"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιδιων"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιδιο"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a9839b9e6c6829c3b33c550b0b8bc8e1c}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a9839b9e6c6829c3b33c550b0b8bc8e1c} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_22@{a\_22}}
+\index{a\_22@{a\_22}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_22}{a\_22}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+22\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιβ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}δ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}φραγκ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}λυκ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}οβελ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}μην"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ρ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a03d4d0563152a112470a31bec91d5d8a}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a03d4d0563152a112470a31bec91d5d8a} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_23@{a\_23}}
+\index{a\_23@{a\_23}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_23}{a\_23}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+23\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισκε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισκο"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισκοσ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισκου"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_afa6b46508c3fbc642166cd67f01c0340}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_afa6b46508c3fbc642166cd67f01c0340} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_24@{a\_24}}
+\index{a\_24@{a\_24}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_24}{a\_24}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+24\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αδων"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αδεσ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a61857661e3f899740a803e76f60b2805}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a61857661e3f899740a803e76f60b2805} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_25@{a\_25}}
+\index{a\_25@{a\_25}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_25}{a\_25}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+25\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}γιαγι"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}θει"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}οκ"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}μαμ"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}μαν"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}μπαμπ"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}πεθερ"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}πατερ"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}κυρ"{}},\ -\/1,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}νταντ"{}},\ -\/1,\ -\/1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a1ef2bf9503efba1e40c34eb9388e9598}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a1ef2bf9503efba1e40c34eb9388e9598} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_26@{a\_26}}
+\index{a\_26@{a\_26}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_26}{a\_26}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+26\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}εδων"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}εδεσ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a26e4ad1c8f060edb28cb5d5a35bb1319}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a26e4ad1c8f060edb28cb5d5a35bb1319} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_27@{a\_27}}
+\index{a\_27@{a\_27}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_27}{a\_27}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+27\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}μιλ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}δαπ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}γηπ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιπ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}εμπ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}οπ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}κρασπ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}υπ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a9e54ec33e7a2606867d8fe03355bc9e0}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a9e54ec33e7a2606867d8fe03355bc9e0} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_28@{a\_28}}
+\index{a\_28@{a\_28}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_28}{a\_28}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+28\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ουδων"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ουδεσ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_ad02fb29f4334b8a38e07ec7cb37424cf}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_ad02fb29f4334b8a38e07ec7cb37424cf} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_29@{a\_29}}
+\index{a\_29@{a\_29}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_29}{a\_29}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+29\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}τραγ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}φε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}καλιακ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αρκ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}σκ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}πεταλ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}βελ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}λουλ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}φλ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}χν"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}πλεξ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}σπ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}φρ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}σ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}λιχ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a329561f573a45a816b0379496f889949}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a329561f573a45a816b0379496f889949} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_3@{a\_3}}
+\index{a\_3@{a\_3}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_3}{a\_3}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+3\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιζα"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιζε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιζαμε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιζουμε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιζανε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιζουνε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιζατε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιζετε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιζει"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιζαν"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιζουν"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιζεσ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιζεισ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιζω"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a618e5354c9fcbbb137d71a4746d70059}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a618e5354c9fcbbb137d71a4746d70059} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_30@{a\_30}}
+\index{a\_30@{a\_30}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_30}{a\_30}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+30\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}εων"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}εωσ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a9fc36f63fea2ed03338a048b7252ad35}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a9fc36f63fea2ed03338a048b7252ad35} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_31@{a\_31}}
+\index{a\_31@{a\_31}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_31}{a\_31}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+31\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}δ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιδ"{}},\ 0,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}θ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}γαλ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ελ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ν"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}π"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}παρ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a0e4984f78a59b06c1378046ee7621a8d}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a0e4984f78a59b06c1378046ee7621a8d} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_32@{a\_32}}
+\index{a\_32@{a\_32}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_32}{a\_32}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+32\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ια"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιων"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιου"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a201fdd9ee8f301135d9f574f67bad65d}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a201fdd9ee8f301135d9f574f67bad65d} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_33@{a\_33}}
+\index{a\_33@{a\_33}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_33}{a\_33}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+33\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ικα"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ικων"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ικο"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ικου"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a71a9f0558a624df57fece7230538e1d9}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a71a9f0558a624df57fece7230538e1d9} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_34@{a\_34}}
+\index{a\_34@{a\_34}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_34}{a\_34}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+34\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_ae1efb8275ef691ccfc092525d045af4c}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_ae1efb8275ef691ccfc092525d045af4c} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_35@{a\_35}}
+\index{a\_35@{a\_35}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_35}{a\_35}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+35\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αγαμε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ηκαμε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ηθηκαμε"{}},\ 1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ησαμε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ουσαμε"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a6516cb828197541a477b1bfdc9fb2a79}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a6516cb828197541a477b1bfdc9fb2a79} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_36@{a\_36}}
+\index{a\_36@{a\_36}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_36}{a\_36}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+36\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}βουβ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ξεθ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}πεθ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αποθ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αποκ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ουλ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αναπ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}πικρ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ποτ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αποστ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}χ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}σιχ"{}},\ 10,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a82b9fe188150b84cdeea960dab90c4cd}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a82b9fe188150b84cdeea960dab90c4cd} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_37@{a\_37}}
+\index{a\_37@{a\_37}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_37}{a\_37}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+37\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}τρ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}τσ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a0f49fbd005a8241360faa05d791f077e}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a0f49fbd005a8241360faa05d791f077e} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_38@{a\_38}}
+\index{a\_38@{a\_38}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_38}{a\_38}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+38\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αγανε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ηκανε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ηθηκανε"{}},\ 1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ησανε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ουσανε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}οντανε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιοντανε"{}},\ 5,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ουντανε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιουντανε"{}},\ 7,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}οτανε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιοτανε"{}},\ 9,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a3a4885c41b5e151ee2732b0d0d76730c}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a3a4885c41b5e151ee2732b0d0d76730c} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_39@{a\_39}}
+\index{a\_39@{a\_39}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_39}{a\_39}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+39\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_aa2310ac97779ebd538ed8ec7bebb603f}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_aa2310ac97779ebd538ed8ec7bebb603f} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_4@{a\_4}}
+\index{a\_4@{a\_4}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_4}{a\_4}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+4\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}βι"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}λι"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αλ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}εν"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}σ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}χ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}υψ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ζω"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a7a5c6572dbec08ab780d3e9e82dfefd0}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a7a5c6572dbec08ab780d3e9e82dfefd0} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_40@{a\_40}}
+\index{a\_40@{a\_40}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_40}{a\_40}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+40\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ησετε"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a4abe5cfeff5a638c136a4a778b2ca1ed}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a4abe5cfeff5a638c136a4a778b2ca1ed} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_41@{a\_41}}
+\index{a\_41@{a\_41}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_41}{a\_41}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+41\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a1786c652c3333b1dd52d131eef8548cf}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a1786c652c3333b1dd52d131eef8548cf} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_42@{a\_42}}
+\index{a\_42@{a\_42}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_42}{a\_42}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+42\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}παγ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}δ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αδ"{}},\ 1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}θ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αθ"{}},\ 3,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}τοκ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}σκ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}παρακαλ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}σκελ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}απλ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}εμ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αν"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}βεν"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}βαρον"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}κοπ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}σερπ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αβαρ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}εναρ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αβρ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}μπορ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}θαρρ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ντρ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}υ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}νιφ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}συρφ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a37ea8f9c533448683f0409ab2b9bb124}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a37ea8f9c533448683f0409ab2b9bb124} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_43@{a\_43}}
+\index{a\_43@{a\_43}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_43}{a\_43}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+43\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}οντασ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ωντασ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a3f38b0f2f2a5c6b8cd7854d30aa81db0}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a3f38b0f2f2a5c6b8cd7854d30aa81db0} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_44@{a\_44}}
+\index{a\_44@{a\_44}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_44}{a\_44}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+44\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ομαστε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ιομαστε"{}},\ 0,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a1b563eb5713aaf677e886e9e92e1da54}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a1b563eb5713aaf677e886e9e92e1da54} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_45@{a\_45}}
+\index{a\_45@{a\_45}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_45}{a\_45}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+45\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}π"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}απ"{}},\ 0,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ακαταπ"{}},\ 1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}συμπ"{}},\ 0,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ασυμπ"{}},\ 3,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αμεταμφ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_aac5db9cd9d753adb3df7b6cee822dcaa}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_aac5db9cd9d753adb3df7b6cee822dcaa} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_46@{a\_46}}
+\index{a\_46@{a\_46}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_46}{a\_46}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+46\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ζ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αλ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}παρακαλ"{}},\ 1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}εκτελ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}μ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ξ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}προ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αρ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}νισ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_abde80b0744bad2aa786906aa0234cb1e}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_abde80b0744bad2aa786906aa0234cb1e} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_47@{a\_47}}
+\index{a\_47@{a\_47}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_47}{a\_47}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+47\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ηθηκα"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ηθηκε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ηθηκεσ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a7f434ccfbc8d7601728d491b74b39002}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a7f434ccfbc8d7601728d491b74b39002} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_48@{a\_48}}
+\index{a\_48@{a\_48}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_48}{a\_48}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+48\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}πιθ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}οθ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ναρθ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}σκουλ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}σκωλ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}σφ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a303cd0754453eda3faf045868e25b816}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a303cd0754453eda3faf045868e25b816} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_49@{a\_49}}
+\index{a\_49@{a\_49}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_49}{a\_49}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+49\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}θ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}διαθ"{}},\ 0,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}παρακαταθ"{}},\ 0,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}συνθ"{}},\ 0,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}προσθ"{}},\ 0,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a6b21ec759dc1faead0a8bf37369c6f76}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a6b21ec759dc1faead0a8bf37369c6f76} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_5@{a\_5}}
+\index{a\_5@{a\_5}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_5}{a\_5}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+5\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ωθηκα"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ωθηκε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ωθηκαμε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ωθηκανε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ωθηκατε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ωθηκαν"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ωθηκεσ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a0ed0d59d1b439803ddcd3aa74c229b41}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a0ed0d59d1b439803ddcd3aa74c229b41} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_50@{a\_50}}
+\index{a\_50@{a\_50}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_50}{a\_50}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+50\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ηκα"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ηκε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ηκεσ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a2c43412fdf3fee77f58a772386eec9dc}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a2c43412fdf3fee77f58a772386eec9dc} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_51@{a\_51}}
+\index{a\_51@{a\_51}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_51}{a\_51}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+51\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}φαγ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ληγ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}φρυδ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}μαντιλ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}μαλλ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ομ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}βλεπ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ποδαρ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}κυματ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}πρωτ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}λαχ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}πανταχ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a11463341e9406b95333f2ed118362b05}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a11463341e9406b95333f2ed118362b05} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_52@{a\_52}}
+\index{a\_52@{a\_52}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_52}{a\_52}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+52\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}τσα"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}χαδ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}μεδ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}λαμπιδ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}δε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}πλε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}μεσαζ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}δεσποζ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αιθ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}φαρμακ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αγκ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ανηκ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}λ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}μ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αμ"{}},\ 13,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}βρομ"{}},\ 13,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}υποτειν"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}εκλιπ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ρ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ενδιαφερ"{}},\ 18,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αναρρ"{}},\ 18,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}πατ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}καθαρευ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}δευτερευ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}λεχ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a9c8e274fcf5a8e8ad1e422bca99611e7}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a9c8e274fcf5a8e8ad1e422bca99611e7} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_53@{a\_53}}
+\index{a\_53@{a\_53}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_53}{a\_53}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+53\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ουσα"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ουσε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ουσεσ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a5187de6e50eade3e12cee4e08d4231fc}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a5187de6e50eade3e12cee4e08d4231fc} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_54@{a\_54}}
+\index{a\_54@{a\_54}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_54}{a\_54}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+54\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}πελ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}λλ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}σμην"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ρπ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}πρ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}φρ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}χορτ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}οφ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ψοφ"{}},\ 7,\ -\/1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}σφ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}λοχ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ναυλοχ"{}},\ 10,\ -\/1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a52742f11a57a268c3a648ca240baed34}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a52742f11a57a268c3a648ca240baed34} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_55@{a\_55}}
+\index{a\_55@{a\_55}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_55}{a\_55}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+55\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_aae76e00ba937b373372879ecffe533f9}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_aae76e00ba937b373372879ecffe533f9} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_56@{a\_56}}
+\index{a\_56@{a\_56}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_56}{a\_56}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+56\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αγα"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αγε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αγεσ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a111af72804d5a093a9131afc5388a2f4}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a111af72804d5a093a9131afc5388a2f4} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_57@{a\_57}}
+\index{a\_57@{a\_57}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_57}{a\_57}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+57\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ησα"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ησε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ησου"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a6074c429a5112d6b2c5a94a4b2b07de4}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a6074c429a5112d6b2c5a94a4b2b07de4} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_58@{a\_58}}
+\index{a\_58@{a\_58}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_58}{a\_58}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+58\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ν"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}δωδεκαν"{}},\ 0,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}επταν"{}},\ 0,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}μεγαλον"{}},\ 0,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ερημον"{}},\ 0,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}χερσον"{}},\ 0,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a40952d44da20137d2829768a68a7addd}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a40952d44da20137d2829768a68a7addd} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_59@{a\_59}}
+\index{a\_59@{a\_59}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_59}{a\_59}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+59\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ηστε"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a42b8173f9084cccc6260aad08d42ca0c}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a42b8173f9084cccc6260aad08d42ca0c} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_6@{a\_6}}
+\index{a\_6@{a\_6}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_6}{a\_6}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+6\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a59afe20cc655ee4258a0790a4ed3606c}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a59afe20cc655ee4258a0790a4ed3606c} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_60@{a\_60}}
+\index{a\_60@{a\_60}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_60}{a\_60}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+60\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}σβ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ασβ"{}},\ 0,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}απλ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αειμν"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}χρ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αχρ"{}},\ 4,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}κοινοχρ"{}},\ 4,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}δυσχρ"{}},\ 4,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ευχρ"{}},\ 4,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}παλιμψ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a0cac056aa10fbfdf94632928a333a08e}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a0cac056aa10fbfdf94632928a333a08e} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_61@{a\_61}}
+\index{a\_61@{a\_61}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_61}{a\_61}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+61\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ουνε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ηθουνε"{}},\ 0,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ησουνε"{}},\ 0,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a2919755e7c05a9625ac729a8605dd1cb}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a2919755e7c05a9625ac729a8605dd1cb} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_62@{a\_62}}
+\index{a\_62@{a\_62}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_62}{a\_62}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+62\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}σπι"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ν"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}εξων"{}},\ 1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ρ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}στραβομουτσ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}κακομουτσ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a9e335bcb6c2d0c694739a6b8d681eee5}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a9e335bcb6c2d0c694739a6b8d681eee5} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_63@{a\_63}}
+\index{a\_63@{a\_63}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_63}{a\_63}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+63\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ουμε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ηθουμε"{}},\ 0,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ησουμε"{}},\ 0,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a0009785c5f99d4380c89dde23416a249}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a0009785c5f99d4380c89dde23416a249} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_64@{a\_64}}
+\index{a\_64@{a\_64}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_64}{a\_64}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+64\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αζ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ωριοπλ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ασουσ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}παρασουσ"{}},\ 2,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αλλοσουσ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}φ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}χ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_aa6a30525936443e9f03ee846096a6194}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_aa6a30525936443e9f03ee846096a6194} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_65@{a\_65}}
+\index{a\_65@{a\_65}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_65}{a\_65}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+65\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ματα"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ματων"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ματοσ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a33b0714f7885c5eb0e1c6d1789d0ac92}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a33b0714f7885c5eb0e1c6d1789d0ac92} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_66@{a\_66}}
+\index{a\_66@{a\_66}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_66}{a\_66}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+66\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a56457ea688474a031d633c63d5726c76}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a56457ea688474a031d633c63d5726c76} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_67@{a\_67}}
+\index{a\_67@{a\_67}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_67}{a\_67}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+67\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}οτερ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}εστερ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}υτερ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ωτερ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}οτατ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}εστατ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}υτατ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ωτατ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a658b0be8265fcaf3504855ddbbe7d4fc}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a658b0be8265fcaf3504855ddbbe7d4fc} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_7@{a\_7}}
+\index{a\_7@{a\_7}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_7}{a\_7}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+7\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισα"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισαμε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισανε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισατε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισαν"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισεσ"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a0326315bdf0f3e9a849cffe5c207f7d0}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a0326315bdf0f3e9a849cffe5c207f7d0} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_8@{a\_8}}
+\index{a\_8@{a\_8}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_8}{a\_8}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+8\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ξαναπα"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}επα"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}περιπα"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αναμπα"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}εμπα"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}χαρτοπα"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}εξαρχα"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}κλε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}εκλε"{}},\ 7,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}απεκλε"{}},\ 8,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αποκλε"{}},\ 7,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}εσωκλε"{}},\ 7,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}δανε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}πε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}επε"{}},\ 13,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}μετεπε"{}},\ 14,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}εσε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}αθρο"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}συναθρο"{}},\ 17,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_adc94d0e9b7c3339e0a7ce2e1f20d9b6c}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_adc94d0e9b7c3339e0a7ce2e1f20d9b6c} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!a\_9@{a\_9}}
+\index{a\_9@{a\_9}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{a\_9}{a\_9}}
+{\footnotesize\ttfamily list snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+a\+\_\+9\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισουμε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισουνε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισετε"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισει"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισουν"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισεισ"{}},\ -\/1,\ 1),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Among(\textcolor{stringliteral}{u"{}ισω"{}},\ -\/1,\ 1)}
+\DoxyCodeLine{\ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a50b71705efb3b6a73faefea32e2876eb}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a50b71705efb3b6a73faefea32e2876eb} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!B\_test1@{B\_test1}}
+\index{B\_test1@{B\_test1}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{B\_test1}{B\_test1}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+B\+\_\+test1 = False\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_aaf6ba6bdb7b767dc4a4960c916d5023e}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_aaf6ba6bdb7b767dc4a4960c916d5023e} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!B\_test1@{B\_test1}}
+\index{B\_test1@{B\_test1}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{B\_test1}{B\_test1}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+B\+\_\+test1}
+
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a21055cfc944170b441fc3caf80b04dcf}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a21055cfc944170b441fc3caf80b04dcf} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!bra@{bra}}
+\index{bra@{bra}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{bra}{bra}}
+{\footnotesize\ttfamily snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+bra}
+
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a88e327f31901a239def1256fbe50387b}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a88e327f31901a239def1256fbe50387b} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!current@{current}}
+\index{current@{current}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{current}{current}}
+{\footnotesize\ttfamily snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+current}
+
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a15fcb510304d4e347c4bc537287a30cf}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a15fcb510304d4e347c4bc537287a30cf} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!cursor@{cursor}}
+\index{cursor@{cursor}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{cursor}{cursor}}
+{\footnotesize\ttfamily snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+cursor}
+
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a81431fdb69de6697b7ba145e32c58d19}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a81431fdb69de6697b7ba145e32c58d19} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!g\_v@{g\_v}}
+\index{g\_v@{g\_v}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{g\_v}{g\_v}}
+{\footnotesize\ttfamily dict snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+g\+\_\+v = \{u"{}α"{}, u"{}ε"{}, u"{}η"{}, u"{}ι"{}, u"{}ο"{}, u"{}υ"{}, u"{}ω"{}\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a4d2f99de11da066c9e410581d227a493}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a4d2f99de11da066c9e410581d227a493} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!g\_v2@{g\_v2}}
+\index{g\_v2@{g\_v2}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{g\_v2}{g\_v2}}
+{\footnotesize\ttfamily dict snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+g\+\_\+v2 = \{u"{}α"{}, u"{}ε"{}, u"{}η"{}, u"{}ι"{}, u"{}ο"{}, u"{}ω"{}\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a66076384e6e25409a97fa5a6b4eb4bcd}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a66076384e6e25409a97fa5a6b4eb4bcd} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!ket@{ket}}
+\index{ket@{ket}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{ket}{ket}}
+{\footnotesize\ttfamily snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+ket}
+
+\Hypertarget{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a2d159914fc1923523d8bba2a6e6f10f9}\label{classsnowballstemmer_1_1greek__stemmer_1_1GreekStemmer_a2d159914fc1923523d8bba2a6e6f10f9} 
+\index{snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}!limit\_backward@{limit\_backward}}
+\index{limit\_backward@{limit\_backward}!snowballstemmer.greek\_stemmer.GreekStemmer@{snowballstemmer.greek\_stemmer.GreekStemmer}}
+\doxysubsubsection{\texorpdfstring{limit\_backward}{limit\_backward}}
+{\footnotesize\ttfamily snowballstemmer.\+greek\+\_\+stemmer.\+Greek\+Stemmer.\+limit\+\_\+backward}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/snowballstemmer/\mbox{\hyperlink{greek__stemmer_8py}{greek\+\_\+stemmer.\+py}}\end{DoxyCompactItemize}

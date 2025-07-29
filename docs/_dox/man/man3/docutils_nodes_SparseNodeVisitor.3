@@ -1,0 +1,67 @@
+.TH "docutils.nodes.SparseNodeVisitor" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.nodes.SparseNodeVisitor
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.nodes\&.NodeVisitor\fP\&.
+.PP
+Inherited by \fBdocutils\&.transforms\&.peps\&.PEPZeroSpecial\fP, and \fBdocutils\&.transforms\&.references\&.DanglingReferencesVisitor\fP\&.
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdocument\fP)"
+.br
+.ti -1c
+.RI "\fBdispatch_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdispatch_departure\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBunknown_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBunknown_departure\fP (self, node)"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBoptional\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBoptional\fP = ('\fBmeta\fP',)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Base class for sparse traversals, where only certain node types are of
+interest\&.  When ``visit_\&.\&.\&.`` & ``depart_\&.\&.\&.`` methods should be
+implemented for *all* node types (such as for `docutils\&.writers\&.Writer`
+subclasses), subclass `NodeVisitor` instead\&.
+
+.fi
+.PP
+ 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

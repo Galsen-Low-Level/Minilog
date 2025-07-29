@@ -1,0 +1,332 @@
+.TH "urllib3.contrib.socks.SOCKSHTTPSConnection" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+urllib3.contrib.socks.SOCKSHTTPSConnection
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBurllib3\&.contrib\&.socks\&.SOCKSConnection\fP, and \fBurllib3\&.connection\&.HTTPSConnection\fP\&.
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBurllib3\&.contrib\&.socks\&.SOCKSConnection\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, \fB_TYPE_SOCKS_OPTIONS\fP \fB_socks_options\fP, *typing\&.Any args, **typing\&.Any kwargs)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBurllib3\&.connection\&.HTTPConnection\fP
+.in +1c
+.ti -1c
+.RI "str \fBhost\fP (self)"
+.br
+.ti -1c
+.RI "None \fBhost\fP (self, str value)"
+.br
+.ti -1c
+.RI "None \fBset_tunnel\fP (self, str \fBhost\fP, int|None \fBport\fP=None, typing\&.Mapping[str, str]|None headers=None, str scheme='http')"
+.br
+.ti -1c
+.RI "bool \fBis_closed\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBis_connected\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBhas_connected_to_proxy\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBproxy_is_forwarding\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBproxy_is_tunneling\fP (self)"
+.br
+.ti -1c
+.RI "None \fBclose\fP (self)"
+.br
+.ti -1c
+.RI "None \fBputrequest\fP (self, str method, str url, bool skip_host=False, bool skip_accept_encoding=False)"
+.br
+.ti -1c
+.RI "None \fBputheader\fP (self, str header, *str values)"
+.br
+.ti -1c
+.RI "None \fBrequest\fP (self, str method, str url, _TYPE_BODY|None body=None, typing\&.Mapping[str, str]|None headers=None, *bool chunked=False, bool preload_content=True, bool decode_content=True, bool enforce_content_length=True)"
+.br
+.ti -1c
+.RI "None \fBrequest_chunked\fP (self, str method, str url, _TYPE_BODY|None body=None, typing\&.Mapping[str, str]|None headers=None)"
+.br
+.ti -1c
+.RI "\fBHTTPResponse\fP \fBgetresponse\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBurllib3\&.connection\&.HTTPSConnection\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str \fBhost\fP, int|None \fBport\fP=None, *_TYPE_TIMEOUT \fBtimeout\fP=_DEFAULT_TIMEOUT, tuple[str, int]|None \fBsource_address\fP=None, int \fBblocksize\fP=16384, None|(connection\&._TYPE_SOCKET_OPTIONS) \fBsocket_options\fP=\fBHTTPConnection\&.default_socket_options\fP, \fBUrl\fP|None \fBproxy\fP=None, \fBProxyConfig\fP|None \fBproxy_config\fP=None, int|str|None \fBcert_reqs\fP=None, None|str|typing\&.Literal[False] \fBassert_hostname\fP=None, str|None \fBassert_fingerprint\fP=None, str|None \fBserver_hostname\fP=None, ssl\&.SSLContext|None \fBssl_context\fP=None, str|None \fBca_certs\fP=None, str|None \fBca_cert_dir\fP=None, None|str|bytes \fBca_cert_data\fP=None, int|None \fBssl_minimum_version\fP=None, int|None \fBssl_maximum_version\fP=None, int|str|None \fBssl_version\fP=None, str|None \fBcert_file\fP=None, str|None \fBkey_file\fP=None, str|None \fBkey_password\fP=None)"
+.br
+.ti -1c
+.RI "None \fBset_cert\fP (self, str|None \fBkey_file\fP=None, str|None \fBcert_file\fP=None, int|str|None \fBcert_reqs\fP=None, str|None \fBkey_password\fP=None, str|None \fBca_certs\fP=None, None|str|typing\&.Literal[False] \fBassert_hostname\fP=None, str|None \fBassert_fingerprint\fP=None, str|None \fBca_cert_dir\fP=None, None|str|bytes \fBca_cert_data\fP=None)"
+.br
+.ti -1c
+.RI "None \fBconnect\fP (self)"
+.br
+.in -1c
+
+Public Attributes inherited from \fBurllib3\&.contrib\&.socks\&.SOCKSConnection\fP
+.in +1c
+.ti -1c
+.RI "\fBhost\fP"
+.br
+.ti -1c
+.RI "\fBport\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBurllib3\&.connection\&.HTTPConnection\fP
+.in +1c
+.ti -1c
+.RI "\fBsocket_options\fP"
+.br
+.ti -1c
+.RI "\fBproxy\fP"
+.br
+.ti -1c
+.RI "\fBproxy_config\fP"
+.br
+.ti -1c
+.RI "\fBport\fP"
+.br
+.ti -1c
+.RI "\fBtimeout\fP"
+.br
+.ti -1c
+.RI "\fBhost\fP"
+.br
+.ti -1c
+.RI "\fBsock\fP"
+.br
+.ti -1c
+.RI "\fBproxy_is_verified\fP"
+.br
+.ti -1c
+.RI "\fBis_verified\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBurllib3\&.connection\&.HTTPSConnection\fP
+.in +1c
+.ti -1c
+.RI "\fBkey_file\fP"
+.br
+.ti -1c
+.RI "\fBcert_file\fP"
+.br
+.ti -1c
+.RI "\fBkey_password\fP"
+.br
+.ti -1c
+.RI "\fBssl_context\fP"
+.br
+.ti -1c
+.RI "\fBserver_hostname\fP"
+.br
+.ti -1c
+.RI "\fBassert_hostname\fP"
+.br
+.ti -1c
+.RI "\fBassert_fingerprint\fP"
+.br
+.ti -1c
+.RI "\fBssl_version\fP"
+.br
+.ti -1c
+.RI "\fBssl_minimum_version\fP"
+.br
+.ti -1c
+.RI "\fBssl_maximum_version\fP"
+.br
+.ti -1c
+.RI "\fBca_certs\fP"
+.br
+.ti -1c
+.RI "\fBca_cert_dir\fP"
+.br
+.ti -1c
+.RI "\fBca_cert_data\fP"
+.br
+.ti -1c
+.RI "\fBcert_reqs\fP"
+.br
+.ti -1c
+.RI "\fBsock\fP"
+.br
+.ti -1c
+.RI "\fBproxy_is_verified\fP"
+.br
+.ti -1c
+.RI "\fBis_verified\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBurllib3\&.connection\&.HTTPConnection\fP
+.in +1c
+.ti -1c
+.RI "typing \fBdefault_port\fP = \fBport_by_scheme\fP['http']"
+.br
+.ti -1c
+.RI "list \fBdefault_socket_options\fP"
+.br
+.ti -1c
+.RI "bool \fBis_verified\fP = False"
+.br
+.ti -1c
+.RI "bool \fBproxy_is_verified\fP = None"
+.br
+.ti -1c
+.RI "int \fBblocksize\fP"
+.br
+.ti -1c
+.RI "tuple \fBsource_address\fP [str, int] | None"
+.br
+.ti -1c
+.RI "connection \fBsocket_options\fP \&._TYPE_SOCKET_OPTIONS | None"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBurllib3\&.connection\&.HTTPSConnection\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_port\fP = \fBport_by_scheme\fP['https']"
+.br
+.ti -1c
+.RI "int \fBcert_reqs\fP = None"
+.br
+.ti -1c
+.RI "str \fBca_certs\fP = None"
+.br
+.ti -1c
+.RI "str \fBca_cert_dir\fP = None"
+.br
+.ti -1c
+.RI "None \fBca_cert_data\fP = None"
+.br
+.ti -1c
+.RI "int \fBssl_version\fP = None"
+.br
+.ti -1c
+.RI "int \fBssl_minimum_version\fP = None"
+.br
+.ti -1c
+.RI "int \fBssl_maximum_version\fP = None"
+.br
+.ti -1c
+.RI "str \fBassert_fingerprint\fP = None"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBurllib3\&.contrib\&.socks\&.SOCKSConnection\fP
+.in +1c
+.ti -1c
+.RI "socks\&.socksocket \fB_new_conn\fP (self)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBurllib3\&.connection\&.HTTPConnection\fP
+.in +1c
+.ti -1c
+.RI "bytes \fB_wrap_ipv6\fP (self, bytes \fBip\fP)"
+.br
+.ti -1c
+.RI "None \fB_tunnel\fP (self)"
+.br
+.ti -1c
+.RI "None \fB_tunnel\fP (self)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBurllib3\&.connection\&.HTTPSConnection\fP
+.in +1c
+.ti -1c
+.RI "ssl\&.SSLSocket \fB_connect_tls_proxy\fP (self, str hostname, socket\&.socket \fBsock\fP)"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBurllib3\&.contrib\&.socks\&.SOCKSConnection\fP
+.in +1c
+.ti -1c
+.RI "\fB_socks_options\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBurllib3\&.connection\&.HTTPConnection\fP
+.in +1c
+.ti -1c
+.RI "\fB_has_connected_to_proxy\fP"
+.br
+.ti -1c
+.RI "\fB_response_options\fP"
+.br
+.ti -1c
+.RI "\fB_dns_host\fP"
+.br
+.ti -1c
+.RI "\fB_tunnel_scheme\fP"
+.br
+.ti -1c
+.RI "\fB_tunnel_port\fP"
+.br
+.ti -1c
+.RI "\fB_raw_proxy_headers\fP"
+.br
+.ti -1c
+.RI "\fB_tunnel_host\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBurllib3\&.connection\&.HTTPSConnection\fP
+.in +1c
+.ti -1c
+.RI "\fB_connect_callback\fP"
+.br
+.ti -1c
+.RI "\fB_tunnel_scheme\fP"
+.br
+.ti -1c
+.RI "\fB_has_connected_to_proxy\fP"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBurllib3\&.connection\&.HTTPConnection\fP
+.in +1c
+.ti -1c
+.RI "bool \fB_has_connected_to_proxy\fP"
+.br
+.ti -1c
+.RI "\fB_ResponseOptions\fP \fB_response_options\fP | None"
+.br
+.ti -1c
+.RI "str \fB_tunnel_host\fP | None"
+.br
+.ti -1c
+.RI "int \fB_tunnel_port\fP | None"
+.br
+.ti -1c
+.RI "str \fB_tunnel_scheme\fP | None"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBurllib3\&.connection\&.HTTPSConnection\fP
+.in +1c
+.ti -1c
+.RI "typing \fB_connect_callback\fP = None"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

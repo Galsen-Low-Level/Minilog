@@ -1,0 +1,112 @@
+\doxysection{jinja2.\+lexer.\+Lexer Class Reference}
+\hypertarget{classjinja2_1_1lexer_1_1Lexer}{}\label{classjinja2_1_1lexer_1_1Lexer}\index{jinja2.lexer.Lexer@{jinja2.lexer.Lexer}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classjinja2_1_1lexer_1_1Lexer_a9cc5255588deca9b6b3b42cd6b6fcd8b}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, "{}Environment"{} environment)
+\item 
+\mbox{\hyperlink{classjinja2_1_1lexer_1_1TokenStream}{Token\+Stream}} \mbox{\hyperlink{classjinja2_1_1lexer_1_1Lexer_ac8fb9829073c27c06ed4e791c5e5d2fd}{tokenize}} (self, str source, t.\+Optional\mbox{[}str\mbox{]} name=None, t.\+Optional\mbox{[}str\mbox{]} filename=None, t.\+Optional\mbox{[}str\mbox{]} state=None)
+\item 
+t.\+Iterator\mbox{[}\mbox{\hyperlink{classjinja2_1_1lexer_1_1Token}{Token}}\mbox{]} \mbox{\hyperlink{classjinja2_1_1lexer_1_1Lexer_a2b9f848c5b74ebc7eea810277ca8a005}{wrap}} (self, t.\+Iterable\mbox{[}t.\+Tuple\mbox{[}int, str, str\mbox{]}\mbox{]} stream, t.\+Optional\mbox{[}str\mbox{]} name=None, t.\+Optional\mbox{[}str\mbox{]} filename=None)
+\item 
+t.\+Iterator\mbox{[}t.\+Tuple\mbox{[}int, str, str\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1lexer_1_1Lexer_ac4ce1679f9b95c265e00a0b1f183696b}{tokeniter}} (self, str source, t.\+Optional\mbox{[}str\mbox{]} name, t.\+Optional\mbox{[}str\mbox{]} filename=None, t.\+Optional\mbox{[}str\mbox{]} state=None)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classjinja2_1_1lexer_1_1Lexer_a6e7a71e933a1daead5f140a40bd4584a}{lstrip\+\_\+blocks}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1lexer_1_1Lexer_a7d949a2c2f4d13fe5a7a6cdfa9ca82a8}{newline\+\_\+sequence}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1lexer_1_1Lexer_a22b7007a2e55580df30349d9d61ec517}{keep\+\_\+trailing\+\_\+newline}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{classjinja2_1_1lexer_1_1Lexer_a2c23ea0635610ab4f6979fd37e79d0ac}{\+\_\+normalize\+\_\+newlines}} (self, str value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Class that implements a lexer for a given environment. Automatically
+created by the environment class, usually you don't have to do that.
+
+Note that the lexer is not automatically bound to an environment.
+Multiple environments can share the same lexer.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classjinja2_1_1lexer_1_1Lexer_a9cc5255588deca9b6b3b42cd6b6fcd8b}\label{classjinja2_1_1lexer_1_1Lexer_a9cc5255588deca9b6b3b42cd6b6fcd8b} 
+\index{jinja2.lexer.Lexer@{jinja2.lexer.Lexer}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!jinja2.lexer.Lexer@{jinja2.lexer.Lexer}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None jinja2.\+lexer.\+Lexer.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{"{}Environment"{}}]{environment }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classjinja2_1_1lexer_1_1Lexer_a2c23ea0635610ab4f6979fd37e79d0ac}\label{classjinja2_1_1lexer_1_1Lexer_a2c23ea0635610ab4f6979fd37e79d0ac} 
+\index{jinja2.lexer.Lexer@{jinja2.lexer.Lexer}!\_normalize\_newlines@{\_normalize\_newlines}}
+\index{\_normalize\_newlines@{\_normalize\_newlines}!jinja2.lexer.Lexer@{jinja2.lexer.Lexer}}
+\doxysubsubsection{\texorpdfstring{\_normalize\_newlines()}{\_normalize\_newlines()}}
+{\footnotesize\ttfamily  str jinja2.\+lexer.\+Lexer.\+\_\+normalize\+\_\+newlines (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Replace all newlines with the configured sequence in strings
+and template data.
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1lexer_1_1Lexer_ac4ce1679f9b95c265e00a0b1f183696b}\label{classjinja2_1_1lexer_1_1Lexer_ac4ce1679f9b95c265e00a0b1f183696b} 
+\index{jinja2.lexer.Lexer@{jinja2.lexer.Lexer}!tokeniter@{tokeniter}}
+\index{tokeniter@{tokeniter}!jinja2.lexer.Lexer@{jinja2.lexer.Lexer}}
+\doxysubsubsection{\texorpdfstring{tokeniter()}{tokeniter()}}
+{\footnotesize\ttfamily  t.\+Iterator\mbox{[}t.\+Tuple\mbox{[}int, str, str\mbox{]}\mbox{]} jinja2.\+lexer.\+Lexer.\+tokeniter (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{source,  }\item[{t.\+Optional\mbox{[}str\mbox{]}}]{name,  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{filename = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{state = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This method tokenizes the text and returns the tokens in a
+generator. Use this method if you just want to tokenize a template.
+
+.. versionchanged:: 3.0
+    Only ``\\n``, ``\\r\\n`` and ``\\r`` are treated as line
+    breaks.
+\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1lexer_1_1Lexer_ac8fb9829073c27c06ed4e791c5e5d2fd}\label{classjinja2_1_1lexer_1_1Lexer_ac8fb9829073c27c06ed4e791c5e5d2fd} 
+\index{jinja2.lexer.Lexer@{jinja2.lexer.Lexer}!tokenize@{tokenize}}
+\index{tokenize@{tokenize}!jinja2.lexer.Lexer@{jinja2.lexer.Lexer}}
+\doxysubsubsection{\texorpdfstring{tokenize()}{tokenize()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classjinja2_1_1lexer_1_1TokenStream}{Token\+Stream}} jinja2.\+lexer.\+Lexer.\+tokenize (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{source,  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{name = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{filename = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{state = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calls tokeniter + tokenize and wraps it in a token stream.\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1lexer_1_1Lexer_a2b9f848c5b74ebc7eea810277ca8a005}\label{classjinja2_1_1lexer_1_1Lexer_a2b9f848c5b74ebc7eea810277ca8a005} 
+\index{jinja2.lexer.Lexer@{jinja2.lexer.Lexer}!wrap@{wrap}}
+\index{wrap@{wrap}!jinja2.lexer.Lexer@{jinja2.lexer.Lexer}}
+\doxysubsubsection{\texorpdfstring{wrap()}{wrap()}}
+{\footnotesize\ttfamily  t.\+Iterator\mbox{[}\mbox{\hyperlink{classjinja2_1_1lexer_1_1Token}{Token}}\mbox{]} jinja2.\+lexer.\+Lexer.\+wrap (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{t.\+Iterable\mbox{[}t.\+Tuple\mbox{[}int, str, str\mbox{]}\mbox{]}}]{stream,  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{name = {\ttfamily None},  }\item[{t.\+Optional\mbox{[}str\mbox{]} }]{filename = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This is called with the stream as returned by `tokenize` and wraps
+every token in a :class:`Token` and converts the value.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classjinja2_1_1lexer_1_1Lexer_a22b7007a2e55580df30349d9d61ec517}\label{classjinja2_1_1lexer_1_1Lexer_a22b7007a2e55580df30349d9d61ec517} 
+\index{jinja2.lexer.Lexer@{jinja2.lexer.Lexer}!keep\_trailing\_newline@{keep\_trailing\_newline}}
+\index{keep\_trailing\_newline@{keep\_trailing\_newline}!jinja2.lexer.Lexer@{jinja2.lexer.Lexer}}
+\doxysubsubsection{\texorpdfstring{keep\_trailing\_newline}{keep\_trailing\_newline}}
+{\footnotesize\ttfamily jinja2.\+lexer.\+Lexer.\+keep\+\_\+trailing\+\_\+newline}
+
+\Hypertarget{classjinja2_1_1lexer_1_1Lexer_a6e7a71e933a1daead5f140a40bd4584a}\label{classjinja2_1_1lexer_1_1Lexer_a6e7a71e933a1daead5f140a40bd4584a} 
+\index{jinja2.lexer.Lexer@{jinja2.lexer.Lexer}!lstrip\_blocks@{lstrip\_blocks}}
+\index{lstrip\_blocks@{lstrip\_blocks}!jinja2.lexer.Lexer@{jinja2.lexer.Lexer}}
+\doxysubsubsection{\texorpdfstring{lstrip\_blocks}{lstrip\_blocks}}
+{\footnotesize\ttfamily jinja2.\+lexer.\+Lexer.\+lstrip\+\_\+blocks}
+
+\Hypertarget{classjinja2_1_1lexer_1_1Lexer_a7d949a2c2f4d13fe5a7a6cdfa9ca82a8}\label{classjinja2_1_1lexer_1_1Lexer_a7d949a2c2f4d13fe5a7a6cdfa9ca82a8} 
+\index{jinja2.lexer.Lexer@{jinja2.lexer.Lexer}!newline\_sequence@{newline\_sequence}}
+\index{newline\_sequence@{newline\_sequence}!jinja2.lexer.Lexer@{jinja2.lexer.Lexer}}
+\doxysubsubsection{\texorpdfstring{newline\_sequence}{newline\_sequence}}
+{\footnotesize\ttfamily jinja2.\+lexer.\+Lexer.\+newline\+\_\+sequence}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/jinja2/\mbox{\hyperlink{jinja2_2lexer_8py}{lexer.\+py}}\end{DoxyCompactItemize}

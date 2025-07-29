@@ -1,0 +1,291 @@
+.TH "sphinx.util.logging" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.util.logging
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_RaiseOnWarningFilter\fP"
+.br
+.ti -1c
+.RI "class \fBColorizeFormatter\fP"
+.br
+.ti -1c
+.RI "class \fBInfoFilter\fP"
+.br
+.ti -1c
+.RI "class \fBInfoLogRecordTranslator\fP"
+.br
+.ti -1c
+.RI "class \fBLastMessagesWriter\fP"
+.br
+.ti -1c
+.RI "class \fBLogCollector\fP"
+.br
+.ti -1c
+.RI "class \fBMemoryHandler\fP"
+.br
+.ti -1c
+.RI "class \fBMessagePrefixFilter\fP"
+.br
+.ti -1c
+.RI "class \fBNewLineStreamHandler\fP"
+.br
+.ti -1c
+.RI "class \fBOnceFilter\fP"
+.br
+.ti -1c
+.RI "class \fBSafeEncodingWriter\fP"
+.br
+.ti -1c
+.RI "class \fBSphinxInfoLogRecord\fP"
+.br
+.ti -1c
+.RI "class \fBSphinxLoggerAdapter\fP"
+.br
+.ti -1c
+.RI "class \fBSphinxLogRecord\fP"
+.br
+.ti -1c
+.RI "class \fBSphinxLogRecordTranslator\fP"
+.br
+.ti -1c
+.RI "class \fBSphinxWarningLogRecord\fP"
+.br
+.ti -1c
+.RI "class \fBWarningLogRecordTranslator\fP"
+.br
+.ti -1c
+.RI "class \fBWarningStreamHandler\fP"
+.br
+.ti -1c
+.RI "class \fBWarningSuppressor\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSphinxLoggerAdapter\fP \fBgetLogger\fP (str name)"
+.br
+.ti -1c
+.RI "None \fBconvert_serializable\fP (list[logging\&.LogRecord] records)"
+.br
+.ti -1c
+.RI "Iterator[logging\&.Handler] \fBpending_warnings\fP ()"
+.br
+.ti -1c
+.RI "Iterator[\fBMemoryHandler\fP] \fBsuppress_logging\fP ()"
+.br
+.ti -1c
+.RI "Iterator[\fBMemoryHandler\fP] \fBpending_logging\fP ()"
+.br
+.ti -1c
+.RI "Iterator[None] \fBprefixed_warnings\fP (str prefix)"
+.br
+.ti -1c
+.RI "bool \fBis_suppressed_warning\fP (str warning_type, str sub_type, Set[str]|Sequence[str] suppress_warnings)"
+.br
+.ti -1c
+.RI "str|None \fBget_node_location\fP (\fBNode\fP node)"
+.br
+.ti -1c
+.RI "None \fBsetup\fP (\fBSphinx\fP app, IO[str] status, IO[str] warning)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "str \fBNAMESPACE\fP = 'sphinx'"
+.br
+.ti -1c
+.RI "int \fBVERBOSE\fP = 15"
+.br
+.ti -1c
+.RI "defaultdict \fBLEVEL_NAMES\fP"
+.br
+.ti -1c
+.RI "defaultdict \fBVERBOSITY_MAP\fP"
+.br
+.ti -1c
+.RI "dict \fBCOLOR_MAP\fP"
+.br
+.ti -1c
+.RI "\fBskip_warningiserror\fP = nullcontext"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Logging utility functions for Sphinx\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " None sphinx\&.util\&.logging\&.convert_serializable (list[logging\&.LogRecord] records)"
+
+.PP
+.nf
+Convert LogRecord serializable\&.
+.fi
+.PP
+ 
+.SS " str | None sphinx\&.util\&.logging\&.get_node_location (\fBNode\fP node)"
+
+.SS " \fBSphinxLoggerAdapter\fP sphinx\&.util\&.logging\&.getLogger (str name)"
+
+.PP
+.nf
+Get logger wrapped by :class:`sphinx\&.util\&.logging\&.SphinxLoggerAdapter`\&.
+
+Sphinx logger always uses ``sphinx\&.*`` namespace to be independent from
+settings of root logger\&.  It ensures logging is consistent even if a
+third-party extension or imported application resets logger settings\&.
+
+Example usage::
+
+    >>> from sphinx\&.util import logging
+    >>> logger = logging\&.getLogger(__name__)
+    >>> logger\&.info('Hello, this is an extension!')
+    Hello, this is an extension!
+
+.fi
+.PP
+ 
+.SS " bool sphinx\&.util\&.logging\&.is_suppressed_warning (str warning_type, str sub_type, Set[str] | Sequence[str]
+ suppress_warnings)"
+
+.PP
+.nf
+Check whether the warning is suppressed or not\&.
+.fi
+.PP
+ 
+.SS " Iterator[\fBMemoryHandler\fP] sphinx\&.util\&.logging\&.pending_logging ()"
+
+.PP
+.nf
+Context manager to postpone logging all logs temporarily\&.
+
+For example::
+
+    >>> with pending_logging():
+    >>>     logger\&.warning('Warning message!')  # not flushed yet
+    >>>     some_long_process()
+    >>>
+    Warning message!  # the warning is flushed here
+
+.fi
+.PP
+ 
+.SS " Iterator[logging\&.Handler] sphinx\&.util\&.logging\&.pending_warnings ()"
+
+.PP
+.nf
+Context manager to postpone logging warnings temporarily\&.
+
+Similar to :func:`pending_logging`\&.
+
+.fi
+.PP
+ 
+.SS " Iterator[None] sphinx\&.util\&.logging\&.prefixed_warnings (str prefix)"
+
+.PP
+.nf
+Context manager to prepend prefix to all warning log records temporarily\&.
+
+For example::
+
+    >>> with prefixed_warnings('prefix:'):
+    >>>     logger\&.warning('Warning message!')  # => prefix: Warning message!
+
+\&.\&. versionadded:: 2\&.0
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.util\&.logging\&.setup (\fBSphinx\fP app, IO[str] status, IO[str] warning)"
+
+.PP
+.nf
+Setup root logger for Sphinx
+.fi
+.PP
+ 
+.SS " Iterator[\fBMemoryHandler\fP] sphinx\&.util\&.logging\&.suppress_logging ()"
+
+.PP
+.nf
+Context manager to suppress logging all logs temporarily\&.
+
+For example::
+
+    >>> with suppress_logging():
+    >>>     logger\&.warning('Warning message!')  # suppressed
+    >>>     some_long_process()
+    >>>
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "dict sphinx\&.util\&.logging\&.COLOR_MAP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     logging\&.ERROR: 'darkred',
+3     logging\&.WARNING: 'red',
+4     logging\&.DEBUG: 'darkgray',
+5 }
+.fi
+
+.SS "defaultdict sphinx\&.util\&.logging\&.LEVEL_NAMES"
+\fBInitial value:\fP.PP
+.nf
+1 =  defaultdict(
+2     lambda: logging\&.WARNING,
+3     {
+4         'CRITICAL': logging\&.CRITICAL,
+5         'SEVERE': logging\&.CRITICAL,
+6         'ERROR': logging\&.ERROR,
+7         'WARNING': logging\&.WARNING,
+8         'INFO': logging\&.INFO,
+9         'VERBOSE': VERBOSE,
+10         'DEBUG': logging\&.DEBUG,
+11     },
+12 )
+.fi
+
+.SS "str sphinx\&.util\&.logging\&.NAMESPACE = 'sphinx'"
+
+.SS "sphinx\&.util\&.logging\&.skip_warningiserror = nullcontext"
+
+.SS "int sphinx\&.util\&.logging\&.VERBOSE = 15"
+
+.SS "defaultdict sphinx\&.util\&.logging\&.VERBOSITY_MAP"
+\fBInitial value:\fP.PP
+.nf
+1 =  defaultdict(
+2     lambda: logging\&.NOTSET,
+3     {
+4         0: logging\&.INFO,
+5         1: VERBOSE,
+6         2: logging\&.DEBUG,
+7     },
+8 )
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

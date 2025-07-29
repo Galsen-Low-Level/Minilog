@@ -1,0 +1,493 @@
+\doxysection{webob.\+cookies Namespace Reference}
+\hypertarget{namespacewebob_1_1cookies}{}\label{namespacewebob_1_1cookies}\index{webob.cookies@{webob.cookies}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classwebob_1_1cookies_1_1Base64Serializer}{Base64\+Serializer}}
+\item 
+class \mbox{\hyperlink{classwebob_1_1cookies_1_1Cookie}{Cookie}}
+\item 
+class \mbox{\hyperlink{classwebob_1_1cookies_1_1CookieProfile}{Cookie\+Profile}}
+\item 
+class \mbox{\hyperlink{classwebob_1_1cookies_1_1JSONSerializer}{JSONSerializer}}
+\item 
+class \mbox{\hyperlink{classwebob_1_1cookies_1_1Morsel}{Morsel}}
+\item 
+class \mbox{\hyperlink{classwebob_1_1cookies_1_1RequestCookies}{Request\+Cookies}}
+\item 
+class \mbox{\hyperlink{classwebob_1_1cookies_1_1SignedCookieProfile}{Signed\+Cookie\+Profile}}
+\item 
+class \mbox{\hyperlink{classwebob_1_1cookies_1_1SignedSerializer}{Signed\+Serializer}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_a5a8097858daf5c42f2a39a42e5a7a0d0}{\+\_\+parse\+\_\+cookie}} (data)
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_a174696791ef459ce1d055066e9679278}{parse\+\_\+cookie}} (data)
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_a4d5d1e4b5ca7a72034faaaadd413a6a3}{cookie\+\_\+property}} (key, serialize=lambda v\+:v)
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_ac0df6f1e0d3f65dc4ff1d60c866edbae}{serialize\+\_\+max\+\_\+age}} (v)
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_a6d9dc2a786fec725c9db2db7d968a058}{serialize\+\_\+cookie\+\_\+date}} (v)
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_aaabc30d0cf1a1ed671dd53b4caba7e53}{serialize\+\_\+samesite}} (v)
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_a83d832e37059353cec0219966fe66b70}{\+\_\+unquote}} (v)
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_a23753c9af04254edb54f3221614389d4}{\+\_\+ch\+\_\+unquote}} (m)
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_a186ecd0a8e9257ac67d54e45e505ced9}{\+\_\+value\+\_\+quote}} (v)
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_a63debb1d21679f0f1b991207ac1edc47}{\+\_\+valid\+\_\+cookie\+\_\+name}} (key)
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_a1dc028eff2037993e5edeec72ad921f1}{\+\_\+path\+\_\+quote}} (v)
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_aed728e06e222e94864097afcc8c1cd61}{make\+\_\+cookie}} (name, value, max\+\_\+age=None, path=\textquotesingle{}/\textquotesingle{}, domain=None, secure=False, httponly=False, comment=None, samesite=None)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_a81d47cd1da7562fe94bd4bff24d81ae2}{\+\_\+marker}} = object()
+\item 
+bool \mbox{\hyperlink{namespacewebob_1_1cookies_a54d096ac44677fe7df09451e76cf20b2}{SAMESITE\+\_\+\+VALIDATION}} = True
+\item 
+str \mbox{\hyperlink{namespacewebob_1_1cookies_abfefbe2138909574479c969657193b6e}{\+\_\+re\+\_\+quoted}} = r\textquotesingle{}"{}(?\+:\textbackslash{}\textbackslash{}"{}\texorpdfstring{$\vert$}{|}.)\texorpdfstring{$\ast$}{*}?"{}\textquotesingle{}
+\item 
+str \mbox{\hyperlink{namespacewebob_1_1cookies_ab9a2c785f7775e2e36ee28af036a6c09}{\+\_\+legal\+\_\+special\+\_\+chars}} = "{}\texorpdfstring{$\sim$}{\string~}!@\#\$\%\texorpdfstring{$^\wedge$}{\string^}\&\texorpdfstring{$\ast$}{*}()\+\_\++=-\/\`{}.?\texorpdfstring{$\vert$}{|}\+:/()\{\}$<$$>$\textquotesingle{}"{}
+\item 
+str \mbox{\hyperlink{namespacewebob_1_1cookies_a13763bc000729329f2d9b8497b409f94}{\+\_\+re\+\_\+legal\+\_\+char}} = r"{}\mbox{[}\textbackslash{}w\textbackslash{}d\%s\mbox{]}"{} \% re.\+escape(\mbox{\hyperlink{namespacewebob_1_1cookies_ab9a2c785f7775e2e36ee28af036a6c09}{\+\_\+legal\+\_\+special\+\_\+chars}})
+\item 
+str \mbox{\hyperlink{namespacewebob_1_1cookies_af77c221472a1c8dd18a821a1c66a10a9}{\+\_\+re\+\_\+expires\+\_\+val}} = r"{}\textbackslash{}w\{3\},\textbackslash{}s\mbox{[}\textbackslash{}w\textbackslash{}d-\/\mbox{]}\{9,11\}\textbackslash{}s\mbox{[}\textbackslash{}d\+:\mbox{]}\{8\}\textbackslash{}s\+GMT"{}
+\item 
+str \mbox{\hyperlink{namespacewebob_1_1cookies_af51cfd7544b7250a7ec72ac0f9788a27}{\+\_\+re\+\_\+cookie\+\_\+str\+\_\+key}} = r"{}(\%s+?)"{} \% \+\_\+re\+\_\+legal\+\_\+char
+\item 
+str \mbox{\hyperlink{namespacewebob_1_1cookies_a8059c85d82297cede2014d5aeed02717}{\+\_\+re\+\_\+cookie\+\_\+str\+\_\+equal}} = r"{}\textbackslash{}s\texorpdfstring{$\ast$}{*}=\textbackslash{}s\texorpdfstring{$\ast$}{*}"{}
+\item 
+str \mbox{\hyperlink{namespacewebob_1_1cookies_ad87b74184378868c6ee50a400a6ccb20}{\+\_\+re\+\_\+unquoted\+\_\+val}} = r"{}(?\+:\%s\texorpdfstring{$\vert$}{|}\textbackslash{}\textbackslash{}(?\+:\mbox{[}0-\/3\mbox{]}\mbox{[}0-\/7\mbox{]}\mbox{[}0-\/7\mbox{]}\texorpdfstring{$\vert$}{|}.))\texorpdfstring{$\ast$}{*}"{} \% \+\_\+re\+\_\+legal\+\_\+char
+\item 
+str \mbox{\hyperlink{namespacewebob_1_1cookies_abf46fe7b591efcf818a2c2a71a6a1760}{\+\_\+re\+\_\+cookie\+\_\+str\+\_\+val}}
+\item 
+str \mbox{\hyperlink{namespacewebob_1_1cookies_a01cda22dae597ea3f9bd9c7af917f372}{\+\_\+re\+\_\+cookie\+\_\+str}} = \mbox{\hyperlink{namespacewebob_1_1cookies_af51cfd7544b7250a7ec72ac0f9788a27}{\+\_\+re\+\_\+cookie\+\_\+str\+\_\+key}} + \mbox{\hyperlink{namespacewebob_1_1cookies_a8059c85d82297cede2014d5aeed02717}{\+\_\+re\+\_\+cookie\+\_\+str\+\_\+equal}} + \mbox{\hyperlink{namespacewebob_1_1cookies_abf46fe7b591efcf818a2c2a71a6a1760}{\+\_\+re\+\_\+cookie\+\_\+str\+\_\+val}}
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_a308d633253d8201d1a98fa9435a4d882}{\+\_\+rx\+\_\+cookie}} = re.\+compile(bytes\+\_\+(\mbox{\hyperlink{namespacewebob_1_1cookies_a01cda22dae597ea3f9bd9c7af917f372}{\+\_\+re\+\_\+cookie\+\_\+str}}, \textquotesingle{}ascii\textquotesingle{}))
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_a1a9c01649b1c4dbedd5dc32f30101dce}{\+\_\+rx\+\_\+unquote}} = re.\+compile(bytes\+\_\+(r\textquotesingle{}\textbackslash{}\textbackslash{}(\mbox{[}0-\/3\mbox{]}\mbox{[}0-\/7\mbox{]}\mbox{[}0-\/7\mbox{]}\texorpdfstring{$\vert$}{|}.)\textquotesingle{}, \textquotesingle{}ascii\textquotesingle{}))
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_a708d8b8d09601b71b84adc8b5d600379}{\+\_\+bchr}} = chr if PY2 else (lambda i\+: bytes(\mbox{[}i\mbox{]}))
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_a90285f0a265af6dc29fee71b39636c6b}{\+\_\+ch\+\_\+unquote\+\_\+map}}
+\item 
+str \mbox{\hyperlink{namespacewebob_1_1cookies_a3ae1149c9b12fae3398c69b38c91aa06}{\+\_\+b\+\_\+dollar\+\_\+sign}} = \textquotesingle{}\$\textquotesingle{} if PY2 else ord(\textquotesingle{}\$\textquotesingle{})
+\item 
+str \mbox{\hyperlink{namespacewebob_1_1cookies_a3ed689bdcf3e22e0707457d89d25a55c}{\+\_\+b\+\_\+quote\+\_\+mark}} = \textquotesingle{}"{}\textquotesingle{} if PY2 else ord(\textquotesingle{}"{}\textquotesingle{})
+\item 
+str \mbox{\hyperlink{namespacewebob_1_1cookies_a1f44e5d3819d528176f76670fd8be12d}{\+\_\+allowed\+\_\+special\+\_\+chars}} = "{}!\#\$\%\&\textquotesingle{}()\texorpdfstring{$\ast$}{*}+-\/./\+:$<$=$>$?@\mbox{[}$\,$\mbox{]}\texorpdfstring{$^\wedge$}{\string^}\+\_\+\`{}\{\texorpdfstring{$\vert$}{|}\}\texorpdfstring{$\sim$}{\string~}"{}
+\item 
+tuple \mbox{\hyperlink{namespacewebob_1_1cookies_aec0a81fb87613a403a7e4bc71ee89329}{\+\_\+allowed\+\_\+cookie\+\_\+chars}}
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_a1a746f08794c835059d31decd3d60593}{\+\_\+allowed\+\_\+cookie\+\_\+bytes}} = bytes\+\_\+(\mbox{\hyperlink{namespacewebob_1_1cookies_aec0a81fb87613a403a7e4bc71ee89329}{\+\_\+allowed\+\_\+cookie\+\_\+chars}})
+\item 
+str \mbox{\hyperlink{namespacewebob_1_1cookies_a06faae508e0738506730b3e22db4f27b}{\+\_\+valid\+\_\+token\+\_\+chars}} = string.\+ascii\+\_\+letters + string.\+digits + "{}!\#\$\%\&\textquotesingle{}\texorpdfstring{$\ast$}{*}+-\/.\texorpdfstring{$^\wedge$}{\string^}\+\_\+\`{}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\sim$}{\string~}"{}
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_aebce12d5e4511fcb81ef1a5b47f077df}{\+\_\+valid\+\_\+token\+\_\+bytes}} = bytes\+\_\+(\mbox{\hyperlink{namespacewebob_1_1cookies_a06faae508e0738506730b3e22db4f27b}{\+\_\+valid\+\_\+token\+\_\+chars}})
+\item 
+tuple \mbox{\hyperlink{namespacewebob_1_1cookies_ab9c5431dfb184d6f53f289f8c8c1f957}{\+\_\+escape\+\_\+noop\+\_\+chars}} = \mbox{\hyperlink{namespacewebob_1_1cookies_aec0a81fb87613a403a7e4bc71ee89329}{\+\_\+allowed\+\_\+cookie\+\_\+chars}} + \textquotesingle{} \textquotesingle{}
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_aa0fcb436a24c1ba6f85c1f5bf90b84fb}{\+\_\+escape\+\_\+map}} = dict((chr(i), \textquotesingle{}\textbackslash{}\textbackslash{}\%03o\textquotesingle{} \% i) for i in range(256))
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_a7f32de2aa43cf5c5a94d8d7dc40abcb6}{\+\_\+escape\+\_\+char}} = \+\_\+escape\+\_\+map.\+\_\+\+\_\+getitem\+\_\+\+\_\+
+\item 
+tuple \mbox{\hyperlink{namespacewebob_1_1cookies_afbf49170ffdf1d34f3c69fb90e7b55c7}{weekdays}} = (\textquotesingle{}Mon\textquotesingle{}, \textquotesingle{}Tue\textquotesingle{}, \textquotesingle{}Wed\textquotesingle{}, \textquotesingle{}Thu\textquotesingle{}, \textquotesingle{}Fri\textquotesingle{}, \textquotesingle{}Sat\textquotesingle{}, \textquotesingle{}Sun\textquotesingle{})
+\item 
+tuple \mbox{\hyperlink{namespacewebob_1_1cookies_a7f8da7301f648cf5c16f98283647b9bc}{months}}
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_af1b53d90be8b5f13609fd294db4be00c}{\+\_\+should\+\_\+raise}} = None
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_af32ac44db52f98159633c1b8896e8e67}{\+\_\+domain\+\_\+quote}} = \mbox{\hyperlink{namespacewebob_1_1cookies_a1dc028eff2037993e5edeec72ad921f1}{\+\_\+path\+\_\+quote}}
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_aed43be62cedf1403e65388cee0a77e2c}{\+\_\+max\+\_\+age\+\_\+quote}} = \mbox{\hyperlink{namespacewebob_1_1cookies_a1dc028eff2037993e5edeec72ad921f1}{\+\_\+path\+\_\+quote}}
+\item 
+dict \mbox{\hyperlink{namespacewebob_1_1cookies_a7351e92464061996f1b3e79787b5d98d}{\+\_\+c\+\_\+renames}}
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_a0ff99d36c34250522bd827992183a6d2}{\+\_\+c\+\_\+valkeys}} = sorted(\mbox{\hyperlink{namespacewebob_1_1cookies_a7351e92464061996f1b3e79787b5d98d}{\+\_\+c\+\_\+renames}})
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_a22cc527d49d81248bb69718954e6abea}{\+\_\+c\+\_\+keys}} = set(\mbox{\hyperlink{namespacewebob_1_1cookies_a7351e92464061996f1b3e79787b5d98d}{\+\_\+c\+\_\+renames}})
+\item 
+\mbox{\hyperlink{namespacewebob_1_1cookies_a824d0def1d86aac9efc9a434a5508abb}{\+\_\+default}} = object()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacewebob_1_1cookies_a23753c9af04254edb54f3221614389d4}\label{namespacewebob_1_1cookies_a23753c9af04254edb54f3221614389d4} 
+\index{webob.cookies@{webob.cookies}!\_ch\_unquote@{\_ch\_unquote}}
+\index{\_ch\_unquote@{\_ch\_unquote}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_ch\_unquote()}{\_ch\_unquote()}}
+{\footnotesize\ttfamily webob.\+cookies.\+\_\+ch\+\_\+unquote (\begin{DoxyParamCaption}\item[{}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_a5a8097858daf5c42f2a39a42e5a7a0d0}\label{namespacewebob_1_1cookies_a5a8097858daf5c42f2a39a42e5a7a0d0} 
+\index{webob.cookies@{webob.cookies}!\_parse\_cookie@{\_parse\_cookie}}
+\index{\_parse\_cookie@{\_parse\_cookie}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_parse\_cookie()}{\_parse\_cookie()}}
+{\footnotesize\ttfamily webob.\+cookies.\+\_\+parse\+\_\+cookie (\begin{DoxyParamCaption}\item[{}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_a1dc028eff2037993e5edeec72ad921f1}\label{namespacewebob_1_1cookies_a1dc028eff2037993e5edeec72ad921f1} 
+\index{webob.cookies@{webob.cookies}!\_path\_quote@{\_path\_quote}}
+\index{\_path\_quote@{\_path\_quote}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_path\_quote()}{\_path\_quote()}}
+{\footnotesize\ttfamily webob.\+cookies.\+\_\+path\+\_\+quote (\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_a83d832e37059353cec0219966fe66b70}\label{namespacewebob_1_1cookies_a83d832e37059353cec0219966fe66b70} 
+\index{webob.cookies@{webob.cookies}!\_unquote@{\_unquote}}
+\index{\_unquote@{\_unquote}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_unquote()}{\_unquote()}}
+{\footnotesize\ttfamily webob.\+cookies.\+\_\+unquote (\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_a63debb1d21679f0f1b991207ac1edc47}\label{namespacewebob_1_1cookies_a63debb1d21679f0f1b991207ac1edc47} 
+\index{webob.cookies@{webob.cookies}!\_valid\_cookie\_name@{\_valid\_cookie\_name}}
+\index{\_valid\_cookie\_name@{\_valid\_cookie\_name}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_valid\_cookie\_name()}{\_valid\_cookie\_name()}}
+{\footnotesize\ttfamily webob.\+cookies.\+\_\+valid\+\_\+cookie\+\_\+name (\begin{DoxyParamCaption}\item[{}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_a186ecd0a8e9257ac67d54e45e505ced9}\label{namespacewebob_1_1cookies_a186ecd0a8e9257ac67d54e45e505ced9} 
+\index{webob.cookies@{webob.cookies}!\_value\_quote@{\_value\_quote}}
+\index{\_value\_quote@{\_value\_quote}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_value\_quote()}{\_value\_quote()}}
+{\footnotesize\ttfamily webob.\+cookies.\+\_\+value\+\_\+quote (\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_a4d5d1e4b5ca7a72034faaaadd413a6a3}\label{namespacewebob_1_1cookies_a4d5d1e4b5ca7a72034faaaadd413a6a3} 
+\index{webob.cookies@{webob.cookies}!cookie\_property@{cookie\_property}}
+\index{cookie\_property@{cookie\_property}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{cookie\_property()}{cookie\_property()}}
+{\footnotesize\ttfamily webob.\+cookies.\+cookie\+\_\+property (\begin{DoxyParamCaption}\item[{}]{key,  }\item[{}]{serialize = {\ttfamily lambda~v\+:~v} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacewebob_1_1cookies_aed728e06e222e94864097afcc8c1cd61}\label{namespacewebob_1_1cookies_aed728e06e222e94864097afcc8c1cd61} 
+\index{webob.cookies@{webob.cookies}!make\_cookie@{make\_cookie}}
+\index{make\_cookie@{make\_cookie}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{make\_cookie()}{make\_cookie()}}
+{\footnotesize\ttfamily webob.\+cookies.\+make\+\_\+cookie (\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{value,  }\item[{}]{max\+\_\+age = {\ttfamily None},  }\item[{}]{path = {\ttfamily \textquotesingle{}/\textquotesingle{}},  }\item[{}]{domain = {\ttfamily None},  }\item[{}]{secure = {\ttfamily False},  }\item[{}]{httponly = {\ttfamily False},  }\item[{}]{comment = {\ttfamily None},  }\item[{}]{samesite = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate a cookie value.
+
+``name``
+  The name of the cookie.
+
+``value``
+  The ``value`` of the cookie. If it is ``None``, it will generate a cookie
+  value with an expiration date in the past.
+
+``max_age``
+  The maximum age of the cookie used for sessioning (in seconds).
+  Default: ``None`` (browser scope).
+
+``path``
+  The path used for the session cookie. Default: ``/``.
+
+``domain``
+  The domain used for the session cookie. Default: ``None`` (no domain).
+
+``secure``
+  The 'secure' flag of the session cookie. Default: ``False``.
+
+``httponly``
+  Hide the cookie from JavaScript by setting the 'HttpOnly' flag of the
+  session cookie. Default: ``False``.
+
+``comment``
+  Set a comment on the cookie. Default: ``None``
+
+``samesite``
+  The 'SameSite' attribute of the cookie, can be either ``"strict"``,
+  ``"lax"``, ``"none"``, or ``None``. By default, WebOb will validate the
+  value to ensure it conforms to the allowable options in the various draft
+  RFC's that exist.
+
+  To disable this check and send headers that are experimental or introduced
+  in a future RFC, set the module flag ``SAMESITE_VALIDATION`` to a
+  false value like:
+
+  .. code::
+
+      import webob.cookies
+      webob.cookies.SAMESITE_VALIDATION = False
+
+      ck = webob.cookies.make_cookie(cookie_name, value, samesite='future')
+
+  .. danger::
+
+      This feature has known compatibility issues with various user agents,
+      and is not yet an accepted RFC. It is therefore considered
+      experimental and subject to change.
+
+      For more information please see :ref:`Experimental: SameSite Cookies
+      <samesiteexp>`
+\end{DoxyVerb}
+ \Hypertarget{namespacewebob_1_1cookies_a174696791ef459ce1d055066e9679278}\label{namespacewebob_1_1cookies_a174696791ef459ce1d055066e9679278} 
+\index{webob.cookies@{webob.cookies}!parse\_cookie@{parse\_cookie}}
+\index{parse\_cookie@{parse\_cookie}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{parse\_cookie()}{parse\_cookie()}}
+{\footnotesize\ttfamily webob.\+cookies.\+parse\+\_\+cookie (\begin{DoxyParamCaption}\item[{}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse cookies ignoring anything except names and values
+\end{DoxyVerb}
+ \Hypertarget{namespacewebob_1_1cookies_a6d9dc2a786fec725c9db2db7d968a058}\label{namespacewebob_1_1cookies_a6d9dc2a786fec725c9db2db7d968a058} 
+\index{webob.cookies@{webob.cookies}!serialize\_cookie\_date@{serialize\_cookie\_date}}
+\index{serialize\_cookie\_date@{serialize\_cookie\_date}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{serialize\_cookie\_date()}{serialize\_cookie\_date()}}
+{\footnotesize\ttfamily webob.\+cookies.\+serialize\+\_\+cookie\+\_\+date (\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacewebob_1_1cookies_ac0df6f1e0d3f65dc4ff1d60c866edbae}\label{namespacewebob_1_1cookies_ac0df6f1e0d3f65dc4ff1d60c866edbae} 
+\index{webob.cookies@{webob.cookies}!serialize\_max\_age@{serialize\_max\_age}}
+\index{serialize\_max\_age@{serialize\_max\_age}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{serialize\_max\_age()}{serialize\_max\_age()}}
+{\footnotesize\ttfamily webob.\+cookies.\+serialize\+\_\+max\+\_\+age (\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacewebob_1_1cookies_aaabc30d0cf1a1ed671dd53b4caba7e53}\label{namespacewebob_1_1cookies_aaabc30d0cf1a1ed671dd53b4caba7e53} 
+\index{webob.cookies@{webob.cookies}!serialize\_samesite@{serialize\_samesite}}
+\index{serialize\_samesite@{serialize\_samesite}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{serialize\_samesite()}{serialize\_samesite()}}
+{\footnotesize\ttfamily webob.\+cookies.\+serialize\+\_\+samesite (\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacewebob_1_1cookies_a1a746f08794c835059d31decd3d60593}\label{namespacewebob_1_1cookies_a1a746f08794c835059d31decd3d60593} 
+\index{webob.cookies@{webob.cookies}!\_allowed\_cookie\_bytes@{\_allowed\_cookie\_bytes}}
+\index{\_allowed\_cookie\_bytes@{\_allowed\_cookie\_bytes}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_allowed\_cookie\_bytes}{\_allowed\_cookie\_bytes}}
+{\footnotesize\ttfamily webob.\+cookies.\+\_\+allowed\+\_\+cookie\+\_\+bytes = bytes\+\_\+(\mbox{\hyperlink{namespacewebob_1_1cookies_aec0a81fb87613a403a7e4bc71ee89329}{\+\_\+allowed\+\_\+cookie\+\_\+chars}})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_aec0a81fb87613a403a7e4bc71ee89329}\label{namespacewebob_1_1cookies_aec0a81fb87613a403a7e4bc71ee89329} 
+\index{webob.cookies@{webob.cookies}!\_allowed\_cookie\_chars@{\_allowed\_cookie\_chars}}
+\index{\_allowed\_cookie\_chars@{\_allowed\_cookie\_chars}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_allowed\_cookie\_chars}{\_allowed\_cookie\_chars}}
+{\footnotesize\ttfamily tuple webob.\+cookies.\+\_\+allowed\+\_\+cookie\+\_\+chars\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ (string.ascii\_letters\ +\ string.digits\ +}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_allowed\_special\_chars)}
+
+\end{DoxyCode}
+\Hypertarget{namespacewebob_1_1cookies_a1f44e5d3819d528176f76670fd8be12d}\label{namespacewebob_1_1cookies_a1f44e5d3819d528176f76670fd8be12d} 
+\index{webob.cookies@{webob.cookies}!\_allowed\_special\_chars@{\_allowed\_special\_chars}}
+\index{\_allowed\_special\_chars@{\_allowed\_special\_chars}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_allowed\_special\_chars}{\_allowed\_special\_chars}}
+{\footnotesize\ttfamily str webob.\+cookies.\+\_\+allowed\+\_\+special\+\_\+chars = "{}!\#\$\%\&\textquotesingle{}()\texorpdfstring{$\ast$}{*}+-\/./\+:$<$=$>$?@\mbox{[}$\,$\mbox{]}\texorpdfstring{$^\wedge$}{\string^}\+\_\+\`{}\{\texorpdfstring{$\vert$}{|}\}\texorpdfstring{$\sim$}{\string~}"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_a3ae1149c9b12fae3398c69b38c91aa06}\label{namespacewebob_1_1cookies_a3ae1149c9b12fae3398c69b38c91aa06} 
+\index{webob.cookies@{webob.cookies}!\_b\_dollar\_sign@{\_b\_dollar\_sign}}
+\index{\_b\_dollar\_sign@{\_b\_dollar\_sign}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_b\_dollar\_sign}{\_b\_dollar\_sign}}
+{\footnotesize\ttfamily str webob.\+cookies.\+\_\+b\+\_\+dollar\+\_\+sign = \textquotesingle{}\$\textquotesingle{} if PY2 else ord(\textquotesingle{}\$\textquotesingle{})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_a3ed689bdcf3e22e0707457d89d25a55c}\label{namespacewebob_1_1cookies_a3ed689bdcf3e22e0707457d89d25a55c} 
+\index{webob.cookies@{webob.cookies}!\_b\_quote\_mark@{\_b\_quote\_mark}}
+\index{\_b\_quote\_mark@{\_b\_quote\_mark}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_b\_quote\_mark}{\_b\_quote\_mark}}
+{\footnotesize\ttfamily str webob.\+cookies.\+\_\+b\+\_\+quote\+\_\+mark = \textquotesingle{}"{}\textquotesingle{} if PY2 else ord(\textquotesingle{}"{}\textquotesingle{})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_a708d8b8d09601b71b84adc8b5d600379}\label{namespacewebob_1_1cookies_a708d8b8d09601b71b84adc8b5d600379} 
+\index{webob.cookies@{webob.cookies}!\_bchr@{\_bchr}}
+\index{\_bchr@{\_bchr}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_bchr}{\_bchr}}
+{\footnotesize\ttfamily webob.\+cookies.\+\_\+bchr = chr if PY2 else (lambda i\+: bytes(\mbox{[}i\mbox{]}))\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_a22cc527d49d81248bb69718954e6abea}\label{namespacewebob_1_1cookies_a22cc527d49d81248bb69718954e6abea} 
+\index{webob.cookies@{webob.cookies}!\_c\_keys@{\_c\_keys}}
+\index{\_c\_keys@{\_c\_keys}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_c\_keys}{\_c\_keys}}
+{\footnotesize\ttfamily webob.\+cookies.\+\_\+c\+\_\+keys = set(\mbox{\hyperlink{namespacewebob_1_1cookies_a7351e92464061996f1b3e79787b5d98d}{\+\_\+c\+\_\+renames}})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_a7351e92464061996f1b3e79787b5d98d}\label{namespacewebob_1_1cookies_a7351e92464061996f1b3e79787b5d98d} 
+\index{webob.cookies@{webob.cookies}!\_c\_renames@{\_c\_renames}}
+\index{\_c\_renames@{\_c\_renames}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_c\_renames}{\_c\_renames}}
+{\footnotesize\ttfamily dict webob.\+cookies.\+\_\+c\+\_\+renames\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ b\textcolor{stringliteral}{"{}path"{}}\ :\ \{\textcolor{stringliteral}{'name'}:b\textcolor{stringliteral}{"{}Path"{}},\ \textcolor{stringliteral}{'quoter'}:\_path\_quote\},}
+\DoxyCodeLine{00003\ \ \ \ \ b\textcolor{stringliteral}{"{}comment"{}}\ :\ \{\textcolor{stringliteral}{'name'}:b\textcolor{stringliteral}{"{}Comment"{}},\ \textcolor{stringliteral}{'quoter'}:\_value\_quote\},}
+\DoxyCodeLine{00004\ \ \ \ \ b\textcolor{stringliteral}{"{}domain"{}}\ :\ \{\textcolor{stringliteral}{'name'}:b\textcolor{stringliteral}{"{}Domain"{}},\ \textcolor{stringliteral}{'quoter'}:\_domain\_quote\},}
+\DoxyCodeLine{00005\ \ \ \ \ b\textcolor{stringliteral}{"{}max-\/age"{}}\ :\ \{\textcolor{stringliteral}{'name'}:b\textcolor{stringliteral}{"{}Max-\/Age"{}},\ \textcolor{stringliteral}{'quoter'}:\_max\_age\_quote\},}
+\DoxyCodeLine{00006\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacewebob_1_1cookies_a0ff99d36c34250522bd827992183a6d2}\label{namespacewebob_1_1cookies_a0ff99d36c34250522bd827992183a6d2} 
+\index{webob.cookies@{webob.cookies}!\_c\_valkeys@{\_c\_valkeys}}
+\index{\_c\_valkeys@{\_c\_valkeys}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_c\_valkeys}{\_c\_valkeys}}
+{\footnotesize\ttfamily webob.\+cookies.\+\_\+c\+\_\+valkeys = sorted(\mbox{\hyperlink{namespacewebob_1_1cookies_a7351e92464061996f1b3e79787b5d98d}{\+\_\+c\+\_\+renames}})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_a90285f0a265af6dc29fee71b39636c6b}\label{namespacewebob_1_1cookies_a90285f0a265af6dc29fee71b39636c6b} 
+\index{webob.cookies@{webob.cookies}!\_ch\_unquote\_map@{\_ch\_unquote\_map}}
+\index{\_ch\_unquote\_map@{\_ch\_unquote\_map}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_ch\_unquote\_map}{\_ch\_unquote\_map}}
+{\footnotesize\ttfamily webob.\+cookies.\+\_\+ch\+\_\+unquote\+\_\+map\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ dict((bytes\_(\textcolor{stringliteral}{'\%03o'}\ \%\ i),\ \_bchr(i))}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{keywordflow}{for}\ i\ \textcolor{keywordflow}{in}\ range(256)}
+\DoxyCodeLine{00003\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacewebob_1_1cookies_a824d0def1d86aac9efc9a434a5508abb}\label{namespacewebob_1_1cookies_a824d0def1d86aac9efc9a434a5508abb} 
+\index{webob.cookies@{webob.cookies}!\_default@{\_default}}
+\index{\_default@{\_default}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_default}{\_default}}
+{\footnotesize\ttfamily webob.\+cookies.\+\_\+default = object()\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_af32ac44db52f98159633c1b8896e8e67}\label{namespacewebob_1_1cookies_af32ac44db52f98159633c1b8896e8e67} 
+\index{webob.cookies@{webob.cookies}!\_domain\_quote@{\_domain\_quote}}
+\index{\_domain\_quote@{\_domain\_quote}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_domain\_quote}{\_domain\_quote}}
+{\footnotesize\ttfamily webob.\+cookies.\+\_\+domain\+\_\+quote = \mbox{\hyperlink{namespacewebob_1_1cookies_a1dc028eff2037993e5edeec72ad921f1}{\+\_\+path\+\_\+quote}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_a7f32de2aa43cf5c5a94d8d7dc40abcb6}\label{namespacewebob_1_1cookies_a7f32de2aa43cf5c5a94d8d7dc40abcb6} 
+\index{webob.cookies@{webob.cookies}!\_escape\_char@{\_escape\_char}}
+\index{\_escape\_char@{\_escape\_char}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_escape\_char}{\_escape\_char}}
+{\footnotesize\ttfamily webob.\+cookies.\+\_\+escape\+\_\+char = \+\_\+escape\+\_\+map.\+\_\+\+\_\+getitem\+\_\+\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_aa0fcb436a24c1ba6f85c1f5bf90b84fb}\label{namespacewebob_1_1cookies_aa0fcb436a24c1ba6f85c1f5bf90b84fb} 
+\index{webob.cookies@{webob.cookies}!\_escape\_map@{\_escape\_map}}
+\index{\_escape\_map@{\_escape\_map}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_escape\_map}{\_escape\_map}}
+{\footnotesize\ttfamily webob.\+cookies.\+\_\+escape\+\_\+map = dict((chr(i), \textquotesingle{}\textbackslash{}\textbackslash{}\%03o\textquotesingle{} \% i) for i in range(256))\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_ab9c5431dfb184d6f53f289f8c8c1f957}\label{namespacewebob_1_1cookies_ab9c5431dfb184d6f53f289f8c8c1f957} 
+\index{webob.cookies@{webob.cookies}!\_escape\_noop\_chars@{\_escape\_noop\_chars}}
+\index{\_escape\_noop\_chars@{\_escape\_noop\_chars}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_escape\_noop\_chars}{\_escape\_noop\_chars}}
+{\footnotesize\ttfamily tuple webob.\+cookies.\+\_\+escape\+\_\+noop\+\_\+chars = \mbox{\hyperlink{namespacewebob_1_1cookies_aec0a81fb87613a403a7e4bc71ee89329}{\+\_\+allowed\+\_\+cookie\+\_\+chars}} + \textquotesingle{} \textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_ab9a2c785f7775e2e36ee28af036a6c09}\label{namespacewebob_1_1cookies_ab9a2c785f7775e2e36ee28af036a6c09} 
+\index{webob.cookies@{webob.cookies}!\_legal\_special\_chars@{\_legal\_special\_chars}}
+\index{\_legal\_special\_chars@{\_legal\_special\_chars}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_legal\_special\_chars}{\_legal\_special\_chars}}
+{\footnotesize\ttfamily str webob.\+cookies.\+\_\+legal\+\_\+special\+\_\+chars = "{}\texorpdfstring{$\sim$}{\string~}!@\#\$\%\texorpdfstring{$^\wedge$}{\string^}\&\texorpdfstring{$\ast$}{*}()\+\_\++=-\/\`{}.?\texorpdfstring{$\vert$}{|}\+:/()\{\}$<$$>$\textquotesingle{}"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_a81d47cd1da7562fe94bd4bff24d81ae2}\label{namespacewebob_1_1cookies_a81d47cd1da7562fe94bd4bff24d81ae2} 
+\index{webob.cookies@{webob.cookies}!\_marker@{\_marker}}
+\index{\_marker@{\_marker}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_marker}{\_marker}}
+{\footnotesize\ttfamily webob.\+cookies.\+\_\+marker = object()\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_aed43be62cedf1403e65388cee0a77e2c}\label{namespacewebob_1_1cookies_aed43be62cedf1403e65388cee0a77e2c} 
+\index{webob.cookies@{webob.cookies}!\_max\_age\_quote@{\_max\_age\_quote}}
+\index{\_max\_age\_quote@{\_max\_age\_quote}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_max\_age\_quote}{\_max\_age\_quote}}
+{\footnotesize\ttfamily webob.\+cookies.\+\_\+max\+\_\+age\+\_\+quote = \mbox{\hyperlink{namespacewebob_1_1cookies_a1dc028eff2037993e5edeec72ad921f1}{\+\_\+path\+\_\+quote}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_a01cda22dae597ea3f9bd9c7af917f372}\label{namespacewebob_1_1cookies_a01cda22dae597ea3f9bd9c7af917f372} 
+\index{webob.cookies@{webob.cookies}!\_re\_cookie\_str@{\_re\_cookie\_str}}
+\index{\_re\_cookie\_str@{\_re\_cookie\_str}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_re\_cookie\_str}{\_re\_cookie\_str}}
+{\footnotesize\ttfamily str webob.\+cookies.\+\_\+re\+\_\+cookie\+\_\+str = \mbox{\hyperlink{namespacewebob_1_1cookies_af51cfd7544b7250a7ec72ac0f9788a27}{\+\_\+re\+\_\+cookie\+\_\+str\+\_\+key}} + \mbox{\hyperlink{namespacewebob_1_1cookies_a8059c85d82297cede2014d5aeed02717}{\+\_\+re\+\_\+cookie\+\_\+str\+\_\+equal}} + \mbox{\hyperlink{namespacewebob_1_1cookies_abf46fe7b591efcf818a2c2a71a6a1760}{\+\_\+re\+\_\+cookie\+\_\+str\+\_\+val}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_a8059c85d82297cede2014d5aeed02717}\label{namespacewebob_1_1cookies_a8059c85d82297cede2014d5aeed02717} 
+\index{webob.cookies@{webob.cookies}!\_re\_cookie\_str\_equal@{\_re\_cookie\_str\_equal}}
+\index{\_re\_cookie\_str\_equal@{\_re\_cookie\_str\_equal}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_re\_cookie\_str\_equal}{\_re\_cookie\_str\_equal}}
+{\footnotesize\ttfamily str webob.\+cookies.\+\_\+re\+\_\+cookie\+\_\+str\+\_\+equal = r"{}\textbackslash{}s\texorpdfstring{$\ast$}{*}=\textbackslash{}s\texorpdfstring{$\ast$}{*}"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_af51cfd7544b7250a7ec72ac0f9788a27}\label{namespacewebob_1_1cookies_af51cfd7544b7250a7ec72ac0f9788a27} 
+\index{webob.cookies@{webob.cookies}!\_re\_cookie\_str\_key@{\_re\_cookie\_str\_key}}
+\index{\_re\_cookie\_str\_key@{\_re\_cookie\_str\_key}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_re\_cookie\_str\_key}{\_re\_cookie\_str\_key}}
+{\footnotesize\ttfamily str webob.\+cookies.\+\_\+re\+\_\+cookie\+\_\+str\+\_\+key = r"{}(\%s+?)"{} \% \+\_\+re\+\_\+legal\+\_\+char\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_abf46fe7b591efcf818a2c2a71a6a1760}\label{namespacewebob_1_1cookies_abf46fe7b591efcf818a2c2a71a6a1760} 
+\index{webob.cookies@{webob.cookies}!\_re\_cookie\_str\_val@{\_re\_cookie\_str\_val}}
+\index{\_re\_cookie\_str\_val@{\_re\_cookie\_str\_val}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_re\_cookie\_str\_val}{\_re\_cookie\_str\_val}}
+{\footnotesize\ttfamily str webob.\+cookies.\+\_\+re\+\_\+cookie\+\_\+str\+\_\+val\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \textcolor{stringliteral}{r"{}(\%s|\%s|\%s)"{}}\ \%\ (\_re\_quoted,\ \_re\_expires\_val,}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_re\_unquoted\_val)}
+
+\end{DoxyCode}
+\Hypertarget{namespacewebob_1_1cookies_af77c221472a1c8dd18a821a1c66a10a9}\label{namespacewebob_1_1cookies_af77c221472a1c8dd18a821a1c66a10a9} 
+\index{webob.cookies@{webob.cookies}!\_re\_expires\_val@{\_re\_expires\_val}}
+\index{\_re\_expires\_val@{\_re\_expires\_val}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_re\_expires\_val}{\_re\_expires\_val}}
+{\footnotesize\ttfamily str webob.\+cookies.\+\_\+re\+\_\+expires\+\_\+val = r"{}\textbackslash{}w\{3\},\textbackslash{}s\mbox{[}\textbackslash{}w\textbackslash{}d-\/\mbox{]}\{9,11\}\textbackslash{}s\mbox{[}\textbackslash{}d\+:\mbox{]}\{8\}\textbackslash{}s\+GMT"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_a13763bc000729329f2d9b8497b409f94}\label{namespacewebob_1_1cookies_a13763bc000729329f2d9b8497b409f94} 
+\index{webob.cookies@{webob.cookies}!\_re\_legal\_char@{\_re\_legal\_char}}
+\index{\_re\_legal\_char@{\_re\_legal\_char}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_re\_legal\_char}{\_re\_legal\_char}}
+{\footnotesize\ttfamily str webob.\+cookies.\+\_\+re\+\_\+legal\+\_\+char = r"{}\mbox{[}\textbackslash{}w\textbackslash{}d\%s\mbox{]}"{} \% re.\+escape(\mbox{\hyperlink{namespacewebob_1_1cookies_ab9a2c785f7775e2e36ee28af036a6c09}{\+\_\+legal\+\_\+special\+\_\+chars}})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_abfefbe2138909574479c969657193b6e}\label{namespacewebob_1_1cookies_abfefbe2138909574479c969657193b6e} 
+\index{webob.cookies@{webob.cookies}!\_re\_quoted@{\_re\_quoted}}
+\index{\_re\_quoted@{\_re\_quoted}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_re\_quoted}{\_re\_quoted}}
+{\footnotesize\ttfamily str webob.\+cookies.\+\_\+re\+\_\+quoted = r\textquotesingle{}"{}(?\+:\textbackslash{}\textbackslash{}"{}\texorpdfstring{$\vert$}{|}.)\texorpdfstring{$\ast$}{*}?"{}\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_ad87b74184378868c6ee50a400a6ccb20}\label{namespacewebob_1_1cookies_ad87b74184378868c6ee50a400a6ccb20} 
+\index{webob.cookies@{webob.cookies}!\_re\_unquoted\_val@{\_re\_unquoted\_val}}
+\index{\_re\_unquoted\_val@{\_re\_unquoted\_val}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_re\_unquoted\_val}{\_re\_unquoted\_val}}
+{\footnotesize\ttfamily str webob.\+cookies.\+\_\+re\+\_\+unquoted\+\_\+val = r"{}(?\+:\%s\texorpdfstring{$\vert$}{|}\textbackslash{}\textbackslash{}(?\+:\mbox{[}0-\/3\mbox{]}\mbox{[}0-\/7\mbox{]}\mbox{[}0-\/7\mbox{]}\texorpdfstring{$\vert$}{|}.))\texorpdfstring{$\ast$}{*}"{} \% \+\_\+re\+\_\+legal\+\_\+char\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_a308d633253d8201d1a98fa9435a4d882}\label{namespacewebob_1_1cookies_a308d633253d8201d1a98fa9435a4d882} 
+\index{webob.cookies@{webob.cookies}!\_rx\_cookie@{\_rx\_cookie}}
+\index{\_rx\_cookie@{\_rx\_cookie}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_rx\_cookie}{\_rx\_cookie}}
+{\footnotesize\ttfamily webob.\+cookies.\+\_\+rx\+\_\+cookie = re.\+compile(bytes\+\_\+(\mbox{\hyperlink{namespacewebob_1_1cookies_a01cda22dae597ea3f9bd9c7af917f372}{\+\_\+re\+\_\+cookie\+\_\+str}}, \textquotesingle{}ascii\textquotesingle{}))\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_a1a9c01649b1c4dbedd5dc32f30101dce}\label{namespacewebob_1_1cookies_a1a9c01649b1c4dbedd5dc32f30101dce} 
+\index{webob.cookies@{webob.cookies}!\_rx\_unquote@{\_rx\_unquote}}
+\index{\_rx\_unquote@{\_rx\_unquote}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_rx\_unquote}{\_rx\_unquote}}
+{\footnotesize\ttfamily webob.\+cookies.\+\_\+rx\+\_\+unquote = re.\+compile(bytes\+\_\+(r\textquotesingle{}\textbackslash{}\textbackslash{}(\mbox{[}0-\/3\mbox{]}\mbox{[}0-\/7\mbox{]}\mbox{[}0-\/7\mbox{]}\texorpdfstring{$\vert$}{|}.)\textquotesingle{}, \textquotesingle{}ascii\textquotesingle{}))\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_af1b53d90be8b5f13609fd294db4be00c}\label{namespacewebob_1_1cookies_af1b53d90be8b5f13609fd294db4be00c} 
+\index{webob.cookies@{webob.cookies}!\_should\_raise@{\_should\_raise}}
+\index{\_should\_raise@{\_should\_raise}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_should\_raise}{\_should\_raise}}
+{\footnotesize\ttfamily webob.\+cookies.\+\_\+should\+\_\+raise = None\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_aebce12d5e4511fcb81ef1a5b47f077df}\label{namespacewebob_1_1cookies_aebce12d5e4511fcb81ef1a5b47f077df} 
+\index{webob.cookies@{webob.cookies}!\_valid\_token\_bytes@{\_valid\_token\_bytes}}
+\index{\_valid\_token\_bytes@{\_valid\_token\_bytes}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_valid\_token\_bytes}{\_valid\_token\_bytes}}
+{\footnotesize\ttfamily webob.\+cookies.\+\_\+valid\+\_\+token\+\_\+bytes = bytes\+\_\+(\mbox{\hyperlink{namespacewebob_1_1cookies_a06faae508e0738506730b3e22db4f27b}{\+\_\+valid\+\_\+token\+\_\+chars}})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_a06faae508e0738506730b3e22db4f27b}\label{namespacewebob_1_1cookies_a06faae508e0738506730b3e22db4f27b} 
+\index{webob.cookies@{webob.cookies}!\_valid\_token\_chars@{\_valid\_token\_chars}}
+\index{\_valid\_token\_chars@{\_valid\_token\_chars}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{\_valid\_token\_chars}{\_valid\_token\_chars}}
+{\footnotesize\ttfamily str webob.\+cookies.\+\_\+valid\+\_\+token\+\_\+chars = string.\+ascii\+\_\+letters + string.\+digits + "{}!\#\$\%\&\textquotesingle{}\texorpdfstring{$\ast$}{*}+-\/.\texorpdfstring{$^\wedge$}{\string^}\+\_\+\`{}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\sim$}{\string~}"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1cookies_a7f8da7301f648cf5c16f98283647b9bc}\label{namespacewebob_1_1cookies_a7f8da7301f648cf5c16f98283647b9bc} 
+\index{webob.cookies@{webob.cookies}!months@{months}}
+\index{months@{months}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{months}{months}}
+{\footnotesize\ttfamily tuple webob.\+cookies.\+months}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ (\textcolor{keywordtype}{None},\ \textcolor{stringliteral}{'Jan'},\ \textcolor{stringliteral}{'Feb'},\ \textcolor{stringliteral}{'Mar'},\ \textcolor{stringliteral}{'Apr'},\ \textcolor{stringliteral}{'May'},\ \textcolor{stringliteral}{'Jun'},\ \textcolor{stringliteral}{'Jul'},\ \textcolor{stringliteral}{'Aug'},\ \textcolor{stringliteral}{'Sep'},}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'Oct'},\ \textcolor{stringliteral}{'Nov'},\ \textcolor{stringliteral}{'Dec'})}
+
+\end{DoxyCode}
+\Hypertarget{namespacewebob_1_1cookies_a54d096ac44677fe7df09451e76cf20b2}\label{namespacewebob_1_1cookies_a54d096ac44677fe7df09451e76cf20b2} 
+\index{webob.cookies@{webob.cookies}!SAMESITE\_VALIDATION@{SAMESITE\_VALIDATION}}
+\index{SAMESITE\_VALIDATION@{SAMESITE\_VALIDATION}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{SAMESITE\_VALIDATION}{SAMESITE\_VALIDATION}}
+{\footnotesize\ttfamily bool webob.\+cookies.\+SAMESITE\+\_\+\+VALIDATION = True}
+
+\Hypertarget{namespacewebob_1_1cookies_afbf49170ffdf1d34f3c69fb90e7b55c7}\label{namespacewebob_1_1cookies_afbf49170ffdf1d34f3c69fb90e7b55c7} 
+\index{webob.cookies@{webob.cookies}!weekdays@{weekdays}}
+\index{weekdays@{weekdays}!webob.cookies@{webob.cookies}}
+\doxysubsubsection{\texorpdfstring{weekdays}{weekdays}}
+{\footnotesize\ttfamily tuple webob.\+cookies.\+weekdays = (\textquotesingle{}Mon\textquotesingle{}, \textquotesingle{}Tue\textquotesingle{}, \textquotesingle{}Wed\textquotesingle{}, \textquotesingle{}Thu\textquotesingle{}, \textquotesingle{}Fri\textquotesingle{}, \textquotesingle{}Sat\textquotesingle{}, \textquotesingle{}Sun\textquotesingle{})}
+

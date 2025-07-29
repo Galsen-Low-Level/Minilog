@@ -1,0 +1,79 @@
+.TH "requests.models" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+requests.models
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBPreparedRequest\fP"
+.br
+.ti -1c
+.RI "class \fBRequest\fP"
+.br
+.ti -1c
+.RI "class \fBRequestEncodingMixin\fP"
+.br
+.ti -1c
+.RI "class \fBRequestHooksMixin\fP"
+.br
+.ti -1c
+.RI "class \fBResponse\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBREDIRECT_STATI\fP"
+.br
+.ti -1c
+.RI "int \fBDEFAULT_REDIRECT_LIMIT\fP = 30"
+.br
+.ti -1c
+.RI "int \fBCONTENT_CHUNK_SIZE\fP = 10 * 1024"
+.br
+.ti -1c
+.RI "int \fBITER_CHUNK_SIZE\fP = 512"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+requests\&.models
+~~~~~~~~~~~~~~~
+
+This module contains the primary objects that power Requests\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "int requests\&.models\&.CONTENT_CHUNK_SIZE = 10 * 1024"
+
+.SS "int requests\&.models\&.DEFAULT_REDIRECT_LIMIT = 30"
+
+.SS "int requests\&.models\&.ITER_CHUNK_SIZE = 512"
+
+.SS "tuple requests\&.models\&.REDIRECT_STATI"
+\fBInitial value:\fP.PP
+.nf
+1 =  (
+2     codes\&.moved,  # 301
+3     codes\&.found,  # 302
+4     codes\&.other,  # 303
+5     codes\&.temporary_redirect,  # 307
+6     codes\&.permanent_redirect,  # 308
+7 )
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

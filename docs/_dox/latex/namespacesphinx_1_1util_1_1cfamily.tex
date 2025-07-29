@@ -1,0 +1,191 @@
+\doxysection{sphinx.\+util.\+cfamily Namespace Reference}
+\hypertarget{namespacesphinx_1_1util_1_1cfamily}{}\label{namespacesphinx_1_1util_1_1cfamily}\index{sphinx.util.cfamily@{sphinx.util.cfamily}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1util_1_1cfamily_1_1ASTAttribute}{ASTAttribute}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1util_1_1cfamily_1_1ASTAttributeList}{ASTAttribute\+List}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1util_1_1cfamily_1_1ASTBaseBase}{ASTBase\+Base}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1util_1_1cfamily_1_1ASTBaseParenExprList}{ASTBase\+Paren\+Expr\+List}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1util_1_1cfamily_1_1ASTCPPAttribute}{ASTCPPAttribute}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1util_1_1cfamily_1_1ASTGnuAttribute}{ASTGnu\+Attribute}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1util_1_1cfamily_1_1ASTGnuAttributeList}{ASTGnu\+Attribute\+List}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1util_1_1cfamily_1_1ASTIdAttribute}{ASTId\+Attribute}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1util_1_1cfamily_1_1ASTParenAttribute}{ASTParen\+Attribute}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1util_1_1cfamily_1_1BaseParser}{Base\+Parser}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1util_1_1cfamily_1_1DefinitionError}{Definition\+Error}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1util_1_1cfamily_1_1NoOldIdError}{No\+Old\+Id\+Error}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1util_1_1cfamily_1_1UnsupportedMultiCharacterCharLiteral}{Unsupported\+Multi\+Character\+Char\+Literal}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{namespacesphinx_1_1util_1_1cfamily_a180f8c617a8558ccf584f31a189e45f0}{verify\+\_\+description\+\_\+mode}} (str mode)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Type\+Alias \mbox{\hyperlink{namespacesphinx_1_1util_1_1cfamily_a76e10072cc4eda8b2bbbac49e53d176c}{Stringify\+Transform}} = Callable\mbox{[}\mbox{[}Any\mbox{]}, str\mbox{]}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1cfamily_a232133edaf39362b645583d7427c1590}{logger}} = \mbox{\hyperlink{namespacesphinx_1_1util_1_1logging_a145fcac2d401a60c07071e113b1c8458}{logging.\+get\+Logger}}(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1cfamily_ad5c32a3312056abead484440d0b9ab77}{\+\_\+whitespace\+\_\+re}} = re.\+compile(r\textquotesingle{}\textbackslash{}s+\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1cfamily_a728cbe4e39c2471abd48699d5ed522ce}{anon\+\_\+identifier\+\_\+re}} = re.\+compile(r\textquotesingle{}(@\mbox{[}a-\/zA-\/Z0-\/9\+\_\+\mbox{]})\mbox{[}a-\/zA-\/Z0-\/9\+\_\+\mbox{]}\texorpdfstring{$\ast$}{*}\textbackslash{}b\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1cfamily_a9d198962c99f8b90c563a60d65f512d6}{identifier\+\_\+re}}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1cfamily_ab3484c133d4f4435b20b17a590572174}{integer\+\_\+literal\+\_\+re}} = re.\+compile(r\textquotesingle{}\mbox{[}1-\/9\mbox{]}\mbox{[}0-\/9\mbox{]}\texorpdfstring{$\ast$}{*}(\textbackslash{}\textquotesingle{}\mbox{[}0-\/9\mbox{]}+)\texorpdfstring{$\ast$}{*}\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1cfamily_acd64647a7061ecec8f9261dca7fb63a0}{octal\+\_\+literal\+\_\+re}} = re.\+compile(r\textquotesingle{}0\mbox{[}0-\/7\mbox{]}\texorpdfstring{$\ast$}{*}(\textbackslash{}\textquotesingle{}\mbox{[}0-\/7\mbox{]}+)\texorpdfstring{$\ast$}{*}\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1cfamily_a967861e715ce0a275feb527c6fd66a22}{hex\+\_\+literal\+\_\+re}} = re.\+compile(r\textquotesingle{}0\mbox{[}xX\mbox{]}\mbox{[}0-\/9a-\/fA-\/F\mbox{]}+(\textbackslash{}\textquotesingle{}\mbox{[}0-\/9a-\/fA-\/F\mbox{]}+)\texorpdfstring{$\ast$}{*}\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1cfamily_a593ba9201af0c28836100dd29584bafd}{binary\+\_\+literal\+\_\+re}} = re.\+compile(r\textquotesingle{}0\mbox{[}bB\mbox{]}\mbox{[}01\mbox{]}+(\textbackslash{}\textquotesingle{}\mbox{[}01\mbox{]}+)\texorpdfstring{$\ast$}{*}\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1cfamily_a2ec2be85516c49e32e7493089a3147be}{integers\+\_\+literal\+\_\+suffix\+\_\+re}}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1cfamily_a7f4709175fb21fd1503da93806c13e5e}{float\+\_\+literal\+\_\+re}}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1cfamily_aeb6c2c57b8266535151e972690c87563}{float\+\_\+literal\+\_\+suffix\+\_\+re}} = re.\+compile(r\textquotesingle{}\mbox{[}f\+FlL\mbox{]}\textbackslash{}b\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1cfamily_a9caab9704f300134b75e0bb05a78993f}{char\+\_\+literal\+\_\+re}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Utility functions common to the C and C++ domains.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesphinx_1_1util_1_1cfamily_a180f8c617a8558ccf584f31a189e45f0}\label{namespacesphinx_1_1util_1_1cfamily_a180f8c617a8558ccf584f31a189e45f0} 
+\index{sphinx.util.cfamily@{sphinx.util.cfamily}!verify\_description\_mode@{verify\_description\_mode}}
+\index{verify\_description\_mode@{verify\_description\_mode}!sphinx.util.cfamily@{sphinx.util.cfamily}}
+\doxysubsubsection{\texorpdfstring{verify\_description\_mode()}{verify\_description\_mode()}}
+{\footnotesize\ttfamily  None sphinx.\+util.\+cfamily.\+verify\+\_\+description\+\_\+mode (\begin{DoxyParamCaption}\item[{str}]{mode }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacesphinx_1_1util_1_1cfamily_ad5c32a3312056abead484440d0b9ab77}\label{namespacesphinx_1_1util_1_1cfamily_ad5c32a3312056abead484440d0b9ab77} 
+\index{sphinx.util.cfamily@{sphinx.util.cfamily}!\_whitespace\_re@{\_whitespace\_re}}
+\index{\_whitespace\_re@{\_whitespace\_re}!sphinx.util.cfamily@{sphinx.util.cfamily}}
+\doxysubsubsection{\texorpdfstring{\_whitespace\_re}{\_whitespace\_re}}
+{\footnotesize\ttfamily sphinx.\+util.\+cfamily.\+\_\+whitespace\+\_\+re = re.\+compile(r\textquotesingle{}\textbackslash{}s+\textquotesingle{})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1util_1_1cfamily_a728cbe4e39c2471abd48699d5ed522ce}\label{namespacesphinx_1_1util_1_1cfamily_a728cbe4e39c2471abd48699d5ed522ce} 
+\index{sphinx.util.cfamily@{sphinx.util.cfamily}!anon\_identifier\_re@{anon\_identifier\_re}}
+\index{anon\_identifier\_re@{anon\_identifier\_re}!sphinx.util.cfamily@{sphinx.util.cfamily}}
+\doxysubsubsection{\texorpdfstring{anon\_identifier\_re}{anon\_identifier\_re}}
+{\footnotesize\ttfamily sphinx.\+util.\+cfamily.\+anon\+\_\+identifier\+\_\+re = re.\+compile(r\textquotesingle{}(@\mbox{[}a-\/zA-\/Z0-\/9\+\_\+\mbox{]})\mbox{[}a-\/zA-\/Z0-\/9\+\_\+\mbox{]}\texorpdfstring{$\ast$}{*}\textbackslash{}b\textquotesingle{})}
+
+\Hypertarget{namespacesphinx_1_1util_1_1cfamily_a593ba9201af0c28836100dd29584bafd}\label{namespacesphinx_1_1util_1_1cfamily_a593ba9201af0c28836100dd29584bafd} 
+\index{sphinx.util.cfamily@{sphinx.util.cfamily}!binary\_literal\_re@{binary\_literal\_re}}
+\index{binary\_literal\_re@{binary\_literal\_re}!sphinx.util.cfamily@{sphinx.util.cfamily}}
+\doxysubsubsection{\texorpdfstring{binary\_literal\_re}{binary\_literal\_re}}
+{\footnotesize\ttfamily sphinx.\+util.\+cfamily.\+binary\+\_\+literal\+\_\+re = re.\+compile(r\textquotesingle{}0\mbox{[}bB\mbox{]}\mbox{[}01\mbox{]}+(\textbackslash{}\textquotesingle{}\mbox{[}01\mbox{]}+)\texorpdfstring{$\ast$}{*}\textquotesingle{})}
+
+\Hypertarget{namespacesphinx_1_1util_1_1cfamily_a9caab9704f300134b75e0bb05a78993f}\label{namespacesphinx_1_1util_1_1cfamily_a9caab9704f300134b75e0bb05a78993f} 
+\index{sphinx.util.cfamily@{sphinx.util.cfamily}!char\_literal\_re@{char\_literal\_re}}
+\index{char\_literal\_re@{char\_literal\_re}!sphinx.util.cfamily@{sphinx.util.cfamily}}
+\doxysubsubsection{\texorpdfstring{char\_literal\_re}{char\_literal\_re}}
+{\footnotesize\ttfamily sphinx.\+util.\+cfamily.\+char\+\_\+literal\+\_\+re}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ re.compile(}
+\DoxyCodeLine{00002\ \ \ \ \ ,}
+\DoxyCodeLine{00003\ \ \ \ \ flags=re.VERBOSE,}
+\DoxyCodeLine{00004\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacesphinx_1_1util_1_1cfamily_a7f4709175fb21fd1503da93806c13e5e}\label{namespacesphinx_1_1util_1_1cfamily_a7f4709175fb21fd1503da93806c13e5e} 
+\index{sphinx.util.cfamily@{sphinx.util.cfamily}!float\_literal\_re@{float\_literal\_re}}
+\index{float\_literal\_re@{float\_literal\_re}!sphinx.util.cfamily@{sphinx.util.cfamily}}
+\doxysubsubsection{\texorpdfstring{float\_literal\_re}{float\_literal\_re}}
+{\footnotesize\ttfamily sphinx.\+util.\+cfamily.\+float\+\_\+literal\+\_\+re}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ re.compile(}
+\DoxyCodeLine{00002\ \ \ \ \ ,}
+\DoxyCodeLine{00003\ \ \ \ \ flags=re.VERBOSE,}
+\DoxyCodeLine{00004\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacesphinx_1_1util_1_1cfamily_aeb6c2c57b8266535151e972690c87563}\label{namespacesphinx_1_1util_1_1cfamily_aeb6c2c57b8266535151e972690c87563} 
+\index{sphinx.util.cfamily@{sphinx.util.cfamily}!float\_literal\_suffix\_re@{float\_literal\_suffix\_re}}
+\index{float\_literal\_suffix\_re@{float\_literal\_suffix\_re}!sphinx.util.cfamily@{sphinx.util.cfamily}}
+\doxysubsubsection{\texorpdfstring{float\_literal\_suffix\_re}{float\_literal\_suffix\_re}}
+{\footnotesize\ttfamily sphinx.\+util.\+cfamily.\+float\+\_\+literal\+\_\+suffix\+\_\+re = re.\+compile(r\textquotesingle{}\mbox{[}f\+FlL\mbox{]}\textbackslash{}b\textquotesingle{})}
+
+\Hypertarget{namespacesphinx_1_1util_1_1cfamily_a967861e715ce0a275feb527c6fd66a22}\label{namespacesphinx_1_1util_1_1cfamily_a967861e715ce0a275feb527c6fd66a22} 
+\index{sphinx.util.cfamily@{sphinx.util.cfamily}!hex\_literal\_re@{hex\_literal\_re}}
+\index{hex\_literal\_re@{hex\_literal\_re}!sphinx.util.cfamily@{sphinx.util.cfamily}}
+\doxysubsubsection{\texorpdfstring{hex\_literal\_re}{hex\_literal\_re}}
+{\footnotesize\ttfamily sphinx.\+util.\+cfamily.\+hex\+\_\+literal\+\_\+re = re.\+compile(r\textquotesingle{}0\mbox{[}xX\mbox{]}\mbox{[}0-\/9a-\/fA-\/F\mbox{]}+(\textbackslash{}\textquotesingle{}\mbox{[}0-\/9a-\/fA-\/F\mbox{]}+)\texorpdfstring{$\ast$}{*}\textquotesingle{})}
+
+\Hypertarget{namespacesphinx_1_1util_1_1cfamily_a9d198962c99f8b90c563a60d65f512d6}\label{namespacesphinx_1_1util_1_1cfamily_a9d198962c99f8b90c563a60d65f512d6} 
+\index{sphinx.util.cfamily@{sphinx.util.cfamily}!identifier\_re@{identifier\_re}}
+\index{identifier\_re@{identifier\_re}!sphinx.util.cfamily@{sphinx.util.cfamily}}
+\doxysubsubsection{\texorpdfstring{identifier\_re}{identifier\_re}}
+{\footnotesize\ttfamily sphinx.\+util.\+cfamily.\+identifier\+\_\+re}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ re.compile(}
+\DoxyCodeLine{00002\ \ \ \ \ ,}
+\DoxyCodeLine{00003\ \ \ \ \ flags=re.VERBOSE,}
+\DoxyCodeLine{00004\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacesphinx_1_1util_1_1cfamily_ab3484c133d4f4435b20b17a590572174}\label{namespacesphinx_1_1util_1_1cfamily_ab3484c133d4f4435b20b17a590572174} 
+\index{sphinx.util.cfamily@{sphinx.util.cfamily}!integer\_literal\_re@{integer\_literal\_re}}
+\index{integer\_literal\_re@{integer\_literal\_re}!sphinx.util.cfamily@{sphinx.util.cfamily}}
+\doxysubsubsection{\texorpdfstring{integer\_literal\_re}{integer\_literal\_re}}
+{\footnotesize\ttfamily sphinx.\+util.\+cfamily.\+integer\+\_\+literal\+\_\+re = re.\+compile(r\textquotesingle{}\mbox{[}1-\/9\mbox{]}\mbox{[}0-\/9\mbox{]}\texorpdfstring{$\ast$}{*}(\textbackslash{}\textquotesingle{}\mbox{[}0-\/9\mbox{]}+)\texorpdfstring{$\ast$}{*}\textquotesingle{})}
+
+\Hypertarget{namespacesphinx_1_1util_1_1cfamily_a2ec2be85516c49e32e7493089a3147be}\label{namespacesphinx_1_1util_1_1cfamily_a2ec2be85516c49e32e7493089a3147be} 
+\index{sphinx.util.cfamily@{sphinx.util.cfamily}!integers\_literal\_suffix\_re@{integers\_literal\_suffix\_re}}
+\index{integers\_literal\_suffix\_re@{integers\_literal\_suffix\_re}!sphinx.util.cfamily@{sphinx.util.cfamily}}
+\doxysubsubsection{\texorpdfstring{integers\_literal\_suffix\_re}{integers\_literal\_suffix\_re}}
+{\footnotesize\ttfamily sphinx.\+util.\+cfamily.\+integers\+\_\+literal\+\_\+suffix\+\_\+re}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ re.compile(}
+\DoxyCodeLine{00002\ \ \ \ \ ,}
+\DoxyCodeLine{00003\ \ \ \ \ flags=re.VERBOSE,}
+\DoxyCodeLine{00004\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacesphinx_1_1util_1_1cfamily_a232133edaf39362b645583d7427c1590}\label{namespacesphinx_1_1util_1_1cfamily_a232133edaf39362b645583d7427c1590} 
+\index{sphinx.util.cfamily@{sphinx.util.cfamily}!logger@{logger}}
+\index{logger@{logger}!sphinx.util.cfamily@{sphinx.util.cfamily}}
+\doxysubsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily sphinx.\+util.\+cfamily.\+logger = \mbox{\hyperlink{namespacesphinx_1_1util_1_1logging_a145fcac2d401a60c07071e113b1c8458}{logging.\+get\+Logger}}(\+\_\+\+\_\+name\+\_\+\+\_\+)}
+
+\Hypertarget{namespacesphinx_1_1util_1_1cfamily_acd64647a7061ecec8f9261dca7fb63a0}\label{namespacesphinx_1_1util_1_1cfamily_acd64647a7061ecec8f9261dca7fb63a0} 
+\index{sphinx.util.cfamily@{sphinx.util.cfamily}!octal\_literal\_re@{octal\_literal\_re}}
+\index{octal\_literal\_re@{octal\_literal\_re}!sphinx.util.cfamily@{sphinx.util.cfamily}}
+\doxysubsubsection{\texorpdfstring{octal\_literal\_re}{octal\_literal\_re}}
+{\footnotesize\ttfamily sphinx.\+util.\+cfamily.\+octal\+\_\+literal\+\_\+re = re.\+compile(r\textquotesingle{}0\mbox{[}0-\/7\mbox{]}\texorpdfstring{$\ast$}{*}(\textbackslash{}\textquotesingle{}\mbox{[}0-\/7\mbox{]}+)\texorpdfstring{$\ast$}{*}\textquotesingle{})}
+
+\Hypertarget{namespacesphinx_1_1util_1_1cfamily_a76e10072cc4eda8b2bbbac49e53d176c}\label{namespacesphinx_1_1util_1_1cfamily_a76e10072cc4eda8b2bbbac49e53d176c} 
+\index{sphinx.util.cfamily@{sphinx.util.cfamily}!StringifyTransform@{StringifyTransform}}
+\index{StringifyTransform@{StringifyTransform}!sphinx.util.cfamily@{sphinx.util.cfamily}}
+\doxysubsubsection{\texorpdfstring{StringifyTransform}{StringifyTransform}}
+{\footnotesize\ttfamily Type\+Alias sphinx.\+util.\+cfamily.\+Stringify\+Transform = Callable\mbox{[}\mbox{[}Any\mbox{]}, str\mbox{]}}
+

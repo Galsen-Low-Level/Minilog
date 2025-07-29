@@ -1,0 +1,121 @@
+.TH "webob.response.ResponseBodyFile" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webob.response.ResponseBodyFile
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBresponse\fP)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBwritelines\fP (self, seq)"
+.br
+.ti -1c
+.RI "\fBclose\fP (self)"
+.br
+.ti -1c
+.RI "\fBflush\fP (self)"
+.br
+.ti -1c
+.RI "\fBtell\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBresponse\fP"
+.br
+.ti -1c
+.RI "\fBwrite\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBmode\fP = 'wb'"
+.br
+.ti -1c
+.RI "bool \fBclosed\fP = False"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "webob\&.response\&.ResponseBodyFile\&.__init__ ( self,  response)"
+
+.PP
+.nf
+Represents a :class:`~Response` as a file like object\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "webob\&.response\&.ResponseBodyFile\&.__repr__ ( self)"
+
+.SS "webob\&.response\&.ResponseBodyFile\&.close ( self)"
+
+.SS "webob\&.response\&.ResponseBodyFile\&.flush ( self)"
+
+.SS "webob\&.response\&.ResponseBodyFile\&.tell ( self)"
+
+.PP
+.nf
+Provide the current location where we are going to start writing\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.response\&.ResponseBodyFile\&.writelines ( self,  seq)"
+
+.PP
+.nf
+Write a sequence of lines to the response\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "bool webob\&.response\&.ResponseBodyFile\&.closed = False\fC [static]\fP"
+
+.SS "str webob\&.response\&.ResponseBodyFile\&.mode = 'wb'\fC [static]\fP"
+
+.SS "webob\&.response\&.ResponseBodyFile\&.response"
+
+.SS "webob\&.response\&.ResponseBodyFile\&.write"
+
+.SH "Property Documentation"
+.PP 
+.SS "webob\&.response\&.ResponseBodyFile\&.encoding\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  property(
+        lambda self: self\&.response\&.charset,
+        doc="The encoding of the file (inherited from response\&.charset)"
+    )
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

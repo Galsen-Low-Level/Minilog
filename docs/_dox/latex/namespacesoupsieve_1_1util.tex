@@ -1,0 +1,98 @@
+\doxysection{soupsieve.\+util Namespace Reference}
+\hypertarget{namespacesoupsieve_1_1util}{}\label{namespacesoupsieve_1_1util}\index{soupsieve.util@{soupsieve.util}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsoupsieve_1_1util_1_1SelectorSyntaxError}{Selector\+Syntax\+Error}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespacesoupsieve_1_1util_a3b70ab740c98f80481d0a07013ebc55f}{lower}} (str string)
+\item 
+Callable\mbox{[}..., Any\mbox{]} \mbox{\hyperlink{namespacesoupsieve_1_1util_a9db86af3d4ec58eef0af3a0e3641d5c5}{deprecated}} (str message, int stacklevel=2)
+\item 
+None \mbox{\hyperlink{namespacesoupsieve_1_1util_a7fac5b7ee8960f38abc6b4e9f200948c}{warn\+\_\+deprecated}} (str message, int stacklevel=2)
+\item 
+tuple\mbox{[}str, int, int\mbox{]} \mbox{\hyperlink{namespacesoupsieve_1_1util_af4d60765364a105e70030646a82325a7}{get\+\_\+pattern\+\_\+context}} (str pattern, int index)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacesoupsieve_1_1util_a21ac2f5687d902e33c1f986885a856af}{DEBUG}} = 0x00001
+\item 
+\mbox{\hyperlink{namespacesoupsieve_1_1util_a40219fc491794d7043f4a7465e9ce081}{RE\+\_\+\+PATTERN\+\_\+\+LINE\+\_\+\+SPLIT}} = re.\+compile(r\textquotesingle{}(?\+:\textbackslash{}r\textbackslash{}n\texorpdfstring{$\vert$}{|}(?!\textbackslash{}r\textbackslash{}n)\mbox{[}\textbackslash{}n\textbackslash{}r\mbox{]})\texorpdfstring{$\vert$}{|}\$\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacesoupsieve_1_1util_ab5593fc6c0633784914ee0fcaf272a06}{UC\+\_\+A}} = ord(\textquotesingle{}A\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacesoupsieve_1_1util_a4b430c2a59aa71cc1b1242dd28377e6c}{UC\+\_\+Z}} = ord(\textquotesingle{}Z\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Utility.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesoupsieve_1_1util_a9db86af3d4ec58eef0af3a0e3641d5c5}\label{namespacesoupsieve_1_1util_a9db86af3d4ec58eef0af3a0e3641d5c5} 
+\index{soupsieve.util@{soupsieve.util}!deprecated@{deprecated}}
+\index{deprecated@{deprecated}!soupsieve.util@{soupsieve.util}}
+\doxysubsubsection{\texorpdfstring{deprecated()}{deprecated()}}
+{\footnotesize\ttfamily  Callable\mbox{[}..., Any\mbox{]} soupsieve.\+util.\+deprecated (\begin{DoxyParamCaption}\item[{str}]{message,  }\item[{int }]{stacklevel = {\ttfamily 2} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Raise a `DeprecationWarning` when wrapped function/method is called.
+
+Usage:
+
+    @deprecated("This method will be removed in version X; use Y instead.")
+    def some_method()"
+        pass
+\end{DoxyVerb}
+ \Hypertarget{namespacesoupsieve_1_1util_af4d60765364a105e70030646a82325a7}\label{namespacesoupsieve_1_1util_af4d60765364a105e70030646a82325a7} 
+\index{soupsieve.util@{soupsieve.util}!get\_pattern\_context@{get\_pattern\_context}}
+\index{get\_pattern\_context@{get\_pattern\_context}!soupsieve.util@{soupsieve.util}}
+\doxysubsubsection{\texorpdfstring{get\_pattern\_context()}{get\_pattern\_context()}}
+{\footnotesize\ttfamily  tuple\mbox{[}str, int, int\mbox{]} soupsieve.\+util.\+get\+\_\+pattern\+\_\+context (\begin{DoxyParamCaption}\item[{str}]{pattern,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the pattern context.\end{DoxyVerb}
+ \Hypertarget{namespacesoupsieve_1_1util_a3b70ab740c98f80481d0a07013ebc55f}\label{namespacesoupsieve_1_1util_a3b70ab740c98f80481d0a07013ebc55f} 
+\index{soupsieve.util@{soupsieve.util}!lower@{lower}}
+\index{lower@{lower}!soupsieve.util@{soupsieve.util}}
+\doxysubsubsection{\texorpdfstring{lower()}{lower()}}
+{\footnotesize\ttfamily  str soupsieve.\+util.\+lower (\begin{DoxyParamCaption}\item[{str}]{string }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Lower.\end{DoxyVerb}
+ \Hypertarget{namespacesoupsieve_1_1util_a7fac5b7ee8960f38abc6b4e9f200948c}\label{namespacesoupsieve_1_1util_a7fac5b7ee8960f38abc6b4e9f200948c} 
+\index{soupsieve.util@{soupsieve.util}!warn\_deprecated@{warn\_deprecated}}
+\index{warn\_deprecated@{warn\_deprecated}!soupsieve.util@{soupsieve.util}}
+\doxysubsubsection{\texorpdfstring{warn\_deprecated()}{warn\_deprecated()}}
+{\footnotesize\ttfamily  None soupsieve.\+util.\+warn\+\_\+deprecated (\begin{DoxyParamCaption}\item[{str}]{message,  }\item[{int }]{stacklevel = {\ttfamily 2} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Warn deprecated.\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacesoupsieve_1_1util_a21ac2f5687d902e33c1f986885a856af}\label{namespacesoupsieve_1_1util_a21ac2f5687d902e33c1f986885a856af} 
+\index{soupsieve.util@{soupsieve.util}!DEBUG@{DEBUG}}
+\index{DEBUG@{DEBUG}!soupsieve.util@{soupsieve.util}}
+\doxysubsubsection{\texorpdfstring{DEBUG}{DEBUG}}
+{\footnotesize\ttfamily int soupsieve.\+util.\+DEBUG = 0x00001}
+
+\Hypertarget{namespacesoupsieve_1_1util_a40219fc491794d7043f4a7465e9ce081}\label{namespacesoupsieve_1_1util_a40219fc491794d7043f4a7465e9ce081} 
+\index{soupsieve.util@{soupsieve.util}!RE\_PATTERN\_LINE\_SPLIT@{RE\_PATTERN\_LINE\_SPLIT}}
+\index{RE\_PATTERN\_LINE\_SPLIT@{RE\_PATTERN\_LINE\_SPLIT}!soupsieve.util@{soupsieve.util}}
+\doxysubsubsection{\texorpdfstring{RE\_PATTERN\_LINE\_SPLIT}{RE\_PATTERN\_LINE\_SPLIT}}
+{\footnotesize\ttfamily soupsieve.\+util.\+RE\+\_\+\+PATTERN\+\_\+\+LINE\+\_\+\+SPLIT = re.\+compile(r\textquotesingle{}(?\+:\textbackslash{}r\textbackslash{}n\texorpdfstring{$\vert$}{|}(?!\textbackslash{}r\textbackslash{}n)\mbox{[}\textbackslash{}n\textbackslash{}r\mbox{]})\texorpdfstring{$\vert$}{|}\$\textquotesingle{})}
+
+\Hypertarget{namespacesoupsieve_1_1util_ab5593fc6c0633784914ee0fcaf272a06}\label{namespacesoupsieve_1_1util_ab5593fc6c0633784914ee0fcaf272a06} 
+\index{soupsieve.util@{soupsieve.util}!UC\_A@{UC\_A}}
+\index{UC\_A@{UC\_A}!soupsieve.util@{soupsieve.util}}
+\doxysubsubsection{\texorpdfstring{UC\_A}{UC\_A}}
+{\footnotesize\ttfamily soupsieve.\+util.\+UC\+\_\+A = ord(\textquotesingle{}A\textquotesingle{})}
+
+\Hypertarget{namespacesoupsieve_1_1util_a4b430c2a59aa71cc1b1242dd28377e6c}\label{namespacesoupsieve_1_1util_a4b430c2a59aa71cc1b1242dd28377e6c} 
+\index{soupsieve.util@{soupsieve.util}!UC\_Z@{UC\_Z}}
+\index{UC\_Z@{UC\_Z}!soupsieve.util@{soupsieve.util}}
+\doxysubsubsection{\texorpdfstring{UC\_Z}{UC\_Z}}
+{\footnotesize\ttfamily soupsieve.\+util.\+UC\+\_\+Z = ord(\textquotesingle{}Z\textquotesingle{})}
+

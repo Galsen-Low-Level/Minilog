@@ -1,0 +1,157 @@
+.TH "requests.cookies" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+requests.cookies
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBCookieConflictError\fP"
+.br
+.ti -1c
+.RI "class \fBMockRequest\fP"
+.br
+.ti -1c
+.RI "class \fBMockResponse\fP"
+.br
+.ti -1c
+.RI "class \fBRequestsCookieJar\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBextract_cookies_to_jar\fP (jar, request, response)"
+.br
+.ti -1c
+.RI "\fBget_cookie_header\fP (jar, request)"
+.br
+.ti -1c
+.RI "\fBremove_cookie_by_name\fP (cookiejar, name, domain=None, path=None)"
+.br
+.ti -1c
+.RI "\fB_copy_cookie_jar\fP (jar)"
+.br
+.ti -1c
+.RI "\fBcreate_cookie\fP (name, value, **kwargs)"
+.br
+.ti -1c
+.RI "\fBmorsel_to_cookie\fP (morsel)"
+.br
+.ti -1c
+.RI "\fBcookiejar_from_dict\fP (cookie_dict, cookiejar=None, overwrite=True)"
+.br
+.ti -1c
+.RI "\fBmerge_cookies\fP (cookiejar, cookies)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+requests\&.cookies
+~~~~~~~~~~~~~~~~
+
+Compatibility code to be able to use `http\&.cookiejar\&.CookieJar` with requests\&.
+
+requests\&.utils imports from here, so be careful with imports\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "requests\&.cookies\&._copy_cookie_jar ( jar)\fC [protected]\fP"
+
+.SS "requests\&.cookies\&.cookiejar_from_dict ( cookie_dict,  cookiejar = \fCNone\fP,  overwrite = \fCTrue\fP)"
+
+.PP
+.nf
+Returns a CookieJar from a key/value dictionary\&.
+
+:param cookie_dict: Dict of key/values to insert into CookieJar\&.
+:param cookiejar: (optional) A cookiejar to add the cookies to\&.
+:param overwrite: (optional) If False, will not replace cookies
+    already in the jar with new ones\&.
+:rtype: CookieJar
+
+.fi
+.PP
+ 
+.SS "requests\&.cookies\&.create_cookie ( name,  value, ** kwargs)"
+
+.PP
+.nf
+Make a cookie from underspecified parameters\&.
+
+By default, the pair of `name` and `value` will be set for the domain ''
+and sent on every request (this is sometimes called a 'supercookie')\&.
+
+.fi
+.PP
+ 
+.SS "requests\&.cookies\&.extract_cookies_to_jar ( jar,  request,  response)"
+
+.PP
+.nf
+Extract the cookies from the response into a CookieJar\&.
+
+:param jar: http\&.cookiejar\&.CookieJar (not necessarily a RequestsCookieJar)
+:param request: our own requests\&.Request object
+:param response: urllib3\&.HTTPResponse object
+
+.fi
+.PP
+ 
+.SS "requests\&.cookies\&.get_cookie_header ( jar,  request)"
+
+.PP
+.nf
+Produce an appropriate Cookie header string to be sent with `request`, or None\&.
+
+:rtype: str
+
+.fi
+.PP
+ 
+.SS "requests\&.cookies\&.merge_cookies ( cookiejar,  cookies)"
+
+.PP
+.nf
+Add cookies to cookiejar and returns a merged CookieJar\&.
+
+:param cookiejar: CookieJar object to add the cookies to\&.
+:param cookies: Dictionary or CookieJar object to be added\&.
+:rtype: CookieJar
+
+.fi
+.PP
+ 
+.SS "requests\&.cookies\&.morsel_to_cookie ( morsel)"
+
+.PP
+.nf
+Convert a Morsel object into a Cookie containing the one k/v pair\&.
+.fi
+.PP
+ 
+.SS "requests\&.cookies\&.remove_cookie_by_name ( cookiejar,  name,  domain = \fCNone\fP,  path = \fCNone\fP)"
+
+.PP
+.nf
+Unsets a cookie by name, by default over all domains and paths\&.
+
+Wraps CookieJar\&.clear(), is O(n)\&.
+
+.fi
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

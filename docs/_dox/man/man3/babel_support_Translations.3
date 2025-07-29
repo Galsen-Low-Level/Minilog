@@ -1,0 +1,249 @@
+.TH "babel.support.Translations" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+babel.support.Translations
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBbabel\&.support\&.NullTranslations\fP, and gettext\&.GNUTranslations\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, gettext\&._TranslationsReader|None fp=None, str|None \fBdomain\fP=None)"
+.br
+.ti -1c
+.RI "\fBNullTranslations\fP \fBload\fP (cls, str|os\&.PathLike[str]|None dirname=None, Iterable[str|\fBLocale\fP]|\fBLocale\fP|str|None locales=None, str|None \fBdomain\fP=None)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd\fP (self, \fBTranslations\fP translations, bool \fBmerge\fP=True)"
+.br
+.ti -1c
+.RI "\fBmerge\fP (self, \fBTranslations\fP translations)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBbabel\&.support\&.NullTranslations\fP
+.in +1c
+.ti -1c
+.RI "str \fBdgettext\fP (self, str \fBdomain\fP, str message)"
+.br
+.ti -1c
+.RI "str \fBldgettext\fP (self, str \fBdomain\fP, str message)"
+.br
+.ti -1c
+.RI "str \fBudgettext\fP (self, str \fBdomain\fP, str message)"
+.br
+.ti -1c
+.RI "str \fBdngettext\fP (self, str \fBdomain\fP, str singular, str plural, int num)"
+.br
+.ti -1c
+.RI "str \fBldngettext\fP (self, str \fBdomain\fP, str singular, str plural, int num)"
+.br
+.ti -1c
+.RI "str \fBudngettext\fP (self, str \fBdomain\fP, str singular, str plural, int num)"
+.br
+.ti -1c
+.RI "str|object \fBpgettext\fP (self, str context, str message)"
+.br
+.ti -1c
+.RI "str|bytes|object \fBlpgettext\fP (self, str context, str message)"
+.br
+.ti -1c
+.RI "str \fBnpgettext\fP (self, str context, str singular, str plural, int num)"
+.br
+.ti -1c
+.RI "str|bytes \fBlnpgettext\fP (self, str context, str singular, str plural, int num)"
+.br
+.ti -1c
+.RI "str \fBupgettext\fP (self, str context, str message)"
+.br
+.ti -1c
+.RI "str \fBunpgettext\fP (self, str context, str singular, str plural, int num)"
+.br
+.ti -1c
+.RI "str|object \fBdpgettext\fP (self, str \fBdomain\fP, str context, str message)"
+.br
+.ti -1c
+.RI "str \fBudpgettext\fP (self, str \fBdomain\fP, str context, str message)"
+.br
+.ti -1c
+.RI "str|bytes|object \fBldpgettext\fP (self, str \fBdomain\fP, str context, str message)"
+.br
+.ti -1c
+.RI "str \fBdnpgettext\fP (self, str \fBdomain\fP, str context, str singular, str plural, int num)"
+.br
+.ti -1c
+.RI "str \fBudnpgettext\fP (self, str \fBdomain\fP, str context, str singular, str plural, int num)"
+.br
+.ti -1c
+.RI "str|bytes \fBldnpgettext\fP (self, str \fBdomain\fP, str context, str singular, str plural, int num)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdomain\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBbabel\&.support\&.NullTranslations\fP
+.in +1c
+.ti -1c
+.RI "\fBfiles\fP"
+.br
+.ti -1c
+.RI "\fBdomain\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBDEFAULT_DOMAIN\fP = 'messages'"
+.br
+.ti -1c
+.RI "\fBugettext\fP = gettext\&.GNUTranslations\&.gettext"
+.br
+.ti -1c
+.RI "\fBungettext\fP = gettext\&.GNUTranslations\&.ngettext"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBbabel\&.support\&.NullTranslations\fP
+.in +1c
+.ti -1c
+.RI "\fBDEFAULT_DOMAIN\fP = None"
+.br
+.ti -1c
+.RI "str \fBdugettext\fP = \fBudgettext\fP"
+.br
+.ti -1c
+.RI "str \fBdungettext\fP = \fBudngettext\fP"
+.br
+.ti -1c
+.RI "str \fBCONTEXT_ENCODING\fP = '%s\\x04%s'"
+.br
+.ti -1c
+.RI "str \fBdupgettext\fP = \fBudpgettext\fP"
+.br
+.ti -1c
+.RI "str \fBdunpgettext\fP = \fBudnpgettext\fP"
+.br
+.ti -1c
+.RI "\fBugettext\fP = gettext\&.NullTranslations\&.gettext"
+.br
+.ti -1c
+.RI "\fBungettext\fP = gettext\&.NullTranslations\&.ngettext"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Protected Attributes inherited from \fBbabel\&.support\&.NullTranslations\fP
+.in +1c
+.ti -1c
+.RI "dict \fB_info\fP [str, str]"
+.br
+.ti -1c
+.RI "\fBNullTranslations\fP \fB_fallback\fP | None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+An extended translation catalog class\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "babel\&.support\&.Translations\&.__init__ ( self, gettext\&._TranslationsReader | None  fp = \fCNone\fP, str | None  domain = \fCNone\fP)"
+
+.PP
+.nf
+Initialize the translations catalog\&.
+
+:param fp: the file-like object the translation should be read from
+:param domain: the message domain (default: 'messages')
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBbabel\&.support\&.NullTranslations\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " str babel\&.support\&.Translations\&.__repr__ ( self)"
+
+.SS "babel\&.support\&.Translations\&.add ( self, \fBTranslations\fP translations, bool  merge = \fCTrue\fP)"
+
+.PP
+.nf
+Add the given translations to the catalog\&.
+
+If the domain of the translations is different than that of the
+current catalog, they are added as a catalog that is only accessible
+by the various ``d*gettext`` functions\&.
+
+:param translations: the `Translations` instance with the messages to
+                     add
+:param merge: whether translations for message domains that have
+              already been added should be merged with the existing
+              translations
+
+.fi
+.PP
+ 
+.SS " \fBNullTranslations\fP babel\&.support\&.Translations\&.load ( cls, str | os\&.PathLike[str] | None  dirname = \fCNone\fP, Iterable[str | \fBLocale\fP] | \fBLocale\fP | str | None  locales = \fCNone\fP, str | None  domain = \fCNone\fP)"
+
+.PP
+.nf
+Load translations from the given directory\&.
+
+:param dirname: the directory containing the ``MO`` files
+:param locales: the list of locales in order of preference (items in
+                this list can be either `Locale` objects or locale
+                strings)
+:param domain: the message domain (default: 'messages')
+
+.fi
+.PP
+ 
+.SS "babel\&.support\&.Translations\&.merge ( self, \fBTranslations\fP translations)"
+
+.PP
+.nf
+Merge the given translations into the catalog\&.
+
+Message translations in the specified catalog override any messages
+with the same identifier in the existing catalog\&.
+
+:param translations: the `Translations` instance with the messages to
+                     merge
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "str babel\&.support\&.Translations\&.DEFAULT_DOMAIN = 'messages'\fC [static]\fP"
+
+.SS "babel\&.support\&.Translations\&.domain"
+
+.SS "babel\&.support\&.Translations\&.ugettext = gettext\&.GNUTranslations\&.gettext\fC [static]\fP"
+
+.SS "babel\&.support\&.Translations\&.ungettext = gettext\&.GNUTranslations\&.ngettext\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

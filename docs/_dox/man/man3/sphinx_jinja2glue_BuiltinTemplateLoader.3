@@ -1,0 +1,184 @@
+.TH "sphinx.jinja2glue.BuiltinTemplateLoader" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.jinja2glue.BuiltinTemplateLoader
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.application\&.TemplateBridge\fP, and \fBjinja2\&.loaders\&.BaseLoader\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBinit\fP (self, \fBBuilder\fP builder, \fBTheme\fP|None theme=None, list[str]|None dirs=None)"
+.br
+.ti -1c
+.RI "str \fBrender\fP (self, str template, dict[str, Any] context)"
+.br
+.ti -1c
+.RI "str \fBrender_string\fP (self, str source, dict[str, Any] context)"
+.br
+.ti -1c
+.RI "float \fBnewest_template_mtime\fP (self)"
+.br
+.ti -1c
+.RI "str \fBnewest_template_name\fP (self)"
+.br
+.ti -1c
+.RI "tuple[str, str, Callable[[], bool]] \fBget_source\fP (self, \fBEnvironment\fP \fBenvironment\fP, str template)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBjinja2\&.loaders\&.BaseLoader\fP
+.in +1c
+.ti -1c
+.RI "t\&.List[str] \fBlist_templates\fP (self)"
+.br
+.ti -1c
+.RI "'Template' \fBload\fP (self, 'Environment' environment, str name, t\&.Optional[t\&.MutableMapping[str, t\&.Any]] globals=None)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBtemplatepathlen\fP"
+.br
+.ti -1c
+.RI "\fBpathchain\fP"
+.br
+.ti -1c
+.RI "\fBloaders\fP"
+.br
+.ti -1c
+.RI "\fBenvironment\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "tuple[float, str] \fB_newest_template_mtime_name\fP (self)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Attributes inherited from \fBjinja2\&.loaders\&.BaseLoader\fP
+.in +1c
+.ti -1c
+.RI "bool \fBhas_source_access\fP = True"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Interfaces the rendering environment of jinja2 for use in Sphinx\&.
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " tuple[float, str] sphinx\&.jinja2glue\&.BuiltinTemplateLoader\&._newest_template_mtime_name ( self)\fC [protected]\fP"
+
+.SS " tuple[str, str, Callable[[], bool]] sphinx\&.jinja2glue\&.BuiltinTemplateLoader\&.get_source ( self, \fBEnvironment\fP environment, str
+     template)"
+
+.PP
+.nf
+Get the template source, filename and reload helper for a template\&.
+It's passed the environment and template name and has to return a
+tuple in the form ``(source, filename, uptodate)`` or raise a
+`TemplateNotFound` error if it can't locate the template\&.
+
+The source part of the returned tuple must be the source of the
+template as a string\&. The filename should be the name of the
+file on the filesystem if it was loaded from there, otherwise
+``None``\&. The filename is used by Python for the tracebacks
+if no loader extension is used\&.
+
+The last item in the tuple is the `uptodate` function\&.  If auto
+reloading is enabled it's always called to check if the template
+changed\&.  No arguments are passed so the function must store the
+old state somewhere (for example in a closure)\&.  If it returns `False`
+the template will be reloaded\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.loaders\&.BaseLoader\fP\&.
+.SS " None sphinx\&.jinja2glue\&.BuiltinTemplateLoader\&.init ( self, \fBBuilder\fP builder, \fBTheme\fP | None  theme = \fCNone\fP, list[str] | None  dirs = \fCNone\fP)"
+
+.PP
+.nf
+Called by the builder to initialize the template system\&.
+
+*builder* is the builder object; you'll probably want to look at the
+value of ``builder\&.config\&.templates_path``\&.
+
+*theme* is a :class:`sphinx\&.theming\&.Theme` object or None; in the latter
+case, *dirs* can be list of fixed directories to look for templates\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.application\&.TemplateBridge\fP\&.
+.SS " float sphinx\&.jinja2glue\&.BuiltinTemplateLoader\&.newest_template_mtime ( self)"
+
+.PP
+.nf
+Called by the builder to determine if output files are outdated
+because of template changes\&.  Return the mtime of the newest template
+file that was changed\&.  The default implementation returns ``0``\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.application\&.TemplateBridge\fP\&.
+.SS " str sphinx\&.jinja2glue\&.BuiltinTemplateLoader\&.newest_template_name ( self)"
+
+.SS " str sphinx\&.jinja2glue\&.BuiltinTemplateLoader\&.render ( self, str template, dict[str, Any] context)"
+
+.PP
+.nf
+Called by the builder to render a template given as a filename with
+a specified context (a Python dictionary)\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.application\&.TemplateBridge\fP\&.
+.SS " str sphinx\&.jinja2glue\&.BuiltinTemplateLoader\&.render_string ( self, str template, dict[str, Any] context)"
+
+.PP
+.nf
+Called by the builder to render a template given as a string with a
+specified context (a Python dictionary)\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.application\&.TemplateBridge\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.jinja2glue\&.BuiltinTemplateLoader\&.environment"
+
+.SS "sphinx\&.jinja2glue\&.BuiltinTemplateLoader\&.loaders"
+
+.SS "sphinx\&.jinja2glue\&.BuiltinTemplateLoader\&.pathchain"
+
+.SS "sphinx\&.jinja2glue\&.BuiltinTemplateLoader\&.templatepathlen"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

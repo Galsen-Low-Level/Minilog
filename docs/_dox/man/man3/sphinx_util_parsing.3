@@ -1,0 +1,75 @@
+.TH "sphinx.util.parsing" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.util.parsing
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "list[\fBNode\fP] \fBnested_parse_to_nodes\fP (\fBRSTState\fP state, str|\fBStringList\fP text, *str source='< generated text >', int offset=0, bool allow_section_headings=True, bool keep_title_context=False)"
+.br
+.ti -1c
+.RI "Iterator[None] \fB_fresh_title_style_context\fP (\fBRSTState\fP state)"
+.br
+.ti -1c
+.RI "\fBStringList\fP \fB_text_to_string_list\fP (str|\fBStringList\fP text, *str source, int tab_width)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Docutils utility functions for parsing text\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " Iterator[None] sphinx\&.util\&.parsing\&._fresh_title_style_context (\fBRSTState\fP state)\fC [protected]\fP"
+
+.SS " \fBStringList\fP sphinx\&.util\&.parsing\&._text_to_string_list (str | \fBStringList\fP text, *str source, int
+ tab_width)\fC [protected]\fP"
+
+.SS " list[\fBNode\fP] sphinx\&.util\&.parsing\&.nested_parse_to_nodes (\fBRSTState\fP state, str | \fBStringList\fP text, *str  source = \fC'<generated text>'\fP, int  offset = \fC0\fP, bool  allow_section_headings = \fCTrue\fP, bool  keep_title_context = \fCFalse\fP)"
+
+.PP
+.nf
+Parse *text* into nodes\&.
+
+:param state:
+    The state machine state\&. Must be a subclass of ``RSTState``\&.
+:param text:
+    Text, in string form\&. ``StringList`` is also accepted\&.
+:param source:
+    The text's source, used when creating a new ``StringList``\&.
+:param offset:
+    The offset of the content\&.
+:param allow_section_headings:
+    Are titles (sections) allowed in *text*?
+    Note that this option bypasses Docutils' usual checks on
+    doctree structure, and misuse of this option can lead to
+    an incoherent doctree\&. In Docutils, section nodes should
+    only be children of ``Structural`` nodes, which includes
+    ``document``, ``section``, and ``sidebar`` nodes\&.
+:param keep_title_context:
+    If this is False (the default), then *content* is parsed as if it were
+    an independent document, meaning that title decorations (e\&.g\&. underlines)
+    do not need to match the surrounding document\&.
+    This is useful when the parsed content comes from
+    a completely different context, such as docstrings\&.
+    If this is True, then title underlines must match those in
+    the surrounding document, otherwise the behaviour is undefined\&.
+
+\&.\&. versionadded:: 7\&.4
+
+.fi
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

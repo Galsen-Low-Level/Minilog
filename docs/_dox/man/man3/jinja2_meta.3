@@ -1,0 +1,103 @@
+.TH "jinja2.meta" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.meta
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBTrackingCodeGenerator\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "t\&.Set[str] \fBfind_undeclared_variables\fP (\fBnodes\&.Template\fP ast)"
+.br
+.ti -1c
+.RI "t\&.Iterator[t\&.Optional[str]] \fBfind_referenced_templates\fP (\fBnodes\&.Template\fP ast)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tuple \fB_ref_types\fP = (\fBnodes\&.Extends\fP, \fBnodes\&.FromImport\fP, \fBnodes\&.Import\fP, \fBnodes\&.Include\fP)"
+.br
+.ti -1c
+.RI "\fB_RefType\fP = t\&.Union[\fBnodes\&.Extends\fP, \fBnodes\&.FromImport\fP, \fBnodes\&.Import\fP, \fBnodes\&.Include\fP]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Functions that expose information about templates that might be
+interesting for introspection\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " t\&.Iterator[t\&.Optional[str]] jinja2\&.meta\&.find_referenced_templates (\fBnodes\&.Template\fP ast)"
+
+.PP
+.nf
+Finds all the referenced templates from the AST\&.  This will return an
+iterator over all the hardcoded template extensions, inclusions and
+imports\&.  If dynamic inheritance or inclusion is used, `None` will be
+yielded\&.
+
+>>> from jinja2 import Environment, meta
+>>> env = Environment()
+>>> ast = env\&.parse('{% extends 'layout\&.html' %}{% include helper %}')
+>>> list(meta\&.find_referenced_templates(ast))
+['layout\&.html', None]
+
+This function is useful for dependency tracking\&.  For example if you want
+to rebuild parts of the website after a layout template has changed\&.
+
+.fi
+.PP
+ 
+.SS " t\&.Set[str] jinja2\&.meta\&.find_undeclared_variables (\fBnodes\&.Template\fP ast)"
+
+.PP
+.nf
+Returns a set of all variables in the AST that will be looked up from
+the context at runtime\&.  Because at compile time it's not known which
+variables will be used depending on the path the execution takes at
+runtime, all variables are returned\&.
+
+>>> from jinja2 import Environment, meta
+>>> env = Environment()
+>>> ast = env\&.parse('{% set foo = 42 %}{{ bar + foo }}')
+>>> meta\&.find_undeclared_variables(ast) == {'bar'}
+True
+
+\&.\&. admonition:: Implementation
+
+   Internally the code generator is used for finding undeclared variables\&.
+   This is good to know because the code generator might raise a
+   :exc:`TemplateAssertionError` during compilation and as a matter of
+   fact this function can currently raise that exception as well\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "tuple jinja2\&.meta\&._ref_types = (\fBnodes\&.Extends\fP, \fBnodes\&.FromImport\fP, \fBnodes\&.Import\fP, \fBnodes\&.Include\fP)\fC [protected]\fP"
+
+.SS "jinja2\&.meta\&._RefType = t\&.Union[\fBnodes\&.Extends\fP, \fBnodes\&.FromImport\fP, \fBnodes\&.Import\fP, \fBnodes\&.Include\fP]\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

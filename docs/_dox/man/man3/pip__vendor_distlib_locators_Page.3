@@ -1,0 +1,99 @@
+.TH "pip._vendor.distlib.locators.Page" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.distlib.locators.Page
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdata\fP, url)"
+.br
+.ti -1c
+.RI "\fBlinks\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdata\fP"
+.br
+.ti -1c
+.RI "\fBbase_url\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_href\fP"
+.br
+.ti -1c
+.RI "\fB_base\fP = re\&.compile(, re\&.I | re\&.S)"
+.br
+.ti -1c
+.RI "\fB_clean_re\fP = re\&.compile(r'[^a\-z0\-9$&+,/:;=?@\&.#%_\\\\|\-]', re\&.I)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This class represents a scraped HTML page\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.locators\&.Page\&.__init__ ( self,  data,  url)"
+
+.PP
+.nf
+Initialise an instance with the Unicode page contents and the URL they
+came from\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.locators\&.Page\&.links ( self)"
+
+.PP
+.nf
+Return the URLs of all the links on a page together with information
+about their 'rel' attribute, for determining which ones to treat as
+downloads and which ones to queue for further scraping\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.locators\&.Page\&._base = re\&.compile(, re\&.I | re\&.S)\fC [static]\fP, \fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.locators\&.Page\&._clean_re = re\&.compile(r'[^a\-z0\-9$&+,/:;=?@\&.#%_\\\\|\-]', re\&.I)\fC [static]\fP, \fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.locators\&.Page\&._href\fC [static]\fP, \fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  re\&.compile(
+        , re\&.I | re\&.S | re\&.X)
+.fi
+
+.SS "pip\&._vendor\&.distlib\&.locators\&.Page\&.base_url"
+
+.SS "pip\&._vendor\&.distlib\&.locators\&.Page\&.data"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

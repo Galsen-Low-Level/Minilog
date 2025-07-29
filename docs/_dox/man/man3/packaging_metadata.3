@@ -1,0 +1,197 @@
+.TH "packaging.metadata" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+packaging.metadata
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_Validator\fP"
+.br
+.ti -1c
+.RI "class \fBExceptionGroup\fP"
+.br
+.ti -1c
+.RI "class \fBInvalidMetadata\fP"
+.br
+.ti -1c
+.RI "class \fBMetadata\fP"
+.br
+.ti -1c
+.RI "class \fBRawMetadata\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "list[str] \fB_parse_keywords\fP (str data)"
+.br
+.ti -1c
+.RI "dict[str, str] \fB_parse_project_urls\fP (list[str] data)"
+.br
+.ti -1c
+.RI "str \fB_get_payload\fP (email\&.message\&.Message msg, bytes|str source)"
+.br
+.ti -1c
+.RI "tuple[\fBRawMetadata\fP, dict[str, list[str]]] \fBparse_email\fP (bytes|str data)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBT\fP = typing\&.TypeVar('T')"
+.br
+.ti -1c
+.RI "\fBExceptionGroup\fP = \fBExceptionGroup\fP"
+.br
+.ti -1c
+.RI "dict \fB_STRING_FIELDS\fP"
+.br
+.ti -1c
+.RI "dict \fB_LIST_FIELDS\fP"
+.br
+.ti -1c
+.RI "dict \fB_DICT_FIELDS\fP"
+.br
+.ti -1c
+.RI "dict \fB_EMAIL_TO_RAW_MAPPING\fP"
+.br
+.ti -1c
+.RI "dict \fB_RAW_TO_EMAIL_MAPPING\fP = {raw: email for email, raw in _EMAIL_TO_RAW_MAPPING\&.items()}"
+.br
+.ti -1c
+.RI "\fB_NOT_FOUND\fP = object()"
+.br
+.ti -1c
+.RI "list \fB_VALID_METADATA_VERSIONS\fP = ['1\&.0', '1\&.1', '1\&.2', '2\&.1', '2\&.2', '2\&.3', '2\&.4']"
+.br
+.ti -1c
+.RI "\fB_MetadataVersion\fP = Literal['1\&.0', '1\&.1', '1\&.2', '2\&.1', '2\&.2', '2\&.3', '2\&.4']"
+.br
+.ti -1c
+.RI "\fB_REQUIRED_ATTRS\fP = frozenset(['metadata_version', 'name', 'version'])"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " str packaging\&.metadata\&._get_payload (email\&.message\&.Message msg, bytes | str source)\fC [protected]\fP"
+
+.PP
+.nf
+Get the body of the message\&.
+.fi
+.PP
+ 
+.SS " list[str] packaging\&.metadata\&._parse_keywords (str data)\fC [protected]\fP"
+
+.PP
+.nf
+Split a string of comma-separated keywords into a list of keywords\&.
+.fi
+.PP
+ 
+.SS " dict[str, str] packaging\&.metadata\&._parse_project_urls (list[str] data)\fC [protected]\fP"
+
+.PP
+.nf
+Parse a list of label/URL string pairings separated by a comma\&.
+.fi
+.PP
+ 
+.SS " tuple[\fBRawMetadata\fP, dict[str, list[str]]] packaging\&.metadata\&.parse_email (bytes | str data)"
+
+.PP
+.nf
+Parse a distribution's metadata stored as email headers (e\&.g\&. from ``METADATA``)\&.
+
+This function returns a two-item tuple of dicts\&. The first dict is of
+recognized fields from the core metadata specification\&. Fields that can be
+parsed and translated into Python's built-in types are converted
+appropriately\&. All other fields are left as-is\&. Fields that are allowed to
+appear multiple times are stored as lists\&.
+
+The second dict contains all other fields from the metadata\&. This includes
+any unrecognized fields\&. It also includes any fields which are expected to
+be parsed into a built-in type but were not formatted appropriately\&. Finally,
+any fields that are expected to appear only once but are repeated are
+included in this dict\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "dict packaging\&.metadata\&._DICT_FIELDS\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     "project_urls",
+3 }
+.fi
+
+.SS "dict packaging\&.metadata\&._EMAIL_TO_RAW_MAPPING\fC [protected]\fP"
+
+.SS "dict packaging\&.metadata\&._LIST_FIELDS\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     "classifiers",
+3     "dynamic",
+4     "license_files",
+5     "obsoletes",
+6     "obsoletes_dist",
+7     "platforms",
+8     "provides",
+9     "provides_dist",
+10     "provides_extra",
+11     "requires",
+12     "requires_dist",
+13     "requires_external",
+14     "supported_platforms",
+15 }
+.fi
+
+.SS "packaging\&.metadata\&._MetadataVersion = Literal['1\&.0', '1\&.1', '1\&.2', '2\&.1', '2\&.2', '2\&.3', '2\&.4']\fC [protected]\fP"
+
+.SS "packaging\&.metadata\&._NOT_FOUND = object()\fC [protected]\fP"
+
+.SS "dict packaging\&.metadata\&._RAW_TO_EMAIL_MAPPING = {raw: email for email, raw in _EMAIL_TO_RAW_MAPPING\&.items()}\fC [protected]\fP"
+
+.SS "packaging\&.metadata\&._REQUIRED_ATTRS = frozenset(['metadata_version', 'name', 'version'])\fC [protected]\fP"
+
+.SS "dict packaging\&.metadata\&._STRING_FIELDS\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     "author",
+3     "author_email",
+4     "description",
+5     "description_content_type",
+6     "download_url",
+7     "home_page",
+8     "license",
+9     "license_expression",
+10     "maintainer",
+11     "maintainer_email",
+12     "metadata_version",
+13     "name",
+14     "requires_python",
+15     "summary",
+16     "version",
+17 }
+.fi
+
+.SS "list packaging\&.metadata\&._VALID_METADATA_VERSIONS = ['1\&.0', '1\&.1', '1\&.2', '2\&.1', '2\&.2', '2\&.3', '2\&.4']\fC [protected]\fP"
+
+.SS "\fBpackaging\&.metadata\&.ExceptionGroup\fP = \fBExceptionGroup\fP"
+
+.SS "packaging\&.metadata\&.T = typing\&.TypeVar('T')"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,391 @@
+.TH "snowballstemmer.estonian_stemmer.EstonianStemmer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+snowballstemmer.estonian_stemmer.EstonianStemmer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP\&.
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBI_p1\fP"
+.br
+.ti -1c
+.RI "\fBlimit_backward\fP"
+.br
+.ti -1c
+.RI "\fBket\fP"
+.br
+.ti -1c
+.RI "\fBbra\fP"
+.br
+.ti -1c
+.RI "\fBcursor\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP
+.in +1c
+.ti -1c
+.RI "\fBcurrent\fP"
+.br
+.ti -1c
+.RI "\fBcursor\fP"
+.br
+.ti -1c
+.RI "\fBlimit\fP"
+.br
+.ti -1c
+.RI "\fBlimit_backward\fP"
+.br
+.ti -1c
+.RI "\fBbra\fP"
+.br
+.ti -1c
+.RI "\fBket\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBg_V1\fP = {u'a', u'e', u'i', u'o', u'u', u'õ', u'ä', u'ö', u'ü'}"
+.br
+.ti -1c
+.RI "dict \fBg_RV\fP = {u'a', u'e', u'i', u'u', u'o'}"
+.br
+.ti -1c
+.RI "dict \fBg_KI\fP = {u'k', u'p', u't', u'g', u'b', u'd', u's', u'h', u'f', u'š', u'z', u'ž'}"
+.br
+.ti -1c
+.RI "dict \fBg_GI\fP = {u'c', u'j', u'l', u'm', u'n', u'q', u'r', u'v', u'w', u'x', u'a', u'e', u'i', u'o', u'u', u'õ', u'ä', u'ö', u'ü'}"
+.br
+.ti -1c
+.RI "int \fBI_p1\fP = 0"
+.br
+.ti -1c
+.RI "list \fBa_0\fP"
+.br
+.ti -1c
+.RI "list \fBa_1\fP"
+.br
+.ti -1c
+.RI "list \fBa_2\fP"
+.br
+.ti -1c
+.RI "list \fBa_3\fP"
+.br
+.ti -1c
+.RI "list \fBa_4\fP"
+.br
+.ti -1c
+.RI "list \fBa_5\fP"
+.br
+.ti -1c
+.RI "list \fBa_6\fP"
+.br
+.ti -1c
+.RI "list \fBa_7\fP"
+.br
+.ti -1c
+.RI "list \fBa_8\fP"
+.br
+.ti -1c
+.RI "list \fBa_9\fP"
+.br
+.ti -1c
+.RI "list \fBa_10\fP"
+.br
+.ti -1c
+.RI "list \fBa_11\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_stem\fP (self)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "\fBset_current\fP (self, value)"
+.br
+.ti -1c
+.RI "\fBget_current\fP (self)"
+.br
+.ti -1c
+.RI "\fBcopy_from\fP (self, other)"
+.br
+.ti -1c
+.RI "\fBin_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_in_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBin_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_in_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBout_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_out_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBout_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_out_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBeq_s\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBeq_s_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBfind_among\fP (self, v)"
+.br
+.ti -1c
+.RI "\fBfind_among_b\fP (self, v)"
+.br
+.ti -1c
+.RI "\fBreplace_s\fP (self, c_bra, c_ket, s)"
+.br
+.ti -1c
+.RI "\fBslice_check\fP (self)"
+.br
+.ti -1c
+.RI "\fBslice_from\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBslice_del\fP (self)"
+.br
+.ti -1c
+.RI "\fBinsert\fP (self, c_bra, c_ket, s)"
+.br
+.ti -1c
+.RI "\fBslice_to\fP (self)"
+.br
+.ti -1c
+.RI "\fBassign_to\fP (self)"
+.br
+.ti -1c
+.RI "\fBstemWord\fP (self, word)"
+.br
+.ti -1c
+.RI "\fBstemWords\fP (self, words)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This class implements the stemming algorithm defined by a snowball script\&.
+Generated from estonian\&.sbl by Snowball 3\&.0\&.1 - https://snowballstem\&.org/
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&._stem ( self)\fC [protected]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "list snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.a_0\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"gi", \-1, 1),
+        Among(u"ki", \-1, 2)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.a_1\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"da", \-1, 3),
+        Among(u"mata", \-1, 1),
+        Among(u"b", \-1, 3),
+        Among(u"ksid", \-1, 1),
+        Among(u"nuksid", 3, 1),
+        Among(u"me", \-1, 3),
+        Among(u"sime", 5, 1),
+        Among(u"ksime", 6, 1),
+        Among(u"nuksime", 7, 1),
+        Among(u"akse", \-1, 2),
+        Among(u"dakse", 9, 1),
+        Among(u"takse", 9, 1),
+        Among(u"site", \-1, 1),
+        Among(u"ksite", 12, 1),
+        Among(u"nuksite", 13, 1),
+        Among(u"n", \-1, 3),
+        Among(u"sin", 15, 1),
+        Among(u"ksin", 16, 1),
+        Among(u"nuksin", 17, 1),
+        Among(u"daks", \-1, 1),
+        Among(u"taks", \-1, 1)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.a_10\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"ma", \-1, 2),
+        Among(u"mai", \-1, 1),
+        Among(u"m", \-1, 1)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.a_11\fC [static]\fP"
+
+.SS "list snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.a_2\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"aa", \-1, \-1),
+        Among(u"ee", \-1, \-1),
+        Among(u"ii", \-1, \-1),
+        Among(u"oo", \-1, \-1),
+        Among(u"uu", \-1, \-1),
+        Among(u"ää", \-1, \-1),
+        Among(u"õõ", \-1, \-1),
+        Among(u"öö", \-1, \-1),
+        Among(u"üü", \-1, \-1)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.a_3\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"i", \-1, 1)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.a_4\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"lane", \-1, 1),
+        Among(u"line", \-1, 3),
+        Among(u"mine", \-1, 2),
+        Among(u"lasse", \-1, 1),
+        Among(u"lisse", \-1, 3),
+        Among(u"misse", \-1, 2),
+        Among(u"lasi", \-1, 1),
+        Among(u"lisi", \-1, 3),
+        Among(u"misi", \-1, 2),
+        Among(u"last", \-1, 1),
+        Among(u"list", \-1, 3),
+        Among(u"mist", \-1, 2)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.a_5\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"ga", \-1, 1),
+        Among(u"ta", \-1, 1),
+        Among(u"le", \-1, 1),
+        Among(u"sse", \-1, 1),
+        Among(u"l", \-1, 1),
+        Among(u"s", \-1, 1),
+        Among(u"ks", 5, 1),
+        Among(u"t", \-1, 2),
+        Among(u"lt", 7, 1),
+        Among(u"st", 7, 1)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.a_6\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"", \-1, 2),
+        Among(u"las", 0, 1),
+        Among(u"lis", 0, 1),
+        Among(u"mis", 0, 1),
+        Among(u"t", 0, \-1)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.a_7\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"d", \-1, 4),
+        Among(u"sid", 0, 2),
+        Among(u"de", \-1, 4),
+        Among(u"ikkude", 2, 1),
+        Among(u"ike", \-1, 1),
+        Among(u"ikke", \-1, 1),
+        Among(u"te", \-1, 3)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.a_8\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"va", \-1, \-1),
+        Among(u"du", \-1, \-1),
+        Among(u"nu", \-1, \-1),
+        Among(u"tu", \-1, \-1)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.a_9\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"kk", \-1, 1),
+        Among(u"pp", \-1, 2),
+        Among(u"tt", \-1, 3)
+    ]
+.fi
+
+.SS "snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.bra"
+
+.SS "snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.cursor"
+
+.SS "dict snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.g_GI = {u'c', u'j', u'l', u'm', u'n', u'q', u'r', u'v', u'w', u'x', u'a', u'e', u'i', u'o', u'u', u'õ', u'ä', u'ö', u'ü'}\fC [static]\fP"
+
+.SS "dict snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.g_KI = {u'k', u'p', u't', u'g', u'b', u'd', u's', u'h', u'f', u'š', u'z', u'ž'}\fC [static]\fP"
+
+.SS "dict snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.g_RV = {u'a', u'e', u'i', u'u', u'o'}\fC [static]\fP"
+
+.SS "dict snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.g_V1 = {u'a', u'e', u'i', u'o', u'u', u'õ', u'ä', u'ö', u'ü'}\fC [static]\fP"
+
+.SS "int snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.I_p1 = 0\fC [static]\fP"
+
+.SS "snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.I_p1"
+
+.SS "snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.ket"
+
+.SS "snowballstemmer\&.estonian_stemmer\&.EstonianStemmer\&.limit_backward"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

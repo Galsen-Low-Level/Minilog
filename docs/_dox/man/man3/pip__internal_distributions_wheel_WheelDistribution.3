@@ -1,0 +1,87 @@
+.TH "pip._internal.distributions.wheel.WheelDistribution" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.distributions.wheel.WheelDistribution
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._internal\&.distributions\&.base\&.AbstractDistribution\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Optional[str] \fBbuild_tracker_id\fP (self)"
+.br
+.ti -1c
+.RI "\fBBaseDistribution\fP \fBget_metadata_distribution\fP (self)"
+.br
+.ti -1c
+.RI "None \fBprepare_distribution_metadata\fP (self, 'PackageFinder' finder, bool build_isolation, bool check_build_deps)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._internal\&.distributions\&.base\&.AbstractDistribution\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, \fBInstallRequirement\fP \fBreq\fP)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBpip\&._internal\&.distributions\&.base\&.AbstractDistribution\fP
+.in +1c
+.ti -1c
+.RI "\fBreq\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Represents a wheel distribution\&.
+
+This does not need any preparation as wheels can be directly unpacked\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " Optional[str] pip\&._internal\&.distributions\&.wheel\&.WheelDistribution\&.build_tracker_id ( self)"
+
+.PP
+.nf
+A string that uniquely identifies this requirement to the build tracker\&.
+
+If None, then this dist has no work to do in the build tracker, and
+``\&.prepare_distribution_metadata()`` will not be called\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.distributions\&.base\&.AbstractDistribution\fP\&.
+.SS " \fBBaseDistribution\fP pip\&._internal\&.distributions\&.wheel\&.WheelDistribution\&.get_metadata_distribution ( self)"
+
+.PP
+.nf
+Loads the metadata from the wheel file into memory and returns a
+Distribution that uses it, not relying on the wheel file or
+requirement\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.distributions\&.base\&.AbstractDistribution\fP\&.
+.SS " None pip\&._internal\&.distributions\&.wheel\&.WheelDistribution\&.prepare_distribution_metadata ( self, 'PackageFinder' finder, bool build_isolation, bool check_build_deps)"
+
+.PP
+Reimplemented from \fBpip\&._internal\&.distributions\&.base\&.AbstractDistribution\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

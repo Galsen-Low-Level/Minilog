@@ -1,0 +1,239 @@
+.TH "sphinx.search.IndexBuilder" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.search.IndexBuilder
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, \fBBuildEnvironment\fP env, str \fBlang\fP, dict[str, str] options, str scoring)"
+.br
+.ti -1c
+.RI "None \fBload\fP (self, \fB_ReadableStream\fP[str|bytes] stream, Any format)"
+.br
+.ti -1c
+.RI "None \fBdump\fP (self, \fB_WritableStream\fP[str]|\fB_WritableStream\fP[bytes] stream, Any format)"
+.br
+.ti -1c
+.RI "dict[str, list[tuple[int, int, int, str, str]]] \fBget_objects\fP (self, dict[str, int] fn2index)"
+.br
+.ti -1c
+.RI "tuple[dict[str, list[int]|int], dict[str, list[int]|int]] \fBget_terms\fP (self, dict[str, int] fn2index)"
+.br
+.ti -1c
+.RI "dict[str, Any] \fBfreeze\fP (self)"
+.br
+.ti -1c
+.RI "str \fBlabel\fP (self)"
+.br
+.ti -1c
+.RI "None \fBprune\fP (self, Iterable[str] docnames)"
+.br
+.ti -1c
+.RI "None \fBfeed\fP (self, str docname, str|os\&.PathLike[str] filename, str title, nodes\&.document doctree)"
+.br
+.ti -1c
+.RI "dict[str, Any] \fBcontext_for_searchtool\fP (self)"
+.br
+.ti -1c
+.RI "list[\fB_StrPath\fP] \fBget_js_stemmer_rawcodes\fP (self)"
+.br
+.ti -1c
+.RI "str|None \fBget_js_stemmer_rawcode\fP (self)"
+.br
+.ti -1c
+.RI "str \fBget_js_stemmer_code\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBlang\fP"
+.br
+.ti -1c
+.RI "\fBjs_scorer_code\fP"
+.br
+.ti -1c
+.RI "\fBjs_splitter_code\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBformats\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWordStore\fP \fB_word_collector\fP (self, nodes\&.document doctree)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_domains\fP"
+.br
+.ti -1c
+.RI "\fB_env_version\fP"
+.br
+.ti -1c
+.RI "\fB_filenames\fP"
+.br
+.ti -1c
+.RI "\fB_titles\fP"
+.br
+.ti -1c
+.RI "\fB_all_titles\fP"
+.br
+.ti -1c
+.RI "\fB_mapping\fP"
+.br
+.ti -1c
+.RI "\fB_title_mapping\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Helper class that creates a search index based on the doctrees
+passed to the `feed` method\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.search\&.IndexBuilder\&.__init__ ( self, \fBBuildEnvironment\fP env, str lang, dict[str, str] options, str
+     scoring)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " \fBWordStore\fP sphinx\&.search\&.IndexBuilder\&._word_collector ( self, nodes\&.document doctree)\fC [protected]\fP"
+
+.SS " dict[str, Any] sphinx\&.search\&.IndexBuilder\&.context_for_searchtool ( self)"
+
+.SS " None sphinx\&.search\&.IndexBuilder\&.dump ( self, \fB_WritableStream\fP[str] | \fB_WritableStream\fP[bytes] stream, Any
+     format)"
+
+.PP
+.nf
+Dump the frozen index to a stream\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.search\&.IndexBuilder\&.feed ( self, str docname, str | os\&.PathLike[str] filename, str title, nodes\&.document doctree)"
+
+.PP
+.nf
+Feed a doctree to the index\&.
+.fi
+.PP
+ 
+.SS " dict[str, Any] sphinx\&.search\&.IndexBuilder\&.freeze ( self)"
+
+.PP
+.nf
+Create a usable data structure for serializing\&.
+.fi
+.PP
+ 
+.SS " str sphinx\&.search\&.IndexBuilder\&.get_js_stemmer_code ( self)"
+
+.PP
+.nf
+Returns JS code that will be inserted into language_data\&.js\&.
+.fi
+.PP
+ 
+.SS " str | None sphinx\&.search\&.IndexBuilder\&.get_js_stemmer_rawcode ( self)"
+
+.SS " list[\fB_StrPath\fP] sphinx\&.search\&.IndexBuilder\&.get_js_stemmer_rawcodes ( self)"
+
+.PP
+.nf
+Returns a list of non-minified stemmer JS files to copy\&.
+.fi
+.PP
+ 
+.SS " dict[str, list[tuple[int, int, int, str, str]]] sphinx\&.search\&.IndexBuilder\&.get_objects ( self, dict[str, int]
+     fn2index)"
+
+.SS " tuple[dict[str, list[int] | int], dict[str, list[int] | int]] sphinx\&.search\&.IndexBuilder\&.get_terms ( self, dict[str, int]
+     fn2index)"
+
+.PP
+.nf
+Return a mapping of document and title terms to sorted document IDs\&.
+
+When a term is only found within a single document,
+then the value for that term will be an integer value\&.
+When a term is found within multiple documents,
+the value will be a list of integers\&.
+
+.fi
+.PP
+ 
+.SS " str sphinx\&.search\&.IndexBuilder\&.label ( self)"
+
+.SS " None sphinx\&.search\&.IndexBuilder\&.load ( self, \fB_ReadableStream\fP[str | bytes] stream, Any format)"
+
+.PP
+.nf
+Reconstruct from frozen data\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.search\&.IndexBuilder\&.prune ( self, Iterable[str] docnames)"
+
+.PP
+.nf
+Remove data for all docnames not in the list\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.search\&.IndexBuilder\&._all_titles\fC [protected]\fP"
+
+.SS "sphinx\&.search\&.IndexBuilder\&._domains\fC [protected]\fP"
+
+.SS "sphinx\&.search\&.IndexBuilder\&._env_version\fC [protected]\fP"
+
+.SS "sphinx\&.search\&.IndexBuilder\&._filenames\fC [protected]\fP"
+
+.SS "sphinx\&.search\&.IndexBuilder\&._mapping\fC [protected]\fP"
+
+.SS "sphinx\&.search\&.IndexBuilder\&._title_mapping\fC [protected]\fP"
+
+.SS "sphinx\&.search\&.IndexBuilder\&._titles\fC [protected]\fP"
+
+.SS "dict sphinx\&.search\&.IndexBuilder\&.formats\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        'json': json,
+        'pickle': pickle,
+    }
+.fi
+
+.SS "sphinx\&.search\&.IndexBuilder\&.js_scorer_code"
+
+.SS "sphinx\&.search\&.IndexBuilder\&.js_splitter_code"
+
+.SS "sphinx\&.search\&.IndexBuilder\&.lang"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,88 @@
+\doxysection{htmlhelp Namespace Reference}
+\hypertarget{namespacehtmlhelp}{}\label{namespacehtmlhelp}\index{htmlhelp@{htmlhelp}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classhtmlhelp_1_1HTMLHelpBuilder}{HTMLHelp\+Builder}}
+\item 
+class \mbox{\hyperlink{classhtmlhelp_1_1ToCTreeVisitor}{To\+CTree\+Visitor}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespacehtmlhelp_a8e04ec0ec12295ad1e908587a769bffd}{chm\+\_\+htmlescape}} (str s, bool quote=True)
+\item 
+str \mbox{\hyperlink{namespacehtmlhelp_a5d1aa6baa9622545c9e9d160f3df4599}{default\+\_\+htmlhelp\+\_\+basename}} (\mbox{\hyperlink{classsphinx_1_1config_1_1Config}{Config}} config)
+\item 
+dict\mbox{[}str, Any\mbox{]} \mbox{\hyperlink{namespacehtmlhelp_af14f9ffd5abac0d2671d7d415db3b252}{setup}} (\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}} app)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacehtmlhelp_a9e0f3ca752b898bdd5f868896365e8ad}{logger}} = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\item 
+\mbox{\hyperlink{namespacehtmlhelp_aaa4cc4f64dbc2248f27e5d37a5cbe60a}{package\+\_\+dir}} = path.\+abspath(path.\+dirname(\+\_\+\+\_\+file\+\_\+\+\_\+))
+\item 
+\mbox{\hyperlink{namespacehtmlhelp_a9d28f1fa910b99abdd92edfb39caaa39}{template\+\_\+dir}} = path.\+join(\mbox{\hyperlink{namespacehtmlhelp_aaa4cc4f64dbc2248f27e5d37a5cbe60a}{package\+\_\+dir}}, \textquotesingle{}templates\textquotesingle{})
+\item 
+dict \mbox{\hyperlink{namespacehtmlhelp_ab033167348d84e4525aedeb5b9abb7ba}{chm\+\_\+locales}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Build HTML help support files.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacehtmlhelp_a8e04ec0ec12295ad1e908587a769bffd}\label{namespacehtmlhelp_a8e04ec0ec12295ad1e908587a769bffd} 
+\index{htmlhelp@{htmlhelp}!chm\_htmlescape@{chm\_htmlescape}}
+\index{chm\_htmlescape@{chm\_htmlescape}!htmlhelp@{htmlhelp}}
+\doxysubsubsection{\texorpdfstring{chm\_htmlescape()}{chm\_htmlescape()}}
+{\footnotesize\ttfamily  str htmlhelp.\+chm\+\_\+htmlescape (\begin{DoxyParamCaption}\item[{str}]{s,  }\item[{bool }]{quote = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}chm_htmlescape() is a wrapper of html.escape().
+.hhc/.hhk files don't recognize hex escaping, we need convert
+hex escaping to decimal escaping. for example: ``&#x27;`` -> ``&#39;``
+html.escape() may generates a hex escaping ``&#x27;`` for single
+quote ``'``, this wrapper fixes this.
+\end{DoxyVerb}
+ \Hypertarget{namespacehtmlhelp_a5d1aa6baa9622545c9e9d160f3df4599}\label{namespacehtmlhelp_a5d1aa6baa9622545c9e9d160f3df4599} 
+\index{htmlhelp@{htmlhelp}!default\_htmlhelp\_basename@{default\_htmlhelp\_basename}}
+\index{default\_htmlhelp\_basename@{default\_htmlhelp\_basename}!htmlhelp@{htmlhelp}}
+\doxysubsubsection{\texorpdfstring{default\_htmlhelp\_basename()}{default\_htmlhelp\_basename()}}
+{\footnotesize\ttfamily  str htmlhelp.\+default\+\_\+htmlhelp\+\_\+basename (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsphinx_1_1config_1_1Config}{Config}}}]{config }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Better default htmlhelp_basename setting.\end{DoxyVerb}
+ \Hypertarget{namespacehtmlhelp_af14f9ffd5abac0d2671d7d415db3b252}\label{namespacehtmlhelp_af14f9ffd5abac0d2671d7d415db3b252} 
+\index{htmlhelp@{htmlhelp}!setup@{setup}}
+\index{setup@{setup}!htmlhelp@{htmlhelp}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily  dict\mbox{[}str, Any\mbox{]} htmlhelp.\+setup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}}]{app }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacehtmlhelp_ab033167348d84e4525aedeb5b9abb7ba}\label{namespacehtmlhelp_ab033167348d84e4525aedeb5b9abb7ba} 
+\index{htmlhelp@{htmlhelp}!chm\_locales@{chm\_locales}}
+\index{chm\_locales@{chm\_locales}!htmlhelp@{htmlhelp}}
+\doxysubsubsection{\texorpdfstring{chm\_locales}{chm\_locales}}
+{\footnotesize\ttfamily dict htmlhelp.\+chm\+\_\+locales}
+
+\Hypertarget{namespacehtmlhelp_a9e0f3ca752b898bdd5f868896365e8ad}\label{namespacehtmlhelp_a9e0f3ca752b898bdd5f868896365e8ad} 
+\index{htmlhelp@{htmlhelp}!logger@{logger}}
+\index{logger@{logger}!htmlhelp@{htmlhelp}}
+\doxysubsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily htmlhelp.\+logger = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)}
+
+\Hypertarget{namespacehtmlhelp_aaa4cc4f64dbc2248f27e5d37a5cbe60a}\label{namespacehtmlhelp_aaa4cc4f64dbc2248f27e5d37a5cbe60a} 
+\index{htmlhelp@{htmlhelp}!package\_dir@{package\_dir}}
+\index{package\_dir@{package\_dir}!htmlhelp@{htmlhelp}}
+\doxysubsubsection{\texorpdfstring{package\_dir}{package\_dir}}
+{\footnotesize\ttfamily htmlhelp.\+package\+\_\+dir = path.\+abspath(path.\+dirname(\+\_\+\+\_\+file\+\_\+\+\_\+))}
+
+\Hypertarget{namespacehtmlhelp_a9d28f1fa910b99abdd92edfb39caaa39}\label{namespacehtmlhelp_a9d28f1fa910b99abdd92edfb39caaa39} 
+\index{htmlhelp@{htmlhelp}!template\_dir@{template\_dir}}
+\index{template\_dir@{template\_dir}!htmlhelp@{htmlhelp}}
+\doxysubsubsection{\texorpdfstring{template\_dir}{template\_dir}}
+{\footnotesize\ttfamily htmlhelp.\+template\+\_\+dir = path.\+join(\mbox{\hyperlink{namespacehtmlhelp_aaa4cc4f64dbc2248f27e5d37a5cbe60a}{package\+\_\+dir}}, \textquotesingle{}templates\textquotesingle{})}
+

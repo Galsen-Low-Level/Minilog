@@ -1,0 +1,89 @@
+\doxysection{babel.\+messages.\+plurals Namespace Reference}
+\hypertarget{namespacebabel_1_1messages_1_1plurals}{}\label{namespacebabel_1_1messages_1_1plurals}\index{babel.messages.plurals@{babel.messages.plurals}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classbabel_1_1messages_1_1plurals_1_1__PluralTuple}{\+\_\+\+Plural\+Tuple}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbabel_1_1messages_1_1plurals_1_1__PluralTuple}{\+\_\+\+Plural\+Tuple}} \mbox{\hyperlink{namespacebabel_1_1messages_1_1plurals_aaef90265ed879fa292947777d5e502e2}{get\+\_\+plural}} (\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1messages_1_1plurals_ad5c1b089e2353135088cc1fd6f9f92a1}{LC\+\_\+\+CTYPE}} = default\+\_\+locale(\textquotesingle{}LC\+\_\+\+CTYPE\textquotesingle{})
+\item 
+dict \mbox{\hyperlink{namespacebabel_1_1messages_1_1plurals_aadcf7a23dfe023d258db372daca21a5b}{PLURALS}}
+\item 
+tuple \mbox{\hyperlink{namespacebabel_1_1messages_1_1plurals_ae7e413cccc872540d21ac2bfe1e64866}{DEFAULT\+\_\+\+PLURAL}} = (2, \textquotesingle{}(n != 1)\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    babel.messages.plurals
+    ~~~~~~~~~~~~~~~~~~~~~~
+
+    Plural form definitions.
+
+    :copyright: (c) 2013-2025 by the Babel Team.
+    :license: BSD, see LICENSE for more details.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacebabel_1_1messages_1_1plurals_aaef90265ed879fa292947777d5e502e2}\label{namespacebabel_1_1messages_1_1plurals_aaef90265ed879fa292947777d5e502e2} 
+\index{babel.messages.plurals@{babel.messages.plurals}!get\_plural@{get\_plural}}
+\index{get\_plural@{get\_plural}!babel.messages.plurals@{babel.messages.plurals}}
+\doxysubsubsection{\texorpdfstring{get\_plural()}{get\_plural()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classbabel_1_1messages_1_1plurals_1_1__PluralTuple}{\+\_\+\+Plural\+Tuple}} babel.\+messages.\+plurals.\+get\+\_\+plural (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A tuple with the information catalogs need to perform proper
+pluralization.  The first item of the tuple is the number of plural
+forms, the second the plural expression.
+
+:param locale: the `Locale` object or locale identifier. Defaults to the system character type locale.
+
+>>> get_plural(locale='en')
+(2, '(n != 1)')
+>>> get_plural(locale='ga')
+(5, '(n==1 ? 0 : n==2 ? 1 : n>=3 && n<=6 ? 2 : n>=7 && n<=10 ? 3 : 4)')
+
+The object returned is a special tuple with additional members:
+
+>>> tup = get_plural("ja")
+>>> tup.num_plurals
+1
+>>> tup.plural_expr
+'0'
+>>> tup.plural_forms
+'nplurals=1; plural=0;'
+
+Converting the tuple into a string prints the plural forms for a
+gettext catalog:
+
+>>> str(tup)
+'nplurals=1; plural=0;'
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacebabel_1_1messages_1_1plurals_ae7e413cccc872540d21ac2bfe1e64866}\label{namespacebabel_1_1messages_1_1plurals_ae7e413cccc872540d21ac2bfe1e64866} 
+\index{babel.messages.plurals@{babel.messages.plurals}!DEFAULT\_PLURAL@{DEFAULT\_PLURAL}}
+\index{DEFAULT\_PLURAL@{DEFAULT\_PLURAL}!babel.messages.plurals@{babel.messages.plurals}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_PLURAL}{DEFAULT\_PLURAL}}
+{\footnotesize\ttfamily tuple babel.\+messages.\+plurals.\+DEFAULT\+\_\+\+PLURAL = (2, \textquotesingle{}(n != 1)\textquotesingle{})}
+
+\Hypertarget{namespacebabel_1_1messages_1_1plurals_ad5c1b089e2353135088cc1fd6f9f92a1}\label{namespacebabel_1_1messages_1_1plurals_ad5c1b089e2353135088cc1fd6f9f92a1} 
+\index{babel.messages.plurals@{babel.messages.plurals}!LC\_CTYPE@{LC\_CTYPE}}
+\index{LC\_CTYPE@{LC\_CTYPE}!babel.messages.plurals@{babel.messages.plurals}}
+\doxysubsubsection{\texorpdfstring{LC\_CTYPE}{LC\_CTYPE}}
+{\footnotesize\ttfamily str babel.\+messages.\+plurals.\+LC\+\_\+\+CTYPE = default\+\_\+locale(\textquotesingle{}LC\+\_\+\+CTYPE\textquotesingle{})}
+
+\Hypertarget{namespacebabel_1_1messages_1_1plurals_aadcf7a23dfe023d258db372daca21a5b}\label{namespacebabel_1_1messages_1_1plurals_aadcf7a23dfe023d258db372daca21a5b} 
+\index{babel.messages.plurals@{babel.messages.plurals}!PLURALS@{PLURALS}}
+\index{PLURALS@{PLURALS}!babel.messages.plurals@{babel.messages.plurals}}
+\doxysubsubsection{\texorpdfstring{PLURALS}{PLURALS}}
+{\footnotesize\ttfamily dict babel.\+messages.\+plurals.\+PLURALS}
+

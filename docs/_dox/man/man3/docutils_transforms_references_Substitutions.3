@@ -1,0 +1,105 @@
+.TH "docutils.transforms.references.Substitutions" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.transforms.references.Substitutions
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.transforms\&.Transform\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBapply\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdocument\fP, \fBstartnode\fP=None)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBdefault_priority\fP = 220"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_priority\fP = None"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBstartnode\fP"
+.br
+.ti -1c
+.RI "\fBlanguage\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Given the following ``document`` as input::
+
+    <document>
+        <paragraph>
+            The
+            <substitution_reference refname='biohazard'>
+                biohazard
+             symbol is deservedly scary-looking\&.
+        <substitution_definition name='biohazard'>
+            <image alt='biohazard' uri='biohazard\&.png'>
+
+The ``substitution_reference`` will simply be replaced by the
+contents of the corresponding ``substitution_definition``\&.
+
+The transformed result will be::
+
+    <document>
+        <paragraph>
+            The
+            <image alt='biohazard' uri='biohazard\&.png'>
+             symbol is deservedly scary-looking\&.
+        <substitution_definition name='biohazard'>
+            <image alt='biohazard' uri='biohazard\&.png'>
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.transforms\&.references\&.Substitutions\&.apply ( self)"
+
+.PP
+.nf
+Override to apply the transform to the document tree\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.transforms\&.Transform\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int docutils\&.transforms\&.references\&.Substitutions\&.default_priority = 220\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

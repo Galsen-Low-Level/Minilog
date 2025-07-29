@@ -1,0 +1,196 @@
+.TH "sphinx.domains.c.CNamespaceObject" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.domains.c.CNamespaceObject
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.util\&.docutils\&.SphinxDirective\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "list[\fBNode\fP] \fBrun\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.util\&.docutils\&.SphinxDirective\fP
+.in +1c
+.ti -1c
+.RI "\fBBuildEnvironment\fP \fBenv\fP (self)"
+.br
+.ti -1c
+.RI "\fBConfig\fP \fBconfig\fP (self)"
+.br
+.ti -1c
+.RI "tuple[str, int] \fBget_source_info\fP (self)"
+.br
+.ti -1c
+.RI "None \fBset_source_info\fP (self, \fBNode\fP node)"
+.br
+.ti -1c
+.RI "str \fBget_location\fP (self)"
+.br
+.ti -1c
+.RI "list[\fBNode\fP] \fBparse_content_to_nodes\fP (self, bool allow_section_headings=False)"
+.br
+.ti -1c
+.RI "list[\fBNode\fP] \fBparse_text_to_nodes\fP (self, str text='', *int offset=\-1, bool allow_section_headings=False)"
+.br
+.ti -1c
+.RI "tuple[list[\fBNode\fP], list[\fBsystem_message\fP]] \fBparse_inline\fP (self, str text, *int \fBlineno\fP=\-1)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.parsers\&.rst\&.Directive\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBname\fP, \fBarguments\fP, \fBoptions\fP, \fBcontent\fP, \fBlineno\fP, \fBcontent_offset\fP, \fBblock_text\fP, \fBstate\fP, \fBstate_machine\fP)"
+.br
+.ti -1c
+.RI "\fBdirective_error\fP (self, level, message)"
+.br
+.ti -1c
+.RI "\fBdebug\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBinfo\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBwarning\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBerror\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBsevere\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBassert_has_content\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd_name\fP (self, node)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBhas_content\fP = False"
+.br
+.ti -1c
+.RI "int \fBrequired_arguments\fP = 1"
+.br
+.ti -1c
+.RI "int \fBoptional_arguments\fP = 0"
+.br
+.ti -1c
+.RI "bool \fBfinal_argument_whitespace\fP = True"
+.br
+.ti -1c
+.RI "dict \fBoption_spec\fP = {}"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.parsers\&.rst\&.Directive\fP
+.in +1c
+.ti -1c
+.RI "int \fBrequired_arguments\fP = 0"
+.br
+.ti -1c
+.RI "int \fBoptional_arguments\fP = 0"
+.br
+.ti -1c
+.RI "bool \fBfinal_argument_whitespace\fP = False"
+.br
+.ti -1c
+.RI "\fBoption_spec\fP = None"
+.br
+.ti -1c
+.RI "bool \fBhas_content\fP = False"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBsphinx\&.util\&.docutils\&.SphinxDirective\fP
+.in +1c
+.ti -1c
+.RI "\fBlineno\fP"
+.br
+.ti -1c
+.RI "\fBstate\fP"
+.br
+.ti -1c
+.RI "\fBcontent\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.parsers\&.rst\&.Directive\fP
+.in +1c
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBarguments\fP"
+.br
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBcontent\fP"
+.br
+.ti -1c
+.RI "\fBlineno\fP"
+.br
+.ti -1c
+.RI "\fBcontent_offset\fP"
+.br
+.ti -1c
+.RI "\fBblock_text\fP"
+.br
+.ti -1c
+.RI "\fBstate\fP"
+.br
+.ti -1c
+.RI "\fBstate_machine\fP"
+.br
+.ti -1c
+.RI "\fBreporter\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This directive is just to tell Sphinx that we're documenting stuff in
+namespace foo\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " list[\fBNode\fP] sphinx\&.domains\&.c\&.CNamespaceObject\&.run ( self)"
+
+.PP
+Reimplemented from \fBdocutils\&.parsers\&.rst\&.Directive\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool sphinx\&.domains\&.c\&.CNamespaceObject\&.final_argument_whitespace = True\fC [static]\fP"
+
+.SS "bool sphinx\&.domains\&.c\&.CNamespaceObject\&.has_content = False\fC [static]\fP"
+
+.SS "dict sphinx\&.domains\&.c\&.CNamespaceObject\&.option_spec = {}\fC [static]\fP"
+
+.SS "int sphinx\&.domains\&.c\&.CNamespaceObject\&.optional_arguments = 0\fC [static]\fP"
+
+.SS "int sphinx\&.domains\&.c\&.CNamespaceObject\&.required_arguments = 1\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

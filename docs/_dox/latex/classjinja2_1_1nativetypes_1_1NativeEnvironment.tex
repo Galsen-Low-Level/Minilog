@@ -1,0 +1,182 @@
+\doxysection{jinja2.\+nativetypes.\+Native\+Environment Class Reference}
+\hypertarget{classjinja2_1_1nativetypes_1_1NativeEnvironment}{}\label{classjinja2_1_1nativetypes_1_1NativeEnvironment}\index{jinja2.nativetypes.NativeEnvironment@{jinja2.nativetypes.NativeEnvironment}}
+Inheritance diagram for jinja2.\+nativetypes.\+Native\+Environment\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classjinja2_1_1nativetypes_1_1NativeEnvironment}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classjinja2_1_1nativetypes_1_1NativeEnvironment_aa194d352e930d267b488321389ea9ff2}{code\+\_\+generator\+\_\+class}} = \mbox{\hyperlink{classjinja2_1_1nativetypes_1_1NativeCodeGenerator}{Native\+Code\+Generator}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1nativetypes_1_1NativeEnvironment_a581734aa86212af8280178d83e4b681e}{concat}} = staticmethod(\mbox{\hyperlink{namespacejinja2_1_1nativetypes_abc1291b631b818492715aaec50fc1906}{native\+\_\+concat}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment}{jinja2.\+environment.\+Environment}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a299850b4b15f78a3f0b9eeac4774065b}{sandboxed}} = False
+\item 
+bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a4c9f95a36934895e6d1976c14d8b894f}{overlayed}} = False
+\item 
+t \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a2944894e0bb6facc8b150e880f7d4557}{linked\+\_\+to}} = None
+\item 
+bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ad3c1e56ac606ed76b4708bf19877bd46}{shared}} = False
+\item 
+t \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a64d2246274eff95fed0ed59fdc93f302}{code\+\_\+generator\+\_\+class}} = \mbox{\hyperlink{classjinja2_1_1compiler_1_1CodeGenerator}{Code\+Generator}}
+\item 
+str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_abafe91c81d1c0333873b08096ee81d2c}{concat}} = "{}"{}.join
+\item 
+t \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ae3aae9b2d3d56b961c26464d880f805d}{context\+\_\+class}} = \mbox{\hyperlink{classjinja2_1_1runtime_1_1Context}{Context}}
+\item 
+t \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ad2d7e3f6afdcd5d4a0a41b20a3322dbd}{template\+\_\+class}} .Type\mbox{[}"{}Template"{}\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment}{jinja2.\+environment.\+Environment}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_af758db6473e229538a23236ca94bc5b5}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a21083815f94a638ccf3fe81be3dd16a4}{block\+\_\+start\+\_\+string}}=BLOCK\+\_\+\+START\+\_\+\+STRING, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ae51a1b43158239b18a58e8b5c2ba8b78}{block\+\_\+end\+\_\+string}}=BLOCK\+\_\+\+END\+\_\+\+STRING, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aeb7d43cd6350d87ace77b61fe761191d}{variable\+\_\+start\+\_\+string}}=VARIABLE\+\_\+\+START\+\_\+\+STRING, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_af606e27a375611fb1a176dcb86147350}{variable\+\_\+end\+\_\+string}}=VARIABLE\+\_\+\+END\+\_\+\+STRING, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_abd4d32c8d1b9394968de9fef0fe544f1}{comment\+\_\+start\+\_\+string}}=COMMENT\+\_\+\+START\+\_\+\+STRING, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a50977dcc623b4ccff0b06742b3c78f6b}{comment\+\_\+end\+\_\+string}}=COMMENT\+\_\+\+END\+\_\+\+STRING, t.\+Optional\mbox{[}str\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ab06e678d1be219053a5a33576f96fae5}{line\+\_\+statement\+\_\+prefix}}=LINE\+\_\+\+STATEMENT\+\_\+\+PREFIX, t.\+Optional\mbox{[}str\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a7f56eeff2e41f5790ba2d3146347531a}{line\+\_\+comment\+\_\+prefix}}=LINE\+\_\+\+COMMENT\+\_\+\+PREFIX, bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ae3aa2ae2619df9a2aa744adff8f734bb}{trim\+\_\+blocks}}=TRIM\+\_\+\+BLOCKS, bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a2f841f439d1d015b4e9fbbfdc95cd736}{lstrip\+\_\+blocks}}=LSTRIP\+\_\+\+BLOCKS, "{}te.\+Literal\mbox{[}\textquotesingle{}\textbackslash{}\textbackslash{}n\textquotesingle{}, \textquotesingle{}\textbackslash{}\textbackslash{}r\textbackslash{}\textbackslash{}n\textquotesingle{}, \textquotesingle{}\textbackslash{}\textbackslash{}r\textquotesingle{}\mbox{]}"{} newline\+\_\+sequence=NEWLINE\+\_\+\+SEQUENCE, bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a1ce5f2ab4442fb62c1b27b14836dd8a7}{keep\+\_\+trailing\+\_\+newline}}=KEEP\+\_\+\+TRAILING\+\_\+\+NEWLINE, t.\+Sequence\mbox{[}t.\+Union\mbox{[}str, t.\+Type\mbox{[}"{}Extension"{}\mbox{]}\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ad6e39b8b9cf90d8d1a420a40e29db2c9}{extensions}}=(), bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a89ea29c99256661d4f8812f8668096cf}{optimized}}=True, t.\+Type\mbox{[}\mbox{\hyperlink{classjinja2_1_1runtime_1_1Undefined}{Undefined}}\mbox{]} undefined=\mbox{\hyperlink{classjinja2_1_1runtime_1_1Undefined}{Undefined}}, t.\+Optional\mbox{[}t.\+Callable\mbox{[}..., t.\+Any\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ac812971d13a32a47d9ebd7e994207510}{finalize}}=None, t.\+Union\mbox{[}bool, t.\+Callable\mbox{[}\mbox{[}t.\+Optional\mbox{[}str\mbox{]}\mbox{]}, bool\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a2567fab346f5e368a0d92db284ab30e4}{autoescape}}=False, t.\+Optional\mbox{[}"{}Base\+Loader"{}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a932fcb4327ccfbc91ebe69848556b60e}{loader}}=None, int cache\+\_\+size=400, bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aff8d7153f26480f30ba1b5a544d85eac}{auto\+\_\+reload}}=True, t.\+Optional\mbox{[}"{}Bytecode\+Cache"{}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aa5bc8250b943d3ffd73bab6966f5ee26}{bytecode\+\_\+cache}}=None, bool enable\+\_\+async=False)
+\item 
+None \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aa854f0ad091eb27e4f2025e2d836f898}{add\+\_\+extension}} (self, t.\+Union\mbox{[}str, t.\+Type\mbox{[}"{}Extension"{}\mbox{]}\mbox{]} extension)
+\item 
+None \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_addbbd33e41c262ae115a9f362391a7d5}{extend}} (self, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}t.\+Any attributes)
+\item 
+"{}te.\+Self"{} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_afad4bab9e00f479fbef9b966fd7feeff}{overlay}} (self, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a21083815f94a638ccf3fe81be3dd16a4}{block\+\_\+start\+\_\+string}}=missing, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ae51a1b43158239b18a58e8b5c2ba8b78}{block\+\_\+end\+\_\+string}}=missing, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aeb7d43cd6350d87ace77b61fe761191d}{variable\+\_\+start\+\_\+string}}=missing, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_af606e27a375611fb1a176dcb86147350}{variable\+\_\+end\+\_\+string}}=missing, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_abd4d32c8d1b9394968de9fef0fe544f1}{comment\+\_\+start\+\_\+string}}=missing, str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a50977dcc623b4ccff0b06742b3c78f6b}{comment\+\_\+end\+\_\+string}}=missing, t.\+Optional\mbox{[}str\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ab06e678d1be219053a5a33576f96fae5}{line\+\_\+statement\+\_\+prefix}}=missing, t.\+Optional\mbox{[}str\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a7f56eeff2e41f5790ba2d3146347531a}{line\+\_\+comment\+\_\+prefix}}=missing, bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ae3aa2ae2619df9a2aa744adff8f734bb}{trim\+\_\+blocks}}=missing, bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a2f841f439d1d015b4e9fbbfdc95cd736}{lstrip\+\_\+blocks}}=missing, "{}te.\+Literal\mbox{[}\textquotesingle{}\textbackslash{}\textbackslash{}n\textquotesingle{}, \textquotesingle{}\textbackslash{}\textbackslash{}r\textbackslash{}\textbackslash{}n\textquotesingle{}, \textquotesingle{}\textbackslash{}\textbackslash{}r\textquotesingle{}\mbox{]}"{} newline\+\_\+sequence=missing, bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a1ce5f2ab4442fb62c1b27b14836dd8a7}{keep\+\_\+trailing\+\_\+newline}}=missing, t.\+Sequence\mbox{[}t.\+Union\mbox{[}str, t.\+Type\mbox{[}"{}Extension"{}\mbox{]}\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ad6e39b8b9cf90d8d1a420a40e29db2c9}{extensions}}=missing, bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a89ea29c99256661d4f8812f8668096cf}{optimized}}=missing, t.\+Type\mbox{[}\mbox{\hyperlink{classjinja2_1_1runtime_1_1Undefined}{Undefined}}\mbox{]} undefined=missing, t.\+Optional\mbox{[}t.\+Callable\mbox{[}..., t.\+Any\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ac812971d13a32a47d9ebd7e994207510}{finalize}}=missing, t.\+Union\mbox{[}bool, t.\+Callable\mbox{[}\mbox{[}t.\+Optional\mbox{[}str\mbox{]}\mbox{]}, bool\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a2567fab346f5e368a0d92db284ab30e4}{autoescape}}=missing, t.\+Optional\mbox{[}"{}Base\+Loader"{}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a932fcb4327ccfbc91ebe69848556b60e}{loader}}=missing, int cache\+\_\+size=missing, bool \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aff8d7153f26480f30ba1b5a544d85eac}{auto\+\_\+reload}}=missing, t.\+Optional\mbox{[}"{}Bytecode\+Cache"{}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aa5bc8250b943d3ffd73bab6966f5ee26}{bytecode\+\_\+cache}}=missing, bool enable\+\_\+async=missing)
+\item 
+\mbox{\hyperlink{classjinja2_1_1lexer_1_1Lexer}{Lexer}} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a8ce0539e36f1dc905a740f5495136085}{lexer}} (self)
+\item 
+t.\+Iterator\mbox{[}"{}Extension"{}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a209b2c2cd92f8d7ba75bc226d8792e5a}{iter\+\_\+extensions}} (self)
+\item 
+t.\+Union\mbox{[}t.\+Any, \mbox{\hyperlink{classjinja2_1_1runtime_1_1Undefined}{Undefined}}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_adaac0af940852c76683f69125182a15c}{getitem}} (self, t.\+Any obj, t.\+Union\mbox{[}str, t.\+Any\mbox{]} argument)
+\item 
+t.\+Any \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a7f381581b4a95b1cd53f5fa48e233fe0}{getattr}} (self, t.\+Any obj, str attribute)
+\item 
+t.\+Any \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a9deceba83b2325e48cac0b19cbca82b9}{call\+\_\+filter}} (self, str name, t.\+Any value, t.\+Optional\mbox{[}t.\+Sequence\mbox{[}t.\+Any\mbox{]}\mbox{]} args=None, t.\+Optional\mbox{[}t.\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} kwargs=None, t.\+Optional\mbox{[}\mbox{\hyperlink{classjinja2_1_1runtime_1_1Context}{Context}}\mbox{]} context=None, t.\+Optional\mbox{[}\mbox{\hyperlink{classjinja2_1_1nodes_1_1EvalContext}{Eval\+Context}}\mbox{]} eval\+\_\+ctx=None)
+\item 
+t.\+Any \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a8dc9961dee3839895e4115410dc2abe5}{call\+\_\+test}} (self, str name, t.\+Any value, t.\+Optional\mbox{[}t.\+Sequence\mbox{[}t.\+Any\mbox{]}\mbox{]} args=None, t.\+Optional\mbox{[}t.\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} kwargs=None, t.\+Optional\mbox{[}\mbox{\hyperlink{classjinja2_1_1runtime_1_1Context}{Context}}\mbox{]} context=None, t.\+Optional\mbox{[}\mbox{\hyperlink{classjinja2_1_1nodes_1_1EvalContext}{Eval\+Context}}\mbox{]} eval\+\_\+ctx=None)
+\item 
+\mbox{\hyperlink{classjinja2_1_1nodes_1_1Template}{nodes.\+Template}} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a203dd9cf6165884a55677c5a9aeb3ac9}{parse}} (self, str source, t.\+Optional\mbox{[}str\mbox{]} name=None, t.\+Optional\mbox{[}str\mbox{]} filename=None)
+\item 
+t.\+Iterator\mbox{[}t.\+Tuple\mbox{[}int, str, str\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a0e3c1818fa749b93bb20d2cc96ca0cff}{lex}} (self, str source, t.\+Optional\mbox{[}str\mbox{]} name=None, t.\+Optional\mbox{[}str\mbox{]} filename=None)
+\item 
+str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ada6737748d0d06899ee8c6085dd2fd6b}{preprocess}} (self, str source, t.\+Optional\mbox{[}str\mbox{]} name=None, t.\+Optional\mbox{[}str\mbox{]} filename=None)
+\item 
+Code\+Type \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a7ee42dc831dd9458f8f3ce90d14124b5}{compile}} (self, t.\+Union\mbox{[}str, \mbox{\hyperlink{classjinja2_1_1nodes_1_1Template}{nodes.\+Template}}\mbox{]} source, t.\+Optional\mbox{[}str\mbox{]} name=None, t.\+Optional\mbox{[}str\mbox{]} filename=None, "{}te.\+Literal\mbox{[}False\mbox{]}"{} raw=False, bool defer\+\_\+init=False)
+\item 
+str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aa431cfc54275cf22a54509bc001819be}{compile}} (self, t.\+Union\mbox{[}str, \mbox{\hyperlink{classjinja2_1_1nodes_1_1Template}{nodes.\+Template}}\mbox{]} source, t.\+Optional\mbox{[}str\mbox{]} name=None, t.\+Optional\mbox{[}str\mbox{]} filename=None, "{}te.\+Literal\mbox{[}True\mbox{]}"{} raw=..., bool defer\+\_\+init=False)
+\item 
+t.\+Union\mbox{[}str, Code\+Type\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a66dbeb68d2ccaf508f2f3189da417d8e}{compile}} (self, t.\+Union\mbox{[}str, \mbox{\hyperlink{classjinja2_1_1nodes_1_1Template}{nodes.\+Template}}\mbox{]} source, t.\+Optional\mbox{[}str\mbox{]} name=None, t.\+Optional\mbox{[}str\mbox{]} filename=None, bool raw=False, bool defer\+\_\+init=False)
+\item 
+"{}Template\+Expression"{} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a132aeddd0259cd765a630c3490b122c3}{compile\+\_\+expression}} (self, str source, bool undefined\+\_\+to\+\_\+none=True)
+\item 
+None \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a485a7e65afe00930c1e0b24a5080ed9d}{compile\+\_\+templates}} (self, t.\+Union\mbox{[}str, "{}os.\+Path\+Like\mbox{[}str\mbox{]}"{}\mbox{]} target, t.\+Optional\mbox{[}t.\+Collection\mbox{[}str\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ad6e39b8b9cf90d8d1a420a40e29db2c9}{extensions}}=None, t.\+Optional\mbox{[}t.\+Callable\mbox{[}\mbox{[}str\mbox{]}, bool\mbox{]}\mbox{]} filter\+\_\+func=None, t.\+Optional\mbox{[}str\mbox{]} zip="{}deflated"{}, t.\+Optional\mbox{[}t.\+Callable\mbox{[}\mbox{[}str\mbox{]}, None\mbox{]}\mbox{]} log\+\_\+function=None, bool ignore\+\_\+errors=True)
+\item 
+t.\+List\mbox{[}str\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a4afe517612b9934f476063ccf2489b86}{list\+\_\+templates}} (self, t.\+Optional\mbox{[}t.\+Collection\mbox{[}str\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ad6e39b8b9cf90d8d1a420a40e29db2c9}{extensions}}=None, t.\+Optional\mbox{[}t.\+Callable\mbox{[}\mbox{[}str\mbox{]}, bool\mbox{]}\mbox{]} filter\+\_\+func=None)
+\item 
+"{}te.\+No\+Return"{} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a3d712e74fd0a7db032669b45c916ec85}{handle\+\_\+exception}} (self, t.\+Optional\mbox{[}str\mbox{]} source=None)
+\item 
+str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_adc29a3ae54fdeccc97e991e07953208d}{join\+\_\+path}} (self, str template, str parent)
+\item 
+"{}Template"{} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a01a140012367ce8393fba888374ab66c}{get\+\_\+template}} (self, t.\+Union\mbox{[}str, "{}Template"{}\mbox{]} name, t.\+Optional\mbox{[}str\mbox{]} parent=None, t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a12b3cef13dab3bd1a7c2e3b5f09d3f98}{globals}}=None)
+\item 
+"{}Template"{} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a44b9a9d2e0750926860b40dce708fe4c}{select\+\_\+template}} (self, t.\+Iterable\mbox{[}t.\+Union\mbox{[}str, "{}Template"{}\mbox{]}\mbox{]} names, t.\+Optional\mbox{[}str\mbox{]} parent=None, t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a12b3cef13dab3bd1a7c2e3b5f09d3f98}{globals}}=None)
+\item 
+"{}Template"{} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a193951eb679a2c84de387ca2b66aa27e}{get\+\_\+or\+\_\+select\+\_\+template}} (self, t.\+Union\mbox{[}str, "{}Template"{}, t.\+List\mbox{[}t.\+Union\mbox{[}str, "{}Template"{}\mbox{]}\mbox{]}\mbox{]} template\+\_\+name\+\_\+or\+\_\+list, t.\+Optional\mbox{[}str\mbox{]} parent=None, t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a12b3cef13dab3bd1a7c2e3b5f09d3f98}{globals}}=None)
+\item 
+"{}Template"{} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_af5ea39790a5ba664cc7c0c6e186143e6}{from\+\_\+string}} (self, t.\+Union\mbox{[}str, \mbox{\hyperlink{classjinja2_1_1nodes_1_1Template}{nodes.\+Template}}\mbox{]} source, t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a12b3cef13dab3bd1a7c2e3b5f09d3f98}{globals}}=None, t.\+Optional\mbox{[}t.\+Type\mbox{[}"{}Template"{}\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ad2d7e3f6afdcd5d4a0a41b20a3322dbd}{template\+\_\+class}}=None)
+\item 
+t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a119ee010e7f06e992df8f30974ad1137}{make\+\_\+globals}} (self, t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} d)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment}{jinja2.\+environment.\+Environment}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a21083815f94a638ccf3fe81be3dd16a4}{block\+\_\+start\+\_\+string}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ae51a1b43158239b18a58e8b5c2ba8b78}{block\+\_\+end\+\_\+string}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aeb7d43cd6350d87ace77b61fe761191d}{variable\+\_\+start\+\_\+string}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_af606e27a375611fb1a176dcb86147350}{variable\+\_\+end\+\_\+string}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_abd4d32c8d1b9394968de9fef0fe544f1}{comment\+\_\+start\+\_\+string}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a50977dcc623b4ccff0b06742b3c78f6b}{comment\+\_\+end\+\_\+string}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ab06e678d1be219053a5a33576f96fae5}{line\+\_\+statement\+\_\+prefix}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a7f56eeff2e41f5790ba2d3146347531a}{line\+\_\+comment\+\_\+prefix}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ae3aa2ae2619df9a2aa744adff8f734bb}{trim\+\_\+blocks}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a2f841f439d1d015b4e9fbbfdc95cd736}{lstrip\+\_\+blocks}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a7051919bf202901ab0cb86db634382ca}{newline\+\_\+sequence}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a1ce5f2ab4442fb62c1b27b14836dd8a7}{keep\+\_\+trailing\+\_\+newline}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a89ea29c99256661d4f8812f8668096cf}{optimized}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ac812971d13a32a47d9ebd7e994207510}{finalize}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a2567fab346f5e368a0d92db284ab30e4}{autoescape}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_af34cc62216dd902073c83b9523d65a31}{filters}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aab1bee5de97fda71dd1983fcea67bdd7}{tests}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a12b3cef13dab3bd1a7c2e3b5f09d3f98}{globals}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a932fcb4327ccfbc91ebe69848556b60e}{loader}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a6b175442c705fa460fbc4478c9cbeb8c}{cache}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aa5bc8250b943d3ffd73bab6966f5ee26}{bytecode\+\_\+cache}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aff8d7153f26480f30ba1b5a544d85eac}{auto\+\_\+reload}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a4734afddfa6a371f9a8abcb4313cf971}{policies}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_ad6e39b8b9cf90d8d1a420a40e29db2c9}{extensions}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aa393a275b440f523ec0da88ad25a8b2d}{is\+\_\+async}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment}{jinja2.\+environment.\+Environment}}}
+\begin{DoxyCompactItemize}
+\item 
+t.\+Any \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aad7af4e3ecd8789b53835e13cb5de9e4}{\+\_\+filter\+\_\+test\+\_\+common}} (self, t.\+Union\mbox{[}str, \mbox{\hyperlink{classjinja2_1_1runtime_1_1Undefined}{Undefined}}\mbox{]} name, t.\+Any value, t.\+Optional\mbox{[}t.\+Sequence\mbox{[}t.\+Any\mbox{]}\mbox{]} args, t.\+Optional\mbox{[}t.\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} kwargs, t.\+Optional\mbox{[}\mbox{\hyperlink{classjinja2_1_1runtime_1_1Context}{Context}}\mbox{]} context, t.\+Optional\mbox{[}\mbox{\hyperlink{classjinja2_1_1nodes_1_1EvalContext}{Eval\+Context}}\mbox{]} eval\+\_\+ctx, bool is\+\_\+filter)
+\item 
+\mbox{\hyperlink{classjinja2_1_1nodes_1_1Template}{nodes.\+Template}} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a057c4ff6c081612b3887b33ed3a2751c}{\+\_\+parse}} (self, str source, t.\+Optional\mbox{[}str\mbox{]} name, t.\+Optional\mbox{[}str\mbox{]} filename)
+\item 
+\mbox{\hyperlink{classjinja2_1_1lexer_1_1TokenStream}{Token\+Stream}} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aac91927185252d0a4e5586078d3f9075}{\+\_\+tokenize}} (self, str source, t.\+Optional\mbox{[}str\mbox{]} name, t.\+Optional\mbox{[}str\mbox{]} filename=None, t.\+Optional\mbox{[}str\mbox{]} state=None)
+\item 
+str \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a0b1ece45cf192279c5c84bd7336d793e}{\+\_\+generate}} (self, \mbox{\hyperlink{classjinja2_1_1nodes_1_1Template}{nodes.\+Template}} source, t.\+Optional\mbox{[}str\mbox{]} name, t.\+Optional\mbox{[}str\mbox{]} filename, bool defer\+\_\+init=False)
+\item 
+Code\+Type \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_aa3bcc2ffaad0a4c65edcd2612ed435e4}{\+\_\+compile}} (self, str source, str filename)
+\item 
+"{}Template"{} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a0e849e5eb6ee0bc5b4a374a486bfa6d1}{\+\_\+load\+\_\+template}} (self, str name, t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment_a12b3cef13dab3bd1a7c2e3b5f09d3f98}{globals}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}An environment that renders templates to native Python types.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classjinja2_1_1nativetypes_1_1NativeEnvironment_aa194d352e930d267b488321389ea9ff2}\label{classjinja2_1_1nativetypes_1_1NativeEnvironment_aa194d352e930d267b488321389ea9ff2} 
+\index{jinja2.nativetypes.NativeEnvironment@{jinja2.nativetypes.NativeEnvironment}!code\_generator\_class@{code\_generator\_class}}
+\index{code\_generator\_class@{code\_generator\_class}!jinja2.nativetypes.NativeEnvironment@{jinja2.nativetypes.NativeEnvironment}}
+\doxysubsubsection{\texorpdfstring{code\_generator\_class}{code\_generator\_class}}
+{\footnotesize\ttfamily jinja2.\+nativetypes.\+Native\+Environment.\+code\+\_\+generator\+\_\+class = \mbox{\hyperlink{classjinja2_1_1nativetypes_1_1NativeCodeGenerator}{Native\+Code\+Generator}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classjinja2_1_1nativetypes_1_1NativeEnvironment_a581734aa86212af8280178d83e4b681e}\label{classjinja2_1_1nativetypes_1_1NativeEnvironment_a581734aa86212af8280178d83e4b681e} 
+\index{jinja2.nativetypes.NativeEnvironment@{jinja2.nativetypes.NativeEnvironment}!concat@{concat}}
+\index{concat@{concat}!jinja2.nativetypes.NativeEnvironment@{jinja2.nativetypes.NativeEnvironment}}
+\doxysubsubsection{\texorpdfstring{concat}{concat}}
+{\footnotesize\ttfamily jinja2.\+nativetypes.\+Native\+Environment.\+concat = staticmethod(\mbox{\hyperlink{namespacejinja2_1_1nativetypes_abc1291b631b818492715aaec50fc1906}{native\+\_\+concat}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/jinja2/\mbox{\hyperlink{nativetypes_8py}{nativetypes.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,75 @@
+.TH "babel.localtime" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+babel.localtime
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fB_fallback\fP"
+.br
+.ti -1c
+.RI "namespace \fB_helpers\fP"
+.br
+.ti -1c
+.RI "namespace \fB_unix\fP"
+.br
+.ti -1c
+.RI "namespace \fB_win32\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "datetime\&.tzinfo \fBget_localzone\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "datetime\&.tzinfo \fBLOCALTZ\fP = \fBget_localzone\fP()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+    babel\&.localtime
+    ~~~~~~~~~~~~~~~
+
+    Babel specific fork of tzlocal to determine the local timezone
+    of the system\&.
+
+    :copyright: (c) 2013-2025 by the Babel Team\&.
+    :license: BSD, see LICENSE for more details\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " datetime\&.tzinfo babel\&.localtime\&.get_localzone ()"
+
+.PP
+.nf
+Returns the current underlying local timezone object\&.
+Generally this function does not need to be used, it's a
+better idea to use the :data:`LOCALTZ` singleton instead\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "babel\&.localtime\&.LOCALTZ = \fBget_localzone\fP()"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

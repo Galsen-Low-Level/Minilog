@@ -1,0 +1,101 @@
+.TH "pip._vendor.requests.sessions" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.requests.sessions
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSession\fP"
+.br
+.ti -1c
+.RI "class \fBSessionRedirectMixin\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBmerge_setting\fP (request_setting, session_setting, dict_class=OrderedDict)"
+.br
+.ti -1c
+.RI "\fBmerge_hooks\fP (request_hooks, session_hooks, dict_class=OrderedDict)"
+.br
+.ti -1c
+.RI "\fBsession\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBpreferred_clock\fP = time\&.perf_counter"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+requests\&.sessions
+~~~~~~~~~~~~~~~~~
+
+This module provides a Session object to manage and persist settings across
+requests (cookies, auth, proxies)\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.requests\&.sessions\&.merge_hooks ( request_hooks,  session_hooks,  dict_class = \fCOrderedDict\fP)"
+
+.PP
+.nf
+Properly merges both requests and session hooks\&.
+
+This is necessary because when request_hooks == {'response': []}, the
+merge breaks Session hooks entirely\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.requests\&.sessions\&.merge_setting ( request_setting,  session_setting,  dict_class = \fCOrderedDict\fP)"
+
+.PP
+.nf
+Determines appropriate setting for a given request, taking into account
+the explicit setting on that request, and the setting in the session\&. If a
+setting is a dictionary, they will be merged together using `dict_class`
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.requests\&.sessions\&.session ()"
+
+.PP
+.nf
+Returns a :class:`Session` for context-management\&.
+
+\&.\&. deprecated:: 1\&.0\&.0
+
+    This method has been deprecated since version 1\&.0\&.0 and is only kept for
+    backwards compatibility\&. New code should use :class:`~requests\&.sessions\&.Session`
+    to create a session\&. This may be removed at a future date\&.
+
+:rtype: Session
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._vendor\&.requests\&.sessions\&.preferred_clock = time\&.perf_counter"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

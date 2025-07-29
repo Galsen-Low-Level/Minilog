@@ -1,0 +1,358 @@
+.TH "packaging.specifiers.SpecifierSet" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+packaging.specifiers.SpecifierSet
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpackaging\&.specifiers\&.BaseSpecifier\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str|Iterable[\fBSpecifier\fP] specifiers='', bool|None \fBprereleases\fP=None)"
+.br
+.ti -1c
+.RI "bool|None \fBprereleases\fP (self)"
+.br
+.ti -1c
+.RI "None \fBprereleases\fP (self, bool value)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "str \fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "int \fB__hash__\fP (self)"
+.br
+.ti -1c
+.RI "\fBSpecifierSet\fP \fB__and__\fP (self, \fBSpecifierSet\fP|str other)"
+.br
+.ti -1c
+.RI "bool \fB__eq__\fP (self, object other)"
+.br
+.ti -1c
+.RI "int \fB__len__\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBSpecifier\fP] \fB__iter__\fP (self)"
+.br
+.ti -1c
+.RI "bool \fB__contains__\fP (self, \fBUnparsedVersion\fP item)"
+.br
+.ti -1c
+.RI "bool \fBcontains\fP (self, \fBUnparsedVersion\fP item, bool|None \fBprereleases\fP=None, bool|None installed=None)"
+.br
+.ti -1c
+.RI "Iterator[\fBUnparsedVersionVar\fP] \fBfilter\fP (self, Iterable[\fBUnparsedVersionVar\fP] iterable, bool|None \fBprereleases\fP=None)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_specs\fP"
+.br
+.ti -1c
+.RI "\fB_prereleases\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This class abstracts handling of a set of version specifiers\&.
+
+It can be passed a single specifier (``>=3\&.0``), a comma-separated list of
+specifiers (``>=3\&.0,!=3\&.1``), or no specifier at all\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None packaging\&.specifiers\&.SpecifierSet\&.__init__ ( self, str | Iterable[\fBSpecifier\fP]  specifiers = \fC''\fP, bool | None  prereleases = \fCNone\fP)"
+
+.PP
+.nf
+Initialize a SpecifierSet instance\&.
+
+:param specifiers:
+    The string representation of a specifier or a comma-separated list of
+    specifiers which will be parsed and normalized before use\&.
+    May also be an iterable of ``Specifier`` instances, which will be used
+    as is\&.
+:param prereleases:
+    This tells the SpecifierSet if it should accept prerelease versions if
+    applicable or not\&. The default of ``None`` will autodetect it from the
+    given specifiers\&.
+
+:raises InvalidSpecifier:
+    If the given ``specifiers`` are not parseable than this exception will be
+    raised\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " \fBSpecifierSet\fP packaging\&.specifiers\&.SpecifierSet\&.__and__ ( self, \fBSpecifierSet\fP | str other)"
+
+.PP
+.nf
+Return a SpecifierSet which is a combination of the two sets\&.
+
+:param other: The other object to combine with\&.
+
+>>> SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1') & '<=2\&.0\&.0,!=2\&.0\&.1'
+<SpecifierSet('!=1\&.0\&.1,!=2\&.0\&.1,<=2\&.0\&.0,>=1\&.0\&.0')>
+>>> SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1') & SpecifierSet('<=2\&.0\&.0,!=2\&.0\&.1')
+<SpecifierSet('!=1\&.0\&.1,!=2\&.0\&.1,<=2\&.0\&.0,>=1\&.0\&.0')>
+
+.fi
+.PP
+ 
+.SS " bool packaging\&.specifiers\&.SpecifierSet\&.__contains__ ( self, \fBUnparsedVersion\fP item)"
+
+.PP
+.nf
+Return whether or not the item is contained in this specifier\&.
+
+:param item: The item to check for\&.
+
+This is used for the ``in`` operator and behaves the same as
+:meth:`contains` with no ``prereleases`` argument passed\&.
+
+>>> '1\&.2\&.3' in SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1')
+True
+>>> Version('1\&.2\&.3') in SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1')
+True
+>>> '1\&.0\&.1' in SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1')
+False
+>>> '1\&.3\&.0a1' in SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1')
+False
+>>> '1\&.3\&.0a1' in SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1', prereleases=True)
+True
+
+.fi
+.PP
+ 
+.SS " bool packaging\&.specifiers\&.SpecifierSet\&.__eq__ ( self, object other)"
+
+.PP
+.nf
+Whether or not the two SpecifierSet-like objects are equal\&.
+
+:param other: The other object to check against\&.
+
+The value of :attr:`prereleases` is ignored\&.
+
+>>> SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1') == SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1')
+True
+>>> (SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1', prereleases=False) ==
+\&.\&.\&.  SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1', prereleases=True))
+True
+>>> SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1') == '>=1\&.0\&.0,!=1\&.0\&.1'
+True
+>>> SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1') == SpecifierSet('>=1\&.0\&.0')
+False
+>>> SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1') == SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.2')
+False
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpackaging\&.specifiers\&.BaseSpecifier\fP\&.
+.SS " int packaging\&.specifiers\&.SpecifierSet\&.__hash__ ( self)"
+
+.PP
+.nf
+Returns a hash value for this Specifier-like object\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpackaging\&.specifiers\&.BaseSpecifier\fP\&.
+.SS " Iterator[\fBSpecifier\fP] packaging\&.specifiers\&.SpecifierSet\&.__iter__ ( self)"
+
+.PP
+.nf
+Returns an iterator over all the underlying :class:`Specifier` instances
+in this specifier set\&.
+
+>>> sorted(SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1'), key=str)
+[<Specifier('!=1\&.0\&.1')>, <Specifier('>=1\&.0\&.0')>]
+
+.fi
+.PP
+ 
+.SS " int packaging\&.specifiers\&.SpecifierSet\&.__len__ ( self)"
+
+.PP
+.nf
+Returns the number of specifiers in this specifier set\&.
+.fi
+.PP
+ 
+.SS " str packaging\&.specifiers\&.SpecifierSet\&.__repr__ ( self)"
+
+.PP
+.nf
+A representation of the specifier set that shows all internal state\&.
+
+Note that the ordering of the individual specifiers within the set may not
+match the input string\&.
+
+>>> SpecifierSet('>=1\&.0\&.0,!=2\&.0\&.0')
+<SpecifierSet('!=2\&.0\&.0,>=1\&.0\&.0')>
+>>> SpecifierSet('>=1\&.0\&.0,!=2\&.0\&.0', prereleases=False)
+<SpecifierSet('!=2\&.0\&.0,>=1\&.0\&.0', prereleases=False)>
+>>> SpecifierSet('>=1\&.0\&.0,!=2\&.0\&.0', prereleases=True)
+<SpecifierSet('!=2\&.0\&.0,>=1\&.0\&.0', prereleases=True)>
+
+.fi
+.PP
+ 
+.SS " str packaging\&.specifiers\&.SpecifierSet\&.__str__ ( self)"
+
+.PP
+.nf
+A string representation of the specifier set that can be round-tripped\&.
+
+Note that the ordering of the individual specifiers within the set may not
+match the input string\&.
+
+>>> str(SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1'))
+'!=1\&.0\&.1,>=1\&.0\&.0'
+>>> str(SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1', prereleases=False))
+'!=1\&.0\&.1,>=1\&.0\&.0'
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpackaging\&.specifiers\&.BaseSpecifier\fP\&.
+.SS " bool packaging\&.specifiers\&.SpecifierSet\&.contains ( self, \fBUnparsedVersion\fP item, bool | None  prereleases = \fCNone\fP, bool | None  installed = \fCNone\fP)"
+
+.PP
+.nf
+Return whether or not the item is contained in this SpecifierSet\&.
+
+:param item:
+    The item to check for, which can be a version string or a
+    :class:`Version` instance\&.
+:param prereleases:
+    Whether or not to match prereleases with this SpecifierSet\&. If set to
+    ``None`` (the default), it uses :attr:`prereleases` to determine
+    whether or not prereleases are allowed\&.
+
+>>> SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1')\&.contains('1\&.2\&.3')
+True
+>>> SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1')\&.contains(Version('1\&.2\&.3'))
+True
+>>> SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1')\&.contains('1\&.0\&.1')
+False
+>>> SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1')\&.contains('1\&.3\&.0a1')
+False
+>>> SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1', prereleases=True)\&.contains('1\&.3\&.0a1')
+True
+>>> SpecifierSet('>=1\&.0\&.0,!=1\&.0\&.1')\&.contains('1\&.3\&.0a1', prereleases=True)
+True
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpackaging\&.specifiers\&.BaseSpecifier\fP\&.
+.SS " Iterator[\fBUnparsedVersionVar\fP] packaging\&.specifiers\&.SpecifierSet\&.filter ( self, Iterable[\fBUnparsedVersionVar\fP] iterable, bool | None  prereleases = \fCNone\fP)"
+
+.PP
+.nf
+Filter items in the given iterable, that match the specifiers in this set\&.
+
+:param iterable:
+    An iterable that can contain version strings and :class:`Version` instances\&.
+    The items in the iterable will be filtered according to the specifier\&.
+:param prereleases:
+    Whether or not to allow prereleases in the returned iterator\&. If set to
+    ``None`` (the default), it will be intelligently decide whether to allow
+    prereleases or not (based on the :attr:`prereleases` attribute, and
+    whether the only versions matching are prereleases)\&.
+
+This method is smarter than just ``filter(SpecifierSet(\&.\&.\&.)\&.contains, [\&.\&.\&.])``
+because it implements the rule from :pep:`440` that a prerelease item
+SHOULD be accepted if no other versions match the given specifier\&.
+
+>>> list(SpecifierSet('>=1\&.2\&.3')\&.filter(['1\&.2', '1\&.3', '1\&.5a1']))
+['1\&.3']
+>>> list(SpecifierSet('>=1\&.2\&.3')\&.filter(['1\&.2', '1\&.3', Version('1\&.4')]))
+['1\&.3', <Version('1\&.4')>]
+>>> list(SpecifierSet('>=1\&.2\&.3')\&.filter(['1\&.2', '1\&.5a1']))
+[]
+>>> list(SpecifierSet('>=1\&.2\&.3')\&.filter(['1\&.3', '1\&.5a1'], prereleases=True))
+['1\&.3', '1\&.5a1']
+>>> list(SpecifierSet('>=1\&.2\&.3', prereleases=True)\&.filter(['1\&.3', '1\&.5a1']))
+['1\&.3', '1\&.5a1']
+
+An 'empty' SpecifierSet will filter items based on the presence of prerelease
+versions in the set\&.
+
+>>> list(SpecifierSet('')\&.filter(['1\&.3', '1\&.5a1']))
+['1\&.3']
+>>> list(SpecifierSet('')\&.filter(['1\&.5a1']))
+['1\&.5a1']
+>>> list(SpecifierSet('', prereleases=True)\&.filter(['1\&.3', '1\&.5a1']))
+['1\&.3', '1\&.5a1']
+>>> list(SpecifierSet('')\&.filter(['1\&.3', '1\&.5a1'], prereleases=True))
+['1\&.3', '1\&.5a1']
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpackaging\&.specifiers\&.BaseSpecifier\fP\&.
+.SS " bool | None packaging\&.specifiers\&.SpecifierSet\&.prereleases ( self)"
+
+.PP
+.nf
+Whether or not pre-releases as a whole are allowed\&.
+
+This can be set to either ``True`` or ``False`` to explicitly enable or disable
+prereleases or it can be set to ``None`` (the default) to use default semantics\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpackaging\&.specifiers\&.BaseSpecifier\fP\&.
+.SS " None packaging\&.specifiers\&.SpecifierSet\&.prereleases ( self, bool value)"
+
+.PP
+.nf
+Whether or not pre-releases as a whole are allowed\&.
+
+This can be set to either ``True`` or ``False`` to explicitly enable or disable
+prereleases or it can be set to ``None`` (the default) to use default semantics\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpackaging\&.specifiers\&.BaseSpecifier\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "packaging\&.specifiers\&.SpecifierSet\&._prereleases\fC [protected]\fP"
+
+.SS "packaging\&.specifiers\&.SpecifierSet\&._specs\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

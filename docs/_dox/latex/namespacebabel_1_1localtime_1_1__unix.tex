@@ -1,0 +1,32 @@
+\doxysection{babel.\+localtime.\+\_\+unix Namespace Reference}
+\hypertarget{namespacebabel_1_1localtime_1_1__unix}{}\label{namespacebabel_1_1localtime_1_1__unix}\index{babel.localtime.\_unix@{babel.localtime.\_unix}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+datetime.\+tzinfo \mbox{\hyperlink{namespacebabel_1_1localtime_1_1__unix_abb726ac610a3d8916db8dca4d07ec4ef}{\+\_\+tz\+\_\+from\+\_\+env}} (str tzenv)
+\item 
+datetime.\+tzinfo \mbox{\hyperlink{namespacebabel_1_1localtime_1_1__unix_adf1e5679bc344ce192f8a2fb622f4b79}{\+\_\+get\+\_\+localzone}} (str \+\_\+root=\textquotesingle{}/\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacebabel_1_1localtime_1_1__unix_adf1e5679bc344ce192f8a2fb622f4b79}\label{namespacebabel_1_1localtime_1_1__unix_adf1e5679bc344ce192f8a2fb622f4b79} 
+\index{babel.localtime.\_unix@{babel.localtime.\_unix}!\_get\_localzone@{\_get\_localzone}}
+\index{\_get\_localzone@{\_get\_localzone}!babel.localtime.\_unix@{babel.localtime.\_unix}}
+\doxysubsubsection{\texorpdfstring{\_get\_localzone()}{\_get\_localzone()}}
+{\footnotesize\ttfamily  datetime.\+tzinfo babel.\+localtime.\+\_\+unix.\+\_\+get\+\_\+localzone (\begin{DoxyParamCaption}\item[{str }]{\+\_\+root = {\ttfamily \textquotesingle{}/\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Tries to find the local timezone configuration.
+This method prefers finding the timezone name and passing that to
+zoneinfo or pytz, over passing in the localtime file, as in the later
+case the zoneinfo name is unknown.
+The parameter _root makes the function look for files like /etc/localtime
+beneath the _root directory. This is primarily used by the tests.
+In normal usage you call the function without parameters.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1localtime_1_1__unix_abb726ac610a3d8916db8dca4d07ec4ef}\label{namespacebabel_1_1localtime_1_1__unix_abb726ac610a3d8916db8dca4d07ec4ef} 
+\index{babel.localtime.\_unix@{babel.localtime.\_unix}!\_tz\_from\_env@{\_tz\_from\_env}}
+\index{\_tz\_from\_env@{\_tz\_from\_env}!babel.localtime.\_unix@{babel.localtime.\_unix}}
+\doxysubsubsection{\texorpdfstring{\_tz\_from\_env()}{\_tz\_from\_env()}}
+{\footnotesize\ttfamily  datetime.\+tzinfo babel.\+localtime.\+\_\+unix.\+\_\+tz\+\_\+from\+\_\+env (\begin{DoxyParamCaption}\item[{str}]{tzenv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+

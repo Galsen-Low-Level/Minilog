@@ -1,0 +1,140 @@
+.TH "pip._vendor.urllib3.contrib.appengine.AppEngineManager" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.urllib3.contrib.appengine.AppEngineManager
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._vendor\&.urllib3\&.request\&.RequestMethods\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBheaders\fP=None, \fBretries\fP=None, \fBvalidate_certificate\fP=True, \fBurlfetch_retries\fP=True)"
+.br
+.ti -1c
+.RI "\fB__enter__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__exit__\fP (self, exc_type, exc_val, exc_tb)"
+.br
+.ti -1c
+.RI "\fBurlopen\fP (self, method, url, body=None, \fBheaders\fP=None, \fBretries\fP=None, redirect=True, timeout=\fBTimeout\&.DEFAULT_TIMEOUT\fP, **response_kw)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._vendor\&.urllib3\&.request\&.RequestMethods\fP
+.in +1c
+.ti -1c
+.RI "\fBrequest\fP (self, method, url, fields=None, \fBheaders\fP=None, **urlopen_kw)"
+.br
+.ti -1c
+.RI "\fBrequest_encode_url\fP (self, method, url, fields=None, \fBheaders\fP=None, **urlopen_kw)"
+.br
+.ti -1c
+.RI "\fBrequest_encode_body\fP (self, method, url, fields=None, \fBheaders\fP=None, encode_multipart=True, multipart_boundary=None, **urlopen_kw)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBvalidate_certificate\fP"
+.br
+.ti -1c
+.RI "\fBurlfetch_retries\fP"
+.br
+.ti -1c
+.RI "\fBretries\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpip\&._vendor\&.urllib3\&.request\&.RequestMethods\fP
+.in +1c
+.ti -1c
+.RI "\fBheaders\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_urlfetch_response_to_http_response\fP (self, urlfetch_resp, **response_kw)"
+.br
+.ti -1c
+.RI "\fB_get_absolute_timeout\fP (self, timeout)"
+.br
+.ti -1c
+.RI "\fB_get_retries\fP (self, \fBretries\fP, redirect)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Protected Attributes inherited from \fBpip\&._vendor\&.urllib3\&.request\&.RequestMethods\fP
+.in +1c
+.ti -1c
+.RI "dict \fB_encode_url_methods\fP = {'DELETE', 'GET', 'HEAD', 'OPTIONS'}"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Connection manager for Google App Engine sandbox applications\&.
+
+This manager uses the URLFetch service directly instead of using the
+emulated httplib, and is subject to URLFetch limitations as described in
+the App Engine documentation `here
+<https://cloud\&.google\&.com/appengine/docs/python/urlfetch>`_\&.
+
+Notably it will raise an :class:`AppEnginePlatformError` if:
+    * URLFetch is not available\&.
+    * If you attempt to use this on App Engine Flexible, as full socket
+      support is available\&.
+    * If a request size is more than 10 megabytes\&.
+    * If a response size is more than 32 megabytes\&.
+    * If you use an unsupported request method such as OPTIONS\&.
+
+Beyond those cases, it will raise normal urllib3 errors\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.appengine\&.AppEngineManager\&.__init__ ( self,  headers = \fCNone\fP,  retries = \fCNone\fP,  validate_certificate = \fCTrue\fP,  urlfetch_retries = \fCTrue\fP)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.urllib3\&.request\&.RequestMethods\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.appengine\&.AppEngineManager\&.__enter__ ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.appengine\&.AppEngineManager\&.__exit__ ( self,  exc_type,  exc_val,  exc_tb)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.appengine\&.AppEngineManager\&._get_absolute_timeout ( self,  timeout)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.appengine\&.AppEngineManager\&._get_retries ( self,  retries,  redirect)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.appengine\&.AppEngineManager\&._urlfetch_response_to_http_response ( self,  urlfetch_resp, ** response_kw)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.appengine\&.AppEngineManager\&.urlopen ( self,  method,  url,  body = \fCNone\fP,  headers = \fCNone\fP,  retries = \fCNone\fP,  redirect = \fCTrue\fP,  timeout = \fC\fBTimeout\&.DEFAULT_TIMEOUT\fP\fP, ** response_kw)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.urllib3\&.request\&.RequestMethods\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.appengine\&.AppEngineManager\&.retries"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.appengine\&.AppEngineManager\&.urlfetch_retries"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.appengine\&.AppEngineManager\&.validate_certificate"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

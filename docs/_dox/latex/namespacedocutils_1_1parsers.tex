@@ -1,0 +1,72 @@
+\doxysection{docutils.\+parsers Namespace Reference}
+\hypertarget{namespacedocutils_1_1parsers}{}\label{namespacedocutils_1_1parsers}\index{docutils.parsers@{docutils.parsers}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacedocutils_1_1parsers_1_1commonmark__wrapper}{commonmark\+\_\+wrapper}}
+\item 
+namespace \mbox{\hyperlink{namespacedocutils_1_1parsers_1_1null}{null}}
+\item 
+namespace \mbox{\hyperlink{namespacedocutils_1_1parsers_1_1recommonmark__wrapper}{recommonmark\+\_\+wrapper}}
+\item 
+namespace \mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst}{rst}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1parsers_1_1Parser}{Parser}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacedocutils_1_1parsers_a97c12130f009303c7e0a8d2d34fc7d9d}{get\+\_\+parser\+\_\+class}} (parser\+\_\+name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+dict \mbox{\hyperlink{namespacedocutils_1_1parsers_ad55787723e7127aed60c31ac70989715}{\+\_\+parser\+\_\+aliases}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}This package contains Docutils parser modules.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacedocutils_1_1parsers_a97c12130f009303c7e0a8d2d34fc7d9d}\label{namespacedocutils_1_1parsers_a97c12130f009303c7e0a8d2d34fc7d9d} 
+\index{docutils.parsers@{docutils.parsers}!get\_parser\_class@{get\_parser\_class}}
+\index{get\_parser\_class@{get\_parser\_class}!docutils.parsers@{docutils.parsers}}
+\doxysubsubsection{\texorpdfstring{get\_parser\_class()}{get\_parser\_class()}}
+{\footnotesize\ttfamily docutils.\+parsers.\+get\+\_\+parser\+\_\+class (\begin{DoxyParamCaption}\item[{}]{parser\+\_\+name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the Parser class from the `parser_name` module.\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacedocutils_1_1parsers_ad55787723e7127aed60c31ac70989715}\label{namespacedocutils_1_1parsers_ad55787723e7127aed60c31ac70989715} 
+\index{docutils.parsers@{docutils.parsers}!\_parser\_aliases@{\_parser\_aliases}}
+\index{\_parser\_aliases@{\_parser\_aliases}!docutils.parsers@{docutils.parsers}}
+\doxysubsubsection{\texorpdfstring{\_parser\_aliases}{\_parser\_aliases}}
+{\footnotesize\ttfamily dict docutils.\+parsers.\+\_\+parser\+\_\+aliases\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{\ \ \textcolor{comment}{\#\ short\ names\ for\ known\ parsers}}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'null'}:\ \textcolor{stringliteral}{'docutils.parsers.null'},}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ reStructuredText}}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'rst'}:\ \textcolor{stringliteral}{'docutils.parsers.rst'},}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'restructuredtext'}:\ \textcolor{stringliteral}{'docutils.parsers.rst'},}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'rest'}:\ \textcolor{stringliteral}{'docutils.parsers.rst'},}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'restx'}:\ \textcolor{stringliteral}{'docutils.parsers.rst'},}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'rtxt'}:\ \textcolor{stringliteral}{'docutils.parsers.rst'},}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 3rd-\/party\ Markdown\ parsers}}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'recommonmark'}:\ \textcolor{stringliteral}{'docutils.parsers.recommonmark\_wrapper'},}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'myst'}:\ \textcolor{stringliteral}{'myst\_parser.docutils\_'},}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 'pycmark':\ works\ out\ of\ the\ box}}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ dispatcher\ for\ 3rd-\/party\ Markdown\ parsers}}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'commonmark'}:\ \textcolor{stringliteral}{'docutils.parsers.commonmark\_wrapper'},}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'markdown'}:\ \textcolor{stringliteral}{'docutils.parsers.commonmark\_wrapper'},}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}

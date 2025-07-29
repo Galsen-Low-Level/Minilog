@@ -1,0 +1,72 @@
+.TH "pip._internal.utils.egg_link" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.utils.egg_link
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "List[str] \fB_egg_link_names\fP (str raw_name)"
+.br
+.ti -1c
+.RI "Optional[str] \fBegg_link_path_from_sys_path\fP (str raw_name)"
+.br
+.ti -1c
+.RI "Optional[str] \fBegg_link_path_from_location\fP (str raw_name)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " List[str] pip\&._internal\&.utils\&.egg_link\&._egg_link_names (str raw_name)\fC [protected]\fP"
+
+.PP
+.nf
+Convert a Name metadata value to a \&.egg-link name, by applying
+the same substitution as pkg_resources's safe_name function\&.
+Note: we cannot use canonicalize_name because it has a different logic\&.
+
+We also look for the raw name (without normalization) as setuptools 69 changed
+the way it names \&.egg-link files (https://github\&.com/pypa/setuptools/issues/4167)\&.
+
+.fi
+.PP
+ 
+.SS " Optional[str] pip\&._internal\&.utils\&.egg_link\&.egg_link_path_from_location (str raw_name)"
+
+.PP
+.nf
+Return the path for the \&.egg-link file if it exists, otherwise, None\&.
+
+There's 3 scenarios:
+1) not in a virtualenv
+   try to find in site\&.USER_SITE, then site_packages
+2) in a no-global virtualenv
+   try to find in site_packages
+3) in a yes-global virtualenv
+   try to find in site_packages, then site\&.USER_SITE
+   (don't look in global location)
+
+For #1 and #3, there could be odd cases, where there's an egg-link in 2
+locations\&.
+
+This method will just return the first one found\&.
+
+.fi
+.PP
+ 
+.SS " Optional[str] pip\&._internal\&.utils\&.egg_link\&.egg_link_path_from_sys_path (str raw_name)"
+
+.PP
+.nf
+Look for a \&.egg-link file for project name, by walking sys\&.path\&.
+
+.fi
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

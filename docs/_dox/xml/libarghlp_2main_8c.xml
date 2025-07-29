@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="libarghlp_2main_8c" kind="file" language="C++">
+    <compoundname>main.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes refid="libarghlp_2arghlp_8h" local="yes">arghlp.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>arghlp.h</label>
+        <link refid="libarghlp_2arghlp_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/umar/Desktop/WorkShop/GLL/libarghlp/main.c</label>
+        <link refid="libarghlp_2main_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>getopt.h</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+      <node id="4">
+        <label>unistd.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="libarghlp_2main_8c_1ab7770a7f0d95e67620ff6ed347a07a56" prot="public" static="no">
+        <name>HEADER</name>
+        <initializer>&quot;This is just a demo ...\n\  to see how to use it&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/libarghlp/main.c" line="8" column="10" bodyfile="/home/umar/Desktop/WorkShop/GLL/libarghlp/main.c" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="libarghlp_2main_8c_1a3d58a4fcb44314d3a153f82925dcbf2c" prot="public" static="no">
+        <name>FOOTER</name>
+        <initializer>&quot;\This is simply the help footer like What you see in regular POSIX command line e.g:\n\GNU coreutils online help: &lt;https://www.gnu.org/software/coreutils/&gt;\n\Full documentation &lt;https://www.gnu.org/software/coreutils/cat&gt;\n\or available locally via: info &apos;(coreutils) cat invocation&apos;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/libarghlp/main.c" line="14" column="9" bodyfile="/home/umar/Desktop/WorkShop/GLL/libarghlp/main.c" bodystart="10" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="libarghlp_2main_8c_1ac14d8e3535b9d35918278d8a698c71f5" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structoptionx" kindref="compound">optionx</ref></type>
+        <definition>struct optionx optlx[]</definition>
+        <argsstring>[]</argsstring>
+        <name>optlx</name>
+        <initializer>={ 
+  {{&quot;help&quot;, no_argument , <ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a02648067ad66739ed70a10195891098a" kindref="member">nullable</ref>, &apos;h&apos;}      , &quot;\t\tprint help of the program&quot;}, 
+  {{&quot;version&quot;,no_argument,<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a02648067ad66739ed70a10195891098a" kindref="member">nullable</ref>, &apos;v&apos;}      , &quot;\t\tprint the version of the program&quot;},
+  {{&quot;input&quot;, required_argument,<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a02648067ad66739ed70a10195891098a" kindref="member">nullable</ref>, &apos;i&apos;} , &quot;&lt;file&gt;\tinput of the program&quot;},
+  {{&quot;output&quot;,optional_argument,<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a02648067ad66739ed70a10195891098a" kindref="member">nullable</ref>, &apos;o&apos;} , &quot;[file]\toutput of the program&quot;},
+  <ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1ac0b92e6c190a568842681dbb698a1bf1" kindref="member">OPTX_END</ref> 
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/libarghlp/main.c" line="17" column="14" bodyfile="/home/umar/Desktop/WorkShop/GLL/libarghlp/main.c" bodystart="17" bodyend="23"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="libarghlp_2main_8c_1a38407fa52da86d7b2676e027c99f21ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * argparse</definition>
+        <argsstring>(int ac, char *const *av, const char *shortopt, struct option *opts, void *args)</argsstring>
+        <name>argparse</name>
+        <param>
+          <type>int</type>
+          <declname>ac</declname>
+        </param>
+        <param>
+          <type>char *const *</type>
+          <declname>av</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>shortopt</declname>
+        </param>
+        <param>
+          <type>struct option *</type>
+          <declname>opts</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/libarghlp/main.c" line="27" column="8" bodyfile="/home/umar/Desktop/WorkShop/GLL/libarghlp/main.c" bodystart="27" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="libarghlp_2main_8c_1a0c99d968a34e803d378692bde2e3f18f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int ac, char **av)</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>ac</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>av</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/libarghlp/main.c" line="64" column="5" bodyfile="/home/umar/Desktop/WorkShop/GLL/libarghlp/main.c" bodystart="64" bodyend="76"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="libarghlp_2arghlp_8h" kindref="compound">arghlp.h</ref>&quot;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/>HEADER<sp/>&quot;This<sp/>is<sp/>just<sp/>a<sp/>demo<sp/>...\n\</highlight></codeline>
+<codeline lineno="8"><highlight class="preprocessor"><sp/><sp/>to<sp/>see<sp/>how<sp/>to<sp/>use<sp/>it&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FOOTER<sp/>&quot;\</highlight></codeline>
+<codeline lineno="11"><highlight class="preprocessor">This<sp/>is<sp/>simply<sp/>the<sp/>help<sp/>footer<sp/>like<sp/>What<sp/>you<sp/>see<sp/>in<sp/>regular<sp/>POSIX<sp/>command<sp/>line<sp/>e.g:\n\</highlight></codeline>
+<codeline lineno="12"><highlight class="preprocessor">GNU<sp/>coreutils<sp/>online<sp/>help:<sp/>&lt;https://www.gnu.org/software/coreutils/&gt;\n\</highlight></codeline>
+<codeline lineno="13"><highlight class="preprocessor">Full<sp/>documentation<sp/>&lt;https://www.gnu.org/software/coreutils/cat&gt;\n\</highlight></codeline>
+<codeline lineno="14"><highlight class="preprocessor">or<sp/>available<sp/>locally<sp/>via:<sp/>info<sp/>&apos;(coreutils)<sp/>cat<sp/>invocation&apos;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structoptionx" kindref="compound">optionx</ref><sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2main_8c_1ac14d8e3535b9d35918278d8a698c71f5" kindref="member">optlx</ref>[]<sp/>={<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/>{{</highlight><highlight class="stringliteral">&quot;help&quot;</highlight><highlight class="normal">,<sp/>no_argument<sp/>,<sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a02648067ad66739ed70a10195891098a" kindref="member">nullable</ref>,<sp/></highlight><highlight class="charliteral">&apos;h&apos;</highlight><highlight class="normal">}<sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight><highlight class="stringliteral">&quot;\t\tprint<sp/>help<sp/>of<sp/>the<sp/>program&quot;</highlight><highlight class="normal">},<sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/>{{</highlight><highlight class="stringliteral">&quot;version&quot;</highlight><highlight class="normal">,no_argument,<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a02648067ad66739ed70a10195891098a" kindref="member">nullable</ref>,<sp/></highlight><highlight class="charliteral">&apos;v&apos;</highlight><highlight class="normal">}<sp/><sp/><sp/><sp/><sp/><sp/>,<sp/></highlight><highlight class="stringliteral">&quot;\t\tprint<sp/>the<sp/>version<sp/>of<sp/>the<sp/>program&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/>{{</highlight><highlight class="stringliteral">&quot;input&quot;</highlight><highlight class="normal">,<sp/>required_argument,<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a02648067ad66739ed70a10195891098a" kindref="member">nullable</ref>,<sp/></highlight><highlight class="charliteral">&apos;i&apos;</highlight><highlight class="normal">}<sp/>,<sp/></highlight><highlight class="stringliteral">&quot;&lt;file&gt;\tinput<sp/>of<sp/>the<sp/>program&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>{{</highlight><highlight class="stringliteral">&quot;output&quot;</highlight><highlight class="normal">,optional_argument,<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a02648067ad66739ed70a10195891098a" kindref="member">nullable</ref>,<sp/></highlight><highlight class="charliteral">&apos;o&apos;</highlight><highlight class="normal">}<sp/>,<sp/></highlight><highlight class="stringliteral">&quot;[file]\toutput<sp/>of<sp/>the<sp/>program&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1ac0b92e6c190a568842681dbb698a1bf1" kindref="member">OPTX_END</ref><sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">};<sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/>*<sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2main_8c_1a38407fa52da86d7b2676e027c99f21ac" kindref="member">argparse</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ac<sp/><sp/>,</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/>av<sp/>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*shortopt<sp/>,<sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>option<sp/>*<sp/>opts<sp/>,<sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>args)<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2example_2main_8c_1a82e29d49572cb88422ac9176f0bd06ce" kindref="member">opt</ref><sp/>=<sp/>0<sp/>;<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(1<sp/>==<sp/>ac<sp/>)<sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a4187b98d97b5598f52407f80610e841c" kindref="member">__help__</ref><sp/>;<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>(<ref refid="Ftp-FM_2subprojects_2Arghlp_2example_2main_8c_1a82e29d49572cb88422ac9176f0bd06ce" kindref="member">opt</ref><sp/><sp/>=<sp/>getopt_long(ac<sp/>,<sp/>av,<sp/><sp/>shortopt<sp/>,<sp/><sp/>opts<sp/>,<sp/><sp/>0))<sp/>!=<sp/>~0<sp/>)<sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(<ref refid="Ftp-FM_2subprojects_2Arghlp_2example_2main_8c_1a82e29d49572cb88422ac9176f0bd06ce" kindref="member">opt</ref>)<sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="charliteral">&apos;h&apos;</highlight><highlight class="normal">:<sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a4187b98d97b5598f52407f80610e841c" kindref="member">__help__</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;v&apos;</highlight><highlight class="normal">:<sp/><sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>puts(</highlight><highlight class="stringliteral">&quot;version<sp/>1.x.x&quot;</highlight><highlight class="normal">);<sp/><sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;i&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*input<sp/>=<sp/>optarg<sp/>;<sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stdout,<sp/></highlight><highlight class="stringliteral">&quot;input<sp/>-&gt;<sp/>%s\n&quot;</highlight><highlight class="normal"><sp/>,<sp/>input)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;o&apos;</highlight><highlight class="normal">:<sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*output<sp/>=<sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8c_1acc239d6fc9af793154061583556742d3" kindref="member">optentry</ref>(<sp/>av<sp/>,<sp/>ac<sp/>,<sp/>optind)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stdout,<sp/></highlight><highlight class="stringliteral">&quot;output<sp/>-&gt;<sp/>%s\n&quot;</highlight><highlight class="normal"><sp/>,<sp/>output)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:<sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr<sp/>,<sp/></highlight><highlight class="stringliteral">&quot;no<sp/><sp/>allowed<sp/>...\n&quot;</highlight><highlight class="normal">);<sp/><sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break<sp/>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)<sp/><ref refid="namespacecertifi_1_1____main_____1a94201c864840d6482dd291d2d02c6f7a" kindref="member">args</ref><sp/>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemain" kindref="compound">main</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ac<sp/>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**av)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structarghlp" kindref="compound">arghlp</ref><sp/><ref refid="structarghlp" kindref="compound">arghlp</ref><sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>.<ref refid="structarghlp_1a46af361a1e788a3f95d207ba35ced47a" kindref="member">synopsys</ref><sp/><sp/><sp/>=<sp/><sp/>{<ref refid="Ftp-FM_2subprojects_2Arghlp_2main_8c_1ab7770a7f0d95e67620ff6ed347a07a56" kindref="member">HEADER</ref><sp/>,<sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2example_2main_8c_1a3d58a4fcb44314d3a153f82925dcbf2c" kindref="member">FOOTER</ref>}<sp/>,<sp/><sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>.options<sp/><sp/><sp/><sp/>=<sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2main_8c_1ac14d8e3535b9d35918278d8a698c71f5" kindref="member">optlx</ref>,<sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>.ah_handler<sp/>=<sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2main_8c_1a38407fa52da86d7b2676e027c99f21ac" kindref="member">argparse</ref></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>}<sp/>;<sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8c_1a8779d1194bf0fef826735e5aef969253" kindref="member">arghlp_context</ref>(ac<sp/>,<sp/>av<sp/>,<sp/><sp/>&amp;<ref refid="structarghlp" kindref="compound">arghlp</ref><sp/>,<sp/><sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a02648067ad66739ed70a10195891098a" kindref="member">nullable</ref>)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_SUCCESS<sp/>;<sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/umar/Desktop/WorkShop/GLL/libarghlp/main.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1265 @@
+.TH "docutils.writers.manpage.Translator" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.writers.manpage.Translator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.nodes\&.NodeVisitor\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdocument\fP)"
+.br
+.ti -1c
+.RI "\fBcomment_begin\fP (self, text)"
+.br
+.ti -1c
+.RI "\fBcomment\fP (self, text)"
+.br
+.ti -1c
+.RI "\fBensure_eol\fP (self)"
+.br
+.ti -1c
+.RI "\fBastext\fP (self)"
+.br
+.ti -1c
+.RI "\fBdeunicode\fP (self, text)"
+.br
+.ti -1c
+.RI "\fBvisit_Text\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_Text\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBlist_start\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBlist_end\fP (self)"
+.br
+.ti -1c
+.RI "\fBheader\fP (self)"
+.br
+.ti -1c
+.RI "\fBappend_header\fP (self)"
+.br
+.ti -1c
+.RI "\fBvisit_address\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_address\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_admonition\fP (self, node, name=None)"
+.br
+.ti -1c
+.RI "\fBdepart_admonition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_attention\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_docinfo_item\fP (self, node, name)"
+.br
+.ti -1c
+.RI "\fBdepart_docinfo_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_author\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_authors\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_authors\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_block_quote\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_block_quote\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_bullet_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_bullet_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_caption\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_caption\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_caution\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_citation\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_citation\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_citation_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_classifier\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_classifier\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_colspec\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_colspec\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBwrite_colspecs\fP (self)"
+.br
+.ti -1c
+.RI "\fBvisit_comment\fP (self, node, sub=re\&.compile('\-(?=\-)')\&.sub)"
+.br
+.ti -1c
+.RI "\fBvisit_contact\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_container\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_container\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_compound\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_compound\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_copyright\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_danger\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_date\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_decoration\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_decoration\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_definition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_definition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_definition_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_definition_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_definition_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_definition_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_description\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_description\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_docinfo\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_docinfo\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_doctest_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_doctest_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_document\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_document\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_emphasis\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_emphasis\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_entry\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_entry\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_enumerated_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_enumerated_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_error\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_field\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_field\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_field_body\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_field_body\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_field_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_field_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_field_name\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_field_name\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_figure\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_figure\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_footer\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_footer\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_footnote\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_footnote\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBfootnote_backrefs\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_footnote_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_footnote_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_generated\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_generated\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_header\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_header\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_hint\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_subscript\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_subscript\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_superscript\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_superscript\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_attribution\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_attribution\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_image\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_important\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_inline\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_inline\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_label\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_label\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_legend\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_legend\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_line_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_line_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_line\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_line\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_literal\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_literal\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_literal_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_literal_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_math\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_math\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_math_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_math_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_note\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBindent\fP (self, by=0\&.5)"
+.br
+.ti -1c
+.RI "\fBdedent\fP (self)"
+.br
+.ti -1c
+.RI "\fBvisit_option_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option_group\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option_group\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option_string\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option_string\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option_argument\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option_argument\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_organization\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_organization\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBfirst_child\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_paragraph\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_paragraph\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_problematic\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_problematic\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_raw\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_revision\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_row\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_row\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_section\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_section\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_status\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_strong\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_strong\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_substitution_definition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_substitution_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_subtitle\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_subtitle\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_system_message\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_system_message\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_table\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_table\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_target\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_tbody\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_tbody\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_term\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_term\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_tgroup\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_tgroup\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_thead\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_thead\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_tip\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_title\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_title\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_title_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_title_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_topic\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_topic\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_sidebar\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_sidebar\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_rubric\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_rubric\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_transition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_transition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_version\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_warning\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBunimplemented_visit\fP (self, node)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "\fBdispatch_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdispatch_departure\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBunknown_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBunknown_departure\fP (self, node)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsettings\fP"
+.br
+.ti -1c
+.RI "\fBlanguage\fP"
+.br
+.ti -1c
+.RI "\fBhead\fP"
+.br
+.ti -1c
+.RI "\fBbody\fP"
+.br
+.ti -1c
+.RI "\fBfoot\fP"
+.br
+.ti -1c
+.RI "\fBsection_level\fP"
+.br
+.ti -1c
+.RI "\fBcontext\fP"
+.br
+.ti -1c
+.RI "\fBtopic_class\fP"
+.br
+.ti -1c
+.RI "\fBcolspecs\fP"
+.br
+.ti -1c
+.RI "\fBcompact_p\fP"
+.br
+.ti -1c
+.RI "\fBcompact_simple\fP"
+.br
+.ti -1c
+.RI "\fBheader_written\fP"
+.br
+.ti -1c
+.RI "\fBauthors\fP"
+.br
+.ti -1c
+.RI "\fBdefs\fP"
+.br
+.ti -1c
+.RI "\fBdocument_start\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBoptional\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBwords_and_spaces\fP = re\&.compile(r'\\S+| +|\\n')"
+.br
+.ti -1c
+.RI "\fBpossibly_a_roff_command\fP = re\&.compile(r'\\\&.\\w')"
+.br
+.ti -1c
+.RI "str \fBdocument_start\fP = '''Man page generated from reStructuredText\&.'''"
+.br
+.ti -1c
+.RI "\fBdepart_attention\fP = \fBdepart_admonition\fP"
+.br
+.ti -1c
+.RI "\fBdepart_author\fP = \fBdepart_docinfo_item\fP"
+.br
+.ti -1c
+.RI "\fBdepart_caution\fP = \fBdepart_admonition\fP"
+.br
+.ti -1c
+.RI "\fBdepart_contact\fP = \fBdepart_docinfo_item\fP"
+.br
+.ti -1c
+.RI "\fBdepart_danger\fP = \fBdepart_admonition\fP"
+.br
+.ti -1c
+.RI "\fBdepart_error\fP = \fBdepart_admonition\fP"
+.br
+.ti -1c
+.RI "\fBdepart_hint\fP = \fBdepart_admonition\fP"
+.br
+.ti -1c
+.RI "\fBdepart_important\fP = \fBdepart_admonition\fP"
+.br
+.ti -1c
+.RI "\fBdepart_note\fP = \fBdepart_admonition\fP"
+.br
+.ti -1c
+.RI "\fBdepart_revision\fP = \fBdepart_docinfo_item\fP"
+.br
+.ti -1c
+.RI "\fBdepart_status\fP = \fBdepart_docinfo_item\fP"
+.br
+.ti -1c
+.RI "\fBdepart_tip\fP = \fBdepart_admonition\fP"
+.br
+.ti -1c
+.RI "\fBdepart_warning\fP = \fBdepart_admonition\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBoptional\fP = ('\fBmeta\fP',)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_list_char\fP"
+.br
+.ti -1c
+.RI "\fB_docinfo\fP"
+.br
+.ti -1c
+.RI "\fB_docinfo_keys\fP"
+.br
+.ti -1c
+.RI "\fB_docinfo_names\fP"
+.br
+.ti -1c
+.RI "\fB_in_docinfo\fP"
+.br
+.ti -1c
+.RI "\fB_field_name\fP"
+.br
+.ti -1c
+.RI "\fB_active_table\fP"
+.br
+.ti -1c
+.RI "\fB_has_a_table\fP"
+.br
+.ti -1c
+.RI "\fB_in_literal\fP"
+.br
+.ti -1c
+.RI "\fB_line_block\fP"
+.br
+.ti -1c
+.RI "\fB_indent\fP"
+.br
+.ti -1c
+.RI "\fB_style\fP"
+.br
+.ti -1c
+.RI "\fB_cnt\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.writers\&.manpage\&.Translator\&.__init__ ( self,  document)"
+
+.PP
+Reimplemented from \fBdocutils\&.nodes\&.NodeVisitor\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.writers\&.manpage\&.Translator\&.append_header ( self)"
+
+.PP
+.nf
+append header with \&.TH and \&.SH NAME
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.manpage\&.Translator\&.astext ( self)"
+
+.PP
+.nf
+Return the final formatted document as a string\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.manpage\&.Translator\&.comment ( self,  text)"
+
+.PP
+.nf
+Return commented version of the passed text\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.manpage\&.Translator\&.comment_begin ( self,  text)"
+
+.PP
+.nf
+Return commented version of the passed text WITHOUT end of
+line/comment\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.manpage\&.Translator\&.dedent ( self)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_address ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_admonition ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_attribution ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_authors ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_block_quote ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_bullet_list ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_caption ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_citation ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_classifier ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_colspec ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_compound ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_container ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_decoration ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_definition ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_definition_list ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_definition_list_item ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_description ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_docinfo ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_docinfo_item ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_doctest_block ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_document ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_emphasis ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_entry ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_enumerated_list ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_field ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_field_body ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_field_list ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_field_name ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_figure ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_footer ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_footnote ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_footnote_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_generated ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_header ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_inline ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_label ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_legend ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_line ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_line_block ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_list_item ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_literal ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_literal_block ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_math ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_math_block ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_option ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_option_argument ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_option_group ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_option_list ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_option_list_item ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_option_string ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_organization ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_paragraph ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_problematic ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_row ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_rubric ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_section ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_sidebar ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_strong ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_subscript ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_subtitle ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_superscript ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_system_message ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_table ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_tbody ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_term ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_Text ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_tgroup ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_thead ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_title ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_title_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_topic ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_transition ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.deunicode ( self,  text)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.ensure_eol ( self)"
+
+.PP
+.nf
+Ensure the last line in body is terminated by new line\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.manpage\&.Translator\&.first_child ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.footnote_backrefs ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.header ( self)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.indent ( self,  by = \fC0\&.5\fP)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.list_end ( self)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.list_start ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.unimplemented_visit ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_address ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_admonition ( self,  node,  name = \fCNone\fP)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_attention ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_attribution ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_author ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_authors ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_block_quote ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_bullet_list ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_caption ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_caution ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_citation ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_citation_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_classifier ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_colspec ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_comment ( self,  node,  sub = \fCre\&.compile('\-(?=\-)')\&.sub\fP)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_compound ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_contact ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_container ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_copyright ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_danger ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_date ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_decoration ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_definition ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_definition_list ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_definition_list_item ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_description ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_docinfo ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_docinfo_item ( self,  node,  name)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_doctest_block ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_document ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_emphasis ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_entry ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_enumerated_list ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_error ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_field ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_field_body ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_field_list ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_field_name ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_figure ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_footer ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_footnote ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_footnote_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_generated ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_header ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_hint ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_image ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_important ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_inline ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_label ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_legend ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_line ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_line_block ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_list_item ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_literal ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_literal_block ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_math ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_math_block ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_note ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_option ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_option_argument ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_option_group ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_option_list ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_option_list_item ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_option_string ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_organization ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_paragraph ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_problematic ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_raw ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_reference ( self,  node)"
+
+.PP
+.nf
+E\&.g\&. link or email address\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_revision ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_row ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_rubric ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_section ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_sidebar ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_status ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_strong ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_subscript ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_substitution_definition ( self,  node)"
+
+.PP
+.nf
+Internal only\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_substitution_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_subtitle ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_superscript ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_system_message ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_table ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_target ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_tbody ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_term ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_Text ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_tgroup ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_thead ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_tip ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_title ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_title_reference ( self,  node)"
+
+.PP
+.nf
+inline citation reference
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_topic ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_transition ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_version ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.visit_warning ( self,  node)"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.write_colspecs ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.writers\&.manpage\&.Translator\&._active_table\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&._cnt\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&._docinfo\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&._docinfo_keys\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&._docinfo_names\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&._field_name\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&._has_a_table\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&._in_docinfo\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&._in_literal\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&._indent\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&._line_block\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&._list_char\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&._style\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.authors"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.body"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.colspecs"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.compact_p"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.compact_simple"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.context"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.defs"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_attention = \fBdepart_admonition\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_author = \fBdepart_docinfo_item\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_caution = \fBdepart_admonition\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_contact = \fBdepart_docinfo_item\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_danger = \fBdepart_admonition\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_error = \fBdepart_admonition\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_hint = \fBdepart_admonition\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_important = \fBdepart_admonition\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_note = \fBdepart_admonition\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_revision = \fBdepart_docinfo_item\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_status = \fBdepart_docinfo_item\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_tip = \fBdepart_admonition\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.depart_warning = \fBdepart_admonition\fP\fC [static]\fP"
+
+.SS "str docutils\&.writers\&.manpage\&.Translator\&.document_start = '''Man page generated from reStructuredText\&.'''\fC [static]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.document_start"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.foot"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.head"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.header_written"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.language"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.possibly_a_roff_command = re\&.compile(r'\\\&.\\w')\fC [static]\fP"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.section_level"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.settings"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.topic_class"
+
+.SS "docutils\&.writers\&.manpage\&.Translator\&.words_and_spaces = re\&.compile(r'\\S+| +|\\n')\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

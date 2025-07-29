@@ -1,0 +1,140 @@
+.TH "pip._internal.commands.check.CheckCommand" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.commands.check.CheckCommand
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._internal\&.cli\&.base_command\&.Command\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBrun\fP (self, Values options, List[str] args)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str \fBname\fP, str \fBsummary\fP, bool isolated=False)"
+.br
+.ti -1c
+.RI "None \fBadd_options\fP (self)"
+.br
+.ti -1c
+.RI "None \fBhandle_pip_version_check\fP (self, Values options)"
+.br
+.ti -1c
+.RI "Tuple[Values, List[str]] \fBparse_args\fP (self, List[str] args)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (self, List[str] args)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._internal\&.cli\&.command_context\&.CommandContextMixIn\fP
+.in +1c
+.ti -1c
+.RI "Generator[None, None, None] \fBmain_context\fP (self)"
+.br
+.ti -1c
+.RI "\fB_T\fP \fBenter_context\fP (self, ContextManager[\fB_T\fP] context_provider)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBignore_require_venv\fP = True"
+.br
+.ti -1c
+.RI "str \fBusage\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP
+.in +1c
+.ti -1c
+.RI "str \fBusage\fP = ''"
+.br
+.ti -1c
+.RI "bool \fBignore_require_venv\fP = False"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP
+.in +1c
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBsummary\fP"
+.br
+.ti -1c
+.RI "\fBparser\fP"
+.br
+.ti -1c
+.RI "\fBcmd_opts\fP"
+.br
+.ti -1c
+.RI "\fBtempdir_registry\fP"
+.br
+.ti -1c
+.RI "\fBverbosity\fP"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP
+.in +1c
+.ti -1c
+.RI "int \fB_run_wrapper\fP (self, int level_number, Values options, List[str] args)"
+.br
+.ti -1c
+.RI "int \fB_main\fP (self, List[str] args)"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBpip\&._internal\&.cli\&.command_context\&.CommandContextMixIn\fP
+.in +1c
+.ti -1c
+.RI "\fB_in_main_context\fP"
+.br
+.ti -1c
+.RI "\fB_main_context\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Verify installed packages have compatible dependencies\&.
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " int pip\&._internal\&.commands\&.check\&.CheckCommand\&.run ( self, Values options, List[str] args)"
+
+.PP
+Reimplemented from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool pip\&._internal\&.commands\&.check\&.CheckCommand\&.ignore_require_venv = True\fC [static]\fP"
+
+.SS "str pip\&._internal\&.commands\&.check\&.CheckCommand\&.usage\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  """
+      %prog [options]"""
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

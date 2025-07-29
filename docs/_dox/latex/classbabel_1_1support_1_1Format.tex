@@ -1,0 +1,229 @@
+\doxysection{babel.\+support.\+Format Class Reference}
+\hypertarget{classbabel_1_1support_1_1Format}{}\label{classbabel_1_1support_1_1Format}\index{babel.support.Format@{babel.support.Format}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classbabel_1_1support_1_1Format_a281b48f54f33f07d36d296d67101e0ee}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str \mbox{\hyperlink{classbabel_1_1support_1_1Format_a6ef2b2dd4283fa9e5067f2d34cd85dd4}{locale}}, \+\_\+datetime.\+tzinfo\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classbabel_1_1support_1_1Format_a0ac2b4e00bd57d63a12707bca7165b4a}{tzinfo}}=None, \texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]}\texorpdfstring{$\vert$}{|}str \mbox{\hyperlink{classbabel_1_1support_1_1Format_a69277ac80a27a7ea4cdec09980add520}{numbering\+\_\+system}}="{}latn"{})
+\item 
+str \mbox{\hyperlink{classbabel_1_1support_1_1Format_a5de92da46bdd1687eb395834ac8fe689}{date}} (self, \+\_\+datetime.\+date\texorpdfstring{$\vert$}{|}None date=None, \+\_\+\+Predefined\+Time\+Format\texorpdfstring{$\vert$}{|}str format=\textquotesingle{}medium\textquotesingle{})
+\item 
+str \mbox{\hyperlink{classbabel_1_1support_1_1Format_aac8639d255e28ae731854655082b00b0}{datetime}} (self, \+\_\+datetime.\+date\texorpdfstring{$\vert$}{|}None datetime=None, \+\_\+\+Predefined\+Time\+Format\texorpdfstring{$\vert$}{|}str format=\textquotesingle{}medium\textquotesingle{})
+\item 
+str \mbox{\hyperlink{classbabel_1_1support_1_1Format_a8952ae78a7ba118a388caa5e92c0adfe}{time}} (self, \+\_\+datetime.\+time\texorpdfstring{$\vert$}{|}\+\_\+datetime.\+datetime\texorpdfstring{$\vert$}{|}None time=None, \+\_\+\+Predefined\+Time\+Format\texorpdfstring{$\vert$}{|}str format=\textquotesingle{}medium\textquotesingle{})
+\item 
+str \mbox{\hyperlink{classbabel_1_1support_1_1Format_ad3493443cae4240ce436bb15893f0d68}{timedelta}} (self, \+\_\+datetime.\+timedelta\texorpdfstring{$\vert$}{|}int delta, Literal\mbox{[}"{}year"{}, "{}month"{}, "{}week"{}, "{}day"{}, "{}hour"{}, "{}minute"{}, "{}second"{}\mbox{]} granularity="{}second"{}, float threshold=0.\+85, Literal\mbox{[}"{}narrow"{}, "{}short"{}, "{}medium"{}, "{}long"{}\mbox{]} format="{}long"{}, bool add\+\_\+direction=False)
+\item 
+str \mbox{\hyperlink{classbabel_1_1support_1_1Format_ae8ccc0873247c689a39aca2bd7ff9a43}{number}} (self, float\texorpdfstring{$\vert$}{|}Decimal\texorpdfstring{$\vert$}{|}str number)
+\item 
+str \mbox{\hyperlink{classbabel_1_1support_1_1Format_a1209f91c5ab2c0a48b47bbc759cf493d}{decimal}} (self, float\texorpdfstring{$\vert$}{|}Decimal\texorpdfstring{$\vert$}{|}str \mbox{\hyperlink{classbabel_1_1support_1_1Format_ae8ccc0873247c689a39aca2bd7ff9a43}{number}}, str\texorpdfstring{$\vert$}{|}None format=None)
+\item 
+str \mbox{\hyperlink{classbabel_1_1support_1_1Format_a14e7aa82751dc3c230bc34dbb314c57d}{compact\+\_\+decimal}} (self, float\texorpdfstring{$\vert$}{|}Decimal\texorpdfstring{$\vert$}{|}str \mbox{\hyperlink{classbabel_1_1support_1_1Format_ae8ccc0873247c689a39aca2bd7ff9a43}{number}}, Literal\mbox{[}\textquotesingle{}short\textquotesingle{}, \textquotesingle{}long\textquotesingle{}\mbox{]} format\+\_\+type=\textquotesingle{}short\textquotesingle{}, int fraction\+\_\+digits=0)
+\item 
+str \mbox{\hyperlink{classbabel_1_1support_1_1Format_a0dd7797fce64e2ef65dd55e87689486f}{currency}} (self, float\texorpdfstring{$\vert$}{|}Decimal\texorpdfstring{$\vert$}{|}str \mbox{\hyperlink{classbabel_1_1support_1_1Format_ae8ccc0873247c689a39aca2bd7ff9a43}{number}}, str currency)
+\item 
+str \mbox{\hyperlink{classbabel_1_1support_1_1Format_aeec204969cae7487bd0c2a78649918f5}{compact\+\_\+currency}} (self, float\texorpdfstring{$\vert$}{|}Decimal\texorpdfstring{$\vert$}{|}str \mbox{\hyperlink{classbabel_1_1support_1_1Format_ae8ccc0873247c689a39aca2bd7ff9a43}{number}}, str \mbox{\hyperlink{classbabel_1_1support_1_1Format_a0dd7797fce64e2ef65dd55e87689486f}{currency}}, Literal\mbox{[}\textquotesingle{}short\textquotesingle{}\mbox{]} format\+\_\+type=\textquotesingle{}short\textquotesingle{}, int fraction\+\_\+digits=0)
+\item 
+str \mbox{\hyperlink{classbabel_1_1support_1_1Format_a3996011a8e77cbaa723d3189ef5186f5}{percent}} (self, float\texorpdfstring{$\vert$}{|}Decimal\texorpdfstring{$\vert$}{|}str \mbox{\hyperlink{classbabel_1_1support_1_1Format_ae8ccc0873247c689a39aca2bd7ff9a43}{number}}, str\texorpdfstring{$\vert$}{|}None format=None)
+\item 
+str \mbox{\hyperlink{classbabel_1_1support_1_1Format_a1f03246dbaa56484960160aeb0677637}{scientific}} (self, float\texorpdfstring{$\vert$}{|}Decimal\texorpdfstring{$\vert$}{|}str \mbox{\hyperlink{classbabel_1_1support_1_1Format_ae8ccc0873247c689a39aca2bd7ff9a43}{number}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbabel_1_1support_1_1Format_a6ef2b2dd4283fa9e5067f2d34cd85dd4}{locale}}
+\item 
+\mbox{\hyperlink{classbabel_1_1support_1_1Format_a0ac2b4e00bd57d63a12707bca7165b4a}{tzinfo}}
+\item 
+\mbox{\hyperlink{classbabel_1_1support_1_1Format_a69277ac80a27a7ea4cdec09980add520}{numbering\+\_\+system}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Wrapper class providing the various date and number formatting functions
+bound to a specific locale and time-zone.
+
+>>> from babel.util import UTC
+>>> from datetime import date
+>>> fmt = Format('en_US', UTC)
+>>> fmt.date(date(2007, 4, 1))
+u'Apr 1, 2007'
+>>> fmt.decimal(1.2345)
+u'1.234'
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbabel_1_1support_1_1Format_a281b48f54f33f07d36d296d67101e0ee}\label{classbabel_1_1support_1_1Format_a281b48f54f33f07d36d296d67101e0ee} 
+\index{babel.support.Format@{babel.support.Format}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!babel.support.Format@{babel.support.Format}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None babel.\+support.\+Format.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str}]{locale,  }\item[{\+\_\+datetime.\+tzinfo \texorpdfstring{$\vert$}{|} None }]{tzinfo = {\ttfamily None},  }\item[{\texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]} \texorpdfstring{$\vert$}{|} str }]{numbering\+\_\+system = {\ttfamily "{}latn"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize the formatter.
+
+:param locale: the locale identifier or `Locale` instance
+:param tzinfo: the time-zone info (a `tzinfo` instance or `None`)
+:param numbering_system: The numbering system used for formatting number symbols. Defaults to "latn".
+                         The special value "default" will use the default numbering system of the locale.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbabel_1_1support_1_1Format_aeec204969cae7487bd0c2a78649918f5}\label{classbabel_1_1support_1_1Format_aeec204969cae7487bd0c2a78649918f5} 
+\index{babel.support.Format@{babel.support.Format}!compact\_currency@{compact\_currency}}
+\index{compact\_currency@{compact\_currency}!babel.support.Format@{babel.support.Format}}
+\doxysubsubsection{\texorpdfstring{compact\_currency()}{compact\_currency()}}
+{\footnotesize\ttfamily  str babel.\+support.\+Format.\+compact\+\_\+currency (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{float \texorpdfstring{$\vert$}{|} Decimal \texorpdfstring{$\vert$}{|} str}]{number,  }\item[{str}]{currency,  }\item[{Literal\mbox{[}\textquotesingle{}short\textquotesingle{}\mbox{]} }]{format\+\_\+type = {\ttfamily \textquotesingle{}short\textquotesingle{}},  }\item[{int }]{fraction\+\_\+digits = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a number in the given currency formatted for the locale
+using the compact number format.
+
+>>> Format('en_US').compact_currency(1234567, "USD", format_type='short', fraction_digits=2)
+'$1.23M'
+\end{DoxyVerb}
+ \Hypertarget{classbabel_1_1support_1_1Format_a14e7aa82751dc3c230bc34dbb314c57d}\label{classbabel_1_1support_1_1Format_a14e7aa82751dc3c230bc34dbb314c57d} 
+\index{babel.support.Format@{babel.support.Format}!compact\_decimal@{compact\_decimal}}
+\index{compact\_decimal@{compact\_decimal}!babel.support.Format@{babel.support.Format}}
+\doxysubsubsection{\texorpdfstring{compact\_decimal()}{compact\_decimal()}}
+{\footnotesize\ttfamily  str babel.\+support.\+Format.\+compact\+\_\+decimal (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{float \texorpdfstring{$\vert$}{|} Decimal \texorpdfstring{$\vert$}{|} str}]{number,  }\item[{Literal\mbox{[}\textquotesingle{}short\textquotesingle{}, \textquotesingle{}long\textquotesingle{}\mbox{]} }]{format\+\_\+type = {\ttfamily \textquotesingle{}short\textquotesingle{}},  }\item[{int }]{fraction\+\_\+digits = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a number formatted in compact form for the locale.
+
+>>> fmt = Format('en_US')
+>>> fmt.compact_decimal(123456789)
+u'123M'
+>>> fmt.compact_decimal(1234567, format_type='long', fraction_digits=2)
+'1.23 million'
+\end{DoxyVerb}
+ \Hypertarget{classbabel_1_1support_1_1Format_a0dd7797fce64e2ef65dd55e87689486f}\label{classbabel_1_1support_1_1Format_a0dd7797fce64e2ef65dd55e87689486f} 
+\index{babel.support.Format@{babel.support.Format}!currency@{currency}}
+\index{currency@{currency}!babel.support.Format@{babel.support.Format}}
+\doxysubsubsection{\texorpdfstring{currency()}{currency()}}
+{\footnotesize\ttfamily  str babel.\+support.\+Format.\+currency (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{float \texorpdfstring{$\vert$}{|} Decimal \texorpdfstring{$\vert$}{|} str}]{number,  }\item[{str}]{currency }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a number in the given currency formatted for the locale.
+\end{DoxyVerb}
+ \Hypertarget{classbabel_1_1support_1_1Format_a5de92da46bdd1687eb395834ac8fe689}\label{classbabel_1_1support_1_1Format_a5de92da46bdd1687eb395834ac8fe689} 
+\index{babel.support.Format@{babel.support.Format}!date@{date}}
+\index{date@{date}!babel.support.Format@{babel.support.Format}}
+\doxysubsubsection{\texorpdfstring{date()}{date()}}
+{\footnotesize\ttfamily  str babel.\+support.\+Format.\+date (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\+\_\+datetime.\+date \texorpdfstring{$\vert$}{|} None }]{date = {\ttfamily None},  }\item[{\+\_\+\+Predefined\+Time\+Format \texorpdfstring{$\vert$}{|} str }]{format = {\ttfamily \textquotesingle{}medium\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a date formatted according to the given pattern.
+
+>>> from datetime import date
+>>> fmt = Format('en_US')
+>>> fmt.date(date(2007, 4, 1))
+u'Apr 1, 2007'
+\end{DoxyVerb}
+ \Hypertarget{classbabel_1_1support_1_1Format_aac8639d255e28ae731854655082b00b0}\label{classbabel_1_1support_1_1Format_aac8639d255e28ae731854655082b00b0} 
+\index{babel.support.Format@{babel.support.Format}!datetime@{datetime}}
+\index{datetime@{datetime}!babel.support.Format@{babel.support.Format}}
+\doxysubsubsection{\texorpdfstring{datetime()}{datetime()}}
+{\footnotesize\ttfamily  str babel.\+support.\+Format.\+datetime (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\+\_\+datetime.\+date \texorpdfstring{$\vert$}{|} None }]{datetime = {\ttfamily None},  }\item[{\+\_\+\+Predefined\+Time\+Format \texorpdfstring{$\vert$}{|} str }]{format = {\ttfamily \textquotesingle{}medium\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a date and time formatted according to the given pattern.
+
+>>> from datetime import datetime
+>>> from babel.dates import get_timezone
+>>> fmt = Format('en_US', tzinfo=get_timezone('US/Eastern'))
+>>> fmt.datetime(datetime(2007, 4, 1, 15, 30))
+u'Apr 1, 2007, 11:30:00\u202fAM'
+\end{DoxyVerb}
+ \Hypertarget{classbabel_1_1support_1_1Format_a1209f91c5ab2c0a48b47bbc759cf493d}\label{classbabel_1_1support_1_1Format_a1209f91c5ab2c0a48b47bbc759cf493d} 
+\index{babel.support.Format@{babel.support.Format}!decimal@{decimal}}
+\index{decimal@{decimal}!babel.support.Format@{babel.support.Format}}
+\doxysubsubsection{\texorpdfstring{decimal()}{decimal()}}
+{\footnotesize\ttfamily  str babel.\+support.\+Format.\+decimal (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{float \texorpdfstring{$\vert$}{|} Decimal \texorpdfstring{$\vert$}{|} str}]{number,  }\item[{str \texorpdfstring{$\vert$}{|} None }]{format = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a decimal number formatted for the locale.
+
+>>> fmt = Format('en_US')
+>>> fmt.decimal(1.2345)
+u'1.234'
+\end{DoxyVerb}
+ \Hypertarget{classbabel_1_1support_1_1Format_ae8ccc0873247c689a39aca2bd7ff9a43}\label{classbabel_1_1support_1_1Format_ae8ccc0873247c689a39aca2bd7ff9a43} 
+\index{babel.support.Format@{babel.support.Format}!number@{number}}
+\index{number@{number}!babel.support.Format@{babel.support.Format}}
+\doxysubsubsection{\texorpdfstring{number()}{number()}}
+{\footnotesize\ttfamily  str babel.\+support.\+Format.\+number (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{float \texorpdfstring{$\vert$}{|} Decimal \texorpdfstring{$\vert$}{|} str}]{number }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return an integer number formatted for the locale.
+
+>>> fmt = Format('en_US')
+>>> fmt.number(1099)
+u'1,099'
+\end{DoxyVerb}
+ \Hypertarget{classbabel_1_1support_1_1Format_a3996011a8e77cbaa723d3189ef5186f5}\label{classbabel_1_1support_1_1Format_a3996011a8e77cbaa723d3189ef5186f5} 
+\index{babel.support.Format@{babel.support.Format}!percent@{percent}}
+\index{percent@{percent}!babel.support.Format@{babel.support.Format}}
+\doxysubsubsection{\texorpdfstring{percent()}{percent()}}
+{\footnotesize\ttfamily  str babel.\+support.\+Format.\+percent (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{float \texorpdfstring{$\vert$}{|} Decimal \texorpdfstring{$\vert$}{|} str}]{number,  }\item[{str \texorpdfstring{$\vert$}{|} None }]{format = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a number formatted as percentage for the locale.
+
+>>> fmt = Format('en_US')
+>>> fmt.percent(0.34)
+u'34%'
+\end{DoxyVerb}
+ \Hypertarget{classbabel_1_1support_1_1Format_a1f03246dbaa56484960160aeb0677637}\label{classbabel_1_1support_1_1Format_a1f03246dbaa56484960160aeb0677637} 
+\index{babel.support.Format@{babel.support.Format}!scientific@{scientific}}
+\index{scientific@{scientific}!babel.support.Format@{babel.support.Format}}
+\doxysubsubsection{\texorpdfstring{scientific()}{scientific()}}
+{\footnotesize\ttfamily  str babel.\+support.\+Format.\+scientific (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{float \texorpdfstring{$\vert$}{|} Decimal \texorpdfstring{$\vert$}{|} str}]{number }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a number formatted using scientific notation for the locale.
+\end{DoxyVerb}
+ \Hypertarget{classbabel_1_1support_1_1Format_a8952ae78a7ba118a388caa5e92c0adfe}\label{classbabel_1_1support_1_1Format_a8952ae78a7ba118a388caa5e92c0adfe} 
+\index{babel.support.Format@{babel.support.Format}!time@{time}}
+\index{time@{time}!babel.support.Format@{babel.support.Format}}
+\doxysubsubsection{\texorpdfstring{time()}{time()}}
+{\footnotesize\ttfamily  str babel.\+support.\+Format.\+time (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\+\_\+datetime.\+time \texorpdfstring{$\vert$}{|} \+\_\+datetime.\+datetime \texorpdfstring{$\vert$}{|} None }]{time = {\ttfamily None},  }\item[{\+\_\+\+Predefined\+Time\+Format \texorpdfstring{$\vert$}{|} str }]{format = {\ttfamily \textquotesingle{}medium\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a time formatted according to the given pattern.
+
+>>> from datetime import datetime
+>>> from babel.dates import get_timezone
+>>> fmt = Format('en_US', tzinfo=get_timezone('US/Eastern'))
+>>> fmt.time(datetime(2007, 4, 1, 15, 30))
+u'11:30:00\u202fAM'
+\end{DoxyVerb}
+ \Hypertarget{classbabel_1_1support_1_1Format_ad3493443cae4240ce436bb15893f0d68}\label{classbabel_1_1support_1_1Format_ad3493443cae4240ce436bb15893f0d68} 
+\index{babel.support.Format@{babel.support.Format}!timedelta@{timedelta}}
+\index{timedelta@{timedelta}!babel.support.Format@{babel.support.Format}}
+\doxysubsubsection{\texorpdfstring{timedelta()}{timedelta()}}
+{\footnotesize\ttfamily  str babel.\+support.\+Format.\+timedelta (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\+\_\+datetime.\+timedelta \texorpdfstring{$\vert$}{|} int}]{delta,  }\item[{Literal\mbox{[}"{}year"{}, "{}month"{}, "{}week"{}, "{}day"{}, "{}hour"{}, "{}minute"{}, "{}second"{}\mbox{]} }]{granularity = {\ttfamily "{}second"{}},  }\item[{float }]{threshold = {\ttfamily 0.85},  }\item[{Literal\mbox{[}"{}narrow"{}, "{}short"{}, "{}medium"{}, "{}long"{}\mbox{]} }]{format = {\ttfamily "{}long"{}},  }\item[{bool }]{add\+\_\+direction = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a time delta according to the rules of the given locale.
+
+>>> from datetime import timedelta
+>>> fmt = Format('en_US')
+>>> fmt.timedelta(timedelta(weeks=11))
+u'3 months'
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classbabel_1_1support_1_1Format_a6ef2b2dd4283fa9e5067f2d34cd85dd4}\label{classbabel_1_1support_1_1Format_a6ef2b2dd4283fa9e5067f2d34cd85dd4} 
+\index{babel.support.Format@{babel.support.Format}!locale@{locale}}
+\index{locale@{locale}!babel.support.Format@{babel.support.Format}}
+\doxysubsubsection{\texorpdfstring{locale}{locale}}
+{\footnotesize\ttfamily babel.\+support.\+Format.\+locale}
+
+\Hypertarget{classbabel_1_1support_1_1Format_a69277ac80a27a7ea4cdec09980add520}\label{classbabel_1_1support_1_1Format_a69277ac80a27a7ea4cdec09980add520} 
+\index{babel.support.Format@{babel.support.Format}!numbering\_system@{numbering\_system}}
+\index{numbering\_system@{numbering\_system}!babel.support.Format@{babel.support.Format}}
+\doxysubsubsection{\texorpdfstring{numbering\_system}{numbering\_system}}
+{\footnotesize\ttfamily babel.\+support.\+Format.\+numbering\+\_\+system}
+
+\Hypertarget{classbabel_1_1support_1_1Format_a0ac2b4e00bd57d63a12707bca7165b4a}\label{classbabel_1_1support_1_1Format_a0ac2b4e00bd57d63a12707bca7165b4a} 
+\index{babel.support.Format@{babel.support.Format}!tzinfo@{tzinfo}}
+\index{tzinfo@{tzinfo}!babel.support.Format@{babel.support.Format}}
+\doxysubsubsection{\texorpdfstring{tzinfo}{tzinfo}}
+{\footnotesize\ttfamily babel.\+support.\+Format.\+tzinfo}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/babel/\mbox{\hyperlink{babel_2support_8py}{support.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,248 @@
+.TH "pip._internal.commands.cache.CacheCommand" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.commands.cache.CacheCommand
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._internal\&.cli\&.base_command\&.Command\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBadd_options\fP (self)"
+.br
+.ti -1c
+.RI "int \fBrun\fP (self, Values options, List[str] args)"
+.br
+.ti -1c
+.RI "None \fBget_cache_dir\fP (self, Values options, List[Any] args)"
+.br
+.ti -1c
+.RI "None \fBget_cache_info\fP (self, Values options, List[Any] args)"
+.br
+.ti -1c
+.RI "None \fBlist_cache_items\fP (self, Values options, List[Any] args)"
+.br
+.ti -1c
+.RI "None \fBformat_for_human\fP (self, List[str] files)"
+.br
+.ti -1c
+.RI "None \fBformat_for_abspath\fP (self, List[str] files)"
+.br
+.ti -1c
+.RI "None \fBremove_cache_items\fP (self, Values options, List[Any] args)"
+.br
+.ti -1c
+.RI "None \fBpurge_cache\fP (self, Values options, List[Any] args)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str \fBname\fP, str \fBsummary\fP, bool isolated=False)"
+.br
+.ti -1c
+.RI "None \fBhandle_pip_version_check\fP (self, Values options)"
+.br
+.ti -1c
+.RI "Tuple[Values, List[str]] \fBparse_args\fP (self, List[str] args)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (self, List[str] args)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._internal\&.cli\&.command_context\&.CommandContextMixIn\fP
+.in +1c
+.ti -1c
+.RI "Generator[None, None, None] \fBmain_context\fP (self)"
+.br
+.ti -1c
+.RI "\fB_T\fP \fBenter_context\fP (self, ContextManager[\fB_T\fP] context_provider)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcmd_opts\fP"
+.br
+.ti -1c
+.RI "\fBget_cache_dir\fP"
+.br
+.ti -1c
+.RI "\fBget_cache_info\fP"
+.br
+.ti -1c
+.RI "\fBlist_cache_items\fP"
+.br
+.ti -1c
+.RI "\fBremove_cache_items\fP"
+.br
+.ti -1c
+.RI "\fBpurge_cache\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP
+.in +1c
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBsummary\fP"
+.br
+.ti -1c
+.RI "\fBparser\fP"
+.br
+.ti -1c
+.RI "\fBcmd_opts\fP"
+.br
+.ti -1c
+.RI "\fBtempdir_registry\fP"
+.br
+.ti -1c
+.RI "\fBverbosity\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBignore_require_venv\fP = True"
+.br
+.ti -1c
+.RI "str \fBusage\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP
+.in +1c
+.ti -1c
+.RI "str \fBusage\fP = ''"
+.br
+.ti -1c
+.RI "bool \fBignore_require_venv\fP = False"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fB_cache_dir\fP (self, Values options, str subdir)"
+.br
+.ti -1c
+.RI "List[str] \fB_find_http_files\fP (self, Values options)"
+.br
+.ti -1c
+.RI "List[str] \fB_find_wheels\fP (self, Values options, str pattern)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP
+.in +1c
+.ti -1c
+.RI "int \fB_run_wrapper\fP (self, int level_number, Values options, List[str] args)"
+.br
+.ti -1c
+.RI "int \fB_main\fP (self, List[str] args)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Attributes inherited from \fBpip\&._internal\&.cli\&.command_context\&.CommandContextMixIn\fP
+.in +1c
+.ti -1c
+.RI "\fB_in_main_context\fP"
+.br
+.ti -1c
+.RI "\fB_main_context\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Inspect and manage pip's wheel cache\&.
+
+Subcommands:
+
+- dir: Show the cache directory\&.
+- info: Show information about the cache\&.
+- list: List filenames of packages stored in the cache\&.
+- remove: Remove one or more package from the cache\&.
+- purge: Remove all items from the cache\&.
+
+``<pattern>`` can be a glob expression or a package name\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " str pip\&._internal\&.commands\&.cache\&.CacheCommand\&._cache_dir ( self, Values options, str subdir)\fC [protected]\fP"
+
+.SS " List[str] pip\&._internal\&.commands\&.cache\&.CacheCommand\&._find_http_files ( self, Values options)\fC [protected]\fP"
+
+.SS " List[str] pip\&._internal\&.commands\&.cache\&.CacheCommand\&._find_wheels ( self, Values options, str pattern)\fC [protected]\fP"
+
+.SS " None pip\&._internal\&.commands\&.cache\&.CacheCommand\&.add_options ( self)"
+
+.PP
+Reimplemented from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP\&.
+.SS " None pip\&._internal\&.commands\&.cache\&.CacheCommand\&.format_for_abspath ( self, List[str] files)"
+
+.SS " None pip\&._internal\&.commands\&.cache\&.CacheCommand\&.format_for_human ( self, List[str] files)"
+
+.SS " None pip\&._internal\&.commands\&.cache\&.CacheCommand\&.get_cache_dir ( self, Values options, List[Any] args)"
+
+.SS " None pip\&._internal\&.commands\&.cache\&.CacheCommand\&.get_cache_info ( self, Values options, List[Any] args)"
+
+.SS " None pip\&._internal\&.commands\&.cache\&.CacheCommand\&.list_cache_items ( self, Values options, List[Any] args)"
+
+.SS " None pip\&._internal\&.commands\&.cache\&.CacheCommand\&.purge_cache ( self, Values options, List[Any] args)"
+
+.SS " None pip\&._internal\&.commands\&.cache\&.CacheCommand\&.remove_cache_items ( self, Values options, List[Any] args)"
+
+.SS " int pip\&._internal\&.commands\&.cache\&.CacheCommand\&.run ( self, Values options, List[str] args)"
+
+.PP
+Reimplemented from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._internal\&.commands\&.cache\&.CacheCommand\&.cmd_opts"
+
+.SS "pip\&._internal\&.commands\&.cache\&.CacheCommand\&.get_cache_dir"
+
+.SS "pip\&._internal\&.commands\&.cache\&.CacheCommand\&.get_cache_info"
+
+.SS "bool pip\&._internal\&.commands\&.cache\&.CacheCommand\&.ignore_require_venv = True\fC [static]\fP"
+
+.SS "pip\&._internal\&.commands\&.cache\&.CacheCommand\&.list_cache_items"
+
+.SS "pip\&._internal\&.commands\&.cache\&.CacheCommand\&.purge_cache"
+
+.SS "pip\&._internal\&.commands\&.cache\&.CacheCommand\&.remove_cache_items"
+
+.SS "str pip\&._internal\&.commands\&.cache\&.CacheCommand\&.usage\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  """
+        %prog dir
+        %prog info
+        %prog list [<pattern>] [\-\-format=[human, abspath]]
+        %prog remove <pattern>
+        %prog purge
+    """
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

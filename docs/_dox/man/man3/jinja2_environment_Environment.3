@@ -1,0 +1,894 @@
+.TH "jinja2.environment.Environment" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.environment.Environment
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBjinja2\&.nativetypes\&.NativeEnvironment\fP, and \fBjinja2\&.sandbox\&.SandboxedEnvironment\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, str \fBblock_start_string\fP=BLOCK_START_STRING, str \fBblock_end_string\fP=BLOCK_END_STRING, str \fBvariable_start_string\fP=VARIABLE_START_STRING, str \fBvariable_end_string\fP=VARIABLE_END_STRING, str \fBcomment_start_string\fP=COMMENT_START_STRING, str \fBcomment_end_string\fP=COMMENT_END_STRING, t\&.Optional[str] \fBline_statement_prefix\fP=LINE_STATEMENT_PREFIX, t\&.Optional[str] \fBline_comment_prefix\fP=LINE_COMMENT_PREFIX, bool \fBtrim_blocks\fP=TRIM_BLOCKS, bool \fBlstrip_blocks\fP=LSTRIP_BLOCKS, 'te\&.Literal['\\\\n', '\\\\r\\\\n', '\\\\r']' newline_sequence=NEWLINE_SEQUENCE, bool \fBkeep_trailing_newline\fP=KEEP_TRAILING_NEWLINE, t\&.Sequence[t\&.Union[str, t\&.Type['Extension']]] \fBextensions\fP=(), bool \fBoptimized\fP=True, t\&.Type[\fBUndefined\fP] undefined=\fBUndefined\fP, t\&.Optional[t\&.Callable[\&.\&.\&., t\&.Any]] \fBfinalize\fP=None, t\&.Union[bool, t\&.Callable[[t\&.Optional[str]], bool]] \fBautoescape\fP=False, t\&.Optional['BaseLoader'] \fBloader\fP=None, int cache_size=400, bool \fBauto_reload\fP=True, t\&.Optional['BytecodeCache'] \fBbytecode_cache\fP=None, bool enable_async=False)"
+.br
+.ti -1c
+.RI "None \fBadd_extension\fP (self, t\&.Union[str, t\&.Type['Extension']] extension)"
+.br
+.ti -1c
+.RI "None \fBextend\fP (self, **t\&.Any attributes)"
+.br
+.ti -1c
+.RI "'te\&.Self' \fBoverlay\fP (self, str \fBblock_start_string\fP=missing, str \fBblock_end_string\fP=missing, str \fBvariable_start_string\fP=missing, str \fBvariable_end_string\fP=missing, str \fBcomment_start_string\fP=missing, str \fBcomment_end_string\fP=missing, t\&.Optional[str] \fBline_statement_prefix\fP=missing, t\&.Optional[str] \fBline_comment_prefix\fP=missing, bool \fBtrim_blocks\fP=missing, bool \fBlstrip_blocks\fP=missing, 'te\&.Literal['\\\\n', '\\\\r\\\\n', '\\\\r']' newline_sequence=missing, bool \fBkeep_trailing_newline\fP=missing, t\&.Sequence[t\&.Union[str, t\&.Type['Extension']]] \fBextensions\fP=missing, bool \fBoptimized\fP=missing, t\&.Type[\fBUndefined\fP] undefined=missing, t\&.Optional[t\&.Callable[\&.\&.\&., t\&.Any]] \fBfinalize\fP=missing, t\&.Union[bool, t\&.Callable[[t\&.Optional[str]], bool]] \fBautoescape\fP=missing, t\&.Optional['BaseLoader'] \fBloader\fP=missing, int cache_size=missing, bool \fBauto_reload\fP=missing, t\&.Optional['BytecodeCache'] \fBbytecode_cache\fP=missing, bool enable_async=missing)"
+.br
+.ti -1c
+.RI "\fBLexer\fP \fBlexer\fP (self)"
+.br
+.ti -1c
+.RI "t\&.Iterator['Extension'] \fBiter_extensions\fP (self)"
+.br
+.ti -1c
+.RI "t\&.Union[t\&.Any, \fBUndefined\fP] \fBgetitem\fP (self, t\&.Any obj, t\&.Union[str, t\&.Any] argument)"
+.br
+.ti -1c
+.RI "t\&.Any \fBgetattr\fP (self, t\&.Any obj, str attribute)"
+.br
+.ti -1c
+.RI "t\&.Any \fBcall_filter\fP (self, str name, t\&.Any value, t\&.Optional[t\&.Sequence[t\&.Any]] args=None, t\&.Optional[t\&.Mapping[str, t\&.Any]] kwargs=None, t\&.Optional[\fBContext\fP] context=None, t\&.Optional[\fBEvalContext\fP] eval_ctx=None)"
+.br
+.ti -1c
+.RI "t\&.Any \fBcall_test\fP (self, str name, t\&.Any value, t\&.Optional[t\&.Sequence[t\&.Any]] args=None, t\&.Optional[t\&.Mapping[str, t\&.Any]] kwargs=None, t\&.Optional[\fBContext\fP] context=None, t\&.Optional[\fBEvalContext\fP] eval_ctx=None)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Template\fP \fBparse\fP (self, str source, t\&.Optional[str] name=None, t\&.Optional[str] filename=None)"
+.br
+.ti -1c
+.RI "t\&.Iterator[t\&.Tuple[int, str, str]] \fBlex\fP (self, str source, t\&.Optional[str] name=None, t\&.Optional[str] filename=None)"
+.br
+.ti -1c
+.RI "str \fBpreprocess\fP (self, str source, t\&.Optional[str] name=None, t\&.Optional[str] filename=None)"
+.br
+.ti -1c
+.RI "CodeType \fBcompile\fP (self, t\&.Union[str, \fBnodes\&.Template\fP] source, t\&.Optional[str] name=None, t\&.Optional[str] filename=None, 'te\&.Literal[False]' raw=False, bool defer_init=False)"
+.br
+.ti -1c
+.RI "str \fBcompile\fP (self, t\&.Union[str, \fBnodes\&.Template\fP] source, t\&.Optional[str] name=None, t\&.Optional[str] filename=None, 'te\&.Literal[True]' raw=\&.\&.\&., bool defer_init=False)"
+.br
+.ti -1c
+.RI "t\&.Union[str, CodeType] \fBcompile\fP (self, t\&.Union[str, \fBnodes\&.Template\fP] source, t\&.Optional[str] name=None, t\&.Optional[str] filename=None, bool raw=False, bool defer_init=False)"
+.br
+.ti -1c
+.RI "'TemplateExpression' \fBcompile_expression\fP (self, str source, bool undefined_to_none=True)"
+.br
+.ti -1c
+.RI "None \fBcompile_templates\fP (self, t\&.Union[str, 'os\&.PathLike[str]'] target, t\&.Optional[t\&.Collection[str]] \fBextensions\fP=None, t\&.Optional[t\&.Callable[[str], bool]] filter_func=None, t\&.Optional[str] zip='deflated', t\&.Optional[t\&.Callable[[str], None]] log_function=None, bool ignore_errors=True)"
+.br
+.ti -1c
+.RI "t\&.List[str] \fBlist_templates\fP (self, t\&.Optional[t\&.Collection[str]] \fBextensions\fP=None, t\&.Optional[t\&.Callable[[str], bool]] filter_func=None)"
+.br
+.ti -1c
+.RI "'te\&.NoReturn' \fBhandle_exception\fP (self, t\&.Optional[str] source=None)"
+.br
+.ti -1c
+.RI "str \fBjoin_path\fP (self, str template, str parent)"
+.br
+.ti -1c
+.RI "'Template' \fBget_template\fP (self, t\&.Union[str, 'Template'] name, t\&.Optional[str] parent=None, t\&.Optional[t\&.MutableMapping[str, t\&.Any]] \fBglobals\fP=None)"
+.br
+.ti -1c
+.RI "'Template' \fBselect_template\fP (self, t\&.Iterable[t\&.Union[str, 'Template']] names, t\&.Optional[str] parent=None, t\&.Optional[t\&.MutableMapping[str, t\&.Any]] \fBglobals\fP=None)"
+.br
+.ti -1c
+.RI "'Template' \fBget_or_select_template\fP (self, t\&.Union[str, 'Template', t\&.List[t\&.Union[str, 'Template']]] template_name_or_list, t\&.Optional[str] parent=None, t\&.Optional[t\&.MutableMapping[str, t\&.Any]] \fBglobals\fP=None)"
+.br
+.ti -1c
+.RI "'Template' \fBfrom_string\fP (self, t\&.Union[str, \fBnodes\&.Template\fP] source, t\&.Optional[t\&.MutableMapping[str, t\&.Any]] \fBglobals\fP=None, t\&.Optional[t\&.Type['Template']] \fBtemplate_class\fP=None)"
+.br
+.ti -1c
+.RI "t\&.MutableMapping[str, t\&.Any] \fBmake_globals\fP (self, t\&.Optional[t\&.MutableMapping[str, t\&.Any]] d)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBblock_start_string\fP"
+.br
+.ti -1c
+.RI "\fBblock_end_string\fP"
+.br
+.ti -1c
+.RI "\fBvariable_start_string\fP"
+.br
+.ti -1c
+.RI "\fBvariable_end_string\fP"
+.br
+.ti -1c
+.RI "\fBcomment_start_string\fP"
+.br
+.ti -1c
+.RI "\fBcomment_end_string\fP"
+.br
+.ti -1c
+.RI "\fBline_statement_prefix\fP"
+.br
+.ti -1c
+.RI "\fBline_comment_prefix\fP"
+.br
+.ti -1c
+.RI "\fBtrim_blocks\fP"
+.br
+.ti -1c
+.RI "\fBlstrip_blocks\fP"
+.br
+.ti -1c
+.RI "\fBnewline_sequence\fP"
+.br
+.ti -1c
+.RI "\fBkeep_trailing_newline\fP"
+.br
+.ti -1c
+.RI "\fBoptimized\fP"
+.br
+.ti -1c
+.RI "\fBfinalize\fP"
+.br
+.ti -1c
+.RI "\fBautoescape\fP"
+.br
+.ti -1c
+.RI "\fBfilters\fP"
+.br
+.ti -1c
+.RI "\fBtests\fP"
+.br
+.ti -1c
+.RI "\fBglobals\fP"
+.br
+.ti -1c
+.RI "\fBloader\fP"
+.br
+.ti -1c
+.RI "\fBcache\fP"
+.br
+.ti -1c
+.RI "\fBbytecode_cache\fP"
+.br
+.ti -1c
+.RI "\fBauto_reload\fP"
+.br
+.ti -1c
+.RI "\fBpolicies\fP"
+.br
+.ti -1c
+.RI "\fBextensions\fP"
+.br
+.ti -1c
+.RI "\fBis_async\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBsandboxed\fP = False"
+.br
+.ti -1c
+.RI "bool \fBoverlayed\fP = False"
+.br
+.ti -1c
+.RI "t \fBlinked_to\fP = None"
+.br
+.ti -1c
+.RI "bool \fBshared\fP = False"
+.br
+.ti -1c
+.RI "t \fBcode_generator_class\fP = \fBCodeGenerator\fP"
+.br
+.ti -1c
+.RI "str \fBconcat\fP = ''\&.join"
+.br
+.ti -1c
+.RI "t \fBcontext_class\fP = \fBContext\fP"
+.br
+.ti -1c
+.RI "t \fBtemplate_class\fP \&.Type['Template']"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "t\&.Any \fB_filter_test_common\fP (self, t\&.Union[str, \fBUndefined\fP] name, t\&.Any value, t\&.Optional[t\&.Sequence[t\&.Any]] args, t\&.Optional[t\&.Mapping[str, t\&.Any]] kwargs, t\&.Optional[\fBContext\fP] context, t\&.Optional[\fBEvalContext\fP] eval_ctx, bool is_filter)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Template\fP \fB_parse\fP (self, str source, t\&.Optional[str] name, t\&.Optional[str] filename)"
+.br
+.ti -1c
+.RI "\fBTokenStream\fP \fB_tokenize\fP (self, str source, t\&.Optional[str] name, t\&.Optional[str] filename=None, t\&.Optional[str] state=None)"
+.br
+.ti -1c
+.RI "str \fB_generate\fP (self, \fBnodes\&.Template\fP source, t\&.Optional[str] name, t\&.Optional[str] filename, bool defer_init=False)"
+.br
+.ti -1c
+.RI "CodeType \fB_compile\fP (self, str source, str filename)"
+.br
+.ti -1c
+.RI "'Template' \fB_load_template\fP (self, str name, t\&.Optional[t\&.MutableMapping[str, t\&.Any]] \fBglobals\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+The core component of Jinja is the `Environment`\&.  It contains
+important shared variables like configuration, filters, tests,
+globals and others\&.  Instances of this class may be modified if
+they are not shared and if no template was loaded so far\&.
+Modifications on environments after the first template was loaded
+will lead to surprising effects and undefined behavior\&.
+
+Here are the possible initialization parameters:
+
+    `block_start_string`
+        The string marking the beginning of a block\&.  Defaults to ``'{%'``\&.
+
+    `block_end_string`
+        The string marking the end of a block\&.  Defaults to ``'%}'``\&.
+
+    `variable_start_string`
+        The string marking the beginning of a print statement\&.
+        Defaults to ``'{{'``\&.
+
+    `variable_end_string`
+        The string marking the end of a print statement\&.  Defaults to
+        ``'}}'``\&.
+
+    `comment_start_string`
+        The string marking the beginning of a comment\&.  Defaults to ``'{#'``\&.
+
+    `comment_end_string`
+        The string marking the end of a comment\&.  Defaults to ``'#}'``\&.
+
+    `line_statement_prefix`
+        If given and a string, this will be used as prefix for line based
+        statements\&.  See also :ref:`line-statements`\&.
+
+    `line_comment_prefix`
+        If given and a string, this will be used as prefix for line based
+        comments\&.  See also :ref:`line-statements`\&.
+
+        \&.\&. versionadded:: 2\&.2
+
+    `trim_blocks`
+        If this is set to ``True`` the first newline after a block is
+        removed (block, not variable tag!)\&.  Defaults to `False`\&.
+
+    `lstrip_blocks`
+        If this is set to ``True`` leading spaces and tabs are stripped
+        from the start of a line to a block\&.  Defaults to `False`\&.
+
+    `newline_sequence`
+        The sequence that starts a newline\&.  Must be one of ``'\\r'``,
+        ``'\\n'`` or ``'\\r\\n'``\&.  The default is ``'\\n'`` which is a
+        useful default for Linux and OS X systems as well as web
+        applications\&.
+
+    `keep_trailing_newline`
+        Preserve the trailing newline when rendering templates\&.
+        The default is ``False``, which causes a single newline,
+        if present, to be stripped from the end of the template\&.
+
+        \&.\&. versionadded:: 2\&.7
+
+    `extensions`
+        List of Jinja extensions to use\&.  This can either be import paths
+        as strings or extension classes\&.  For more information have a
+        look at :ref:`the extensions documentation <jinja-extensions>`\&.
+
+    `optimized`
+        should the optimizer be enabled?  Default is ``True``\&.
+
+    `undefined`
+        :class:`Undefined` or a subclass of it that is used to represent
+        undefined values in the template\&.
+
+    `finalize`
+        A callable that can be used to process the result of a variable
+        expression before it is output\&.  For example one can convert
+        ``None`` implicitly into an empty string here\&.
+
+    `autoescape`
+        If set to ``True`` the XML/HTML autoescaping feature is enabled by
+        default\&.  For more details about autoescaping see
+        :class:`~markupsafe\&.Markup`\&.  As of Jinja 2\&.4 this can also
+        be a callable that is passed the template name and has to
+        return ``True`` or ``False`` depending on autoescape should be
+        enabled by default\&.
+
+        \&.\&. versionchanged:: 2\&.4
+           `autoescape` can now be a function
+
+    `loader`
+        The template loader for this environment\&.
+
+    `cache_size`
+        The size of the cache\&.  Per default this is ``400`` which means
+        that if more than 400 templates are loaded the loader will clean
+        out the least recently used template\&.  If the cache size is set to
+        ``0`` templates are recompiled all the time, if the cache size is
+        ``-1`` the cache will not be cleaned\&.
+
+        \&.\&. versionchanged:: 2\&.8
+           The cache size was increased to 400 from a low 50\&.
+
+    `auto_reload`
+        Some loaders load templates from locations where the template
+        sources may change (ie: file system or database)\&.  If
+        ``auto_reload`` is set to ``True`` (default) every time a template is
+        requested the loader checks if the source changed and if yes, it
+        will reload the template\&.  For higher performance it's possible to
+        disable that\&.
+
+    `bytecode_cache`
+        If set to a bytecode cache object, this object will provide a
+        cache for the internal Jinja bytecode so that templates don't
+        have to be parsed if they were not changed\&.
+
+        See :ref:`bytecode-cache` for more information\&.
+
+    `enable_async`
+        If set to true this enables async template execution which
+        allows using async functions and generators\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "jinja2\&.environment\&.Environment\&.__init__ ( self, str  block_start_string = \fCBLOCK_START_STRING\fP, str  block_end_string = \fCBLOCK_END_STRING\fP, str  variable_start_string = \fCVARIABLE_START_STRING\fP, str  variable_end_string = \fCVARIABLE_END_STRING\fP, str  comment_start_string = \fCCOMMENT_START_STRING\fP, str  comment_end_string = \fCCOMMENT_END_STRING\fP, t\&.Optional[str]  line_statement_prefix = \fCLINE_STATEMENT_PREFIX\fP, t\&.Optional[str]  line_comment_prefix = \fCLINE_COMMENT_PREFIX\fP, bool  trim_blocks = \fCTRIM_BLOCKS\fP, bool  lstrip_blocks = \fCLSTRIP_BLOCKS\fP, 'te\&.Literal['\\\\n', '\\\\r\\\\n', '\\\\r']'  newline_sequence = \fCNEWLINE_SEQUENCE\fP, bool  keep_trailing_newline = \fCKEEP_TRAILING_NEWLINE\fP, t\&.Sequence[t\&.Union[str, t\&.Type['Extension']]]  extensions = \fC()\fP, bool  optimized = \fCTrue\fP, t\&.Type[\fBUndefined\fP]  undefined = \fC\fBUndefined\fP\fP, t\&.Optional[t\&.Callable[\&.\&.\&., t\&.Any]]  finalize = \fCNone\fP, t\&.Union[bool, t\&.Callable[[t\&.Optional[str]], bool]]  autoescape = \fCFalse\fP, t\&.Optional['BaseLoader']  loader = \fCNone\fP, int  cache_size = \fC400\fP, bool  auto_reload = \fCTrue\fP, t\&.Optional['BytecodeCache']  bytecode_cache = \fCNone\fP, bool  enable_async = \fCFalse\fP)"
+
+.PP
+Reimplemented in \fBjinja2\&.sandbox\&.SandboxedEnvironment\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " CodeType jinja2\&.environment\&.Environment\&._compile ( self, str source, str filename)\fC [protected]\fP"
+
+.PP
+.nf
+Internal hook that can be overridden to hook a different compile
+method in\&.
+
+\&.\&. versionadded:: 2\&.5
+
+.fi
+.PP
+ 
+.SS " t\&.Any jinja2\&.environment\&.Environment\&._filter_test_common ( self, t\&.Union[str, \fBUndefined\fP] name, t\&.Any value, t\&.Optional[t\&.Sequence[t\&.Any]] args, t\&.Optional[t\&.Mapping[str, t\&.Any]] kwargs, t\&.Optional[\fBContext\fP] context, t\&.Optional[\fBEvalContext\fP] eval_ctx, bool is_filter)\fC [protected]\fP"
+
+.SS " str jinja2\&.environment\&.Environment\&._generate ( self, \fBnodes\&.Template\fP source, t\&.Optional[str] name, t\&.Optional[str] filename, bool  defer_init = \fCFalse\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Internal hook that can be overridden to hook a different generate
+method in\&.
+
+\&.\&. versionadded:: 2\&.5
+
+.fi
+.PP
+ 
+.SS " 'Template' jinja2\&.environment\&.Environment\&._load_template ( self, str name, t\&.Optional[t\&.MutableMapping[str, t\&.Any]]
+     globals)\fC [protected]\fP"
+
+.SS " \fBnodes\&.Template\fP jinja2\&.environment\&.Environment\&._parse ( self, str source, t\&.Optional[str] name, t\&.Optional[str]
+     filename)\fC [protected]\fP"
+
+.PP
+.nf
+Internal parsing function used by `parse` and `compile`\&.
+.fi
+.PP
+ 
+.SS " \fBTokenStream\fP jinja2\&.environment\&.Environment\&._tokenize ( self, str source, t\&.Optional[str] name, t\&.Optional[str]  filename = \fCNone\fP, t\&.Optional[str]  state = \fCNone\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Called by the parser to do the preprocessing and filtering
+for all the extensions\&.  Returns a :class:`~jinja2\&.lexer\&.TokenStream`\&.
+
+.fi
+.PP
+ 
+.SS " None jinja2\&.environment\&.Environment\&.add_extension ( self, t\&.Union[str, t\&.Type['Extension']] extension)"
+
+.PP
+.nf
+Adds an extension after the environment was created\&.
+
+\&.\&. versionadded:: 2\&.5
+
+.fi
+.PP
+ 
+.SS " t\&.Any jinja2\&.environment\&.Environment\&.call_filter ( self, str name, t\&.Any value, t\&.Optional[t\&.Sequence[t\&.Any]]  args = \fCNone\fP, t\&.Optional[t\&.Mapping[str, t\&.Any]]  kwargs = \fCNone\fP, t\&.Optional[\fBContext\fP]  context = \fCNone\fP, t\&.Optional[\fBEvalContext\fP]  eval_ctx = \fCNone\fP)"
+
+.PP
+.nf
+Invoke a filter on a value the same way the compiler does\&.
+
+This might return a coroutine if the filter is running from an
+environment in async mode and the filter supports async
+execution\&. It's your responsibility to await this if needed\&.
+
+\&.\&. versionadded:: 2\&.7
+
+.fi
+.PP
+ 
+.SS " t\&.Any jinja2\&.environment\&.Environment\&.call_test ( self, str name, t\&.Any value, t\&.Optional[t\&.Sequence[t\&.Any]]  args = \fCNone\fP, t\&.Optional[t\&.Mapping[str, t\&.Any]]  kwargs = \fCNone\fP, t\&.Optional[\fBContext\fP]  context = \fCNone\fP, t\&.Optional[\fBEvalContext\fP]  eval_ctx = \fCNone\fP)"
+
+.PP
+.nf
+Invoke a test on a value the same way the compiler does\&.
+
+This might return a coroutine if the test is running from an
+environment in async mode and the test supports async execution\&.
+It's your responsibility to await this if needed\&.
+
+\&.\&. versionchanged:: 3\&.0
+    Tests support ``@pass_context``, etc\&. decorators\&. Added
+    the ``context`` and ``eval_ctx`` parameters\&.
+
+\&.\&. versionadded:: 2\&.7
+
+.fi
+.PP
+ 
+.SS " CodeType jinja2\&.environment\&.Environment\&.compile ( self, t\&.Union[str, \fBnodes\&.Template\fP] source, t\&.Optional[str]  name = \fCNone\fP, t\&.Optional[str]  filename = \fCNone\fP, 'te\&.Literal[False]'  raw = \fCFalse\fP, bool  defer_init = \fCFalse\fP)"
+
+.SS " str jinja2\&.environment\&.Environment\&.compile ( self, t\&.Union[str, \fBnodes\&.Template\fP] source, t\&.Optional[str]  name = \fCNone\fP, t\&.Optional[str]  filename = \fCNone\fP, 'te\&.Literal[True]'  raw = \fC\&.\&.\&.\fP, bool  defer_init = \fCFalse\fP)"
+
+.SS " t\&.Union[str, CodeType] jinja2\&.environment\&.Environment\&.compile ( self, t\&.Union[str, \fBnodes\&.Template\fP] source, t\&.Optional[str]  name = \fCNone\fP, t\&.Optional[str]  filename = \fCNone\fP, bool  raw = \fCFalse\fP, bool  defer_init = \fCFalse\fP)"
+
+.PP
+.nf
+Compile a node or template source code\&.  The `name` parameter is
+the load name of the template after it was joined using
+:meth:`join_path` if necessary, not the filename on the file system\&.
+the `filename` parameter is the estimated filename of the template on
+the file system\&.  If the template came from a database or memory this
+can be omitted\&.
+
+The return value of this method is a python code object\&.  If the `raw`
+parameter is `True` the return value will be a string with python
+code equivalent to the bytecode returned otherwise\&.  This method is
+mainly used internally\&.
+
+`defer_init` is use internally to aid the module code generator\&.  This
+causes the generated code to be able to import without the global
+environment variable to be set\&.
+
+\&.\&. versionadded:: 2\&.4
+   `defer_init` parameter added\&.
+
+.fi
+.PP
+ 
+.SS " 'TemplateExpression' jinja2\&.environment\&.Environment\&.compile_expression ( self, str source, bool  undefined_to_none = \fCTrue\fP)"
+
+.PP
+.nf
+A handy helper method that returns a callable that accepts keyword
+arguments that appear as variables in the expression\&.  If called it
+returns the result of the expression\&.
+
+This is useful if applications want to use the same rules as Jinja
+in template 'configuration files' or similar situations\&.
+
+Example usage:
+
+>>> env = Environment()
+>>> expr = env\&.compile_expression('foo == 42')
+>>> expr(foo=23)
+False
+>>> expr(foo=42)
+True
+
+Per default the return value is converted to `None` if the
+expression returns an undefined value\&.  This can be changed
+by setting `undefined_to_none` to `False`\&.
+
+>>> env\&.compile_expression('var')() is None
+True
+>>> env\&.compile_expression('var', undefined_to_none=False)()
+Undefined
+
+\&.\&. versionadded:: 2\&.1
+
+.fi
+.PP
+ 
+.SS " None jinja2\&.environment\&.Environment\&.compile_templates ( self, t\&.Union[str, 'os\&.PathLike[str]'] target, t\&.Optional[t\&.Collection[str]]  extensions = \fCNone\fP, t\&.Optional[t\&.Callable[[str], bool]]  filter_func = \fCNone\fP, t\&.Optional[str]  zip = \fC'deflated'\fP, t\&.Optional[t\&.Callable[[str], None]]  log_function = \fCNone\fP, bool  ignore_errors = \fCTrue\fP)"
+
+.PP
+.nf
+Finds all the templates the loader can find, compiles them
+and stores them in `target`\&.  If `zip` is `None`, instead of in a
+zipfile, the templates will be stored in a directory\&.
+By default a deflate zip algorithm is used\&. To switch to
+the stored algorithm, `zip` can be set to ``'stored'``\&.
+
+`extensions` and `filter_func` are passed to :meth:`list_templates`\&.
+Each template returned will be compiled to the target folder or
+zipfile\&.
+
+By default template compilation errors are ignored\&.  In case a
+log function is provided, errors are logged\&.  If you want template
+syntax errors to abort the compilation you can set `ignore_errors`
+to `False` and you will get an exception on syntax errors\&.
+
+\&.\&. versionadded:: 2\&.4
+
+.fi
+.PP
+ 
+.SS " None jinja2\&.environment\&.Environment\&.extend ( self, **t\&.Any attributes)"
+
+.PP
+.nf
+Add the items to the instance of the environment if they do not exist
+yet\&.  This is used by :ref:`extensions <writing-extensions>` to register
+callbacks and configuration values without breaking inheritance\&.
+
+.fi
+.PP
+ 
+.SS " 'Template' jinja2\&.environment\&.Environment\&.from_string ( self, t\&.Union[str, \fBnodes\&.Template\fP] source, t\&.Optional[t\&.MutableMapping[str, t\&.Any]]  globals = \fCNone\fP, t\&.Optional[t\&.Type['Template']]  template_class = \fCNone\fP)"
+
+.PP
+.nf
+Load a template from a source string without using
+:attr:`loader`\&.
+
+:param source: Jinja source to compile into a template\&.
+:param globals: Extend the environment :attr:`globals` with
+    these extra variables available for all renders of this
+    template\&. If the template has already been loaded and
+    cached, its globals are updated with any new items\&.
+:param template_class: Return an instance of this
+    :class:`Template` class\&.
+
+.fi
+.PP
+ 
+.SS " 'Template' jinja2\&.environment\&.Environment\&.get_or_select_template ( self, t\&.Union[
+            str, 'Template', t\&.List[t\&.Union[str, 'Template']]
+        ] template_name_or_list, t\&.Optional[str]  parent = \fCNone\fP, t\&.Optional[t\&.MutableMapping[str, t\&.Any]]  globals = \fCNone\fP)"
+
+.PP
+.nf
+Use :meth:`select_template` if an iterable of template names
+is given, or :meth:`get_template` if one name is given\&.
+
+\&.\&. versionadded:: 2\&.3
+
+.fi
+.PP
+ 
+.SS " 'Template' jinja2\&.environment\&.Environment\&.get_template ( self, t\&.Union[str, 'Template'] name, t\&.Optional[str]  parent = \fCNone\fP, t\&.Optional[t\&.MutableMapping[str, t\&.Any]]  globals = \fCNone\fP)"
+
+.PP
+.nf
+Load a template by name with :attr:`loader` and return a
+:class:`Template`\&. If the template does not exist a
+:exc:`TemplateNotFound` exception is raised\&.
+
+:param name: Name of the template to load\&. When loading
+    templates from the filesystem, '/' is used as the path
+    separator, even on Windows\&.
+:param parent: The name of the parent template importing this
+    template\&. :meth:`join_path` can be used to implement name
+    transformations with this\&.
+:param globals: Extend the environment :attr:`globals` with
+    these extra variables available for all renders of this
+    template\&. If the template has already been loaded and
+    cached, its globals are updated with any new items\&.
+
+\&.\&. versionchanged:: 3\&.0
+    If a template is loaded from cache, ``globals`` will update
+    the template's globals instead of ignoring the new values\&.
+
+\&.\&. versionchanged:: 2\&.4
+    If ``name`` is a :class:`Template` object it is returned
+    unchanged\&.
+
+.fi
+.PP
+ 
+.SS " t\&.Any jinja2\&.environment\&.Environment\&.getattr ( self, t\&.Any obj, str attribute)"
+
+.PP
+.nf
+Get an item or attribute of an object but prefer the attribute\&.
+Unlike :meth:`getitem` the attribute *must* be a string\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBjinja2\&.sandbox\&.SandboxedEnvironment\fP\&.
+.SS " t\&.Union[t\&.Any, \fBUndefined\fP] jinja2\&.environment\&.Environment\&.getitem ( self, t\&.Any obj, t\&.Union[str, t\&.Any]
+     argument)"
+
+.PP
+.nf
+Get an item or attribute of an object but prefer the item\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBjinja2\&.sandbox\&.SandboxedEnvironment\fP\&.
+.SS " 'te\&.NoReturn' jinja2\&.environment\&.Environment\&.handle_exception ( self, t\&.Optional[str]  source = \fCNone\fP)"
+
+.PP
+.nf
+Exception handling helper\&.  This is used internally to either raise
+rewritten exceptions or return a rendered traceback for the template\&.
+
+.fi
+.PP
+ 
+.SS " t\&.Iterator['Extension'] jinja2\&.environment\&.Environment\&.iter_extensions ( self)"
+
+.PP
+.nf
+Iterates over the extensions by priority\&.
+.fi
+.PP
+ 
+.SS " str jinja2\&.environment\&.Environment\&.join_path ( self, str template, str parent)"
+
+.PP
+.nf
+Join a template with the parent\&.  By default all the lookups are
+relative to the loader root so this method returns the `template`
+parameter unchanged, but if the paths should be relative to the
+parent template, this function can be used to calculate the real
+template name\&.
+
+Subclasses may override this method and implement template path
+joining here\&.
+
+.fi
+.PP
+ 
+.SS " t\&.Iterator[t\&.Tuple[int, str, str]] jinja2\&.environment\&.Environment\&.lex ( self, str source, t\&.Optional[str]  name = \fCNone\fP, t\&.Optional[str]  filename = \fCNone\fP)"
+
+.PP
+.nf
+Lex the given sourcecode and return a generator that yields
+tokens as tuples in the form ``(lineno, token_type, value)``\&.
+This can be useful for :ref:`extension development <writing-extensions>`
+and debugging templates\&.
+
+This does not perform preprocessing\&.  If you want the preprocessing
+of the extensions to be applied you have to filter source through
+the :meth:`preprocess` method\&.
+
+.fi
+.PP
+ 
+.SS " \fBLexer\fP jinja2\&.environment\&.Environment\&.lexer ( self)"
+
+.PP
+.nf
+The lexer for this environment\&.
+.fi
+.PP
+ 
+.SS " t\&.List[str] jinja2\&.environment\&.Environment\&.list_templates ( self, t\&.Optional[t\&.Collection[str]]  extensions = \fCNone\fP, t\&.Optional[t\&.Callable[[str], bool]]  filter_func = \fCNone\fP)"
+
+.PP
+.nf
+Returns a list of templates for this environment\&.  This requires
+that the loader supports the loader's
+:meth:`~BaseLoader\&.list_templates` method\&.
+
+If there are other files in the template folder besides the
+actual templates, the returned list can be filtered\&.  There are two
+ways: either `extensions` is set to a list of file extensions for
+templates, or a `filter_func` can be provided which is a callable that
+is passed a template name and should return `True` if it should end up
+in the result list\&.
+
+If the loader does not support that, a :exc:`TypeError` is raised\&.
+
+\&.\&. versionadded:: 2\&.4
+
+.fi
+.PP
+ 
+.SS " t\&.MutableMapping[str, t\&.Any] jinja2\&.environment\&.Environment\&.make_globals ( self, t\&.Optional[t\&.MutableMapping[str, t\&.Any]]
+     d)"
+
+.PP
+.nf
+Make the globals map for a template\&. Any given template
+globals overlay the environment :attr:`globals`\&.
+
+Returns a :class:`collections\&.ChainMap`\&. This allows any changes
+to a template's globals to only affect that template, while
+changes to the environment's globals are still reflected\&.
+However, avoid modifying any globals after a template is loaded\&.
+
+:param d: Dict of template-specific globals\&.
+
+\&.\&. versionchanged:: 3\&.0
+    Use :class:`collections\&.ChainMap` to always prevent mutating
+    environment globals\&.
+
+.fi
+.PP
+ 
+.SS " 'te\&.Self' jinja2\&.environment\&.Environment\&.overlay ( self, str  block_start_string = \fCmissing\fP, str  block_end_string = \fCmissing\fP, str  variable_start_string = \fCmissing\fP, str  variable_end_string = \fCmissing\fP, str  comment_start_string = \fCmissing\fP, str  comment_end_string = \fCmissing\fP, t\&.Optional[str]  line_statement_prefix = \fCmissing\fP, t\&.Optional[str]  line_comment_prefix = \fCmissing\fP, bool  trim_blocks = \fCmissing\fP, bool  lstrip_blocks = \fCmissing\fP, 'te\&.Literal['\\\\n', '\\\\r\\\\n', '\\\\r']'  newline_sequence = \fCmissing\fP, bool  keep_trailing_newline = \fCmissing\fP, t\&.Sequence[t\&.Union[str, t\&.Type['Extension']]]  extensions = \fCmissing\fP, bool  optimized = \fCmissing\fP, t\&.Type[\fBUndefined\fP]  undefined = \fCmissing\fP, t\&.Optional[t\&.Callable[\&.\&.\&., t\&.Any]]  finalize = \fCmissing\fP, t\&.Union[bool, t\&.Callable[[t\&.Optional[str]], bool]]  autoescape = \fCmissing\fP, t\&.Optional['BaseLoader']  loader = \fCmissing\fP, int  cache_size = \fCmissing\fP, bool  auto_reload = \fCmissing\fP, t\&.Optional['BytecodeCache']  bytecode_cache = \fCmissing\fP, bool  enable_async = \fCmissing\fP)"
+
+.PP
+.nf
+Create a new overlay environment that shares all the data with the
+current environment except for cache and the overridden attributes\&.
+Extensions cannot be removed for an overlayed environment\&.  An overlayed
+environment automatically gets all the extensions of the environment it
+is linked to plus optional extra extensions\&.
+
+Creating overlays should happen after the initial environment was set
+up completely\&.  Not all attributes are truly linked, some are just
+copied over so modifications on the original environment may not shine
+through\&.
+
+\&.\&. versionchanged:: 3\&.1\&.5
+    ``enable_async`` is applied correctly\&.
+
+\&.\&. versionchanged:: 3\&.1\&.2
+    Added the ``newline_sequence``, ``keep_trailing_newline``,
+    and ``enable_async`` parameters to match ``__init__``\&.
+
+.fi
+.PP
+ 
+.SS " \fBnodes\&.Template\fP jinja2\&.environment\&.Environment\&.parse ( self, str source, t\&.Optional[str]  name = \fCNone\fP, t\&.Optional[str]  filename = \fCNone\fP)"
+
+.PP
+.nf
+Parse the sourcecode and return the abstract syntax tree\&.  This
+tree of nodes is used by the compiler to convert the template into
+executable source- or bytecode\&.  This is useful for debugging or to
+extract information from templates\&.
+
+If you are :ref:`developing Jinja extensions <writing-extensions>`
+this gives you a good overview of the node tree generated\&.
+
+.fi
+.PP
+ 
+.SS " str jinja2\&.environment\&.Environment\&.preprocess ( self, str source, t\&.Optional[str]  name = \fCNone\fP, t\&.Optional[str]  filename = \fCNone\fP)"
+
+.PP
+.nf
+Preprocesses the source with all extensions\&.  This is automatically
+called for all parsing and compiling methods but *not* for :meth:`lex`
+because there you usually only want the actual source tokenized\&.
+
+.fi
+.PP
+ 
+.SS " 'Template' jinja2\&.environment\&.Environment\&.select_template ( self, t\&.Iterable[t\&.Union[str, 'Template']] names, t\&.Optional[str]  parent = \fCNone\fP, t\&.Optional[t\&.MutableMapping[str, t\&.Any]]  globals = \fCNone\fP)"
+
+.PP
+.nf
+Like :meth:`get_template`, but tries loading multiple names\&.
+If none of the names can be loaded a :exc:`TemplatesNotFound`
+exception is raised\&.
+
+:param names: List of template names to try loading in order\&.
+:param parent: The name of the parent template importing this
+    template\&. :meth:`join_path` can be used to implement name
+    transformations with this\&.
+:param globals: Extend the environment :attr:`globals` with
+    these extra variables available for all renders of this
+    template\&. If the template has already been loaded and
+    cached, its globals are updated with any new items\&.
+
+\&.\&. versionchanged:: 3\&.0
+    If a template is loaded from cache, ``globals`` will update
+    the template's globals instead of ignoring the new values\&.
+
+\&.\&. versionchanged:: 2\&.11
+    If ``names`` is :class:`Undefined`, an :exc:`UndefinedError`
+    is raised instead\&. If no templates were found and ``names``
+    contains :class:`Undefined`, the message is more helpful\&.
+
+\&.\&. versionchanged:: 2\&.4
+    If ``names`` contains a :class:`Template` object it is
+    returned unchanged\&.
+
+\&.\&. versionadded:: 2\&.3
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "jinja2\&.environment\&.Environment\&.auto_reload"
+
+.SS "jinja2\&.environment\&.Environment\&.autoescape"
+
+.SS "jinja2\&.environment\&.Environment\&.block_end_string"
+
+.SS "jinja2\&.environment\&.Environment\&.block_start_string"
+
+.SS "jinja2\&.environment\&.Environment\&.bytecode_cache"
+
+.SS "jinja2\&.environment\&.Environment\&.cache"
+
+.SS "t jinja2\&.environment\&.Environment\&.code_generator_class = \fBCodeGenerator\fP\fC [static]\fP"
+
+.SS "jinja2\&.environment\&.Environment\&.comment_end_string"
+
+.SS "jinja2\&.environment\&.Environment\&.comment_start_string"
+
+.SS "str jinja2\&.environment\&.Environment\&.concat = ''\&.join\fC [static]\fP"
+
+.SS "t jinja2\&.environment\&.Environment\&.context_class = \fBContext\fP\fC [static]\fP"
+
+.SS "jinja2\&.environment\&.Environment\&.extensions"
+
+.SS "jinja2\&.environment\&.Environment\&.filters"
+
+.SS "jinja2\&.environment\&.Environment\&.finalize"
+
+.SS "jinja2\&.environment\&.Environment\&.globals"
+
+.SS "jinja2\&.environment\&.Environment\&.is_async"
+
+.SS "jinja2\&.environment\&.Environment\&.keep_trailing_newline"
+
+.SS "jinja2\&.environment\&.Environment\&.line_comment_prefix"
+
+.SS "jinja2\&.environment\&.Environment\&.line_statement_prefix"
+
+.SS "t jinja2\&.environment\&.Environment\&.linked_to = None\fC [static]\fP"
+
+.SS "jinja2\&.environment\&.Environment\&.loader"
+
+.SS "jinja2\&.environment\&.Environment\&.lstrip_blocks"
+
+.SS "jinja2\&.environment\&.Environment\&.newline_sequence"
+
+.SS "jinja2\&.environment\&.Environment\&.optimized"
+
+.SS "bool jinja2\&.environment\&.Environment\&.overlayed = False\fC [static]\fP"
+
+.SS "jinja2\&.environment\&.Environment\&.policies"
+
+.SS "bool jinja2\&.environment\&.Environment\&.sandboxed = False\fC [static]\fP"
+
+.SS "bool jinja2\&.environment\&.Environment\&.shared = False\fC [static]\fP"
+
+.SS "t jinja2\&.environment\&.Environment\&.template_class \&.Type['Template']\fC [static]\fP"
+
+.SS "jinja2\&.environment\&.Environment\&.tests"
+
+.SS "jinja2\&.environment\&.Environment\&.trim_blocks"
+
+.SS "jinja2\&.environment\&.Environment\&.variable_end_string"
+
+.SS "jinja2\&.environment\&.Environment\&.variable_start_string"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

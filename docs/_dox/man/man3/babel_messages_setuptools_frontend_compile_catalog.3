@@ -1,0 +1,155 @@
+.TH "babel.messages.setuptools_frontend.compile_catalog" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+babel.messages.setuptools_frontend.compile_catalog
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBbabel\&.messages\&.frontend\&.CompileCatalog\fP, and Command\&.
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBbabel\&.messages\&.frontend\&.CompileCatalog\fP
+.in +1c
+.ti -1c
+.RI "\fBinitialize_options\fP (self)"
+.br
+.ti -1c
+.RI "\fBfinalize_options\fP (self)"
+.br
+.ti -1c
+.RI "\fBrun\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBbabel\&.messages\&.frontend\&.CommandMixin\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, dist=None)"
+.br
+.ti -1c
+.RI "\fBensure_finalized\fP (self)"
+.br
+.in -1c
+
+Public Attributes inherited from \fBbabel\&.messages\&.frontend\&.CompileCatalog\fP
+.in +1c
+.ti -1c
+.RI "\fBdomain\fP"
+.br
+.ti -1c
+.RI "\fBdirectory\fP"
+.br
+.ti -1c
+.RI "\fBinput_file\fP"
+.br
+.ti -1c
+.RI "\fBoutput_file\fP"
+.br
+.ti -1c
+.RI "\fBlocale\fP"
+.br
+.ti -1c
+.RI "\fBuse_fuzzy\fP"
+.br
+.ti -1c
+.RI "\fBstatistics\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBbabel\&.messages\&.frontend\&.CommandMixin\fP
+.in +1c
+.ti -1c
+.RI "\fBdistribution\fP"
+.br
+.ti -1c
+.RI "\fBverbose\fP"
+.br
+.ti -1c
+.RI "\fBforce\fP"
+.br
+.ti -1c
+.RI "\fBhelp\fP"
+.br
+.ti -1c
+.RI "\fBfinalized\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBbabel\&.messages\&.frontend\&.CompileCatalog\fP
+.in +1c
+.ti -1c
+.RI "str \fBdescription\fP = 'compile message catalogs to binary MO files'"
+.br
+.ti -1c
+.RI "list \fBuser_options\fP"
+.br
+.ti -1c
+.RI "list \fBboolean_options\fP = ['use\-fuzzy', '\fBstatistics\fP']"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBbabel\&.messages\&.frontend\&.CommandMixin\fP
+.in +1c
+.ti -1c
+.RI "\fBas_args\fP = None"
+.br
+.ti -1c
+.RI "tuple \fBmultiple_value_options\fP = ()"
+.br
+.ti -1c
+.RI "tuple \fBboolean_options\fP = ()"
+.br
+.ti -1c
+.RI "dict \fBoption_aliases\fP = {}"
+.br
+.ti -1c
+.RI "dict \fBoption_choices\fP = {}"
+.br
+.ti -1c
+.RI "\fBlog\fP = log"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBbabel\&.messages\&.frontend\&.CompileCatalog\fP
+.in +1c
+.ti -1c
+.RI "\fB_run_domain\fP (self, \fBdomain\fP)"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBbabel\&.messages\&.frontend\&.CommandMixin\fP
+.in +1c
+.ti -1c
+.RI "\fB_dry_run\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Catalog compilation command for use in ``setup\&.py`` scripts\&.
+
+If correctly installed, this command is available to Setuptools-using
+setup scripts automatically\&. For projects using plain old ``distutils``,
+the command needs to be registered explicitly in ``setup\&.py``::
+
+    from babel\&.messages\&.setuptools_frontend import compile_catalog
+
+    setup(
+        \&.\&.\&.
+        cmdclass = {'compile_catalog': compile_catalog}
+    )
+
+\&.\&. versionadded:: 0\&.9
+
+.fi
+.PP
+ 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

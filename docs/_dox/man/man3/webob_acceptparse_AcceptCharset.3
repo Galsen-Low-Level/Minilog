@@ -1,0 +1,94 @@
+.TH "webob.acceptparse.AcceptCharset" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webob.acceptparse.AcceptCharset
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.PP
+Inherited by \fBwebob\&.acceptparse\&.AcceptCharsetValidHeader\fP, and \fBwebob\&.acceptparse\&._AcceptCharsetInvalidOrNoHeader\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBparse\fP (cls, value)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcharset_re\fP = \fBtoken_re\fP"
+.br
+.ti -1c
+.RI "\fBcharset_n_weight_re\fP = \fB_item_n_weight_re\fP(item_re=\fBcharset_re\fP)"
+.br
+.ti -1c
+.RI "\fBcharset_n_weight_compiled_re\fP = re\&.compile(\fBcharset_n_weight_re\fP)"
+.br
+.ti -1c
+.RI "\fBaccept_charset_compiled_re\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_python_value_to_header_str\fP (cls, value)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Represent an ``Accept-Charset`` header\&.
+
+Base class for :class:`AcceptCharsetValidHeader`,
+:class:`AcceptCharsetNoHeader`, and :class:`AcceptCharsetInvalidHeader`\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "webob\&.acceptparse\&.AcceptCharset\&._python_value_to_header_str ( cls,  value)\fC [protected]\fP"
+
+.SS "webob\&.acceptparse\&.AcceptCharset\&.parse ( cls,  value)"
+
+.PP
+.nf
+Parse an ``Accept-Charset`` header\&.
+
+:param value: (``str``) header value
+:return: If `value` is a valid ``Accept-Charset`` header, returns an
+         iterator of (charset, quality value) tuples, as parsed from
+         the header from left to right\&.
+:raises ValueError: if `value` is an invalid header
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "webob\&.acceptparse\&.AcceptCharset\&.accept_charset_compiled_re\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  _list_1_or_more__compiled_re(
+        element_re=charset_n_weight_re,
+    )
+.fi
+
+.SS "webob\&.acceptparse\&.AcceptCharset\&.charset_n_weight_compiled_re = re\&.compile(\fBcharset_n_weight_re\fP)\fC [static]\fP"
+
+.SS "webob\&.acceptparse\&.AcceptCharset\&.charset_n_weight_re = \fB_item_n_weight_re\fP(item_re=\fBcharset_re\fP)\fC [static]\fP"
+
+.SS "webob\&.acceptparse\&.AcceptCharset\&.charset_re = \fBtoken_re\fP\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

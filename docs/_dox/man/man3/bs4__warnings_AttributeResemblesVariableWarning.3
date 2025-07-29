@@ -1,0 +1,53 @@
+.TH "bs4._warnings.AttributeResemblesVariableWarning" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bs4._warnings.AttributeResemblesVariableWarning
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBbs4\&._warnings\&.UnusualUsageWarning\fP, and SyntaxWarning\&.
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBMESSAGE\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+The warning issued when Beautiful Soup suspects a provided
+attribute name may actually be the misspelled name of a Beautiful
+Soup variable\&. Generally speaking, this is only used in cases like
+'_class' where it's very unlikely the user would be referencing an
+XML attribute with that name\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "str bs4\&._warnings\&.AttributeResemblesVariableWarning\&.MESSAGE\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  """%(original)r is an unusual attribute name and is a common misspelling for %(autocorrect)r\&.
+
+If you meant %(autocorrect)r, change your code to use it, and this warning will go away\&.
+
+If you really did mean to check the %(original)r attribute, this warning is spurious and can be filtered\&. To make it go away, run this code before creating your BeautifulSoup object:
+
+    from bs4 import AttributeResemblesVariableWarning
+    import warnings
+
+    warnings\&.filterwarnings("ignore", category=AttributeResemblesVariableWarning)
+"""
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,1685 @@
+.TH "docutils.writers.latex2e.LaTeXTranslator" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.writers.latex2e.LaTeXTranslator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.nodes\&.NodeVisitor\fP\&.
+.PP
+Inherited by \fBdocutils\&.writers\&.xetex\&.XeLaTeXTranslator\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdocument\fP, babel_class=\fBBabel\fP)"
+.br
+.ti -1c
+.RI "\fBstylesheet_call\fP (self, path)"
+.br
+.ti -1c
+.RI "\fBto_latex_encoding\fP (self, docutils_encoding)"
+.br
+.ti -1c
+.RI "\fBlanguage_label\fP (self, docutil_label)"
+.br
+.ti -1c
+.RI "\fBencode\fP (self, text)"
+.br
+.ti -1c
+.RI "\fBattval\fP (self, text, whitespace=re\&.compile('[\\n\\r\\t\\v\\f]'))"
+.br
+.ti -1c
+.RI "\fBis_inline\fP (self, node)"
+.br
+.RI "def astext(self): '''Assemble document parts and return as string\&.''' head = '
+.br
+'\&.join(self\&.head_prefix + self\&.stylesheet + self\&.head) body = ''\&.join(self\&.body_prefix + self\&.body + self\&.body_suffix) return head + '
+.br
+' + body "
+.ti -1c
+.RI "\fBappend_hypertargets\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBids_to_labels\fP (self, node, set_anchor=True, protect=False, newline=False)"
+.br
+.ti -1c
+.RI "\fBset_align_from_classes\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBinsert_align_declaration\fP (self, node, default=None)"
+.br
+.ti -1c
+.RI "\fBduclass_open\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBduclass_close\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBpush_output_collector\fP (self, new_out)"
+.br
+.ti -1c
+.RI "\fBpop_output_collector\fP (self)"
+.br
+.ti -1c
+.RI "\fBterm_postfix\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_Text\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_Text\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_abbreviation\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_abbreviation\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_acronym\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_acronym\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_address\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_address\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_admonition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_admonition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_author\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_author\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_authors\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_authors\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_block_quote\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_block_quote\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_bullet_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_bullet_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_superscript\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_superscript\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_subscript\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_subscript\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_caption\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_caption\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_title_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_title_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_citation\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_citation\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_citation_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_citation_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_classifier\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_classifier\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_colspec\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_colspec\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_comment\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_comment\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_compound\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_compound\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_contact\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_contact\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_container\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_container\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_copyright\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_copyright\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_date\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_date\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_decoration\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_decoration\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_definition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_definition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_definition_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_definition_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_definition_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_definition_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_description\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_description\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_docinfo\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_docinfo\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_docinfo_item\fP (self, node, name)"
+.br
+.ti -1c
+.RI "\fBdepart_docinfo_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_doctest_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_doctest_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_document\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_document\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBmake_title\fP (self)"
+.br
+.ti -1c
+.RI "\fBappend_bibliogaphy\fP (self)"
+.br
+.ti -1c
+.RI "\fBvisit_emphasis\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_emphasis\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBinsert_additional_table_colum_delimiters\fP (self)"
+.br
+.ti -1c
+.RI "\fBvisit_entry\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_entry\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_row\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_row\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_enumerated_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_enumerated_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_field\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_field\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_field_body\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_field_body\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_field_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_field_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_field_name\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_field_name\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_figure\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_figure\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_footer\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_footer\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_footnote\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_footnote\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_footnote_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_footnote_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBlabel_delim\fP (self, node, bracket, superscript)"
+.br
+.ti -1c
+.RI "\fBvisit_label\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_label\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_generated\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_generated\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_header\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_header\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBto_latex_length\fP (self, length_str, pxunit=None)"
+.br
+.ti -1c
+.RI "\fBvisit_image\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_image\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_inline\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_inline\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_legend\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_legend\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_line\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_line\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_line_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_line_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_literal\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_literal\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBis_plaintext\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_literal_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_literal_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_meta\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_meta\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_math\fP (self, node, math_env='$')"
+.br
+.ti -1c
+.RI "\fBdepart_math\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_math_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_math_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option_argument\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option_argument\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option_group\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option_group\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option_string\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option_string\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_organization\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_organization\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_paragraph\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_paragraph\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_problematic\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_problematic\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_raw\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_raw\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBhas_unbalanced_braces\fP (self, string)"
+.br
+.ti -1c
+.RI "\fBvisit_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_revision\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_revision\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_rubric\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_rubric\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_section\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_section\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_sidebar\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_sidebar\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_attribution\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_attribution\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_status\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_status\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_strong\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_strong\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_substitution_definition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_substitution_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_subtitle\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_subtitle\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_system_message\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_system_message\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_table\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_table\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_target\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_target\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_tbody\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_tbody\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_term\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_term\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_tgroup\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_tgroup\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBthead_depth\fP (self)"
+.br
+.ti -1c
+.RI "\fBvisit_thead\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_thead\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_title\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_title\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_contents\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_topic\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_topic\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_transition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_transition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_version\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_version\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBunimplemented_visit\fP (self, node)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "\fBdispatch_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdispatch_departure\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBunknown_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBunknown_departure\fP (self, node)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBwarn\fP"
+.br
+.ti -1c
+.RI "\fBerror\fP"
+.br
+.ti -1c
+.RI "\fBsettings\fP"
+.br
+.ti -1c
+.RI "\fBlatex_encoding\fP"
+.br
+.ti -1c
+.RI "\fBuse_latex_toc\fP"
+.br
+.ti -1c
+.RI "\fBuse_latex_docinfo\fP"
+.br
+.ti -1c
+.RI "\fBuse_latex_citations\fP"
+.br
+.ti -1c
+.RI "\fBreference_label\fP"
+.br
+.ti -1c
+.RI "\fBhyperlink_color\fP"
+.br
+.ti -1c
+.RI "\fBcompound_enumerators\fP"
+.br
+.ti -1c
+.RI "\fBfont_encoding\fP"
+.br
+.ti -1c
+.RI "\fBsection_prefix_for_enumerators\fP"
+.br
+.ti -1c
+.RI "\fBsection_enumerator_separator\fP"
+.br
+.ti -1c
+.RI "\fBliteral_block_env\fP"
+.br
+.ti -1c
+.RI "\fBliteral_block_options\fP"
+.br
+.ti -1c
+.RI "\fBbibtex\fP"
+.br
+.ti -1c
+.RI "\fBlanguage_module\fP"
+.br
+.ti -1c
+.RI "\fBbabel\fP"
+.br
+.ti -1c
+.RI "\fBauthor_separator\fP"
+.br
+.ti -1c
+.RI "\fBdocumentoptions\fP"
+.br
+.ti -1c
+.RI "\fBd_class\fP"
+.br
+.ti -1c
+.RI "\fBgraphicx_package\fP"
+.br
+.ti -1c
+.RI "\fBdocutils_footnotes\fP"
+.br
+.ti -1c
+.RI "\fBhead_prefix\fP"
+.br
+.ti -1c
+.RI "\fBrequirements\fP"
+.br
+.ti -1c
+.RI "\fBlatex_preamble\fP"
+.br
+.ti -1c
+.RI "\fBfallbacks\fP"
+.br
+.ti -1c
+.RI "\fBpdfsetup\fP"
+.br
+.ti -1c
+.RI "\fBtitle\fP"
+.br
+.ti -1c
+.RI "\fBsubtitle\fP"
+.br
+.ti -1c
+.RI "\fBtitledata\fP"
+.br
+.ti -1c
+.RI "\fBbody_pre_docinfo\fP"
+.br
+.RI "self\&.body_prefix = ['\\begin{document}
+.br
+'] "
+.ti -1c
+.RI "\fBdocinfo\fP"
+.br
+.ti -1c
+.RI "\fBdedication\fP"
+.br
+.ti -1c
+.RI "\fBabstract\fP"
+.br
+.ti -1c
+.RI "\fBbody\fP"
+.br
+.ti -1c
+.RI "\fBcontext\fP"
+.br
+.RI "self\&.body_suffix = ['\\end{document}
+.br
+'] "
+.ti -1c
+.RI "\fBtitle_labels\fP"
+.br
+.ti -1c
+.RI "\fBsubtitle_labels\fP"
+.br
+.ti -1c
+.RI "\fBauthor_stack\fP"
+.br
+.ti -1c
+.RI "\fBdate\fP"
+.br
+.ti -1c
+.RI "\fBpdfauthor\fP"
+.br
+.ti -1c
+.RI "\fBpdfinfo\fP"
+.br
+.ti -1c
+.RI "\fBtable_stack\fP"
+.br
+.ti -1c
+.RI "\fBactive_table\fP"
+.br
+.ti -1c
+.RI "\fBout\fP"
+.br
+.ti -1c
+.RI "\fBout_stack\fP"
+.br
+.ti -1c
+.RI "\fBfallback_stylesheet\fP"
+.br
+.ti -1c
+.RI "\fBstylesheet\fP"
+.br
+.ti -1c
+.RI "\fBhyperref_options\fP"
+.br
+.ti -1c
+.RI "\fBinside_citation_reference_label\fP"
+.br
+.ti -1c
+.RI "\fBinsert_newline\fP"
+.br
+.ti -1c
+.RI "\fBliteral\fP"
+.br
+.ti -1c
+.RI "\fBverbatim\fP"
+.br
+.ti -1c
+.RI "\fBalltt\fP"
+.br
+.ti -1c
+.RI "\fBinsert_non_breaking_blanks\fP"
+.br
+.ti -1c
+.RI "\fBsection_level\fP"
+.br
+.ti -1c
+.RI "\fBhas_latex_toc\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBoptional\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBis_xetex\fP = False"
+.br
+.ti -1c
+.RI "bool \fBcompound_enumerators\fP = False"
+.br
+.RI "use_optionlist_for_docinfo = False # TODO: NOT YET IN USE "
+.ti -1c
+.RI "bool \fBsection_prefix_for_enumerators\fP = False"
+.br
+.ti -1c
+.RI "str \fBsection_enumerator_separator\fP = '\-'"
+.br
+.ti -1c
+.RI "bool \fBhas_latex_toc\fP = False"
+.br
+.ti -1c
+.RI "int \fBsection_level\fP = 0"
+.br
+.ti -1c
+.RI "bool \fBinside_citation_reference_label\fP = False"
+.br
+.ti -1c
+.RI "bool \fBverbatim\fP = False"
+.br
+.ti -1c
+.RI "bool \fBinsert_non_breaking_blanks\fP = False"
+.br
+.ti -1c
+.RI "bool \fBinsert_newline\fP = False"
+.br
+.ti -1c
+.RI "bool \fBliteral\fP = False"
+.br
+.ti -1c
+.RI "bool \fBalltt\fP = False"
+.br
+.ti -1c
+.RI "dict \fBattribution_formats\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBoptional\fP = ('\fBmeta\fP',)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_section_number\fP"
+.br
+.ti -1c
+.RI "\fB_enumeration_counters\fP"
+.br
+.ti -1c
+.RI "\fB_max_enumeration_counters\fP"
+.br
+.ti -1c
+.RI "\fB_bibitems\fP"
+.br
+.ti -1c
+.RI "\fB_thead_depth\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fB_thead_depth\fP = 0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Generate code for 8-bit LaTeX from a Docutils document tree\&.
+
+See the docstring of docutils\&.writers\&._html_base\&.HTMLTranslator for
+notes on and examples of safe subclassing\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.__init__ ( self,  document,  babel_class = \fC\fBBabel\fP\fP)"
+
+.PP
+Reimplemented from \fBdocutils\&.nodes\&.NodeVisitor\fP\&.
+.PP
+Reimplemented in \fBdocutils\&.writers\&.xetex\&.XeLaTeXTranslator\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.append_bibliogaphy ( self)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.append_hypertargets ( self,  node)"
+
+.PP
+.nf
+Append hypertargets for all ids of `node`
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.attval ( self,  text,  whitespace = \fCre\&.compile('[\\n\\r\\t\\v\\f]')\fP)"
+
+.PP
+.nf
+Cleanse, encode, and return attribute value text\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_abbreviation ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_acronym ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_address ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_admonition ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_attribution ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_author ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_authors ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_block_quote ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_bullet_list ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_caption ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_citation ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_citation_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_classifier ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_colspec ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_comment ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_compound ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_contact ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_container ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_copyright ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_date ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_decoration ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_definition ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_definition_list ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_definition_list_item ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_description ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_docinfo ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_docinfo_item ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_doctest_block ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_document ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_emphasis ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_entry ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_enumerated_list ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_field ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_field_body ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_field_list ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_field_name ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_figure ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_footer ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_footnote ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_footnote_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_generated ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_header ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_image ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_inline ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_label ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_legend ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_line ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_line_block ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_list_item ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_literal ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_literal_block ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_math ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_math_block ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_meta ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_option ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_option_argument ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_option_group ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_option_list ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_option_list_item ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_option_string ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_organization ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_paragraph ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_problematic ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_raw ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_revision ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_row ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_rubric ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_section ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_sidebar ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_status ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_strong ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_subscript ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_subtitle ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_superscript ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_system_message ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_table ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_target ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_tbody ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_term ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_Text ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_tgroup ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_thead ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_title ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_title_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_topic ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_transition ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.depart_version ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.duclass_close ( self,  node)"
+
+.PP
+.nf
+Close a group of class declarations\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.duclass_open ( self,  node)"
+
+.PP
+.nf
+Open a group and insert declarations for class values\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.encode ( self,  text)"
+
+.PP
+.nf
+Return text with 'problematic' characters escaped\&.
+
+* Escape the special printing characters ``# $ % & ~ _ ^ \\\\ { }``,
+  square brackets ``[ ]``, double quotes and (in OT1) ``< | >``\&.
+* Translate non-supported Unicode characters\&.
+* Separate ``-`` (and more in literal text) to prevent input ligatures\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.has_unbalanced_braces ( self,  string)"
+
+.PP
+.nf
+Test whether there are unmatched '{' or '}' characters\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.ids_to_labels ( self,  node,  set_anchor = \fCTrue\fP,  protect = \fCFalse\fP,  newline = \fCFalse\fP)"
+
+.PP
+.nf
+Return list of label definitions for all ids of `node`
+
+If `set_anchor` is True, an anchor is set with \\\\phantomsection\&.
+If `protect` is True, the \\\\label cmd is made robust\&.
+If `newline` is True, a newline is added if there are labels\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.insert_additional_table_colum_delimiters ( self)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.insert_align_declaration ( self,  node,  default = \fCNone\fP)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.is_inline ( self,  node)"
+
+.PP
+def astext(self): '''Assemble document parts and return as string\&.''' head = '
+.br
+'\&.join(self\&.head_prefix + self\&.stylesheet + self\&.head) body = ''\&.join(self\&.body_prefix + self\&.body + self\&.body_suffix) return head + '
+.br
+' + body 
+.PP
+.nf
+Check whether a node represents an inline or block-level element
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.is_plaintext ( self,  node)"
+
+.PP
+.nf
+Check whether a node can be typeset verbatim
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.label_delim ( self,  node,  bracket,  superscript)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.language_label ( self,  docutil_label)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.make_title ( self)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.pop_output_collector ( self)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.push_output_collector ( self,  new_out)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.set_align_from_classes ( self,  node)"
+
+.PP
+.nf
+Convert ``align-*`` class arguments into alignment args\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.stylesheet_call ( self,  path)"
+
+.PP
+.nf
+Return code to reference or embed stylesheet file `path`
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.term_postfix ( self,  node)"
+
+.PP
+.nf
+Return LaTeX code required between term or field name and content\&.
+
+In a LaTeX 'description' environment (used for definition
+lists and non-docinfo field lists), a ``\\\\leavevmode``
+between an item's label and content ensures the correct
+placement of certain block constructs\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.thead_depth ( self)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.to_latex_encoding ( self,  docutils_encoding)"
+
+.PP
+.nf
+Translate docutils encoding name into LaTeX's\&.
+
+Default method is remove '-' and '_' chars from docutils_encoding\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.to_latex_length ( self,  length_str,  pxunit = \fCNone\fP)"
+
+.PP
+.nf
+Convert `length_str` with rst length to LaTeX length
+
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.unimplemented_visit ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_abbreviation ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_acronym ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_address ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_admonition ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_attribution ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_author ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_authors ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_block_quote ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_bullet_list ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_caption ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_citation ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_citation_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_classifier ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_colspec ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_comment ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_compound ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_contact ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_container ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_contents ( self,  node)"
+
+.PP
+.nf
+Write the table of contents\&.
+
+Called from visit_topic() for 'contents' topics\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_copyright ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_date ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_decoration ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_definition ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_definition_list ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_definition_list_item ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_description ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_docinfo ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_docinfo_item ( self,  node,  name)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_doctest_block ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_document ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_emphasis ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_entry ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_enumerated_list ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_field ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_field_body ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_field_list ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_field_name ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_figure ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_footer ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_footnote ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_footnote_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_generated ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_header ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_image ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_inline ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_label ( self,  node)"
+
+.PP
+.nf
+footnote or citation label: in brackets or as superscript
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_legend ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_line ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_line_block ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_list_item ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_literal ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_literal_block ( self,  node)"
+
+.PP
+.nf
+Render a literal block\&.
+
+Corresponding rST elements: literal block, parsed-literal, code\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_math ( self,  node,  math_env = \fC'$'\fP)"
+
+.PP
+.nf
+math role
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_math_block ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_meta ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_option ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_option_argument ( self,  node)"
+
+.PP
+.nf
+Append the delimiter between an option and its argument to body\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_option_group ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_option_list ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_option_list_item ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_option_string ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_organization ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_paragraph ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_problematic ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_raw ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_revision ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_row ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_rubric ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_section ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_sidebar ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_status ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_strong ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_subscript ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_substitution_definition ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_substitution_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_subtitle ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_superscript ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_system_message ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_table ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_target ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_tbody ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_term ( self,  node)"
+
+.PP
+.nf
+definition list term
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_Text ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_tgroup ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_thead ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_title ( self,  node)"
+
+.PP
+.nf
+Append section and other titles\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_title_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_topic ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_transition ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.visit_version ( self,  node)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&._bibitems\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&._enumeration_counters\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&._max_enumeration_counters\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&._section_number\fC [protected]\fP"
+
+.SS "int docutils\&.writers\&.latex2e\&.LaTeXTranslator\&._thead_depth = 0\fC [static]\fP, \fC [protected]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&._thead_depth\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.abstract"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.active_table"
+
+.SS "bool docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.alltt = False\fC [static]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.alltt"
+
+.SS "dict docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.attribution_formats\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {'dash': ('—', ''),  # EM DASH
+                           'parentheses': ('(', ')'),
+                           'parens': ('(', ')'),
+                           'none': ('', '')}
+.fi
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.author_separator"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.author_stack"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.babel"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.bibtex"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.body"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.body_pre_docinfo"
+
+.PP
+self\&.body_prefix = ['\\begin{document}
+.br
+'] 
+.SS "bool docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.compound_enumerators = False\fC [static]\fP"
+
+.PP
+use_optionlist_for_docinfo = False # TODO: NOT YET IN USE 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.compound_enumerators"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.context"
+
+.PP
+self\&.body_suffix = ['\\end{document}
+.br
+'] 
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.d_class"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.date"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.dedication"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.docinfo"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.documentoptions"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.docutils_footnotes"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.error"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.fallback_stylesheet"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.fallbacks"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.font_encoding"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.graphicx_package"
+
+.SS "bool docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.has_latex_toc = False\fC [static]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.has_latex_toc"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.head_prefix"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.hyperlink_color"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.hyperref_options"
+
+.SS "bool docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.insert_newline = False\fC [static]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.insert_newline"
+
+.SS "bool docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.insert_non_breaking_blanks = False\fC [static]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.insert_non_breaking_blanks"
+
+.SS "bool docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.inside_citation_reference_label = False\fC [static]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.inside_citation_reference_label"
+
+.SS "bool docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.is_xetex = False\fC [static]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.language_module"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.latex_encoding"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.latex_preamble"
+
+.SS "bool docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.literal = False\fC [static]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.literal"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.literal_block_env"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.literal_block_options"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.out"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.out_stack"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.pdfauthor"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.pdfinfo"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.pdfsetup"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.reference_label"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.requirements"
+
+.SS "str docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.section_enumerator_separator = '\-'\fC [static]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.section_enumerator_separator"
+
+.SS "int docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.section_level = 0\fC [static]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.section_level"
+
+.SS "bool docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.section_prefix_for_enumerators = False\fC [static]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.section_prefix_for_enumerators"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.settings"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.stylesheet"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.subtitle"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.subtitle_labels"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.table_stack"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.title"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.title_labels"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.titledata"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.use_latex_citations"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.use_latex_docinfo"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.use_latex_toc"
+
+.SS "bool docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.verbatim = False\fC [static]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.verbatim"
+
+.SS "docutils\&.writers\&.latex2e\&.LaTeXTranslator\&.warn"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

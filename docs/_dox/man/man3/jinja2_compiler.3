@@ -1,0 +1,131 @@
+.TH "jinja2.compiler" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.compiler
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBCodeGenerator\fP"
+.br
+.ti -1c
+.RI "class \fBCompilerExit\fP"
+.br
+.ti -1c
+.RI "class \fBDependencyFinderVisitor\fP"
+.br
+.ti -1c
+.RI "class \fBFrame\fP"
+.br
+.ti -1c
+.RI "class \fBMacroRef\fP"
+.br
+.ti -1c
+.RI "class \fBUndeclaredNameVisitor\fP"
+.br
+.ti -1c
+.RI "class \fBVisitorExit\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBF\fP \fBoptimizeconst\fP (\fBF\fP f)"
+.br
+.ti -1c
+.RI "t\&.Callable[['CodeGenerator', \fBnodes\&.BinExpr\fP, 'Frame'], None] \fB_make_binop\fP (str op)"
+.br
+.ti -1c
+.RI "t\&.Callable[['CodeGenerator', \fBnodes\&.UnaryExpr\fP, 'Frame'], None] \fB_make_unop\fP (str op)"
+.br
+.ti -1c
+.RI "t\&.Optional[str] \fBgenerate\fP (\fBnodes\&.Template\fP node, 'Environment' environment, t\&.Optional[str] name, t\&.Optional[str] filename, t\&.Optional[t\&.TextIO] stream=None, bool defer_init=False, bool optimized=True)"
+.br
+.ti -1c
+.RI "bool \fBhas_safe_repr\fP (t\&.Any value)"
+.br
+.ti -1c
+.RI "t\&.Set[str] \fBfind_undeclared\fP (t\&.Iterable[\fBnodes\&.Node\fP] nodes, t\&.Iterable[str] names)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBF\fP = t\&.TypeVar('F', bound=t\&.Callable[\&.\&.\&., t\&.Any])"
+.br
+.ti -1c
+.RI "dict \fBoperators\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Compiles nodes from the parser into Python code\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " t\&.Callable[['CodeGenerator', \fBnodes\&.BinExpr\fP, 'Frame'], None] jinja2\&.compiler\&._make_binop (str op)\fC [protected]\fP"
+
+.SS " t\&.Callable[['CodeGenerator', \fBnodes\&.UnaryExpr\fP, 'Frame'], None] jinja2\&.compiler\&._make_unop (str op)\fC [protected]\fP"
+
+.SS " t\&.Set[str] jinja2\&.compiler\&.find_undeclared (t\&.Iterable[\fBnodes\&.Node\fP] nodes, t\&.Iterable[str]
+ names)"
+
+.PP
+.nf
+Check if the names passed are accessed undeclared\&.  The return value
+is a set of all the undeclared names from the sequence of names found\&.
+
+.fi
+.PP
+ 
+.SS " t\&.Optional[str] jinja2\&.compiler\&.generate (\fBnodes\&.Template\fP node, 'Environment' environment, t\&.Optional[str] name, t\&.Optional[str] filename, t\&.Optional[t\&.TextIO]  stream = \fCNone\fP, bool  defer_init = \fCFalse\fP, bool  optimized = \fCTrue\fP)"
+
+.PP
+.nf
+Generate the python source for a node tree\&.
+.fi
+.PP
+ 
+.SS " bool jinja2\&.compiler\&.has_safe_repr (t\&.Any value)"
+
+.PP
+.nf
+Does the node have a safe representation?
+.fi
+.PP
+ 
+.SS " \fBF\fP jinja2\&.compiler\&.optimizeconst (\fBF\fP f)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "jinja2\&.compiler\&.F = t\&.TypeVar('F', bound=t\&.Callable[\&.\&.\&., t\&.Any])"
+
+.SS "dict jinja2\&.compiler\&.operators"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     "eq": "==",
+3     "ne": "!=",
+4     "gt": ">",
+5     "gteq": ">=",
+6     "lt": "<",
+7     "lteq": "<=",
+8     "in": "in",
+9     "notin": "not in",
+10 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

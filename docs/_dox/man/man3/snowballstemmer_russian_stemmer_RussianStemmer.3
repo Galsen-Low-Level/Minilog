@@ -1,0 +1,315 @@
+.TH "snowballstemmer.russian_stemmer.RussianStemmer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+snowballstemmer.russian_stemmer.RussianStemmer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP\&.
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBI_pV\fP"
+.br
+.ti -1c
+.RI "\fBI_p2\fP"
+.br
+.ti -1c
+.RI "\fBcursor\fP"
+.br
+.ti -1c
+.RI "\fBket\fP"
+.br
+.ti -1c
+.RI "\fBbra\fP"
+.br
+.ti -1c
+.RI "\fBlimit_backward\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP
+.in +1c
+.ti -1c
+.RI "\fBcurrent\fP"
+.br
+.ti -1c
+.RI "\fBcursor\fP"
+.br
+.ti -1c
+.RI "\fBlimit\fP"
+.br
+.ti -1c
+.RI "\fBlimit_backward\fP"
+.br
+.ti -1c
+.RI "\fBbra\fP"
+.br
+.ti -1c
+.RI "\fBket\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBg_v\fP = {u'а', u'е', u'и', u'о', u'у', u'ы', u'э', u'ю', u'я'}"
+.br
+.ti -1c
+.RI "int \fBI_p2\fP = 0"
+.br
+.ti -1c
+.RI "int \fBI_pV\fP = 0"
+.br
+.ti -1c
+.RI "list \fBa_0\fP"
+.br
+.ti -1c
+.RI "list \fBa_1\fP"
+.br
+.ti -1c
+.RI "list \fBa_2\fP"
+.br
+.ti -1c
+.RI "list \fBa_3\fP"
+.br
+.ti -1c
+.RI "list \fBa_4\fP"
+.br
+.ti -1c
+.RI "list \fBa_5\fP"
+.br
+.ti -1c
+.RI "list \fBa_6\fP"
+.br
+.ti -1c
+.RI "list \fBa_7\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_stem\fP (self)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "\fBset_current\fP (self, value)"
+.br
+.ti -1c
+.RI "\fBget_current\fP (self)"
+.br
+.ti -1c
+.RI "\fBcopy_from\fP (self, other)"
+.br
+.ti -1c
+.RI "\fBin_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_in_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBin_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_in_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBout_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_out_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBout_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_out_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBeq_s\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBeq_s_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBfind_among\fP (self, v)"
+.br
+.ti -1c
+.RI "\fBfind_among_b\fP (self, v)"
+.br
+.ti -1c
+.RI "\fBreplace_s\fP (self, c_bra, c_ket, s)"
+.br
+.ti -1c
+.RI "\fBslice_check\fP (self)"
+.br
+.ti -1c
+.RI "\fBslice_from\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBslice_del\fP (self)"
+.br
+.ti -1c
+.RI "\fBinsert\fP (self, c_bra, c_ket, s)"
+.br
+.ti -1c
+.RI "\fBslice_to\fP (self)"
+.br
+.ti -1c
+.RI "\fBassign_to\fP (self)"
+.br
+.ti -1c
+.RI "\fBstemWord\fP (self, word)"
+.br
+.ti -1c
+.RI "\fBstemWords\fP (self, words)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This class implements the stemming algorithm defined by a snowball script\&.
+Generated from russian\&.sbl by Snowball 3\&.0\&.1 - https://snowballstem\&.org/
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "snowballstemmer\&.russian_stemmer\&.RussianStemmer\&._stem ( self)\fC [protected]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "list snowballstemmer\&.russian_stemmer\&.RussianStemmer\&.a_0\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"в", \-1, 1),
+        Among(u"ив", 0, 2),
+        Among(u"ыв", 0, 2),
+        Among(u"вши", \-1, 1),
+        Among(u"ивши", 3, 2),
+        Among(u"ывши", 3, 2),
+        Among(u"вшись", \-1, 1),
+        Among(u"ившись", 6, 2),
+        Among(u"ывшись", 6, 2)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.russian_stemmer\&.RussianStemmer\&.a_1\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"ее", \-1, 1),
+        Among(u"ие", \-1, 1),
+        Among(u"ое", \-1, 1),
+        Among(u"ые", \-1, 1),
+        Among(u"ими", \-1, 1),
+        Among(u"ыми", \-1, 1),
+        Among(u"ей", \-1, 1),
+        Among(u"ий", \-1, 1),
+        Among(u"ой", \-1, 1),
+        Among(u"ый", \-1, 1),
+        Among(u"ем", \-1, 1),
+        Among(u"им", \-1, 1),
+        Among(u"ом", \-1, 1),
+        Among(u"ым", \-1, 1),
+        Among(u"его", \-1, 1),
+        Among(u"ого", \-1, 1),
+        Among(u"ему", \-1, 1),
+        Among(u"ому", \-1, 1),
+        Among(u"их", \-1, 1),
+        Among(u"ых", \-1, 1),
+        Among(u"ею", \-1, 1),
+        Among(u"ою", \-1, 1),
+        Among(u"ую", \-1, 1),
+        Among(u"юю", \-1, 1),
+        Among(u"ая", \-1, 1),
+        Among(u"яя", \-1, 1)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.russian_stemmer\&.RussianStemmer\&.a_2\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"ем", \-1, 1),
+        Among(u"нн", \-1, 1),
+        Among(u"вш", \-1, 1),
+        Among(u"ивш", 2, 2),
+        Among(u"ывш", 2, 2),
+        Among(u"щ", \-1, 1),
+        Among(u"ющ", 5, 1),
+        Among(u"ующ", 6, 2)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.russian_stemmer\&.RussianStemmer\&.a_3\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"сь", \-1, 1),
+        Among(u"ся", \-1, 1)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.russian_stemmer\&.RussianStemmer\&.a_4\fC [static]\fP"
+
+.SS "list snowballstemmer\&.russian_stemmer\&.RussianStemmer\&.a_5\fC [static]\fP"
+
+.SS "list snowballstemmer\&.russian_stemmer\&.RussianStemmer\&.a_6\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"ост", \-1, 1),
+        Among(u"ость", \-1, 1)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.russian_stemmer\&.RussianStemmer\&.a_7\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"ейше", \-1, 1),
+        Among(u"н", \-1, 2),
+        Among(u"ейш", \-1, 1),
+        Among(u"ь", \-1, 3)
+    ]
+.fi
+
+.SS "snowballstemmer\&.russian_stemmer\&.RussianStemmer\&.bra"
+
+.SS "snowballstemmer\&.russian_stemmer\&.RussianStemmer\&.cursor"
+
+.SS "dict snowballstemmer\&.russian_stemmer\&.RussianStemmer\&.g_v = {u'а', u'е', u'и', u'о', u'у', u'ы', u'э', u'ю', u'я'}\fC [static]\fP"
+
+.SS "int snowballstemmer\&.russian_stemmer\&.RussianStemmer\&.I_p2 = 0\fC [static]\fP"
+
+.SS "snowballstemmer\&.russian_stemmer\&.RussianStemmer\&.I_p2"
+
+.SS "int snowballstemmer\&.russian_stemmer\&.RussianStemmer\&.I_pV = 0\fC [static]\fP"
+
+.SS "snowballstemmer\&.russian_stemmer\&.RussianStemmer\&.I_pV"
+
+.SS "snowballstemmer\&.russian_stemmer\&.RussianStemmer\&.ket"
+
+.SS "snowballstemmer\&.russian_stemmer\&.RussianStemmer\&.limit_backward"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

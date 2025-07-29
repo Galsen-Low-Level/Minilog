@@ -1,0 +1,133 @@
+\doxysection{cgitb Namespace Reference}
+\hypertarget{namespacecgitb}{}\label{namespacecgitb}\index{cgitb@{cgitb}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classcgitb_1_1Hook}{Hook}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacecgitb_a221c9dd2df72149281c0f3dd0f75bba7}{reset}} ()
+\item 
+\mbox{\hyperlink{namespacecgitb_a1fb4579a10917e2877c1c1f9b9f3a645}{small}} (\mbox{\hyperlink{namespacecgitb_aff50a79e4e04415dbf7eecd4f9a41ebf}{text}})
+\item 
+\mbox{\hyperlink{namespacecgitb_a1bd9a53fbb083740938f1448dd46157f}{strong}} (\mbox{\hyperlink{namespacecgitb_aff50a79e4e04415dbf7eecd4f9a41ebf}{text}})
+\item 
+\mbox{\hyperlink{namespacecgitb_a63a699ab8a94221d8a3d9fbdf07d2120}{grey}} (\mbox{\hyperlink{namespacecgitb_aff50a79e4e04415dbf7eecd4f9a41ebf}{text}})
+\item 
+\mbox{\hyperlink{namespacecgitb_a8f41638d795673c92aa3c8b1ea1bbb47}{lookup}} (name, frame, locals)
+\item 
+\mbox{\hyperlink{namespacecgitb_a5031c2caa58cca47b4f1c0aa9cd42ff7}{scanvars}} (reader, frame, locals)
+\item 
+\mbox{\hyperlink{namespacecgitb_ac171104dac8a84505ea54af7e13f3b0f}{html}} (einfo, context=5)
+\item 
+\mbox{\hyperlink{namespacecgitb_aff50a79e4e04415dbf7eecd4f9a41ebf}{text}} (einfo, context=5)
+\item 
+\mbox{\hyperlink{namespacecgitb_a070ac5fd803a87da7fec38d4a51cc495}{enable}} (display=1, logdir=None, context=5, format="{}html"{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacecgitb_a22acfe63e9a5a536abc1dea616594558}{handler}} = \mbox{\hyperlink{classcgitb_1_1Hook}{Hook}}().handle
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}More comprehensive traceback formatting for Python scripts.
+
+To enable this module, do:
+
+    import cgitb; cgitb.enable()
+
+at the top of your script.  The optional arguments to enable() are:
+
+    display     - if true, tracebacks are displayed in the web browser
+    logdir      - if set, tracebacks are written to files in this directory
+    context     - number of lines of source code to show for each stack frame
+    format      - 'text' or 'html' controls the output format
+
+By default, tracebacks are displayed but not saved, the context is 5 lines
+and the output format is 'html' (for backwards compatibility with the
+original use of this module)
+
+Alternatively, if you have caught an exception and want cgitb to display it
+for you, call cgitb.handler().  The optional argument to handler() is a
+3-item tuple (etype, evalue, etb) just like the value of sys.exc_info().
+The default handler displays output as HTML.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacecgitb_a070ac5fd803a87da7fec38d4a51cc495}\label{namespacecgitb_a070ac5fd803a87da7fec38d4a51cc495} 
+\index{cgitb@{cgitb}!enable@{enable}}
+\index{enable@{enable}!cgitb@{cgitb}}
+\doxysubsubsection{\texorpdfstring{enable()}{enable()}}
+{\footnotesize\ttfamily cgitb.\+enable (\begin{DoxyParamCaption}\item[{}]{display = {\ttfamily 1},  }\item[{}]{logdir = {\ttfamily None},  }\item[{}]{context = {\ttfamily 5},  }\item[{}]{format = {\ttfamily "{}html"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Install an exception handler that formats tracebacks as HTML.
+
+The optional argument 'display' can be set to 0 to suppress sending the
+traceback to the browser, and 'logdir' can be set to a directory to cause
+tracebacks to be written to files there.\end{DoxyVerb}
+ \Hypertarget{namespacecgitb_a63a699ab8a94221d8a3d9fbdf07d2120}\label{namespacecgitb_a63a699ab8a94221d8a3d9fbdf07d2120} 
+\index{cgitb@{cgitb}!grey@{grey}}
+\index{grey@{grey}!cgitb@{cgitb}}
+\doxysubsubsection{\texorpdfstring{grey()}{grey()}}
+{\footnotesize\ttfamily cgitb.\+grey (\begin{DoxyParamCaption}\item[{}]{text }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacecgitb_ac171104dac8a84505ea54af7e13f3b0f}\label{namespacecgitb_ac171104dac8a84505ea54af7e13f3b0f} 
+\index{cgitb@{cgitb}!html@{html}}
+\index{html@{html}!cgitb@{cgitb}}
+\doxysubsubsection{\texorpdfstring{html()}{html()}}
+{\footnotesize\ttfamily cgitb.\+html (\begin{DoxyParamCaption}\item[{}]{einfo,  }\item[{}]{context = {\ttfamily 5} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a nice HTML document describing a given traceback.\end{DoxyVerb}
+ \Hypertarget{namespacecgitb_a8f41638d795673c92aa3c8b1ea1bbb47}\label{namespacecgitb_a8f41638d795673c92aa3c8b1ea1bbb47} 
+\index{cgitb@{cgitb}!lookup@{lookup}}
+\index{lookup@{lookup}!cgitb@{cgitb}}
+\doxysubsubsection{\texorpdfstring{lookup()}{lookup()}}
+{\footnotesize\ttfamily cgitb.\+lookup (\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{frame,  }\item[{}]{locals }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find the value for a given name in the given environment.\end{DoxyVerb}
+ \Hypertarget{namespacecgitb_a221c9dd2df72149281c0f3dd0f75bba7}\label{namespacecgitb_a221c9dd2df72149281c0f3dd0f75bba7} 
+\index{cgitb@{cgitb}!reset@{reset}}
+\index{reset@{reset}!cgitb@{cgitb}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily cgitb.\+reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a string that resets the CGI and browser to a known state.\end{DoxyVerb}
+ \Hypertarget{namespacecgitb_a5031c2caa58cca47b4f1c0aa9cd42ff7}\label{namespacecgitb_a5031c2caa58cca47b4f1c0aa9cd42ff7} 
+\index{cgitb@{cgitb}!scanvars@{scanvars}}
+\index{scanvars@{scanvars}!cgitb@{cgitb}}
+\doxysubsubsection{\texorpdfstring{scanvars()}{scanvars()}}
+{\footnotesize\ttfamily cgitb.\+scanvars (\begin{DoxyParamCaption}\item[{}]{reader,  }\item[{}]{frame,  }\item[{}]{locals }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Scan one logical line of Python and look up values of variables used.\end{DoxyVerb}
+ \Hypertarget{namespacecgitb_a1fb4579a10917e2877c1c1f9b9f3a645}\label{namespacecgitb_a1fb4579a10917e2877c1c1f9b9f3a645} 
+\index{cgitb@{cgitb}!small@{small}}
+\index{small@{small}!cgitb@{cgitb}}
+\doxysubsubsection{\texorpdfstring{small()}{small()}}
+{\footnotesize\ttfamily cgitb.\+small (\begin{DoxyParamCaption}\item[{}]{text }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacecgitb_a1bd9a53fbb083740938f1448dd46157f}\label{namespacecgitb_a1bd9a53fbb083740938f1448dd46157f} 
+\index{cgitb@{cgitb}!strong@{strong}}
+\index{strong@{strong}!cgitb@{cgitb}}
+\doxysubsubsection{\texorpdfstring{strong()}{strong()}}
+{\footnotesize\ttfamily cgitb.\+strong (\begin{DoxyParamCaption}\item[{}]{text }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacecgitb_aff50a79e4e04415dbf7eecd4f9a41ebf}\label{namespacecgitb_aff50a79e4e04415dbf7eecd4f9a41ebf} 
+\index{cgitb@{cgitb}!text@{text}}
+\index{text@{text}!cgitb@{cgitb}}
+\doxysubsubsection{\texorpdfstring{text()}{text()}}
+{\footnotesize\ttfamily cgitb.\+text (\begin{DoxyParamCaption}\item[{}]{einfo,  }\item[{}]{context = {\ttfamily 5} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a plain text document describing a given traceback.\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacecgitb_a22acfe63e9a5a536abc1dea616594558}\label{namespacecgitb_a22acfe63e9a5a536abc1dea616594558} 
+\index{cgitb@{cgitb}!handler@{handler}}
+\index{handler@{handler}!cgitb@{cgitb}}
+\doxysubsubsection{\texorpdfstring{handler}{handler}}
+{\footnotesize\ttfamily cgitb.\+handler = \mbox{\hyperlink{classcgitb_1_1Hook}{Hook}}().handle}
+

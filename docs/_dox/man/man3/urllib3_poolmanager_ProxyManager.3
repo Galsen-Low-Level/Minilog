@@ -1,0 +1,266 @@
+.TH "urllib3.poolmanager.ProxyManager" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+urllib3.poolmanager.ProxyManager
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBurllib3\&.poolmanager\&.PoolManager\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str proxy_url, int num_pools=10, typing\&.Mapping[str, str]|None \fBheaders\fP=None, typing\&.Mapping[str, str]|None \fBproxy_headers\fP=None, ssl\&.SSLContext|None \fBproxy_ssl_context\fP=None, bool use_forwarding_for_https=False, None|str|typing\&.Literal[False] proxy_assert_hostname=None, str|None proxy_assert_fingerprint=None, **typing\&.Any \fBconnection_pool_kw\fP)"
+.br
+.ti -1c
+.RI "\fBHTTPConnectionPool\fP \fBconnection_from_host\fP (self, str|None host, int|None port=None, str|None scheme='http', dict[str, typing\&.Any]|None pool_kwargs=None)"
+.br
+.ti -1c
+.RI "\fBBaseHTTPResponse\fP \fBurlopen\fP (self, str method, str url, bool redirect=True, **typing\&.Any kw)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBurllib3\&.poolmanager\&.PoolManager\fP
+.in +1c
+.ti -1c
+.RI "Self \fB__enter__\fP (self)"
+.br
+.ti -1c
+.RI "typing\&.Literal[False] \fB__exit__\fP (self, type[BaseException]|None exc_type, BaseException|None exc_val, TracebackType|None exc_tb)"
+.br
+.ti -1c
+.RI "None \fBclear\fP (self)"
+.br
+.ti -1c
+.RI "\fBHTTPConnectionPool\fP \fBconnection_from_context\fP (self, dict[str, typing\&.Any] request_context)"
+.br
+.ti -1c
+.RI "\fBHTTPConnectionPool\fP \fBconnection_from_pool_key\fP (self, \fBPoolKey\fP pool_key, dict[str, typing\&.Any] request_context)"
+.br
+.ti -1c
+.RI "\fBHTTPConnectionPool\fP \fBconnection_from_url\fP (self, str url, dict[str, typing\&.Any]|None pool_kwargs=None)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBurllib3\&._request_methods\&.RequestMethods\fP
+.in +1c
+.ti -1c
+.RI "\fBBaseHTTPResponse\fP \fBrequest\fP (self, str method, str url, _TYPE_BODY|None body=None, _TYPE_FIELDS|None fields=None, typing\&.Mapping[str, str]|None \fBheaders\fP=None, typing\&.Any|None json=None, **typing\&.Any urlopen_kw)"
+.br
+.ti -1c
+.RI "\fBBaseHTTPResponse\fP \fBrequest_encode_url\fP (self, str method, str url, \fB_TYPE_ENCODE_URL_FIELDS\fP|None fields=None, typing\&.Mapping[str, str]|None \fBheaders\fP=None, **str urlopen_kw)"
+.br
+.ti -1c
+.RI "\fBBaseHTTPResponse\fP \fBrequest_encode_body\fP (self, str method, str url, _TYPE_FIELDS|None fields=None, typing\&.Mapping[str, str]|None \fBheaders\fP=None, bool encode_multipart=True, str|None multipart_boundary=None, **str urlopen_kw)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBproxy\fP"
+.br
+.ti -1c
+.RI "\fBproxy_headers\fP"
+.br
+.ti -1c
+.RI "\fBproxy_ssl_context\fP"
+.br
+.ti -1c
+.RI "\fBproxy_config\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBurllib3\&.poolmanager\&.PoolManager\fP
+.in +1c
+.ti -1c
+.RI "\fBconnection_pool_kw\fP"
+.br
+.ti -1c
+.RI "\fBpools\fP"
+.br
+.ti -1c
+.RI "\fBpool_classes_by_scheme\fP"
+.br
+.ti -1c
+.RI "\fBkey_fn_by_scheme\fP"
+.br
+.ti -1c
+.RI "\fBproxy\fP"
+.br
+.ti -1c
+.RI "\fBproxy_config\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBurllib3\&._request_methods\&.RequestMethods\fP
+.in +1c
+.ti -1c
+.RI "\fBheaders\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "typing\&.Mapping[str, str] \fB_set_proxy_headers\fP (self, str url, typing\&.Mapping[str, str]|None \fBheaders\fP=None)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBurllib3\&.poolmanager\&.PoolManager\fP
+.in +1c
+.ti -1c
+.RI "\fBHTTPConnectionPool\fP \fB_new_pool\fP (self, str scheme, str host, int port, dict[str, typing\&.Any]|None request_context=None)"
+.br
+.ti -1c
+.RI "dict[str, typing\&.Any] \fB_merge_pool_kwargs\fP (self, dict[str, typing\&.Any]|None override)"
+.br
+.ti -1c
+.RI "bool \fB_proxy_requires_url_absolute_form\fP (self, \fBUrl\fP parsed_url)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Attributes inherited from \fBurllib3\&.poolmanager\&.PoolManager\fP
+.in +1c
+.ti -1c
+.RI "\fBUrl\fP \fBproxy\fP = None"
+.br
+.ti -1c
+.RI "\fBProxyConfig\fP \fBproxy_config\fP = None"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBurllib3\&._request_methods\&.RequestMethods\fP
+.in +1c
+.ti -1c
+.RI "dict \fB_encode_url_methods\fP = {'DELETE', 'GET', 'HEAD', 'OPTIONS'}"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Behaves just like :class:`PoolManager`, but sends all requests through
+the defined proxy, using the CONNECT method for HTTPS URLs\&.
+
+:param proxy_url:
+    The URL of the proxy to be used\&.
+
+:param proxy_headers:
+    A dictionary containing headers that will be sent to the proxy\&. In case
+    of HTTP they are being sent with each request, while in the
+    HTTPS/CONNECT case they are sent only once\&. Could be used for proxy
+    authentication\&.
+
+:param proxy_ssl_context:
+    The proxy SSL context is used to establish the TLS connection to the
+    proxy when using HTTPS proxies\&.
+
+:param use_forwarding_for_https:
+    (Defaults to False) If set to True will forward requests to the HTTPS
+    proxy to be made on behalf of the client instead of creating a TLS
+    tunnel via the CONNECT method\&. **Enabling this flag means that request
+    and response headers and content will be visible from the HTTPS proxy**
+    whereas tunneling keeps request and response headers and content
+    private\&.  IP address, target hostname, SNI, and port are always visible
+    to an HTTPS proxy even when this flag is disabled\&.
+
+:param proxy_assert_hostname:
+    The hostname of the certificate to verify against\&.
+
+:param proxy_assert_fingerprint:
+    The fingerprint of the certificate to verify against\&.
+
+Example:
+
+\&.\&. code-block:: python
+
+    import urllib3
+
+    proxy = urllib3\&.ProxyManager('https://localhost:3128/')
+
+    resp1 = proxy\&.request('GET', 'https://google\&.com/')
+    resp2 = proxy\&.request('GET', 'https://httpbin\&.org/')
+
+    print(len(proxy\&.pools))
+    # 1
+
+    resp3 = proxy\&.request('GET', 'https://httpbin\&.org/')
+    resp4 = proxy\&.request('GET', 'https://twitter\&.com/')
+
+    print(len(proxy\&.pools))
+    # 3
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None urllib3\&.poolmanager\&.ProxyManager\&.__init__ ( self, str proxy_url, int  num_pools = \fC10\fP, typing\&.Mapping[str, str] | None  headers = \fCNone\fP, typing\&.Mapping[str, str] | None  proxy_headers = \fCNone\fP, ssl\&.SSLContext | None  proxy_ssl_context = \fCNone\fP, bool  use_forwarding_for_https = \fCFalse\fP, None | str | typing\&.Literal[False]  proxy_assert_hostname = \fCNone\fP, str | None  proxy_assert_fingerprint = \fCNone\fP, **typing\&.Any connection_pool_kw)"
+
+.PP
+Reimplemented from \fBurllib3\&.poolmanager\&.PoolManager\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " typing\&.Mapping[str, str] urllib3\&.poolmanager\&.ProxyManager\&._set_proxy_headers ( self, str url, typing\&.Mapping[str, str] | None  headers = \fCNone\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Sets headers needed by proxies: specifically, the Accept and Host
+headers\&. Only sets headers not provided by the user\&.
+
+.fi
+.PP
+ 
+.SS " \fBHTTPConnectionPool\fP urllib3\&.poolmanager\&.ProxyManager\&.connection_from_host ( self, str | None host, int | None  port = \fCNone\fP, str | None  scheme = \fC'http'\fP, dict[str, typing\&.Any] | None  pool_kwargs = \fCNone\fP)"
+
+.PP
+.nf
+Get a :class:`urllib3\&.connectionpool\&.ConnectionPool` based on the host, port, and scheme\&.
+
+If ``port`` isn't given, it will be derived from the ``scheme`` using
+``urllib3\&.connectionpool\&.port_by_scheme``\&. If ``pool_kwargs`` is
+provided, it is merged with the instance's ``connection_pool_kw``
+variable and used to create the new connection pool, if one is
+needed\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBurllib3\&.poolmanager\&.PoolManager\fP\&.
+.SS " \fBBaseHTTPResponse\fP urllib3\&.poolmanager\&.ProxyManager\&.urlopen ( self, str method, str url, bool  redirect = \fCTrue\fP, **typing\&.Any
+     kw)"
+
+.PP
+.nf
+Same as :meth:`urllib3\&.HTTPConnectionPool\&.urlopen`
+with custom cross-host redirect logic and only sends the request-uri
+portion of the ``url``\&.
+
+The given ``url`` parameter must be absolute, such that an appropriate
+:class:`urllib3\&.connectionpool\&.ConnectionPool` can be chosen for it\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBurllib3\&.poolmanager\&.PoolManager\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "urllib3\&.poolmanager\&.ProxyManager\&.proxy"
+
+.SS "urllib3\&.poolmanager\&.ProxyManager\&.proxy_config"
+
+.SS "urllib3\&.poolmanager\&.ProxyManager\&.proxy_headers"
+
+.SS "urllib3\&.poolmanager\&.ProxyManager\&.proxy_ssl_context"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

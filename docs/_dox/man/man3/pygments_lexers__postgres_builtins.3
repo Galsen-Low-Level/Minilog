@@ -1,0 +1,144 @@
+.TH "pygments.lexers._postgres_builtins" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.lexers._postgres_builtins
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBupdate_myself\fP ()"
+.br
+.ti -1c
+.RI "\fBparse_keywords\fP (f)"
+.br
+.ti -1c
+.RI "\fBparse_datatypes\fP (f)"
+.br
+.ti -1c
+.RI "\fBparse_pseudos\fP (f)"
+.br
+.ti -1c
+.RI "\fBupdate_consts\fP (filename, constname, content)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBKEYWORDS\fP"
+.br
+.ti -1c
+.RI "tuple \fBDATATYPES\fP"
+.br
+.ti -1c
+.RI "tuple \fBPSEUDO_TYPES\fP"
+.br
+.ti -1c
+.RI "tuple \fBPLPGSQL_KEYWORDS\fP"
+.br
+.ti -1c
+.RI "tuple \fBEXPLAIN_KEYWORDS\fP"
+.br
+.ti -1c
+.RI "str \fBSOURCE_URL\fP = 'https://github\&.com/postgres/postgres/raw/master'"
+.br
+.ti -1c
+.RI "str \fBKEYWORDS_URL\fP = \fBSOURCE_URL\fP + '/src/include/parser/kwlist\&.h'"
+.br
+.ti -1c
+.RI "str \fBDATATYPES_URL\fP = \fBSOURCE_URL\fP + '/doc/src/sgml/datatype\&.sgml'"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+    pygments\&.lexers\&._postgres_builtins
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Self-updating data files for PostgreSQL lexer\&.
+
+    Run with `python -I` to update itself\&.
+
+    :copyright: Copyright 2006-2025 by the Pygments team, see AUTHORS\&.
+    :license: BSD, see LICENSE for details\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "pygments\&.lexers\&._postgres_builtins\&.parse_datatypes ( f)"
+
+.SS "pygments\&.lexers\&._postgres_builtins\&.parse_keywords ( f)"
+
+.SS "pygments\&.lexers\&._postgres_builtins\&.parse_pseudos ( f)"
+
+.SS "pygments\&.lexers\&._postgres_builtins\&.update_consts ( filename,  constname,  content)"
+
+.SS "pygments\&.lexers\&._postgres_builtins\&.update_myself ()"
+
+.SH "Variable Documentation"
+.PP 
+.SS "tuple pygments\&.lexers\&._postgres_builtins\&.DATATYPES"
+
+.SS "str pygments\&.lexers\&._postgres_builtins\&.DATATYPES_URL = \fBSOURCE_URL\fP + '/doc/src/sgml/datatype\&.sgml'"
+
+.SS "tuple pygments\&.lexers\&._postgres_builtins\&.EXPLAIN_KEYWORDS"
+
+.SS "tuple pygments\&.lexers\&._postgres_builtins\&.KEYWORDS"
+
+.SS "str pygments\&.lexers\&._postgres_builtins\&.KEYWORDS_URL = \fBSOURCE_URL\fP + '/src/include/parser/kwlist\&.h'"
+
+.SS "tuple pygments\&.lexers\&._postgres_builtins\&.PLPGSQL_KEYWORDS"
+\fBInitial value:\fP.PP
+.nf
+1 =  (
+2     'ALIAS', 'CONSTANT', 'DIAGNOSTICS', 'ELSIF', 'EXCEPTION', 'EXIT',
+3     'FOREACH', 'GET', 'LOOP', 'NOTICE', 'OPEN', 'PERFORM', 'QUERY', 'RAISE',
+4     'RETURN', 'REVERSE', 'SQLSTATE', 'WHILE',
+5 )
+.fi
+
+.SS "pygments\&.lexers\&._postgres_builtins\&.PSEUDO_TYPES"
+\fBInitial value:\fP.PP
+.nf
+1 =  (
+2     'any',
+3     'anyarray',
+4     'anycompatible',
+5     'anycompatiblearray',
+6     'anycompatiblemultirange',
+7     'anycompatiblenonarray',
+8     'anycompatiblerange',
+9     'anyelement',
+10     'anyenum',
+11     'anymultirange',
+12     'anynonarray',
+13     'anyrange',
+14     'cstring',
+15     'event_trigger',
+16     'fdw_handler',
+17     'index_am_handler',
+18     'internal',
+19     'language_handler',
+20     'pg_ddl_command',
+21     'record',
+22     'table_am_handler',
+23     'trigger',
+24     'tsm_handler',
+25     'unknown',
+26     'void',
+27 )
+.fi
+
+.SS "str pygments\&.lexers\&._postgres_builtins\&.SOURCE_URL = 'https://github\&.com/postgres/postgres/raw/master'"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,201 @@
+.TH "pygments.lexers.data.JsonBareObjectLexer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.lexers.data.JsonBareObjectLexer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpygments\&.lexers\&.data\&.JsonLexer\fP\&.
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = 'JSONBareObject'"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = []"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBmimetypes\fP = []"
+.br
+.ti -1c
+.RI "str \fBversion_added\fP = '2\&.2'"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpygments\&.lexers\&.data\&.JsonLexer\fP
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = 'JSON'"
+.br
+.ti -1c
+.RI "str \fBurl\fP = 'https://www\&.json\&.org'"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = ['json', 'json\-object']"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = ['*\&.json', '*\&.jsonl', '*\&.ndjson', 'Pipfile\&.lock']"
+.br
+.ti -1c
+.RI "list \fBmimetypes\fP = ['application/json', 'application/json\-object', 'application/x\-ndjson', 'application/jsonl', 'application/json\-seq']"
+.br
+.ti -1c
+.RI "str \fBversion_added\fP = '1\&.5'"
+.br
+.ti -1c
+.RI "\fBintegers\fP = set('\-0123456789')"
+.br
+.ti -1c
+.RI "\fBfloats\fP = set('\&.eE+')"
+.br
+.ti -1c
+.RI "\fBconstants\fP = set('truefalsenull')"
+.br
+.ti -1c
+.RI "\fBhexadecimals\fP = set('0123456789abcdefABCDEF')"
+.br
+.ti -1c
+.RI "\fBpunctuations\fP = set('{}[],')"
+.br
+.ti -1c
+.RI "dict \fBwhitespaces\fP = {'\\u0020', '\\u000a', '\\u000d', '\\u0009'}"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fBname\fP = None"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = []"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBalias_filenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBmimetypes\fP = []"
+.br
+.ti -1c
+.RI "int \fBpriority\fP = 0"
+.br
+.ti -1c
+.RI "\fBurl\fP = None"
+.br
+.ti -1c
+.RI "\fBversion_added\fP = None"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBpygments\&.lexers\&.data\&.JsonLexer\fP
+.in +1c
+.ti -1c
+.RI "\fBget_tokens_unprocessed\fP (self, text)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd_filter\fP (self, filter_, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fBanalyse_text\fP (text)"
+.br
+.ti -1c
+.RI "\fBget_tokens\fP (self, text, unfiltered=False)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.LexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fB__new__\fP (mcs, name, bases, d)"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBstripnl\fP"
+.br
+.ti -1c
+.RI "\fBstripall\fP"
+.br
+.ti -1c
+.RI "\fBensurenl\fP"
+.br
+.ti -1c
+.RI "\fBtabsize\fP"
+.br
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBfilters\fP"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB_preprocess_lexer_input\fP (self, text)"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB_example\fP = None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+For JSON data structures (with missing object curly braces)\&.
+
+\&.\&. deprecated:: 2\&.8\&.0
+
+   Behaves the same as `JsonLexer` now\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "list pygments\&.lexers\&.data\&.JsonBareObjectLexer\&.aliases = []\fC [static]\fP"
+
+.SS "list pygments\&.lexers\&.data\&.JsonBareObjectLexer\&.filenames = []\fC [static]\fP"
+
+.SS "list pygments\&.lexers\&.data\&.JsonBareObjectLexer\&.mimetypes = []\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.data\&.JsonBareObjectLexer\&.name = 'JSONBareObject'\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.data\&.JsonBareObjectLexer\&.version_added = '2\&.2'\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

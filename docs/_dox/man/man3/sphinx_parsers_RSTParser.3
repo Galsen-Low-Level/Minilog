@@ -1,0 +1,244 @@
+.TH "sphinx.parsers.RSTParser" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.parsers.RSTParser
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.parsers\&.rst\&.Parser\fP, and \fBsphinx\&.parsers\&.Parser\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "list[type[\fBTransform\fP]] \fBget_transforms\fP (self)"
+.br
+.ti -1c
+.RI "None \fBparse\fP (self, str|\fBStringList\fP \fBinputstring\fP, nodes\&.document \fBdocument\fP)"
+.br
+.ti -1c
+.RI "None \fBdecorate\fP (self, \fBStringList\fP content)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.parsers\&.rst\&.Parser\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, rfc2822=False, \fBinliner\fP=None)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.parsers\&.Parser\fP
+.in +1c
+.ti -1c
+.RI "\fBsetup_parse\fP (self, \fBinputstring\fP, \fBdocument\fP)"
+.br
+.ti -1c
+.RI "\fBfinish_parse\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.Component\fP
+.in +1c
+.ti -1c
+.RI "\fBsupports\fP (self, format)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.parsers\&.Parser\fP
+.in +1c
+.ti -1c
+.RI "None \fBset_application\fP (self, \fBSphinx\fP app)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBstatemachine\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.parsers\&.rst\&.Parser\fP
+.in +1c
+.ti -1c
+.RI "\fBinitial_state\fP"
+.br
+.ti -1c
+.RI "\fBstate_classes\fP"
+.br
+.ti -1c
+.RI "\fBinliner\fP"
+.br
+.ti -1c
+.RI "\fBstatemachine\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.parsers\&.Parser\fP
+.in +1c
+.ti -1c
+.RI "\fBinputstring\fP"
+.br
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_transforms\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsphinx\&.parsers\&.Parser\fP
+.in +1c
+.ti -1c
+.RI "\fBconfig\fP"
+.br
+.ti -1c
+.RI "\fBenv\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Attributes inherited from \fBdocutils\&.parsers\&.rst\&.Parser\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBsupported\fP = ('rst', 'restructuredtext', 'rest', 'restx', 'rtxt', 'rstx')"
+.br
+.ti -1c
+.RI "\fBsettings_spec\fP"
+.br
+.ti -1c
+.RI "str \fBconfig_section\fP = 'restructuredtext parser'"
+.br
+.ti -1c
+.RI "tuple \fBconfig_section_dependencies\fP = ('parsers',)"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.parsers\&.Parser\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBsettings_spec\fP"
+.br
+.ti -1c
+.RI "str \fBcomponent_type\fP = 'parser'"
+.br
+.ti -1c
+.RI "str \fBconfig_section\fP = 'parsers'"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.Component\fP
+.in +1c
+.ti -1c
+.RI "\fBcomponent_type\fP = None"
+.br
+.ti -1c
+.RI "tuple \fBsupported\fP = ()"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.SettingsSpec\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBsettings_spec\fP = ()"
+.br
+.ti -1c
+.RI "\fBsettings_defaults\fP = None"
+.br
+.ti -1c
+.RI "\fBsettings_default_overrides\fP = None"
+.br
+.ti -1c
+.RI "tuple \fBrelative_path_settings\fP = ()"
+.br
+.ti -1c
+.RI "\fBconfig_section\fP = None"
+.br
+.ti -1c
+.RI "\fBconfig_section_dependencies\fP = None"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBdefault_transforms\fP = ()"
+.br
+.ti -1c
+.RI "tuple \fBunknown_reference_resolvers\fP = ()"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBsphinx\&.parsers\&.Parser\fP
+.in +1c
+.ti -1c
+.RI "\fBConfig\fP \fBconfig\fP"
+.br
+.ti -1c
+.RI "\fBBuildEnvironment\fP \fBenv\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBsphinx\&.parsers\&.Parser\fP
+.in +1c
+.ti -1c
+.RI "\fB_app\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A reST parser for Sphinx\&.
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " None sphinx\&.parsers\&.RSTParser\&.decorate ( self, \fBStringList\fP content)"
+
+.PP
+.nf
+Preprocess reST content before parsing\&.
+.fi
+.PP
+ 
+.SS " list[type[\fBTransform\fP]] sphinx\&.parsers\&.RSTParser\&.get_transforms ( self)"
+
+.PP
+.nf
+Sphinx's reST parser replaces a transform class for smart-quotes by its own
+
+refs: sphinx\&.io\&.SphinxStandaloneReader
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.parsers\&.rst\&.Parser\fP\&.
+.SS " None sphinx\&.parsers\&.RSTParser\&.parse ( self, str | \fBStringList\fP inputstring, nodes\&.document document)"
+
+.PP
+.nf
+Parse text and generate a document tree\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.parsers\&.rst\&.Parser\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.parsers\&.RSTParser\&.statemachine"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

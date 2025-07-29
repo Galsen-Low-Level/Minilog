@@ -1,0 +1,129 @@
+\doxysection{sphinx.\+ext.\+autodoc.\+importer Namespace Reference}
+\hypertarget{namespacesphinx_1_1ext_1_1autodoc_1_1importer}{}\label{namespacesphinx_1_1ext_1_1autodoc_1_1importer}\index{sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1ext_1_1autodoc_1_1importer_1_1__AttrGetter}{\+\_\+\+Attr\+Getter}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1ext_1_1autodoc_1_1importer_1_1__StubFileLoader}{\+\_\+\+Stub\+File\+Loader}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1ext_1_1autodoc_1_1importer_1_1Attribute}{Attribute}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Iterator\mbox{[}tuple\mbox{[}str, type, Any\mbox{]}\mbox{]} \mbox{\hyperlink{namespacesphinx_1_1ext_1_1autodoc_1_1importer_ade4cac0e59c46e264bc6ee81f4370f83}{\+\_\+filter\+\_\+enum\+\_\+dict}} (type\mbox{[}Enum\mbox{]} enum\+\_\+class, \mbox{\hyperlink{classsphinx_1_1ext_1_1autodoc_1_1importer_1_1__AttrGetter}{\+\_\+\+Attr\+Getter}} attrgetter, Mapping\mbox{[}str, \mbox{\hyperlink{namespacesphinx_1_1ext_1_1autodoc_a243754e369dff31b8d3683f93dea620e}{object}}\mbox{]} enum\+\_\+class\+\_\+dict)
+\item 
+bool \mbox{\hyperlink{namespacesphinx_1_1ext_1_1autodoc_1_1importer_a2a1aa503c96c5f0285ae6dd204a957c8}{\+\_\+is\+\_\+native\+\_\+enum\+\_\+api}} (\mbox{\hyperlink{namespacesphinx_1_1ext_1_1autodoc_a243754e369dff31b8d3683f93dea620e}{object}} obj, str name)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1ext_1_1autodoc_1_1importer_abba0ecbc59a7b0e11a435ec314d3547e}{mangle}} (Any subject, str name)
+\item 
+str\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{namespacesphinx_1_1ext_1_1autodoc_1_1importer_ae4b79059630ab61e98753a3427410619}{unmangle}} (Any subject, str name)
+\item 
+Any \mbox{\hyperlink{namespacesphinx_1_1ext_1_1autodoc_1_1importer_a094f2cfdccc40621254ff255a10ba4e8}{import\+\_\+module}} (str modname, bool try\+\_\+reload=False)
+\item 
+tuple\mbox{[}Module\+Spec, Path\texorpdfstring{$\vert$}{|}None\mbox{]} \mbox{\hyperlink{namespacesphinx_1_1ext_1_1autodoc_1_1importer_aa0852042025556d73bf8638d98f962a9}{\+\_\+find\+\_\+type\+\_\+stub\+\_\+spec}} (Module\+Spec spec, str modname)
+\item 
+Any \mbox{\hyperlink{namespacesphinx_1_1ext_1_1autodoc_1_1importer_a586601cfd8b6123a611d0f30e24aff79}{\+\_\+reload\+\_\+module}} (Module\+Type \mbox{\hyperlink{namespacesphinx_a6c3718b14467227af280273dfbfc7e8b}{module}})
+\item 
+Any \mbox{\hyperlink{namespacesphinx_1_1ext_1_1autodoc_1_1importer_a708d9320a7ec11067fd4283c13e25b19}{import\+\_\+object}} (str modname, list\mbox{[}str\mbox{]} objpath, str \mbox{\hyperlink{namespacesphinx_1_1ext_1_1autodoc_ad3f118a492c1bc8b57e152124e3881e5}{objtype}}=\textquotesingle{}\textquotesingle{}, \mbox{\hyperlink{classsphinx_1_1ext_1_1autodoc_1_1importer_1_1__AttrGetter}{\+\_\+\+Attr\+Getter}} attrgetter=safe\+\_\+getattr)
+\item 
+dict\mbox{[}str, \mbox{\hyperlink{classsphinx_1_1ext_1_1autodoc_1_1importer_1_1Attribute}{Attribute}}\mbox{]} \mbox{\hyperlink{namespacesphinx_1_1ext_1_1autodoc_1_1importer_aebb2ff062bfbb62e5220d0ab242d72cd}{get\+\_\+object\+\_\+members}} (Any subject, list\mbox{[}str\mbox{]} objpath, \mbox{\hyperlink{classsphinx_1_1ext_1_1autodoc_1_1importer_1_1__AttrGetter}{\+\_\+\+Attr\+Getter}} attrgetter, \mbox{\hyperlink{classsphinx_1_1pycode_1_1ModuleAnalyzer}{Module\+Analyzer}}\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{namespacesphinx_1_1ext_1_1autodoc_a04ddd7200d4188fe75211d85ca71dca7}{analyzer}}=None)
+\item 
+dict\mbox{[}str, \mbox{\hyperlink{classsphinx_1_1ext_1_1autodoc_1_1ObjectMember}{Object\+Member}}\mbox{]} \mbox{\hyperlink{namespacesphinx_1_1ext_1_1autodoc_1_1importer_a3303570a428b8d0f5d908636f5e16c01}{get\+\_\+class\+\_\+members}} (Any subject, Any objpath, \mbox{\hyperlink{classsphinx_1_1ext_1_1autodoc_1_1importer_1_1__AttrGetter}{\+\_\+\+Attr\+Getter}} attrgetter, bool inherit\+\_\+docstrings=True)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1ext_1_1autodoc_1_1importer_af256a13be8fd273a5c14e5bb3b8c37ff}{logger}} = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Importer utilities for autodoc\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesphinx_1_1ext_1_1autodoc_1_1importer_ade4cac0e59c46e264bc6ee81f4370f83}\label{namespacesphinx_1_1ext_1_1autodoc_1_1importer_ade4cac0e59c46e264bc6ee81f4370f83} 
+\index{sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}!\_filter\_enum\_dict@{\_filter\_enum\_dict}}
+\index{\_filter\_enum\_dict@{\_filter\_enum\_dict}!sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}}
+\doxysubsubsection{\texorpdfstring{\_filter\_enum\_dict()}{\_filter\_enum\_dict()}}
+{\footnotesize\ttfamily  Iterator\mbox{[}tuple\mbox{[}str, type, Any\mbox{]}\mbox{]} sphinx.\+ext.\+autodoc.\+importer.\+\_\+filter\+\_\+enum\+\_\+dict (\begin{DoxyParamCaption}\item[{type\mbox{[}Enum\mbox{]}}]{enum\+\_\+class,  }\item[{\mbox{\hyperlink{classsphinx_1_1ext_1_1autodoc_1_1importer_1_1__AttrGetter}{\+\_\+\+Attr\+Getter}}}]{attrgetter,  }\item[{Mapping\mbox{[}str, \mbox{\hyperlink{namespacesphinx_1_1ext_1_1autodoc_a243754e369dff31b8d3683f93dea620e}{object}}\mbox{]}}]{enum\+\_\+class\+\_\+dict }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Find the attributes to document of an enumeration class.
+
+The output consists of triplets ``(attribute name, defining class, value)``
+where the attribute name can appear more than once during the iteration
+but with different defining class. The order of occurrence is guided by
+the MRO of *enum_class*.
+\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1ext_1_1autodoc_1_1importer_aa0852042025556d73bf8638d98f962a9}\label{namespacesphinx_1_1ext_1_1autodoc_1_1importer_aa0852042025556d73bf8638d98f962a9} 
+\index{sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}!\_find\_type\_stub\_spec@{\_find\_type\_stub\_spec}}
+\index{\_find\_type\_stub\_spec@{\_find\_type\_stub\_spec}!sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}}
+\doxysubsubsection{\texorpdfstring{\_find\_type\_stub\_spec()}{\_find\_type\_stub\_spec()}}
+{\footnotesize\ttfamily  tuple\mbox{[}Module\+Spec, Path \texorpdfstring{$\vert$}{|} None\mbox{]} sphinx.\+ext.\+autodoc.\+importer.\+\_\+find\+\_\+type\+\_\+stub\+\_\+spec (\begin{DoxyParamCaption}\item[{Module\+Spec}]{spec,  }\item[{str }]{modname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Try finding a spec for a PEP 561 '.pyi' stub file for native modules.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1ext_1_1autodoc_1_1importer_a2a1aa503c96c5f0285ae6dd204a957c8}\label{namespacesphinx_1_1ext_1_1autodoc_1_1importer_a2a1aa503c96c5f0285ae6dd204a957c8} 
+\index{sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}!\_is\_native\_enum\_api@{\_is\_native\_enum\_api}}
+\index{\_is\_native\_enum\_api@{\_is\_native\_enum\_api}!sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}}
+\doxysubsubsection{\texorpdfstring{\_is\_native\_enum\_api()}{\_is\_native\_enum\_api()}}
+{\footnotesize\ttfamily  bool sphinx.\+ext.\+autodoc.\+importer.\+\_\+is\+\_\+native\+\_\+enum\+\_\+api (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesphinx_1_1ext_1_1autodoc_a243754e369dff31b8d3683f93dea620e}{object}}}]{obj,  }\item[{str}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Check whether *obj* is the same as ``Enum.__dict__[name]``.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1ext_1_1autodoc_1_1importer_a586601cfd8b6123a611d0f30e24aff79}\label{namespacesphinx_1_1ext_1_1autodoc_1_1importer_a586601cfd8b6123a611d0f30e24aff79} 
+\index{sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}!\_reload\_module@{\_reload\_module}}
+\index{\_reload\_module@{\_reload\_module}!sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}}
+\doxysubsubsection{\texorpdfstring{\_reload\_module()}{\_reload\_module()}}
+{\footnotesize\ttfamily  Any sphinx.\+ext.\+autodoc.\+importer.\+\_\+reload\+\_\+module (\begin{DoxyParamCaption}\item[{Module\+Type}]{module }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Call importlib.reload(module), convert exceptions to ImportError\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1ext_1_1autodoc_1_1importer_a3303570a428b8d0f5d908636f5e16c01}\label{namespacesphinx_1_1ext_1_1autodoc_1_1importer_a3303570a428b8d0f5d908636f5e16c01} 
+\index{sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}!get\_class\_members@{get\_class\_members}}
+\index{get\_class\_members@{get\_class\_members}!sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}}
+\doxysubsubsection{\texorpdfstring{get\_class\_members()}{get\_class\_members()}}
+{\footnotesize\ttfamily  dict\mbox{[}str, \mbox{\hyperlink{classsphinx_1_1ext_1_1autodoc_1_1ObjectMember}{Object\+Member}}\mbox{]} sphinx.\+ext.\+autodoc.\+importer.\+get\+\_\+class\+\_\+members (\begin{DoxyParamCaption}\item[{Any}]{subject,  }\item[{Any}]{objpath,  }\item[{\mbox{\hyperlink{classsphinx_1_1ext_1_1autodoc_1_1importer_1_1__AttrGetter}{\+\_\+\+Attr\+Getter}}}]{attrgetter,  }\item[{bool }]{inherit\+\_\+docstrings = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get members and attributes of target class.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1ext_1_1autodoc_1_1importer_aebb2ff062bfbb62e5220d0ab242d72cd}\label{namespacesphinx_1_1ext_1_1autodoc_1_1importer_aebb2ff062bfbb62e5220d0ab242d72cd} 
+\index{sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}!get\_object\_members@{get\_object\_members}}
+\index{get\_object\_members@{get\_object\_members}!sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}}
+\doxysubsubsection{\texorpdfstring{get\_object\_members()}{get\_object\_members()}}
+{\footnotesize\ttfamily  dict\mbox{[}str, \mbox{\hyperlink{classsphinx_1_1ext_1_1autodoc_1_1importer_1_1Attribute}{Attribute}}\mbox{]} sphinx.\+ext.\+autodoc.\+importer.\+get\+\_\+object\+\_\+members (\begin{DoxyParamCaption}\item[{Any}]{subject,  }\item[{list\mbox{[}str\mbox{]}}]{objpath,  }\item[{\mbox{\hyperlink{classsphinx_1_1ext_1_1autodoc_1_1importer_1_1__AttrGetter}{\+\_\+\+Attr\+Getter}}}]{attrgetter,  }\item[{\mbox{\hyperlink{classsphinx_1_1pycode_1_1ModuleAnalyzer}{Module\+Analyzer}} \texorpdfstring{$\vert$}{|} None }]{analyzer = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get members and attributes of target object.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1ext_1_1autodoc_1_1importer_a094f2cfdccc40621254ff255a10ba4e8}\label{namespacesphinx_1_1ext_1_1autodoc_1_1importer_a094f2cfdccc40621254ff255a10ba4e8} 
+\index{sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}!import\_module@{import\_module}}
+\index{import\_module@{import\_module}!sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}}
+\doxysubsubsection{\texorpdfstring{import\_module()}{import\_module()}}
+{\footnotesize\ttfamily  Any sphinx.\+ext.\+autodoc.\+importer.\+import\+\_\+module (\begin{DoxyParamCaption}\item[{str}]{modname,  }\item[{bool }]{try\+\_\+reload = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1ext_1_1autodoc_1_1importer_a708d9320a7ec11067fd4283c13e25b19}\label{namespacesphinx_1_1ext_1_1autodoc_1_1importer_a708d9320a7ec11067fd4283c13e25b19} 
+\index{sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}!import\_object@{import\_object}}
+\index{import\_object@{import\_object}!sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}}
+\doxysubsubsection{\texorpdfstring{import\_object()}{import\_object()}}
+{\footnotesize\ttfamily  Any sphinx.\+ext.\+autodoc.\+importer.\+import\+\_\+object (\begin{DoxyParamCaption}\item[{str}]{modname,  }\item[{list\mbox{[}str\mbox{]}}]{objpath,  }\item[{str }]{objtype = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{\mbox{\hyperlink{classsphinx_1_1ext_1_1autodoc_1_1importer_1_1__AttrGetter}{\+\_\+\+Attr\+Getter}} }]{attrgetter = {\ttfamily safe\+\_\+getattr} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1ext_1_1autodoc_1_1importer_abba0ecbc59a7b0e11a435ec314d3547e}\label{namespacesphinx_1_1ext_1_1autodoc_1_1importer_abba0ecbc59a7b0e11a435ec314d3547e} 
+\index{sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}!mangle@{mangle}}
+\index{mangle@{mangle}!sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}}
+\doxysubsubsection{\texorpdfstring{mangle()}{mangle()}}
+{\footnotesize\ttfamily  str sphinx.\+ext.\+autodoc.\+importer.\+mangle (\begin{DoxyParamCaption}\item[{Any}]{subject,  }\item[{str}]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Mangle the given name.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1ext_1_1autodoc_1_1importer_ae4b79059630ab61e98753a3427410619}\label{namespacesphinx_1_1ext_1_1autodoc_1_1importer_ae4b79059630ab61e98753a3427410619} 
+\index{sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}!unmangle@{unmangle}}
+\index{unmangle@{unmangle}!sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}}
+\doxysubsubsection{\texorpdfstring{unmangle()}{unmangle()}}
+{\footnotesize\ttfamily  str \texorpdfstring{$\vert$}{|} None sphinx.\+ext.\+autodoc.\+importer.\+unmangle (\begin{DoxyParamCaption}\item[{Any}]{subject,  }\item[{str}]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Unmangle the given name.\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacesphinx_1_1ext_1_1autodoc_1_1importer_af256a13be8fd273a5c14e5bb3b8c37ff}\label{namespacesphinx_1_1ext_1_1autodoc_1_1importer_af256a13be8fd273a5c14e5bb3b8c37ff} 
+\index{sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}!logger@{logger}}
+\index{logger@{logger}!sphinx.ext.autodoc.importer@{sphinx.ext.autodoc.importer}}
+\doxysubsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily sphinx.\+ext.\+autodoc.\+importer.\+logger = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)}
+

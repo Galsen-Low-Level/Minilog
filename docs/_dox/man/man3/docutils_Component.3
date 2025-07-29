@@ -1,0 +1,112 @@
+.TH "docutils.Component" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.Component
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.SettingsSpec\fP, and \fBdocutils\&.TransformSpec\fP\&.
+.PP
+Inherited by \fBdocutils\&.parsers\&.Parser\fP, \fBdocutils\&.readers\&.Reader\fP, and \fBdocutils\&.writers\&.Writer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBsupports\fP (self, format)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "\fBget_transforms\fP (self)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcomponent_type\fP = None"
+.br
+.ti -1c
+.RI "tuple \fBsupported\fP = ()"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.SettingsSpec\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBsettings_spec\fP = ()"
+.br
+.ti -1c
+.RI "\fBsettings_defaults\fP = None"
+.br
+.ti -1c
+.RI "\fBsettings_default_overrides\fP = None"
+.br
+.ti -1c
+.RI "tuple \fBrelative_path_settings\fP = ()"
+.br
+.ti -1c
+.RI "\fBconfig_section\fP = None"
+.br
+.ti -1c
+.RI "\fBconfig_section_dependencies\fP = None"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBdefault_transforms\fP = ()"
+.br
+.ti -1c
+.RI "tuple \fBunknown_reference_resolvers\fP = ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_transforms\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Base class for Docutils components\&.
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.Component\&.supports ( self,  format)"
+
+.PP
+.nf
+Is `format` supported by this component?
+
+To be used by transforms to ask the dependent component if it supports
+a certain input context or output format\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBdocutils\&.writers\&.pseudoxml\&.Writer\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.Component\&.component_type = None\fC [static]\fP"
+
+.SS "tuple docutils\&.Component\&.supported = ()\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

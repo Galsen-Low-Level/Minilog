@@ -1,0 +1,261 @@
+\doxysection{babel.\+util Namespace Reference}
+\hypertarget{namespacebabel_1_1util}{}\label{namespacebabel_1_1util}\index{babel.util@{babel.util}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classbabel_1_1util_1_1FixedOffsetTimezone}{Fixed\+Offset\+Timezone}}
+\item 
+class \mbox{\hyperlink{classbabel_1_1util_1_1TextWrapper}{Text\+Wrapper}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Generator\mbox{[}\mbox{\hyperlink{namespacebabel_1_1util_abf2cfa058dae4cfa3d032204d0639757}{\+\_\+T}}, None, None\mbox{]} \mbox{\hyperlink{namespacebabel_1_1util_aa73470dc256add4b1a5482e20713964b}{distinct}} (Iterable\mbox{[}\mbox{\hyperlink{namespacebabel_1_1util_abf2cfa058dae4cfa3d032204d0639757}{\+\_\+T}}\mbox{]} iterable)
+\item 
+str\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{namespacebabel_1_1util_a2cf96290df837c4247b02e893c4c542b}{parse\+\_\+encoding}} (IO\mbox{[}bytes\mbox{]} fp)
+\item 
+int \mbox{\hyperlink{namespacebabel_1_1util_a5a8dc7abc275bc8fd74a81f91c7c67a2}{parse\+\_\+future\+\_\+flags}} (IO\mbox{[}bytes\mbox{]} fp, str encoding=\textquotesingle{}latin-\/1\textquotesingle{})
+\item 
+bool \mbox{\hyperlink{namespacebabel_1_1util_ab6052081104162d2550726f8ff805745}{pathmatch}} (str pattern, str filename)
+\item 
+list\mbox{[}str\mbox{]} \mbox{\hyperlink{namespacebabel_1_1util_a05f95ae985abd3f4ae0504bd17ca3f42}{wraptext}} (str text, int width=70, str initial\+\_\+indent=\textquotesingle{}\textquotesingle{}, str subsequent\+\_\+indent=\textquotesingle{}\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacebabel_1_1util_aed9350bbd4e262a168a6cc4525d8c106}{\+\_\+cmp}} (Any a, Any b)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacebabel_1_1util_aea0ddbd52c9c6911bb8d235631f25660}{missing}} = object()
+\item 
+\mbox{\hyperlink{namespacebabel_1_1util_abf2cfa058dae4cfa3d032204d0639757}{\+\_\+T}} = Type\+Var("{}\+\_\+\+T"{})
+\item 
+\mbox{\hyperlink{namespacebabel_1_1util_aa9f9ad79709cdcfb127bf056a1606cf9}{PYTHON\+\_\+\+MAGIC\+\_\+\+COMMENT\+\_\+re}}
+\item 
+\mbox{\hyperlink{namespacebabel_1_1util_a6d2a6e4cb2a72e48a47758f58d127678}{PYTHON\+\_\+\+FUTURE\+\_\+\+IMPORT\+\_\+re}}
+\item 
+\mbox{\hyperlink{namespacebabel_1_1util_ac393c19e57404f5195ab0134752db086}{odict}} = dict
+\item 
+\mbox{\hyperlink{namespacebabel_1_1util_aa5bd61c17c8069b28ebbb5c4feebdefd}{UTC}} = dates.\+UTC
+\item 
+\mbox{\hyperlink{namespacebabel_1_1util_aa6507c8e80a59ea138a596f7a2bbb867}{LOCALTZ}} = dates.\+LOCALTZ
+\item 
+\mbox{\hyperlink{namespacebabel_1_1util_ab5f51ea23b5acc07583ac88e95a5a6e1}{get\+\_\+localzone}} = localtime.\+get\+\_\+localzone
+\item 
+\mbox{\hyperlink{namespacebabel_1_1util_aedae0e667da565a044add0b8f12cc16e}{STDOFFSET}} = localtime.\+STDOFFSET
+\item 
+\mbox{\hyperlink{namespacebabel_1_1util_a959922060b8b145b5020f759150366ed}{DSTOFFSET}} = localtime.\+DSTOFFSET
+\item 
+\mbox{\hyperlink{namespacebabel_1_1util_a37c45b1be58812f1e9c7492dc3bba1b4}{DSTDIFF}} = localtime.\+DSTDIFF
+\item 
+\mbox{\hyperlink{namespacebabel_1_1util_ad402c2ca8d81ed4cd2223277c71043b6}{ZERO}} = localtime.\+ZERO
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    babel.util
+    ~~~~~~~~~~
+
+    Various utility classes and functions.
+
+    :copyright: (c) 2013-2025 by the Babel Team.
+    :license: BSD, see LICENSE for more details.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacebabel_1_1util_aed9350bbd4e262a168a6cc4525d8c106}\label{namespacebabel_1_1util_aed9350bbd4e262a168a6cc4525d8c106} 
+\index{babel.util@{babel.util}!\_cmp@{\_cmp}}
+\index{\_cmp@{\_cmp}!babel.util@{babel.util}}
+\doxysubsubsection{\texorpdfstring{\_cmp()}{\_cmp()}}
+{\footnotesize\ttfamily babel.\+util.\+\_\+cmp (\begin{DoxyParamCaption}\item[{Any}]{a,  }\item[{Any}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacebabel_1_1util_aa73470dc256add4b1a5482e20713964b}\label{namespacebabel_1_1util_aa73470dc256add4b1a5482e20713964b} 
+\index{babel.util@{babel.util}!distinct@{distinct}}
+\index{distinct@{distinct}!babel.util@{babel.util}}
+\doxysubsubsection{\texorpdfstring{distinct()}{distinct()}}
+{\footnotesize\ttfamily  Generator\mbox{[}\mbox{\hyperlink{namespacebabel_1_1util_abf2cfa058dae4cfa3d032204d0639757}{\+\_\+T}}, None, None\mbox{]} babel.\+util.\+distinct (\begin{DoxyParamCaption}\item[{Iterable\mbox{[}\mbox{\hyperlink{namespacebabel_1_1util_abf2cfa058dae4cfa3d032204d0639757}{\+\_\+T}}\mbox{]}}]{iterable }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Yield all items in an iterable collection that are distinct.
+
+Unlike when using sets for a similar effect, the original ordering of the
+items in the collection is preserved by this function.
+
+>>> print(list(distinct([1, 2, 1, 3, 4, 4])))
+[1, 2, 3, 4]
+>>> print(list(distinct('foobar')))
+['f', 'o', 'b', 'a', 'r']
+
+:param iterable: the iterable collection providing the data
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1util_a2cf96290df837c4247b02e893c4c542b}\label{namespacebabel_1_1util_a2cf96290df837c4247b02e893c4c542b} 
+\index{babel.util@{babel.util}!parse\_encoding@{parse\_encoding}}
+\index{parse\_encoding@{parse\_encoding}!babel.util@{babel.util}}
+\doxysubsubsection{\texorpdfstring{parse\_encoding()}{parse\_encoding()}}
+{\footnotesize\ttfamily  str \texorpdfstring{$\vert$}{|} None babel.\+util.\+parse\+\_\+encoding (\begin{DoxyParamCaption}\item[{IO\mbox{[}bytes\mbox{]}}]{fp }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Deduce the encoding of a source file from magic comment.
+
+It does this in the same way as the `Python interpreter`__
+
+.. __: https://docs.python.org/3.4/reference/lexical_analysis.html#encoding-declarations
+
+The ``fp`` argument should be a seekable file object.
+
+(From Jeff Dairiki)
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1util_a5a8dc7abc275bc8fd74a81f91c7c67a2}\label{namespacebabel_1_1util_a5a8dc7abc275bc8fd74a81f91c7c67a2} 
+\index{babel.util@{babel.util}!parse\_future\_flags@{parse\_future\_flags}}
+\index{parse\_future\_flags@{parse\_future\_flags}!babel.util@{babel.util}}
+\doxysubsubsection{\texorpdfstring{parse\_future\_flags()}{parse\_future\_flags()}}
+{\footnotesize\ttfamily  int babel.\+util.\+parse\+\_\+future\+\_\+flags (\begin{DoxyParamCaption}\item[{IO\mbox{[}bytes\mbox{]}}]{fp,  }\item[{str }]{encoding = {\ttfamily \textquotesingle{}latin-\/1\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse the compiler flags by :mod:`__future__` from the given Python
+code.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1util_ab6052081104162d2550726f8ff805745}\label{namespacebabel_1_1util_ab6052081104162d2550726f8ff805745} 
+\index{babel.util@{babel.util}!pathmatch@{pathmatch}}
+\index{pathmatch@{pathmatch}!babel.util@{babel.util}}
+\doxysubsubsection{\texorpdfstring{pathmatch()}{pathmatch()}}
+{\footnotesize\ttfamily  bool babel.\+util.\+pathmatch (\begin{DoxyParamCaption}\item[{str}]{pattern,  }\item[{str}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Extended pathname pattern matching.
+
+This function is similar to what is provided by the ``fnmatch`` module in
+the Python standard library, but:
+
+ * can match complete (relative or absolute) path names, and not just file
+   names, and
+ * also supports a convenience pattern ("**") to match files at any
+   directory level.
+
+Examples:
+
+>>> pathmatch('**.py', 'bar.py')
+True
+>>> pathmatch('**.py', 'foo/bar/baz.py')
+True
+>>> pathmatch('**.py', 'templates/index.html')
+False
+
+>>> pathmatch('./foo/**.py', 'foo/bar/baz.py')
+True
+>>> pathmatch('./foo/**.py', 'bar/baz.py')
+False
+
+>>> pathmatch('^foo/**.py', 'foo/bar/baz.py')
+True
+>>> pathmatch('^foo/**.py', 'bar/baz.py')
+False
+
+>>> pathmatch('**/templates/*.html', 'templates/index.html')
+True
+>>> pathmatch('**/templates/*.html', 'templates/foo/bar.html')
+False
+
+:param pattern: the glob pattern
+:param filename: the path name of the file to match against
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1util_a05f95ae985abd3f4ae0504bd17ca3f42}\label{namespacebabel_1_1util_a05f95ae985abd3f4ae0504bd17ca3f42} 
+\index{babel.util@{babel.util}!wraptext@{wraptext}}
+\index{wraptext@{wraptext}!babel.util@{babel.util}}
+\doxysubsubsection{\texorpdfstring{wraptext()}{wraptext()}}
+{\footnotesize\ttfamily  list\mbox{[}str\mbox{]} babel.\+util.\+wraptext (\begin{DoxyParamCaption}\item[{str}]{text,  }\item[{int }]{width = {\ttfamily 70},  }\item[{str }]{initial\+\_\+indent = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{str }]{subsequent\+\_\+indent = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Simple wrapper around the ``textwrap.wrap`` function in the standard
+library. This version does not wrap lines on hyphens in words. It also
+does not wrap PO file locations containing spaces.
+
+:param text: the text to wrap
+:param width: the maximum line width
+:param initial_indent: string that will be prepended to the first line of
+                       wrapped output
+:param subsequent_indent: string that will be prepended to all lines save
+                          the first of wrapped output
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacebabel_1_1util_abf2cfa058dae4cfa3d032204d0639757}\label{namespacebabel_1_1util_abf2cfa058dae4cfa3d032204d0639757} 
+\index{babel.util@{babel.util}!\_T@{\_T}}
+\index{\_T@{\_T}!babel.util@{babel.util}}
+\doxysubsubsection{\texorpdfstring{\_T}{\_T}}
+{\footnotesize\ttfamily babel.\+util.\+\_\+T = Type\+Var("{}\+\_\+\+T"{})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacebabel_1_1util_a37c45b1be58812f1e9c7492dc3bba1b4}\label{namespacebabel_1_1util_a37c45b1be58812f1e9c7492dc3bba1b4} 
+\index{babel.util@{babel.util}!DSTDIFF@{DSTDIFF}}
+\index{DSTDIFF@{DSTDIFF}!babel.util@{babel.util}}
+\doxysubsubsection{\texorpdfstring{DSTDIFF}{DSTDIFF}}
+{\footnotesize\ttfamily babel.\+util.\+DSTDIFF = localtime.\+DSTDIFF}
+
+\Hypertarget{namespacebabel_1_1util_a959922060b8b145b5020f759150366ed}\label{namespacebabel_1_1util_a959922060b8b145b5020f759150366ed} 
+\index{babel.util@{babel.util}!DSTOFFSET@{DSTOFFSET}}
+\index{DSTOFFSET@{DSTOFFSET}!babel.util@{babel.util}}
+\doxysubsubsection{\texorpdfstring{DSTOFFSET}{DSTOFFSET}}
+{\footnotesize\ttfamily babel.\+util.\+DSTOFFSET = localtime.\+DSTOFFSET}
+
+\Hypertarget{namespacebabel_1_1util_ab5f51ea23b5acc07583ac88e95a5a6e1}\label{namespacebabel_1_1util_ab5f51ea23b5acc07583ac88e95a5a6e1} 
+\index{babel.util@{babel.util}!get\_localzone@{get\_localzone}}
+\index{get\_localzone@{get\_localzone}!babel.util@{babel.util}}
+\doxysubsubsection{\texorpdfstring{get\_localzone}{get\_localzone}}
+{\footnotesize\ttfamily babel.\+util.\+get\+\_\+localzone = localtime.\+get\+\_\+localzone}
+
+\Hypertarget{namespacebabel_1_1util_aa6507c8e80a59ea138a596f7a2bbb867}\label{namespacebabel_1_1util_aa6507c8e80a59ea138a596f7a2bbb867} 
+\index{babel.util@{babel.util}!LOCALTZ@{LOCALTZ}}
+\index{LOCALTZ@{LOCALTZ}!babel.util@{babel.util}}
+\doxysubsubsection{\texorpdfstring{LOCALTZ}{LOCALTZ}}
+{\footnotesize\ttfamily babel.\+util.\+LOCALTZ = dates.\+LOCALTZ}
+
+\Hypertarget{namespacebabel_1_1util_aea0ddbd52c9c6911bb8d235631f25660}\label{namespacebabel_1_1util_aea0ddbd52c9c6911bb8d235631f25660} 
+\index{babel.util@{babel.util}!missing@{missing}}
+\index{missing@{missing}!babel.util@{babel.util}}
+\doxysubsubsection{\texorpdfstring{missing}{missing}}
+{\footnotesize\ttfamily babel.\+util.\+missing = object()}
+
+\Hypertarget{namespacebabel_1_1util_ac393c19e57404f5195ab0134752db086}\label{namespacebabel_1_1util_ac393c19e57404f5195ab0134752db086} 
+\index{babel.util@{babel.util}!odict@{odict}}
+\index{odict@{odict}!babel.util@{babel.util}}
+\doxysubsubsection{\texorpdfstring{odict}{odict}}
+{\footnotesize\ttfamily babel.\+util.\+odict = dict}
+
+\Hypertarget{namespacebabel_1_1util_a6d2a6e4cb2a72e48a47758f58d127678}\label{namespacebabel_1_1util_a6d2a6e4cb2a72e48a47758f58d127678} 
+\index{babel.util@{babel.util}!PYTHON\_FUTURE\_IMPORT\_re@{PYTHON\_FUTURE\_IMPORT\_re}}
+\index{PYTHON\_FUTURE\_IMPORT\_re@{PYTHON\_FUTURE\_IMPORT\_re}!babel.util@{babel.util}}
+\doxysubsubsection{\texorpdfstring{PYTHON\_FUTURE\_IMPORT\_re}{PYTHON\_FUTURE\_IMPORT\_re}}
+{\footnotesize\ttfamily babel.\+util.\+PYTHON\+\_\+\+FUTURE\+\_\+\+IMPORT\+\_\+re}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ re.compile(}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{r'from\(\backslash\)s+\_\_future\_\_\(\backslash\)s+import\(\backslash\)s+\(\backslash\)(*(.+)\(\backslash\))*'})}
+
+\end{DoxyCode}
+\Hypertarget{namespacebabel_1_1util_aa9f9ad79709cdcfb127bf056a1606cf9}\label{namespacebabel_1_1util_aa9f9ad79709cdcfb127bf056a1606cf9} 
+\index{babel.util@{babel.util}!PYTHON\_MAGIC\_COMMENT\_re@{PYTHON\_MAGIC\_COMMENT\_re}}
+\index{PYTHON\_MAGIC\_COMMENT\_re@{PYTHON\_MAGIC\_COMMENT\_re}!babel.util@{babel.util}}
+\doxysubsubsection{\texorpdfstring{PYTHON\_MAGIC\_COMMENT\_re}{PYTHON\_MAGIC\_COMMENT\_re}}
+{\footnotesize\ttfamily babel.\+util.\+PYTHON\+\_\+\+MAGIC\+\_\+\+COMMENT\+\_\+re}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ re.compile(}
+\DoxyCodeLine{00002\ \ \ \ \ br\textcolor{stringliteral}{'[\ \(\backslash\)t\(\backslash\)f]*\ \(\backslash\)\#\ .*\ coding[=:][\ \(\backslash\)t]*([-\/\(\backslash\)w.]+)'},\ re.VERBOSE)}
+
+\end{DoxyCode}
+\Hypertarget{namespacebabel_1_1util_aedae0e667da565a044add0b8f12cc16e}\label{namespacebabel_1_1util_aedae0e667da565a044add0b8f12cc16e} 
+\index{babel.util@{babel.util}!STDOFFSET@{STDOFFSET}}
+\index{STDOFFSET@{STDOFFSET}!babel.util@{babel.util}}
+\doxysubsubsection{\texorpdfstring{STDOFFSET}{STDOFFSET}}
+{\footnotesize\ttfamily babel.\+util.\+STDOFFSET = localtime.\+STDOFFSET}
+
+\Hypertarget{namespacebabel_1_1util_aa5bd61c17c8069b28ebbb5c4feebdefd}\label{namespacebabel_1_1util_aa5bd61c17c8069b28ebbb5c4feebdefd} 
+\index{babel.util@{babel.util}!UTC@{UTC}}
+\index{UTC@{UTC}!babel.util@{babel.util}}
+\doxysubsubsection{\texorpdfstring{UTC}{UTC}}
+{\footnotesize\ttfamily babel.\+util.\+UTC = dates.\+UTC}
+
+\Hypertarget{namespacebabel_1_1util_ad402c2ca8d81ed4cd2223277c71043b6}\label{namespacebabel_1_1util_ad402c2ca8d81ed4cd2223277c71043b6} 
+\index{babel.util@{babel.util}!ZERO@{ZERO}}
+\index{ZERO@{ZERO}!babel.util@{babel.util}}
+\doxysubsubsection{\texorpdfstring{ZERO}{ZERO}}
+{\footnotesize\ttfamily babel.\+util.\+ZERO = localtime.\+ZERO}
+

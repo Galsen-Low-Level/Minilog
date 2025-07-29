@@ -1,0 +1,69 @@
+\chapter{README}
+\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README}{}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README}\index{README@{README}}
+ ~\newline
+
+
+Serve as a fast local http server and FTP utility. ~\newline
+ You can also use it to browse files like File Manager but in the Navigator.
+
+Quite simple to use. Type the {\ttfamily -\/-\/help} flag to get the usage summary.
+
+NOTE\+: By default, if the target directory contains an {\ttfamily .html} or {\ttfamily .htm} index, priority is given to displaying these files.\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_autotoc_md16}{}\doxysubsubsection{\texorpdfstring{Project Structure}{Project Structure}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_autotoc_md16}
+\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_autotoc_md17}{}\doxysubsection{\texorpdfstring{base Structure}{base Structure}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_autotoc_md17}
+config / -\/ basic configuration, include/ -\/ header files src / -\/ source files\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_autotoc_md18}{}\doxysubsection{\texorpdfstring{After build}{After build}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_autotoc_md18}
+
+\begin{DoxyItemize}
+\item bin/ -\/ hold the final binary
+\item lib/ -\/ hold the needed library
+\end{DoxyItemize}\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_autotoc_md19}{}\doxysubsubsection{\texorpdfstring{Prelude}{Prelude}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_autotoc_md19}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ git\ clone\ https://github.com/Galsen-\/Low-\/Level/Ftp-\/FM\ -\/-\/recursive\ }
+
+\end{DoxyCode}
+\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_autotoc_md20}{}\doxysubsubsection{\texorpdfstring{Quick assessment}{Quick assessment}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_autotoc_md20}
+This section is for those who want to get a quick overview of the project using Docker. Here\textquotesingle{}s an example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_\_\_\_\_\_\_\_\_\_}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v\ \ \ \ \ \ \ \ \ \ v}
+\DoxyCodeLine{\$\ docker\ \ run\ \ \ -\/v\ \string~/Desktop/:/opt/local\ -\/p\ 9090:9090\ ftpfm\ \ \ /ftp-\/FM/bin/ftpFM\ \ -\/t\ /opt/local}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \string^-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\string^}
+
+\end{DoxyCode}
+ {\itshape The contents of the Desktop folder are volume-\/mounted on /opt/local and the program will point to this folder to display the contents of the volume-\/mounted folder.}\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_autotoc_md21}{}\doxysubsection{\texorpdfstring{\#\#\# Build}{\#\#\# Build}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_autotoc_md21}
+The default build tool is {\ttfamily Cmake}
+
+to build it, use the following command
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/B\ build\ }
+\DoxyCodeLine{cmake\ -\/-\/build\ build\ \ }
+
+\end{DoxyCode}
+
+
+the binary source is located in the ./bin folder the ./lib folder contains the libraries (you can browse them) ~\newline
+\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_autotoc_md22}{}\doxysubsubsection{\texorpdfstring{Have fun}{Have fun}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_autotoc_md22}
+launch binary \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ ./bin/ftpfm\ -\/h\ \#\ to\ get\ help\ }
+\DoxyCodeLine{\$\ ./bin/ftpfm\ \ \#\ launch\ on\ default\ port\ 9090\ }
+
+\end{DoxyCode}
+\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_autotoc_md23}{}\doxysubsubsection{\texorpdfstring{Screen\+Shot}{ScreenShot}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_autotoc_md23}
+
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+\_\+\+Happy Hacking Folks\+\_\+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+
+
+
+Feel free to contribute.
+
+We ❤️ Computers at all Levels.
+
+From Senegal. 🇸🇳 

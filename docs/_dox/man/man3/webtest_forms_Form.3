@@ -1,0 +1,310 @@
+.TH "webtest.forms.Form" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webtest.forms.Form
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBresponse\fP, \fBtext\fP, parser_features='html\&.parser')"
+.br
+.ti -1c
+.RI "\fB__setitem__\fP (self, name, value)"
+.br
+.ti -1c
+.RI "\fB__getitem__\fP (self, name)"
+.br
+.ti -1c
+.RI "\fBlint\fP (self)"
+.br
+.ti -1c
+.RI "\fBset\fP (self, name, value, index=None)"
+.br
+.ti -1c
+.RI "\fBget\fP (self, name, index=None, default=\fButils\&.NoDefault\fP)"
+.br
+.ti -1c
+.RI "\fBselect\fP (self, name, value=None, \fBtext\fP=None, index=None)"
+.br
+.ti -1c
+.RI "\fBselect_multiple\fP (self, name, value=None, texts=None, index=None)"
+.br
+.ti -1c
+.RI "\fBsubmit\fP (self, name=None, index=None, value=None, **args)"
+.br
+.ti -1c
+.RI "\fBupload_fields\fP (self)"
+.br
+.ti -1c
+.RI "\fBsubmit_fields\fP (self, name=None, index=None, submit_value=None)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBresponse\fP"
+.br
+.ti -1c
+.RI "\fBtext\fP"
+.br
+.ti -1c
+.RI "\fBhtml\fP"
+.br
+.ti -1c
+.RI "\fBaction\fP"
+.br
+.ti -1c
+.RI "\fBmethod\fP"
+.br
+.ti -1c
+.RI "\fBid\fP"
+.br
+.ti -1c
+.RI "\fBenctype\fP"
+.br
+.ti -1c
+.RI "\fBfield_order\fP"
+.br
+.ti -1c
+.RI "\fBfields\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBFieldClass\fP = \fBField\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_parse_fields\fP (self)"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_tag_re\fP = re\&.compile(r'<(/?)([a\-z0\-9_\\\-]*)([^>]*?)>', re\&.I)"
+.br
+.ti -1c
+.RI "\fB_label_re\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This object represents a form that has been found in a page\&.
+
+:param response: `webob\&.response\&.TestResponse` instance
+:param text: Unparsed html of the form
+
+\&.\&. attribute:: text
+
+    the full HTML of the form\&.
+
+\&.\&. attribute:: action
+
+    the relative URI of the action\&.
+
+\&.\&. attribute:: method
+
+    the HTTP method (e\&.g\&., ``'GET'``)\&.
+
+\&.\&. attribute:: id
+
+    the id, or None if not given\&.
+
+\&.\&. attribute:: enctype
+
+    encoding of the form submission
+
+\&.\&. attribute:: fields
+
+    a dictionary of fields, each value is a list of fields by
+    that name\&.  ``<input type=\\'radio\\'>`` and ``<select>`` are
+    both represented as single fields with multiple options\&.
+
+\&.\&. attribute:: field_order
+
+    Ordered list of field names as found in the html\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "webtest\&.forms\&.Form\&.__init__ ( self,  response,  text,  parser_features = \fC'html\&.parser'\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "webtest\&.forms\&.Form\&.__getitem__ ( self,  name)"
+
+.PP
+.nf
+Get the named field object (ambiguity is an error)\&.
+.fi
+.PP
+ 
+.SS "webtest\&.forms\&.Form\&.__repr__ ( self)"
+
+.SS "webtest\&.forms\&.Form\&.__setitem__ ( self,  name,  value)"
+
+.PP
+.nf
+Set the value of the named field\&. If there is 0 or multiple fields
+by that name, it is an error\&.
+
+Multiple checkboxes of the same name are special-cased; a list may be
+assigned to them to check the checkboxes whose value is present in the
+list (and uncheck all others)\&.
+
+Setting the value of a ``<select>`` selects the given option (and
+confirms it is an option)\&. Setting radio fields does the same\&.
+Checkboxes get boolean values\&. You cannot set hidden fields or buttons\&.
+
+Use ``\&.set()`` if there is any ambiguity and you must provide an index\&.
+
+.fi
+.PP
+ 
+.SS "webtest\&.forms\&.Form\&._parse_fields ( self)\fC [protected]\fP"
+
+.SS "webtest\&.forms\&.Form\&.get ( self,  name,  index = \fCNone\fP,  default = \fC\fButils\&.NoDefault\fP\fP)"
+
+.PP
+.nf
+Get the named/indexed field object, or ``default`` if no field is
+found\&. Throws an AssertionError if no field is found and no ``default``
+was given\&.
+
+.fi
+.PP
+ 
+.SS "webtest\&.forms\&.Form\&.lint ( self)"
+
+.PP
+.nf
+Check that the html is valid:
+
+- each field must have an id
+- each field must have a label
+.fi
+.PP
+ 
+.SS "webtest\&.forms\&.Form\&.select ( self,  name,  value = \fCNone\fP,  text = \fCNone\fP,  index = \fCNone\fP)"
+
+.PP
+.nf
+Like ``\&.set()``, except also confirms the target is a ``<select>``
+and allows selecting options by text\&.
+
+.fi
+.PP
+ 
+.SS "webtest\&.forms\&.Form\&.select_multiple ( self,  name,  value = \fCNone\fP,  texts = \fCNone\fP,  index = \fCNone\fP)"
+
+.PP
+.nf
+Like ``\&.set()``, except also confirms the target is a
+``<select multiple>`` and allows selecting options by text\&.
+
+.fi
+.PP
+ 
+.SS "webtest\&.forms\&.Form\&.set ( self,  name,  value,  index = \fCNone\fP)"
+
+.PP
+.nf
+Set the given name, using ``index`` to disambiguate\&.
+.fi
+.PP
+ 
+.SS "webtest\&.forms\&.Form\&.submit ( self,  name = \fCNone\fP,  index = \fCNone\fP,  value = \fCNone\fP, ** args)"
+
+.PP
+.nf
+Submits the form\&.  If ``name`` is given, then also select that
+button (using ``index`` or ``value`` to disambiguate)``\&.
+
+Any extra keyword arguments are passed to the
+:meth:`webtest\&.TestResponse\&.get` or
+:meth:`webtest\&.TestResponse\&.post` method\&.
+
+Returns a :class:`webtest\&.TestResponse` object\&.
+.fi
+.PP
+ 
+.SS "webtest\&.forms\&.Form\&.submit_fields ( self,  name = \fCNone\fP,  index = \fCNone\fP,  submit_value = \fCNone\fP)"
+
+.PP
+.nf
+Return a list of ``[(name, value), \&.\&.\&.]`` for the current state of
+the form\&.
+
+:param name: Same as for :meth:`submit`
+:param index: Same as for :meth:`submit`
+.fi
+.PP
+ 
+.SS "webtest\&.forms\&.Form\&.upload_fields ( self)"
+
+.PP
+.nf
+Return a list of file field tuples of the form::
+
+    (field name, file name)
+
+or::
+
+    (field name, file name, file contents)\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "webtest\&.forms\&.Form\&._label_re\fC [static]\fP, \fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  re\&.compile(
+        ,
+        re\&.I)
+.fi
+
+.SS "webtest\&.forms\&.Form\&._tag_re = re\&.compile(r'<(/?)([a\-z0\-9_\\\-]*)([^>]*?)>', re\&.I)\fC [static]\fP, \fC [protected]\fP"
+
+.SS "webtest\&.forms\&.Form\&.action"
+
+.SS "webtest\&.forms\&.Form\&.enctype"
+
+.SS "webtest\&.forms\&.Form\&.field_order"
+
+.SS "webtest\&.forms\&.Form\&.FieldClass = \fBField\fP\fC [static]\fP"
+
+.SS "webtest\&.forms\&.Form\&.fields"
+
+.SS "webtest\&.forms\&.Form\&.html"
+
+.SS "webtest\&.forms\&.Form\&.id"
+
+.SS "webtest\&.forms\&.Form\&.method"
+
+.SS "webtest\&.forms\&.Form\&.response"
+
+.SS "webtest\&.forms\&.Form\&.text"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

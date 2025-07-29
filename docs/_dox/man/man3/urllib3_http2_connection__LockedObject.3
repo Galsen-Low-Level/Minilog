@@ -1,0 +1,71 @@
+.TH "urllib3.http2.connection._LockedObject" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+urllib3.http2.connection._LockedObject
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits typing\&.Generic, and T\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBT\fP obj)"
+.br
+.ti -1c
+.RI "\fBT\fP \fB__enter__\fP (self)"
+.br
+.ti -1c
+.RI "None \fB__exit__\fP (self, type[BaseException]|None exc_type, BaseException|None exc_val, types\&.TracebackType|None exc_tb)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBlock\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_obj\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A wrapper class that hides a specific object behind a lock\&.
+The goal here is to provide a simple way to protect access to an object
+that cannot safely be simultaneously accessed from multiple threads\&. The
+intended use of this class is simple: take hold of it with a context
+manager, which returns the protected object\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "urllib3\&.http2\&.connection\&._LockedObject\&.__init__ ( self, \fBT\fP obj)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " \fBT\fP urllib3\&.http2\&.connection\&._LockedObject\&.__enter__ ( self)"
+
+.SS " None urllib3\&.http2\&.connection\&._LockedObject\&.__exit__ ( self, type[BaseException] | None exc_type, BaseException | None exc_val, types\&.TracebackType | None exc_tb)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "urllib3\&.http2\&.connection\&._LockedObject\&._obj\fC [protected]\fP"
+
+.SS "urllib3\&.http2\&.connection\&._LockedObject\&.lock"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

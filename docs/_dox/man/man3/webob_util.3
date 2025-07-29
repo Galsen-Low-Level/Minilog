@@ -1,0 +1,99 @@
+.TH "webob.util" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webob.util
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBhtml_escape\fP (s)"
+.br
+.ti -1c
+.RI "\fBheader_docstring\fP (header, rfc_section)"
+.br
+.ti -1c
+.RI "\fBwarn_deprecation\fP (text, version, stacklevel)"
+.br
+.ti -1c
+.RI "\fBstrings_differ\fP (string1, string2, compare_digest=compare_digest)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "dict \fBstatus_reasons\fP"
+.br
+.ti -1c
+.RI "dict \fBstatus_generic_reasons\fP"
+.br
+.ti -1c
+.RI "\fBcompare_digest\fP = None"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "webob\&.util\&.header_docstring ( header,  rfc_section)"
+
+.SS "webob\&.util\&.html_escape ( s)"
+
+.PP
+.nf
+HTML-escape a string or object
+
+This converts any non-string objects passed into it to strings
+(actually, using ``unicode()``)\&.  All values returned are
+non-unicode strings (using ``&#num;`` entities for all non-ASCII
+characters)\&.
+
+None is treated specially, and returns the empty string\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.util\&.strings_differ ( string1,  string2,  compare_digest = \fCcompare_digest\fP)"
+
+.PP
+.nf
+Check whether two strings differ while avoiding timing attacks\&.
+
+This function returns True if the given strings differ and False
+if they are equal\&.  It's careful not to leak information about *where*
+they differ as a result of its running time, which can be very important
+to avoid certain timing-related crypto attacks:
+
+    http://seb\&.dbzteam\&.org/crypto/python-oauth-timing-hmac\&.pdf
+
+\&.\&. versionchanged:: 1\&.5
+   Support :func:`hmac\&.compare_digest` if it is available (Python 2\&.7\&.7+
+   and Python 3\&.3+)\&.
+.fi
+.PP
+ 
+.SS "webob\&.util\&.warn_deprecation ( text,  version,  stacklevel)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "webob\&.util\&.compare_digest = None"
+
+.SS "dict webob\&.util\&.status_generic_reasons"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     1: 'Continue',
+3     2: 'Success',
+4     3: 'Multiple Choices',
+5     4: 'Unknown Client Error',
+6     5: 'Unknown Server Error',
+7 }
+.fi
+
+.SS "dict webob\&.util\&.status_reasons"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

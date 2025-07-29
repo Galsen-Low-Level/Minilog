@@ -1,0 +1,133 @@
+.TH "pip._vendor.packaging._tokenizer.Tokenizer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.packaging._tokenizer.Tokenizer
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str \fBsource\fP, *dict[str, str|re\&.Pattern[str]] \fBrules\fP)"
+.br
+.ti -1c
+.RI "None \fBconsume\fP (self, str name)"
+.br
+.ti -1c
+.RI "bool \fBcheck\fP (self, str name, *bool peek=False)"
+.br
+.ti -1c
+.RI "\fBToken\fP \fBexpect\fP (self, str name, *str expected)"
+.br
+.ti -1c
+.RI "\fBToken\fP \fBread\fP (self)"
+.br
+.ti -1c
+.RI "NoReturn \fBraise_syntax_error\fP (self, str message, *int|None span_start=None, int|None span_end=None)"
+.br
+.ti -1c
+.RI "Iterator[None] \fBenclosing_tokens\fP (self, str open_token, str close_token, *str around)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsource\fP"
+.br
+.ti -1c
+.RI "\fBposition\fP"
+.br
+.ti -1c
+.RI "\fBrules\fP"
+.br
+.ti -1c
+.RI "\fBnext_token\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Context-sensitive token parsing\&.
+
+Provides methods to examine the input stream to check whether the next token
+matches\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._vendor\&.packaging\&._tokenizer\&.Tokenizer\&.__init__ ( self, str source, *dict[str, str | re\&.Pattern[str]] rules)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " bool pip\&._vendor\&.packaging\&._tokenizer\&.Tokenizer\&.check ( self, str name, *bool  peek = \fCFalse\fP)"
+
+.PP
+.nf
+Check whether the next token has the provided name\&.
+
+By default, if the check succeeds, the token *must* be read before
+another check\&. If `peek` is set to `True`, the token is not loaded and
+would need to be checked again\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.packaging\&._tokenizer\&.Tokenizer\&.consume ( self, str name)"
+
+.PP
+.nf
+Move beyond provided token name, if at current position\&.
+.fi
+.PP
+ 
+.SS " Iterator[None] pip\&._vendor\&.packaging\&._tokenizer\&.Tokenizer\&.enclosing_tokens ( self, str open_token, str close_token, *str
+     around)"
+
+.SS " \fBToken\fP pip\&._vendor\&.packaging\&._tokenizer\&.Tokenizer\&.expect ( self, str name, *str expected)"
+
+.PP
+.nf
+Expect a certain token name next, failing with a syntax error otherwise\&.
+
+The token is *not* read\&.
+
+.fi
+.PP
+ 
+.SS " NoReturn pip\&._vendor\&.packaging\&._tokenizer\&.Tokenizer\&.raise_syntax_error ( self, str message, *int | None  span_start = \fCNone\fP, int | None  span_end = \fCNone\fP)"
+
+.PP
+.nf
+Raise ParserSyntaxError at the given position\&.
+.fi
+.PP
+ 
+.SS " \fBToken\fP pip\&._vendor\&.packaging\&._tokenizer\&.Tokenizer\&.read ( self)"
+
+.PP
+.nf
+Consume the next token and return it\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.packaging\&._tokenizer\&.Tokenizer\&.next_token"
+
+.SS "pip\&._vendor\&.packaging\&._tokenizer\&.Tokenizer\&.position"
+
+.SS "pip\&._vendor\&.packaging\&._tokenizer\&.Tokenizer\&.rules"
+
+.SS "pip\&._vendor\&.packaging\&._tokenizer\&.Tokenizer\&.source"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

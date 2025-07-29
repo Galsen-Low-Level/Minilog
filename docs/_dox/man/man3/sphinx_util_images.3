@@ -1,0 +1,102 @@
+.TH "sphinx.util.images" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.util.images
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBDataURI\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "tuple[int, int]|None \fBget_image_size\fP (str|PathLike[str] filename)"
+.br
+.ti -1c
+.RI "str \fBguess_mimetype\fP (PathLike[str]|str filename, str default)"
+.br
+.ti -1c
+.RI "str|None \fBguess_mimetype\fP (PathLike[str]|str filename, None default=None)"
+.br
+.ti -1c
+.RI "str|None \fBguess_mimetype\fP (PathLike[str]|str filename='', str|None default=None)"
+.br
+.ti -1c
+.RI "str|None \fBget_image_extension\fP (str mimetype)"
+.br
+.ti -1c
+.RI "\fBDataURI\fP|None \fBparse_data_uri\fP (str uri)"
+.br
+.ti -1c
+.RI "str \fB_image_type_from_file\fP (PathLike[str]|str filename)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "bool \fBPILLOW_AVAILABLE\fP = True"
+.br
+.ti -1c
+.RI "dict \fBmime_suffixes\fP"
+.br
+.ti -1c
+.RI "dict \fB_suffix_from_mime\fP = {v: k for k, v in reversed(mime_suffixes\&.items())}"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Image utility functions for Sphinx\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " str sphinx\&.util\&.images\&._image_type_from_file (PathLike[str] | str filename)\fC [protected]\fP"
+
+.SS " str | None sphinx\&.util\&.images\&.get_image_extension (str mimetype)"
+
+.SS " tuple[int, int] | None sphinx\&.util\&.images\&.get_image_size (str | PathLike[str] filename)"
+
+.SS " str | None sphinx\&.util\&.images\&.guess_mimetype (PathLike[str] | str filename, None  default = \fCNone\fP)"
+
+.SS " str sphinx\&.util\&.images\&.guess_mimetype (PathLike[str] | str filename, str default)"
+
+.SS " str | None sphinx\&.util\&.images\&.guess_mimetype (PathLike[str] | str  filename = \fC''\fP, str | None  default = \fCNone\fP)"
+
+.SS " \fBDataURI\fP | None sphinx\&.util\&.images\&.parse_data_uri (str uri)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "dict sphinx\&.util\&.images\&._suffix_from_mime = {v: k for k, v in reversed(mime_suffixes\&.items())}\fC [protected]\fP"
+
+.SS "dict sphinx\&.util\&.images\&.mime_suffixes"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     '\&.gif': 'image/gif',
+3     '\&.jpg': 'image/jpeg',
+4     '\&.png': 'image/png',
+5     '\&.pdf': 'application/pdf',
+6     '\&.svg': 'image/svg+xml',
+7     '\&.svgz': 'image/svg+xml',
+8     '\&.ai': 'application/illustrator',
+9     '\&.webp': 'image/webp',
+10 }
+.fi
+
+.SS "bool sphinx\&.util\&.images\&.PILLOW_AVAILABLE = True"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

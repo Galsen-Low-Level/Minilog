@@ -1,0 +1,185 @@
+.TH "docutils.parsers.Parser" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.parsers.Parser
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.Component\fP\&.
+.PP
+Inherited by \fBdocutils\&.parsers\&.null\&.Parser\fP, \fBdocutils\&.parsers\&.rst\&.Parser\fP, and \fBsphinx\&.parsers\&.Parser\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBparse\fP (self, \fBinputstring\fP, \fBdocument\fP)"
+.br
+.ti -1c
+.RI "\fBsetup_parse\fP (self, \fBinputstring\fP, \fBdocument\fP)"
+.br
+.ti -1c
+.RI "\fBfinish_parse\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.Component\fP
+.in +1c
+.ti -1c
+.RI "\fBsupports\fP (self, format)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "\fBget_transforms\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBinputstring\fP"
+.br
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_transforms\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBsettings_spec\fP"
+.br
+.ti -1c
+.RI "str \fBcomponent_type\fP = 'parser'"
+.br
+.ti -1c
+.RI "str \fBconfig_section\fP = 'parsers'"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.Component\fP
+.in +1c
+.ti -1c
+.RI "\fBcomponent_type\fP = None"
+.br
+.ti -1c
+.RI "tuple \fBsupported\fP = ()"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.SettingsSpec\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBsettings_spec\fP = ()"
+.br
+.ti -1c
+.RI "\fBsettings_defaults\fP = None"
+.br
+.ti -1c
+.RI "\fBsettings_default_overrides\fP = None"
+.br
+.ti -1c
+.RI "tuple \fBrelative_path_settings\fP = ()"
+.br
+.ti -1c
+.RI "\fBconfig_section\fP = None"
+.br
+.ti -1c
+.RI "\fBconfig_section_dependencies\fP = None"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBdefault_transforms\fP = ()"
+.br
+.ti -1c
+.RI "tuple \fBunknown_reference_resolvers\fP = ()"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.parsers\&.Parser\&.finish_parse ( self)"
+
+.PP
+.nf
+Finalize parse details\&.  Call at end of `self\&.parse()`\&.
+.fi
+.PP
+ 
+.SS "docutils\&.parsers\&.Parser\&.parse ( self,  inputstring,  document)"
+
+.PP
+.nf
+Override to parse `inputstring` into document tree `document`\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBdocutils\&.parsers\&.null\&.Parser\fP, \fBdocutils\&.parsers\&.rst\&.Parser\fP, and \fBsphinx\&.parsers\&.RSTParser\fP\&.
+.SS "docutils\&.parsers\&.Parser\&.setup_parse ( self,  inputstring,  document)"
+
+.PP
+.nf
+Initial parse setup\&.  Call at start of `self\&.parse()`\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "str docutils\&.parsers\&.Parser\&.component_type = 'parser'\fC [static]\fP"
+
+.SS "str docutils\&.parsers\&.Parser\&.config_section = 'parsers'\fC [static]\fP"
+
+.SS "docutils\&.parsers\&.Parser\&.document"
+
+.SS "docutils\&.parsers\&.Parser\&.inputstring"
+
+.SS "tuple docutils\&.parsers\&.Parser\&.settings_spec\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  (
+        'Generic Parser Options',
+        None,
+        (('Disable directives that insert the contents of an external file; '
+          'replaced with a "warning" system message\&.',
+          ['\-\-no\-file\-insertion'],
+          {'action': 'store_false', 'default': 1,
+           'dest': 'file_insertion_enabled',
+           'validator': frontend\&.validate_boolean}),
+         ('Enable directives that insert the contents '
+          'of an external file\&. (default)',
+          ['\-\-file\-insertion\-enabled'],
+          {'action': 'store_true'}),
+         ('Disable the "raw" directive; '
+          'replaced with a "warning" system message\&.',
+          ['\-\-no\-raw'],
+          {'action': 'store_false', 'default': 1, 'dest': 'raw_enabled',
+           'validator': frontend\&.validate_boolean}),
+         ('Enable the "raw" directive\&. (default)',
+          ['\-\-raw\-enabled'],
+          {'action': 'store_true'}),
+         ('Maximal number of characters in an input line\&. Default 10 000\&.',
+          ['\-\-line\-length\-limit'],
+          {'metavar': '<length>', 'type': 'int', 'default': 10000,
+           'validator': frontend\&.validate_nonnegative_int}),
+         )
+        )
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

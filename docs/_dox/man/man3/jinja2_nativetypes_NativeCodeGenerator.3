@@ -1,0 +1,521 @@
+.TH "jinja2.nativetypes.NativeCodeGenerator" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.nativetypes.NativeCodeGenerator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBjinja2\&.compiler\&.CodeGenerator\fP\&.
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fB_output_const_repr\fP (self, t\&.Iterable[t\&.Any] group)"
+.br
+.ti -1c
+.RI "t\&.Any \fB_output_child_to_const\fP (self, \fBnodes\&.Expr\fP node, \fBFrame\fP frame, \fBCodeGenerator\&._FinalizeInfo\fP finalize)"
+.br
+.ti -1c
+.RI "None \fB_output_child_pre\fP (self, \fBnodes\&.Expr\fP node, \fBFrame\fP frame, \fBCodeGenerator\&._FinalizeInfo\fP finalize)"
+.br
+.ti -1c
+.RI "None \fB_output_child_post\fP (self, \fBnodes\&.Expr\fP node, \fBFrame\fP frame, \fBCodeGenerator\&._FinalizeInfo\fP finalize)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBjinja2\&.compiler\&.CodeGenerator\fP
+.in +1c
+.ti -1c
+.RI "None \fB_import_common\fP (self, t\&.Union[\fBnodes\&.Import\fP, \fBnodes\&.FromImport\fP] node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "\fB_FinalizeInfo\fP \fB_make_finalize\fP (self)"
+.br
+.ti -1c
+.RI "t\&.Iterator[None] \fB_filter_test_common\fP (self, t\&.Union[\fBnodes\&.Filter\fP, \fBnodes\&.Test\fP] node, \fBFrame\fP frame, bool is_filter)"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "t\&.Any \fB_default_finalize\fP (t\&.Any value)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBjinja2\&.compiler\&.CodeGenerator\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, 'Environment' \fBenvironment\fP, t\&.Optional[str] \fBname\fP, t\&.Optional[str] \fBfilename\fP, t\&.Optional[t\&.TextIO] \fBstream\fP=None, bool \fBdefer_init\fP=False, bool \fBoptimized\fP=True)"
+.br
+.ti -1c
+.RI "bool \fBoptimized\fP (self)"
+.br
+.ti -1c
+.RI "'te\&.NoReturn' \fBfail\fP (self, str msg, int lineno)"
+.br
+.ti -1c
+.RI "str \fBtemporary_identifier\fP (self)"
+.br
+.ti -1c
+.RI "None \fBbuffer\fP (self, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBreturn_buffer_contents\fP (self, \fBFrame\fP frame, bool force_unescaped=False)"
+.br
+.ti -1c
+.RI "None \fBindent\fP (self)"
+.br
+.ti -1c
+.RI "None \fBoutdent\fP (self, int step=1)"
+.br
+.ti -1c
+.RI "None \fBstart_write\fP (self, \fBFrame\fP frame, t\&.Optional[\fBnodes\&.Node\fP] node=None)"
+.br
+.ti -1c
+.RI "None \fBend_write\fP (self, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBsimple_write\fP (self, str s, \fBFrame\fP frame, t\&.Optional[\fBnodes\&.Node\fP] node=None)"
+.br
+.ti -1c
+.RI "None \fBblockvisit\fP (self, t\&.Iterable[\fBnodes\&.Node\fP] nodes, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBwrite\fP (self, str x)"
+.br
+.ti -1c
+.RI "None \fBwriteline\fP (self, str x, t\&.Optional[\fBnodes\&.Node\fP] node=None, int extra=0)"
+.br
+.ti -1c
+.RI "None \fBnewline\fP (self, t\&.Optional[\fBnodes\&.Node\fP] node=None, int extra=0)"
+.br
+.ti -1c
+.RI "None \fBsignature\fP (self, t\&.Union[\fBnodes\&.Call\fP, \fBnodes\&.Filter\fP, \fBnodes\&.Test\fP] node, \fBFrame\fP frame, t\&.Optional[t\&.Mapping[str, t\&.Any]] extra_kwargs=None)"
+.br
+.ti -1c
+.RI "None \fBpull_dependencies\fP (self, t\&.Iterable[\fBnodes\&.Node\fP] nodes)"
+.br
+.ti -1c
+.RI "None \fBenter_frame\fP (self, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBleave_frame\fP (self, \fBFrame\fP frame, bool with_python_scope=False)"
+.br
+.ti -1c
+.RI "str \fBchoose_async\fP (self, str async_value='async ', str sync_value='')"
+.br
+.ti -1c
+.RI "str \fBfunc\fP (self, str \fBname\fP)"
+.br
+.ti -1c
+.RI "t\&.Tuple[\fBFrame\fP, \fBMacroRef\fP] \fBmacro_body\fP (self, t\&.Union[\fBnodes\&.Macro\fP, \fBnodes\&.CallBlock\fP] node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBmacro_def\fP (self, \fBMacroRef\fP macro_ref, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "str \fBposition\fP (self, \fBnodes\&.Node\fP node)"
+.br
+.ti -1c
+.RI "str \fBdump_local_context\fP (self, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBwrite_commons\fP (self)"
+.br
+.ti -1c
+.RI "None \fBpush_parameter_definitions\fP (self, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBpop_parameter_definitions\fP (self)"
+.br
+.ti -1c
+.RI "None \fBmark_parameter_stored\fP (self, str target)"
+.br
+.ti -1c
+.RI "None \fBpush_context_reference\fP (self, str target)"
+.br
+.ti -1c
+.RI "None \fBpop_context_reference\fP (self)"
+.br
+.ti -1c
+.RI "str \fBget_context_ref\fP (self)"
+.br
+.ti -1c
+.RI "str \fBget_resolve_func\fP (self)"
+.br
+.ti -1c
+.RI "str \fBderive_context\fP (self, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "bool \fBparameter_is_undeclared\fP (self, str target)"
+.br
+.ti -1c
+.RI "None \fBpush_assign_tracking\fP (self)"
+.br
+.ti -1c
+.RI "None \fBpop_assign_tracking\fP (self, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Template\fP (self, \fBnodes\&.Template\fP node, t\&.Optional[\fBFrame\fP] frame=None)"
+.br
+.ti -1c
+.RI "None \fBvisit_Block\fP (self, \fBnodes\&.Block\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Extends\fP (self, \fBnodes\&.Extends\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Include\fP (self, \fBnodes\&.Include\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Import\fP (self, \fBnodes\&.Import\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_FromImport\fP (self, \fBnodes\&.FromImport\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_For\fP (self, \fBnodes\&.For\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_If\fP (self, \fBnodes\&.If\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Macro\fP (self, \fBnodes\&.Macro\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_CallBlock\fP (self, \fBnodes\&.CallBlock\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_FilterBlock\fP (self, \fBnodes\&.FilterBlock\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_With\fP (self, \fBnodes\&.With\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_ExprStmt\fP (self, \fBnodes\&.ExprStmt\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Output\fP (self, \fBnodes\&.Output\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Assign\fP (self, \fBnodes\&.Assign\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_AssignBlock\fP (self, \fBnodes\&.AssignBlock\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Name\fP (self, \fBnodes\&.Name\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_NSRef\fP (self, \fBnodes\&.NSRef\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Const\fP (self, \fBnodes\&.Const\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_TemplateData\fP (self, \fBnodes\&.TemplateData\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Tuple\fP (self, \fBnodes\&.Tuple\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_List\fP (self, \fBnodes\&.List\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Dict\fP (self, \fBnodes\&.Dict\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Concat\fP (self, \fBnodes\&.Concat\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Compare\fP (self, \fBnodes\&.Compare\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Operand\fP (self, \fBnodes\&.Operand\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Getattr\fP (self, \fBnodes\&.Getattr\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Getitem\fP (self, \fBnodes\&.Getitem\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Slice\fP (self, \fBnodes\&.Slice\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Filter\fP (self, \fBnodes\&.Filter\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Test\fP (self, \fBnodes\&.Test\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_CondExpr\fP (self, \fBnodes\&.CondExpr\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Call\fP (self, \fBnodes\&.Call\fP node, \fBFrame\fP frame, bool forward_caller=False)"
+.br
+.ti -1c
+.RI "None \fBvisit_Keyword\fP (self, \fBnodes\&.Keyword\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_MarkSafe\fP (self, \fBnodes\&.MarkSafe\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_MarkSafeIfAutoescape\fP (self, \fBnodes\&.MarkSafeIfAutoescape\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_EnvironmentAttribute\fP (self, \fBnodes\&.EnvironmentAttribute\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_ExtensionAttribute\fP (self, \fBnodes\&.ExtensionAttribute\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_ImportedName\fP (self, \fBnodes\&.ImportedName\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_InternalName\fP (self, \fBnodes\&.InternalName\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_ContextReference\fP (self, \fBnodes\&.ContextReference\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_DerivedContextReference\fP (self, \fBnodes\&.DerivedContextReference\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Continue\fP (self, \fBnodes\&.Continue\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Break\fP (self, \fBnodes\&.Break\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_Scope\fP (self, \fBnodes\&.Scope\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_OverlayScope\fP (self, \fBnodes\&.OverlayScope\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_EvalContextModifier\fP (self, \fBnodes\&.EvalContextModifier\fP node, \fBFrame\fP frame)"
+.br
+.ti -1c
+.RI "None \fBvisit_ScopedEvalContextModifier\fP (self, \fBnodes\&.ScopedEvalContextModifier\fP node, \fBFrame\fP frame)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBjinja2\&.visitor\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "'t\&.Optional[\fBVisitCallable\fP]' \fBget_visitor\fP (self, \fBNode\fP node)"
+.br
+.ti -1c
+.RI "t\&.Any \fBvisit\fP (self, \fBNode\fP node, *t\&.Any args, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "t\&.Any \fBgeneric_visit\fP (self, \fBNode\fP node, *t\&.Any args, **t\&.Any kwargs)"
+.br
+.in -1c
+
+Public Attributes inherited from \fBjinja2\&.compiler\&.CodeGenerator\fP
+.in +1c
+.ti -1c
+.RI "\fBenvironment\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBfilename\fP"
+.br
+.ti -1c
+.RI "\fBstream\fP"
+.br
+.ti -1c
+.RI "\fBcreated_block_context\fP"
+.br
+.ti -1c
+.RI "\fBdefer_init\fP"
+.br
+.ti -1c
+.RI "\fBoptimizer\fP"
+.br
+.ti -1c
+.RI "\fBextends_so_far\fP"
+.br
+.ti -1c
+.RI "\fBhas_known_extends\fP"
+.br
+.ti -1c
+.RI "\fBcode_lineno\fP"
+.br
+.ti -1c
+.RI "\fBfilters\fP"
+.br
+.ti -1c
+.RI "\fBtests\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBjinja2\&.compiler\&.CodeGenerator\fP
+.in +1c
+.ti -1c
+.RI "\fBvisit_Add\fP = \fB_make_binop\fP('+')"
+.br
+.ti -1c
+.RI "\fBvisit_Sub\fP = \fB_make_binop\fP('\-')"
+.br
+.ti -1c
+.RI "\fBvisit_Mul\fP = \fB_make_binop\fP('*')"
+.br
+.ti -1c
+.RI "\fBvisit_Div\fP = \fB_make_binop\fP('/')"
+.br
+.ti -1c
+.RI "\fBvisit_FloorDiv\fP = \fB_make_binop\fP('//')"
+.br
+.ti -1c
+.RI "\fBvisit_Pow\fP = \fB_make_binop\fP('**')"
+.br
+.ti -1c
+.RI "\fBvisit_Mod\fP = \fB_make_binop\fP('%')"
+.br
+.ti -1c
+.RI "\fBvisit_And\fP = \fB_make_binop\fP('and')"
+.br
+.ti -1c
+.RI "\fBvisit_Or\fP = \fB_make_binop\fP('or')"
+.br
+.ti -1c
+.RI "\fBvisit_Pos\fP = \fB_make_unop\fP('+')"
+.br
+.ti -1c
+.RI "\fBvisit_Neg\fP = \fB_make_unop\fP('\-')"
+.br
+.ti -1c
+.RI "\fBvisit_Not\fP = \fB_make_unop\fP('not ')"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBjinja2\&.compiler\&.CodeGenerator\fP
+.in +1c
+.ti -1c
+.RI "\fB_new_lines\fP"
+.br
+.ti -1c
+.RI "\fB_last_line\fP"
+.br
+.ti -1c
+.RI "\fB_first_write\fP"
+.br
+.ti -1c
+.RI "\fB_last_identifier\fP"
+.br
+.ti -1c
+.RI "\fB_indentation\fP"
+.br
+.ti -1c
+.RI "\fB_context_reference_stack\fP"
+.br
+.ti -1c
+.RI "\fB_write_debug_info\fP"
+.br
+.ti -1c
+.RI "\fB_finalize\fP"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBjinja2\&.compiler\&.CodeGenerator\fP
+.in +1c
+.ti -1c
+.RI "t \fB_finalize\fP = None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A code generator which renders Python types by not adding
+``str()`` around output nodes\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " t\&.Any jinja2\&.nativetypes\&.NativeCodeGenerator\&._default_finalize (t\&.Any value)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+.nf
+The default finalize function if the environment isn't
+configured with one\&. Or, if the environment has one, this is
+called on that function's output for constants\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.compiler\&.CodeGenerator\fP\&.
+.SS " None jinja2\&.nativetypes\&.NativeCodeGenerator\&._output_child_post ( self, \fBnodes\&.Expr\fP node, \fBFrame\fP frame, \fBCodeGenerator\&._FinalizeInfo\fP
+     finalize)\fC [protected]\fP"
+
+.PP
+.nf
+Output extra source code after visiting a child of an
+``Output`` node\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.compiler\&.CodeGenerator\fP\&.
+.SS " None jinja2\&.nativetypes\&.NativeCodeGenerator\&._output_child_pre ( self, \fBnodes\&.Expr\fP node, \fBFrame\fP frame, \fBCodeGenerator\&._FinalizeInfo\fP
+     finalize)\fC [protected]\fP"
+
+.PP
+.nf
+Output extra source code before visiting a child of an
+``Output`` node\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.compiler\&.CodeGenerator\fP\&.
+.SS " t\&.Any jinja2\&.nativetypes\&.NativeCodeGenerator\&._output_child_to_const ( self, \fBnodes\&.Expr\fP node, \fBFrame\fP frame, \fBCodeGenerator\&._FinalizeInfo\fP
+     finalize)\fC [protected]\fP"
+
+.PP
+.nf
+Try to optimize a child of an ``Output`` node by trying to
+convert it to constant, finalized data at compile time\&.
+
+If :exc:`Impossible` is raised, the node is not constant and
+will be evaluated at runtime\&. Any other exception will also be
+evaluated at runtime for easier debugging\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.compiler\&.CodeGenerator\fP\&.
+.SS " str jinja2\&.nativetypes\&.NativeCodeGenerator\&._output_const_repr ( self, t\&.Iterable[t\&.Any] group)\fC [protected]\fP"
+
+.PP
+.nf
+Given a group of constant values converted from ``Output``
+child nodes, produce a string to write to the template module
+source\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.compiler\&.CodeGenerator\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

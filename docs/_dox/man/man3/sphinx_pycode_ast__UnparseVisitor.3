@@ -1,0 +1,148 @@
+.TH "sphinx.pycode.ast._UnparseVisitor" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.pycode.ast._UnparseVisitor
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits ast\&.NodeVisitor\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str \fBcode\fP='')"
+.br
+.ti -1c
+.RI "str \fBvisit_arg\fP (self, ast\&.arg node)"
+.br
+.ti -1c
+.RI "str \fBvisit_arguments\fP (self, ast\&.arguments node)"
+.br
+.ti -1c
+.RI "str \fBvisit_Attribute\fP (self, ast\&.Attribute node)"
+.br
+.ti -1c
+.RI "str \fBvisit_BinOp\fP (self, ast\&.BinOp node)"
+.br
+.ti -1c
+.RI "str \fBvisit_BoolOp\fP (self, ast\&.BoolOp node)"
+.br
+.ti -1c
+.RI "str \fBvisit_Call\fP (self, ast\&.Call node)"
+.br
+.ti -1c
+.RI "str \fBvisit_Constant\fP (self, ast\&.Constant node)"
+.br
+.ti -1c
+.RI "str \fBvisit_Dict\fP (self, ast\&.Dict node)"
+.br
+.ti -1c
+.RI "str \fBvisit_Lambda\fP (self, ast\&.Lambda node)"
+.br
+.ti -1c
+.RI "str \fBvisit_List\fP (self, ast\&.List node)"
+.br
+.ti -1c
+.RI "str \fBvisit_Name\fP (self, ast\&.Name node)"
+.br
+.ti -1c
+.RI "str \fBvisit_Set\fP (self, ast\&.Set node)"
+.br
+.ti -1c
+.RI "str \fBvisit_Slice\fP (self, ast\&.Slice node)"
+.br
+.ti -1c
+.RI "str \fBvisit_Subscript\fP (self, ast\&.Subscript node)"
+.br
+.ti -1c
+.RI "str \fBvisit_UnaryOp\fP (self, ast\&.UnaryOp node)"
+.br
+.ti -1c
+.RI "str \fBvisit_Tuple\fP (self, ast\&.Tuple node)"
+.br
+.ti -1c
+.RI "NoReturn \fBgeneric_visit\fP (self, ast\&.AST node)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcode\fP"
+.br
+.ti -1c
+.RI "\fBvisit\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fB_visit_op\fP (self, ast\&.AST node)"
+.br
+.ti -1c
+.RI "str \fB_visit_arg_with_default\fP (self, ast\&.arg arg, ast\&.AST|None default)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.pycode\&.ast\&._UnparseVisitor\&.__init__ ( self, str  code = \fC''\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " str sphinx\&.pycode\&.ast\&._UnparseVisitor\&._visit_arg_with_default ( self, ast\&.arg arg, ast\&.AST | None default)\fC [protected]\fP"
+
+.PP
+.nf
+Unparse a single argument to a string\&.
+.fi
+.PP
+ 
+.SS " str sphinx\&.pycode\&.ast\&._UnparseVisitor\&._visit_op ( self, ast\&.AST node)\fC [protected]\fP"
+
+.SS " NoReturn sphinx\&.pycode\&.ast\&._UnparseVisitor\&.generic_visit ( self, ast\&.AST node)"
+
+.SS " str sphinx\&.pycode\&.ast\&._UnparseVisitor\&.visit_arg ( self, ast\&.arg node)"
+
+.SS " str sphinx\&.pycode\&.ast\&._UnparseVisitor\&.visit_arguments ( self, ast\&.arguments node)"
+
+.SS " str sphinx\&.pycode\&.ast\&._UnparseVisitor\&.visit_Attribute ( self, ast\&.Attribute node)"
+
+.SS " str sphinx\&.pycode\&.ast\&._UnparseVisitor\&.visit_BinOp ( self, ast\&.BinOp node)"
+
+.SS " str sphinx\&.pycode\&.ast\&._UnparseVisitor\&.visit_BoolOp ( self, ast\&.BoolOp node)"
+
+.SS " str sphinx\&.pycode\&.ast\&._UnparseVisitor\&.visit_Call ( self, ast\&.Call node)"
+
+.SS " str sphinx\&.pycode\&.ast\&._UnparseVisitor\&.visit_Constant ( self, ast\&.Constant node)"
+
+.SS " str sphinx\&.pycode\&.ast\&._UnparseVisitor\&.visit_Dict ( self, ast\&.Dict node)"
+
+.SS " str sphinx\&.pycode\&.ast\&._UnparseVisitor\&.visit_Lambda ( self, ast\&.Lambda node)"
+
+.SS " str sphinx\&.pycode\&.ast\&._UnparseVisitor\&.visit_List ( self, ast\&.List node)"
+
+.SS " str sphinx\&.pycode\&.ast\&._UnparseVisitor\&.visit_Name ( self, ast\&.Name node)"
+
+.SS " str sphinx\&.pycode\&.ast\&._UnparseVisitor\&.visit_Set ( self, ast\&.Set node)"
+
+.SS " str sphinx\&.pycode\&.ast\&._UnparseVisitor\&.visit_Slice ( self, ast\&.Slice node)"
+
+.SS " str sphinx\&.pycode\&.ast\&._UnparseVisitor\&.visit_Subscript ( self, ast\&.Subscript node)"
+
+.SS " str sphinx\&.pycode\&.ast\&._UnparseVisitor\&.visit_Tuple ( self, ast\&.Tuple node)"
+
+.SS " str sphinx\&.pycode\&.ast\&._UnparseVisitor\&.visit_UnaryOp ( self, ast\&.UnaryOp node)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.pycode\&.ast\&._UnparseVisitor\&.code"
+
+.SS "sphinx\&.pycode\&.ast\&._UnparseVisitor\&.visit"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

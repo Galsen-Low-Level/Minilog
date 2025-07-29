@@ -1,0 +1,898 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classsoupsieve_1_1css__match_1_1__DocumentNav" kind="class" language="Python" prot="protected">
+    <compoundname>soupsieve::css_match::_DocumentNav</compoundname>
+    <derivedcompoundref refid="classsoupsieve_1_1css__match_1_1CSSMatch" prot="public" virt="non-virtual">soupsieve.css_match.CSSMatch</derivedcompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a1f1eed8032a3b66376538f41d851ae0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>None</type>
+        <definition> None soupsieve.css_match._DocumentNav.assert_valid_input</definition>
+        <argsstring>(cls, Any tag)</argsstring>
+        <name>assert_valid_input</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.assert_valid_input</qualifiedname>
+        <param>
+          <type>cls</type>
+          <defname>cls</defname>
+        </param>
+        <param>
+          <type>Any</type>
+          <declname>tag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Check if valid input tag or document.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="83" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="83" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a38b7fba29a393b017b39db62d319e1d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool soupsieve.css_match._DocumentNav.is_content_string</definition>
+        <argsstring>(cls, bs4.element.PageElement|None obj)</argsstring>
+        <name>is_content_string</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.is_content_string</qualifiedname>
+        <param>
+          <type>cls</type>
+          <defname>cls</defname>
+        </param>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1PageElement" kindref="compound">bs4.element.PageElement</ref>|None</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Check if node is content string.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="126" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="126" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a86db8b5f0f5461fde7f6bee74e150ac6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool soupsieve.css_match._DocumentNav.is_iframe</definition>
+        <argsstring>(self, bs4.Tag|None el)</argsstring>
+        <name>is_iframe</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.is_iframe</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref>|None</type>
+          <declname>el</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Check if element is an `iframe`.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="143" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="143" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a01adc515c01548bf37359863a5b3040b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool soupsieve.css_match._DocumentNav.is_root</definition>
+        <argsstring>(self, bs4.Tag el)</argsstring>
+        <name>is_root</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.is_root</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref></type>
+          <declname>el</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Return whether element is a root element.
+
+We check that the element is the root of the tree (which we have already pre-calculated),
+and we check if it is the root element under an `iframe`.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="154" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="154" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1ab3162560bd224c17a24dd45d838c5e79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Iterator[<ref refid="classbs4_1_1element_1_1PageElement" kindref="compound">bs4.element.PageElement</ref>]</type>
+        <definition> Iterator[bs4.element.PageElement] soupsieve.css_match._DocumentNav.get_contents</definition>
+        <argsstring>(self, bs4.Tag|None el, bool no_iframe=False)</argsstring>
+        <name>get_contents</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.get_contents</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref>|None</type>
+          <declname>el</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>no_iframe</declname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get contents or contents in reverse.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="168" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="168" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1af69bd28f00a63ee1ef3f06da9e0bb426" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Iterator[<ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref>]</type>
+        <definition> Iterator[bs4.Tag] soupsieve.css_match._DocumentNav.get_tag_children</definition>
+        <argsstring>(self, bs4.Tag|None el, int|None start=None, bool reverse=False, bool no_iframe=False)</argsstring>
+        <name>get_tag_children</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.get_tag_children</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref>|None</type>
+          <declname>el</declname>
+        </param>
+        <param>
+          <type>int|None</type>
+          <declname>start</declname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>reverse</declname>
+          <defval>False</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>no_iframe</declname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get tag children.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="175" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="181" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a31dc18abb25bfa00c42e41598221f1ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Iterator[<ref refid="classbs4_1_1element_1_1PageElement" kindref="compound">bs4.element.PageElement</ref>]</type>
+        <definition> Iterator[bs4.element.PageElement] soupsieve.css_match._DocumentNav.get_children</definition>
+        <argsstring>(self, bs4.Tag|None el, int|None start=None, bool reverse=False, bool tags=False, bool no_iframe=False)</argsstring>
+        <name>get_children</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.get_children</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref>|None</type>
+          <declname>el</declname>
+        </param>
+        <param>
+          <type>int|None</type>
+          <declname>start</declname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>reverse</declname>
+          <defval>False</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>tags</declname>
+          <defval>False</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>no_iframe</declname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get children.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="186" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="193" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a0295e55b9276084ab3233fe877f688bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Iterator[<ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref>]</type>
+        <definition> Iterator[bs4.Tag] soupsieve.css_match._DocumentNav.get_tag_descendants</definition>
+        <argsstring>(self, bs4.Tag|None el, bool no_iframe=False)</argsstring>
+        <name>get_tag_descendants</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.get_tag_descendants</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref>|None</type>
+          <declname>el</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>no_iframe</declname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Specifically get tag descendants.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="212" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="216" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a2b8a91811a7b1ae36d663b65104aeb5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Iterator[<ref refid="classbs4_1_1element_1_1PageElement" kindref="compound">bs4.element.PageElement</ref>]</type>
+        <definition> Iterator[bs4.element.PageElement] soupsieve.css_match._DocumentNav.get_descendants</definition>
+        <argsstring>(self, bs4.Tag|None el, bool tags=False, bool no_iframe=False)</argsstring>
+        <name>get_descendants</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.get_descendants</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref>|None</type>
+          <declname>el</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>tags</declname>
+          <defval>False</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>no_iframe</declname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get descendants.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="221" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="226" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1ae4efe0f1d609afa68e9115967946886d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref>|None</type>
+        <definition> bs4.Tag | None soupsieve.css_match._DocumentNav.get_parent</definition>
+        <argsstring>(self, bs4.Tag|None el, bool no_iframe=False)</argsstring>
+        <name>get_parent</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.get_parent</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref>|None</type>
+          <declname>el</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>no_iframe</declname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get parent.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="257" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="257" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a8d5adf870d54fdd1f047d5732c454103" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref>|None</type>
+        <definition> bs4.Tag | None soupsieve.css_match._DocumentNav.get_next_tag</definition>
+        <argsstring>(cls, bs4.Tag el)</argsstring>
+        <name>get_next_tag</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.get_next_tag</qualifiedname>
+        <param>
+          <type>cls</type>
+          <defname>cls</defname>
+        </param>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref></type>
+          <declname>el</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get next sibling tag.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="284" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="284" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1ad287389eba4c2d2aff6c972c9563691a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbs4_1_1element_1_1PageElement" kindref="compound">bs4.element.PageElement</ref>|None</type>
+        <definition> bs4.element.PageElement | None soupsieve.css_match._DocumentNav.get_next</definition>
+        <argsstring>(cls, bs4.Tag el, bool tags=False)</argsstring>
+        <name>get_next</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.get_next</qualifiedname>
+        <param>
+          <type>cls</type>
+          <defname>cls</defname>
+        </param>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref></type>
+          <declname>el</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>tags</declname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get next sibling tag.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="290" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="290" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a7182cc8e27f40c5b8e79d1341faf36d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref>|None</type>
+        <definition> bs4.Tag | None soupsieve.css_match._DocumentNav.get_previous_tag</definition>
+        <argsstring>(cls, bs4.Tag el, bool tags=True)</argsstring>
+        <name>get_previous_tag</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.get_previous_tag</qualifiedname>
+        <param>
+          <type>cls</type>
+          <defname>cls</defname>
+        </param>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref></type>
+          <declname>el</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>tags</declname>
+          <defval>True</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get previous sibling tag.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="303" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="303" bodyend="307"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a893d6f7ea5fce23c2bce90960e64560a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbs4_1_1element_1_1PageElement" kindref="compound">bs4.element.PageElement</ref>|None</type>
+        <definition> bs4.element.PageElement | None soupsieve.css_match._DocumentNav.get_previous</definition>
+        <argsstring>(cls, bs4.Tag el, bool tags=False)</argsstring>
+        <name>get_previous</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.get_previous</qualifiedname>
+        <param>
+          <type>cls</type>
+          <defname>cls</defname>
+        </param>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref></type>
+          <declname>el</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>tags</declname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get previous sibling tag.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="309" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="309" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a35a4d729167154c2c1fb3ab6dbb8c42f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>str|Sequence[str]</type>
+        <definition> str | Sequence[str] soupsieve.css_match._DocumentNav.normalize_value</definition>
+        <argsstring>(cls, Any value)</argsstring>
+        <name>normalize_value</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.normalize_value</qualifiedname>
+        <param>
+          <type>cls</type>
+          <defname>cls</defname>
+        </param>
+        <param>
+          <type>Any</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Normalize the value to be a string or list of strings.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="343" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="343" bodyend="374"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a11fd11b8b8431c319a0446ff934e3b24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>str|Sequence[str]|None</type>
+        <definition> str | Sequence[str] | None soupsieve.css_match._DocumentNav.get_attribute_by_name</definition>
+        <argsstring>(cls, bs4.Tag el, str name, str|Sequence[str]|None default=None)</argsstring>
+        <name>get_attribute_by_name</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.get_attribute_by_name</qualifiedname>
+        <param>
+          <type>cls</type>
+          <defname>cls</defname>
+        </param>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref></type>
+          <declname>el</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>str|Sequence|None</type>
+          <declname>default</declname>
+          <array>[str]</array>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get attribute by name.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="376" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="381" bodyend="396"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1ac0901aa80e362e276276372e0cd8253c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Iterator[tuple[str, str|Sequence[str]|None]]</type>
+        <definition> Iterator[tuple[str, str | Sequence[str] | None]] soupsieve.css_match._DocumentNav.iter_attributes</definition>
+        <argsstring>(cls, bs4.Tag|None el)</argsstring>
+        <name>iter_attributes</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.iter_attributes</qualifiedname>
+        <param>
+          <type>cls</type>
+          <defname>cls</defname>
+        </param>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref>|None</type>
+          <declname>el</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Iterate attributes.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="398" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="398" bodyend="404"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a5922cf72c794556ea097b29f7e66c302" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Sequence[str]</type>
+        <definition> Sequence[str] soupsieve.css_match._DocumentNav.get_classes</definition>
+        <argsstring>(cls, bs4.Tag el)</argsstring>
+        <name>get_classes</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.get_classes</qualifiedname>
+        <param>
+          <type>cls</type>
+          <defname>cls</defname>
+        </param>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref></type>
+          <declname>el</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get classes.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="406" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="406" bodyend="413"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a18bdb24e3bb64a2805aa829169a83944" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>str</type>
+        <definition> str soupsieve.css_match._DocumentNav.get_text</definition>
+        <argsstring>(self, bs4.Tag el, bool no_iframe=False)</argsstring>
+        <name>get_text</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.get_text</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref></type>
+          <declname>el</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>no_iframe</declname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get text.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="414" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="414" bodyend="423"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a5425e62a39c6ee4b90e2cb0eaf2d94c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>list[str]</type>
+        <definition> list[str] soupsieve.css_match._DocumentNav.get_own_text</definition>
+        <argsstring>(self, bs4.Tag el, bool no_iframe=False)</argsstring>
+        <name>get_own_text</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.get_own_text</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref></type>
+          <declname>el</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>no_iframe</declname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get Own Text.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="424" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="424" bodyend="431"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a862b392654e679f0e07ef02ecc62a35b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool soupsieve.css_match._DocumentNav.is_doc</definition>
+        <argsstring>(bs4.element.PageElement|None obj)</argsstring>
+        <name>is_doc</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.is_doc</qualifiedname>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1PageElement" kindref="compound">bs4.element.PageElement</ref>|None</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Is `BeautifulSoup` object.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="91" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="91" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a6f5c0d6ef4207c4235f8213a4e64a3a7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool soupsieve.css_match._DocumentNav.is_tag</definition>
+        <argsstring>(bs4.element.PageElement|None obj)</argsstring>
+        <name>is_tag</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.is_tag</qualifiedname>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1PageElement" kindref="compound">bs4.element.PageElement</ref>|None</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Is tag.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="96" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="96" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1aef0c0bb9cf48f9a9d827036cf6db31cd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool soupsieve.css_match._DocumentNav.is_declaration</definition>
+        <argsstring>(bs4.element.PageElement|None obj)</argsstring>
+        <name>is_declaration</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.is_declaration</qualifiedname>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1PageElement" kindref="compound">bs4.element.PageElement</ref>|None</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Is declaration.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="101" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="101" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a4ad81f0673322d2b6a97a177fc7e4ce7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool soupsieve.css_match._DocumentNav.is_cdata</definition>
+        <argsstring>(bs4.element.PageElement|None obj)</argsstring>
+        <name>is_cdata</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.is_cdata</qualifiedname>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1PageElement" kindref="compound">bs4.element.PageElement</ref>|None</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Is CDATA.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="106" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="106" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a8e4d1b05838c61cdcfcfc09a4ab621e5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool soupsieve.css_match._DocumentNav.is_processing_instruction</definition>
+        <argsstring>(bs4.element.PageElement|None obj)</argsstring>
+        <name>is_processing_instruction</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.is_processing_instruction</qualifiedname>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1PageElement" kindref="compound">bs4.element.PageElement</ref>|None</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Is processing instruction.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="111" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="111" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a220c87f0ecf5b1e9d129a9616b283a8e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool soupsieve.css_match._DocumentNav.is_navigable_string</definition>
+        <argsstring>(bs4.element.PageElement|None obj)</argsstring>
+        <name>is_navigable_string</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.is_navigable_string</qualifiedname>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1PageElement" kindref="compound">bs4.element.PageElement</ref>|None</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Is navigable string.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="116" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="116" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a14b961de556c41d5acffd16b2a395201" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool soupsieve.css_match._DocumentNav.is_special_string</definition>
+        <argsstring>(bs4.element.PageElement|None obj)</argsstring>
+        <name>is_special_string</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.is_special_string</qualifiedname>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1PageElement" kindref="compound">bs4.element.PageElement</ref>|None</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Is special string.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="121" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="121" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1af27866905858014ed077f510f8f06d68" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classsoupsieve_1_1css__match_1_1__FakeParent" kindref="compound">_FakeParent</ref></type>
+        <definition> _FakeParent soupsieve.css_match._DocumentNav.create_fake_parent</definition>
+        <argsstring>(bs4.Tag el)</argsstring>
+        <name>create_fake_parent</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.create_fake_parent</qualifiedname>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref></type>
+          <declname>el</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Create fake parent for a given element.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="132" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="132" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a8c0bc3c1d873acbefb9bad61c4a99620" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool soupsieve.css_match._DocumentNav.is_xml_tree</definition>
+        <argsstring>(bs4.Tag|None el)</argsstring>
+        <name>is_xml_tree</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.is_xml_tree</qualifiedname>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref>|None</type>
+          <declname>el</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Check if element (or document) is from a XML tree.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="138" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="138" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1aa3bb67d98340a99d1e1561232d36e44b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>str|None</type>
+        <definition> str | None soupsieve.css_match._DocumentNav.get_tag_name</definition>
+        <argsstring>(bs4.Tag|None el)</argsstring>
+        <name>get_tag_name</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.get_tag_name</qualifiedname>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref>|None</type>
+          <declname>el</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get tag.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="266" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="266" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1ab617ad0ab58c9a193be5a90486e9ce6a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>str|None</type>
+        <definition> str | None soupsieve.css_match._DocumentNav.get_prefix_name</definition>
+        <argsstring>(bs4.Tag el)</argsstring>
+        <name>get_prefix_name</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.get_prefix_name</qualifiedname>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref></type>
+          <declname>el</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get prefix.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="272" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="272" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a13b53a94531c9aa26541ca769fbb2039" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>str|None</type>
+        <definition> str | None soupsieve.css_match._DocumentNav.get_uri</definition>
+        <argsstring>(bs4.Tag|None el)</argsstring>
+        <name>get_uri</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.get_uri</qualifiedname>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref>|None</type>
+          <declname>el</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get namespace `URI`.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="278" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="278" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1aef0d14d233802bea6c4591533349cc42" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool soupsieve.css_match._DocumentNav.has_html_ns</definition>
+        <argsstring>(bs4.Tag|None el)</argsstring>
+        <name>has_html_ns</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.has_html_ns</qualifiedname>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref>|None</type>
+          <declname>el</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Check if element has an HTML namespace.
+
+This is a bit different than whether a element is treated as having an HTML namespace,
+like we do in the case of `is_html_tag`.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="322" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="322" bodyend="332"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__match_1_1__DocumentNav_1a53333b9f97e2f95e08d70fe609a7281e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>tuple[str|None, str|None]</type>
+        <definition> tuple[str | None, str | None] soupsieve.css_match._DocumentNav.split_namespace</definition>
+        <argsstring>(bs4.Tag|None el, str attr_name)</argsstring>
+        <name>split_namespace</name>
+        <qualifiedname>soupsieve.css_match._DocumentNav.split_namespace</qualifiedname>
+        <param>
+          <type><ref refid="classbs4_1_1element_1_1Tag" kindref="compound">bs4.Tag</ref>|None</type>
+          <declname>el</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>attr_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Return namespace and attribute name without the prefix.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="334" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="334" bodyend="341"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Navigate a Beautiful Soup document.</verbatim> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>soupsieve.css_match._DocumentNav</label>
+        <link refid="classsoupsieve_1_1css__match_1_1__DocumentNav"/>
+      </node>
+      <node id="2">
+        <label>soupsieve.css_match.CSSMatch</label>
+        <link refid="classsoupsieve_1_1css__match_1_1CSSMatch"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" line="79" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_match.py" bodystart="79" bodyend="431"/>
+    <listofallmembers>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a1f1eed8032a3b66376538f41d851ae0c" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>assert_valid_input</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1af27866905858014ed077f510f8f06d68" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>create_fake_parent</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a11fd11b8b8431c319a0446ff934e3b24" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>get_attribute_by_name</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a31dc18abb25bfa00c42e41598221f1ec" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>get_children</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a5922cf72c794556ea097b29f7e66c302" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>get_classes</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1ab3162560bd224c17a24dd45d838c5e79" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>get_contents</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a2b8a91811a7b1ae36d663b65104aeb5e" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>get_descendants</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1ad287389eba4c2d2aff6c972c9563691a" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>get_next</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a8d5adf870d54fdd1f047d5732c454103" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>get_next_tag</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a5425e62a39c6ee4b90e2cb0eaf2d94c6" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>get_own_text</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1ae4efe0f1d609afa68e9115967946886d" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>get_parent</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1ab617ad0ab58c9a193be5a90486e9ce6a" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>get_prefix_name</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a893d6f7ea5fce23c2bce90960e64560a" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>get_previous</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a7182cc8e27f40c5b8e79d1341faf36d2" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>get_previous_tag</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1af69bd28f00a63ee1ef3f06da9e0bb426" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>get_tag_children</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a0295e55b9276084ab3233fe877f688bd" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>get_tag_descendants</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1aa3bb67d98340a99d1e1561232d36e44b" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>get_tag_name</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a18bdb24e3bb64a2805aa829169a83944" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>get_text</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a13b53a94531c9aa26541ca769fbb2039" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>get_uri</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1aef0d14d233802bea6c4591533349cc42" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>has_html_ns</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a4ad81f0673322d2b6a97a177fc7e4ce7" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>is_cdata</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a38b7fba29a393b017b39db62d319e1d3" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>is_content_string</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1aef0c0bb9cf48f9a9d827036cf6db31cd" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>is_declaration</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a862b392654e679f0e07ef02ecc62a35b" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>is_doc</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a86db8b5f0f5461fde7f6bee74e150ac6" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>is_iframe</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a220c87f0ecf5b1e9d129a9616b283a8e" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>is_navigable_string</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a8e4d1b05838c61cdcfcfc09a4ab621e5" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>is_processing_instruction</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a01adc515c01548bf37359863a5b3040b" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>is_root</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a14b961de556c41d5acffd16b2a395201" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>is_special_string</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a6f5c0d6ef4207c4235f8213a4e64a3a7" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>is_tag</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a8c0bc3c1d873acbefb9bad61c4a99620" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>is_xml_tree</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1ac0901aa80e362e276276372e0cd8253c" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>iter_attributes</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a35a4d729167154c2c1fb3ab6dbb8c42f" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>normalize_value</name></member>
+      <member refid="classsoupsieve_1_1css__match_1_1__DocumentNav_1a53333b9f97e2f95e08d70fe609a7281e" prot="public" virt="non-virtual"><scope>soupsieve::css_match::_DocumentNav</scope><name>split_namespace</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,272 @@
+.TH "webob.acceptparse" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webob.acceptparse
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_AcceptCharsetInvalidOrNoHeader\fP"
+.br
+.ti -1c
+.RI "class \fB_AcceptEncodingInvalidOrNoHeader\fP"
+.br
+.ti -1c
+.RI "class \fB_AcceptInvalidOrNoHeader\fP"
+.br
+.ti -1c
+.RI "class \fB_AcceptLanguageInvalidOrNoHeader\fP"
+.br
+.ti -1c
+.RI "class \fBAccept\fP"
+.br
+.ti -1c
+.RI "class \fBAcceptCharset\fP"
+.br
+.ti -1c
+.RI "class \fBAcceptCharsetInvalidHeader\fP"
+.br
+.ti -1c
+.RI "class \fBAcceptCharsetNoHeader\fP"
+.br
+.ti -1c
+.RI "class \fBAcceptCharsetValidHeader\fP"
+.br
+.ti -1c
+.RI "class \fBAcceptEncoding\fP"
+.br
+.ti -1c
+.RI "class \fBAcceptEncodingInvalidHeader\fP"
+.br
+.ti -1c
+.RI "class \fBAcceptEncodingNoHeader\fP"
+.br
+.ti -1c
+.RI "class \fBAcceptEncodingValidHeader\fP"
+.br
+.ti -1c
+.RI "class \fBAcceptInvalidHeader\fP"
+.br
+.ti -1c
+.RI "class \fBAcceptLanguage\fP"
+.br
+.ti -1c
+.RI "class \fBAcceptLanguageInvalidHeader\fP"
+.br
+.ti -1c
+.RI "class \fBAcceptLanguageNoHeader\fP"
+.br
+.ti -1c
+.RI "class \fBAcceptLanguageValidHeader\fP"
+.br
+.ti -1c
+.RI "class \fBAcceptNoHeader\fP"
+.br
+.ti -1c
+.RI "class \fBAcceptOffer\fP"
+.br
+.ti -1c
+.RI "class \fBAcceptValidHeader\fP"
+.br
+.ti -1c
+.RI "class \fBMIMEAccept\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_item_n_weight_re\fP (item_re)"
+.br
+.ti -1c
+.RI "\fB_item_qvalue_pair_to_header_element\fP (pair)"
+.br
+.ti -1c
+.RI "\fB_list_0_or_more__compiled_re\fP (element_re)"
+.br
+.ti -1c
+.RI "\fB_list_1_or_more__compiled_re\fP (element_re)"
+.br
+.ti -1c
+.RI "\fBcreate_accept_header\fP (header_value)"
+.br
+.ti -1c
+.RI "\fBaccept_property\fP ()"
+.br
+.ti -1c
+.RI "\fBcreate_accept_charset_header\fP (header_value)"
+.br
+.ti -1c
+.RI "\fBaccept_charset_property\fP ()"
+.br
+.ti -1c
+.RI "\fBcreate_accept_encoding_header\fP (header_value)"
+.br
+.ti -1c
+.RI "\fBaccept_encoding_property\fP ()"
+.br
+.ti -1c
+.RI "\fBcreate_accept_language_header\fP (header_value)"
+.br
+.ti -1c
+.RI "\fBaccept_language_property\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "str \fBOWS_re\fP = '[ \\t]*'"
+.br
+.ti -1c
+.RI "str \fBtchar_re\fP = r'[!#$%&'*+\\\-\&.^_`|~0\-9A\-Za\-z]'"
+.br
+.ti -1c
+.RI "str \fBtoken_re\fP = \fBtchar_re\fP + '+'"
+.br
+.ti -1c
+.RI "\fBtoken_compiled_re\fP = re\&.compile('^' + \fBtoken_re\fP + '$')"
+.br
+.ti -1c
+.RI "tuple \fBqvalue_re\fP"
+.br
+.ti -1c
+.RI "str \fBweight_re\fP = \fBOWS_re\fP + ';' + \fBOWS_re\fP + '[qQ]=(' + \fBqvalue_re\fP + ')'"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Parse four ``Accept*`` headers used in server-driven content negotiation\&.
+
+The four headers are ``Accept``, ``Accept-Charset``, ``Accept-Encoding`` and
+``Accept-Language``\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "webob\&.acceptparse\&._item_n_weight_re ( item_re)\fC [protected]\fP"
+
+.SS "webob\&.acceptparse\&._item_qvalue_pair_to_header_element ( pair)\fC [protected]\fP"
+
+.SS "webob\&.acceptparse\&._list_0_or_more__compiled_re ( element_re)\fC [protected]\fP"
+
+.SS "webob\&.acceptparse\&._list_1_or_more__compiled_re ( element_re)\fC [protected]\fP"
+
+.SS "webob\&.acceptparse\&.accept_charset_property ()"
+
+.SS "webob\&.acceptparse\&.accept_encoding_property ()"
+
+.SS "webob\&.acceptparse\&.accept_language_property ()"
+
+.SS "webob\&.acceptparse\&.accept_property ()"
+
+.SS "webob\&.acceptparse\&.create_accept_charset_header ( header_value)"
+
+.PP
+.nf
+Create an object representing the ``Accept-Charset`` header in a request\&.
+
+:param header_value: (``str``) header value
+:return: If `header_value` is ``None``, an :class:`AcceptCharsetNoHeader`
+         instance\&.
+
+         | If `header_value` is a valid ``Accept-Charset`` header, an
+           :class:`AcceptCharsetValidHeader` instance\&.
+
+         | If `header_value` is an invalid ``Accept-Charset`` header, an
+           :class:`AcceptCharsetInvalidHeader` instance\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.acceptparse\&.create_accept_encoding_header ( header_value)"
+
+.PP
+.nf
+Create an object representing the ``Accept-Encoding`` header in a request\&.
+
+:param header_value: (``str``) header value
+:return: If `header_value` is ``None``, an :class:`AcceptEncodingNoHeader`
+         instance\&.
+
+         | If `header_value` is a valid ``Accept-Encoding`` header, an
+           :class:`AcceptEncodingValidHeader` instance\&.
+
+         | If `header_value` is an invalid ``Accept-Encoding`` header, an
+           :class:`AcceptEncodingInvalidHeader` instance\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.acceptparse\&.create_accept_header ( header_value)"
+
+.PP
+.nf
+Create an object representing the ``Accept`` header in a request\&.
+
+:param header_value: (``str``) header value
+:return: If `header_value` is ``None``, an :class:`AcceptNoHeader`
+         instance\&.
+
+         | If `header_value` is a valid ``Accept`` header, an
+           :class:`AcceptValidHeader` instance\&.
+
+         | If `header_value` is an invalid ``Accept`` header, an
+           :class:`AcceptInvalidHeader` instance\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.acceptparse\&.create_accept_language_header ( header_value)"
+
+.PP
+.nf
+Create an object representing the ``Accept-Language`` header in a request\&.
+
+:param header_value: (``str``) header value
+:return: If `header_value` is ``None``, an :class:`AcceptLanguageNoHeader`
+         instance\&.
+
+         | If `header_value` is a valid ``Accept-Language`` header, an
+           :class:`AcceptLanguageValidHeader` instance\&.
+
+         | If `header_value` is an invalid ``Accept-Language`` header, an
+           :class:`AcceptLanguageInvalidHeader` instance\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "str webob\&.acceptparse\&.OWS_re = '[ \\t]*'"
+
+.SS "tuple webob\&.acceptparse\&.qvalue_re"
+\fBInitial value:\fP.PP
+.nf
+1 =  (
+2     r'(?:0(?:\\\&.[0\-9]{0,3})?)'
+3     '|'
+4     r'(?:1(?:\\\&.0{0,3})?)'
+5 )
+.fi
+
+.SS "str webob\&.acceptparse\&.tchar_re = r'[!#$%&'*+\\\-\&.^_`|~0\-9A\-Za\-z]'"
+
+.SS "webob\&.acceptparse\&.token_compiled_re = re\&.compile('^' + \fBtoken_re\fP + '$')"
+
+.SS "str webob\&.acceptparse\&.token_re = \fBtchar_re\fP + '+'"
+
+.SS "str webob\&.acceptparse\&.weight_re = \fBOWS_re\fP + ';' + \fBOWS_re\fP + '[qQ]=(' + \fBqvalue_re\fP + ')'"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,906 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier" kind="class" language="Python" prot="public">
+    <compoundname>pip::_vendor::packaging::specifiers::Specifier</compoundname>
+    <basecompoundref refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1BaseSpecifier" prot="public" virt="non-virtual">pip._vendor.packaging.specifiers.BaseSpecifier</basecompoundref>
+    <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1ad34c75566a0ffad1017b769e0bb13815" prot="protected" static="yes" mutable="no">
+        <type>str</type>
+        <definition>str pip._vendor.packaging.specifiers.Specifier::_operator_regex_str</definition>
+        <argsstring></argsstring>
+        <name>_operator_regex_str</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier._operator_regex_str</qualifiedname>
+        <initializer>=  r&quot;&quot;&quot;
+        (?P&lt;<ref refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a75276c4aae4f1b5eee694dc8eb0e8f88" kindref="member">operator</ref>&gt;(~=|==|!=|&lt;=|&gt;=|&lt;|&gt;|===))
+        &quot;&quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="109" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a4eda597d90ec85d93b6c8184657bfc73" prot="protected" static="yes" mutable="no">
+        <type>str</type>
+        <definition>str pip._vendor.packaging.specifiers.Specifier::_version_regex_str</definition>
+        <argsstring></argsstring>
+        <name>_version_regex_str</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier._version_regex_str</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="112" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a1c3dd3a0238b868f061160a39f1a3177" prot="protected" static="yes" mutable="no">
+        <type></type>
+        <definition>pip._vendor.packaging.specifiers.Specifier::_regex</definition>
+        <argsstring></argsstring>
+        <name>_regex</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier._regex</qualifiedname>
+        <initializer>=  re.compile(
+        r&quot;^\s*&quot; + _operator_regex_str + <ref refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a4eda597d90ec85d93b6c8184657bfc73" kindref="member">_version_regex_str</ref> + r&quot;\s*$&quot;,
+        re.VERBOSE | re.IGNORECASE,
+    )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="206" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1ab75861e399d72f1d330e835f8350ec96" prot="protected" static="yes" mutable="no">
+        <type>dict</type>
+        <definition>dict pip._vendor.packaging.specifiers.Specifier::_operators</definition>
+        <argsstring></argsstring>
+        <name>_operators</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier._operators</qualifiedname>
+        <initializer>=  {
+        &quot;~=&quot;: &quot;compatible&quot;,
+        &quot;==&quot;: &quot;equal&quot;,
+        &quot;!=&quot;: &quot;not_equal&quot;,
+        &quot;&lt;=&quot;: &quot;less_than_equal&quot;,
+        &quot;&gt;=&quot;: &quot;greater_than_equal&quot;,
+        &quot;&lt;&quot;: &quot;less_than&quot;,
+        &quot;&gt;&quot;: &quot;greater_than&quot;,
+        &quot;===&quot;: &quot;arbitrary&quot;,
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="211" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="211" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a92d2edc94bc0864abd9792a63067ae66" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>pip._vendor.packaging.specifiers.Specifier::_prereleases</definition>
+        <argsstring></argsstring>
+        <name>_prereleases</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier._prereleases</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="245" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a6822d1f9f1de65c413af2b34cf0b071b" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>pip._vendor.packaging.specifiers.Specifier::_spec</definition>
+        <argsstring></argsstring>
+        <name>_spec</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier._spec</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="320" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="320" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a980df7eb33cc70e821148e8ab0676546" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>pip._vendor.packaging.specifiers.Specifier::_canonical_spec</definition>
+        <argsstring></argsstring>
+        <name>_canonical_spec</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier._canonical_spec</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="331" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="331" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1ae0692a2cb4b69f339c4a6202a5ac2fc4" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>pip._vendor.packaging.specifiers.Specifier::__class__</definition>
+        <argsstring></argsstring>
+        <name>__class__</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier.__class__</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="357" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="357" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a40ee0d5674e67ad37e5f1456438e9715" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pip._vendor.packaging.specifiers.Specifier::version</definition>
+        <argsstring></argsstring>
+        <name>version</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier.version</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="563" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="563" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1ae70a99f55f52e9dc1ea43580d946e8b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>None</type>
+        <definition> None pip._vendor.packaging.specifiers.Specifier.__init__</definition>
+        <argsstring>(self, str spec=&quot;&quot;, bool|None prereleases=None)</argsstring>
+        <name>__init__</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier.__init__</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>spec</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>bool|None</type>
+          <declname>prereleases</declname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Initialize a Specifier instance.
+
+:param spec:
+    The string representation of a specifier which will be parsed and
+    normalized before use.
+:param prereleases:
+    This tells the specifier if it should accept prerelease versions if
+    applicable or not. The default of ``None`` will autodetect it from the
+    given specifiers.
+:raises InvalidSpecifier:
+    If the given specifier is invalid (i.e. bad syntax).
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="222" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="222" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a94896054c4deb1cf1ab028fb0a045848" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool pip._vendor.packaging.specifiers.Specifier.prereleases</definition>
+        <argsstring>(self)</argsstring>
+        <name>prereleases</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier.prereleases</qualifiedname>
+        <reimplements refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1BaseSpecifier_1aaa0161f4b3d21430ba8d25947f04eeea">prereleases</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Whether or not pre-releases as a whole are allowed.
+
+This can be set to either ``True`` or ``False`` to explicitly enable or disable
+prereleases or it can be set to ``None`` (the default) to use default semantics.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="249" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="249" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1af1e606eb11b7321f394795929cf34085" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>None</type>
+        <definition> None pip._vendor.packaging.specifiers.Specifier.prereleases</definition>
+        <argsstring>(self, bool value)</argsstring>
+        <name>prereleases</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier.prereleases</qualifiedname>
+        <reimplements refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1BaseSpecifier_1aaa0161f4b3d21430ba8d25947f04eeea">prereleases</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Whether or not pre-releases as a whole are allowed.
+
+This can be set to either ``True`` or ``False`` to explicitly enable or disable
+prereleases or it can be set to ``None`` (the default) to use default semantics.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="273" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="273" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a75276c4aae4f1b5eee694dc8eb0e8f88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>str</type>
+        <definition> str pip._vendor.packaging.specifiers.Specifier.operator</definition>
+        <argsstring>(self)</argsstring>
+        <name>operator</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier.operator</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>The operator of this specifier.
+
+&gt;&gt;&gt; Specifier(&quot;==1.2.3&quot;).operator
+&apos;==&apos;
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="277" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="277" bodyend="284"/>
+      </memberdef>
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a8c68e6b946071e0df5a28781d233165e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>str</type>
+        <definition> str pip._vendor.packaging.specifiers.Specifier.version</definition>
+        <argsstring>(self)</argsstring>
+        <name>version</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier.version</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>The version of this specifier.
+
+&gt;&gt;&gt; Specifier(&quot;==1.2.3&quot;).version
+&apos;1.2.3&apos;
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="286" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="286" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a62067cf49633f89e5a507d89f4edb575" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>str</type>
+        <definition> str pip._vendor.packaging.specifiers.Specifier.__repr__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__repr__</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier.__repr__</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>A representation of the Specifier that shows all internal state.
+
+&gt;&gt;&gt; Specifier(&apos;&gt;=1.0.0&apos;)
+&lt;Specifier(&apos;&gt;=1.0.0&apos;)&gt;
+&gt;&gt;&gt; Specifier(&apos;&gt;=1.0.0&apos;, prereleases=False)
+&lt;Specifier(&apos;&gt;=1.0.0&apos;, prereleases=False)&gt;
+&gt;&gt;&gt; Specifier(&apos;&gt;=1.0.0&apos;, prereleases=True)
+&lt;Specifier(&apos;&gt;=1.0.0&apos;, prereleases=True)&gt;
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="294" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="294" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1aff8a0958024472b5d75e29cb134d9bc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>str</type>
+        <definition> str pip._vendor.packaging.specifiers.Specifier.__str__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__str__</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier.__str__</qualifiedname>
+        <reimplements refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1BaseSpecifier_1abe710a70f1e40a143d6ba5b6f42b3aee">__str__</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>A string representation of the Specifier that can be round-tripped.
+
+&gt;&gt;&gt; str(Specifier(&apos;&gt;=1.0.0&apos;))
+&apos;&gt;=1.0.0&apos;
+&gt;&gt;&gt; str(Specifier(&apos;&gt;=1.0.0&apos;, prereleases=False))
+&apos;&gt;=1.0.0&apos;
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="312" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="312" bodyend="321"/>
+      </memberdef>
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a08936b701db9b75ec8b44a82a292c485" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition> int pip._vendor.packaging.specifiers.Specifier.__hash__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__hash__</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier.__hash__</qualifiedname>
+        <reimplements refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1BaseSpecifier_1a9bc31770565a3b887a4a187e54af2358">__hash__</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Returns a hash value for this Specifier-like object.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="330" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="330" bodyend="332"/>
+      </memberdef>
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1adf699c698b2bcf16ef85e173a51d38ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool pip._vendor.packaging.specifiers.Specifier.__eq__</definition>
+        <argsstring>(self, object other)</argsstring>
+        <name>__eq__</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier.__eq__</qualifiedname>
+        <reimplements refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1BaseSpecifier_1a00a12252d929a8444d4b5902c07743b8">__eq__</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Whether or not the two Specifier-like objects are equal.
+
+:param other: The other object to check against.
+
+The value of :attr:`prereleases` is ignored.
+
+&gt;&gt;&gt; Specifier(&quot;==1.2.3&quot;) == Specifier(&quot;== 1.2.3.0&quot;)
+True
+&gt;&gt;&gt; (Specifier(&quot;==1.2.3&quot;, prereleases=False) ==
+...  Specifier(&quot;==1.2.3&quot;, prereleases=True))
+True
+&gt;&gt;&gt; Specifier(&quot;==1.2.3&quot;) == &quot;==1.2.3&quot;
+True
+&gt;&gt;&gt; Specifier(&quot;==1.2.3&quot;) == Specifier(&quot;==1.2.4&quot;)
+False
+&gt;&gt;&gt; Specifier(&quot;==1.2.3&quot;) == Specifier(&quot;~=1.2.3&quot;)
+False
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="333" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="333" bodyend="361"/>
+      </memberdef>
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a683c5e94b06a9db13dd59ea5be823182" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool pip._vendor.packaging.specifiers.Specifier.__contains__</definition>
+        <argsstring>(self, str|Version item)</argsstring>
+        <name>__contains__</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier.__contains__</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str|<ref refid="classpip_1_1__vendor_1_1packaging_1_1version_1_1Version" kindref="compound">Version</ref></type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Return whether or not the item is contained in this specifier.
+
+:param item: The item to check for.
+
+This is used for the ``in`` operator and behaves the same as
+:meth:`contains` with no ``prereleases`` argument passed.
+
+&gt;&gt;&gt; &quot;1.2.3&quot; in Specifier(&quot;&gt;=1.2.3&quot;)
+True
+&gt;&gt;&gt; Version(&quot;1.2.3&quot;) in Specifier(&quot;&gt;=1.2.3&quot;)
+True
+&gt;&gt;&gt; &quot;1.0.0&quot; in Specifier(&quot;&gt;=1.2.3&quot;)
+False
+&gt;&gt;&gt; &quot;1.3.0a1&quot; in Specifier(&quot;&gt;=1.2.3&quot;)
+False
+&gt;&gt;&gt; &quot;1.3.0a1&quot; in Specifier(&quot;&gt;=1.2.3&quot;, prereleases=True)
+True
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="500" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="500" bodyend="520"/>
+      </memberdef>
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a7a2f152abd6d3428a07d2be6d8d9bd9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool pip._vendor.packaging.specifiers.Specifier.contains</definition>
+        <argsstring>(self, UnparsedVersion item, bool|None prereleases=None)</argsstring>
+        <name>contains</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier.contains</qualifiedname>
+        <reimplements refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1BaseSpecifier_1ae8ec8b9186fc675b9f08c7da193b15c9">contains</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacepip_1_1__vendor_1_1packaging_1_1specifiers_1a72a62ad16de8c039a2c3293fcb57ea8c" kindref="member">UnparsedVersion</ref></type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type>bool|None</type>
+          <declname>prereleases</declname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Return whether or not the item is contained in this specifier.
+
+:param item:
+    The item to check for, which can be a version string or a
+    :class:`Version` instance.
+:param prereleases:
+    Whether or not to match prereleases with this Specifier. If set to
+    ``None`` (the default), it uses :attr:`prereleases` to determine
+    whether or not prereleases are allowed.
+
+&gt;&gt;&gt; Specifier(&quot;&gt;=1.2.3&quot;).contains(&quot;1.2.3&quot;)
+True
+&gt;&gt;&gt; Specifier(&quot;&gt;=1.2.3&quot;).contains(Version(&quot;1.2.3&quot;))
+True
+&gt;&gt;&gt; Specifier(&quot;&gt;=1.2.3&quot;).contains(&quot;1.0.0&quot;)
+False
+&gt;&gt;&gt; Specifier(&quot;&gt;=1.2.3&quot;).contains(&quot;1.3.0a1&quot;)
+False
+&gt;&gt;&gt; Specifier(&quot;&gt;=1.2.3&quot;, prereleases=True).contains(&quot;1.3.0a1&quot;)
+True
+&gt;&gt;&gt; Specifier(&quot;&gt;=1.2.3&quot;).contains(&quot;1.3.0a1&quot;, prereleases=True)
+True
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="521" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="521" bodyend="564"/>
+      </memberdef>
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1ac96d37578d7010d36bc56af2553b55a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Iterator[<ref refid="namespacepip_1_1__vendor_1_1packaging_1_1specifiers_1a33e20cc1f3737e3cdfffee92d0dfb82e" kindref="member">UnparsedVersionVar</ref>]</type>
+        <definition> Iterator[UnparsedVersionVar] pip._vendor.packaging.specifiers.Specifier.filter</definition>
+        <argsstring>(self, Iterable[UnparsedVersionVar] iterable, bool|None prereleases=None)</argsstring>
+        <name>filter</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier.filter</qualifiedname>
+        <reimplements refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1BaseSpecifier_1ae1a90952e4f3257db3a6b0a42d6cf8bd">filter</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>Iterable</type>
+          <declname>iterable</declname>
+          <array>[UnparsedVersionVar]</array>
+        </param>
+        <param>
+          <type>bool|None</type>
+          <declname>prereleases</declname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Filter items in the given iterable, that match the specifier.
+
+:param iterable:
+    An iterable that can contain version strings and :class:`Version` instances.
+    The items in the iterable will be filtered according to the specifier.
+:param prereleases:
+    Whether or not to allow prereleases in the returned iterator. If set to
+    ``None`` (the default), it will be intelligently decide whether to allow
+    prereleases or not (based on the :attr:`prereleases` attribute, and
+    whether the only versions matching are prereleases).
+
+This method is smarter than just ``filter(Specifier().contains, [...])``
+because it implements the rule from :pep:`440` that a prerelease item
+SHOULD be accepted if no other versions match the given specifier.
+
+&gt;&gt;&gt; list(Specifier(&quot;&gt;=1.2.3&quot;).filter([&quot;1.2&quot;, &quot;1.3&quot;, &quot;1.5a1&quot;]))
+[&apos;1.3&apos;]
+&gt;&gt;&gt; list(Specifier(&quot;&gt;=1.2.3&quot;).filter([&quot;1.2&quot;, &quot;1.2.3&quot;, &quot;1.3&quot;, Version(&quot;1.4&quot;)]))
+[&apos;1.2.3&apos;, &apos;1.3&apos;, &lt;Version(&apos;1.4&apos;)&gt;]
+&gt;&gt;&gt; list(Specifier(&quot;&gt;=1.2.3&quot;).filter([&quot;1.2&quot;, &quot;1.5a1&quot;]))
+[&apos;1.5a1&apos;]
+&gt;&gt;&gt; list(Specifier(&quot;&gt;=1.2.3&quot;).filter([&quot;1.3&quot;, &quot;1.5a1&quot;], prereleases=True))
+[&apos;1.3&apos;, &apos;1.5a1&apos;]
+&gt;&gt;&gt; list(Specifier(&quot;&gt;=1.2.3&quot;, prereleases=True).filter([&quot;1.3&quot;, &quot;1.5a1&quot;]))
+[&apos;1.3&apos;, &apos;1.5a1&apos;]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="565" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="567" bodyend="626"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a248252022d035f7891334b275160c3ea" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>tuple[str, str]</type>
+        <definition> tuple[str, str] pip._vendor.packaging.specifiers.Specifier._canonical_spec</definition>
+        <argsstring>(self)</argsstring>
+        <name>_canonical_spec</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier._canonical_spec</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="323" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="323" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1ac7b3f39bae160a2b9aba701df6d54af1" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacepip_1_1__vendor_1_1packaging_1_1specifiers_1a6bd695ad18f9dc17d7ea2fc7b649b2ad" kindref="member">CallableOperator</ref></type>
+        <definition> CallableOperator pip._vendor.packaging.specifiers.Specifier._get_operator</definition>
+        <argsstring>(self, str op)</argsstring>
+        <name>_get_operator</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier._get_operator</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>op</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="362" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="362" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1ae5d0a8b3eb146c41e2fdb9e0081c2281" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool pip._vendor.packaging.specifiers.Specifier._compare_compatible</definition>
+        <argsstring>(self, Version prospective, str spec)</argsstring>
+        <name>_compare_compatible</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier._compare_compatible</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpip_1_1__vendor_1_1packaging_1_1version_1_1Version" kindref="compound">Version</ref></type>
+          <declname>prospective</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>spec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="368" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="368" bodyend="387"/>
+      </memberdef>
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1aad95a7e2c2abff33c0134d0a7810a792" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool pip._vendor.packaging.specifiers.Specifier._compare_equal</definition>
+        <argsstring>(self, Version prospective, str spec)</argsstring>
+        <name>_compare_equal</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier._compare_equal</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpip_1_1__vendor_1_1packaging_1_1version_1_1Version" kindref="compound">Version</ref></type>
+          <declname>prospective</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>spec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="388" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="388" bodyend="427"/>
+      </memberdef>
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a719dafe40bc5b1e2982bc1087ae4c1a4" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool pip._vendor.packaging.specifiers.Specifier._compare_not_equal</definition>
+        <argsstring>(self, Version prospective, str spec)</argsstring>
+        <name>_compare_not_equal</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier._compare_not_equal</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpip_1_1__vendor_1_1packaging_1_1version_1_1Version" kindref="compound">Version</ref></type>
+          <declname>prospective</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>spec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="428" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="428" bodyend="430"/>
+      </memberdef>
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1aa4afcc0abd1b3415d808b0c36ab0ad66" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool pip._vendor.packaging.specifiers.Specifier._compare_less_than_equal</definition>
+        <argsstring>(self, Version prospective, str spec)</argsstring>
+        <name>_compare_less_than_equal</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier._compare_less_than_equal</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpip_1_1__vendor_1_1packaging_1_1version_1_1Version" kindref="compound">Version</ref></type>
+          <declname>prospective</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>spec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="431" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="431" bodyend="436"/>
+      </memberdef>
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a4ba374bc62584920d5666f5920203199" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool pip._vendor.packaging.specifiers.Specifier._compare_greater_than_equal</definition>
+        <argsstring>(self, Version prospective, str spec)</argsstring>
+        <name>_compare_greater_than_equal</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier._compare_greater_than_equal</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpip_1_1__vendor_1_1packaging_1_1version_1_1Version" kindref="compound">Version</ref></type>
+          <declname>prospective</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>spec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="437" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="437" bodyend="442"/>
+      </memberdef>
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a0e3cb3d551caa15888d6321394a23561" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool pip._vendor.packaging.specifiers.Specifier._compare_less_than</definition>
+        <argsstring>(self, Version prospective, str spec_str)</argsstring>
+        <name>_compare_less_than</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier._compare_less_than</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpip_1_1__vendor_1_1packaging_1_1version_1_1Version" kindref="compound">Version</ref></type>
+          <declname>prospective</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>spec_str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="443" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="443" bodyend="466"/>
+      </memberdef>
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1aee15243a6e5ca4d1209032e6356548ef" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool pip._vendor.packaging.specifiers.Specifier._compare_greater_than</definition>
+        <argsstring>(self, Version prospective, str spec_str)</argsstring>
+        <name>_compare_greater_than</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier._compare_greater_than</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpip_1_1__vendor_1_1packaging_1_1version_1_1Version" kindref="compound">Version</ref></type>
+          <declname>prospective</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>spec_str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="467" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="467" bodyend="496"/>
+      </memberdef>
+      <memberdef kind="function" id="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a6d52465ac7d2bb1bd32b944e9569a750" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool pip._vendor.packaging.specifiers.Specifier._compare_arbitrary</definition>
+        <argsstring>(self, Version prospective, str spec)</argsstring>
+        <name>_compare_arbitrary</name>
+        <qualifiedname>pip._vendor.packaging.specifiers.Specifier._compare_arbitrary</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpip_1_1__vendor_1_1packaging_1_1version_1_1Version" kindref="compound">Version</ref></type>
+          <declname>prospective</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>spec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="497" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="497" bodyend="499"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>This class abstracts handling of version specifiers.
+
+.. tip::
+
+    It is generally not required to instantiate this manually. You should instead
+    prefer to work with :class:`SpecifierSet` instead, which can parse
+    comma-separated version specifiers (which is what package metadata contains).
+</verbatim> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>abc.ABCMeta</label>
+      </node>
+      <node id="3">
+        <label>metaclass</label>
+      </node>
+      <node id="1">
+        <label>pip._vendor.packaging.specifiers.Specifier</label>
+        <link refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>pip._vendor.packaging.specifiers.BaseSpecifier</label>
+        <link refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1BaseSpecifier"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>abc.ABCMeta</label>
+      </node>
+      <node id="5">
+        <label>str</label>
+      </node>
+      <node id="3">
+        <label>metaclass</label>
+      </node>
+      <node id="1">
+        <label>pip._vendor.packaging.specifiers.Specifier</label>
+        <link refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>_operator_regex_str</edgelabel>
+          <edgelabel>_version_regex_str</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>pip._vendor.packaging.specifiers.BaseSpecifier</label>
+        <link refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1BaseSpecifier"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" line="99" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_vendor/packaging/specifiers.py" bodystart="99" bodyend="626"/>
+    <listofallmembers>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1ae0692a2cb4b69f339c4a6202a5ac2fc4" prot="private" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>__class__</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a683c5e94b06a9db13dd59ea5be823182" prot="public" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>__contains__</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1adf699c698b2bcf16ef85e173a51d38ed" prot="public" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>__eq__</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a08936b701db9b75ec8b44a82a292c485" prot="public" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>__hash__</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1ae70a99f55f52e9dc1ea43580d946e8b6" prot="public" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>__init__</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a62067cf49633f89e5a507d89f4edb575" prot="public" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>__repr__</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1aff8a0958024472b5d75e29cb134d9bc7" prot="public" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>__str__</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a980df7eb33cc70e821148e8ab0676546" prot="protected" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>_canonical_spec</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a248252022d035f7891334b275160c3ea" prot="protected" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>_canonical_spec</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a6d52465ac7d2bb1bd32b944e9569a750" prot="protected" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>_compare_arbitrary</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1ae5d0a8b3eb146c41e2fdb9e0081c2281" prot="protected" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>_compare_compatible</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1aad95a7e2c2abff33c0134d0a7810a792" prot="protected" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>_compare_equal</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1aee15243a6e5ca4d1209032e6356548ef" prot="protected" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>_compare_greater_than</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a4ba374bc62584920d5666f5920203199" prot="protected" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>_compare_greater_than_equal</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a0e3cb3d551caa15888d6321394a23561" prot="protected" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>_compare_less_than</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1aa4afcc0abd1b3415d808b0c36ab0ad66" prot="protected" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>_compare_less_than_equal</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a719dafe40bc5b1e2982bc1087ae4c1a4" prot="protected" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>_compare_not_equal</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1ac7b3f39bae160a2b9aba701df6d54af1" prot="protected" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>_get_operator</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1ad34c75566a0ffad1017b769e0bb13815" prot="protected" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>_operator_regex_str</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1ab75861e399d72f1d330e835f8350ec96" prot="protected" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>_operators</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a92d2edc94bc0864abd9792a63067ae66" prot="protected" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>_prereleases</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a1c3dd3a0238b868f061160a39f1a3177" prot="protected" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>_regex</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a6822d1f9f1de65c413af2b34cf0b071b" prot="protected" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>_spec</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a4eda597d90ec85d93b6c8184657bfc73" prot="protected" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>_version_regex_str</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a7a2f152abd6d3428a07d2be6d8d9bd9c" prot="public" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>contains</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1ac96d37578d7010d36bc56af2553b55a9" prot="public" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>filter</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a75276c4aae4f1b5eee694dc8eb0e8f88" prot="public" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>operator</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a94896054c4deb1cf1ab028fb0a045848" prot="public" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>prereleases</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1af1e606eb11b7321f394795929cf34085" prot="public" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>prereleases</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a40ee0d5674e67ad37e5f1456438e9715" prot="public" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>version</name></member>
+      <member refid="classpip_1_1__vendor_1_1packaging_1_1specifiers_1_1Specifier_1a8c68e6b946071e0df5a28781d233165e" prot="public" virt="non-virtual"><scope>pip::_vendor::packaging::specifiers::Specifier</scope><name>version</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

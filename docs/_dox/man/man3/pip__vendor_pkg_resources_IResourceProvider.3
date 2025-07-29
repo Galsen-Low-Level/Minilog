@@ -1,0 +1,126 @@
+.TH "pip._vendor.pkg_resources.IResourceProvider" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.pkg_resources.IResourceProvider
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._vendor\&.pkg_resources\&.IMetadataProvider\fP, and Protocol\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fBget_resource_filename\fP (self, \fBResourceManager\fP manager, str resource_name)"
+.br
+.ti -1c
+.RI "\fB_ResourceStream\fP \fBget_resource_stream\fP (self, \fBResourceManager\fP manager, str resource_name)"
+.br
+.ti -1c
+.RI "bytes \fBget_resource_string\fP (self, \fBResourceManager\fP manager, str resource_name)"
+.br
+.ti -1c
+.RI "bool \fBhas_resource\fP (self, str resource_name)"
+.br
+.ti -1c
+.RI "bool \fBresource_isdir\fP (self, str resource_name)"
+.br
+.ti -1c
+.RI "list[str] \fBresource_listdir\fP (self, str resource_name)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._vendor\&.pkg_resources\&.IMetadataProvider\fP
+.in +1c
+.ti -1c
+.RI "bool \fBhas_metadata\fP (self, str name)"
+.br
+.ti -1c
+.RI "str \fBget_metadata\fP (self, str name)"
+.br
+.ti -1c
+.RI "Iterator[str] \fBget_metadata_lines\fP (self, str name)"
+.br
+.ti -1c
+.RI "bool \fBmetadata_isdir\fP (self, str name)"
+.br
+.ti -1c
+.RI "list[str] \fBmetadata_listdir\fP (self, str name)"
+.br
+.ti -1c
+.RI "None \fBrun_script\fP (self, str script_name, dict[str, Any] namespace)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+An object that provides access to package resources
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " str pip\&._vendor\&.pkg_resources\&.IResourceProvider\&.get_resource_filename ( self, \fBResourceManager\fP manager, str
+     resource_name)"
+
+.PP
+.nf
+Return a true filesystem path for `resource_name`
+
+`manager` must be a ``ResourceManager``
+.fi
+.PP
+ 
+.SS " \fB_ResourceStream\fP pip\&._vendor\&.pkg_resources\&.IResourceProvider\&.get_resource_stream ( self, \fBResourceManager\fP manager, str
+     resource_name)"
+
+.PP
+.nf
+Return a readable file-like object for `resource_name`
+
+`manager` must be a ``ResourceManager``
+.fi
+.PP
+ 
+.SS " bytes pip\&._vendor\&.pkg_resources\&.IResourceProvider\&.get_resource_string ( self, \fBResourceManager\fP manager, str
+     resource_name)"
+
+.PP
+.nf
+Return the contents of `resource_name` as :obj:`bytes`
+
+`manager` must be a ``ResourceManager``
+.fi
+.PP
+ 
+.SS " bool pip\&._vendor\&.pkg_resources\&.IResourceProvider\&.has_resource ( self, str resource_name)"
+
+.PP
+.nf
+Does the package contain the named resource?
+.fi
+.PP
+ 
+.SS " bool pip\&._vendor\&.pkg_resources\&.IResourceProvider\&.resource_isdir ( self, str resource_name)"
+
+.PP
+.nf
+Is the named resource a directory?  (like ``os\&.path\&.isdir()``)
+.fi
+.PP
+ 
+.SS " list[str] pip\&._vendor\&.pkg_resources\&.IResourceProvider\&.resource_listdir ( self, str resource_name)"
+
+.PP
+.nf
+List of resource names in the directory (like ``os\&.listdir()``)
+.fi
+.PP
+ 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

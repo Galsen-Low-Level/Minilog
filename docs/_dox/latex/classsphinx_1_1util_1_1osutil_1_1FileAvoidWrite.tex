@@ -1,0 +1,101 @@
+\doxysection{sphinx.\+util.\+osutil.\+File\+Avoid\+Write Class Reference}
+\hypertarget{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite}{}\label{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite}\index{sphinx.util.osutil.FileAvoidWrite@{sphinx.util.osutil.FileAvoidWrite}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_a393ef68e081a3934bdf40d0af6c97e6f}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, str\texorpdfstring{$\vert$}{|}Path path)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_a508cdf9cd2bfdc63509c7a221c5b76e5}{write}} (self, str data)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_a200688883d0f5a9001fd484d185d77d0}{close}} (self)
+\item 
+Self \mbox{\hyperlink{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_a40b6ffb3309f8c16f4dfee7e918e462a}{\+\_\+\+\_\+enter\+\_\+\+\_\+}} (self)
+\item 
+bool \mbox{\hyperlink{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_aa2325dc0bbcde8680d5f3ad3fe44e536}{\+\_\+\+\_\+exit\+\_\+\+\_\+}} (self, type\mbox{[}Base\+Exception\mbox{]}\texorpdfstring{$\vert$}{|}None exc\+\_\+type, Base\+Exception\texorpdfstring{$\vert$}{|}None exc\+\_\+value, Traceback\+Type\texorpdfstring{$\vert$}{|}None traceback)
+\item 
+Any \mbox{\hyperlink{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_a249f01cadf246da76dcfaea3ee93b9cf}{\+\_\+\+\_\+getattr\+\_\+\+\_\+}} (self, str name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_a6dc35f35acb7bdb60b25e1bfdbeeb921}{\+\_\+path}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_a87c479dbe1908568345953f373236314}{\+\_\+io}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}File-like object that buffers output and only writes if content changed.
+
+Use this class like when writing to a file to avoid touching the original
+file if the content hasn't changed. This is useful in scenarios where file
+mtime is used to invalidate caches or trigger new behavior.
+
+When writing to this file handle, all writes are buffered until the object
+is closed.
+
+Objects can be used as context managers.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_a393ef68e081a3934bdf40d0af6c97e6f}\label{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_a393ef68e081a3934bdf40d0af6c97e6f} 
+\index{sphinx.util.osutil.FileAvoidWrite@{sphinx.util.osutil.FileAvoidWrite}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!sphinx.util.osutil.FileAvoidWrite@{sphinx.util.osutil.FileAvoidWrite}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None sphinx.\+util.\+osutil.\+File\+Avoid\+Write.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str \texorpdfstring{$\vert$}{|} Path}]{path }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_a40b6ffb3309f8c16f4dfee7e918e462a}\label{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_a40b6ffb3309f8c16f4dfee7e918e462a} 
+\index{sphinx.util.osutil.FileAvoidWrite@{sphinx.util.osutil.FileAvoidWrite}!\_\_enter\_\_@{\_\_enter\_\_}}
+\index{\_\_enter\_\_@{\_\_enter\_\_}!sphinx.util.osutil.FileAvoidWrite@{sphinx.util.osutil.FileAvoidWrite}}
+\doxysubsubsection{\texorpdfstring{\_\_enter\_\_()}{\_\_enter\_\_()}}
+{\footnotesize\ttfamily  Self sphinx.\+util.\+osutil.\+File\+Avoid\+Write.\+\_\+\+\_\+enter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_aa2325dc0bbcde8680d5f3ad3fe44e536}\label{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_aa2325dc0bbcde8680d5f3ad3fe44e536} 
+\index{sphinx.util.osutil.FileAvoidWrite@{sphinx.util.osutil.FileAvoidWrite}!\_\_exit\_\_@{\_\_exit\_\_}}
+\index{\_\_exit\_\_@{\_\_exit\_\_}!sphinx.util.osutil.FileAvoidWrite@{sphinx.util.osutil.FileAvoidWrite}}
+\doxysubsubsection{\texorpdfstring{\_\_exit\_\_()}{\_\_exit\_\_()}}
+{\footnotesize\ttfamily  bool sphinx.\+util.\+osutil.\+File\+Avoid\+Write.\+\_\+\+\_\+exit\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{type\mbox{[}Base\+Exception\mbox{]} \texorpdfstring{$\vert$}{|} None}]{exc\+\_\+type,  }\item[{Base\+Exception \texorpdfstring{$\vert$}{|} None}]{exc\+\_\+value,  }\item[{Traceback\+Type \texorpdfstring{$\vert$}{|} None}]{traceback }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_a249f01cadf246da76dcfaea3ee93b9cf}\label{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_a249f01cadf246da76dcfaea3ee93b9cf} 
+\index{sphinx.util.osutil.FileAvoidWrite@{sphinx.util.osutil.FileAvoidWrite}!\_\_getattr\_\_@{\_\_getattr\_\_}}
+\index{\_\_getattr\_\_@{\_\_getattr\_\_}!sphinx.util.osutil.FileAvoidWrite@{sphinx.util.osutil.FileAvoidWrite}}
+\doxysubsubsection{\texorpdfstring{\_\_getattr\_\_()}{\_\_getattr\_\_()}}
+{\footnotesize\ttfamily  Any sphinx.\+util.\+osutil.\+File\+Avoid\+Write.\+\_\+\+\_\+getattr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_a200688883d0f5a9001fd484d185d77d0}\label{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_a200688883d0f5a9001fd484d185d77d0} 
+\index{sphinx.util.osutil.FileAvoidWrite@{sphinx.util.osutil.FileAvoidWrite}!close@{close}}
+\index{close@{close}!sphinx.util.osutil.FileAvoidWrite@{sphinx.util.osutil.FileAvoidWrite}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily  None sphinx.\+util.\+osutil.\+File\+Avoid\+Write.\+close (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Stop accepting writes and write file, if needed.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_a508cdf9cd2bfdc63509c7a221c5b76e5}\label{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_a508cdf9cd2bfdc63509c7a221c5b76e5} 
+\index{sphinx.util.osutil.FileAvoidWrite@{sphinx.util.osutil.FileAvoidWrite}!write@{write}}
+\index{write@{write}!sphinx.util.osutil.FileAvoidWrite@{sphinx.util.osutil.FileAvoidWrite}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily  None sphinx.\+util.\+osutil.\+File\+Avoid\+Write.\+write (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{data }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_a87c479dbe1908568345953f373236314}\label{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_a87c479dbe1908568345953f373236314} 
+\index{sphinx.util.osutil.FileAvoidWrite@{sphinx.util.osutil.FileAvoidWrite}!\_io@{\_io}}
+\index{\_io@{\_io}!sphinx.util.osutil.FileAvoidWrite@{sphinx.util.osutil.FileAvoidWrite}}
+\doxysubsubsection{\texorpdfstring{\_io}{\_io}}
+{\footnotesize\ttfamily sphinx.\+util.\+osutil.\+File\+Avoid\+Write.\+\_\+io\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_a6dc35f35acb7bdb60b25e1bfdbeeb921}\label{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite_a6dc35f35acb7bdb60b25e1bfdbeeb921} 
+\index{sphinx.util.osutil.FileAvoidWrite@{sphinx.util.osutil.FileAvoidWrite}!\_path@{\_path}}
+\index{\_path@{\_path}!sphinx.util.osutil.FileAvoidWrite@{sphinx.util.osutil.FileAvoidWrite}}
+\doxysubsubsection{\texorpdfstring{\_path}{\_path}}
+{\footnotesize\ttfamily sphinx.\+util.\+osutil.\+File\+Avoid\+Write.\+\_\+path\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/sphinx/util/\mbox{\hyperlink{osutil_8py}{osutil.\+py}}\end{DoxyCompactItemize}

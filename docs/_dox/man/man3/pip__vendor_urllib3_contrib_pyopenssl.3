@@ -1,0 +1,233 @@
+.TH "pip._vendor.urllib3.contrib.pyopenssl" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.urllib3.contrib.pyopenssl
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBPyOpenSSLContext\fP"
+.br
+.ti -1c
+.RI "class \fBUnsupportedExtension\fP"
+.br
+.ti -1c
+.RI "class \fBWrappedSocket\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBinject_into_urllib3\fP ()"
+.br
+.ti -1c
+.RI "\fBextract_from_urllib3\fP ()"
+.br
+.ti -1c
+.RI "\fB_validate_dependencies_met\fP ()"
+.br
+.ti -1c
+.RI "\fB_dnsname_to_stdlib\fP (name)"
+.br
+.ti -1c
+.RI "\fBget_subj_alt_name\fP (peer_cert)"
+.br
+.ti -1c
+.RI "\fBmakefile\fP (self, mode, bufsize=\-1)"
+.br
+.ti -1c
+.RI "\fB_verify_callback\fP (cnx, x509, err_no, err_depth, return_code)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB_fileobject\fP = None"
+.br
+.ti -1c
+.RI "\fBcategory\fP"
+.br
+.ti -1c
+.RI "\fBstacklevel\fP"
+.br
+.ti -1c
+.RI "bool \fBHAS_SNI\fP = True"
+.br
+.ti -1c
+.RI "dict \fB_openssl_versions\fP"
+.br
+.ti -1c
+.RI "dict \fB_stdlib_to_openssl_verify\fP"
+.br
+.ti -1c
+.RI "\fB_openssl_to_stdlib_verify\fP = dict((v, k) for k, v in _stdlib_to_openssl_verify\&.items())"
+.br
+.ti -1c
+.RI "int \fBSSL_WRITE_BLOCKSIZE\fP = 16384"
+.br
+.ti -1c
+.RI "bool \fBorig_util_HAS_SNI\fP = util\&.HAS_SNI"
+.br
+.ti -1c
+.RI "\fBorig_util_SSLContext\fP = \fButil\&.ssl_\&.SSLContext\fP"
+.br
+.ti -1c
+.RI "\fBlog\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "\fBmakefile\fP = backport_makefile"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+TLS with SNI_-support for Python 2\&. Follow these instructions if you would
+like to verify TLS certificates in Python 2\&. Note, the default libraries do
+*not* do certificate checking; you need to do additional work to validate
+certificates yourself\&.
+
+This needs the following packages installed:
+
+* `pyOpenSSL`_ (tested with 16\&.0\&.0)
+* `cryptography`_ (minimum 1\&.3\&.4, from pyopenssl)
+* `idna`_ (minimum 2\&.0, from cryptography)
+
+However, pyopenssl depends on cryptography, which depends on idna, so while we
+use all three directly here we end up having relatively few packages required\&.
+
+You can install them with the following command:
+
+\&.\&. code-block:: bash
+
+    $ python -m pip install pyopenssl cryptography idna
+
+To activate certificate checking, call
+:func:`~urllib3\&.contrib\&.pyopenssl\&.inject_into_urllib3` from your Python code
+before you begin making HTTP requests\&. This can be done in a ``sitecustomize``
+module, or at any other time before your application begins using ``urllib3``,
+like this:
+
+\&.\&. code-block:: python
+
+    try:
+        import pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl as pyopenssl
+        pyopenssl\&.inject_into_urllib3()
+    except ImportError:
+        pass
+
+Now you can use :mod:`urllib3` as you normally would, and it will support SNI
+when the required modules are installed\&.
+
+Activating this module also has the positive side effect of disabling SSL/TLS
+compression in Python 2 (see `CRIME attack`_)\&.
+
+\&.\&. _sni: https://en\&.wikipedia\&.org/wiki/Server_Name_Indication
+\&.\&. _crime attack: https://en\&.wikipedia\&.org/wiki/CRIME_(security_exploit)
+\&.\&. _pyopenssl: https://www\&.pyopenssl\&.org
+\&.\&. _cryptography: https://cryptography\&.io
+\&.\&. _idna: https://github\&.com/kjd/idna
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&._dnsname_to_stdlib ( name)\fC [protected]\fP"
+
+.PP
+.nf
+Converts a dNSName SubjectAlternativeName field to the form used by the
+standard library on the given Python version\&.
+
+Cryptography produces a dNSName as a unicode string that was idna-decoded
+from ASCII bytes\&. We need to idna-encode that string to get it back, and
+then on Python 3 we also need to convert to unicode via UTF-8 (the stdlib
+uses PyUnicode_FromStringAndSize on it, which decodes via UTF-8)\&.
+
+If the name cannot be idna-encoded then we return None signalling that
+the name given should be skipped\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&._validate_dependencies_met ()\fC [protected]\fP"
+
+.PP
+.nf
+Verifies that PyOpenSSL's package-level dependencies have been met\&.
+Throws `ImportError` if they are not met\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&._verify_callback ( cnx,  x509,  err_no,  err_depth,  return_code)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.extract_from_urllib3 ()"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.get_subj_alt_name ( peer_cert)"
+
+.PP
+.nf
+Given an PyOpenSSL certificate, provides all the subject alternative names\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.inject_into_urllib3 ()"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.makefile ( self,  mode,  bufsize = \fC\-1\fP)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&._fileobject = None\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&._openssl_to_stdlib_verify = dict((v, k) for k, v in _stdlib_to_openssl_verify\&.items())\fC [protected]\fP"
+
+.SS "dict pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&._openssl_versions\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     util\&.PROTOCOL_TLS: OpenSSL\&.SSL\&.SSLv23_METHOD,
+3     PROTOCOL_TLS_CLIENT: OpenSSL\&.SSL\&.SSLv23_METHOD,
+4     ssl\&.PROTOCOL_TLSv1: OpenSSL\&.SSL\&.TLSv1_METHOD,
+5 }
+.fi
+
+.SS "dict pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&._stdlib_to_openssl_verify\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     ssl\&.CERT_NONE: OpenSSL\&.SSL\&.VERIFY_NONE,
+3     ssl\&.CERT_OPTIONAL: OpenSSL\&.SSL\&.VERIFY_PEER,
+4     ssl\&.CERT_REQUIRED: OpenSSL\&.SSL\&.VERIFY_PEER
+5     + OpenSSL\&.SSL\&.VERIFY_FAIL_IF_NO_PEER_CERT,
+6 }
+.fi
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.category"
+
+.SS "bool pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.HAS_SNI = True"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.log = logging\&.getLogger(__name__)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.makefile = backport_makefile"
+
+.SS "bool pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.orig_util_HAS_SNI = util\&.HAS_SNI"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.orig_util_SSLContext = \fButil\&.ssl_\&.SSLContext\fP"
+
+.SS "int pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.SSL_WRITE_BLOCKSIZE = 16384"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.stacklevel"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

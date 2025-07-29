@@ -1,0 +1,202 @@
+.TH "sphinx.search.SearchLanguage" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.search.SearchLanguage
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBsphinx\&.search\&.da\&.SearchDanish\fP, \fBsphinx\&.search\&.de\&.SearchGerman\fP, \fBsphinx\&.search\&.en\&.SearchEnglish\fP, \fBsphinx\&.search\&.es\&.SearchSpanish\fP, \fBsphinx\&.search\&.fi\&.SearchFinnish\fP, \fBsphinx\&.search\&.fr\&.SearchFrench\fP, \fBsphinx\&.search\&.hu\&.SearchHungarian\fP, \fBsphinx\&.search\&.it\&.SearchItalian\fP, \fBsphinx\&.search\&.ja\&.SearchJapanese\fP, \fBsphinx\&.search\&.nl\&.SearchDutch\fP, \fBsphinx\&.search\&.no\&.SearchNorwegian\fP, \fBsphinx\&.search\&.pt\&.SearchPortuguese\fP, \fBsphinx\&.search\&.ro\&.SearchRomanian\fP, \fBsphinx\&.search\&.ru\&.SearchRussian\fP, \fBsphinx\&.search\&.sv\&.SearchSwedish\fP, \fBsphinx\&.search\&.tr\&.SearchTurkish\fP, and \fBsphinx\&.search\&.zh\&.SearchChinese\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, dict[str, str] \fBoptions\fP)"
+.br
+.ti -1c
+.RI "None \fBinit\fP (self, dict[str, str] \fBoptions\fP)"
+.br
+.ti -1c
+.RI "list[str] \fBsplit\fP (self, str input)"
+.br
+.ti -1c
+.RI "str \fBstem\fP (self, str word)"
+.br
+.ti -1c
+.RI "bool \fBword_filter\fP (self, str word)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBstopwords\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBlang\fP = ''"
+.br
+.ti -1c
+.RI "str \fBlanguage_name\fP = ''"
+.br
+.ti -1c
+.RI "set \fBstopwords\fP = set()"
+.br
+.ti -1c
+.RI "str \fBjs_splitter_code\fP = ''"
+.br
+.ti -1c
+.RI "str \fBjs_stemmer_rawcode\fP = ''"
+.br
+.ti -1c
+.RI "str \fBjs_stemmer_code\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_word_re\fP = re\&.compile(r'\\w+')"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This class is the base class for search natural language preprocessors\&.  If
+you want to add support for a new language, you should override the methods
+of this class\&.
+
+You should override `lang` class property too (e\&.g\&. 'en', 'fr' and so on)\&.
+
+\&.\&. attribute:: stopwords
+
+   This is a set of stop words of the target language\&.  Default `stopwords`
+   is empty\&.  This word is used for building index and embedded in JS\&.
+
+\&.\&. attribute:: js_splitter_code
+
+   Return splitter function of JavaScript version\&.  The function should be
+   named as ``splitQuery``\&.  And it should take a string and return list of
+   strings\&.
+
+   \&.\&. versionadded:: 3\&.0
+
+\&.\&. attribute:: js_stemmer_code
+
+   Return stemmer class of JavaScript version\&.  This class' name should be
+   ``Stemmer`` and this class must have ``stemWord`` method\&.  This string is
+   embedded as-is in searchtools\&.js\&.
+
+   This class is used to preprocess search word which Sphinx HTML readers
+   type, before searching index\&. Default implementation does nothing\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.search\&.SearchLanguage\&.__init__ ( self, dict[str, str] options)"
+
+.PP
+Reimplemented in \fBsphinx\&.search\&.zh\&.SearchChinese\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " None sphinx\&.search\&.SearchLanguage\&.init ( self, dict[str, str] options)"
+
+.PP
+.nf
+Initialize the class with the options the user has given\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.search\&.da\&.SearchDanish\fP, \fBsphinx\&.search\&.de\&.SearchGerman\fP, \fBsphinx\&.search\&.en\&.SearchEnglish\fP, \fBsphinx\&.search\&.es\&.SearchSpanish\fP, \fBsphinx\&.search\&.fi\&.SearchFinnish\fP, \fBsphinx\&.search\&.fr\&.SearchFrench\fP, \fBsphinx\&.search\&.hu\&.SearchHungarian\fP, \fBsphinx\&.search\&.it\&.SearchItalian\fP, \fBsphinx\&.search\&.ja\&.SearchJapanese\fP, \fBsphinx\&.search\&.nl\&.SearchDutch\fP, \fBsphinx\&.search\&.no\&.SearchNorwegian\fP, \fBsphinx\&.search\&.pt\&.SearchPortuguese\fP, \fBsphinx\&.search\&.ro\&.SearchRomanian\fP, \fBsphinx\&.search\&.ru\&.SearchRussian\fP, \fBsphinx\&.search\&.sv\&.SearchSwedish\fP, \fBsphinx\&.search\&.tr\&.SearchTurkish\fP, and \fBsphinx\&.search\&.zh\&.SearchChinese\fP\&.
+.SS " list[str] sphinx\&.search\&.SearchLanguage\&.split ( self, str input)"
+
+.PP
+.nf
+This method splits a sentence into words\&.  Default splitter splits input
+at white spaces, which should be enough for most languages except CJK
+languages\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.search\&.ja\&.SearchJapanese\fP, and \fBsphinx\&.search\&.zh\&.SearchChinese\fP\&.
+.SS " str sphinx\&.search\&.SearchLanguage\&.stem ( self, str word)"
+
+.PP
+.nf
+This method implements stemming algorithm of the Python version\&.
+
+Default implementation does nothing\&.  You should implement this if the
+language has any stemming rules\&.
+
+This class is used to preprocess search words before registering them in
+the search index\&.  The stemming of the Python version and the JS version
+(given in the js_stemmer_code attribute) must be compatible\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.search\&.da\&.SearchDanish\fP, \fBsphinx\&.search\&.de\&.SearchGerman\fP, \fBsphinx\&.search\&.en\&.SearchEnglish\fP, \fBsphinx\&.search\&.es\&.SearchSpanish\fP, \fBsphinx\&.search\&.fi\&.SearchFinnish\fP, \fBsphinx\&.search\&.fr\&.SearchFrench\fP, \fBsphinx\&.search\&.hu\&.SearchHungarian\fP, \fBsphinx\&.search\&.it\&.SearchItalian\fP, \fBsphinx\&.search\&.ja\&.SearchJapanese\fP, \fBsphinx\&.search\&.nl\&.SearchDutch\fP, \fBsphinx\&.search\&.no\&.SearchNorwegian\fP, \fBsphinx\&.search\&.pt\&.SearchPortuguese\fP, \fBsphinx\&.search\&.ro\&.SearchRomanian\fP, \fBsphinx\&.search\&.ru\&.SearchRussian\fP, \fBsphinx\&.search\&.sv\&.SearchSwedish\fP, \fBsphinx\&.search\&.tr\&.SearchTurkish\fP, and \fBsphinx\&.search\&.zh\&.SearchChinese\fP\&.
+.SS " bool sphinx\&.search\&.SearchLanguage\&.word_filter ( self, str word)"
+
+.PP
+.nf
+Return true if the target word should be registered in the search index\&.
+This method is called after stemming\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.search\&.ja\&.SearchJapanese\fP, and \fBsphinx\&.search\&.zh\&.SearchChinese\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.search\&.SearchLanguage\&._word_re = re\&.compile(r'\\w+')\fC [static]\fP, \fC [protected]\fP"
+
+.SS "str sphinx\&.search\&.SearchLanguage\&.js_splitter_code = ''\fC [static]\fP"
+
+.SS "str sphinx\&.search\&.SearchLanguage\&.js_stemmer_code\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  """
+/**
+ * Dummy stemmer for languages without stemming rules\&.
+ */
+var Stemmer = function() {
+  this\&.stemWord = function(w) {
+    return w;
+  }
+}
+"""
+.fi
+
+.SS "str sphinx\&.search\&.SearchLanguage\&.js_stemmer_rawcode = ''\fC [static]\fP"
+
+.SS "str sphinx\&.search\&.SearchLanguage\&.lang = ''\fC [static]\fP"
+
+.SS "str sphinx\&.search\&.SearchLanguage\&.language_name = ''\fC [static]\fP"
+
+.SS "sphinx\&.search\&.SearchLanguage\&.options"
+
+.SS "set sphinx\&.search\&.SearchLanguage\&.stopwords = set()\fC [static]\fP"
+
+.SS "sphinx\&.search\&.SearchLanguage\&.stopwords"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,53 @@
+\doxysection{sphinx.\+errors.\+Sphinx\+Error Class Reference}
+\hypertarget{classsphinx_1_1errors_1_1SphinxError}{}\label{classsphinx_1_1errors_1_1SphinxError}\index{sphinx.errors.SphinxError@{sphinx.errors.SphinxError}}
+Inheritance diagram for sphinx.\+errors.\+Sphinx\+Error\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classsphinx_1_1errors_1_1SphinxError}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{classsphinx_1_1errors_1_1SphinxError_a50a7d7b83269378cfe6682cb67c3ee54}{category}} = \textquotesingle{}Sphinx error\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Base class for Sphinx errors.
+
+This is the base class for "nice" exceptions.  When such an exception is
+raised, Sphinx will abort the build and present the exception category and
+message to the user.
+
+Extensions are encouraged to derive from this exception for their custom
+errors.
+
+Exceptions *not* derived from :exc:`SphinxError` are treated as unexpected
+and shown to the user with a part of the traceback (and the full traceback
+saved in a temporary file).
+
+.. attribute:: category
+
+   Description of the exception "category", used in converting the
+   exception to a string ("category: message").  Should be set accordingly
+   in subclasses.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsphinx_1_1errors_1_1SphinxError_a50a7d7b83269378cfe6682cb67c3ee54}\label{classsphinx_1_1errors_1_1SphinxError_a50a7d7b83269378cfe6682cb67c3ee54} 
+\index{sphinx.errors.SphinxError@{sphinx.errors.SphinxError}!category@{category}}
+\index{category@{category}!sphinx.errors.SphinxError@{sphinx.errors.SphinxError}}
+\doxysubsubsection{\texorpdfstring{category}{category}}
+{\footnotesize\ttfamily str sphinx.\+errors.\+Sphinx\+Error.\+category = \textquotesingle{}Sphinx error\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1errors_1_1ExtensionError_a8a7b845701cba28d8198d9f128ca3695}{sphinx.\+errors.\+Extension\+Error}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/sphinx/\mbox{\hyperlink{sphinx_2errors_8py}{errors.\+py}}\end{DoxyCompactItemize}

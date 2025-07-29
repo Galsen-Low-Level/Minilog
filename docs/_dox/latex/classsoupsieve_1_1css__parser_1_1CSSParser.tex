@@ -1,0 +1,248 @@
+\doxysection{soupsieve.\+css\+\_\+parser.\+CSSParser Class Reference}
+\hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser}{}\label{classsoupsieve_1_1css__parser_1_1CSSParser}\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_ad85cbf652d694e7e11b0e6e05700f082}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, str selector, dict\mbox{[}str, str\texorpdfstring{$\vert$}{|}ct.\+Selector\+List\mbox{]}\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_a2ff284f24913d1dd6e76952d2fbce6a2}{custom}}=None, int \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_a194393fa9ea3f6e888a0173c6df500d2}{flags}}=0)
+\item 
+bool \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_af8cb3ec1a10e2a4a51e8b2963e922326}{parse\+\_\+attribute\+\_\+selector}} (self, \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}} sel, Match\mbox{[}str\mbox{]} m, bool has\+\_\+selector)
+\item 
+bool \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_a2c49428612baf030daf244ce551b9cc2}{parse\+\_\+tag\+\_\+pattern}} (self, \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}} sel, Match\mbox{[}str\mbox{]} m, bool has\+\_\+selector)
+\item 
+bool \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_ad704b48644d59cc78fe707543bd50a83}{parse\+\_\+pseudo\+\_\+class\+\_\+custom}} (self, \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}} sel, Match\mbox{[}str\mbox{]} m, bool has\+\_\+selector)
+\item 
+tuple\mbox{[}bool, bool\mbox{]} \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_acbbe875bce287f41c5d335da7fe56348}{parse\+\_\+pseudo\+\_\+class}} (self, \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}} sel, Match\mbox{[}str\mbox{]} m, bool has\+\_\+selector, Iterator\mbox{[}tuple\mbox{[}str, Match\mbox{[}str\mbox{]}\mbox{]}\mbox{]} iselector, bool is\+\_\+html)
+\item 
+bool \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_ac1f025e7528f3ddc3c94ecdf24b8675f}{parse\+\_\+pseudo\+\_\+nth}} (self, \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}} sel, Match\mbox{[}str\mbox{]} m, bool has\+\_\+selector, Iterator\mbox{[}tuple\mbox{[}str, Match\mbox{[}str\mbox{]}\mbox{]}\mbox{]} iselector)
+\item 
+bool \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_abd7cc02c4a75d56a58a6f7bdd85c55fa}{parse\+\_\+pseudo\+\_\+open}} (self, \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}} sel, str name, bool has\+\_\+selector, Iterator\mbox{[}tuple\mbox{[}str, Match\mbox{[}str\mbox{]}\mbox{]}\mbox{]} iselector, int index)
+\item 
+tuple\mbox{[}bool, \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}, str\mbox{]} \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_a93cfb3abb6a5aae181a352638bb4bae7}{parse\+\_\+has\+\_\+combinator}} (self, \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}} sel, Match\mbox{[}str\mbox{]} m, bool has\+\_\+selector, list\mbox{[}\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}\mbox{]} selectors, str rel\+\_\+type, int index)
+\item 
+tuple\mbox{[}bool, \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}\mbox{]} \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_ae565970202305f5748a60d2074c4de6c}{parse\+\_\+combinator}} (self, \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}} sel, Match\mbox{[}str\mbox{]} m, bool has\+\_\+selector, list\mbox{[}\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}\mbox{]} selectors, list\mbox{[}\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}\mbox{]} relations, bool is\+\_\+pseudo, bool is\+\_\+forgive, int index)
+\item 
+bool \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_a99199436f027d8bb837dde61af536823}{parse\+\_\+class\+\_\+id}} (self, \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}} sel, Match\mbox{[}str\mbox{]} m, bool has\+\_\+selector)
+\item 
+bool \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_a040b441af8598d7ac4e6dc64bac2009c}{parse\+\_\+pseudo\+\_\+contains}} (self, \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}} sel, Match\mbox{[}str\mbox{]} m, bool has\+\_\+selector)
+\item 
+bool \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_a04499342dd5dcd983585eeb5456d9e38}{parse\+\_\+pseudo\+\_\+lang}} (self, \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}} sel, Match\mbox{[}str\mbox{]} m, bool has\+\_\+selector)
+\item 
+bool \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_a2b2d3ee07c1dcfc83ea5da18e7b748ea}{parse\+\_\+pseudo\+\_\+dir}} (self, \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}} sel, Match\mbox{[}str\mbox{]} m, bool has\+\_\+selector)
+\item 
+ct.\+Selector\+List \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_aa5cf2337277983d463b1cf908e5f7af7}{parse\+\_\+selectors}} (self, Iterator\mbox{[}tuple\mbox{[}str, Match\mbox{[}str\mbox{]}\mbox{]}\mbox{]} iselector, int index=0, int \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_a194393fa9ea3f6e888a0173c6df500d2}{flags}}=0)
+\item 
+Iterator\mbox{[}tuple\mbox{[}str, Match\mbox{[}str\mbox{]}\mbox{]}\mbox{]} \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_a9c9eb5aa0642d17b01b0350551746209}{selector\+\_\+iter}} (self, str \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_a0cb86ed4dcfb0450f8425e8d8857a02a}{pattern}})
+\item 
+ct.\+Selector\+List \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_a9ff54e044f8694bfaa56191929fa1711}{process\+\_\+selectors}} (self, int index=0, int \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_a194393fa9ea3f6e888a0173c6df500d2}{flags}}=0)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_a0cb86ed4dcfb0450f8425e8d8857a02a}{pattern}}
+\item 
+\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_a194393fa9ea3f6e888a0173c6df500d2}{flags}}
+\item 
+\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_aa69bacb77f2a338961850b4d8ce8d8a9}{debug}}
+\item 
+\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_a2ff284f24913d1dd6e76952d2fbce6a2}{custom}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tuple \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1CSSParser_ae518202e29ea0ebf6b4ec697b86b651c}{css\+\_\+tokens}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Parse CSS selectors.\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser_ad85cbf652d694e7e11b0e6e05700f082}\label{classsoupsieve_1_1css__parser_1_1CSSParser_ad85cbf652d694e7e11b0e6e05700f082} 
+\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None soupsieve.\+css\+\_\+parser.\+CSSParser.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{selector,  }\item[{dict\mbox{[}str, str \texorpdfstring{$\vert$}{|} ct.\+Selector\+List\mbox{]} \texorpdfstring{$\vert$}{|} None }]{custom = {\ttfamily None},  }\item[{int }]{flags = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser_af8cb3ec1a10e2a4a51e8b2963e922326}\label{classsoupsieve_1_1css__parser_1_1CSSParser_af8cb3ec1a10e2a4a51e8b2963e922326} 
+\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}!parse\_attribute\_selector@{parse\_attribute\_selector}}
+\index{parse\_attribute\_selector@{parse\_attribute\_selector}!soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection{\texorpdfstring{parse\_attribute\_selector()}{parse\_attribute\_selector()}}
+{\footnotesize\ttfamily  bool soupsieve.\+css\+\_\+parser.\+CSSParser.\+parse\+\_\+attribute\+\_\+selector (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}}]{sel,  }\item[{Match\mbox{[}str\mbox{]}}]{m,  }\item[{bool}]{has\+\_\+selector }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create attribute selector from the returned regex match.\end{DoxyVerb}
+ \Hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser_a99199436f027d8bb837dde61af536823}\label{classsoupsieve_1_1css__parser_1_1CSSParser_a99199436f027d8bb837dde61af536823} 
+\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}!parse\_class\_id@{parse\_class\_id}}
+\index{parse\_class\_id@{parse\_class\_id}!soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection{\texorpdfstring{parse\_class\_id()}{parse\_class\_id()}}
+{\footnotesize\ttfamily  bool soupsieve.\+css\+\_\+parser.\+CSSParser.\+parse\+\_\+class\+\_\+id (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}}]{sel,  }\item[{Match\mbox{[}str\mbox{]}}]{m,  }\item[{bool}]{has\+\_\+selector }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse HTML classes and ids.\end{DoxyVerb}
+ \Hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser_ae565970202305f5748a60d2074c4de6c}\label{classsoupsieve_1_1css__parser_1_1CSSParser_ae565970202305f5748a60d2074c4de6c} 
+\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}!parse\_combinator@{parse\_combinator}}
+\index{parse\_combinator@{parse\_combinator}!soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection{\texorpdfstring{parse\_combinator()}{parse\_combinator()}}
+{\footnotesize\ttfamily  tuple\mbox{[}bool, \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}\mbox{]} soupsieve.\+css\+\_\+parser.\+CSSParser.\+parse\+\_\+combinator (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}}]{sel,  }\item[{Match\mbox{[}str\mbox{]}}]{m,  }\item[{bool}]{has\+\_\+selector,  }\item[{list\mbox{[}\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}\mbox{]}}]{selectors,  }\item[{list\mbox{[}\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}\mbox{]}}]{relations,  }\item[{bool}]{is\+\_\+pseudo,  }\item[{bool}]{is\+\_\+forgive,  }\item[{int     }]{index }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse combinator tokens.\end{DoxyVerb}
+ \Hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser_a93cfb3abb6a5aae181a352638bb4bae7}\label{classsoupsieve_1_1css__parser_1_1CSSParser_a93cfb3abb6a5aae181a352638bb4bae7} 
+\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}!parse\_has\_combinator@{parse\_has\_combinator}}
+\index{parse\_has\_combinator@{parse\_has\_combinator}!soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection{\texorpdfstring{parse\_has\_combinator()}{parse\_has\_combinator()}}
+{\footnotesize\ttfamily  tuple\mbox{[}bool, \mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}, str\mbox{]} soupsieve.\+css\+\_\+parser.\+CSSParser.\+parse\+\_\+has\+\_\+combinator (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}}]{sel,  }\item[{Match\mbox{[}str\mbox{]}}]{m,  }\item[{bool}]{has\+\_\+selector,  }\item[{list\mbox{[}\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}\mbox{]}}]{selectors,  }\item[{str}]{rel\+\_\+type,  }\item[{int     }]{index }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse combinator tokens.\end{DoxyVerb}
+ \Hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser_acbbe875bce287f41c5d335da7fe56348}\label{classsoupsieve_1_1css__parser_1_1CSSParser_acbbe875bce287f41c5d335da7fe56348} 
+\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}!parse\_pseudo\_class@{parse\_pseudo\_class}}
+\index{parse\_pseudo\_class@{parse\_pseudo\_class}!soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection{\texorpdfstring{parse\_pseudo\_class()}{parse\_pseudo\_class()}}
+{\footnotesize\ttfamily  tuple\mbox{[}bool, bool\mbox{]} soupsieve.\+css\+\_\+parser.\+CSSParser.\+parse\+\_\+pseudo\+\_\+class (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}}]{sel,  }\item[{Match\mbox{[}str\mbox{]}}]{m,  }\item[{bool}]{has\+\_\+selector,  }\item[{Iterator\mbox{[}tuple\mbox{[}str, Match\mbox{[}str\mbox{]}\mbox{]}\mbox{]}}]{iselector,  }\item[{bool     }]{is\+\_\+html }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse pseudo class.\end{DoxyVerb}
+ \Hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser_ad704b48644d59cc78fe707543bd50a83}\label{classsoupsieve_1_1css__parser_1_1CSSParser_ad704b48644d59cc78fe707543bd50a83} 
+\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}!parse\_pseudo\_class\_custom@{parse\_pseudo\_class\_custom}}
+\index{parse\_pseudo\_class\_custom@{parse\_pseudo\_class\_custom}!soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection{\texorpdfstring{parse\_pseudo\_class\_custom()}{parse\_pseudo\_class\_custom()}}
+{\footnotesize\ttfamily  bool soupsieve.\+css\+\_\+parser.\+CSSParser.\+parse\+\_\+pseudo\+\_\+class\+\_\+custom (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}}]{sel,  }\item[{Match\mbox{[}str\mbox{]}}]{m,  }\item[{bool}]{has\+\_\+selector }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse custom pseudo class alias.
+
+Compile custom selectors as we need them. When compiling a custom selector,
+set it to `None` in the dictionary so we can avoid an infinite loop.
+\end{DoxyVerb}
+ \Hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser_a040b441af8598d7ac4e6dc64bac2009c}\label{classsoupsieve_1_1css__parser_1_1CSSParser_a040b441af8598d7ac4e6dc64bac2009c} 
+\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}!parse\_pseudo\_contains@{parse\_pseudo\_contains}}
+\index{parse\_pseudo\_contains@{parse\_pseudo\_contains}!soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection{\texorpdfstring{parse\_pseudo\_contains()}{parse\_pseudo\_contains()}}
+{\footnotesize\ttfamily  bool soupsieve.\+css\+\_\+parser.\+CSSParser.\+parse\+\_\+pseudo\+\_\+contains (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}}]{sel,  }\item[{Match\mbox{[}str\mbox{]}}]{m,  }\item[{bool}]{has\+\_\+selector }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse contains.\end{DoxyVerb}
+ \Hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser_a2b2d3ee07c1dcfc83ea5da18e7b748ea}\label{classsoupsieve_1_1css__parser_1_1CSSParser_a2b2d3ee07c1dcfc83ea5da18e7b748ea} 
+\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}!parse\_pseudo\_dir@{parse\_pseudo\_dir}}
+\index{parse\_pseudo\_dir@{parse\_pseudo\_dir}!soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection{\texorpdfstring{parse\_pseudo\_dir()}{parse\_pseudo\_dir()}}
+{\footnotesize\ttfamily  bool soupsieve.\+css\+\_\+parser.\+CSSParser.\+parse\+\_\+pseudo\+\_\+dir (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}}]{sel,  }\item[{Match\mbox{[}str\mbox{]}}]{m,  }\item[{bool}]{has\+\_\+selector }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse pseudo direction.\end{DoxyVerb}
+ \Hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser_a04499342dd5dcd983585eeb5456d9e38}\label{classsoupsieve_1_1css__parser_1_1CSSParser_a04499342dd5dcd983585eeb5456d9e38} 
+\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}!parse\_pseudo\_lang@{parse\_pseudo\_lang}}
+\index{parse\_pseudo\_lang@{parse\_pseudo\_lang}!soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection{\texorpdfstring{parse\_pseudo\_lang()}{parse\_pseudo\_lang()}}
+{\footnotesize\ttfamily  bool soupsieve.\+css\+\_\+parser.\+CSSParser.\+parse\+\_\+pseudo\+\_\+lang (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}}]{sel,  }\item[{Match\mbox{[}str\mbox{]}}]{m,  }\item[{bool}]{has\+\_\+selector }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse pseudo language.\end{DoxyVerb}
+ \Hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser_ac1f025e7528f3ddc3c94ecdf24b8675f}\label{classsoupsieve_1_1css__parser_1_1CSSParser_ac1f025e7528f3ddc3c94ecdf24b8675f} 
+\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}!parse\_pseudo\_nth@{parse\_pseudo\_nth}}
+\index{parse\_pseudo\_nth@{parse\_pseudo\_nth}!soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection{\texorpdfstring{parse\_pseudo\_nth()}{parse\_pseudo\_nth()}}
+{\footnotesize\ttfamily  bool soupsieve.\+css\+\_\+parser.\+CSSParser.\+parse\+\_\+pseudo\+\_\+nth (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}}]{sel,  }\item[{Match\mbox{[}str\mbox{]}}]{m,  }\item[{bool}]{has\+\_\+selector,  }\item[{Iterator\mbox{[}tuple\mbox{[}str, Match\mbox{[}str\mbox{]}\mbox{]}\mbox{]}     }]{iselector }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse `nth` pseudo.\end{DoxyVerb}
+ \Hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser_abd7cc02c4a75d56a58a6f7bdd85c55fa}\label{classsoupsieve_1_1css__parser_1_1CSSParser_abd7cc02c4a75d56a58a6f7bdd85c55fa} 
+\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}!parse\_pseudo\_open@{parse\_pseudo\_open}}
+\index{parse\_pseudo\_open@{parse\_pseudo\_open}!soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection{\texorpdfstring{parse\_pseudo\_open()}{parse\_pseudo\_open()}}
+{\footnotesize\ttfamily  bool soupsieve.\+css\+\_\+parser.\+CSSParser.\+parse\+\_\+pseudo\+\_\+open (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}}]{sel,  }\item[{str}]{name,  }\item[{bool}]{has\+\_\+selector,  }\item[{Iterator\mbox{[}tuple\mbox{[}str, Match\mbox{[}str\mbox{]}\mbox{]}\mbox{]}}]{iselector,  }\item[{int     }]{index }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse pseudo with opening bracket.\end{DoxyVerb}
+ \Hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser_aa5cf2337277983d463b1cf908e5f7af7}\label{classsoupsieve_1_1css__parser_1_1CSSParser_aa5cf2337277983d463b1cf908e5f7af7} 
+\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}!parse\_selectors@{parse\_selectors}}
+\index{parse\_selectors@{parse\_selectors}!soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection{\texorpdfstring{parse\_selectors()}{parse\_selectors()}}
+{\footnotesize\ttfamily  ct.\+Selector\+List soupsieve.\+css\+\_\+parser.\+CSSParser.\+parse\+\_\+selectors (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Iterator\mbox{[}tuple\mbox{[}str, Match\mbox{[}str\mbox{]}\mbox{]}\mbox{]}}]{iselector,  }\item[{int }]{index = {\ttfamily 0},  }\item[{int }]{flags = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse selectors.\end{DoxyVerb}
+ \Hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser_a2c49428612baf030daf244ce551b9cc2}\label{classsoupsieve_1_1css__parser_1_1CSSParser_a2c49428612baf030daf244ce551b9cc2} 
+\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}!parse\_tag\_pattern@{parse\_tag\_pattern}}
+\index{parse\_tag\_pattern@{parse\_tag\_pattern}!soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection{\texorpdfstring{parse\_tag\_pattern()}{parse\_tag\_pattern()}}
+{\footnotesize\ttfamily  bool soupsieve.\+css\+\_\+parser.\+CSSParser.\+parse\+\_\+tag\+\_\+pattern (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsoupsieve_1_1css__parser_1_1__Selector}{\+\_\+\+Selector}}}]{sel,  }\item[{Match\mbox{[}str\mbox{]}}]{m,  }\item[{bool}]{has\+\_\+selector }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse tag pattern from regex match.\end{DoxyVerb}
+ \Hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser_a9ff54e044f8694bfaa56191929fa1711}\label{classsoupsieve_1_1css__parser_1_1CSSParser_a9ff54e044f8694bfaa56191929fa1711} 
+\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}!process\_selectors@{process\_selectors}}
+\index{process\_selectors@{process\_selectors}!soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection{\texorpdfstring{process\_selectors()}{process\_selectors()}}
+{\footnotesize\ttfamily  ct.\+Selector\+List soupsieve.\+css\+\_\+parser.\+CSSParser.\+process\+\_\+selectors (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int }]{index = {\ttfamily 0},  }\item[{int }]{flags = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Process selectors.\end{DoxyVerb}
+ \Hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser_a9c9eb5aa0642d17b01b0350551746209}\label{classsoupsieve_1_1css__parser_1_1CSSParser_a9c9eb5aa0642d17b01b0350551746209} 
+\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}!selector\_iter@{selector\_iter}}
+\index{selector\_iter@{selector\_iter}!soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection{\texorpdfstring{selector\_iter()}{selector\_iter()}}
+{\footnotesize\ttfamily  Iterator\mbox{[}tuple\mbox{[}str, Match\mbox{[}str\mbox{]}\mbox{]}\mbox{]} soupsieve.\+css\+\_\+parser.\+CSSParser.\+selector\+\_\+iter (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{pattern }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Iterate selector tokens.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser_ae518202e29ea0ebf6b4ec697b86b651c}\label{classsoupsieve_1_1css__parser_1_1CSSParser_ae518202e29ea0ebf6b4ec697b86b651c} 
+\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}!css\_tokens@{css\_tokens}}
+\index{css\_tokens@{css\_tokens}!soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection{\texorpdfstring{css\_tokens}{css\_tokens}}
+{\footnotesize\ttfamily tuple soupsieve.\+css\+\_\+parser.\+CSSParser.\+css\+\_\+tokens\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ (}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ SelectorPattern(\textcolor{stringliteral}{"{}pseudo\_close"{}},\ PAT\_PSEUDO\_CLOSE),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ SpecialPseudoPattern(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}pseudo\_contains"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{':contains'},\ \textcolor{stringliteral}{':-\/soup-\/contains'},\ \textcolor{stringliteral}{':-\/soup-\/contains-\/own'}),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PAT\_PSEUDO\_CONTAINS,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SelectorPattern}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{"{}pseudo\_nth\_child"{}},\ (\textcolor{stringliteral}{':nth-\/child'},\ \textcolor{stringliteral}{':nth-\/last-\/child'}),\ PAT\_PSEUDO\_NTH\_CHILD,\ SelectorPattern),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{"{}pseudo\_nth\_type"{}},\ (\textcolor{stringliteral}{':nth-\/of-\/type'},\ \textcolor{stringliteral}{':nth-\/last-\/of-\/type'}),\ PAT\_PSEUDO\_NTH\_TYPE,\ SelectorPattern),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{"{}pseudo\_lang"{}},\ (\textcolor{stringliteral}{':lang'},),\ PAT\_PSEUDO\_LANG,\ SelectorPattern),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{stringliteral}{"{}pseudo\_dir"{}},\ (\textcolor{stringliteral}{':dir'},),\ PAT\_PSEUDO\_DIR,\ SelectorPattern)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ SelectorPattern(\textcolor{stringliteral}{"{}pseudo\_class\_custom"{}},\ PAT\_PSEUDO\_CLASS\_CUSTOM),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ SelectorPattern(\textcolor{stringliteral}{"{}pseudo\_class"{}},\ PAT\_PSEUDO\_CLASS),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ SelectorPattern(\textcolor{stringliteral}{"{}pseudo\_element"{}},\ PAT\_PSEUDO\_ELEMENT),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ SelectorPattern(\textcolor{stringliteral}{"{}amp"{}},\ PAT\_AMP),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ SelectorPattern(\textcolor{stringliteral}{"{}at\_rule"{}},\ PAT\_AT\_RULE),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ SelectorPattern(\textcolor{stringliteral}{"{}id"{}},\ PAT\_ID),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ SelectorPattern(\textcolor{stringliteral}{"{}class"{}},\ PAT\_CLASS),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ SelectorPattern(\textcolor{stringliteral}{"{}tag"{}},\ PAT\_TAG),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ SelectorPattern(\textcolor{stringliteral}{"{}attribute"{}},\ PAT\_ATTR),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ SelectorPattern(\textcolor{stringliteral}{"{}combine"{}},\ PAT\_COMBINE)}
+\DoxyCodeLine{\ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser_a2ff284f24913d1dd6e76952d2fbce6a2}\label{classsoupsieve_1_1css__parser_1_1CSSParser_a2ff284f24913d1dd6e76952d2fbce6a2} 
+\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}!custom@{custom}}
+\index{custom@{custom}!soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection{\texorpdfstring{custom}{custom}}
+{\footnotesize\ttfamily soupsieve.\+css\+\_\+parser.\+CSSParser.\+custom}
+
+\Hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser_aa69bacb77f2a338961850b4d8ce8d8a9}\label{classsoupsieve_1_1css__parser_1_1CSSParser_aa69bacb77f2a338961850b4d8ce8d8a9} 
+\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}!debug@{debug}}
+\index{debug@{debug}!soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection{\texorpdfstring{debug}{debug}}
+{\footnotesize\ttfamily soupsieve.\+css\+\_\+parser.\+CSSParser.\+debug}
+
+\Hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser_a194393fa9ea3f6e888a0173c6df500d2}\label{classsoupsieve_1_1css__parser_1_1CSSParser_a194393fa9ea3f6e888a0173c6df500d2} 
+\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}!flags@{flags}}
+\index{flags@{flags}!soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily soupsieve.\+css\+\_\+parser.\+CSSParser.\+flags}
+
+\Hypertarget{classsoupsieve_1_1css__parser_1_1CSSParser_a0cb86ed4dcfb0450f8425e8d8857a02a}\label{classsoupsieve_1_1css__parser_1_1CSSParser_a0cb86ed4dcfb0450f8425e8d8857a02a} 
+\index{soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}!pattern@{pattern}}
+\index{pattern@{pattern}!soupsieve.css\_parser.CSSParser@{soupsieve.css\_parser.CSSParser}}
+\doxysubsubsection{\texorpdfstring{pattern}{pattern}}
+{\footnotesize\ttfamily soupsieve.\+css\+\_\+parser.\+CSSParser.\+pattern}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/soupsieve/\mbox{\hyperlink{css__parser_8py}{css\+\_\+parser.\+py}}\end{DoxyCompactItemize}

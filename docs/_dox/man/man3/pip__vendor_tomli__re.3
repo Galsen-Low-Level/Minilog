@@ -1,0 +1,87 @@
+.TH "pip._vendor.tomli._re" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.tomli._re
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "datetime|date \fBmatch_to_datetime\fP (re\&.Match match)"
+.br
+.ti -1c
+.RI "timezone \fBcached_tz\fP (str hour_str, str minute_str, str sign_str)"
+.br
+.ti -1c
+.RI "time \fBmatch_to_localtime\fP (re\&.Match match)"
+.br
+.ti -1c
+.RI "Any \fBmatch_to_number\fP (re\&.Match match, ParseFloat parse_float)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "str \fB_TIME_RE_STR\fP = r'([01][0\-9]|2[0\-3]):([0\-5][0\-9]):([0\-5][0\-9])(?:\\\&.([0\-9]{1,6})[0\-9]*)?'"
+.br
+.ti -1c
+.RI "\fBRE_NUMBER\fP"
+.br
+.ti -1c
+.RI "\fBRE_LOCALTIME\fP = re\&.compile(\fB_TIME_RE_STR\fP)"
+.br
+.ti -1c
+.RI "\fBRE_DATETIME\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " timezone pip\&._vendor\&.tomli\&._re\&.cached_tz (str hour_str, str minute_str, str sign_str)"
+
+.SS " datetime | date pip\&._vendor\&.tomli\&._re\&.match_to_datetime (re\&.Match match)"
+
+.PP
+.nf
+Convert a `RE_DATETIME` match to `datetime\&.datetime` or `datetime\&.date`\&.
+
+Raises ValueError if the match does not correspond to a valid date
+or datetime\&.
+
+.fi
+.PP
+ 
+.SS " time pip\&._vendor\&.tomli\&._re\&.match_to_localtime (re\&.Match match)"
+
+.SS " Any pip\&._vendor\&.tomli\&._re\&.match_to_number (re\&.Match match, ParseFloat parse_float)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "str pip\&._vendor\&.tomli\&._re\&._TIME_RE_STR = r'([01][0\-9]|2[0\-3]):([0\-5][0\-9]):([0\-5][0\-9])(?:\\\&.([0\-9]{1,6})[0\-9]*)?'\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.tomli\&._re\&.RE_DATETIME"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(
+2     rf,
+3     flags=re\&.VERBOSE,
+4 )
+.fi
+
+.SS "pip\&._vendor\&.tomli\&._re\&.RE_LOCALTIME = re\&.compile(\fB_TIME_RE_STR\fP)"
+
+.SS "pip\&._vendor\&.tomli\&._re\&.RE_NUMBER"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(
+2     ,
+3     flags=re\&.VERBOSE,
+4 )
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,96 @@
+\doxysection{ftpfm\+\_\+logprint.\+h}
+\hypertarget{ftpfm__logprint_8h_source}{}\label{ftpfm__logprint_8h_source}\index{/home/umar/Desktop/WorkShop/GLL/Ftp-\/FM/include/ftpfm\_logprint.h@{/home/umar/Desktop/WorkShop/GLL/Ftp-\/FM/include/ftpfm\_logprint.h}}
+\mbox{\hyperlink{ftpfm__logprint_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ @file\ ftpfm\_logprint.h\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ @brief\ a\ simple\ logger\ with\ termcap\ embedded\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ @author\ \ Umar\ Ba\ <jUmarB@protonmail.com>\ }}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#if\ !defined(FTPFM\_LP)\ }}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ \ FTPFM\_LP\ }}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ \ \_\_parmreq\_\ }}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#\ define\ \_\_parmreq\_(\_\_sizereq)\ [static\ \_\_sizereq]\ }}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#if\ defined(nptr)\ }}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#\ undef\ nptr\ }}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif\ \ }}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#\ define\ nptr\ NULL\ }}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ \ FLOG(\_\_severity\_level\ ,\ \ \_\_mesg)\ \(\backslash\)}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\ \ \ \ fmtmsg(MM\_CONSOLE|MM\_PRINT\ ,\ "{}FTPFM:v1.0"{}\ ,\ \_\_severity\_level\ ,\ \_\_mesg\ ,0}\textcolor{comment}{/*\ no\ action\ */}\textcolor{preprocessor}{,\ 0}\textcolor{comment}{/*\ no\ tag*/}\textcolor{preprocessor}{)}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ \ tc\_exec(\_\_termcap)\ \ tputs(\_\_termcap\ ,\ 1\ ,\ putchar)\ \ }}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ \ tc\_exec\_p(\_\_termcaparm)\ tc\_exec(tiparm(\_\_termcaparm))\ \ }}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ \ tc\_exec\_g(x,y)\ tputs(tigoto(cursor\_address\ ,\ x\ ,\ y)\ ,\ 1,\ putchar)\ \ }}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ \ SETAF\ \ ((TERMTYPE\ *)(cur\_term))-\/>Strings[359]\ }}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ \ RSET\ \ \ ((TERMTYPE\ *)(cur\_term))-\/>Strings[39]\ }}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ \ \_\_restore\ \ tc\_exec(RSET)\ \ }}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ \ tc\_color\_attr(\_\_color\_attribute)\ \ \ SETAF\ ,\ \_\_color\_attribute\ }}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{ftpfm__logprint_8h_abe38b4385b5ca5bc5e7eeb7b243311ff}{\_\_log\_level}}\ \{\ }
+\DoxyCodeLine{00031\ \ \ \mbox{\hyperlink{ftpfm__logprint_8h_abe38b4385b5ca5bc5e7eeb7b243311ffa748005382152808a72b1a9177d9dc806}{INFO}},}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ LP\_INFO\ \ tc\_color\_attr(COLOR\_CYAN)\ }}
+\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{ftpfm__logprint_8h_abe38b4385b5ca5bc5e7eeb7b243311ffa74dac7ac23d5b810db6d4067f14e8676}{WARN}},\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ LP\_WARN\ \ tc\_color\_attr(COLOR\_YELLOW)\ }}
+\DoxyCodeLine{00035\ \ \ ERROR}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ LP\_ERROR\ tc\_color\_attr(COLOR\_RED)}}
+\DoxyCodeLine{00037\ \}\ ;\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ \_\_get\_lp\_level(\_\_lp\_level)\(\backslash\)}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\ \ tc\_exec\_p(LP\_\#\#\_\_lp\_level)\ }}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ \ \_\_LP\_GENERIC(\_\_lvl\ ,\ ...)\(\backslash\)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\ \ htftp\_log(\_\_lvl\ ,\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ \ LOGINFO(...)\(\backslash\)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\ \ \_\_LP\_GENERIC(INFO,\ \_\_VA\_ARGS\_\_)\ \ }}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ \ LOGWARN(...)\(\backslash\)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\ \ \_\_LP\_GENERIC(WARN,\_\_VA\_ARGS\_\_)\ \ }}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ \ LOGERR(...)\(\backslash\)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ \_\_LP\_GENERIC(ERROR,\_\_VA\_ARGS\_\_)\ \ }}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{comment}{/*\ @fn\ htftp\_lp\_setup(void)\ ;\ }}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ *\ @brief\ configure\ or\ initilize\ the\ terminal\ capbilities\ \ }}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00057\ FTPFM\_LP\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ }
+\DoxyCodeLine{00058\ \mbox{\hyperlink{ftpfm__logprint_8h_aa903289aa634a4e36e1d16d55746a3a4}{htftp\_lp\_setup}}(\textcolor{keywordtype}{void})\ ;\ \ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{comment}{/*\ @fn\ \ htftp\_log(int\ \ ,\ const\ char\ \ *\ ,\ \ ...)\ }}
+\DoxyCodeLine{00062\ \textcolor{comment}{\ *\ @brief\ write\ formated\ log\ on\ stdandard\ output\ with\ color\ indication\ }}
+\DoxyCodeLine{00063\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ see\ \ \ \_\_log\_level\ enum\ }}
+\DoxyCodeLine{00064\ \textcolor{comment}{\ *\ @param\ \ int\ -\/\ \_\_log\_level\ \ \ }}
+\DoxyCodeLine{00065\ \textcolor{comment}{\ *\ @param\ const\ char\ *\ \ formated\ string\ \ }}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ *\ @param\ ...\ \ variadic\ parameter\ \ \ }}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ *\ @return\ \ \ int\ -\/\ 0\ ok\ \ otherwise\ \ \string~1}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ *\ \ }}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00070\ FTPFM\_LP\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00071\ \mbox{\hyperlink{ftpfm__logprint_8h_ade68bcc16b01d8fea1c149e4d7a60b13}{htftp\_log}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{ftpfm__logprint_8h_abe38b4385b5ca5bc5e7eeb7b243311ff}{\_\_log\_level}}\ ,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\_\_restrict\_\_\ \_\_fmtstr\ ,\ ...)\ ;\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ \ htftp\_lp\ \ htftp\_log}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{comment}{/*\ @fn\ htftp\_log(const\ char\ \ *\ ,\ ...\ )\ }}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ *\ @brief\ write\ formated\ log\ }}
+\DoxyCodeLine{00076\ \textcolor{comment}{\ *\ @param\ const\ char\ *\ \ formated\ string\ \ }}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ *\ @param\ ...\ \ variadic\ parameter\ \ \ }}
+\DoxyCodeLine{00078\ \textcolor{comment}{\ *\ @return\ int\ -\/\ 0\ ok\ otherwise\ -\/1}}
+\DoxyCodeLine{00079\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00080\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ }
+\DoxyCodeLine{00081\ \_\_htftp\_log(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \_\_restrict\_\_\ \_\_fmtstr\ ,\ ...);\ \ }
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{comment}{/*\ \ @fn\ htftp\_perform\_localtime(char\ \ \_\_parmreq\_(1024)))\ }}
+\DoxyCodeLine{00084\ \textcolor{comment}{\ *\ \ @brief\ format\ time\ in\ specific\ representation\ \ }}
+\DoxyCodeLine{00085\ \textcolor{comment}{\ *\ \ @param\ \ char\ \ strtime\_buffer\ with\ limited\ size\ 1024\ \ null\ value\ \ is\ no\ allowed\ }}
+\DoxyCodeLine{00086\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00087\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ }
+\DoxyCodeLine{00088\ htftp\_perform\_localtime(\textcolor{keywordtype}{char}\ strtime\_buffer\ \ \mbox{\hyperlink{ftpfm__logprint_8h_a88a963bebc51e7c7954045dfef3d2aac}{\_\_parmreq\_}}(1024))\ ;\ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !HTFTP\_LP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

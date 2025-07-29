@@ -1,0 +1,299 @@
+.TH "pip._vendor.pkg_resources.ZipProvider" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.pkg_resources.ZipProvider
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._vendor\&.pkg_resources\&.EggProvider\fP\&.
+.PP
+Inherited by \fBpip\&._vendor\&.pkg_resources\&.EggMetadata\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fB_ZipLoaderModule\fP module)"
+.br
+.ti -1c
+.RI "\fBzipinfo\fP (self)"
+.br
+.ti -1c
+.RI "\fBget_resource_filename\fP (self, \fBResourceManager\fP manager, str resource_name)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._vendor\&.pkg_resources\&.NullProvider\fP
+.in +1c
+.ti -1c
+.RI "\fBget_resource_stream\fP (self, \fBResourceManager\fP manager, str resource_name)"
+.br
+.ti -1c
+.RI "bytes \fBget_resource_string\fP (self, \fBResourceManager\fP manager, str resource_name)"
+.br
+.ti -1c
+.RI "\fBhas_resource\fP (self, str resource_name)"
+.br
+.ti -1c
+.RI "bool \fBhas_metadata\fP (self, str name)"
+.br
+.ti -1c
+.RI "\fBget_metadata\fP (self, str name)"
+.br
+.ti -1c
+.RI "Iterator[str] \fBget_metadata_lines\fP (self, str name)"
+.br
+.ti -1c
+.RI "\fBresource_isdir\fP (self, str resource_name)"
+.br
+.ti -1c
+.RI "bool \fBmetadata_isdir\fP (self, str name)"
+.br
+.ti -1c
+.RI "\fBresource_listdir\fP (self, str resource_name)"
+.br
+.ti -1c
+.RI "list[str] \fBmetadata_listdir\fP (self, str name)"
+.br
+.ti -1c
+.RI "\fBrun_script\fP (self, str script_name, dict[str, Any] namespace)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBzip_pre\fP"
+.br
+.ti -1c
+.RI "\fBegg_root\fP"
+.br
+.ti -1c
+.RI "\fBeagers\fP"
+.br
+.ti -1c
+.RI "\fBmodule_path\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpip\&._vendor\&.pkg_resources\&.EggProvider\fP
+.in +1c
+.ti -1c
+.RI "\fBegg_name\fP"
+.br
+.ti -1c
+.RI "\fBegg_info\fP"
+.br
+.ti -1c
+.RI "\fBegg_root\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpip\&._vendor\&.pkg_resources\&.NullProvider\fP
+.in +1c
+.ti -1c
+.RI "\fBloader\fP"
+.br
+.ti -1c
+.RI "\fBmodule_path\fP"
+.br
+.ti -1c
+.RI "\fBegg_info\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "list \fBeagers\fP = None"
+.br
+.ti -1c
+.RI "zipimport \fBloader\fP \&.zipimporter"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpip\&._vendor\&.pkg_resources\&.NullProvider\fP
+.in +1c
+.ti -1c
+.RI "str \fBegg_name\fP = None"
+.br
+.ti -1c
+.RI "str \fBegg_info\fP = None"
+.br
+.ti -1c
+.RI "\fB_LoaderProtocol\fP \fBloader\fP = None"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_zipinfo_name\fP (self, fspath)"
+.br
+.ti -1c
+.RI "\fB_parts\fP (self, zip_path)"
+.br
+.ti -1c
+.RI "str \fB_extract_resource\fP (self, \fBResourceManager\fP manager, zip_path)"
+.br
+.ti -1c
+.RI "\fB_is_current\fP (self, file_path, zip_path)"
+.br
+.ti -1c
+.RI "\fB_get_eager_resources\fP (self)"
+.br
+.ti -1c
+.RI "\fB_index\fP (self)"
+.br
+.ti -1c
+.RI "bool \fB_has\fP (self, fspath)"
+.br
+.ti -1c
+.RI "bool \fB_isdir\fP (self, fspath)"
+.br
+.ti -1c
+.RI "\fB_listdir\fP (self, fspath)"
+.br
+.ti -1c
+.RI "\fB_eager_to_zip\fP (self, str resource_name)"
+.br
+.ti -1c
+.RI "\fB_resource_to_zip\fP (self, str resource_name)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpip\&._vendor\&.pkg_resources\&.EggProvider\fP
+.in +1c
+.ti -1c
+.RI "\fB_setup_prefix\fP (self)"
+.br
+.ti -1c
+.RI "\fB_set_egg\fP (self, str path)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpip\&._vendor\&.pkg_resources\&.NullProvider\fP
+.in +1c
+.ti -1c
+.RI "\fB_get_metadata_path\fP (self, name)"
+.br
+.ti -1c
+.RI "\fB_fn\fP (self, str|None base, str resource_name)"
+.br
+.ti -1c
+.RI "bytes \fB_get\fP (self, path)"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_get_date_and_size\fP (zip_stat)"
+.br
+.in -1c
+
+Static Protected Member Functions inherited from \fBpip\&._vendor\&.pkg_resources\&.NullProvider\fP
+.in +1c
+.ti -1c
+.RI "\fB_validate_resource_path\fP (path)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_dirindex\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_zip_manifests\fP = \fBMemoizedZipManifests\fP()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Resource support for zips and eggs
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.pkg_resources\&.ZipProvider\&.__init__ ( self, \fB_ZipLoaderModule\fP module)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.pkg_resources\&.EggProvider\fP\&.
+.PP
+Reimplemented in \fBpip\&._vendor\&.pkg_resources\&.EggMetadata\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.pkg_resources\&.ZipProvider\&._eager_to_zip ( self, str resource_name)\fC [protected]\fP"
+
+.SS " str pip\&._vendor\&.pkg_resources\&.ZipProvider\&._extract_resource ( self, \fBResourceManager\fP manager,  zip_path)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.ZipProvider\&._get_date_and_size ( zip_stat)\fC [static]\fP, \fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.ZipProvider\&._get_eager_resources ( self)\fC [protected]\fP"
+
+.SS " bool pip\&._vendor\&.pkg_resources\&.ZipProvider\&._has ( self,  fspath)\fC [protected]\fP"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.pkg_resources\&.NullProvider\fP\&.
+.SS "pip\&._vendor\&.pkg_resources\&.ZipProvider\&._index ( self)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.ZipProvider\&._is_current ( self,  file_path,  zip_path)\fC [protected]\fP"
+
+.PP
+.nf
+Return True if the file_path is current for this zip_path
+
+.fi
+.PP
+ 
+.SS " bool pip\&._vendor\&.pkg_resources\&.ZipProvider\&._isdir ( self,  fspath)\fC [protected]\fP"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.pkg_resources\&.NullProvider\fP\&.
+.SS "pip\&._vendor\&.pkg_resources\&.ZipProvider\&._listdir ( self,  fspath)\fC [protected]\fP"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.pkg_resources\&.NullProvider\fP\&.
+.SS "pip\&._vendor\&.pkg_resources\&.ZipProvider\&._parts ( self,  zip_path)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.ZipProvider\&._resource_to_zip ( self, str resource_name)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.ZipProvider\&._zipinfo_name ( self,  fspath)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.ZipProvider\&.get_resource_filename ( self, \fBResourceManager\fP manager, str resource_name)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.pkg_resources\&.NullProvider\fP\&.
+.SS "pip\&._vendor\&.pkg_resources\&.ZipProvider\&.zipinfo ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.pkg_resources\&.ZipProvider\&._dirindex\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.ZipProvider\&._zip_manifests = \fBMemoizedZipManifests\fP()\fC [static]\fP, \fC [protected]\fP"
+
+.SS "list pip\&._vendor\&.pkg_resources\&.ZipProvider\&.eagers = None\fC [static]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.ZipProvider\&.eagers"
+
+.SS "pip\&._vendor\&.pkg_resources\&.ZipProvider\&.egg_root"
+
+.SS "zipimport pip\&._vendor\&.pkg_resources\&.ZipProvider\&.loader \&.zipimporter\fC [static]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.ZipProvider\&.module_path"
+
+.SS "pip\&._vendor\&.pkg_resources\&.ZipProvider\&.zip_pre"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

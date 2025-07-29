@@ -1,0 +1,311 @@
+.TH "pip._vendor.distlib.metadata.LegacyMetadata" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.distlib.metadata.LegacyMetadata
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, path=None, fileobj=None, mapping=None, \fBscheme\fP='default')"
+.br
+.ti -1c
+.RI "\fBset_metadata_version\fP (self)"
+.br
+.ti -1c
+.RI "\fB__getitem__\fP (self, \fBname\fP)"
+.br
+.ti -1c
+.RI "\fB__setitem__\fP (self, \fBname\fP, value)"
+.br
+.ti -1c
+.RI "\fB__delitem__\fP (self, \fBname\fP)"
+.br
+.ti -1c
+.RI "\fB__contains__\fP (self, \fBname\fP)"
+.br
+.ti -1c
+.RI "\fB__getattr__\fP (self, \fBname\fP)"
+.br
+.ti -1c
+.RI "\fBget_fullname\fP (self, filesafe=False)"
+.br
+.ti -1c
+.RI "\fBis_field\fP (self, \fBname\fP)"
+.br
+.ti -1c
+.RI "\fBis_multi_field\fP (self, \fBname\fP)"
+.br
+.ti -1c
+.RI "\fBread\fP (self, filepath)"
+.br
+.ti -1c
+.RI "\fBread_file\fP (self, fileob)"
+.br
+.ti -1c
+.RI "\fBwrite\fP (self, filepath, skip_unknown=False)"
+.br
+.ti -1c
+.RI "\fBwrite_file\fP (self, fileobject, skip_unknown=False)"
+.br
+.ti -1c
+.RI "\fBupdate\fP (self, other=None, **kwargs)"
+.br
+.ti -1c
+.RI "\fBset\fP (self, \fBname\fP, value)"
+.br
+.ti -1c
+.RI "\fBget\fP (self, \fBname\fP, default=\fB_MISSING\fP)"
+.br
+.ti -1c
+.RI "\fBcheck\fP (self, strict=False)"
+.br
+.ti -1c
+.RI "\fBtodict\fP (self, skip_missing=False)"
+.br
+.ti -1c
+.RI "\fBadd_requirements\fP (self, requirements)"
+.br
+.ti -1c
+.RI "\fBkeys\fP (self)"
+.br
+.ti -1c
+.RI "\fB__iter__\fP (self)"
+.br
+.ti -1c
+.RI "\fBvalues\fP (self)"
+.br
+.ti -1c
+.RI "\fBitems\fP (self)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBrequires_files\fP"
+.br
+.ti -1c
+.RI "\fBscheme\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBversion\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_write_field\fP (self, fileobj, \fBname\fP, value)"
+.br
+.ti -1c
+.RI "\fB_convert_name\fP (self, \fBname\fP)"
+.br
+.ti -1c
+.RI "\fB_default_value\fP (self, \fBname\fP)"
+.br
+.ti -1c
+.RI "\fB_remove_line_prefix\fP (self, value)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_fields\fP"
+.br
+.ti -1c
+.RI "\fB_dependencies\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+The legacy metadata of a release\&.
+
+Supports versions 1\&.0, 1\&.1, 1\&.2, 2\&.0 and 1\&.3/2\&.1 (auto-detected)\&. You can
+instantiate the class with one of these arguments (or none):
+- *path*, the path to a metadata file
+- *fileobj* give a file-like object with metadata as content
+- *mapping* is a dict-like object
+- *scheme* is a version scheme name
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.__init__ ( self,  path = \fCNone\fP,  fileobj = \fCNone\fP,  mapping = \fCNone\fP,  scheme = \fC'default'\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.__contains__ ( self,  name)"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.__delitem__ ( self,  name)"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.__getattr__ ( self,  name)"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.__getitem__ ( self,  name)"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.__iter__ ( self)"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.__repr__ ( self)"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.__setitem__ ( self,  name,  value)"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&._convert_name ( self,  name)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&._default_value ( self,  name)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&._remove_line_prefix ( self,  value)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&._write_field ( self,  fileobj,  name,  value)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.add_requirements ( self,  requirements)"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.check ( self,  strict = \fCFalse\fP)"
+
+.PP
+.nf
+Check if the metadata is compliant\&. If strict is True then raise if
+no Name or Version are provided
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.get ( self,  name,  default = \fC\fB_MISSING\fP\fP)"
+
+.PP
+.nf
+Get a metadata field\&.
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.get_fullname ( self,  filesafe = \fCFalse\fP)"
+
+.PP
+.nf
+Return the distribution name with version\&.
+
+If filesafe is true, return a filename-escaped form\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.is_field ( self,  name)"
+
+.PP
+.nf
+return True if name is a valid metadata key
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.is_multi_field ( self,  name)"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.items ( self)"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.keys ( self)"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.read ( self,  filepath)"
+
+.PP
+.nf
+Read the metadata values from a file path\&.
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.read_file ( self,  fileob)"
+
+.PP
+.nf
+Read the metadata values from a file object\&.
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.set ( self,  name,  value)"
+
+.PP
+.nf
+Control then set a metadata field\&.
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.set_metadata_version ( self)"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.todict ( self,  skip_missing = \fCFalse\fP)"
+
+.PP
+.nf
+Return fields as a dict\&.
+
+Field names will be converted to use the underscore-lowercase style
+instead of hyphen-mixed case (i\&.e\&. home_page instead of Home-page)\&.
+This is as per https://www\&.python\&.org/dev/peps/pep-0566/#id17\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.update ( self,  other = \fCNone\fP, ** kwargs)"
+
+.PP
+.nf
+Set metadata values from the given iterable `other` and kwargs\&.
+
+Behavior is like `dict\&.update`: If `other` has a ``keys`` method,
+they are looped over and ``self[key]`` is assigned ``other[key]``\&.
+Else, ``other`` is an iterable of ``(key, value)`` iterables\&.
+
+Keys that don't match a metadata field or that have an empty value are
+dropped\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.values ( self)"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.write ( self,  filepath,  skip_unknown = \fCFalse\fP)"
+
+.PP
+.nf
+Write the metadata fields to filepath\&.
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.write_file ( self,  fileobject,  skip_unknown = \fCFalse\fP)"
+
+.PP
+.nf
+Write the PKG-INFO format data to a file object\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&._dependencies\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&._fields\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.name"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.requires_files"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.scheme"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.LegacyMetadata\&.version"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

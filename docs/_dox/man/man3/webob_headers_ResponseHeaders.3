@@ -1,0 +1,221 @@
+.TH "webob.headers.ResponseHeaders" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webob.headers.ResponseHeaders
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBwebob\&.multidict\&.MultiDict\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__getitem__\fP (self, key)"
+.br
+.ti -1c
+.RI "\fBgetall\fP (self, key)"
+.br
+.ti -1c
+.RI "\fBmixed\fP (self)"
+.br
+.ti -1c
+.RI "\fBdict_of_lists\fP (self)"
+.br
+.ti -1c
+.RI "\fB__setitem__\fP (self, key, value)"
+.br
+.ti -1c
+.RI "\fB__delitem__\fP (self, key)"
+.br
+.ti -1c
+.RI "\fB__contains__\fP (self, key)"
+.br
+.ti -1c
+.RI "\fBsetdefault\fP (self, key, default=None)"
+.br
+.ti -1c
+.RI "\fBpop\fP (self, key, *args)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBwebob\&.multidict\&.MultiDict\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, *args, **kw)"
+.br
+.ti -1c
+.RI "\fBview_list\fP (cls, lst)"
+.br
+.ti -1c
+.RI "\fBfrom_fieldstorage\fP (cls, fs)"
+.br
+.ti -1c
+.RI "\fBadd\fP (self, key, value)"
+.br
+.ti -1c
+.RI "\fBgetone\fP (self, key)"
+.br
+.ti -1c
+.RI "\fBclear\fP (self)"
+.br
+.ti -1c
+.RI "\fBcopy\fP (self)"
+.br
+.ti -1c
+.RI "\fBpopitem\fP (self)"
+.br
+.ti -1c
+.RI "\fBupdate\fP (self, *args, **kw)"
+.br
+.ti -1c
+.RI "\fBextend\fP (self, other=None, **kwargs)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__len__\fP (self)"
+.br
+.ti -1c
+.RI "\fBiterkeys\fP (self)"
+.br
+.RI "All the iteration: "
+.ti -1c
+.RI "\fBkeys\fP (self)"
+.br
+.ti -1c
+.RI "\fBiteritems\fP (self)"
+.br
+.ti -1c
+.RI "\fBitems\fP (self)"
+.br
+.ti -1c
+.RI "\fBitervalues\fP (self)"
+.br
+.ti -1c
+.RI "\fBvalues\fP (self)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBhas_key\fP = \fB__contains__\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBwebob\&.multidict\&.MultiDict\fP
+.in +1c
+.ti -1c
+.RI "\fBhas_key\fP = \fB__contains__\fP"
+.br
+.ti -1c
+.RI "\fBkeys\fP = \fBiterkeys\fP"
+.br
+.ti -1c
+.RI "\fBitems\fP = \fBiteritems\fP"
+.br
+.ti -1c
+.RI "\fBvalues\fP = \fBitervalues\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_items\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBwebob\&.multidict\&.MultiDict\fP
+.in +1c
+.ti -1c
+.RI "\fB_items\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+    Dictionary view on the response headerlist\&.
+    Keys are normalized for case and whitespace\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "webob\&.headers\&.ResponseHeaders\&.__contains__ ( self,  key)"
+
+.PP
+Reimplemented from \fBwebob\&.multidict\&.MultiDict\fP\&.
+.SS "webob\&.headers\&.ResponseHeaders\&.__delitem__ ( self,  key)"
+
+.PP
+Reimplemented from \fBwebob\&.multidict\&.MultiDict\fP\&.
+.SS "webob\&.headers\&.ResponseHeaders\&.__getitem__ ( self,  key)"
+
+.PP
+Reimplemented from \fBwebob\&.multidict\&.MultiDict\fP\&.
+.SS "webob\&.headers\&.ResponseHeaders\&.__setitem__ ( self,  key,  value)"
+
+.PP
+Reimplemented from \fBwebob\&.multidict\&.MultiDict\fP\&.
+.SS "webob\&.headers\&.ResponseHeaders\&.dict_of_lists ( self)"
+
+.PP
+.nf
+Returns a dictionary where each key is associated with a list of values\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBwebob\&.multidict\&.MultiDict\fP\&.
+.SS "webob\&.headers\&.ResponseHeaders\&.getall ( self,  key)"
+
+.PP
+.nf
+Return a list of all values matching the key (may be an empty list)
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBwebob\&.multidict\&.MultiDict\fP\&.
+.SS "webob\&.headers\&.ResponseHeaders\&.mixed ( self)"
+
+.PP
+.nf
+Returns a dictionary where the values are either single
+values, or a list of values when a key/value appears more than
+once in this dictionary\&.  This is similar to the kind of
+dictionary often used to represent the variables in a web
+request\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBwebob\&.multidict\&.MultiDict\fP\&.
+.SS "webob\&.headers\&.ResponseHeaders\&.pop ( self,  key, * args)"
+
+.PP
+Reimplemented from \fBwebob\&.multidict\&.MultiDict\fP\&.
+.SS "webob\&.headers\&.ResponseHeaders\&.setdefault ( self,  key,  default = \fCNone\fP)"
+
+.PP
+Reimplemented from \fBwebob\&.multidict\&.MultiDict\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "webob\&.headers\&.ResponseHeaders\&._items\fC [protected]\fP"
+
+.SS "webob\&.headers\&.ResponseHeaders\&.has_key = \fB__contains__\fP\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

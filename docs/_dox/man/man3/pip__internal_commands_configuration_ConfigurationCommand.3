@@ -1,0 +1,304 @@
+.TH "pip._internal.commands.configuration.ConfigurationCommand" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.commands.configuration.ConfigurationCommand
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._internal\&.cli\&.base_command\&.Command\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBadd_options\fP (self)"
+.br
+.ti -1c
+.RI "int \fBrun\fP (self, Values options, List[str] args)"
+.br
+.ti -1c
+.RI "None \fBlist_values\fP (self, Values options, List[str] args)"
+.br
+.ti -1c
+.RI "None \fBget_name\fP (self, Values options, List[str] args)"
+.br
+.ti -1c
+.RI "None \fBset_name_value\fP (self, Values options, List[str] args)"
+.br
+.ti -1c
+.RI "None \fBunset_name\fP (self, Values options, List[str] args)"
+.br
+.ti -1c
+.RI "None \fBlist_config_values\fP (self, Values options, List[str] args)"
+.br
+.ti -1c
+.RI "None \fBprint_config_file_values\fP (self, Kind variant)"
+.br
+.ti -1c
+.RI "None \fBprint_env_var_values\fP (self)"
+.br
+.ti -1c
+.RI "None \fBopen_in_editor\fP (self, Values options, List[str] args)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str \fBname\fP, str \fBsummary\fP, bool isolated=False)"
+.br
+.ti -1c
+.RI "None \fBhandle_pip_version_check\fP (self, Values options)"
+.br
+.ti -1c
+.RI "Tuple[Values, List[str]] \fBparse_args\fP (self, List[str] args)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (self, List[str] args)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._internal\&.cli\&.command_context\&.CommandContextMixIn\fP
+.in +1c
+.ti -1c
+.RI "Generator[None, None, None] \fBmain_context\fP (self)"
+.br
+.ti -1c
+.RI "\fB_T\fP \fBenter_context\fP (self, ContextManager[\fB_T\fP] context_provider)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcmd_opts\fP"
+.br
+.ti -1c
+.RI "\fBlist_values\fP"
+.br
+.ti -1c
+.RI "\fBopen_in_editor\fP"
+.br
+.ti -1c
+.RI "\fBget_name\fP"
+.br
+.ti -1c
+.RI "\fBset_name_value\fP"
+.br
+.ti -1c
+.RI "\fBunset_name\fP"
+.br
+.ti -1c
+.RI "\fBlist_config_values\fP"
+.br
+.ti -1c
+.RI "\fBconfiguration\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP
+.in +1c
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBsummary\fP"
+.br
+.ti -1c
+.RI "\fBparser\fP"
+.br
+.ti -1c
+.RI "\fBcmd_opts\fP"
+.br
+.ti -1c
+.RI "\fBtempdir_registry\fP"
+.br
+.ti -1c
+.RI "\fBverbosity\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBignore_require_venv\fP = True"
+.br
+.ti -1c
+.RI "str \fBusage\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP
+.in +1c
+.ti -1c
+.RI "str \fBusage\fP = ''"
+.br
+.ti -1c
+.RI "bool \fBignore_require_venv\fP = False"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Optional[Kind] \fB_determine_file\fP (self, Values options, bool need_value)"
+.br
+.ti -1c
+.RI "Any \fB_get_n_args\fP (self, List[str] args, str example, int n)"
+.br
+.ti -1c
+.RI "None \fB_save_configuration\fP (self)"
+.br
+.ti -1c
+.RI "str \fB_determine_editor\fP (self, Values options)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP
+.in +1c
+.ti -1c
+.RI "int \fB_run_wrapper\fP (self, int level_number, Values options, List[str] args)"
+.br
+.ti -1c
+.RI "int \fB_main\fP (self, List[str] args)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Attributes inherited from \fBpip\&._internal\&.cli\&.command_context\&.CommandContextMixIn\fP
+.in +1c
+.ti -1c
+.RI "\fB_in_main_context\fP"
+.br
+.ti -1c
+.RI "\fB_main_context\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Manage local and global configuration\&.
+
+Subcommands:
+
+- list: List the active configuration (or from the file specified)
+- edit: Edit the configuration file in an editor
+- get: Get the value associated with command\&.option
+- set: Set the command\&.option=value
+- unset: Unset the value associated with command\&.option
+- debug: List the configuration files and values defined under them
+
+Configuration keys should be dot separated command and option name,
+with the special prefix 'global' affecting any command\&. For example,
+'pip config set global\&.index-url https://example\&.org/' would configure
+the index url for all commands, but 'pip config set download\&.timeout 10'
+would configure a 10 second timeout only for 'pip download' commands\&.
+
+If none of --user, --global and --site are passed, a virtual
+environment configuration file is used if one is active and the file
+exists\&. Otherwise, all modifications happen to the user file by
+default\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " str pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&._determine_editor ( self, Values options)\fC [protected]\fP"
+
+.SS " Optional[Kind] pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&._determine_file ( self, Values options, bool need_value)\fC [protected]\fP"
+
+.SS " Any pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&._get_n_args ( self, List[str] args, str example, int n)\fC [protected]\fP"
+
+.PP
+.nf
+Helper to make sure the command got the right number of arguments
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&._save_configuration ( self)\fC [protected]\fP"
+
+.SS " None pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&.add_options ( self)"
+
+.PP
+Reimplemented from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP\&.
+.SS " None pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&.get_name ( self, Values options, List[str] args)"
+
+.SS " None pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&.list_config_values ( self, Values options, List[str] args)"
+
+.PP
+.nf
+List config key-value pairs across different config files
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&.list_values ( self, Values options, List[str] args)"
+
+.SS " None pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&.open_in_editor ( self, Values options, List[str] args)"
+
+.SS " None pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&.print_config_file_values ( self, Kind variant)"
+
+.PP
+.nf
+Get key-value pairs from the file of a variant
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&.print_env_var_values ( self)"
+
+.PP
+.nf
+Get key-values pairs present as environment variables
+.fi
+.PP
+ 
+.SS " int pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&.run ( self, Values options, List[str] args)"
+
+.PP
+Reimplemented from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP\&.
+.SS " None pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&.set_name_value ( self, Values options, List[str] args)"
+
+.SS " None pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&.unset_name ( self, Values options, List[str] args)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&.cmd_opts"
+
+.SS "pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&.configuration"
+
+.SS "pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&.get_name"
+
+.SS "bool pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&.ignore_require_venv = True\fC [static]\fP"
+
+.SS "pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&.list_config_values"
+
+.SS "pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&.list_values"
+
+.SS "pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&.open_in_editor"
+
+.SS "pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&.set_name_value"
+
+.SS "pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&.unset_name"
+
+.SS "str pip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\&.usage\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  """
+        %prog [<file\-option>] list
+        %prog [<file\-option>] [\-\-editor <editor\-path>] edit
+
+        %prog [<file\-option>] get command\&.option
+        %prog [<file\-option>] set command\&.option value
+        %prog [<file\-option>] unset command\&.option
+        %prog [<file\-option>] debug
+    """
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

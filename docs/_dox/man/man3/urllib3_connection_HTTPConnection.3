@@ -1,0 +1,413 @@
+.TH "urllib3.connection.HTTPConnection" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+urllib3.connection.HTTPConnection
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits _HTTPConnection\&.
+.PP
+Inherited by \fBurllib3\&.connection\&.HTTPSConnection\fP, and \fBurllib3\&.contrib\&.socks\&.SOCKSConnection\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str \fBhost\fP, int|None \fBport\fP=None, *_TYPE_TIMEOUT \fBtimeout\fP=_DEFAULT_TIMEOUT, tuple[str, int]|None \fBsource_address\fP=None, int \fBblocksize\fP=16384, None|(connection\&._TYPE_SOCKET_OPTIONS) \fBsocket_options\fP=\fBdefault_socket_options\fP, \fBUrl\fP|None \fBproxy\fP=None, \fBProxyConfig\fP|None \fBproxy_config\fP=None)"
+.br
+.ti -1c
+.RI "str \fBhost\fP (self)"
+.br
+.ti -1c
+.RI "None \fBhost\fP (self, str value)"
+.br
+.ti -1c
+.RI "None \fBset_tunnel\fP (self, str \fBhost\fP, int|None \fBport\fP=None, typing\&.Mapping[str, str]|None headers=None, str scheme='http')"
+.br
+.ti -1c
+.RI "None \fBconnect\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBis_closed\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBis_connected\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBhas_connected_to_proxy\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBproxy_is_forwarding\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBproxy_is_tunneling\fP (self)"
+.br
+.ti -1c
+.RI "None \fBclose\fP (self)"
+.br
+.ti -1c
+.RI "None \fBputrequest\fP (self, str method, str url, bool skip_host=False, bool skip_accept_encoding=False)"
+.br
+.ti -1c
+.RI "None \fBputheader\fP (self, str header, *str values)"
+.br
+.ti -1c
+.RI "None \fBrequest\fP (self, str method, str url, _TYPE_BODY|None body=None, typing\&.Mapping[str, str]|None headers=None, *bool chunked=False, bool preload_content=True, bool decode_content=True, bool enforce_content_length=True)"
+.br
+.ti -1c
+.RI "None \fBrequest_chunked\fP (self, str method, str url, _TYPE_BODY|None body=None, typing\&.Mapping[str, str]|None headers=None)"
+.br
+.ti -1c
+.RI "\fBHTTPResponse\fP \fBgetresponse\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsocket_options\fP"
+.br
+.ti -1c
+.RI "\fBproxy\fP"
+.br
+.ti -1c
+.RI "\fBproxy_config\fP"
+.br
+.ti -1c
+.RI "\fBport\fP"
+.br
+.ti -1c
+.RI "\fBtimeout\fP"
+.br
+.ti -1c
+.RI "\fBhost\fP"
+.br
+.ti -1c
+.RI "\fBsock\fP"
+.br
+.ti -1c
+.RI "\fBproxy_is_verified\fP"
+.br
+.ti -1c
+.RI "\fBis_verified\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "typing \fBdefault_port\fP = \fBport_by_scheme\fP['http']"
+.br
+.ti -1c
+.RI "list \fBdefault_socket_options\fP"
+.br
+.ti -1c
+.RI "bool \fBis_verified\fP = False"
+.br
+.ti -1c
+.RI "bool \fBproxy_is_verified\fP = None"
+.br
+.ti -1c
+.RI "int \fBblocksize\fP"
+.br
+.ti -1c
+.RI "tuple \fBsource_address\fP [str, int] | None"
+.br
+.ti -1c
+.RI "connection \fBsocket_options\fP \&._TYPE_SOCKET_OPTIONS | None"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "socket\&.socket \fB_new_conn\fP (self)"
+.br
+.ti -1c
+.RI "bytes \fB_wrap_ipv6\fP (self, bytes \fBip\fP)"
+.br
+.ti -1c
+.RI "None \fB_tunnel\fP (self)"
+.br
+.ti -1c
+.RI "None \fB_tunnel\fP (self)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_has_connected_to_proxy\fP"
+.br
+.ti -1c
+.RI "\fB_response_options\fP"
+.br
+.ti -1c
+.RI "\fB_dns_host\fP"
+.br
+.ti -1c
+.RI "\fB_tunnel_scheme\fP"
+.br
+.ti -1c
+.RI "\fB_tunnel_port\fP"
+.br
+.ti -1c
+.RI "\fB_raw_proxy_headers\fP"
+.br
+.ti -1c
+.RI "\fB_tunnel_host\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fB_has_connected_to_proxy\fP"
+.br
+.ti -1c
+.RI "\fB_ResponseOptions\fP \fB_response_options\fP | None"
+.br
+.ti -1c
+.RI "str \fB_tunnel_host\fP | None"
+.br
+.ti -1c
+.RI "int \fB_tunnel_port\fP | None"
+.br
+.ti -1c
+.RI "str \fB_tunnel_scheme\fP | None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Based on :class:`http\&.client\&.HTTPConnection` but provides an extra constructor
+backwards-compatibility layer between older and newer Pythons\&.
+
+Additional keyword parameters are used to configure attributes of the connection\&.
+Accepted parameters include:
+
+- ``source_address``: Set the source address for the current connection\&.
+- ``socket_options``: Set specific options on the underlying socket\&. If not specified, then
+  defaults are loaded from ``HTTPConnection\&.default_socket_options`` which includes disabling
+  Nagle's algorithm (sets TCP_NODELAY to 1) unless the connection is behind a proxy\&.
+
+  For example, if you wish to enable TCP Keep Alive in addition to the defaults,
+  you might pass:
+
+  \&.\&. code-block:: python
+
+     HTTPConnection\&.default_socket_options + [
+         (socket\&.SOL_SOCKET, socket\&.SO_KEEPALIVE, 1),
+     ]
+
+  Or you may want to disable the defaults by passing an empty list (e\&.g\&., ``[]``)\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None urllib3\&.connection\&.HTTPConnection\&.__init__ ( self, str host, int | None  port = \fCNone\fP, *_TYPE_TIMEOUT  timeout = \fC_DEFAULT_TIMEOUT\fP, tuple[str, int] | None  source_address = \fCNone\fP, int  blocksize = \fC16384\fP, None | (
+            connection\&._TYPE_SOCKET_OPTIONS
+        )  socket_options = \fC\fBdefault_socket_options\fP\fP, \fBUrl\fP | None  proxy = \fCNone\fP, \fBProxyConfig\fP | None  proxy_config = \fCNone\fP)"
+
+.PP
+Reimplemented in \fBurllib3\&.contrib\&.socks\&.SOCKSConnection\fP, \fBurllib3\&.http2\&.connection\&.HTTP2Connection\fP, and \fBurllib3\&.connection\&.HTTPSConnection\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " socket\&.socket urllib3\&.connection\&.HTTPConnection\&._new_conn ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Establish a socket connection and set nodelay settings on it\&.
+
+:return: New socket connection\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBurllib3\&.contrib\&.socks\&.SOCKSConnection\fP\&.
+.SS " None urllib3\&.connection\&.HTTPConnection\&._tunnel ( self)\fC [protected]\fP"
+
+.SS " None urllib3\&.connection\&.HTTPConnection\&._tunnel ( self)\fC [protected]\fP"
+
+.SS " bytes urllib3\&.connection\&.HTTPConnection\&._wrap_ipv6 ( self, bytes ip)\fC [protected]\fP"
+
+.SS " None urllib3\&.connection\&.HTTPConnection\&.close ( self)"
+
+.PP
+Reimplemented in \fBurllib3\&.http2\&.connection\&.HTTP2Connection\fP\&.
+.SS " None urllib3\&.connection\&.HTTPConnection\&.connect ( self)"
+
+.PP
+Reimplemented in \fBurllib3\&.connection\&.HTTPSConnection\fP, and \fBurllib3\&.http2\&.connection\&.HTTP2Connection\fP\&.
+.SS " \fBHTTPResponse\fP urllib3\&.connection\&.HTTPConnection\&.getresponse ( self)"
+
+.PP
+.nf
+Get the response from the server\&.
+
+If the HTTPConnection is in the correct state, returns an instance of HTTPResponse or of whatever object is returned by the response_class variable\&.
+
+If a request has not been sent or if a previous response has not be handled, ResponseNotReady is raised\&. If the HTTP response indicates that the connection should be closed, then it will be closed before the response is returned\&. When the connection is closed, the underlying socket is closed\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBurllib3\&.http2\&.connection\&.HTTP2Connection\fP\&.
+.SS " bool urllib3\&.connection\&.HTTPConnection\&.has_connected_to_proxy ( self)"
+
+.SS " str urllib3\&.connection\&.HTTPConnection\&.host ( self)"
+
+.PP
+.nf
+Getter method to remove any trailing dots that indicate the hostname is an FQDN\&.
+
+In general, SSL certificates don't include the trailing dot indicating a
+fully-qualified domain name, and thus, they don't validate properly when
+checked against a domain name that includes the dot\&. In addition, some
+servers may not expect to receive the trailing dot when provided\&.
+
+However, the hostname with trailing dot is critical to DNS resolution; doing a
+lookup with the trailing dot will properly only resolve the appropriate FQDN,
+whereas a lookup without a trailing dot will search the system's search domain
+list\&. Thus, it's important to keep the original host around for use only in
+those cases where it's appropriate (i\&.e\&., when doing DNS lookup to establish the
+actual TCP connection across which we're going to send HTTP requests)\&.
+
+.fi
+.PP
+ 
+.SS " None urllib3\&.connection\&.HTTPConnection\&.host ( self, str value)"
+
+.PP
+.nf
+Setter for the `host` property\&.
+
+We assume that only urllib3 uses the _dns_host attribute; httplib itself
+only uses `host`, and it seems reasonable that other libraries follow suit\&.
+
+.fi
+.PP
+ 
+.SS " bool urllib3\&.connection\&.HTTPConnection\&.is_closed ( self)"
+
+.SS " bool urllib3\&.connection\&.HTTPConnection\&.is_connected ( self)"
+
+.SS " bool urllib3\&.connection\&.HTTPConnection\&.proxy_is_forwarding ( self)"
+
+.PP
+.nf
+Return True if a forwarding proxy is configured, else return False
+
+.fi
+.PP
+ 
+.SS " bool urllib3\&.connection\&.HTTPConnection\&.proxy_is_tunneling ( self)"
+
+.PP
+.nf
+Return True if a tunneling proxy is configured, else return False
+
+.fi
+.PP
+ 
+.SS " None urllib3\&.connection\&.HTTPConnection\&.putheader ( self, str header, *str values)"
+
+.PP
+Reimplemented in \fBurllib3\&.http2\&.connection\&.HTTP2Connection\fP\&.
+.SS " None urllib3\&.connection\&.HTTPConnection\&.putrequest ( self, str method, str url, bool  skip_host = \fCFalse\fP, bool  skip_accept_encoding = \fCFalse\fP)"
+
+.PP
+Reimplemented in \fBurllib3\&.http2\&.connection\&.HTTP2Connection\fP\&.
+.SS " None urllib3\&.connection\&.HTTPConnection\&.request ( self, str method, str url, _TYPE_BODY | None  body = \fCNone\fP, typing\&.Mapping[str, str] | None  headers = \fCNone\fP, *bool  chunked = \fCFalse\fP, bool  preload_content = \fCTrue\fP, bool  decode_content = \fCTrue\fP, bool  enforce_content_length = \fCTrue\fP)"
+
+.PP
+Reimplemented in \fBurllib3\&.http2\&.connection\&.HTTP2Connection\fP\&.
+.SS " None urllib3\&.connection\&.HTTPConnection\&.request_chunked ( self, str method, str url, _TYPE_BODY | None  body = \fCNone\fP, typing\&.Mapping[str, str] | None  headers = \fCNone\fP)"
+
+.PP
+.nf
+Alternative to the common request method, which sends the
+body with chunked encoding and not as one block
+
+.fi
+.PP
+ 
+.SS " None urllib3\&.connection\&.HTTPConnection\&.set_tunnel ( self, str host, int | None  port = \fCNone\fP, typing\&.Mapping[str, str] | None  headers = \fCNone\fP, str  scheme = \fC'http'\fP)"
+
+.PP
+Reimplemented in \fBurllib3\&.http2\&.connection\&.HTTP2Connection\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "urllib3\&.connection\&.HTTPConnection\&._dns_host\fC [protected]\fP"
+
+.SS "bool urllib3\&.connection\&.HTTPConnection\&._has_connected_to_proxy\fC [static]\fP, \fC [protected]\fP"
+
+.SS "urllib3\&.connection\&.HTTPConnection\&._has_connected_to_proxy\fC [protected]\fP"
+
+.SS "urllib3\&.connection\&.HTTPConnection\&._raw_proxy_headers\fC [protected]\fP"
+
+.SS "\fB_ResponseOptions\fP urllib3\&.connection\&.HTTPConnection\&._response_options | None\fC [static]\fP, \fC [protected]\fP"
+
+.SS "urllib3\&.connection\&.HTTPConnection\&._response_options\fC [protected]\fP"
+
+.SS "str urllib3\&.connection\&.HTTPConnection\&._tunnel_host | None\fC [static]\fP, \fC [protected]\fP"
+
+.SS "urllib3\&.connection\&.HTTPConnection\&._tunnel_host\fC [protected]\fP"
+
+.SS "int urllib3\&.connection\&.HTTPConnection\&._tunnel_port | None\fC [static]\fP, \fC [protected]\fP"
+
+.SS "urllib3\&.connection\&.HTTPConnection\&._tunnel_port\fC [protected]\fP"
+
+.SS "str urllib3\&.connection\&.HTTPConnection\&._tunnel_scheme | None\fC [static]\fP, \fC [protected]\fP"
+
+.SS "urllib3\&.connection\&.HTTPConnection\&._tunnel_scheme\fC [protected]\fP"
+
+.SS "int urllib3\&.connection\&.HTTPConnection\&.blocksize\fC [static]\fP"
+
+.SS "typing urllib3\&.connection\&.HTTPConnection\&.default_port = \fBport_by_scheme\fP['http']\fC [static]\fP"
+
+.SS "list urllib3\&.connection\&.HTTPConnection\&.default_socket_options\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        (socket\&.IPPROTO_TCP, socket\&.TCP_NODELAY, 1)
+    ]
+.fi
+
+.SS "urllib3\&.connection\&.HTTPConnection\&.host"
+
+.SS "bool urllib3\&.connection\&.HTTPConnection\&.is_verified = False\fC [static]\fP"
+
+.SS "urllib3\&.connection\&.HTTPConnection\&.is_verified"
+
+.SS "urllib3\&.connection\&.HTTPConnection\&.port"
+
+.SS "urllib3\&.connection\&.HTTPConnection\&.proxy"
+
+.SS "urllib3\&.connection\&.HTTPConnection\&.proxy_config"
+
+.SS "bool urllib3\&.connection\&.HTTPConnection\&.proxy_is_verified = None\fC [static]\fP"
+
+.SS "urllib3\&.connection\&.HTTPConnection\&.proxy_is_verified"
+
+.SS "urllib3\&.connection\&.HTTPConnection\&.sock"
+
+.SS "connection urllib3\&.connection\&.HTTPConnection\&.socket_options \&._TYPE_SOCKET_OPTIONS | None\fC [static]\fP"
+
+.SS "urllib3\&.connection\&.HTTPConnection\&.socket_options"
+
+.SS "tuple urllib3\&.connection\&.HTTPConnection\&.source_address [str, int] | None\fC [static]\fP"
+
+.SS "urllib3\&.connection\&.HTTPConnection\&.timeout"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

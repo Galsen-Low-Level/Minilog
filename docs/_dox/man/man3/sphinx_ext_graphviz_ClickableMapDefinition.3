@@ -1,0 +1,93 @@
+.TH "sphinx.ext.graphviz.ClickableMapDefinition" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.ext.graphviz.ClickableMapDefinition
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str \fBfilename\fP, str \fBcontent\fP, str dot='')"
+.br
+.ti -1c
+.RI "None \fBparse\fP (self, str dot)"
+.br
+.ti -1c
+.RI "str \fBgenerate_clickable_map\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBfilename\fP"
+.br
+.ti -1c
+.RI "\fBcontent\fP"
+.br
+.ti -1c
+.RI "\fBid\fP"
+.br
+.ti -1c
+.RI "\fBclickable\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBmaptag_re\fP = re\&.compile('<map \fBid\fP='(\&.*?)'')"
+.br
+.ti -1c
+.RI "\fBhref_re\fP = re\&.compile('href='\&.*?'')"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A manipulator for clickable map file of graphviz\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.ext\&.graphviz\&.ClickableMapDefinition\&.__init__ ( self, str filename, str content, str  dot = \fC''\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " str sphinx\&.ext\&.graphviz\&.ClickableMapDefinition\&.generate_clickable_map ( self)"
+
+.PP
+.nf
+Generate clickable map tags if clickable item exists\&.
+
+If not exists, this only returns empty string\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.ext\&.graphviz\&.ClickableMapDefinition\&.parse ( self, str dot)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.ext\&.graphviz\&.ClickableMapDefinition\&.clickable"
+
+.SS "sphinx\&.ext\&.graphviz\&.ClickableMapDefinition\&.content"
+
+.SS "sphinx\&.ext\&.graphviz\&.ClickableMapDefinition\&.filename"
+
+.SS "sphinx\&.ext\&.graphviz\&.ClickableMapDefinition\&.href_re = re\&.compile('href='\&.*?'')\fC [static]\fP"
+
+.SS "sphinx\&.ext\&.graphviz\&.ClickableMapDefinition\&.id"
+
+.SS "sphinx\&.ext\&.graphviz\&.ClickableMapDefinition\&.maptag_re = re\&.compile('<map \fBid\fP='(\&.*?)'')\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

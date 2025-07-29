@@ -1,0 +1,314 @@
+.TH "pygments.util" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.util
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBClassNotFound\fP"
+.br
+.ti -1c
+.RI "class \fBFuture\fP"
+.br
+.ti -1c
+.RI "class \fBOptionError\fP"
+.br
+.ti -1c
+.RI "class \fBUnclosingTextIOWrapper\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBget_choice_opt\fP (options, optname, allowed, default=None, normcase=False)"
+.br
+.ti -1c
+.RI "\fBget_bool_opt\fP (options, optname, default=None)"
+.br
+.ti -1c
+.RI "\fBget_int_opt\fP (options, optname, default=None)"
+.br
+.ti -1c
+.RI "\fBget_list_opt\fP (options, optname, default=None)"
+.br
+.ti -1c
+.RI "\fBdocstring_headline\fP (obj)"
+.br
+.ti -1c
+.RI "\fBmake_analysator\fP (f)"
+.br
+.ti -1c
+.RI "\fBshebang_matches\fP (text, regex)"
+.br
+.ti -1c
+.RI "\fBdoctype_matches\fP (text, regex)"
+.br
+.ti -1c
+.RI "\fBhtml_doctype_matches\fP (text)"
+.br
+.ti -1c
+.RI "\fBlooks_like_xml\fP (text)"
+.br
+.ti -1c
+.RI "\fBsurrogatepair\fP (c)"
+.br
+.ti -1c
+.RI "\fBformat_lines\fP (var_name, seq, raw=False, indent_level=0)"
+.br
+.ti -1c
+.RI "\fBduplicates_removed\fP (it, already_seen=())"
+.br
+.ti -1c
+.RI "\fBguess_decode\fP (text)"
+.br
+.ti -1c
+.RI "\fBguess_decode_from_terminal\fP (text, term)"
+.br
+.ti -1c
+.RI "\fBterminal_encoding\fP (term)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBsplit_path_re\fP = re\&.compile(r'[/\\\\ ]')"
+.br
+.ti -1c
+.RI "\fBdoctype_lookup_re\fP = re\&.compile(, re\&.DOTALL | re\&.MULTILINE | re\&.VERBOSE)"
+.br
+.ti -1c
+.RI "\fBtag_re\fP"
+.br
+.ti -1c
+.RI "\fBxml_decl_re\fP = re\&.compile(r'\\s*<\\?xml[^>]*\\?>', re\&.I)"
+.br
+.ti -1c
+.RI "dict \fB_looks_like_xml_cache\fP = {}"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+    pygments\&.util
+    ~~~~~~~~~~~~~
+
+    Utility functions\&.
+
+    :copyright: Copyright 2006-2025 by the Pygments team, see AUTHORS\&.
+    :license: BSD, see LICENSE for details\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "pygments\&.util\&.docstring_headline ( obj)"
+
+.SS "pygments\&.util\&.doctype_matches ( text,  regex)"
+
+.PP
+.nf
+Check if the doctype matches a regular expression (if present)\&.
+
+Note that this method only checks the first part of a DOCTYPE\&.
+eg: 'html PUBLIC '-//W3C//DTD XHTML 1\&.0 Strict//EN''
+
+.fi
+.PP
+ 
+.SS "pygments\&.util\&.duplicates_removed ( it,  already_seen = \fC()\fP)"
+
+.PP
+.nf
+Returns a list with duplicates removed from the iterable `it`\&.
+
+Order is preserved\&.
+
+.fi
+.PP
+ 
+.SS "pygments\&.util\&.format_lines ( var_name,  seq,  raw = \fCFalse\fP,  indent_level = \fC0\fP)"
+
+.PP
+.nf
+Formats a sequence of strings for output\&.
+.fi
+.PP
+ 
+.SS "pygments\&.util\&.get_bool_opt ( options,  optname,  default = \fCNone\fP)"
+
+.PP
+.nf
+Intuitively, this is `options\&.get(optname, default)`, but restricted to
+Boolean value\&. The Booleans can be represented as string, in order to accept
+Boolean value from the command line arguments\&. If the key `optname` is
+present in the dictionary `options` and is not associated with a Boolean,
+raise an `OptionError`\&. If it is absent, `default` is returned instead\&.
+
+The valid string values for ``True`` are ``1``, ``yes``, ``true`` and
+``on``, the ones for ``False`` are ``0``, ``no``, ``false`` and ``off``
+(matched case-insensitively)\&.
+
+.fi
+.PP
+ 
+.SS "pygments\&.util\&.get_choice_opt ( options,  optname,  allowed,  default = \fCNone\fP,  normcase = \fCFalse\fP)"
+
+.PP
+.nf
+If the key `optname` from the dictionary is not in the sequence
+`allowed`, raise an error, otherwise return it\&.
+
+.fi
+.PP
+ 
+.SS "pygments\&.util\&.get_int_opt ( options,  optname,  default = \fCNone\fP)"
+
+.PP
+.nf
+As :func:`get_bool_opt`, but interpret the value as an integer\&.
+.fi
+.PP
+ 
+.SS "pygments\&.util\&.get_list_opt ( options,  optname,  default = \fCNone\fP)"
+
+.PP
+.nf
+If the key `optname` from the dictionary `options` is a string,
+split it at whitespace and return it\&. If it is already a list
+or a tuple, it is returned as a list\&.
+
+.fi
+.PP
+ 
+.SS "pygments\&.util\&.guess_decode ( text)"
+
+.PP
+.nf
+Decode *text* with guessed encoding\&.
+
+First try UTF-8; this should fail for non-UTF-8 encodings\&.
+Then try the preferred locale encoding\&.
+Fall back to latin-1, which always works\&.
+
+.fi
+.PP
+ 
+.SS "pygments\&.util\&.guess_decode_from_terminal ( text,  term)"
+
+.PP
+.nf
+Decode *text* coming from terminal *term*\&.
+
+First try the terminal encoding, if given\&.
+Then try UTF-8\&.  Then try the preferred locale encoding\&.
+Fall back to latin-1, which always works\&.
+
+.fi
+.PP
+ 
+.SS "pygments\&.util\&.html_doctype_matches ( text)"
+
+.PP
+.nf
+Check if the file looks like it has a html doctype\&.
+.fi
+.PP
+ 
+.SS "pygments\&.util\&.looks_like_xml ( text)"
+
+.PP
+.nf
+Check if a doctype exists or if we have some tags\&.
+.fi
+.PP
+ 
+.SS "pygments\&.util\&.make_analysator ( f)"
+
+.PP
+.nf
+Return a static text analyser function that returns float values\&.
+.fi
+.PP
+ 
+.SS "pygments\&.util\&.shebang_matches ( text,  regex)"
+
+.PP
+.nf
+Check if the given regular expression matches the last part of the
+shebang if one exists\&.
+
+    >>> from pygments\&.util import shebang_matches
+    >>> shebang_matches('#!/usr/bin/env python', r'python(2\\\&.\\d)?')
+    True
+    >>> shebang_matches('#!/usr/bin/python2\&.4', r'python(2\\\&.\\d)?')
+    True
+    >>> shebang_matches('#!/usr/bin/python-ruby', r'python(2\\\&.\\d)?')
+    False
+    >>> shebang_matches('#!/usr/bin/python/ruby', r'python(2\\\&.\\d)?')
+    False
+    >>> shebang_matches('#!/usr/bin/startsomethingwith python',
+    \&.\&.\&.                 r'python(2\\\&.\\d)?')
+    True
+
+It also checks for common windows executable file extensions::
+
+    >>> shebang_matches('#!C:\\\\Python2\&.4\\\\Python\&.exe', r'python(2\\\&.\\d)?')
+    True
+
+Parameters (``'-f'`` or ``'--foo'`` are ignored so ``'perl'`` does
+the same as ``'perl -e'``)
+
+Note that this method automatically searches the whole string (eg:
+the regular expression is wrapped in ``'^$'``)
+
+.fi
+.PP
+ 
+.SS "pygments\&.util\&.surrogatepair ( c)"
+
+.PP
+.nf
+Given a unicode character code with length greater than 16 bits,
+return the two 16 bit surrogate pair\&.
+
+.fi
+.PP
+ 
+.SS "pygments\&.util\&.terminal_encoding ( term)"
+
+.PP
+.nf
+Return our best guess of encoding for the given *term*\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "dict pygments\&.util\&._looks_like_xml_cache = {}\fC [protected]\fP"
+
+.SS "pygments\&.util\&.doctype_lookup_re = re\&.compile(, re\&.DOTALL | re\&.MULTILINE | re\&.VERBOSE)"
+
+.SS "pygments\&.util\&.split_path_re = re\&.compile(r'[/\\\\ ]')"
+
+.SS "pygments\&.util\&.tag_re"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(r'<(\&.+?)(\\s\&.*?)?>\&.*?</\&.+?>',
+2                     re\&.IGNORECASE | re\&.DOTALL | re\&.MULTILINE)
+.fi
+
+.SS "pygments\&.util\&.xml_decl_re = re\&.compile(r'\\s*<\\?xml[^>]*\\?>', re\&.I)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,105 @@
+.TH "waitress.buffers.FileBasedBuffer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+waitress.buffers.FileBasedBuffer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBwaitress\&.buffers\&.BytesIOBasedBuffer\fP, \fBwaitress\&.buffers\&.ReadOnlyFileBasedBuffer\fP, and \fBwaitress\&.buffers\&.TempfileBasedBuffer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBfile\fP, from_buffer=None)"
+.br
+.ti -1c
+.RI "\fB__len__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__bool__\fP (self)"
+.br
+.ti -1c
+.RI "\fBappend\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBget\fP (self, numbytes=\-1, \fBskip\fP=False)"
+.br
+.ti -1c
+.RI "\fBskip\fP (self, numbytes, allow_prune=0)"
+.br
+.ti -1c
+.RI "\fBnewfile\fP (self)"
+.br
+.ti -1c
+.RI "\fBprune\fP (self)"
+.br
+.ti -1c
+.RI "\fBgetfile\fP (self)"
+.br
+.ti -1c
+.RI "\fBclose\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBfile\fP"
+.br
+.ti -1c
+.RI "\fBremain\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBremain\fP = 0"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "waitress\&.buffers\&.FileBasedBuffer\&.__init__ ( self,  file,  from_buffer = \fCNone\fP)"
+
+.PP
+Reimplemented in \fBwaitress\&.buffers\&.ReadOnlyFileBasedBuffer\fP, \fBwaitress\&.buffers\&.TempfileBasedBuffer\fP, and \fBwaitress\&.buffers\&.BytesIOBasedBuffer\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "waitress\&.buffers\&.FileBasedBuffer\&.__bool__ ( self)"
+
+.SS "waitress\&.buffers\&.FileBasedBuffer\&.__len__ ( self)"
+
+.SS "waitress\&.buffers\&.FileBasedBuffer\&.append ( self,  s)"
+
+.PP
+Reimplemented in \fBwaitress\&.buffers\&.ReadOnlyFileBasedBuffer\fP\&.
+.SS "waitress\&.buffers\&.FileBasedBuffer\&.close ( self)"
+
+.SS "waitress\&.buffers\&.FileBasedBuffer\&.get ( self,  numbytes = \fC\-1\fP,  skip = \fCFalse\fP)"
+
+.PP
+Reimplemented in \fBwaitress\&.buffers\&.ReadOnlyFileBasedBuffer\fP\&.
+.SS "waitress\&.buffers\&.FileBasedBuffer\&.getfile ( self)"
+
+.SS "waitress\&.buffers\&.FileBasedBuffer\&.newfile ( self)"
+
+.PP
+Reimplemented in \fBwaitress\&.buffers\&.TempfileBasedBuffer\fP, and \fBwaitress\&.buffers\&.BytesIOBasedBuffer\fP\&.
+.SS "waitress\&.buffers\&.FileBasedBuffer\&.prune ( self)"
+
+.SS "waitress\&.buffers\&.FileBasedBuffer\&.skip ( self,  numbytes,  allow_prune = \fC0\fP)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "waitress\&.buffers\&.FileBasedBuffer\&.file"
+
+.SS "int waitress\&.buffers\&.FileBasedBuffer\&.remain = 0\fC [static]\fP"
+
+.SS "waitress\&.buffers\&.FileBasedBuffer\&.remain"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

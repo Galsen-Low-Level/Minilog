@@ -1,0 +1,173 @@
+.TH "sphinx.ext.napoleon.docstring" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.ext.napoleon.docstring
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBDeque\fP"
+.br
+.ti -1c
+.RI "class \fBGoogleDocstring\fP"
+.br
+.ti -1c
+.RI "class \fBNumpyDocstring\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "list[str] \fB_recombine_set_tokens\fP (list[str] tokens)"
+.br
+.ti -1c
+.RI "list[str] \fB_tokenize_type_spec\fP (str spec)"
+.br
+.ti -1c
+.RI "str \fB_token_type\fP (str token, str|None debug_location=None)"
+.br
+.ti -1c
+.RI "str \fB_convert_type_spec\fP (str _type, dict[str, str]|None translations=None, str|None debug_location=None)"
+.br
+.ti -1c
+.RI "str \fB_convert_type_spec_obj\fP (str obj, dict[str, str] translations)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "\fB_directive_regex\fP = re\&.compile(r'\\\&.\\\&. \\S+::')"
+.br
+.ti -1c
+.RI "\fB_google_section_regex\fP = re\&.compile(r'^(\\s|\\w)+:\\s*$')"
+.br
+.ti -1c
+.RI "\fB_google_typed_arg_regex\fP = re\&.compile(r'(\&.+?)\\(\\s*(\&.*[^\\s]+)\\s*\\)')"
+.br
+.ti -1c
+.RI "\fB_numpy_section_regex\fP = re\&.compile(r'^[=\\\-`:\\''~^_*+#<>]{2,}\\s*$')"
+.br
+.ti -1c
+.RI "\fB_single_colon_regex\fP = re\&.compile(r'(?<!:):(?!:)')"
+.br
+.ti -1c
+.RI "\fB_xref_or_code_regex\fP"
+.br
+.ti -1c
+.RI "\fB_xref_regex\fP"
+.br
+.ti -1c
+.RI "\fB_bullet_list_regex\fP = re\&.compile(r'^(\\*|\\+|\\\-)(\\s+\\S|\\s*$)')"
+.br
+.ti -1c
+.RI "\fB_enumerated_list_regex\fP"
+.br
+.ti -1c
+.RI "\fB_token_regex\fP"
+.br
+.ti -1c
+.RI "\fB_default_regex\fP"
+.br
+.ti -1c
+.RI "\fB_SINGLETONS\fP = frozenset({'None', 'True', 'False', 'Ellipsis', '\&.\&.\&.'})"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Classes for docstring parsing and formatting\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " str sphinx\&.ext\&.napoleon\&.docstring\&._convert_type_spec (str _type, dict[str, str] | None  translations = \fCNone\fP, str | None  debug_location = \fCNone\fP)\fC [protected]\fP"
+
+.SS " str sphinx\&.ext\&.napoleon\&.docstring\&._convert_type_spec_obj (str obj, dict[str, str] translations)\fC [protected]\fP"
+
+.SS " list[str] sphinx\&.ext\&.napoleon\&.docstring\&._recombine_set_tokens (list[str] tokens)\fC [protected]\fP"
+
+.SS " str sphinx\&.ext\&.napoleon\&.docstring\&._token_type (str token, str | None  debug_location = \fCNone\fP)\fC [protected]\fP"
+
+.SS " list[str] sphinx\&.ext\&.napoleon\&.docstring\&._tokenize_type_spec (str spec)\fC [protected]\fP"
+
+.SH "Variable Documentation"
+.PP 
+.SS "sphinx\&.ext\&.napoleon\&.docstring\&._bullet_list_regex = re\&.compile(r'^(\\*|\\+|\\\-)(\\s+\\S|\\s*$)')\fC [protected]\fP"
+
+.SS "sphinx\&.ext\&.napoleon\&.docstring\&._default_regex\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(
+2     r'^default[^_0\-9A\-Za\-z]\&.*$',
+3 )
+.fi
+
+.SS "sphinx\&.ext\&.napoleon\&.docstring\&._directive_regex = re\&.compile(r'\\\&.\\\&. \\S+::')\fC [protected]\fP"
+
+.SS "sphinx\&.ext\&.napoleon\&.docstring\&._enumerated_list_regex\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(
+2     r'^(?P<paren>\\()?'
+3     r'(\\d+|#|[ivxlcdm]+|[IVXLCDM]+|[a\-zA\-Z])'
+4     r'(?(paren)\\)|\\\&.)(\\s+\\S|\\s*$)'
+5 )
+.fi
+
+.SS "sphinx\&.ext\&.napoleon\&.docstring\&._google_section_regex = re\&.compile(r'^(\\s|\\w)+:\\s*$')\fC [protected]\fP"
+
+.SS "sphinx\&.ext\&.napoleon\&.docstring\&._google_typed_arg_regex = re\&.compile(r'(\&.+?)\\(\\s*(\&.*[^\\s]+)\\s*\\)')\fC [protected]\fP"
+
+.SS "sphinx\&.ext\&.napoleon\&.docstring\&._numpy_section_regex = re\&.compile(r'^[=\\\-`:\\''~^_*+#<>]{2,}\\s*$')\fC [protected]\fP"
+
+.SS "sphinx\&.ext\&.napoleon\&.docstring\&._single_colon_regex = re\&.compile(r'(?<!:):(?!:)')\fC [protected]\fP"
+
+.SS "sphinx\&.ext\&.napoleon\&.docstring\&._SINGLETONS = frozenset({'None', 'True', 'False', 'Ellipsis', '\&.\&.\&.'})\fC [protected]\fP"
+
+.SS "sphinx\&.ext\&.napoleon\&.docstring\&._token_regex\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(
+2     r'(,\\sor\\s|\\sor\\s|\\sof\\s|:\\s|\\sto\\s|,\\sand\\s|\\sand\\s|,\\s'
+3     r'|[{]|[}]'
+4     r'|"(?:\\\\"|[^"])*"'
+5     r"|'(?:\\\\'|[^'])*')",
+6 )
+.fi
+
+.SS "sphinx\&.ext\&.napoleon\&.docstring\&._xref_or_code_regex\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(
+2     r'((?::(?:[a\-zA\-Z0\-9]+[\\\-_+:\&.])*[a\-zA\-Z0\-9]+:`\&.+?`)|'
+3     r'(?:``\&.+?``)|'
+4     r'(?::meta \&.+:\&.*)|'
+5     r'(?:`\&.+?\\s*(?<!\\x00)<\&.*?>`))'
+6 )
+.fi
+
+.SS "sphinx\&.ext\&.napoleon\&.docstring\&._xref_regex\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(
+2     r'(?:(?::(?:[a\-zA\-Z0\-9]+[\\\-_+:\&.])*[a\-zA\-Z0\-9]+:)?`\&.+?`)',
+3 )
+.fi
+
+.SS "sphinx\&.ext\&.napoleon\&.docstring\&.logger = logging\&.getLogger(__name__)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

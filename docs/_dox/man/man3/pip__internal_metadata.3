@@ -1,0 +1,163 @@
+.TH "pip._internal.metadata" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.metadata
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fB_json\fP"
+.br
+.ti -1c
+.RI "namespace \fBbase\fP"
+.br
+.ti -1c
+.RI "namespace \fBimportlib\fP"
+.br
+.ti -1c
+.RI "namespace \fBpkg_resources\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBBackend\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fB_should_use_importlib_metadata\fP ()"
+.br
+.ti -1c
+.RI "\fBBackend\fP \fBselect_backend\fP ()"
+.br
+.ti -1c
+.RI "\fBBaseEnvironment\fP \fBget_default_environment\fP ()"
+.br
+.ti -1c
+.RI "\fBBaseEnvironment\fP \fBget_environment\fP (Optional[List[str]] paths)"
+.br
+.ti -1c
+.RI "\fBBaseDistribution\fP \fBget_directory_distribution\fP (str directory)"
+.br
+.ti -1c
+.RI "\fBBaseDistribution\fP \fBget_wheel_distribution\fP (\fBWheel\fP wheel, str canonical_name)"
+.br
+.ti -1c
+.RI "\fBBaseDistribution\fP \fBget_metadata_distribution\fP (bytes metadata_contents, str filename, str canonical_name)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBProtocol\fP = object"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " bool pip\&._internal\&.metadata\&._should_use_importlib_metadata ()\fC [protected]\fP"
+
+.PP
+.nf
+Whether to use the ``importlib\&.metadata`` or ``pkg_resources`` backend\&.
+
+By default, pip uses ``importlib\&.metadata`` on Python 3\&.11+, and
+``pkg_resourcess`` otherwise\&. This can be overridden by a couple of ways:
+
+* If environment variable ``_PIP_USE_IMPORTLIB_METADATA`` is set, it
+  dictates whether ``importlib\&.metadata`` is used, regardless of Python
+  version\&.
+* On Python 3\&.11+, Python distributors can patch ``importlib\&.metadata``
+  to add a global constant ``_PIP_USE_IMPORTLIB_METADATA = False``\&. This
+  makes pip use ``pkg_resources`` (unless the user set the aforementioned
+  environment variable to *True*)\&.
+
+.fi
+.PP
+ 
+.SS " \fBBaseEnvironment\fP pip\&._internal\&.metadata\&.get_default_environment ()"
+
+.PP
+.nf
+Get the default representation for the current environment\&.
+
+This returns an Environment instance from the chosen backend\&. The default
+Environment instance should be built from ``sys\&.path`` and may use caching
+to share instance state accorss calls\&.
+
+.fi
+.PP
+ 
+.SS " \fBBaseDistribution\fP pip\&._internal\&.metadata\&.get_directory_distribution (str directory)"
+
+.PP
+.nf
+Get the distribution metadata representation in the specified directory\&.
+
+This returns a Distribution instance from the chosen backend based on
+the given on-disk ``\&.dist-info`` directory\&.
+
+.fi
+.PP
+ 
+.SS " \fBBaseEnvironment\fP pip\&._internal\&.metadata\&.get_environment (Optional[List[str]] paths)"
+
+.PP
+.nf
+Get a representation of the environment specified by ``paths``\&.
+
+This returns an Environment instance from the chosen backend based on the
+given import paths\&. The backend must build a fresh instance representing
+the state of installed distributions when this function is called\&.
+
+.fi
+.PP
+ 
+.SS " \fBBaseDistribution\fP pip\&._internal\&.metadata\&.get_metadata_distribution (bytes metadata_contents, str filename, str canonical_name)"
+
+.PP
+.nf
+Get the dist representation of the specified METADATA file contents\&.
+
+This returns a Distribution instance from the chosen backend sourced from the data
+in `metadata_contents`\&.
+
+:param metadata_contents: Contents of a METADATA file within a dist, or one served
+                          via PEP 658\&.
+:param filename: Filename for the dist this metadata represents\&.
+:param canonical_name: Normalized project name of the given dist\&.
+
+.fi
+.PP
+ 
+.SS " \fBBaseDistribution\fP pip\&._internal\&.metadata\&.get_wheel_distribution (\fBWheel\fP wheel, str canonical_name)"
+
+.PP
+.nf
+Get the representation of the specified wheel's distribution metadata\&.
+
+This returns a Distribution instance from the chosen backend based on
+the given wheel's ``\&.dist-info`` directory\&.
+
+:param canonical_name: Normalized project name of the given wheel\&.
+
+.fi
+.PP
+ 
+.SS " \fBBackend\fP pip\&._internal\&.metadata\&.select_backend ()"
+
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._internal\&.metadata\&.Protocol = object"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

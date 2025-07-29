@@ -1,0 +1,186 @@
+\doxysection{docutils.\+parsers.\+rst Namespace Reference}
+\hypertarget{namespacedocutils_1_1parsers_1_1rst}{}\label{namespacedocutils_1_1parsers_1_1rst}\index{docutils.parsers.rst@{docutils.parsers.rst}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_1_1directives}{directives}}
+\item 
+namespace \mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_1_1languages}{languages}}
+\item 
+namespace \mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_1_1roles}{roles}}
+\item 
+namespace \mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_1_1states}{states}}
+\item 
+namespace \mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_1_1tableparser}{tableparser}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1Directive}{Directive}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1DirectiveError}{Directive\+Error}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1Parser}{Parser}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_a6ad4e3e17a92e6b5f7cce3431ce0956f}{convert\+\_\+directive\+\_\+function}} (directive\+\_\+fn)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_a55a9422a08fef02a7efdff45b7321ebb}{name}}
+\item 
+\mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_ade803f1e1072f136a87d8269b3d1d51e}{arguments}}
+\item 
+\mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_a92af6b4091266449b642a7543d748ddb}{options}}
+\item 
+\mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_a96ad400966154f0b1e7b9201624eb8c8}{content}}
+\item 
+\mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_ae9fd95584c96566be7dc095b64e7c26b}{lineno}}
+\item 
+\mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_af34af02fb28c1c4c9c61faecf5e2e65b}{content\+\_\+offset}}
+\item 
+\mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_ad1be6d35e291e2ce4ee7980f76da1053}{block\+\_\+text}}
+\item 
+\mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_afba1aa30f58b8b877f3d5610f709670a}{state}}
+\item 
+\mbox{\hyperlink{namespacedocutils_1_1parsers_1_1rst_aba05ea3858c0bbf55e70fa649d212cee}{state\+\_\+machine}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}This is ``docutils.parsers.rst`` package. It exports a single class, `Parser`,
+the reStructuredText parser.
+
+
+Usage
+=====
+
+1. Create a parser::
+
+       parser = docutils.parsers.rst.Parser()
+
+   Several optional arguments may be passed to modify the parser's behavior.
+   Please see `Customizing the Parser`_ below for details.
+
+2. Gather input (a multi-line string), by reading a file or the standard
+   input::
+
+       input = sys.stdin.read()
+
+3. Create a new empty `docutils.nodes.document` tree::
+
+       document = docutils.utils.new_document(source, settings)
+
+   See `docutils.utils.new_document()` for parameter details.
+
+4. Run the parser, populating the document tree::
+
+       parser.parse(input, document)
+
+
+Parser Overview
+===============
+
+The reStructuredText parser is implemented as a state machine, examining its
+input one line at a time. To understand how the parser works, please first
+become familiar with the `docutils.statemachine` module, then see the
+`states` module.
+
+
+Customizing the Parser
+----------------------
+
+Anything that isn't already customizable is that way simply because that type
+of customizability hasn't been implemented yet.  Patches welcome!
+
+When instantiating an object of the `Parser` class, two parameters may be
+passed: ``rfc2822`` and ``inliner``.  Pass ``rfc2822=True`` to enable an
+initial RFC-2822 style header block, parsed as a "field_list" element (with
+"class" attribute set to "rfc2822").  Currently this is the only body-level
+element which is customizable without subclassing.  (Tip: subclass `Parser`
+and change its "state_classes" and "initial_state" attributes to refer to new
+classes. Contact the author if you need more details.)
+
+The ``inliner`` parameter takes an instance of `states.Inliner` or a subclass.
+It handles inline markup recognition.  A common extension is the addition of
+further implicit hyperlinks, like "RFC 2822".  This can be done by subclassing
+`states.Inliner`, adding a new method for the implicit markup, and adding a
+``(pattern, method)`` pair to the "implicit_dispatch" attribute of the
+subclass.  See `states.Inliner.implicit_inline()` for details.  Explicit
+inline markup can be customized in a `states.Inliner` subclass via the
+``patterns.initial`` and ``dispatch`` attributes (and new methods as
+appropriate).
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacedocutils_1_1parsers_1_1rst_a6ad4e3e17a92e6b5f7cce3431ce0956f}\label{namespacedocutils_1_1parsers_1_1rst_a6ad4e3e17a92e6b5f7cce3431ce0956f} 
+\index{docutils.parsers.rst@{docutils.parsers.rst}!convert\_directive\_function@{convert\_directive\_function}}
+\index{convert\_directive\_function@{convert\_directive\_function}!docutils.parsers.rst@{docutils.parsers.rst}}
+\doxysubsubsection{\texorpdfstring{convert\_directive\_function()}{convert\_directive\_function()}}
+{\footnotesize\ttfamily docutils.\+parsers.\+rst.\+convert\+\_\+directive\+\_\+function (\begin{DoxyParamCaption}\item[{}]{directive\+\_\+fn }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Define & return a directive class generated from `directive_fn`.
+
+`directive_fn` uses the old-style, functional interface.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacedocutils_1_1parsers_1_1rst_ade803f1e1072f136a87d8269b3d1d51e}\label{namespacedocutils_1_1parsers_1_1rst_ade803f1e1072f136a87d8269b3d1d51e} 
+\index{docutils.parsers.rst@{docutils.parsers.rst}!arguments@{arguments}}
+\index{arguments@{arguments}!docutils.parsers.rst@{docutils.parsers.rst}}
+\doxysubsubsection{\texorpdfstring{arguments}{arguments}}
+{\footnotesize\ttfamily docutils.\+parsers.\+rst.\+arguments}
+
+\Hypertarget{namespacedocutils_1_1parsers_1_1rst_ad1be6d35e291e2ce4ee7980f76da1053}\label{namespacedocutils_1_1parsers_1_1rst_ad1be6d35e291e2ce4ee7980f76da1053} 
+\index{docutils.parsers.rst@{docutils.parsers.rst}!block\_text@{block\_text}}
+\index{block\_text@{block\_text}!docutils.parsers.rst@{docutils.parsers.rst}}
+\doxysubsubsection{\texorpdfstring{block\_text}{block\_text}}
+{\footnotesize\ttfamily docutils.\+parsers.\+rst.\+block\+\_\+text}
+
+\Hypertarget{namespacedocutils_1_1parsers_1_1rst_a96ad400966154f0b1e7b9201624eb8c8}\label{namespacedocutils_1_1parsers_1_1rst_a96ad400966154f0b1e7b9201624eb8c8} 
+\index{docutils.parsers.rst@{docutils.parsers.rst}!content@{content}}
+\index{content@{content}!docutils.parsers.rst@{docutils.parsers.rst}}
+\doxysubsubsection{\texorpdfstring{content}{content}}
+{\footnotesize\ttfamily docutils.\+parsers.\+rst.\+content}
+
+\Hypertarget{namespacedocutils_1_1parsers_1_1rst_af34af02fb28c1c4c9c61faecf5e2e65b}\label{namespacedocutils_1_1parsers_1_1rst_af34af02fb28c1c4c9c61faecf5e2e65b} 
+\index{docutils.parsers.rst@{docutils.parsers.rst}!content\_offset@{content\_offset}}
+\index{content\_offset@{content\_offset}!docutils.parsers.rst@{docutils.parsers.rst}}
+\doxysubsubsection{\texorpdfstring{content\_offset}{content\_offset}}
+{\footnotesize\ttfamily docutils.\+parsers.\+rst.\+content\+\_\+offset}
+
+\Hypertarget{namespacedocutils_1_1parsers_1_1rst_ae9fd95584c96566be7dc095b64e7c26b}\label{namespacedocutils_1_1parsers_1_1rst_ae9fd95584c96566be7dc095b64e7c26b} 
+\index{docutils.parsers.rst@{docutils.parsers.rst}!lineno@{lineno}}
+\index{lineno@{lineno}!docutils.parsers.rst@{docutils.parsers.rst}}
+\doxysubsubsection{\texorpdfstring{lineno}{lineno}}
+{\footnotesize\ttfamily docutils.\+parsers.\+rst.\+lineno}
+
+\Hypertarget{namespacedocutils_1_1parsers_1_1rst_a55a9422a08fef02a7efdff45b7321ebb}\label{namespacedocutils_1_1parsers_1_1rst_a55a9422a08fef02a7efdff45b7321ebb} 
+\index{docutils.parsers.rst@{docutils.parsers.rst}!name@{name}}
+\index{name@{name}!docutils.parsers.rst@{docutils.parsers.rst}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily docutils.\+parsers.\+rst.\+name}
+
+\Hypertarget{namespacedocutils_1_1parsers_1_1rst_a92af6b4091266449b642a7543d748ddb}\label{namespacedocutils_1_1parsers_1_1rst_a92af6b4091266449b642a7543d748ddb} 
+\index{docutils.parsers.rst@{docutils.parsers.rst}!options@{options}}
+\index{options@{options}!docutils.parsers.rst@{docutils.parsers.rst}}
+\doxysubsubsection{\texorpdfstring{options}{options}}
+{\footnotesize\ttfamily docutils.\+parsers.\+rst.\+options}
+
+\Hypertarget{namespacedocutils_1_1parsers_1_1rst_afba1aa30f58b8b877f3d5610f709670a}\label{namespacedocutils_1_1parsers_1_1rst_afba1aa30f58b8b877f3d5610f709670a} 
+\index{docutils.parsers.rst@{docutils.parsers.rst}!state@{state}}
+\index{state@{state}!docutils.parsers.rst@{docutils.parsers.rst}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily docutils.\+parsers.\+rst.\+state}
+
+\Hypertarget{namespacedocutils_1_1parsers_1_1rst_aba05ea3858c0bbf55e70fa649d212cee}\label{namespacedocutils_1_1parsers_1_1rst_aba05ea3858c0bbf55e70fa649d212cee} 
+\index{docutils.parsers.rst@{docutils.parsers.rst}!state\_machine@{state\_machine}}
+\index{state\_machine@{state\_machine}!docutils.parsers.rst@{docutils.parsers.rst}}
+\doxysubsubsection{\texorpdfstring{state\_machine}{state\_machine}}
+{\footnotesize\ttfamily docutils.\+parsers.\+rst.\+state\+\_\+machine}
+

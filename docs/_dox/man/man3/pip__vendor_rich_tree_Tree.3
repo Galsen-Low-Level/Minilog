@@ -1,0 +1,123 @@
+.TH "pip._vendor.rich.tree.Tree" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.rich.tree.Tree
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._vendor\&.rich\&.jupyter\&.JupyterMixin\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, RenderableType \fBlabel\fP, *StyleType \fBstyle\fP='tree', StyleType \fBguide_style\fP='tree\&.line', bool \fBexpanded\fP=True, bool \fBhighlight\fP=False, bool \fBhide_root\fP=False)"
+.br
+.ti -1c
+.RI "'Tree' \fBadd\fP (self, RenderableType \fBlabel\fP, *Optional[StyleType] \fBstyle\fP=None, Optional[StyleType] \fBguide_style\fP=None, bool \fBexpanded\fP=True, Optional[bool] \fBhighlight\fP=False)"
+.br
+.ti -1c
+.RI "'RenderResult' \fB__rich_console__\fP (self, 'Console' \fBconsole\fP, 'ConsoleOptions' options)"
+.br
+.ti -1c
+.RI "'Measurement' \fB__rich_measure__\fP (self, 'Console' \fBconsole\fP, 'ConsoleOptions' options)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBlabel\fP"
+.br
+.ti -1c
+.RI "\fBstyle\fP"
+.br
+.ti -1c
+.RI "\fBguide_style\fP"
+.br
+.ti -1c
+.RI "\fBexpanded\fP"
+.br
+.ti -1c
+.RI "\fBhighlight\fP"
+.br
+.ti -1c
+.RI "\fBhide_root\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Member Functions inherited from \fBpip\&._vendor\&.rich\&.jupyter\&.JupyterMixin\fP
+.in +1c
+.ti -1c
+.RI "Dict[str, str] \fB_repr_mimebundle_\fP ('ConsoleRenderable' self, Sequence[str] include, Sequence[str] exclude, **Any kwargs)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A renderable for a tree structure\&.
+
+Args:
+    label (RenderableType): The renderable or str for the tree label\&.
+    style (StyleType, optional): Style of this tree\&. Defaults to 'tree'\&.
+    guide_style (StyleType, optional): Style of the guide lines\&. Defaults to 'tree\&.line'\&.
+    expanded (bool, optional): Also display children\&. Defaults to True\&.
+    highlight (bool, optional): Highlight renderable (if str)\&. Defaults to False\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._vendor\&.rich\&.tree\&.Tree\&.__init__ ( self, RenderableType label, *StyleType  style = \fC'tree'\fP, StyleType  guide_style = \fC'tree\&.line'\fP, bool  expanded = \fCTrue\fP, bool  highlight = \fCFalse\fP, bool  hide_root = \fCFalse\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " 'RenderResult' pip\&._vendor\&.rich\&.tree\&.Tree\&.__rich_console__ ( self, 'Console' console, 'ConsoleOptions'
+     options)"
+
+.SS " 'Measurement' pip\&._vendor\&.rich\&.tree\&.Tree\&.__rich_measure__ ( self, 'Console' console, 'ConsoleOptions'
+     options)"
+
+.SS " 'Tree' pip\&._vendor\&.rich\&.tree\&.Tree\&.add ( self, RenderableType label, *Optional[StyleType]  style = \fCNone\fP, Optional[StyleType]  guide_style = \fCNone\fP, bool  expanded = \fCTrue\fP, Optional[bool]  highlight = \fCFalse\fP)"
+
+.PP
+.nf
+Add a child tree\&.
+
+Args:
+    label (RenderableType): The renderable or str for the tree label\&.
+    style (StyleType, optional): Style of this tree\&. Defaults to 'tree'\&.
+    guide_style (StyleType, optional): Style of the guide lines\&. Defaults to 'tree\&.line'\&.
+    expanded (bool, optional): Also display children\&. Defaults to True\&.
+    highlight (Optional[bool], optional): Highlight renderable (if str)\&. Defaults to False\&.
+
+Returns:
+    Tree: A new child Tree, which may be further modified\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.rich\&.tree\&.Tree\&.expanded"
+
+.SS "pip\&._vendor\&.rich\&.tree\&.Tree\&.guide_style"
+
+.SS "pip\&._vendor\&.rich\&.tree\&.Tree\&.hide_root"
+
+.SS "pip\&._vendor\&.rich\&.tree\&.Tree\&.highlight"
+
+.SS "pip\&._vendor\&.rich\&.tree\&.Tree\&.label"
+
+.SS "pip\&._vendor\&.rich\&.tree\&.Tree\&.style"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

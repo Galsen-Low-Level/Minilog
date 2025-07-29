@@ -1,0 +1,1764 @@
+.TH "docutils.writers._html_base.HTMLTranslator" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.writers._html_base.HTMLTranslator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.nodes\&.NodeVisitor\fP\&.
+.PP
+Inherited by \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP, and \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdocument\fP)"
+.br
+.ti -1c
+.RI "\fBastext\fP (self)"
+.br
+.ti -1c
+.RI "\fBattval\fP (self, text, whitespace=re\&.compile('[\\n\\r\\t\\v\\f]'))"
+.br
+.ti -1c
+.RI "\fBcloak_email\fP (self, addr)"
+.br
+.ti -1c
+.RI "\fBcloak_mailto\fP (self, uri)"
+.br
+.ti -1c
+.RI "\fBencode\fP (self, text)"
+.br
+.ti -1c
+.RI "\fBimage_size\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBprepare_svg\fP (self, node, imagedata, size_declaration)"
+.br
+.ti -1c
+.RI "\fBstylesheet_call\fP (self, path, adjust_path=None)"
+.br
+.ti -1c
+.RI "\fBstarttag\fP (self, node, tagname, suffix='\\n', empty=False, **attributes)"
+.br
+.ti -1c
+.RI "\fBemptytag\fP (self, node, tagname, suffix='\\n', **attributes)"
+.br
+.ti -1c
+.RI "\fBreport_messages\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBset_class_on_child\fP (self, node, class_, index=0)"
+.br
+.ti -1c
+.RI "\fBuri2imagepath\fP (self, uri)"
+.br
+.ti -1c
+.RI "\fBvisit_Text\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_Text\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_abbreviation\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_abbreviation\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_acronym\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_acronym\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_address\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_address\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_admonition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_admonition\fP (self, node=None)"
+.br
+.ti -1c
+.RI "\fBvisit_attribution\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_attribution\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_author\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_author\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_authors\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_authors\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_block_quote\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_block_quote\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBcheck_simple_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBis_compactable\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_bullet_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_bullet_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_caption\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_caption\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_citation\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_citation\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_citation_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_citation_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_classifier\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_classifier\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_colspec\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_colspec\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_comment\fP (self, node, sub=re\&.compile('\-(?=\-)')\&.sub)"
+.br
+.ti -1c
+.RI "\fBvisit_compound\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_compound\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_container\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_container\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_contact\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_contact\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_copyright\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_copyright\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_date\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_date\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_decoration\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_decoration\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_definition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_definition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_definition_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_definition_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_definition_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_definition_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_description\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_description\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_docinfo\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_docinfo\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_docinfo_item\fP (self, node, name, \fBmeta\fP=True)"
+.br
+.ti -1c
+.RI "\fBdepart_docinfo_item\fP (self)"
+.br
+.ti -1c
+.RI "\fBvisit_doctest_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_doctest_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_document\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_document\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_emphasis\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_emphasis\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_entry\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_entry\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_enumerated_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_enumerated_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_field_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_field_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_field\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_field\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_field_name\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_field_name\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_field_body\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_field_body\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_figure\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_figure\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_footer\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_footer\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_footnote\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_footnote\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_footnote_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_footnote_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_generated\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_generated\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_header\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_header\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_image\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_image\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_inline\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_inline\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_label\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_label\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_legend\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_legend\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_line\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_line\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_line_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_line_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_literal\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_literal\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_literal_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_literal_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_math\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_math\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_math_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_math_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_meta\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_meta\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option_argument\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option_argument\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option_group\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option_group\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option_string\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option_string\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_organization\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_organization\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_paragraph\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_paragraph\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_problematic\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_problematic\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_raw\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_revision\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_revision\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_row\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_row\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_rubric\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_rubric\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_section\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_section\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_sidebar\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_sidebar\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_status\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_status\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_strong\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_strong\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_subscript\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_subscript\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_substitution_definition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_substitution_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_subtitle\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_subtitle\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_superscript\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_superscript\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_system_message\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_system_message\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_table\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_table\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_target\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_target\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_tbody\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_tbody\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_term\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_term\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_tgroup\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_tgroup\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_thead\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_thead\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBsection_title_tags\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_title\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_title\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_title_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_title_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_topic\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_topic\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_transition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_transition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_version\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_version\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBunimplemented_visit\fP (self, node)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "\fBdispatch_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdispatch_departure\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBunknown_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBunknown_departure\fP (self, node)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsettings\fP"
+.br
+.ti -1c
+.RI "\fBlanguage\fP"
+.br
+.ti -1c
+.RI "\fBinitial_header_level\fP"
+.br
+.ti -1c
+.RI "\fBimage_loading\fP"
+.br
+.ti -1c
+.RI "\fBmath_output\fP"
+.br
+.ti -1c
+.RI "\fBmath_options\fP"
+.br
+.ti -1c
+.RI "\fBbody\fP"
+.br
+.ti -1c
+.RI "\fBbody_prefix\fP"
+.br
+.ti -1c
+.RI "\fBbody_pre_docinfo\fP"
+.br
+.ti -1c
+.RI "\fBbody_suffix\fP"
+.br
+.ti -1c
+.RI "\fBdocinfo\fP"
+.br
+.ti -1c
+.RI "\fBfooter\fP"
+.br
+.ti -1c
+.RI "\fBfragment\fP"
+.br
+.ti -1c
+.RI "\fBhead\fP"
+.br
+.ti -1c
+.RI "\fBhead_prefix\fP"
+.br
+.ti -1c
+.RI "\fBheader\fP"
+.br
+.ti -1c
+.RI "\fBhtml_body\fP"
+.br
+.ti -1c
+.RI "\fBhtml_head\fP"
+.br
+.ti -1c
+.RI "\fBhtml_prolog\fP"
+.br
+.ti -1c
+.RI "\fBhtml_subtitle\fP"
+.br
+.ti -1c
+.RI "\fBhtml_title\fP"
+.br
+.ti -1c
+.RI "\fBmeta\fP"
+.br
+.ti -1c
+.RI "\fBstylesheet\fP"
+.br
+.ti -1c
+.RI "\fBtitle\fP"
+.br
+.ti -1c
+.RI "\fBsubtitle\fP"
+.br
+.ti -1c
+.RI "\fBcontext\fP"
+.br
+.ti -1c
+.RI "\fBsection_level\fP"
+.br
+.ti -1c
+.RI "\fBcolspecs\fP"
+.br
+.ti -1c
+.RI "\fBcompact_p\fP"
+.br
+.ti -1c
+.RI "\fBcompact_simple\fP"
+.br
+.ti -1c
+.RI "\fBcompact_field_list\fP"
+.br
+.ti -1c
+.RI "\fBin_docinfo\fP"
+.br
+.ti -1c
+.RI "\fBin_sidebar\fP"
+.br
+.ti -1c
+.RI "\fBin_document_title\fP"
+.br
+.ti -1c
+.RI "\fBin_mailto\fP"
+.br
+.ti -1c
+.RI "\fBauthor_in_authors\fP"
+.br
+.ti -1c
+.RI "\fBmath_header\fP"
+.br
+.ti -1c
+.RI "\fBmessages\fP"
+.br
+.ti -1c
+.RI "\fBspecial_characters\fP"
+.br
+.ti -1c
+.RI "\fBdoctype\fP"
+.br
+.ti -1c
+.RI "\fBdocumenttag_args\fP"
+.br
+.ti -1c
+.RI "\fBmathjax_url\fP"
+.br
+.ti -1c
+.RI "\fBcontent_type\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBoptional\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBdoctype\fP = '<!DOCTYPE html>\\n'"
+.br
+.ti -1c
+.RI "str \fBdoctype_mathml\fP = \fBdoctype\fP"
+.br
+.ti -1c
+.RI "tuple \fBhead_prefix_template\fP"
+.br
+.ti -1c
+.RI "str \fBcontent_type\fP = '<\fBmeta\fP charset='%s' />\\n'"
+.br
+.ti -1c
+.RI "tuple \fBgenerator\fP"
+.br
+.ti -1c
+.RI "dict \fBdocumenttag_args\fP = {'tagname': 'div', 'CLASS': '\fBdocument\fP'}"
+.br
+.ti -1c
+.RI "str \fBmathjax_script\fP = '<script type='text/javascript' src='%s'></script>\\n'"
+.br
+.ti -1c
+.RI "str \fBmathjax_url\fP = 'file:/usr/share/javascript/mathjax/MathJax\&.js'"
+.br
+.ti -1c
+.RI "str \fBstylesheet_link\fP = '<link rel='stylesheet' href='%s' type='text/css' />\\n'"
+.br
+.ti -1c
+.RI "str \fBembedded_stylesheet\fP = '<style type='text/css'>\\n\\n%s\\n</style>\\n'"
+.br
+.ti -1c
+.RI "\fBwords_and_spaces\fP = re\&.compile(r'[^ \\n]+| +|\\n')"
+.br
+.ti -1c
+.RI "\fBin_word_wrap_point\fP = re\&.compile(r'\&.+\\W\\W\&.+|[\-?]\&.+')"
+.br
+.ti -1c
+.RI "str \fBlang_attribute\fP = 'lang'"
+.br
+.ti -1c
+.RI "dict \fBspecial_characters\fP"
+.br
+.ti -1c
+.RI "tuple \fBvideotypes\fP = ('video/mp4', 'video/webm', 'video/ogg')"
+.br
+.ti -1c
+.RI "dict \fBattribution_formats\fP"
+.br
+.ti -1c
+.RI "dict \fBmath_tags\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBoptional\fP = ('\fBmeta\fP',)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Generic Docutils to HTML translator\&.
+
+See the `html4css1` and `html5_polyglot` writers for full featured
+HTML writers\&.
+
+\&.\&. IMPORTANT::
+  The `visit_*` and `depart_*` methods use a
+  heterogeneous stack, `self\&.context`\&.
+  When subclassing, make sure to be consistent in its use!
+
+  Examples for robust coding:
+
+  a) Override both `visit_*` and `depart_*` methods, don't call the
+     parent functions\&.
+
+  b) Extend both and unconditionally call the parent functions::
+
+       def visit_example(self, node):
+           if foo:
+               self\&.body\&.append('<div class='foo'>')
+           html4css1\&.HTMLTranslator\&.visit_example(self, node)
+
+       def depart_example(self, node):
+           html4css1\&.HTMLTranslator\&.depart_example(self, node)
+           if foo:
+               self\&.body\&.append('</div>')
+
+  c) Extend both, calling the parent functions under the same
+     conditions::
+
+       def visit_example(self, node):
+           if foo:
+               self\&.body\&.append('<div class='foo'>\\n')
+           else: # call the parent method
+               _html_base\&.HTMLTranslator\&.visit_example(self, node)
+
+       def depart_example(self, node):
+           if foo:
+               self\&.body\&.append('</div>\\n')
+           else: # call the parent method
+               _html_base\&.HTMLTranslator\&.depart_example(self, node)
+
+  d) Extend one method (call the parent), but don't otherwise use the
+     `self\&.context` stack::
+
+       def depart_example(self, node):
+           _html_base\&.HTMLTranslator\&.depart_example(self, node)
+           if foo:
+               # implementation-specific code
+               # that does not use `self\&.context`
+               self\&.body\&.append('</div>\\n')
+
+  This way, changes in stack use will not bite you\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.__init__ ( self,  document)"
+
+.PP
+Reimplemented from \fBdocutils\&.nodes\&.NodeVisitor\fP\&.
+.PP
+Reimplemented in \fBdocutils\&.writers\&.s5_html\&.S5HTMLTranslator\fP, and \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.astext ( self)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.attval ( self,  text,  whitespace = \fCre\&.compile('[\\n\\r\\t\\v\\f]')\fP)"
+
+.PP
+.nf
+Cleanse, HTML encode, and return attribute value text\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.check_simple_list ( self,  node)"
+
+.PP
+.nf
+Check for a simple list that can be rendered compactly\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.cloak_email ( self,  addr)"
+
+.PP
+.nf
+Try to hide the link text of a email link from harversters\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.cloak_mailto ( self,  uri)"
+
+.PP
+.nf
+Try to hide a mailto: URL from harvesters\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_abbreviation ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_acronym ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_address ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_admonition ( self,  node = \fCNone\fP)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_attribution ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_author ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_authors ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP, and \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_block_quote ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_bullet_list ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_caption ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_citation ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_citation_reference ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_classifier ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_colspec ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_compound ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_contact ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_container ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_copyright ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_date ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_decoration ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_definition ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_definition_list ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_definition_list_item ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_description ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_docinfo ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_docinfo_item ( self)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_doctest_block ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_document ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.s5_html\&.S5HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_emphasis ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_entry ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_enumerated_list ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_field ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_field_body ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_field_list ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP, and \fBdocutils\&.writers\&.pep_html\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_field_name ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_figure ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_footer ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP, and \fBdocutils\&.writers\&.s5_html\&.S5HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_footnote ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_footnote_reference ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_generated ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_header ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP, and \fBdocutils\&.writers\&.s5_html\&.S5HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_image ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_inline ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_label ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_legend ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_line ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_line_block ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_list_item ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_literal ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP, and \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_literal_block ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_math ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_math_block ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_meta ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_option ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_option_argument ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_option_group ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_option_list ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_option_list_item ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_option_string ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_organization ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_paragraph ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_problematic ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_reference ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_revision ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_row ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_rubric ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_section ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_sidebar ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP, and \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_status ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_strong ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_subscript ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_subtitle ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_superscript ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_system_message ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_table ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_target ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_tbody ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_term ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_Text ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_tgroup ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_thead ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_title ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_title_reference ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_topic ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_transition ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.depart_version ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.emptytag ( self,  node,  tagname,  suffix = \fC'\\n'\fP, ** attributes)"
+
+.PP
+.nf
+Construct and return an XML-compatible empty tag\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.encode ( self,  text)"
+
+.PP
+.nf
+Encode special characters in `text` & return\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.image_size ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.is_compactable ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.prepare_svg ( self,  node,  imagedata,  size_declaration)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.report_messages ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.section_title_tags ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP, and \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.set_class_on_child ( self,  node,  class_,  index = \fC0\fP)"
+
+.PP
+.nf
+Set class `class_` on the visible child no\&. index of `node`\&.
+Do nothing if node has fewer children than `index`\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.starttag ( self,  node,  tagname,  suffix = \fC'\\n'\fP,  empty = \fCFalse\fP, ** attributes)"
+
+.PP
+.nf
+Construct and return a start tag given a node (id & class attributes
+are extracted), tag name, and optional attributes\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.stylesheet_call ( self,  path,  adjust_path = \fCNone\fP)"
+
+.PP
+.nf
+Return code to reference or embed stylesheet file `path`
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.unimplemented_visit ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.uri2imagepath ( self,  uri)"
+
+.PP
+.nf
+Get filesystem path corresponding to an URI\&.
+
+The image directive expects an image URI\&. Some writers require the
+corresponding image path to read the image size from the file or to
+embed the image in the output\&.
+
+Absolute URIs consider the 'root_prefix' setting\&.
+
+In order to work in the output document, relative image URIs relate
+to the output directory\&. For access by the writer, the corresponding
+image path must be relative to the current working directory\&.
+
+Provisional: the function's location, interface and behaviour
+may change without advance warning\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_abbreviation ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_acronym ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_address ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_admonition ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_attribution ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_author ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_authors ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP, and \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_block_quote ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_bullet_list ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_caption ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_citation ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_citation_reference ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_classifier ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_colspec ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_comment ( self,  node,  sub = \fCre\&.compile('\-(?=\-)')\&.sub\fP)"
+
+.PP
+.nf
+Escape double-dashes in comment text\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_compound ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_contact ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_container ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_copyright ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_date ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_decoration ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_definition ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_definition_list ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_definition_list_item ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_description ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_docinfo ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_docinfo_item ( self,  node,  name,  meta = \fCTrue\fP)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_doctest_block ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_document ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_emphasis ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_entry ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_enumerated_list ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_field ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_field_body ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_field_list ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_field_name ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_figure ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_footer ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_footnote ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_footnote_reference ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_generated ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_header ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_image ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_inline ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_label ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_legend ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_line ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_line_block ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_list_item ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_literal ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP, and \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_literal_block ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_math ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_math_block ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_meta ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_option ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_option_argument ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_option_group ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_option_list ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_option_list_item ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_option_string ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_organization ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_paragraph ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_problematic ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_raw ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_reference ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_revision ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_row ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_rubric ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_section ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP, and \fBdocutils\&.writers\&.s5_html\&.S5HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_sidebar ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP, and \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_status ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_strong ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_subscript ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_substitution_definition ( self,  node)"
+
+.PP
+.nf
+Internal only\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_substitution_reference ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_subtitle ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP, and \fBdocutils\&.writers\&.s5_html\&.S5HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_superscript ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_system_message ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_table ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_target ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_tbody ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_term ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_Text ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_tgroup ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_thead ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html4css1\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_title ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.s5_html\&.S5HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_title_reference ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_topic ( self,  node)"
+
+.PP
+Reimplemented in \fBdocutils\&.writers\&.html5_polyglot\&.HTMLTranslator\fP\&.
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_transition ( self,  node)"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.visit_version ( self,  node)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "dict docutils\&.writers\&._html_base\&.HTMLTranslator\&.attribution_formats\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {'dash': ('\\u2014', ''),
+                           'parentheses': ('(', ')'),
+                           'parens': ('(', ')'),
+                           'none': ('', '')}
+.fi
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.author_in_authors"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.body"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.body_pre_docinfo"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.body_prefix"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.body_suffix"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.colspecs"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.compact_field_list"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.compact_p"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.compact_simple"
+
+.SS "str docutils\&.writers\&._html_base\&.HTMLTranslator\&.content_type = '<\fBmeta\fP charset='%s' />\\n'\fC [static]\fP"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.content_type"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.context"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.docinfo"
+
+.SS "str docutils\&.writers\&._html_base\&.HTMLTranslator\&.doctype = '<!DOCTYPE html>\\n'\fC [static]\fP"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.doctype"
+
+.SS "str docutils\&.writers\&._html_base\&.HTMLTranslator\&.doctype_mathml = \fBdoctype\fP\fC [static]\fP"
+
+.SS "dict docutils\&.writers\&._html_base\&.HTMLTranslator\&.documenttag_args = {'tagname': 'div', 'CLASS': '\fBdocument\fP'}\fC [static]\fP"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.documenttag_args"
+
+.SS "str docutils\&.writers\&._html_base\&.HTMLTranslator\&.embedded_stylesheet = '<style type='text/css'>\\n\\n%s\\n</style>\\n'\fC [static]\fP"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.footer"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.fragment"
+
+.SS "tuple docutils\&.writers\&._html_base\&.HTMLTranslator\&.generator\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  (
+        f'<meta name="generator" content="Docutils {docutils\&.__version__}: '
+        'https://docutils\&.sourceforge\&.io/" />\\n')
+.fi
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.head"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.head_prefix"
+
+.SS "tuple docutils\&.writers\&._html_base\&.HTMLTranslator\&.head_prefix_template\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  ('<html xmlns="http://www\&.w3\&.org/1999/xhtml"'
+                            ' xml:lang="%(lang)s" lang="%(lang)s">\\n<head>\\n')
+.fi
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.header"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.html_body"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.html_head"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.html_prolog"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.html_subtitle"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.html_title"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.image_loading"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.in_docinfo"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.in_document_title"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.in_mailto"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.in_sidebar"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.in_word_wrap_point = re\&.compile(r'\&.+\\W\\W\&.+|[\-?]\&.+')\fC [static]\fP"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.initial_header_level"
+
+.SS "str docutils\&.writers\&._html_base\&.HTMLTranslator\&.lang_attribute = 'lang'\fC [static]\fP"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.language"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.math_header"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.math_options"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.math_output"
+
+.SS "dict docutils\&.writers\&._html_base\&.HTMLTranslator\&.math_tags\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {  # format: (inline, block, [class arguments])
+                 'html': ('span', 'div', ['formula']),
+                 'latex': ('tt', 'pre', ['math']),
+                 'mathjax': ('span', 'div', ['math']),
+                 'mathml': ('', 'div', []),
+                 'problematic': ('span', 'pre', ['math', 'problematic']),
+                 }
+.fi
+
+.SS "str docutils\&.writers\&._html_base\&.HTMLTranslator\&.mathjax_script = '<script type='text/javascript' src='%s'></script>\\n'\fC [static]\fP"
+
+.SS "str docutils\&.writers\&._html_base\&.HTMLTranslator\&.mathjax_url = 'file:/usr/share/javascript/mathjax/MathJax\&.js'\fC [static]\fP"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.mathjax_url"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.messages"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.meta"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.section_level"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.settings"
+
+.SS "dict docutils\&.writers\&._html_base\&.HTMLTranslator\&.special_characters\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {ord('&'): '&amp;',
+                          ord('<'): '&lt;',
+                          ord('"'): '&quot;',
+                          ord('>'): '&gt;',
+                          ord('@'): '&#64;',  # may thwart address harvesters
+                          }
+.fi
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.special_characters"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.stylesheet"
+
+.SS "str docutils\&.writers\&._html_base\&.HTMLTranslator\&.stylesheet_link = '<link rel='stylesheet' href='%s' type='text/css' />\\n'\fC [static]\fP"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.subtitle"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.title"
+
+.SS "tuple docutils\&.writers\&._html_base\&.HTMLTranslator\&.videotypes = ('video/mp4', 'video/webm', 'video/ogg')\fC [static]\fP"
+
+.SS "docutils\&.writers\&._html_base\&.HTMLTranslator\&.words_and_spaces = re\&.compile(r'[^ \\n]+| +|\\n')\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

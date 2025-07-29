@@ -1,0 +1,139 @@
+.TH "pip._internal.utils.temp_dir.TempDirectory" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.utils.temp_dir.TempDirectory
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBpip\&._internal\&.utils\&.temp_dir\&.AdjacentTempDirectory\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, Optional[str] \fBpath\fP=None, Union[bool, None, \fB_Default\fP] \fBdelete\fP=\fB_default\fP, str \fBkind\fP='temp', bool globally_managed=False, bool \fBignore_cleanup_errors\fP=True)"
+.br
+.ti -1c
+.RI "str \fBpath\fP (self)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fB_T\fP \fB__enter__\fP (\fB_T\fP self)"
+.br
+.ti -1c
+.RI "None \fB__exit__\fP (self, Any exc, Any value, Any tb)"
+.br
+.ti -1c
+.RI "None \fBcleanup\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdelete\fP"
+.br
+.ti -1c
+.RI "\fBkind\fP"
+.br
+.ti -1c
+.RI "\fBignore_cleanup_errors\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fB_create\fP (self, str \fBkind\fP)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_path\fP"
+.br
+.ti -1c
+.RI "\fB_deleted\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Helper class that owns and cleans up a temporary directory\&.
+
+This class can be used as a context manager or as an OO representation of a
+temporary directory\&.
+
+Attributes:
+    path
+        Location to the created temporary directory
+    delete
+        Whether the directory should be deleted when exiting
+        (when used as a contextmanager)
+
+Methods:
+    cleanup()
+        Deletes the temporary directory
+
+When used as a context manager, if the delete attribute is True, on
+exiting the context the temporary directory is deleted\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._internal\&.utils\&.temp_dir\&.TempDirectory\&.__init__ ( self, Optional[str]  path = \fCNone\fP, Union[bool, None, \fB_Default\fP]  delete = \fC\fB_default\fP\fP, str  kind = \fC'temp'\fP, bool  globally_managed = \fCFalse\fP, bool  ignore_cleanup_errors = \fCTrue\fP)"
+
+.PP
+Reimplemented in \fBpip\&._internal\&.utils\&.temp_dir\&.AdjacentTempDirectory\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " \fB_T\fP pip\&._internal\&.utils\&.temp_dir\&.TempDirectory\&.__enter__ (\fB_T\fP self)"
+
+.SS " None pip\&._internal\&.utils\&.temp_dir\&.TempDirectory\&.__exit__ ( self, Any exc, Any value, Any tb)"
+
+.SS " str pip\&._internal\&.utils\&.temp_dir\&.TempDirectory\&.__repr__ ( self)"
+
+.SS " str pip\&._internal\&.utils\&.temp_dir\&.TempDirectory\&._create ( self, str kind)\fC [protected]\fP"
+
+.PP
+.nf
+Create a temporary directory and store its path in self\&.path
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._internal\&.utils\&.temp_dir\&.AdjacentTempDirectory\fP\&.
+.SS " None pip\&._internal\&.utils\&.temp_dir\&.TempDirectory\&.cleanup ( self)"
+
+.PP
+.nf
+Remove the temporary directory created and reset state
+.fi
+.PP
+ 
+.SS " str pip\&._internal\&.utils\&.temp_dir\&.TempDirectory\&.path ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._internal\&.utils\&.temp_dir\&.TempDirectory\&._deleted\fC [protected]\fP"
+
+.SS "pip\&._internal\&.utils\&.temp_dir\&.TempDirectory\&._path\fC [protected]\fP"
+
+.SS "pip\&._internal\&.utils\&.temp_dir\&.TempDirectory\&.delete"
+
+.SS "pip\&._internal\&.utils\&.temp_dir\&.TempDirectory\&.ignore_cleanup_errors"
+
+.SS "pip\&._internal\&.utils\&.temp_dir\&.TempDirectory\&.kind"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

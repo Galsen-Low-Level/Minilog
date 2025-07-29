@@ -1,0 +1,111 @@
+.TH "pip._vendor.distlib.resources" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.distlib.resources
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBResource\fP"
+.br
+.ti -1c
+.RI "class \fBResourceBase\fP"
+.br
+.ti -1c
+.RI "class \fBResourceCache\fP"
+.br
+.ti -1c
+.RI "class \fBResourceContainer\fP"
+.br
+.ti -1c
+.RI "class \fBResourceFinder\fP"
+.br
+.ti -1c
+.RI "class \fBZipResourceFinder\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBregister_finder\fP (loader, finder_maker)"
+.br
+.ti -1c
+.RI "\fBfinder\fP (package)"
+.br
+.ti -1c
+.RI "\fBfinder_for_path\fP (path)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "\fBcache\fP = None"
+.br
+.ti -1c
+.RI "dict \fB_finder_registry\fP"
+.br
+.ti -1c
+.RI "dict \fB_finder_cache\fP = {}"
+.br
+.ti -1c
+.RI "\fB_dummy_module\fP = types\&.ModuleType(str('__dummy__'))"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.resources\&.finder ( package)"
+
+.PP
+.nf
+Return a resource finder for a package\&.
+:param package: The name of the package\&.
+:return: A :class:`ResourceFinder` instance for the package\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.resources\&.finder_for_path ( path)"
+
+.PP
+.nf
+Return a resource finder for a path, which should represent a container\&.
+
+:param path: The path\&.
+:return: A :class:`ResourceFinder` instance for the path\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.resources\&.register_finder ( loader,  finder_maker)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.resources\&._dummy_module = types\&.ModuleType(str('__dummy__'))\fC [protected]\fP"
+
+.SS "dict pip\&._vendor\&.distlib\&.resources\&._finder_cache = {}\fC [protected]\fP"
+
+.SS "dict pip\&._vendor\&.distlib\&.resources\&._finder_registry\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     type(None): ResourceFinder,
+3     zipimport\&.zipimporter: ZipResourceFinder
+4 }
+.fi
+
+.SS "pip\&._vendor\&.distlib\&.resources\&.cache = None"
+
+.SS "pip\&._vendor\&.distlib\&.resources\&.logger = logging\&.getLogger(__name__)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,113 @@
+\doxysection{babel.\+messages.\+mofile Namespace Reference}
+\hypertarget{namespacebabel_1_1messages_1_1mofile}{}\label{namespacebabel_1_1messages_1_1mofile}\index{babel.messages.mofile@{babel.messages.mofile}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Catalog}{Catalog}} \mbox{\hyperlink{namespacebabel_1_1messages_1_1mofile_a1f8acc57a7fd559297ce3d5c75a2ebfa}{read\+\_\+mo}} (Supports\+Read\mbox{[}bytes\mbox{]} fileobj)
+\item 
+None \mbox{\hyperlink{namespacebabel_1_1messages_1_1mofile_a7dad09fc6c9c893256400034aec0e6d9}{write\+\_\+mo}} (Supports\+Write\mbox{[}bytes\mbox{]} fileobj, \mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Catalog}{Catalog}} catalog, bool use\+\_\+fuzzy=False)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacebabel_1_1messages_1_1mofile_a9b7735eb2620b41bdb4413c5db88cb2d}{LE\+\_\+\+MAGIC}} = 0x950412de
+\item 
+int \mbox{\hyperlink{namespacebabel_1_1messages_1_1mofile_a93f8afd7534fb0224bce73c48891f39c}{BE\+\_\+\+MAGIC}} = 0xde120495
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    babel.messages.mofile
+    ~~~~~~~~~~~~~~~~~~~~~
+
+    Writing of files in the ``gettext`` MO (machine object) format.
+
+    :copyright: (c) 2013-2025 by the Babel Team.
+    :license: BSD, see LICENSE for more details.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacebabel_1_1messages_1_1mofile_a1f8acc57a7fd559297ce3d5c75a2ebfa}\label{namespacebabel_1_1messages_1_1mofile_a1f8acc57a7fd559297ce3d5c75a2ebfa} 
+\index{babel.messages.mofile@{babel.messages.mofile}!read\_mo@{read\_mo}}
+\index{read\_mo@{read\_mo}!babel.messages.mofile@{babel.messages.mofile}}
+\doxysubsubsection{\texorpdfstring{read\_mo()}{read\_mo()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Catalog}{Catalog}} babel.\+messages.\+mofile.\+read\+\_\+mo (\begin{DoxyParamCaption}\item[{Supports\+Read\mbox{[}bytes\mbox{]}}]{fileobj }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read a binary MO file from the given file-like object and return a
+corresponding `Catalog` object.
+
+:param fileobj: the file-like object to read the MO file from
+
+:note: The implementation of this function is heavily based on the
+       ``GNUTranslations._parse`` method of the ``gettext`` module in the
+       standard library.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1messages_1_1mofile_a7dad09fc6c9c893256400034aec0e6d9}\label{namespacebabel_1_1messages_1_1mofile_a7dad09fc6c9c893256400034aec0e6d9} 
+\index{babel.messages.mofile@{babel.messages.mofile}!write\_mo@{write\_mo}}
+\index{write\_mo@{write\_mo}!babel.messages.mofile@{babel.messages.mofile}}
+\doxysubsubsection{\texorpdfstring{write\_mo()}{write\_mo()}}
+{\footnotesize\ttfamily  None babel.\+messages.\+mofile.\+write\+\_\+mo (\begin{DoxyParamCaption}\item[{Supports\+Write\mbox{[}bytes\mbox{]}}]{fileobj,  }\item[{\mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Catalog}{Catalog}}}]{catalog,  }\item[{bool }]{use\+\_\+fuzzy = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write a catalog to the specified file-like object using the GNU MO file
+format.
+
+>>> import sys
+>>> from babel.messages import Catalog
+>>> from gettext import GNUTranslations
+>>> from io import BytesIO
+
+>>> catalog = Catalog(locale='en_US')
+>>> catalog.add('foo', 'Voh')
+<Message ...>
+>>> catalog.add((u'bar', u'baz'), (u'Bahr', u'Batz'))
+<Message ...>
+>>> catalog.add('fuz', 'Futz', flags=['fuzzy'])
+<Message ...>
+>>> catalog.add('Fizz', '')
+<Message ...>
+>>> catalog.add(('Fuzz', 'Fuzzes'), ('', ''))
+<Message ...>
+>>> buf = BytesIO()
+
+>>> write_mo(buf, catalog)
+>>> x = buf.seek(0)
+>>> translations = GNUTranslations(fp=buf)
+>>> if sys.version_info[0] >= 3:
+...     translations.ugettext = translations.gettext
+...     translations.ungettext = translations.ngettext
+>>> translations.ugettext('foo')
+u'Voh'
+>>> translations.ungettext('bar', 'baz', 1)
+u'Bahr'
+>>> translations.ungettext('bar', 'baz', 2)
+u'Batz'
+>>> translations.ugettext('fuz')
+u'fuz'
+>>> translations.ugettext('Fizz')
+u'Fizz'
+>>> translations.ugettext('Fuzz')
+u'Fuzz'
+>>> translations.ugettext('Fuzzes')
+u'Fuzzes'
+
+:param fileobj: the file-like object to write to
+:param catalog: the `Catalog` instance
+:param use_fuzzy: whether translations marked as "fuzzy" should be included
+                  in the output
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacebabel_1_1messages_1_1mofile_a93f8afd7534fb0224bce73c48891f39c}\label{namespacebabel_1_1messages_1_1mofile_a93f8afd7534fb0224bce73c48891f39c} 
+\index{babel.messages.mofile@{babel.messages.mofile}!BE\_MAGIC@{BE\_MAGIC}}
+\index{BE\_MAGIC@{BE\_MAGIC}!babel.messages.mofile@{babel.messages.mofile}}
+\doxysubsubsection{\texorpdfstring{BE\_MAGIC}{BE\_MAGIC}}
+{\footnotesize\ttfamily int babel.\+messages.\+mofile.\+BE\+\_\+\+MAGIC = 0xde120495}
+
+\Hypertarget{namespacebabel_1_1messages_1_1mofile_a9b7735eb2620b41bdb4413c5db88cb2d}\label{namespacebabel_1_1messages_1_1mofile_a9b7735eb2620b41bdb4413c5db88cb2d} 
+\index{babel.messages.mofile@{babel.messages.mofile}!LE\_MAGIC@{LE\_MAGIC}}
+\index{LE\_MAGIC@{LE\_MAGIC}!babel.messages.mofile@{babel.messages.mofile}}
+\doxysubsubsection{\texorpdfstring{LE\_MAGIC}{LE\_MAGIC}}
+{\footnotesize\ttfamily int babel.\+messages.\+mofile.\+LE\+\_\+\+MAGIC = 0x950412de}
+

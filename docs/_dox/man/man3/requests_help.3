@@ -1,0 +1,99 @@
+.TH "requests.help" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+requests.help
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_implementation\fP ()"
+.br
+.ti -1c
+.RI "\fBinfo\fP ()"
+.br
+.ti -1c
+.RI "\fBmain\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBcharset_normalizer\fP = None"
+.br
+.ti -1c
+.RI "\fBchardet\fP = None"
+.br
+.ti -1c
+.RI "\fBpyopenssl\fP = None"
+.br
+.ti -1c
+.RI "\fBOpenSSL\fP = None"
+.br
+.ti -1c
+.RI "\fBcryptography\fP = None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Module containing bug report helper(s)\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "requests\&.help\&._implementation ()\fC [protected]\fP"
+
+.PP
+.nf
+Return a dict with the Python implementation and version\&.
+
+Provide both the name and the version of the Python implementation
+currently running\&. For example, on CPython 3\&.10\&.3 it will return
+{'name': 'CPython', 'version': '3\&.10\&.3'}\&.
+
+This function works best on CPython and PyPy: in particular, it probably
+doesn't work for Jython or IronPython\&. Future investigation should be done
+to work out the correct shape of the code for those platforms\&.
+
+.fi
+.PP
+ 
+.SS "requests\&.help\&.info ()"
+
+.PP
+.nf
+Generate information for a bug report\&.
+.fi
+.PP
+ 
+.SS "requests\&.help\&.main ()"
+
+.PP
+.nf
+Pretty-print the bug information as JSON\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "requests\&.help\&.chardet = None"
+
+.SS "requests\&.help\&.charset_normalizer = None"
+
+.SS "requests\&.help\&.cryptography = None"
+
+.SS "requests\&.help\&.OpenSSL = None"
+
+.SS "requests\&.help\&.pyopenssl = None"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

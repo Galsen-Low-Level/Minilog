@@ -1,0 +1,138 @@
+.TH "waitress.buffers.ReadOnlyFileBasedBuffer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+waitress.buffers.ReadOnlyFileBasedBuffer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBwaitress\&.buffers\&.FileBasedBuffer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBfile\fP, \fBblock_size\fP=32768)"
+.br
+.ti -1c
+.RI "\fBprepare\fP (self, size=None)"
+.br
+.ti -1c
+.RI "\fBget\fP (self, numbytes=\-1, \fBskip\fP=False)"
+.br
+.ti -1c
+.RI "\fB__iter__\fP (self)"
+.br
+.ti -1c
+.RI "\fBnext\fP (self)"
+.br
+.ti -1c
+.RI "\fBappend\fP (self, s)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBwaitress\&.buffers\&.FileBasedBuffer\fP
+.in +1c
+.ti -1c
+.RI "\fB__len__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__bool__\fP (self)"
+.br
+.ti -1c
+.RI "\fBskip\fP (self, numbytes, allow_prune=0)"
+.br
+.ti -1c
+.RI "\fBnewfile\fP (self)"
+.br
+.ti -1c
+.RI "\fBprune\fP (self)"
+.br
+.ti -1c
+.RI "\fBgetfile\fP (self)"
+.br
+.ti -1c
+.RI "\fBclose\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBfile\fP"
+.br
+.ti -1c
+.RI "\fBblock_size\fP"
+.br
+.ti -1c
+.RI "\fBseekable\fP"
+.br
+.ti -1c
+.RI "\fBseek\fP"
+.br
+.ti -1c
+.RI "\fBtell\fP"
+.br
+.ti -1c
+.RI "\fBremain\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBwaitress\&.buffers\&.FileBasedBuffer\fP
+.in +1c
+.ti -1c
+.RI "\fBfile\fP"
+.br
+.ti -1c
+.RI "\fBremain\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Attributes inherited from \fBwaitress\&.buffers\&.FileBasedBuffer\fP
+.in +1c
+.ti -1c
+.RI "int \fBremain\fP = 0"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "waitress\&.buffers\&.ReadOnlyFileBasedBuffer\&.__init__ ( self,  file,  block_size = \fC32768\fP)"
+
+.PP
+Reimplemented from \fBwaitress\&.buffers\&.FileBasedBuffer\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "waitress\&.buffers\&.ReadOnlyFileBasedBuffer\&.__iter__ ( self)"
+
+.SS "waitress\&.buffers\&.ReadOnlyFileBasedBuffer\&.append ( self,  s)"
+
+.PP
+Reimplemented from \fBwaitress\&.buffers\&.FileBasedBuffer\fP\&.
+.SS "waitress\&.buffers\&.ReadOnlyFileBasedBuffer\&.get ( self,  numbytes = \fC\-1\fP,  skip = \fCFalse\fP)"
+
+.PP
+Reimplemented from \fBwaitress\&.buffers\&.FileBasedBuffer\fP\&.
+.SS "waitress\&.buffers\&.ReadOnlyFileBasedBuffer\&.next ( self)"
+
+.SS "waitress\&.buffers\&.ReadOnlyFileBasedBuffer\&.prepare ( self,  size = \fCNone\fP)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "waitress\&.buffers\&.ReadOnlyFileBasedBuffer\&.block_size"
+
+.SS "waitress\&.buffers\&.ReadOnlyFileBasedBuffer\&.file"
+
+.SS "waitress\&.buffers\&.ReadOnlyFileBasedBuffer\&.remain"
+
+.SS "waitress\&.buffers\&.ReadOnlyFileBasedBuffer\&.seek"
+
+.SS "waitress\&.buffers\&.ReadOnlyFileBasedBuffer\&.seekable"
+
+.SS "waitress\&.buffers\&.ReadOnlyFileBasedBuffer\&.tell"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

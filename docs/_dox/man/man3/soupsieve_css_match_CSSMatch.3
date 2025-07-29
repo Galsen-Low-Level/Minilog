@@ -1,0 +1,652 @@
+.TH "soupsieve.css_match.CSSMatch" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+soupsieve.css_match.CSSMatch
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsoupsieve\&.css_match\&._DocumentNav\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, ct\&.SelectorList \fBselectors\fP, \fBbs4\&.Tag\fP|None \fBscope\fP, ct\&.Namespaces|None \fBnamespaces\fP, int \fBflags\fP)"
+.br
+.ti -1c
+.RI "bool \fBsupports_namespaces\fP (self)"
+.br
+.ti -1c
+.RI "str \fBget_tag_ns\fP (self, \fBbs4\&.Tag\fP|None el)"
+.br
+.ti -1c
+.RI "bool \fBis_html_tag\fP (self, \fBbs4\&.Tag\fP|None el)"
+.br
+.ti -1c
+.RI "str|None \fBget_tag\fP (self, \fBbs4\&.Tag\fP|None el)"
+.br
+.ti -1c
+.RI "str|None \fBget_prefix\fP (self, \fBbs4\&.Tag\fP el)"
+.br
+.ti -1c
+.RI "int|None \fBfind_bidi\fP (self, \fBbs4\&.Tag\fP el)"
+.br
+.ti -1c
+.RI "bool \fBextended_language_filter\fP (self, str lang_range, str lang_tag)"
+.br
+.ti -1c
+.RI "str|Sequence[str]|None \fBmatch_attribute_name\fP (self, \fBbs4\&.Tag\fP el, str attr, str|None prefix)"
+.br
+.ti -1c
+.RI "bool \fBmatch_namespace\fP (self, \fBbs4\&.Tag\fP el, ct\&.SelectorTag \fBtag\fP)"
+.br
+.ti -1c
+.RI "bool \fBmatch_attributes\fP (self, \fBbs4\&.Tag\fP el, tuple[ct\&.SelectorAttribute,\&.\&.\&.] attributes)"
+.br
+.ti -1c
+.RI "bool \fBmatch_tagname\fP (self, \fBbs4\&.Tag\fP el, ct\&.SelectorTag \fBtag\fP)"
+.br
+.ti -1c
+.RI "bool \fBmatch_tag\fP (self, \fBbs4\&.Tag\fP el, ct\&.SelectorTag|None \fBtag\fP)"
+.br
+.ti -1c
+.RI "bool \fBmatch_past_relations\fP (self, \fBbs4\&.Tag\fP el, ct\&.SelectorList relation)"
+.br
+.ti -1c
+.RI "bool \fBmatch_future_child\fP (self, \fBbs4\&.Tag\fP parent, ct\&.SelectorList relation, bool recursive=False)"
+.br
+.ti -1c
+.RI "bool \fBmatch_future_relations\fP (self, \fBbs4\&.Tag\fP el, ct\&.SelectorList relation)"
+.br
+.ti -1c
+.RI "bool \fBmatch_relations\fP (self, \fBbs4\&.Tag\fP el, ct\&.SelectorList relation)"
+.br
+.ti -1c
+.RI "bool \fBmatch_id\fP (self, \fBbs4\&.Tag\fP el, tuple[str,\&.\&.\&.] ids)"
+.br
+.ti -1c
+.RI "bool \fBmatch_classes\fP (self, \fBbs4\&.Tag\fP el, tuple[str,\&.\&.\&.] classes)"
+.br
+.ti -1c
+.RI "bool \fBmatch_root\fP (self, \fBbs4\&.Tag\fP el)"
+.br
+.ti -1c
+.RI "bool \fBmatch_scope\fP (self, \fBbs4\&.Tag\fP el)"
+.br
+.ti -1c
+.RI "bool \fBmatch_nth_tag_type\fP (self, \fBbs4\&.Tag\fP el, \fBbs4\&.Tag\fP child)"
+.br
+.ti -1c
+.RI "bool \fBmatch_nth\fP (self, \fBbs4\&.Tag\fP el, tuple[ct\&.SelectorNth,\&.\&.\&.] nth)"
+.br
+.ti -1c
+.RI "bool \fBmatch_empty\fP (self, \fBbs4\&.Tag\fP el)"
+.br
+.ti -1c
+.RI "bool \fBmatch_subselectors\fP (self, \fBbs4\&.Tag\fP el, tuple[ct\&.SelectorList,\&.\&.\&.] \fBselectors\fP)"
+.br
+.ti -1c
+.RI "bool \fBmatch_contains\fP (self, \fBbs4\&.Tag\fP el, tuple[ct\&.SelectorContains,\&.\&.\&.] contains)"
+.br
+.ti -1c
+.RI "bool \fBmatch_default\fP (self, \fBbs4\&.Tag\fP el)"
+.br
+.ti -1c
+.RI "bool \fBmatch_indeterminate\fP (self, \fBbs4\&.Tag\fP el)"
+.br
+.ti -1c
+.RI "bool \fBmatch_lang\fP (self, \fBbs4\&.Tag\fP el, tuple[ct\&.SelectorLang,\&.\&.\&.] langs)"
+.br
+.ti -1c
+.RI "bool \fBmatch_dir\fP (self, \fBbs4\&.Tag\fP|None el, int directionality)"
+.br
+.ti -1c
+.RI "bool \fBmatch_range\fP (self, \fBbs4\&.Tag\fP el, int condition)"
+.br
+.ti -1c
+.RI "bool \fBmatch_defined\fP (self, \fBbs4\&.Tag\fP el)"
+.br
+.ti -1c
+.RI "bool \fBmatch_placeholder_shown\fP (self, \fBbs4\&.Tag\fP el)"
+.br
+.ti -1c
+.RI "bool \fBmatch_selectors\fP (self, \fBbs4\&.Tag\fP el, ct\&.SelectorList \fBselectors\fP)"
+.br
+.ti -1c
+.RI "Iterator[\fBbs4\&.Tag\fP] \fBselect\fP (self, int limit=0)"
+.br
+.ti -1c
+.RI "\fBbs4\&.Tag\fP|None \fBclosest\fP (self)"
+.br
+.ti -1c
+.RI "list[\fBbs4\&.Tag\fP] \fBfilter\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBmatch\fP (self, \fBbs4\&.Tag\fP el)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsoupsieve\&.css_match\&._DocumentNav\fP
+.in +1c
+.ti -1c
+.RI "None \fBassert_valid_input\fP (cls, Any tag)"
+.br
+.ti -1c
+.RI "bool \fBis_content_string\fP (cls, \fBbs4\&.element\&.PageElement\fP|None obj)"
+.br
+.ti -1c
+.RI "bool \fBis_iframe\fP (self, \fBbs4\&.Tag\fP|None el)"
+.br
+.ti -1c
+.RI "bool \fBis_root\fP (self, \fBbs4\&.Tag\fP el)"
+.br
+.ti -1c
+.RI "Iterator[\fBbs4\&.element\&.PageElement\fP] \fBget_contents\fP (self, \fBbs4\&.Tag\fP|None el, bool no_iframe=False)"
+.br
+.ti -1c
+.RI "Iterator[\fBbs4\&.Tag\fP] \fBget_tag_children\fP (self, \fBbs4\&.Tag\fP|None el, int|None start=None, bool reverse=False, bool no_iframe=False)"
+.br
+.ti -1c
+.RI "Iterator[\fBbs4\&.element\&.PageElement\fP] \fBget_children\fP (self, \fBbs4\&.Tag\fP|None el, int|None start=None, bool reverse=False, bool tags=False, bool no_iframe=False)"
+.br
+.ti -1c
+.RI "Iterator[\fBbs4\&.Tag\fP] \fBget_tag_descendants\fP (self, \fBbs4\&.Tag\fP|None el, bool no_iframe=False)"
+.br
+.ti -1c
+.RI "Iterator[\fBbs4\&.element\&.PageElement\fP] \fBget_descendants\fP (self, \fBbs4\&.Tag\fP|None el, bool tags=False, bool no_iframe=False)"
+.br
+.ti -1c
+.RI "\fBbs4\&.Tag\fP|None \fBget_parent\fP (self, \fBbs4\&.Tag\fP|None el, bool no_iframe=False)"
+.br
+.ti -1c
+.RI "\fBbs4\&.Tag\fP|None \fBget_next_tag\fP (cls, \fBbs4\&.Tag\fP el)"
+.br
+.ti -1c
+.RI "\fBbs4\&.element\&.PageElement\fP|None \fBget_next\fP (cls, \fBbs4\&.Tag\fP el, bool tags=False)"
+.br
+.ti -1c
+.RI "\fBbs4\&.Tag\fP|None \fBget_previous_tag\fP (cls, \fBbs4\&.Tag\fP el, bool tags=True)"
+.br
+.ti -1c
+.RI "\fBbs4\&.element\&.PageElement\fP|None \fBget_previous\fP (cls, \fBbs4\&.Tag\fP el, bool tags=False)"
+.br
+.ti -1c
+.RI "str|Sequence[str] \fBnormalize_value\fP (cls, Any value)"
+.br
+.ti -1c
+.RI "str|Sequence[str]|None \fBget_attribute_by_name\fP (cls, \fBbs4\&.Tag\fP el, str name, str|Sequence[str]|None default=None)"
+.br
+.ti -1c
+.RI "Iterator[tuple[str, str|Sequence[str]|None]] \fBiter_attributes\fP (cls, \fBbs4\&.Tag\fP|None el)"
+.br
+.ti -1c
+.RI "Sequence[str] \fBget_classes\fP (cls, \fBbs4\&.Tag\fP el)"
+.br
+.ti -1c
+.RI "str \fBget_text\fP (self, \fBbs4\&.Tag\fP el, bool no_iframe=False)"
+.br
+.ti -1c
+.RI "list[str] \fBget_own_text\fP (self, \fBbs4\&.Tag\fP el, bool no_iframe=False)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBtag\fP"
+.br
+.ti -1c
+.RI "\fBcached_meta_lang\fP"
+.br
+.ti -1c
+.RI "\fBcached_default_forms\fP"
+.br
+.ti -1c
+.RI "\fBcached_indeterminate_forms\fP"
+.br
+.ti -1c
+.RI "\fBselectors\fP"
+.br
+.ti -1c
+.RI "\fBnamespaces\fP"
+.br
+.ti -1c
+.RI "\fBflags\fP"
+.br
+.ti -1c
+.RI "\fBiframe_restrict\fP"
+.br
+.ti -1c
+.RI "\fBroot\fP"
+.br
+.ti -1c
+.RI "\fBscope\fP"
+.br
+.ti -1c
+.RI "\fBhas_html_namespace\fP"
+.br
+.ti -1c
+.RI "\fBis_xml\fP"
+.br
+.ti -1c
+.RI "\fBis_html\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Member Functions inherited from \fBsoupsieve\&.css_match\&._DocumentNav\fP
+.in +1c
+.ti -1c
+.RI "bool \fBis_doc\fP (\fBbs4\&.element\&.PageElement\fP|None obj)"
+.br
+.ti -1c
+.RI "bool \fBis_tag\fP (\fBbs4\&.element\&.PageElement\fP|None obj)"
+.br
+.ti -1c
+.RI "bool \fBis_declaration\fP (\fBbs4\&.element\&.PageElement\fP|None obj)"
+.br
+.ti -1c
+.RI "bool \fBis_cdata\fP (\fBbs4\&.element\&.PageElement\fP|None obj)"
+.br
+.ti -1c
+.RI "bool \fBis_processing_instruction\fP (\fBbs4\&.element\&.PageElement\fP|None obj)"
+.br
+.ti -1c
+.RI "bool \fBis_navigable_string\fP (\fBbs4\&.element\&.PageElement\fP|None obj)"
+.br
+.ti -1c
+.RI "bool \fBis_special_string\fP (\fBbs4\&.element\&.PageElement\fP|None obj)"
+.br
+.ti -1c
+.RI "\fB_FakeParent\fP \fBcreate_fake_parent\fP (\fBbs4\&.Tag\fP el)"
+.br
+.ti -1c
+.RI "bool \fBis_xml_tree\fP (\fBbs4\&.Tag\fP|None el)"
+.br
+.ti -1c
+.RI "str|None \fBget_tag_name\fP (\fBbs4\&.Tag\fP|None el)"
+.br
+.ti -1c
+.RI "str|None \fBget_prefix_name\fP (\fBbs4\&.Tag\fP el)"
+.br
+.ti -1c
+.RI "str|None \fBget_uri\fP (\fBbs4\&.Tag\fP|None el)"
+.br
+.ti -1c
+.RI "bool \fBhas_html_ns\fP (\fBbs4\&.Tag\fP|None el)"
+.br
+.ti -1c
+.RI "tuple[str|None, str|None] \fBsplit_namespace\fP (\fBbs4\&.Tag\fP|None el, str attr_name)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Perform CSS matching\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None soupsieve\&.css_match\&.CSSMatch\&.__init__ ( self, ct\&.SelectorList selectors, \fBbs4\&.Tag\fP | None scope, ct\&.Namespaces | None namespaces, int
+     flags)"
+
+.PP
+.nf
+Initialize\&.
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " \fBbs4\&.Tag\fP | None soupsieve\&.css_match\&.CSSMatch\&.closest ( self)"
+
+.PP
+.nf
+Match closest ancestor\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.extended_language_filter ( self, str lang_range, str lang_tag)"
+
+.PP
+.nf
+Filter the language tags\&.
+.fi
+.PP
+ 
+.SS " list[\fBbs4\&.Tag\fP] soupsieve\&.css_match\&.CSSMatch\&.filter ( self)"
+
+.PP
+.nf
+Filter tag's children\&.
+.fi
+.PP
+ 
+.SS " int | None soupsieve\&.css_match\&.CSSMatch\&.find_bidi ( self, \fBbs4\&.Tag\fP el)"
+
+.PP
+.nf
+Get directionality from element text\&.
+.fi
+.PP
+ 
+.SS " str | None soupsieve\&.css_match\&.CSSMatch\&.get_prefix ( self, \fBbs4\&.Tag\fP el)"
+
+.PP
+.nf
+Get prefix\&.
+.fi
+.PP
+ 
+.SS " str | None soupsieve\&.css_match\&.CSSMatch\&.get_tag ( self, \fBbs4\&.Tag\fP | None el)"
+
+.PP
+.nf
+Get tag\&.
+.fi
+.PP
+ 
+.SS " str soupsieve\&.css_match\&.CSSMatch\&.get_tag_ns ( self, \fBbs4\&.Tag\fP | None el)"
+
+.PP
+.nf
+Get tag namespace\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.is_html_tag ( self, \fBbs4\&.Tag\fP | None el)"
+
+.PP
+.nf
+Check if tag is in HTML namespace\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match ( self, \fBbs4\&.Tag\fP el)"
+
+.PP
+.nf
+Match\&.
+.fi
+.PP
+ 
+.SS " str | Sequence[str] | None soupsieve\&.css_match\&.CSSMatch\&.match_attribute_name ( self, \fBbs4\&.Tag\fP el, str attr, str | None
+     prefix)"
+
+.PP
+.nf
+Match attribute name and return value if it exists\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_attributes ( self, \fBbs4\&.Tag\fP el, tuple[ct\&.SelectorAttribute, \&.\&.\&.] attributes)"
+
+.PP
+.nf
+Match attributes\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_classes ( self, \fBbs4\&.Tag\fP el, tuple[str, \&.\&.\&.] classes)"
+
+.PP
+.nf
+Match element's classes\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_contains ( self, \fBbs4\&.Tag\fP el, tuple[ct\&.SelectorContains, \&.\&.\&.] contains)"
+
+.PP
+.nf
+Match element if it contains text\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_default ( self, \fBbs4\&.Tag\fP el)"
+
+.PP
+.nf
+Match default\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_defined ( self, \fBbs4\&.Tag\fP el)"
+
+.PP
+.nf
+Match defined\&.
+
+`:defined` is related to custom elements in a browser\&.
+
+- If the document is XML (not XHTML), all tags will match\&.
+- Tags that are not custom (don't have a hyphen) are marked defined\&.
+- If the tag has a prefix (without or without a namespace), it will not match\&.
+
+This is of course requires the parser to provide us with the proper prefix and namespace info,
+if it doesn't, there is nothing we can do\&.
+
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_dir ( self, \fBbs4\&.Tag\fP | None el, int directionality)"
+
+.PP
+.nf
+Check directionality\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_empty ( self, \fBbs4\&.Tag\fP el)"
+
+.PP
+.nf
+Check if element is empty (if requested)\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_future_child ( self, \fBbs4\&.Tag\fP parent, ct\&.SelectorList relation, bool  recursive = \fCFalse\fP)"
+
+.PP
+.nf
+Match future child\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_future_relations ( self, \fBbs4\&.Tag\fP el, ct\&.SelectorList relation)"
+
+.PP
+.nf
+Match future relationship\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_id ( self, \fBbs4\&.Tag\fP el, tuple[str, \&.\&.\&.] ids)"
+
+.PP
+.nf
+Match element's ID\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_indeterminate ( self, \fBbs4\&.Tag\fP el)"
+
+.PP
+.nf
+Match default\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_lang ( self, \fBbs4\&.Tag\fP el, tuple[ct\&.SelectorLang, \&.\&.\&.] langs)"
+
+.PP
+.nf
+Match languages\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_namespace ( self, \fBbs4\&.Tag\fP el, ct\&.SelectorTag tag)"
+
+.PP
+.nf
+Match the namespace of the element\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_nth ( self, \fBbs4\&.Tag\fP el, tuple[ct\&.SelectorNth, \&.\&.\&.] nth)"
+
+.PP
+.nf
+Match `nth` elements\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_nth_tag_type ( self, \fBbs4\&.Tag\fP el, \fBbs4\&.Tag\fP child)"
+
+.PP
+.nf
+Match tag type for `nth` matches\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_past_relations ( self, \fBbs4\&.Tag\fP el, ct\&.SelectorList relation)"
+
+.PP
+.nf
+Match past relationship\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_placeholder_shown ( self, \fBbs4\&.Tag\fP el)"
+
+.PP
+.nf
+Match placeholder shown according to HTML spec\&.
+
+- text area should be checked if they have content\&. A single newline does not count as content\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_range ( self, \fBbs4\&.Tag\fP el, int condition)"
+
+.PP
+.nf
+Match range\&.
+
+Behavior is modeled after what we see in browsers\&. Browsers seem to evaluate
+if the value is out of range, and if not, it is in range\&. So a missing value
+will not evaluate out of range; therefore, value is in range\&. Personally, I
+feel like this should evaluate as neither in or out of range\&.
+
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_relations ( self, \fBbs4\&.Tag\fP el, ct\&.SelectorList relation)"
+
+.PP
+.nf
+Match relationship to other elements\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_root ( self, \fBbs4\&.Tag\fP el)"
+
+.PP
+.nf
+Match element as root\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_scope ( self, \fBbs4\&.Tag\fP el)"
+
+.PP
+.nf
+Match element as scope\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_selectors ( self, \fBbs4\&.Tag\fP el, ct\&.SelectorList selectors)"
+
+.PP
+.nf
+Check if element matches one of the selectors\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_subselectors ( self, \fBbs4\&.Tag\fP el, tuple[ct\&.SelectorList, \&.\&.\&.] selectors)"
+
+.PP
+.nf
+Match selectors\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_tag ( self, \fBbs4\&.Tag\fP el, ct\&.SelectorTag | None tag)"
+
+.PP
+.nf
+Match the tag\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.match_tagname ( self, \fBbs4\&.Tag\fP el, ct\&.SelectorTag tag)"
+
+.PP
+.nf
+Match tag name\&.
+.fi
+.PP
+ 
+.SS " Iterator[\fBbs4\&.Tag\fP] soupsieve\&.css_match\&.CSSMatch\&.select ( self, int  limit = \fC0\fP)"
+
+.PP
+.nf
+Match all tags under the targeted tag\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&.CSSMatch\&.supports_namespaces ( self)"
+
+.PP
+.nf
+Check if namespaces are supported in the HTML type\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "soupsieve\&.css_match\&.CSSMatch\&.cached_default_forms"
+
+.SS "soupsieve\&.css_match\&.CSSMatch\&.cached_indeterminate_forms"
+
+.SS "soupsieve\&.css_match\&.CSSMatch\&.cached_meta_lang"
+
+.SS "soupsieve\&.css_match\&.CSSMatch\&.flags"
+
+.SS "soupsieve\&.css_match\&.CSSMatch\&.has_html_namespace"
+
+.SS "soupsieve\&.css_match\&.CSSMatch\&.iframe_restrict"
+
+.SS "soupsieve\&.css_match\&.CSSMatch\&.is_html"
+
+.SS "soupsieve\&.css_match\&.CSSMatch\&.is_xml"
+
+.SS "soupsieve\&.css_match\&.CSSMatch\&.namespaces"
+
+.SS "soupsieve\&.css_match\&.CSSMatch\&.root"
+
+.SS "soupsieve\&.css_match\&.CSSMatch\&.scope"
+
+.SS "soupsieve\&.css_match\&.CSSMatch\&.selectors"
+
+.SS "soupsieve\&.css_match\&.CSSMatch\&.tag"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

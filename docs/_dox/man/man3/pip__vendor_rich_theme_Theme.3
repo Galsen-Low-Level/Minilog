@@ -1,0 +1,110 @@
+.TH "pip._vendor.rich.theme.Theme" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.rich.theme.Theme
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, Optional[Mapping[str, StyleType]] \fBstyles\fP=None, bool inherit=True)"
+.br
+.ti -1c
+.RI "str \fBconfig\fP (self)"
+.br
+.ti -1c
+.RI "'Theme' \fBfrom_file\fP (cls, IO[str] config_file, Optional[str] source=None, bool inherit=True)"
+.br
+.ti -1c
+.RI "'Theme' \fBread\fP (cls, str path, bool inherit=True, Optional[str] encoding=None)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBstyles\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "Dict \fBstyles\fP [str, \fBStyle\fP]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A container for style information, used by :class:`~rich\&.console\&.Console`\&.
+
+Args:
+    styles (Dict[str, Style], optional): A mapping of style names on to styles\&. Defaults to None for a theme with no styles\&.
+    inherit (bool, optional): Inherit default styles\&. Defaults to True\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.rich\&.theme\&.Theme\&.__init__ ( self, Optional[Mapping[str, StyleType]]  styles = \fCNone\fP, bool  inherit = \fCTrue\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " str pip\&._vendor\&.rich\&.theme\&.Theme\&.config ( self)"
+
+.PP
+.nf
+Get contents of a config file for this theme\&.
+.fi
+.PP
+ 
+.SS " 'Theme' pip\&._vendor\&.rich\&.theme\&.Theme\&.from_file ( cls, IO[str] config_file, Optional[str]  source = \fCNone\fP, bool  inherit = \fCTrue\fP)"
+
+.PP
+.nf
+Load a theme from a text mode file\&.
+
+Args:
+    config_file (IO[str]): An open conf file\&.
+    source (str, optional): The filename of the open file\&. Defaults to None\&.
+    inherit (bool, optional): Inherit default styles\&. Defaults to True\&.
+
+Returns:
+    Theme: A New theme instance\&.
+
+.fi
+.PP
+ 
+.SS " 'Theme' pip\&._vendor\&.rich\&.theme\&.Theme\&.read ( cls, str path, bool  inherit = \fCTrue\fP, Optional[str]  encoding = \fCNone\fP)"
+
+.PP
+.nf
+Read a theme from a path\&.
+
+Args:
+    path (str): Path to a config file readable by Python configparser module\&.
+    inherit (bool, optional): Inherit default styles\&. Defaults to True\&.
+    encoding (str, optional): Encoding of the config file\&. Defaults to None\&.
+
+Returns:
+    Theme: A new theme instance\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "Dict pip\&._vendor\&.rich\&.theme\&.Theme\&.styles [str, \fBStyle\fP]\fC [static]\fP"
+
+.SS "pip\&._vendor\&.rich\&.theme\&.Theme\&.styles"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

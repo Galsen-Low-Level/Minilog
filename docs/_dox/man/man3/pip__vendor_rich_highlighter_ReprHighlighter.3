@@ -1,0 +1,88 @@
+.TH "pip._vendor.rich.highlighter.ReprHighlighter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.rich.highlighter.ReprHighlighter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._vendor\&.rich\&.highlighter\&.RegexHighlighter\fP\&.
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBbase_style\fP = 'repr\&.'"
+.br
+.ti -1c
+.RI "list \fBhighlights\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpip\&._vendor\&.rich\&.highlighter\&.RegexHighlighter\fP
+.in +1c
+.ti -1c
+.RI "list \fBhighlights\fP = []"
+.br
+.ti -1c
+.RI "str \fBbase_style\fP = ''"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBpip\&._vendor\&.rich\&.highlighter\&.RegexHighlighter\fP
+.in +1c
+.ti -1c
+.RI "None \fBhighlight\fP (self, \fBText\fP text)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._vendor\&.rich\&.highlighter\&.Highlighter\fP
+.in +1c
+.ti -1c
+.RI "\fBText\fP \fB__call__\fP (self, Union[str, \fBText\fP] text)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Highlights the text typically produced from ``__repr__`` methods\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "str pip\&._vendor\&.rich\&.highlighter\&.ReprHighlighter\&.base_style = 'repr\&.'\fC [static]\fP"
+
+.SS "list pip\&._vendor\&.rich\&.highlighter\&.ReprHighlighter\&.highlights\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        r"(?P<tag_start><)(?P<tag_name>[\-\\w\&.:|]*)(?P<tag_contents>[\\w\\W]*)(?P<tag_end>>)",
+        r'(?P<attrib_name>[\\w_]{1,50})=(?P<attrib_value>"?[\\w_]+"?)?',
+        r"(?P<brace>[][{}()])",
+        _combine_regex(
+            r"(?P<ipv4>[0\-9]{1,3}\\\&.[0\-9]{1,3}\\\&.[0\-9]{1,3}\\\&.[0\-9]{1,3})",
+            r"(?P<ipv6>([A\-Fa\-f0\-9]{1,4}::?){1,7}[A\-Fa\-f0\-9]{1,4})",
+            r"(?P<eui64>(?:[0\-9A\-Fa\-f]{1,2}\-){7}[0\-9A\-Fa\-f]{1,2}|(?:[0\-9A\-Fa\-f]{1,2}:){7}[0\-9A\-Fa\-f]{1,2}|(?:[0\-9A\-Fa\-f]{4}\\\&.){3}[0\-9A\-Fa\-f]{4})",
+            r"(?P<eui48>(?:[0\-9A\-Fa\-f]{1,2}\-){5}[0\-9A\-Fa\-f]{1,2}|(?:[0\-9A\-Fa\-f]{1,2}:){5}[0\-9A\-Fa\-f]{1,2}|(?:[0\-9A\-Fa\-f]{4}\\\&.){2}[0\-9A\-Fa\-f]{4})",
+            r"(?P<uuid>[a\-fA\-F0\-9]{8}\-[a\-fA\-F0\-9]{4}\-[a\-fA\-F0\-9]{4}\-[a\-fA\-F0\-9]{4}\-[a\-fA\-F0\-9]{12})",
+            r"(?P<call>[\\w\&.]*?)\\(",
+            r"\\b(?P<bool_true>True)\\b|\\b(?P<bool_false>False)\\b|\\b(?P<none>None)\\b",
+            r"(?P<ellipsis>\\\&.\\\&.\\\&.)",
+            r"(?P<number_complex>(?<!\\w)(?:\\\-?[0\-9]+\\\&.?[0\-9]*(?:e[\-+]?\\d+?)?)(?:[\-+](?:[0\-9]+\\\&.?[0\-9]*(?:e[\-+]?\\d+)?))?j)",
+            r"(?P<number>(?<!\\w)\\\-?[0\-9]+\\\&.?[0\-9]*(e[\-+]?\\d+?)?\\b|0x[0\-9a\-fA\-F]*)",
+            r"(?P<path>\\B(/[\-\\w\&._+]+)*\\/)(?P<filename>[\-\\w\&._+]*)?",
+            r"(?<![\\\\\\w])(?P<str>b?'''\&.*?(?<!\\\\)'''|b?'\&.*?(?<!\\\\)'|b?\\"\\"\\"\&.*?(?<!\\\\)\\"\\"\\"|b?\\"\&.*?(?<!\\\\)\\")",
+            r"(?P<url>(file|https|http|ws|wss)://[\-0\-9a\-zA\-Z$_+!`(),\&.?/;:&=%#~]*)",
+        ),
+    ]
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

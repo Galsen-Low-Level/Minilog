@@ -1,0 +1,95 @@
+.TH "sphinx.util.nodes.NodeMatcher" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.util.nodes.NodeMatcher
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Generic, and N\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, *type[\fBN\fP] node_classes, **Any \fBattrs\fP)"
+.br
+.ti -1c
+.RI "bool \fBmatch\fP (self, \fBNode\fP node)"
+.br
+.ti -1c
+.RI "bool \fB__call__\fP (self, \fBNode\fP node)"
+.br
+.ti -1c
+.RI "Iterator[\fBN\fP] \fBfindall\fP (self, \fBNode\fP node)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBclasses\fP"
+.br
+.ti -1c
+.RI "\fBattrs\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A helper class for Node\&.findall()\&.
+
+It checks that the given node is an instance of the specified node-classes and
+has the specified node-attributes\&.
+
+For example, following example searches ``reference`` node having ``refdomain``
+and ``reftype`` attributes::
+
+    matcher = NodeMatcher(nodes\&.reference, refdomain='std', reftype='citation')
+    matcher\&.findall(doctree)
+    # => [<reference \&.\&.\&.>, <reference \&.\&.\&.>, \&.\&.\&.]
+
+A special value ``typing\&.Any`` matches any kind of node-attributes\&.  For example,
+following example searches ``reference`` node having ``refdomain`` attributes::
+
+    matcher = NodeMatcher(nodes\&.reference, refdomain=Any)
+    matcher\&.findall(doctree)
+    # => [<reference \&.\&.\&.>, <reference \&.\&.\&.>, \&.\&.\&.]
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.util\&.nodes\&.NodeMatcher\&.__init__ ( self, *type[\fBN\fP] node_classes, **Any attrs)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " bool sphinx\&.util\&.nodes\&.NodeMatcher\&.__call__ ( self, \fBNode\fP node)"
+
+.SS " Iterator[\fBN\fP] sphinx\&.util\&.nodes\&.NodeMatcher\&.findall ( self, \fBNode\fP node)"
+
+.PP
+.nf
+An alternative to `Node\&.findall` with improved type safety\&.
+
+While the `NodeMatcher` object can be used as an argument to `Node\&.findall`, doing so
+confounds type checkers' ability to determine the return type of the iterator\&.
+
+.fi
+.PP
+ 
+.SS " bool sphinx\&.util\&.nodes\&.NodeMatcher\&.match ( self, \fBNode\fP node)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.util\&.nodes\&.NodeMatcher\&.attrs"
+
+.SS "sphinx\&.util\&.nodes\&.NodeMatcher\&.classes"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

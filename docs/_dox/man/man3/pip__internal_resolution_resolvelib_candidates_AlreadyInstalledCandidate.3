@@ -1,0 +1,181 @@
+.TH "pip._internal.resolution.resolvelib.candidates.AlreadyInstalledCandidate" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.resolution.resolvelib.candidates.AlreadyInstalledCandidate
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._internal\&.resolution\&.resolvelib\&.base\&.Candidate\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, \fBBaseDistribution\fP \fBdist\fP, \fBInstallRequirement\fP template, 'Factory' factory)"
+.br
+.ti -1c
+.RI "str \fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "bool \fB__eq__\fP (self, object other)"
+.br
+.ti -1c
+.RI "int \fB__hash__\fP (self)"
+.br
+.ti -1c
+.RI "NormalizedName \fBproject_name\fP (self)"
+.br
+.ti -1c
+.RI "str \fBname\fP (self)"
+.br
+.ti -1c
+.RI "\fBVersion\fP \fBversion\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBis_editable\fP (self)"
+.br
+.ti -1c
+.RI "str \fBformat_for_error\fP (self)"
+.br
+.ti -1c
+.RI "Iterable[Optional[\fBRequirement\fP]] \fBiter_dependencies\fP (self, bool with_requires)"
+.br
+.ti -1c
+.RI "Optional[\fBInstallRequirement\fP] \fBget_install_requirement\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._internal\&.resolution\&.resolvelib\&.base\&.Candidate\fP
+.in +1c
+.ti -1c
+.RI "bool \fBis_installed\fP (self)"
+.br
+.ti -1c
+.RI "Optional[\fBLink\fP] \fBsource_link\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdist\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBversion\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBis_installed\fP = True"
+.br
+.ti -1c
+.RI "\fBsource_link\fP = None"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_ireq\fP"
+.br
+.ti -1c
+.RI "\fB_factory\fP"
+.br
+.ti -1c
+.RI "\fB_version\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.AlreadyInstalledCandidate\&.__init__ ( self, \fBBaseDistribution\fP dist, \fBInstallRequirement\fP template, 'Factory' factory)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " bool pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.AlreadyInstalledCandidate\&.__eq__ ( self, object other)"
+
+.SS " int pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.AlreadyInstalledCandidate\&.__hash__ ( self)"
+
+.SS " str pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.AlreadyInstalledCandidate\&.__repr__ ( self)"
+
+.SS " str pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.AlreadyInstalledCandidate\&.__str__ ( self)"
+
+.SS " str pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.AlreadyInstalledCandidate\&.format_for_error ( self)"
+
+.PP
+Reimplemented from \fBpip\&._internal\&.resolution\&.resolvelib\&.base\&.Candidate\fP\&.
+.SS " Optional[\fBInstallRequirement\fP] pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.AlreadyInstalledCandidate\&.get_install_requirement ( self)"
+
+.PP
+Reimplemented from \fBpip\&._internal\&.resolution\&.resolvelib\&.base\&.Candidate\fP\&.
+.SS " bool pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.AlreadyInstalledCandidate\&.is_editable ( self)"
+
+.PP
+Reimplemented from \fBpip\&._internal\&.resolution\&.resolvelib\&.base\&.Candidate\fP\&.
+.SS " Iterable[Optional[\fBRequirement\fP]] pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.AlreadyInstalledCandidate\&.iter_dependencies ( self, bool with_requires)"
+
+.PP
+Reimplemented from \fBpip\&._internal\&.resolution\&.resolvelib\&.base\&.Candidate\fP\&.
+.SS " str pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.AlreadyInstalledCandidate\&.name ( self)"
+
+.PP
+.nf
+The name identifying this candidate in the resolver\&.
+
+This is different from ``project_name`` if this candidate contains
+extras, where ``project_name`` would not contain the ``[\&.\&.\&.]`` part\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.resolution\&.resolvelib\&.base\&.Candidate\fP\&.
+.SS " NormalizedName pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.AlreadyInstalledCandidate\&.project_name ( self)"
+
+.PP
+.nf
+The 'project name' of the candidate\&.
+
+This is different from ``name`` if this candidate contains extras,
+in which case ``name`` would contain the ``[\&.\&.\&.]`` part, while this
+refers to the name of the project\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.resolution\&.resolvelib\&.base\&.Candidate\fP\&.
+.SS " \fBVersion\fP pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.AlreadyInstalledCandidate\&.version ( self)"
+
+.PP
+Reimplemented from \fBpip\&._internal\&.resolution\&.resolvelib\&.base\&.Candidate\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.AlreadyInstalledCandidate\&._factory\fC [protected]\fP"
+
+.SS "pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.AlreadyInstalledCandidate\&._ireq\fC [protected]\fP"
+
+.SS "pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.AlreadyInstalledCandidate\&._version\fC [protected]\fP"
+
+.SS "pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.AlreadyInstalledCandidate\&.dist"
+
+.SS "bool pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.AlreadyInstalledCandidate\&.is_installed = True\fC [static]\fP"
+
+.SS "pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.AlreadyInstalledCandidate\&.name"
+
+.SS "pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.AlreadyInstalledCandidate\&.source_link = None\fC [static]\fP"
+
+.SS "pip\&._internal\&.resolution\&.resolvelib\&.candidates\&.AlreadyInstalledCandidate\&.version"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

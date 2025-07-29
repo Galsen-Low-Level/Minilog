@@ -1,0 +1,142 @@
+.TH "waitress.wasyncore" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+waitress.wasyncore
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBdispatcher\fP"
+.br
+.ti -1c
+.RI "class \fBExitNow\fP"
+.br
+.ti -1c
+.RI "class \fBfile_dispatcher\fP"
+.br
+.ti -1c
+.RI "class \fBfile_wrapper\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_strerror\fP (err)"
+.br
+.ti -1c
+.RI "\fBread\fP (obj)"
+.br
+.ti -1c
+.RI "\fBwrite\fP (obj)"
+.br
+.ti -1c
+.RI "\fB_exception\fP (obj)"
+.br
+.ti -1c
+.RI "\fBreadwrite\fP (obj, flags)"
+.br
+.ti -1c
+.RI "\fBpoll\fP (timeout=0\&.0, map=None)"
+.br
+.ti -1c
+.RI "\fBpoll2\fP (timeout=0\&.0, map=None)"
+.br
+.ti -1c
+.RI "\fBloop\fP (timeout=30\&.0, use_poll=False, map=None, count=None)"
+.br
+.ti -1c
+.RI "\fBcompact_traceback\fP ()"
+.br
+.ti -1c
+.RI "\fBclose_all\fP (map=None, ignore_all=False)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB_DISCONNECTED\fP = frozenset({ECONNRESET, ENOTCONN, ESHUTDOWN, ECONNABORTED, EPIPE, EBADF})"
+.br
+.ti -1c
+.RI "dict \fBsocket_map\fP = {}"
+.br
+.ti -1c
+.RI "tuple \fB_reraised_exceptions\fP = (\fBExitNow\fP, KeyboardInterrupt, SystemExit)"
+.br
+.ti -1c
+.RI "\fBpoll3\fP = \fBpoll2\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Basic infrastructure for asynchronous socket service clients and servers\&.
+
+There are only two ways to have a program on a single processor do 'more
+than one thing at a time'\&.  Multi-threaded programming is the simplest and
+most popular way to do it, but there is another very different technique,
+that lets you have nearly all the advantages of multi-threading, without
+actually using multiple threads\&. it's really only practical if your program
+is largely I/O bound\&. If your program is CPU bound, then pre-emptive
+scheduled threads are probably what you really need\&. Network servers are
+rarely CPU-bound, however\&.
+
+If your operating system supports the select() system call in its I/O
+library (and nearly all do), then you can use it to juggle multiple
+communication channels at once; doing other work while your I/O is taking
+place in the 'background\&.'  Although this strategy can seem strange and
+complex, especially at first, it is in many ways easier to understand and
+control than multi-threaded programming\&. The module documented here solves
+many of the difficult problems for you, making the task of building
+sophisticated high-performance network servers and clients a snap\&.
+
+NB: this is a fork of asyncore from the stdlib that we've (the waitress
+developers) named 'wasyncore' to ensure forward compatibility, as asyncore
+in the stdlib will be dropped soon\&.  It is neither a copy of the 2\&.7 asyncore
+nor the 3\&.X asyncore; it is a version compatible with either 2\&.7 or 3\&.X\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "waitress\&.wasyncore\&._exception ( obj)\fC [protected]\fP"
+
+.SS "waitress\&.wasyncore\&._strerror ( err)\fC [protected]\fP"
+
+.SS "waitress\&.wasyncore\&.close_all ( map = \fCNone\fP,  ignore_all = \fCFalse\fP)"
+
+.SS "waitress\&.wasyncore\&.compact_traceback ()"
+
+.SS "waitress\&.wasyncore\&.loop ( timeout = \fC30\&.0\fP,  use_poll = \fCFalse\fP,  map = \fCNone\fP,  count = \fCNone\fP)"
+
+.SS "waitress\&.wasyncore\&.poll ( timeout = \fC0\&.0\fP,  map = \fCNone\fP)"
+
+.SS "waitress\&.wasyncore\&.poll2 ( timeout = \fC0\&.0\fP,  map = \fCNone\fP)"
+
+.SS "waitress\&.wasyncore\&.read ( obj)"
+
+.SS "waitress\&.wasyncore\&.readwrite ( obj,  flags)"
+
+.SS "waitress\&.wasyncore\&.write ( obj)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "waitress\&.wasyncore\&._DISCONNECTED = frozenset({ECONNRESET, ENOTCONN, ESHUTDOWN, ECONNABORTED, EPIPE, EBADF})\fC [protected]\fP"
+
+.SS "tuple waitress\&.wasyncore\&._reraised_exceptions = (\fBExitNow\fP, KeyboardInterrupt, SystemExit)\fC [protected]\fP"
+
+.SS "waitress\&.wasyncore\&.poll3 = \fBpoll2\fP"
+
+.SS "dict waitress\&.wasyncore\&.socket_map = {}"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

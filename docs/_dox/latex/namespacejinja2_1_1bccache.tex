@@ -1,0 +1,56 @@
+\doxysection{jinja2.\+bccache Namespace Reference}
+\hypertarget{namespacejinja2_1_1bccache}{}\label{namespacejinja2_1_1bccache}\index{jinja2.bccache@{jinja2.bccache}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classjinja2_1_1bccache_1_1__MemcachedClient}{\+\_\+\+Memcached\+Client}}
+\item 
+class \mbox{\hyperlink{classjinja2_1_1bccache_1_1Bucket}{Bucket}}
+\item 
+class \mbox{\hyperlink{classjinja2_1_1bccache_1_1BytecodeCache}{Bytecode\+Cache}}
+\item 
+class \mbox{\hyperlink{classjinja2_1_1bccache_1_1FileSystemBytecodeCache}{File\+System\+Bytecode\+Cache}}
+\item 
+class \mbox{\hyperlink{classjinja2_1_1bccache_1_1MemcachedBytecodeCache}{Memcached\+Bytecode\+Cache}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacejinja2_1_1bccache_a20569affbc7b932a7c16ce8668d10c48}{bc\+\_\+version}} = 5
+\item 
+tuple \mbox{\hyperlink{namespacejinja2_1_1bccache_a819b0f9c7e14a2e48681b07aebef787c}{bc\+\_\+magic}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}The optional bytecode cache system. This is useful if you have very
+complex template situations and the compilation of all those templates
+slows down your application too much.
+
+Situations where this is useful are often forking web applications that
+are initialized on the first request.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacejinja2_1_1bccache_a819b0f9c7e14a2e48681b07aebef787c}\label{namespacejinja2_1_1bccache_a819b0f9c7e14a2e48681b07aebef787c} 
+\index{jinja2.bccache@{jinja2.bccache}!bc\_magic@{bc\_magic}}
+\index{bc\_magic@{bc\_magic}!jinja2.bccache@{jinja2.bccache}}
+\doxysubsubsection{\texorpdfstring{bc\_magic}{bc\_magic}}
+{\footnotesize\ttfamily tuple jinja2.\+bccache.\+bc\+\_\+magic}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ (}
+\DoxyCodeLine{00002\ \ \ \ \ b\textcolor{stringliteral}{"{}j2"{}}}
+\DoxyCodeLine{00003\ \ \ \ \ +\ pickle.dumps(bc\_version,\ 2)}
+\DoxyCodeLine{00004\ \ \ \ \ +\ pickle.dumps((sys.version\_info[0]\ <<\ 24)\ |\ sys.version\_info[1],\ 2)}
+\DoxyCodeLine{00005\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacejinja2_1_1bccache_a20569affbc7b932a7c16ce8668d10c48}\label{namespacejinja2_1_1bccache_a20569affbc7b932a7c16ce8668d10c48} 
+\index{jinja2.bccache@{jinja2.bccache}!bc\_version@{bc\_version}}
+\index{bc\_version@{bc\_version}!jinja2.bccache@{jinja2.bccache}}
+\doxysubsubsection{\texorpdfstring{bc\_version}{bc\_version}}
+{\footnotesize\ttfamily int jinja2.\+bccache.\+bc\+\_\+version = 5}
+

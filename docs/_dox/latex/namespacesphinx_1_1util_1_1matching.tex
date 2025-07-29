@@ -1,0 +1,108 @@
+\doxysection{sphinx.\+util.\+matching Namespace Reference}
+\hypertarget{namespacesphinx_1_1util_1_1matching}{}\label{namespacesphinx_1_1util_1_1matching}\index{sphinx.util.matching@{sphinx.util.matching}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1util_1_1matching_1_1Matcher}{Matcher}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1util_1_1matching_ae6c2f200609fe2552d5839c76a7adecc}{\+\_\+translate\+\_\+pattern}} (str pat)
+\item 
+list\mbox{[}Callable\mbox{[}\mbox{[}str\mbox{]}, re.\+Match\mbox{[}str\mbox{]}\texorpdfstring{$\vert$}{|}None\mbox{]}\mbox{]} \mbox{\hyperlink{namespacesphinx_1_1util_1_1matching_aef835bc22fc7c5acb9d54db4a77553b4}{compile\+\_\+matchers}} (Iterable\mbox{[}str\mbox{]} patterns)
+\item 
+re.\+Match\mbox{[}str\mbox{]}\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{namespacesphinx_1_1util_1_1matching_a7735bef7350e6b64fc9c204418baf403}{patmatch}} (str name, str pat)
+\item 
+list\mbox{[}str\mbox{]} \mbox{\hyperlink{namespacesphinx_1_1util_1_1matching_aa2e5e0f90da499d32f1c28824654134b}{patfilter}} (Iterable\mbox{[}str\mbox{]} names, str pat)
+\item 
+Iterator\mbox{[}str\mbox{]} \mbox{\hyperlink{namespacesphinx_1_1util_1_1matching_a73b947e22048ee398795f5ab63c127d9}{get\+\_\+matching\+\_\+files}} (str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]} dirname, Iterable\mbox{[}str\mbox{]} include\+\_\+patterns=(\textquotesingle{} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\textquotesingle{},), Iterable\mbox{[}str\mbox{]} exclude\+\_\+patterns=())
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1util_1_1matching_a1391efe9698b41f8f7ac5ac93302466a}{\+\_\+unicode\+\_\+nfc}} (str s)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1matching_a55967bd9a7dfd6a139f65210191be25a}{DOTFILES}} = \mbox{\hyperlink{classsphinx_1_1util_1_1matching_1_1Matcher}{Matcher}}(\mbox{[}\textquotesingle{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/.\texorpdfstring{$\ast$}{*}\textquotesingle{}\mbox{]})
+\item 
+dict \mbox{\hyperlink{namespacesphinx_1_1util_1_1matching_acadcdf88672e99b1667e32b439240159}{\+\_\+pat\+\_\+cache}} = \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Pattern-matching utility functions for Sphinx.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesphinx_1_1util_1_1matching_ae6c2f200609fe2552d5839c76a7adecc}\label{namespacesphinx_1_1util_1_1matching_ae6c2f200609fe2552d5839c76a7adecc} 
+\index{sphinx.util.matching@{sphinx.util.matching}!\_translate\_pattern@{\_translate\_pattern}}
+\index{\_translate\_pattern@{\_translate\_pattern}!sphinx.util.matching@{sphinx.util.matching}}
+\doxysubsubsection{\texorpdfstring{\_translate\_pattern()}{\_translate\_pattern()}}
+{\footnotesize\ttfamily  str sphinx.\+util.\+matching.\+\_\+translate\+\_\+pattern (\begin{DoxyParamCaption}\item[{str}]{pat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Translate a shell-style glob pattern to a regular expression.
+
+Adapted from the fnmatch module, but enhanced so that single stars don't
+match slashes.
+\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1util_1_1matching_a1391efe9698b41f8f7ac5ac93302466a}\label{namespacesphinx_1_1util_1_1matching_a1391efe9698b41f8f7ac5ac93302466a} 
+\index{sphinx.util.matching@{sphinx.util.matching}!\_unicode\_nfc@{\_unicode\_nfc}}
+\index{\_unicode\_nfc@{\_unicode\_nfc}!sphinx.util.matching@{sphinx.util.matching}}
+\doxysubsubsection{\texorpdfstring{\_unicode\_nfc()}{\_unicode\_nfc()}}
+{\footnotesize\ttfamily  str sphinx.\+util.\+matching.\+\_\+unicode\+\_\+nfc (\begin{DoxyParamCaption}\item[{str}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Normalise the string to NFC form.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1util_1_1matching_aef835bc22fc7c5acb9d54db4a77553b4}\label{namespacesphinx_1_1util_1_1matching_aef835bc22fc7c5acb9d54db4a77553b4} 
+\index{sphinx.util.matching@{sphinx.util.matching}!compile\_matchers@{compile\_matchers}}
+\index{compile\_matchers@{compile\_matchers}!sphinx.util.matching@{sphinx.util.matching}}
+\doxysubsubsection{\texorpdfstring{compile\_matchers()}{compile\_matchers()}}
+{\footnotesize\ttfamily  list\mbox{[}Callable\mbox{[}\mbox{[}str\mbox{]}, re.\+Match\mbox{[}str\mbox{]} \texorpdfstring{$\vert$}{|} None\mbox{]}\mbox{]} sphinx.\+util.\+matching.\+compile\+\_\+matchers (\begin{DoxyParamCaption}\item[{Iterable\mbox{[}str\mbox{]}}]{patterns }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1util_1_1matching_a73b947e22048ee398795f5ab63c127d9}\label{namespacesphinx_1_1util_1_1matching_a73b947e22048ee398795f5ab63c127d9} 
+\index{sphinx.util.matching@{sphinx.util.matching}!get\_matching\_files@{get\_matching\_files}}
+\index{get\_matching\_files@{get\_matching\_files}!sphinx.util.matching@{sphinx.util.matching}}
+\doxysubsubsection{\texorpdfstring{get\_matching\_files()}{get\_matching\_files()}}
+{\footnotesize\ttfamily  Iterator\mbox{[}str\mbox{]} sphinx.\+util.\+matching.\+get\+\_\+matching\+\_\+files (\begin{DoxyParamCaption}\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}}]{dirname,  }\item[{Iterable\mbox{[}str\mbox{]} }]{include\+\_\+patterns = {\ttfamily (\textquotesingle{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\textquotesingle{},)},  }\item[{Iterable\mbox{[}str\mbox{]} }]{exclude\+\_\+patterns = {\ttfamily ()} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get all file names in a directory, recursively.
+
+Filter file names by the glob-style include_patterns and exclude_patterns.
+The default values include all files ("**") and exclude nothing ("").
+
+Only files matching some pattern in *include_patterns* are included, and
+exclusions from *exclude_patterns* take priority over inclusions.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1util_1_1matching_aa2e5e0f90da499d32f1c28824654134b}\label{namespacesphinx_1_1util_1_1matching_aa2e5e0f90da499d32f1c28824654134b} 
+\index{sphinx.util.matching@{sphinx.util.matching}!patfilter@{patfilter}}
+\index{patfilter@{patfilter}!sphinx.util.matching@{sphinx.util.matching}}
+\doxysubsubsection{\texorpdfstring{patfilter()}{patfilter()}}
+{\footnotesize\ttfamily  list\mbox{[}str\mbox{]} sphinx.\+util.\+matching.\+patfilter (\begin{DoxyParamCaption}\item[{Iterable\mbox{[}str\mbox{]}}]{names,  }\item[{str}]{pat }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the subset of the list ``names`` that match
+the regular expression (pattern) ``pat``.
+
+Adapted from fnmatch module.
+\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1util_1_1matching_a7735bef7350e6b64fc9c204418baf403}\label{namespacesphinx_1_1util_1_1matching_a7735bef7350e6b64fc9c204418baf403} 
+\index{sphinx.util.matching@{sphinx.util.matching}!patmatch@{patmatch}}
+\index{patmatch@{patmatch}!sphinx.util.matching@{sphinx.util.matching}}
+\doxysubsubsection{\texorpdfstring{patmatch()}{patmatch()}}
+{\footnotesize\ttfamily  re.\+Match\mbox{[}str\mbox{]} \texorpdfstring{$\vert$}{|} None sphinx.\+util.\+matching.\+patmatch (\begin{DoxyParamCaption}\item[{str}]{name,  }\item[{str}]{pat }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return if name matches the regular expression (pattern)
+``pat```. Adapted from fnmatch module.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacesphinx_1_1util_1_1matching_acadcdf88672e99b1667e32b439240159}\label{namespacesphinx_1_1util_1_1matching_acadcdf88672e99b1667e32b439240159} 
+\index{sphinx.util.matching@{sphinx.util.matching}!\_pat\_cache@{\_pat\_cache}}
+\index{\_pat\_cache@{\_pat\_cache}!sphinx.util.matching@{sphinx.util.matching}}
+\doxysubsubsection{\texorpdfstring{\_pat\_cache}{\_pat\_cache}}
+{\footnotesize\ttfamily dict sphinx.\+util.\+matching.\+\_\+pat\+\_\+cache = \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1util_1_1matching_a55967bd9a7dfd6a139f65210191be25a}\label{namespacesphinx_1_1util_1_1matching_a55967bd9a7dfd6a139f65210191be25a} 
+\index{sphinx.util.matching@{sphinx.util.matching}!DOTFILES@{DOTFILES}}
+\index{DOTFILES@{DOTFILES}!sphinx.util.matching@{sphinx.util.matching}}
+\doxysubsubsection{\texorpdfstring{DOTFILES}{DOTFILES}}
+{\footnotesize\ttfamily sphinx.\+util.\+matching.\+DOTFILES = \mbox{\hyperlink{classsphinx_1_1util_1_1matching_1_1Matcher}{Matcher}}(\mbox{[}\textquotesingle{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}/.\texorpdfstring{$\ast$}{*}\textquotesingle{}\mbox{]})}
+

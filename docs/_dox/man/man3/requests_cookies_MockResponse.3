@@ -1,0 +1,68 @@
+.TH "requests.cookies.MockResponse" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+requests.cookies.MockResponse
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, headers)"
+.br
+.ti -1c
+.RI "\fBinfo\fP (self)"
+.br
+.ti -1c
+.RI "\fBgetheaders\fP (self, name)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_headers\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Wraps a `httplib\&.HTTPMessage` to mimic a `urllib\&.addinfourl`\&.
+
+\&.\&.\&.what? Basically, expose the parsed HTTP headers from the server response
+the way `http\&.cookiejar` expects to see them\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "requests\&.cookies\&.MockResponse\&.__init__ ( self,  headers)"
+
+.PP
+.nf
+Make a MockResponse for `cookiejar` to read\&.
+
+:param headers: a httplib\&.HTTPMessage or analogous carrying the headers
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "requests\&.cookies\&.MockResponse\&.getheaders ( self,  name)"
+
+.SS "requests\&.cookies\&.MockResponse\&.info ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "requests\&.cookies\&.MockResponse\&._headers\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

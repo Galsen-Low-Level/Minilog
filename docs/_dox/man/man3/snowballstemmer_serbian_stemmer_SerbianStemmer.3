@@ -1,0 +1,260 @@
+.TH "snowballstemmer.serbian_stemmer.SerbianStemmer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+snowballstemmer.serbian_stemmer.SerbianStemmer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP\&.
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBbra\fP"
+.br
+.ti -1c
+.RI "\fBket\fP"
+.br
+.ti -1c
+.RI "\fBcursor\fP"
+.br
+.ti -1c
+.RI "\fBB_no_diacritics\fP"
+.br
+.ti -1c
+.RI "\fBI_p1\fP"
+.br
+.ti -1c
+.RI "\fBlimit_backward\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP
+.in +1c
+.ti -1c
+.RI "\fBcurrent\fP"
+.br
+.ti -1c
+.RI "\fBcursor\fP"
+.br
+.ti -1c
+.RI "\fBlimit\fP"
+.br
+.ti -1c
+.RI "\fBlimit_backward\fP"
+.br
+.ti -1c
+.RI "\fBbra\fP"
+.br
+.ti -1c
+.RI "\fBket\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBg_v\fP = {u'a', u'e', u'i', u'o', u'u'}"
+.br
+.ti -1c
+.RI "dict \fBg_sa\fP = {u'č', u'ć', u'ž', u'š', u'đ'}"
+.br
+.ti -1c
+.RI "dict \fBg_ca\fP = {u'b', u'v', u'g', u'd', u'z', u'j', u'k', u'l', u'm', u'n', u'p', u'r', u's', u't', u'f', u'h', u'c', u'č', u'ć', u'ž', u'š', u'đ'}"
+.br
+.ti -1c
+.RI "dict \fBg_rg\fP = {u'r'}"
+.br
+.ti -1c
+.RI "int \fBI_p1\fP = 0"
+.br
+.ti -1c
+.RI "bool \fBB_no_diacritics\fP = False"
+.br
+.ti -1c
+.RI "list \fBa_0\fP"
+.br
+.ti -1c
+.RI "list \fBa_1\fP"
+.br
+.ti -1c
+.RI "list \fBa_2\fP"
+.br
+.ti -1c
+.RI "list \fBa_3\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_stem\fP (self)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "\fBset_current\fP (self, value)"
+.br
+.ti -1c
+.RI "\fBget_current\fP (self)"
+.br
+.ti -1c
+.RI "\fBcopy_from\fP (self, other)"
+.br
+.ti -1c
+.RI "\fBin_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_in_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBin_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_in_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBout_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_out_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBout_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_out_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBeq_s\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBeq_s_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBfind_among\fP (self, v)"
+.br
+.ti -1c
+.RI "\fBfind_among_b\fP (self, v)"
+.br
+.ti -1c
+.RI "\fBreplace_s\fP (self, c_bra, c_ket, s)"
+.br
+.ti -1c
+.RI "\fBslice_check\fP (self)"
+.br
+.ti -1c
+.RI "\fBslice_from\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBslice_del\fP (self)"
+.br
+.ti -1c
+.RI "\fBinsert\fP (self, c_bra, c_ket, s)"
+.br
+.ti -1c
+.RI "\fBslice_to\fP (self)"
+.br
+.ti -1c
+.RI "\fBassign_to\fP (self)"
+.br
+.ti -1c
+.RI "\fBstemWord\fP (self, word)"
+.br
+.ti -1c
+.RI "\fBstemWords\fP (self, words)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This class implements the stemming algorithm defined by a snowball script\&.
+Generated from serbian\&.sbl by Snowball 3\&.0\&.1 - https://snowballstem\&.org/
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "snowballstemmer\&.serbian_stemmer\&.SerbianStemmer\&._stem ( self)\fC [protected]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "list snowballstemmer\&.serbian_stemmer\&.SerbianStemmer\&.a_0\fC [static]\fP"
+
+.SS "list snowballstemmer\&.serbian_stemmer\&.SerbianStemmer\&.a_1\fC [static]\fP"
+
+.SS "list snowballstemmer\&.serbian_stemmer\&.SerbianStemmer\&.a_2\fC [static]\fP"
+
+.SS "list snowballstemmer\&.serbian_stemmer\&.SerbianStemmer\&.a_3\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"a", \-1, 1),
+        Among(u"oga", 0, 1),
+        Among(u"ama", 0, 1),
+        Among(u"ima", 0, 1),
+        Among(u"ena", 0, 1),
+        Among(u"e", \-1, 1),
+        Among(u"og", \-1, 1),
+        Among(u"anog", 6, 1),
+        Among(u"enog", 6, 1),
+        Among(u"anih", \-1, 1),
+        Among(u"enih", \-1, 1),
+        Among(u"i", \-1, 1),
+        Among(u"ani", 11, 1),
+        Among(u"eni", 11, 1),
+        Among(u"anoj", \-1, 1),
+        Among(u"enoj", \-1, 1),
+        Among(u"anim", \-1, 1),
+        Among(u"enim", \-1, 1),
+        Among(u"om", \-1, 1),
+        Among(u"enom", 18, 1),
+        Among(u"o", \-1, 1),
+        Among(u"ano", 20, 1),
+        Among(u"eno", 20, 1),
+        Among(u"ost", \-1, 1),
+        Among(u"u", \-1, 1),
+        Among(u"enu", 24, 1)
+    ]
+.fi
+
+.SS "bool snowballstemmer\&.serbian_stemmer\&.SerbianStemmer\&.B_no_diacritics = False\fC [static]\fP"
+
+.SS "snowballstemmer\&.serbian_stemmer\&.SerbianStemmer\&.B_no_diacritics"
+
+.SS "snowballstemmer\&.serbian_stemmer\&.SerbianStemmer\&.bra"
+
+.SS "snowballstemmer\&.serbian_stemmer\&.SerbianStemmer\&.cursor"
+
+.SS "dict snowballstemmer\&.serbian_stemmer\&.SerbianStemmer\&.g_ca = {u'b', u'v', u'g', u'd', u'z', u'j', u'k', u'l', u'm', u'n', u'p', u'r', u's', u't', u'f', u'h', u'c', u'č', u'ć', u'ž', u'š', u'đ'}\fC [static]\fP"
+
+.SS "dict snowballstemmer\&.serbian_stemmer\&.SerbianStemmer\&.g_rg = {u'r'}\fC [static]\fP"
+
+.SS "dict snowballstemmer\&.serbian_stemmer\&.SerbianStemmer\&.g_sa = {u'č', u'ć', u'ž', u'š', u'đ'}\fC [static]\fP"
+
+.SS "dict snowballstemmer\&.serbian_stemmer\&.SerbianStemmer\&.g_v = {u'a', u'e', u'i', u'o', u'u'}\fC [static]\fP"
+
+.SS "int snowballstemmer\&.serbian_stemmer\&.SerbianStemmer\&.I_p1 = 0\fC [static]\fP"
+
+.SS "snowballstemmer\&.serbian_stemmer\&.SerbianStemmer\&.I_p1"
+
+.SS "snowballstemmer\&.serbian_stemmer\&.SerbianStemmer\&.ket"
+
+.SS "snowballstemmer\&.serbian_stemmer\&.SerbianStemmer\&.limit_backward"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,177 @@
+.TH "pip._internal.exceptions" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.exceptions
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBBadCommand\fP"
+.br
+.ti -1c
+.RI "class \fBBestVersionAlreadyInstalled\fP"
+.br
+.ti -1c
+.RI "class \fBCommandError\fP"
+.br
+.ti -1c
+.RI "class \fBConfigurationError\fP"
+.br
+.ti -1c
+.RI "class \fBConfigurationFileCouldNotBeLoaded\fP"
+.br
+.ti -1c
+.RI "class \fBDiagnosticPipError\fP"
+.br
+.ti -1c
+.RI "class \fBDirectoryUrlHashUnsupported\fP"
+.br
+.ti -1c
+.RI "class \fBDistributionNotFound\fP"
+.br
+.ti -1c
+.RI "class \fBExternallyManagedEnvironment\fP"
+.br
+.ti -1c
+.RI "class \fBHashError\fP"
+.br
+.ti -1c
+.RI "class \fBHashErrors\fP"
+.br
+.ti -1c
+.RI "class \fBHashMismatch\fP"
+.br
+.ti -1c
+.RI "class \fBHashMissing\fP"
+.br
+.ti -1c
+.RI "class \fBHashUnpinned\fP"
+.br
+.ti -1c
+.RI "class \fBInstallationError\fP"
+.br
+.ti -1c
+.RI "class \fBInstallationSubprocessError\fP"
+.br
+.ti -1c
+.RI "class \fBInvalidInstalledPackage\fP"
+.br
+.ti -1c
+.RI "class \fBInvalidPyProjectBuildRequires\fP"
+.br
+.ti -1c
+.RI "class \fBInvalidSchemeCombination\fP"
+.br
+.ti -1c
+.RI "class \fBInvalidWheel\fP"
+.br
+.ti -1c
+.RI "class \fBInvalidWheelFilename\fP"
+.br
+.ti -1c
+.RI "class \fBLegacyDistutilsInstall\fP"
+.br
+.ti -1c
+.RI "class \fBMetadataGenerationFailed\fP"
+.br
+.ti -1c
+.RI "class \fBMetadataInconsistent\fP"
+.br
+.ti -1c
+.RI "class \fBMetadataInvalid\fP"
+.br
+.ti -1c
+.RI "class \fBMissingPyProjectBuildRequires\fP"
+.br
+.ti -1c
+.RI "class \fBNetworkConnectionError\fP"
+.br
+.ti -1c
+.RI "class \fBNoneMetadataError\fP"
+.br
+.ti -1c
+.RI "class \fBPipError\fP"
+.br
+.ti -1c
+.RI "class \fBPreviousBuildDirError\fP"
+.br
+.ti -1c
+.RI "class \fBRequirementsFileParseError\fP"
+.br
+.ti -1c
+.RI "class \fBUninstallMissingRecord\fP"
+.br
+.ti -1c
+.RI "class \fBUnsupportedPythonVersion\fP"
+.br
+.ti -1c
+.RI "class \fBUnsupportedWheel\fP"
+.br
+.ti -1c
+.RI "class \fBUserInstallationInvalid\fP"
+.br
+.ti -1c
+.RI "class \fBVcsHashUnsupported\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fB_is_kebab_case\fP (str s)"
+.br
+.ti -1c
+.RI "\fBText\fP \fB_prefix_with_indent\fP (Union[\fBText\fP, str] s, \fBConsole\fP console, *str prefix, str indent)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "str \fB_DEFAULT_EXTERNALLY_MANAGED_ERROR\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Exceptions used throughout package\&.
+
+This module MUST NOT try to import from anything within `pip\&._internal` to
+operate\&. This is expected to be importable from any/all files within the
+subpackage and, thus, should not depend on them\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " bool pip\&._internal\&.exceptions\&._is_kebab_case (str s)\fC [protected]\fP"
+
+.SS " \fBText\fP pip\&._internal\&.exceptions\&._prefix_with_indent (Union[\fBText\fP, str] s, \fBConsole\fP console, *str prefix, str indent)\fC [protected]\fP"
+
+.SH "Variable Documentation"
+.PP 
+.SS "str pip\&._internal\&.exceptions\&._DEFAULT_EXTERNALLY_MANAGED_ERROR\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  f"""\\
+2 The Python environment under {sys\&.prefix} is managed externally, and may not be
+3 manipulated by the user\&. Please use specific tooling from the distributor of
+4 the Python installation to interact with this environment instead\&.
+5 """
+.fi
+
+.SS "pip\&._internal\&.exceptions\&.logger = logging\&.getLogger(__name__)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

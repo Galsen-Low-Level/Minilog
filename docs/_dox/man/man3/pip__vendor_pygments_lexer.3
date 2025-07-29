@@ -1,0 +1,179 @@
+.TH "pip._vendor.pygments.lexer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.pygments.lexer
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_inherit\fP"
+.br
+.ti -1c
+.RI "class \fB_PseudoMatch\fP"
+.br
+.ti -1c
+.RI "class \fB_This\fP"
+.br
+.ti -1c
+.RI "class \fBcombined\fP"
+.br
+.ti -1c
+.RI "class \fBdefault\fP"
+.br
+.ti -1c
+.RI "class \fBDelegatingLexer\fP"
+.br
+.ti -1c
+.RI "class \fBExtendedRegexLexer\fP"
+.br
+.ti -1c
+.RI "class \fBinclude\fP"
+.br
+.ti -1c
+.RI "class \fBLexer\fP"
+.br
+.ti -1c
+.RI "class \fBLexerContext\fP"
+.br
+.ti -1c
+.RI "class \fBLexerMeta\fP"
+.br
+.ti -1c
+.RI "class \fBProfilingRegexLexer\fP"
+.br
+.ti -1c
+.RI "class \fBProfilingRegexLexerMeta\fP"
+.br
+.ti -1c
+.RI "class \fBRegexLexer\fP"
+.br
+.ti -1c
+.RI "class \fBRegexLexerMeta\fP"
+.br
+.ti -1c
+.RI "class \fBwords\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBbygroups\fP (*args)"
+.br
+.ti -1c
+.RI "\fBusing\fP (_other, **kwargs)"
+.br
+.ti -1c
+.RI "\fBdo_insertions\fP (insertions, tokens)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBline_re\fP = re\&.compile('\&.*?\\n')"
+.br
+.ti -1c
+.RI "list \fB_encoding_map\fP"
+.br
+.ti -1c
+.RI "\fB_default_analyse\fP = staticmethod(lambda x: 0\&.0)"
+.br
+.ti -1c
+.RI "\fBinherit\fP = \fB_inherit\fP()"
+.br
+.ti -1c
+.RI "\fBthis\fP = \fB_This\fP()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+    pygments\&.lexer
+    ~~~~~~~~~~~~~~
+
+    Base lexer classes\&.
+
+    :copyright: Copyright 2006-2024 by the Pygments team, see AUTHORS\&.
+    :license: BSD, see LICENSE for details\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.pygments\&.lexer\&.bygroups (* args)"
+
+.PP
+.nf
+Callback that yields multiple actions for each group in the match\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pygments\&.lexer\&.do_insertions ( insertions,  tokens)"
+
+.PP
+.nf
+Helper for lexers which must combine the results of several
+sublexers\&.
+
+``insertions`` is a list of ``(index, itokens)`` pairs\&.
+Each ``itokens`` iterable should be inserted at position
+``index`` into the token stream given by the ``tokens``
+argument\&.
+
+The result is a combined token stream\&.
+
+TODO: clean up the code here\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pygments\&.lexer\&.using ( _other, ** kwargs)"
+
+.PP
+.nf
+Callback that processes the match with a different lexer\&.
+
+The keyword arguments are forwarded to the lexer, except `state` which
+is handled separately\&.
+
+`state` specifies the state that the new lexer will start in, and can
+be an enumerable such as ('root', 'inline', 'string') or a simple
+string which is assumed to be on top of the root state\&.
+
+Note: For that to work, `_other` must not be an `ExtendedRegexLexer`\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._vendor\&.pygments\&.lexer\&._default_analyse = staticmethod(lambda x: 0\&.0)\fC [protected]\fP"
+
+.SS "list pip\&._vendor\&.pygments\&.lexer\&._encoding_map\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  [(b'\\xef\\xbb\\xbf', 'utf\-8'),
+2                  (b'\\xff\\xfe\\0\\0', 'utf\-32'),
+3                  (b'\\0\\0\\xfe\\xff', 'utf\-32be'),
+4                  (b'\\xff\\xfe', 'utf\-16'),
+5                  (b'\\xfe\\xff', 'utf\-16be')]
+.fi
+
+.SS "pip\&._vendor\&.pygments\&.lexer\&.inherit = \fB_inherit\fP()"
+
+.SS "pip\&._vendor\&.pygments\&.lexer\&.line_re = re\&.compile('\&.*?\\n')"
+
+.SS "pip\&._vendor\&.pygments\&.lexer\&.this = \fB_This\fP()"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

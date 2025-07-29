@@ -1,0 +1,198 @@
+.TH "pip._vendor.pkg_resources.FileMetadata" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.pkg_resources.FileMetadata
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._vendor\&.pkg_resources\&.EmptyProvider\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, StrPath \fBpath\fP)"
+.br
+.ti -1c
+.RI "bool \fBhas_metadata\fP (self, str name)"
+.br
+.ti -1c
+.RI "\fBget_metadata\fP (self, str name)"
+.br
+.ti -1c
+.RI "Iterator[str] \fBget_metadata_lines\fP (self, str name)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._vendor\&.pkg_resources\&.NullProvider\fP
+.in +1c
+.ti -1c
+.RI "\fBget_resource_filename\fP (self, \fBResourceManager\fP manager, str resource_name)"
+.br
+.ti -1c
+.RI "\fBget_resource_stream\fP (self, \fBResourceManager\fP manager, str resource_name)"
+.br
+.ti -1c
+.RI "bytes \fBget_resource_string\fP (self, \fBResourceManager\fP manager, str resource_name)"
+.br
+.ti -1c
+.RI "\fBhas_resource\fP (self, str resource_name)"
+.br
+.ti -1c
+.RI "\fBresource_isdir\fP (self, str resource_name)"
+.br
+.ti -1c
+.RI "bool \fBmetadata_isdir\fP (self, str name)"
+.br
+.ti -1c
+.RI "\fBresource_listdir\fP (self, str resource_name)"
+.br
+.ti -1c
+.RI "list[str] \fBmetadata_listdir\fP (self, str name)"
+.br
+.ti -1c
+.RI "\fBrun_script\fP (self, str script_name, dict[str, Any] namespace)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBpath\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpip\&._vendor\&.pkg_resources\&.NullProvider\fP
+.in +1c
+.ti -1c
+.RI "\fBloader\fP"
+.br
+.ti -1c
+.RI "\fBmodule_path\fP"
+.br
+.ti -1c
+.RI "\fBegg_info\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_get_metadata_path\fP (self, name)"
+.br
+.ti -1c
+.RI "\fB_warn_on_replacement\fP (self, metadata)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpip\&._vendor\&.pkg_resources\&.EmptyProvider\fP
+.in +1c
+.ti -1c
+.RI "bytes \fB_get\fP (self, path)"
+.br
+.ti -1c
+.RI "\fB_listdir\fP (self, path)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpip\&._vendor\&.pkg_resources\&.NullProvider\fP
+.in +1c
+.ti -1c
+.RI "bool \fB_has\fP (self, path)"
+.br
+.ti -1c
+.RI "bool \fB_isdir\fP (self, path)"
+.br
+.ti -1c
+.RI "\fB_fn\fP (self, str|None base, str resource_name)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Attributes inherited from \fBpip\&._vendor\&.pkg_resources\&.EmptyProvider\fP
+.in +1c
+.ti -1c
+.RI "str \fBmodule_path\fP = None"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpip\&._vendor\&.pkg_resources\&.NullProvider\fP
+.in +1c
+.ti -1c
+.RI "str \fBegg_name\fP = None"
+.br
+.ti -1c
+.RI "str \fBegg_info\fP = None"
+.br
+.ti -1c
+.RI "\fB_LoaderProtocol\fP \fBloader\fP = None"
+.br
+.in -1c
+
+Static Protected Member Functions inherited from \fBpip\&._vendor\&.pkg_resources\&.NullProvider\fP
+.in +1c
+.ti -1c
+.RI "\fB_validate_resource_path\fP (path)"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBpip\&._vendor\&.pkg_resources\&.EmptyProvider\fP
+.in +1c
+.ti -1c
+.RI "False \fB_isdir\fP = lambda self, path"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Metadata handler for standalone PKG-INFO files
+
+Usage::
+
+    metadata = FileMetadata('/path/to/PKG-INFO')
+
+This provider rejects all data and metadata requests except for PKG-INFO,
+which is treated as existing, and will be the contents of the file at
+the provided location\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.pkg_resources\&.FileMetadata\&.__init__ ( self, StrPath path)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.pkg_resources\&.EmptyProvider\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.pkg_resources\&.FileMetadata\&._get_metadata_path ( self,  name)\fC [protected]\fP"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.pkg_resources\&.NullProvider\fP\&.
+.SS "pip\&._vendor\&.pkg_resources\&.FileMetadata\&._warn_on_replacement ( self,  metadata)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.FileMetadata\&.get_metadata ( self, str name)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.pkg_resources\&.NullProvider\fP\&.
+.SS " Iterator[str] pip\&._vendor\&.pkg_resources\&.FileMetadata\&.get_metadata_lines ( self, str name)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.pkg_resources\&.NullProvider\fP\&.
+.SS " bool pip\&._vendor\&.pkg_resources\&.FileMetadata\&.has_metadata ( self, str name)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.pkg_resources\&.NullProvider\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.pkg_resources\&.FileMetadata\&.path"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

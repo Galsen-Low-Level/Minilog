@@ -1,0 +1,110 @@
+.TH "pip._vendor.urllib3.contrib.ntlmpool.NTLMConnectionPool" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.urllib3.contrib.ntlmpool.NTLMConnectionPool
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits HTTPSConnectionPool\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBuser\fP, \fBpw\fP, \fBauthurl\fP, *args, **kwargs)"
+.br
+.ti -1c
+.RI "\fBurlopen\fP (self, method, url, body=None, headers=None, retries=3, redirect=True, assert_same_host=True)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBauthurl\fP"
+.br
+.ti -1c
+.RI "\fBrawuser\fP"
+.br
+.ti -1c
+.RI "\fBdomain\fP"
+.br
+.ti -1c
+.RI "\fBuser\fP"
+.br
+.ti -1c
+.RI "\fBpw\fP"
+.br
+.ti -1c
+.RI "\fBnum_connections\fP"
+.br
+.ti -1c
+.RI "\fBhost\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBscheme\fP = 'https'"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_new_conn\fP (self)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Implements an NTLM authentication version of an urllib3 connection pool
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.ntlmpool\&.NTLMConnectionPool\&.__init__ ( self,  user,  pw,  authurl, * args, ** kwargs)"
+
+.PP
+.nf
+authurl is a random URL on the server that is protected by NTLM\&.
+user is the Windows user, probably in the DOMAIN\\\\username format\&.
+pw is the password for the user\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.ntlmpool\&.NTLMConnectionPool\&._new_conn ( self)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.ntlmpool\&.NTLMConnectionPool\&.urlopen ( self,  method,  url,  body = \fCNone\fP,  headers = \fCNone\fP,  retries = \fC3\fP,  redirect = \fCTrue\fP,  assert_same_host = \fCTrue\fP)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.ntlmpool\&.NTLMConnectionPool\&.authurl"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.ntlmpool\&.NTLMConnectionPool\&.domain"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.ntlmpool\&.NTLMConnectionPool\&.host"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.ntlmpool\&.NTLMConnectionPool\&.num_connections"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.ntlmpool\&.NTLMConnectionPool\&.pw"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.ntlmpool\&.NTLMConnectionPool\&.rawuser"
+
+.SS "str pip\&._vendor\&.urllib3\&.contrib\&.ntlmpool\&.NTLMConnectionPool\&.scheme = 'https'\fC [static]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.ntlmpool\&.NTLMConnectionPool\&.user"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

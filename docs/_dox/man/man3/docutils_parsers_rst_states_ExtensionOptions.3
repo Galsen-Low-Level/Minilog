@@ -1,0 +1,561 @@
+.TH "docutils.parsers.rst.states.ExtensionOptions" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.parsers.rst.states.ExtensionOptions
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.parsers\&.rst\&.states\&.FieldList\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBparse_field_body\fP (self, indented, offset, node)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.parsers\&.rst\&.states\&.FieldList\fP
+.in +1c
+.ti -1c
+.RI "\fBfield_marker\fP (self, match, context, next_state)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.parsers\&.rst\&.states\&.SpecializedBody\fP
+.in +1c
+.ti -1c
+.RI "\fBinvalid_input\fP (self, match=None, context=None, next_state=None)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.parsers\&.rst\&.states\&.Body\fP
+.in +1c
+.ti -1c
+.RI "\fBindent\fP (self, match, context, next_state)"
+.br
+.ti -1c
+.RI "\fBblock_quote\fP (self, indented, line_offset)"
+.br
+.ti -1c
+.RI "\fBsplit_attribution\fP (self, indented, line_offset)"
+.br
+.ti -1c
+.RI "\fBcheck_attribution\fP (self, indented, attribution_start)"
+.br
+.ti -1c
+.RI "\fBparse_attribution\fP (self, indented, line_offset)"
+.br
+.ti -1c
+.RI "\fBbullet\fP (self, match, context, next_state)"
+.br
+.ti -1c
+.RI "\fBlist_item\fP (self, \fBindent\fP)"
+.br
+.ti -1c
+.RI "\fBenumerator\fP (self, match, context, next_state)"
+.br
+.ti -1c
+.RI "\fBparse_enumerator\fP (self, match, expected_sequence=None)"
+.br
+.ti -1c
+.RI "\fBis_enumerated_list_item\fP (self, ordinal, sequence, format)"
+.br
+.ti -1c
+.RI "\fBmake_enumerator\fP (self, ordinal, sequence, format)"
+.br
+.ti -1c
+.RI "\fBfield\fP (self, match)"
+.br
+.ti -1c
+.RI "\fBparse_field_marker\fP (self, match)"
+.br
+.ti -1c
+.RI "\fBoption_marker\fP (self, match, context, next_state)"
+.br
+.ti -1c
+.RI "\fBoption_list_item\fP (self, match)"
+.br
+.ti -1c
+.RI "\fBparse_option_marker\fP (self, match)"
+.br
+.ti -1c
+.RI "\fBdoctest\fP (self, match, context, next_state)"
+.br
+.ti -1c
+.RI "\fBline_block\fP (self, match, context, next_state)"
+.br
+.ti -1c
+.RI "\fBline_block_line\fP (self, match, \fBlineno\fP)"
+.br
+.ti -1c
+.RI "\fBnest_line_block_lines\fP (self, block)"
+.br
+.ti -1c
+.RI "\fBnest_line_block_segment\fP (self, block)"
+.br
+.ti -1c
+.RI "\fBgrid_table_top\fP (self, match, context, next_state)"
+.br
+.ti -1c
+.RI "\fBsimple_table_top\fP (self, match, context, next_state)"
+.br
+.ti -1c
+.RI "\fBtable_top\fP (self, match, context, next_state, isolate_function, parser_class)"
+.br
+.ti -1c
+.RI "\fBtable\fP (self, isolate_function, parser_class)"
+.br
+.ti -1c
+.RI "\fBisolate_grid_table\fP (self)"
+.br
+.ti -1c
+.RI "\fBisolate_simple_table\fP (self)"
+.br
+.ti -1c
+.RI "\fBmalformed_table\fP (self, block, detail='', offset=0)"
+.br
+.ti -1c
+.RI "\fBbuild_table\fP (self, tabledata, tableline, stub_columns=0, widths=None)"
+.br
+.ti -1c
+.RI "\fBbuild_table_row\fP (self, rowdata, tableline)"
+.br
+.ti -1c
+.RI "\fBfootnote\fP (self, match)"
+.br
+.ti -1c
+.RI "\fBcitation\fP (self, match)"
+.br
+.ti -1c
+.RI "\fBhyperlink_target\fP (self, match)"
+.br
+.ti -1c
+.RI "\fBmake_target\fP (self, block, \fBblock_text\fP, \fBlineno\fP, target_name)"
+.br
+.ti -1c
+.RI "\fBparse_target\fP (self, block, \fBblock_text\fP, \fBlineno\fP)"
+.br
+.ti -1c
+.RI "\fBis_reference\fP (self, \fBreference\fP)"
+.br
+.ti -1c
+.RI "\fBadd_target\fP (self, targetname, refuri, \fBtarget\fP, \fBlineno\fP)"
+.br
+.ti -1c
+.RI "\fBsubstitution_def\fP (self, match)"
+.br
+.ti -1c
+.RI "\fBdisallowed_inside_substitution_definitions\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdirective\fP (self, match, **option_presets)"
+.br
+.ti -1c
+.RI "\fBrun_directive\fP (self, \fBdirective\fP, match, type_name, option_presets)"
+.br
+.ti -1c
+.RI "\fBparse_directive_block\fP (self, indented, line_offset, \fBdirective\fP, option_presets)"
+.br
+.ti -1c
+.RI "\fBparse_directive_options\fP (self, option_presets, option_spec, arg_block)"
+.br
+.ti -1c
+.RI "\fBparse_directive_arguments\fP (self, \fBdirective\fP, arg_block)"
+.br
+.ti -1c
+.RI "\fBparse_extension_options\fP (self, option_spec, datalines)"
+.br
+.ti -1c
+.RI "\fBunknown_directive\fP (self, type_name)"
+.br
+.ti -1c
+.RI "\fBcomment\fP (self, match)"
+.br
+.ti -1c
+.RI "\fBexplicit_markup\fP (self, match, context, next_state)"
+.br
+.ti -1c
+.RI "\fBexplicit_construct\fP (self, match)"
+.br
+.ti -1c
+.RI "\fBexplicit_list\fP (self, blank_finish)"
+.br
+.ti -1c
+.RI "\fBanonymous\fP (self, match, context, next_state)"
+.br
+.ti -1c
+.RI "\fBanonymous_target\fP (self, match)"
+.br
+.ti -1c
+.RI "\fBline\fP (self, match, context, next_state)"
+.br
+.ti -1c
+.RI "\fBtext\fP (self, match, context, next_state)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.parsers\&.rst\&.states\&.RSTState\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBstate_machine\fP, \fBdebug\fP=False)"
+.br
+.ti -1c
+.RI "\fBruntime_init\fP (self)"
+.br
+.ti -1c
+.RI "\fBgoto_line\fP (self, abs_line_offset)"
+.br
+.ti -1c
+.RI "\fBno_match\fP (self, context, \fBtransitions\fP)"
+.br
+.ti -1c
+.RI "\fBbof\fP (self, context)"
+.br
+.ti -1c
+.RI "\fBnested_parse\fP (self, block, input_offset, node, match_titles=False, state_machine_class=None, state_machine_kwargs=None)"
+.br
+.ti -1c
+.RI "\fBnested_list_parse\fP (self, block, input_offset, node, initial_state, blank_finish, blank_finish_state=None, extra_settings={}, match_titles=False, state_machine_class=None, state_machine_kwargs=None)"
+.br
+.ti -1c
+.RI "\fBsection\fP (self, title, source, style, \fBlineno\fP, messages)"
+.br
+.ti -1c
+.RI "\fBcheck_subsection\fP (self, source, style, \fBlineno\fP)"
+.br
+.ti -1c
+.RI "\fBtitle_inconsistent\fP (self, sourcetext, \fBlineno\fP)"
+.br
+.ti -1c
+.RI "\fBnew_subsection\fP (self, title, \fBlineno\fP, messages)"
+.br
+.ti -1c
+.RI "\fBparagraph\fP (self, lines, \fBlineno\fP)"
+.br
+.ti -1c
+.RI "\fBinline_text\fP (self, text, \fBlineno\fP)"
+.br
+.ti -1c
+.RI "\fBunindent_warning\fP (self, node_name)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.statemachine\&.StateWS\fP
+.in +1c
+.ti -1c
+.RI "\fBadd_initial_transitions\fP (self)"
+.br
+.ti -1c
+.RI "\fBblank\fP (self, match, context, next_state)"
+.br
+.ti -1c
+.RI "\fBknown_indent\fP (self, match, context, next_state)"
+.br
+.ti -1c
+.RI "\fBfirst_known_indent\fP (self, match, context, next_state)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.statemachine\&.State\fP
+.in +1c
+.ti -1c
+.RI "\fBunlink\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd_transitions\fP (self, names, \fBtransitions\fP)"
+.br
+.ti -1c
+.RI "\fBadd_transition\fP (self, name, transition)"
+.br
+.ti -1c
+.RI "\fBremove_transition\fP (self, name)"
+.br
+.ti -1c
+.RI "\fBmake_transition\fP (self, name, next_state=None)"
+.br
+.ti -1c
+.RI "\fBmake_transitions\fP (self, name_list)"
+.br
+.ti -1c
+.RI "\fBeof\fP (self, context)"
+.br
+.ti -1c
+.RI "\fBnop\fP (self, match, context, next_state)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBdocutils\&.parsers\&.rst\&.states\&.FieldList\fP
+.in +1c
+.ti -1c
+.RI "\fBblank_finish\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.parsers\&.rst\&.states\&.Body\fP
+.in +1c
+.ti -1c
+.RI "\fBisolate_grid_table\fP"
+.br
+.ti -1c
+.RI "\fBisolate_simple_table\fP"
+.br
+.ti -1c
+.RI "\fBparent\fP"
+.br
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBstate_machine\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.parsers\&.rst\&.states\&.RSTState\fP
+.in +1c
+.ti -1c
+.RI "\fBnested_sm_kwargs\fP"
+.br
+.ti -1c
+.RI "\fBmemo\fP"
+.br
+.ti -1c
+.RI "\fBreporter\fP"
+.br
+.ti -1c
+.RI "\fBinliner\fP"
+.br
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBparent\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.statemachine\&.StateWS\fP
+.in +1c
+.ti -1c
+.RI "\fBpatterns\fP"
+.br
+.ti -1c
+.RI "\fBws_patterns\fP"
+.br
+.ti -1c
+.RI "\fBws_initial_transitions\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.statemachine\&.State\fP
+.in +1c
+.ti -1c
+.RI "\fBtransition_order\fP"
+.br
+.ti -1c
+.RI "\fBtransitions\fP"
+.br
+.ti -1c
+.RI "\fBstate_machine\fP"
+.br
+.ti -1c
+.RI "\fBdebug\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.parsers\&.rst\&.states\&.SpecializedBody\fP
+.in +1c
+.ti -1c
+.RI "\fBindent\fP = \fBinvalid_input\fP"
+.br
+.ti -1c
+.RI "\fBbullet\fP = \fBinvalid_input\fP"
+.br
+.ti -1c
+.RI "\fBenumerator\fP = \fBinvalid_input\fP"
+.br
+.ti -1c
+.RI "\fBoption_marker\fP = \fBinvalid_input\fP"
+.br
+.ti -1c
+.RI "\fBdoctest\fP = \fBinvalid_input\fP"
+.br
+.ti -1c
+.RI "\fBline_block\fP = \fBinvalid_input\fP"
+.br
+.ti -1c
+.RI "\fBgrid_table_top\fP = \fBinvalid_input\fP"
+.br
+.ti -1c
+.RI "\fBsimple_table_top\fP = \fBinvalid_input\fP"
+.br
+.ti -1c
+.RI "\fBexplicit_markup\fP = \fBinvalid_input\fP"
+.br
+.ti -1c
+.RI "\fBanonymous\fP = \fBinvalid_input\fP"
+.br
+.ti -1c
+.RI "\fBline\fP = \fBinvalid_input\fP"
+.br
+.ti -1c
+.RI "\fBtext\fP = \fBinvalid_input\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.parsers\&.rst\&.states\&.Body\fP
+.in +1c
+.ti -1c
+.RI "\fBdouble_width_pad_char\fP = tableparser\&.TableParser\&.double_width_pad_char"
+.br
+.ti -1c
+.RI "\fBenum\fP = \fBStruct\fP()"
+.br
+.ti -1c
+.RI "\fBformatinfo\fP"
+.br
+.ti -1c
+.RI "\fBprefix\fP"
+.br
+.ti -1c
+.RI "\fBsuffix\fP"
+.br
+.ti -1c
+.RI "\fBstart\fP"
+.br
+.ti -1c
+.RI "\fBend\fP"
+.br
+.ti -1c
+.RI "\fBformats\fP"
+.br
+.ti -1c
+.RI "\fBsequences\fP"
+.br
+.ti -1c
+.RI "\fBsequencepats\fP"
+.br
+.ti -1c
+.RI "\fBconverters\fP"
+.br
+.ti -1c
+.RI "\fBsequenceregexps\fP"
+.br
+.ti -1c
+.RI "\fBgrid_table_top_pat\fP = re\&.compile(r'\\+\-[\-+]+\-\\+ *$')"
+.br
+.ti -1c
+.RI "\fBsimple_table_top_pat\fP = re\&.compile('=+( +=+)+ *$')"
+.br
+.ti -1c
+.RI "\fBsimple_table_border_pat\fP = re\&.compile('=+[ =]*$')"
+.br
+.ti -1c
+.RI "dict \fBpats\fP = {}"
+.br
+.ti -1c
+.RI "dict \fBpatterns\fP"
+.br
+.ti -1c
+.RI "tuple \fBinitial_transitions\fP"
+.br
+.ti -1c
+.RI "\fBattribution_pattern\fP = re\&.compile('(\-\-\-?(?!\-)|\\u2014) *(?=[^ \\\\n])')"
+.br
+.ti -1c
+.RI "\fBexplicit\fP = \fBStruct\fP()"
+.br
+.ti -1c
+.RI "\fBpatterns\fP"
+.br
+.ti -1c
+.RI "\fBtarget\fP"
+.br
+.ti -1c
+.RI "\fBreference\fP"
+.br
+.ti -1c
+.RI "\fBsubstitution\fP"
+.br
+.ti -1c
+.RI "\fBconstructs\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.parsers\&.rst\&.states\&.RSTState\fP
+.in +1c
+.ti -1c
+.RI "\fBnested_sm\fP = \fBNestedStateMachine\fP"
+.br
+.ti -1c
+.RI "list \fBnested_sm_cache\fP = []"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.statemachine\&.StateWS\fP
+.in +1c
+.ti -1c
+.RI "\fBindent_sm\fP = None"
+.br
+.ti -1c
+.RI "\fBindent_sm_kwargs\fP = None"
+.br
+.ti -1c
+.RI "\fBknown_indent_sm\fP = None"
+.br
+.ti -1c
+.RI "\fBknown_indent_sm_kwargs\fP = None"
+.br
+.ti -1c
+.RI "dict \fBws_patterns\fP"
+.br
+.ti -1c
+.RI "tuple \fBws_initial_transitions\fP = ('\fBblank\fP', '\fBindent\fP')"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.statemachine\&.State\fP
+.in +1c
+.ti -1c
+.RI "\fBpatterns\fP = None"
+.br
+.ti -1c
+.RI "\fBinitial_transitions\fP = None"
+.br
+.ti -1c
+.RI "\fBnested_sm\fP = None"
+.br
+.ti -1c
+.RI "\fBnested_sm_kwargs\fP = None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Parse field_list fields for extension options\&.
+
+No nested parsing is done (including inline markup parsing)\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.parsers\&.rst\&.states\&.ExtensionOptions\&.parse_field_body ( self,  indented,  offset,  node)"
+
+.PP
+.nf
+Override `Body\&.parse_field_body` for simpler parsing\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.parsers\&.rst\&.states\&.Body\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

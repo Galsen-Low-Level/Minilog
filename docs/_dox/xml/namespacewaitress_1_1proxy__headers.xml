@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespacewaitress_1_1proxy__headers" kind="namespace" language="Python">
+    <compoundname>waitress::proxy_headers</compoundname>
+    <innerclass refid="classwaitress_1_1proxy__headers_1_1MalformedProxyHeader" prot="public">waitress::proxy_headers::MalformedProxyHeader</innerclass>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacewaitress_1_1proxy__headers_1a79fcd494c6cd25e736156aebb74a1730" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress::proxy_headers.PROXY_HEADERS</definition>
+        <argsstring></argsstring>
+        <name>PROXY_HEADERS</name>
+        <qualifiedname>waitress.proxy_headers.PROXY_HEADERS</qualifiedname>
+        <initializer>=  frozenset(
+    {
+        &quot;X_FORWARDED_FOR&quot;,
+        &quot;X_FORWARDED_HOST&quot;,
+        &quot;X_FORWARDED_PROTO&quot;,
+        &quot;X_FORWARDED_PORT&quot;,
+        &quot;X_FORWARDED_BY&quot;,
+        &quot;FORWARDED&quot;,
+    }
+)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/proxy_headers.py" line="5" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/proxy_headers.py" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacewaitress_1_1proxy__headers_1ac3991d37e644c65ab15a27f2cc358ec0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress::proxy_headers.Forwarded</definition>
+        <argsstring></argsstring>
+        <name>Forwarded</name>
+        <qualifiedname>waitress.proxy_headers.Forwarded</qualifiedname>
+        <initializer>=  namedtuple(&quot;Forwarded&quot;, [&quot;by&quot;, &quot;for_&quot;, &quot;host&quot;, &quot;proto&quot;])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/proxy_headers.py" line="16" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/proxy_headers.py" bodystart="16" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacewaitress_1_1proxy__headers_1a191059596a8d82c8a92371f1d6d9a17f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.proxy_headers.proxy_headers_middleware</definition>
+        <argsstring>(app, trusted_proxy=None, trusted_proxy_count=1, trusted_proxy_headers=None, clear_untrusted=True, log_untrusted=False, logger=logger)</argsstring>
+        <name>proxy_headers_middleware</name>
+        <qualifiedname>waitress.proxy_headers.proxy_headers_middleware</qualifiedname>
+        <param>
+          <type>app</type>
+          <defname>app</defname>
+        </param>
+        <param>
+          <type>trusted_proxy</type>
+          <defname>trusted_proxy</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>trusted_proxy_count</type>
+          <defname>trusted_proxy_count</defname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>trusted_proxy_headers</type>
+          <defname>trusted_proxy_headers</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>clear_untrusted</type>
+          <defname>clear_untrusted</defname>
+          <defval>True</defval>
+        </param>
+        <param>
+          <type>log_untrusted</type>
+          <defname>log_untrusted</defname>
+          <defval>False</defval>
+        </param>
+        <param>
+          <type>logger</type>
+          <defname>logger</defname>
+          <defval>logger</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/proxy_headers.py" line="27" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/proxy_headers.py" bodystart="35" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewaitress_1_1proxy__headers_1a74830af2dd7ddbbc8d54cbe51111579c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.proxy_headers.parse_proxy_headers</definition>
+        <argsstring>(environ, trusted_proxy_count, trusted_proxy_headers, logger=logger)</argsstring>
+        <name>parse_proxy_headers</name>
+        <qualifiedname>waitress.proxy_headers.parse_proxy_headers</qualifiedname>
+        <param>
+          <type>environ</type>
+          <defname>environ</defname>
+        </param>
+        <param>
+          <type>trusted_proxy_count</type>
+          <defname>trusted_proxy_count</defname>
+        </param>
+        <param>
+          <type>trusted_proxy_headers</type>
+          <defname>trusted_proxy_headers</defname>
+        </param>
+        <param>
+          <type>logger</type>
+          <defname>logger</defname>
+          <defval>logger</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/proxy_headers.py" line="69" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/proxy_headers.py" bodystart="71" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewaitress_1_1proxy__headers_1a3a34e9f825680a39e0a0e75cbaee6315" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.proxy_headers.strip_brackets</definition>
+        <argsstring>(addr)</argsstring>
+        <name>strip_brackets</name>
+        <qualifiedname>waitress.proxy_headers.strip_brackets</qualifiedname>
+        <param>
+          <type>addr</type>
+          <defname>addr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/proxy_headers.py" line="318" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/proxy_headers.py" bodystart="318" bodyend="323"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewaitress_1_1proxy__headers_1ab111e8fee87a5e145c1aa50803c7933f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.proxy_headers.clear_untrusted_headers</definition>
+        <argsstring>(environ, untrusted_headers, log_warning=False, logger=logger)</argsstring>
+        <name>clear_untrusted_headers</name>
+        <qualifiedname>waitress.proxy_headers.clear_untrusted_headers</qualifiedname>
+        <param>
+          <type>environ</type>
+          <defname>environ</defname>
+        </param>
+        <param>
+          <type>untrusted_headers</type>
+          <defname>untrusted_headers</defname>
+        </param>
+        <param>
+          <type>log_warning</type>
+          <defname>log_warning</defname>
+          <defval>False</defval>
+        </param>
+        <param>
+          <type>logger</type>
+          <defname>logger</defname>
+          <defval>logger</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/proxy_headers.py" line="324" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/proxy_headers.py" bodystart="326" bodyend="343"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/proxy_headers.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

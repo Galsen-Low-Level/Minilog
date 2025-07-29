@@ -1,0 +1,113 @@
+\doxysection{babel.\+messages.\+checkers Namespace Reference}
+\hypertarget{namespacebabel_1_1messages_1_1checkers}{}\label{namespacebabel_1_1messages_1_1checkers}\index{babel.messages.checkers@{babel.messages.checkers}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{namespacebabel_1_1messages_1_1checkers_a30abed1c5817921c730b79a351eba427}{num\+\_\+plurals}} (\mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Catalog}{Catalog}}\texorpdfstring{$\vert$}{|}None catalog, \mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Message}{Message}} message)
+\item 
+None \mbox{\hyperlink{namespacebabel_1_1messages_1_1checkers_a062bac5f14e0a7cb9be7ebfdb03cbe96}{python\+\_\+format}} (\mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Catalog}{Catalog}}\texorpdfstring{$\vert$}{|}None catalog, \mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Message}{Message}} message)
+\item 
+None \mbox{\hyperlink{namespacebabel_1_1messages_1_1checkers_a9dd46f4f7741138f61c25db52c974d78}{\+\_\+validate\+\_\+format}} (str format, str alternative)
+\item 
+list\mbox{[}Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Catalog}{Catalog}}\texorpdfstring{$\vert$}{|}None, \mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Message}{Message}}\mbox{]}, object\mbox{]}\mbox{]} \mbox{\hyperlink{namespacebabel_1_1messages_1_1checkers_ab6526be8755386e3827192ba862e3647}{\+\_\+find\+\_\+checkers}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{namespacebabel_1_1messages_1_1checkers_ae989ca2ff4a473c330ef5d39bbd4b1fb}{\+\_\+string\+\_\+format\+\_\+compatibilities}}
+\item 
+list \mbox{\hyperlink{namespacebabel_1_1messages_1_1checkers_add80e35d5e2de45d06978a790ae005e1}{checkers}} = \mbox{\hyperlink{namespacebabel_1_1messages_1_1checkers_ab6526be8755386e3827192ba862e3647}{\+\_\+find\+\_\+checkers}}()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    babel.messages.checkers
+    ~~~~~~~~~~~~~~~~~~~~~~~
+
+    Various routines that help with validation of translations.
+
+    :since: version 0.9
+
+    :copyright: (c) 2013-2025 by the Babel Team.
+    :license: BSD, see LICENSE for more details.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacebabel_1_1messages_1_1checkers_ab6526be8755386e3827192ba862e3647}\label{namespacebabel_1_1messages_1_1checkers_ab6526be8755386e3827192ba862e3647} 
+\index{babel.messages.checkers@{babel.messages.checkers}!\_find\_checkers@{\_find\_checkers}}
+\index{\_find\_checkers@{\_find\_checkers}!babel.messages.checkers@{babel.messages.checkers}}
+\doxysubsubsection{\texorpdfstring{\_find\_checkers()}{\_find\_checkers()}}
+{\footnotesize\ttfamily  list\mbox{[}Callable\mbox{[}\mbox{[}\mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Catalog}{Catalog}} \texorpdfstring{$\vert$}{|} None, \mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Message}{Message}}\mbox{]}, object\mbox{]}\mbox{]} babel.\+messages.\+checkers.\+\_\+find\+\_\+checkers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacebabel_1_1messages_1_1checkers_a9dd46f4f7741138f61c25db52c974d78}\label{namespacebabel_1_1messages_1_1checkers_a9dd46f4f7741138f61c25db52c974d78} 
+\index{babel.messages.checkers@{babel.messages.checkers}!\_validate\_format@{\_validate\_format}}
+\index{\_validate\_format@{\_validate\_format}!babel.messages.checkers@{babel.messages.checkers}}
+\doxysubsubsection{\texorpdfstring{\_validate\_format()}{\_validate\_format()}}
+{\footnotesize\ttfamily  None babel.\+messages.\+checkers.\+\_\+validate\+\_\+format (\begin{DoxyParamCaption}\item[{str}]{format,  }\item[{str}]{alternative }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Test format string `alternative` against `format`.  `format` can be the
+msgid of a message and `alternative` one of the `msgstr`\\s.  The two
+arguments are not interchangeable as `alternative` may contain less
+placeholders if `format` uses named placeholders.
+
+If the string formatting of `alternative` is compatible to `format` the
+function returns `None`, otherwise a `TranslationError` is raised.
+
+Examples for compatible format strings:
+
+>>> _validate_format('Hello %s!', 'Hallo %s!')
+>>> _validate_format('Hello %i!', 'Hallo %d!')
+
+Example for an incompatible format strings:
+
+>>> _validate_format('Hello %(name)s!', 'Hallo %s!')
+Traceback (most recent call last):
+  ...
+TranslationError: the format strings are of different kinds
+
+This function is used by the `python_format` checker.
+
+:param format: The original format string
+:param alternative: The alternative format string that should be checked
+                    against format
+:raises TranslationError: on formatting errors
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1messages_1_1checkers_a30abed1c5817921c730b79a351eba427}\label{namespacebabel_1_1messages_1_1checkers_a30abed1c5817921c730b79a351eba427} 
+\index{babel.messages.checkers@{babel.messages.checkers}!num\_plurals@{num\_plurals}}
+\index{num\_plurals@{num\_plurals}!babel.messages.checkers@{babel.messages.checkers}}
+\doxysubsubsection{\texorpdfstring{num\_plurals()}{num\_plurals()}}
+{\footnotesize\ttfamily  None babel.\+messages.\+checkers.\+num\+\_\+plurals (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Catalog}{Catalog}} \texorpdfstring{$\vert$}{|} None}]{catalog,  }\item[{\mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Message}{Message}}}]{message }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Verify the number of plurals in the translation.\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1messages_1_1checkers_a062bac5f14e0a7cb9be7ebfdb03cbe96}\label{namespacebabel_1_1messages_1_1checkers_a062bac5f14e0a7cb9be7ebfdb03cbe96} 
+\index{babel.messages.checkers@{babel.messages.checkers}!python\_format@{python\_format}}
+\index{python\_format@{python\_format}!babel.messages.checkers@{babel.messages.checkers}}
+\doxysubsubsection{\texorpdfstring{python\_format()}{python\_format()}}
+{\footnotesize\ttfamily  None babel.\+messages.\+checkers.\+python\+\_\+format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Catalog}{Catalog}} \texorpdfstring{$\vert$}{|} None}]{catalog,  }\item[{\mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Message}{Message}}}]{message }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Verify the format string placeholders in the translation.\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacebabel_1_1messages_1_1checkers_ae989ca2ff4a473c330ef5d39bbd4b1fb}\label{namespacebabel_1_1messages_1_1checkers_ae989ca2ff4a473c330ef5d39bbd4b1fb} 
+\index{babel.messages.checkers@{babel.messages.checkers}!\_string\_format\_compatibilities@{\_string\_format\_compatibilities}}
+\index{\_string\_format\_compatibilities@{\_string\_format\_compatibilities}!babel.messages.checkers@{babel.messages.checkers}}
+\doxysubsubsection{\texorpdfstring{\_string\_format\_compatibilities}{\_string\_format\_compatibilities}}
+{\footnotesize\ttfamily list babel.\+messages.\+checkers.\+\_\+string\+\_\+format\+\_\+compatibilities\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ [}
+\DoxyCodeLine{00002\ \ \ \ \ \{\textcolor{stringliteral}{'i'},\ \textcolor{stringliteral}{'d'},\ \textcolor{stringliteral}{'u'}\},}
+\DoxyCodeLine{00003\ \ \ \ \ \{\textcolor{stringliteral}{'x'},\ \textcolor{stringliteral}{'X'}\},}
+\DoxyCodeLine{00004\ \ \ \ \ \{\textcolor{stringliteral}{'f'},\ \textcolor{stringliteral}{'F'},\ \textcolor{stringliteral}{'g'},\ \textcolor{stringliteral}{'G'}\},}
+\DoxyCodeLine{00005\ ]}
+
+\end{DoxyCode}
+\Hypertarget{namespacebabel_1_1messages_1_1checkers_add80e35d5e2de45d06978a790ae005e1}\label{namespacebabel_1_1messages_1_1checkers_add80e35d5e2de45d06978a790ae005e1} 
+\index{babel.messages.checkers@{babel.messages.checkers}!checkers@{checkers}}
+\index{checkers@{checkers}!babel.messages.checkers@{babel.messages.checkers}}
+\doxysubsubsection{\texorpdfstring{checkers}{checkers}}
+{\footnotesize\ttfamily list babel.\+messages.\+checkers.\+checkers = \mbox{\hyperlink{namespacebabel_1_1messages_1_1checkers_ab6526be8755386e3827192ba862e3647}{\+\_\+find\+\_\+checkers}}()}
+

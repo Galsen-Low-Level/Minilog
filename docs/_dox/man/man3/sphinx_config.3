@@ -1,0 +1,235 @@
+.TH "sphinx.config" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.config
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_Opt\fP"
+.br
+.ti -1c
+.RI "class \fBConfig\fP"
+.br
+.ti -1c
+.RI "class \fBConfigValue\fP"
+.br
+.ti -1c
+.RI "class \fBENUM\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBis_serializable\fP (object obj, *frozenset[int] _seen=frozenset())"
+.br
+.ti -1c
+.RI "dict[str, Any] \fBeval_config_file\fP (str|os\&.PathLike[str] filename, \fBTags\fP|None tags)"
+.br
+.ti -1c
+.RI "frozenset[type]|\fBENUM\fP \fB_validate_valid_types\fP (type|Collection[type]|\fBENUM\fP valid_types)"
+.br
+.ti -1c
+.RI "None \fBconvert_source_suffix\fP (\fBSphinx\fP app, \fBConfig\fP config)"
+.br
+.ti -1c
+.RI "None \fBconvert_highlight_options\fP (\fBSphinx\fP app, \fBConfig\fP config)"
+.br
+.ti -1c
+.RI "None \fBinit_numfig_format\fP (\fBSphinx\fP app, \fBConfig\fP config)"
+.br
+.ti -1c
+.RI "None \fBevaluate_copyright_placeholders\fP (\fBSphinx\fP _app, \fBConfig\fP config)"
+.br
+.ti -1c
+.RI "None \fBcorrect_copyright_year\fP (\fBSphinx\fP _app, \fBConfig\fP config)"
+.br
+.ti -1c
+.RI "str \fB_substitute_copyright_year\fP (str copyright_line, str current_year, str replace_year)"
+.br
+.ti -1c
+.RI "None \fBcheck_confval_types\fP (\fBSphinx\fP|None app, \fBConfig\fP config)"
+.br
+.ti -1c
+.RI "None \fBcheck_primary_domain\fP (\fBSphinx\fP app, \fBConfig\fP config)"
+.br
+.ti -1c
+.RI "Iterable[str] \fBcheck_master_doc\fP (\fBSphinx\fP app, \fBBuildEnvironment\fP env, Set[str] added, Set[str] changed, Set[str] removed)"
+.br
+.ti -1c
+.RI "\fBExtensionMetadata\fP \fBsetup\fP (\fBSphinx\fP app)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "TypeAlias \fB_ConfigRebuild\fP"
+.br
+.ti -1c
+.RI "str \fBCONFIG_FILENAME\fP = 'conf\&.py'"
+.br
+.ti -1c
+.RI "tuple \fBUNSERIALIZABLE_TYPES\fP = (type, types\&.ModuleType, types\&.FunctionType)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Build configuration file handling\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " str sphinx\&.config\&._substitute_copyright_year (str copyright_line, str current_year, str
+ replace_year)\fC [protected]\fP"
+
+.PP
+.nf
+Replace the year in a single copyright line\&.
+
+Legal formats are:
+
+* ``YYYY``
+* ``YYYY,``
+* ``YYYY ``
+* ``YYYY-YYYY``
+* ``YYYY-YYYY,``
+* ``YYYY-YYYY ``
+
+The final year in the string is replaced with ``replace_year``\&.
+
+.fi
+.PP
+ 
+.SS " frozenset[type] | \fBENUM\fP sphinx\&.config\&._validate_valid_types (type | Collection[type] | \fBENUM\fP valid_types)\fC [protected]\fP"
+
+.SS " None sphinx\&.config\&.check_confval_types (\fBSphinx\fP | None app, \fBConfig\fP config)"
+
+.PP
+.nf
+Check all values for deviation from the default value's type, since
+that can result in TypeErrors all over the place NB\&.
+
+.fi
+.PP
+ 
+.SS " Iterable[str] sphinx\&.config\&.check_master_doc (\fBSphinx\fP app, \fBBuildEnvironment\fP env, Set[str] added, Set[str] changed, Set[str] removed)"
+
+.PP
+.nf
+Sphinx 2\&.0 changed the default from 'contents' to 'index'\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.config\&.check_primary_domain (\fBSphinx\fP app, \fBConfig\fP config)"
+
+.SS " None sphinx\&.config\&.convert_highlight_options (\fBSphinx\fP app, \fBConfig\fP config)"
+
+.PP
+.nf
+Convert old styled highlight_options to new styled one\&.
+
+* old style: options
+* new style: a dict which maps from language name to options
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.config\&.convert_source_suffix (\fBSphinx\fP app, \fBConfig\fP config)"
+
+.PP
+.nf
+Convert old styled source_suffix to new styled one\&.
+
+* old style: str or list
+* new style: a dict which maps from fileext to filetype
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.config\&.correct_copyright_year (\fBSphinx\fP _app, \fBConfig\fP config)"
+
+.PP
+.nf
+Correct values of copyright year that are not coherent with
+the SOURCE_DATE_EPOCH environment variable (if set)
+
+See https://reproducible-builds\&.org/specs/source-date-epoch/
+
+.fi
+.PP
+ 
+.SS " dict[str, Any] sphinx\&.config\&.eval_config_file (str | os\&.PathLike[str] filename, \fBTags\fP | None
+ tags)"
+
+.PP
+.nf
+Evaluate a config file\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.config\&.evaluate_copyright_placeholders (\fBSphinx\fP _app, \fBConfig\fP config)"
+
+.PP
+.nf
+Replace copyright year placeholders (%Y) with the current year\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.config\&.init_numfig_format (\fBSphinx\fP app, \fBConfig\fP config)"
+
+.PP
+.nf
+Initialize :confval:`numfig_format`\&.
+.fi
+.PP
+ 
+.SS " bool sphinx\&.config\&.is_serializable (object obj, *frozenset[int]  _seen = \fCfrozenset()\fP)"
+
+.PP
+.nf
+Check if an object is serializable or not\&.
+.fi
+.PP
+ 
+.SS " \fBExtensionMetadata\fP sphinx\&.config\&.setup (\fBSphinx\fP app)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "TypeAlias sphinx\&.config\&._ConfigRebuild\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  Literal[
+2     '',
+3     'env',
+4     'epub',
+5     'gettext',
+6     'html',
+7     # sphinxcontrib\-applehelp
+8     'applehelp',
+9     # sphinxcontrib\-devhelp
+10     'devhelp',
+11 ]
+.fi
+
+.SS "str sphinx\&.config\&.CONFIG_FILENAME = 'conf\&.py'"
+
+.SS "sphinx\&.config\&.logger = logging\&.getLogger(__name__)"
+
+.SS "tuple sphinx\&.config\&.UNSERIALIZABLE_TYPES = (type, types\&.ModuleType, types\&.FunctionType)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

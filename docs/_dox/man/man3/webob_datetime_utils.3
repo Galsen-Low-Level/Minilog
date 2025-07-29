@@ -1,0 +1,114 @@
+.TH "webob.datetime_utils" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webob.datetime_utils
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_UTC\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBtimedelta_to_seconds\fP (td)"
+.br
+.ti -1c
+.RI "\fBparse_date\fP (value)"
+.br
+.ti -1c
+.RI "\fBserialize_date\fP (dt)"
+.br
+.ti -1c
+.RI "\fBparse_date_delta\fP (value)"
+.br
+.ti -1c
+.RI "\fBserialize_date_delta\fP (value)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB_now\fP = datetime\&.now"
+.br
+.ti -1c
+.RI "\fBUTC\fP = \fB_UTC\fP()"
+.br
+.ti -1c
+.RI "\fBday\fP = timedelta(days=1)"
+.br
+.ti -1c
+.RI "\fBweek\fP = timedelta(weeks=1)"
+.br
+.ti -1c
+.RI "\fBhour\fP = timedelta(hours=1)"
+.br
+.ti -1c
+.RI "\fBminute\fP = timedelta(minutes=1)"
+.br
+.ti -1c
+.RI "\fBsecond\fP = timedelta(seconds=1)"
+.br
+.ti -1c
+.RI "\fBmonth\fP = timedelta(days=30)"
+.br
+.ti -1c
+.RI "\fByear\fP = timedelta(days=365)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "webob\&.datetime_utils\&.parse_date ( value)"
+
+.SS "webob\&.datetime_utils\&.parse_date_delta ( value)"
+
+.PP
+.nf
+like parse_date, but also handle delta seconds
+
+.fi
+.PP
+ 
+.SS "webob\&.datetime_utils\&.serialize_date ( dt)"
+
+.SS "webob\&.datetime_utils\&.serialize_date_delta ( value)"
+
+.SS "webob\&.datetime_utils\&.timedelta_to_seconds ( td)"
+
+.PP
+.nf
+Converts a timedelta instance to seconds\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "webob\&.datetime_utils\&._now = datetime\&.now\fC [protected]\fP"
+
+.SS "webob\&.datetime_utils\&.day = timedelta(days=1)"
+
+.SS "webob\&.datetime_utils\&.hour = timedelta(hours=1)"
+
+.SS "webob\&.datetime_utils\&.minute = timedelta(minutes=1)"
+
+.SS "webob\&.datetime_utils\&.month = timedelta(days=30)"
+
+.SS "webob\&.datetime_utils\&.second = timedelta(seconds=1)"
+
+.SS "webob\&.datetime_utils\&.UTC = \fB_UTC\fP()"
+
+.SS "webob\&.datetime_utils\&.week = timedelta(weeks=1)"
+
+.SS "webob\&.datetime_utils\&.year = timedelta(days=365)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

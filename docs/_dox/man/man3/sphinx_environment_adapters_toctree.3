@@ -1,0 +1,178 @@
+.TH "sphinx.environment.adapters.toctree" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.environment.adapters.toctree
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBTocTree\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBnote_toctree\fP (\fBBuildEnvironment\fP env, str docname, \fBaddnodes\&.toctree\fP toctreenode)"
+.br
+.ti -1c
+.RI "\fBNode\fP \fBdocument_toc\fP (\fBBuildEnvironment\fP env, str docname, \fBTags\fP tags)"
+.br
+.ti -1c
+.RI "\fBElement\fP|None \fBglobal_toctree_for_doc\fP (\fBBuildEnvironment\fP env, str docname, \fBBuilder\fP builder, bool collapse=False, bool includehidden=True, int maxdepth=0, bool titles_only=False)"
+.br
+.ti -1c
+.RI "\fBElement\fP|None \fB_resolve_toctree\fP (\fBBuildEnvironment\fP env, str docname, \fBBuilder\fP builder, \fBaddnodes\&.toctree\fP toctree, *bool prune=True, int maxdepth=0, bool titles_only=False, bool collapse=False, bool includehidden=False, \fBTags\fP tags)"
+.br
+.ti -1c
+.RI "list[\fBElement\fP] \fB_entries_from_toctree\fP (\fBBuildEnvironment\fP env, bool prune, bool titles_only, bool collapse, bool includehidden, \fBTags\fP tags, Set[str] toctree_ancestors, \fBMatcher\fP included, \fBMatcher\fP excluded, \fBaddnodes\&.toctree\fP toctreenode, list[str] parents, bool subtree=False)"
+.br
+.ti -1c
+.RI "tuple[\fBElement\fP, str] \fB_toctree_entry\fP (str title, str ref, \fBBuildEnvironment\fP env, bool prune, bool collapse, \fBTags\fP tags, Set[str] toctree_ancestors, \fBMatcher\fP included, \fBMatcher\fP excluded, \fBaddnodes\&.toctree\fP toctreenode, list[str] parents)"
+.br
+.ti -1c
+.RI "nodes\&.bullet_list \fB_toctree_url_entry\fP (str title, str ref)"
+.br
+.ti -1c
+.RI "nodes\&.bullet_list \fB_toctree_self_entry\fP (str title, str ref, dict[str, nodes\&.title] titles)"
+.br
+.ti -1c
+.RI "nodes\&.bullet_list \fB_toctree_generated_entry\fP (str title, str ref)"
+.br
+.ti -1c
+.RI "tuple[nodes\&.bullet_list, str] \fB_toctree_standard_entry\fP (str title, str ref, int maxdepth, nodes\&.bullet_list toc, Set[str] toctree_ancestors, bool prune, bool collapse, \fBTags\fP tags)"
+.br
+.ti -1c
+.RI "None \fB_toctree_add_classes\fP (\fBElement\fP node, int depth, str docname)"
+.br
+.ti -1c
+.RI "\fBET\fP \fB_toctree_copy\fP (\fBET\fP node, int depth, int maxdepth, bool collapse, \fBTags\fP tags)"
+.br
+.ti -1c
+.RI "Set[str] \fB_get_toctree_ancestors\fP (dict[str, list[str]] toctree_includes, str docname)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "\fBET\fP = TypeVar('ET', bound=\fBElement\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Toctree adapter for sphinx\&.environment\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " list[\fBElement\fP] sphinx\&.environment\&.adapters\&.toctree\&._entries_from_toctree (\fBBuildEnvironment\fP env, bool prune, bool titles_only, bool collapse, bool includehidden, \fBTags\fP tags, Set[str] toctree_ancestors, \fBMatcher\fP included, \fBMatcher\fP excluded, \fBaddnodes\&.toctree\fP toctreenode, list[str] parents, bool  subtree = \fCFalse\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Return TOC entries for a toctree node\&.
+.fi
+.PP
+ 
+.SS " Set[str] sphinx\&.environment\&.adapters\&.toctree\&._get_toctree_ancestors (dict[str, list[str]] toctree_includes, str docname)\fC [protected]\fP"
+
+.SS " \fBElement\fP | None sphinx\&.environment\&.adapters\&.toctree\&._resolve_toctree (\fBBuildEnvironment\fP env, str docname, \fBBuilder\fP builder, \fBaddnodes\&.toctree\fP toctree, *bool  prune = \fCTrue\fP, int  maxdepth = \fC0\fP, bool  titles_only = \fCFalse\fP, bool  collapse = \fCFalse\fP, bool  includehidden = \fCFalse\fP, \fBTags\fP tags)\fC [protected]\fP"
+
+.PP
+.nf
+Resolve a *toctree* node into individual bullet lists with titles
+as items, returning None (if no containing titles are found) or
+a new node\&.
+
+If *prune* is True, the tree is pruned to *maxdepth*, or if that is 0,
+to the value of the *maxdepth* option on the *toctree* node\&.
+If *titles_only* is True, only toplevel document titles will be in the
+resulting tree\&.
+If *collapse* is True, all branches not containing docname will
+be collapsed\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.environment\&.adapters\&.toctree\&._toctree_add_classes (\fBElement\fP node, int depth, str docname)\fC [protected]\fP"
+
+.PP
+.nf
+Add 'toctree-l%d' and 'current' classes to the toctree\&.
+.fi
+.PP
+ 
+.SS " \fBET\fP sphinx\&.environment\&.adapters\&.toctree\&._toctree_copy (\fBET\fP node, int depth, int maxdepth, bool collapse, \fBTags\fP
+ tags)\fC [protected]\fP"
+
+.PP
+.nf
+Utility: Cut and deep-copy a TOC at a specified depth\&.
+.fi
+.PP
+ 
+.SS " tuple[\fBElement\fP, str] sphinx\&.environment\&.adapters\&.toctree\&._toctree_entry (str title, str ref, \fBBuildEnvironment\fP env, bool prune, bool collapse, \fBTags\fP tags, Set[str] toctree_ancestors, \fBMatcher\fP included, \fBMatcher\fP excluded, \fBaddnodes\&.toctree\fP toctreenode, list[str] parents)\fC [protected]\fP"
+
+.SS " nodes\&.bullet_list sphinx\&.environment\&.adapters\&.toctree\&._toctree_generated_entry (str title, str ref)\fC [protected]\fP"
+
+.SS " nodes\&.bullet_list sphinx\&.environment\&.adapters\&.toctree\&._toctree_self_entry (str title, str ref, dict[str, nodes\&.title] titles)\fC [protected]\fP"
+
+.SS " tuple[nodes\&.bullet_list, str] sphinx\&.environment\&.adapters\&.toctree\&._toctree_standard_entry (str title, str ref, int maxdepth, nodes\&.bullet_list toc, Set[str] toctree_ancestors, bool prune, bool collapse, \fBTags\fP tags)\fC [protected]\fP"
+
+.SS " nodes\&.bullet_list sphinx\&.environment\&.adapters\&.toctree\&._toctree_url_entry (str title, str ref)\fC [protected]\fP"
+
+.SS " \fBNode\fP sphinx\&.environment\&.adapters\&.toctree\&.document_toc (\fBBuildEnvironment\fP env, str docname, \fBTags\fP tags)"
+
+.PP
+.nf
+Get the (local) table of contents for a document\&.
+
+Note that this is only the sections within the document\&.
+For a ToC tree that shows the document's place in the
+ToC structure, use `get_toctree_for`\&.
+
+.fi
+.PP
+ 
+.SS " \fBElement\fP | None sphinx\&.environment\&.adapters\&.toctree\&.global_toctree_for_doc (\fBBuildEnvironment\fP env, str docname, \fBBuilder\fP builder, bool  collapse = \fCFalse\fP, bool  includehidden = \fCTrue\fP, int  maxdepth = \fC0\fP, bool  titles_only = \fCFalse\fP)"
+
+.PP
+.nf
+Get the global ToC tree at a given document\&.
+
+This gives the global ToC, with all ancestors and their siblings\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.environment\&.adapters\&.toctree\&.note_toctree (\fBBuildEnvironment\fP env, str docname, \fBaddnodes\&.toctree\fP
+ toctreenode)"
+
+.PP
+.nf
+Note a TOC tree directive in a document and gather information about
+file relations from it\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "sphinx\&.environment\&.adapters\&.toctree\&.ET = TypeVar('ET', bound=\fBElement\fP)"
+
+.SS "sphinx\&.environment\&.adapters\&.toctree\&.logger = logging\&.getLogger(__name__)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

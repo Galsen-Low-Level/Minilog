@@ -1,0 +1,36 @@
+\doxysection{jinja2.\+optimizer Namespace Reference}
+\hypertarget{namespacejinja2_1_1optimizer}{}\label{namespacejinja2_1_1optimizer}\index{jinja2.optimizer@{jinja2.optimizer}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classjinja2_1_1optimizer_1_1Optimizer}{Optimizer}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classjinja2_1_1nodes_1_1Node}{nodes.\+Node}} \mbox{\hyperlink{namespacejinja2_1_1optimizer_ad4eb7c63e569e911a3491d8e3cc04c77}{optimize}} (\mbox{\hyperlink{classjinja2_1_1nodes_1_1Node}{nodes.\+Node}} node, "{}Environment"{} environment)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}The optimizer tries to constant fold expressions and modify the AST
+in place so that it should be faster to evaluate.
+
+Because the AST does not contain all the scoping information and the
+compiler has to find that out, we cannot do all the optimizations we
+want. For example, loop unrolling doesn't work because unrolled loops
+would have a different scope. The solution would be a second syntax tree
+that stored the scoping rules.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacejinja2_1_1optimizer_ad4eb7c63e569e911a3491d8e3cc04c77}\label{namespacejinja2_1_1optimizer_ad4eb7c63e569e911a3491d8e3cc04c77} 
+\index{jinja2.optimizer@{jinja2.optimizer}!optimize@{optimize}}
+\index{optimize@{optimize}!jinja2.optimizer@{jinja2.optimizer}}
+\doxysubsubsection{\texorpdfstring{optimize()}{optimize()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classjinja2_1_1nodes_1_1Node}{nodes.\+Node}} jinja2.\+optimizer.\+optimize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classjinja2_1_1nodes_1_1Node}{nodes.\+Node}}}]{node,  }\item[{"{}Environment"{}}]{environment }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The context hint can be used to perform an static optimization
+based on the context given.\end{DoxyVerb}
+ 

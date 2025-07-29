@@ -1,0 +1,92 @@
+.TH "pip._internal.resolution.resolvelib.resolver" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.resolution.resolvelib.resolver
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBResolver\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "Dict[Optional[str], int] \fBget_topological_weights\fP ('DirectedGraph[Optional[str]]' graph, Set[str] requirement_keys)"
+.br
+.ti -1c
+.RI "Tuple[int, str] \fB_req_set_item_sorter\fP (Tuple[str, \fBInstallRequirement\fP] item, Dict[Optional[str], int] weights)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBResult\fP = RLResult[\fBRequirement\fP, \fBCandidate\fP, str]"
+.br
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " Tuple[int, str] pip\&._internal\&.resolution\&.resolvelib\&.resolver\&._req_set_item_sorter (Tuple[str, \fBInstallRequirement\fP] item, Dict[Optional[str], int] weights)\fC [protected]\fP"
+
+.PP
+.nf
+Key function used to sort install requirements for installation\&.
+
+Based on the 'weight' mapping calculated in ``get_installation_order()``\&.
+The canonical package name is returned as the second member as a tie-
+breaker to ensure the result is predictable, which is useful in tests\&.
+
+.fi
+.PP
+ 
+.SS " Dict[Optional[str], int] pip\&._internal\&.resolution\&.resolvelib\&.resolver\&.get_topological_weights ('DirectedGraph[Optional[str]]' graph, Set[str]
+ requirement_keys)"
+
+.PP
+.nf
+Assign weights to each node based on how 'deep' they are\&.
+
+This implementation may change at any point in the future without prior
+notice\&.
+
+We first simplify the dependency graph by pruning any leaves and giving them
+the highest weight: a package without any dependencies should be installed
+first\&. This is done again and again in the same way, giving ever less weight
+to the newly found leaves\&. The loop stops when no leaves are left: all
+remaining packages have at least one dependency left in the graph\&.
+
+Then we continue with the remaining graph, by taking the length for the
+longest path to any node from root, ignoring any paths that contain a single
+node twice (i\&.e\&. cycles)\&. This is done through a depth-first search through
+the graph, while keeping track of the path to the node\&.
+
+Cycles in the graph result would result in node being revisited while also
+being on its own path\&. In this case, take no action\&. This helps ensure we
+don't get stuck in a cycle\&.
+
+When assigning weight, the longer path (i\&.e\&. larger length) is preferred\&.
+
+We are only interested in the weights of packages that are in the
+requirement_keys\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._internal\&.resolution\&.resolvelib\&.resolver\&.logger = logging\&.getLogger(__name__)"
+
+.SS "pip\&._internal\&.resolution\&.resolvelib\&.resolver\&.Result = RLResult[\fBRequirement\fP, \fBCandidate\fP, str]"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

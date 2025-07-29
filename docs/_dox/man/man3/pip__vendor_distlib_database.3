@@ -1,0 +1,154 @@
+.TH "pip._vendor.distlib.database" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.distlib.database
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_Cache\fP"
+.br
+.ti -1c
+.RI "class \fBBaseInstalledDistribution\fP"
+.br
+.ti -1c
+.RI "class \fBDependencyGraph\fP"
+.br
+.ti -1c
+.RI "class \fBDistribution\fP"
+.br
+.ti -1c
+.RI "class \fBDistributionPath\fP"
+.br
+.ti -1c
+.RI "class \fBEggInfoDistribution\fP"
+.br
+.ti -1c
+.RI "class \fBInstalledDistribution\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBmake_graph\fP (dists, scheme='default')"
+.br
+.ti -1c
+.RI "\fBget_dependent_dists\fP (dists, dist)"
+.br
+.ti -1c
+.RI "\fBget_required_dists\fP (dists, dist)"
+.br
+.ti -1c
+.RI "\fBmake_dist\fP (name, version, **kwargs)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "str \fBEXPORTS_FILENAME\fP = 'pydist\-exports\&.json'"
+.br
+.ti -1c
+.RI "str \fBCOMMANDS_FILENAME\fP = 'pydist\-commands\&.json'"
+.br
+.ti -1c
+.RI "tuple \fBDIST_FILES\fP = ('INSTALLER', METADATA_FILENAME, 'RECORD', 'REQUESTED', 'RESOURCES', \fBEXPORTS_FILENAME\fP, 'SHARED')"
+.br
+.ti -1c
+.RI "str \fBDISTINFO_EXT\fP = '\&.dist\-info'"
+.br
+.ti -1c
+.RI "\fBnew_dist_class\fP = \fBInstalledDistribution\fP"
+.br
+.ti -1c
+.RI "\fBold_dist_class\fP = \fBEggInfoDistribution\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+PEP 376 implementation\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.database\&.get_dependent_dists ( dists,  dist)"
+
+.PP
+.nf
+Recursively generate a list of distributions from *dists* that are
+dependent on *dist*\&.
+
+:param dists: a list of distributions
+:param dist: a distribution, member of *dists* for which we are interested
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.database\&.get_required_dists ( dists,  dist)"
+
+.PP
+.nf
+Recursively generate a list of distributions from *dists* that are
+required by *dist*\&.
+
+:param dists: a list of distributions
+:param dist: a distribution, member of *dists* for which we are interested
+             in finding the dependencies\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.database\&.make_dist ( name,  version, ** kwargs)"
+
+.PP
+.nf
+A convenience method for making a dist given just a name and version\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.database\&.make_graph ( dists,  scheme = \fC'default'\fP)"
+
+.PP
+.nf
+Makes a dependency graph from the given distributions\&.
+
+:parameter dists: a list of distributions
+:type dists: list of :class:`distutils2\&.database\&.InstalledDistribution` and
+             :class:`distutils2\&.database\&.EggInfoDistribution` instances
+:rtype: a :class:`DependencyGraph` instance
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "str pip\&._vendor\&.distlib\&.database\&.COMMANDS_FILENAME = 'pydist\-commands\&.json'"
+
+.SS "tuple pip\&._vendor\&.distlib\&.database\&.DIST_FILES = ('INSTALLER', METADATA_FILENAME, 'RECORD', 'REQUESTED', 'RESOURCES', \fBEXPORTS_FILENAME\fP, 'SHARED')"
+
+.SS "str pip\&._vendor\&.distlib\&.database\&.DISTINFO_EXT = '\&.dist\-info'"
+
+.SS "str pip\&._vendor\&.distlib\&.database\&.EXPORTS_FILENAME = 'pydist\-exports\&.json'"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.logger = logging\&.getLogger(__name__)"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.new_dist_class = \fBInstalledDistribution\fP"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.old_dist_class = \fBEggInfoDistribution\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

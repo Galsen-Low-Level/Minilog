@@ -1,0 +1,75 @@
+.TH "typing_extensions.Doc" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+typing_extensions.Doc
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str \fBdocumentation\fP)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "int \fB__hash__\fP (self)"
+.br
+.ti -1c
+.RI "bool \fB__eq__\fP (self, object other)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdocumentation\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Define the documentation of a type annotation using ``Annotated``, to be
+ used in class attributes, function and method parameters, return values,
+ and variables\&.
+
+The value should be a positional-only string literal to allow static tools
+like editors and documentation generators to use it\&.
+
+This complements docstrings\&.
+
+The string value passed is available in the attribute ``documentation``\&.
+
+Example::
+
+    >>> from typing_extensions import Annotated, Doc
+    >>> def hi(to: Annotated[str, Doc('Who to say hi to')]) -> None: \&.\&.\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None typing_extensions\&.Doc\&.__init__ ( self, str documentation)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " bool typing_extensions\&.Doc\&.__eq__ ( self, object other)"
+
+.SS " int typing_extensions\&.Doc\&.__hash__ ( self)"
+
+.SS " str typing_extensions\&.Doc\&.__repr__ ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "typing_extensions\&.Doc\&.documentation"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

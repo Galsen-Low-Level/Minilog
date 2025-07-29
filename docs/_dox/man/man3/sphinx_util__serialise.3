@@ -1,0 +1,60 @@
+.TH "sphinx.util._serialise" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.util._serialise
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fBstable_hash\fP (Any obj)"
+.br
+.ti -1c
+.RI "str \fBstable_str\fP (Any obj, *int|None indent=None)"
+.br
+.ti -1c
+.RI "dict[str, Any]|list[Any]|str \fB_stable_str_prep\fP (Any obj)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Serialise objects to a stable representation\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " dict[str, Any] | list[Any] | str sphinx\&.util\&._serialise\&._stable_str_prep (Any obj)\fC [protected]\fP"
+
+.SS " str sphinx\&.util\&._serialise\&.stable_hash (Any obj)"
+
+.PP
+.nf
+Return a stable hash for a Python data structure\&.
+
+We can't just use the md5 of str(obj) as the order of collections
+may be random\&.
+
+.fi
+.PP
+ 
+.SS " str sphinx\&.util\&._serialise\&.stable_str (Any obj, *int | None  indent = \fCNone\fP)"
+
+.PP
+.nf
+Return a stable string representation of a Python data structure\&.
+
+We can't just use ``str(obj)`` as the order of collections may be random\&.
+
+.fi
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

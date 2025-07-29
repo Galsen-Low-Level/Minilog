@@ -1,0 +1,995 @@
+\doxysection{babel.\+numbers Namespace Reference}
+\hypertarget{namespacebabel_1_1numbers}{}\label{namespacebabel_1_1numbers}\index{babel.numbers@{babel.numbers}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classbabel_1_1numbers_1_1NumberFormatError}{Number\+Format\+Error}}
+\item 
+class \mbox{\hyperlink{classbabel_1_1numbers_1_1NumberPattern}{Number\+Pattern}}
+\item 
+class \mbox{\hyperlink{classbabel_1_1numbers_1_1UnknownCurrencyError}{Unknown\+Currency\+Error}}
+\item 
+class \mbox{\hyperlink{classbabel_1_1numbers_1_1UnknownCurrencyFormatError}{Unknown\+Currency\+Format\+Error}}
+\item 
+class \mbox{\hyperlink{classbabel_1_1numbers_1_1UnsupportedNumberingSystemError}{Unsupported\+Numbering\+System\+Error}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+set\mbox{[}str\mbox{]} \mbox{\hyperlink{namespacebabel_1_1numbers_a8f1a866db6e1efcb3ead6338051b4191}{list\+\_\+currencies}} (\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None)
+\item 
+None \mbox{\hyperlink{namespacebabel_1_1numbers_abbbb71b83f34a8cbb55b6cbbdaa11d78}{validate\+\_\+currency}} (str currency, \mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None)
+\item 
+bool \mbox{\hyperlink{namespacebabel_1_1numbers_aa1eaa2c3615d0ef745addd5306693e62}{is\+\_\+currency}} (str currency, \mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None)
+\item 
+str\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{namespacebabel_1_1numbers_a18ad55133d738d93e8566613a0ff0f4b}{normalize\+\_\+currency}} (str currency, \mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None)
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_aaa7747f21f684a90bd6ae90874ac1043}{get\+\_\+currency\+\_\+name}} (str currency, float\texorpdfstring{$\vert$}{|}decimal.\+Decimal\texorpdfstring{$\vert$}{|}None count=None, \mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None)
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_ad75ccefd3d6b4436d964599b868a9ee3}{get\+\_\+currency\+\_\+symbol}} (str currency, \mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None)
+\item 
+int \mbox{\hyperlink{namespacebabel_1_1numbers_a3ab50ebb3ead5ec4aab35b5db84962a8}{get\+\_\+currency\+\_\+precision}} (str currency)
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_ae8b0515254396e91afec513cf46af1ce}{get\+\_\+currency\+\_\+unit\+\_\+pattern}} (str currency, float\texorpdfstring{$\vert$}{|}decimal.\+Decimal\texorpdfstring{$\vert$}{|}None count=None, \mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None)
+\item 
+list\mbox{[}str\mbox{]} \mbox{\hyperlink{namespacebabel_1_1numbers_a2d85b48cacfd6f79850146d5423d928e}{get\+\_\+territory\+\_\+currencies}} (str territory, datetime.\+date\texorpdfstring{$\vert$}{|}None start\+\_\+date=..., datetime.\+date\texorpdfstring{$\vert$}{|}None end\+\_\+date=..., bool tender=..., bool non\+\_\+tender=..., Literal\mbox{[}False\mbox{]} include\+\_\+details=...)
+\item 
+list\mbox{[}dict\mbox{[}str, Any\mbox{]}\mbox{]} \mbox{\hyperlink{namespacebabel_1_1numbers_aab4b2decf71a353fed2d8c44e4a66bf1}{get\+\_\+territory\+\_\+currencies}} (str territory, datetime.\+date\texorpdfstring{$\vert$}{|}None start\+\_\+date=..., datetime.\+date\texorpdfstring{$\vert$}{|}None end\+\_\+date=..., bool tender=..., bool non\+\_\+tender=..., Literal\mbox{[}True\mbox{]} include\+\_\+details=...)
+\item 
+list\mbox{[}str\mbox{]}\texorpdfstring{$\vert$}{|}list\mbox{[}dict\mbox{[}str, Any\mbox{]}\mbox{]} \mbox{\hyperlink{namespacebabel_1_1numbers_a2b0c2e139343d09d3de279616570818d}{get\+\_\+territory\+\_\+currencies}} (str territory, datetime.\+date\texorpdfstring{$\vert$}{|}None start\+\_\+date=None, datetime.\+date\texorpdfstring{$\vert$}{|}None end\+\_\+date=None, bool tender=True, bool non\+\_\+tender=False, bool include\+\_\+details=False)
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_a3abc0eb346a20d3855a436083401a65d}{\+\_\+get\+\_\+numbering\+\_\+system}} (\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} locale, Literal\mbox{[}"{}default"{}\mbox{]}\texorpdfstring{$\vert$}{|}str numbering\+\_\+system="{}latn"{})
+\item 
+\mbox{\hyperlink{classbabel_1_1localedata_1_1LocaleDataDict}{Locale\+Data\+Dict}} \mbox{\hyperlink{namespacebabel_1_1numbers_a5d2563b6ddb5006dcce809c440fe0a65}{\+\_\+get\+\_\+number\+\_\+symbols}} (\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} locale, \texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]}\texorpdfstring{$\vert$}{|}str numbering\+\_\+system="{}latn"{})
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_a7360fb7fa1d9b4c8106dd747fc19767f}{get\+\_\+decimal\+\_\+symbol}} (\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None, \texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]}\texorpdfstring{$\vert$}{|}str numbering\+\_\+system="{}latn"{})
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_aba39d8bcd0683289881b6c6c8b35291a}{get\+\_\+plus\+\_\+sign\+\_\+symbol}} (\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None, \texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]}\texorpdfstring{$\vert$}{|}str numbering\+\_\+system="{}latn"{})
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_a798132c4b74c0f4f7e125dd5cb28df3b}{get\+\_\+minus\+\_\+sign\+\_\+symbol}} (\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None, \texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]}\texorpdfstring{$\vert$}{|}str numbering\+\_\+system="{}latn"{})
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_a0c557fdce2871efa778e16aa90dfdba8}{get\+\_\+exponential\+\_\+symbol}} (\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None, \texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]}\texorpdfstring{$\vert$}{|}str numbering\+\_\+system="{}latn"{})
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_ad579560d131aec8d6b09c534b32d0d21}{get\+\_\+group\+\_\+symbol}} (\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None, \texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]}\texorpdfstring{$\vert$}{|}str numbering\+\_\+system="{}latn"{})
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_aeff3aa44605d946aa4268035fb4464f5}{get\+\_\+infinity\+\_\+symbol}} (\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None, \texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]}\texorpdfstring{$\vert$}{|}str numbering\+\_\+system="{}latn"{})
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_a4d128294c82c700bc3102aacd75f845b}{format\+\_\+number}} (float\texorpdfstring{$\vert$}{|}decimal.\+Decimal\texorpdfstring{$\vert$}{|}str number, \mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None)
+\item 
+int \mbox{\hyperlink{namespacebabel_1_1numbers_a34bf444c776f95af7a3898b75caf70a2}{get\+\_\+decimal\+\_\+precision}} (decimal.\+Decimal number)
+\item 
+decimal.\+Decimal \mbox{\hyperlink{namespacebabel_1_1numbers_a0c6e40e6d41596e32696d29bcd6bcc34}{get\+\_\+decimal\+\_\+quantum}} (int\texorpdfstring{$\vert$}{|}decimal.\+Decimal precision)
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_afeb679dcd711c3fd2159e5d3b53c3fe9}{format\+\_\+decimal}} (float\texorpdfstring{$\vert$}{|}decimal.\+Decimal\texorpdfstring{$\vert$}{|}str number, str\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{classbabel_1_1numbers_1_1NumberPattern}{Number\+Pattern}}\texorpdfstring{$\vert$}{|}None format=None, \mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None, bool decimal\+\_\+quantization=True, bool group\+\_\+separator=True, \texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]}\texorpdfstring{$\vert$}{|}str numbering\+\_\+system="{}latn"{})
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_a767412f4e5b72239b07ef9935e86674e}{format\+\_\+compact\+\_\+decimal}} (float\texorpdfstring{$\vert$}{|}decimal.\+Decimal\texorpdfstring{$\vert$}{|}str number, \texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}short"{}, "{}long"{}\mbox{]} format\+\_\+type="{}short"{}, \mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None, int fraction\+\_\+digits=0, Literal\mbox{[}"{}default"{}\mbox{]}\texorpdfstring{$\vert$}{|}str numbering\+\_\+system="{}latn"{})
+\item 
+tuple\mbox{[}decimal.\+Decimal, \mbox{\hyperlink{classbabel_1_1numbers_1_1NumberPattern}{Number\+Pattern}}\texorpdfstring{$\vert$}{|}None\mbox{]} \mbox{\hyperlink{namespacebabel_1_1numbers_aaabd41e0b68f368130f70ccde7147bfc}{\+\_\+get\+\_\+compact\+\_\+format}} (float\texorpdfstring{$\vert$}{|}decimal.\+Decimal\texorpdfstring{$\vert$}{|}str number, \mbox{\hyperlink{classbabel_1_1localedata_1_1LocaleDataDict}{Locale\+Data\+Dict}} compact\+\_\+format, \mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} locale, int fraction\+\_\+digits)
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_a83ae5728f0b912627b0b1bacfd92cc20}{format\+\_\+currency}} (float\texorpdfstring{$\vert$}{|}decimal.\+Decimal\texorpdfstring{$\vert$}{|}str number, str currency, str\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{classbabel_1_1numbers_1_1NumberPattern}{Number\+Pattern}}\texorpdfstring{$\vert$}{|}None format=None, \mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None, bool currency\+\_\+digits=True, Literal\mbox{[}"{}name"{}, "{}standard"{}, "{}accounting"{}\mbox{]} format\+\_\+type="{}standard"{}, bool decimal\+\_\+quantization=True, bool group\+\_\+separator=True, \texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]}\texorpdfstring{$\vert$}{|}str numbering\+\_\+system="{}latn"{})
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_ae472a861dfffb70aaadb9787deb3589b}{\+\_\+format\+\_\+currency\+\_\+long\+\_\+name}} (float\texorpdfstring{$\vert$}{|}decimal.\+Decimal\texorpdfstring{$\vert$}{|}str number, str currency, \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} locale, str\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{classbabel_1_1numbers_1_1NumberPattern}{Number\+Pattern}}\texorpdfstring{$\vert$}{|}None format, bool currency\+\_\+digits, bool decimal\+\_\+quantization, bool group\+\_\+separator, Literal\mbox{[}"{}default"{}\mbox{]}\texorpdfstring{$\vert$}{|}str numbering\+\_\+system)
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_a7d700ec84fa3e1eee1135d27f796486d}{format\+\_\+compact\+\_\+currency}} (float\texorpdfstring{$\vert$}{|}decimal.\+Decimal\texorpdfstring{$\vert$}{|}str number, str currency, \texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}short"{}\mbox{]} format\+\_\+type="{}short"{}, \mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None, int fraction\+\_\+digits=0, Literal\mbox{[}"{}default"{}\mbox{]}\texorpdfstring{$\vert$}{|}str numbering\+\_\+system="{}latn"{})
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_a75e36f1487ac8c7e23224a1b504bdf39}{format\+\_\+percent}} (float\texorpdfstring{$\vert$}{|}decimal.\+Decimal\texorpdfstring{$\vert$}{|}str number, str\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{classbabel_1_1numbers_1_1NumberPattern}{Number\+Pattern}}\texorpdfstring{$\vert$}{|}None format=None, \mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None, bool decimal\+\_\+quantization=True, bool group\+\_\+separator=True, \texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]}\texorpdfstring{$\vert$}{|}str numbering\+\_\+system="{}latn"{})
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_a10b0f7e68e98f3b4374c217c366e9677}{format\+\_\+scientific}} (float\texorpdfstring{$\vert$}{|}decimal.\+Decimal\texorpdfstring{$\vert$}{|}str number, str\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{classbabel_1_1numbers_1_1NumberPattern}{Number\+Pattern}}\texorpdfstring{$\vert$}{|}None format=None, \mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None, bool decimal\+\_\+quantization=True, \texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]}\texorpdfstring{$\vert$}{|}str numbering\+\_\+system="{}latn"{})
+\item 
+int \mbox{\hyperlink{namespacebabel_1_1numbers_a693159159f10259660f83c596934a092}{parse\+\_\+number}} (str string, \mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None, \texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]}\texorpdfstring{$\vert$}{|}str numbering\+\_\+system="{}latn"{})
+\item 
+decimal.\+Decimal \mbox{\hyperlink{namespacebabel_1_1numbers_a4e6479f6db84d1ca26b6eb4e82d43631}{parse\+\_\+decimal}} (str string, \mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None, bool strict=False, \texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]}\texorpdfstring{$\vert$}{|}str numbering\+\_\+system="{}latn"{})
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_a8bf21969fc160d7f1a189f1a258b14f5}{\+\_\+remove\+\_\+trailing\+\_\+zeros\+\_\+after\+\_\+decimal}} (str string, str decimal\+\_\+symbol)
+\item 
+tuple\mbox{[}int, int\mbox{]} \mbox{\hyperlink{namespacebabel_1_1numbers_afb39a4839fdcea74d1202c1c8ab19d7a}{parse\+\_\+grouping}} (str p)
+\item 
+\mbox{\hyperlink{classbabel_1_1numbers_1_1NumberPattern}{Number\+Pattern}} \mbox{\hyperlink{namespacebabel_1_1numbers_a1d9cd4e4b8eab4d07b035763db9cfcc9}{parse\+\_\+pattern}} (\mbox{\hyperlink{classbabel_1_1numbers_1_1NumberPattern}{Number\+Pattern}}\texorpdfstring{$\vert$}{|}str pattern)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacebabel_1_1numbers_a48246cf492fc92170eb30042d973201c}{LC\+\_\+\+MONETARY}} = default\+\_\+locale((\textquotesingle{}LC\+\_\+\+MONETARY\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{namespacebabel_1_1numbers_aa225720d95ab2a699c336fec66765a75}{LC\+\_\+\+NUMERIC}}\textquotesingle{}))
+\item 
+\mbox{\hyperlink{namespacebabel_1_1numbers_aa225720d95ab2a699c336fec66765a75}{LC\+\_\+\+NUMERIC}} = default\+\_\+locale(\textquotesingle{}LC\+\_\+\+NUMERIC\textquotesingle{})
+\item 
+dict \mbox{\hyperlink{namespacebabel_1_1numbers_a70ddf65b65c95fd24931dc71a7069eb3}{SPACE\+\_\+\+CHARS}}
+\item 
+\mbox{\hyperlink{namespacebabel_1_1numbers_ad92b83ed816be83e16368e4c3386b470}{SPACE\+\_\+\+CHARS\+\_\+\+RE}} = re.\+compile(\textquotesingle{}\texorpdfstring{$\vert$}{|}\textquotesingle{}.join(\mbox{\hyperlink{namespacebabel_1_1numbers_a70ddf65b65c95fd24931dc71a7069eb3}{SPACE\+\_\+\+CHARS}}))
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_afea757cf33f002c047470dd19305af2a}{PREFIX\+\_\+\+END}} = r\textquotesingle{}\mbox{[}\texorpdfstring{$^\wedge$}{\string^}0-\/9@\#.,\mbox{]}\textquotesingle{}
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_a84eb5e6942b8da8a2e72adebbf699cdf}{NUMBER\+\_\+\+TOKEN}} = r\textquotesingle{}\mbox{[}0-\/9@\#.,E+\mbox{]}\textquotesingle{}
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_aa506bb69ab8ef36519c66cbb4477e90f}{PREFIX\+\_\+\+PATTERN}} = r"{}(?P$<$prefix$>$(?\+:\textquotesingle{}\mbox{[}\texorpdfstring{$^\wedge$}{\string^}\textquotesingle{}\mbox{]}\texorpdfstring{$\ast$}{*}\textquotesingle{}\texorpdfstring{$\vert$}{|}\%s)\texorpdfstring{$\ast$}{*})"{} \% PREFIX\+\_\+\+END
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_aa3d0a2c9ceddd19a849f8f38ea172308}{NUMBER\+\_\+\+PATTERN}} = r"{}(?P$<$number$>$\%s\texorpdfstring{$\ast$}{*})"{} \% NUMBER\+\_\+\+TOKEN
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1numbers_af997bf5b978b936b8641f30824937b57}{SUFFIX\+\_\+\+PATTERN}} = r"{}(?P$<$suffix$>$.\texorpdfstring{$\ast$}{*})"{}
+\item 
+\mbox{\hyperlink{namespacebabel_1_1numbers_adca82501a7df15995654303700bf026a}{number\+\_\+re}} = re.\+compile(f"{}\{\mbox{\hyperlink{namespacebabel_1_1numbers_aa506bb69ab8ef36519c66cbb4477e90f}{PREFIX\+\_\+\+PATTERN}}\}\{\mbox{\hyperlink{namespacebabel_1_1numbers_aa3d0a2c9ceddd19a849f8f38ea172308}{NUMBER\+\_\+\+PATTERN}}\}\{\mbox{\hyperlink{namespacebabel_1_1numbers_af997bf5b978b936b8641f30824937b57}{SUFFIX\+\_\+\+PATTERN}}\}"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    babel.numbers
+    ~~~~~~~~~~~~~
+
+    Locale dependent formatting and parsing of numeric data.
+
+    The default locale for the functions in this module is determined by the
+    following environment variables, in that order:
+
+     * ``LC_MONETARY`` for currency related functions,
+     * ``LC_NUMERIC``, and
+     * ``LC_ALL``, and
+     * ``LANG``
+
+    :copyright: (c) 2013-2025 by the Babel Team.
+    :license: BSD, see LICENSE for more details.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacebabel_1_1numbers_ae472a861dfffb70aaadb9787deb3589b}\label{namespacebabel_1_1numbers_ae472a861dfffb70aaadb9787deb3589b} 
+\index{babel.numbers@{babel.numbers}!\_format\_currency\_long\_name@{\_format\_currency\_long\_name}}
+\index{\_format\_currency\_long\_name@{\_format\_currency\_long\_name}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{\_format\_currency\_long\_name()}{\_format\_currency\_long\_name()}}
+{\footnotesize\ttfamily  str babel.\+numbers.\+\_\+format\+\_\+currency\+\_\+long\+\_\+name (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\vert$}{|} decimal.\+Decimal \texorpdfstring{$\vert$}{|} str}]{number,  }\item[{str}]{currency,  }\item[{\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}}]{locale,  }\item[{str \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{classbabel_1_1numbers_1_1NumberPattern}{Number\+Pattern}} \texorpdfstring{$\vert$}{|} None}]{format,  }\item[{bool}]{currency\+\_\+digits,  }\item[{bool}]{decimal\+\_\+quantization,  }\item[{bool}]{group\+\_\+separator,  }\item[{Literal\mbox{[}"{}default"{}\mbox{]} \texorpdfstring{$\vert$}{|} str}]{numbering\+\_\+system }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacebabel_1_1numbers_aaabd41e0b68f368130f70ccde7147bfc}\label{namespacebabel_1_1numbers_aaabd41e0b68f368130f70ccde7147bfc} 
+\index{babel.numbers@{babel.numbers}!\_get\_compact\_format@{\_get\_compact\_format}}
+\index{\_get\_compact\_format@{\_get\_compact\_format}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{\_get\_compact\_format()}{\_get\_compact\_format()}}
+{\footnotesize\ttfamily  tuple\mbox{[}decimal.\+Decimal, \mbox{\hyperlink{classbabel_1_1numbers_1_1NumberPattern}{Number\+Pattern}} \texorpdfstring{$\vert$}{|} None\mbox{]} babel.\+numbers.\+\_\+get\+\_\+compact\+\_\+format (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\vert$}{|} decimal.\+Decimal \texorpdfstring{$\vert$}{|} str}]{number,  }\item[{\mbox{\hyperlink{classbabel_1_1localedata_1_1LocaleDataDict}{Locale\+Data\+Dict}}}]{compact\+\_\+format,  }\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}}]{locale,  }\item[{int}]{fraction\+\_\+digits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Returns the number after dividing by the unit and the format pattern to use.
+The algorithm is described here:
+https://www.unicode.org/reports/tr35/tr35-45/tr35-numbers.html#Compact_Number_Formats.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_a5d2563b6ddb5006dcce809c440fe0a65}\label{namespacebabel_1_1numbers_a5d2563b6ddb5006dcce809c440fe0a65} 
+\index{babel.numbers@{babel.numbers}!\_get\_number\_symbols@{\_get\_number\_symbols}}
+\index{\_get\_number\_symbols@{\_get\_number\_symbols}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{\_get\_number\_symbols()}{\_get\_number\_symbols()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classbabel_1_1localedata_1_1LocaleDataDict}{Locale\+Data\+Dict}} babel.\+numbers.\+\_\+get\+\_\+number\+\_\+symbols (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}}]{locale,  }\item[{\texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]} \texorpdfstring{$\vert$}{|} str }]{numbering\+\_\+system = {\ttfamily "{}latn"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacebabel_1_1numbers_a3abc0eb346a20d3855a436083401a65d}\label{namespacebabel_1_1numbers_a3abc0eb346a20d3855a436083401a65d} 
+\index{babel.numbers@{babel.numbers}!\_get\_numbering\_system@{\_get\_numbering\_system}}
+\index{\_get\_numbering\_system@{\_get\_numbering\_system}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{\_get\_numbering\_system()}{\_get\_numbering\_system()}}
+{\footnotesize\ttfamily  str babel.\+numbers.\+\_\+get\+\_\+numbering\+\_\+system (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}}]{locale,  }\item[{Literal\mbox{[}"{}default"{}\mbox{]} \texorpdfstring{$\vert$}{|} str }]{numbering\+\_\+system = {\ttfamily "{}latn"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacebabel_1_1numbers_a8bf21969fc160d7f1a189f1a258b14f5}\label{namespacebabel_1_1numbers_a8bf21969fc160d7f1a189f1a258b14f5} 
+\index{babel.numbers@{babel.numbers}!\_remove\_trailing\_zeros\_after\_decimal@{\_remove\_trailing\_zeros\_after\_decimal}}
+\index{\_remove\_trailing\_zeros\_after\_decimal@{\_remove\_trailing\_zeros\_after\_decimal}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{\_remove\_trailing\_zeros\_after\_decimal()}{\_remove\_trailing\_zeros\_after\_decimal()}}
+{\footnotesize\ttfamily  str babel.\+numbers.\+\_\+remove\+\_\+trailing\+\_\+zeros\+\_\+after\+\_\+decimal (\begin{DoxyParamCaption}\item[{str}]{string,  }\item[{str}]{decimal\+\_\+symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Remove trailing zeros from the decimal part of a numeric string.
+
+This function takes a string representing a numeric value and a decimal symbol.
+It removes any trailing zeros that appear after the decimal symbol in the number.
+If the decimal part becomes empty after removing trailing zeros, the decimal symbol
+is also removed. If the string does not contain the decimal symbol, it is returned unchanged.
+
+:param string: The numeric string from which to remove trailing zeros.
+:type string: str
+:param decimal_symbol: The symbol used to denote the decimal point.
+:type decimal_symbol: str
+:return: The numeric string with trailing zeros removed from its decimal part.
+:rtype: str
+
+Example:
+>>> _remove_trailing_zeros_after_decimal("123.4500", ".")
+'123.45'
+>>> _remove_trailing_zeros_after_decimal("100.000", ".")
+'100'
+>>> _remove_trailing_zeros_after_decimal("100", ".")
+'100'
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_a7d700ec84fa3e1eee1135d27f796486d}\label{namespacebabel_1_1numbers_a7d700ec84fa3e1eee1135d27f796486d} 
+\index{babel.numbers@{babel.numbers}!format\_compact\_currency@{format\_compact\_currency}}
+\index{format\_compact\_currency@{format\_compact\_currency}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{format\_compact\_currency()}{format\_compact\_currency()}}
+{\footnotesize\ttfamily  str babel.\+numbers.\+format\+\_\+compact\+\_\+currency (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\vert$}{|} decimal.\+Decimal \texorpdfstring{$\vert$}{|} str}]{number,  }\item[{str}]{currency,  }\item[{\texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}short"{}\mbox{]} }]{format\+\_\+type = {\ttfamily "{}short"{}},  }\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None},  }\item[{int }]{fraction\+\_\+digits = {\ttfamily 0},  }\item[{Literal\mbox{[}"{}default"{}\mbox{]} \texorpdfstring{$\vert$}{|} str }]{numbering\+\_\+system = {\ttfamily "{}latn"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Format a number as a currency value in compact form.
+
+>>> format_compact_currency(12345, 'USD', locale='en_US')
+u'$12K'
+>>> format_compact_currency(123456789, 'USD', locale='en_US', fraction_digits=2)
+u'$123.46M'
+>>> format_compact_currency(123456789, 'EUR', locale='de_DE', fraction_digits=1)
+'123,5\xa0Mio.\xa0€'
+
+:param number: the number to format
+:param currency: the currency code
+:param format_type: the compact format type to use. Defaults to "short".
+:param locale: the `Locale` object or locale identifier.
+               Defaults to the system currency locale or numeric locale.
+:param fraction_digits: Number of digits after the decimal point to use. Defaults to `0`.
+:param numbering_system: The numbering system used for formatting number symbols. Defaults to "latn".
+                         The special value "default" will use the default numbering system of the locale.
+:raise `UnsupportedNumberingSystemError`: If the numbering system is not supported by the locale.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_a767412f4e5b72239b07ef9935e86674e}\label{namespacebabel_1_1numbers_a767412f4e5b72239b07ef9935e86674e} 
+\index{babel.numbers@{babel.numbers}!format\_compact\_decimal@{format\_compact\_decimal}}
+\index{format\_compact\_decimal@{format\_compact\_decimal}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{format\_compact\_decimal()}{format\_compact\_decimal()}}
+{\footnotesize\ttfamily  str babel.\+numbers.\+format\+\_\+compact\+\_\+decimal (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\vert$}{|} decimal.\+Decimal \texorpdfstring{$\vert$}{|} str}]{number,  }\item[{\texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}short"{}, "{}long"{}\mbox{]} }]{format\+\_\+type = {\ttfamily "{}short"{}},  }\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None},  }\item[{int }]{fraction\+\_\+digits = {\ttfamily 0},  }\item[{Literal\mbox{[}"{}default"{}\mbox{]} \texorpdfstring{$\vert$}{|} str }]{numbering\+\_\+system = {\ttfamily "{}latn"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the given decimal number formatted for a specific locale in compact form.
+
+>>> format_compact_decimal(12345, format_type="short", locale='en_US')
+u'12K'
+>>> format_compact_decimal(12345, format_type="long", locale='en_US')
+u'12 thousand'
+>>> format_compact_decimal(12345, format_type="short", locale='en_US', fraction_digits=2)
+u'12.34K'
+>>> format_compact_decimal(1234567, format_type="short", locale="ja_JP")
+u'123万'
+>>> format_compact_decimal(2345678, format_type="long", locale="mk")
+u'2 милиони'
+>>> format_compact_decimal(21000000, format_type="long", locale="mk")
+u'21 милион'
+>>> format_compact_decimal(12345, format_type="short", locale='ar_EG', fraction_digits=2, numbering_system='default')
+u'12٫34\xa0ألف'
+
+:param number: the number to format
+:param format_type: Compact format to use ("short" or "long")
+:param locale: the `Locale` object or locale identifier. Defaults to the system numeric locale.
+:param fraction_digits: Number of digits after the decimal point to use. Defaults to `0`.
+:param numbering_system: The numbering system used for formatting number symbols. Defaults to "latn".
+                         The special value "default" will use the default numbering system of the locale.
+:raise `UnsupportedNumberingSystemError`: If the numbering system is not supported by the locale.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_a83ae5728f0b912627b0b1bacfd92cc20}\label{namespacebabel_1_1numbers_a83ae5728f0b912627b0b1bacfd92cc20} 
+\index{babel.numbers@{babel.numbers}!format\_currency@{format\_currency}}
+\index{format\_currency@{format\_currency}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{format\_currency()}{format\_currency()}}
+{\footnotesize\ttfamily  str babel.\+numbers.\+format\+\_\+currency (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\vert$}{|} decimal.\+Decimal \texorpdfstring{$\vert$}{|} str}]{number,  }\item[{str}]{currency,  }\item[{str \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{classbabel_1_1numbers_1_1NumberPattern}{Number\+Pattern}} \texorpdfstring{$\vert$}{|} None }]{format = {\ttfamily None},  }\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None},  }\item[{bool }]{currency\+\_\+digits = {\ttfamily True},  }\item[{Literal\mbox{[}"{}name"{}, "{}standard"{}, "{}accounting"{}\mbox{]} }]{format\+\_\+type = {\ttfamily "{}standard"{}},  }\item[{bool }]{decimal\+\_\+quantization = {\ttfamily True},  }\item[{bool }]{group\+\_\+separator = {\ttfamily True},  }\item[{\texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]} \texorpdfstring{$\vert$}{|} str }]{numbering\+\_\+system = {\ttfamily "{}latn"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return formatted currency value.
+
+>>> format_currency(1099.98, 'USD', locale='en_US')
+'$1,099.98'
+>>> format_currency(1099.98, 'USD', locale='es_CO')
+u'US$1.099,98'
+>>> format_currency(1099.98, 'EUR', locale='de_DE')
+u'1.099,98\\xa0\\u20ac'
+>>> format_currency(1099.98, 'EGP', locale='ar_EG', numbering_system='default')
+u'\u200f1٬099٫98\xa0ج.م.\u200f'
+
+The format can also be specified explicitly.  The currency is
+placed with the '¤' sign.  As the sign gets repeated the format
+expands (¤ being the symbol, ¤¤ is the currency abbreviation and
+¤¤¤ is the full name of the currency):
+
+>>> format_currency(1099.98, 'EUR', u'\xa4\xa4 #,##0.00', locale='en_US')
+u'EUR 1,099.98'
+>>> format_currency(1099.98, 'EUR', u'#,##0.00 \xa4\xa4\xa4', locale='en_US')
+u'1,099.98 euros'
+
+Currencies usually have a specific number of decimal digits. This function
+favours that information over the given format:
+
+>>> format_currency(1099.98, 'JPY', locale='en_US')
+u'\\xa51,100'
+>>> format_currency(1099.98, 'COP', u'#,##0.00', locale='es_ES')
+u'1.099,98'
+
+However, the number of decimal digits can be overridden from the currency
+information, by setting the last parameter to ``False``:
+
+>>> format_currency(1099.98, 'JPY', locale='en_US', currency_digits=False)
+u'\\xa51,099.98'
+>>> format_currency(1099.98, 'COP', u'#,##0.00', locale='es_ES', currency_digits=False)
+u'1.099,98'
+
+If a format is not specified the type of currency format to use
+from the locale can be specified:
+
+>>> format_currency(1099.98, 'EUR', locale='en_US', format_type='standard')
+u'\\u20ac1,099.98'
+
+When the given currency format type is not available, an exception is
+raised:
+
+>>> format_currency('1099.98', 'EUR', locale='root', format_type='unknown')
+Traceback (most recent call last):
+    ...
+UnknownCurrencyFormatError: "'unknown' is not a known currency format type"
+
+>>> format_currency(101299.98, 'USD', locale='en_US', group_separator=False)
+u'$101299.98'
+
+>>> format_currency(101299.98, 'USD', locale='en_US', group_separator=True)
+u'$101,299.98'
+
+You can also pass format_type='name' to use long display names. The order of
+the number and currency name, along with the correct localized plural form
+of the currency name, is chosen according to locale:
+
+>>> format_currency(1, 'USD', locale='en_US', format_type='name')
+u'1.00 US dollar'
+>>> format_currency(1099.98, 'USD', locale='en_US', format_type='name')
+u'1,099.98 US dollars'
+>>> format_currency(1099.98, 'USD', locale='ee', format_type='name')
+u'us ga dollar 1,099.98'
+
+By default the locale is allowed to truncate and round a high-precision
+number by forcing its format pattern onto the decimal part. You can bypass
+this behavior with the `decimal_quantization` parameter:
+
+>>> format_currency(1099.9876, 'USD', locale='en_US')
+u'$1,099.99'
+>>> format_currency(1099.9876, 'USD', locale='en_US', decimal_quantization=False)
+u'$1,099.9876'
+
+:param number: the number to format
+:param currency: the currency code
+:param format: the format string to use
+:param locale: the `Locale` object or locale identifier.
+               Defaults to the system currency locale or numeric locale.
+:param currency_digits: use the currency's natural number of decimal digits
+:param format_type: the currency format type to use
+:param decimal_quantization: Truncate and round high-precision numbers to
+                             the format pattern. Defaults to `True`.
+:param group_separator: Boolean to switch group separator on/off in a locale's
+                        number format.
+:param numbering_system: The numbering system used for formatting number symbols. Defaults to "latn".
+                         The special value "default" will use the default numbering system of the locale.
+:raise `UnsupportedNumberingSystemError`: If the numbering system is not supported by the locale.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_afeb679dcd711c3fd2159e5d3b53c3fe9}\label{namespacebabel_1_1numbers_afeb679dcd711c3fd2159e5d3b53c3fe9} 
+\index{babel.numbers@{babel.numbers}!format\_decimal@{format\_decimal}}
+\index{format\_decimal@{format\_decimal}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{format\_decimal()}{format\_decimal()}}
+{\footnotesize\ttfamily  str babel.\+numbers.\+format\+\_\+decimal (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\vert$}{|} decimal.\+Decimal \texorpdfstring{$\vert$}{|} str}]{number,  }\item[{str \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{classbabel_1_1numbers_1_1NumberPattern}{Number\+Pattern}} \texorpdfstring{$\vert$}{|} None }]{format = {\ttfamily None},  }\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None},  }\item[{bool }]{decimal\+\_\+quantization = {\ttfamily True},  }\item[{bool }]{group\+\_\+separator = {\ttfamily True},  }\item[{\texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]} \texorpdfstring{$\vert$}{|} str }]{numbering\+\_\+system = {\ttfamily "{}latn"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the given decimal number formatted for a specific locale.
+
+>>> format_decimal(1.2345, locale='en_US')
+u'1.234'
+>>> format_decimal(1.2346, locale='en_US')
+u'1.235'
+>>> format_decimal(-1.2346, locale='en_US')
+u'-1.235'
+>>> format_decimal(1.2345, locale='sv_SE')
+u'1,234'
+>>> format_decimal(1.2345, locale='de')
+u'1,234'
+>>> format_decimal(1.2345, locale='ar_EG', numbering_system='default')
+u'1٫234'
+>>> format_decimal(1.2345, locale='ar_EG', numbering_system='latn')
+u'1.234'
+
+The appropriate thousands grouping and the decimal separator are used for
+each locale:
+
+>>> format_decimal(12345.5, locale='en_US')
+u'12,345.5'
+
+By default the locale is allowed to truncate and round a high-precision
+number by forcing its format pattern onto the decimal part. You can bypass
+this behavior with the `decimal_quantization` parameter:
+
+>>> format_decimal(1.2346, locale='en_US')
+u'1.235'
+>>> format_decimal(1.2346, locale='en_US', decimal_quantization=False)
+u'1.2346'
+>>> format_decimal(12345.67, locale='fr_CA', group_separator=False)
+u'12345,67'
+>>> format_decimal(12345.67, locale='en_US', group_separator=True)
+u'12,345.67'
+
+:param number: the number to format
+:param format:
+:param locale: the `Locale` object or locale identifier. Defaults to the system numeric locale.
+:param decimal_quantization: Truncate and round high-precision numbers to
+                             the format pattern. Defaults to `True`.
+:param group_separator: Boolean to switch group separator on/off in a locale's
+                        number format.
+:param numbering_system: The numbering system used for formatting number symbols. Defaults to "latn".
+                         The special value "default" will use the default numbering system of the locale.
+:raise `UnsupportedNumberingSystemError`: If the numbering system is not supported by the locale.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_a4d128294c82c700bc3102aacd75f845b}\label{namespacebabel_1_1numbers_a4d128294c82c700bc3102aacd75f845b} 
+\index{babel.numbers@{babel.numbers}!format\_number@{format\_number}}
+\index{format\_number@{format\_number}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{format\_number()}{format\_number()}}
+{\footnotesize\ttfamily  str babel.\+numbers.\+format\+\_\+number (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\vert$}{|} decimal.\+Decimal \texorpdfstring{$\vert$}{|} str}]{number,  }\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the given number formatted for a specific locale.
+
+>>> format_number(1099, locale='en_US')  # doctest: +SKIP
+u'1,099'
+>>> format_number(1099, locale='de_DE')  # doctest: +SKIP
+u'1.099'
+
+.. deprecated:: 2.6.0
+
+   Use babel.numbers.format_decimal() instead.
+
+:param number: the number to format
+:param locale: the `Locale` object or locale identifier. Defaults to the system numeric locale.\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_a75e36f1487ac8c7e23224a1b504bdf39}\label{namespacebabel_1_1numbers_a75e36f1487ac8c7e23224a1b504bdf39} 
+\index{babel.numbers@{babel.numbers}!format\_percent@{format\_percent}}
+\index{format\_percent@{format\_percent}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{format\_percent()}{format\_percent()}}
+{\footnotesize\ttfamily  str babel.\+numbers.\+format\+\_\+percent (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\vert$}{|} decimal.\+Decimal \texorpdfstring{$\vert$}{|} str}]{number,  }\item[{str \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{classbabel_1_1numbers_1_1NumberPattern}{Number\+Pattern}} \texorpdfstring{$\vert$}{|} None }]{format = {\ttfamily None},  }\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None},  }\item[{bool }]{decimal\+\_\+quantization = {\ttfamily True},  }\item[{bool }]{group\+\_\+separator = {\ttfamily True},  }\item[{\texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]} \texorpdfstring{$\vert$}{|} str }]{numbering\+\_\+system = {\ttfamily "{}latn"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return formatted percent value for a specific locale.
+
+>>> format_percent(0.34, locale='en_US')
+u'34%'
+>>> format_percent(25.1234, locale='en_US')
+u'2,512%'
+>>> format_percent(25.1234, locale='sv_SE')
+u'2\\xa0512\\xa0%'
+>>> format_percent(25.1234, locale='ar_EG', numbering_system='default')
+u'2٬512%'
+
+The format pattern can also be specified explicitly:
+
+>>> format_percent(25.1234, u'#,##0\u2030', locale='en_US')
+u'25,123\u2030'
+
+By default the locale is allowed to truncate and round a high-precision
+number by forcing its format pattern onto the decimal part. You can bypass
+this behavior with the `decimal_quantization` parameter:
+
+>>> format_percent(23.9876, locale='en_US')
+u'2,399%'
+>>> format_percent(23.9876, locale='en_US', decimal_quantization=False)
+u'2,398.76%'
+
+>>> format_percent(229291.1234, locale='pt_BR', group_separator=False)
+u'22929112%'
+
+>>> format_percent(229291.1234, locale='pt_BR', group_separator=True)
+u'22.929.112%'
+
+:param number: the percent number to format
+:param format:
+:param locale: the `Locale` object or locale identifier. Defaults to the system numeric locale.
+:param decimal_quantization: Truncate and round high-precision numbers to
+                             the format pattern. Defaults to `True`.
+:param group_separator: Boolean to switch group separator on/off in a locale's
+                        number format.
+:param numbering_system: The numbering system used for formatting number symbols. Defaults to "latn".
+                         The special value "default" will use the default numbering system of the locale.
+:raise `UnsupportedNumberingSystemError`: If the numbering system is not supported by the locale.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_a10b0f7e68e98f3b4374c217c366e9677}\label{namespacebabel_1_1numbers_a10b0f7e68e98f3b4374c217c366e9677} 
+\index{babel.numbers@{babel.numbers}!format\_scientific@{format\_scientific}}
+\index{format\_scientific@{format\_scientific}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{format\_scientific()}{format\_scientific()}}
+{\footnotesize\ttfamily  str babel.\+numbers.\+format\+\_\+scientific (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\vert$}{|} decimal.\+Decimal \texorpdfstring{$\vert$}{|} str}]{number,  }\item[{str \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{classbabel_1_1numbers_1_1NumberPattern}{Number\+Pattern}} \texorpdfstring{$\vert$}{|} None }]{format = {\ttfamily None},  }\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None},  }\item[{bool }]{decimal\+\_\+quantization = {\ttfamily True},  }\item[{\texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]} \texorpdfstring{$\vert$}{|} str }]{numbering\+\_\+system = {\ttfamily "{}latn"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return value formatted in scientific notation for a specific locale.
+
+>>> format_scientific(10000, locale='en_US')
+u'1E4'
+>>> format_scientific(10000, locale='ar_EG', numbering_system='default')
+u'1أس4'
+
+The format pattern can also be specified explicitly:
+
+>>> format_scientific(1234567, u'##0.##E00', locale='en_US')
+u'1.23E06'
+
+By default the locale is allowed to truncate and round a high-precision
+number by forcing its format pattern onto the decimal part. You can bypass
+this behavior with the `decimal_quantization` parameter:
+
+>>> format_scientific(1234.9876, u'#.##E0', locale='en_US')
+u'1.23E3'
+>>> format_scientific(1234.9876, u'#.##E0', locale='en_US', decimal_quantization=False)
+u'1.2349876E3'
+
+:param number: the number to format
+:param format:
+:param locale: the `Locale` object or locale identifier. Defaults to the system numeric locale.
+:param decimal_quantization: Truncate and round high-precision numbers to
+                             the format pattern. Defaults to `True`.
+:param numbering_system: The numbering system used for formatting number symbols. Defaults to "latn".
+                         The special value "default" will use the default numbering system of the locale.
+:raise `UnsupportedNumberingSystemError`: If the numbering system is not supported by the locale.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_aaa7747f21f684a90bd6ae90874ac1043}\label{namespacebabel_1_1numbers_aaa7747f21f684a90bd6ae90874ac1043} 
+\index{babel.numbers@{babel.numbers}!get\_currency\_name@{get\_currency\_name}}
+\index{get\_currency\_name@{get\_currency\_name}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{get\_currency\_name()}{get\_currency\_name()}}
+{\footnotesize\ttfamily  str babel.\+numbers.\+get\+\_\+currency\+\_\+name (\begin{DoxyParamCaption}\item[{str}]{currency,  }\item[{float \texorpdfstring{$\vert$}{|} decimal.\+Decimal \texorpdfstring{$\vert$}{|} None }]{count = {\ttfamily None},  }\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the name used by the locale for the specified currency.
+
+>>> get_currency_name('USD', locale='en_US')
+u'US Dollar'
+
+.. versionadded:: 0.9.4
+
+:param currency: the currency code.
+:param count: the optional count.  If provided the currency name
+              will be pluralized to that number if possible.
+:param locale: the `Locale` object or locale identifier.
+               Defaults to the system currency locale or numeric locale.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_a3ab50ebb3ead5ec4aab35b5db84962a8}\label{namespacebabel_1_1numbers_a3ab50ebb3ead5ec4aab35b5db84962a8} 
+\index{babel.numbers@{babel.numbers}!get\_currency\_precision@{get\_currency\_precision}}
+\index{get\_currency\_precision@{get\_currency\_precision}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{get\_currency\_precision()}{get\_currency\_precision()}}
+{\footnotesize\ttfamily  int babel.\+numbers.\+get\+\_\+currency\+\_\+precision (\begin{DoxyParamCaption}\item[{str}]{currency }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return currency's precision.
+
+Precision is the number of decimals found after the decimal point in the
+currency's format pattern.
+
+.. versionadded:: 2.5.0
+
+:param currency: the currency code.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_ad75ccefd3d6b4436d964599b868a9ee3}\label{namespacebabel_1_1numbers_ad75ccefd3d6b4436d964599b868a9ee3} 
+\index{babel.numbers@{babel.numbers}!get\_currency\_symbol@{get\_currency\_symbol}}
+\index{get\_currency\_symbol@{get\_currency\_symbol}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{get\_currency\_symbol()}{get\_currency\_symbol()}}
+{\footnotesize\ttfamily  str babel.\+numbers.\+get\+\_\+currency\+\_\+symbol (\begin{DoxyParamCaption}\item[{str}]{currency,  }\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the symbol used by the locale for the specified currency.
+
+>>> get_currency_symbol('USD', locale='en_US')
+u'$'
+
+:param currency: the currency code.
+:param locale: the `Locale` object or locale identifier.
+               Defaults to the system currency locale or numeric locale.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_ae8b0515254396e91afec513cf46af1ce}\label{namespacebabel_1_1numbers_ae8b0515254396e91afec513cf46af1ce} 
+\index{babel.numbers@{babel.numbers}!get\_currency\_unit\_pattern@{get\_currency\_unit\_pattern}}
+\index{get\_currency\_unit\_pattern@{get\_currency\_unit\_pattern}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{get\_currency\_unit\_pattern()}{get\_currency\_unit\_pattern()}}
+{\footnotesize\ttfamily  str babel.\+numbers.\+get\+\_\+currency\+\_\+unit\+\_\+pattern (\begin{DoxyParamCaption}\item[{str}]{currency,  }\item[{float \texorpdfstring{$\vert$}{|} decimal.\+Decimal \texorpdfstring{$\vert$}{|} None }]{count = {\ttfamily None},  }\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the unit pattern used for long display of a currency value
+for a given locale.
+This is a string containing ``{0}`` where the numeric part
+should be substituted and ``{1}`` where the currency long display
+name should be substituted.
+
+>>> get_currency_unit_pattern('USD', locale='en_US', count=10)
+u'{0} {1}'
+
+.. versionadded:: 2.7.0
+
+:param currency: the currency code.
+:param count: the optional count.  If provided the unit
+              pattern for that number will be returned.
+:param locale: the `Locale` object or locale identifier.
+               Defaults to the system currency locale or numeric locale.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_a34bf444c776f95af7a3898b75caf70a2}\label{namespacebabel_1_1numbers_a34bf444c776f95af7a3898b75caf70a2} 
+\index{babel.numbers@{babel.numbers}!get\_decimal\_precision@{get\_decimal\_precision}}
+\index{get\_decimal\_precision@{get\_decimal\_precision}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{get\_decimal\_precision()}{get\_decimal\_precision()}}
+{\footnotesize\ttfamily  int babel.\+numbers.\+get\+\_\+decimal\+\_\+precision (\begin{DoxyParamCaption}\item[{decimal.\+Decimal}]{number }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return maximum precision of a decimal instance's fractional part.
+
+Precision is extracted from the fractional part only.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_a0c6e40e6d41596e32696d29bcd6bcc34}\label{namespacebabel_1_1numbers_a0c6e40e6d41596e32696d29bcd6bcc34} 
+\index{babel.numbers@{babel.numbers}!get\_decimal\_quantum@{get\_decimal\_quantum}}
+\index{get\_decimal\_quantum@{get\_decimal\_quantum}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{get\_decimal\_quantum()}{get\_decimal\_quantum()}}
+{\footnotesize\ttfamily  decimal.\+Decimal babel.\+numbers.\+get\+\_\+decimal\+\_\+quantum (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\vert$}{|} decimal.\+Decimal}]{precision }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return minimal quantum of a number, as defined by precision.\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_a7360fb7fa1d9b4c8106dd747fc19767f}\label{namespacebabel_1_1numbers_a7360fb7fa1d9b4c8106dd747fc19767f} 
+\index{babel.numbers@{babel.numbers}!get\_decimal\_symbol@{get\_decimal\_symbol}}
+\index{get\_decimal\_symbol@{get\_decimal\_symbol}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{get\_decimal\_symbol()}{get\_decimal\_symbol()}}
+{\footnotesize\ttfamily  str babel.\+numbers.\+get\+\_\+decimal\+\_\+symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None},  }\item[{\texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]} \texorpdfstring{$\vert$}{|} str }]{numbering\+\_\+system = {\ttfamily "{}latn"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the symbol used by the locale to separate decimal fractions.
+
+>>> get_decimal_symbol('en_US')
+u'.'
+>>> get_decimal_symbol('ar_EG', numbering_system='default')
+u'٫'
+>>> get_decimal_symbol('ar_EG', numbering_system='latn')
+u'.'
+
+:param locale: the `Locale` object or locale identifier. Defaults to the system numeric locale.
+:param numbering_system: The numbering system used for fetching the symbol. Defaults to "latn".
+                         The special value "default" will use the default numbering system of the locale.
+:raise `UnsupportedNumberingSystemError`: If the numbering system is not supported by the locale.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_a0c557fdce2871efa778e16aa90dfdba8}\label{namespacebabel_1_1numbers_a0c557fdce2871efa778e16aa90dfdba8} 
+\index{babel.numbers@{babel.numbers}!get\_exponential\_symbol@{get\_exponential\_symbol}}
+\index{get\_exponential\_symbol@{get\_exponential\_symbol}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{get\_exponential\_symbol()}{get\_exponential\_symbol()}}
+{\footnotesize\ttfamily  str babel.\+numbers.\+get\+\_\+exponential\+\_\+symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None},  }\item[{\texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]} \texorpdfstring{$\vert$}{|} str }]{numbering\+\_\+system = {\ttfamily "{}latn"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the symbol used by the locale to separate mantissa and exponent.
+
+>>> get_exponential_symbol('en_US')
+u'E'
+>>> get_exponential_symbol('ar_EG', numbering_system='default')
+u'أس'
+>>> get_exponential_symbol('ar_EG', numbering_system='latn')
+u'E'
+
+:param locale: the `Locale` object or locale identifier. Defaults to the system numeric locale.
+:param numbering_system: The numbering system used for fetching the symbol. Defaults to "latn".
+                         The special value "default" will use the default numbering system of the locale.
+:raise `UnsupportedNumberingSystemError`: if the numbering system is not supported by the locale.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_ad579560d131aec8d6b09c534b32d0d21}\label{namespacebabel_1_1numbers_ad579560d131aec8d6b09c534b32d0d21} 
+\index{babel.numbers@{babel.numbers}!get\_group\_symbol@{get\_group\_symbol}}
+\index{get\_group\_symbol@{get\_group\_symbol}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{get\_group\_symbol()}{get\_group\_symbol()}}
+{\footnotesize\ttfamily  str babel.\+numbers.\+get\+\_\+group\+\_\+symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None},  }\item[{\texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]} \texorpdfstring{$\vert$}{|} str }]{numbering\+\_\+system = {\ttfamily "{}latn"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the symbol used by the locale to separate groups of thousands.
+
+>>> get_group_symbol('en_US')
+u','
+>>> get_group_symbol('ar_EG', numbering_system='default')
+u'٬'
+>>> get_group_symbol('ar_EG', numbering_system='latn')
+u','
+
+:param locale: the `Locale` object or locale identifier. Defaults to the system numeric locale.
+:param numbering_system: The numbering system used for fetching the symbol. Defaults to "latn".
+                         The special value "default" will use the default numbering system of the locale.
+:raise `UnsupportedNumberingSystemError`: if the numbering system is not supported by the locale.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_aeff3aa44605d946aa4268035fb4464f5}\label{namespacebabel_1_1numbers_aeff3aa44605d946aa4268035fb4464f5} 
+\index{babel.numbers@{babel.numbers}!get\_infinity\_symbol@{get\_infinity\_symbol}}
+\index{get\_infinity\_symbol@{get\_infinity\_symbol}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{get\_infinity\_symbol()}{get\_infinity\_symbol()}}
+{\footnotesize\ttfamily  str babel.\+numbers.\+get\+\_\+infinity\+\_\+symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None},  }\item[{\texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]} \texorpdfstring{$\vert$}{|} str }]{numbering\+\_\+system = {\ttfamily "{}latn"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the symbol used by the locale to represent infinity.
+
+>>> get_infinity_symbol('en_US')
+u'∞'
+>>> get_infinity_symbol('ar_EG', numbering_system='default')
+u'∞'
+>>> get_infinity_symbol('ar_EG', numbering_system='latn')
+u'∞'
+
+:param locale: the `Locale` object or locale identifier. Defaults to the system numeric locale.
+:param numbering_system: The numbering system used for fetching the symbol. Defaults to "latn".
+                         The special value "default" will use the default numbering system of the locale.
+:raise `UnsupportedNumberingSystemError`: if the numbering system is not supported by the locale.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_a798132c4b74c0f4f7e125dd5cb28df3b}\label{namespacebabel_1_1numbers_a798132c4b74c0f4f7e125dd5cb28df3b} 
+\index{babel.numbers@{babel.numbers}!get\_minus\_sign\_symbol@{get\_minus\_sign\_symbol}}
+\index{get\_minus\_sign\_symbol@{get\_minus\_sign\_symbol}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{get\_minus\_sign\_symbol()}{get\_minus\_sign\_symbol()}}
+{\footnotesize\ttfamily  str babel.\+numbers.\+get\+\_\+minus\+\_\+sign\+\_\+symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None},  }\item[{\texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]} \texorpdfstring{$\vert$}{|} str }]{numbering\+\_\+system = {\ttfamily "{}latn"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the plus sign symbol used by the current locale.
+
+>>> get_minus_sign_symbol('en_US')
+u'-'
+>>> get_minus_sign_symbol('ar_EG', numbering_system='default')
+u'\u061c-'
+>>> get_minus_sign_symbol('ar_EG', numbering_system='latn')
+u'\u200e-'
+
+:param locale: the `Locale` object or locale identifier. Defaults to the system numeric locale.
+:param numbering_system: The numbering system used for fetching the symbol. Defaults to "latn".
+                         The special value "default" will use the default numbering system of the locale.
+:raise `UnsupportedNumberingSystemError`: if the numbering system is not supported by the locale.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_aba39d8bcd0683289881b6c6c8b35291a}\label{namespacebabel_1_1numbers_aba39d8bcd0683289881b6c6c8b35291a} 
+\index{babel.numbers@{babel.numbers}!get\_plus\_sign\_symbol@{get\_plus\_sign\_symbol}}
+\index{get\_plus\_sign\_symbol@{get\_plus\_sign\_symbol}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{get\_plus\_sign\_symbol()}{get\_plus\_sign\_symbol()}}
+{\footnotesize\ttfamily  str babel.\+numbers.\+get\+\_\+plus\+\_\+sign\+\_\+symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None},  }\item[{\texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]} \texorpdfstring{$\vert$}{|} str }]{numbering\+\_\+system = {\ttfamily "{}latn"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the plus sign symbol used by the current locale.
+
+>>> get_plus_sign_symbol('en_US')
+u'+'
+>>> get_plus_sign_symbol('ar_EG', numbering_system='default')
+u'\u061c+'
+>>> get_plus_sign_symbol('ar_EG', numbering_system='latn')
+u'\u200e+'
+
+:param locale: the `Locale` object or locale identifier. Defaults to the system numeric locale.
+:param numbering_system: The numbering system used for fetching the symbol. Defaults to "latn".
+                         The special value "default" will use the default numbering system of the locale.
+:raise `UnsupportedNumberingSystemError`: if the numbering system is not supported by the locale.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_a2d85b48cacfd6f79850146d5423d928e}\label{namespacebabel_1_1numbers_a2d85b48cacfd6f79850146d5423d928e} 
+\index{babel.numbers@{babel.numbers}!get\_territory\_currencies@{get\_territory\_currencies}}
+\index{get\_territory\_currencies@{get\_territory\_currencies}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{get\_territory\_currencies()}{get\_territory\_currencies()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily  list\mbox{[}str\mbox{]} babel.\+numbers.\+get\+\_\+territory\+\_\+currencies (\begin{DoxyParamCaption}\item[{str}]{territory,  }\item[{datetime.\+date \texorpdfstring{$\vert$}{|} None }]{start\+\_\+date = {\ttfamily ...},  }\item[{datetime.\+date \texorpdfstring{$\vert$}{|} None }]{end\+\_\+date = {\ttfamily ...},  }\item[{bool }]{tender = {\ttfamily ...},  }\item[{bool }]{non\+\_\+tender = {\ttfamily ...},  }\item[{Literal\mbox{[}False\mbox{]} }]{include\+\_\+details = {\ttfamily ...} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacebabel_1_1numbers_aab4b2decf71a353fed2d8c44e4a66bf1}\label{namespacebabel_1_1numbers_aab4b2decf71a353fed2d8c44e4a66bf1} 
+\index{babel.numbers@{babel.numbers}!get\_territory\_currencies@{get\_territory\_currencies}}
+\index{get\_territory\_currencies@{get\_territory\_currencies}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{get\_territory\_currencies()}{get\_territory\_currencies()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily  list\mbox{[}dict\mbox{[}str, Any\mbox{]}\mbox{]} babel.\+numbers.\+get\+\_\+territory\+\_\+currencies (\begin{DoxyParamCaption}\item[{str}]{territory,  }\item[{datetime.\+date \texorpdfstring{$\vert$}{|} None }]{start\+\_\+date = {\ttfamily ...},  }\item[{datetime.\+date \texorpdfstring{$\vert$}{|} None }]{end\+\_\+date = {\ttfamily ...},  }\item[{bool }]{tender = {\ttfamily ...},  }\item[{bool }]{non\+\_\+tender = {\ttfamily ...},  }\item[{Literal\mbox{[}True\mbox{]} }]{include\+\_\+details = {\ttfamily ...} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacebabel_1_1numbers_a2b0c2e139343d09d3de279616570818d}\label{namespacebabel_1_1numbers_a2b0c2e139343d09d3de279616570818d} 
+\index{babel.numbers@{babel.numbers}!get\_territory\_currencies@{get\_territory\_currencies}}
+\index{get\_territory\_currencies@{get\_territory\_currencies}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{get\_territory\_currencies()}{get\_territory\_currencies()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily  list\mbox{[}str\mbox{]} \texorpdfstring{$\vert$}{|} list\mbox{[}dict\mbox{[}str, Any\mbox{]}\mbox{]} babel.\+numbers.\+get\+\_\+territory\+\_\+currencies (\begin{DoxyParamCaption}\item[{str}]{territory,  }\item[{datetime.\+date \texorpdfstring{$\vert$}{|} None }]{start\+\_\+date = {\ttfamily None},  }\item[{datetime.\+date \texorpdfstring{$\vert$}{|} None }]{end\+\_\+date = {\ttfamily None},  }\item[{bool }]{tender = {\ttfamily True},  }\item[{bool }]{non\+\_\+tender = {\ttfamily False},  }\item[{bool }]{include\+\_\+details = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the list of currencies for the given territory that are valid for
+the given date range.  In addition to that the currency database
+distinguishes between tender and non-tender currencies.  By default only
+tender currencies are returned.
+
+The return value is a list of all currencies roughly ordered by the time
+of when the currency became active.  The longer the currency is being in
+use the more to the left of the list it will be.
+
+The start date defaults to today.  If no end date is given it will be the
+same as the start date.  Otherwise a range can be defined.  For instance
+this can be used to find the currencies in use in Austria between 1995 and
+2011:
+
+>>> from datetime import date
+>>> get_territory_currencies('AT', date(1995, 1, 1), date(2011, 1, 1))
+['ATS', 'EUR']
+
+Likewise it's also possible to find all the currencies in use on a
+single date:
+
+>>> get_territory_currencies('AT', date(1995, 1, 1))
+['ATS']
+>>> get_territory_currencies('AT', date(2011, 1, 1))
+['EUR']
+
+By default the return value only includes tender currencies.  This
+however can be changed:
+
+>>> get_territory_currencies('US')
+['USD']
+>>> get_territory_currencies('US', tender=False, non_tender=True,
+...                          start_date=date(2014, 1, 1))
+['USN', 'USS']
+
+.. versionadded:: 2.0
+
+:param territory: the name of the territory to find the currency for.
+:param start_date: the start date.  If not given today is assumed.
+:param end_date: the end date.  If not given the start date is assumed.
+:param tender: controls whether tender currencies should be included.
+:param non_tender: controls whether non-tender currencies should be
+                   included.
+:param include_details: if set to `True`, instead of returning currency
+                        codes the return value will be dictionaries
+                        with detail information.  In that case each
+                        dictionary will have the keys ``'currency'``,
+                        ``'from'``, ``'to'``, and ``'tender'``.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_aa1eaa2c3615d0ef745addd5306693e62}\label{namespacebabel_1_1numbers_aa1eaa2c3615d0ef745addd5306693e62} 
+\index{babel.numbers@{babel.numbers}!is\_currency@{is\_currency}}
+\index{is\_currency@{is\_currency}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{is\_currency()}{is\_currency()}}
+{\footnotesize\ttfamily  bool babel.\+numbers.\+is\+\_\+currency (\begin{DoxyParamCaption}\item[{str}]{currency,  }\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Returns `True` only if a currency is recognized by Babel.
+
+This method always return a Boolean and never raise.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_a8f1a866db6e1efcb3ead6338051b4191}\label{namespacebabel_1_1numbers_a8f1a866db6e1efcb3ead6338051b4191} 
+\index{babel.numbers@{babel.numbers}!list\_currencies@{list\_currencies}}
+\index{list\_currencies@{list\_currencies}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{list\_currencies()}{list\_currencies()}}
+{\footnotesize\ttfamily  set\mbox{[}str\mbox{]} babel.\+numbers.\+list\+\_\+currencies (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Return a `set` of normalized currency codes.
+
+.. versionadded:: 2.5.0
+
+:param locale: filters returned currency codes by the provided locale.
+               Expected to be a locale instance or code. If no locale is
+               provided, returns the list of all currencies from all
+               locales.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_a18ad55133d738d93e8566613a0ff0f4b}\label{namespacebabel_1_1numbers_a18ad55133d738d93e8566613a0ff0f4b} 
+\index{babel.numbers@{babel.numbers}!normalize\_currency@{normalize\_currency}}
+\index{normalize\_currency@{normalize\_currency}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{normalize\_currency()}{normalize\_currency()}}
+{\footnotesize\ttfamily  str \texorpdfstring{$\vert$}{|} None babel.\+numbers.\+normalize\+\_\+currency (\begin{DoxyParamCaption}\item[{str}]{currency,  }\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the normalized identifier of any currency code.
+
+Accepts a ``locale`` parameter for fined-grained validation, working as
+the one defined above in ``list_currencies()`` method.
+
+Returns None if the currency is unknown to Babel.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_a4e6479f6db84d1ca26b6eb4e82d43631}\label{namespacebabel_1_1numbers_a4e6479f6db84d1ca26b6eb4e82d43631} 
+\index{babel.numbers@{babel.numbers}!parse\_decimal@{parse\_decimal}}
+\index{parse\_decimal@{parse\_decimal}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{parse\_decimal()}{parse\_decimal()}}
+{\footnotesize\ttfamily  decimal.\+Decimal babel.\+numbers.\+parse\+\_\+decimal (\begin{DoxyParamCaption}\item[{str}]{string,  }\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None},  }\item[{bool }]{strict = {\ttfamily False},  }\item[{\texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]} \texorpdfstring{$\vert$}{|} str }]{numbering\+\_\+system = {\ttfamily "{}latn"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse localized decimal string into a decimal.
+
+>>> parse_decimal('1,099.98', locale='en_US')
+Decimal('1099.98')
+>>> parse_decimal('1.099,98', locale='de')
+Decimal('1099.98')
+>>> parse_decimal('12 345,123', locale='ru')
+Decimal('12345.123')
+>>> parse_decimal('1٬099٫98', locale='ar_EG', numbering_system='default')
+Decimal('1099.98')
+
+When the given string cannot be parsed, an exception is raised:
+
+>>> parse_decimal('2,109,998', locale='de')
+Traceback (most recent call last):
+    ...
+NumberFormatError: '2,109,998' is not a valid decimal number
+
+If `strict` is set to `True` and the given string contains a number
+formatted in an irregular way, an exception is raised:
+
+>>> parse_decimal('30.00', locale='de', strict=True)
+Traceback (most recent call last):
+    ...
+NumberFormatError: '30.00' is not a properly formatted decimal number. Did you mean '3.000'? Or maybe '30,00'?
+
+>>> parse_decimal('0.00', locale='de', strict=True)
+Traceback (most recent call last):
+    ...
+NumberFormatError: '0.00' is not a properly formatted decimal number. Did you mean '0'?
+
+:param string: the string to parse
+:param locale: the `Locale` object or locale identifier. Defaults to the system numeric locale.
+:param strict: controls whether numbers formatted in a weird way are
+               accepted or rejected
+:param numbering_system: The numbering system used for formatting number symbols. Defaults to "latn".
+                         The special value "default" will use the default numbering system of the locale.
+:raise NumberFormatError: if the string can not be converted to a
+                          decimal number
+:raise UnsupportedNumberingSystemError: if the numbering system is not supported by the locale.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_afb39a4839fdcea74d1202c1c8ab19d7a}\label{namespacebabel_1_1numbers_afb39a4839fdcea74d1202c1c8ab19d7a} 
+\index{babel.numbers@{babel.numbers}!parse\_grouping@{parse\_grouping}}
+\index{parse\_grouping@{parse\_grouping}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{parse\_grouping()}{parse\_grouping()}}
+{\footnotesize\ttfamily  tuple\mbox{[}int, int\mbox{]} babel.\+numbers.\+parse\+\_\+grouping (\begin{DoxyParamCaption}\item[{str}]{p }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse primary and secondary digit grouping
+
+>>> parse_grouping('##')
+(1000, 1000)
+>>> parse_grouping('#,###')
+(3, 3)
+>>> parse_grouping('#,####,###')
+(3, 4)
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_a693159159f10259660f83c596934a092}\label{namespacebabel_1_1numbers_a693159159f10259660f83c596934a092} 
+\index{babel.numbers@{babel.numbers}!parse\_number@{parse\_number}}
+\index{parse\_number@{parse\_number}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{parse\_number()}{parse\_number()}}
+{\footnotesize\ttfamily  int babel.\+numbers.\+parse\+\_\+number (\begin{DoxyParamCaption}\item[{str}]{string,  }\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None},  }\item[{\texorpdfstring{$\ast$}{*}Literal\mbox{[}"{}default"{}\mbox{]} \texorpdfstring{$\vert$}{|} str }]{numbering\+\_\+system = {\ttfamily "{}latn"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse localized number string into an integer.
+
+>>> parse_number('1,099', locale='en_US')
+1099
+>>> parse_number('1.099', locale='de_DE')
+1099
+
+When the given string cannot be parsed, an exception is raised:
+
+>>> parse_number('1.099,98', locale='de')
+Traceback (most recent call last):
+    ...
+NumberFormatError: '1.099,98' is not a valid number
+
+:param string: the string to parse
+:param locale: the `Locale` object or locale identifier. Defaults to the system numeric locale.
+:param numbering_system: The numbering system used for formatting number symbols. Defaults to "latn".
+                         The special value "default" will use the default numbering system of the locale.
+:return: the parsed number
+:raise `NumberFormatError`: if the string can not be converted to a number
+:raise `UnsupportedNumberingSystemError`: if the numbering system is not supported by the locale.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_a1d9cd4e4b8eab4d07b035763db9cfcc9}\label{namespacebabel_1_1numbers_a1d9cd4e4b8eab4d07b035763db9cfcc9} 
+\index{babel.numbers@{babel.numbers}!parse\_pattern@{parse\_pattern}}
+\index{parse\_pattern@{parse\_pattern}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{parse\_pattern()}{parse\_pattern()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classbabel_1_1numbers_1_1NumberPattern}{Number\+Pattern}} babel.\+numbers.\+parse\+\_\+pattern (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbabel_1_1numbers_1_1NumberPattern}{Number\+Pattern}} \texorpdfstring{$\vert$}{|} str}]{pattern }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse number format patterns\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1numbers_abbbb71b83f34a8cbb55b6cbbdaa11d78}\label{namespacebabel_1_1numbers_abbbb71b83f34a8cbb55b6cbbdaa11d78} 
+\index{babel.numbers@{babel.numbers}!validate\_currency@{validate\_currency}}
+\index{validate\_currency@{validate\_currency}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{validate\_currency()}{validate\_currency()}}
+{\footnotesize\ttfamily  None babel.\+numbers.\+validate\+\_\+currency (\begin{DoxyParamCaption}\item[{str}]{currency,  }\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Check the currency code is recognized by Babel.
+
+Accepts a ``locale`` parameter for fined-grained validation, working as
+the one defined above in ``list_currencies()`` method.
+
+Raises a `UnknownCurrencyError` exception if the currency is unknown to Babel.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacebabel_1_1numbers_a48246cf492fc92170eb30042d973201c}\label{namespacebabel_1_1numbers_a48246cf492fc92170eb30042d973201c} 
+\index{babel.numbers@{babel.numbers}!LC\_MONETARY@{LC\_MONETARY}}
+\index{LC\_MONETARY@{LC\_MONETARY}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{LC\_MONETARY}{LC\_MONETARY}}
+{\footnotesize\ttfamily babel.\+numbers.\+LC\+\_\+\+MONETARY = default\+\_\+locale((\textquotesingle{}LC\+\_\+\+MONETARY\textquotesingle{}, \textquotesingle{}\mbox{\hyperlink{namespacebabel_1_1numbers_aa225720d95ab2a699c336fec66765a75}{LC\+\_\+\+NUMERIC}}\textquotesingle{}))}
+
+\Hypertarget{namespacebabel_1_1numbers_aa225720d95ab2a699c336fec66765a75}\label{namespacebabel_1_1numbers_aa225720d95ab2a699c336fec66765a75} 
+\index{babel.numbers@{babel.numbers}!LC\_NUMERIC@{LC\_NUMERIC}}
+\index{LC\_NUMERIC@{LC\_NUMERIC}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{LC\_NUMERIC}{LC\_NUMERIC}}
+{\footnotesize\ttfamily babel.\+numbers.\+LC\+\_\+\+NUMERIC = default\+\_\+locale(\textquotesingle{}LC\+\_\+\+NUMERIC\textquotesingle{})}
+
+\Hypertarget{namespacebabel_1_1numbers_aa3d0a2c9ceddd19a849f8f38ea172308}\label{namespacebabel_1_1numbers_aa3d0a2c9ceddd19a849f8f38ea172308} 
+\index{babel.numbers@{babel.numbers}!NUMBER\_PATTERN@{NUMBER\_PATTERN}}
+\index{NUMBER\_PATTERN@{NUMBER\_PATTERN}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{NUMBER\_PATTERN}{NUMBER\_PATTERN}}
+{\footnotesize\ttfamily str babel.\+numbers.\+NUMBER\+\_\+\+PATTERN = r"{}(?P$<$number$>$\%s\texorpdfstring{$\ast$}{*})"{} \% NUMBER\+\_\+\+TOKEN}
+
+\Hypertarget{namespacebabel_1_1numbers_adca82501a7df15995654303700bf026a}\label{namespacebabel_1_1numbers_adca82501a7df15995654303700bf026a} 
+\index{babel.numbers@{babel.numbers}!number\_re@{number\_re}}
+\index{number\_re@{number\_re}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{number\_re}{number\_re}}
+{\footnotesize\ttfamily babel.\+numbers.\+number\+\_\+re = re.\+compile(f"{}\{\mbox{\hyperlink{namespacebabel_1_1numbers_aa506bb69ab8ef36519c66cbb4477e90f}{PREFIX\+\_\+\+PATTERN}}\}\{\mbox{\hyperlink{namespacebabel_1_1numbers_aa3d0a2c9ceddd19a849f8f38ea172308}{NUMBER\+\_\+\+PATTERN}}\}\{\mbox{\hyperlink{namespacebabel_1_1numbers_af997bf5b978b936b8641f30824937b57}{SUFFIX\+\_\+\+PATTERN}}\}"{})}
+
+\Hypertarget{namespacebabel_1_1numbers_a84eb5e6942b8da8a2e72adebbf699cdf}\label{namespacebabel_1_1numbers_a84eb5e6942b8da8a2e72adebbf699cdf} 
+\index{babel.numbers@{babel.numbers}!NUMBER\_TOKEN@{NUMBER\_TOKEN}}
+\index{NUMBER\_TOKEN@{NUMBER\_TOKEN}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{NUMBER\_TOKEN}{NUMBER\_TOKEN}}
+{\footnotesize\ttfamily str babel.\+numbers.\+NUMBER\+\_\+\+TOKEN = r\textquotesingle{}\mbox{[}0-\/9@\#.,E+\mbox{]}\textquotesingle{}}
+
+\Hypertarget{namespacebabel_1_1numbers_afea757cf33f002c047470dd19305af2a}\label{namespacebabel_1_1numbers_afea757cf33f002c047470dd19305af2a} 
+\index{babel.numbers@{babel.numbers}!PREFIX\_END@{PREFIX\_END}}
+\index{PREFIX\_END@{PREFIX\_END}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{PREFIX\_END}{PREFIX\_END}}
+{\footnotesize\ttfamily str babel.\+numbers.\+PREFIX\+\_\+\+END = r\textquotesingle{}\mbox{[}\texorpdfstring{$^\wedge$}{\string^}0-\/9@\#.,\mbox{]}\textquotesingle{}}
+
+\Hypertarget{namespacebabel_1_1numbers_aa506bb69ab8ef36519c66cbb4477e90f}\label{namespacebabel_1_1numbers_aa506bb69ab8ef36519c66cbb4477e90f} 
+\index{babel.numbers@{babel.numbers}!PREFIX\_PATTERN@{PREFIX\_PATTERN}}
+\index{PREFIX\_PATTERN@{PREFIX\_PATTERN}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{PREFIX\_PATTERN}{PREFIX\_PATTERN}}
+{\footnotesize\ttfamily str babel.\+numbers.\+PREFIX\+\_\+\+PATTERN = r"{}(?P$<$prefix$>$(?\+:\textquotesingle{}\mbox{[}\texorpdfstring{$^\wedge$}{\string^}\textquotesingle{}\mbox{]}\texorpdfstring{$\ast$}{*}\textquotesingle{}\texorpdfstring{$\vert$}{|}\%s)\texorpdfstring{$\ast$}{*})"{} \% PREFIX\+\_\+\+END}
+
+\Hypertarget{namespacebabel_1_1numbers_a70ddf65b65c95fd24931dc71a7069eb3}\label{namespacebabel_1_1numbers_a70ddf65b65c95fd24931dc71a7069eb3} 
+\index{babel.numbers@{babel.numbers}!SPACE\_CHARS@{SPACE\_CHARS}}
+\index{SPACE\_CHARS@{SPACE\_CHARS}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{SPACE\_CHARS}{SPACE\_CHARS}}
+{\footnotesize\ttfamily dict babel.\+numbers.\+SPACE\+\_\+\+CHARS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{'\ '},\ \ \textcolor{comment}{\#\ space}}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{'\(\backslash\)xa0'},\ \ \textcolor{comment}{\#\ no-\/break\ space}}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{'\(\backslash\)u202f'},\ \ \textcolor{comment}{\#\ narrow\ no-\/break\ space}}
+\DoxyCodeLine{00005\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacebabel_1_1numbers_ad92b83ed816be83e16368e4c3386b470}\label{namespacebabel_1_1numbers_ad92b83ed816be83e16368e4c3386b470} 
+\index{babel.numbers@{babel.numbers}!SPACE\_CHARS\_RE@{SPACE\_CHARS\_RE}}
+\index{SPACE\_CHARS\_RE@{SPACE\_CHARS\_RE}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{SPACE\_CHARS\_RE}{SPACE\_CHARS\_RE}}
+{\footnotesize\ttfamily babel.\+numbers.\+SPACE\+\_\+\+CHARS\+\_\+\+RE = re.\+compile(\textquotesingle{}\texorpdfstring{$\vert$}{|}\textquotesingle{}.join(\mbox{\hyperlink{namespacebabel_1_1numbers_a70ddf65b65c95fd24931dc71a7069eb3}{SPACE\+\_\+\+CHARS}}))}
+
+\Hypertarget{namespacebabel_1_1numbers_af997bf5b978b936b8641f30824937b57}\label{namespacebabel_1_1numbers_af997bf5b978b936b8641f30824937b57} 
+\index{babel.numbers@{babel.numbers}!SUFFIX\_PATTERN@{SUFFIX\_PATTERN}}
+\index{SUFFIX\_PATTERN@{SUFFIX\_PATTERN}!babel.numbers@{babel.numbers}}
+\doxysubsubsection{\texorpdfstring{SUFFIX\_PATTERN}{SUFFIX\_PATTERN}}
+{\footnotesize\ttfamily str babel.\+numbers.\+SUFFIX\+\_\+\+PATTERN = r"{}(?P$<$suffix$>$.\texorpdfstring{$\ast$}{*})"{}}
+

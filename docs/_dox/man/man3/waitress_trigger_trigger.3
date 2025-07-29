@@ -1,0 +1,310 @@
+.TH "waitress.trigger.trigger" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+waitress.trigger.trigger
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBwaitress\&.trigger\&._triggerbase\fP, \fBwaitress\&.wasyncore\&.file_dispatcher\fP, \fBwaitress\&.trigger\&._triggerbase\fP, and \fBwaitress\&.wasyncore\&.dispatcher\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, map)"
+.br
+.ti -1c
+.RI "\fB__init__\fP (self, map)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBwaitress\&.trigger\&._triggerbase\fP
+.in +1c
+.ti -1c
+.RI "\fBreadable\fP (self)"
+.br
+.ti -1c
+.RI "\fBwritable\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_connect\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_close\fP (self)"
+.br
+.ti -1c
+.RI "\fBclose\fP (self)"
+.br
+.ti -1c
+.RI "\fBpull_trigger\fP (self, thunk=None)"
+.br
+.ti -1c
+.RI "\fBhandle_read\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBwaitress\&.wasyncore\&.file_dispatcher\fP
+.in +1c
+.ti -1c
+.RI "\fBset_file\fP (self, fd)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBwaitress\&.wasyncore\&.dispatcher\fP
+.in +1c
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd_channel\fP (self, map=None)"
+.br
+.ti -1c
+.RI "\fBdel_channel\fP (self, map=None)"
+.br
+.ti -1c
+.RI "\fBcreate_socket\fP (self, family=socket\&.AF_INET, type=socket\&.SOCK_STREAM)"
+.br
+.ti -1c
+.RI "\fBset_socket\fP (self, sock, map=None)"
+.br
+.ti -1c
+.RI "\fBset_reuse_addr\fP (self)"
+.br
+.ti -1c
+.RI "\fBreadable\fP (self)"
+.br
+.ti -1c
+.RI "\fBwritable\fP (self)"
+.br
+.ti -1c
+.RI "\fBlisten\fP (self, num)"
+.br
+.ti -1c
+.RI "\fBbind\fP (self, \fBaddr\fP)"
+.br
+.ti -1c
+.RI "\fBaccept\fP (self)"
+.br
+.ti -1c
+.RI "\fBsend\fP (self, data, do_close=True)"
+.br
+.ti -1c
+.RI "\fBrecv\fP (self, buffer_size)"
+.br
+.ti -1c
+.RI "\fBclose\fP (self)"
+.br
+.ti -1c
+.RI "\fBlog\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBlog_info\fP (self, message, type='info')"
+.br
+.ti -1c
+.RI "\fBhandle_read_event\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_connect_event\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_write_event\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_expt_event\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_error\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_expt\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_read\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_write\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_connect\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_accept\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_accepted\fP (self, sock, \fBaddr\fP)"
+.br
+.ti -1c
+.RI "\fBhandle_close\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBtrigger\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBwaitress\&.trigger\&._triggerbase\fP
+.in +1c
+.ti -1c
+.RI "\fBlock\fP"
+.br
+.ti -1c
+.RI "\fBthunks\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBwaitress\&.wasyncore\&.file_dispatcher\fP
+.in +1c
+.ti -1c
+.RI "\fBconnected\fP"
+.br
+.ti -1c
+.RI "\fBsocket\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBwaitress\&.wasyncore\&.dispatcher\fP
+.in +1c
+.ti -1c
+.RI "\fBsocket\fP"
+.br
+.ti -1c
+.RI "\fBfamily_and_type\fP"
+.br
+.ti -1c
+.RI "\fBaccepting\fP"
+.br
+.ti -1c
+.RI "\fBconnected\fP"
+.br
+.ti -1c
+.RI "\fBconnecting\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBkind\fP = 'pipe'"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBwaitress\&.trigger\&._triggerbase\fP
+.in +1c
+.ti -1c
+.RI "\fBkind\fP = None"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBwaitress\&.wasyncore\&.dispatcher\fP
+.in +1c
+.ti -1c
+.RI "bool \fBdebug\fP = False"
+.br
+.ti -1c
+.RI "bool \fBconnected\fP = False"
+.br
+.ti -1c
+.RI "bool \fBaccepting\fP = False"
+.br
+.ti -1c
+.RI "bool \fBconnecting\fP = False"
+.br
+.ti -1c
+.RI "bool \fBclosing\fP = False"
+.br
+.ti -1c
+.RI "\fBaddr\fP = None"
+.br
+.ti -1c
+.RI "\fBignore_log_types\fP = frozenset({'warning'})"
+.br
+.ti -1c
+.RI "\fBlogger\fP = utilities\&.logger"
+.br
+.ti -1c
+.RI "\fBcompact_traceback\fP = staticmethod(compact_traceback)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_close\fP (self)"
+.br
+.ti -1c
+.RI "\fB_physical_pull\fP (self)"
+.br
+.ti -1c
+.RI "\fB_close\fP (self)"
+.br
+.ti -1c
+.RI "\fB_physical_pull\fP (self)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_fds\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBwaitress\&.trigger\&._triggerbase\fP
+.in +1c
+.ti -1c
+.RI "\fB_closed\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBwaitress\&.wasyncore\&.file_dispatcher\fP
+.in +1c
+.ti -1c
+.RI "\fB_fileno\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBwaitress\&.wasyncore\&.dispatcher\fP
+.in +1c
+.ti -1c
+.RI "\fB_map\fP"
+.br
+.ti -1c
+.RI "\fB_fileno\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "waitress\&.trigger\&.trigger\&.__init__ ( self,  map)"
+
+.PP
+Reimplemented from \fBwaitress\&.trigger\&._triggerbase\fP\&.
+.SS "waitress\&.trigger\&.trigger\&.__init__ ( self,  map)"
+
+.PP
+Reimplemented from \fBwaitress\&.trigger\&._triggerbase\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "waitress\&.trigger\&.trigger\&._close ( self)\fC [protected]\fP"
+
+.SS "waitress\&.trigger\&.trigger\&._close ( self)\fC [protected]\fP"
+
+.SS "waitress\&.trigger\&.trigger\&._physical_pull ( self)\fC [protected]\fP"
+
+.SS "waitress\&.trigger\&.trigger\&._physical_pull ( self)\fC [protected]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "waitress\&.trigger\&.trigger\&._fds\fC [protected]\fP"
+
+.SS "str waitress\&.trigger\&.trigger\&.kind = 'pipe'\fC [static]\fP"
+
+.SS "waitress\&.trigger\&.trigger\&.trigger"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

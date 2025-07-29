@@ -1,0 +1,74 @@
+.TH "pip._internal.cli.autocompletion" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.cli.autocompletion
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBautocomplete\fP ()"
+.br
+.ti -1c
+.RI "Optional[str] \fBget_path_completion_type\fP (List[str] cwords, int cword, Iterable[Any] opts)"
+.br
+.ti -1c
+.RI "Iterable[str] \fBauto_complete_paths\fP (str current, str completion_type)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Logic that powers autocompletion installed by ``pip completion``\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " Iterable[str] pip\&._internal\&.cli\&.autocompletion\&.auto_complete_paths (str current, str completion_type)"
+
+.PP
+.nf
+If ``completion_type`` is ``file`` or ``path``, list all regular files
+and directories starting with ``current``; otherwise only list directories
+starting with ``current``\&.
+
+:param current: The word to be completed
+:param completion_type: path completion type(``file``, ``path`` or ``dir``)
+:return: A generator of regular files and/or directories
+
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.cli\&.autocompletion\&.autocomplete ()"
+
+.PP
+.nf
+Entry Point for completion of main and subcommand options\&.
+.fi
+.PP
+ 
+.SS " Optional[str] pip\&._internal\&.cli\&.autocompletion\&.get_path_completion_type (List[str] cwords, int cword, Iterable[Any]
+ opts)"
+
+.PP
+.nf
+Get the type of path completion (``file``, ``dir``, ``path`` or None)
+
+:param cwords: same as the environmental variable ``COMP_WORDS``
+:param cword: same as the environmental variable ``COMP_CWORD``
+:param opts: The available options to check
+:return: path completion type (``file``, ``dir``, ``path`` or None)
+
+.fi
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

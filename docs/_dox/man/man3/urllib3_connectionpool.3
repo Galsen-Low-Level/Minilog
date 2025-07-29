@@ -1,0 +1,123 @@
+.TH "urllib3.connectionpool" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+urllib3.connectionpool
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBConnectionPool\fP"
+.br
+.ti -1c
+.RI "class \fBHTTPConnectionPool\fP"
+.br
+.ti -1c
+.RI "class \fBHTTPSConnectionPool\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHTTPConnectionPool\fP \fBconnection_from_url\fP (str url, **typing\&.Any kw)"
+.br
+.ti -1c
+.RI "None \fB_normalize_host\fP (None host, str|None scheme)"
+.br
+.ti -1c
+.RI "str \fB_normalize_host\fP (str host, str|None scheme)"
+.br
+.ti -1c
+.RI "str|None \fB_normalize_host\fP (str|None host, str|None scheme)"
+.br
+.ti -1c
+.RI "str \fB_url_from_pool\fP (\fBHTTPConnectionPool\fP|\fBHTTPSConnectionPool\fP pool, str|None path=None)"
+.br
+.ti -1c
+.RI "None \fB_close_pool_connections\fP (queue\&.LifoQueue[typing\&.Any] pool)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlog\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "\fB_TYPE_TIMEOUT\fP = typing\&.Union[\fBTimeout\fP, float, \fB_TYPE_DEFAULT\fP, None]"
+.br
+.ti -1c
+.RI "dict \fB_blocking_errnos\fP = {errno\&.EAGAIN, errno\&.EWOULDBLOCK}"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " None urllib3\&.connectionpool\&._close_pool_connections (queue\&.LifoQueue[typing\&.Any] pool)\fC [protected]\fP"
+
+.PP
+.nf
+Drains a queue of connections and closes each one\&.
+.fi
+.PP
+ 
+.SS " None urllib3\&.connectionpool\&._normalize_host (None host, str | None scheme)\fC [protected]\fP"
+
+.SS " str urllib3\&.connectionpool\&._normalize_host (str host, str | None scheme)\fC [protected]\fP"
+
+.SS " str | None urllib3\&.connectionpool\&._normalize_host (str | None host, str | None scheme)\fC [protected]\fP"
+
+.PP
+.nf
+Normalize hosts for comparisons and use with sockets\&.
+
+.fi
+.PP
+ 
+.SS " str urllib3\&.connectionpool\&._url_from_pool (\fBHTTPConnectionPool\fP | \fBHTTPSConnectionPool\fP pool, str | None  path = \fCNone\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Returns the URL from a given connection pool\&. This is mainly used for testing and logging\&.
+.fi
+.PP
+ 
+.SS " \fBHTTPConnectionPool\fP urllib3\&.connectionpool\&.connection_from_url (str url, **typing\&.Any kw)"
+
+.PP
+.nf
+Given a url, return an :class:`\&.ConnectionPool` instance of its host\&.
+
+This is a shortcut for not having to parse out the scheme, host, and port
+of the url before creating an :class:`\&.ConnectionPool` instance\&.
+
+:param url:
+    Absolute URL string that must include the scheme\&. Port is optional\&.
+
+:param \\\\**kw:
+    Passes additional parameters to the constructor of the appropriate
+    :class:`\&.ConnectionPool`\&. Useful for specifying things like
+    timeout, maxsize, headers, etc\&.
+
+Example::
+
+    >>> conn = connection_from_url('http://google\&.com/')
+    >>> r = conn\&.request('GET', '/')
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "dict urllib3\&.connectionpool\&._blocking_errnos = {errno\&.EAGAIN, errno\&.EWOULDBLOCK}\fC [protected]\fP"
+
+.SS "urllib3\&.connectionpool\&._TYPE_TIMEOUT = typing\&.Union[\fBTimeout\fP, float, \fB_TYPE_DEFAULT\fP, None]\fC [protected]\fP"
+
+.SS "urllib3\&.connectionpool\&.log = logging\&.getLogger(__name__)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

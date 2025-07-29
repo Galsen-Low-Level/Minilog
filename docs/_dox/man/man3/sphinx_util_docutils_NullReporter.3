@@ -1,0 +1,144 @@
+.TH "sphinx.util.docutils.NullReporter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.util.docutils.NullReporter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.utils\&.Reporter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.utils\&.Reporter\fP
+.in +1c
+.ti -1c
+.RI "\fBset_conditions\fP (self, category, \fBreport_level\fP, \fBhalt_level\fP, \fBstream\fP=None, \fBdebug\fP=False)"
+.br
+.ti -1c
+.RI "\fBattach_observer\fP (self, observer)"
+.br
+.ti -1c
+.RI "\fBdetach_observer\fP (self, observer)"
+.br
+.ti -1c
+.RI "\fBnotify_observers\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBsystem_message\fP (self, level, message, *children, **kwargs)"
+.br
+.ti -1c
+.RI "\fBdebug\fP (self, *args, **kwargs)"
+.br
+.ti -1c
+.RI "\fBinfo\fP (self, *args, **kwargs)"
+.br
+.ti -1c
+.RI "\fBwarning\fP (self, *args, **kwargs)"
+.br
+.ti -1c
+.RI "\fBerror\fP (self, *args, **kwargs)"
+.br
+.ti -1c
+.RI "\fBsevere\fP (self, *args, **kwargs)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBdocutils\&.utils\&.Reporter\fP
+.in +1c
+.ti -1c
+.RI "\fBsource\fP"
+.br
+.ti -1c
+.RI "\fBerror_handler\fP"
+.br
+.ti -1c
+.RI "\fBdebug_flag\fP"
+.br
+.ti -1c
+.RI "\fBreport_level\fP"
+.br
+.ti -1c
+.RI "\fBhalt_level\fP"
+.br
+.ti -1c
+.RI "\fBstream\fP"
+.br
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBobservers\fP"
+.br
+.ti -1c
+.RI "\fBmax_level\fP"
+.br
+.ti -1c
+.RI "\fBDEBUG_LEVEL\fP"
+.br
+.ti -1c
+.RI "\fBINFO_LEVEL\fP"
+.br
+.ti -1c
+.RI "\fBWARNING_LEVEL\fP"
+.br
+.ti -1c
+.RI "\fBERROR_LEVEL\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.utils\&.Reporter\fP
+.in +1c
+.ti -1c
+.RI "str \fBlevels\fP = 'DEBUG \fBINFO\fP WARNING ERROR SEVERE'\&.split()"
+.br
+.ti -1c
+.RI "\fBSEVERE_LEVEL\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A dummy reporter; write nothing\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.util\&.docutils\&.NullReporter\&.__init__ ( self)"
+
+.PP
+.nf
+:Parameters:
+    - `source`: The path to or description of the source data\&.
+    - `report_level`: The level at or above which warning output will
+      be sent to `stream`\&.
+    - `halt_level`: The level at or above which `SystemMessage`
+      exceptions will be raised, halting execution\&.
+    - `debug`: Show debug (level=0) system messages?
+    - `stream`: Where warning output is sent\&.  Can be file-like (has a
+      ``\&.write`` method), a string (file name, opened for writing),
+      '' (empty string) or `False` (for discarding all stream messages)
+      or `None` (implies `sys\&.stderr`; default)\&.
+    - `encoding`: The output encoding\&.
+    - `error_handler`: The error handler for stderr output encoding\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.utils\&.Reporter\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

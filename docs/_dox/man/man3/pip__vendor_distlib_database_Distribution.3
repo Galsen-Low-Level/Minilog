@@ -1,0 +1,262 @@
+.TH "pip._vendor.distlib.database.Distribution" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.distlib.database.Distribution
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.PP
+Inherited by \fBpip\&._vendor\&.distlib\&.database\&.BaseInstalledDistribution\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBmetadata\fP)"
+.br
+.ti -1c
+.RI "\fBsource_url\fP (self)"
+.br
+.ti -1c
+.RI "\fBname_and_version\fP (self)"
+.br
+.ti -1c
+.RI "\fBprovides\fP (self)"
+.br
+.ti -1c
+.RI "\fBrun_requires\fP (self)"
+.br
+.ti -1c
+.RI "\fBmeta_requires\fP (self)"
+.br
+.ti -1c
+.RI "\fBbuild_requires\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_requires\fP (self)"
+.br
+.ti -1c
+.RI "\fBdev_requires\fP (self)"
+.br
+.ti -1c
+.RI "\fBmatches_requirement\fP (self, req)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__eq__\fP (self, other)"
+.br
+.ti -1c
+.RI "\fB__hash__\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBmetadata\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBkey\fP"
+.br
+.ti -1c
+.RI "\fBversion\fP"
+.br
+.ti -1c
+.RI "\fBlocator\fP"
+.br
+.ti -1c
+.RI "\fBdigest\fP"
+.br
+.ti -1c
+.RI "\fBextras\fP"
+.br
+.ti -1c
+.RI "\fBcontext\fP"
+.br
+.ti -1c
+.RI "\fBdownload_urls\fP"
+.br
+.ti -1c
+.RI "\fBdigests\fP"
+.br
+.ti -1c
+.RI "\fBsource_url\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBbuild_time_dependency\fP = False"
+.br
+.ti -1c
+.RI "bool \fBrequested\fP = False"
+.br
+.ti -1c
+.RI "\fBdownload_url\fP = \fBsource_url\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_get_requirements\fP (self, req_attr)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A base class for distributions, whether installed or from indexes\&.
+Either way, it must have some metadata, so that's all that's needed
+for construction\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.__init__ ( self,  metadata)"
+
+.PP
+.nf
+Initialise an instance\&.
+:param metadata: The instance of :class:`Metadata` describing this
+distribution\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._vendor\&.distlib\&.database\&.BaseInstalledDistribution\fP, \fBpip\&._vendor\&.distlib\&.database\&.EggInfoDistribution\fP, and \fBpip\&._vendor\&.distlib\&.database\&.InstalledDistribution\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.__eq__ ( self,  other)"
+
+.PP
+.nf
+See if this distribution is the same as another\&.
+:param other: The distribution to compare with\&. To be equal to one
+              another\&. distributions must have the same type, name,
+              version and source_url\&.
+:return: True if it is the same, else False\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._vendor\&.distlib\&.database\&.InstalledDistribution\fP, and \fBpip\&._vendor\&.distlib\&.database\&.EggInfoDistribution\fP\&.
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.__hash__ ( self)"
+
+.PP
+.nf
+Compute hash in a way which matches the equality test\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.__repr__ ( self)"
+
+.PP
+.nf
+Return a textual representation of this instance,
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._vendor\&.distlib\&.database\&.InstalledDistribution\fP, and \fBpip\&._vendor\&.distlib\&.database\&.EggInfoDistribution\fP\&.
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&._get_requirements ( self,  req_attr)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.build_requires ( self)"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.dev_requires ( self)"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.matches_requirement ( self,  req)"
+
+.PP
+.nf
+Say if this instance matches (fulfills) a requirement\&.
+:param req: The requirement to match\&.
+:rtype req: str
+:return: True if it matches, else False\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.meta_requires ( self)"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.name_and_version ( self)"
+
+.PP
+.nf
+A utility property which displays the name and version in parentheses\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.provides ( self)"
+
+.PP
+.nf
+A set of distribution names and versions provided by this distribution\&.
+:return: A set of 'name (version)' strings\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.run_requires ( self)"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.source_url ( self)"
+
+.PP
+.nf
+The source archive download URL for this distribution\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.test_requires ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "bool pip\&._vendor\&.distlib\&.database\&.Distribution\&.build_time_dependency = False\fC [static]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.context"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.digest"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.digests"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.download_url = \fBsource_url\fP\fC [static]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.download_urls"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.extras"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.key"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.locator"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.metadata"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.name"
+
+.SS "bool pip\&._vendor\&.distlib\&.database\&.Distribution\&.requested = False\fC [static]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.source_url"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.Distribution\&.version"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

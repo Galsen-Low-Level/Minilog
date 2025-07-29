@@ -1,0 +1,218 @@
+.TH "docutils.io.FileOutput" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.io.FileOutput
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.io\&.Output\fP\&.
+.PP
+Inherited by \fBdocutils\&.io\&.BinaryFileOutput\fP, and \fBsphinx\&.util\&.docutils\&.SphinxFileOutput\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdestination\fP=None, \fBdestination_path\fP=None, \fBencoding\fP=None, \fBerror_handler\fP='strict', \fBautoclose\fP=True, handle_io_errors=None, \fBmode\fP=None)"
+.br
+.ti -1c
+.RI "\fBopen\fP (self)"
+.br
+.ti -1c
+.RI "\fBwrite\fP (self, data)"
+.br
+.ti -1c
+.RI "\fBclose\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.io\&.Output\fP
+.in +1c
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBencode\fP (self, data)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "\fBget_transforms\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBopened\fP"
+.br
+.ti -1c
+.RI "\fBautoclose\fP"
+.br
+.ti -1c
+.RI "\fBmode\fP"
+.br
+.ti -1c
+.RI "\fBdestination\fP"
+.br
+.ti -1c
+.RI "\fBdestination_path\fP"
+.br
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.io\&.Output\fP
+.in +1c
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBerror_handler\fP"
+.br
+.ti -1c
+.RI "\fBdestination\fP"
+.br
+.ti -1c
+.RI "\fBdestination_path\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_transforms\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBdefault_destination_path\fP = '<file>'"
+.br
+.ti -1c
+.RI "str \fBmode\fP = 'w'"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.io\&.Output\fP
+.in +1c
+.ti -1c
+.RI "str \fBcomponent_type\fP = 'output'"
+.br
+.ti -1c
+.RI "\fBdefault_destination_path\fP = None"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBdefault_transforms\fP = ()"
+.br
+.ti -1c
+.RI "tuple \fBunknown_reference_resolvers\fP = ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_stderr\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Output for single, simple file-like objects\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.io\&.FileOutput\&.__init__ ( self,  destination = \fCNone\fP,  destination_path = \fCNone\fP,  encoding = \fCNone\fP,  error_handler = \fC'strict'\fP,  autoclose = \fCTrue\fP,  handle_io_errors = \fCNone\fP,  mode = \fCNone\fP)"
+
+.PP
+.nf
+:Parameters:
+    - `destination`: either a file-like object (which is written
+      directly) or `None` (which implies `sys\&.stdout` if no
+      `destination_path` given)\&.
+    - `destination_path`: a path to a file, which is opened and then
+      written\&.
+    - `encoding`: the text encoding of the output file\&.
+    - `error_handler`: the encoding error handler to use\&.
+    - `autoclose`: close automatically after write (except when
+      `sys\&.stdout` or `sys\&.stderr` is the destination)\&.
+    - `handle_io_errors`: ignored, deprecated, will be removed\&.
+    - `mode`: how the file is to be opened (see standard function
+      `open`)\&. The default is 'w', providing universal newline
+      support for text files\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.io\&.Output\fP\&.
+.PP
+Reimplemented in \fBsphinx\&.util\&.docutils\&.SphinxFileOutput\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.io\&.FileOutput\&.close ( self)"
+
+.SS "docutils\&.io\&.FileOutput\&.open ( self)"
+
+.SS "docutils\&.io\&.FileOutput\&.write ( self,  data)"
+
+.PP
+.nf
+Write `data` to a single file, also return it\&.
+
+`data` can be a `str` or `bytes` instance\&.
+If writing `bytes` fails, an attempt is made to write to
+the low-level interface ``self\&.destination\&.buffer``\&.
+
+If `data` is a `str` instance and `self\&.encoding` and
+`self\&.destination\&.encoding` are  set to different values, `data`
+is encoded to a `bytes` instance using `self\&.encoding`\&.
+
+Provisional: future versions may raise an error if `self\&.encoding`
+and `self\&.destination\&.encoding` are set to different values\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.io\&.Output\fP\&.
+.PP
+Reimplemented in \fBsphinx\&.util\&.docutils\&.SphinxFileOutput\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.io\&.FileOutput\&._stderr\fC [protected]\fP"
+
+.SS "docutils\&.io\&.FileOutput\&.autoclose"
+
+.SS "str docutils\&.io\&.FileOutput\&.default_destination_path = '<file>'\fC [static]\fP"
+
+.SS "docutils\&.io\&.FileOutput\&.destination"
+
+.SS "docutils\&.io\&.FileOutput\&.destination_path"
+
+.SS "docutils\&.io\&.FileOutput\&.encoding"
+
+.SS "str docutils\&.io\&.FileOutput\&.mode = 'w'\fC [static]\fP"
+
+.SS "docutils\&.io\&.FileOutput\&.mode"
+
+.SS "docutils\&.io\&.FileOutput\&.opened"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

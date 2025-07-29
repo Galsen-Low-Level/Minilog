@@ -1,0 +1,312 @@
+.TH "pip._vendor.distlib.wheel.Wheel" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.distlib.wheel.Wheel
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBfilename\fP=None, \fBsign\fP=False, \fBverify\fP=False)"
+.br
+.ti -1c
+.RI "\fBfilename\fP (self)"
+.br
+.ti -1c
+.RI "\fBexists\fP (self)"
+.br
+.ti -1c
+.RI "\fBtags\fP (self)"
+.br
+.ti -1c
+.RI "\fBmetadata\fP (self)"
+.br
+.ti -1c
+.RI "\fBget_wheel_metadata\fP (self, zf)"
+.br
+.ti -1c
+.RI "\fBinfo\fP (self)"
+.br
+.ti -1c
+.RI "\fBprocess_shebang\fP (self, data)"
+.br
+.ti -1c
+.RI "\fBget_hash\fP (self, data, \fBhash_kind\fP=None)"
+.br
+.ti -1c
+.RI "\fBwrite_record\fP (self, records, record_path, archive_record_path)"
+.br
+.ti -1c
+.RI "\fBwrite_records\fP (self, \fBinfo\fP, libdir, archive_paths)"
+.br
+.ti -1c
+.RI "\fBbuild_zip\fP (self, pathname, archive_paths)"
+.br
+.ti -1c
+.RI "\fBbuild\fP (self, paths, \fBtags\fP=None, \fBwheel_version\fP=None)"
+.br
+.ti -1c
+.RI "\fBskip_entry\fP (self, arcname)"
+.br
+.ti -1c
+.RI "\fBinstall\fP (self, paths, maker, **kwargs)"
+.br
+.ti -1c
+.RI "\fBis_compatible\fP (self)"
+.br
+.ti -1c
+.RI "\fBis_mountable\fP (self)"
+.br
+.ti -1c
+.RI "\fBmount\fP (self, append=False)"
+.br
+.ti -1c
+.RI "\fBunmount\fP (self)"
+.br
+.ti -1c
+.RI "\fBverify\fP (self)"
+.br
+.ti -1c
+.RI "\fBupdate\fP (self, modifier, dest_dir=None, **kwargs)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsign\fP"
+.br
+.ti -1c
+.RI "\fBshould_verify\fP"
+.br
+.ti -1c
+.RI "\fBbuildver\fP"
+.br
+.ti -1c
+.RI "\fBpyver\fP"
+.br
+.ti -1c
+.RI "\fBabi\fP"
+.br
+.ti -1c
+.RI "\fBarch\fP"
+.br
+.ti -1c
+.RI "\fBdirname\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBversion\fP"
+.br
+.ti -1c
+.RI "\fBwheel_version\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBwheel_version\fP = (1, 1)"
+.br
+.ti -1c
+.RI "str \fBhash_kind\fP = 'sha256'"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_get_dylib_cache\fP (self)"
+.br
+.ti -1c
+.RI "\fB_get_extensions\fP (self)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_filename\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Class to build and install from Wheel files (PEP 427)\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.__init__ ( self,  filename = \fCNone\fP,  sign = \fCFalse\fP,  verify = \fCFalse\fP)"
+
+.PP
+.nf
+Initialise an instance using a (valid) filename\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&._get_dylib_cache ( self)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&._get_extensions ( self)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.build ( self,  paths,  tags = \fCNone\fP,  wheel_version = \fCNone\fP)"
+
+.PP
+.nf
+Build a wheel from files in specified paths, and use any specified tags
+when determining the name of the wheel\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.build_zip ( self,  pathname,  archive_paths)"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.exists ( self)"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.filename ( self)"
+
+.PP
+.nf
+Build and return a filename from the various components\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.get_hash ( self,  data,  hash_kind = \fCNone\fP)"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.get_wheel_metadata ( self,  zf)"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.info ( self)"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.install ( self,  paths,  maker, ** kwargs)"
+
+.PP
+.nf
+Install a wheel to the specified paths\&. If kwarg ``warner`` is
+specified, it should be a callable, which will be called with two
+tuples indicating the wheel version of this software and the wheel
+version in the file, if there is a discrepancy in the versions\&.
+This can be used to issue any warnings to raise any exceptions\&.
+If kwarg ``lib_only`` is True, only the purelib/platlib files are
+installed, and the headers, scripts, data and dist-info metadata are
+not written\&. If kwarg ``bytecode_hashed_invalidation`` is True, written
+bytecode will try to use file-hash based invalidation (PEP-552) on
+supported interpreter versions (CPython 3\&.7+)\&.
+
+The return value is a :class:`InstalledDistribution` instance unless
+``options\&.lib_only`` is True, in which case the return value is ``None``\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.is_compatible ( self)"
+
+.PP
+.nf
+Determine if a wheel is compatible with the running system\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.is_mountable ( self)"
+
+.PP
+.nf
+Determine if a wheel is asserted as mountable by its metadata\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.metadata ( self)"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.mount ( self,  append = \fCFalse\fP)"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.process_shebang ( self,  data)"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.skip_entry ( self,  arcname)"
+
+.PP
+.nf
+Determine whether an archive entry should be skipped when verifying
+or installing\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.tags ( self)"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.unmount ( self)"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.update ( self,  modifier,  dest_dir = \fCNone\fP, ** kwargs)"
+
+.PP
+.nf
+Update the contents of a wheel in a generic way\&. The modifier should
+be a callable which expects a dictionary argument: its keys are
+archive-entry paths, and its values are absolute filesystem paths
+where the contents the corresponding archive entries can be found\&. The
+modifier is free to change the contents of the files pointed to, add
+new entries and remove entries, before returning\&. This method will
+extract the entire contents of the wheel to a temporary location, call
+the modifier, and then use the passed (and possibly updated)
+dictionary to write a new wheel\&. If ``dest_dir`` is specified, the new
+wheel is written there -- otherwise, the original wheel is overwritten\&.
+
+The modifier should return True if it updated the wheel, else False\&.
+This method returns the same value the modifier returns\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.verify ( self)"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.write_record ( self,  records,  record_path,  archive_record_path)"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.write_records ( self,  info,  libdir,  archive_paths)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&._filename\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.abi"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.arch"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.buildver"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.dirname"
+
+.SS "str pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.hash_kind = 'sha256'\fC [static]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.name"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.pyver"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.should_verify"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.sign"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.version"
+
+.SS "tuple pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.wheel_version = (1, 1)\fC [static]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.Wheel\&.wheel_version"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

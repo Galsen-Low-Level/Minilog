@@ -1,0 +1,54 @@
+\doxysection{sphinx.\+util.\+texescape Namespace Reference}
+\hypertarget{namespacesphinx_1_1util_1_1texescape}{}\label{namespacesphinx_1_1util_1_1texescape}\index{sphinx.util.texescape@{sphinx.util.texescape}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{namespacesphinx_1_1util_1_1texescape_a5827b9bd87143695f7e21a3bb60e4518}{tex\+\_\+replacements}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}TeX escaping helper.\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacesphinx_1_1util_1_1texescape_a5827b9bd87143695f7e21a3bb60e4518}\label{namespacesphinx_1_1util_1_1texescape_a5827b9bd87143695f7e21a3bb60e4518} 
+\index{sphinx.util.texescape@{sphinx.util.texescape}!tex\_replacements@{tex\_replacements}}
+\index{tex\_replacements@{tex\_replacements}!sphinx.util.texescape@{sphinx.util.texescape}}
+\doxysubsubsection{\texorpdfstring{tex\_replacements}{tex\_replacements}}
+{\footnotesize\ttfamily list sphinx.\+util.\+texescape.\+tex\+\_\+replacements}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ [}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{comment}{\#\ map\ TeX\ special\ chars}}
+\DoxyCodeLine{00003\ \ \ \ \ (\textcolor{stringliteral}{'\$'},\ \textcolor{stringliteral}{r'\(\backslash\)\$'}),}
+\DoxyCodeLine{00004\ \ \ \ \ (\textcolor{stringliteral}{'\%'},\ \textcolor{stringliteral}{r'\(\backslash\)\%'}),}
+\DoxyCodeLine{00005\ \ \ \ \ (\textcolor{stringliteral}{'\&'},\ \textcolor{stringliteral}{r'\(\backslash\)\&'}),}
+\DoxyCodeLine{00006\ \ \ \ \ (\textcolor{stringliteral}{'\#'},\ \textcolor{stringliteral}{r'\(\backslash\)\#'}),}
+\DoxyCodeLine{00007\ \ \ \ \ (\textcolor{stringliteral}{'\_'},\ \textcolor{stringliteral}{r'\(\backslash\)\_'}),}
+\DoxyCodeLine{00008\ \ \ \ \ (\textcolor{stringliteral}{'\{'},\ \textcolor{stringliteral}{r'\(\backslash\)\{'}),}
+\DoxyCodeLine{00009\ \ \ \ \ (\textcolor{stringliteral}{'\}'},\ \textcolor{stringliteral}{r'\(\backslash\)\}'}),}
+\DoxyCodeLine{00010\ \ \ \ \ (\textcolor{stringliteral}{'\(\backslash\)\(\backslash\)'},\ \textcolor{stringliteral}{r'\(\backslash\)textbackslash\{\}'}),}
+\DoxyCodeLine{00011\ \ \ \ \ (\textcolor{stringliteral}{'\string~'},\ \textcolor{stringliteral}{r'\(\backslash\)textasciitilde\{\}'}),}
+\DoxyCodeLine{00012\ \ \ \ \ (\textcolor{stringliteral}{'\string^'},\ \textcolor{stringliteral}{r'\(\backslash\)textasciicircum\{\}'}),}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{\#\ map\ chars\ to\ avoid\ mis-\/interpretation\ in\ LaTeX}}
+\DoxyCodeLine{00014\ \ \ \ \ (\textcolor{stringliteral}{'['},\ \textcolor{stringliteral}{r'\{[\}'}),}
+\DoxyCodeLine{00015\ \ \ \ \ (\textcolor{stringliteral}{']'},\ \textcolor{stringliteral}{r'\{]\}'}),}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{\#\ map\ special\ Unicode\ characters\ to\ TeX\ commands}}
+\DoxyCodeLine{00017\ \ \ \ \ (\textcolor{stringliteral}{'✓'},\ \textcolor{stringliteral}{r'\(\backslash\)(\(\backslash\)checkmark\(\backslash\))'}),}
+\DoxyCodeLine{00018\ \ \ \ \ (\textcolor{stringliteral}{'✔'},\ \textcolor{stringliteral}{r'\(\backslash\)(\(\backslash\)pmb\{\(\backslash\)checkmark\}\(\backslash\))'}),}
+\DoxyCodeLine{00019\ \ \ \ \ (\textcolor{stringliteral}{'✕'},\ \textcolor{stringliteral}{r'\(\backslash\)(\(\backslash\)times\(\backslash\))'}),}
+\DoxyCodeLine{00020\ \ \ \ \ (\textcolor{stringliteral}{'✖'},\ \textcolor{stringliteral}{r'\(\backslash\)(\(\backslash\)pmb\{\(\backslash\)times\}\(\backslash\))'}),}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{\#\ used\ to\ separate\ -\/-\/\ in\ options}}
+\DoxyCodeLine{00022\ \ \ \ \ (\textcolor{stringliteral}{'﻿'},\ \textcolor{stringliteral}{r'\{\}'}),}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{\#\ map\ some\ special\ Unicode\ characters\ to\ similar\ ASCII\ ones}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{\#\ (even\ for\ Unicode\ LaTeX\ as\ may\ not\ be\ supported\ by\ OpenType\ font)}}
+\DoxyCodeLine{00025\ \ \ \ \ (\textcolor{stringliteral}{'⎽'},\ \textcolor{stringliteral}{r'\(\backslash\)\_'}),}
+\DoxyCodeLine{00026\ \ \ \ \ (\textcolor{stringliteral}{'ℯ'},\ \textcolor{stringliteral}{r'e'}),\ \ \textcolor{comment}{\#\ U+212F\ \#\ NoQA:\ RUF001}}
+\DoxyCodeLine{00027\ \ \ \ \ (\textcolor{stringliteral}{'ⅈ'},\ \textcolor{stringliteral}{r'i'}),\ \ \textcolor{comment}{\#\ U+2148\ \#\ NoQA:\ RUF001}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{\#\ Greek\ alphabet\ not\ escaped:\ pdflatex\ handles\ it\ via\ textalpha\ and\ inputenc}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{\#\ OHM\ SIGN\ U+2126\ is\ handled\ by\ LaTeX\ textcomp\ package}}
+\DoxyCodeLine{00030\ ]}
+
+\end{DoxyCode}

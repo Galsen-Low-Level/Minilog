@@ -1,0 +1,96 @@
+.TH "pip._vendor.urllib3.util.connection" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.urllib3.util.connection
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBis_connection_dropped\fP (conn)"
+.br
+.ti -1c
+.RI "\fBcreate_connection\fP (address, timeout=socket\&._GLOBAL_DEFAULT_TIMEOUT, source_address=None, socket_options=None)"
+.br
+.ti -1c
+.RI "\fB_set_socket_options\fP (sock, options)"
+.br
+.ti -1c
+.RI "\fBallowed_gai_family\fP ()"
+.br
+.ti -1c
+.RI "\fB_has_ipv6\fP (host)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBHAS_IPV6\fP = \fB_has_ipv6\fP('::1')"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.util\&.connection\&._has_ipv6 ( host)\fC [protected]\fP"
+
+.PP
+.nf
+Returns True if the system can bind an IPv6 address\&.
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.util\&.connection\&._set_socket_options ( sock,  options)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.connection\&.allowed_gai_family ()"
+
+.PP
+.nf
+This function is designed to work in the context of
+getaddrinfo, where family=socket\&.AF_UNSPEC is the default and
+will perform a DNS search for both IPv6 and IPv4 records\&.
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.util\&.connection\&.create_connection ( address,  timeout = \fCsocket\&._GLOBAL_DEFAULT_TIMEOUT\fP,  source_address = \fCNone\fP,  socket_options = \fCNone\fP)"
+
+.PP
+.nf
+Connect to *address* and return the socket object\&.
+
+Convenience function\&.  Connect to *address* (a 2-tuple ``(host,
+port)``) and return the socket object\&.  Passing the optional
+*timeout* parameter will set the timeout on the socket instance
+before attempting to connect\&.  If no *timeout* is supplied, the
+global default timeout setting returned by :func:`socket\&.getdefaulttimeout`
+is used\&.  If *source_address* is set it must be a tuple of (host, port)
+for the socket to bind as a source address before making the connection\&.
+An host of '' or port 0 tells the OS to use the default\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.util\&.connection\&.is_connection_dropped ( conn)"
+
+.PP
+.nf
+Returns True if the connection is dropped and should be closed\&.
+
+:param conn:
+    :class:`http\&.client\&.HTTPConnection` object\&.
+
+Note: For platforms like AppEngine, this will always return ``False`` to
+let the platform handle connection recycling transparently for us\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.util\&.connection\&.HAS_IPV6 = \fB_has_ipv6\fP('::1')"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,172 @@
+.TH "pip._vendor.distlib.version.NormalizedMatcher" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.distlib.version.NormalizedMatcher
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._vendor\&.distlib\&.version\&.Matcher\fP\&.
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBversion_class\fP = \fBNormalizedVersion\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpip\&._vendor\&.distlib\&.version\&.Matcher\fP
+.in +1c
+.ti -1c
+.RI "\fBversion_class\fP = None"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_adjust_local\fP (self, version, constraint, prefix)"
+.br
+.ti -1c
+.RI "\fB_match_lt\fP (self, version, constraint, prefix)"
+.br
+.ti -1c
+.RI "\fB_match_gt\fP (self, version, constraint, prefix)"
+.br
+.ti -1c
+.RI "\fB_match_le\fP (self, version, constraint, prefix)"
+.br
+.ti -1c
+.RI "\fB_match_ge\fP (self, version, constraint, prefix)"
+.br
+.ti -1c
+.RI "\fB_match_eq\fP (self, version, constraint, prefix)"
+.br
+.ti -1c
+.RI "\fB_match_arbitrary\fP (self, version, constraint, prefix)"
+.br
+.ti -1c
+.RI "\fB_match_ne\fP (self, version, constraint, prefix)"
+.br
+.ti -1c
+.RI "\fB_match_compatible\fP (self, version, constraint, prefix)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpip\&._vendor\&.distlib\&.version\&.Matcher\fP
+.in +1c
+.ti -1c
+.RI "\fB_check_compatible\fP (self, other)"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fB_operators\fP"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBpip\&._vendor\&.distlib\&.version\&.Matcher\fP
+.in +1c
+.ti -1c
+.RI "dict \fB_operators\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBpip\&._vendor\&.distlib\&.version\&.Matcher\fP
+.in +1c
+.ti -1c
+.RI "\fBparse_requirement\fP (self, s)"
+.br
+.ti -1c
+.RI "\fB__init__\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBmatch\fP (self, version)"
+.br
+.ti -1c
+.RI "\fBexact_version\fP (self)"
+.br
+.ti -1c
+.RI "\fB__eq__\fP (self, other)"
+.br
+.ti -1c
+.RI "\fB__ne__\fP (self, other)"
+.br
+.ti -1c
+.RI "\fB__hash__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__str__\fP (self)"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpip\&._vendor\&.distlib\&.version\&.Matcher\fP
+.in +1c
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBkey\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBpip\&._vendor\&.distlib\&.version\&.Matcher\fP
+.in +1c
+.ti -1c
+.RI "\fB_string\fP"
+.br
+.ti -1c
+.RI "\fB_parts\fP"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.version\&.NormalizedMatcher\&._adjust_local ( self,  version,  constraint,  prefix)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.version\&.NormalizedMatcher\&._match_arbitrary ( self,  version,  constraint,  prefix)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.version\&.NormalizedMatcher\&._match_compatible ( self,  version,  constraint,  prefix)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.version\&.NormalizedMatcher\&._match_eq ( self,  version,  constraint,  prefix)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.version\&.NormalizedMatcher\&._match_ge ( self,  version,  constraint,  prefix)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.version\&.NormalizedMatcher\&._match_gt ( self,  version,  constraint,  prefix)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.version\&.NormalizedMatcher\&._match_le ( self,  version,  constraint,  prefix)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.version\&.NormalizedMatcher\&._match_lt ( self,  version,  constraint,  prefix)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.version\&.NormalizedMatcher\&._match_ne ( self,  version,  constraint,  prefix)\fC [protected]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "dict pip\&._vendor\&.distlib\&.version\&.NormalizedMatcher\&._operators\fC [static]\fP, \fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        '~=': '_match_compatible',
+        '<': '_match_lt',
+        '>': '_match_gt',
+        '<=': '_match_le',
+        '>=': '_match_ge',
+        '==': '_match_eq',
+        '===': '_match_arbitrary',
+        '!=': '_match_ne',
+    }
+.fi
+
+.SS "pip\&._vendor\&.distlib\&.version\&.NormalizedMatcher\&.version_class = \fBNormalizedVersion\fP\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

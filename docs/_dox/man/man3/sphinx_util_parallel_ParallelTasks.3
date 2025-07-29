@@ -1,0 +1,94 @@
+.TH "sphinx.util.parallel.ParallelTasks" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.util.parallel.ParallelTasks
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, int \fBnproc\fP)"
+.br
+.ti -1c
+.RI "None \fBadd_task\fP (self, Callable[[Any], Any]|Callable[[], Any] task_func, Any arg=None, Callable[[Any, Any], Any]|None result_func=None)"
+.br
+.ti -1c
+.RI "None \fBjoin\fP (self)"
+.br
+.ti -1c
+.RI "None \fBterminate\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBnproc\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB_process\fP (self, Any pipe, Callable[[Any], Any]|Callable[[], Any] func, Any arg)"
+.br
+.ti -1c
+.RI "bool \fB_join_one\fP (self)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_pworking\fP"
+.br
+.ti -1c
+.RI "\fB_taskid\fP"
+.br
+.ti -1c
+.RI "\fB_precvs\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Executes *nproc* tasks in parallel after forking\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.util\&.parallel\&.ParallelTasks\&.__init__ ( self, int nproc)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " bool sphinx\&.util\&.parallel\&.ParallelTasks\&._join_one ( self)\fC [protected]\fP"
+
+.SS " None sphinx\&.util\&.parallel\&.ParallelTasks\&._process ( self, Any pipe, Callable[[Any], Any] | Callable[[], Any] func, Any
+     arg)\fC [protected]\fP"
+
+.SS " None sphinx\&.util\&.parallel\&.ParallelTasks\&.add_task ( self, Callable[[Any], Any] | Callable[[], Any] task_func, Any  arg = \fCNone\fP, Callable[[Any, Any], Any] | None  result_func = \fCNone\fP)"
+
+.SS " None sphinx\&.util\&.parallel\&.ParallelTasks\&.join ( self)"
+
+.SS " None sphinx\&.util\&.parallel\&.ParallelTasks\&.terminate ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.util\&.parallel\&.ParallelTasks\&._precvs\fC [protected]\fP"
+
+.SS "sphinx\&.util\&.parallel\&.ParallelTasks\&._pworking\fC [protected]\fP"
+
+.SS "sphinx\&.util\&.parallel\&.ParallelTasks\&._taskid\fC [protected]\fP"
+
+.SS "sphinx\&.util\&.parallel\&.ParallelTasks\&.nproc"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

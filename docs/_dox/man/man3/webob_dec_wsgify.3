@@ -1,0 +1,301 @@
+.TH "webob.dec.wsgify" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webob.dec.wsgify
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBfunc\fP=None, \fBRequestClass\fP=None, \fBargs\fP=(), \fBkwargs\fP=None, \fBmiddleware_wraps\fP=None)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__get__\fP (self, obj, type=None)"
+.br
+.ti -1c
+.RI "\fB__call__\fP (self, req, *\fBargs\fP, **kw)"
+.br
+.ti -1c
+.RI "\fBget\fP (self, url, **kw)"
+.br
+.ti -1c
+.RI "\fBpost\fP (self, url, POST=None, **kw)"
+.br
+.ti -1c
+.RI "\fBrequest\fP (self, url, **kw)"
+.br
+.ti -1c
+.RI "\fBcall_func\fP (self, req, *\fBargs\fP, **\fBkwargs\fP)"
+.br
+.ti -1c
+.RI "\fBclone\fP (self, \fBfunc\fP=None, **kw)"
+.br
+.ti -1c
+.RI "\fBundecorated\fP (self)"
+.br
+.ti -1c
+.RI "\fBmiddleware\fP (cls, middle_func=None, app=None, **kw)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBfunc\fP"
+.br
+.ti -1c
+.RI "\fBargs\fP"
+.br
+.ti -1c
+.RI "\fBkwargs\fP"
+.br
+.ti -1c
+.RI "\fBmiddleware_wraps\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBRequestClass\fP = \fBRequest\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_prepare_args\fP (self, \fBargs\fP, \fBkwargs\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Turns a request-taking, response-returning function into a WSGI
+app
+
+You can use this like::
+
+    @wsgify
+    def myfunc(req):
+        return webob\&.Response('hey there')
+
+With that ``myfunc`` will be a WSGI application, callable like
+``app_iter = myfunc(environ, start_response)``\&.  You can also call
+it like normal, e\&.g\&., ``resp = myfunc(req)``\&.  (You can also wrap
+methods, like ``def myfunc(self, req)``\&.)
+
+If you raise exceptions from :mod:`webob\&.exc` they will be turned
+into WSGI responses\&.
+
+There are also several parameters you can use to customize the
+decorator\&.  Most notably, you can use a :class:`webob\&.Request`
+subclass, like::
+
+    class MyRequest(webob\&.Request):
+        @property
+        def is_local(self):
+            return self\&.remote_addr == '127\&.0\&.0\&.1'
+    @wsgify(RequestClass=MyRequest)
+    def myfunc(req):
+        if req\&.is_local:
+            return Response('hi!')
+        else:
+            raise webob\&.exc\&.HTTPForbidden
+
+Another customization you can add is to add `args` (positional
+arguments) or `kwargs` (of course, keyword arguments)\&.  While
+generally not that useful, you can use this to create multiple
+WSGI apps from one function, like::
+
+    import simplejson
+    def serve_json(req, json_obj):
+        return Response(json\&.dumps(json_obj),
+                        content_type='application/json')
+
+    serve_ob1 = wsgify(serve_json, args=(ob1,))
+    serve_ob2 = wsgify(serve_json, args=(ob2,))
+
+You can return several things from a function:
+
+* A :class:`webob\&.Response` object (or subclass)
+* *Any* WSGI application
+* None, and then ``req\&.response`` will be used (a pre-instantiated
+  Response object)
+* A string, which will be written to ``req\&.response`` and then that
+  response will be used\&.
+* Raise an exception from :mod:`webob\&.exc`
+
+Also see :func:`wsgify\&.middleware` for a way to make middleware\&.
+
+You can also subclass this decorator; the most useful things to do
+in a subclass would be to change `RequestClass` or override
+`call_func` (e\&.g\&., to add ``req\&.urlvars`` as keyword arguments to
+the function)\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "webob\&.dec\&.wsgify\&.__init__ ( self,  func = \fCNone\fP,  RequestClass = \fCNone\fP,  args = \fC()\fP,  kwargs = \fCNone\fP,  middleware_wraps = \fCNone\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "webob\&.dec\&.wsgify\&.__call__ ( self,  req, * args, ** kw)"
+
+.PP
+.nf
+Call this as a WSGI application or with a request
+.fi
+.PP
+ 
+.SS "webob\&.dec\&.wsgify\&.__get__ ( self,  obj,  type = \fCNone\fP)"
+
+.SS "webob\&.dec\&.wsgify\&.__repr__ ( self)"
+
+.SS "webob\&.dec\&.wsgify\&._prepare_args ( self,  args,  kwargs)\fC [protected]\fP"
+
+.SS "webob\&.dec\&.wsgify\&.call_func ( self,  req, * args, ** kwargs)"
+
+.PP
+.nf
+Call the wrapped function; override this in a subclass to
+change how the function is called\&.
+.fi
+.PP
+ 
+.SS "webob\&.dec\&.wsgify\&.clone ( self,  func = \fCNone\fP, ** kw)"
+
+.PP
+.nf
+Creates a copy/clone of this object, but with some
+parameters rebound
+
+.fi
+.PP
+ 
+.SS "webob\&.dec\&.wsgify\&.get ( self,  url, ** kw)"
+
+.PP
+.nf
+Run a GET request on this application, returning a Response\&.
+
+This creates a request object using the given URL, and any
+other keyword arguments are set on the request object (e\&.g\&.,
+``last_modified=datetime\&.now()``)\&.
+
+::
+
+    resp = myapp\&.get('/article?id=10')
+
+.fi
+.PP
+ 
+.SS "webob\&.dec\&.wsgify\&.middleware ( cls,  middle_func = \fCNone\fP,  app = \fCNone\fP, ** kw)"
+
+.PP
+.nf
+Creates middleware
+
+Use this like::
+
+    @wsgify\&.middleware
+    def restrict_ip(req, app, ips):
+        if req\&.remote_addr not in ips:
+            raise webob\&.exc\&.HTTPForbidden('Bad IP: %s' % req\&.remote_addr)
+        return app
+
+    @wsgify
+    def app(req):
+        return 'hi'
+
+    wrapped = restrict_ip(app, ips=['127\&.0\&.0\&.1'])
+
+Or as a decorator::
+
+    @restrict_ip(ips=['127\&.0\&.0\&.1'])
+    @wsgify
+    def wrapped_app(req):
+        return 'hi'
+
+Or if you want to write output-rewriting middleware::
+
+    @wsgify\&.middleware
+    def all_caps(req, app):
+        resp = req\&.get_response(app)
+        resp\&.body = resp\&.body\&.upper()
+        return resp
+
+    wrapped = all_caps(app)
+
+Note that you must call ``req\&.get_response(app)`` to get a WebOb
+response object\&.  If you are not modifying the output, you can just
+return the app\&.
+
+As you can see, this method doesn't actually create an application, but
+creates 'middleware' that can be bound to an application, along with
+'configuration' (that is, any other keyword arguments you pass when
+binding the application)\&.
+.fi
+.PP
+ 
+.SS "webob\&.dec\&.wsgify\&.post ( self,  url,  POST = \fCNone\fP, ** kw)"
+
+.PP
+.nf
+Run a POST request on this application, returning a Response\&.
+
+The second argument (`POST`) can be the request body (a
+string), or a dictionary or list of two-tuples, that give the
+POST body\&.
+
+::
+
+    resp = myapp\&.post('/article/new',
+                      dict(title='My Day',
+                           content='I ate a sandwich'))
+
+.fi
+.PP
+ 
+.SS "webob\&.dec\&.wsgify\&.request ( self,  url, ** kw)"
+
+.PP
+.nf
+Run a request on this application, returning a Response\&.
+
+This can be used for DELETE, PUT, etc requests\&.  E\&.g\&.::
+
+    resp = myapp\&.request('/article/1', method='PUT', body='New article')
+
+.fi
+.PP
+ 
+.SS "webob\&.dec\&.wsgify\&.undecorated ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "webob\&.dec\&.wsgify\&.args"
+
+.SS "webob\&.dec\&.wsgify\&.func"
+
+.SS "webob\&.dec\&.wsgify\&.kwargs"
+
+.SS "webob\&.dec\&.wsgify\&.middleware_wraps"
+
+.SS "webob\&.dec\&.wsgify\&.RequestClass = \fBRequest\fP\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

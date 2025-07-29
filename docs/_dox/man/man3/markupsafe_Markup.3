@@ -1,0 +1,298 @@
+.TH "markupsafe.Markup" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+markupsafe.Markup
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits str\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "te\&.Self \fB__new__\fP (cls, t\&.Any object='', str|None encoding=None, str errors='strict')"
+.br
+.ti -1c
+.RI "te\&.Self \fB__html__\fP (self)"
+.br
+.ti -1c
+.RI "te\&.Self \fB__add__\fP (self, str|\fB_HasHTML\fP value)"
+.br
+.ti -1c
+.RI "te\&.Self \fB__radd__\fP (self, str|\fB_HasHTML\fP value)"
+.br
+.ti -1c
+.RI "te\&.Self \fB__mul__\fP (self, t\&.SupportsIndex value)"
+.br
+.ti -1c
+.RI "te\&.Self \fB__rmul__\fP (self, t\&.SupportsIndex value)"
+.br
+.ti -1c
+.RI "te\&.Self \fB__mod__\fP (self, t\&.Any value)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "te\&.Self \fBjoin\fP (self, cabc\&.Iterable[str|\fB_HasHTML\fP] iterable)"
+.br
+.ti -1c
+.RI "list[te\&.Self] \fBsplit\fP (self, str|None sep=None, t\&.SupportsIndex maxsplit=\-1)"
+.br
+.ti -1c
+.RI "list[te\&.Self] \fBrsplit\fP (self, str|None sep=None, t\&.SupportsIndex maxsplit=\-1)"
+.br
+.ti -1c
+.RI "list[te\&.Self] \fBsplitlines\fP (self, bool keepends=False)"
+.br
+.ti -1c
+.RI "str \fBunescape\fP (self)"
+.br
+.ti -1c
+.RI "str \fBstriptags\fP (self)"
+.br
+.ti -1c
+.RI "te\&.Self \fBescape\fP (cls, t\&.Any s)"
+.br
+.ti -1c
+.RI "te\&.Self \fB__getitem__\fP (self, t\&.SupportsIndex|slice key)"
+.br
+.ti -1c
+.RI "te\&.Self \fBcapitalize\fP (self)"
+.br
+.ti -1c
+.RI "te\&.Self \fBtitle\fP (self)"
+.br
+.ti -1c
+.RI "te\&.Self \fBlower\fP (self)"
+.br
+.ti -1c
+.RI "te\&.Self \fBupper\fP (self)"
+.br
+.ti -1c
+.RI "te\&.Self \fBreplace\fP (self, str old, str new, t\&.SupportsIndex count=\-1)"
+.br
+.ti -1c
+.RI "te\&.Self \fBljust\fP (self, t\&.SupportsIndex width, str fillchar=' ')"
+.br
+.ti -1c
+.RI "te\&.Self \fBrjust\fP (self, t\&.SupportsIndex width, str fillchar=' ')"
+.br
+.ti -1c
+.RI "te\&.Self \fBlstrip\fP (self, str|None chars=None)"
+.br
+.ti -1c
+.RI "te\&.Self \fBrstrip\fP (self, str|None chars=None)"
+.br
+.ti -1c
+.RI "te\&.Self \fBcenter\fP (self, t\&.SupportsIndex width, str fillchar=' ')"
+.br
+.ti -1c
+.RI "te\&.Self \fBstrip\fP (self, str|None chars=None)"
+.br
+.ti -1c
+.RI "str \fBtranslate\fP (self, cabc\&.Mapping[int, str|int|None] table)"
+.br
+.ti -1c
+.RI "te\&.Self \fBexpandtabs\fP (self, t\&.SupportsIndex tabsize=8)"
+.br
+.ti -1c
+.RI "te\&.Self \fBswapcase\fP (self)"
+.br
+.ti -1c
+.RI "te\&.Self \fBzfill\fP (self, t\&.SupportsIndex width)"
+.br
+.ti -1c
+.RI "te\&.Self \fBcasefold\fP (self)"
+.br
+.ti -1c
+.RI "te\&.Self \fBremoveprefix\fP (self, str prefix)"
+.br
+.ti -1c
+.RI "te\&.Self \fBremovesuffix\fP (self, str suffix)"
+.br
+.ti -1c
+.RI "tuple[te\&.Self, te\&.Self, te\&.Self] \fBpartition\fP (self, str sep)"
+.br
+.ti -1c
+.RI "tuple[te\&.Self, te\&.Self, te\&.Self] \fBrpartition\fP (self, str sep)"
+.br
+.ti -1c
+.RI "te\&.Self \fBformat\fP (self, *t\&.Any args, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "te\&.Self \fBformat_map\fP (self, cabc\&.Mapping[str, t\&.Any] mapping)"
+.br
+.ti -1c
+.RI "te\&.Self \fB__html_format__\fP (self, str format_spec)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBescape\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A string that is ready to be safely inserted into an HTML or XML
+document, either because it was escaped or because it was marked
+safe\&.
+
+Passing an object to the constructor converts it to text and wraps
+it to mark it safe without escaping\&. To escape the text, use the
+:meth:`escape` class method instead\&.
+
+>>> Markup('Hello, <em>World</em>!')
+Markup('Hello, <em>World</em>!')
+>>> Markup(42)
+Markup('42')
+>>> Markup\&.escape('Hello, <em>World</em>!')
+Markup('Hello &lt;em&gt;World&lt;/em&gt;!')
+
+This implements the ``__html__()`` interface that some frameworks
+use\&. Passing an object that implements ``__html__()`` will wrap the
+output of that method, marking it safe\&.
+
+>>> class Foo:
+\&.\&.\&.     def __html__(self):
+\&.\&.\&.         return '<a href='/foo'>foo</a>'
+\&.\&.\&.
+>>> Markup(Foo())
+Markup('<a href='/foo'>foo</a>')
+
+This is a subclass of :class:`str`\&. It has the same methods, but
+escapes their arguments and returns a ``Markup`` instance\&.
+
+>>> Markup('<em>%s</em>') % ('foo & bar',)
+Markup('<em>foo &amp; bar</em>')
+>>> Markup('<em>Hello</em> ') + '<foo>'
+Markup('<em>Hello</em> &lt;foo&gt;')
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " te\&.Self markupsafe\&.Markup\&.__add__ ( self, str | \fB_HasHTML\fP value)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.__getitem__ ( self, t\&.SupportsIndex | slice key)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.__html__ ( self)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.__html_format__ ( self, str format_spec)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.__mod__ ( self, t\&.Any value)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.__mul__ ( self, t\&.SupportsIndex value)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.__new__ ( cls, t\&.Any  object = \fC''\fP, str | None  encoding = \fCNone\fP, str  errors = \fC'strict'\fP)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.__radd__ ( self, str | \fB_HasHTML\fP value)"
+
+.SS " str markupsafe\&.Markup\&.__repr__ ( self)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.__rmul__ ( self, t\&.SupportsIndex value)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.capitalize ( self)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.casefold ( self)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.center ( self, t\&.SupportsIndex width, str  fillchar = \fC' '\fP)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.escape ( cls, t\&.Any s)"
+
+.PP
+.nf
+Escape a string\&. Calls :func:`escape` and ensures that for
+subclasses the correct type is returned\&.
+
+.fi
+.PP
+ 
+.SS " te\&.Self markupsafe\&.Markup\&.expandtabs ( self, t\&.SupportsIndex  tabsize = \fC8\fP)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.format ( self, *t\&.Any args, **t\&.Any kwargs)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.format_map ( self, cabc\&.Mapping[str, t\&.Any] mapping)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.join ( self, cabc\&.Iterable[str | \fB_HasHTML\fP] iterable)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.ljust ( self, t\&.SupportsIndex width, str  fillchar = \fC' '\fP)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.lower ( self)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.lstrip ( self, str | None  chars = \fCNone\fP)"
+
+.SS " tuple[te\&.Self, te\&.Self, te\&.Self] markupsafe\&.Markup\&.partition ( self, str sep)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.removeprefix ( self, str prefix)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.removesuffix ( self, str suffix)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.replace ( self, str old, str new, t\&.SupportsIndex  count = \fC\-1\fP)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.rjust ( self, t\&.SupportsIndex width, str  fillchar = \fC' '\fP)"
+
+.SS " tuple[te\&.Self, te\&.Self, te\&.Self] markupsafe\&.Markup\&.rpartition ( self, str sep)"
+
+.SS " list[te\&.Self] markupsafe\&.Markup\&.rsplit ( self, str | None  sep = \fCNone\fP, t\&.SupportsIndex  maxsplit = \fC\-1\fP)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.rstrip ( self, str | None  chars = \fCNone\fP)"
+
+.SS " list[te\&.Self] markupsafe\&.Markup\&.split ( self, str | None  sep = \fCNone\fP, t\&.SupportsIndex  maxsplit = \fC\-1\fP)"
+
+.SS " list[te\&.Self] markupsafe\&.Markup\&.splitlines ( self, bool  keepends = \fCFalse\fP)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.strip ( self, str | None  chars = \fCNone\fP)"
+
+.SS " str markupsafe\&.Markup\&.striptags ( self)"
+
+.PP
+.nf
+:meth:`unescape` the markup, remove tags, and normalize
+whitespace to single spaces\&.
+
+>>> Markup('Main &raquo;\\t<em>About</em>')\&.striptags()
+'Main » About'
+
+.fi
+.PP
+ 
+.SS " te\&.Self markupsafe\&.Markup\&.swapcase ( self)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.title ( self)"
+
+.SS " str markupsafe\&.Markup\&.translate ( self, cabc\&.Mapping[int, str | int | None] table)"
+
+.SS " str markupsafe\&.Markup\&.unescape ( self)"
+
+.PP
+.nf
+Convert escaped markup back into a text string\&. This replaces
+HTML entities with the characters they represent\&.
+
+>>> Markup('Main &raquo; <em>About</em>')\&.unescape()
+'Main » <em>About</em>'
+
+.fi
+.PP
+ 
+.SS " te\&.Self markupsafe\&.Markup\&.upper ( self)"
+
+.SS " te\&.Self markupsafe\&.Markup\&.zfill ( self, t\&.SupportsIndex width)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "markupsafe\&.Markup\&.escape"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

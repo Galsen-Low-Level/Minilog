@@ -1,0 +1,102 @@
+.TH "pip._internal.utils.filesystem" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.utils.filesystem
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBcheck_path_owner\fP (str path)"
+.br
+.ti -1c
+.RI "Generator[BinaryIO, None, None] \fBadjacent_tmp_file\fP (str path, **Any kwargs)"
+.br
+.ti -1c
+.RI "bool \fBtest_writable_dir\fP (str path)"
+.br
+.ti -1c
+.RI "bool \fB_test_writable_dir_win\fP (str path)"
+.br
+.ti -1c
+.RI "List[str] \fBfind_files\fP (str path, str pattern)"
+.br
+.ti -1c
+.RI "Union[int, float] \fBfile_size\fP (str path)"
+.br
+.ti -1c
+.RI "str \fBformat_file_size\fP (str path)"
+.br
+.ti -1c
+.RI "Union[int, float] \fBdirectory_size\fP (str path)"
+.br
+.ti -1c
+.RI "str \fBformat_directory_size\fP (str path)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBreplace\fP = retry(stop_after_delay=1, wait=0\&.25)(os\&.replace)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " bool pip\&._internal\&.utils\&.filesystem\&._test_writable_dir_win (str path)\fC [protected]\fP"
+
+.SS " Generator[BinaryIO, None, None] pip\&._internal\&.utils\&.filesystem\&.adjacent_tmp_file (str path, **Any kwargs)"
+
+.PP
+.nf
+Return a file-like object pointing to a tmp file next to path\&.
+
+The file is created securely and is ensured to be written to disk
+after the context reaches its end\&.
+
+kwargs will be passed to tempfile\&.NamedTemporaryFile to control
+the way the temporary file will be opened\&.
+
+.fi
+.PP
+ 
+.SS " bool pip\&._internal\&.utils\&.filesystem\&.check_path_owner (str path)"
+
+.SS " Union[int, float] pip\&._internal\&.utils\&.filesystem\&.directory_size (str path)"
+
+.SS " Union[int, float] pip\&._internal\&.utils\&.filesystem\&.file_size (str path)"
+
+.SS " List[str] pip\&._internal\&.utils\&.filesystem\&.find_files (str path, str pattern)"
+
+.PP
+.nf
+Returns a list of absolute paths of files beneath path, recursively,
+with filenames which match the UNIX-style shell glob pattern\&.
+.fi
+.PP
+ 
+.SS " str pip\&._internal\&.utils\&.filesystem\&.format_directory_size (str path)"
+
+.SS " str pip\&._internal\&.utils\&.filesystem\&.format_file_size (str path)"
+
+.SS " bool pip\&._internal\&.utils\&.filesystem\&.test_writable_dir (str path)"
+
+.PP
+.nf
+Check if a directory is writable\&.
+
+Uses os\&.access() on POSIX, tries creating files on Windows\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._internal\&.utils\&.filesystem\&.replace = retry(stop_after_delay=1, wait=0\&.25)(os\&.replace)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

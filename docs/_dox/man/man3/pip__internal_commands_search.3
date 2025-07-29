@@ -1,0 +1,67 @@
+.TH "pip._internal.commands.search" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.commands.search
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSearchCommand\fP"
+.br
+.ti -1c
+.RI "class \fBTransformedHit\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "List['TransformedHit'] \fBtransform_hits\fP (List[Dict[str, str]] hits)"
+.br
+.ti -1c
+.RI "None \fBprint_dist_installation_info\fP (str name, str latest)"
+.br
+.ti -1c
+.RI "None \fBprint_results\fP (List['TransformedHit'] hits, Optional[int] name_column_width=None, Optional[int] terminal_width=None)"
+.br
+.ti -1c
+.RI "str \fBhighest_version\fP (List[str] versions)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " str pip\&._internal\&.commands\&.search\&.highest_version (List[str] versions)"
+
+.SS " None pip\&._internal\&.commands\&.search\&.print_dist_installation_info (str name, str latest)"
+
+.SS " None pip\&._internal\&.commands\&.search\&.print_results (List['TransformedHit'] hits, Optional[int]  name_column_width = \fCNone\fP, Optional[int]  terminal_width = \fCNone\fP)"
+
+.SS " List['TransformedHit'] pip\&._internal\&.commands\&.search\&.transform_hits (List[Dict[str, str]] hits)"
+
+.PP
+.nf
+The list from pypi is really a list of versions\&. We want a list of
+packages with the list of versions stored inline\&. This converts the
+list from pypi into one we can use\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._internal\&.commands\&.search\&.logger = logging\&.getLogger(__name__)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

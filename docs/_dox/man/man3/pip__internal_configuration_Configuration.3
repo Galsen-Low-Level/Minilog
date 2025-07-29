@@ -1,0 +1,263 @@
+.TH "pip._internal.configuration.Configuration" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.configuration.Configuration
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, bool \fBisolated\fP, Optional[\fBKind\fP] \fBload_only\fP=None)"
+.br
+.ti -1c
+.RI "None \fBload\fP (self)"
+.br
+.ti -1c
+.RI "Optional[str] \fBget_file_to_edit\fP (self)"
+.br
+.ti -1c
+.RI "Iterable[Tuple[str, Any]] \fBitems\fP (self)"
+.br
+.ti -1c
+.RI "Any \fBget_value\fP (self, str key)"
+.br
+.ti -1c
+.RI "None \fBset_value\fP (self, str key, Any value)"
+.br
+.ti -1c
+.RI "None \fBunset_value\fP (self, str key)"
+.br
+.ti -1c
+.RI "None \fBsave\fP (self)"
+.br
+.ti -1c
+.RI "Iterable[Tuple[str, str]] \fBget_environ_vars\fP (self)"
+.br
+.ti -1c
+.RI "Iterable[Tuple[\fBKind\fP, List[str]]] \fBiter_config_files\fP (self)"
+.br
+.ti -1c
+.RI "Dict[str, Any] \fBget_values_in_config\fP (self, \fBKind\fP variant)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBisolated\fP"
+.br
+.ti -1c
+.RI "\fBload_only\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB_ensure_have_load_only\fP (self)"
+.br
+.ti -1c
+.RI "Dict[str, Any] \fB_dictionary\fP (self)"
+.br
+.ti -1c
+.RI "None \fB_load_config_files\fP (self)"
+.br
+.ti -1c
+.RI "\fBRawConfigParser\fP \fB_load_file\fP (self, \fBKind\fP variant, str fname)"
+.br
+.ti -1c
+.RI "\fBRawConfigParser\fP \fB_construct_parser\fP (self, str fname)"
+.br
+.ti -1c
+.RI "None \fB_load_environment_vars\fP (self)"
+.br
+.ti -1c
+.RI "Dict[str, Any] \fB_normalized_keys\fP (self, str section, Iterable[Tuple[str, Any]] \fBitems\fP)"
+.br
+.ti -1c
+.RI "Tuple[str, \fBRawConfigParser\fP] \fB_get_parser_to_modify\fP (self)"
+.br
+.ti -1c
+.RI "None \fB_mark_as_modified\fP (self, str fname, \fBRawConfigParser\fP parser)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Handles management of configuration\&.
+
+Provides an interface to accessing and managing configuration files\&.
+
+This class converts provides an API that takes 'section\&.key-name' style
+keys and stores the value associated with it as 'key-name' under the
+section 'section'\&.
+
+This allows for a clean interface wherein the both the section and the
+key-name are preserved in an easy to manage form in the configuration files
+and the data stored is also nice\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._internal\&.configuration\&.Configuration\&.__init__ ( self, bool isolated, Optional[\fBKind\fP]  load_only = \fCNone\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " str pip\&._internal\&.configuration\&.Configuration\&.__repr__ ( self)"
+
+.SS " \fBRawConfigParser\fP pip\&._internal\&.configuration\&.Configuration\&._construct_parser ( self, str fname)\fC [protected]\fP"
+
+.SS " Dict[str, Any] pip\&._internal\&.configuration\&.Configuration\&._dictionary ( self)\fC [protected]\fP"
+
+.PP
+.nf
+A dictionary representing the loaded configuration\&.
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.configuration\&.Configuration\&._ensure_have_load_only ( self)\fC [protected]\fP"
+
+.SS " Tuple[str, \fBRawConfigParser\fP] pip\&._internal\&.configuration\&.Configuration\&._get_parser_to_modify ( self)\fC [protected]\fP"
+
+.SS " None pip\&._internal\&.configuration\&.Configuration\&._load_config_files ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Loads configuration from configuration files
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.configuration\&.Configuration\&._load_environment_vars ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Loads configuration from environment variables
+.fi
+.PP
+ 
+.SS " \fBRawConfigParser\fP pip\&._internal\&.configuration\&.Configuration\&._load_file ( self, \fBKind\fP variant, str fname)\fC [protected]\fP"
+
+.SS " None pip\&._internal\&.configuration\&.Configuration\&._mark_as_modified ( self, str fname, \fBRawConfigParser\fP parser)\fC [protected]\fP"
+
+.SS " Dict[str, Any] pip\&._internal\&.configuration\&.Configuration\&._normalized_keys ( self, str section, Iterable[Tuple[str, Any]]
+     items)\fC [protected]\fP"
+
+.PP
+.nf
+Normalizes items to construct a dictionary with normalized keys\&.
+
+This routine is where the names become keys and are made the same
+regardless of source - configuration files or environment\&.
+
+.fi
+.PP
+ 
+.SS " Iterable[Tuple[str, str]] pip\&._internal\&.configuration\&.Configuration\&.get_environ_vars ( self)"
+
+.PP
+.nf
+Returns a generator with all environmental vars with prefix PIP_
+.fi
+.PP
+ 
+.SS " Optional[str] pip\&._internal\&.configuration\&.Configuration\&.get_file_to_edit ( self)"
+
+.PP
+.nf
+Returns the file with highest priority in configuration
+.fi
+.PP
+ 
+.SS " Any pip\&._internal\&.configuration\&.Configuration\&.get_value ( self, str key)"
+
+.PP
+.nf
+Get a value from the configuration\&.
+.fi
+.PP
+ 
+.SS " Dict[str, Any] pip\&._internal\&.configuration\&.Configuration\&.get_values_in_config ( self, \fBKind\fP variant)"
+
+.PP
+.nf
+Get values present in a config file
+.fi
+.PP
+ 
+.SS " Iterable[Tuple[str, Any]] pip\&._internal\&.configuration\&.Configuration\&.items ( self)"
+
+.PP
+.nf
+Returns key-value pairs like dict\&.items() representing the loaded
+configuration
+
+.fi
+.PP
+ 
+.SS " Iterable[Tuple[\fBKind\fP, List[str]]] pip\&._internal\&.configuration\&.Configuration\&.iter_config_files ( self)"
+
+.PP
+.nf
+Yields variant and configuration files associated with it\&.
+
+This should be treated like items of a dictionary\&. The order
+here doesn't affect what gets overridden\&. That is controlled
+by OVERRIDE_ORDER\&. However this does control the order they are
+displayed to the user\&. It's probably most ergononmic to display
+things in the same order as OVERRIDE_ORDER
+
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.configuration\&.Configuration\&.load ( self)"
+
+.PP
+.nf
+Loads configuration from configuration files and environment
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.configuration\&.Configuration\&.save ( self)"
+
+.PP
+.nf
+Save the current in-memory state\&.
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.configuration\&.Configuration\&.set_value ( self, str key, Any value)"
+
+.PP
+.nf
+Modify a value in the configuration\&.
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.configuration\&.Configuration\&.unset_value ( self, str key)"
+
+.PP
+.nf
+Unset a value in the configuration\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._internal\&.configuration\&.Configuration\&.isolated"
+
+.SS "pip\&._internal\&.configuration\&.Configuration\&.load_only"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,90 @@
+.TH "pip._internal.utils.temp_dir" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.utils.temp_dir
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_Default\fP"
+.br
+.ti -1c
+.RI "class \fBAdjacentTempDirectory\fP"
+.br
+.ti -1c
+.RI "class \fBTempDirectory\fP"
+.br
+.ti -1c
+.RI "class \fBTempDirectoryTypeRegistry\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "Generator[None, None, None] \fBglobal_tempdir_manager\fP ()"
+.br
+.ti -1c
+.RI "Generator[\fBTempDirectoryTypeRegistry\fP, None, None] \fBtempdir_registry\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "\fB_T\fP = TypeVar('_T', bound='TempDirectory')"
+.br
+.ti -1c
+.RI "\fBtempdir_kinds\fP"
+.br
+.ti -1c
+.RI "Optional \fB_tempdir_manager\fP = None"
+.br
+.ti -1c
+.RI "\fB_default\fP = \fB_Default\fP()"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " Generator[None, None, None] pip\&._internal\&.utils\&.temp_dir\&.global_tempdir_manager ()"
+
+.SS " Generator[\fBTempDirectoryTypeRegistry\fP, None, None] pip\&._internal\&.utils\&.temp_dir\&.tempdir_registry ()"
+
+.PP
+.nf
+Provides a scoped global tempdir registry that can be used to dictate
+whether directories should be deleted\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._internal\&.utils\&.temp_dir\&._default = \fB_Default\fP()\fC [protected]\fP"
+
+.SS "pip\&._internal\&.utils\&.temp_dir\&._T = TypeVar('_T', bound='TempDirectory')\fC [protected]\fP"
+
+.SS "Optional pip\&._internal\&.utils\&.temp_dir\&._tempdir_manager = None\fC [protected]\fP"
+
+.SS "pip\&._internal\&.utils\&.temp_dir\&.logger = logging\&.getLogger(__name__)"
+
+.SS "pip\&._internal\&.utils\&.temp_dir\&.tempdir_kinds"
+\fBInitial value:\fP.PP
+.nf
+1 =  enum(
+2     BUILD_ENV="build\-env",
+3     EPHEM_WHEEL_CACHE="ephem\-wheel\-cache",
+4     REQ_BUILD="req\-build",
+5 )
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

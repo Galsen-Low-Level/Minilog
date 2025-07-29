@@ -1,0 +1,388 @@
+.TH "waitress.server.BaseWSGIServer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+waitress.server.BaseWSGIServer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBwaitress\&.wasyncore\&.dispatcher\fP\&.
+.PP
+Inherited by \fBwaitress\&.server\&.TcpWSGIServer\fP, and \fBwaitress\&.server\&.UnixWSGIServer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBapplication\fP, map=None, _start=True, _sock=None, dispatcher=None, \fBadj\fP=None, \fBsockinfo\fP=None, bind_socket=True, **kw)"
+.br
+.ti -1c
+.RI "\fBbind_server_socket\fP (self)"
+.br
+.ti -1c
+.RI "\fBgetsockname\fP (self)"
+.br
+.ti -1c
+.RI "\fBaccept_connections\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd_task\fP (self, task)"
+.br
+.ti -1c
+.RI "\fBreadable\fP (self)"
+.br
+.ti -1c
+.RI "\fBwritable\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_read\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_connect\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_accept\fP (self)"
+.br
+.ti -1c
+.RI "\fBrun\fP (self)"
+.br
+.ti -1c
+.RI "\fBpull_trigger\fP (self)"
+.br
+.ti -1c
+.RI "\fBset_socket_options\fP (self, conn)"
+.br
+.ti -1c
+.RI "\fBfix_addr\fP (self, \fBaddr\fP)"
+.br
+.ti -1c
+.RI "\fBmaintenance\fP (self, now)"
+.br
+.ti -1c
+.RI "\fBprint_listen\fP (self, format_str)"
+.br
+.ti -1c
+.RI "\fBclose\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBwaitress\&.wasyncore\&.dispatcher\fP
+.in +1c
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd_channel\fP (self, map=None)"
+.br
+.ti -1c
+.RI "\fBdel_channel\fP (self, map=None)"
+.br
+.ti -1c
+.RI "\fBcreate_socket\fP (self, family=socket\&.AF_INET, type=socket\&.SOCK_STREAM)"
+.br
+.ti -1c
+.RI "\fBset_socket\fP (self, sock, map=None)"
+.br
+.ti -1c
+.RI "\fBset_reuse_addr\fP (self)"
+.br
+.ti -1c
+.RI "\fBlisten\fP (self, num)"
+.br
+.ti -1c
+.RI "\fBbind\fP (self, \fBaddr\fP)"
+.br
+.ti -1c
+.RI "\fBaccept\fP (self)"
+.br
+.ti -1c
+.RI "\fBsend\fP (self, data, do_close=True)"
+.br
+.ti -1c
+.RI "\fBrecv\fP (self, buffer_size)"
+.br
+.ti -1c
+.RI "\fBlog\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBlog_info\fP (self, message, type='info')"
+.br
+.ti -1c
+.RI "\fBhandle_read_event\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_connect_event\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_write_event\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_expt_event\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_error\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_expt\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_write\fP (self)"
+.br
+.ti -1c
+.RI "\fBhandle_accepted\fP (self, sock, \fBaddr\fP)"
+.br
+.ti -1c
+.RI "\fBhandle_close\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsockinfo\fP"
+.br
+.ti -1c
+.RI "\fBfamily\fP"
+.br
+.ti -1c
+.RI "\fBsocktype\fP"
+.br
+.ti -1c
+.RI "\fBapplication\fP"
+.br
+.ti -1c
+.RI "\fBadj\fP"
+.br
+.ti -1c
+.RI "\fBtrigger\fP"
+.br
+.ti -1c
+.RI "\fBtask_dispatcher\fP"
+.br
+.ti -1c
+.RI "\fBeffective_host\fP"
+.br
+.ti -1c
+.RI "\fBeffective_port\fP"
+.br
+.ti -1c
+.RI "\fBserver_name\fP"
+.br
+.ti -1c
+.RI "\fBactive_channels\fP"
+.br
+.ti -1c
+.RI "\fBaccepting\fP"
+.br
+.ti -1c
+.RI "\fBnext_channel_cleanup\fP"
+.br
+.ti -1c
+.RI "\fBin_connection_overflow\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBwaitress\&.wasyncore\&.dispatcher\fP
+.in +1c
+.ti -1c
+.RI "\fBsocket\fP"
+.br
+.ti -1c
+.RI "\fBfamily_and_type\fP"
+.br
+.ti -1c
+.RI "\fBaccepting\fP"
+.br
+.ti -1c
+.RI "\fBconnected\fP"
+.br
+.ti -1c
+.RI "\fBconnecting\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBchannel_class\fP = \fBHTTPChannel\fP"
+.br
+.ti -1c
+.RI "int \fBnext_channel_cleanup\fP = 0"
+.br
+.ti -1c
+.RI "\fBsocketmod\fP = \fBsocket\fP"
+.br
+.ti -1c
+.RI "\fBasyncore\fP = wasyncore"
+.br
+.ti -1c
+.RI "bool \fBin_connection_overflow\fP = False"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBwaitress\&.wasyncore\&.dispatcher\fP
+.in +1c
+.ti -1c
+.RI "bool \fBdebug\fP = False"
+.br
+.ti -1c
+.RI "bool \fBconnected\fP = False"
+.br
+.ti -1c
+.RI "bool \fBaccepting\fP = False"
+.br
+.ti -1c
+.RI "bool \fBconnecting\fP = False"
+.br
+.ti -1c
+.RI "bool \fBclosing\fP = False"
+.br
+.ti -1c
+.RI "\fBaddr\fP = None"
+.br
+.ti -1c
+.RI "\fBignore_log_types\fP = frozenset({'warning'})"
+.br
+.ti -1c
+.RI "\fBlogger\fP = utilities\&.logger"
+.br
+.ti -1c
+.RI "\fBcompact_traceback\fP = staticmethod(compact_traceback)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_map\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBwaitress\&.wasyncore\&.dispatcher\fP
+.in +1c
+.ti -1c
+.RI "\fB_map\fP"
+.br
+.ti -1c
+.RI "\fB_fileno\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "waitress\&.server\&.BaseWSGIServer\&.__init__ ( self,  application,  map = \fCNone\fP,  _start = \fCTrue\fP,  _sock = \fCNone\fP,  dispatcher = \fCNone\fP,  adj = \fCNone\fP,  sockinfo = \fCNone\fP,  bind_socket = \fCTrue\fP, ** kw)"
+
+.PP
+Reimplemented from \fBwaitress\&.wasyncore\&.dispatcher\fP\&.
+.PP
+Reimplemented in \fBwebtest\&.http\&.StopableWSGIServer\fP, and \fBwaitress\&.server\&.UnixWSGIServer\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "waitress\&.server\&.BaseWSGIServer\&.accept_connections ( self)"
+
+.SS "waitress\&.server\&.BaseWSGIServer\&.add_task ( self,  task)"
+
+.SS "waitress\&.server\&.BaseWSGIServer\&.bind_server_socket ( self)"
+
+.PP
+Reimplemented in \fBwaitress\&.server\&.TcpWSGIServer\fP, and \fBwaitress\&.server\&.UnixWSGIServer\fP\&.
+.SS "waitress\&.server\&.BaseWSGIServer\&.close ( self)"
+
+.PP
+Reimplemented from \fBwaitress\&.wasyncore\&.dispatcher\fP\&.
+.SS "waitress\&.server\&.BaseWSGIServer\&.fix_addr ( self,  addr)"
+
+.PP
+Reimplemented in \fBwaitress\&.server\&.UnixWSGIServer\fP\&.
+.SS "waitress\&.server\&.BaseWSGIServer\&.getsockname ( self)"
+
+.PP
+Reimplemented in \fBwaitress\&.server\&.TcpWSGIServer\fP, and \fBwaitress\&.server\&.UnixWSGIServer\fP\&.
+.SS "waitress\&.server\&.BaseWSGIServer\&.handle_accept ( self)"
+
+.PP
+Reimplemented from \fBwaitress\&.wasyncore\&.dispatcher\fP\&.
+.SS "waitress\&.server\&.BaseWSGIServer\&.handle_connect ( self)"
+
+.PP
+Reimplemented from \fBwaitress\&.wasyncore\&.dispatcher\fP\&.
+.SS "waitress\&.server\&.BaseWSGIServer\&.handle_read ( self)"
+
+.PP
+Reimplemented from \fBwaitress\&.wasyncore\&.dispatcher\fP\&.
+.SS "waitress\&.server\&.BaseWSGIServer\&.maintenance ( self,  now)"
+
+.PP
+.nf
+Closes channels that have not had any activity in a while\&.
+
+The timeout is configured through adj\&.channel_timeout (seconds)\&.
+
+.fi
+.PP
+ 
+.SS "waitress\&.server\&.BaseWSGIServer\&.print_listen ( self,  format_str)"
+
+.SS "waitress\&.server\&.BaseWSGIServer\&.pull_trigger ( self)"
+
+.SS "waitress\&.server\&.BaseWSGIServer\&.readable ( self)"
+
+.PP
+Reimplemented from \fBwaitress\&.wasyncore\&.dispatcher\fP\&.
+.SS "waitress\&.server\&.BaseWSGIServer\&.run ( self)"
+
+.PP
+Reimplemented in \fBwebtest\&.http\&.StopableWSGIServer\fP\&.
+.SS "waitress\&.server\&.BaseWSGIServer\&.set_socket_options ( self,  conn)"
+
+.PP
+Reimplemented in \fBwaitress\&.server\&.TcpWSGIServer\fP\&.
+.SS "waitress\&.server\&.BaseWSGIServer\&.writable ( self)"
+
+.PP
+Reimplemented from \fBwaitress\&.wasyncore\&.dispatcher\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "waitress\&.server\&.BaseWSGIServer\&._map\fC [protected]\fP"
+
+.SS "waitress\&.server\&.BaseWSGIServer\&.accepting"
+
+.SS "waitress\&.server\&.BaseWSGIServer\&.active_channels"
+
+.SS "waitress\&.server\&.BaseWSGIServer\&.adj"
+
+.SS "waitress\&.server\&.BaseWSGIServer\&.application"
+
+.SS "waitress\&.server\&.BaseWSGIServer\&.asyncore = wasyncore\fC [static]\fP"
+
+.SS "waitress\&.server\&.BaseWSGIServer\&.channel_class = \fBHTTPChannel\fP\fC [static]\fP"
+
+.SS "waitress\&.server\&.BaseWSGIServer\&.effective_host"
+
+.SS "waitress\&.server\&.BaseWSGIServer\&.effective_port"
+
+.SS "waitress\&.server\&.BaseWSGIServer\&.family"
+
+.SS "bool waitress\&.server\&.BaseWSGIServer\&.in_connection_overflow = False\fC [static]\fP"
+
+.SS "waitress\&.server\&.BaseWSGIServer\&.in_connection_overflow"
+
+.SS "int waitress\&.server\&.BaseWSGIServer\&.next_channel_cleanup = 0\fC [static]\fP"
+
+.SS "waitress\&.server\&.BaseWSGIServer\&.next_channel_cleanup"
+
+.SS "waitress\&.server\&.BaseWSGIServer\&.server_name"
+
+.SS "waitress\&.server\&.BaseWSGIServer\&.socketmod = \fBsocket\fP\fC [static]\fP"
+
+.SS "waitress\&.server\&.BaseWSGIServer\&.sockinfo"
+
+.SS "waitress\&.server\&.BaseWSGIServer\&.socktype"
+
+.SS "waitress\&.server\&.BaseWSGIServer\&.task_dispatcher"
+
+.SS "waitress\&.server\&.BaseWSGIServer\&.trigger"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

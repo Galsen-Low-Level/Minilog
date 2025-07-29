@@ -1,0 +1,130 @@
+.TH "jinja2.loaders.ChoiceLoader" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.loaders.ChoiceLoader
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBjinja2\&.loaders\&.BaseLoader\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, t\&.Sequence[\fBBaseLoader\fP] \fBloaders\fP)"
+.br
+.ti -1c
+.RI "t\&.Tuple[str, t\&.Optional[str], t\&.Optional[t\&.Callable[[], bool]]] \fBget_source\fP (self, 'Environment' environment, str template)"
+.br
+.ti -1c
+.RI "'Template' \fBload\fP (self, 'Environment' environment, str name, t\&.Optional[t\&.MutableMapping[str, t\&.Any]] globals=None)"
+.br
+.ti -1c
+.RI "t\&.List[str] \fBlist_templates\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBloaders\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Attributes inherited from \fBjinja2\&.loaders\&.BaseLoader\fP
+.in +1c
+.ti -1c
+.RI "bool \fBhas_source_access\fP = True"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This loader works like the `PrefixLoader` just that no prefix is
+specified\&.  If a template could not be found by one loader the next one
+is tried\&.
+
+>>> loader = ChoiceLoader([
+\&.\&.\&.     FileSystemLoader('/path/to/user/templates'),
+\&.\&.\&.     FileSystemLoader('/path/to/system/templates')
+\&.\&.\&. ])
+
+This is useful if you want to allow users to override builtin templates
+from a different location\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None jinja2\&.loaders\&.ChoiceLoader\&.__init__ ( self, t\&.Sequence[\fBBaseLoader\fP] loaders)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " t\&.Tuple[str, t\&.Optional[str], t\&.Optional[t\&.Callable[[], bool]]] jinja2\&.loaders\&.ChoiceLoader\&.get_source ( self, 'Environment' environment, str
+     template)"
+
+.PP
+.nf
+Get the template source, filename and reload helper for a template\&.
+It's passed the environment and template name and has to return a
+tuple in the form ``(source, filename, uptodate)`` or raise a
+`TemplateNotFound` error if it can't locate the template\&.
+
+The source part of the returned tuple must be the source of the
+template as a string\&. The filename should be the name of the
+file on the filesystem if it was loaded from there, otherwise
+``None``\&. The filename is used by Python for the tracebacks
+if no loader extension is used\&.
+
+The last item in the tuple is the `uptodate` function\&.  If auto
+reloading is enabled it's always called to check if the template
+changed\&.  No arguments are passed so the function must store the
+old state somewhere (for example in a closure)\&.  If it returns `False`
+the template will be reloaded\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.loaders\&.BaseLoader\fP\&.
+.SS " t\&.List[str] jinja2\&.loaders\&.ChoiceLoader\&.list_templates ( self)"
+
+.PP
+.nf
+Iterates over all templates\&.  If the loader does not support that
+it should raise a :exc:`TypeError` which is the default behavior\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.loaders\&.BaseLoader\fP\&.
+.SS " 'Template' jinja2\&.loaders\&.ChoiceLoader\&.load ( self, 'Environment' environment, str name, t\&.Optional[t\&.MutableMapping[str, t\&.Any]]  globals = \fCNone\fP)"
+
+.PP
+.nf
+Loads a template\&.  This method looks up the template in the cache
+or loads one by calling :meth:`get_source`\&.  Subclasses should not
+override this method as loaders working on collections of other
+loaders (such as :class:`PrefixLoader` or :class:`ChoiceLoader`)
+will not call this method but `get_source` directly\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.loaders\&.BaseLoader\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "jinja2\&.loaders\&.ChoiceLoader\&.loaders"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

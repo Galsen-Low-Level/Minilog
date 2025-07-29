@@ -1,0 +1,99 @@
+.TH "sphinx.transforms.compact_bullet_list.RefOnlyBulletListTransform" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.transforms.compact_bullet_list.RefOnlyBulletListTransform
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.transforms\&.SphinxTransform\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBapply\fP (self, **Any kwargs)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.transforms\&.SphinxTransform\fP
+.in +1c
+.ti -1c
+.RI "\fBSphinx\fP \fBapp\fP (self)"
+.br
+.ti -1c
+.RI "\fBBuildEnvironment\fP \fBenv\fP (self)"
+.br
+.ti -1c
+.RI "\fBConfig\fP \fBconfig\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdocument\fP, \fBstartnode\fP=None)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBdefault_priority\fP = 100"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_priority\fP = None"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBstartnode\fP"
+.br
+.ti -1c
+.RI "\fBlanguage\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Change refonly bullet lists to use compact_paragraphs\&.
+
+Specifically implemented for 'Indices and Tables' section, which looks
+odd when html_compact_lists is false\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " None sphinx\&.transforms\&.compact_bullet_list\&.RefOnlyBulletListTransform\&.apply ( self, **Any kwargs)"
+
+.PP
+.nf
+Override to apply the transform to the document tree\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.transforms\&.Transform\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int sphinx\&.transforms\&.compact_bullet_list\&.RefOnlyBulletListTransform\&.default_priority = 100\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,188 @@
+.TH "sphinx.config.Config" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.config.Config
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, dict[str, Any]|None config=None, dict[str, Any]|None \fBoverrides\fP=None)"
+.br
+.ti -1c
+.RI "dict[str, \fB_Opt\fP] \fBvalues\fP (self)"
+.br
+.ti -1c
+.RI "dict[str, Any] \fBoverrides\fP (self)"
+.br
+.ti -1c
+.RI "\fBConfig\fP \fBread\fP (type[\fBConfig\fP] cls, str|os\&.PathLike[str] confdir, dict[str, Any]|None \fBoverrides\fP=None, \fBTags\fP|None tags=None)"
+.br
+.ti -1c
+.RI "Any \fBconvert_overrides\fP (self, str name, str value)"
+.br
+.ti -1c
+.RI "None \fBinit_values\fP (self)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "None \fB__setattr__\fP (self, str key, object value)"
+.br
+.ti -1c
+.RI "Any \fB__getattr__\fP (self, str name)"
+.br
+.ti -1c
+.RI "Any \fB__getitem__\fP (self, str name)"
+.br
+.ti -1c
+.RI "None \fB__setitem__\fP (self, str name, Any value)"
+.br
+.ti -1c
+.RI "None \fB__delitem__\fP (self, str name)"
+.br
+.ti -1c
+.RI "bool \fB__contains__\fP (self, str name)"
+.br
+.ti -1c
+.RI "Iterator[\fBConfigValue\fP] \fB__iter__\fP (self)"
+.br
+.ti -1c
+.RI "None \fBadd\fP (self, str name, Any default, \fB_ConfigRebuild\fP rebuild, type|Collection[type]|\fBENUM\fP types, str description='')"
+.br
+.ti -1c
+.RI "Iterator[\fBConfigValue\fP] \fBfilter\fP (self, Set[\fB_ConfigRebuild\fP] rebuild)"
+.br
+.ti -1c
+.RI "dict[str, Any] \fB__getstate__\fP (self)"
+.br
+.ti -1c
+.RI "None \fB__setstate__\fP (self, dict[str, Any] state)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBpre_init_values\fP ()"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBconfig_values\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB_report_override_warnings\fP (self)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_overrides\fP"
+.br
+.ti -1c
+.RI "\fB_options\fP"
+.br
+.ti -1c
+.RI "\fB_raw_config\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Configuration file abstraction\&.
+
+The Config object makes the values of all config options available as
+attributes\&.
+
+It is exposed via the :py:class:`~sphinx\&.application\&.Sphinx`\\ ``\&.config``
+and :py:class:`sphinx\&.environment\&.BuildEnvironment`\\ ``\&.config`` attributes\&.
+For example, to get the value of :confval:`language`, use either
+``app\&.config\&.language`` or ``env\&.config\&.language``\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.config\&.Config\&.__init__ ( self, dict[str, Any] | None  config = \fCNone\fP, dict[str, Any] | None  overrides = \fCNone\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " bool sphinx\&.config\&.Config\&.__contains__ ( self, str name)"
+
+.SS " None sphinx\&.config\&.Config\&.__delitem__ ( self, str name)"
+
+.SS " Any sphinx\&.config\&.Config\&.__getattr__ ( self, str name)"
+
+.SS " Any sphinx\&.config\&.Config\&.__getitem__ ( self, str name)"
+
+.SS " dict[str, Any] sphinx\&.config\&.Config\&.__getstate__ ( self)"
+
+.PP
+.nf
+Obtains serializable data for pickling\&.
+.fi
+.PP
+ 
+.SS " Iterator[\fBConfigValue\fP] sphinx\&.config\&.Config\&.__iter__ ( self)"
+
+.SS " str sphinx\&.config\&.Config\&.__repr__ ( self)"
+
+.SS " None sphinx\&.config\&.Config\&.__setattr__ ( self, str key, object value)"
+
+.SS " None sphinx\&.config\&.Config\&.__setitem__ ( self, str name, Any value)"
+
+.SS " None sphinx\&.config\&.Config\&.__setstate__ ( self, dict[str, Any] state)"
+
+.SS " None sphinx\&.config\&.Config\&._report_override_warnings ( self)\fC [protected]\fP"
+
+.SS " None sphinx\&.config\&.Config\&.add ( self, str name, Any default, \fB_ConfigRebuild\fP rebuild, type | Collection[type] | \fBENUM\fP types, str  description = \fC''\fP)"
+
+.SS " Any sphinx\&.config\&.Config\&.convert_overrides ( self, str name, str value)"
+
+.SS " Iterator[\fBConfigValue\fP] sphinx\&.config\&.Config\&.filter ( self, Set[\fB_ConfigRebuild\fP] rebuild)"
+
+.SS " None sphinx\&.config\&.Config\&.init_values ( self)"
+
+.SS " dict[str, Any] sphinx\&.config\&.Config\&.overrides ( self)"
+
+.SS " None sphinx\&.config\&.Config\&.pre_init_values ()\fC [static]\fP"
+
+.SS " \fBConfig\fP sphinx\&.config\&.Config\&.read (type[\fBConfig\fP] cls, str | os\&.PathLike[str] confdir, dict[str, Any] | None  overrides = \fCNone\fP, \fBTags\fP | None  tags = \fCNone\fP)"
+
+.PP
+.nf
+Create a Config object from configuration file\&.
+.fi
+.PP
+ 
+.SS " dict[str, \fB_Opt\fP] sphinx\&.config\&.Config\&.values ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.config\&.Config\&._options\fC [protected]\fP"
+
+.SS "sphinx\&.config\&.Config\&._overrides\fC [protected]\fP"
+
+.SS "sphinx\&.config\&.Config\&._raw_config\fC [protected]\fP"
+
+.SS "dict sphinx\&.config\&.Config\&.config_values\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

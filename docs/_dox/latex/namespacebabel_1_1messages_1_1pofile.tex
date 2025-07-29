@@ -1,0 +1,306 @@
+\doxysection{babel.\+messages.\+pofile Namespace Reference}
+\hypertarget{namespacebabel_1_1messages_1_1pofile}{}\label{namespacebabel_1_1messages_1_1pofile}\index{babel.messages.pofile@{babel.messages.pofile}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classbabel_1_1messages_1_1pofile_1_1__NormalizedString}{\+\_\+\+Normalized\+String}}
+\item 
+class \mbox{\hyperlink{classbabel_1_1messages_1_1pofile_1_1PoFileError}{Po\+File\+Error}}
+\item 
+class \mbox{\hyperlink{classbabel_1_1messages_1_1pofile_1_1PoFileParser}{Po\+File\+Parser}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1messages_1_1pofile_a94965d2bb28e1dac86f221e70df4856f}{unescape}} (str string)
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1messages_1_1pofile_a5194b1f10b67fc7b8d7efa27e5cc25dc}{denormalize}} (str string)
+\item 
+list\mbox{[}str\mbox{]} \mbox{\hyperlink{namespacebabel_1_1messages_1_1pofile_a3e322f6ac692af6e0922e2746ecf751b}{\+\_\+extract\+\_\+locations}} (str line)
+\item 
+\mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Catalog}{Catalog}} \mbox{\hyperlink{namespacebabel_1_1messages_1_1pofile_a671f173dbaf2240077ae570d2ca2dc50}{read\+\_\+po}} (IO\mbox{[}Any\+Str\mbox{]}\texorpdfstring{$\vert$}{|}Iterable\mbox{[}Any\+Str\mbox{]} fileobj, \mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None, str\texorpdfstring{$\vert$}{|}None domain=None, bool ignore\+\_\+obsolete=False, str\texorpdfstring{$\vert$}{|}None charset=None, bool abort\+\_\+invalid=False)
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1messages_1_1pofile_ac1c69407699891ca89a3729a160f0518}{escape}} (str string)
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1messages_1_1pofile_a361170277ef2b67fa8cba499109051cd}{normalize}} (str string, str prefix=\textquotesingle{}\textquotesingle{}, int width=76)
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1messages_1_1pofile_a93c2246ae20220df543a3cd604f47b6c}{\+\_\+enclose\+\_\+filename\+\_\+if\+\_\+necessary}} (str filename)
+\item 
+None \mbox{\hyperlink{namespacebabel_1_1messages_1_1pofile_a857c272c6e6cb2758dffaf4068679680}{write\+\_\+po}} (Supports\+Write\mbox{[}bytes\mbox{]} fileobj, \mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Catalog}{Catalog}} catalog, int width=76, bool no\+\_\+location=False, bool omit\+\_\+header=False, bool sort\+\_\+output=False, bool sort\+\_\+by\+\_\+file=False, bool ignore\+\_\+obsolete=False, bool include\+\_\+previous=False, bool include\+\_\+lineno=True)
+\item 
+Iterable\mbox{[}str\mbox{]} \mbox{\hyperlink{namespacebabel_1_1messages_1_1pofile_a3279b9bccb58a1b9a88fc2b68b2c08fa}{generate\+\_\+po}} (\mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Catalog}{Catalog}} catalog, \texorpdfstring{$\ast$}{*}bool ignore\+\_\+obsolete=False, bool include\+\_\+lineno=True, bool include\+\_\+previous=False, bool no\+\_\+location=False, bool omit\+\_\+header=False, Literal\mbox{[}"{}message"{}, "{}location"{}\mbox{]}\texorpdfstring{$\vert$}{|}None sort\+\_\+by=None, int width=76)
+\item 
+list\mbox{[}\mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Message}{Message}}\mbox{]} \mbox{\hyperlink{namespacebabel_1_1messages_1_1pofile_a0f0dce67584fc24a110276d0aff8e345}{\+\_\+sort\+\_\+messages}} (Iterable\mbox{[}\mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Message}{Message}}\mbox{]} messages, Literal\mbox{[}"{}message"{}, "{}location"{}\mbox{]}\texorpdfstring{$\vert$}{|}None sort\+\_\+by)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacebabel_1_1messages_1_1pofile_a46a11d89f52871a1eb6a4fb9724787bc}{WORD\+\_\+\+SEP}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    babel.messages.pofile
+    ~~~~~~~~~~~~~~~~~~~~~
+
+    Reading and writing of files in the ``gettext`` PO (portable object)
+    format.
+
+    :copyright: (c) 2013-2025 by the Babel Team.
+    :license: BSD, see LICENSE for more details.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacebabel_1_1messages_1_1pofile_a93c2246ae20220df543a3cd604f47b6c}\label{namespacebabel_1_1messages_1_1pofile_a93c2246ae20220df543a3cd604f47b6c} 
+\index{babel.messages.pofile@{babel.messages.pofile}!\_enclose\_filename\_if\_necessary@{\_enclose\_filename\_if\_necessary}}
+\index{\_enclose\_filename\_if\_necessary@{\_enclose\_filename\_if\_necessary}!babel.messages.pofile@{babel.messages.pofile}}
+\doxysubsubsection{\texorpdfstring{\_enclose\_filename\_if\_necessary()}{\_enclose\_filename\_if\_necessary()}}
+{\footnotesize\ttfamily  str babel.\+messages.\+pofile.\+\_\+enclose\+\_\+filename\+\_\+if\+\_\+necessary (\begin{DoxyParamCaption}\item[{str}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Enclose filenames which include white spaces or tabs.
+
+Do the same as gettext and enclose filenames which contain white
+spaces or tabs with First Strong Isolate (U+2068) and Pop
+Directional Isolate (U+2069).
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1messages_1_1pofile_a3e322f6ac692af6e0922e2746ecf751b}\label{namespacebabel_1_1messages_1_1pofile_a3e322f6ac692af6e0922e2746ecf751b} 
+\index{babel.messages.pofile@{babel.messages.pofile}!\_extract\_locations@{\_extract\_locations}}
+\index{\_extract\_locations@{\_extract\_locations}!babel.messages.pofile@{babel.messages.pofile}}
+\doxysubsubsection{\texorpdfstring{\_extract\_locations()}{\_extract\_locations()}}
+{\footnotesize\ttfamily  list\mbox{[}str\mbox{]} babel.\+messages.\+pofile.\+\_\+extract\+\_\+locations (\begin{DoxyParamCaption}\item[{str}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Extract locations from location comments.
+
+Locations are extracted while properly handling First Strong
+Isolate (U+2068) and Pop Directional Isolate (U+2069), used by
+gettext to enclose filenames with spaces and tabs in their names.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1messages_1_1pofile_a0f0dce67584fc24a110276d0aff8e345}\label{namespacebabel_1_1messages_1_1pofile_a0f0dce67584fc24a110276d0aff8e345} 
+\index{babel.messages.pofile@{babel.messages.pofile}!\_sort\_messages@{\_sort\_messages}}
+\index{\_sort\_messages@{\_sort\_messages}!babel.messages.pofile@{babel.messages.pofile}}
+\doxysubsubsection{\texorpdfstring{\_sort\_messages()}{\_sort\_messages()}}
+{\footnotesize\ttfamily  list\mbox{[}\mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Message}{Message}}\mbox{]} babel.\+messages.\+pofile.\+\_\+sort\+\_\+messages (\begin{DoxyParamCaption}\item[{Iterable\mbox{[}\mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Message}{Message}}\mbox{]}}]{messages,  }\item[{Literal\mbox{[}"{}message"{}, "{}location"{}\mbox{]} \texorpdfstring{$\vert$}{|} None}]{sort\+\_\+by }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Sort the given message iterable by the given criteria.
+
+Always returns a list.
+
+:param messages: An iterable of Messages.
+:param sort_by: Sort by which criteria? Options are `message` and `location`.
+:return: list[Message]
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1messages_1_1pofile_a5194b1f10b67fc7b8d7efa27e5cc25dc}\label{namespacebabel_1_1messages_1_1pofile_a5194b1f10b67fc7b8d7efa27e5cc25dc} 
+\index{babel.messages.pofile@{babel.messages.pofile}!denormalize@{denormalize}}
+\index{denormalize@{denormalize}!babel.messages.pofile@{babel.messages.pofile}}
+\doxysubsubsection{\texorpdfstring{denormalize()}{denormalize()}}
+{\footnotesize\ttfamily  str babel.\+messages.\+pofile.\+denormalize (\begin{DoxyParamCaption}\item[{str}]{string }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Reverse the normalization done by the `normalize` function.
+
+>>> print(denormalize(r'''""
+... "Say:\n"
+... "  \"hello, world!\"\n"'''))
+Say:
+"hello, world!"
+<BLANKLINE>
+
+>>> print(denormalize(r'''""
+... "Say:\n"
+... "  \"Lorem ipsum dolor sit "
+... "amet, consectetur adipisicing"
+... " elit, \"\n"'''))
+Say:
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, "
+<BLANKLINE>
+
+:param string: the string to denormalize
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1messages_1_1pofile_ac1c69407699891ca89a3729a160f0518}\label{namespacebabel_1_1messages_1_1pofile_ac1c69407699891ca89a3729a160f0518} 
+\index{babel.messages.pofile@{babel.messages.pofile}!escape@{escape}}
+\index{escape@{escape}!babel.messages.pofile@{babel.messages.pofile}}
+\doxysubsubsection{\texorpdfstring{escape()}{escape()}}
+{\footnotesize\ttfamily  str babel.\+messages.\+pofile.\+escape (\begin{DoxyParamCaption}\item[{str}]{string }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Escape the given string so that it can be included in double-quoted
+strings in ``PO`` files.
+
+>>> escape('''Say:
+...   "hello, world!"
+... ''')
+'"Say:\\n  \\"hello, world!\\"\\n"'
+
+:param string: the string to escape
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1messages_1_1pofile_a3279b9bccb58a1b9a88fc2b68b2c08fa}\label{namespacebabel_1_1messages_1_1pofile_a3279b9bccb58a1b9a88fc2b68b2c08fa} 
+\index{babel.messages.pofile@{babel.messages.pofile}!generate\_po@{generate\_po}}
+\index{generate\_po@{generate\_po}!babel.messages.pofile@{babel.messages.pofile}}
+\doxysubsubsection{\texorpdfstring{generate\_po()}{generate\_po()}}
+{\footnotesize\ttfamily  Iterable\mbox{[}str\mbox{]} babel.\+messages.\+pofile.\+generate\+\_\+po (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Catalog}{Catalog}}}]{catalog,  }\item[{\texorpdfstring{$\ast$}{*}bool }]{ignore\+\_\+obsolete = {\ttfamily False},  }\item[{bool }]{include\+\_\+lineno = {\ttfamily True},  }\item[{bool }]{include\+\_\+previous = {\ttfamily False},  }\item[{bool }]{no\+\_\+location = {\ttfamily False},  }\item[{bool }]{omit\+\_\+header = {\ttfamily False},  }\item[{Literal\mbox{[}"{}message"{}, "{}location"{}\mbox{]} \texorpdfstring{$\vert$}{|} None }]{sort\+\_\+by = {\ttfamily None},  }\item[{int }]{width = {\ttfamily 76} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Yield text strings representing a ``gettext`` PO (portable object) file.
+
+See `write_po()` for a more detailed description.
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1messages_1_1pofile_a361170277ef2b67fa8cba499109051cd}\label{namespacebabel_1_1messages_1_1pofile_a361170277ef2b67fa8cba499109051cd} 
+\index{babel.messages.pofile@{babel.messages.pofile}!normalize@{normalize}}
+\index{normalize@{normalize}!babel.messages.pofile@{babel.messages.pofile}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily  str babel.\+messages.\+pofile.\+normalize (\begin{DoxyParamCaption}\item[{str}]{string,  }\item[{str }]{prefix = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{int }]{width = {\ttfamily 76} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert a string into a format that is appropriate for .po files.
+
+>>> print(normalize('''Say:
+...   "hello, world!"
+... ''', width=None))
+""
+"Say:\n"
+"  \"hello, world!\"\n"
+
+>>> print(normalize('''Say:
+...   "Lorem ipsum dolor sit amet, consectetur adipisicing elit, "
+... ''', width=32))
+""
+"Say:\n"
+"  \"Lorem ipsum dolor sit "
+"amet, consectetur adipisicing"
+" elit, \"\n"
+
+:param string: the string to normalize
+:param prefix: a string that should be prepended to every line
+:param width: the maximum line width; use `None`, 0, or a negative number
+to completely disable line wrapping
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1messages_1_1pofile_a671f173dbaf2240077ae570d2ca2dc50}\label{namespacebabel_1_1messages_1_1pofile_a671f173dbaf2240077ae570d2ca2dc50} 
+\index{babel.messages.pofile@{babel.messages.pofile}!read\_po@{read\_po}}
+\index{read\_po@{read\_po}!babel.messages.pofile@{babel.messages.pofile}}
+\doxysubsubsection{\texorpdfstring{read\_po()}{read\_po()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Catalog}{Catalog}} babel.\+messages.\+pofile.\+read\+\_\+po (\begin{DoxyParamCaption}\item[{IO\mbox{[}Any\+Str\mbox{]} \texorpdfstring{$\vert$}{|} Iterable\mbox{[}Any\+Str\mbox{]}}]{fileobj,  }\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None},  }\item[{str \texorpdfstring{$\vert$}{|} None }]{domain = {\ttfamily None},  }\item[{bool }]{ignore\+\_\+obsolete = {\ttfamily False},  }\item[{str \texorpdfstring{$\vert$}{|} None }]{charset = {\ttfamily None},  }\item[{bool }]{abort\+\_\+invalid = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read messages from a ``gettext`` PO (portable object) file from the given
+file-like object (or an iterable of lines) and return a `Catalog`.
+
+>>> from datetime import datetime
+>>> from io import StringIO
+>>> buf = StringIO('''
+... #: main.py:1
+... #, fuzzy, python-format
+... msgid "foo %(name)s"
+... msgstr "quux %(name)s"
+...
+... # A user comment
+... #. An auto comment
+... #: main.py:3
+... msgid "bar"
+... msgid_plural "baz"
+... msgstr[0] "bar"
+... msgstr[1] "baaz"
+... ''')
+>>> catalog = read_po(buf)
+>>> catalog.revision_date = datetime(2007, 4, 1)
+
+>>> for message in catalog:
+...     if message.id:
+...         print((message.id, message.string))
+...         print(' ', (message.locations, sorted(list(message.flags))))
+...         print(' ', (message.user_comments, message.auto_comments))
+(u'foo %(name)s', u'quux %(name)s')
+  ([(u'main.py', 1)], [u'fuzzy', u'python-format'])
+  ([], [])
+((u'bar', u'baz'), (u'bar', u'baaz'))
+  ([(u'main.py', 3)], [])
+  ([u'A user comment'], [u'An auto comment'])
+
+.. versionadded:: 1.0
+   Added support for explicit charset argument.
+
+:param fileobj: the file-like object (or iterable of lines) to read the PO file from
+:param locale: the locale identifier or `Locale` object, or `None`
+               if the catalog is not bound to a locale (which basically
+               means it's a template)
+:param domain: the message domain
+:param ignore_obsolete: whether to ignore obsolete messages in the input
+:param charset: the character set of the catalog.
+:param abort_invalid: abort read if po file is invalid
+\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1messages_1_1pofile_a94965d2bb28e1dac86f221e70df4856f}\label{namespacebabel_1_1messages_1_1pofile_a94965d2bb28e1dac86f221e70df4856f} 
+\index{babel.messages.pofile@{babel.messages.pofile}!unescape@{unescape}}
+\index{unescape@{unescape}!babel.messages.pofile@{babel.messages.pofile}}
+\doxysubsubsection{\texorpdfstring{unescape()}{unescape()}}
+{\footnotesize\ttfamily  str babel.\+messages.\+pofile.\+unescape (\begin{DoxyParamCaption}\item[{str}]{string }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Reverse `escape` the given string.
+
+    >>> print(unescape('"Say:\\n  \\"hello, world!\\"\\n"'))
+    Say:
+      "hello, world!"
+    <BLANKLINE>
+
+    :param string: the string to unescape\end{DoxyVerb}
+ \Hypertarget{namespacebabel_1_1messages_1_1pofile_a857c272c6e6cb2758dffaf4068679680}\label{namespacebabel_1_1messages_1_1pofile_a857c272c6e6cb2758dffaf4068679680} 
+\index{babel.messages.pofile@{babel.messages.pofile}!write\_po@{write\_po}}
+\index{write\_po@{write\_po}!babel.messages.pofile@{babel.messages.pofile}}
+\doxysubsubsection{\texorpdfstring{write\_po()}{write\_po()}}
+{\footnotesize\ttfamily  None babel.\+messages.\+pofile.\+write\+\_\+po (\begin{DoxyParamCaption}\item[{Supports\+Write\mbox{[}bytes\mbox{]}}]{fileobj,  }\item[{\mbox{\hyperlink{classbabel_1_1messages_1_1catalog_1_1Catalog}{Catalog}}}]{catalog,  }\item[{int }]{width = {\ttfamily 76},  }\item[{bool }]{no\+\_\+location = {\ttfamily False},  }\item[{bool }]{omit\+\_\+header = {\ttfamily False},  }\item[{bool }]{sort\+\_\+output = {\ttfamily False},  }\item[{bool }]{sort\+\_\+by\+\_\+file = {\ttfamily False},  }\item[{bool }]{ignore\+\_\+obsolete = {\ttfamily False},  }\item[{bool }]{include\+\_\+previous = {\ttfamily False},  }\item[{bool }]{include\+\_\+lineno = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write a ``gettext`` PO (portable object) template file for a given
+message catalog to the provided file-like object.
+
+>>> catalog = Catalog()
+>>> catalog.add(u'foo %(name)s', locations=[('main.py', 1)],
+...             flags=('fuzzy',))
+<Message...>
+>>> catalog.add((u'bar', u'baz'), locations=[('main.py', 3)])
+<Message...>
+>>> from io import BytesIO
+>>> buf = BytesIO()
+>>> write_po(buf, catalog, omit_header=True)
+>>> print(buf.getvalue().decode("utf8"))
+#: main.py:1
+#, fuzzy, python-format
+msgid "foo %(name)s"
+msgstr ""
+<BLANKLINE>
+#: main.py:3
+msgid "bar"
+msgid_plural "baz"
+msgstr[0] ""
+msgstr[1] ""
+<BLANKLINE>
+<BLANKLINE>
+
+:param fileobj: the file-like object to write to
+:param catalog: the `Catalog` instance
+:param width: the maximum line width for the generated output; use `None`,
+              0, or a negative number to completely disable line wrapping
+:param no_location: do not emit a location comment for every message
+:param omit_header: do not include the ``msgid ""`` entry at the top of the
+                    output
+:param sort_output: whether to sort the messages in the output by msgid
+:param sort_by_file: whether to sort the messages in the output by their
+                     locations
+:param ignore_obsolete: whether to ignore obsolete messages and not include
+                        them in the output; by default they are included as
+                        comments
+:param include_previous: include the old msgid as a comment when
+                         updating the catalog
+:param include_lineno: include line number in the location comment
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacebabel_1_1messages_1_1pofile_a46a11d89f52871a1eb6a4fb9724787bc}\label{namespacebabel_1_1messages_1_1pofile_a46a11d89f52871a1eb6a4fb9724787bc} 
+\index{babel.messages.pofile@{babel.messages.pofile}!WORD\_SEP@{WORD\_SEP}}
+\index{WORD\_SEP@{WORD\_SEP}!babel.messages.pofile@{babel.messages.pofile}}
+\doxysubsubsection{\texorpdfstring{WORD\_SEP}{WORD\_SEP}}
+{\footnotesize\ttfamily babel.\+messages.\+pofile.\+WORD\+\_\+\+SEP}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ re.compile(\textcolor{stringliteral}{'('}}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{r'\(\backslash\)s+|'}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ any\ whitespace}}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{r'[\string^\(\backslash\)s\(\backslash\)w]*\(\backslash\)w+[a-\/zA-\/Z]-\/(?=\(\backslash\)w+[a-\/zA-\/Z])|'}\ \ \textcolor{comment}{\#\ hyphenated\ words}}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{r'(?<=[\(\backslash\)w\(\backslash\)!\(\backslash\)"{}\(\backslash\)'\(\backslash\)\&\(\backslash\).\(\backslash\),\(\backslash\)?])-\/\{2,\}(?=\(\backslash\)w)'}\ \ \ \textcolor{comment}{\#\ em-\/dash}}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{')'})}
+
+\end{DoxyCode}

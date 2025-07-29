@@ -1,0 +1,159 @@
+\doxysection{sphinx.\+builders.\+linkcheck Namespace Reference}
+\hypertarget{namespacesphinx_1_1builders_1_1linkcheck}{}\label{namespacesphinx_1_1builders_1_1linkcheck}\index{sphinx.builders.linkcheck@{sphinx.builders.linkcheck}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1builders_1_1linkcheck_1_1__Status}{\+\_\+\+Status}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1builders_1_1linkcheck_1_1AnchorCheckParser}{Anchor\+Check\+Parser}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1builders_1_1linkcheck_1_1CheckExternalLinksBuilder}{Check\+External\+Links\+Builder}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1builders_1_1linkcheck_1_1CheckRequest}{Check\+Request}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1builders_1_1linkcheck_1_1CheckResult}{Check\+Result}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1builders_1_1linkcheck_1_1Hyperlink}{Hyperlink}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1builders_1_1linkcheck_1_1HyperlinkAvailabilityChecker}{Hyperlink\+Availability\+Checker}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1builders_1_1linkcheck_1_1HyperlinkAvailabilityCheckWorker}{Hyperlink\+Availability\+Check\+Worker}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1builders_1_1linkcheck_1_1HyperlinkCollector}{Hyperlink\+Collector}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1builders_1_1linkcheck_1_1RateLimit}{Rate\+Limit}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+dict\mbox{[}str, str\mbox{]} \mbox{\hyperlink{namespacesphinx_1_1builders_1_1linkcheck_a8ebbd4ab0710212d7b14f655fc7011e2}{\+\_\+get\+\_\+request\+\_\+headers}} (str uri, dict\mbox{[}str, dict\mbox{[}str, str\mbox{]}\mbox{]} request\+\_\+headers)
+\item 
+bool \mbox{\hyperlink{namespacesphinx_1_1builders_1_1linkcheck_a1f4ea337063c6ca2d51cefeb4138ea65}{contains\+\_\+anchor}} (Response response, str anchor)
+\item 
+bool \mbox{\hyperlink{namespacesphinx_1_1builders_1_1linkcheck_a148fcef22b933304a0384101ed62f54d}{\+\_\+allowed\+\_\+redirect}} (str url, str new\+\_\+url, dict\mbox{[}re.\+Pattern\mbox{[}str\mbox{]}, re.\+Pattern\mbox{[}str\mbox{]}\mbox{]} allowed\+\_\+redirects)
+\item 
+str\texorpdfstring{$\vert$}{|}None \mbox{\hyperlink{namespacesphinx_1_1builders_1_1linkcheck_aaed6da67d99e56cf5920a3872523d4e6}{rewrite\+\_\+github\+\_\+anchor}} (\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}} app, str uri)
+\item 
+None \mbox{\hyperlink{namespacesphinx_1_1builders_1_1linkcheck_ada10cbfdd2ac89ddc6de6d14d57b3325}{compile\+\_\+linkcheck\+\_\+allowed\+\_\+redirects}} (\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}} app, \mbox{\hyperlink{classsphinx_1_1config_1_1Config}{Config}} config)
+\item 
+\mbox{\hyperlink{classsphinx_1_1util_1_1typing_1_1ExtensionMetadata}{Extension\+Metadata}} \mbox{\hyperlink{namespacesphinx_1_1builders_1_1linkcheck_a3d68b57cf4ec8d99f31b22636c152844}{setup}} (\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}} app)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1builders_1_1linkcheck_a9bbb44b1f143a0c7cd9049a5825ec5ac}{Type\+Alias}}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1builders_1_1linkcheck_aa1c470db970d4a8ddadd0896d1940bc0}{logger}} = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1builders_1_1linkcheck_a3997ee382bbdd2e647bceec731919ab6}{uri\+\_\+re}} = re.\+compile(\textquotesingle{}(\mbox{[}a-\/z\mbox{]}+\+:)?//\textquotesingle{})
+\item 
+dict \mbox{\hyperlink{namespacesphinx_1_1builders_1_1linkcheck_adcca965ce8644ddb289cdc9edf297581}{DEFAULT\+\_\+\+REQUEST\+\_\+\+HEADERS}}
+\item 
+int \mbox{\hyperlink{namespacesphinx_1_1builders_1_1linkcheck_a5b434b7f09f2acaaeb8f1ee8584be618}{CHECK\+\_\+\+IMMEDIATELY}} = 0
+\item 
+int \mbox{\hyperlink{namespacesphinx_1_1builders_1_1linkcheck_a66c180199aa3f688ecd2e6785f42b52a}{QUEUE\+\_\+\+POLL\+\_\+\+SECS}} = 1
+\item 
+float \mbox{\hyperlink{namespacesphinx_1_1builders_1_1linkcheck_ae98a652f22e2f2b9f5bb38bc896cb7b8}{DEFAULT\+\_\+\+DELAY}} = 60.\+0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}The CheckExternalLinksBuilder class.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesphinx_1_1builders_1_1linkcheck_a148fcef22b933304a0384101ed62f54d}\label{namespacesphinx_1_1builders_1_1linkcheck_a148fcef22b933304a0384101ed62f54d} 
+\index{sphinx.builders.linkcheck@{sphinx.builders.linkcheck}!\_allowed\_redirect@{\_allowed\_redirect}}
+\index{\_allowed\_redirect@{\_allowed\_redirect}!sphinx.builders.linkcheck@{sphinx.builders.linkcheck}}
+\doxysubsubsection{\texorpdfstring{\_allowed\_redirect()}{\_allowed\_redirect()}}
+{\footnotesize\ttfamily  bool sphinx.\+builders.\+linkcheck.\+\_\+allowed\+\_\+redirect (\begin{DoxyParamCaption}\item[{str}]{url,  }\item[{str}]{new\+\_\+url,  }\item[{dict\mbox{[}re.\+Pattern\mbox{[}str\mbox{]}, re.\+Pattern\mbox{[}str\mbox{]}\mbox{]} }]{allowed\+\_\+redirects }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1builders_1_1linkcheck_a8ebbd4ab0710212d7b14f655fc7011e2}\label{namespacesphinx_1_1builders_1_1linkcheck_a8ebbd4ab0710212d7b14f655fc7011e2} 
+\index{sphinx.builders.linkcheck@{sphinx.builders.linkcheck}!\_get\_request\_headers@{\_get\_request\_headers}}
+\index{\_get\_request\_headers@{\_get\_request\_headers}!sphinx.builders.linkcheck@{sphinx.builders.linkcheck}}
+\doxysubsubsection{\texorpdfstring{\_get\_request\_headers()}{\_get\_request\_headers()}}
+{\footnotesize\ttfamily  dict\mbox{[}str, str\mbox{]} sphinx.\+builders.\+linkcheck.\+\_\+get\+\_\+request\+\_\+headers (\begin{DoxyParamCaption}\item[{str}]{uri,  }\item[{dict\mbox{[}str, dict\mbox{[}str, str\mbox{]}\mbox{]}}]{request\+\_\+headers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1builders_1_1linkcheck_ada10cbfdd2ac89ddc6de6d14d57b3325}\label{namespacesphinx_1_1builders_1_1linkcheck_ada10cbfdd2ac89ddc6de6d14d57b3325} 
+\index{sphinx.builders.linkcheck@{sphinx.builders.linkcheck}!compile\_linkcheck\_allowed\_redirects@{compile\_linkcheck\_allowed\_redirects}}
+\index{compile\_linkcheck\_allowed\_redirects@{compile\_linkcheck\_allowed\_redirects}!sphinx.builders.linkcheck@{sphinx.builders.linkcheck}}
+\doxysubsubsection{\texorpdfstring{compile\_linkcheck\_allowed\_redirects()}{compile\_linkcheck\_allowed\_redirects()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+linkcheck.\+compile\+\_\+linkcheck\+\_\+allowed\+\_\+redirects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}}]{app,  }\item[{\mbox{\hyperlink{classsphinx_1_1config_1_1Config}{Config}}}]{config }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compile patterns in linkcheck_allowed_redirects to the regexp objects.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1builders_1_1linkcheck_a1f4ea337063c6ca2d51cefeb4138ea65}\label{namespacesphinx_1_1builders_1_1linkcheck_a1f4ea337063c6ca2d51cefeb4138ea65} 
+\index{sphinx.builders.linkcheck@{sphinx.builders.linkcheck}!contains\_anchor@{contains\_anchor}}
+\index{contains\_anchor@{contains\_anchor}!sphinx.builders.linkcheck@{sphinx.builders.linkcheck}}
+\doxysubsubsection{\texorpdfstring{contains\_anchor()}{contains\_anchor()}}
+{\footnotesize\ttfamily  bool sphinx.\+builders.\+linkcheck.\+contains\+\_\+anchor (\begin{DoxyParamCaption}\item[{Response}]{response,  }\item[{str}]{anchor }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Determine if an anchor is contained within an HTTP response.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1builders_1_1linkcheck_aaed6da67d99e56cf5920a3872523d4e6}\label{namespacesphinx_1_1builders_1_1linkcheck_aaed6da67d99e56cf5920a3872523d4e6} 
+\index{sphinx.builders.linkcheck@{sphinx.builders.linkcheck}!rewrite\_github\_anchor@{rewrite\_github\_anchor}}
+\index{rewrite\_github\_anchor@{rewrite\_github\_anchor}!sphinx.builders.linkcheck@{sphinx.builders.linkcheck}}
+\doxysubsubsection{\texorpdfstring{rewrite\_github\_anchor()}{rewrite\_github\_anchor()}}
+{\footnotesize\ttfamily  str \texorpdfstring{$\vert$}{|} None sphinx.\+builders.\+linkcheck.\+rewrite\+\_\+github\+\_\+anchor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}}]{app,  }\item[{str}]{uri }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Rewrite anchor name of the hyperlink to github.com
+
+The hyperlink anchors in github.com are dynamically generated.  This rewrites
+them before checking and makes them comparable.
+\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1builders_1_1linkcheck_a3d68b57cf4ec8d99f31b22636c152844}\label{namespacesphinx_1_1builders_1_1linkcheck_a3d68b57cf4ec8d99f31b22636c152844} 
+\index{sphinx.builders.linkcheck@{sphinx.builders.linkcheck}!setup@{setup}}
+\index{setup@{setup}!sphinx.builders.linkcheck@{sphinx.builders.linkcheck}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classsphinx_1_1util_1_1typing_1_1ExtensionMetadata}{Extension\+Metadata}} sphinx.\+builders.\+linkcheck.\+setup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}}]{app }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacesphinx_1_1builders_1_1linkcheck_a5b434b7f09f2acaaeb8f1ee8584be618}\label{namespacesphinx_1_1builders_1_1linkcheck_a5b434b7f09f2acaaeb8f1ee8584be618} 
+\index{sphinx.builders.linkcheck@{sphinx.builders.linkcheck}!CHECK\_IMMEDIATELY@{CHECK\_IMMEDIATELY}}
+\index{CHECK\_IMMEDIATELY@{CHECK\_IMMEDIATELY}!sphinx.builders.linkcheck@{sphinx.builders.linkcheck}}
+\doxysubsubsection{\texorpdfstring{CHECK\_IMMEDIATELY}{CHECK\_IMMEDIATELY}}
+{\footnotesize\ttfamily int sphinx.\+builders.\+linkcheck.\+CHECK\+\_\+\+IMMEDIATELY = 0}
+
+\Hypertarget{namespacesphinx_1_1builders_1_1linkcheck_ae98a652f22e2f2b9f5bb38bc896cb7b8}\label{namespacesphinx_1_1builders_1_1linkcheck_ae98a652f22e2f2b9f5bb38bc896cb7b8} 
+\index{sphinx.builders.linkcheck@{sphinx.builders.linkcheck}!DEFAULT\_DELAY@{DEFAULT\_DELAY}}
+\index{DEFAULT\_DELAY@{DEFAULT\_DELAY}!sphinx.builders.linkcheck@{sphinx.builders.linkcheck}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_DELAY}{DEFAULT\_DELAY}}
+{\footnotesize\ttfamily float sphinx.\+builders.\+linkcheck.\+DEFAULT\+\_\+\+DELAY = 60.\+0}
+
+\Hypertarget{namespacesphinx_1_1builders_1_1linkcheck_adcca965ce8644ddb289cdc9edf297581}\label{namespacesphinx_1_1builders_1_1linkcheck_adcca965ce8644ddb289cdc9edf297581} 
+\index{sphinx.builders.linkcheck@{sphinx.builders.linkcheck}!DEFAULT\_REQUEST\_HEADERS@{DEFAULT\_REQUEST\_HEADERS}}
+\index{DEFAULT\_REQUEST\_HEADERS@{DEFAULT\_REQUEST\_HEADERS}!sphinx.builders.linkcheck@{sphinx.builders.linkcheck}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_REQUEST\_HEADERS}{DEFAULT\_REQUEST\_HEADERS}}
+{\footnotesize\ttfamily dict sphinx.\+builders.\+linkcheck.\+DEFAULT\+\_\+\+REQUEST\+\_\+\+HEADERS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{'Accept'}:\ \textcolor{stringliteral}{'text/html,application/xhtml+xml;q=0.9,*/*;q=0.8'},}
+\DoxyCodeLine{00003\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacesphinx_1_1builders_1_1linkcheck_aa1c470db970d4a8ddadd0896d1940bc0}\label{namespacesphinx_1_1builders_1_1linkcheck_aa1c470db970d4a8ddadd0896d1940bc0} 
+\index{sphinx.builders.linkcheck@{sphinx.builders.linkcheck}!logger@{logger}}
+\index{logger@{logger}!sphinx.builders.linkcheck@{sphinx.builders.linkcheck}}
+\doxysubsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily sphinx.\+builders.\+linkcheck.\+logger = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)}
+
+\Hypertarget{namespacesphinx_1_1builders_1_1linkcheck_a66c180199aa3f688ecd2e6785f42b52a}\label{namespacesphinx_1_1builders_1_1linkcheck_a66c180199aa3f688ecd2e6785f42b52a} 
+\index{sphinx.builders.linkcheck@{sphinx.builders.linkcheck}!QUEUE\_POLL\_SECS@{QUEUE\_POLL\_SECS}}
+\index{QUEUE\_POLL\_SECS@{QUEUE\_POLL\_SECS}!sphinx.builders.linkcheck@{sphinx.builders.linkcheck}}
+\doxysubsubsection{\texorpdfstring{QUEUE\_POLL\_SECS}{QUEUE\_POLL\_SECS}}
+{\footnotesize\ttfamily int sphinx.\+builders.\+linkcheck.\+QUEUE\+\_\+\+POLL\+\_\+\+SECS = 1}
+
+\Hypertarget{namespacesphinx_1_1builders_1_1linkcheck_a9bbb44b1f143a0c7cd9049a5825ec5ac}\label{namespacesphinx_1_1builders_1_1linkcheck_a9bbb44b1f143a0c7cd9049a5825ec5ac} 
+\index{sphinx.builders.linkcheck@{sphinx.builders.linkcheck}!TypeAlias@{TypeAlias}}
+\index{TypeAlias@{TypeAlias}!sphinx.builders.linkcheck@{sphinx.builders.linkcheck}}
+\doxysubsubsection{\texorpdfstring{TypeAlias}{TypeAlias}}
+{\footnotesize\ttfamily sphinx.\+builders.\+linkcheck.\+Type\+Alias}
+
+\Hypertarget{namespacesphinx_1_1builders_1_1linkcheck_a3997ee382bbdd2e647bceec731919ab6}\label{namespacesphinx_1_1builders_1_1linkcheck_a3997ee382bbdd2e647bceec731919ab6} 
+\index{sphinx.builders.linkcheck@{sphinx.builders.linkcheck}!uri\_re@{uri\_re}}
+\index{uri\_re@{uri\_re}!sphinx.builders.linkcheck@{sphinx.builders.linkcheck}}
+\doxysubsubsection{\texorpdfstring{uri\_re}{uri\_re}}
+{\footnotesize\ttfamily sphinx.\+builders.\+linkcheck.\+uri\+\_\+re = re.\+compile(\textquotesingle{}(\mbox{[}a-\/z\mbox{]}+\+:)?//\textquotesingle{})}
+

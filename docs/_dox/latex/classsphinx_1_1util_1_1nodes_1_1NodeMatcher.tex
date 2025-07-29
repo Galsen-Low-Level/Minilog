@@ -1,0 +1,103 @@
+\doxysection{sphinx.\+util.\+nodes.\+Node\+Matcher Class Reference}
+\hypertarget{classsphinx_1_1util_1_1nodes_1_1NodeMatcher}{}\label{classsphinx_1_1util_1_1nodes_1_1NodeMatcher}\index{sphinx.util.nodes.NodeMatcher@{sphinx.util.nodes.NodeMatcher}}
+Inheritance diagram for sphinx.\+util.\+nodes.\+Node\+Matcher\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsphinx_1_1util_1_1nodes_1_1NodeMatcher}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classsphinx_1_1util_1_1nodes_1_1NodeMatcher_a2b9322b46a82a8afc8fec1ede74471bf}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \texorpdfstring{$\ast$}{*}type\mbox{[}\mbox{\hyperlink{namespacesphinx_1_1util_1_1nodes_abf2216cbe580f15765d90768cecc9427}{N}}\mbox{]} node\+\_\+classes, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}Any \mbox{\hyperlink{classsphinx_1_1util_1_1nodes_1_1NodeMatcher_aa0e8a4bc754a48389ee3eb02f4f3ce52}{attrs}})
+\item 
+bool \mbox{\hyperlink{classsphinx_1_1util_1_1nodes_1_1NodeMatcher_aa86960a8a7d153751d779cc60e0a0495}{match}} (self, \mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}} node)
+\item 
+bool \mbox{\hyperlink{classsphinx_1_1util_1_1nodes_1_1NodeMatcher_ae1919f986bed225c887bc0117a722fb6}{\+\_\+\+\_\+call\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}} node)
+\item 
+Iterator\mbox{[}\mbox{\hyperlink{namespacesphinx_1_1util_1_1nodes_abf2216cbe580f15765d90768cecc9427}{N}}\mbox{]} \mbox{\hyperlink{classsphinx_1_1util_1_1nodes_1_1NodeMatcher_a55a22881a057f6e5caacf934121b009d}{findall}} (self, \mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}} node)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsphinx_1_1util_1_1nodes_1_1NodeMatcher_adc3e3ba8aa7299dc0126f18b73a67c2d}{classes}}
+\item 
+\mbox{\hyperlink{classsphinx_1_1util_1_1nodes_1_1NodeMatcher_aa0e8a4bc754a48389ee3eb02f4f3ce52}{attrs}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A helper class for Node.findall().
+
+It checks that the given node is an instance of the specified node-classes and
+has the specified node-attributes.
+
+For example, following example searches ``reference`` node having ``refdomain``
+and ``reftype`` attributes::
+
+    matcher = NodeMatcher(nodes.reference, refdomain='std', reftype='citation')
+    matcher.findall(doctree)
+    # => [<reference ...>, <reference ...>, ...]
+
+A special value ``typing.Any`` matches any kind of node-attributes.  For example,
+following example searches ``reference`` node having ``refdomain`` attributes::
+
+    matcher = NodeMatcher(nodes.reference, refdomain=Any)
+    matcher.findall(doctree)
+    # => [<reference ...>, <reference ...>, ...]
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsphinx_1_1util_1_1nodes_1_1NodeMatcher_a2b9322b46a82a8afc8fec1ede74471bf}\label{classsphinx_1_1util_1_1nodes_1_1NodeMatcher_a2b9322b46a82a8afc8fec1ede74471bf} 
+\index{sphinx.util.nodes.NodeMatcher@{sphinx.util.nodes.NodeMatcher}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!sphinx.util.nodes.NodeMatcher@{sphinx.util.nodes.NodeMatcher}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None sphinx.\+util.\+nodes.\+Node\+Matcher.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\texorpdfstring{$\ast$}{*}type\mbox{[}\mbox{\hyperlink{namespacesphinx_1_1util_1_1nodes_abf2216cbe580f15765d90768cecc9427}{N}}\mbox{]}}]{node\+\_\+classes,  }\item[{\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}Any}]{attrs }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsphinx_1_1util_1_1nodes_1_1NodeMatcher_ae1919f986bed225c887bc0117a722fb6}\label{classsphinx_1_1util_1_1nodes_1_1NodeMatcher_ae1919f986bed225c887bc0117a722fb6} 
+\index{sphinx.util.nodes.NodeMatcher@{sphinx.util.nodes.NodeMatcher}!\_\_call\_\_@{\_\_call\_\_}}
+\index{\_\_call\_\_@{\_\_call\_\_}!sphinx.util.nodes.NodeMatcher@{sphinx.util.nodes.NodeMatcher}}
+\doxysubsubsection{\texorpdfstring{\_\_call\_\_()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily  bool sphinx.\+util.\+nodes.\+Node\+Matcher.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}}}]{node }\end{DoxyParamCaption})}
+
+\Hypertarget{classsphinx_1_1util_1_1nodes_1_1NodeMatcher_a55a22881a057f6e5caacf934121b009d}\label{classsphinx_1_1util_1_1nodes_1_1NodeMatcher_a55a22881a057f6e5caacf934121b009d} 
+\index{sphinx.util.nodes.NodeMatcher@{sphinx.util.nodes.NodeMatcher}!findall@{findall}}
+\index{findall@{findall}!sphinx.util.nodes.NodeMatcher@{sphinx.util.nodes.NodeMatcher}}
+\doxysubsubsection{\texorpdfstring{findall()}{findall()}}
+{\footnotesize\ttfamily  Iterator\mbox{[}\mbox{\hyperlink{namespacesphinx_1_1util_1_1nodes_abf2216cbe580f15765d90768cecc9427}{N}}\mbox{]} sphinx.\+util.\+nodes.\+Node\+Matcher.\+findall (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}}}]{node }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}An alternative to `Node.findall` with improved type safety.
+
+While the `NodeMatcher` object can be used as an argument to `Node.findall`, doing so
+confounds type checkers' ability to determine the return type of the iterator.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1util_1_1nodes_1_1NodeMatcher_aa86960a8a7d153751d779cc60e0a0495}\label{classsphinx_1_1util_1_1nodes_1_1NodeMatcher_aa86960a8a7d153751d779cc60e0a0495} 
+\index{sphinx.util.nodes.NodeMatcher@{sphinx.util.nodes.NodeMatcher}!match@{match}}
+\index{match@{match}!sphinx.util.nodes.NodeMatcher@{sphinx.util.nodes.NodeMatcher}}
+\doxysubsubsection{\texorpdfstring{match()}{match()}}
+{\footnotesize\ttfamily  bool sphinx.\+util.\+nodes.\+Node\+Matcher.\+match (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classdocutils_1_1nodes_1_1Node}{Node}}}]{node }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsphinx_1_1util_1_1nodes_1_1NodeMatcher_aa0e8a4bc754a48389ee3eb02f4f3ce52}\label{classsphinx_1_1util_1_1nodes_1_1NodeMatcher_aa0e8a4bc754a48389ee3eb02f4f3ce52} 
+\index{sphinx.util.nodes.NodeMatcher@{sphinx.util.nodes.NodeMatcher}!attrs@{attrs}}
+\index{attrs@{attrs}!sphinx.util.nodes.NodeMatcher@{sphinx.util.nodes.NodeMatcher}}
+\doxysubsubsection{\texorpdfstring{attrs}{attrs}}
+{\footnotesize\ttfamily sphinx.\+util.\+nodes.\+Node\+Matcher.\+attrs}
+
+\Hypertarget{classsphinx_1_1util_1_1nodes_1_1NodeMatcher_adc3e3ba8aa7299dc0126f18b73a67c2d}\label{classsphinx_1_1util_1_1nodes_1_1NodeMatcher_adc3e3ba8aa7299dc0126f18b73a67c2d} 
+\index{sphinx.util.nodes.NodeMatcher@{sphinx.util.nodes.NodeMatcher}!classes@{classes}}
+\index{classes@{classes}!sphinx.util.nodes.NodeMatcher@{sphinx.util.nodes.NodeMatcher}}
+\doxysubsubsection{\texorpdfstring{classes}{classes}}
+{\footnotesize\ttfamily sphinx.\+util.\+nodes.\+Node\+Matcher.\+classes}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/sphinx/util/\mbox{\hyperlink{sphinx_2util_2nodes_8py}{nodes.\+py}}\end{DoxyCompactItemize}

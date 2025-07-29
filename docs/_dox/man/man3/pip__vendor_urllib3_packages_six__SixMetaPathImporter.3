@@ -1,0 +1,132 @@
+.TH "pip._vendor.urllib3.packages.six._SixMetaPathImporter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.urllib3.packages.six._SixMetaPathImporter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, six_module_name)"
+.br
+.ti -1c
+.RI "\fBfind_module\fP (self, fullname, path=None)"
+.br
+.ti -1c
+.RI "\fBfind_spec\fP (self, fullname, path, target=None)"
+.br
+.ti -1c
+.RI "\fBload_module\fP (self, fullname)"
+.br
+.ti -1c
+.RI "\fBis_package\fP (self, fullname)"
+.br
+.ti -1c
+.RI "\fBget_code\fP (self, fullname)"
+.br
+.ti -1c
+.RI "\fBcreate_module\fP (self, spec)"
+.br
+.ti -1c
+.RI "\fBexec_module\fP (self, module)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBknown_modules\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBget_source\fP = \fBget_code\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_add_module\fP (self, mod, *fullnames)"
+.br
+.ti -1c
+.RI "\fB_get_module\fP (self, fullname)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A meta path importer to import six\&.moves and its submodules\&.
+
+This class implements a PEP302 finder and loader\&. It should be compatible
+with Python 2\&.5 and all existing versions of Python3
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.packages\&.six\&._SixMetaPathImporter\&.__init__ ( self,  six_module_name)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.packages\&.six\&._SixMetaPathImporter\&._add_module ( self,  mod, * fullnames)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.packages\&.six\&._SixMetaPathImporter\&._get_module ( self,  fullname)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.packages\&.six\&._SixMetaPathImporter\&.create_module ( self,  spec)"
+
+.SS "pip\&._vendor\&.urllib3\&.packages\&.six\&._SixMetaPathImporter\&.exec_module ( self,  module)"
+
+.SS "pip\&._vendor\&.urllib3\&.packages\&.six\&._SixMetaPathImporter\&.find_module ( self,  fullname,  path = \fCNone\fP)"
+
+.SS "pip\&._vendor\&.urllib3\&.packages\&.six\&._SixMetaPathImporter\&.find_spec ( self,  fullname,  path,  target = \fCNone\fP)"
+
+.SS "pip\&._vendor\&.urllib3\&.packages\&.six\&._SixMetaPathImporter\&.get_code ( self,  fullname)"
+
+.PP
+.nf
+Return None
+
+Required, if is_package is implemented
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.packages\&.six\&._SixMetaPathImporter\&.is_package ( self,  fullname)"
+
+.PP
+.nf
+Return true, if the named module is a package\&.
+
+We need this method to get correct spec objects with
+Python 3\&.4 (see PEP451)
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.packages\&.six\&._SixMetaPathImporter\&.load_module ( self,  fullname)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.packages\&.six\&._SixMetaPathImporter\&.get_source = \fBget_code\fP\fC [static]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.packages\&.six\&._SixMetaPathImporter\&.known_modules"
+
+.SS "pip\&._vendor\&.urllib3\&.packages\&.six\&._SixMetaPathImporter\&.name"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

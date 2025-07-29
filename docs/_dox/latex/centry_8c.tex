@@ -1,0 +1,116 @@
+\doxysection{/home/umar/\+Desktop/\+Work\+Shop/\+GLL/centry/centry.c File Reference}
+\hypertarget{centry_8c}{}\label{centry_8c}\index{/home/umar/Desktop/WorkShop/GLL/centry/centry.c@{/home/umar/Desktop/WorkShop/GLL/centry/centry.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$sys/cdefs.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$sched.\+h$>$}\newline
+{\ttfamily \#include $<$err.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$dirent.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$sys/utsname.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$poll.\+h$>$}\newline
+{\ttfamily \#include $<$term.\+h$>$}\newline
+{\ttfamily \#include $<$curses.\+h$>$}\newline
+{\ttfamily \#include $<$termios.\+h$>$}\newline
+{\ttfamily \#include "{}centry.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{centry_8c_a369266c24eacffb87046522897a570d5}{\+\_\+\+GNU\+\_\+\+SOURCE}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{centry_8c_a0d72f9267c9c621051394ac3cf103b89}{has\+\_\+command}} (const char \texorpdfstring{$\ast$}{*}restrict host\+\_\+command)
+\item 
+\mbox{\hyperlink{centry_8h_a4e0534062b817130668cec7bc64556d3}{cpid\+\_\+t}} \mbox{\hyperlink{centry_8c_ac238fb3b9fce3f2985711381a4c26d49}{container\+\_\+process\+\_\+id}} (char \texorpdfstring{$\ast$}{*}restrict container\+\_\+id)
+\item 
+void \mbox{\hyperlink{centry_8c_a6e679cd8d82ab251cde78e749bd72127}{load\+\_\+ns\+\_\+for}} (\mbox{\hyperlink{centry_8h_a4e0534062b817130668cec7bc64556d3}{cpid\+\_\+t}} \mbox{\hyperlink{centry_8c_ac238fb3b9fce3f2985711381a4c26d49}{container\+\_\+process\+\_\+id}})
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{centry_8c_a7f8df7384b6cf656d1adc204e51f6264}{centry\+\_\+check\+\_\+running\+\_\+container\+\_\+for}} (const char \texorpdfstring{$\ast$}{*}container\+\_\+name)
+\item 
+void \mbox{\hyperlink{centry_8c_ab1611f4277d93f70da5861906bbb17ae}{centry\+\_\+curses\+\_\+select}} (char(\texorpdfstring{$\ast$}{*}buffer\+\_\+result)\mbox{[}0xff\mbox{]}, int size)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{centry_8c_a77b1730866ed7924effdf7b18771dbb9}{docker\+\_\+location}} \mbox{[}0x64\mbox{]} =\{0\}
+\item 
+struct \mbox{\hyperlink{struct____ns__info__t}{\+\_\+\+\_\+ns\+\_\+info\+\_\+t}} \mbox{\hyperlink{centry_8c_a370b85889bab6ba391f01f550d10a95b}{nsinfo}} \mbox{[}6\mbox{]} = \mbox{\hyperlink{centry_8h_adda546458c522b9f0541fdc4e3d692b3}{NS\+\_\+\+DEFINITIONS}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{centry_8c_a369266c24eacffb87046522897a570d5}\label{centry_8c_a369266c24eacffb87046522897a570d5} 
+\index{centry.c@{centry.c}!\_GNU\_SOURCE@{\_GNU\_SOURCE}}
+\index{\_GNU\_SOURCE@{\_GNU\_SOURCE}!centry.c@{centry.c}}
+\doxysubsubsection{\texorpdfstring{\_GNU\_SOURCE}{\_GNU\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GNU\+\_\+\+SOURCE}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{centry_8c_a7f8df7384b6cf656d1adc204e51f6264}\label{centry_8c_a7f8df7384b6cf656d1adc204e51f6264} 
+\index{centry.c@{centry.c}!centry\_check\_running\_container\_for@{centry\_check\_running\_container\_for}}
+\index{centry\_check\_running\_container\_for@{centry\_check\_running\_container\_for}!centry.c@{centry.c}}
+\doxysubsubsection{\texorpdfstring{centry\_check\_running\_container\_for()}{centry\_check\_running\_container\_for()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} centry\+\_\+check\+\_\+running\+\_\+container\+\_\+for (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{container\+\_\+name }\end{DoxyParamCaption})}
+
+shorten outbuffer i just need the container id and images name TODO \+: put this in speciale function\Hypertarget{centry_8c_ab1611f4277d93f70da5861906bbb17ae}\label{centry_8c_ab1611f4277d93f70da5861906bbb17ae} 
+\index{centry.c@{centry.c}!centry\_curses\_select@{centry\_curses\_select}}
+\index{centry\_curses\_select@{centry\_curses\_select}!centry.c@{centry.c}}
+\doxysubsubsection{\texorpdfstring{centry\_curses\_select()}{centry\_curses\_select()}}
+{\footnotesize\ttfamily void centry\+\_\+curses\+\_\+select (\begin{DoxyParamCaption}\item[{char(\texorpdfstring{$\ast$}{*})}]{buffer\+\_\+result\mbox{[}0xff\mbox{]},  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+Initialising polling on keyboard ~\newline
+
+
+Term dimension
+
+Initial setup
+
+start listening in keyboard
+
+Big apologies to azerty users TODO \+:Implement navigation keys for AZERTY users or
+
+TODO \+: Make more clear\Hypertarget{centry_8c_ac238fb3b9fce3f2985711381a4c26d49}\label{centry_8c_ac238fb3b9fce3f2985711381a4c26d49} 
+\index{centry.c@{centry.c}!container\_process\_id@{container\_process\_id}}
+\index{container\_process\_id@{container\_process\_id}!centry.c@{centry.c}}
+\doxysubsubsection{\texorpdfstring{container\_process\_id()}{container\_process\_id()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{centry_8h_a4e0534062b817130668cec7bc64556d3}{cpid\+\_\+t}} container\+\_\+process\+\_\+id (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}restrict}]{container\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{centry_8c_a0d72f9267c9c621051394ac3cf103b89}\label{centry_8c_a0d72f9267c9c621051394ac3cf103b89} 
+\index{centry.c@{centry.c}!has\_command@{has\_command}}
+\index{has\_command@{has\_command}!centry.c@{centry.c}}
+\doxysubsubsection{\texorpdfstring{has\_command()}{has\_command()}}
+{\footnotesize\ttfamily int has\+\_\+command (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}restrict}]{host\+\_\+command }\end{DoxyParamCaption})}
+
+\Hypertarget{centry_8c_a6e679cd8d82ab251cde78e749bd72127}\label{centry_8c_a6e679cd8d82ab251cde78e749bd72127} 
+\index{centry.c@{centry.c}!load\_ns\_for@{load\_ns\_for}}
+\index{load\_ns\_for@{load\_ns\_for}!centry.c@{centry.c}}
+\doxysubsubsection{\texorpdfstring{load\_ns\_for()}{load\_ns\_for()}}
+{\footnotesize\ttfamily void load\+\_\+ns\+\_\+for (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{centry_8h_a4e0534062b817130668cec7bc64556d3}{cpid\+\_\+t}}}]{container\+\_\+process\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{centry_8c_a77b1730866ed7924effdf7b18771dbb9}\label{centry_8c_a77b1730866ed7924effdf7b18771dbb9} 
+\index{centry.c@{centry.c}!docker\_location@{docker\_location}}
+\index{docker\_location@{docker\_location}!centry.c@{centry.c}}
+\doxysubsubsection{\texorpdfstring{docker\_location}{docker\_location}}
+{\footnotesize\ttfamily char docker\+\_\+location\mbox{[}0x64\mbox{]} =\{0\}}
+
+\Hypertarget{centry_8c_a370b85889bab6ba391f01f550d10a95b}\label{centry_8c_a370b85889bab6ba391f01f550d10a95b} 
+\index{centry.c@{centry.c}!nsinfo@{nsinfo}}
+\index{nsinfo@{nsinfo}!centry.c@{centry.c}}
+\doxysubsubsection{\texorpdfstring{nsinfo}{nsinfo}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct____ns__info__t}{\+\_\+\+\_\+ns\+\_\+info\+\_\+t}} nsinfo\mbox{[}6\mbox{]} = \mbox{\hyperlink{centry_8h_adda546458c522b9f0541fdc4e3d692b3}{NS\+\_\+\+DEFINITIONS}}}
+

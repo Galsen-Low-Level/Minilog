@@ -1,0 +1,328 @@
+.TH "docutils.nodes.Node" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.nodes.Node
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBdocutils\&.nodes\&.Element\fP, and \fBdocutils\&.nodes\&.Text\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP (self)"
+.br
+.ti -1c
+.RI "\fBdocument\fP (self, value)"
+.br
+.ti -1c
+.RI "\fB__bool__\fP (self)"
+.br
+.ti -1c
+.RI "\fBasdom\fP (self, dom=None)"
+.br
+.ti -1c
+.RI "\fBpformat\fP (self, indent=' ', level=0)"
+.br
+.ti -1c
+.RI "\fBcopy\fP (self)"
+.br
+.ti -1c
+.RI "\fBdeepcopy\fP (self)"
+.br
+.ti -1c
+.RI "\fBastext\fP (self)"
+.br
+.ti -1c
+.RI "\fBsetup_child\fP (self, child)"
+.br
+.ti -1c
+.RI "\fBwalk\fP (self, visitor)"
+.br
+.ti -1c
+.RI "\fBwalkabout\fP (self, visitor)"
+.br
+.ti -1c
+.RI "\fBtraverse\fP (self, condition=None, include_self=True, descend=True, siblings=False, ascend=False)"
+.br
+.ti -1c
+.RI "\fBfindall\fP (self, condition=None, include_self=True, descend=True, siblings=False, ascend=False)"
+.br
+.ti -1c
+.RI "\fBnext_node\fP (self, condition=None, include_self=False, descend=True, siblings=False, ascend=False)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBchildren\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBparent\fP = None"
+.br
+.ti -1c
+.RI "\fBsource\fP = None"
+.br
+.ti -1c
+.RI "\fBline\fP = None"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_fast_findall\fP (self, cls)"
+.br
+.ti -1c
+.RI "\fB_superfast_findall\fP (self)"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_document\fP = None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Abstract base class of nodes in a document tree\&.
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.nodes\&.Node\&.__bool__ ( self)"
+
+.PP
+.nf
+Node instances are always true, even if they're empty\&.  A node is more
+than a simple container\&.  Its boolean 'truth' does not depend on
+having one or more subnodes in the doctree\&.
+
+Use `len()` to check node length\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.nodes\&.Node\&._fast_findall ( self,  cls)\fC [protected]\fP"
+
+.PP
+.nf
+Return iterator that only supports instance checks\&.
+.fi
+.PP
+ 
+.SS "docutils\&.nodes\&.Node\&._superfast_findall ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Return iterator that doesn't check for a condition\&.
+.fi
+.PP
+ 
+.SS "docutils\&.nodes\&.Node\&.asdom ( self,  dom = \fCNone\fP)"
+
+.PP
+.nf
+Return a DOM **fragment** representation of this Node\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBdocutils\&.nodes\&.document\fP\&.
+.SS "docutils\&.nodes\&.Node\&.astext ( self)"
+
+.PP
+.nf
+Return a string representation of this Node\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBdocutils\&.nodes\&.Text\fP, \fBdocutils\&.nodes\&.Element\fP, \fBdocutils\&.nodes\&.option_argument\fP, \fBdocutils\&.nodes\&.system_message\fP, and \fBdocutils\&.nodes\&.image\fP\&.
+.SS "docutils\&.nodes\&.Node\&.copy ( self)"
+
+.PP
+.nf
+Return a copy of self\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBdocutils\&.nodes\&.Text\fP, \fBdocutils\&.nodes\&.Element\fP, \fBdocutils\&.nodes\&.document\fP, and \fBdocutils\&.nodes\&.pending\fP\&.
+.SS "docutils\&.nodes\&.Node\&.deepcopy ( self)"
+
+.PP
+.nf
+Return a deep copy of self (also copying children)\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBdocutils\&.nodes\&.Text\fP, and \fBdocutils\&.nodes\&.Element\fP\&.
+.SS "docutils\&.nodes\&.Node\&.document ( self)"
+
+.PP
+.nf
+Return the `document` root node of the tree containing this Node\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.nodes\&.Node\&.document ( self,  value)"
+
+.SS "docutils\&.nodes\&.Node\&.findall ( self,  condition = \fCNone\fP,  include_self = \fCTrue\fP,  descend = \fCTrue\fP,  siblings = \fCFalse\fP,  ascend = \fCFalse\fP)"
+
+.PP
+.nf
+Return an iterator yielding nodes following `self`:
+
+* self (if `include_self` is true)
+* all descendants in tree traversal order (if `descend` is true)
+* the following siblings (if `siblings` is true) and their
+  descendants (if also `descend` is true)
+* the following siblings of the parent (if `ascend` is true) and
+  their descendants (if also `descend` is true), and so on\&.
+
+If `condition` is not None, the iterator yields only nodes
+for which ``condition(node)`` is true\&.  If `condition` is a
+node class ``cls``, it is equivalent to a function consisting
+of ``return isinstance(node, cls)``\&.
+
+If `ascend` is true, assume `siblings` to be true as well\&.
+
+If the tree structure is modified during iteration, the result
+is undefined\&.
+
+For example, given the following tree::
+
+    <paragraph>
+        <emphasis>      <--- emphasis\&.traverse() and
+            <strong>    <--- strong\&.traverse() are called\&.
+                Foo
+            Bar
+        <reference name='Baz' refid='baz'>
+            Baz
+
+Then tuple(emphasis\&.traverse()) equals ::
+
+    (<emphasis>, <strong>, <#text: Foo>, <#text: Bar>)
+
+and list(strong\&.traverse(ascend=True) equals ::
+
+    [<strong>, <#text: Foo>, <#text: Bar>, <reference>, <#text: Baz>]
+
+.fi
+.PP
+ 
+.SS "docutils\&.nodes\&.Node\&.next_node ( self,  condition = \fCNone\fP,  include_self = \fCFalse\fP,  descend = \fCTrue\fP,  siblings = \fCFalse\fP,  ascend = \fCFalse\fP)"
+
+.PP
+.nf
+Return the first node in the iterator returned by findall(),
+or None if the iterable is empty\&.
+
+Parameter list is the same as of `findall()`\&.  Note that `include_self`
+defaults to False, though\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.nodes\&.Node\&.pformat ( self,  indent = \fC'    '\fP,  level = \fC0\fP)"
+
+.PP
+.nf
+Return an indented pseudo-XML representation, for test purposes\&.
+
+Override in subclasses\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBdocutils\&.nodes\&.Text\fP, \fBdocutils\&.nodes\&.Element\fP, and \fBdocutils\&.nodes\&.pending\fP\&.
+.SS "docutils\&.nodes\&.Node\&.setup_child ( self,  child)"
+
+.SS "docutils\&.nodes\&.Node\&.traverse ( self,  condition = \fCNone\fP,  include_self = \fCTrue\fP,  descend = \fCTrue\fP,  siblings = \fCFalse\fP,  ascend = \fCFalse\fP)"
+
+.PP
+.nf
+Return list of nodes following `self`\&.
+
+For looping, Node\&.findall() is faster and more memory efficient\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.nodes\&.Node\&.walk ( self,  visitor)"
+
+.PP
+.nf
+Traverse a tree of `Node` objects, calling the
+`dispatch_visit()` method of `visitor` when entering each
+node\&.  (The `walkabout()` method is similar, except it also
+calls the `dispatch_departure()` method before exiting each
+node\&.)
+
+This tree traversal supports limited in-place tree
+modifications\&.  Replacing one node with one or more nodes is
+OK, as is removing an element\&.  However, if the node removed
+or replaced occurs after the current node, the old node will
+still be traversed, and any new nodes will not\&.
+
+Within ``visit`` methods (and ``depart`` methods for
+`walkabout()`), `TreePruningException` subclasses may be raised
+(`SkipChildren`, `SkipSiblings`, `SkipNode`, `SkipDeparture`)\&.
+
+Parameter `visitor`: A `NodeVisitor` object, containing a
+``visit`` implementation for each `Node` subclass encountered\&.
+
+Return true if we should stop the traversal\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.nodes\&.Node\&.walkabout ( self,  visitor)"
+
+.PP
+.nf
+Perform a tree traversal similarly to `Node\&.walk()` (which
+see), except also call the `dispatch_departure()` method
+before exiting each node\&.
+
+Parameter `visitor`: A `NodeVisitor` object, containing a
+``visit`` and ``depart`` implementation for each `Node`
+subclass encountered\&.
+
+Return true if we should stop the traversal\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.nodes\&.Node\&._document = None\fC [static]\fP, \fC [protected]\fP"
+
+.SS "docutils\&.nodes\&.Node\&.children"
+
+.SS "docutils\&.nodes\&.Node\&.line = None\fC [static]\fP"
+
+.SS "docutils\&.nodes\&.Node\&.parent = None\fC [static]\fP"
+
+.SS "docutils\&.nodes\&.Node\&.source = None\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

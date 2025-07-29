@@ -1,0 +1,190 @@
+.TH "pip._internal.index.collector" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.index.collector
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_NotAPIContent\fP"
+.br
+.ti -1c
+.RI "class \fB_NotHTTP\fP"
+.br
+.ti -1c
+.RI "class \fBCacheablePageContent\fP"
+.br
+.ti -1c
+.RI "class \fBCollectedSources\fP"
+.br
+.ti -1c
+.RI "class \fBHTMLLinkParser\fP"
+.br
+.ti -1c
+.RI "class \fBIndexContent\fP"
+.br
+.ti -1c
+.RI "class \fBLinkCollector\fP"
+.br
+.ti -1c
+.RI "class \fBParseLinks\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "Optional[str] \fB_match_vcs_scheme\fP (str url)"
+.br
+.ti -1c
+.RI "None \fB_ensure_api_header\fP (\fBResponse\fP response)"
+.br
+.ti -1c
+.RI "None \fB_ensure_api_response\fP (str url, PipSession session)"
+.br
+.ti -1c
+.RI "\fBResponse\fP \fB_get_simple_response\fP (str url, PipSession session)"
+.br
+.ti -1c
+.RI "Optional[str] \fB_get_encoding_from_headers\fP (\fBResponseHeaders\fP headers)"
+.br
+.ti -1c
+.RI "\fBParseLinks\fP \fBwith_cached_index_content\fP (\fBParseLinks\fP fn)"
+.br
+.ti -1c
+.RI "Iterable[\fBLink\fP] \fBparse_links\fP ('IndexContent' page)"
+.br
+.ti -1c
+.RI "None \fB_handle_get_simple_fail\fP (\fBLink\fP link, Union[str, Exception] reason, Optional[Callable[\&.\&.\&., None]] meth=None)"
+.br
+.ti -1c
+.RI "\fBIndexContent\fP \fB_make_index_content\fP (\fBResponse\fP response, bool cache_link_parsing=True)"
+.br
+.ti -1c
+.RI "Optional['IndexContent'] \fB_get_index_content\fP (\fBLink\fP link, *PipSession session)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "\fBResponseHeaders\fP = MutableMapping[str, str]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+The main purpose of this module is to expose LinkCollector\&.collect_sources()\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " None pip\&._internal\&.index\&.collector\&._ensure_api_header (\fBResponse\fP response)\fC [protected]\fP"
+
+.PP
+.nf
+Check the Content-Type header to ensure the response contains a Simple
+API Response\&.
+
+Raises `_NotAPIContent` if the content type is not a valid content-type\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.index\&.collector\&._ensure_api_response (str url, PipSession session)\fC [protected]\fP"
+
+.PP
+.nf
+Send a HEAD request to the URL, and ensure the response contains a simple
+API Response\&.
+
+Raises `_NotHTTP` if the URL is not available for a HEAD request, or
+`_NotAPIContent` if the content type is not a valid content type\&.
+
+.fi
+.PP
+ 
+.SS " Optional[str] pip\&._internal\&.index\&.collector\&._get_encoding_from_headers (\fBResponseHeaders\fP headers)\fC [protected]\fP"
+
+.PP
+.nf
+Determine if we have any encoding information in our headers\&.
+.fi
+.PP
+ 
+.SS " Optional['IndexContent'] pip\&._internal\&.index\&.collector\&._get_index_content (\fBLink\fP link, *PipSession session)\fC [protected]\fP"
+
+.SS " \fBResponse\fP pip\&._internal\&.index\&.collector\&._get_simple_response (str url, PipSession session)\fC [protected]\fP"
+
+.PP
+.nf
+Access an Simple API response with GET, and return the response\&.
+
+This consists of three parts:
+
+1\&. If the URL looks suspiciously like an archive, send a HEAD first to
+   check the Content-Type is HTML or Simple API, to avoid downloading a
+   large file\&. Raise `_NotHTTP` if the content type cannot be determined, or
+   `_NotAPIContent` if it is not HTML or a Simple API\&.
+2\&. Actually perform the request\&. Raise HTTP exceptions on network failures\&.
+3\&. Check the Content-Type header to make sure we got a Simple API response,
+   and raise `_NotAPIContent` otherwise\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.index\&.collector\&._handle_get_simple_fail (\fBLink\fP link, Union[str, Exception] reason, Optional[Callable[\&.\&.\&., None]]  meth = \fCNone\fP)\fC [protected]\fP"
+
+.SS " \fBIndexContent\fP pip\&._internal\&.index\&.collector\&._make_index_content (\fBResponse\fP response, bool  cache_link_parsing = \fCTrue\fP)\fC [protected]\fP"
+
+.SS " Optional[str] pip\&._internal\&.index\&.collector\&._match_vcs_scheme (str url)\fC [protected]\fP"
+
+.PP
+.nf
+Look for VCS schemes in the URL\&.
+
+Returns the matched VCS scheme, or None if there's no match\&.
+
+.fi
+.PP
+ 
+.SS " Iterable[\fBLink\fP] pip\&._internal\&.index\&.collector\&.parse_links ('IndexContent' page)"
+
+.PP
+.nf
+Parse a Simple API's Index Content, and yield its anchor elements as Link objects\&.
+
+.fi
+.PP
+ 
+.SS " \fBParseLinks\fP pip\&._internal\&.index\&.collector\&.with_cached_index_content (\fBParseLinks\fP fn)"
+
+.PP
+.nf
+Given a function that parses an Iterable[Link] from an IndexContent, cache the
+function's result (keyed by CacheablePageContent), unless the IndexContent
+`page` has `page\&.cache_link_parsing == False`\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._internal\&.index\&.collector\&.logger = logging\&.getLogger(__name__)"
+
+.SS "pip\&._internal\&.index\&.collector\&.ResponseHeaders = MutableMapping[str, str]"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

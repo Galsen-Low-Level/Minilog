@@ -1,0 +1,265 @@
+.TH "urllib3.contrib.pyopenssl" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+urllib3.contrib.pyopenssl
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBPyOpenSSLContext\fP"
+.br
+.ti -1c
+.RI "class \fBUnsupportedExtension\fP"
+.br
+.ti -1c
+.RI "class \fBWrappedSocket\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBinject_into_urllib3\fP ()"
+.br
+.ti -1c
+.RI "None \fBextract_from_urllib3\fP ()"
+.br
+.ti -1c
+.RI "None \fB_validate_dependencies_met\fP ()"
+.br
+.ti -1c
+.RI "str|None \fB_dnsname_to_stdlib\fP (str name)"
+.br
+.ti -1c
+.RI "list[tuple[str, str]] \fBget_subj_alt_name\fP (X509 peer_cert)"
+.br
+.ti -1c
+.RI "bool \fB_verify_callback\fP (OpenSSL\&.SSL\&.Connection cnx, X509 x509, int err_no, int err_depth, int return_code)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "dict \fB_openssl_versions\fP"
+.br
+.ti -1c
+.RI "dict \fB_stdlib_to_openssl_verify\fP"
+.br
+.ti -1c
+.RI "dict \fB_openssl_to_stdlib_verify\fP = {v: k for k, v in _stdlib_to_openssl_verify\&.items()}"
+.br
+.ti -1c
+.RI "int \fB_OP_NO_SSLv2_OR_SSLv3\fP"
+.br
+.ti -1c
+.RI "int \fB_OP_NO_TLSv1\fP = getattr(OpenSSL\&.SSL, 'OP_NO_TLSv1', 0)"
+.br
+.ti -1c
+.RI "int \fB_OP_NO_TLSv1_1\fP = getattr(OpenSSL\&.SSL, 'OP_NO_TLSv1_1', 0)"
+.br
+.ti -1c
+.RI "int \fB_OP_NO_TLSv1_2\fP = getattr(OpenSSL\&.SSL, 'OP_NO_TLSv1_2', 0)"
+.br
+.ti -1c
+.RI "int \fB_OP_NO_TLSv1_3\fP = getattr(OpenSSL\&.SSL, 'OP_NO_TLSv1_3', 0)"
+.br
+.ti -1c
+.RI "dict \fB_openssl_to_ssl_minimum_version\fP"
+.br
+.ti -1c
+.RI "dict \fB_openssl_to_ssl_maximum_version\fP"
+.br
+.ti -1c
+.RI "int \fBSSL_WRITE_BLOCKSIZE\fP = 16384"
+.br
+.ti -1c
+.RI "\fBorig_util_SSLContext\fP = \fButil\&.ssl_\&.SSLContext\fP"
+.br
+.ti -1c
+.RI "\fBlog\fP = logging\&.getLogger(__name__)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Module for using pyOpenSSL as a TLS backend\&. This module was relevant before
+the standard library ``ssl`` module supported SNI, but now that we've dropped
+support for Python 2\&.7 all relevant Python versions support SNI so
+**this module is no longer recommended**\&.
+
+This needs the following packages installed:
+
+* `pyOpenSSL`_ (tested with 16\&.0\&.0)
+* `cryptography`_ (minimum 1\&.3\&.4, from pyopenssl)
+* `idna`_ (minimum 2\&.0)
+
+However, pyOpenSSL depends on cryptography, so while we use all three directly here we
+end up having relatively few packages required\&.
+
+You can install them with the following command:
+
+\&.\&. code-block:: bash
+
+    $ python -m pip install pyopenssl cryptography idna
+
+To activate certificate checking, call
+:func:`~urllib3\&.contrib\&.pyopenssl\&.inject_into_urllib3` from your Python code
+before you begin making HTTP requests\&. This can be done in a ``sitecustomize``
+module, or at any other time before your application begins using ``urllib3``,
+like this:
+
+\&.\&. code-block:: python
+
+    try:
+        import urllib3\&.contrib\&.pyopenssl
+        urllib3\&.contrib\&.pyopenssl\&.inject_into_urllib3()
+    except ImportError:
+        pass
+
+\&.\&. _pyopenssl: https://www\&.pyopenssl\&.org
+\&.\&. _cryptography: https://cryptography\&.io
+\&.\&. _idna: https://github\&.com/kjd/idna
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " str | None urllib3\&.contrib\&.pyopenssl\&._dnsname_to_stdlib (str name)\fC [protected]\fP"
+
+.PP
+.nf
+Converts a dNSName SubjectAlternativeName field to the form used by the
+standard library on the given Python version\&.
+
+Cryptography produces a dNSName as a unicode string that was idna-decoded
+from ASCII bytes\&. We need to idna-encode that string to get it back, and
+then on Python 3 we also need to convert to unicode via UTF-8 (the stdlib
+uses PyUnicode_FromStringAndSize on it, which decodes via UTF-8)\&.
+
+If the name cannot be idna-encoded then we return None signalling that
+the name given should be skipped\&.
+
+.fi
+.PP
+ 
+.SS " None urllib3\&.contrib\&.pyopenssl\&._validate_dependencies_met ()\fC [protected]\fP"
+
+.PP
+.nf
+Verifies that PyOpenSSL's package-level dependencies have been met\&.
+Throws `ImportError` if they are not met\&.
+
+.fi
+.PP
+ 
+.SS " bool urllib3\&.contrib\&.pyopenssl\&._verify_callback (OpenSSL\&.SSL\&.Connection cnx, X509 x509, int err_no, int err_depth, int return_code)\fC [protected]\fP"
+
+.SS " None urllib3\&.contrib\&.pyopenssl\&.extract_from_urllib3 ()"
+
+.SS " list[tuple[str, str]] urllib3\&.contrib\&.pyopenssl\&.get_subj_alt_name (X509 peer_cert)"
+
+.PP
+.nf
+Given an PyOpenSSL certificate, provides all the subject alternative names\&.
+
+.fi
+.PP
+ 
+.SS " None urllib3\&.contrib\&.pyopenssl\&.inject_into_urllib3 ()"
+
+.SH "Variable Documentation"
+.PP 
+.SS "int urllib3\&.contrib\&.pyopenssl\&._OP_NO_SSLv2_OR_SSLv3\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  getattr(OpenSSL\&.SSL, "OP_NO_SSLv2", 0) | getattr(
+2     OpenSSL\&.SSL, "OP_NO_SSLv3", 0
+3 )
+.fi
+
+.SS "int urllib3\&.contrib\&.pyopenssl\&._OP_NO_TLSv1 = getattr(OpenSSL\&.SSL, 'OP_NO_TLSv1', 0)\fC [protected]\fP"
+
+.SS "int urllib3\&.contrib\&.pyopenssl\&._OP_NO_TLSv1_1 = getattr(OpenSSL\&.SSL, 'OP_NO_TLSv1_1', 0)\fC [protected]\fP"
+
+.SS "int urllib3\&.contrib\&.pyopenssl\&._OP_NO_TLSv1_2 = getattr(OpenSSL\&.SSL, 'OP_NO_TLSv1_2', 0)\fC [protected]\fP"
+
+.SS "int urllib3\&.contrib\&.pyopenssl\&._OP_NO_TLSv1_3 = getattr(OpenSSL\&.SSL, 'OP_NO_TLSv1_3', 0)\fC [protected]\fP"
+
+.SS "dict urllib3\&.contrib\&.pyopenssl\&._openssl_to_ssl_maximum_version\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     ssl\&.TLSVersion\&.MINIMUM_SUPPORTED: (
+3         _OP_NO_SSLv2_OR_SSLv3
+4         | _OP_NO_TLSv1
+5         | _OP_NO_TLSv1_1
+6         | _OP_NO_TLSv1_2
+7         | _OP_NO_TLSv1_3
+8     ),
+9     ssl\&.TLSVersion\&.TLSv1: (
+10         _OP_NO_SSLv2_OR_SSLv3 | _OP_NO_TLSv1_1 | _OP_NO_TLSv1_2 | _OP_NO_TLSv1_3
+11     ),
+12     ssl\&.TLSVersion\&.TLSv1_1: _OP_NO_SSLv2_OR_SSLv3 | _OP_NO_TLSv1_2 | _OP_NO_TLSv1_3,
+13     ssl\&.TLSVersion\&.TLSv1_2: _OP_NO_SSLv2_OR_SSLv3 | _OP_NO_TLSv1_3,
+14     ssl\&.TLSVersion\&.TLSv1_3: _OP_NO_SSLv2_OR_SSLv3,
+15     ssl\&.TLSVersion\&.MAXIMUM_SUPPORTED: _OP_NO_SSLv2_OR_SSLv3,
+16 }
+.fi
+
+.SS "dict urllib3\&.contrib\&.pyopenssl\&._openssl_to_ssl_minimum_version\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     ssl\&.TLSVersion\&.MINIMUM_SUPPORTED: _OP_NO_SSLv2_OR_SSLv3,
+3     ssl\&.TLSVersion\&.TLSv1: _OP_NO_SSLv2_OR_SSLv3,
+4     ssl\&.TLSVersion\&.TLSv1_1: _OP_NO_SSLv2_OR_SSLv3 | _OP_NO_TLSv1,
+5     ssl\&.TLSVersion\&.TLSv1_2: _OP_NO_SSLv2_OR_SSLv3 | _OP_NO_TLSv1 | _OP_NO_TLSv1_1,
+6     ssl\&.TLSVersion\&.TLSv1_3: (
+7         _OP_NO_SSLv2_OR_SSLv3 | _OP_NO_TLSv1 | _OP_NO_TLSv1_1 | _OP_NO_TLSv1_2
+8     ),
+9     ssl\&.TLSVersion\&.MAXIMUM_SUPPORTED: (
+10         _OP_NO_SSLv2_OR_SSLv3 | _OP_NO_TLSv1 | _OP_NO_TLSv1_1 | _OP_NO_TLSv1_2
+11     ),
+12 }
+.fi
+
+.SS "dict urllib3\&.contrib\&.pyopenssl\&._openssl_to_stdlib_verify = {v: k for k, v in _stdlib_to_openssl_verify\&.items()}\fC [protected]\fP"
+
+.SS "dict urllib3\&.contrib\&.pyopenssl\&._openssl_versions\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     util\&.ssl_\&.PROTOCOL_TLS: OpenSSL\&.SSL\&.SSLv23_METHOD,  # type: ignore[attr\-defined]
+3     util\&.ssl_\&.PROTOCOL_TLS_CLIENT: OpenSSL\&.SSL\&.SSLv23_METHOD,  # type: ignore[attr\-defined]
+4     ssl\&.PROTOCOL_TLSv1: OpenSSL\&.SSL\&.TLSv1_METHOD,
+5 }
+.fi
+
+.SS "dict urllib3\&.contrib\&.pyopenssl\&._stdlib_to_openssl_verify\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     ssl\&.CERT_NONE: OpenSSL\&.SSL\&.VERIFY_NONE,
+3     ssl\&.CERT_OPTIONAL: OpenSSL\&.SSL\&.VERIFY_PEER,
+4     ssl\&.CERT_REQUIRED: OpenSSL\&.SSL\&.VERIFY_PEER
+5     + OpenSSL\&.SSL\&.VERIFY_FAIL_IF_NO_PEER_CERT,
+6 }
+.fi
+
+.SS "urllib3\&.contrib\&.pyopenssl\&.log = logging\&.getLogger(__name__)"
+
+.SS "urllib3\&.contrib\&.pyopenssl\&.orig_util_SSLContext = \fButil\&.ssl_\&.SSLContext\fP"
+
+.SS "int urllib3\&.contrib\&.pyopenssl\&.SSL_WRITE_BLOCKSIZE = 16384"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

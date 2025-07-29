@@ -1,0 +1,125 @@
+.TH "sphinx.util.matching" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.util.matching
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBMatcher\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fB_translate_pattern\fP (str pat)"
+.br
+.ti -1c
+.RI "list[Callable[[str], re\&.Match[str]|None]] \fBcompile_matchers\fP (Iterable[str] patterns)"
+.br
+.ti -1c
+.RI "re\&.Match[str]|None \fBpatmatch\fP (str name, str pat)"
+.br
+.ti -1c
+.RI "list[str] \fBpatfilter\fP (Iterable[str] names, str pat)"
+.br
+.ti -1c
+.RI "Iterator[str] \fBget_matching_files\fP (str|os\&.PathLike[str] dirname, Iterable[str] include_patterns=(' **',), Iterable[str] exclude_patterns=())"
+.br
+.ti -1c
+.RI "str \fB_unicode_nfc\fP (str s)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBDOTFILES\fP = \fBMatcher\fP(['**/\&.*'])"
+.br
+.ti -1c
+.RI "dict \fB_pat_cache\fP = {}"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Pattern-matching utility functions for Sphinx\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " str sphinx\&.util\&.matching\&._translate_pattern (str pat)\fC [protected]\fP"
+
+.PP
+.nf
+Translate a shell-style glob pattern to a regular expression\&.
+
+Adapted from the fnmatch module, but enhanced so that single stars don't
+match slashes\&.
+
+.fi
+.PP
+ 
+.SS " str sphinx\&.util\&.matching\&._unicode_nfc (str s)\fC [protected]\fP"
+
+.PP
+.nf
+Normalise the string to NFC form\&.
+.fi
+.PP
+ 
+.SS " list[Callable[[str], re\&.Match[str] | None]] sphinx\&.util\&.matching\&.compile_matchers (Iterable[str] patterns)"
+
+.SS " Iterator[str] sphinx\&.util\&.matching\&.get_matching_files (str | os\&.PathLike[str] dirname, Iterable[str]  include_patterns = \fC('**',)\fP, Iterable[str]  exclude_patterns = \fC()\fP)"
+
+.PP
+.nf
+Get all file names in a directory, recursively\&.
+
+Filter file names by the glob-style include_patterns and exclude_patterns\&.
+The default values include all files ('**') and exclude nothing ('')\&.
+
+Only files matching some pattern in *include_patterns* are included, and
+exclusions from *exclude_patterns* take priority over inclusions\&.
+.fi
+.PP
+ 
+.SS " list[str] sphinx\&.util\&.matching\&.patfilter (Iterable[str] names, str pat)"
+
+.PP
+.nf
+Return the subset of the list ``names`` that match
+the regular expression (pattern) ``pat``\&.
+
+Adapted from fnmatch module\&.
+
+.fi
+.PP
+ 
+.SS " re\&.Match[str] | None sphinx\&.util\&.matching\&.patmatch (str name, str pat)"
+
+.PP
+.nf
+Return if name matches the regular expression (pattern)
+``pat```\&. Adapted from fnmatch module\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "dict sphinx\&.util\&.matching\&._pat_cache = {}\fC [protected]\fP"
+
+.SS "sphinx\&.util\&.matching\&.DOTFILES = \fBMatcher\fP(['**/\&.*'])"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

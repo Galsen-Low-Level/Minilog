@@ -1,0 +1,120 @@
+.TH "pip._internal.models.link" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.models.link
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_CleanResult\fP"
+.br
+.ti -1c
+.RI "class \fBLink\fP"
+.br
+.ti -1c
+.RI "class \fBLinkHash\fP"
+.br
+.ti -1c
+.RI "class \fBMetadataFile\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "Optional[Dict[str, str]] \fBsupported_hashes\fP (Optional[Dict[str, str]] hashes)"
+.br
+.ti -1c
+.RI "str \fB_clean_url_path_part\fP (str part)"
+.br
+.ti -1c
+.RI "str \fB_clean_file_url_path\fP (str part)"
+.br
+.ti -1c
+.RI "str \fB_clean_url_path\fP (str path, bool is_local_path)"
+.br
+.ti -1c
+.RI "str \fB_ensure_quoted_url\fP (str url)"
+.br
+.ti -1c
+.RI "\fB_CleanResult\fP \fB_clean_link\fP (\fBLink\fP link)"
+.br
+.ti -1c
+.RI "bool \fBlinks_equivalent\fP (\fBLink\fP link1, \fBLink\fP link2)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "tuple \fB_SUPPORTED_HASHES\fP = ('sha512', 'sha384', 'sha256', 'sha224', 'sha1', 'md5')"
+.br
+.ti -1c
+.RI "\fB_reserved_chars_re\fP = re\&.compile('(@|%2F)', re\&.IGNORECASE)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " str pip\&._internal\&.models\&.link\&._clean_file_url_path (str part)\fC [protected]\fP"
+
+.PP
+.nf
+Clean the first part of a URL path that corresponds to a local
+filesystem path (i\&.e\&. the first part after splitting on '@' characters)\&.
+
+.fi
+.PP
+ 
+.SS " \fB_CleanResult\fP pip\&._internal\&.models\&.link\&._clean_link (\fBLink\fP link)\fC [protected]\fP"
+
+.SS " str pip\&._internal\&.models\&.link\&._clean_url_path (str path, bool is_local_path)\fC [protected]\fP"
+
+.PP
+.nf
+Clean the path portion of a URL\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._internal\&.models\&.link\&._clean_url_path_part (str part)\fC [protected]\fP"
+
+.PP
+.nf
+Clean a 'part' of a URL path (i\&.e\&. after splitting on '@' characters)\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._internal\&.models\&.link\&._ensure_quoted_url (str url)\fC [protected]\fP"
+
+.PP
+.nf
+Make sure a link is fully quoted\&.
+For example, if ' ' occurs in the URL, it will be replaced with '%20',
+and without double-quoting other characters\&.
+
+.fi
+.PP
+ 
+.SS " bool pip\&._internal\&.models\&.link\&.links_equivalent (\fBLink\fP link1, \fBLink\fP link2)"
+
+.SS " Optional[Dict[str, str]] pip\&._internal\&.models\&.link\&.supported_hashes (Optional[Dict[str, str]] hashes)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._internal\&.models\&.link\&._reserved_chars_re = re\&.compile('(@|%2F)', re\&.IGNORECASE)\fC [protected]\fP"
+
+.SS "tuple pip\&._internal\&.models\&.link\&._SUPPORTED_HASHES = ('sha512', 'sha384', 'sha256', 'sha224', 'sha1', 'md5')\fC [protected]\fP"
+
+.SS "pip\&._internal\&.models\&.link\&.logger = logging\&.getLogger(__name__)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

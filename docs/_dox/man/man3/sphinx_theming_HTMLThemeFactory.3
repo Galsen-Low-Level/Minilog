@@ -1,0 +1,121 @@
+.TH "sphinx.theming.HTMLThemeFactory" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.theming.HTMLThemeFactory
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, \fBSphinx\fP app)"
+.br
+.ti -1c
+.RI "\fBTheme\fP \fBcreate\fP (self, str name)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB_load_builtin_themes\fP (self)"
+.br
+.ti -1c
+.RI "None \fB_load_additional_themes\fP (self, list[str] theme_paths)"
+.br
+.ti -1c
+.RI "None \fB_load_entry_point_themes\fP (self)"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "dict[str, Path] \fB_find_themes\fP (Path theme_path)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_app\fP"
+.br
+.ti -1c
+.RI "\fB_themes\fP"
+.br
+.ti -1c
+.RI "\fB_entry_point_themes\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A factory class for HTML Themes\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.theming\&.HTMLThemeFactory\&.__init__ ( self, \fBSphinx\fP app)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " dict[str, Path] sphinx\&.theming\&.HTMLThemeFactory\&._find_themes (Path theme_path)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+.nf
+Search themes from specified directory\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.theming\&.HTMLThemeFactory\&._load_additional_themes ( self, list[str] theme_paths)\fC [protected]\fP"
+
+.PP
+.nf
+Load additional themes placed at specified directories\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.theming\&.HTMLThemeFactory\&._load_builtin_themes ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Load built-in themes\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.theming\&.HTMLThemeFactory\&._load_entry_point_themes ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Try to load a theme with the specified name\&.
+
+This uses the ``sphinx\&.html_themes`` entry point from package metadata\&.
+
+.fi
+.PP
+ 
+.SS " \fBTheme\fP sphinx\&.theming\&.HTMLThemeFactory\&.create ( self, str name)"
+
+.PP
+.nf
+Create an instance of theme\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.theming\&.HTMLThemeFactory\&._app\fC [protected]\fP"
+
+.SS "sphinx\&.theming\&.HTMLThemeFactory\&._entry_point_themes\fC [protected]\fP"
+
+.SS "sphinx\&.theming\&.HTMLThemeFactory\&._themes\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

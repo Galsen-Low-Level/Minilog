@@ -1,0 +1,310 @@
+.TH "pygments.lexers.scripting.RexxLexer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.lexers.scripting.RexxLexer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpygments\&.lexer\&.RegexLexer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBanalyse_text\fP (text)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.RegexLexer\fP
+.in +1c
+.ti -1c
+.RI "\fBget_tokens_unprocessed\fP (self, text, stack=('root',))"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd_filter\fP (self, filter_, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fBget_tokens\fP (self, text, unfiltered=False)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.LexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fB__new__\fP (mcs, name, bases, d)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.RegexLexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fBprocess_tokendef\fP (cls, name, tokendefs=None)"
+.br
+.ti -1c
+.RI "\fBget_tokendefs\fP (cls)"
+.br
+.ti -1c
+.RI "\fB__call__\fP (cls, *args, **kwds)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = 'Rexx'"
+.br
+.ti -1c
+.RI "str \fBurl\fP = 'http://www\&.rexxinfo\&.org/'"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = ['rexx', 'arexx']"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = ['*\&.rexx', '*\&.rex', '*\&.rx', '*\&.arexx']"
+.br
+.ti -1c
+.RI "list \fBmimetypes\fP = ['text/x\-rexx']"
+.br
+.ti -1c
+.RI "str \fBversion_added\fP = '2\&.0'"
+.br
+.ti -1c
+.RI "\fBflags\fP = re\&.IGNORECASE"
+.br
+.ti -1c
+.RI "dict \fBtokens\fP"
+.br
+.ti -1c
+.RI "tuple \fBPATTERNS_AND_WEIGHTS\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpygments\&.lexer\&.RegexLexer\fP
+.in +1c
+.ti -1c
+.RI "\fBflags\fP = re\&.MULTILINE"
+.br
+.ti -1c
+.RI "dict \fBtokens\fP = {}"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fBname\fP = None"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = []"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBalias_filenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBmimetypes\fP = []"
+.br
+.ti -1c
+.RI "int \fBpriority\fP = 0"
+.br
+.ti -1c
+.RI "\fBurl\fP = None"
+.br
+.ti -1c
+.RI "\fBversion_added\fP = None"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_c\fP (s)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB_preprocess_lexer_input\fP (self, text)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpygments\&.lexer\&.RegexLexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fB_process_regex\fP (cls, regex, rflags, state)"
+.br
+.ti -1c
+.RI "\fB_process_token\fP (cls, token)"
+.br
+.ti -1c
+.RI "\fB_process_new_state\fP (cls, new_state, unprocessed, processed)"
+.br
+.ti -1c
+.RI "\fB_process_state\fP (cls, unprocessed, processed, state)"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_ADDRESS_COMMAND_PATTERN\fP = \fB_c\fP(r'^\\s*address\\s+command\\b')"
+.br
+.ti -1c
+.RI "\fB_ADDRESS_PATTERN\fP = \fB_c\fP(r'^\\s*address\\s+')"
+.br
+.ti -1c
+.RI "\fB_DO_WHILE_PATTERN\fP = \fB_c\fP(r'^\\s*do\\s+while\\b')"
+.br
+.ti -1c
+.RI "\fB_IF_THEN_DO_PATTERN\fP = \fB_c\fP(r'^\\s*if\\b\&.+\\bthen\\s+do\\s*$')"
+.br
+.ti -1c
+.RI "\fB_PROCEDURE_PATTERN\fP = \fB_c\fP(r'^\\s*([a\-z_]\\w*)(\\s*)(:)(\\s*)(procedure)\\b')"
+.br
+.ti -1c
+.RI "\fB_ELSE_DO_PATTERN\fP = \fB_c\fP(r'\\belse\\s+do\\s*$')"
+.br
+.ti -1c
+.RI "\fB_PARSE_ARG_PATTERN\fP = \fB_c\fP(r'^\\s*parse\\s+(upper\\s+)?(arg|value)\\b')"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB_example\fP = None"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBstripnl\fP"
+.br
+.ti -1c
+.RI "\fBstripall\fP"
+.br
+.ti -1c
+.RI "\fBensurenl\fP"
+.br
+.ti -1c
+.RI "\fBtabsize\fP"
+.br
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBfilters\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBpygments\&.lexer\&.RegexLexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fB_all_tokens\fP"
+.br
+.ti -1c
+.RI "\fB_tmpname\fP"
+.br
+.ti -1c
+.RI "\fB_tokens\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Rexx is a scripting language available for
+a wide range of different platforms with its roots found on mainframe
+systems\&. It is popular for I/O- and data based tasks and can act as glue
+language to bind different applications together\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "pygments\&.lexers\&.scripting\&.RexxLexer\&._c ( s)\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.scripting\&.RexxLexer\&.analyse_text ( text)"
+
+.PP
+.nf
+Check for initial comment and patterns that distinguish Rexx from other
+C-like languages\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpygments\&.lexer\&.Lexer\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "pygments\&.lexers\&.scripting\&.RexxLexer\&._ADDRESS_COMMAND_PATTERN = \fB_c\fP(r'^\\s*address\\s+command\\b')\fC [static]\fP, \fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.scripting\&.RexxLexer\&._ADDRESS_PATTERN = \fB_c\fP(r'^\\s*address\\s+')\fC [static]\fP, \fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.scripting\&.RexxLexer\&._DO_WHILE_PATTERN = \fB_c\fP(r'^\\s*do\\s+while\\b')\fC [static]\fP, \fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.scripting\&.RexxLexer\&._ELSE_DO_PATTERN = \fB_c\fP(r'\\belse\\s+do\\s*$')\fC [static]\fP, \fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.scripting\&.RexxLexer\&._IF_THEN_DO_PATTERN = \fB_c\fP(r'^\\s*if\\b\&.+\\bthen\\s+do\\s*$')\fC [static]\fP, \fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.scripting\&.RexxLexer\&._PARSE_ARG_PATTERN = \fB_c\fP(r'^\\s*parse\\s+(upper\\s+)?(arg|value)\\b')\fC [static]\fP, \fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.scripting\&.RexxLexer\&._PROCEDURE_PATTERN = \fB_c\fP(r'^\\s*([a\-z_]\\w*)(\\s*)(:)(\\s*)(procedure)\\b')\fC [static]\fP, \fC [protected]\fP"
+
+.SS "list pygments\&.lexers\&.scripting\&.RexxLexer\&.aliases = ['rexx', 'arexx']\fC [static]\fP"
+
+.SS "list pygments\&.lexers\&.scripting\&.RexxLexer\&.filenames = ['*\&.rexx', '*\&.rex', '*\&.rx', '*\&.arexx']\fC [static]\fP"
+
+.SS "pygments\&.lexers\&.scripting\&.RexxLexer\&.flags = re\&.IGNORECASE\fC [static]\fP"
+
+.SS "list pygments\&.lexers\&.scripting\&.RexxLexer\&.mimetypes = ['text/x\-rexx']\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.scripting\&.RexxLexer\&.name = 'Rexx'\fC [static]\fP"
+
+.SS "tuple pygments\&.lexers\&.scripting\&.RexxLexer\&.PATTERNS_AND_WEIGHTS\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  (
+        (_ADDRESS_COMMAND_PATTERN, 0\&.2),
+        (_ADDRESS_PATTERN, 0\&.05),
+        (_DO_WHILE_PATTERN, 0\&.1),
+        (_ELSE_DO_PATTERN, 0\&.1),
+        (_IF_THEN_DO_PATTERN, 0\&.1),
+        (_PROCEDURE_PATTERN, 0\&.5),
+        (_PARSE_ARG_PATTERN, 0\&.2),
+    )
+.fi
+
+.SS "dict pygments\&.lexers\&.scripting\&.RexxLexer\&.tokens\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.scripting\&.RexxLexer\&.url = 'http://www\&.rexxinfo\&.org/'\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.scripting\&.RexxLexer\&.version_added = '2\&.0'\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

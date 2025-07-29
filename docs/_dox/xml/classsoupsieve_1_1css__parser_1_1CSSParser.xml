@@ -1,0 +1,703 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classsoupsieve_1_1css__parser_1_1CSSParser" kind="class" language="Python" prot="public">
+    <compoundname>soupsieve::css_parser::CSSParser</compoundname>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classsoupsieve_1_1css__parser_1_1CSSParser_1ae518202e29ea0ebf6b4ec697b86b651c" prot="public" static="yes" mutable="no">
+        <type>tuple</type>
+        <definition>tuple soupsieve.css_parser.CSSParser::css_tokens</definition>
+        <argsstring></argsstring>
+        <name>css_tokens</name>
+        <qualifiedname>soupsieve.css_parser.CSSParser.css_tokens</qualifiedname>
+        <initializer>=  (
+        <ref refid="classsoupsieve_1_1css__parser_1_1SelectorPattern" kindref="compound">SelectorPattern</ref>(&quot;pseudo_close&quot;, <ref refid="namespacesoupsieve_1_1css__parser_1abd084b4a56de83729788c3fac49edac6" kindref="member">PAT_PSEUDO_CLOSE</ref>),
+        <ref refid="classsoupsieve_1_1css__parser_1_1SpecialPseudoPattern" kindref="compound">SpecialPseudoPattern</ref>(
+            (
+                (
+                    &quot;pseudo_contains&quot;,
+                    (&apos;:contains&apos;, &apos;:-soup-contains&apos;, &apos;:-soup-contains-own&apos;),
+                    <ref refid="namespacesoupsieve_1_1css__parser_1a4f8454fb6d606c4cb286f15eba50aead" kindref="member">PAT_PSEUDO_CONTAINS</ref>,
+                    <ref refid="classsoupsieve_1_1css__parser_1_1SelectorPattern" kindref="compound">SelectorPattern</ref>
+                ),
+                (&quot;pseudo_nth_child&quot;, (&apos;:nth-child&apos;, &apos;:nth-last-child&apos;), <ref refid="namespacesoupsieve_1_1css__parser_1a9bf519cea507d75eec831143f03e887d" kindref="member">PAT_PSEUDO_NTH_CHILD</ref>, <ref refid="classsoupsieve_1_1css__parser_1_1SelectorPattern" kindref="compound">SelectorPattern</ref>),
+                (&quot;pseudo_nth_type&quot;, (&apos;:nth-of-type&apos;, &apos;:nth-last-of-type&apos;), <ref refid="namespacesoupsieve_1_1css__parser_1a456187ff7c3d6c3fc24bf2ae31f9cb81" kindref="member">PAT_PSEUDO_NTH_TYPE</ref>, <ref refid="classsoupsieve_1_1css__parser_1_1SelectorPattern" kindref="compound">SelectorPattern</ref>),
+                (&quot;pseudo_lang&quot;, (&apos;:lang&apos;,), <ref refid="namespacesoupsieve_1_1css__parser_1a67d766f159bfa883a562898a0da4b48e" kindref="member">PAT_PSEUDO_LANG</ref>, <ref refid="classsoupsieve_1_1css__parser_1_1SelectorPattern" kindref="compound">SelectorPattern</ref>),
+                (&quot;pseudo_dir&quot;, (&apos;:dir&apos;,), <ref refid="namespacesoupsieve_1_1css__parser_1a624928bd43854f1be79096fcd765dbc4" kindref="member">PAT_PSEUDO_DIR</ref>, <ref refid="classsoupsieve_1_1css__parser_1_1SelectorPattern" kindref="compound">SelectorPattern</ref>)
+            )
+        ),
+        <ref refid="classsoupsieve_1_1css__parser_1_1SelectorPattern" kindref="compound">SelectorPattern</ref>(&quot;pseudo_class_custom&quot;, <ref refid="namespacesoupsieve_1_1css__parser_1a391ca33f4752a5026886dedea8c0b3e8" kindref="member">PAT_PSEUDO_CLASS_CUSTOM</ref>),
+        <ref refid="classsoupsieve_1_1css__parser_1_1SelectorPattern" kindref="compound">SelectorPattern</ref>(&quot;pseudo_class&quot;, <ref refid="namespacesoupsieve_1_1css__parser_1a145c738e81390413dde0025218031d9b" kindref="member">PAT_PSEUDO_CLASS</ref>),
+        <ref refid="classsoupsieve_1_1css__parser_1_1SelectorPattern" kindref="compound">SelectorPattern</ref>(&quot;pseudo_element&quot;, <ref refid="namespacesoupsieve_1_1css__parser_1a842cb94788790cbea4da9b2d3a238c87" kindref="member">PAT_PSEUDO_ELEMENT</ref>),
+        <ref refid="classsoupsieve_1_1css__parser_1_1SelectorPattern" kindref="compound">SelectorPattern</ref>(&quot;amp&quot;, <ref refid="namespacesoupsieve_1_1css__parser_1a346d9858f8eeb31065198e3069bb2d93" kindref="member">PAT_AMP</ref>),
+        <ref refid="classsoupsieve_1_1css__parser_1_1SelectorPattern" kindref="compound">SelectorPattern</ref>(&quot;at_rule&quot;, <ref refid="namespacesoupsieve_1_1css__parser_1ae25e8c2db2e4fc8cfa0c27057dec4abe" kindref="member">PAT_AT_RULE</ref>),
+        <ref refid="classsoupsieve_1_1css__parser_1_1SelectorPattern" kindref="compound">SelectorPattern</ref>(&quot;id&quot;, <ref refid="namespacesoupsieve_1_1css__parser_1a4d783fac16b2b5dccbb457c9d7718fbe" kindref="member">PAT_ID</ref>),
+        <ref refid="classsoupsieve_1_1css__parser_1_1SelectorPattern" kindref="compound">SelectorPattern</ref>(&quot;class&quot;, <ref refid="namespacesoupsieve_1_1css__parser_1a57bf9b4482c62192a420238647bb5bbe" kindref="member">PAT_CLASS</ref>),
+        <ref refid="classsoupsieve_1_1css__parser_1_1SelectorPattern" kindref="compound">SelectorPattern</ref>(&quot;tag&quot;, <ref refid="namespacesoupsieve_1_1css__parser_1a7470700c23dacc12085ebb038f1d101b" kindref="member">PAT_TAG</ref>),
+        <ref refid="classsoupsieve_1_1css__parser_1_1SelectorPattern" kindref="compound">SelectorPattern</ref>(&quot;attribute&quot;, <ref refid="namespacesoupsieve_1_1css__parser_1a6ff45522c36434ed238f64a1bb4cdf3b" kindref="member">PAT_ATTR</ref>),
+        <ref refid="classsoupsieve_1_1css__parser_1_1SelectorPattern" kindref="compound">SelectorPattern</ref>(&quot;combine&quot;, <ref refid="namespacesoupsieve_1_1css__parser_1a659e9804f412aea14c79629090b272f4" kindref="member">PAT_COMBINE</ref>)
+    )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="431" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="431" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classsoupsieve_1_1css__parser_1_1CSSParser_1a0cb86ed4dcfb0450f8425e8d8857a02a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve.css_parser.CSSParser::pattern</definition>
+        <argsstring></argsstring>
+        <name>pattern</name>
+        <qualifiedname>soupsieve.css_parser.CSSParser.pattern</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="467" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="467" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsoupsieve_1_1css__parser_1_1CSSParser_1a194393fa9ea3f6e888a0173c6df500d2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve.css_parser.CSSParser::flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <qualifiedname>soupsieve.css_parser.CSSParser.flags</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="468" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="468" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsoupsieve_1_1css__parser_1_1CSSParser_1aa69bacb77f2a338961850b4d8ce8d8a9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve.css_parser.CSSParser::debug</definition>
+        <argsstring></argsstring>
+        <name>debug</name>
+        <qualifiedname>soupsieve.css_parser.CSSParser.debug</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="469" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="469" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsoupsieve_1_1css__parser_1_1CSSParser_1a2ff284f24913d1dd6e76952d2fbce6a2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>soupsieve.css_parser.CSSParser::custom</definition>
+        <argsstring></argsstring>
+        <name>custom</name>
+        <qualifiedname>soupsieve.css_parser.CSSParser.custom</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="470" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="470" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsoupsieve_1_1css__parser_1_1CSSParser_1ad85cbf652d694e7e11b0e6e05700f082" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>None</type>
+        <definition> None soupsieve.css_parser.CSSParser.__init__</definition>
+        <argsstring>(self, str selector, dict[str, str|ct.SelectorList]|None custom=None, int flags=0)</argsstring>
+        <name>__init__</name>
+        <qualifiedname>soupsieve.css_parser.CSSParser.__init__</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>selector</declname>
+        </param>
+        <param>
+          <type>dict|None</type>
+          <declname>custom</declname>
+          <array>[str, str|ct.SelectorList]</array>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Initialize.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="459" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="464" bodyend="471"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__parser_1_1CSSParser_1af8cb3ec1a10e2a4a51e8b2963e922326" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool soupsieve.css_parser.CSSParser.parse_attribute_selector</definition>
+        <argsstring>(self, _Selector sel, Match[str] m, bool has_selector)</argsstring>
+        <name>parse_attribute_selector</name>
+        <qualifiedname>soupsieve.css_parser.CSSParser.parse_attribute_selector</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classsoupsieve_1_1css__parser_1_1__Selector" kindref="compound">_Selector</ref></type>
+          <declname>sel</declname>
+        </param>
+        <param>
+          <type>Match</type>
+          <declname>m</declname>
+          <array>[str]</array>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>has_selector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Create attribute selector from the returned regex match.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="472" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="472" bodyend="541"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__parser_1_1CSSParser_1a2c49428612baf030daf244ce551b9cc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool soupsieve.css_parser.CSSParser.parse_tag_pattern</definition>
+        <argsstring>(self, _Selector sel, Match[str] m, bool has_selector)</argsstring>
+        <name>parse_tag_pattern</name>
+        <qualifiedname>soupsieve.css_parser.CSSParser.parse_tag_pattern</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classsoupsieve_1_1css__parser_1_1__Selector" kindref="compound">_Selector</ref></type>
+          <declname>sel</declname>
+        </param>
+        <param>
+          <type>Match</type>
+          <declname>m</declname>
+          <array>[str]</array>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>has_selector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Parse tag pattern from regex match.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="542" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="542" bodyend="550"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__parser_1_1CSSParser_1ad704b48644d59cc78fe707543bd50a83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool soupsieve.css_parser.CSSParser.parse_pseudo_class_custom</definition>
+        <argsstring>(self, _Selector sel, Match[str] m, bool has_selector)</argsstring>
+        <name>parse_pseudo_class_custom</name>
+        <qualifiedname>soupsieve.css_parser.CSSParser.parse_pseudo_class_custom</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classsoupsieve_1_1css__parser_1_1__Selector" kindref="compound">_Selector</ref></type>
+          <declname>sel</declname>
+        </param>
+        <param>
+          <type>Match</type>
+          <declname>m</declname>
+          <array>[str]</array>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>has_selector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Parse custom pseudo class alias.
+
+Compile custom selectors as we need them. When compiling a custom selector,
+set it to `None` in the dictionary so we can avoid an infinite loop.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="551" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="551" bodyend="578"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__parser_1_1CSSParser_1acbbe875bce287f41c5d335da7fe56348" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>tuple[bool, bool]</type>
+        <definition> tuple[bool, bool] soupsieve.css_parser.CSSParser.parse_pseudo_class</definition>
+        <argsstring>(self, _Selector sel, Match[str] m, bool has_selector, Iterator[tuple[str, Match[str]]] iselector, bool is_html)</argsstring>
+        <name>parse_pseudo_class</name>
+        <qualifiedname>soupsieve.css_parser.CSSParser.parse_pseudo_class</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classsoupsieve_1_1css__parser_1_1__Selector" kindref="compound">_Selector</ref></type>
+          <declname>sel</declname>
+        </param>
+        <param>
+          <type>Match</type>
+          <declname>m</declname>
+          <array>[str]</array>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>has_selector</declname>
+        </param>
+        <param>
+          <type>Iterator]]</type>
+          <declname>iselector</declname>
+          <array>[tuple[str, Match[str]</array>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>is_html</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Parse pseudo class.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="579" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="586" bodyend="680"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__parser_1_1CSSParser_1ac1f025e7528f3ddc3c94ecdf24b8675f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool soupsieve.css_parser.CSSParser.parse_pseudo_nth</definition>
+        <argsstring>(self, _Selector sel, Match[str] m, bool has_selector, Iterator[tuple[str, Match[str]]] iselector)</argsstring>
+        <name>parse_pseudo_nth</name>
+        <qualifiedname>soupsieve.css_parser.CSSParser.parse_pseudo_nth</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classsoupsieve_1_1css__parser_1_1__Selector" kindref="compound">_Selector</ref></type>
+          <declname>sel</declname>
+        </param>
+        <param>
+          <type>Match</type>
+          <declname>m</declname>
+          <array>[str]</array>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>has_selector</declname>
+        </param>
+        <param>
+          <type>Iterator]]</type>
+          <declname>iselector</declname>
+          <array>[tuple[str, Match[str]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Parse `nth` pseudo.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="681" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="687" bodyend="745"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__parser_1_1CSSParser_1abd7cc02c4a75d56a58a6f7bdd85c55fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool soupsieve.css_parser.CSSParser.parse_pseudo_open</definition>
+        <argsstring>(self, _Selector sel, str name, bool has_selector, Iterator[tuple[str, Match[str]]] iselector, int index)</argsstring>
+        <name>parse_pseudo_open</name>
+        <qualifiedname>soupsieve.css_parser.CSSParser.parse_pseudo_open</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classsoupsieve_1_1css__parser_1_1__Selector" kindref="compound">_Selector</ref></type>
+          <declname>sel</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>has_selector</declname>
+        </param>
+        <param>
+          <type>Iterator]]</type>
+          <declname>iselector</declname>
+          <array>[tuple[str, Match[str]</array>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Parse pseudo with opening bracket.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="746" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="753" bodyend="768"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__parser_1_1CSSParser_1a93cfb3abb6a5aae181a352638bb4bae7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>tuple[bool, <ref refid="classsoupsieve_1_1css__parser_1_1__Selector" kindref="compound">_Selector</ref>, str]</type>
+        <definition> tuple[bool, _Selector, str] soupsieve.css_parser.CSSParser.parse_has_combinator</definition>
+        <argsstring>(self, _Selector sel, Match[str] m, bool has_selector, list[_Selector] selectors, str rel_type, int index)</argsstring>
+        <name>parse_has_combinator</name>
+        <qualifiedname>soupsieve.css_parser.CSSParser.parse_has_combinator</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classsoupsieve_1_1css__parser_1_1__Selector" kindref="compound">_Selector</ref></type>
+          <declname>sel</declname>
+        </param>
+        <param>
+          <type>Match</type>
+          <declname>m</declname>
+          <array>[str]</array>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>has_selector</declname>
+        </param>
+        <param>
+          <type>list</type>
+          <declname>selectors</declname>
+          <array>[_Selector]</array>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>rel_type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Parse combinator tokens.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="769" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="777" bodyend="811"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__parser_1_1CSSParser_1ae565970202305f5748a60d2074c4de6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>tuple[bool, <ref refid="classsoupsieve_1_1css__parser_1_1__Selector" kindref="compound">_Selector</ref>]</type>
+        <definition> tuple[bool, _Selector] soupsieve.css_parser.CSSParser.parse_combinator</definition>
+        <argsstring>(self, _Selector sel, Match[str] m, bool has_selector, list[_Selector] selectors, list[_Selector] relations, bool is_pseudo, bool is_forgive, int index)</argsstring>
+        <name>parse_combinator</name>
+        <qualifiedname>soupsieve.css_parser.CSSParser.parse_combinator</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classsoupsieve_1_1css__parser_1_1__Selector" kindref="compound">_Selector</ref></type>
+          <declname>sel</declname>
+        </param>
+        <param>
+          <type>Match</type>
+          <declname>m</declname>
+          <array>[str]</array>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>has_selector</declname>
+        </param>
+        <param>
+          <type>list</type>
+          <declname>selectors</declname>
+          <array>[_Selector]</array>
+        </param>
+        <param>
+          <type>list</type>
+          <declname>relations</declname>
+          <array>[_Selector]</array>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>is_pseudo</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>is_forgive</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Parse combinator tokens.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="812" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="822" bodyend="859"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__parser_1_1CSSParser_1a99199436f027d8bb837dde61af536823" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool soupsieve.css_parser.CSSParser.parse_class_id</definition>
+        <argsstring>(self, _Selector sel, Match[str] m, bool has_selector)</argsstring>
+        <name>parse_class_id</name>
+        <qualifiedname>soupsieve.css_parser.CSSParser.parse_class_id</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classsoupsieve_1_1css__parser_1_1__Selector" kindref="compound">_Selector</ref></type>
+          <declname>sel</declname>
+        </param>
+        <param>
+          <type>Match</type>
+          <declname>m</declname>
+          <array>[str]</array>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>has_selector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Parse HTML classes and ids.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="860" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="860" bodyend="870"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__parser_1_1CSSParser_1a040b441af8598d7ac4e6dc64bac2009c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool soupsieve.css_parser.CSSParser.parse_pseudo_contains</definition>
+        <argsstring>(self, _Selector sel, Match[str] m, bool has_selector)</argsstring>
+        <name>parse_pseudo_contains</name>
+        <qualifiedname>soupsieve.css_parser.CSSParser.parse_pseudo_contains</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classsoupsieve_1_1css__parser_1_1__Selector" kindref="compound">_Selector</ref></type>
+          <declname>sel</declname>
+        </param>
+        <param>
+          <type>Match</type>
+          <declname>m</declname>
+          <array>[str]</array>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>has_selector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Parse contains.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="871" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="871" bodyend="895"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__parser_1_1CSSParser_1a04499342dd5dcd983585eeb5456d9e38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool soupsieve.css_parser.CSSParser.parse_pseudo_lang</definition>
+        <argsstring>(self, _Selector sel, Match[str] m, bool has_selector)</argsstring>
+        <name>parse_pseudo_lang</name>
+        <qualifiedname>soupsieve.css_parser.CSSParser.parse_pseudo_lang</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classsoupsieve_1_1css__parser_1_1__Selector" kindref="compound">_Selector</ref></type>
+          <declname>sel</declname>
+        </param>
+        <param>
+          <type>Match</type>
+          <declname>m</declname>
+          <array>[str]</array>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>has_selector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Parse pseudo language.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="896" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="896" bodyend="916"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__parser_1_1CSSParser_1a2b2d3ee07c1dcfc83ea5da18e7b748ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition> bool soupsieve.css_parser.CSSParser.parse_pseudo_dir</definition>
+        <argsstring>(self, _Selector sel, Match[str] m, bool has_selector)</argsstring>
+        <name>parse_pseudo_dir</name>
+        <qualifiedname>soupsieve.css_parser.CSSParser.parse_pseudo_dir</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classsoupsieve_1_1css__parser_1_1__Selector" kindref="compound">_Selector</ref></type>
+          <declname>sel</declname>
+        </param>
+        <param>
+          <type>Match</type>
+          <declname>m</declname>
+          <array>[str]</array>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>has_selector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Parse pseudo direction.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="917" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="917" bodyend="924"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__parser_1_1CSSParser_1aa5cf2337277983d463b1cf908e5f7af7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ct.SelectorList</type>
+        <definition> ct.SelectorList soupsieve.css_parser.CSSParser.parse_selectors</definition>
+        <argsstring>(self, Iterator[tuple[str, Match[str]]] iselector, int index=0, int flags=0)</argsstring>
+        <name>parse_selectors</name>
+        <qualifiedname>soupsieve.css_parser.CSSParser.parse_selectors</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>Iterator]]</type>
+          <declname>iselector</declname>
+          <array>[tuple[str, Match[str]</array>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Parse selectors.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="925" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="930" bodyend="1107"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__parser_1_1CSSParser_1a9c9eb5aa0642d17b01b0350551746209" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Iterator[tuple[str, Match[str]]]</type>
+        <definition> Iterator[tuple[str, Match[str]]] soupsieve.css_parser.CSSParser.selector_iter</definition>
+        <argsstring>(self, str pattern)</argsstring>
+        <name>selector_iter</name>
+        <qualifiedname>soupsieve.css_parser.CSSParser.selector_iter</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>pattern</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Iterate selector tokens.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="1108" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="1108" bodyend="1148"/>
+      </memberdef>
+      <memberdef kind="function" id="classsoupsieve_1_1css__parser_1_1CSSParser_1a9ff54e044f8694bfaa56191929fa1711" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ct.SelectorList</type>
+        <definition> ct.SelectorList soupsieve.css_parser.CSSParser.process_selectors</definition>
+        <argsstring>(self, int index=0, int flags=0)</argsstring>
+        <name>process_selectors</name>
+        <qualifiedname>soupsieve.css_parser.CSSParser.process_selectors</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Process selectors.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="1149" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="1149" bodyend="1158"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Parse CSS selectors.</verbatim> </para>
+    </detaileddescription>
+    <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" line="428" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" bodystart="428" bodyend="1158"/>
+    <listofallmembers>
+      <member refid="classsoupsieve_1_1css__parser_1_1CSSParser_1ad85cbf652d694e7e11b0e6e05700f082" prot="public" virt="non-virtual"><scope>soupsieve::css_parser::CSSParser</scope><name>__init__</name></member>
+      <member refid="classsoupsieve_1_1css__parser_1_1CSSParser_1ae518202e29ea0ebf6b4ec697b86b651c" prot="public" virt="non-virtual"><scope>soupsieve::css_parser::CSSParser</scope><name>css_tokens</name></member>
+      <member refid="classsoupsieve_1_1css__parser_1_1CSSParser_1a2ff284f24913d1dd6e76952d2fbce6a2" prot="public" virt="non-virtual"><scope>soupsieve::css_parser::CSSParser</scope><name>custom</name></member>
+      <member refid="classsoupsieve_1_1css__parser_1_1CSSParser_1aa69bacb77f2a338961850b4d8ce8d8a9" prot="public" virt="non-virtual"><scope>soupsieve::css_parser::CSSParser</scope><name>debug</name></member>
+      <member refid="classsoupsieve_1_1css__parser_1_1CSSParser_1a194393fa9ea3f6e888a0173c6df500d2" prot="public" virt="non-virtual"><scope>soupsieve::css_parser::CSSParser</scope><name>flags</name></member>
+      <member refid="classsoupsieve_1_1css__parser_1_1CSSParser_1af8cb3ec1a10e2a4a51e8b2963e922326" prot="public" virt="non-virtual"><scope>soupsieve::css_parser::CSSParser</scope><name>parse_attribute_selector</name></member>
+      <member refid="classsoupsieve_1_1css__parser_1_1CSSParser_1a99199436f027d8bb837dde61af536823" prot="public" virt="non-virtual"><scope>soupsieve::css_parser::CSSParser</scope><name>parse_class_id</name></member>
+      <member refid="classsoupsieve_1_1css__parser_1_1CSSParser_1ae565970202305f5748a60d2074c4de6c" prot="public" virt="non-virtual"><scope>soupsieve::css_parser::CSSParser</scope><name>parse_combinator</name></member>
+      <member refid="classsoupsieve_1_1css__parser_1_1CSSParser_1a93cfb3abb6a5aae181a352638bb4bae7" prot="public" virt="non-virtual"><scope>soupsieve::css_parser::CSSParser</scope><name>parse_has_combinator</name></member>
+      <member refid="classsoupsieve_1_1css__parser_1_1CSSParser_1acbbe875bce287f41c5d335da7fe56348" prot="public" virt="non-virtual"><scope>soupsieve::css_parser::CSSParser</scope><name>parse_pseudo_class</name></member>
+      <member refid="classsoupsieve_1_1css__parser_1_1CSSParser_1ad704b48644d59cc78fe707543bd50a83" prot="public" virt="non-virtual"><scope>soupsieve::css_parser::CSSParser</scope><name>parse_pseudo_class_custom</name></member>
+      <member refid="classsoupsieve_1_1css__parser_1_1CSSParser_1a040b441af8598d7ac4e6dc64bac2009c" prot="public" virt="non-virtual"><scope>soupsieve::css_parser::CSSParser</scope><name>parse_pseudo_contains</name></member>
+      <member refid="classsoupsieve_1_1css__parser_1_1CSSParser_1a2b2d3ee07c1dcfc83ea5da18e7b748ea" prot="public" virt="non-virtual"><scope>soupsieve::css_parser::CSSParser</scope><name>parse_pseudo_dir</name></member>
+      <member refid="classsoupsieve_1_1css__parser_1_1CSSParser_1a04499342dd5dcd983585eeb5456d9e38" prot="public" virt="non-virtual"><scope>soupsieve::css_parser::CSSParser</scope><name>parse_pseudo_lang</name></member>
+      <member refid="classsoupsieve_1_1css__parser_1_1CSSParser_1ac1f025e7528f3ddc3c94ecdf24b8675f" prot="public" virt="non-virtual"><scope>soupsieve::css_parser::CSSParser</scope><name>parse_pseudo_nth</name></member>
+      <member refid="classsoupsieve_1_1css__parser_1_1CSSParser_1abd7cc02c4a75d56a58a6f7bdd85c55fa" prot="public" virt="non-virtual"><scope>soupsieve::css_parser::CSSParser</scope><name>parse_pseudo_open</name></member>
+      <member refid="classsoupsieve_1_1css__parser_1_1CSSParser_1aa5cf2337277983d463b1cf908e5f7af7" prot="public" virt="non-virtual"><scope>soupsieve::css_parser::CSSParser</scope><name>parse_selectors</name></member>
+      <member refid="classsoupsieve_1_1css__parser_1_1CSSParser_1a2c49428612baf030daf244ce551b9cc2" prot="public" virt="non-virtual"><scope>soupsieve::css_parser::CSSParser</scope><name>parse_tag_pattern</name></member>
+      <member refid="classsoupsieve_1_1css__parser_1_1CSSParser_1a0cb86ed4dcfb0450f8425e8d8857a02a" prot="public" virt="non-virtual"><scope>soupsieve::css_parser::CSSParser</scope><name>pattern</name></member>
+      <member refid="classsoupsieve_1_1css__parser_1_1CSSParser_1a9ff54e044f8694bfaa56191929fa1711" prot="public" virt="non-virtual"><scope>soupsieve::css_parser::CSSParser</scope><name>process_selectors</name></member>
+      <member refid="classsoupsieve_1_1css__parser_1_1CSSParser_1a9c9eb5aa0642d17b01b0350551746209" prot="public" virt="non-virtual"><scope>soupsieve::css_parser::CSSParser</scope><name>selector_iter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

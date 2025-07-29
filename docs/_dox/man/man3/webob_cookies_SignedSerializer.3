@@ -1,0 +1,129 @@
+.TH "webob.cookies.SignedSerializer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webob.cookies.SignedSerializer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBsecret\fP, \fBsalt\fP, \fBhashalg\fP='sha512', \fBserializer\fP=None)"
+.br
+.ti -1c
+.RI "\fBdumps\fP (self, appstruct)"
+.br
+.ti -1c
+.RI "\fBloads\fP (self, bstruct)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsalt\fP"
+.br
+.ti -1c
+.RI "\fBsecret\fP"
+.br
+.ti -1c
+.RI "\fBhashalg\fP"
+.br
+.ti -1c
+.RI "\fBsalted_secret\fP"
+.br
+.ti -1c
+.RI "\fBdigestmod\fP"
+.br
+.ti -1c
+.RI "\fBdigest_size\fP"
+.br
+.ti -1c
+.RI "\fBserializer\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A helper to cryptographically sign arbitrary content using HMAC\&.
+
+The serializer accepts arbitrary functions for performing the actual
+serialization and deserialization\&.
+
+``secret``
+  A string which is used to sign the cookie\&. The secret should be at
+  least as long as the block size of the selected hash algorithm\&. For
+  ``sha512`` this would mean a 512 bit (64 character) secret\&.
+
+``salt``
+  A namespace to avoid collisions between different uses of a shared
+  secret\&.
+
+``hashalg``
+  The HMAC digest algorithm to use for signing\&. The algorithm must be
+  supported by the :mod:`hashlib` library\&. Default: ``'sha512'``\&.
+
+``serializer``
+  An object with two methods: `loads`` and ``dumps``\&.  The ``loads`` method
+  should accept bytes and return a Python object\&.  The ``dumps`` method
+  should accept a Python object and return bytes\&.  A ``ValueError`` should
+  be raised for malformed inputs\&.  Default: ``None`, which will use a
+  derivation of :func:`json\&.dumps` and ``json\&.loads``\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "webob\&.cookies\&.SignedSerializer\&.__init__ ( self,  secret,  salt,  hashalg = \fC'sha512'\fP,  serializer = \fCNone\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "webob\&.cookies\&.SignedSerializer\&.dumps ( self,  appstruct)"
+
+.PP
+.nf
+Given an ``appstruct``, serialize and sign the data\&.
+
+Returns a bytestring\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.cookies\&.SignedSerializer\&.loads ( self,  bstruct)"
+
+.PP
+.nf
+Given a ``bstruct`` (a bytestring), verify the signature and then
+deserialize and return the deserialized value\&.
+
+A ``ValueError`` will be raised if the signature fails to validate\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "webob\&.cookies\&.SignedSerializer\&.digest_size"
+
+.SS "webob\&.cookies\&.SignedSerializer\&.digestmod"
+
+.SS "webob\&.cookies\&.SignedSerializer\&.hashalg"
+
+.SS "webob\&.cookies\&.SignedSerializer\&.salt"
+
+.SS "webob\&.cookies\&.SignedSerializer\&.salted_secret"
+
+.SS "webob\&.cookies\&.SignedSerializer\&.secret"
+
+.SS "webob\&.cookies\&.SignedSerializer\&.serializer"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

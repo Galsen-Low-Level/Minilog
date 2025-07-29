@@ -1,0 +1,61 @@
+.TH "bs4._deprecation" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bs4._deprecation
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_deprecated_alias\fP (str old_name, str new_name, str version)"
+.br
+.ti -1c
+.RI "Callable[[Any], Any] \fB_deprecated_function_alias\fP (str old_name, str new_name, str version)"
+.br
+.ti -1c
+.RI "Callable \fB_deprecated\fP (str replaced_by, str version)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Helper functions for deprecation\&.
+
+This interface is itself unstable and may change without warning\&. Do
+not use these functions yourself, even as a joke\&. The underscores are
+there for a reason\&. No support will be given\&.
+
+In particular, most of this will go away without warning once
+Beautiful Soup drops support for Python 3\&.11, since Python 3\&.12
+defines a `@typing\&.deprecated()
+decorator\&. <https://peps\&.python\&.org/pep-0702/>`_
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " Callable bs4\&._deprecation\&._deprecated (str replaced_by, str version)\fC [protected]\fP"
+
+.SS "bs4\&._deprecation\&._deprecated_alias (str old_name, str new_name, str version)\fC [protected]\fP"
+
+.PP
+.nf
+Alias one attribute name to another for backward compatibility
+
+:meta private:
+
+.fi
+.PP
+ 
+.SS " Callable[[Any], Any] bs4\&._deprecation\&._deprecated_function_alias (str old_name, str new_name, str
+ version)\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

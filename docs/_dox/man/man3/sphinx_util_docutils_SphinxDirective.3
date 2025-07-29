@@ -1,0 +1,290 @@
+.TH "sphinx.util.docutils.SphinxDirective" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.util.docutils.SphinxDirective
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.parsers\&.rst\&.Directive\fP\&.
+.PP
+Inherited by \fBsphinx\&.directives\&.DefaultDomain\fP, \fBsphinx\&.directives\&.DefaultRole\fP, \fBsphinx\&.directives\&.ObjectDescription\fP, \fBsphinx\&.directives\&.admonitions\&.SphinxAdmonition\fP, \fBsphinx\&.directives\&.code\&.CodeBlock\fP, \fBsphinx\&.directives\&.code\&.Highlight\fP, \fBsphinx\&.directives\&.code\&.LiteralInclude\fP, \fBsphinx\&.directives\&.other\&.Acks\fP, \fBsphinx\&.directives\&.other\&.Author\fP, \fBsphinx\&.directives\&.other\&.Centered\fP, \fBsphinx\&.directives\&.other\&.HList\fP, \fBsphinx\&.directives\&.other\&.Include\fP, \fBsphinx\&.directives\&.other\&.Only\fP, \fBsphinx\&.directives\&.other\&.TabularColumns\fP, \fBsphinx\&.directives\&.other\&.TocTree\fP, \fBsphinx\&.directives\&.patches\&.Code\fP, \fBsphinx\&.directives\&.patches\&.MathDirective\fP, \fBsphinx\&.directives\&.patches\&.Rubric\fP, \fBsphinx\&.domains\&.c\&.CNamespaceObject\fP, \fBsphinx\&.domains\&.c\&.CNamespacePopObject\fP, \fBsphinx\&.domains\&.c\&.CNamespacePushObject\fP, \fBsphinx\&.domains\&.changeset\&.VersionChange\fP, \fBsphinx\&.domains\&.cpp\&.CPPNamespaceObject\fP, \fBsphinx\&.domains\&.cpp\&.CPPNamespacePopObject\fP, \fBsphinx\&.domains\&.cpp\&.CPPNamespacePushObject\fP, \fBsphinx\&.domains\&.index\&.IndexDirective\fP, \fBsphinx\&.domains\&.javascript\&.JSModule\fP, \fBsphinx\&.domains\&.python\&.PyCurrentModule\fP, \fBsphinx\&.domains\&.python\&.PyModule\fP, \fBsphinx\&.domains\&.std\&.Glossary\fP, \fBsphinx\&.domains\&.std\&.ProductionList\fP, \fBsphinx\&.domains\&.std\&.Program\fP, \fBsphinx\&.domains\&.std\&.Target\fP, \fBsphinx\&.ext\&.autodoc\&.directive\&.AutodocDirective\fP, \fBsphinx\&.ext\&.autosummary\&.Autosummary\fP, \fBsphinx\&.ext\&.doctest\&.TestDirective\fP, \fBsphinx\&.ext\&.graphviz\&.Graphviz\fP, \fBsphinx\&.ext\&.graphviz\&.GraphvizSimple\fP, \fBsphinx\&.ext\&.ifconfig\&.IfConfig\fP, \fBsphinx\&.ext\&.inheritance_diagram\&.InheritanceDiagram\fP, and \fBsphinx\&.ext\&.todo\&.TodoList\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBuildEnvironment\fP \fBenv\fP (self)"
+.br
+.ti -1c
+.RI "\fBConfig\fP \fBconfig\fP (self)"
+.br
+.ti -1c
+.RI "tuple[str, int] \fBget_source_info\fP (self)"
+.br
+.ti -1c
+.RI "None \fBset_source_info\fP (self, \fBNode\fP node)"
+.br
+.ti -1c
+.RI "str \fBget_location\fP (self)"
+.br
+.ti -1c
+.RI "list[\fBNode\fP] \fBparse_content_to_nodes\fP (self, bool allow_section_headings=False)"
+.br
+.ti -1c
+.RI "list[\fBNode\fP] \fBparse_text_to_nodes\fP (self, str text='', *int offset=\-1, bool allow_section_headings=False)"
+.br
+.ti -1c
+.RI "tuple[list[\fBNode\fP], list[\fBsystem_message\fP]] \fBparse_inline\fP (self, str text, *int \fBlineno\fP=\-1)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.parsers\&.rst\&.Directive\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBname\fP, \fBarguments\fP, \fBoptions\fP, \fBcontent\fP, \fBlineno\fP, \fBcontent_offset\fP, \fBblock_text\fP, \fBstate\fP, \fBstate_machine\fP)"
+.br
+.ti -1c
+.RI "\fBrun\fP (self)"
+.br
+.ti -1c
+.RI "\fBdirective_error\fP (self, level, message)"
+.br
+.ti -1c
+.RI "\fBdebug\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBinfo\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBwarning\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBerror\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBsevere\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBassert_has_content\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd_name\fP (self, node)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBlineno\fP"
+.br
+.ti -1c
+.RI "\fBstate\fP"
+.br
+.ti -1c
+.RI "\fBcontent\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.parsers\&.rst\&.Directive\fP
+.in +1c
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBarguments\fP"
+.br
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBcontent\fP"
+.br
+.ti -1c
+.RI "\fBlineno\fP"
+.br
+.ti -1c
+.RI "\fBcontent_offset\fP"
+.br
+.ti -1c
+.RI "\fBblock_text\fP"
+.br
+.ti -1c
+.RI "\fBstate\fP"
+.br
+.ti -1c
+.RI "\fBstate_machine\fP"
+.br
+.ti -1c
+.RI "\fBreporter\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Attributes inherited from \fBdocutils\&.parsers\&.rst\&.Directive\fP
+.in +1c
+.ti -1c
+.RI "int \fBrequired_arguments\fP = 0"
+.br
+.ti -1c
+.RI "int \fBoptional_arguments\fP = 0"
+.br
+.ti -1c
+.RI "bool \fBfinal_argument_whitespace\fP = False"
+.br
+.ti -1c
+.RI "\fBoption_spec\fP = None"
+.br
+.ti -1c
+.RI "bool \fBhas_content\fP = False"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A base class for Sphinx directives\&.
+
+This class provides helper methods for Sphinx directives\&.
+
+\&.\&. versionadded:: 1\&.8
+
+\&.\&. note:: The subclasses of this class might not work with docutils\&.
+          This class is strongly coupled with Sphinx\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " \fBConfig\fP sphinx\&.util\&.docutils\&.SphinxDirective\&.config ( self)"
+
+.PP
+.nf
+Reference to the :class:`\&.Config` object\&.
+
+\&.\&. versionadded:: 1\&.8
+
+.fi
+.PP
+ 
+.SS " \fBBuildEnvironment\fP sphinx\&.util\&.docutils\&.SphinxDirective\&.env ( self)"
+
+.PP
+.nf
+Reference to the :class:`\&.BuildEnvironment` object\&.
+
+\&.\&. versionadded:: 1\&.8
+
+.fi
+.PP
+ 
+.SS " str sphinx\&.util\&.docutils\&.SphinxDirective\&.get_location ( self)"
+
+.PP
+.nf
+Get current location info for logging\&.
+
+\&.\&. versionadded:: 4\&.2
+
+.fi
+.PP
+ 
+.SS " tuple[str, int] sphinx\&.util\&.docutils\&.SphinxDirective\&.get_source_info ( self)"
+
+.PP
+.nf
+Get source and line number\&.
+
+\&.\&. versionadded:: 3\&.0
+
+.fi
+.PP
+ 
+.SS " list[\fBNode\fP] sphinx\&.util\&.docutils\&.SphinxDirective\&.parse_content_to_nodes ( self, bool  allow_section_headings = \fCFalse\fP)"
+
+.PP
+.nf
+Parse the directive's content into nodes\&.
+
+:param allow_section_headings:
+    Are titles (sections) allowed in the directive's content?
+    Note that this option bypasses Docutils' usual checks on
+    doctree structure, and misuse of this option can lead to
+    an incoherent doctree\&. In Docutils, section nodes should
+    only be children of ``Structural`` nodes, which includes
+    ``document``, ``section``, and ``sidebar`` nodes\&.
+
+\&.\&. versionadded:: 7\&.4
+
+.fi
+.PP
+ 
+.SS " tuple[list[\fBNode\fP], list[\fBsystem_message\fP]] sphinx\&.util\&.docutils\&.SphinxDirective\&.parse_inline ( self, str text, *int  lineno = \fC\-1\fP)"
+
+.PP
+.nf
+Parse *text* as inline elements\&.
+
+:param text:
+    The text to parse, which should be a single line or paragraph\&.
+    This cannot contain any structural elements (headings,
+    transitions, directives, etc)\&.
+:param lineno:
+    The line number where the interpreted text begins\&.
+:returns:
+    A list of nodes (text and inline elements) and a list of system_messages\&.
+
+\&.\&. versionadded:: 7\&.4
+
+.fi
+.PP
+ 
+.SS " list[\fBNode\fP] sphinx\&.util\&.docutils\&.SphinxDirective\&.parse_text_to_nodes ( self, str  text = \fC''\fP, *int  offset = \fC\-1\fP, bool  allow_section_headings = \fCFalse\fP)"
+
+.PP
+.nf
+Parse *text* into nodes\&.
+
+:param text:
+    Text, in string form\&. ``StringList`` is also accepted\&.
+:param allow_section_headings:
+    Are titles (sections) allowed in *text*?
+    Note that this option bypasses Docutils' usual checks on
+    doctree structure, and misuse of this option can lead to
+    an incoherent doctree\&. In Docutils, section nodes should
+    only be children of ``Structural`` nodes, which includes
+    ``document``, ``section``, and ``sidebar`` nodes\&.
+:param offset:
+    The offset of the content\&.
+
+\&.\&. versionadded:: 7\&.4
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.util\&.docutils\&.SphinxDirective\&.set_source_info ( self, \fBNode\fP node)"
+
+.PP
+.nf
+Set source and line number to the node\&.
+
+\&.\&. versionadded:: 2\&.1
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.util\&.docutils\&.SphinxDirective\&.content"
+
+.SS "sphinx\&.util\&.docutils\&.SphinxDirective\&.lineno"
+
+.SS "sphinx\&.util\&.docutils\&.SphinxDirective\&.state"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,431 @@
+.TH "requests.sessions.Session" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+requests.sessions.Session
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBrequests\&.sessions\&.SessionRedirectMixin\fP\&.
+.PP
+Inherited by \fBsphinx\&.util\&.requests\&._Session\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__enter__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__exit__\fP (self, *args)"
+.br
+.ti -1c
+.RI "\fBprepare_request\fP (self, \fBrequest\fP)"
+.br
+.ti -1c
+.RI "\fBrequest\fP (self, method, url, \fBparams\fP=None, data=None, \fBheaders\fP=None, \fBcookies\fP=None, files=None, \fBauth\fP=None, timeout=None, allow_redirects=True, \fBproxies\fP=None, \fBhooks\fP=None, \fBstream\fP=None, \fBverify\fP=None, \fBcert\fP=None, json=None)"
+.br
+.ti -1c
+.RI "\fBget\fP (self, url, **kwargs)"
+.br
+.ti -1c
+.RI "\fBoptions\fP (self, url, **kwargs)"
+.br
+.ti -1c
+.RI "\fBhead\fP (self, url, **kwargs)"
+.br
+.ti -1c
+.RI "\fBpost\fP (self, url, data=None, json=None, **kwargs)"
+.br
+.ti -1c
+.RI "\fBput\fP (self, url, data=None, **kwargs)"
+.br
+.ti -1c
+.RI "\fBpatch\fP (self, url, data=None, **kwargs)"
+.br
+.ti -1c
+.RI "\fBdelete\fP (self, url, **kwargs)"
+.br
+.ti -1c
+.RI "\fBsend\fP (self, \fBrequest\fP, **kwargs)"
+.br
+.ti -1c
+.RI "\fBmerge_environment_settings\fP (self, url, \fBproxies\fP, \fBstream\fP, \fBverify\fP, \fBcert\fP)"
+.br
+.ti -1c
+.RI "\fBget_adapter\fP (self, url)"
+.br
+.ti -1c
+.RI "\fBclose\fP (self)"
+.br
+.ti -1c
+.RI "\fBmount\fP (self, prefix, adapter)"
+.br
+.ti -1c
+.RI "\fB__getstate__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__setstate__\fP (self, state)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBrequests\&.sessions\&.SessionRedirectMixin\fP
+.in +1c
+.ti -1c
+.RI "\fBget_redirect_target\fP (self, resp)"
+.br
+.ti -1c
+.RI "\fBshould_strip_auth\fP (self, old_url, new_url)"
+.br
+.ti -1c
+.RI "\fBresolve_redirects\fP (self, resp, req, stream=False, timeout=None, verify=True, cert=None, proxies=None, yield_requests=False, **adapter_kwargs)"
+.br
+.ti -1c
+.RI "\fBrebuild_auth\fP (self, prepared_request, response)"
+.br
+.ti -1c
+.RI "\fBrebuild_proxies\fP (self, prepared_request, proxies)"
+.br
+.ti -1c
+.RI "\fBrebuild_method\fP (self, prepared_request, response)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBheaders\fP"
+.br
+.ti -1c
+.RI "\fBauth\fP"
+.br
+.ti -1c
+.RI "\fBproxies\fP"
+.br
+.ti -1c
+.RI "\fBhooks\fP"
+.br
+.ti -1c
+.RI "\fBparams\fP"
+.br
+.ti -1c
+.RI "\fBstream\fP"
+.br
+.ti -1c
+.RI "\fBverify\fP"
+.br
+.ti -1c
+.RI "\fBcert\fP"
+.br
+.ti -1c
+.RI "\fBmax_redirects\fP"
+.br
+.ti -1c
+.RI "\fBtrust_env\fP"
+.br
+.ti -1c
+.RI "\fBcookies\fP"
+.br
+.ti -1c
+.RI "\fBadapters\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBrequests\&.sessions\&.SessionRedirectMixin\fP
+.in +1c
+.ti -1c
+.RI "\fBcookies\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A Requests session\&.
+
+Provides cookie persistence, connection-pooling, and configuration\&.
+
+Basic Usage::
+
+  >>> import requests
+  >>> s = requests\&.Session()
+  >>> s\&.get('https://httpbin\&.org/get')
+  <Response [200]>
+
+Or as a context manager::
+
+  >>> with requests\&.Session() as s:
+  \&.\&.\&.     s\&.get('https://httpbin\&.org/get')
+  <Response [200]>
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "requests\&.sessions\&.Session\&.__init__ ( self)"
+
+.PP
+Reimplemented in \fBsphinx\&.util\&.requests\&._Session\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "requests\&.sessions\&.Session\&.__enter__ ( self)"
+
+.SS "requests\&.sessions\&.Session\&.__exit__ ( self, * args)"
+
+.SS "requests\&.sessions\&.Session\&.__getstate__ ( self)"
+
+.SS "requests\&.sessions\&.Session\&.__setstate__ ( self,  state)"
+
+.SS "requests\&.sessions\&.Session\&.close ( self)"
+
+.PP
+.nf
+Closes all adapters and as such the session
+.fi
+.PP
+ 
+.SS "requests\&.sessions\&.Session\&.delete ( self,  url, ** kwargs)"
+
+.PP
+.nf
+Sends a DELETE request\&. Returns :class:`Response` object\&.
+
+:param url: URL for the new :class:`Request` object\&.
+:param \\*\\*kwargs: Optional arguments that ``request`` takes\&.
+:rtype: requests\&.Response
+
+.fi
+.PP
+ 
+.SS "requests\&.sessions\&.Session\&.get ( self,  url, ** kwargs)"
+
+.PP
+.nf
+Sends a GET request\&. Returns :class:`Response` object\&.
+
+:param url: URL for the new :class:`Request` object\&.
+:param \\*\\*kwargs: Optional arguments that ``request`` takes\&.
+:rtype: requests\&.Response
+
+.fi
+.PP
+ 
+.SS "requests\&.sessions\&.Session\&.get_adapter ( self,  url)"
+
+.PP
+.nf
+Returns the appropriate connection adapter for the given URL\&.
+
+:rtype: requests\&.adapters\&.BaseAdapter
+
+.fi
+.PP
+ 
+.SS "requests\&.sessions\&.Session\&.head ( self,  url, ** kwargs)"
+
+.PP
+.nf
+Sends a HEAD request\&. Returns :class:`Response` object\&.
+
+:param url: URL for the new :class:`Request` object\&.
+:param \\*\\*kwargs: Optional arguments that ``request`` takes\&.
+:rtype: requests\&.Response
+
+.fi
+.PP
+ 
+.SS "requests\&.sessions\&.Session\&.merge_environment_settings ( self,  url,  proxies,  stream,  verify,  cert)"
+
+.PP
+.nf
+Check the environment and merge it with some settings\&.
+
+:rtype: dict
+
+.fi
+.PP
+ 
+.SS "requests\&.sessions\&.Session\&.mount ( self,  prefix,  adapter)"
+
+.PP
+.nf
+Registers a connection adapter to a prefix\&.
+
+Adapters are sorted in descending order by prefix length\&.
+
+.fi
+.PP
+ 
+.SS "requests\&.sessions\&.Session\&.options ( self,  url, ** kwargs)"
+
+.PP
+.nf
+Sends a OPTIONS request\&. Returns :class:`Response` object\&.
+
+:param url: URL for the new :class:`Request` object\&.
+:param \\*\\*kwargs: Optional arguments that ``request`` takes\&.
+:rtype: requests\&.Response
+
+.fi
+.PP
+ 
+.SS "requests\&.sessions\&.Session\&.patch ( self,  url,  data = \fCNone\fP, ** kwargs)"
+
+.PP
+.nf
+Sends a PATCH request\&. Returns :class:`Response` object\&.
+
+:param url: URL for the new :class:`Request` object\&.
+:param data: (optional) Dictionary, list of tuples, bytes, or file-like
+    object to send in the body of the :class:`Request`\&.
+:param \\*\\*kwargs: Optional arguments that ``request`` takes\&.
+:rtype: requests\&.Response
+
+.fi
+.PP
+ 
+.SS "requests\&.sessions\&.Session\&.post ( self,  url,  data = \fCNone\fP,  json = \fCNone\fP, ** kwargs)"
+
+.PP
+.nf
+Sends a POST request\&. Returns :class:`Response` object\&.
+
+:param url: URL for the new :class:`Request` object\&.
+:param data: (optional) Dictionary, list of tuples, bytes, or file-like
+    object to send in the body of the :class:`Request`\&.
+:param json: (optional) json to send in the body of the :class:`Request`\&.
+:param \\*\\*kwargs: Optional arguments that ``request`` takes\&.
+:rtype: requests\&.Response
+
+.fi
+.PP
+ 
+.SS "requests\&.sessions\&.Session\&.prepare_request ( self,  request)"
+
+.PP
+.nf
+Constructs a :class:`PreparedRequest <PreparedRequest>` for
+transmission and returns it\&. The :class:`PreparedRequest` has settings
+merged from the :class:`Request <Request>` instance and those of the
+:class:`Session`\&.
+
+:param request: :class:`Request` instance to prepare with this
+    session's settings\&.
+:rtype: requests\&.PreparedRequest
+
+.fi
+.PP
+ 
+.SS "requests\&.sessions\&.Session\&.put ( self,  url,  data = \fCNone\fP, ** kwargs)"
+
+.PP
+.nf
+Sends a PUT request\&. Returns :class:`Response` object\&.
+
+:param url: URL for the new :class:`Request` object\&.
+:param data: (optional) Dictionary, list of tuples, bytes, or file-like
+    object to send in the body of the :class:`Request`\&.
+:param \\*\\*kwargs: Optional arguments that ``request`` takes\&.
+:rtype: requests\&.Response
+
+.fi
+.PP
+ 
+.SS "requests\&.sessions\&.Session\&.request ( self,  method,  url,  params = \fCNone\fP,  data = \fCNone\fP,  headers = \fCNone\fP,  cookies = \fCNone\fP,  files = \fCNone\fP,  auth = \fCNone\fP,  timeout = \fCNone\fP,  allow_redirects = \fCTrue\fP,  proxies = \fCNone\fP,  hooks = \fCNone\fP,  stream = \fCNone\fP,  verify = \fCNone\fP,  cert = \fCNone\fP,  json = \fCNone\fP)"
+
+.PP
+.nf
+Constructs a :class:`Request <Request>`, prepares it and sends it\&.
+Returns :class:`Response <Response>` object\&.
+
+:param method: method for the new :class:`Request` object\&.
+:param url: URL for the new :class:`Request` object\&.
+:param params: (optional) Dictionary or bytes to be sent in the query
+    string for the :class:`Request`\&.
+:param data: (optional) Dictionary, list of tuples, bytes, or file-like
+    object to send in the body of the :class:`Request`\&.
+:param json: (optional) json to send in the body of the
+    :class:`Request`\&.
+:param headers: (optional) Dictionary of HTTP Headers to send with the
+    :class:`Request`\&.
+:param cookies: (optional) Dict or CookieJar object to send with the
+    :class:`Request`\&.
+:param files: (optional) Dictionary of ``'filename': file-like-objects``
+    for multipart encoding upload\&.
+:param auth: (optional) Auth tuple or callable to enable
+    Basic/Digest/Custom HTTP Auth\&.
+:param timeout: (optional) How long to wait for the server to send
+    data before giving up, as a float, or a :ref:`(connect timeout,
+    read timeout) <timeouts>` tuple\&.
+:type timeout: float or tuple
+:param allow_redirects: (optional) Set to True by default\&.
+:type allow_redirects: bool
+:param proxies: (optional) Dictionary mapping protocol or protocol and
+    hostname to the URL of the proxy\&.
+:param hooks: (optional) Dictionary mapping hook name to one event or
+    list of events, event must be callable\&.
+:param stream: (optional) whether to immediately download the response
+    content\&. Defaults to ``False``\&.
+:param verify: (optional) Either a boolean, in which case it controls whether we verify
+    the server's TLS certificate, or a string, in which case it must be a path
+    to a CA bundle to use\&. Defaults to ``True``\&. When set to
+    ``False``, requests will accept any TLS certificate presented by
+    the server, and will ignore hostname mismatches and/or expired
+    certificates, which will make your application vulnerable to
+    man-in-the-middle (MitM) attacks\&. Setting verify to ``False``
+    may be useful during local development or testing\&.
+:param cert: (optional) if String, path to ssl client cert file (\&.pem)\&.
+    If Tuple, ('cert', 'key') pair\&.
+:rtype: requests\&.Response
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.util\&.requests\&._Session\fP\&.
+.SS "requests\&.sessions\&.Session\&.send ( self,  request, ** kwargs)"
+
+.PP
+.nf
+Send a given PreparedRequest\&.
+
+:rtype: requests\&.Response
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "requests\&.sessions\&.Session\&.adapters"
+
+.SS "requests\&.sessions\&.Session\&.auth"
+
+.SS "requests\&.sessions\&.Session\&.cert"
+
+.SS "requests\&.sessions\&.Session\&.cookies"
+
+.SS "requests\&.sessions\&.Session\&.headers"
+
+.SS "requests\&.sessions\&.Session\&.hooks"
+
+.SS "requests\&.sessions\&.Session\&.max_redirects"
+
+.SS "requests\&.sessions\&.Session\&.params"
+
+.SS "requests\&.sessions\&.Session\&.proxies"
+
+.SS "requests\&.sessions\&.Session\&.stream"
+
+.SS "requests\&.sessions\&.Session\&.trust_env"
+
+.SS "requests\&.sessions\&.Session\&.verify"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

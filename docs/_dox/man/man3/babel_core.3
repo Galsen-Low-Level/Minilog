@@ -1,0 +1,334 @@
+.TH "babel.core" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+babel.core
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBLocale\fP"
+.br
+.ti -1c
+.RI "class \fBUnknownLocaleError\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_raise_no_data_error\fP ()"
+.br
+.ti -1c
+.RI "Mapping[str, Any] \fBget_global\fP (\fB_GLOBAL_KEY\fP key)"
+.br
+.ti -1c
+.RI "str|None \fBdefault_locale\fP (str|tuple[str,\&.\&.\&.]|list[str]|None category=None, Mapping[str, str] aliases=\fBLOCALE_ALIASES\fP)"
+.br
+.ti -1c
+.RI "str|None \fBnegotiate_locale\fP (Iterable[str] preferred, Iterable[str] available, str sep='_', Mapping[str, str] aliases=\fBLOCALE_ALIASES\fP)"
+.br
+.ti -1c
+.RI "tuple[str, str|None, str|None, str|None]|tuple[str, str|None, str|None, str|None, str|None] \fBparse_locale\fP (str identifier, str sep='_')"
+.br
+.ti -1c
+.RI "str \fBget_locale_identifier\fP (tuple[str]|tuple[str, str|None]|tuple[str, str|None, str|None]|tuple[str, str|None, str|None, str|None]|tuple[str, str|None, str|None, str|None, str|None] tup, str sep='_')"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "TypeAlias \fB_GLOBAL_KEY\fP"
+.br
+.ti -1c
+.RI "Mapping \fB_global_data\fP [\fB_GLOBAL_KEY\fP, Mapping[str, Any]] | None"
+.br
+.ti -1c
+.RI "\fB_default_plural_rule\fP = \fBPluralRule\fP({})"
+.br
+.ti -1c
+.RI "dict \fBLOCALE_ALIASES\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+    babel\&.core
+    ~~~~~~~~~~
+
+    Core locale representation and locale data access\&.
+
+    :copyright: (c) 2013-2025 by the Babel Team\&.
+    :license: BSD, see LICENSE for more details\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "babel\&.core\&._raise_no_data_error ()\fC [protected]\fP"
+
+.SS " str | None babel\&.core\&.default_locale (str | tuple[str, \&.\&.\&.] | list[str] | None  category = \fCNone\fP, Mapping[str, str]  aliases = \fC\fBLOCALE_ALIASES\fP\fP)"
+
+.PP
+.nf
+Returns the system default locale for a given category, based on
+environment variables\&.
+
+>>> for name in ['LANGUAGE', 'LC_ALL', 'LC_CTYPE']:
+\&.\&.\&.     os\&.environ[name] = ''
+>>> os\&.environ['LANG'] = 'fr_FR\&.UTF-8'
+>>> default_locale('LC_MESSAGES')
+'fr_FR'
+
+The 'C' or 'POSIX' pseudo-locales are treated as aliases for the
+'en_US_POSIX' locale:
+
+>>> os\&.environ['LC_MESSAGES'] = 'POSIX'
+>>> default_locale('LC_MESSAGES')
+'en_US_POSIX'
+
+The following fallbacks to the variable are always considered:
+
+- ``LANGUAGE``
+- ``LC_ALL``
+- ``LC_CTYPE``
+- ``LANG``
+
+:param category: one or more of the ``LC_XXX`` environment variable names
+:param aliases: a dictionary of aliases for locale identifiers
+
+.fi
+.PP
+ 
+.SS " Mapping[str, Any] babel\&.core\&.get_global (\fB_GLOBAL_KEY\fP key)"
+
+.PP
+.nf
+Return the dictionary for the given key in the global data\&.
+
+The global data is stored in the ``babel/global\&.dat`` file and contains
+information independent of individual locales\&.
+
+>>> get_global('zone_aliases')['UTC']
+u'Etc/UTC'
+>>> get_global('zone_territories')['Europe/Berlin']
+u'DE'
+
+The keys available are:
+
+- ``all_currencies``
+- ``currency_fractions``
+- ``language_aliases``
+- ``likely_subtags``
+- ``parent_exceptions``
+- ``script_aliases``
+- ``territory_aliases``
+- ``territory_currencies``
+- ``territory_languages``
+- ``territory_zones``
+- ``variant_aliases``
+- ``windows_zone_mapping``
+- ``zone_aliases``
+- ``zone_territories``
+
+\&.\&. note:: The internal structure of the data may change between versions\&.
+
+\&.\&. versionadded:: 0\&.9
+
+:param key: the data key
+
+.fi
+.PP
+ 
+.SS " str babel\&.core\&.get_locale_identifier (tuple[str]
+    | tuple[str, str | None]
+    | tuple[str, str | None, str | None]
+    | tuple[str, str | None, str | None, str | None]
+    | tuple[str, str | None, str | None, str | None, str | None] tup, str  sep = \fC'_'\fP)"
+
+.PP
+.nf
+The reverse of :func:`parse_locale`\&.  It creates a locale identifier out
+of a ``(language, territory, script, variant, modifier)`` tuple\&.  Items can be set to
+``None`` and trailing ``None``\\\\s can also be left out of the tuple\&.
+
+>>> get_locale_identifier(('de', 'DE', None, '1999', 'custom'))
+'de_DE_1999@custom'
+>>> get_locale_identifier(('fi', None, None, None, 'custom'))
+'fi@custom'
+
+
+\&.\&. versionadded:: 1\&.0
+
+:param tup: the tuple as returned by :func:`parse_locale`\&.
+:param sep: the separator for the identifier\&.
+
+.fi
+.PP
+ 
+.SS " str | None babel\&.core\&.negotiate_locale (Iterable[str] preferred, Iterable[str] available, str  sep = \fC'_'\fP, Mapping[str, str]  aliases = \fC\fBLOCALE_ALIASES\fP\fP)"
+
+.PP
+.nf
+Find the best match between available and requested locale strings\&.
+
+>>> negotiate_locale(['de_DE', 'en_US'], ['de_DE', 'de_AT'])
+'de_DE'
+>>> negotiate_locale(['de_DE', 'en_US'], ['en', 'de'])
+'de'
+
+Case is ignored by the algorithm, the result uses the case of the preferred
+locale identifier:
+
+>>> negotiate_locale(['de_DE', 'en_US'], ['de_de', 'de_at'])
+'de_DE'
+
+>>> negotiate_locale(['de_DE', 'en_US'], ['de_de', 'de_at'])
+'de_DE'
+
+By default, some web browsers unfortunately do not include the territory
+in the locale identifier for many locales, and some don't even allow the
+user to easily add the territory\&. So while you may prefer using qualified
+locale identifiers in your web-application, they would not normally match
+the language-only locale sent by such browsers\&. To workaround that, this
+function uses a default mapping of commonly used language-only locale
+identifiers to identifiers including the territory:
+
+>>> negotiate_locale(['ja', 'en_US'], ['ja_JP', 'en_US'])
+'ja_JP'
+
+Some browsers even use an incorrect or outdated language code, such as 'no'
+for Norwegian, where the correct locale identifier would actually be 'nb_NO'
+(Bokmål) or 'nn_NO' (Nynorsk)\&. The aliases are intended to take care of
+such cases, too:
+
+>>> negotiate_locale(['no', 'sv'], ['nb_NO', 'sv_SE'])
+'nb_NO'
+
+You can override this default mapping by passing a different `aliases`
+dictionary to this function, or you can bypass the behavior althogher by
+setting the `aliases` parameter to `None`\&.
+
+:param preferred: the list of locale strings preferred by the user
+:param available: the list of locale strings available
+:param sep: character that separates the different parts of the locale
+            strings
+:param aliases: a dictionary of aliases for locale identifiers
+
+.fi
+.PP
+ 
+.SS " tuple[str, str | None, str | None, str | None] | tuple[str, str | None, str | None, str | None, str | None] babel\&.core\&.parse_locale (str identifier, str  sep = \fC'_'\fP)"
+
+.PP
+.nf
+Parse a locale identifier into a tuple of the form ``(language,
+territory, script, variant, modifier)``\&.
+
+>>> parse_locale('zh_CN')
+('zh', 'CN', None, None)
+>>> parse_locale('zh_Hans_CN')
+('zh', 'CN', 'Hans', None)
+>>> parse_locale('ca_es_valencia')
+('ca', 'ES', None, 'VALENCIA')
+>>> parse_locale('en_150')
+('en', '150', None, None)
+>>> parse_locale('en_us_posix')
+('en', 'US', None, 'POSIX')
+>>> parse_locale('it_IT@euro')
+('it', 'IT', None, None, 'euro')
+>>> parse_locale('it_IT@custom')
+('it', 'IT', None, None, 'custom')
+>>> parse_locale('it_IT@')
+('it', 'IT', None, None)
+
+The default component separator is '_', but a different separator can be
+specified using the `sep` parameter\&.
+
+The optional modifier is always separated with '@' and at the end:
+
+>>> parse_locale('zh-CN', sep='-')
+('zh', 'CN', None, None)
+>>> parse_locale('zh-CN@custom', sep='-')
+('zh', 'CN', None, None, 'custom')
+
+If the identifier cannot be parsed into a locale, a `ValueError` exception
+is raised:
+
+>>> parse_locale('not_a_LOCALE_String')
+Traceback (most recent call last):
+  \&.\&.\&.
+ValueError: 'not_a_LOCALE_String' is not a valid locale identifier
+
+Encoding information is removed from the identifier, while modifiers are
+kept:
+
+>>> parse_locale('en_US\&.UTF-8')
+('en', 'US', None, None)
+>>> parse_locale('de_DE\&.iso885915@euro')
+('de', 'DE', None, None, 'euro')
+
+See :rfc:`4646` for more information\&.
+
+:param identifier: the locale identifier string
+:param sep: character that separates the different components of the locale
+            identifier
+:raise `ValueError`: if the string does not appear to be a valid locale
+                     identifier
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "babel\&.core\&._default_plural_rule = \fBPluralRule\fP({})\fC [protected]\fP"
+
+.SS "babel\&.core\&._global_data [\fB_GLOBAL_KEY\fP, Mapping[str, Any]] | None\fC [protected]\fP"
+
+.SS "TypeAlias babel\&.core\&._GLOBAL_KEY\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  Literal[
+2         "all_currencies",
+3         "currency_fractions",
+4         "language_aliases",
+5         "likely_subtags",
+6         "meta_zones",
+7         "parent_exceptions",
+8         "script_aliases",
+9         "territory_aliases",
+10         "territory_currencies",
+11         "territory_languages",
+12         "territory_zones",
+13         "variant_aliases",
+14         "windows_zone_mapping",
+15         "zone_aliases",
+16         "zone_territories",
+17     ]
+.fi
+
+.SS "dict babel\&.core\&.LOCALE_ALIASES"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     'ar': 'ar_SY', 'bg': 'bg_BG', 'bs': 'bs_BA', 'ca': 'ca_ES', 'cs': 'cs_CZ',
+3     'da': 'da_DK', 'de': 'de_DE', 'el': 'el_GR', 'en': 'en_US', 'es': 'es_ES',
+4     'et': 'et_EE', 'fa': 'fa_IR', 'fi': 'fi_FI', 'fr': 'fr_FR', 'gl': 'gl_ES',
+5     'he': 'he_IL', 'hu': 'hu_HU', 'id': 'id_ID', 'is': 'is_IS', 'it': 'it_IT',
+6     'ja': 'ja_JP', 'km': 'km_KH', 'ko': 'ko_KR', 'lt': 'lt_LT', 'lv': 'lv_LV',
+7     'mk': 'mk_MK', 'nl': 'nl_NL', 'nn': 'nn_NO', 'no': 'nb_NO', 'pl': 'pl_PL',
+8     'pt': 'pt_PT', 'ro': 'ro_RO', 'ru': 'ru_RU', 'sk': 'sk_SK', 'sl': 'sl_SI',
+9     'sv': 'sv_SE', 'th': 'th_TH', 'tr': 'tr_TR', 'uk': 'uk_UA',
+10 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

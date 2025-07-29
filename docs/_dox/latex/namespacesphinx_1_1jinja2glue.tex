@@ -1,0 +1,79 @@
+\doxysection{sphinx.\+jinja2glue Namespace Reference}
+\hypertarget{namespacesphinx_1_1jinja2glue}{}\label{namespacesphinx_1_1jinja2glue}\index{sphinx.jinja2glue@{sphinx.jinja2glue}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader}{Builtin\+Template\+Loader}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1jinja2glue_1_1idgen}{idgen}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1jinja2glue_1_1SphinxFileSystemLoader}{Sphinx\+File\+System\+Loader}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacesphinx_1_1jinja2glue_a78e59637ad9f216af96a6b09363cc885}{\+\_\+tobool}} (str val)
+\item 
+int \mbox{\hyperlink{namespacesphinx_1_1jinja2glue_a58d84dc20339e11e5678eeab37c543df}{\+\_\+toint}} (str val)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1jinja2glue_a708170d291dcb96a1bca27d5aba30f80}{\+\_\+todim}} (int\texorpdfstring{$\vert$}{|}str val)
+\item 
+Iterator\mbox{[}list\mbox{[}\+\_\+\+Real\+Index\+Entry\mbox{]}\mbox{]} \mbox{\hyperlink{namespacesphinx_1_1jinja2glue_a6f7aa63f5b579da6bca399fa98c02322}{\+\_\+slice\+\_\+index}} (\+\_\+\+Real\+Index\+Entries values, int slices)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1jinja2glue_a334ebafa8506a5e21663d406af288bff}{accesskey}} (Any context, str key)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1jinja2glue_aa6a7ea5022e01c3be7315779aa51b937}{warning}} (dict\mbox{[}str, Any\mbox{]} context, str message, \texorpdfstring{$\ast$}{*}Any args, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}Any kwargs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Glue code for the jinja2 templating engine.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesphinx_1_1jinja2glue_a6f7aa63f5b579da6bca399fa98c02322}\label{namespacesphinx_1_1jinja2glue_a6f7aa63f5b579da6bca399fa98c02322} 
+\index{sphinx.jinja2glue@{sphinx.jinja2glue}!\_slice\_index@{\_slice\_index}}
+\index{\_slice\_index@{\_slice\_index}!sphinx.jinja2glue@{sphinx.jinja2glue}}
+\doxysubsubsection{\texorpdfstring{\_slice\_index()}{\_slice\_index()}}
+{\footnotesize\ttfamily  Iterator\mbox{[}list\mbox{[}\+\_\+\+Real\+Index\+Entry\mbox{]}\mbox{]} sphinx.\+jinja2glue.\+\_\+slice\+\_\+index (\begin{DoxyParamCaption}\item[{\+\_\+\+Real\+Index\+Entries}]{values,  }\item[{int }]{slices }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1jinja2glue_a78e59637ad9f216af96a6b09363cc885}\label{namespacesphinx_1_1jinja2glue_a78e59637ad9f216af96a6b09363cc885} 
+\index{sphinx.jinja2glue@{sphinx.jinja2glue}!\_tobool@{\_tobool}}
+\index{\_tobool@{\_tobool}!sphinx.jinja2glue@{sphinx.jinja2glue}}
+\doxysubsubsection{\texorpdfstring{\_tobool()}{\_tobool()}}
+{\footnotesize\ttfamily  bool sphinx.\+jinja2glue.\+\_\+tobool (\begin{DoxyParamCaption}\item[{str}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1jinja2glue_a708170d291dcb96a1bca27d5aba30f80}\label{namespacesphinx_1_1jinja2glue_a708170d291dcb96a1bca27d5aba30f80} 
+\index{sphinx.jinja2glue@{sphinx.jinja2glue}!\_todim@{\_todim}}
+\index{\_todim@{\_todim}!sphinx.jinja2glue@{sphinx.jinja2glue}}
+\doxysubsubsection{\texorpdfstring{\_todim()}{\_todim()}}
+{\footnotesize\ttfamily  str sphinx.\+jinja2glue.\+\_\+todim (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\vert$}{|} str}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Make val a css dimension. In particular the following transformations
+are performed:
+
+- None -> 'initial' (default CSS value)
+- 0 -> '0'
+- ints and string representations of ints are interpreted as pixels.
+
+Everything else is returned unchanged.
+\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1jinja2glue_a58d84dc20339e11e5678eeab37c543df}\label{namespacesphinx_1_1jinja2glue_a58d84dc20339e11e5678eeab37c543df} 
+\index{sphinx.jinja2glue@{sphinx.jinja2glue}!\_toint@{\_toint}}
+\index{\_toint@{\_toint}!sphinx.jinja2glue@{sphinx.jinja2glue}}
+\doxysubsubsection{\texorpdfstring{\_toint()}{\_toint()}}
+{\footnotesize\ttfamily  int sphinx.\+jinja2glue.\+\_\+toint (\begin{DoxyParamCaption}\item[{str}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1jinja2glue_a334ebafa8506a5e21663d406af288bff}\label{namespacesphinx_1_1jinja2glue_a334ebafa8506a5e21663d406af288bff} 
+\index{sphinx.jinja2glue@{sphinx.jinja2glue}!accesskey@{accesskey}}
+\index{accesskey@{accesskey}!sphinx.jinja2glue@{sphinx.jinja2glue}}
+\doxysubsubsection{\texorpdfstring{accesskey()}{accesskey()}}
+{\footnotesize\ttfamily  str sphinx.\+jinja2glue.\+accesskey (\begin{DoxyParamCaption}\item[{Any}]{context,  }\item[{str}]{key }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Helper to output each access key only once.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1jinja2glue_aa6a7ea5022e01c3be7315779aa51b937}\label{namespacesphinx_1_1jinja2glue_aa6a7ea5022e01c3be7315779aa51b937} 
+\index{sphinx.jinja2glue@{sphinx.jinja2glue}!warning@{warning}}
+\index{warning@{warning}!sphinx.jinja2glue@{sphinx.jinja2glue}}
+\doxysubsubsection{\texorpdfstring{warning()}{warning()}}
+{\footnotesize\ttfamily  str sphinx.\+jinja2glue.\+warning (\begin{DoxyParamCaption}\item[{dict\mbox{[}str, Any\mbox{]}}]{context,  }\item[{str}]{message,  }\item[{\texorpdfstring{$\ast$}{*}Any}]{args,  }\item[{\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}Any}]{kwargs }\end{DoxyParamCaption})}
+

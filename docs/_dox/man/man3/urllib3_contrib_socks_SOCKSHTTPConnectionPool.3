@@ -1,0 +1,191 @@
+.TH "urllib3.contrib.socks.SOCKSHTTPConnectionPool" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+urllib3.contrib.socks.SOCKSHTTPConnectionPool
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBurllib3\&.connectionpool\&.HTTPConnectionPool\fP\&.
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBConnectionCls\fP = \fBSOCKSConnection\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBurllib3\&.connectionpool\&.HTTPConnectionPool\fP
+.in +1c
+.ti -1c
+.RI "str \fBscheme\fP = 'http'"
+.br
+.ti -1c
+.RI "type \fBConnectionCls\fP = \fBHTTPConnection\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBurllib3\&.connectionpool\&.ConnectionPool\fP
+.in +1c
+.ti -1c
+.RI "str \fBscheme\fP = None"
+.br
+.ti -1c
+.RI "\fBQueueCls\fP = queue\&.LifoQueue"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBurllib3\&.connectionpool\&.HTTPConnectionPool\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, str \fBhost\fP, int|None \fBport\fP=None, \fB_TYPE_TIMEOUT\fP|None \fBtimeout\fP=_DEFAULT_TIMEOUT, int maxsize=1, bool \fBblock\fP=False, typing\&.Mapping[str, str]|None \fBheaders\fP=None, \fBRetry\fP|bool|int|None \fBretries\fP=None, \fBUrl\fP|None _proxy=None, typing\&.Mapping[str, str]|None _proxy_headers=None, \fBProxyConfig\fP|None _proxy_config=None, **typing\&.Any \fBconn_kw\fP)"
+.br
+.ti -1c
+.RI "None \fBclose\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBis_same_host\fP (self, str url)"
+.br
+.ti -1c
+.RI "\fBBaseHTTPResponse\fP \fBurlopen\fP (self, str method, str url, _TYPE_BODY|None body=None, typing\&.Mapping[str, str]|None \fBheaders\fP=None, \fBRetry\fP|bool|int|None \fBretries\fP=None, bool redirect=True, bool assert_same_host=True, \fB_TYPE_TIMEOUT\fP \fBtimeout\fP=_DEFAULT_TIMEOUT, int|None pool_timeout=None, bool|None release_conn=None, bool chunked=False, _TYPE_BODY_POSITION|None body_pos=None, bool preload_content=True, bool decode_content=True, **typing\&.Any response_kw)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBurllib3\&.connectionpool\&.ConnectionPool\fP
+.in +1c
+.ti -1c
+.RI "str \fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "Self \fB__enter__\fP (self)"
+.br
+.ti -1c
+.RI "typing\&.Literal[False] \fB__exit__\fP (self, type[BaseException]|None exc_type, BaseException|None exc_val, TracebackType|None exc_tb)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBurllib3\&._request_methods\&.RequestMethods\fP
+.in +1c
+.ti -1c
+.RI "\fBBaseHTTPResponse\fP \fBrequest\fP (self, str method, str url, _TYPE_BODY|None body=None, _TYPE_FIELDS|None fields=None, typing\&.Mapping[str, str]|None \fBheaders\fP=None, typing\&.Any|None json=None, **typing\&.Any urlopen_kw)"
+.br
+.ti -1c
+.RI "\fBBaseHTTPResponse\fP \fBrequest_encode_url\fP (self, str method, str url, \fB_TYPE_ENCODE_URL_FIELDS\fP|None fields=None, typing\&.Mapping[str, str]|None \fBheaders\fP=None, **str urlopen_kw)"
+.br
+.ti -1c
+.RI "\fBBaseHTTPResponse\fP \fBrequest_encode_body\fP (self, str method, str url, _TYPE_FIELDS|None fields=None, typing\&.Mapping[str, str]|None \fBheaders\fP=None, bool encode_multipart=True, str|None multipart_boundary=None, **str urlopen_kw)"
+.br
+.in -1c
+
+Public Attributes inherited from \fBurllib3\&.connectionpool\&.HTTPConnectionPool\fP
+.in +1c
+.ti -1c
+.RI "\fBtimeout\fP"
+.br
+.ti -1c
+.RI "\fBretries\fP"
+.br
+.ti -1c
+.RI "\fBblock\fP"
+.br
+.ti -1c
+.RI "\fBproxy\fP"
+.br
+.ti -1c
+.RI "\fBproxy_headers\fP"
+.br
+.ti -1c
+.RI "\fBproxy_config\fP"
+.br
+.ti -1c
+.RI "\fBnum_connections\fP"
+.br
+.ti -1c
+.RI "\fBnum_requests\fP"
+.br
+.ti -1c
+.RI "\fBconn_kw\fP"
+.br
+.ti -1c
+.RI "\fBhost\fP"
+.br
+.ti -1c
+.RI "\fBscheme\fP"
+.br
+.ti -1c
+.RI "\fBport\fP"
+.br
+.ti -1c
+.RI "\fBpool\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBurllib3\&.connectionpool\&.ConnectionPool\fP
+.in +1c
+.ti -1c
+.RI "\fBhost\fP"
+.br
+.ti -1c
+.RI "\fBport\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBurllib3\&._request_methods\&.RequestMethods\fP
+.in +1c
+.ti -1c
+.RI "\fBheaders\fP"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBurllib3\&.connectionpool\&.HTTPConnectionPool\fP
+.in +1c
+.ti -1c
+.RI "\fBBaseHTTPConnection\fP \fB_new_conn\fP (self)"
+.br
+.ti -1c
+.RI "\fBBaseHTTPConnection\fP \fB_get_conn\fP (self, float|None \fBtimeout\fP=None)"
+.br
+.ti -1c
+.RI "None \fB_put_conn\fP (self, \fBBaseHTTPConnection\fP|None conn)"
+.br
+.ti -1c
+.RI "None \fB_validate_conn\fP (self, \fBBaseHTTPConnection\fP conn)"
+.br
+.ti -1c
+.RI "None \fB_prepare_proxy\fP (self, \fBBaseHTTPConnection\fP conn)"
+.br
+.ti -1c
+.RI "\fBTimeout\fP \fB_get_timeout\fP (self, \fB_TYPE_TIMEOUT\fP \fBtimeout\fP)"
+.br
+.ti -1c
+.RI "None \fB_raise_timeout\fP (self, \fBBaseSSLError\fP|OSError|SocketTimeout err, str url, \fB_TYPE_TIMEOUT\fP|None timeout_value)"
+.br
+.ti -1c
+.RI "\fBBaseHTTPResponse\fP \fB_make_request\fP (self, \fBBaseHTTPConnection\fP conn, str method, str url, _TYPE_BODY|None body=None, typing\&.Mapping[str, str]|None \fBheaders\fP=None, \fBRetry\fP|None \fBretries\fP=None, \fB_TYPE_TIMEOUT\fP \fBtimeout\fP=_DEFAULT_TIMEOUT, bool chunked=False, \fBBaseHTTPConnection\fP|None response_conn=None, bool preload_content=True, bool decode_content=True, bool enforce_content_length=True)"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBurllib3\&.connectionpool\&.ConnectionPool\fP
+.in +1c
+.ti -1c
+.RI "\fB_tunnel_host\fP"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBurllib3\&._request_methods\&.RequestMethods\fP
+.in +1c
+.ti -1c
+.RI "dict \fB_encode_url_methods\fP = {'DELETE', 'GET', 'HEAD', 'OPTIONS'}"
+.br
+.in -1c
+.SH "Member Data Documentation"
+.PP 
+.SS "urllib3\&.contrib\&.socks\&.SOCKSHTTPConnectionPool\&.ConnectionCls = \fBSOCKSConnection\fP\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

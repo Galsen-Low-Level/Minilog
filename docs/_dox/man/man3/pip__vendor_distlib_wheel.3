@@ -1,0 +1,180 @@
+.TH "pip._vendor.distlib.wheel" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.distlib.wheel
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBMounter\fP"
+.br
+.ti -1c
+.RI "class \fBWheel\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_derive_abi\fP ()"
+.br
+.ti -1c
+.RI "\fB_get_suffixes\fP ()"
+.br
+.ti -1c
+.RI "\fB_load_dynamic\fP (name, path)"
+.br
+.ti -1c
+.RI "\fB_get_glibc_version\fP ()"
+.br
+.ti -1c
+.RI "\fBcompatible_tags\fP ()"
+.br
+.ti -1c
+.RI "\fBis_compatible\fP (wheel, tags=None)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "\fBcache\fP = None"
+.br
+.ti -1c
+.RI "str \fBIMP_PREFIX\fP = 'pp'"
+.br
+.ti -1c
+.RI "\fBVER_SUFFIX\fP = sysconfig\&.get_config_var('py_version_nodot')"
+.br
+.ti -1c
+.RI "str \fBPYVER\fP = 'py' + \fBVER_SUFFIX\fP"
+.br
+.ti -1c
+.RI "str \fBIMPVER\fP = \fBIMP_PREFIX\fP + \fBVER_SUFFIX\fP"
+.br
+.ti -1c
+.RI "\fBARCH\fP = get_platform()\&.replace('\-', '_')\&.replace('\&.', '_')"
+.br
+.ti -1c
+.RI "\fBABI\fP = sysconfig\&.get_config_var('SOABI')"
+.br
+.ti -1c
+.RI "\fBFILENAME_RE\fP"
+.br
+.ti -1c
+.RI "\fBNAME_VERSION_RE\fP = re\&.compile(, re\&.IGNORECASE | re\&.VERBOSE)"
+.br
+.ti -1c
+.RI "\fBSHEBANG_RE\fP = re\&.compile(br'\\s*#![^\\r\\n]*')"
+.br
+.ti -1c
+.RI "\fBSHEBANG_DETAIL_RE\fP = re\&.compile(br'^(\\s*#!('[^']+'|\\S+))\\s+(\&.*)$')"
+.br
+.ti -1c
+.RI "str \fBSHEBANG_PYTHON\fP = b'#!python'"
+.br
+.ti -1c
+.RI "str \fBSHEBANG_PYTHONW\fP = b'#!pythonw'"
+.br
+.ti -1c
+.RI "o \fBto_posix\fP = lambda o"
+.br
+.ti -1c
+.RI "\fBimp\fP = None"
+.br
+.ti -1c
+.RI "\fB_hook\fP = \fBMounter\fP()"
+.br
+.ti -1c
+.RI "\fBCOMPATIBLE_TAGS\fP = \fBcompatible_tags\fP()"
+.br
+.ti -1c
+.RI "\fBmajor\fP"
+.br
+.ti -1c
+.RI "\fBmajor_minor\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.wheel\&._derive_abi ()\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&._get_glibc_version ()\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&._get_suffixes ()\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&._load_dynamic ( name,  path)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.compatible_tags ()"
+
+.PP
+.nf
+Return (pyver, abi, arch) tuples compatible with this Python\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.wheel\&.is_compatible ( wheel,  tags = \fCNone\fP)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.wheel\&._hook = \fBMounter\fP()\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.ABI = sysconfig\&.get_config_var('SOABI')"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.ARCH = get_platform()\&.replace('\-', '_')\&.replace('\&.', '_')"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.cache = None"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.COMPATIBLE_TAGS = \fBcompatible_tags\fP()"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.FILENAME_RE"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(
+2     , re\&.IGNORECASE | re\&.VERBOSE)
+.fi
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.imp = None"
+
+.SS "str pip\&._vendor\&.distlib\&.wheel\&.IMP_PREFIX = 'pp'"
+
+.SS "str pip\&._vendor\&.distlib\&.wheel\&.IMPVER = \fBIMP_PREFIX\fP + \fBVER_SUFFIX\fP"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.logger = logging\&.getLogger(__name__)"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.major"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.major_minor"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.NAME_VERSION_RE = re\&.compile(, re\&.IGNORECASE | re\&.VERBOSE)"
+
+.SS "str pip\&._vendor\&.distlib\&.wheel\&.PYVER = 'py' + \fBVER_SUFFIX\fP"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.SHEBANG_DETAIL_RE = re\&.compile(br'^(\\s*#!('[^']+'|\\S+))\\s+(\&.*)$')"
+
+.SS "str pip\&._vendor\&.distlib\&.wheel\&.SHEBANG_PYTHON = b'#!python'"
+
+.SS "str pip\&._vendor\&.distlib\&.wheel\&.SHEBANG_PYTHONW = b'#!pythonw'"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.SHEBANG_RE = re\&.compile(br'\\s*#![^\\r\\n]*')"
+
+.SS "pip\&._vendor\&.distlib\&.wheel\&.string"
+
+.SS "o pip\&._vendor\&.distlib\&.wheel\&.to_posix = lambda o"
+
+.SS "str pip\&._vendor\&.distlib\&.wheel\&.VER_SUFFIX = sysconfig\&.get_config_var('py_version_nodot')"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

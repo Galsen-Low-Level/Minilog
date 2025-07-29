@@ -1,0 +1,202 @@
+\doxysection{sphinx.\+util.\+osutil Namespace Reference}
+\hypertarget{namespacesphinx_1_1util_1_1osutil}{}\label{namespacesphinx_1_1util_1_1osutil}\index{sphinx.util.osutil@{sphinx.util.osutil}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1util_1_1osutil_1_1FileAvoidWrite}{File\+Avoid\+Write}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1util_1_1osutil_ad918e766097f11113b1b98b0ca8252e0}{os\+\_\+path}} (str canonical\+\_\+path)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1util_1_1osutil_ac99e8d33cc48d48dca52ed007429a192}{canon\+\_\+path}} (str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]} native\+\_\+path)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1util_1_1osutil_a79699dc0af6bf8f4ba6eef3991a944e0}{path\+\_\+stabilize}} (str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]} filepath)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1util_1_1osutil_a0f6e35ff58d94a81b0e13bc460669bc8}{relative\+\_\+uri}} (str base, str to)
+\item 
+None \mbox{\hyperlink{namespacesphinx_1_1util_1_1osutil_a0dc0ba5535a2bb08335447a589a4468f}{ensuredir}} (str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]} file)
+\item 
+int \mbox{\hyperlink{namespacesphinx_1_1util_1_1osutil_a95e41ae279ab36edc4761cf384a5557f}{\+\_\+last\+\_\+modified\+\_\+time}} (str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]} source)
+\item 
+None \mbox{\hyperlink{namespacesphinx_1_1util_1_1osutil_ad9b3c962d870db4658942c6361ee480e}{\+\_\+copy\+\_\+times}} (str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]} source, str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]} dest)
+\item 
+None \mbox{\hyperlink{namespacesphinx_1_1util_1_1osutil_a868190c1ec8ed5d601c1ebb9d5d20295}{copyfile}} (str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]} source, str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]} dest, \texorpdfstring{$\ast$}{*}bool force=False)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1util_1_1osutil_a5957d760a511a29c3bbd624388227d1b}{make\+\_\+filename}} (str string)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1util_1_1osutil_ab6d54afe157fa1ecb4c0c517dd05d1f0}{make\+\_\+filename\+\_\+from\+\_\+project}} (str project)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1util_1_1osutil_aa316ce35817a9ebb88df3c05a4df613c}{relpath}} (str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]} path, str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]}\texorpdfstring{$\vert$}{|}None start=os.\+curdir)
+\item 
+Path \mbox{\hyperlink{namespacesphinx_1_1util_1_1osutil_a9af72d63a5186af671e9a6cf4860e71d}{\+\_\+relative\+\_\+path}} (Path path, Path root)
+\item 
+None \mbox{\hyperlink{namespacesphinx_1_1util_1_1osutil_a0d8abd24eccfeb1cb4340aae23e24184}{rmtree}} (str\texorpdfstring{$\vert$}{|}os.\+Path\+Like\mbox{[}str\mbox{]} path)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1util_1_1osutil_a8ca8c64f91434398256c1f102b09e58a}{SEP}} = \textquotesingle{}/\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1osutil_af4ecf94ce43e091269d7a0328bce3a6e}{\+\_\+no\+\_\+fn\+\_\+re}} = re.\+compile(r\textquotesingle{}\mbox{[}\texorpdfstring{$^\wedge$}{\string^}a-\/zA-\/Z0-\/9\+\_\+-\/\mbox{]}\textquotesingle{})
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1util_1_1osutil_ad9b8565e43a7236508350adf64e542ce}{safe\+\_\+relpath}} = \mbox{\hyperlink{namespacesphinx_1_1util_1_1osutil_aa316ce35817a9ebb88df3c05a4df613c}{relpath}}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1osutil_a1020d062e11c522d628c5608d063d863}{fs\+\_\+encoding}} = sys.\+getfilesystemencoding() or sys.\+getdefaultencoding()
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1osutil_ab0aff27417b7e6a3571d2200352b5cd0}{abspath}} = os.\+path.\+abspath
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Operating system-related utility functions for Sphinx.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesphinx_1_1util_1_1osutil_ad9b3c962d870db4658942c6361ee480e}\label{namespacesphinx_1_1util_1_1osutil_ad9b3c962d870db4658942c6361ee480e} 
+\index{sphinx.util.osutil@{sphinx.util.osutil}!\_copy\_times@{\_copy\_times}}
+\index{\_copy\_times@{\_copy\_times}!sphinx.util.osutil@{sphinx.util.osutil}}
+\doxysubsubsection{\texorpdfstring{\_copy\_times()}{\_copy\_times()}}
+{\footnotesize\ttfamily  None sphinx.\+util.\+osutil.\+\_\+copy\+\_\+times (\begin{DoxyParamCaption}\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}}]{source,  }\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}}]{dest }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Copy a file's modification times.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1util_1_1osutil_a95e41ae279ab36edc4761cf384a5557f}\label{namespacesphinx_1_1util_1_1osutil_a95e41ae279ab36edc4761cf384a5557f} 
+\index{sphinx.util.osutil@{sphinx.util.osutil}!\_last\_modified\_time@{\_last\_modified\_time}}
+\index{\_last\_modified\_time@{\_last\_modified\_time}!sphinx.util.osutil@{sphinx.util.osutil}}
+\doxysubsubsection{\texorpdfstring{\_last\_modified\_time()}{\_last\_modified\_time()}}
+{\footnotesize\ttfamily  int sphinx.\+util.\+osutil.\+\_\+last\+\_\+modified\+\_\+time (\begin{DoxyParamCaption}\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}}]{source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Return the last modified time of ``filename``.
+
+The time is returned as integer microseconds.
+The lowest common denominator of modern file-systems seems to be
+microsecond-level precision.
+
+We prefer to err on the side of re-rendering a file,
+so we round up to the nearest microsecond.
+\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1util_1_1osutil_a9af72d63a5186af671e9a6cf4860e71d}\label{namespacesphinx_1_1util_1_1osutil_a9af72d63a5186af671e9a6cf4860e71d} 
+\index{sphinx.util.osutil@{sphinx.util.osutil}!\_relative\_path@{\_relative\_path}}
+\index{\_relative\_path@{\_relative\_path}!sphinx.util.osutil@{sphinx.util.osutil}}
+\doxysubsubsection{\texorpdfstring{\_relative\_path()}{\_relative\_path()}}
+{\footnotesize\ttfamily  Path sphinx.\+util.\+osutil.\+\_\+relative\+\_\+path (\begin{DoxyParamCaption}\item[{Path}]{path,  }\item[{Path}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Return a relative filepath to *path* from the given *root* directory.
+
+This is an alternative of ``Path.relative_to``.
+It returns the original path if *path* and *root* are on different drives,
+which may happen on Windows.
+\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1util_1_1osutil_ac99e8d33cc48d48dca52ed007429a192}\label{namespacesphinx_1_1util_1_1osutil_ac99e8d33cc48d48dca52ed007429a192} 
+\index{sphinx.util.osutil@{sphinx.util.osutil}!canon\_path@{canon\_path}}
+\index{canon\_path@{canon\_path}!sphinx.util.osutil@{sphinx.util.osutil}}
+\doxysubsubsection{\texorpdfstring{canon\_path()}{canon\_path()}}
+{\footnotesize\ttfamily  str sphinx.\+util.\+osutil.\+canon\+\_\+path (\begin{DoxyParamCaption}\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}}]{native\+\_\+path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return path in OS-independent form\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1util_1_1osutil_a868190c1ec8ed5d601c1ebb9d5d20295}\label{namespacesphinx_1_1util_1_1osutil_a868190c1ec8ed5d601c1ebb9d5d20295} 
+\index{sphinx.util.osutil@{sphinx.util.osutil}!copyfile@{copyfile}}
+\index{copyfile@{copyfile}!sphinx.util.osutil@{sphinx.util.osutil}}
+\doxysubsubsection{\texorpdfstring{copyfile()}{copyfile()}}
+{\footnotesize\ttfamily  None sphinx.\+util.\+osutil.\+copyfile (\begin{DoxyParamCaption}\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}}]{source,  }\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}}]{dest,  }\item[{\texorpdfstring{$\ast$}{*}bool }]{force = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Copy a file and its modification times, if possible.
+
+:param source: An existing source to copy.
+:param dest: The destination path.
+:param bool force: Overwrite the destination file even if it exists.
+:raise FileNotFoundError: The *source* does not exist.
+
+.. note:: :func:`copyfile` is a no-op if *source* and *dest* are identical.
+\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1util_1_1osutil_a0dc0ba5535a2bb08335447a589a4468f}\label{namespacesphinx_1_1util_1_1osutil_a0dc0ba5535a2bb08335447a589a4468f} 
+\index{sphinx.util.osutil@{sphinx.util.osutil}!ensuredir@{ensuredir}}
+\index{ensuredir@{ensuredir}!sphinx.util.osutil@{sphinx.util.osutil}}
+\doxysubsubsection{\texorpdfstring{ensuredir()}{ensuredir()}}
+{\footnotesize\ttfamily  None sphinx.\+util.\+osutil.\+ensuredir (\begin{DoxyParamCaption}\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}}]{file }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Ensure that a path exists.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1util_1_1osutil_a5957d760a511a29c3bbd624388227d1b}\label{namespacesphinx_1_1util_1_1osutil_a5957d760a511a29c3bbd624388227d1b} 
+\index{sphinx.util.osutil@{sphinx.util.osutil}!make\_filename@{make\_filename}}
+\index{make\_filename@{make\_filename}!sphinx.util.osutil@{sphinx.util.osutil}}
+\doxysubsubsection{\texorpdfstring{make\_filename()}{make\_filename()}}
+{\footnotesize\ttfamily  str sphinx.\+util.\+osutil.\+make\+\_\+filename (\begin{DoxyParamCaption}\item[{str}]{string }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1util_1_1osutil_ab6d54afe157fa1ecb4c0c517dd05d1f0}\label{namespacesphinx_1_1util_1_1osutil_ab6d54afe157fa1ecb4c0c517dd05d1f0} 
+\index{sphinx.util.osutil@{sphinx.util.osutil}!make\_filename\_from\_project@{make\_filename\_from\_project}}
+\index{make\_filename\_from\_project@{make\_filename\_from\_project}!sphinx.util.osutil@{sphinx.util.osutil}}
+\doxysubsubsection{\texorpdfstring{make\_filename\_from\_project()}{make\_filename\_from\_project()}}
+{\footnotesize\ttfamily  str sphinx.\+util.\+osutil.\+make\+\_\+filename\+\_\+from\+\_\+project (\begin{DoxyParamCaption}\item[{str}]{project }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1util_1_1osutil_ad918e766097f11113b1b98b0ca8252e0}\label{namespacesphinx_1_1util_1_1osutil_ad918e766097f11113b1b98b0ca8252e0} 
+\index{sphinx.util.osutil@{sphinx.util.osutil}!os\_path@{os\_path}}
+\index{os\_path@{os\_path}!sphinx.util.osutil@{sphinx.util.osutil}}
+\doxysubsubsection{\texorpdfstring{os\_path()}{os\_path()}}
+{\footnotesize\ttfamily  str sphinx.\+util.\+osutil.\+os\+\_\+path (\begin{DoxyParamCaption}\item[{str}]{canonical\+\_\+path }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1util_1_1osutil_a79699dc0af6bf8f4ba6eef3991a944e0}\label{namespacesphinx_1_1util_1_1osutil_a79699dc0af6bf8f4ba6eef3991a944e0} 
+\index{sphinx.util.osutil@{sphinx.util.osutil}!path\_stabilize@{path\_stabilize}}
+\index{path\_stabilize@{path\_stabilize}!sphinx.util.osutil@{sphinx.util.osutil}}
+\doxysubsubsection{\texorpdfstring{path\_stabilize()}{path\_stabilize()}}
+{\footnotesize\ttfamily  str sphinx.\+util.\+osutil.\+path\+\_\+stabilize (\begin{DoxyParamCaption}\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}}]{filepath }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Normalize path separator and unicode string\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1util_1_1osutil_a0f6e35ff58d94a81b0e13bc460669bc8}\label{namespacesphinx_1_1util_1_1osutil_a0f6e35ff58d94a81b0e13bc460669bc8} 
+\index{sphinx.util.osutil@{sphinx.util.osutil}!relative\_uri@{relative\_uri}}
+\index{relative\_uri@{relative\_uri}!sphinx.util.osutil@{sphinx.util.osutil}}
+\doxysubsubsection{\texorpdfstring{relative\_uri()}{relative\_uri()}}
+{\footnotesize\ttfamily  str sphinx.\+util.\+osutil.\+relative\+\_\+uri (\begin{DoxyParamCaption}\item[{str}]{base,  }\item[{str}]{to }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a relative URL from ``base`` to ``to``.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1util_1_1osutil_aa316ce35817a9ebb88df3c05a4df613c}\label{namespacesphinx_1_1util_1_1osutil_aa316ce35817a9ebb88df3c05a4df613c} 
+\index{sphinx.util.osutil@{sphinx.util.osutil}!relpath@{relpath}}
+\index{relpath@{relpath}!sphinx.util.osutil@{sphinx.util.osutil}}
+\doxysubsubsection{\texorpdfstring{relpath()}{relpath()}}
+{\footnotesize\ttfamily  str sphinx.\+util.\+osutil.\+relpath (\begin{DoxyParamCaption}\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}}]{path,  }\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]} \texorpdfstring{$\vert$}{|} None }]{start = {\ttfamily os.curdir} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a relative filepath to *path* either from the current directory or
+from an optional *start* directory.
+
+This is an alternative of ``os.path.relpath()``.  This returns original path
+if *path* and *start* are on different drives (for Windows platform).
+\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1util_1_1osutil_a0d8abd24eccfeb1cb4340aae23e24184}\label{namespacesphinx_1_1util_1_1osutil_a0d8abd24eccfeb1cb4340aae23e24184} 
+\index{sphinx.util.osutil@{sphinx.util.osutil}!rmtree@{rmtree}}
+\index{rmtree@{rmtree}!sphinx.util.osutil@{sphinx.util.osutil}}
+\doxysubsubsection{\texorpdfstring{rmtree()}{rmtree()}}
+{\footnotesize\ttfamily  None sphinx.\+util.\+osutil.\+rmtree (\begin{DoxyParamCaption}\item[{str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}}]{path }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacesphinx_1_1util_1_1osutil_af4ecf94ce43e091269d7a0328bce3a6e}\label{namespacesphinx_1_1util_1_1osutil_af4ecf94ce43e091269d7a0328bce3a6e} 
+\index{sphinx.util.osutil@{sphinx.util.osutil}!\_no\_fn\_re@{\_no\_fn\_re}}
+\index{\_no\_fn\_re@{\_no\_fn\_re}!sphinx.util.osutil@{sphinx.util.osutil}}
+\doxysubsubsection{\texorpdfstring{\_no\_fn\_re}{\_no\_fn\_re}}
+{\footnotesize\ttfamily sphinx.\+util.\+osutil.\+\_\+no\+\_\+fn\+\_\+re = re.\+compile(r\textquotesingle{}\mbox{[}\texorpdfstring{$^\wedge$}{\string^}a-\/zA-\/Z0-\/9\+\_\+-\/\mbox{]}\textquotesingle{})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1util_1_1osutil_ab0aff27417b7e6a3571d2200352b5cd0}\label{namespacesphinx_1_1util_1_1osutil_ab0aff27417b7e6a3571d2200352b5cd0} 
+\index{sphinx.util.osutil@{sphinx.util.osutil}!abspath@{abspath}}
+\index{abspath@{abspath}!sphinx.util.osutil@{sphinx.util.osutil}}
+\doxysubsubsection{\texorpdfstring{abspath}{abspath}}
+{\footnotesize\ttfamily sphinx.\+util.\+osutil.\+abspath = os.\+path.\+abspath}
+
+\Hypertarget{namespacesphinx_1_1util_1_1osutil_a1020d062e11c522d628c5608d063d863}\label{namespacesphinx_1_1util_1_1osutil_a1020d062e11c522d628c5608d063d863} 
+\index{sphinx.util.osutil@{sphinx.util.osutil}!fs\_encoding@{fs\_encoding}}
+\index{fs\_encoding@{fs\_encoding}!sphinx.util.osutil@{sphinx.util.osutil}}
+\doxysubsubsection{\texorpdfstring{fs\_encoding}{fs\_encoding}}
+{\footnotesize\ttfamily sphinx.\+util.\+osutil.\+fs\+\_\+encoding = sys.\+getfilesystemencoding() or sys.\+getdefaultencoding()}
+
+\Hypertarget{namespacesphinx_1_1util_1_1osutil_ad9b8565e43a7236508350adf64e542ce}\label{namespacesphinx_1_1util_1_1osutil_ad9b8565e43a7236508350adf64e542ce} 
+\index{sphinx.util.osutil@{sphinx.util.osutil}!safe\_relpath@{safe\_relpath}}
+\index{safe\_relpath@{safe\_relpath}!sphinx.util.osutil@{sphinx.util.osutil}}
+\doxysubsubsection{\texorpdfstring{safe\_relpath}{safe\_relpath}}
+{\footnotesize\ttfamily str sphinx.\+util.\+osutil.\+safe\+\_\+relpath = \mbox{\hyperlink{namespacesphinx_1_1util_1_1osutil_aa316ce35817a9ebb88df3c05a4df613c}{relpath}}}
+
+\Hypertarget{namespacesphinx_1_1util_1_1osutil_a8ca8c64f91434398256c1f102b09e58a}\label{namespacesphinx_1_1util_1_1osutil_a8ca8c64f91434398256c1f102b09e58a} 
+\index{sphinx.util.osutil@{sphinx.util.osutil}!SEP@{SEP}}
+\index{SEP@{SEP}!sphinx.util.osutil@{sphinx.util.osutil}}
+\doxysubsubsection{\texorpdfstring{SEP}{SEP}}
+{\footnotesize\ttfamily str sphinx.\+util.\+osutil.\+SEP = \textquotesingle{}/\textquotesingle{}}
+

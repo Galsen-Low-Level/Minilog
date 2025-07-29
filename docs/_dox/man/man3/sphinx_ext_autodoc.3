@@ -1,0 +1,490 @@
+.TH "sphinx.ext.autodoc" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.ext.autodoc
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBdirective\fP"
+.br
+.ti -1c
+.RI "namespace \fBimporter\fP"
+.br
+.ti -1c
+.RI "namespace \fBmock\fP"
+.br
+.ti -1c
+.RI "namespace \fBpreserve_defaults\fP"
+.br
+.ti -1c
+.RI "namespace \fBtype_comment\fP"
+.br
+.ti -1c
+.RI "namespace \fBtypehints\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_All\fP"
+.br
+.ti -1c
+.RI "class \fB_Empty\fP"
+.br
+.ti -1c
+.RI "class \fBAttributeDocumenter\fP"
+.br
+.ti -1c
+.RI "class \fBClassDocumenter\fP"
+.br
+.ti -1c
+.RI "class \fBClassLevelDocumenter\fP"
+.br
+.ti -1c
+.RI "class \fBDataDocumenter\fP"
+.br
+.ti -1c
+.RI "class \fBDataDocumenterMixinBase\fP"
+.br
+.ti -1c
+.RI "class \fBDecoratorDocumenter\fP"
+.br
+.ti -1c
+.RI "class \fBDocstringSignatureMixin\fP"
+.br
+.ti -1c
+.RI "class \fBDocstringStripSignatureMixin\fP"
+.br
+.ti -1c
+.RI "class \fBDocumenter\fP"
+.br
+.ti -1c
+.RI "class \fBExceptionDocumenter\fP"
+.br
+.ti -1c
+.RI "class \fBFunctionDocumenter\fP"
+.br
+.ti -1c
+.RI "class \fBGenericAliasMixin\fP"
+.br
+.ti -1c
+.RI "class \fBMethodDocumenter\fP"
+.br
+.ti -1c
+.RI "class \fBModuleDocumenter\fP"
+.br
+.ti -1c
+.RI "class \fBModuleLevelDocumenter\fP"
+.br
+.ti -1c
+.RI "class \fBNonDataDescriptorMixin\fP"
+.br
+.ti -1c
+.RI "class \fBObjectMember\fP"
+.br
+.ti -1c
+.RI "class \fBOptions\fP"
+.br
+.ti -1c
+.RI "class \fBPropertyDocumenter\fP"
+.br
+.ti -1c
+.RI "class \fBRuntimeInstanceAttributeMixin\fP"
+.br
+.ti -1c
+.RI "class \fBSlotsMixin\fP"
+.br
+.ti -1c
+.RI "class \fBUninitializedGlobalVariableMixin\fP"
+.br
+.ti -1c
+.RI "class \fBUninitializedInstanceAttributeMixin\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "_RestifyMode \fB_get_render_mode\fP (Literal['fully\-qualified', 'short'] typehints_format)"
+.br
+.ti -1c
+.RI "Any \fBidentity\fP (Any x)"
+.br
+.ti -1c
+.RI "\fBobject\fP|list[str] \fBmembers_option\fP (Any arg)"
+.br
+.ti -1c
+.RI "\fBobject\fP|set[str] \fBexclude_members_option\fP (Any arg)"
+.br
+.ti -1c
+.RI "set[str] \fBinherited_members_option\fP (Any arg)"
+.br
+.ti -1c
+.RI "str|None \fBmember_order_option\fP (Any arg)"
+.br
+.ti -1c
+.RI "str|None \fBclass_doc_from_option\fP (Any arg)"
+.br
+.ti -1c
+.RI "Any \fBannotation_option\fP (Any arg)"
+.br
+.ti -1c
+.RI "bool \fBbool_option\fP (Any arg)"
+.br
+.ti -1c
+.RI "None \fBmerge_members_option\fP (dict[str, Any] options)"
+.br
+.ti -1c
+.RI "\fB_AutodocProcessDocstringListener\fP \fBcut_lines\fP (int pre, int post=0, Sequence[str]|None what=None)"
+.br
+.ti -1c
+.RI "\fB_AutodocProcessDocstringListener\fP \fBbetween\fP (str marker, Sequence[str]|None what=None, bool keepempty=False, bool exclude=False)"
+.br
+.ti -1c
+.RI "bool \fBcan_document_member\fP (type[\fBDocumenter\fP] cls, Any member, str membername, bool isattr, Any \fBparent\fP)"
+.br
+.ti -1c
+.RI "None \fBdocument_members\fP (self, bool all_members=False)"
+.br
+.ti -1c
+.RI "None \fBupdate_annotations\fP (self, Any \fBparent\fP)"
+.br
+.ti -1c
+.RI "bool \fBimport_object\fP (self, bool raiseerror=False)"
+.br
+.ti -1c
+.RI "str \fBget_real_modname\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBshould_suppress_value_header\fP (self)"
+.br
+.ti -1c
+.RI "None \fBadd_directive_header\fP (self, str sig)"
+.br
+.ti -1c
+.RI "list[str]|None \fBget_attribute_comment\fP (self, Any \fBparent\fP, str attrname)"
+.br
+.ti -1c
+.RI "list[list[str]]|None \fBget_doc\fP (self)"
+.br
+.ti -1c
+.RI "None \fBadd_content\fP (self, \fBStringList\fP|None more_content)"
+.br
+.ti -1c
+.RI "Any \fBautodoc_attrgetter\fP (Any obj, str name, *Any defargs, \fBSphinxComponentRegistry\fP registry)"
+.br
+.ti -1c
+.RI "\fBExtensionMetadata\fP \fBsetup\fP (\fBSphinx\fP app)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB_AutodocObjType\fP"
+.br
+.ti -1c
+.RI "TypeAlias \fB_AutodocProcessDocstringListener\fP"
+.br
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "\fBMethodDescriptorType\fP = type(type\&.__subclasses__)"
+.br
+.ti -1c
+.RI "\fBpy_ext_sig_re\fP"
+.br
+.ti -1c
+.RI "\fBspecial_member_re\fP = re\&.compile(r'^__\\S+__$')"
+.br
+.ti -1c
+.RI "\fBALL\fP = \fB_All\fP()"
+.br
+.ti -1c
+.RI "\fBEMPTY\fP = \fB_Empty\fP()"
+.br
+.ti -1c
+.RI "\fBUNINITIALIZED_ATTR\fP = \fBobject\fP()"
+.br
+.ti -1c
+.RI "\fBINSTANCEATTR\fP = \fBobject\fP()"
+.br
+.ti -1c
+.RI "\fBSLOTSATTR\fP = \fBobject\fP()"
+.br
+.ti -1c
+.RI "\fBSUPPRESS\fP = \fBobject\fP()"
+.br
+.ti -1c
+.RI "\fB_METACLASS_CALL_BLACKLIST\fP"
+.br
+.ti -1c
+.RI "\fB_CLASS_NEW_BLACKLIST\fP"
+.br
+.ti -1c
+.RI "str \fBobjtype\fP = 'attribute'"
+.br
+.ti -1c
+.RI "int \fBmember_order\fP = 60"
+.br
+.ti -1c
+.RI "ClassVar \fBoption_spec\fP = dict(ModuleLevelDocumenter\&.option_spec)"
+.br
+.ti -1c
+.RI "int \fBpriority\fP = 10"
+.br
+.ti -1c
+.RI "\fBobject\fP"
+.br
+.ti -1c
+.RI "\fBparent\fP"
+.br
+.ti -1c
+.RI "\fBanalyzer\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Extension to create automatic documentation from code docstrings\&.
+
+Automatically insert docstrings for functions, classes or whole modules into
+the doctree, thus avoiding duplication between docstrings and documentation
+for those who like elaborate docstrings\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " _RestifyMode sphinx\&.ext\&.autodoc\&._get_render_mode (Literal['fully\-qualified', 'short'] typehints_format)\fC [protected]\fP"
+
+.SS " None sphinx\&.ext\&.autodoc\&.add_content ( self, \fBStringList\fP | None more_content)"
+
+.SS " None sphinx\&.ext\&.autodoc\&.add_directive_header ( self, str sig)"
+
+.SS " Any sphinx\&.ext\&.autodoc\&.annotation_option (Any arg)"
+
+.SS " Any sphinx\&.ext\&.autodoc\&.autodoc_attrgetter (Any obj, str name, *Any defargs, \fBSphinxComponentRegistry\fP
+ registry)"
+
+.PP
+.nf
+Alternative getattr() for types
+.fi
+.PP
+ 
+.SS " \fB_AutodocProcessDocstringListener\fP sphinx\&.ext\&.autodoc\&.between (str marker, Sequence[str] | None  what = \fCNone\fP, bool  keepempty = \fCFalse\fP, bool  exclude = \fCFalse\fP)"
+
+.PP
+.nf
+Return a listener that either keeps, or if *exclude* is True excludes,
+lines between lines that match the *marker* regular expression\&.  If no line
+matches, the resulting docstring would be empty, so no change will be made
+unless *keepempty* is true\&.
+
+If *what* is a sequence of strings, only docstrings of a type in *what* will
+be processed\&.
+
+.fi
+.PP
+ 
+.SS " bool sphinx\&.ext\&.autodoc\&.bool_option (Any arg)"
+
+.PP
+.nf
+Used to convert flag options to auto directives\&.  (Instead of
+directives\&.flag(), which returns None)\&.
+
+.fi
+.PP
+ 
+.SS " bool sphinx\&.ext\&.autodoc\&.can_document_member (type[\fBDocumenter\fP] cls, Any member, str membername, bool isattr, Any
+     parent)"
+
+.SS " str | None sphinx\&.ext\&.autodoc\&.class_doc_from_option (Any arg)"
+
+.PP
+.nf
+Used to convert the :class-doc-from: option to autoclass directives\&.
+.fi
+.PP
+ 
+.SS " \fB_AutodocProcessDocstringListener\fP sphinx\&.ext\&.autodoc\&.cut_lines (int pre, int  post = \fC0\fP, Sequence[str] | None  what = \fCNone\fP)"
+
+.PP
+.nf
+Return a listener that removes the first *pre* and last *post*
+lines of every docstring\&.  If *what* is a sequence of strings,
+only docstrings of a type in *what* will be processed\&.
+
+Use like this (e\&.g\&. in the ``setup()`` function of :file:`conf\&.py`)::
+
+   from sphinx\&.ext\&.autodoc import cut_lines
+
+   app\&.connect('autodoc-process-docstring', cut_lines(4, what={'module'}))
+
+This can (and should) be used in place of :confval:`automodule_skip_lines`\&.
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.ext\&.autodoc\&.document_members ( self, bool  all_members = \fCFalse\fP)"
+
+.SS " \fBobject\fP | set[str] sphinx\&.ext\&.autodoc\&.exclude_members_option (Any arg)"
+
+.PP
+.nf
+Used to convert the :exclude-members: option\&.
+.fi
+.PP
+ 
+.SS " list[str] | None sphinx\&.ext\&.autodoc\&.get_attribute_comment ( self, Any parent, str attrname)"
+
+.SS " list[list[str]] | None sphinx\&.ext\&.autodoc\&.get_doc ( self)"
+
+.SS " str sphinx\&.ext\&.autodoc\&.get_real_modname ( self)"
+
+.SS " Any sphinx\&.ext\&.autodoc\&.identity (Any x)"
+
+.SS " bool sphinx\&.ext\&.autodoc\&.import_object ( self, bool  raiseerror = \fCFalse\fP)"
+
+.SS " set[str] sphinx\&.ext\&.autodoc\&.inherited_members_option (Any arg)"
+
+.PP
+.nf
+Used to convert the :inherited-members: option to auto directives\&.
+.fi
+.PP
+ 
+.SS " str | None sphinx\&.ext\&.autodoc\&.member_order_option (Any arg)"
+
+.PP
+.nf
+Used to convert the :member-order: option to auto directives\&.
+.fi
+.PP
+ 
+.SS " \fBobject\fP | list[str] sphinx\&.ext\&.autodoc\&.members_option (Any arg)"
+
+.PP
+.nf
+Used to convert the :members: option to auto directives\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.ext\&.autodoc\&.merge_members_option (dict[str, Any] options)"
+
+.PP
+.nf
+Merge :private-members: and :special-members: options to the
+:members: option\&.
+
+.fi
+.PP
+ 
+.SS " \fBExtensionMetadata\fP sphinx\&.ext\&.autodoc\&.setup (\fBSphinx\fP app)"
+
+.SS " bool sphinx\&.ext\&.autodoc\&.should_suppress_value_header ( self)"
+
+.SS " None sphinx\&.ext\&.autodoc\&.update_annotations ( self, Any parent)"
+
+.PP
+.nf
+Update __annotations__ to support type_comment and so on\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "sphinx\&.ext\&.autodoc\&._AutodocObjType\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  Literal[
+2         'module', 'class', 'exception', 'function', 'method', 'attribute'
+3     ]
+.fi
+
+.SS "TypeAlias sphinx\&.ext\&.autodoc\&._AutodocProcessDocstringListener\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  Callable[
+2         [Sphinx, _AutodocObjType, str, Any, dict[str, bool], list[str]], None
+3     ]
+.fi
+
+.SS "sphinx\&.ext\&.autodoc\&._CLASS_NEW_BLACKLIST\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  frozenset({
+2     'typing\&.Generic\&.__new__',
+3 })
+.fi
+
+.SS "sphinx\&.ext\&.autodoc\&._METACLASS_CALL_BLACKLIST\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  frozenset({
+2     'enum\&.EnumType\&.__call__',
+3 })
+.fi
+
+.SS "sphinx\&.ext\&.autodoc\&.ALL = \fB_All\fP()"
+
+.SS "sphinx\&.ext\&.autodoc\&.analyzer"
+
+.SS "sphinx\&.ext\&.autodoc\&.EMPTY = \fB_Empty\fP()"
+
+.SS "sphinx\&.ext\&.autodoc\&.INSTANCEATTR = \fBobject\fP()"
+
+.SS "sphinx\&.ext\&.autodoc\&.logger = logging\&.getLogger(__name__)"
+
+.SS "int sphinx\&.ext\&.autodoc\&.member_order = 60"
+
+.SS "sphinx\&.ext\&.autodoc\&.MethodDescriptorType = type(type\&.__subclasses__)"
+
+.SS "sphinx\&.ext\&.autodoc\&.object"
+
+.SS "str sphinx\&.ext\&.autodoc\&.objtype = 'attribute'"
+
+.PP
+.nf
+Specialized Documenter subclass for attributes\&.
+.fi
+.PP
+ 
+.SS "ClassVar sphinx\&.ext\&.autodoc\&.option_spec = dict(ModuleLevelDocumenter\&.option_spec)"
+
+.SS "sphinx\&.ext\&.autodoc\&.parent"
+
+.SS "int sphinx\&.ext\&.autodoc\&.priority = 10"
+
+.SS "sphinx\&.ext\&.autodoc\&.py_ext_sig_re"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(
+2     ,
+3     re\&.VERBOSE,
+4 )
+.fi
+
+.SS "sphinx\&.ext\&.autodoc\&.SLOTSATTR = \fBobject\fP()"
+
+.SS "sphinx\&.ext\&.autodoc\&.special_member_re = re\&.compile(r'^__\\S+__$')"
+
+.SS "sphinx\&.ext\&.autodoc\&.SUPPRESS = \fBobject\fP()"
+
+.SS "sphinx\&.ext\&.autodoc\&.UNINITIALIZED_ATTR = \fBobject\fP()"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,191 @@
+.TH "docutils.utils.math.math2html.FormulaBit" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.utils.math.math2html.FormulaBit
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.utils\&.math\&.math2html\&.Container\fP\&.
+.PP
+Inherited by \fBdocutils\&.utils\&.math\&.math2html\&.Bracket\fP, \fBdocutils\&.utils\&.math\&.math2html\&.Comment\fP, \fBdocutils\&.utils\&.math\&.math2html\&.FormulaCommand\fP, \fBdocutils\&.utils\&.math\&.math2html\&.FormulaNumber\fP, \fBdocutils\&.utils\&.math\&.math2html\&.FormulaSymbol\fP, \fBdocutils\&.utils\&.math\&.math2html\&.RawText\fP, \fBdocutils\&.utils\&.math\&.math2html\&.TaggedBit\fP, \fBdocutils\&.utils\&.math\&.math2html\&.WhiteSpace\fP, and \fBdocutils\&.utils\&.math\&.math2html\&.WholeFormula\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "\fBsetfactory\fP (self, \fBfactory\fP)"
+.br
+.ti -1c
+.RI "\fBadd\fP (self, bit)"
+.br
+.ti -1c
+.RI "\fBskiporiginal\fP (self, string, pos)"
+.br
+.ti -1c
+.RI "\fBcomputesize\fP (self)"
+.br
+.ti -1c
+.RI "\fBclone\fP (self)"
+.br
+.ti -1c
+.RI "\fB__str__\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.utils\&.math\&.math2html\&.Container\fP
+.in +1c
+.ti -1c
+.RI "\fBprocess\fP (self)"
+.br
+.ti -1c
+.RI "\fBgethtml\fP (self)"
+.br
+.ti -1c
+.RI "\fBescape\fP (self, line, replacements=\fBEscapeConfig\&.entities\fP)"
+.br
+.ti -1c
+.RI "\fBescapeentities\fP (self, line)"
+.br
+.ti -1c
+.RI "\fBsearchall\fP (self, type)"
+.br
+.ti -1c
+.RI "\fBsearchremove\fP (self, type)"
+.br
+.ti -1c
+.RI "\fBsearchprocess\fP (self, type, \fBprocess\fP)"
+.br
+.ti -1c
+.RI "\fBlocateprocess\fP (self, locate, \fBprocess\fP)"
+.br
+.ti -1c
+.RI "\fBrecursivesearch\fP (self, locate, recursive, \fBprocess\fP)"
+.br
+.ti -1c
+.RI "\fBextracttext\fP (self)"
+.br
+.ti -1c
+.RI "\fBgroup\fP (self, index, group, isingroup)"
+.br
+.ti -1c
+.RI "\fBremove\fP (self, index)"
+.br
+.ti -1c
+.RI "\fBtree\fP (self, level=0)"
+.br
+.ti -1c
+.RI "\fBgetparameter\fP (self, name)"
+.br
+.ti -1c
+.RI "\fBgetparameterlist\fP (self, name)"
+.br
+.ti -1c
+.RI "\fBhasemptyoutput\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcontents\fP"
+.br
+.ti -1c
+.RI "\fBoutput\fP"
+.br
+.ti -1c
+.RI "\fBfactory\fP"
+.br
+.ti -1c
+.RI "\fBsize\fP"
+.br
+.ti -1c
+.RI "\fBoriginal\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.utils\&.math\&.math2html\&.Container\fP
+.in +1c
+.ti -1c
+.RI "\fBcontents\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBtype\fP = None"
+.br
+.ti -1c
+.RI "int \fBsize\fP = 1"
+.br
+.ti -1c
+.RI "str \fBoriginal\fP = ''"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.utils\&.math\&.math2html\&.Container\fP
+.in +1c
+.ti -1c
+.RI "\fBpartkey\fP = None"
+.br
+.ti -1c
+.RI "\fBparent\fP = None"
+.br
+.ti -1c
+.RI "\fBbegin\fP = None"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.utils\&.math\&.math2html\&.FormulaBit\&.__init__ ( self)"
+
+.PP
+Reimplemented from \fBdocutils\&.utils\&.math\&.math2html\&.Container\fP\&.
+.PP
+Reimplemented in \fBdocutils\&.utils\&.math\&.math2html\&.Bracket\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.utils\&.math\&.math2html\&.FormulaBit\&.__str__ ( self)"
+
+.PP
+Reimplemented from \fBdocutils\&.utils\&.math\&.math2html\&.Container\fP\&.
+.PP
+Reimplemented in \fBdocutils\&.utils\&.math\&.math2html\&.WhiteSpace\fP, and \fBdocutils\&.utils\&.math\&.math2html\&.LimitPreviousCommand\fP\&.
+.SS "docutils\&.utils\&.math\&.math2html\&.FormulaBit\&.add ( self,  bit)"
+
+.SS "docutils\&.utils\&.math\&.math2html\&.FormulaBit\&.clone ( self)"
+
+.PP
+Reimplemented in \fBdocutils\&.utils\&.math\&.math2html\&.SquareBracket\fP\&.
+.SS "docutils\&.utils\&.math\&.math2html\&.FormulaBit\&.computesize ( self)"
+
+.SS "docutils\&.utils\&.math\&.math2html\&.FormulaBit\&.setfactory ( self,  factory)"
+
+.SS "docutils\&.utils\&.math\&.math2html\&.FormulaBit\&.skiporiginal ( self,  string,  pos)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.utils\&.math\&.math2html\&.FormulaBit\&.contents"
+
+.SS "docutils\&.utils\&.math\&.math2html\&.FormulaBit\&.factory"
+
+.SS "str docutils\&.utils\&.math\&.math2html\&.FormulaBit\&.original = ''\fC [static]\fP"
+
+.SS "docutils\&.utils\&.math\&.math2html\&.FormulaBit\&.original"
+
+.SS "docutils\&.utils\&.math\&.math2html\&.FormulaBit\&.output"
+
+.SS "int docutils\&.utils\&.math\&.math2html\&.FormulaBit\&.size = 1\fC [static]\fP"
+
+.SS "docutils\&.utils\&.math\&.math2html\&.FormulaBit\&.size"
+
+.SS "docutils\&.utils\&.math\&.math2html\&.FormulaBit\&.type = None\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

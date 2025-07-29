@@ -1,0 +1,777 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classwaitress_1_1server_1_1BaseWSGIServer" kind="class" language="Python" prot="public">
+    <compoundname>waitress::server::BaseWSGIServer</compoundname>
+    <basecompoundref refid="classwaitress_1_1wasyncore_1_1dispatcher" prot="public" virt="non-virtual">waitress.wasyncore.dispatcher</basecompoundref>
+    <derivedcompoundref refid="classwaitress_1_1server_1_1TcpWSGIServer" prot="public" virt="non-virtual">waitress.server.TcpWSGIServer</derivedcompoundref>
+    <derivedcompoundref refid="classwaitress_1_1server_1_1UnixWSGIServer" prot="public" virt="non-virtual">waitress.server.UnixWSGIServer</derivedcompoundref>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classwaitress_1_1server_1_1BaseWSGIServer_1a092cc9e24a31bb6cb0a1eafe02ccb1c8" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer::channel_class</definition>
+        <argsstring></argsstring>
+        <name>channel_class</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.channel_class</qualifiedname>
+        <initializer>=  <ref refid="classwaitress_1_1channel_1_1HTTPChannel" kindref="compound">HTTPChannel</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="180" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1server_1_1BaseWSGIServer_1a74d1f4c9048163bedaf4f2d354e3ecb7" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int waitress.server.BaseWSGIServer::next_channel_cleanup</definition>
+        <argsstring></argsstring>
+        <name>next_channel_cleanup</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.next_channel_cleanup</qualifiedname>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="181" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1server_1_1BaseWSGIServer_1a0dd0967538cd6520191bd5234f245331" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer::socketmod</definition>
+        <argsstring></argsstring>
+        <name>socketmod</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.socketmod</qualifiedname>
+        <initializer>=  <ref refid="classwaitress_1_1wasyncore_1_1dispatcher_1a6df3027f7bc9cfa75c13de9115df0d26" kindref="member">socket</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="182" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1server_1_1BaseWSGIServer_1a6a3dcac9aaef2b535dcc23fc7cf147d1" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer::asyncore</definition>
+        <argsstring></argsstring>
+        <name>asyncore</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.asyncore</qualifiedname>
+        <initializer>=  wasyncore</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="183" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1server_1_1BaseWSGIServer_1a79e69d7638e67d6fafdd7e3bcf53845f" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool waitress.server.BaseWSGIServer::in_connection_overflow</definition>
+        <argsstring></argsstring>
+        <name>in_connection_overflow</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.in_connection_overflow</qualifiedname>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="184" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="184" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classwaitress_1_1server_1_1BaseWSGIServer_1a3389c37adf04e1a4b2d8f11fc551a875" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer::sockinfo</definition>
+        <argsstring></argsstring>
+        <name>sockinfo</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.sockinfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="223" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1server_1_1BaseWSGIServer_1a8d3dd99a5a2bf67cc5b9c85a5cf97771" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer::family</definition>
+        <argsstring></argsstring>
+        <name>family</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.family</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="224" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1server_1_1BaseWSGIServer_1a8155bc8dd3e3e2626c0b1b12d6b55c4c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer::socktype</definition>
+        <argsstring></argsstring>
+        <name>socktype</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.socktype</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="225" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1server_1_1BaseWSGIServer_1a3bbe26219ddb2bf6e28a4d81cc7b58b1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer::application</definition>
+        <argsstring></argsstring>
+        <name>application</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.application</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="226" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="226" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1server_1_1BaseWSGIServer_1a7e8c777733502be6847adc05895444f3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer::adj</definition>
+        <argsstring></argsstring>
+        <name>adj</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.adj</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="227" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="227" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1server_1_1BaseWSGIServer_1a9e92e3fd97f83ed931d84b2457a45044" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer::trigger</definition>
+        <argsstring></argsstring>
+        <name>trigger</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.trigger</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="228" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="228" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1server_1_1BaseWSGIServer_1a82f8c54370612b10ec14759c96cf3078" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer::task_dispatcher</definition>
+        <argsstring></argsstring>
+        <name>task_dispatcher</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.task_dispatcher</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="233" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1server_1_1BaseWSGIServer_1a8412234f5b2f6070fc17822365f94bfc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer::effective_host</definition>
+        <argsstring></argsstring>
+        <name>effective_host</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.effective_host</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="245" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1server_1_1BaseWSGIServer_1a5c70af226a6435f6fe181881585017c6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer::effective_port</definition>
+        <argsstring></argsstring>
+        <name>effective_port</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.effective_port</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="245" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1server_1_1BaseWSGIServer_1aa8893333eee857db24ae7e1fefdca5da" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer::server_name</definition>
+        <argsstring></argsstring>
+        <name>server_name</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.server_name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="246" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1server_1_1BaseWSGIServer_1a2d213bd06fa2b23be55899c2d3b8fd5a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer::active_channels</definition>
+        <argsstring></argsstring>
+        <name>active_channels</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.active_channels</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="247" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1server_1_1BaseWSGIServer_1af35e813ecf596ad4c809797005a6b2a0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer::accepting</definition>
+        <argsstring></argsstring>
+        <name>accepting</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.accepting</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="258" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="258" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1server_1_1BaseWSGIServer_1a97c687b2887cea9bd0e88e5d1e80c695" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer::next_channel_cleanup</definition>
+        <argsstring></argsstring>
+        <name>next_channel_cleanup</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.next_channel_cleanup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="267" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="267" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwaitress_1_1server_1_1BaseWSGIServer_1ae0fc1c79536d04136d215ee26a400d1a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer::in_connection_overflow</definition>
+        <argsstring></argsstring>
+        <name>in_connection_overflow</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.in_connection_overflow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="275" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="275" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classwaitress_1_1server_1_1BaseWSGIServer_1a2cfb89b71fd04d5525e797ea96ee6482" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer::_map</definition>
+        <argsstring></argsstring>
+        <name>_map</name>
+        <qualifiedname>waitress.server.BaseWSGIServer._map</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="273" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="273" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwaitress_1_1server_1_1BaseWSGIServer_1aa9683206e9c372cbf50df890eb5fa952" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer.__init__</definition>
+        <argsstring>(self, application, map=None, _start=True, _sock=None, dispatcher=None, adj=None, sockinfo=None, bind_socket=True, **kw)</argsstring>
+        <name>__init__</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.__init__</qualifiedname>
+        <reimplements refid="classwaitress_1_1wasyncore_1_1dispatcher_1a4e91c5b7a63d909616a10564ff4f6e79">__init__</reimplements>
+        <reimplementedby refid="classwebtest_1_1http_1_1StopableWSGIServer_1a1d6c5db7d483419daae2f453e6ca837b">__init__</reimplementedby>
+        <reimplementedby refid="classwaitress_1_1server_1_1UnixWSGIServer_1a583fea734a31a7a9fe3a80f7db049739">__init__</reimplementedby>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classwaitress_1_1server_1_1BaseWSGIServer_1a3bbe26219ddb2bf6e28a4d81cc7b58b1" kindref="member">application</ref></type>
+          <defname>application</defname>
+        </param>
+        <param>
+          <type>map</type>
+          <defname>map</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>_start</type>
+          <defname>_start</defname>
+          <defval>True</defval>
+        </param>
+        <param>
+          <type>_sock</type>
+          <defname>_sock</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>dispatcher</type>
+          <defname>dispatcher</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type><ref refid="classwaitress_1_1server_1_1BaseWSGIServer_1a7e8c777733502be6847adc05895444f3" kindref="member">adj</ref></type>
+          <defname>adj</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type><ref refid="classwaitress_1_1server_1_1BaseWSGIServer_1a3389c37adf04e1a4b2d8f11fc551a875" kindref="member">sockinfo</ref></type>
+          <defname>sockinfo</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>bind_socket</type>
+          <defname>bind_socket</defname>
+          <defval>True</defval>
+        </param>
+        <param>
+          <type>**</type>
+          <declname>kw</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="186" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="197" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1server_1_1BaseWSGIServer_1a9909d39b924af8b34e61145bc375e7c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer.bind_server_socket</definition>
+        <argsstring>(self)</argsstring>
+        <name>bind_server_socket</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.bind_server_socket</qualifiedname>
+        <reimplementedby refid="classwaitress_1_1server_1_1TcpWSGIServer_1a973a7f95f3cfc4980dc03d4cdee72ac3">bind_server_socket</reimplementedby>
+        <reimplementedby refid="classwaitress_1_1server_1_1UnixWSGIServer_1a6a5429ffb355a94a23c1267c3eaf6b4d">bind_server_socket</reimplementedby>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="251" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="251" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1server_1_1BaseWSGIServer_1a7200b9aa38dc8f11eb4387fb8b74547b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer.getsockname</definition>
+        <argsstring>(self)</argsstring>
+        <name>getsockname</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.getsockname</qualifiedname>
+        <reimplementedby refid="classwaitress_1_1server_1_1TcpWSGIServer_1ad2665ccdeda97762875ee13fce2049b2">getsockname</reimplementedby>
+        <reimplementedby refid="classwaitress_1_1server_1_1UnixWSGIServer_1a757706da05ebfb76d7b94937af775702">getsockname</reimplementedby>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="254" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="254" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1server_1_1BaseWSGIServer_1a043b8c6bce1cb3c2416b53d650bb6b0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer.accept_connections</definition>
+        <argsstring>(self)</argsstring>
+        <name>accept_connections</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.accept_connections</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="257" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="257" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1server_1_1BaseWSGIServer_1aa62bd95573fdbdf54be7fb15889971e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer.add_task</definition>
+        <argsstring>(self, task)</argsstring>
+        <name>add_task</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.add_task</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>task</type>
+          <defname>task</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="261" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="261" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1server_1_1BaseWSGIServer_1a48b794d3530c86a39a5f7973aef271a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer.readable</definition>
+        <argsstring>(self)</argsstring>
+        <name>readable</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.readable</qualifiedname>
+        <reimplements refid="classwaitress_1_1wasyncore_1_1dispatcher_1a1e8d638be2f79f1f0ecc3b30312ea99d">readable</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="264" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="264" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1server_1_1BaseWSGIServer_1a19f2e47466634db21e8896a20cb4102d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer.writable</definition>
+        <argsstring>(self)</argsstring>
+        <name>writable</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.writable</qualifiedname>
+        <reimplements refid="classwaitress_1_1wasyncore_1_1dispatcher_1addde53d853292402cbcf9b52a44d5227">writable</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="292" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="292" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1server_1_1BaseWSGIServer_1a6ac1c25caede4ca4840cd3f8c4e7b2e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer.handle_read</definition>
+        <argsstring>(self)</argsstring>
+        <name>handle_read</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.handle_read</qualifiedname>
+        <reimplements refid="classwaitress_1_1wasyncore_1_1dispatcher_1a1b12b5f8aca373b091f81df30f90c4ca">handle_read</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="295" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="295" bodyend="297"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1server_1_1BaseWSGIServer_1af55dcd7f5c1c9ecead7a4b32a06fc41f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer.handle_connect</definition>
+        <argsstring>(self)</argsstring>
+        <name>handle_connect</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.handle_connect</qualifiedname>
+        <reimplements refid="classwaitress_1_1wasyncore_1_1dispatcher_1ad84d783b23119d88a2675115b4ec9120">handle_connect</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="298" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="298" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1server_1_1BaseWSGIServer_1af5fa6c8d70f71409d3b84b29d57ab1c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer.handle_accept</definition>
+        <argsstring>(self)</argsstring>
+        <name>handle_accept</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.handle_accept</qualifiedname>
+        <reimplements refid="classwaitress_1_1wasyncore_1_1dispatcher_1abb651db4478a77832580cb821bf60ca6">handle_accept</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="301" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="301" bodyend="322"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1server_1_1BaseWSGIServer_1a4a813787e639d9e2dbe9416cbab68da6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer.run</definition>
+        <argsstring>(self)</argsstring>
+        <name>run</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.run</qualifiedname>
+        <reimplementedby refid="classwebtest_1_1http_1_1StopableWSGIServer_1a573e04c5ae31063e1f4786212c111a02">run</reimplementedby>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="323" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="323" bodyend="332"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1server_1_1BaseWSGIServer_1a12b656c42089e116ba4188fa76fb7049" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer.pull_trigger</definition>
+        <argsstring>(self)</argsstring>
+        <name>pull_trigger</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.pull_trigger</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="333" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="333" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1server_1_1BaseWSGIServer_1a4c7b68d8909ab427d803a98ac955c190" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer.set_socket_options</definition>
+        <argsstring>(self, conn)</argsstring>
+        <name>set_socket_options</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.set_socket_options</qualifiedname>
+        <reimplementedby refid="classwaitress_1_1server_1_1TcpWSGIServer_1a1f247a6f05a97230b5353d585b7a6f10">set_socket_options</reimplementedby>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>conn</type>
+          <defname>conn</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="336" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="336" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1server_1_1BaseWSGIServer_1a405818ecd725186eef027e9f9eb463b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer.fix_addr</definition>
+        <argsstring>(self, addr)</argsstring>
+        <name>fix_addr</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.fix_addr</qualifiedname>
+        <reimplementedby refid="classwaitress_1_1server_1_1UnixWSGIServer_1ade254e58a2dd6f6c3addd5531a3b2f11">fix_addr</reimplementedby>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classwaitress_1_1wasyncore_1_1dispatcher_1a53d6c8ccb4987b67b74183e368169c83" kindref="member">addr</ref></type>
+          <defname>addr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="339" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="339" bodyend="341"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1server_1_1BaseWSGIServer_1addbabb47d62a649dda87936b23e09b13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer.maintenance</definition>
+        <argsstring>(self, now)</argsstring>
+        <name>maintenance</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.maintenance</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>now</type>
+          <defname>now</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Closes channels that have not had any activity in a while.
+
+The timeout is configured through adj.channel_timeout (seconds).
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="342" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="342" bodyend="352"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1server_1_1BaseWSGIServer_1a7def95edc17edf6c24d6550a13503ef9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer.print_listen</definition>
+        <argsstring>(self, format_str)</argsstring>
+        <name>print_listen</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.print_listen</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>format_str</type>
+          <defname>format_str</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="353" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="353" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="function" id="classwaitress_1_1server_1_1BaseWSGIServer_1afe8159489fb06b9cd5e38397e5cb4232" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.server.BaseWSGIServer.close</definition>
+        <argsstring>(self)</argsstring>
+        <name>close</name>
+        <qualifiedname>waitress.server.BaseWSGIServer.close</qualifiedname>
+        <reimplements refid="classwaitress_1_1wasyncore_1_1dispatcher_1a583c436524ac65442f8c2b3785a44b5c">close</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="356" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="356" bodyend="360"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>waitress.server.BaseWSGIServer</label>
+        <link refid="classwaitress_1_1server_1_1BaseWSGIServer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>waitress.server.TcpWSGIServer</label>
+        <link refid="classwaitress_1_1server_1_1TcpWSGIServer"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>waitress.server.UnixWSGIServer</label>
+        <link refid="classwaitress_1_1server_1_1UnixWSGIServer"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>waitress.wasyncore.dispatcher</label>
+        <link refid="classwaitress_1_1wasyncore_1_1dispatcher"/>
+      </node>
+      <node id="4">
+        <label>webtest.http.StopableWSGIServer</label>
+        <link refid="classwebtest_1_1http_1_1StopableWSGIServer"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>waitress.server.BaseWSGIServer</label>
+        <link refid="classwaitress_1_1server_1_1BaseWSGIServer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>waitress.wasyncore.dispatcher</label>
+        <link refid="classwaitress_1_1wasyncore_1_1dispatcher"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" line="179" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/server.py" bodystart="179" bodyend="360"/>
+    <listofallmembers>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1aa9683206e9c372cbf50df890eb5fa952" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>__init__</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a2cfb89b71fd04d5525e797ea96ee6482" prot="protected" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>_map</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a043b8c6bce1cb3c2416b53d650bb6b0f" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>accept_connections</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1af35e813ecf596ad4c809797005a6b2a0" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>accepting</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a2d213bd06fa2b23be55899c2d3b8fd5a" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>active_channels</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1aa62bd95573fdbdf54be7fb15889971e1" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>add_task</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a7e8c777733502be6847adc05895444f3" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>adj</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a3bbe26219ddb2bf6e28a4d81cc7b58b1" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>application</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a6a3dcac9aaef2b535dcc23fc7cf147d1" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>asyncore</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a9909d39b924af8b34e61145bc375e7c5" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>bind_server_socket</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a092cc9e24a31bb6cb0a1eafe02ccb1c8" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>channel_class</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1afe8159489fb06b9cd5e38397e5cb4232" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>close</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a8412234f5b2f6070fc17822365f94bfc" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>effective_host</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a5c70af226a6435f6fe181881585017c6" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>effective_port</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a8d3dd99a5a2bf67cc5b9c85a5cf97771" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>family</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a405818ecd725186eef027e9f9eb463b1" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>fix_addr</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a7200b9aa38dc8f11eb4387fb8b74547b" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>getsockname</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1af5fa6c8d70f71409d3b84b29d57ab1c7" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>handle_accept</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1af55dcd7f5c1c9ecead7a4b32a06fc41f" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>handle_connect</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a6ac1c25caede4ca4840cd3f8c4e7b2e0" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>handle_read</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a79e69d7638e67d6fafdd7e3bcf53845f" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>in_connection_overflow</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1ae0fc1c79536d04136d215ee26a400d1a" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>in_connection_overflow</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1addbabb47d62a649dda87936b23e09b13" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>maintenance</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a74d1f4c9048163bedaf4f2d354e3ecb7" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>next_channel_cleanup</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a97c687b2887cea9bd0e88e5d1e80c695" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>next_channel_cleanup</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a7def95edc17edf6c24d6550a13503ef9" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>print_listen</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a12b656c42089e116ba4188fa76fb7049" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>pull_trigger</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a48b794d3530c86a39a5f7973aef271a0" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>readable</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a4a813787e639d9e2dbe9416cbab68da6" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>run</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1aa8893333eee857db24ae7e1fefdca5da" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>server_name</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a4c7b68d8909ab427d803a98ac955c190" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>set_socket_options</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a0dd0967538cd6520191bd5234f245331" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>socketmod</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a3389c37adf04e1a4b2d8f11fc551a875" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>sockinfo</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a8155bc8dd3e3e2626c0b1b12d6b55c4c" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>socktype</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a82f8c54370612b10ec14759c96cf3078" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>task_dispatcher</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a9e92e3fd97f83ed931d84b2457a45044" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>trigger</name></member>
+      <member refid="classwaitress_1_1server_1_1BaseWSGIServer_1a19f2e47466634db21e8896a20cb4102d" prot="public" virt="non-virtual"><scope>waitress::server::BaseWSGIServer</scope><name>writable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

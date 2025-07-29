@@ -1,0 +1,157 @@
+.TH "bs4.tests.test_html5lib.TestHTML5LibBuilder" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bs4.tests.test_html5lib.TestHTML5LibBuilder
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits HTML5TreeBuilderSmokeTest\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBdefault_builder\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_soupstrainer\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_correctly_nested_tables\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_xml_declaration_followed_by_doctype\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_reparented_markup\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_reparented_markup_ends_with_whitespace\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_reparented_markup_containing_identical_whitespace_nodes\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_reparented_markup_containing_children\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_processing_instruction\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_cloned_multivalue_node\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_foster_parenting\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_extraction\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_empty_comment\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_tracking_line_numbers\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_special_string_containers\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_html5_attributes\fP (self)"
+.br
+.ti -1c
+.RI "\fBtest_prepare_markup_warnings\fP (self, name, value)"
+.br
+.ti -1c
+.RI "\fBtest_doctype_filtered\fP (self)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+See ``HTML5TreeBuilderSmokeTest``\&.
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "bs4\&.tests\&.test_html5lib\&.TestHTML5LibBuilder\&.default_builder ( self)"
+
+.SS "bs4\&.tests\&.test_html5lib\&.TestHTML5LibBuilder\&.test_cloned_multivalue_node ( self)"
+
+.SS "bs4\&.tests\&.test_html5lib\&.TestHTML5LibBuilder\&.test_correctly_nested_tables ( self)"
+
+.PP
+.nf
+html5lib inserts <tbody> tags where other parsers don't\&.
+.fi
+.PP
+ 
+.SS "bs4\&.tests\&.test_html5lib\&.TestHTML5LibBuilder\&.test_doctype_filtered ( self)"
+
+.SS "bs4\&.tests\&.test_html5lib\&.TestHTML5LibBuilder\&.test_empty_comment ( self)"
+
+.PP
+.nf
+Test that empty comment does not break structure\&.
+
+https://bugs\&.launchpad\&.net/beautifulsoup/+bug/1806598
+
+.fi
+.PP
+ 
+.SS "bs4\&.tests\&.test_html5lib\&.TestHTML5LibBuilder\&.test_extraction ( self)"
+
+.PP
+.nf
+Test that extraction does not destroy the tree\&.
+
+https://bugs\&.launchpad\&.net/beautifulsoup/+bug/1782928
+
+.fi
+.PP
+ 
+.SS "bs4\&.tests\&.test_html5lib\&.TestHTML5LibBuilder\&.test_foster_parenting ( self)"
+
+.SS "bs4\&.tests\&.test_html5lib\&.TestHTML5LibBuilder\&.test_html5_attributes ( self)"
+
+.SS "bs4\&.tests\&.test_html5lib\&.TestHTML5LibBuilder\&.test_prepare_markup_warnings ( self,  name,  value)"
+
+.SS "bs4\&.tests\&.test_html5lib\&.TestHTML5LibBuilder\&.test_processing_instruction ( self)"
+
+.PP
+.nf
+Processing instructions become comments\&.
+.fi
+.PP
+ 
+.SS "bs4\&.tests\&.test_html5lib\&.TestHTML5LibBuilder\&.test_reparented_markup ( self)"
+
+.SS "bs4\&.tests\&.test_html5lib\&.TestHTML5LibBuilder\&.test_reparented_markup_containing_children ( self)"
+
+.SS "bs4\&.tests\&.test_html5lib\&.TestHTML5LibBuilder\&.test_reparented_markup_containing_identical_whitespace_nodes ( self)"
+
+.PP
+.nf
+Verify that we keep the two whitespace nodes in this
+document distinct when reparenting the adjacent <tbody> tags\&.
+
+.fi
+.PP
+ 
+.SS "bs4\&.tests\&.test_html5lib\&.TestHTML5LibBuilder\&.test_reparented_markup_ends_with_whitespace ( self)"
+
+.SS "bs4\&.tests\&.test_html5lib\&.TestHTML5LibBuilder\&.test_soupstrainer ( self)"
+
+.SS "bs4\&.tests\&.test_html5lib\&.TestHTML5LibBuilder\&.test_special_string_containers ( self)"
+
+.SS "bs4\&.tests\&.test_html5lib\&.TestHTML5LibBuilder\&.test_tracking_line_numbers ( self)"
+
+.SS "bs4\&.tests\&.test_html5lib\&.TestHTML5LibBuilder\&.test_xml_declaration_followed_by_doctype ( self)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

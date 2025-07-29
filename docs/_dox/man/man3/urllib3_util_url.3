@@ -1,0 +1,315 @@
+.TH "urllib3.util.url" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+urllib3.util.url
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBUrl\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fB_encode_invalid_chars\fP (str component, typing\&.Container[str] allowed_chars)"
+.br
+.ti -1c
+.RI "None \fB_encode_invalid_chars\fP (None component, typing\&.Container[str] allowed_chars)"
+.br
+.ti -1c
+.RI "str|None \fB_encode_invalid_chars\fP (str|None component, typing\&.Container[str] allowed_chars)"
+.br
+.ti -1c
+.RI "str \fB_remove_path_dot_segments\fP (str path)"
+.br
+.ti -1c
+.RI "None \fB_normalize_host\fP (None host, str|None scheme)"
+.br
+.ti -1c
+.RI "str \fB_normalize_host\fP (str host, str|None scheme)"
+.br
+.ti -1c
+.RI "str|None \fB_normalize_host\fP (str|None host, str|None scheme)"
+.br
+.ti -1c
+.RI "bytes \fB_idna_encode\fP (str name)"
+.br
+.ti -1c
+.RI "str \fB_encode_target\fP (str target)"
+.br
+.ti -1c
+.RI "\fBUrl\fP \fBparse_url\fP (str url)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tuple \fB_NORMALIZABLE_SCHEMES\fP = ('http', 'https', None)"
+.br
+.ti -1c
+.RI "\fB_PERCENT_RE\fP = re\&.compile(r'%[a\-fA\-F0\-9]{2}')"
+.br
+.ti -1c
+.RI "\fB_SCHEME_RE\fP = re\&.compile(r'^(?:[a\-zA\-Z][a\-zA\-Z0\-9+\-]*:|/)')"
+.br
+.ti -1c
+.RI "\fB_URI_RE\fP"
+.br
+.ti -1c
+.RI "str \fB_IPV4_PAT\fP = r'(?:[0\-9]{1,3}\\\&.){3}[0\-9]{1,3}'"
+.br
+.ti -1c
+.RI "str \fB_HEX_PAT\fP = '[0\-9A\-Fa\-f]{1,4}'"
+.br
+.ti -1c
+.RI "str \fB_LS32_PAT\fP = '(?:{hex}:{hex}|{ipv4})'\&.format(hex=\fB_HEX_PAT\fP, ipv4=\fB_IPV4_PAT\fP)"
+.br
+.ti -1c
+.RI "dict \fB_subs\fP = {'hex': \fB_HEX_PAT\fP, 'ls32': \fB_LS32_PAT\fP}"
+.br
+.ti -1c
+.RI "list \fB_variations\fP"
+.br
+.ti -1c
+.RI "str \fB_UNRESERVED_PAT\fP = r'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\&._\\\-~'"
+.br
+.ti -1c
+.RI "str \fB_IPV6_PAT\fP = '(?:' + '|'\&.join([x % \fB_subs\fP for x in \fB_variations\fP]) + ')'"
+.br
+.ti -1c
+.RI "str \fB_ZONE_ID_PAT\fP = '(?:%25|%)(?:[' + \fB_UNRESERVED_PAT\fP + ']|%[a\-fA\-F0\-9]{2})+'"
+.br
+.ti -1c
+.RI "str \fB_IPV6_ADDRZ_PAT\fP = r'\\[' + _IPV6_PAT + r'(?:' + _ZONE_ID_PAT + r')?\\]'"
+.br
+.ti -1c
+.RI "str \fB_REG_NAME_PAT\fP = r'(?:[^\\[\\]%:/?#]|%[a\-fA\-F0\-9]{2})*'"
+.br
+.ti -1c
+.RI "\fB_TARGET_RE\fP = re\&.compile(r'^(/[^?#]*)(?:\\?([^#]*))?(?:#\&.*)?$')"
+.br
+.ti -1c
+.RI "\fB_IPV4_RE\fP = re\&.compile('^' + \fB_IPV4_PAT\fP + '$')"
+.br
+.ti -1c
+.RI "\fB_IPV6_RE\fP = re\&.compile('^' + \fB_IPV6_PAT\fP + '$')"
+.br
+.ti -1c
+.RI "\fB_IPV6_ADDRZ_RE\fP = re\&.compile('^' + \fB_IPV6_ADDRZ_PAT\fP + '$')"
+.br
+.ti -1c
+.RI "\fB_BRACELESS_IPV6_ADDRZ_RE\fP = re\&.compile('^' + \fB_IPV6_ADDRZ_PAT\fP[2:\-2] + '$')"
+.br
+.ti -1c
+.RI "\fB_ZONE_ID_RE\fP = re\&.compile('(' + \fB_ZONE_ID_PAT\fP + r')\\]$')"
+.br
+.ti -1c
+.RI "tuple \fB_HOST_PORT_PAT\fP"
+.br
+.ti -1c
+.RI "\fB_HOST_PORT_RE\fP = re\&.compile(\fB_HOST_PORT_PAT\fP, re\&.UNICODE | re\&.DOTALL)"
+.br
+.ti -1c
+.RI "\fB_UNRESERVED_CHARS\fP"
+.br
+.ti -1c
+.RI "\fB_SUB_DELIM_CHARS\fP = set('!$&'()*+,;=')"
+.br
+.ti -1c
+.RI "\fB_USERINFO_CHARS\fP = \fB_UNRESERVED_CHARS\fP | \fB_SUB_DELIM_CHARS\fP | {':'}"
+.br
+.ti -1c
+.RI "\fB_PATH_CHARS\fP = \fB_USERINFO_CHARS\fP | {'@', '/'}"
+.br
+.ti -1c
+.RI "\fB_QUERY_CHARS\fP = \fB_PATH_CHARS\fP | {'?'}"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " None urllib3\&.util\&.url\&._encode_invalid_chars (None component, typing\&.Container[str]
+ allowed_chars)\fC [protected]\fP"
+
+.SS " str urllib3\&.util\&.url\&._encode_invalid_chars (str component, typing\&.Container[str]
+ allowed_chars)\fC [protected]\fP"
+
+.SS " str | None urllib3\&.util\&.url\&._encode_invalid_chars (str | None component, typing\&.Container[str]
+ allowed_chars)\fC [protected]\fP"
+
+.PP
+.nf
+Percent-encodes a URI component without reapplying
+onto an already percent-encoded component\&.
+
+.fi
+.PP
+ 
+.SS " str urllib3\&.util\&.url\&._encode_target (str target)\fC [protected]\fP"
+
+.PP
+.nf
+Percent-encodes a request target so that there are no invalid characters
+
+Pre-condition for this function is that 'target' must start with '/'\&.
+If that is the case then _TARGET_RE will always produce a match\&.
+
+.fi
+.PP
+ 
+.SS " bytes urllib3\&.util\&.url\&._idna_encode (str name)\fC [protected]\fP"
+
+.SS " None urllib3\&.util\&.url\&._normalize_host (None host, str | None scheme)\fC [protected]\fP"
+
+.SS " str urllib3\&.util\&.url\&._normalize_host (str host, str | None scheme)\fC [protected]\fP"
+
+.SS " str | None urllib3\&.util\&.url\&._normalize_host (str | None host, str | None scheme)\fC [protected]\fP"
+
+.SS " str urllib3\&.util\&.url\&._remove_path_dot_segments (str path)\fC [protected]\fP"
+
+.SS " \fBUrl\fP urllib3\&.util\&.url\&.parse_url (str url)"
+
+.PP
+.nf
+Given a url, return a parsed :class:`\&.Url` namedtuple\&. Best-effort is
+performed to parse incomplete urls\&. Fields not provided will be None\&.
+This parser is RFC 3986 and RFC 6874 compliant\&.
+
+The parser logic and helper functions are based heavily on
+work done in the ``rfc3986`` module\&.
+
+:param str url: URL to parse into a :class:`\&.Url` namedtuple\&.
+
+Partly backwards-compatible with :mod:`urllib\&.parse`\&.
+
+Example:
+
+\&.\&. code-block:: python
+
+    import urllib3
+
+    print( urllib3\&.util\&.parse_url('http://google\&.com/mail/'))
+    # Url(scheme='http', host='google\&.com', port=None, path='/mail/', \&.\&.\&.)
+
+    print( urllib3\&.util\&.parse_url('google\&.com:80'))
+    # Url(scheme=None, host='google\&.com', port=80, path=None, \&.\&.\&.)
+
+    print( urllib3\&.util\&.parse_url('/foo?bar'))
+    # Url(scheme=None, host=None, port=None, path='/foo', query='bar', \&.\&.\&.)
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "urllib3\&.util\&.url\&._BRACELESS_IPV6_ADDRZ_RE = re\&.compile('^' + \fB_IPV6_ADDRZ_PAT\fP[2:\-2] + '$')\fC [protected]\fP"
+
+.SS "str urllib3\&.util\&.url\&._HEX_PAT = '[0\-9A\-Fa\-f]{1,4}'\fC [protected]\fP"
+
+.SS "tuple urllib3\&.util\&.url\&._HOST_PORT_PAT\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  ("^(%s|%s|%s)(?::0*?(|0|[1\-9][0\-9]{0,4}))?$") % (
+2     _REG_NAME_PAT,
+3     _IPV4_PAT,
+4     _IPV6_ADDRZ_PAT,
+5 )
+.fi
+
+.SS "urllib3\&.util\&.url\&._HOST_PORT_RE = re\&.compile(\fB_HOST_PORT_PAT\fP, re\&.UNICODE | re\&.DOTALL)\fC [protected]\fP"
+
+.SS "str urllib3\&.util\&.url\&._IPV4_PAT = r'(?:[0\-9]{1,3}\\\&.){3}[0\-9]{1,3}'\fC [protected]\fP"
+
+.SS "urllib3\&.util\&.url\&._IPV4_RE = re\&.compile('^' + \fB_IPV4_PAT\fP + '$')\fC [protected]\fP"
+
+.SS "str urllib3\&.util\&.url\&._IPV6_ADDRZ_PAT = r'\\[' + _IPV6_PAT + r'(?:' + _ZONE_ID_PAT + r')?\\]'\fC [protected]\fP"
+
+.SS "urllib3\&.util\&.url\&._IPV6_ADDRZ_RE = re\&.compile('^' + \fB_IPV6_ADDRZ_PAT\fP + '$')\fC [protected]\fP"
+
+.SS "str urllib3\&.util\&.url\&._IPV6_PAT = '(?:' + '|'\&.join([x % \fB_subs\fP for x in \fB_variations\fP]) + ')'\fC [protected]\fP"
+
+.SS "urllib3\&.util\&.url\&._IPV6_RE = re\&.compile('^' + \fB_IPV6_PAT\fP + '$')\fC [protected]\fP"
+
+.SS "str urllib3\&.util\&.url\&._LS32_PAT = '(?:{hex}:{hex}|{ipv4})'\&.format(hex=\fB_HEX_PAT\fP, ipv4=\fB_IPV4_PAT\fP)\fC [protected]\fP"
+
+.SS "tuple urllib3\&.util\&.url\&._NORMALIZABLE_SCHEMES = ('http', 'https', None)\fC [protected]\fP"
+
+.SS "urllib3\&.util\&.url\&._PATH_CHARS = \fB_USERINFO_CHARS\fP | {'@', '/'}\fC [protected]\fP"
+
+.SS "urllib3\&.util\&.url\&._PERCENT_RE = re\&.compile(r'%[a\-fA\-F0\-9]{2}')\fC [protected]\fP"
+
+.SS "urllib3\&.util\&.url\&._QUERY_CHARS = \fB_PATH_CHARS\fP | {'?'}\fC [protected]\fP"
+
+.SS "str urllib3\&.util\&.url\&._REG_NAME_PAT = r'(?:[^\\[\\]%:/?#]|%[a\-fA\-F0\-9]{2})*'\fC [protected]\fP"
+
+.SS "urllib3\&.util\&.url\&._SCHEME_RE = re\&.compile(r'^(?:[a\-zA\-Z][a\-zA\-Z0\-9+\-]*:|/)')\fC [protected]\fP"
+
+.SS "urllib3\&.util\&.url\&._SUB_DELIM_CHARS = set('!$&'()*+,;=')\fC [protected]\fP"
+
+.SS "dict urllib3\&.util\&.url\&._subs = {'hex': \fB_HEX_PAT\fP, 'ls32': \fB_LS32_PAT\fP}\fC [protected]\fP"
+
+.SS "urllib3\&.util\&.url\&._TARGET_RE = re\&.compile(r'^(/[^?#]*)(?:\\?([^#]*))?(?:#\&.*)?$')\fC [protected]\fP"
+
+.SS "urllib3\&.util\&.url\&._UNRESERVED_CHARS\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  set(
+2     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\&._\-~"
+3 )
+.fi
+
+.SS "str urllib3\&.util\&.url\&._UNRESERVED_PAT = r'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\&._\\\-~'\fC [protected]\fP"
+
+.SS "urllib3\&.util\&.url\&._URI_RE\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(
+2     r"^(?:([a\-zA\-Z][a\-zA\-Z0\-9+\&.\-]*):)?"
+3     r"(?://([^\\\\/?#]*))?"
+4     r"([^?#]*)"
+5     r"(?:\\?([^#]*))?"
+6     r"(?:#(\&.*))?$",
+7     re\&.UNICODE | re\&.DOTALL,
+8 )
+.fi
+
+.SS "urllib3\&.util\&.url\&._USERINFO_CHARS = \fB_UNRESERVED_CHARS\fP | \fB_SUB_DELIM_CHARS\fP | {':'}\fC [protected]\fP"
+
+.SS "list urllib3\&.util\&.url\&._variations\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  [
+2     #                            6( h16 ":" ) ls32
+3     "(?:%(hex)s:){6}%(ls32)s",
+4     #                       "::" 5( h16 ":" ) ls32
+5     "::(?:%(hex)s:){5}%(ls32)s",
+6     # [               h16 ] "::" 4( h16 ":" ) ls32
+7     "(?:%(hex)s)?::(?:%(hex)s:){4}%(ls32)s",
+8     # [ *1( h16 ":" ) h16 ] "::" 3( h16 ":" ) ls32
+9     "(?:(?:%(hex)s:)?%(hex)s)?::(?:%(hex)s:){3}%(ls32)s",
+10     # [ *2( h16 ":" ) h16 ] "::" 2( h16 ":" ) ls32
+11     "(?:(?:%(hex)s:){0,2}%(hex)s)?::(?:%(hex)s:){2}%(ls32)s",
+12     # [ *3( h16 ":" ) h16 ] "::"    h16 ":"   ls32
+13     "(?:(?:%(hex)s:){0,3}%(hex)s)?::%(hex)s:%(ls32)s",
+14     # [ *4( h16 ":" ) h16 ] "::"              ls32
+15     "(?:(?:%(hex)s:){0,4}%(hex)s)?::%(ls32)s",
+16     # [ *5( h16 ":" ) h16 ] "::"              h16
+17     "(?:(?:%(hex)s:){0,5}%(hex)s)?::%(hex)s",
+18     # [ *6( h16 ":" ) h16 ] "::"
+19     "(?:(?:%(hex)s:){0,6}%(hex)s)?::",
+20 ]
+.fi
+
+.SS "str urllib3\&.util\&.url\&._ZONE_ID_PAT = '(?:%25|%)(?:[' + \fB_UNRESERVED_PAT\fP + ']|%[a\-fA\-F0\-9]{2})+'\fC [protected]\fP"
+
+.SS "urllib3\&.util\&.url\&._ZONE_ID_RE = re\&.compile('(' + \fB_ZONE_ID_PAT\fP + r')\\]$')\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

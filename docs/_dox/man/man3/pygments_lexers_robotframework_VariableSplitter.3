@@ -1,0 +1,174 @@
+.TH "pygments.lexers.robotframework.VariableSplitter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.lexers.robotframework.VariableSplitter
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, string, identifiers)"
+.br
+.ti -1c
+.RI "\fBget_replaced_base\fP (self, variables)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBidentifier\fP"
+.br
+.ti -1c
+.RI "\fBbase\fP"
+.br
+.ti -1c
+.RI "\fBindex\fP"
+.br
+.ti -1c
+.RI "\fBstart\fP"
+.br
+.ti -1c
+.RI "\fBend\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_finalize\fP (self)"
+.br
+.ti -1c
+.RI "\fB_has_list_or_dict_variable_index\fP (self)"
+.br
+.ti -1c
+.RI "\fB_split\fP (self, string)"
+.br
+.ti -1c
+.RI "\fB_scanning_list_variable_index\fP (self)"
+.br
+.ti -1c
+.RI "\fB_find_variable\fP (self, string)"
+.br
+.ti -1c
+.RI "\fB_find_start_index\fP (self, string, \fBstart\fP, \fBend\fP)"
+.br
+.ti -1c
+.RI "\fB_start_index_is_ok\fP (self, string, \fBindex\fP)"
+.br
+.ti -1c
+.RI "\fB_is_escaped\fP (self, string, \fBindex\fP)"
+.br
+.ti -1c
+.RI "\fB_variable_state\fP (self, char, \fBindex\fP)"
+.br
+.ti -1c
+.RI "\fB_is_list_or_dict_variable\fP (self)"
+.br
+.ti -1c
+.RI "\fB_internal_variable_start_state\fP (self, char, \fBindex\fP)"
+.br
+.ti -1c
+.RI "\fB_waiting_list_variable_index_state\fP (self, char, \fBindex\fP)"
+.br
+.ti -1c
+.RI "\fB_list_variable_index_state\fP (self, char, \fBindex\fP)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_identifiers\fP"
+.br
+.ti -1c
+.RI "\fB_may_have_internal_variables\fP"
+.br
+.ti -1c
+.RI "\fB_open_curly\fP"
+.br
+.ti -1c
+.RI "\fB_state\fP"
+.br
+.ti -1c
+.RI "\fB_variable_chars\fP"
+.br
+.ti -1c
+.RI "\fB_list_and_dict_variable_index_chars\fP"
+.br
+.ti -1c
+.RI "\fB_string\fP"
+.br
+.ti -1c
+.RI "\fB_waiting_list_variable_index_state\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&.__init__ ( self,  string,  identifiers)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&._finalize ( self)\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&._find_start_index ( self,  string,  start,  end)\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&._find_variable ( self,  string)\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&._has_list_or_dict_variable_index ( self)\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&._internal_variable_start_state ( self,  char,  index)\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&._is_escaped ( self,  string,  index)\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&._is_list_or_dict_variable ( self)\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&._list_variable_index_state ( self,  char,  index)\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&._scanning_list_variable_index ( self)\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&._split ( self,  string)\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&._start_index_is_ok ( self,  string,  index)\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&._variable_state ( self,  char,  index)\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&._waiting_list_variable_index_state ( self,  char,  index)\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&.get_replaced_base ( self,  variables)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&._identifiers\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&._list_and_dict_variable_index_chars\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&._may_have_internal_variables\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&._open_curly\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&._state\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&._string\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&._variable_chars\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&._waiting_list_variable_index_state\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&.base"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&.end"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&.identifier"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&.index"
+
+.SS "pygments\&.lexers\&.robotframework\&.VariableSplitter\&.start"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

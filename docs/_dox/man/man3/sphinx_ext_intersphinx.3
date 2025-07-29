@@ -1,0 +1,92 @@
+.TH "sphinx.ext.intersphinx" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.ext.intersphinx
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fB__main__\fP"
+.br
+.ti -1c
+.RI "namespace \fB_cli\fP"
+.br
+.ti -1c
+.RI "namespace \fB_load\fP"
+.br
+.ti -1c
+.RI "namespace \fB_resolve\fP"
+.br
+.ti -1c
+.RI "namespace \fB_shared\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBExtensionMetadata\fP \fBsetup\fP (\fBSphinx\fP app)"
+.br
+.ti -1c
+.RI "object \fB__getattr__\fP (str name)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "dict \fB_DEPRECATED_OBJECTS\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Insert links to objects documented in remote Sphinx documentation\&.
+
+This works as follows:
+
+* Each Sphinx HTML build creates a file named 'objects\&.inv' that contains a
+  mapping from object names to URIs relative to the HTML set's root\&.
+
+* Projects using the Intersphinx extension can specify links to such mapping
+  files in the `intersphinx_mapping` config value\&.  The mapping will then be
+  used to resolve otherwise missing references to objects into links to the
+  other documentation\&.
+
+* By default, the mapping file is assumed to be at the same location as the
+  rest of the documentation; however, the location of the mapping file can
+  also be specified individually, e\&.g\&. if the docs should be buildable
+  without Internet access\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " object sphinx\&.ext\&.intersphinx\&.__getattr__ (str name)"
+
+.SS " \fBExtensionMetadata\fP sphinx\&.ext\&.intersphinx\&.setup (\fBSphinx\fP app)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "dict sphinx\&.ext\&.intersphinx\&._DEPRECATED_OBJECTS\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     'normalize_intersphinx_mapping': (
+3         validate_intersphinx_mapping,
+4         'sphinx\&.ext\&.intersphinx\&.validate_intersphinx_mapping',
+5         (10, 0),
+6     ),
+7 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

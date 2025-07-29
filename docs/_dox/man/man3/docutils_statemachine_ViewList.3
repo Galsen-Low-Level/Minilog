@@ -1,0 +1,302 @@
+.TH "docutils.statemachine.ViewList" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.statemachine.ViewList
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBdocutils\&.statemachine\&.StringList\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, initlist=None, \fBsource\fP=None, \fBitems\fP=None, \fBparent\fP=None, \fBparent_offset\fP=None)"
+.br
+.ti -1c
+.RI "\fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__lt__\fP (self, other)"
+.br
+.ti -1c
+.RI "\fB__le__\fP (self, other)"
+.br
+.ti -1c
+.RI "\fB__eq__\fP (self, other)"
+.br
+.ti -1c
+.RI "\fB__ne__\fP (self, other)"
+.br
+.ti -1c
+.RI "\fB__gt__\fP (self, other)"
+.br
+.ti -1c
+.RI "\fB__ge__\fP (self, other)"
+.br
+.ti -1c
+.RI "\fB__contains__\fP (self, item)"
+.br
+.ti -1c
+.RI "\fB__len__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__getitem__\fP (self, i)"
+.br
+.ti -1c
+.RI "\fB__setitem__\fP (self, i, item)"
+.br
+.ti -1c
+.RI "\fB__delitem__\fP (self, i)"
+.br
+.ti -1c
+.RI "\fB__add__\fP (self, other)"
+.br
+.ti -1c
+.RI "\fB__radd__\fP (self, other)"
+.br
+.ti -1c
+.RI "\fB__iadd__\fP (self, other)"
+.br
+.ti -1c
+.RI "\fB__mul__\fP (self, n)"
+.br
+.ti -1c
+.RI "\fB__imul__\fP (self, n)"
+.br
+.ti -1c
+.RI "\fBextend\fP (self, other)"
+.br
+.ti -1c
+.RI "\fBappend\fP (self, item, \fBsource\fP=None, \fBoffset\fP=0)"
+.br
+.ti -1c
+.RI "\fBinsert\fP (self, i, item, \fBsource\fP=None, \fBoffset\fP=0)"
+.br
+.ti -1c
+.RI "\fBpop\fP (self, i=\-1)"
+.br
+.ti -1c
+.RI "\fBtrim_start\fP (self, n=1)"
+.br
+.ti -1c
+.RI "\fBtrim_end\fP (self, n=1)"
+.br
+.ti -1c
+.RI "\fBremove\fP (self, item)"
+.br
+.ti -1c
+.RI "\fBcount\fP (self, item)"
+.br
+.ti -1c
+.RI "\fBindex\fP (self, item)"
+.br
+.ti -1c
+.RI "\fBreverse\fP (self)"
+.br
+.ti -1c
+.RI "\fBsort\fP (self, *args)"
+.br
+.ti -1c
+.RI "\fBinfo\fP (self, i)"
+.br
+.ti -1c
+.RI "\fBsource\fP (self, i)"
+.br
+.ti -1c
+.RI "\fBoffset\fP (self, i)"
+.br
+.ti -1c
+.RI "\fBdisconnect\fP (self)"
+.br
+.ti -1c
+.RI "\fBxitems\fP (self)"
+.br
+.ti -1c
+.RI "\fBpprint\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdata\fP"
+.br
+.ti -1c
+.RI "\fBitems\fP"
+.br
+.ti -1c
+.RI "\fBparent\fP"
+.br
+.ti -1c
+.RI "\fBparent_offset\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+List with extended functionality: slices of ViewList objects are child
+lists, linked to their parents\&. Changes made to a child list also affect
+the parent list\&.  A child list is effectively a 'view' (in the SQL sense)
+of the parent list\&.  Changes to parent lists, however, do *not* affect
+active child lists\&.  If a parent list is changed, any active child lists
+should be recreated\&.
+
+The start and end of the slice can be trimmed using the `trim_start()` and
+`trim_end()` methods, without affecting the parent list\&.  The link between
+child and parent lists can be broken by calling `disconnect()` on the
+child list\&.
+
+Also, ViewList objects keep track of the source & offset of each item\&.
+This information is accessible via the `source()`, `offset()`, and
+`info()` methods\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.statemachine\&.ViewList\&.__init__ ( self,  initlist = \fCNone\fP,  source = \fCNone\fP,  items = \fCNone\fP,  parent = \fCNone\fP,  parent_offset = \fCNone\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.statemachine\&.ViewList\&.__add__ ( self,  other)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.__contains__ ( self,  item)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.__delitem__ ( self,  i)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.__eq__ ( self,  other)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.__ge__ ( self,  other)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.__getitem__ ( self,  i)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.__gt__ ( self,  other)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.__iadd__ ( self,  other)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.__imul__ ( self,  n)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.__le__ ( self,  other)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.__len__ ( self)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.__lt__ ( self,  other)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.__mul__ ( self,  n)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.__ne__ ( self,  other)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.__radd__ ( self,  other)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.__repr__ ( self)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.__setitem__ ( self,  i,  item)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.__str__ ( self)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.append ( self,  item,  source = \fCNone\fP,  offset = \fC0\fP)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.count ( self,  item)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.disconnect ( self)"
+
+.PP
+.nf
+Break link between this list and parent list\&.
+.fi
+.PP
+ 
+.SS "docutils\&.statemachine\&.ViewList\&.extend ( self,  other)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.index ( self,  item)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.info ( self,  i)"
+
+.PP
+.nf
+Return source & offset for index `i`\&.
+.fi
+.PP
+ 
+.SS "docutils\&.statemachine\&.ViewList\&.insert ( self,  i,  item,  source = \fCNone\fP,  offset = \fC0\fP)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.offset ( self,  i)"
+
+.PP
+.nf
+Return offset for index `i`\&.
+.fi
+.PP
+ 
+.SS "docutils\&.statemachine\&.ViewList\&.pop ( self,  i = \fC\-1\fP)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.pprint ( self)"
+
+.PP
+.nf
+Print the list in `grep` format (`source:offset:value` lines)
+.fi
+.PP
+ 
+.SS "docutils\&.statemachine\&.ViewList\&.remove ( self,  item)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.reverse ( self)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.sort ( self, * args)"
+
+.SS "docutils\&.statemachine\&.ViewList\&.source ( self,  i)"
+
+.PP
+.nf
+Return source for index `i`\&.
+.fi
+.PP
+ 
+.SS "docutils\&.statemachine\&.ViewList\&.trim_end ( self,  n = \fC1\fP)"
+
+.PP
+.nf
+Remove items from the end of the list, without touching the parent\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.statemachine\&.ViewList\&.trim_start ( self,  n = \fC1\fP)"
+
+.PP
+.nf
+Remove items from the start of the list, without touching the parent\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.statemachine\&.ViewList\&.xitems ( self)"
+
+.PP
+.nf
+Return iterator yielding (source, offset, value) tuples\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.statemachine\&.ViewList\&.data"
+
+.SS "docutils\&.statemachine\&.ViewList\&.items"
+
+.SS "docutils\&.statemachine\&.ViewList\&.parent"
+
+.SS "docutils\&.statemachine\&.ViewList\&.parent_offset"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

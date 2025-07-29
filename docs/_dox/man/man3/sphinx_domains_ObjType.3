@@ -1,0 +1,60 @@
+.TH "sphinx.domains.ObjType" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.domains.ObjType
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str lname, *Any roles, **Any attrs)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBknown_attrs\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+An ObjType is the description for a type of object that a domain can
+document\&.  In the object_types attribute of Domain subclasses, object type
+names are mapped to instances of this class\&.
+
+Constructor arguments:
+
+- *lname*: localized name of the type (do not include domain name)
+- *roles*: all the roles that can refer to an object of this type
+- *attrs*: object attributes -- currently only 'searchprio' is known,
+  which defines the object's priority in the full-text search index,
+  see :meth:`Domain\&.get_objects()`\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.domains\&.ObjType\&.__init__ ( self, str lname, *Any roles, **Any attrs)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "dict sphinx\&.domains\&.ObjType\&.known_attrs\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        'searchprio': 1,
+    }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

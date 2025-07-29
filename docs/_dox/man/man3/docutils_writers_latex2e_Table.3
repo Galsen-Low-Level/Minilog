@@ -1,0 +1,286 @@
+.TH "docutils.writers.latex2e.Table" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.writers.latex2e.Table
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, translator, latex_type)"
+.br
+.ti -1c
+.RI "\fBopen\fP (self)"
+.br
+.ti -1c
+.RI "\fBclose\fP (self)"
+.br
+.ti -1c
+.RI "\fBis_open\fP (self)"
+.br
+.ti -1c
+.RI "\fBset_table_style\fP (self, node, settings)"
+.br
+.ti -1c
+.RI "\fBget_latex_type\fP (self)"
+.br
+.ti -1c
+.RI "\fBset\fP (self, attr, value)"
+.br
+.ti -1c
+.RI "\fBget\fP (self, attr)"
+.br
+.ti -1c
+.RI "\fBget_vertical_bar\fP (self)"
+.br
+.ti -1c
+.RI "\fBget_opening\fP (self, width=r'\\linewidth')"
+.br
+.ti -1c
+.RI "\fBget_closing\fP (self)"
+.br
+.ti -1c
+.RI "\fBvisit_colspec\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBget_colspecs\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBget_column_width\fP (self)"
+.br
+.ti -1c
+.RI "\fBget_multicolumn_width\fP (self, start, len_)"
+.br
+.ti -1c
+.RI "\fBget_caption\fP (self)"
+.br
+.ti -1c
+.RI "\fBneed_recurse\fP (self)"
+.br
+.ti -1c
+.RI "\fBvisit_thead\fP (self)"
+.br
+.ti -1c
+.RI "\fBdepart_thead\fP (self)"
+.br
+.ti -1c
+.RI "\fBvisit_row\fP (self)"
+.br
+.ti -1c
+.RI "\fBdepart_row\fP (self)"
+.br
+.ti -1c
+.RI "\fBset_rowspan\fP (self, cell, value)"
+.br
+.ti -1c
+.RI "\fBget_rowspan\fP (self, cell)"
+.br
+.ti -1c
+.RI "\fBget_entry_number\fP (self)"
+.br
+.ti -1c
+.RI "\fBvisit_entry\fP (self)"
+.br
+.ti -1c
+.RI "\fBis_stub_column\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBlegacy_column_widths\fP"
+.br
+.ti -1c
+.RI "\fBcaption\fP"
+.br
+.ti -1c
+.RI "\fBstubs\fP"
+.br
+.ti -1c
+.RI "\fBcolwidths_auto\fP"
+.br
+.ti -1c
+.RI "\fBborders\fP"
+.br
+.RI "if self\&.borders == 'standard': a\&.append('\\hline
+.br
+') "
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_translator\fP"
+.br
+.ti -1c
+.RI "\fB_latex_type\fP"
+.br
+.ti -1c
+.RI "\fB_colwidths\fP"
+.br
+.ti -1c
+.RI "\fB_rowspan\fP"
+.br
+.ti -1c
+.RI "\fB_in_thead\fP"
+.br
+.ti -1c
+.RI "\fB_open\fP"
+.br
+.ti -1c
+.RI "\fB_col_specs\fP"
+.br
+.ti -1c
+.RI "\fB_attrs\fP"
+.br
+.ti -1c
+.RI "\fB_in_head\fP"
+.br
+.ti -1c
+.RI "\fB_cell_in_row\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Manage a table while traversing\&.
+
+Table style might be
+
+:standard:   horizontal and vertical lines
+:booktabs:   only horizontal lines (requires 'booktabs' LaTeX package)
+:borderless: no borders around table cells
+:nolines:    alias for borderless
+
+:colwidths-auto:  column widths determined by LaTeX
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.writers\&.latex2e\&.Table\&.__init__ ( self,  translator,  latex_type)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.writers\&.latex2e\&.Table\&.close ( self)"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.depart_row ( self)"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.depart_thead ( self)"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.get ( self,  attr)"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.get_caption ( self)"
+
+.PP
+.nf
+Deprecated\&. Will be removed in Docutils 0\&.22\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.Table\&.get_closing ( self)"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.get_colspecs ( self,  node)"
+
+.PP
+.nf
+Return column specification for longtable\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.Table\&.get_column_width ( self)"
+
+.PP
+.nf
+Return columnwidth for current cell (not multicell)\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.Table\&.get_entry_number ( self)"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.get_latex_type ( self)"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.get_multicolumn_width ( self,  start,  len_)"
+
+.PP
+.nf
+Return sum of columnwidths for multicell\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.latex2e\&.Table\&.get_opening ( self,  width = \fCr'\\linewidth'\fP)"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.get_rowspan ( self,  cell)"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.get_vertical_bar ( self)"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.is_open ( self)"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.is_stub_column ( self)"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.need_recurse ( self)"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.open ( self)"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.set ( self,  attr,  value)"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.set_rowspan ( self,  cell,  value)"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.set_table_style ( self,  node,  settings)"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.visit_colspec ( self,  node)"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.visit_entry ( self)"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.visit_row ( self)"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.visit_thead ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.writers\&.latex2e\&.Table\&._attrs\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&._cell_in_row\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&._col_specs\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&._colwidths\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&._in_head\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&._in_thead\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&._latex_type\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&._open\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&._rowspan\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&._translator\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.borders"
+
+.PP
+if self\&.borders == 'standard': a\&.append('\\hline
+.br
+') 
+.SS "docutils\&.writers\&.latex2e\&.Table\&.caption"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.colwidths_auto"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.legacy_column_widths"
+
+.SS "docutils\&.writers\&.latex2e\&.Table\&.stubs"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

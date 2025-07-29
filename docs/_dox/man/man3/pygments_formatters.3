@@ -1,0 +1,211 @@
+.TH "pygments.formatters" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.formatters
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fB_mapping\fP"
+.br
+.ti -1c
+.RI "namespace \fBbbcode\fP"
+.br
+.ti -1c
+.RI "namespace \fBgroff\fP"
+.br
+.ti -1c
+.RI "namespace \fBhtml\fP"
+.br
+.ti -1c
+.RI "namespace \fBimg\fP"
+.br
+.ti -1c
+.RI "namespace \fBirc\fP"
+.br
+.ti -1c
+.RI "namespace \fBlatex\fP"
+.br
+.ti -1c
+.RI "namespace \fBother\fP"
+.br
+.ti -1c
+.RI "namespace \fBpangomarkup\fP"
+.br
+.ti -1c
+.RI "namespace \fBrtf\fP"
+.br
+.ti -1c
+.RI "namespace \fBsvg\fP"
+.br
+.ti -1c
+.RI "namespace \fBterminal\fP"
+.br
+.ti -1c
+.RI "namespace \fBterminal256\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_automodule\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_fn_matches\fP (fn, glob)"
+.br
+.ti -1c
+.RI "\fB_load_formatters\fP (module_name)"
+.br
+.ti -1c
+.RI "\fBget_all_formatters\fP ()"
+.br
+.ti -1c
+.RI "\fBfind_formatter_class\fP (alias)"
+.br
+.ti -1c
+.RI "\fBget_formatter_by_name\fP (_alias, **options)"
+.br
+.ti -1c
+.RI "\fBload_formatter_from_file\fP (filename, formattername='CustomFormatter', **options)"
+.br
+.ti -1c
+.RI "\fBget_formatter_for_filename\fP (fn, **options)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "dict \fB_formatter_cache\fP = {}"
+.br
+.ti -1c
+.RI "dict \fB_pattern_cache\fP = {}"
+.br
+.ti -1c
+.RI "\fBoldmod\fP = sys\&.modules[__name__]"
+.br
+.ti -1c
+.RI "\fBnewmod\fP = \fB_automodule\fP(__name__)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+    pygments\&.formatters
+    ~~~~~~~~~~~~~~~~~~~
+
+    Pygments formatters\&.
+
+    :copyright: Copyright 2006-2025 by the Pygments team, see AUTHORS\&.
+    :license: BSD, see LICENSE for details\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "pygments\&.formatters\&._fn_matches ( fn,  glob)\fC [protected]\fP"
+
+.PP
+.nf
+Return whether the supplied file name fn matches pattern filename\&.
+.fi
+.PP
+ 
+.SS "pygments\&.formatters\&._load_formatters ( module_name)\fC [protected]\fP"
+
+.PP
+.nf
+Load a formatter (and all others in the module too)\&.
+.fi
+.PP
+ 
+.SS "pygments\&.formatters\&.find_formatter_class ( alias)"
+
+.PP
+.nf
+Lookup a formatter by alias\&.
+
+Returns None if not found\&.
+
+.fi
+.PP
+ 
+.SS "pygments\&.formatters\&.get_all_formatters ()"
+
+.PP
+.nf
+Return a generator for all formatter classes\&.
+.fi
+.PP
+ 
+.SS "pygments\&.formatters\&.get_formatter_by_name ( _alias, ** options)"
+
+.PP
+.nf
+Return an instance of a :class:`\&.Formatter` subclass that has `alias` in its
+aliases list\&. The formatter is given the `options` at its instantiation\&.
+
+Will raise :exc:`pygments\&.util\&.ClassNotFound` if no formatter with that
+alias is found\&.
+
+.fi
+.PP
+ 
+.SS "pygments\&.formatters\&.get_formatter_for_filename ( fn, ** options)"
+
+.PP
+.nf
+Return a :class:`\&.Formatter` subclass instance that has a filename pattern
+matching `fn`\&. The formatter is given the `options` at its instantiation\&.
+
+Will raise :exc:`pygments\&.util\&.ClassNotFound` if no formatter for that filename
+is found\&.
+
+.fi
+.PP
+ 
+.SS "pygments\&.formatters\&.load_formatter_from_file ( filename,  formattername = \fC'CustomFormatter'\fP, ** options)"
+
+.PP
+.nf
+Return a `Formatter` subclass instance loaded from the provided file, relative
+to the current directory\&.
+
+The file is expected to contain a Formatter class named ``formattername``
+(by default, CustomFormatter)\&. Users should be very careful with the input, because
+this method is equivalent to running ``eval()`` on the input file\&. The formatter is
+given the `options` at its instantiation\&.
+
+:exc:`pygments\&.util\&.ClassNotFound` is raised if there are any errors loading
+the formatter\&.
+
+\&.\&. versionadded:: 2\&.2
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "dict pygments\&.formatters\&._formatter_cache = {}\fC [protected]\fP"
+
+.SS "dict pygments\&.formatters\&._pattern_cache = {}\fC [protected]\fP"
+
+.SS "pygments\&.formatters\&.newmod = \fB_automodule\fP(__name__)"
+
+.SS "pygments\&.formatters\&.oldmod = sys\&.modules[__name__]"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,150 @@
+.TH "pip._vendor.rich.measure.Measurement" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.rich.measure.Measurement
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits NamedTuple\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBspan\fP (self)"
+.br
+.ti -1c
+.RI "'Measurement' \fBnormalize\fP (self)"
+.br
+.ti -1c
+.RI "'Measurement' \fBwith_maximum\fP (self, int width)"
+.br
+.ti -1c
+.RI "'Measurement' \fBwith_minimum\fP (self, int width)"
+.br
+.ti -1c
+.RI "'Measurement' \fBclamp\fP (self, Optional[int] min_width=None, Optional[int] max_width=None)"
+.br
+.ti -1c
+.RI "'Measurement' \fBget\fP (cls, 'Console' console, 'ConsoleOptions' options, 'RenderableType' renderable)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBminimum\fP"
+.br
+.ti -1c
+.RI "int \fBmaximum\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Stores the minimum and maximum widths (in characters) required to render an object\&.
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " 'Measurement' pip\&._vendor\&.rich\&.measure\&.Measurement\&.clamp ( self, Optional[int]  min_width = \fCNone\fP, Optional[int]  max_width = \fCNone\fP)"
+
+.PP
+.nf
+Clamp a measurement within the specified range\&.
+
+Args:
+    min_width (int): Minimum desired width, or ``None`` for no minimum\&. Defaults to None\&.
+    max_width (int): Maximum desired width, or ``None`` for no maximum\&. Defaults to None\&.
+
+Returns:
+    Measurement: New Measurement object\&.
+
+.fi
+.PP
+ 
+.SS " 'Measurement' pip\&._vendor\&.rich\&.measure\&.Measurement\&.get ( cls, 'Console' console, 'ConsoleOptions' options, 'RenderableType'
+     renderable)"
+
+.PP
+.nf
+Get a measurement for a renderable\&.
+
+Args:
+    console (~rich\&.console\&.Console): Console instance\&.
+    options (~rich\&.console\&.ConsoleOptions): Console options\&.
+    renderable (RenderableType): An object that may be rendered with Rich\&.
+
+Raises:
+    errors\&.NotRenderableError: If the object is not renderable\&.
+
+Returns:
+    Measurement: Measurement object containing range of character widths required to render the object\&.
+
+.fi
+.PP
+ 
+.SS " 'Measurement' pip\&._vendor\&.rich\&.measure\&.Measurement\&.normalize ( self)"
+
+.PP
+.nf
+Get measurement that ensures that minimum <= maximum and minimum >= 0
+
+Returns:
+    Measurement: A normalized measurement\&.
+
+.fi
+.PP
+ 
+.SS " int pip\&._vendor\&.rich\&.measure\&.Measurement\&.span ( self)"
+
+.PP
+.nf
+Get difference between maximum and minimum\&.
+.fi
+.PP
+ 
+.SS " 'Measurement' pip\&._vendor\&.rich\&.measure\&.Measurement\&.with_maximum ( self, int width)"
+
+.PP
+.nf
+Get a RenderableWith where the widths are <= width\&.
+
+Args:
+    width (int): Maximum desired width\&.
+
+Returns:
+    Measurement: New Measurement object\&.
+
+.fi
+.PP
+ 
+.SS " 'Measurement' pip\&._vendor\&.rich\&.measure\&.Measurement\&.with_minimum ( self, int width)"
+
+.PP
+.nf
+Get a RenderableWith where the widths are >= width\&.
+
+Args:
+    width (int): Minimum desired width\&.
+
+Returns:
+    Measurement: New Measurement object\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "int pip\&._vendor\&.rich\&.measure\&.Measurement\&.maximum\fC [static]\fP"
+
+.SS "int pip\&._vendor\&.rich\&.measure\&.Measurement\&.minimum\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

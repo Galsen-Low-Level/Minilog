@@ -1,0 +1,131 @@
+.TH "pygments.filters" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.filters
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBCodeTagFilter\fP"
+.br
+.ti -1c
+.RI "class \fBErrorToken\fP"
+.br
+.ti -1c
+.RI "class \fBGobbleFilter\fP"
+.br
+.ti -1c
+.RI "class \fBKeywordCaseFilter\fP"
+.br
+.ti -1c
+.RI "class \fBNameHighlightFilter\fP"
+.br
+.ti -1c
+.RI "class \fBRaiseOnErrorTokenFilter\fP"
+.br
+.ti -1c
+.RI "class \fBSymbolFilter\fP"
+.br
+.ti -1c
+.RI "class \fBTokenMergeFilter\fP"
+.br
+.ti -1c
+.RI "class \fBVisibleWhitespaceFilter\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBfind_filter_class\fP (filtername)"
+.br
+.ti -1c
+.RI "\fBget_filter_by_name\fP (filtername, **options)"
+.br
+.ti -1c
+.RI "\fBget_all_filters\fP ()"
+.br
+.ti -1c
+.RI "\fB_replace_special\fP (ttype, value, regex, specialttype, replacefunc=lambda x:x)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "dict \fBFILTERS\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+    pygments\&.filters
+    ~~~~~~~~~~~~~~~~
+
+    Module containing filter lookup functions and default
+    filters\&.
+
+    :copyright: Copyright 2006-2025 by the Pygments team, see AUTHORS\&.
+    :license: BSD, see LICENSE for details\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "pygments\&.filters\&._replace_special ( ttype,  value,  regex,  specialttype,  replacefunc = \fClambda x: x\fP)\fC [protected]\fP"
+
+.SS "pygments\&.filters\&.find_filter_class ( filtername)"
+
+.PP
+.nf
+Lookup a filter by name\&. Return None if not found\&.
+.fi
+.PP
+ 
+.SS "pygments\&.filters\&.get_all_filters ()"
+
+.PP
+.nf
+Return a generator of all filter names\&.
+.fi
+.PP
+ 
+.SS "pygments\&.filters\&.get_filter_by_name ( filtername, ** options)"
+
+.PP
+.nf
+Return an instantiated filter\&.
+
+Options are passed to the filter initializer if wanted\&.
+Raise a ClassNotFound if not found\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "dict pygments\&.filters\&.FILTERS"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     'codetagify':     CodeTagFilter,
+3     'keywordcase':    KeywordCaseFilter,
+4     'highlight':      NameHighlightFilter,
+5     'raiseonerror':   RaiseOnErrorTokenFilter,
+6     'whitespace':     VisibleWhitespaceFilter,
+7     'gobble':         GobbleFilter,
+8     'tokenmerge':     TokenMergeFilter,
+9     'symbols':        SymbolFilter,
+10 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

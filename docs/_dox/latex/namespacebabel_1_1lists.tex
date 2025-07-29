@@ -1,0 +1,128 @@
+\doxysection{babel.\+lists Namespace Reference}
+\hypertarget{namespacebabel_1_1lists}{}\label{namespacebabel_1_1lists}\index{babel.lists@{babel.lists}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacebabel_1_1lists_a87fb6b007590f537746c2c8b078e98e0}{\+\_\+\+\_\+getattr\+\_\+\+\_\+}} (name)
+\item 
+str \mbox{\hyperlink{namespacebabel_1_1lists_a337025bae8d6e92ea8201134d03303fe}{format\+\_\+list}} (Sequence\mbox{[}str\mbox{]} lst, Literal\mbox{[}\textquotesingle{}standard\textquotesingle{}, \textquotesingle{}standard-\/short\textquotesingle{}, \textquotesingle{}or\textquotesingle{}, \textquotesingle{}or-\/short\textquotesingle{}, \textquotesingle{}unit\textquotesingle{}, \textquotesingle{}unit-\/short\textquotesingle{}, \textquotesingle{}unit-\/narrow\textquotesingle{}\mbox{]} style=\textquotesingle{}standard\textquotesingle{}, \mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}\texorpdfstring{$\vert$}{|}str\texorpdfstring{$\vert$}{|}None locale=None)
+\item 
+\mbox{\hyperlink{namespacebabel_1_1lists_a51d720c21b726dc565c85ebc7f4ecd58}{\+\_\+resolve\+\_\+list\+\_\+style}} (\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} locale, str style)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacebabel_1_1lists_a165b7c89328cb427e00430d447771a58}{\+\_\+\+DEFAULT\+\_\+\+LOCALE}} = default\+\_\+locale()
+\item 
+dict \mbox{\hyperlink{namespacebabel_1_1lists_aad719a1bcb1907a1f6220ac09e327f3e}{\+\_\+style\+\_\+fallbacks}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    babel.lists
+    ~~~~~~~~~~~
+
+    Locale dependent formatting of lists.
+
+    The default locale for the functions in this module is determined by the
+    following environment variables, in that order:
+
+     * ``LC_ALL``, and
+     * ``LANG``
+
+    :copyright: (c) 2015-2025 by the Babel Team.
+    :license: BSD, see LICENSE for more details.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacebabel_1_1lists_a87fb6b007590f537746c2c8b078e98e0}\label{namespacebabel_1_1lists_a87fb6b007590f537746c2c8b078e98e0} 
+\index{babel.lists@{babel.lists}!\_\_getattr\_\_@{\_\_getattr\_\_}}
+\index{\_\_getattr\_\_@{\_\_getattr\_\_}!babel.lists@{babel.lists}}
+\doxysubsubsection{\texorpdfstring{\_\_getattr\_\_()}{\_\_getattr\_\_()}}
+{\footnotesize\ttfamily babel.\+lists.\+\_\+\+\_\+getattr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacebabel_1_1lists_a51d720c21b726dc565c85ebc7f4ecd58}\label{namespacebabel_1_1lists_a51d720c21b726dc565c85ebc7f4ecd58} 
+\index{babel.lists@{babel.lists}!\_resolve\_list\_style@{\_resolve\_list\_style}}
+\index{\_resolve\_list\_style@{\_resolve\_list\_style}!babel.lists@{babel.lists}}
+\doxysubsubsection{\texorpdfstring{\_resolve\_list\_style()}{\_resolve\_list\_style()}}
+{\footnotesize\ttfamily babel.\+lists.\+\_\+resolve\+\_\+list\+\_\+style (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}}}]{locale,  }\item[{str}]{style }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacebabel_1_1lists_a337025bae8d6e92ea8201134d03303fe}\label{namespacebabel_1_1lists_a337025bae8d6e92ea8201134d03303fe} 
+\index{babel.lists@{babel.lists}!format\_list@{format\_list}}
+\index{format\_list@{format\_list}!babel.lists@{babel.lists}}
+\doxysubsubsection{\texorpdfstring{format\_list()}{format\_list()}}
+{\footnotesize\ttfamily  str babel.\+lists.\+format\+\_\+list (\begin{DoxyParamCaption}\item[{Sequence\mbox{[}str\mbox{]}}]{lst,  }\item[{Literal\mbox{[}\textquotesingle{}standard\textquotesingle{}, \textquotesingle{}standard-\/short\textquotesingle{}, \textquotesingle{}or\textquotesingle{}, \textquotesingle{}or-\/short\textquotesingle{}, \textquotesingle{}unit\textquotesingle{}, \textquotesingle{}unit-\/short\textquotesingle{}, \textquotesingle{}unit-\/narrow\textquotesingle{}\mbox{]} }]{style = {\ttfamily \textquotesingle{}standard\textquotesingle{}},  }\item[{\mbox{\hyperlink{classbabel_1_1core_1_1Locale}{Locale}} \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} None }]{locale = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Format the items in `lst` as a list.
+
+>>> format_list(['apples', 'oranges', 'pears'], locale='en')
+u'apples, oranges, and pears'
+>>> format_list(['apples', 'oranges', 'pears'], locale='zh')
+u'apples\u3001oranges\u548cpears'
+>>> format_list(['omena', 'peruna', 'aplari'], style='or', locale='fi')
+u'omena, peruna tai aplari'
+
+Not all styles are necessarily available in all locales.
+The function will attempt to fall back to replacement styles according to the rules
+set forth in the CLDR root XML file, and raise a ValueError if no suitable replacement
+can be found.
+
+The following text is verbatim from the Unicode TR35-49 spec [1].
+
+* standard:
+  A typical 'and' list for arbitrary placeholders.
+  eg. "January, February, and March"
+* standard-short:
+  A short version of an 'and' list, suitable for use with short or abbreviated placeholder values.
+  eg. "Jan., Feb., and Mar."
+* or:
+  A typical 'or' list for arbitrary placeholders.
+  eg. "January, February, or March"
+* or-short:
+  A short version of an 'or' list.
+  eg. "Jan., Feb., or Mar."
+* unit:
+  A list suitable for wide units.
+  eg. "3 feet, 7 inches"
+* unit-short:
+  A list suitable for short units
+  eg. "3 ft, 7 in"
+* unit-narrow:
+  A list suitable for narrow units, where space on the screen is very limited.
+  eg. "3′ 7″"
+
+[1]: https://www.unicode.org/reports/tr35/tr35-49/tr35-general.html#ListPatterns
+
+:param lst: a sequence of items to format in to a list
+:param style: the style to format the list with. See above for description.
+:param locale: the locale. Defaults to the system locale.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacebabel_1_1lists_a165b7c89328cb427e00430d447771a58}\label{namespacebabel_1_1lists_a165b7c89328cb427e00430d447771a58} 
+\index{babel.lists@{babel.lists}!\_DEFAULT\_LOCALE@{\_DEFAULT\_LOCALE}}
+\index{\_DEFAULT\_LOCALE@{\_DEFAULT\_LOCALE}!babel.lists@{babel.lists}}
+\doxysubsubsection{\texorpdfstring{\_DEFAULT\_LOCALE}{\_DEFAULT\_LOCALE}}
+{\footnotesize\ttfamily babel.\+lists.\+\_\+\+DEFAULT\+\_\+\+LOCALE = default\+\_\+locale()\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacebabel_1_1lists_aad719a1bcb1907a1f6220ac09e327f3e}\label{namespacebabel_1_1lists_aad719a1bcb1907a1f6220ac09e327f3e} 
+\index{babel.lists@{babel.lists}!\_style\_fallbacks@{\_style\_fallbacks}}
+\index{\_style\_fallbacks@{\_style\_fallbacks}!babel.lists@{babel.lists}}
+\doxysubsubsection{\texorpdfstring{\_style\_fallbacks}{\_style\_fallbacks}}
+{\footnotesize\ttfamily dict babel.\+lists.\+\_\+style\+\_\+fallbacks\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{"{}or-\/narrow"{}}:\ [\textcolor{stringliteral}{"{}or-\/short"{}},\ \textcolor{stringliteral}{"{}or"{}}],}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{"{}or-\/short"{}}:\ [\textcolor{stringliteral}{"{}or"{}}],}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{"{}standard-\/narrow"{}}:\ [\textcolor{stringliteral}{"{}standard-\/short"{}},\ \textcolor{stringliteral}{"{}standard"{}}],}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{stringliteral}{"{}standard-\/short"{}}:\ [\textcolor{stringliteral}{"{}standard"{}}],}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{stringliteral}{"{}unit"{}}:\ [\textcolor{stringliteral}{"{}unit-\/short"{}},\ \textcolor{stringliteral}{"{}standard"{}}],}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{stringliteral}{"{}unit-\/narrow"{}}:\ [\textcolor{stringliteral}{"{}unit-\/short"{}},\ \textcolor{stringliteral}{"{}unit"{}},\ \textcolor{stringliteral}{"{}standard"{}}],}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{stringliteral}{"{}unit-\/short"{}}:\ [\textcolor{stringliteral}{"{}standard"{}}],}
+\DoxyCodeLine{00009\ \}}
+
+\end{DoxyCode}

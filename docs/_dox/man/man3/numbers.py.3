@@ -1,0 +1,183 @@
+.TH "/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/babel/numbers.py" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/babel/numbers.py
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBbabel\&.numbers\&.UnknownCurrencyError\fP"
+.br
+.ti -1c
+.RI "class \fBbabel\&.numbers\&.UnsupportedNumberingSystemError\fP"
+.br
+.ti -1c
+.RI "class \fBbabel\&.numbers\&.UnknownCurrencyFormatError\fP"
+.br
+.ti -1c
+.RI "class \fBbabel\&.numbers\&.NumberFormatError\fP"
+.br
+.ti -1c
+.RI "class \fBbabel\&.numbers\&.NumberPattern\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBbabel\fP"
+.br
+.ti -1c
+.RI "namespace \fBbabel\&.numbers\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "set[str] \fBbabel\&.numbers\&.list_currencies\fP (\fBLocale\fP|str|None locale=None)"
+.br
+.ti -1c
+.RI "None \fBbabel\&.numbers\&.validate_currency\fP (str currency, \fBLocale\fP|str|None locale=None)"
+.br
+.ti -1c
+.RI "bool \fBbabel\&.numbers\&.is_currency\fP (str currency, \fBLocale\fP|str|None locale=None)"
+.br
+.ti -1c
+.RI "str|None \fBbabel\&.numbers\&.normalize_currency\fP (str currency, \fBLocale\fP|str|None locale=None)"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&.get_currency_name\fP (str currency, float|decimal\&.Decimal|None count=None, \fBLocale\fP|str|None locale=None)"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&.get_currency_symbol\fP (str currency, \fBLocale\fP|str|None locale=None)"
+.br
+.ti -1c
+.RI "int \fBbabel\&.numbers\&.get_currency_precision\fP (str currency)"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&.get_currency_unit_pattern\fP (str currency, float|decimal\&.Decimal|None count=None, \fBLocale\fP|str|None locale=None)"
+.br
+.ti -1c
+.RI "list[str] \fBbabel\&.numbers\&.get_territory_currencies\fP (str territory, datetime\&.date|None start_date=\&.\&.\&., datetime\&.date|None end_date=\&.\&.\&., bool tender=\&.\&.\&., bool non_tender=\&.\&.\&., Literal[False] include_details=\&.\&.\&.)"
+.br
+.ti -1c
+.RI "list[dict[str, Any]] \fBbabel\&.numbers\&.get_territory_currencies\fP (str territory, datetime\&.date|None start_date=\&.\&.\&., datetime\&.date|None end_date=\&.\&.\&., bool tender=\&.\&.\&., bool non_tender=\&.\&.\&., Literal[True] include_details=\&.\&.\&.)"
+.br
+.ti -1c
+.RI "list[str]|list[dict[str, Any]] \fBbabel\&.numbers\&.get_territory_currencies\fP (str territory, datetime\&.date|None start_date=None, datetime\&.date|None end_date=None, bool tender=True, bool non_tender=False, bool include_details=False)"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&._get_numbering_system\fP (\fBLocale\fP locale, Literal['default']|str numbering_system='latn')"
+.br
+.ti -1c
+.RI "\fBLocaleDataDict\fP \fBbabel\&.numbers\&._get_number_symbols\fP (\fBLocale\fP locale, *Literal['default']|str numbering_system='latn')"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&.get_decimal_symbol\fP (\fBLocale\fP|str|None locale=None, *Literal['default']|str numbering_system='latn')"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&.get_plus_sign_symbol\fP (\fBLocale\fP|str|None locale=None, *Literal['default']|str numbering_system='latn')"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&.get_minus_sign_symbol\fP (\fBLocale\fP|str|None locale=None, *Literal['default']|str numbering_system='latn')"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&.get_exponential_symbol\fP (\fBLocale\fP|str|None locale=None, *Literal['default']|str numbering_system='latn')"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&.get_group_symbol\fP (\fBLocale\fP|str|None locale=None, *Literal['default']|str numbering_system='latn')"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&.get_infinity_symbol\fP (\fBLocale\fP|str|None locale=None, *Literal['default']|str numbering_system='latn')"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&.format_number\fP (float|decimal\&.Decimal|str number, \fBLocale\fP|str|None locale=None)"
+.br
+.ti -1c
+.RI "int \fBbabel\&.numbers\&.get_decimal_precision\fP (decimal\&.Decimal number)"
+.br
+.ti -1c
+.RI "decimal\&.Decimal \fBbabel\&.numbers\&.get_decimal_quantum\fP (int|decimal\&.Decimal precision)"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&.format_decimal\fP (float|decimal\&.Decimal|str number, str|\fBNumberPattern\fP|None format=None, \fBLocale\fP|str|None locale=None, bool decimal_quantization=True, bool group_separator=True, *Literal['default']|str numbering_system='latn')"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&.format_compact_decimal\fP (float|decimal\&.Decimal|str number, *Literal['short', 'long'] format_type='short', \fBLocale\fP|str|None locale=None, int fraction_digits=0, Literal['default']|str numbering_system='latn')"
+.br
+.ti -1c
+.RI "tuple[decimal\&.Decimal, \fBNumberPattern\fP|None] \fBbabel\&.numbers\&._get_compact_format\fP (float|decimal\&.Decimal|str number, \fBLocaleDataDict\fP compact_format, \fBLocale\fP locale, int fraction_digits)"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&.format_currency\fP (float|decimal\&.Decimal|str number, str currency, str|\fBNumberPattern\fP|None format=None, \fBLocale\fP|str|None locale=None, bool currency_digits=True, Literal['name', 'standard', 'accounting'] format_type='standard', bool decimal_quantization=True, bool group_separator=True, *Literal['default']|str numbering_system='latn')"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&._format_currency_long_name\fP (float|decimal\&.Decimal|str number, str currency, *\fBLocale\fP locale, str|\fBNumberPattern\fP|None format, bool currency_digits, bool decimal_quantization, bool group_separator, Literal['default']|str numbering_system)"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&.format_compact_currency\fP (float|decimal\&.Decimal|str number, str currency, *Literal['short'] format_type='short', \fBLocale\fP|str|None locale=None, int fraction_digits=0, Literal['default']|str numbering_system='latn')"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&.format_percent\fP (float|decimal\&.Decimal|str number, str|\fBNumberPattern\fP|None format=None, \fBLocale\fP|str|None locale=None, bool decimal_quantization=True, bool group_separator=True, *Literal['default']|str numbering_system='latn')"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&.format_scientific\fP (float|decimal\&.Decimal|str number, str|\fBNumberPattern\fP|None format=None, \fBLocale\fP|str|None locale=None, bool decimal_quantization=True, *Literal['default']|str numbering_system='latn')"
+.br
+.ti -1c
+.RI "int \fBbabel\&.numbers\&.parse_number\fP (str string, \fBLocale\fP|str|None locale=None, *Literal['default']|str numbering_system='latn')"
+.br
+.ti -1c
+.RI "decimal\&.Decimal \fBbabel\&.numbers\&.parse_decimal\fP (str string, \fBLocale\fP|str|None locale=None, bool strict=False, *Literal['default']|str numbering_system='latn')"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&._remove_trailing_zeros_after_decimal\fP (str string, str decimal_symbol)"
+.br
+.ti -1c
+.RI "tuple[int, int] \fBbabel\&.numbers\&.parse_grouping\fP (str p)"
+.br
+.ti -1c
+.RI "\fBNumberPattern\fP \fBbabel\&.numbers\&.parse_pattern\fP (\fBNumberPattern\fP|str pattern)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBbabel\&.numbers\&.LC_MONETARY\fP = default_locale(('LC_MONETARY', '\fBLC_NUMERIC\fP'))"
+.br
+.ti -1c
+.RI "\fBbabel\&.numbers\&.LC_NUMERIC\fP = default_locale('LC_NUMERIC')"
+.br
+.ti -1c
+.RI "dict \fBbabel\&.numbers\&.SPACE_CHARS\fP"
+.br
+.ti -1c
+.RI "\fBbabel\&.numbers\&.SPACE_CHARS_RE\fP = re\&.compile('|'\&.join(\fBSPACE_CHARS\fP))"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&.PREFIX_END\fP = r'[^0\-9@#\&.,]'"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&.NUMBER_TOKEN\fP = r'[0\-9@#\&.,E+]'"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&.PREFIX_PATTERN\fP = r'(?P<prefix>(?:'[^']*'|%s)*)' % PREFIX_END"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&.NUMBER_PATTERN\fP = r'(?P<number>%s*)' % NUMBER_TOKEN"
+.br
+.ti -1c
+.RI "str \fBbabel\&.numbers\&.SUFFIX_PATTERN\fP = r'(?P<suffix>\&.*)'"
+.br
+.ti -1c
+.RI "\fBbabel\&.numbers\&.number_re\fP = re\&.compile(f'{\fBPREFIX_PATTERN\fP}{\fBNUMBER_PATTERN\fP}{\fBSUFFIX_PATTERN\fP}')"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

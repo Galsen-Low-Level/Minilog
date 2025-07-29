@@ -1,0 +1,51 @@
+.TH "pip._internal.utils.appdirs" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.utils.appdirs
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fBuser_cache_dir\fP (str appname)"
+.br
+.ti -1c
+.RI "str \fB_macos_user_config_dir\fP (str appname, bool roaming=True)"
+.br
+.ti -1c
+.RI "str \fBuser_config_dir\fP (str appname, bool roaming=True)"
+.br
+.ti -1c
+.RI "List[str] \fBsite_config_dirs\fP (str appname)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This code wraps the vendored appdirs module to so the return values are
+compatible for the current pip code base\&.
+
+The intention is to rewrite current usages gradually, keeping the tests pass,
+and eventually drop this after all usages are changed\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " str pip\&._internal\&.utils\&.appdirs\&._macos_user_config_dir (str appname, bool  roaming = \fCTrue\fP)\fC [protected]\fP"
+
+.SS " List[str] pip\&._internal\&.utils\&.appdirs\&.site_config_dirs (str appname)"
+
+.SS " str pip\&._internal\&.utils\&.appdirs\&.user_cache_dir (str appname)"
+
+.SS " str pip\&._internal\&.utils\&.appdirs\&.user_config_dir (str appname, bool  roaming = \fCTrue\fP)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

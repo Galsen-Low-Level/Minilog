@@ -1,0 +1,170 @@
+.TH "/home/umar/Desktop/WorkShop/GLL/Ftp-FM/src/ftpfm.c" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/umar/Desktop/WorkShop/GLL/Ftp-FM/src/ftpfm.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <ctype\&.h>\fP
+.br
+\fC#include <fcntl\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include <poll\&.h>\fP
+.br
+\fC#include <dirent\&.h>\fP
+.br
+\fC#include <locale\&.h>\fP
+.br
+\fC#include <langinfo\&.h>\fP
+.br
+\fC#include <fmtmsg\&.h>\fP
+.br
+\fC#include <sys/sendfile\&.h>\fP
+.br
+\fC#include <sys/socket\&.h>\fP
+.br
+\fC#include <sys/stat\&.h>\fP
+.br
+\fC#include <netinet/in\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+\fC#include <err\&.h>\fP
+.br
+\fC#include <error\&.h>\fP
+.br
+\fC#include <errno\&.h>\fP
+.br
+\fC#include 'ftpfm\&.h'\fP
+.br
+\fC#include 'ftpfm_logprint\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fB__htftp_protocol_header_t\fP"
+.br
+.ti -1c
+.RI "struct \fB__htftp_request_header_t\fP"
+.br
+.ti -1c
+.RI "struct \fB__htftp_t\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBhtftp_t\fP * \fBhtftp_start\fP (int portnumber, \fBhtftp_fcfg\fP fconfig, void *extra_argument)"
+.br
+.ti -1c
+.RI "int \fBhtftp_polling\fP (\fBhtftp_t\fP *restrict hf)"
+.br
+.ti -1c
+.RI "void \fBhtftp_close\fP (struct \fB__htftp_t\fP *restrict hf)"
+.br
+.ti -1c
+.RI "\fBhtftp_reqhdr_t\fP * \fBhtftp_parse_request\fP (char htftp_rbuff \fB__parmreq\fP)"
+.br
+.ti -1c
+.RI "char * \fBhtftp_get_requested_content\fP (\fBhtftp_reqhdr_t\fP *htftp_req, char *path_target)"
+.br
+.RI "retrieve the requested content from htftp_request_header_t GET the requested resource from user agent "
+.ti -1c
+.RI "char * \fBhtftp_read_content\fP (int user_agent_fd, char *filename, char *content_dump)"
+.br
+.RI "Read the asked ressource\&. "
+.ti -1c
+.RI "int \fBhtftp_transmission\fP (int user_agent_fd, char content_delivry \fB__parmreq\fP)"
+.br
+.ti -1c
+.RI "\fBfobject_t\fP * \fBfile_detail\fP (\fBfobject_t\fP *fobj, char *file_item, int timefmt_opt)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "ssize_t \fBua_kind\fP = 0"
+.br
+.RI "What kind of user agent is used ? "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBfobject_t\fP * file_detail (\fBfobject_t\fP * fobj, char * file_item, int timefmt_opt)"
+When the 2 flags are used the priority goes for TIME_NUM 
+.br
+
+.SS "void htftp_close (struct \fB__htftp_t\fP *restrict hf)"
+
+.SS "char * htftp_get_requested_content (\fBhtftp_reqhdr_t\fP * htftp_req, char * path_target)"
+
+.PP
+retrieve the requested content from htftp_request_header_t GET the requested resource from user agent trying accessing default file -> index\&.html or index\&.htm 
+.br
+.PP
+Truncate asked request 
+.br
+.PP
+just add '#' at the end to mark it as directory
+.SS "\fBhtftp_reqhdr_t\fP * htftp_parse_request (char htftp_rbuff __parmreq)"
+just make a raw copy and leave \&.\&.\&. ignoring the rest 
+.br
+
+.SS "int htftp_polling (\fBhtftp_t\fP *restrict hf)"
+NOTICE: infinity timeout
+.SS "char * htftp_read_content (int user_agent_fd, char * filename, char * content_dump)"
+
+.PP
+Read the asked ressource\&. NOTE : cannot download directory for special user agent 
+.br
+.PP
+allow sending file only if user agent like curl and wget is used 
+.br
+ TODO : Migrate this to htftp_transmission function bellow
+.PP
+reset
+.PP
+:NEXTFEAT: When special user agent is detected like curl or wget the file size and file descriptor are embeded in ua_kind and the closing fd is defered if(ua_kind != 0) { ua_kind = (requested_bsize << 4) | hyper_text_fd ; goto dumping ;
+.PP
+} else
+.SS "\fBhtftp_t\fP * htftp_start (int portnumber, \fBhtftp_fcfg\fP fconfig, void * extra_argument)"
+
+.SS "int htftp_transmission (int user_agent_fd, char content_delivry __parmreq)"
+HTTP/1\&.1 200 OK \\r
+.br
+\\r
+.br
+.PP
+CONTENT 
+.br
+.PP
+\\r
+.br
+\\r
+.br
+ 
+.br
+
+.SH "Variable Documentation"
+.PP 
+.SS "ssize_t ua_kind = 0"
+
+.PP
+What kind of user agent is used ? 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,176 @@
+.TH "pip._vendor.distlib.resources.ZipResourceFinder" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.distlib.resources.ZipResourceFinder
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._vendor\&.distlib\&.resources\&.ResourceFinder\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBmodule\fP)"
+.br
+.ti -1c
+.RI "\fBget_cache_info\fP (self, resource)"
+.br
+.ti -1c
+.RI "\fBget_bytes\fP (self, resource)"
+.br
+.ti -1c
+.RI "\fBget_stream\fP (self, resource)"
+.br
+.ti -1c
+.RI "\fBget_size\fP (self, resource)"
+.br
+.ti -1c
+.RI "\fBget_resources\fP (self, resource)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._vendor\&.distlib\&.resources\&.ResourceFinder\fP
+.in +1c
+.ti -1c
+.RI "\fBfind\fP (self, resource_name)"
+.br
+.ti -1c
+.RI "\fBis_container\fP (self, resource)"
+.br
+.ti -1c
+.RI "\fBiterator\fP (self, resource_name)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBprefix_len\fP"
+.br
+.ti -1c
+.RI "\fBloader\fP"
+.br
+.ti -1c
+.RI "\fBindex\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpip\&._vendor\&.distlib\&.resources\&.ResourceFinder\fP
+.in +1c
+.ti -1c
+.RI "\fBmodule\fP"
+.br
+.ti -1c
+.RI "\fBloader\fP"
+.br
+.ti -1c
+.RI "\fBbase\fP"
+.br
+.ti -1c
+.RI "\fBskipped_extensions\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_adjust_path\fP (self, path)"
+.br
+.ti -1c
+.RI "\fB_find\fP (self, path)"
+.br
+.ti -1c
+.RI "\fB_is_directory\fP (self, path)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpip\&._vendor\&.distlib\&.resources\&.ResourceFinder\fP
+.in +1c
+.ti -1c
+.RI "\fB_make_path\fP (self, resource_name)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_files\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Attributes inherited from \fBpip\&._vendor\&.distlib\&.resources\&.ResourceFinder\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBskipped_extensions\fP = ('\&.pyc', '\&.pyo', '\&.class')"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBpip\&._vendor\&.distlib\&.resources\&.ResourceFinder\fP
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Resource finder for resources in \&.zip files\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\&.__init__ ( self,  module)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.distlib\&.resources\&.ResourceFinder\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\&._adjust_path ( self,  path)\fC [protected]\fP"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.distlib\&.resources\&.ResourceFinder\fP\&.
+.SS "pip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\&._find ( self,  path)\fC [protected]\fP"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.distlib\&.resources\&.ResourceFinder\fP\&.
+.SS "pip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\&._is_directory ( self,  path)\fC [protected]\fP"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.distlib\&.resources\&.ResourceFinder\fP\&.
+.SS "pip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\&.get_bytes ( self,  resource)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.distlib\&.resources\&.ResourceFinder\fP\&.
+.SS "pip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\&.get_cache_info ( self,  resource)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.distlib\&.resources\&.ResourceFinder\fP\&.
+.SS "pip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\&.get_resources ( self,  resource)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.distlib\&.resources\&.ResourceFinder\fP\&.
+.SS "pip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\&.get_size ( self,  resource)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.distlib\&.resources\&.ResourceFinder\fP\&.
+.SS "pip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\&.get_stream ( self,  resource)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.distlib\&.resources\&.ResourceFinder\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\&._files\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\&.index"
+
+.SS "pip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\&.loader"
+
+.SS "pip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\&.prefix_len"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

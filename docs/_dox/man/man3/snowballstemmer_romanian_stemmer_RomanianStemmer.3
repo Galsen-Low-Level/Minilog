@@ -1,0 +1,295 @@
+.TH "snowballstemmer.romanian_stemmer.RomanianStemmer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+snowballstemmer.romanian_stemmer.RomanianStemmer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP\&.
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBbra\fP"
+.br
+.ti -1c
+.RI "\fBket\fP"
+.br
+.ti -1c
+.RI "\fBcursor\fP"
+.br
+.ti -1c
+.RI "\fBI_pV\fP"
+.br
+.ti -1c
+.RI "\fBI_p1\fP"
+.br
+.ti -1c
+.RI "\fBI_p2\fP"
+.br
+.ti -1c
+.RI "\fBB_standard_suffix_removed\fP"
+.br
+.ti -1c
+.RI "\fBlimit_backward\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP
+.in +1c
+.ti -1c
+.RI "\fBcurrent\fP"
+.br
+.ti -1c
+.RI "\fBcursor\fP"
+.br
+.ti -1c
+.RI "\fBlimit\fP"
+.br
+.ti -1c
+.RI "\fBlimit_backward\fP"
+.br
+.ti -1c
+.RI "\fBbra\fP"
+.br
+.ti -1c
+.RI "\fBket\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBg_v\fP = {u'a', u'e', u'i', u'o', u'u', u'â', u'î', u'ă'}"
+.br
+.ti -1c
+.RI "bool \fBB_standard_suffix_removed\fP = False"
+.br
+.ti -1c
+.RI "int \fBI_p2\fP = 0"
+.br
+.ti -1c
+.RI "int \fBI_p1\fP = 0"
+.br
+.ti -1c
+.RI "int \fBI_pV\fP = 0"
+.br
+.ti -1c
+.RI "list \fBa_0\fP"
+.br
+.ti -1c
+.RI "list \fBa_1\fP"
+.br
+.ti -1c
+.RI "list \fBa_2\fP"
+.br
+.ti -1c
+.RI "list \fBa_3\fP"
+.br
+.ti -1c
+.RI "list \fBa_4\fP"
+.br
+.ti -1c
+.RI "list \fBa_5\fP"
+.br
+.ti -1c
+.RI "list \fBa_6\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_stem\fP (self)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "\fBset_current\fP (self, value)"
+.br
+.ti -1c
+.RI "\fBget_current\fP (self)"
+.br
+.ti -1c
+.RI "\fBcopy_from\fP (self, other)"
+.br
+.ti -1c
+.RI "\fBin_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_in_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBin_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_in_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBout_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_out_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBout_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_out_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBeq_s\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBeq_s_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBfind_among\fP (self, v)"
+.br
+.ti -1c
+.RI "\fBfind_among_b\fP (self, v)"
+.br
+.ti -1c
+.RI "\fBreplace_s\fP (self, c_bra, c_ket, s)"
+.br
+.ti -1c
+.RI "\fBslice_check\fP (self)"
+.br
+.ti -1c
+.RI "\fBslice_from\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBslice_del\fP (self)"
+.br
+.ti -1c
+.RI "\fBinsert\fP (self, c_bra, c_ket, s)"
+.br
+.ti -1c
+.RI "\fBslice_to\fP (self)"
+.br
+.ti -1c
+.RI "\fBassign_to\fP (self)"
+.br
+.ti -1c
+.RI "\fBstemWord\fP (self, word)"
+.br
+.ti -1c
+.RI "\fBstemWords\fP (self, words)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This class implements the stemming algorithm defined by a snowball script\&.
+Generated from romanian\&.sbl by Snowball 3\&.0\&.1 - https://snowballstem\&.org/
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "snowballstemmer\&.romanian_stemmer\&.RomanianStemmer\&._stem ( self)\fC [protected]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "list snowballstemmer\&.romanian_stemmer\&.RomanianStemmer\&.a_0\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"ş", \-1, 1),
+        Among(u"ţ", \-1, 2)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.romanian_stemmer\&.RomanianStemmer\&.a_1\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"", \-1, 3),
+        Among(u"I", 0, 1),
+        Among(u"U", 0, 2)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.romanian_stemmer\&.RomanianStemmer\&.a_2\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"ea", \-1, 3),
+        Among(u"ația", \-1, 7),
+        Among(u"aua", \-1, 2),
+        Among(u"iua", \-1, 4),
+        Among(u"ație", \-1, 7),
+        Among(u"ele", \-1, 3),
+        Among(u"ile", \-1, 5),
+        Among(u"iile", 6, 4),
+        Among(u"iei", \-1, 4),
+        Among(u"atei", \-1, 6),
+        Among(u"ii", \-1, 4),
+        Among(u"ului", \-1, 1),
+        Among(u"ul", \-1, 1),
+        Among(u"elor", \-1, 3),
+        Among(u"ilor", \-1, 4),
+        Among(u"iilor", 14, 4)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.romanian_stemmer\&.RomanianStemmer\&.a_3\fC [static]\fP"
+
+.SS "list snowballstemmer\&.romanian_stemmer\&.RomanianStemmer\&.a_4\fC [static]\fP"
+
+.SS "list snowballstemmer\&.romanian_stemmer\&.RomanianStemmer\&.a_5\fC [static]\fP"
+
+.SS "list snowballstemmer\&.romanian_stemmer\&.RomanianStemmer\&.a_6\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"a", \-1, 1),
+        Among(u"e", \-1, 1),
+        Among(u"ie", 1, 1),
+        Among(u"i", \-1, 1),
+        Among(u"ă", \-1, 1)
+    ]
+.fi
+
+.SS "bool snowballstemmer\&.romanian_stemmer\&.RomanianStemmer\&.B_standard_suffix_removed = False\fC [static]\fP"
+
+.SS "snowballstemmer\&.romanian_stemmer\&.RomanianStemmer\&.B_standard_suffix_removed"
+
+.SS "snowballstemmer\&.romanian_stemmer\&.RomanianStemmer\&.bra"
+
+.SS "snowballstemmer\&.romanian_stemmer\&.RomanianStemmer\&.cursor"
+
+.SS "dict snowballstemmer\&.romanian_stemmer\&.RomanianStemmer\&.g_v = {u'a', u'e', u'i', u'o', u'u', u'â', u'î', u'ă'}\fC [static]\fP"
+
+.SS "int snowballstemmer\&.romanian_stemmer\&.RomanianStemmer\&.I_p1 = 0\fC [static]\fP"
+
+.SS "snowballstemmer\&.romanian_stemmer\&.RomanianStemmer\&.I_p1"
+
+.SS "int snowballstemmer\&.romanian_stemmer\&.RomanianStemmer\&.I_p2 = 0\fC [static]\fP"
+
+.SS "snowballstemmer\&.romanian_stemmer\&.RomanianStemmer\&.I_p2"
+
+.SS "int snowballstemmer\&.romanian_stemmer\&.RomanianStemmer\&.I_pV = 0\fC [static]\fP"
+
+.SS "snowballstemmer\&.romanian_stemmer\&.RomanianStemmer\&.I_pV"
+
+.SS "snowballstemmer\&.romanian_stemmer\&.RomanianStemmer\&.ket"
+
+.SS "snowballstemmer\&.romanian_stemmer\&.RomanianStemmer\&.limit_backward"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

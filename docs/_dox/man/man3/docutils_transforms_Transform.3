@@ -1,0 +1,88 @@
+.TH "docutils.transforms.Transform" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.transforms.Transform
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBdocutils\&.transforms\&.components\&.Filter\fP, \fBdocutils\&.transforms\&.frontmatter\&.DocInfo\fP, \fBdocutils\&.transforms\&.frontmatter\&.TitlePromoter\fP, \fBdocutils\&.transforms\&.misc\&.CallBack\fP, \fBdocutils\&.transforms\&.misc\&.ClassAttribute\fP, \fBdocutils\&.transforms\&.misc\&.Transitions\fP, \fBdocutils\&.transforms\&.parts\&.Contents\fP, \fBdocutils\&.transforms\&.parts\&.SectNum\fP, \fBdocutils\&.transforms\&.peps\&.Contents\fP, \fBdocutils\&.transforms\&.peps\&.Headers\fP, \fBdocutils\&.transforms\&.peps\&.PEPZero\fP, \fBdocutils\&.transforms\&.peps\&.TargetNotes\fP, \fBdocutils\&.transforms\&.references\&.AnonymousHyperlinks\fP, \fBdocutils\&.transforms\&.references\&.DanglingReferences\fP, \fBdocutils\&.transforms\&.references\&.ExternalTargets\fP, \fBdocutils\&.transforms\&.references\&.Footnotes\fP, \fBdocutils\&.transforms\&.references\&.IndirectHyperlinks\fP, \fBdocutils\&.transforms\&.references\&.InternalTargets\fP, \fBdocutils\&.transforms\&.references\&.PropagateTargets\fP, \fBdocutils\&.transforms\&.references\&.Substitutions\fP, \fBdocutils\&.transforms\&.references\&.TargetNotes\fP, \fBdocutils\&.transforms\&.universal\&.Decorations\fP, \fBdocutils\&.transforms\&.universal\&.ExposeInternals\fP, \fBdocutils\&.transforms\&.universal\&.FilterMessages\fP, \fBdocutils\&.transforms\&.universal\&.Messages\fP, \fBdocutils\&.transforms\&.universal\&.SmartQuotes\fP, \fBdocutils\&.transforms\&.universal\&.StripClassesAndElements\fP, \fBdocutils\&.transforms\&.universal\&.StripComments\fP, \fBdocutils\&.transforms\&.universal\&.TestMessages\fP, \fBdocutils\&.transforms\&.writer_aux\&.Admonitions\fP, \fBdocutils\&.transforms\&.writer_aux\&.Compound\fP, and \fBsphinx\&.transforms\&.SphinxTransform\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdocument\fP, \fBstartnode\fP=None)"
+.br
+.ti -1c
+.RI "\fBapply\fP (self, **kwargs)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBstartnode\fP"
+.br
+.ti -1c
+.RI "\fBlanguage\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdefault_priority\fP = None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Docutils transform component abstract base class\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.transforms\&.Transform\&.__init__ ( self,  document,  startnode = \fCNone\fP)"
+
+.PP
+.nf
+Initial setup for in-place document transforms\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBdocutils\&.transforms\&.references\&.TargetNotes\fP, \fBdocutils\&.transforms\&.universal\&.SmartQuotes\fP, and \fBdocutils\&.transforms\&.writer_aux\&.Compound\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.transforms\&.Transform\&.apply ( self, ** kwargs)"
+
+.PP
+.nf
+Override to apply the transform to the document tree\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBdocutils\&.transforms\&.components\&.Filter\fP, \fBdocutils\&.transforms\&.frontmatter\&.DocTitle\fP, \fBdocutils\&.transforms\&.frontmatter\&.SectionSubTitle\fP, \fBdocutils\&.transforms\&.frontmatter\&.DocInfo\fP, \fBdocutils\&.transforms\&.misc\&.CallBack\fP, \fBdocutils\&.transforms\&.misc\&.ClassAttribute\fP, \fBdocutils\&.transforms\&.misc\&.Transitions\fP, \fBdocutils\&.transforms\&.parts\&.SectNum\fP, \fBdocutils\&.transforms\&.parts\&.Contents\fP, \fBdocutils\&.transforms\&.peps\&.Headers\fP, \fBdocutils\&.transforms\&.peps\&.Contents\fP, \fBdocutils\&.transforms\&.peps\&.TargetNotes\fP, \fBdocutils\&.transforms\&.peps\&.PEPZero\fP, \fBdocutils\&.transforms\&.references\&.PropagateTargets\fP, \fBdocutils\&.transforms\&.references\&.AnonymousHyperlinks\fP, \fBdocutils\&.transforms\&.references\&.IndirectHyperlinks\fP, \fBdocutils\&.transforms\&.references\&.ExternalTargets\fP, \fBdocutils\&.transforms\&.references\&.InternalTargets\fP, \fBdocutils\&.transforms\&.references\&.Footnotes\fP, \fBdocutils\&.transforms\&.references\&.Substitutions\fP, \fBdocutils\&.transforms\&.references\&.TargetNotes\fP, \fBdocutils\&.transforms\&.references\&.DanglingReferences\fP, \fBdocutils\&.transforms\&.universal\&.Decorations\fP, \fBdocutils\&.transforms\&.universal\&.ExposeInternals\fP, \fBdocutils\&.transforms\&.universal\&.Messages\fP, \fBdocutils\&.transforms\&.universal\&.FilterMessages\fP, \fBdocutils\&.transforms\&.universal\&.TestMessages\fP, \fBdocutils\&.transforms\&.universal\&.StripComments\fP, \fBdocutils\&.transforms\&.universal\&.StripClassesAndElements\fP, \fBdocutils\&.transforms\&.universal\&.SmartQuotes\fP, \fBdocutils\&.transforms\&.writer_aux\&.Compound\fP, \fBdocutils\&.transforms\&.writer_aux\&.Admonitions\fP, \fBsphinx\&.builders\&.latex\&.transforms\&.FootnoteDocnameUpdater\fP, \fBsphinx\&.domains\&.c\&.AliasTransform\fP, \fBsphinx\&.domains\&.citation\&.CitationDefinitionTransform\fP, \fBsphinx\&.domains\&.citation\&.CitationReferenceTransform\fP, \fBsphinx\&.domains\&.cpp\&.AliasTransform\fP, \fBsphinx\&.transforms\&.DefaultSubstitutions\fP, \fBsphinx\&.transforms\&.MoveModuleTargets\fP, \fBsphinx\&.transforms\&.HandleCodeBlocks\fP, \fBsphinx\&.transforms\&.AutoNumbering\fP, \fBsphinx\&.transforms\&.SortIds\fP, \fBsphinx\&.transforms\&.ApplySourceWorkaround\fP, \fBsphinx\&.transforms\&.AutoIndexUpgrader\fP, \fBsphinx\&.transforms\&.ExtraTranslatableNodes\fP, \fBsphinx\&.transforms\&.UnreferencedFootnotesDetector\fP, \fBsphinx\&.transforms\&.DoctestTransform\fP, \fBsphinx\&.transforms\&.FilterSystemMessages\fP, \fBsphinx\&.transforms\&.SphinxSmartQuotes\fP, \fBsphinx\&.transforms\&.DoctreeReadEvent\fP, \fBsphinx\&.transforms\&.GlossarySorter\fP, \fBsphinx\&.transforms\&.ReorderConsecutiveTargetAndIndexNodes\fP, \fBsphinx\&.transforms\&.compact_bullet_list\&.RefOnlyBulletListTransform\fP, \fBsphinx\&.transforms\&.i18n\&.PreserveTranslatableMessages\fP, \fBsphinx\&.transforms\&.i18n\&.Locale\fP, \fBsphinx\&.transforms\&.i18n\&.TranslationProgressTotaliser\fP, \fBsphinx\&.transforms\&.i18n\&.AddTranslationClasses\fP, \fBsphinx\&.transforms\&.i18n\&.RemoveTranslatableInline\fP, \fBsphinx\&.transforms\&.post_transforms\&.SphinxPostTransform\fP, \fBsphinx\&.transforms\&.post_transforms\&.code\&.HighlightLanguageTransform\fP, \fBsphinx\&.transforms\&.post_transforms\&.code\&.TrimDoctestFlagsTransform\fP, \fBsphinx\&.transforms\&.post_transforms\&.images\&.BaseImageConverter\fP, \fBsphinx\&.transforms\&.references\&.SphinxDanglingReferences\fP, \fBsphinx\&.transforms\&.references\&.SphinxDomains\fP, and \fBsphinx\&.versioning\&.UIDTransform\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.transforms\&.Transform\&.default_priority = None\fC [static]\fP"
+
+.SS "docutils\&.transforms\&.Transform\&.document"
+
+.SS "docutils\&.transforms\&.Transform\&.language"
+
+.SS "docutils\&.transforms\&.Transform\&.startnode"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

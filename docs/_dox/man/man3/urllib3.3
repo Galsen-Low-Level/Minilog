@@ -1,0 +1,196 @@
+.TH "urllib3" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+urllib3
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fB_base_connection\fP"
+.br
+.ti -1c
+.RI "namespace \fB_collections\fP"
+.br
+.ti -1c
+.RI "namespace \fB_request_methods\fP"
+.br
+.ti -1c
+.RI "namespace \fB_version\fP"
+.br
+.ti -1c
+.RI "namespace \fBconnection\fP"
+.br
+.ti -1c
+.RI "namespace \fBconnectionpool\fP"
+.br
+.ti -1c
+.RI "namespace \fBcontrib\fP"
+.br
+.ti -1c
+.RI "namespace \fBexceptions\fP"
+.br
+.ti -1c
+.RI "namespace \fBfields\fP"
+.br
+.ti -1c
+.RI "namespace \fBfilepost\fP"
+.br
+.ti -1c
+.RI "namespace \fBhttp2\fP"
+.br
+.ti -1c
+.RI "namespace \fBpoolmanager\fP"
+.br
+.ti -1c
+.RI "namespace \fBresponse\fP"
+.br
+.ti -1c
+.RI "namespace \fButil\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "logging\&.StreamHandler[typing\&.TextIO] \fBadd_stderr_logger\fP (int level=logging\&.DEBUG)"
+.br
+.ti -1c
+.RI "None \fBdisable_warnings\fP (type[Warning] category=\fBexceptions\&.HTTPWarning\fP)"
+.br
+.ti -1c
+.RI "\fBBaseHTTPResponse\fP \fBrequest\fP (str method, str url, *_TYPE_BODY|None body=None, _TYPE_FIELDS|None fields=None, typing\&.Mapping[str, str]|None headers=None, bool|None preload_content=True, bool|None decode_content=True, bool|None redirect=True, \fBRetry\fP|bool|int|None retries=None, \fBTimeout\fP|float|int|None timeout=3, typing\&.Any|None json=None)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBSecurityWarning\fP"
+.br
+.ti -1c
+.RI "\fBappend\fP"
+.br
+.ti -1c
+.RI "\fBInsecurePlatformWarning\fP"
+.br
+.ti -1c
+.RI "\fB_DEFAULT_POOL\fP = \fBPoolManager\fP()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Python HTTP library with thread-safe connection pooling, file post support, user friendly, and more
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " logging\&.StreamHandler[typing\&.TextIO] urllib3\&.add_stderr_logger (int  level = \fClogging\&.DEBUG\fP)"
+
+.PP
+.nf
+Helper for quickly adding a StreamHandler to the logger\&. Useful for
+debugging\&.
+
+Returns the handler after adding it\&.
+
+.fi
+.PP
+ 
+.SS " None urllib3\&.disable_warnings (type[Warning]  category = \fC\fBexceptions\&.HTTPWarning\fP\fP)"
+
+.PP
+.nf
+Helper for quickly disabling all urllib3 warnings\&.
+
+.fi
+.PP
+ 
+.SS " \fBBaseHTTPResponse\fP urllib3\&.request (str method, str url, *_TYPE_BODY | None  body = \fCNone\fP, _TYPE_FIELDS | None  fields = \fCNone\fP, typing\&.Mapping[str, str] | None  headers = \fCNone\fP, bool | None  preload_content = \fCTrue\fP, bool | None  decode_content = \fCTrue\fP, bool | None  redirect = \fCTrue\fP, \fBRetry\fP | bool | int | None  retries = \fCNone\fP, \fBTimeout\fP | float | int | None  timeout = \fC3\fP, typing\&.Any | None  json = \fCNone\fP)"
+
+.PP
+.nf
+A convenience, top-level request method\&. It uses a module-global ``PoolManager`` instance\&.
+Therefore, its side effects could be shared across dependencies relying on it\&.
+To avoid side effects create a new ``PoolManager`` instance and use it instead\&.
+The method does not accept low-level ``**urlopen_kw`` keyword arguments\&.
+
+:param method:
+    HTTP request method (such as GET, POST, PUT, etc\&.)
+
+:param url:
+    The URL to perform the request on\&.
+
+:param body:
+    Data to send in the request body, either :class:`str`, :class:`bytes`,
+    an iterable of :class:`str`/:class:`bytes`, or a file-like object\&.
+
+:param fields:
+    Data to encode and send in the request body\&.
+
+:param headers:
+    Dictionary of custom headers to send, such as User-Agent,
+    If-None-Match, etc\&.
+
+:param bool preload_content:
+    If True, the response's body will be preloaded into memory\&.
+
+:param bool decode_content:
+    If True, will attempt to decode the body based on the
+    'content-encoding' header\&.
+
+:param redirect:
+    If True, automatically handle redirects (status codes 301, 302,
+    303, 307, 308)\&. Each redirect counts as a retry\&. Disabling retries
+    will disable redirect, too\&.
+
+:param retries:
+    Configure the number of retries to allow before raising a
+    :class:`~urllib3\&.exceptions\&.MaxRetryError` exception\&.
+
+    If ``None`` (default) will retry 3 times, see ``Retry\&.DEFAULT``\&. Pass a
+    :class:`~urllib3\&.util\&.retry\&.Retry` object for fine-grained control
+    over different types of retries\&.
+    Pass an integer number to retry connection errors that many times,
+    but no other types of errors\&. Pass zero to never retry\&.
+
+    If ``False``, then retries are disabled and any exception is raised
+    immediately\&. Also, instead of raising a MaxRetryError on redirects,
+    the redirect response will be returned\&.
+
+:type retries: :class:`~urllib3\&.util\&.retry\&.Retry`, False, or an int\&.
+
+:param timeout:
+    If specified, overrides the default timeout for this one
+    request\&. It may be a float (in seconds) or an instance of
+    :class:`urllib3\&.util\&.Timeout`\&.
+
+:param json:
+    Data to encode and send as JSON with UTF-encoded in the request body\&.
+    The ``'Content-Type'`` header will be set to ``'application/json'``
+    unless specified otherwise\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "urllib3\&._DEFAULT_POOL = \fBPoolManager\fP()\fC [protected]\fP"
+
+.SS "urllib3\&.append"
+
+.SS "urllib3\&.InsecurePlatformWarning"
+
+.SS "urllib3\&.SecurityWarning"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

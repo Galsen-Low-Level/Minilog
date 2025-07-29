@@ -1,0 +1,76 @@
+.TH "urllib3._collections" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+urllib3._collections
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_Sentinel\fP"
+.br
+.ti -1c
+.RI "class \fBHasGettableStringKeys\fP"
+.br
+.ti -1c
+.RI "class \fBHTTPHeaderDict\fP"
+.br
+.ti -1c
+.RI "class \fBHTTPHeaderDictItemView\fP"
+.br
+.ti -1c
+.RI "class \fBRecentlyUsedContainer\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBValidHTTPHeaderSource\fP|None \fBensure_can_construct_http_header_dict\fP (object potential)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB_KT\fP = typing\&.TypeVar('_KT')"
+.br
+.ti -1c
+.RI "\fB_VT\fP = typing\&.TypeVar('_VT')"
+.br
+.ti -1c
+.RI "\fB_DT\fP = typing\&.TypeVar('_DT')"
+.br
+.ti -1c
+.RI "\fBValidHTTPHeaderSource\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " \fBValidHTTPHeaderSource\fP | None urllib3\&._collections\&.ensure_can_construct_http_header_dict (object potential)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "urllib3\&._collections\&._DT = typing\&.TypeVar('_DT')\fC [protected]\fP"
+
+.SS "urllib3\&._collections\&._KT = typing\&.TypeVar('_KT')\fC [protected]\fP"
+
+.SS "urllib3\&._collections\&._VT = typing\&.TypeVar('_VT')\fC [protected]\fP"
+
+.SS "urllib3\&._collections\&.ValidHTTPHeaderSource"
+\fBInitial value:\fP.PP
+.nf
+1 =  typing\&.Union[
+2     "HTTPHeaderDict",
+3     typing\&.Mapping[str, str],
+4     typing\&.Iterable[tuple[str, str]],
+5     "HasGettableStringKeys",
+6 ]
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

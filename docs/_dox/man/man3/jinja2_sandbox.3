@@ -1,0 +1,170 @@
+.TH "jinja2.sandbox" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.sandbox
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBImmutableSandboxedEnvironment\fP"
+.br
+.ti -1c
+.RI "class \fBSandboxedEnvironment\fP"
+.br
+.ti -1c
+.RI "class \fBSandboxedEscapeFormatter\fP"
+.br
+.ti -1c
+.RI "class \fBSandboxedFormatter\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "range \fBsafe_range\fP (*int args)"
+.br
+.ti -1c
+.RI "\fBF\fP \fBunsafe\fP (\fBF\fP f)"
+.br
+.ti -1c
+.RI "bool \fBis_internal_attribute\fP (t\&.Any obj, str attr)"
+.br
+.ti -1c
+.RI "bool \fBmodifies_known_mutable\fP (t\&.Any obj, str attr)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBF\fP = t\&.TypeVar('F', bound=t\&.Callable[\&.\&.\&., t\&.Any])"
+.br
+.ti -1c
+.RI "int \fBMAX_RANGE\fP = 100000"
+.br
+.ti -1c
+.RI "t \fBUNSAFE_FUNCTION_ATTRIBUTES\fP = set()"
+.br
+.ti -1c
+.RI "t \fBUNSAFE_METHOD_ATTRIBUTES\fP = set()"
+.br
+.ti -1c
+.RI "dict \fBUNSAFE_GENERATOR_ATTRIBUTES\fP = {'gi_frame', 'gi_code'}"
+.br
+.ti -1c
+.RI "dict \fBUNSAFE_COROUTINE_ATTRIBUTES\fP = {'cr_frame', 'cr_code'}"
+.br
+.ti -1c
+.RI "dict \fBUNSAFE_ASYNC_GENERATOR_ATTRIBUTES\fP = {'ag_code', 'ag_frame'}"
+.br
+.ti -1c
+.RI "tuple \fB_mutable_spec\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A sandbox layer that ensures unsafe operations cannot be performed\&.
+Useful when the template itself comes from an untrusted source\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " bool jinja2\&.sandbox\&.is_internal_attribute (t\&.Any obj, str attr)"
+
+.PP
+.nf
+Test if the attribute given is an internal python attribute\&.  For
+example this function returns `True` for the `func_code` attribute of
+python objects\&.  This is useful if the environment method
+:meth:`~SandboxedEnvironment\&.is_safe_attribute` is overridden\&.
+
+>>> from jinja2\&.sandbox import is_internal_attribute
+>>> is_internal_attribute(str, 'mro')
+True
+>>> is_internal_attribute(str, 'upper')
+False
+
+.fi
+.PP
+ 
+.SS " bool jinja2\&.sandbox\&.modifies_known_mutable (t\&.Any obj, str attr)"
+
+.PP
+.nf
+This function checks if an attribute on a builtin mutable object
+(list, dict, set or deque) or the corresponding ABCs would modify it
+if called\&.
+
+>>> modifies_known_mutable({}, 'clear')
+True
+>>> modifies_known_mutable({}, 'keys')
+False
+>>> modifies_known_mutable([], 'append')
+True
+>>> modifies_known_mutable([], 'index')
+False
+
+If called with an unsupported object, ``False`` is returned\&.
+
+>>> modifies_known_mutable('foo', 'upper')
+False
+
+.fi
+.PP
+ 
+.SS " range jinja2\&.sandbox\&.safe_range (*int args)"
+
+.PP
+.nf
+A range that can't generate ranges with a length of more than
+MAX_RANGE items\&.
+
+.fi
+.PP
+ 
+.SS " \fBF\fP jinja2\&.sandbox\&.unsafe (\fBF\fP f)"
+
+.PP
+.nf
+Marks a function or method as unsafe\&.
+
+\&.\&. code-block: python
+
+    @unsafe
+    def delete(self):
+        pass
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "tuple jinja2\&.sandbox\&._mutable_spec\fC [protected]\fP"
+
+.SS "jinja2\&.sandbox\&.F = t\&.TypeVar('F', bound=t\&.Callable[\&.\&.\&., t\&.Any])"
+
+.SS "int jinja2\&.sandbox\&.MAX_RANGE = 100000"
+
+.SS "dict jinja2\&.sandbox\&.UNSAFE_ASYNC_GENERATOR_ATTRIBUTES = {'ag_code', 'ag_frame'}"
+
+.SS "dict jinja2\&.sandbox\&.UNSAFE_COROUTINE_ATTRIBUTES = {'cr_frame', 'cr_code'}"
+
+.SS "t jinja2\&.sandbox\&.UNSAFE_FUNCTION_ATTRIBUTES = set()"
+
+.SS "dict jinja2\&.sandbox\&.UNSAFE_GENERATOR_ATTRIBUTES = {'gi_frame', 'gi_code'}"
+
+.SS "t jinja2\&.sandbox\&.UNSAFE_METHOD_ATTRIBUTES = set()"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

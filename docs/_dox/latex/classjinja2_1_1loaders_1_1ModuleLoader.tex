@@ -1,0 +1,123 @@
+\doxysection{jinja2.\+loaders.\+Module\+Loader Class Reference}
+\hypertarget{classjinja2_1_1loaders_1_1ModuleLoader}{}\label{classjinja2_1_1loaders_1_1ModuleLoader}\index{jinja2.loaders.ModuleLoader@{jinja2.loaders.ModuleLoader}}
+Inheritance diagram for jinja2.\+loaders.\+Module\+Loader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classjinja2_1_1loaders_1_1ModuleLoader}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classjinja2_1_1loaders_1_1ModuleLoader_a6d747d1c7b3316d5a9f837923fa957ec}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, t.\+Union\mbox{[}str, "{}os.\+Path\+Like\mbox{[}str\mbox{]}"{}, t.\+Sequence\mbox{[}t.\+Union\mbox{[}str, "{}os.\+Path\+Like\mbox{[}str\mbox{]}"{}\mbox{]}\mbox{]}\mbox{]} path)
+\item 
+"{}Template"{} \mbox{\hyperlink{classjinja2_1_1loaders_1_1ModuleLoader_a913e99703f585ed056c899e8df19849f}{load}} (self, "{}Environment"{} environment, str name, t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} globals=None)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classjinja2_1_1loaders_1_1BaseLoader}{jinja2.\+loaders.\+Base\+Loader}}}
+\begin{DoxyCompactItemize}
+\item 
+t.\+Tuple\mbox{[}str, t.\+Optional\mbox{[}str\mbox{]}, t.\+Optional\mbox{[}t.\+Callable\mbox{[}\mbox{[}$\,$\mbox{]}, bool\mbox{]}\mbox{]}\mbox{]} \mbox{\hyperlink{classjinja2_1_1loaders_1_1BaseLoader_a7e222ad2ab60e2cfd58c11822b0c4951}{get\+\_\+source}} (self, "{}Environment"{} environment, str template)
+\item 
+t.\+List\mbox{[}str\mbox{]} \mbox{\hyperlink{classjinja2_1_1loaders_1_1BaseLoader_acb576631d9b98370780cf622e2433992}{list\+\_\+templates}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{classjinja2_1_1loaders_1_1ModuleLoader_acd07970a8c72190d53ae1ff7d5c3a451}{get\+\_\+template\+\_\+key}} (str name)
+\item 
+str \mbox{\hyperlink{classjinja2_1_1loaders_1_1ModuleLoader_a310f26a977d4d7fd23de1cc352f5fc4c}{get\+\_\+module\+\_\+filename}} (str name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classjinja2_1_1loaders_1_1ModuleLoader_a51fa0b315ae129053465c2b2cee1f29a}{module}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1loaders_1_1ModuleLoader_aa225859fbc68c5a2a431cf1b5bd1d6a2}{package\+\_\+name}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classjinja2_1_1loaders_1_1ModuleLoader_a82d3df34456dd550e7ea4c9542d34fdb}{has\+\_\+source\+\_\+access}} = False
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classjinja2_1_1loaders_1_1BaseLoader}{jinja2.\+loaders.\+Base\+Loader}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classjinja2_1_1loaders_1_1BaseLoader_ac9d3885a6dc14640fa415810264721ee}{has\+\_\+source\+\_\+access}} = True
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}This loader loads templates from precompiled templates.
+
+Example usage:
+
+>>> loader = ModuleLoader('/path/to/compiled/templates')
+
+Templates can be precompiled with :meth:`Environment.compile_templates`.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classjinja2_1_1loaders_1_1ModuleLoader_a6d747d1c7b3316d5a9f837923fa957ec}\label{classjinja2_1_1loaders_1_1ModuleLoader_a6d747d1c7b3316d5a9f837923fa957ec} 
+\index{jinja2.loaders.ModuleLoader@{jinja2.loaders.ModuleLoader}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!jinja2.loaders.ModuleLoader@{jinja2.loaders.ModuleLoader}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None jinja2.\+loaders.\+Module\+Loader.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{t.\+Union\mbox{[}             str, "{}os.\+Path\+Like\mbox{[}str\mbox{]}"{}, t.\+Sequence\mbox{[}t.\+Union\mbox{[}str, "{}os.\+Path\+Like\mbox{[}str\mbox{]}"{}\mbox{]}\mbox{]}         \mbox{]}}]{path }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classjinja2_1_1loaders_1_1ModuleLoader_a310f26a977d4d7fd23de1cc352f5fc4c}\label{classjinja2_1_1loaders_1_1ModuleLoader_a310f26a977d4d7fd23de1cc352f5fc4c} 
+\index{jinja2.loaders.ModuleLoader@{jinja2.loaders.ModuleLoader}!get\_module\_filename@{get\_module\_filename}}
+\index{get\_module\_filename@{get\_module\_filename}!jinja2.loaders.ModuleLoader@{jinja2.loaders.ModuleLoader}}
+\doxysubsubsection{\texorpdfstring{get\_module\_filename()}{get\_module\_filename()}}
+{\footnotesize\ttfamily  str jinja2.\+loaders.\+Module\+Loader.\+get\+\_\+module\+\_\+filename (\begin{DoxyParamCaption}\item[{str}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classjinja2_1_1loaders_1_1ModuleLoader_acd07970a8c72190d53ae1ff7d5c3a451}\label{classjinja2_1_1loaders_1_1ModuleLoader_acd07970a8c72190d53ae1ff7d5c3a451} 
+\index{jinja2.loaders.ModuleLoader@{jinja2.loaders.ModuleLoader}!get\_template\_key@{get\_template\_key}}
+\index{get\_template\_key@{get\_template\_key}!jinja2.loaders.ModuleLoader@{jinja2.loaders.ModuleLoader}}
+\doxysubsubsection{\texorpdfstring{get\_template\_key()}{get\_template\_key()}}
+{\footnotesize\ttfamily  str jinja2.\+loaders.\+Module\+Loader.\+get\+\_\+template\+\_\+key (\begin{DoxyParamCaption}\item[{str}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classjinja2_1_1loaders_1_1ModuleLoader_a913e99703f585ed056c899e8df19849f}\label{classjinja2_1_1loaders_1_1ModuleLoader_a913e99703f585ed056c899e8df19849f} 
+\index{jinja2.loaders.ModuleLoader@{jinja2.loaders.ModuleLoader}!load@{load}}
+\index{load@{load}!jinja2.loaders.ModuleLoader@{jinja2.loaders.ModuleLoader}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily  "{}Template"{} jinja2.\+loaders.\+Module\+Loader.\+load (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{"{}Environment"{}}]{environment,  }\item[{str}]{name,  }\item[{t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} }]{globals = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Loads a template.  This method looks up the template in the cache
+or loads one by calling :meth:`get_source`.  Subclasses should not
+override this method as loaders working on collections of other
+loaders (such as :class:`PrefixLoader` or :class:`ChoiceLoader`)
+will not call this method but `get_source` directly.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classjinja2_1_1loaders_1_1BaseLoader_aec17b1b1367164ea6cb8c532b8033255}{jinja2.\+loaders.\+Base\+Loader}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classjinja2_1_1loaders_1_1ModuleLoader_a82d3df34456dd550e7ea4c9542d34fdb}\label{classjinja2_1_1loaders_1_1ModuleLoader_a82d3df34456dd550e7ea4c9542d34fdb} 
+\index{jinja2.loaders.ModuleLoader@{jinja2.loaders.ModuleLoader}!has\_source\_access@{has\_source\_access}}
+\index{has\_source\_access@{has\_source\_access}!jinja2.loaders.ModuleLoader@{jinja2.loaders.ModuleLoader}}
+\doxysubsubsection{\texorpdfstring{has\_source\_access}{has\_source\_access}}
+{\footnotesize\ttfamily bool jinja2.\+loaders.\+Module\+Loader.\+has\+\_\+source\+\_\+access = False\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classjinja2_1_1loaders_1_1ModuleLoader_a51fa0b315ae129053465c2b2cee1f29a}\label{classjinja2_1_1loaders_1_1ModuleLoader_a51fa0b315ae129053465c2b2cee1f29a} 
+\index{jinja2.loaders.ModuleLoader@{jinja2.loaders.ModuleLoader}!module@{module}}
+\index{module@{module}!jinja2.loaders.ModuleLoader@{jinja2.loaders.ModuleLoader}}
+\doxysubsubsection{\texorpdfstring{module}{module}}
+{\footnotesize\ttfamily jinja2.\+loaders.\+Module\+Loader.\+module}
+
+\Hypertarget{classjinja2_1_1loaders_1_1ModuleLoader_aa225859fbc68c5a2a431cf1b5bd1d6a2}\label{classjinja2_1_1loaders_1_1ModuleLoader_aa225859fbc68c5a2a431cf1b5bd1d6a2} 
+\index{jinja2.loaders.ModuleLoader@{jinja2.loaders.ModuleLoader}!package\_name@{package\_name}}
+\index{package\_name@{package\_name}!jinja2.loaders.ModuleLoader@{jinja2.loaders.ModuleLoader}}
+\doxysubsubsection{\texorpdfstring{package\_name}{package\_name}}
+{\footnotesize\ttfamily jinja2.\+loaders.\+Module\+Loader.\+package\+\_\+name}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/jinja2/\mbox{\hyperlink{loaders_8py}{loaders.\+py}}\end{DoxyCompactItemize}

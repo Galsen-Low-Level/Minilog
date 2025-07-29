@@ -1,0 +1,74 @@
+.TH "docutils.utils.math.math2html.ContainerExtractor" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.utils.math.math2html.ContainerExtractor
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, config)"
+.br
+.ti -1c
+.RI "\fBextract\fP (self, container)"
+.br
+.ti -1c
+.RI "\fBprocess\fP (self, container, list)"
+.br
+.ti -1c
+.RI "\fBsafeclone\fP (self, container)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBallowed\fP"
+.br
+.ti -1c
+.RI "\fBextracted\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A class to extract certain containers\&.
+
+The config parameter is a map containing three lists:
+allowed, copied and extracted\&.
+Each of the three is a list of class names for containers\&.
+Allowed containers are included as is into the result\&.
+Cloned containers are cloned and placed into the result\&.
+Extracted containers are looked into\&.
+All other containers are silently ignored\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.utils\&.math\&.math2html\&.ContainerExtractor\&.__init__ ( self,  config)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.utils\&.math\&.math2html\&.ContainerExtractor\&.extract ( self,  container)"
+
+.SS "docutils\&.utils\&.math\&.math2html\&.ContainerExtractor\&.process ( self,  container,  list)"
+
+.SS "docutils\&.utils\&.math\&.math2html\&.ContainerExtractor\&.safeclone ( self,  container)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.utils\&.math\&.math2html\&.ContainerExtractor\&.allowed"
+
+.SS "docutils\&.utils\&.math\&.math2html\&.ContainerExtractor\&.extracted"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

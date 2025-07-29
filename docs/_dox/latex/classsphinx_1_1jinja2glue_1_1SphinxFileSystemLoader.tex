@@ -1,0 +1,95 @@
+\doxysection{sphinx.\+jinja2glue.\+Sphinx\+File\+System\+Loader Class Reference}
+\hypertarget{classsphinx_1_1jinja2glue_1_1SphinxFileSystemLoader}{}\label{classsphinx_1_1jinja2glue_1_1SphinxFileSystemLoader}\index{sphinx.jinja2glue.SphinxFileSystemLoader@{sphinx.jinja2glue.SphinxFileSystemLoader}}
+Inheritance diagram for sphinx.\+jinja2glue.\+Sphinx\+File\+System\+Loader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classsphinx_1_1jinja2glue_1_1SphinxFileSystemLoader}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+tuple\mbox{[}str, str, Callable\mbox{[}\mbox{[}$\,$\mbox{]}, bool\mbox{]}\mbox{]} \mbox{\hyperlink{classsphinx_1_1jinja2glue_1_1SphinxFileSystemLoader_a8d07dc2d85afb45aacdf28508050ce64}{get\+\_\+source}} (self, \mbox{\hyperlink{classjinja2_1_1environment_1_1Environment}{Environment}} environment, str template)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classjinja2_1_1loaders_1_1FileSystemLoader}{jinja2.\+loaders.\+File\+System\+Loader}}}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classjinja2_1_1loaders_1_1FileSystemLoader_ae92d352caacffbd4a5bf54f1b1300703}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, t.\+Union\mbox{[}str, "{}os.\+Path\+Like\mbox{[}str\mbox{]}"{}, t.\+Sequence\mbox{[}t.\+Union\mbox{[}str, "{}os.\+Path\+Like\mbox{[}str\mbox{]}"{}\mbox{]}\mbox{]}\mbox{]} searchpath, str \mbox{\hyperlink{classjinja2_1_1loaders_1_1FileSystemLoader_aaa0ddbe0f92cf2372682dc2e4023cb1b}{encoding}}="{}utf-\/8"{}, bool \mbox{\hyperlink{classjinja2_1_1loaders_1_1FileSystemLoader_a063c6c1595835fef5d14eb18e2ba2af1}{followlinks}}=False)
+\item 
+t.\+List\mbox{[}str\mbox{]} \mbox{\hyperlink{classjinja2_1_1loaders_1_1FileSystemLoader_a81eb53eaf7bd2a639bffad193a8d0961}{list\+\_\+templates}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classjinja2_1_1loaders_1_1BaseLoader}{jinja2.\+loaders.\+Base\+Loader}}}
+\begin{DoxyCompactItemize}
+\item 
+"{}Template"{} \mbox{\hyperlink{classjinja2_1_1loaders_1_1BaseLoader_aec17b1b1367164ea6cb8c532b8033255}{load}} (self, "{}Environment"{} environment, str name, t.\+Optional\mbox{[}t.\+Mutable\+Mapping\mbox{[}str, t.\+Any\mbox{]}\mbox{]} globals=None)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsphinx_1_1jinja2glue_1_1SphinxFileSystemLoader_a92047e0cfb4a87a238b5675b2f856704}{searchpath}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classjinja2_1_1loaders_1_1FileSystemLoader}{jinja2.\+loaders.\+File\+System\+Loader}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classjinja2_1_1loaders_1_1FileSystemLoader_a9bf9c4966b57aa4cf4330146a71252df}{searchpath}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1loaders_1_1FileSystemLoader_aaa0ddbe0f92cf2372682dc2e4023cb1b}{encoding}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1loaders_1_1FileSystemLoader_a063c6c1595835fef5d14eb18e2ba2af1}{followlinks}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classjinja2_1_1loaders_1_1BaseLoader}{jinja2.\+loaders.\+Base\+Loader}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classjinja2_1_1loaders_1_1BaseLoader_ac9d3885a6dc14640fa415810264721ee}{has\+\_\+source\+\_\+access}} = True
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}FileSystemLoader subclass that is not so strict about '..'  entries in
+template names.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsphinx_1_1jinja2glue_1_1SphinxFileSystemLoader_a8d07dc2d85afb45aacdf28508050ce64}\label{classsphinx_1_1jinja2glue_1_1SphinxFileSystemLoader_a8d07dc2d85afb45aacdf28508050ce64} 
+\index{sphinx.jinja2glue.SphinxFileSystemLoader@{sphinx.jinja2glue.SphinxFileSystemLoader}!get\_source@{get\_source}}
+\index{get\_source@{get\_source}!sphinx.jinja2glue.SphinxFileSystemLoader@{sphinx.jinja2glue.SphinxFileSystemLoader}}
+\doxysubsubsection{\texorpdfstring{get\_source()}{get\_source()}}
+{\footnotesize\ttfamily  tuple\mbox{[}str, str, Callable\mbox{[}\mbox{[}$\,$\mbox{]}, bool\mbox{]}\mbox{]} sphinx.\+jinja2glue.\+Sphinx\+File\+System\+Loader.\+get\+\_\+source (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment}{Environment}}}]{environment,  }\item[{str     }]{template }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the template source, filename and reload helper for a template.
+It's passed the environment and template name and has to return a
+tuple in the form ``(source, filename, uptodate)`` or raise a
+`TemplateNotFound` error if it can't locate the template.
+
+The source part of the returned tuple must be the source of the
+template as a string. The filename should be the name of the
+file on the filesystem if it was loaded from there, otherwise
+``None``. The filename is used by Python for the tracebacks
+if no loader extension is used.
+
+The last item in the tuple is the `uptodate` function.  If auto
+reloading is enabled it's always called to check if the template
+changed.  No arguments are passed so the function must store the
+old state somewhere (for example in a closure).  If it returns `False`
+the template will be reloaded.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classjinja2_1_1loaders_1_1FileSystemLoader_aba31fbe6c9dc2c2e2bf8ad3337cd6588}{jinja2.\+loaders.\+File\+System\+Loader}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsphinx_1_1jinja2glue_1_1SphinxFileSystemLoader_a92047e0cfb4a87a238b5675b2f856704}\label{classsphinx_1_1jinja2glue_1_1SphinxFileSystemLoader_a92047e0cfb4a87a238b5675b2f856704} 
+\index{sphinx.jinja2glue.SphinxFileSystemLoader@{sphinx.jinja2glue.SphinxFileSystemLoader}!searchpath@{searchpath}}
+\index{searchpath@{searchpath}!sphinx.jinja2glue.SphinxFileSystemLoader@{sphinx.jinja2glue.SphinxFileSystemLoader}}
+\doxysubsubsection{\texorpdfstring{searchpath}{searchpath}}
+{\footnotesize\ttfamily sphinx.\+jinja2glue.\+Sphinx\+File\+System\+Loader.\+searchpath}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/sphinx/\mbox{\hyperlink{jinja2glue_8py}{jinja2glue.\+py}}\end{DoxyCompactItemize}

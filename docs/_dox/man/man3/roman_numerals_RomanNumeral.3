@@ -1,0 +1,209 @@
+.TH "roman_numerals.RomanNumeral" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+roman_numerals.RomanNumeral
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, int value)"
+.br
+.ti -1c
+.RI "int \fB__int__\fP (self)"
+.br
+.ti -1c
+.RI "str \fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "bool \fB__eq__\fP (self, object other)"
+.br
+.ti -1c
+.RI "bool \fB__lt__\fP (self, object other)"
+.br
+.ti -1c
+.RI "int \fB__hash__\fP (self)"
+.br
+.ti -1c
+.RI "None \fB__setattr__\fP (self, str key, object value)"
+.br
+.ti -1c
+.RI "str \fBto_uppercase\fP (self)"
+.br
+.ti -1c
+.RI "str \fBto_lowercase\fP (self)"
+.br
+.ti -1c
+.RI "Self \fBfrom_string\fP (cls, str string)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_value\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fB_value\fP"
+.br
+.ti -1c
+.RI "list \fB_ROMAN_NUMERAL_PREFIXES\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A Roman numeral\&.
+
+Only values between 1 and 3,999 are valid\&.
+Stores the value internally as an ``int``\&.
+
+>>> answer = RomanNumeral(42)
+>>> print(answer\&.to_uppercase())
+XLII
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None roman_numerals\&.RomanNumeral\&.__init__ ( self, int value)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " bool roman_numerals\&.RomanNumeral\&.__eq__ ( self, object other)"
+
+.PP
+.nf
+Return self == other\&.
+.fi
+.PP
+ 
+.SS " int roman_numerals\&.RomanNumeral\&.__hash__ ( self)"
+
+.PP
+.nf
+Return the hashed value of this numeral\&.
+.fi
+.PP
+ 
+.SS " int roman_numerals\&.RomanNumeral\&.__int__ ( self)"
+
+.PP
+.nf
+Return the integer value of this numeral\&.
+.fi
+.PP
+ 
+.SS " bool roman_numerals\&.RomanNumeral\&.__lt__ ( self, object other)"
+
+.PP
+.nf
+Return self < other\&.
+.fi
+.PP
+ 
+.SS " str roman_numerals\&.RomanNumeral\&.__repr__ ( self)"
+
+.PP
+.nf
+Return the string representation of this numeral\&.
+.fi
+.PP
+ 
+.SS " None roman_numerals\&.RomanNumeral\&.__setattr__ ( self, str key, object value)"
+
+.PP
+.nf
+Implement setattr(self, name, value)\&.
+.fi
+.PP
+ 
+.SS " str roman_numerals\&.RomanNumeral\&.__str__ ( self)"
+
+.PP
+.nf
+Return the well-formed (uppercase) string for this numeral\&.
+.fi
+.PP
+ 
+.SS " Self roman_numerals\&.RomanNumeral\&.from_string ( cls, str string)"
+
+.PP
+.nf
+Create a ``RomanNumeral`` from a well-formed string representation\&.
+
+Returns ``RomanNumeral`` or raises ``InvalidRomanNumeralError``\&.
+
+>>> answer = RomanNumeral\&.from_string('XLII')
+>>> assert int(answer) == 42
+
+.fi
+.PP
+ 
+.SS " str roman_numerals\&.RomanNumeral\&.to_lowercase ( self)"
+
+.PP
+.nf
+Convert a ``RomanNumeral`` to a lowercase string\&.
+
+>>> answer = RomanNumeral(42)
+>>> assert answer\&.to_lowercase() == 'xlii'
+
+.fi
+.PP
+ 
+.SS " str roman_numerals\&.RomanNumeral\&.to_uppercase ( self)"
+
+.PP
+.nf
+Convert a ``RomanNumeral`` to an uppercase string\&.
+
+>>> answer = RomanNumeral(42)
+>>> assert answer\&.to_uppercase() == 'XLII'
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "list roman_numerals\&.RomanNumeral\&._ROMAN_NUMERAL_PREFIXES\fC [static]\fP, \fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+    (1000, sys\&.intern('M'), sys\&.intern('m')),
+    (900, sys\&.intern('CM'), sys\&.intern('cm')),
+    (500, sys\&.intern('D'), sys\&.intern('d')),
+    (400, sys\&.intern('CD'), sys\&.intern('cd')),
+    (100, sys\&.intern('C'), sys\&.intern('c')),
+    (90, sys\&.intern('XC'), sys\&.intern('xc')),
+    (50, sys\&.intern('L'), sys\&.intern('l')),
+    (40, sys\&.intern('XL'), sys\&.intern('xl')),
+    (10, sys\&.intern('X'), sys\&.intern('x')),
+    (9, sys\&.intern('IX'), sys\&.intern('ix')),
+    (5, sys\&.intern('V'), sys\&.intern('v')),
+    (4, sys\&.intern('IV'), sys\&.intern('iv')),
+    (1, sys\&.intern('I'), sys\&.intern('i')),
+]
+.fi
+
+.SS "int roman_numerals\&.RomanNumeral\&._value\fC [static]\fP, \fC [protected]\fP"
+
+.SS "roman_numerals\&.RomanNumeral\&._value\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

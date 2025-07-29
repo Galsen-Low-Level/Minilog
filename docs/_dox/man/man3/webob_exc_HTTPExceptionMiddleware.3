@@ -1,0 +1,59 @@
+.TH "webob.exc.HTTPExceptionMiddleware" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webob.exc.HTTPExceptionMiddleware
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBapplication\fP)"
+.br
+.ti -1c
+.RI "\fB__call__\fP (self, environ, start_response)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBapplication\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Middleware that catches exceptions in the sub-application\&.  This
+does not catch exceptions in the app_iter; only during the initial
+calling of the application\&.
+
+This should be put *very close* to applications that might raise
+these exceptions\&.  This should not be applied globally; letting
+*expected* exceptions raise through the WSGI stack is dangerous\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "webob\&.exc\&.HTTPExceptionMiddleware\&.__init__ ( self,  application)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "webob\&.exc\&.HTTPExceptionMiddleware\&.__call__ ( self,  environ,  start_response)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "webob\&.exc\&.HTTPExceptionMiddleware\&.application"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,58 @@
+\doxysection{docutils.\+statemachine.\+\_\+\+Search\+Override Class Reference}
+\hypertarget{classdocutils_1_1statemachine_1_1__SearchOverride}{}\label{classdocutils_1_1statemachine_1_1__SearchOverride}\index{docutils.statemachine.\_SearchOverride@{docutils.statemachine.\_SearchOverride}}
+Inheritance diagram for docutils.\+statemachine.\+\_\+\+Search\+Override\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.992882cm]{classdocutils_1_1statemachine_1_1__SearchOverride}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1__SearchOverride_af3b89294589c6fc449b2ec267fb4d83d}{match}} (self, pattern)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1statemachine_1_1__SearchOverride_a2b91e9d62432f2a075961ab06ae08dac}{line}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Mix-in class to override `StateMachine` regular expression behavior.
+
+Changes regular expression matching, from the default `re.match()`
+(succeeds only if the pattern matches at the start of `self.line`) to
+`re.search()` (succeeds if the pattern matches anywhere in `self.line`).
+When subclassing a `StateMachine`, list this class **first** in the
+inheritance list of the class definition.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdocutils_1_1statemachine_1_1__SearchOverride_af3b89294589c6fc449b2ec267fb4d83d}\label{classdocutils_1_1statemachine_1_1__SearchOverride_af3b89294589c6fc449b2ec267fb4d83d} 
+\index{docutils.statemachine.\_SearchOverride@{docutils.statemachine.\_SearchOverride}!match@{match}}
+\index{match@{match}!docutils.statemachine.\_SearchOverride@{docutils.statemachine.\_SearchOverride}}
+\doxysubsubsection{\texorpdfstring{match()}{match()}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+\_\+\+Search\+Override.\+match (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{pattern }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the result of a regular expression search.
+
+Overrides `StateMachine.match()`.
+
+Parameter `pattern`: `re` compiled regular expression.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classdocutils_1_1statemachine_1_1__SearchOverride_a2b91e9d62432f2a075961ab06ae08dac}\label{classdocutils_1_1statemachine_1_1__SearchOverride_a2b91e9d62432f2a075961ab06ae08dac} 
+\index{docutils.statemachine.\_SearchOverride@{docutils.statemachine.\_SearchOverride}!line@{line}}
+\index{line@{line}!docutils.statemachine.\_SearchOverride@{docutils.statemachine.\_SearchOverride}}
+\doxysubsubsection{\texorpdfstring{line}{line}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+\_\+\+Search\+Override.\+line}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/docutils/\mbox{\hyperlink{statemachine_8py}{statemachine.\+py}}\end{DoxyCompactItemize}

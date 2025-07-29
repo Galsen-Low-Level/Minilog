@@ -1,0 +1,121 @@
+.TH "jinja2.environment" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.environment
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBEnvironment\fP"
+.br
+.ti -1c
+.RI "class \fBTemplate\fP"
+.br
+.ti -1c
+.RI "class \fBTemplateExpression\fP"
+.br
+.ti -1c
+.RI "class \fBTemplateModule\fP"
+.br
+.ti -1c
+.RI "class \fBTemplateStream\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_env_bound\fP \fBget_spontaneous_environment\fP (t\&.Type[\fB_env_bound\fP] cls, *t\&.Any args)"
+.br
+.ti -1c
+.RI "t\&.Optional[t\&.MutableMapping[t\&.Tuple['weakref\&.ref[t\&.Any]', str], 'Template']] \fBcreate_cache\fP (int size)"
+.br
+.ti -1c
+.RI "t\&.Optional[t\&.MutableMapping[t\&.Tuple['weakref\&.ref[t\&.Any]', str], 'Template']] \fBcopy_cache\fP (t\&.Optional[t\&.MutableMapping[t\&.Any, t\&.Any]] cache)"
+.br
+.ti -1c
+.RI "t\&.Dict[str, 'Extension'] \fBload_extensions\fP ('Environment' environment, t\&.Sequence[t\&.Union[str, t\&.Type['Extension']]] extensions)"
+.br
+.ti -1c
+.RI "\fB_env_bound\fP \fB_environment_config_check\fP (\fB_env_bound\fP environment)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB_env_bound\fP = t\&.TypeVar('_env_bound', bound='Environment')"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Classes for managing templates and their runtime and compile time
+options\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " \fB_env_bound\fP jinja2\&.environment\&._environment_config_check (\fB_env_bound\fP environment)\fC [protected]\fP"
+
+.PP
+.nf
+Perform a sanity check on the environment\&.
+.fi
+.PP
+ 
+.SS " t\&.Optional[t\&.MutableMapping[t\&.Tuple['weakref\&.ref[t\&.Any]', str], 'Template']] jinja2\&.environment\&.copy_cache (t\&.Optional[t\&.MutableMapping[t\&.Any, t\&.Any]] cache)"
+
+.PP
+.nf
+Create an empty copy of the given cache\&.
+.fi
+.PP
+ 
+.SS " t\&.Optional[t\&.MutableMapping[t\&.Tuple['weakref\&.ref[t\&.Any]', str], 'Template']] jinja2\&.environment\&.create_cache (int size)"
+
+.PP
+.nf
+Return the cache class for the given size\&.
+.fi
+.PP
+ 
+.SS " \fB_env_bound\fP jinja2\&.environment\&.get_spontaneous_environment (t\&.Type[\fB_env_bound\fP] cls, *t\&.Any args)"
+
+.PP
+.nf
+Return a new spontaneous environment\&. A spontaneous environment
+is used for templates created directly rather than through an
+existing environment\&.
+
+:param cls: Environment class to create\&.
+:param args: Positional arguments passed to environment\&.
+
+.fi
+.PP
+ 
+.SS " t\&.Dict[str, 'Extension'] jinja2\&.environment\&.load_extensions ('Environment' environment, t\&.Sequence[t\&.Union[str, t\&.Type['Extension']]] extensions)"
+
+.PP
+.nf
+Load the extensions from the list and bind it to the environment\&.
+Returns a dict of instantiated extensions\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "jinja2\&.environment\&._env_bound = t\&.TypeVar('_env_bound', bound='Environment')\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

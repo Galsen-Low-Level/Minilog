@@ -1,0 +1,165 @@
+\doxysection{waitress.\+wasyncore Namespace Reference}
+\hypertarget{namespacewaitress_1_1wasyncore}{}\label{namespacewaitress_1_1wasyncore}\index{waitress.wasyncore@{waitress.wasyncore}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1dispatcher}{dispatcher}}
+\item 
+class \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1ExitNow}{Exit\+Now}}
+\item 
+class \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1file__dispatcher}{file\+\_\+dispatcher}}
+\item 
+class \mbox{\hyperlink{classwaitress_1_1wasyncore_1_1file__wrapper}{file\+\_\+wrapper}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1wasyncore_a53c842adcc86f05b9d15f116da320bf4}{\+\_\+strerror}} (err)
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1wasyncore_a2f8d475d6d04e25b23e0db6970d9ce36}{read}} (obj)
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1wasyncore_ae70e4613eaae7d7b5ce98819aacb6fed}{write}} (obj)
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1wasyncore_a60fddc5b4cd11c4f384731bc547880ce}{\+\_\+exception}} (obj)
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1wasyncore_ab6c1bd567170faf3702e8a199df13b65}{readwrite}} (obj, flags)
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1wasyncore_ac45b54943241d7096f47425a053b2cc3}{poll}} (timeout=0.\+0, map=None)
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1wasyncore_a083dbeee1503626bb58a005a6947c3fe}{poll2}} (timeout=0.\+0, map=None)
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1wasyncore_a8bebe4c77d111a5687ae6651c542d9ab}{loop}} (timeout=30.\+0, use\+\_\+poll=False, map=None, count=None)
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1wasyncore_a4092fd759fbff545175b5dcafa891918}{compact\+\_\+traceback}} ()
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1wasyncore_a64600446139fb7939cdd9bb505ef4c0b}{close\+\_\+all}} (map=None, ignore\+\_\+all=False)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1wasyncore_a16d76f825b63ccf309eca4de96952ee5}{\+\_\+\+DISCONNECTED}} = frozenset(\{ECONNRESET, ENOTCONN, ESHUTDOWN, ECONNABORTED, EPIPE, EBADF\})
+\item 
+dict \mbox{\hyperlink{namespacewaitress_1_1wasyncore_a695fb13a638cbe33550fda0dab21d8fc}{socket\+\_\+map}} = \{\}
+\item 
+tuple \mbox{\hyperlink{namespacewaitress_1_1wasyncore_ab02e08407d3e5eb815bee4c889315380}{\+\_\+reraised\+\_\+exceptions}} = (\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1ExitNow}{Exit\+Now}}, Keyboard\+Interrupt, System\+Exit)
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1wasyncore_acb570b28dab7c35266c361da01756f79}{poll3}} = \mbox{\hyperlink{namespacewaitress_1_1wasyncore_a083dbeee1503626bb58a005a6947c3fe}{poll2}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Basic infrastructure for asynchronous socket service clients and servers.
+
+There are only two ways to have a program on a single processor do "more
+than one thing at a time".  Multi-threaded programming is the simplest and
+most popular way to do it, but there is another very different technique,
+that lets you have nearly all the advantages of multi-threading, without
+actually using multiple threads. it's really only practical if your program
+is largely I/O bound. If your program is CPU bound, then pre-emptive
+scheduled threads are probably what you really need. Network servers are
+rarely CPU-bound, however.
+
+If your operating system supports the select() system call in its I/O
+library (and nearly all do), then you can use it to juggle multiple
+communication channels at once; doing other work while your I/O is taking
+place in the "background."  Although this strategy can seem strange and
+complex, especially at first, it is in many ways easier to understand and
+control than multi-threaded programming. The module documented here solves
+many of the difficult problems for you, making the task of building
+sophisticated high-performance network servers and clients a snap.
+
+NB: this is a fork of asyncore from the stdlib that we've (the waitress
+developers) named 'wasyncore' to ensure forward compatibility, as asyncore
+in the stdlib will be dropped soon.  It is neither a copy of the 2.7 asyncore
+nor the 3.X asyncore; it is a version compatible with either 2.7 or 3.X.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacewaitress_1_1wasyncore_a60fddc5b4cd11c4f384731bc547880ce}\label{namespacewaitress_1_1wasyncore_a60fddc5b4cd11c4f384731bc547880ce} 
+\index{waitress.wasyncore@{waitress.wasyncore}!\_exception@{\_exception}}
+\index{\_exception@{\_exception}!waitress.wasyncore@{waitress.wasyncore}}
+\doxysubsubsection{\texorpdfstring{\_exception()}{\_exception()}}
+{\footnotesize\ttfamily waitress.\+wasyncore.\+\_\+exception (\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewaitress_1_1wasyncore_a53c842adcc86f05b9d15f116da320bf4}\label{namespacewaitress_1_1wasyncore_a53c842adcc86f05b9d15f116da320bf4} 
+\index{waitress.wasyncore@{waitress.wasyncore}!\_strerror@{\_strerror}}
+\index{\_strerror@{\_strerror}!waitress.wasyncore@{waitress.wasyncore}}
+\doxysubsubsection{\texorpdfstring{\_strerror()}{\_strerror()}}
+{\footnotesize\ttfamily waitress.\+wasyncore.\+\_\+strerror (\begin{DoxyParamCaption}\item[{}]{err }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewaitress_1_1wasyncore_a64600446139fb7939cdd9bb505ef4c0b}\label{namespacewaitress_1_1wasyncore_a64600446139fb7939cdd9bb505ef4c0b} 
+\index{waitress.wasyncore@{waitress.wasyncore}!close\_all@{close\_all}}
+\index{close\_all@{close\_all}!waitress.wasyncore@{waitress.wasyncore}}
+\doxysubsubsection{\texorpdfstring{close\_all()}{close\_all()}}
+{\footnotesize\ttfamily waitress.\+wasyncore.\+close\+\_\+all (\begin{DoxyParamCaption}\item[{}]{map = {\ttfamily None},  }\item[{}]{ignore\+\_\+all = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacewaitress_1_1wasyncore_a4092fd759fbff545175b5dcafa891918}\label{namespacewaitress_1_1wasyncore_a4092fd759fbff545175b5dcafa891918} 
+\index{waitress.wasyncore@{waitress.wasyncore}!compact\_traceback@{compact\_traceback}}
+\index{compact\_traceback@{compact\_traceback}!waitress.wasyncore@{waitress.wasyncore}}
+\doxysubsubsection{\texorpdfstring{compact\_traceback()}{compact\_traceback()}}
+{\footnotesize\ttfamily waitress.\+wasyncore.\+compact\+\_\+traceback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacewaitress_1_1wasyncore_a8bebe4c77d111a5687ae6651c542d9ab}\label{namespacewaitress_1_1wasyncore_a8bebe4c77d111a5687ae6651c542d9ab} 
+\index{waitress.wasyncore@{waitress.wasyncore}!loop@{loop}}
+\index{loop@{loop}!waitress.wasyncore@{waitress.wasyncore}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily waitress.\+wasyncore.\+loop (\begin{DoxyParamCaption}\item[{}]{timeout = {\ttfamily 30.0},  }\item[{}]{use\+\_\+poll = {\ttfamily False},  }\item[{}]{map = {\ttfamily None},  }\item[{}]{count = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacewaitress_1_1wasyncore_ac45b54943241d7096f47425a053b2cc3}\label{namespacewaitress_1_1wasyncore_ac45b54943241d7096f47425a053b2cc3} 
+\index{waitress.wasyncore@{waitress.wasyncore}!poll@{poll}}
+\index{poll@{poll}!waitress.wasyncore@{waitress.wasyncore}}
+\doxysubsubsection{\texorpdfstring{poll()}{poll()}}
+{\footnotesize\ttfamily waitress.\+wasyncore.\+poll (\begin{DoxyParamCaption}\item[{}]{timeout = {\ttfamily 0.0},  }\item[{}]{map = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacewaitress_1_1wasyncore_a083dbeee1503626bb58a005a6947c3fe}\label{namespacewaitress_1_1wasyncore_a083dbeee1503626bb58a005a6947c3fe} 
+\index{waitress.wasyncore@{waitress.wasyncore}!poll2@{poll2}}
+\index{poll2@{poll2}!waitress.wasyncore@{waitress.wasyncore}}
+\doxysubsubsection{\texorpdfstring{poll2()}{poll2()}}
+{\footnotesize\ttfamily waitress.\+wasyncore.\+poll2 (\begin{DoxyParamCaption}\item[{}]{timeout = {\ttfamily 0.0},  }\item[{}]{map = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacewaitress_1_1wasyncore_a2f8d475d6d04e25b23e0db6970d9ce36}\label{namespacewaitress_1_1wasyncore_a2f8d475d6d04e25b23e0db6970d9ce36} 
+\index{waitress.wasyncore@{waitress.wasyncore}!read@{read}}
+\index{read@{read}!waitress.wasyncore@{waitress.wasyncore}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily waitress.\+wasyncore.\+read (\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacewaitress_1_1wasyncore_ab6c1bd567170faf3702e8a199df13b65}\label{namespacewaitress_1_1wasyncore_ab6c1bd567170faf3702e8a199df13b65} 
+\index{waitress.wasyncore@{waitress.wasyncore}!readwrite@{readwrite}}
+\index{readwrite@{readwrite}!waitress.wasyncore@{waitress.wasyncore}}
+\doxysubsubsection{\texorpdfstring{readwrite()}{readwrite()}}
+{\footnotesize\ttfamily waitress.\+wasyncore.\+readwrite (\begin{DoxyParamCaption}\item[{}]{obj,  }\item[{}]{flags }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacewaitress_1_1wasyncore_ae70e4613eaae7d7b5ce98819aacb6fed}\label{namespacewaitress_1_1wasyncore_ae70e4613eaae7d7b5ce98819aacb6fed} 
+\index{waitress.wasyncore@{waitress.wasyncore}!write@{write}}
+\index{write@{write}!waitress.wasyncore@{waitress.wasyncore}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily waitress.\+wasyncore.\+write (\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacewaitress_1_1wasyncore_a16d76f825b63ccf309eca4de96952ee5}\label{namespacewaitress_1_1wasyncore_a16d76f825b63ccf309eca4de96952ee5} 
+\index{waitress.wasyncore@{waitress.wasyncore}!\_DISCONNECTED@{\_DISCONNECTED}}
+\index{\_DISCONNECTED@{\_DISCONNECTED}!waitress.wasyncore@{waitress.wasyncore}}
+\doxysubsubsection{\texorpdfstring{\_DISCONNECTED}{\_DISCONNECTED}}
+{\footnotesize\ttfamily waitress.\+wasyncore.\+\_\+\+DISCONNECTED = frozenset(\{ECONNRESET, ENOTCONN, ESHUTDOWN, ECONNABORTED, EPIPE, EBADF\})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewaitress_1_1wasyncore_ab02e08407d3e5eb815bee4c889315380}\label{namespacewaitress_1_1wasyncore_ab02e08407d3e5eb815bee4c889315380} 
+\index{waitress.wasyncore@{waitress.wasyncore}!\_reraised\_exceptions@{\_reraised\_exceptions}}
+\index{\_reraised\_exceptions@{\_reraised\_exceptions}!waitress.wasyncore@{waitress.wasyncore}}
+\doxysubsubsection{\texorpdfstring{\_reraised\_exceptions}{\_reraised\_exceptions}}
+{\footnotesize\ttfamily tuple waitress.\+wasyncore.\+\_\+reraised\+\_\+exceptions = (\mbox{\hyperlink{classwaitress_1_1wasyncore_1_1ExitNow}{Exit\+Now}}, Keyboard\+Interrupt, System\+Exit)\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewaitress_1_1wasyncore_acb570b28dab7c35266c361da01756f79}\label{namespacewaitress_1_1wasyncore_acb570b28dab7c35266c361da01756f79} 
+\index{waitress.wasyncore@{waitress.wasyncore}!poll3@{poll3}}
+\index{poll3@{poll3}!waitress.wasyncore@{waitress.wasyncore}}
+\doxysubsubsection{\texorpdfstring{poll3}{poll3}}
+{\footnotesize\ttfamily waitress.\+wasyncore.\+poll3 = \mbox{\hyperlink{namespacewaitress_1_1wasyncore_a083dbeee1503626bb58a005a6947c3fe}{poll2}}}
+
+\Hypertarget{namespacewaitress_1_1wasyncore_a695fb13a638cbe33550fda0dab21d8fc}\label{namespacewaitress_1_1wasyncore_a695fb13a638cbe33550fda0dab21d8fc} 
+\index{waitress.wasyncore@{waitress.wasyncore}!socket\_map@{socket\_map}}
+\index{socket\_map@{socket\_map}!waitress.wasyncore@{waitress.wasyncore}}
+\doxysubsubsection{\texorpdfstring{socket\_map}{socket\_map}}
+{\footnotesize\ttfamily dict waitress.\+wasyncore.\+socket\+\_\+map = \{\}}
+

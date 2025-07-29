@@ -1,0 +1,271 @@
+.TH "babel.support.LazyProxy" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+babel.support.LazyProxy
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, Callable[\&.\&.\&., Any] func, *Any args, bool enable_cache=True, **Any kwargs)"
+.br
+.ti -1c
+.RI "Any \fBvalue\fP (self)"
+.br
+.ti -1c
+.RI "bool \fB__contains__\fP (self, object key)"
+.br
+.ti -1c
+.RI "bool \fB__bool__\fP (self)"
+.br
+.ti -1c
+.RI "list[str] \fB__dir__\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[Any] \fB__iter__\fP (self)"
+.br
+.ti -1c
+.RI "int \fB__len__\fP (self)"
+.br
+.ti -1c
+.RI "str \fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "Any \fB__add__\fP (self, object other)"
+.br
+.ti -1c
+.RI "Any \fB__radd__\fP (self, object other)"
+.br
+.ti -1c
+.RI "Any \fB__mod__\fP (self, object other)"
+.br
+.ti -1c
+.RI "Any \fB__rmod__\fP (self, object other)"
+.br
+.ti -1c
+.RI "Any \fB__mul__\fP (self, object other)"
+.br
+.ti -1c
+.RI "Any \fB__rmul__\fP (self, object other)"
+.br
+.ti -1c
+.RI "Any \fB__call__\fP (self, *Any args, **Any kwargs)"
+.br
+.ti -1c
+.RI "bool \fB__lt__\fP (self, object other)"
+.br
+.ti -1c
+.RI "bool \fB__le__\fP (self, object other)"
+.br
+.ti -1c
+.RI "bool \fB__eq__\fP (self, object other)"
+.br
+.ti -1c
+.RI "bool \fB__ne__\fP (self, object other)"
+.br
+.ti -1c
+.RI "bool \fB__gt__\fP (self, object other)"
+.br
+.ti -1c
+.RI "bool \fB__ge__\fP (self, object other)"
+.br
+.ti -1c
+.RI "None \fB__delattr__\fP (self, str name)"
+.br
+.ti -1c
+.RI "Any \fB__getattr__\fP (self, str name)"
+.br
+.ti -1c
+.RI "None \fB__setattr__\fP (self, str name, Any \fBvalue\fP)"
+.br
+.ti -1c
+.RI "None \fB__delitem__\fP (self, Any key)"
+.br
+.ti -1c
+.RI "Any \fB__getitem__\fP (self, Any key)"
+.br
+.ti -1c
+.RI "None \fB__setitem__\fP (self, Any key, Any \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBLazyProxy\fP \fB__copy__\fP (self)"
+.br
+.ti -1c
+.RI "\fBLazyProxy\fP \fB__deepcopy__\fP (self, Any memo)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBvalue\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_func\fP"
+.br
+.ti -1c
+.RI "\fB_args\fP"
+.br
+.ti -1c
+.RI "\fB_kwargs\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "Callable \fB_func\fP [\&.\&.\&., Any]"
+.br
+.ti -1c
+.RI "tuple \fB_args\fP [Any, \&.\&.\&.]"
+.br
+.ti -1c
+.RI "dict \fB_kwargs\fP [str, Any]"
+.br
+.ti -1c
+.RI "bool \fB_is_cache_enabled\fP"
+.br
+.ti -1c
+.RI "Any \fB_value\fP"
+.br
+.ti -1c
+.RI "AttributeError \fB_attribute_error\fP | None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Class for proxy objects that delegate to a specified function to evaluate
+the actual object\&.
+
+>>> def greeting(name='world'):
+\&.\&.\&.     return 'Hello, %s!' % name
+>>> lazy_greeting = LazyProxy(greeting, name='Joe')
+>>> print(lazy_greeting)
+Hello, Joe!
+>>> u'  ' + lazy_greeting
+u'  Hello, Joe!'
+>>> u'(%s)' % lazy_greeting
+u'(Hello, Joe!)'
+
+This can be used, for example, to implement lazy translation functions that
+delay the actual translation until the string is actually used\&. The
+rationale for such behavior is that the locale of the user may not always
+be available\&. In web applications, you only know the locale when processing
+a request\&.
+
+The proxy implementation attempts to be as complete as possible, so that
+the lazy objects should mostly work as expected, for example for sorting:
+
+>>> greetings = [
+\&.\&.\&.     LazyProxy(greeting, 'world'),
+\&.\&.\&.     LazyProxy(greeting, 'Joe'),
+\&.\&.\&.     LazyProxy(greeting, 'universe'),
+\&.\&.\&. ]
+>>> greetings\&.sort()
+>>> for greeting in greetings:
+\&.\&.\&.     print(greeting)
+Hello, Joe!
+Hello, universe!
+Hello, world!
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None babel\&.support\&.LazyProxy\&.__init__ ( self, Callable[\&.\&.\&., Any] func, *Any args, bool  enable_cache = \fCTrue\fP, **Any kwargs)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " Any babel\&.support\&.LazyProxy\&.__add__ ( self, object other)"
+
+.SS " bool babel\&.support\&.LazyProxy\&.__bool__ ( self)"
+
+.SS " Any babel\&.support\&.LazyProxy\&.__call__ ( self, *Any args, **Any kwargs)"
+
+.SS " bool babel\&.support\&.LazyProxy\&.__contains__ ( self, object key)"
+
+.SS " \fBLazyProxy\fP babel\&.support\&.LazyProxy\&.__copy__ ( self)"
+
+.SS " \fBLazyProxy\fP babel\&.support\&.LazyProxy\&.__deepcopy__ ( self, Any memo)"
+
+.SS " None babel\&.support\&.LazyProxy\&.__delattr__ ( self, str name)"
+
+.SS " None babel\&.support\&.LazyProxy\&.__delitem__ ( self, Any key)"
+
+.SS " list[str] babel\&.support\&.LazyProxy\&.__dir__ ( self)"
+
+.SS " bool babel\&.support\&.LazyProxy\&.__eq__ ( self, object other)"
+
+.SS " bool babel\&.support\&.LazyProxy\&.__ge__ ( self, object other)"
+
+.SS " Any babel\&.support\&.LazyProxy\&.__getattr__ ( self, str name)"
+
+.SS " Any babel\&.support\&.LazyProxy\&.__getitem__ ( self, Any key)"
+
+.SS " bool babel\&.support\&.LazyProxy\&.__gt__ ( self, object other)"
+
+.SS " Iterator[Any] babel\&.support\&.LazyProxy\&.__iter__ ( self)"
+
+.SS " bool babel\&.support\&.LazyProxy\&.__le__ ( self, object other)"
+
+.SS " int babel\&.support\&.LazyProxy\&.__len__ ( self)"
+
+.SS " bool babel\&.support\&.LazyProxy\&.__lt__ ( self, object other)"
+
+.SS " Any babel\&.support\&.LazyProxy\&.__mod__ ( self, object other)"
+
+.SS " Any babel\&.support\&.LazyProxy\&.__mul__ ( self, object other)"
+
+.SS " bool babel\&.support\&.LazyProxy\&.__ne__ ( self, object other)"
+
+.SS " Any babel\&.support\&.LazyProxy\&.__radd__ ( self, object other)"
+
+.SS " Any babel\&.support\&.LazyProxy\&.__rmod__ ( self, object other)"
+
+.SS " Any babel\&.support\&.LazyProxy\&.__rmul__ ( self, object other)"
+
+.SS " None babel\&.support\&.LazyProxy\&.__setattr__ ( self, str name, Any value)"
+
+.SS " None babel\&.support\&.LazyProxy\&.__setitem__ ( self, Any key, Any value)"
+
+.SS " str babel\&.support\&.LazyProxy\&.__str__ ( self)"
+
+.SS " Any babel\&.support\&.LazyProxy\&.value ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "tuple babel\&.support\&.LazyProxy\&._args [Any, \&.\&.\&.]\fC [static]\fP, \fC [protected]\fP"
+
+.SS "babel\&.support\&.LazyProxy\&._args\fC [protected]\fP"
+
+.SS "AttributeError babel\&.support\&.LazyProxy\&._attribute_error | None\fC [static]\fP, \fC [protected]\fP"
+
+.SS "Callable babel\&.support\&.LazyProxy\&._func [\&.\&.\&., Any]\fC [static]\fP, \fC [protected]\fP"
+
+.SS "babel\&.support\&.LazyProxy\&._func\fC [protected]\fP"
+
+.SS "bool babel\&.support\&.LazyProxy\&._is_cache_enabled\fC [static]\fP, \fC [protected]\fP"
+
+.SS "dict babel\&.support\&.LazyProxy\&._kwargs [str, Any]\fC [static]\fP, \fC [protected]\fP"
+
+.SS "babel\&.support\&.LazyProxy\&._kwargs\fC [protected]\fP"
+
+.SS "Any babel\&.support\&.LazyProxy\&._value\fC [static]\fP, \fC [protected]\fP"
+
+.SS "babel\&.support\&.LazyProxy\&.value"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

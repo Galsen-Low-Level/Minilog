@@ -1,0 +1,80 @@
+\chapter{README}
+\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Minilog_2README}{}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Minilog_2README}\index{README@{README}}
+ ~\newline
+
+
+\begin{quote}
+{\itshape A Minimalistic log print using termcapabities for native support for almost all terminal.} \end{quote}
+\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Minilog_2README_autotoc_md32}{}\doxysubsection{\texorpdfstring{About}{About}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Minilog_2README_autotoc_md32}
+As its name suggests, {\bfseries{minilog}} is a tool dedicated to native logging based on termcapabilities . It adapts automatically to different terminals, thanks to its {\bfseries{support for termcapabilities}}, and is often already present on most Unix systems.
+
+Lightweight and easy to use, it has no external dependencies, which {\itshape {\bfseries{reduces the memory footprint}}} when used.
+
+By default, for fast display, standard output is not buffered, i.\+e. it is not timed. by the operating system, giving you instant display of messages. It can be quickly integrated into your workflow, as the project is built into a single file called a {\itshape shared object}.
+
+It can be integrated into your code by creating a link to it.
+
+\begin{quote}
+\mbox{[}!\+IMPORTANT\mbox{]} For the moment, python support is under construction, and will be offered as a package using this shared object file.
+
+\end{quote}
+\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Minilog_2README_autotoc_md33}{}\doxysubsubsection{\texorpdfstring{How do I build it?}{How do I build it?}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Minilog_2README_autotoc_md33}
+To install or build it, we used the build manager called \href{https://mesonbuild.com/index.html}{\texttt{ Meson Build System}}.
+
+And here are the commands to type\+:
+
+After cloning.
+
+
+\begin{DoxyItemize}
+\item Enter to project. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ cd\ Minilog}
+
+\end{DoxyCode}
+
+\item start construction with meson 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ meson\ setup\ build\ \ \ \ \ \ \#\ build\ the\ project}
+\DoxyCodeLine{\$\ meson\ compile\ -\/C\ build\ \#\ compile\ project}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+At the end of compilation, you\textquotesingle{}ll have a .so file that can be integrated into your environment.\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Minilog_2README_autotoc_md34}{}\doxysubsubsection{\texorpdfstring{Over\+View\+:}{OverView:}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2Minilog_2README_autotoc_md34}
+\begin{quote}
+\mbox{[}!\+WARNING\mbox{]} Due to a technical problem with Docker containers, most of the images I try to use don\textquotesingle{}t work. Most of them refuse to download resource packages (I don\textquotesingle{}t know why??). This section is therefore unreliable on my side. I suggest you work on your side Try and make a pull request. Thanks in advance. \end{quote}
+
+
+\texorpdfstring{$\sim$}{\string~}\+For a quick appercu, a dockerfile is provided to build the environment and get an overview.\texorpdfstring{$\sim$}{\string~} \texorpdfstring{$\sim$}{\string~}\+Or you can directly use the build project as described above (see the section on how to build)\texorpdfstring{$\sim$}{\string~} \texorpdfstring{$\sim$}{\string~}and in the build folder you\textquotesingle{}ll have the executable.\texorpdfstring{$\sim$}{\string~}
+
+Feel free to play around with the {\ttfamily \doxylink{minilog__overview_8c}{minilog\+\_\+overview.\+c}} file, which contains code examples you can play with too.
+
+\texorpdfstring{$\sim$}{\string~}\+For the more timid, use Docker \+:\texorpdfstring{$\sim$}{\string~} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{!\ Do\ Not\ Try\ \ }
+\DoxyCodeLine{-\/\ \$\ docker\ build\ .\ -\/t\ minilog\string~\ }
+\DoxyCodeLine{-\/\ \$\ docker\ run\ minilog\ \#\ run\ it\string~\ \ }
+
+\end{DoxyCode}
+
+
+\doxysubparagraph*{Here is a screenshot to see what the logs look like}
+
+
+
+\begin{quote}
+\mbox{[}!\+NOTE\mbox{]} This project is in its initial state and needs feedback or feature requests to improve it as much as possible. This project aims to satisfy a large number of users, so please feel free to submit pull requests or issues by placing a flag. feat\+: so I know it\textquotesingle{}s a feature request, ~\newline
+ idea\+: to discuss an idea question\+: if it\textquotesingle{}s a question, I\textquotesingle{}ll be happy to answer it. \end{quote}
+
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+\_\+\+Happy Hacking Folks\+\_\+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+
+
+
+Feel free to contribute.
+
+We ❤️ Computers at all Levels.
+
+From Senegal 🇸🇳 

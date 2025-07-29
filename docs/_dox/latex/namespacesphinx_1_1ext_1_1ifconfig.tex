@@ -1,0 +1,49 @@
+\doxysection{sphinx.\+ext.\+ifconfig Namespace Reference}
+\hypertarget{namespacesphinx_1_1ext_1_1ifconfig}{}\label{namespacesphinx_1_1ext_1_1ifconfig}\index{sphinx.ext.ifconfig@{sphinx.ext.ifconfig}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1ext_1_1ifconfig_1_1ifconfig}{ifconfig}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1ext_1_1ifconfig_1_1IfConfig}{If\+Config}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{namespacesphinx_1_1ext_1_1ifconfig_ad25bac7aa624880d508b582f0f05ac71}{process\+\_\+ifconfig\+\_\+nodes}} (\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}} app, nodes.\+document doctree, str docname)
+\item 
+\mbox{\hyperlink{classsphinx_1_1util_1_1typing_1_1ExtensionMetadata}{Extension\+Metadata}} \mbox{\hyperlink{namespacesphinx_1_1ext_1_1ifconfig_a0061d54e9e0cf57ea9c979601c9add07}{setup}} (\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}} app)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Provides the ``ifconfig`` directive.
+
+The ``ifconfig`` directive enables writing documentation
+that is included depending on configuration variables.
+
+Usage::
+
+    .. ifconfig:: releaselevel in ('alpha', 'beta', 'rc')
+
+       This stuff is only included in the built docs for unstable versions.
+
+The argument for ``ifconfig`` is a plain Python expression, evaluated in the
+namespace of the project configuration (that is, all variables from
+``conf.py`` are available.)
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesphinx_1_1ext_1_1ifconfig_ad25bac7aa624880d508b582f0f05ac71}\label{namespacesphinx_1_1ext_1_1ifconfig_ad25bac7aa624880d508b582f0f05ac71} 
+\index{sphinx.ext.ifconfig@{sphinx.ext.ifconfig}!process\_ifconfig\_nodes@{process\_ifconfig\_nodes}}
+\index{process\_ifconfig\_nodes@{process\_ifconfig\_nodes}!sphinx.ext.ifconfig@{sphinx.ext.ifconfig}}
+\doxysubsubsection{\texorpdfstring{process\_ifconfig\_nodes()}{process\_ifconfig\_nodes()}}
+{\footnotesize\ttfamily  None sphinx.\+ext.\+ifconfig.\+process\+\_\+ifconfig\+\_\+nodes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}}]{app,  }\item[{nodes.\+document}]{doctree,  }\item[{str}]{docname }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1ext_1_1ifconfig_a0061d54e9e0cf57ea9c979601c9add07}\label{namespacesphinx_1_1ext_1_1ifconfig_a0061d54e9e0cf57ea9c979601c9add07} 
+\index{sphinx.ext.ifconfig@{sphinx.ext.ifconfig}!setup@{setup}}
+\index{setup@{setup}!sphinx.ext.ifconfig@{sphinx.ext.ifconfig}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classsphinx_1_1util_1_1typing_1_1ExtensionMetadata}{Extension\+Metadata}} sphinx.\+ext.\+ifconfig.\+setup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}}]{app }\end{DoxyParamCaption})}
+

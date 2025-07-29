@@ -1,0 +1,128 @@
+.TH "pip._vendor.rich.color" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.rich.color
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBColor\fP"
+.br
+.ti -1c
+.RI "class \fBColorParseError\fP"
+.br
+.ti -1c
+.RI "class \fBColorSystem\fP"
+.br
+.ti -1c
+.RI "class \fBColorType\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBColorTriplet\fP \fBparse_rgb_hex\fP (str hex_color)"
+.br
+.ti -1c
+.RI "\fBColorTriplet\fP \fBblend_rgb\fP (\fBColorTriplet\fP color1, \fBColorTriplet\fP color2, float cross_fade=0\&.5)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "str \fBWINDOWS\fP = 'Windows'"
+.br
+.ti -1c
+.RI "dict \fBANSI_COLOR_NAMES\fP"
+.br
+.ti -1c
+.RI "\fBRE_COLOR\fP"
+.br
+.ti -1c
+.RI "\fBconsole\fP = \fBConsole\fP()"
+.br
+.ti -1c
+.RI "\fBtable\fP = \fBTable\fP(show_footer=False, show_edge=True)"
+.br
+.ti -1c
+.RI "\fBwidth\fP"
+.br
+.ti -1c
+.RI "\fBoverflow\fP"
+.br
+.ti -1c
+.RI "\fBjustify\fP"
+.br
+.ti -1c
+.RI "\fBstyle\fP"
+.br
+.ti -1c
+.RI "\fBcolors\fP = sorted((v, k) for k, v in ANSI_COLOR_NAMES\&.items())"
+.br
+.ti -1c
+.RI "\fBcolor_cell\fP = \fBText\fP(' ' * 10, \fBstyle\fP=f'on {name}')"
+.br
+.ti -1c
+.RI "\fBcolor\fP = EIGHT_BIT_PALETTE[color_number]"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " \fBColorTriplet\fP pip\&._vendor\&.rich\&.color\&.blend_rgb (\fBColorTriplet\fP color1, \fBColorTriplet\fP color2, float  cross_fade = \fC0\&.5\fP)"
+
+.PP
+.nf
+Blend one RGB color in to another\&.
+.fi
+.PP
+ 
+.SS " \fBColorTriplet\fP pip\&._vendor\&.rich\&.color\&.parse_rgb_hex (str hex_color)"
+
+.PP
+.nf
+Parse six hex characters in to RGB triplet\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "dict pip\&._vendor\&.rich\&.color\&.ANSI_COLOR_NAMES"
+
+.SS "pip\&._vendor\&.rich\&.color\&.color = EIGHT_BIT_PALETTE[color_number]"
+
+.SS "pip\&._vendor\&.rich\&.color\&.color_cell = \fBText\fP(' ' * 10, \fBstyle\fP=f'on {name}')"
+
+.SS "pip\&._vendor\&.rich\&.color\&.colors = sorted((v, k) for k, v in ANSI_COLOR_NAMES\&.items())"
+
+.SS "pip\&._vendor\&.rich\&.color\&.console = \fBConsole\fP()"
+
+.SS "pip\&._vendor\&.rich\&.color\&.justify"
+
+.SS "pip\&._vendor\&.rich\&.color\&.overflow"
+
+.SS "pip\&._vendor\&.rich\&.color\&.RE_COLOR"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(
+2     ,
+3     re\&.VERBOSE,
+4 )
+.fi
+
+.SS "pip\&._vendor\&.rich\&.color\&.style"
+
+.SS "pip\&._vendor\&.rich\&.color\&.table = \fBTable\fP(show_footer=False, show_edge=True)"
+
+.SS "pip\&._vendor\&.rich\&.color\&.width"
+
+.SS "str pip\&._vendor\&.rich\&.color\&.WINDOWS = 'Windows'"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

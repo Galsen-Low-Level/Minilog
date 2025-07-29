@@ -1,0 +1,109 @@
+.TH "jinja2.ext.ExprStmtExtension" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.ext.ExprStmtExtension
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBjinja2\&.ext\&.Extension\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBnodes\&.ExprStmt\fP \fBparse\fP (self, 'Parser' parser)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBjinja2\&.ext\&.Extension\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init_subclass__\fP (cls)"
+.br
+.ti -1c
+.RI "None \fB__init__\fP (self, \fBEnvironment\fP \fBenvironment\fP)"
+.br
+.ti -1c
+.RI "'te\&.Self' \fBbind\fP (self, \fBEnvironment\fP \fBenvironment\fP)"
+.br
+.ti -1c
+.RI "str \fBpreprocess\fP (self, str source, t\&.Optional[str] name, t\&.Optional[str] filename=None)"
+.br
+.ti -1c
+.RI "t\&.Union['TokenStream', t\&.Iterable['Token']] \fBfilter_stream\fP (self, 'TokenStream' stream)"
+.br
+.ti -1c
+.RI "\fBnodes\&.ExtensionAttribute\fP \fBattr\fP (self, str name, t\&.Optional[int] lineno=None)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Call\fP \fBcall_method\fP (self, str name, t\&.Optional[t\&.List[\fBnodes\&.Expr\fP]] args=None, t\&.Optional[t\&.List[\fBnodes\&.Keyword\fP]] kwargs=None, t\&.Optional[\fBnodes\&.Expr\fP] dyn_args=None, t\&.Optional[\fBnodes\&.Expr\fP] dyn_kwargs=None, t\&.Optional[int] lineno=None)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBtags\fP = {'do'}"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBjinja2\&.ext\&.Extension\fP
+.in +1c
+.ti -1c
+.RI "t \fBidentifier\fP \&.ClassVar[str]"
+.br
+.ti -1c
+.RI "t \fBtags\fP = set()"
+.br
+.ti -1c
+.RI "int \fBpriority\fP = 100"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBjinja2\&.ext\&.Extension\fP
+.in +1c
+.ti -1c
+.RI "\fBidentifier\fP"
+.br
+.ti -1c
+.RI "\fBenvironment\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Adds a `do` tag to Jinja that works like the print statement just
+that it doesn't print the return value\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " \fBnodes\&.ExprStmt\fP jinja2\&.ext\&.ExprStmtExtension\&.parse ( self, 'Parser' parser)"
+
+.PP
+.nf
+If any of the :attr:`tags` matched this method is called with the
+parser as first argument\&.  The token the parser stream is pointing at
+is the name token that matched\&.  This method has to return one or a
+list of multiple nodes\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.ext\&.Extension\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "dict jinja2\&.ext\&.ExprStmtExtension\&.tags = {'do'}\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

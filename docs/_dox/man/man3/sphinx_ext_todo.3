@@ -1,0 +1,89 @@
+.TH "sphinx.ext.todo" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.ext.todo
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBTodo\fP"
+.br
+.ti -1c
+.RI "class \fBtodo_node\fP"
+.br
+.ti -1c
+.RI "class \fBTodoDomain\fP"
+.br
+.ti -1c
+.RI "class \fBtodolist\fP"
+.br
+.ti -1c
+.RI "class \fBTodoList\fP"
+.br
+.ti -1c
+.RI "class \fBTodoListProcessor\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBvisit_todo_node\fP (\fBHTML5Translator\fP self, \fBtodo_node\fP node)"
+.br
+.ti -1c
+.RI "None \fBdepart_todo_node\fP (\fBHTML5Translator\fP self, \fBtodo_node\fP node)"
+.br
+.ti -1c
+.RI "None \fBlatex_visit_todo_node\fP (\fBLaTeXTranslator\fP self, \fBtodo_node\fP node)"
+.br
+.ti -1c
+.RI "None \fBlatex_depart_todo_node\fP (\fBLaTeXTranslator\fP self, \fBtodo_node\fP node)"
+.br
+.ti -1c
+.RI "\fBExtensionMetadata\fP \fBsetup\fP (\fBSphinx\fP app)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Allow todos to be inserted into your documentation\&.
+
+Inclusion of todos can be switched of by a configuration variable\&.
+The todolist directive collects all todos of your project and lists them along
+with a backlink to the original location\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " None sphinx\&.ext\&.todo\&.depart_todo_node (\fBHTML5Translator\fP self, \fBtodo_node\fP node)"
+
+.SS " None sphinx\&.ext\&.todo\&.latex_depart_todo_node (\fBLaTeXTranslator\fP self, \fBtodo_node\fP node)"
+
+.SS " None sphinx\&.ext\&.todo\&.latex_visit_todo_node (\fBLaTeXTranslator\fP self, \fBtodo_node\fP node)"
+
+.SS " \fBExtensionMetadata\fP sphinx\&.ext\&.todo\&.setup (\fBSphinx\fP app)"
+
+.SS " None sphinx\&.ext\&.todo\&.visit_todo_node (\fBHTML5Translator\fP self, \fBtodo_node\fP node)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "sphinx\&.ext\&.todo\&.logger = logging\&.getLogger(__name__)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

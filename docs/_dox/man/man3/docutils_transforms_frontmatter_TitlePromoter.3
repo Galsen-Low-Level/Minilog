@@ -1,0 +1,128 @@
+.TH "docutils.transforms.frontmatter.TitlePromoter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.transforms.frontmatter.TitlePromoter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.transforms\&.Transform\fP\&.
+.PP
+Inherited by \fBdocutils\&.transforms\&.frontmatter\&.DocTitle\fP, and \fBdocutils\&.transforms\&.frontmatter\&.SectionSubTitle\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBpromote_title\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBpromote_subtitle\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBcandidate_index\fP (self, node)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdocument\fP, \fBstartnode\fP=None)"
+.br
+.ti -1c
+.RI "\fBapply\fP (self, **kwargs)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBstartnode\fP"
+.br
+.ti -1c
+.RI "\fBlanguage\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_priority\fP = None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Abstract base class for DocTitle and SectionSubTitle transforms\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.transforms\&.frontmatter\&.TitlePromoter\&.candidate_index ( self,  node)"
+
+.PP
+.nf
+Find and return the promotion candidate and its index\&.
+
+Return (None, None) if no valid candidate was found\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.transforms\&.frontmatter\&.TitlePromoter\&.promote_subtitle ( self,  node)"
+
+.PP
+.nf
+Transform the following node tree::
+
+    <node>
+        <title>
+        <section>
+            <title>
+            \&.\&.\&.
+
+into ::
+
+    <node>
+        <title>
+        <subtitle>
+        \&.\&.\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.transforms\&.frontmatter\&.TitlePromoter\&.promote_title ( self,  node)"
+
+.PP
+.nf
+Transform the following tree::
+
+    <node>
+        <section>
+            <title>
+            \&.\&.\&.
+
+into ::
+
+    <node>
+        <title>
+        \&.\&.\&.
+
+`node` is normally a document\&.
+
+.fi
+.PP
+ 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,231 @@
+.TH "sphinx.builders.html" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.builders.html
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fB_assets\fP"
+.br
+.ti -1c
+.RI "namespace \fB_build_info\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBStandaloneHTMLBuilder\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "str|None \fBconvert_locale_to_language_tag\fP (str|None locale)"
+.br
+.ti -1c
+.RI "None \fBconvert_html_css_files\fP (\fBSphinx\fP app, \fBConfig\fP config)"
+.br
+.ti -1c
+.RI "None \fBconvert_html_js_files\fP (\fBSphinx\fP app, \fBConfig\fP config)"
+.br
+.ti -1c
+.RI "None \fBsetup_resource_paths\fP (\fBSphinx\fP app, str pagename, str templatename, dict[str, Any] context, \fBNode\fP doctree)"
+.br
+.ti -1c
+.RI "None \fBvalidate_math_renderer\fP (\fBSphinx\fP app)"
+.br
+.ti -1c
+.RI "None \fBvalidate_html_extra_path\fP (\fBSphinx\fP app, \fBConfig\fP config)"
+.br
+.ti -1c
+.RI "None \fBvalidate_html_static_path\fP (\fBSphinx\fP app, \fBConfig\fP config)"
+.br
+.ti -1c
+.RI "None \fBvalidate_html_logo\fP (\fBSphinx\fP app, \fBConfig\fP config)"
+.br
+.ti -1c
+.RI "None \fBvalidate_html_favicon\fP (\fBSphinx\fP app, \fBConfig\fP config)"
+.br
+.ti -1c
+.RI "None \fBerror_on_html_sidebars_string_values\fP (\fBSphinx\fP app, \fBConfig\fP config)"
+.br
+.ti -1c
+.RI "None \fBerror_on_html_4\fP (\fBSphinx\fP _app, \fBConfig\fP config)"
+.br
+.ti -1c
+.RI "\fBExtensionMetadata\fP \fBsetup\fP (\fBSphinx\fP app)"
+.br
+.ti -1c
+.RI "Any \fB__getattr__\fP (str name)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "str \fBINVENTORY_FILENAME\fP = 'objects\&.inv'"
+.br
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "\fBreturn_codes_re\fP = re\&.compile('[\\r\\n]+')"
+.br
+.ti -1c
+.RI "TypeAlias \fBDOMAIN_INDEX_TYPE\fP"
+.br
+.ti -1c
+.RI "dict \fB_DEPRECATED_OBJECTS\fP"
+.br
+.ti -1c
+.RI "\fBhtml_title\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Several HTML builders\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " Any sphinx\&.builders\&.html\&.__getattr__ (str name)"
+
+.SS " None sphinx\&.builders\&.html\&.convert_html_css_files (\fBSphinx\fP app, \fBConfig\fP config)"
+
+.PP
+.nf
+Convert string styled html_css_files to tuple styled one\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.builders\&.html\&.convert_html_js_files (\fBSphinx\fP app, \fBConfig\fP config)"
+
+.PP
+.nf
+Convert string styled html_js_files to tuple styled one\&.
+.fi
+.PP
+ 
+.SS " str | None sphinx\&.builders\&.html\&.convert_locale_to_language_tag (str | None locale)"
+
+.PP
+.nf
+Convert a locale string to a language tag (ex\&. en_US -> en-US)\&.
+
+refs: BCP 47 (:rfc:`5646`)
+
+.fi
+.PP
+ 
+.SS " None sphinx\&.builders\&.html\&.error_on_html_4 (\fBSphinx\fP _app, \fBConfig\fP config)"
+
+.PP
+.nf
+Error on HTML 4\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.builders\&.html\&.error_on_html_sidebars_string_values (\fBSphinx\fP app, \fBConfig\fP config)"
+
+.PP
+.nf
+Support removed in Sphinx 2\&.
+.fi
+.PP
+ 
+.SS " \fBExtensionMetadata\fP sphinx\&.builders\&.html\&.setup (\fBSphinx\fP app)"
+
+.SS " None sphinx\&.builders\&.html\&.setup_resource_paths (\fBSphinx\fP app, str pagename, str templatename, dict[str, Any] context, \fBNode\fP doctree)"
+
+.PP
+.nf
+Set up relative resource paths\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.builders\&.html\&.validate_html_extra_path (\fBSphinx\fP app, \fBConfig\fP config)"
+
+.PP
+.nf
+Check html_extra_paths setting\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.builders\&.html\&.validate_html_favicon (\fBSphinx\fP app, \fBConfig\fP config)"
+
+.PP
+.nf
+Check html_favicon setting\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.builders\&.html\&.validate_html_logo (\fBSphinx\fP app, \fBConfig\fP config)"
+
+.PP
+.nf
+Check html_logo setting\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.builders\&.html\&.validate_html_static_path (\fBSphinx\fP app, \fBConfig\fP config)"
+
+.PP
+.nf
+Check html_static_paths setting\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.builders\&.html\&.validate_math_renderer (\fBSphinx\fP app)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "dict sphinx\&.builders\&.html\&._DEPRECATED_OBJECTS\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     'Stylesheet': (
+3         _CascadingStyleSheet,
+4         'sphinx\&.builders\&.html\&._assets\&._CascadingStyleSheet',
+5         (9, 0),
+6     ),
+7     'JavaScript': (_JavaScript, 'sphinx\&.builders\&.html\&._assets\&._JavaScript', (9, 0)),
+8 }
+.fi
+
+.SS "TypeAlias sphinx\&.builders\&.html\&.DOMAIN_INDEX_TYPE"
+\fBInitial value:\fP.PP
+.nf
+1 =  tuple[
+2     # Index name (e\&.g\&. py\-modindex)
+3     str,
+4     # Index class
+5     type[Index],
+6     # list of (heading string, list of index entries) pairs\&.
+7     list[tuple[str, list[IndexEntry]]],
+8     # whether sub\-entries should start collapsed
+9     bool,
+10 ]
+.fi
+
+.SS "sphinx\&.builders\&.html\&.html_title"
+
+.SS "str sphinx\&.builders\&.html\&.INVENTORY_FILENAME = 'objects\&.inv'"
+
+.SS "sphinx\&.builders\&.html\&.logger = logging\&.getLogger(__name__)"
+
+.SS "sphinx\&.builders\&.html\&.return_codes_re = re\&.compile('[\\r\\n]+')"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

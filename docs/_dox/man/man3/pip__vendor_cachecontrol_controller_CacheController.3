@@ -1,0 +1,158 @@
+.TH "pip._vendor.cachecontrol.controller.CacheController" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.cachecontrol.controller.CacheController
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBBaseCache\fP|None \fBcache\fP=None, bool \fBcache_etags\fP=True, \fBSerializer\fP|None \fBserializer\fP=None, Collection[int]|None status_codes=None)"
+.br
+.ti -1c
+.RI "str \fBcache_url\fP (cls, str uri)"
+.br
+.ti -1c
+.RI "dict[str, int|None] \fBparse_cache_control\fP (self, Mapping[str, str] headers)"
+.br
+.ti -1c
+.RI "\fBHTTPResponse\fP|Literal[False] \fBcached_request\fP (self, \fBPreparedRequest\fP request)"
+.br
+.ti -1c
+.RI "dict[str, str] \fBconditional_headers\fP (self, \fBPreparedRequest\fP request)"
+.br
+.ti -1c
+.RI "None \fBcache_response\fP (self, \fBPreparedRequest\fP request, \fBHTTPResponse\fP response, bytes|None body=None, Collection[int]|None status_codes=None)"
+.br
+.ti -1c
+.RI "\fBHTTPResponse\fP \fBupdate_cached_response\fP (self, \fBPreparedRequest\fP request, \fBHTTPResponse\fP response)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcache\fP"
+.br
+.ti -1c
+.RI "\fBcache_etags\fP"
+.br
+.ti -1c
+.RI "\fBserializer\fP"
+.br
+.ti -1c
+.RI "\fBcacheable_status_codes\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fB_urlnorm\fP (cls, str uri)"
+.br
+.ti -1c
+.RI "\fBHTTPResponse\fP|None \fB_load_from_cache\fP (self, \fBPreparedRequest\fP request)"
+.br
+.ti -1c
+.RI "None \fB_cache_set\fP (self, str \fBcache_url\fP, \fBPreparedRequest\fP request, \fBHTTPResponse\fP response, bytes|None body=None, int|None expires_time=None)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+An interface to see if request should cached or not\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.cachecontrol\&.controller\&.CacheController\&.__init__ ( self, \fBBaseCache\fP | None  cache = \fCNone\fP, bool  cache_etags = \fCTrue\fP, \fBSerializer\fP | None  serializer = \fCNone\fP, Collection[int] | None  status_codes = \fCNone\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " None pip\&._vendor\&.cachecontrol\&.controller\&.CacheController\&._cache_set ( self, str cache_url, \fBPreparedRequest\fP request, \fBHTTPResponse\fP response, bytes | None  body = \fCNone\fP, int | None  expires_time = \fCNone\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Store the data in the cache\&.
+
+.fi
+.PP
+ 
+.SS " \fBHTTPResponse\fP | None pip\&._vendor\&.cachecontrol\&.controller\&.CacheController\&._load_from_cache ( self, \fBPreparedRequest\fP request)\fC [protected]\fP"
+
+.PP
+.nf
+Load a cached response, or return None if it's not available\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.cachecontrol\&.controller\&.CacheController\&._urlnorm ( cls, str uri)\fC [protected]\fP"
+
+.PP
+.nf
+Normalize the URL to create a safe key for the cache
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.cachecontrol\&.controller\&.CacheController\&.cache_response ( self, \fBPreparedRequest\fP request, \fBHTTPResponse\fP response, bytes | None  body = \fCNone\fP, Collection[int] | None  status_codes = \fCNone\fP)"
+
+.PP
+.nf
+Algorithm for caching requests\&.
+
+This assumes a requests Response object\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.cachecontrol\&.controller\&.CacheController\&.cache_url ( cls, str uri)"
+
+.SS " \fBHTTPResponse\fP | Literal[False] pip\&._vendor\&.cachecontrol\&.controller\&.CacheController\&.cached_request ( self, \fBPreparedRequest\fP request)"
+
+.PP
+.nf
+Return a cached response if it exists in the cache, otherwise
+return False\&.
+
+.fi
+.PP
+ 
+.SS " dict[str, str] pip\&._vendor\&.cachecontrol\&.controller\&.CacheController\&.conditional_headers ( self, \fBPreparedRequest\fP request)"
+
+.SS " dict[str, int | None] pip\&._vendor\&.cachecontrol\&.controller\&.CacheController\&.parse_cache_control ( self, Mapping[str, str] headers)"
+
+.SS " \fBHTTPResponse\fP pip\&._vendor\&.cachecontrol\&.controller\&.CacheController\&.update_cached_response ( self, \fBPreparedRequest\fP request, \fBHTTPResponse\fP
+     response)"
+
+.PP
+.nf
+On a 304 we will get a new set of headers that we want to
+update our cached value with, assuming we have one\&.
+
+This should only ever be called when we've sent an ETag and
+gotten a 304 as the response\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.cachecontrol\&.controller\&.CacheController\&.cache"
+
+.SS "pip\&._vendor\&.cachecontrol\&.controller\&.CacheController\&.cache_etags"
+
+.SS "pip\&._vendor\&.cachecontrol\&.controller\&.CacheController\&.cacheable_status_codes"
+
+.SS "pip\&._vendor\&.cachecontrol\&.controller\&.CacheController\&.serializer"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

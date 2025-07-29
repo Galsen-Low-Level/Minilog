@@ -1,0 +1,210 @@
+.TH "sphinx.util.docutils.SphinxFileOutput" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.util.docutils.SphinxFileOutput
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.io\&.FileOutput\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, **Any kwargs)"
+.br
+.ti -1c
+.RI "str \fBwrite\fP (self, str data)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.io\&.FileOutput\fP
+.in +1c
+.ti -1c
+.RI "\fBopen\fP (self)"
+.br
+.ti -1c
+.RI "\fBclose\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.io\&.Output\fP
+.in +1c
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBencode\fP (self, data)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "\fBget_transforms\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBoverwrite_if_changed\fP"
+.br
+.ti -1c
+.RI "\fBdestination_path\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.io\&.FileOutput\fP
+.in +1c
+.ti -1c
+.RI "\fBopened\fP"
+.br
+.ti -1c
+.RI "\fBautoclose\fP"
+.br
+.ti -1c
+.RI "\fBmode\fP"
+.br
+.ti -1c
+.RI "\fBdestination\fP"
+.br
+.ti -1c
+.RI "\fBdestination_path\fP"
+.br
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.io\&.Output\fP
+.in +1c
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBerror_handler\fP"
+.br
+.ti -1c
+.RI "\fBdestination\fP"
+.br
+.ti -1c
+.RI "\fBdestination_path\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_transforms\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Attributes inherited from \fBdocutils\&.io\&.FileOutput\fP
+.in +1c
+.ti -1c
+.RI "str \fBdefault_destination_path\fP = '<file>'"
+.br
+.ti -1c
+.RI "str \fBmode\fP = 'w'"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.io\&.Output\fP
+.in +1c
+.ti -1c
+.RI "str \fBcomponent_type\fP = 'output'"
+.br
+.ti -1c
+.RI "\fBdefault_destination_path\fP = None"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBdefault_transforms\fP = ()"
+.br
+.ti -1c
+.RI "tuple \fBunknown_reference_resolvers\fP = ()"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBdocutils\&.io\&.FileOutput\fP
+.in +1c
+.ti -1c
+.RI "\fB_stderr\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Better FileOutput class for Sphinx\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.util\&.docutils\&.SphinxFileOutput\&.__init__ ( self, **Any destination)"
+
+.PP
+.nf
+:Parameters:
+    - `destination`: either a file-like object (which is written
+      directly) or `None` (which implies `sys\&.stdout` if no
+      `destination_path` given)\&.
+    - `destination_path`: a path to a file, which is opened and then
+      written\&.
+    - `encoding`: the text encoding of the output file\&.
+    - `error_handler`: the encoding error handler to use\&.
+    - `autoclose`: close automatically after write (except when
+      `sys\&.stdout` or `sys\&.stderr` is the destination)\&.
+    - `handle_io_errors`: ignored, deprecated, will be removed\&.
+    - `mode`: how the file is to be opened (see standard function
+      `open`)\&. The default is 'w', providing universal newline
+      support for text files\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.io\&.FileOutput\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " str sphinx\&.util\&.docutils\&.SphinxFileOutput\&.write ( self, str data)"
+
+.PP
+.nf
+Write `data` to a single file, also return it\&.
+
+`data` can be a `str` or `bytes` instance\&.
+If writing `bytes` fails, an attempt is made to write to
+the low-level interface ``self\&.destination\&.buffer``\&.
+
+If `data` is a `str` instance and `self\&.encoding` and
+`self\&.destination\&.encoding` are  set to different values, `data`
+is encoded to a `bytes` instance using `self\&.encoding`\&.
+
+Provisional: future versions may raise an error if `self\&.encoding`
+and `self\&.destination\&.encoding` are set to different values\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.io\&.FileOutput\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.util\&.docutils\&.SphinxFileOutput\&.destination_path"
+
+.SS "sphinx\&.util\&.docutils\&.SphinxFileOutput\&.overwrite_if_changed"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

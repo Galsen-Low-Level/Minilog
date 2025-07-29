@@ -1,0 +1,111 @@
+.TH "jinja2.defaults" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.defaults
+.SH SYNOPSIS
+.br
+.PP
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "str \fBBLOCK_START_STRING\fP = '{%'"
+.br
+.ti -1c
+.RI "str \fBBLOCK_END_STRING\fP = '%}'"
+.br
+.ti -1c
+.RI "str \fBVARIABLE_START_STRING\fP = '{{'"
+.br
+.ti -1c
+.RI "str \fBVARIABLE_END_STRING\fP = '}}'"
+.br
+.ti -1c
+.RI "str \fBCOMMENT_START_STRING\fP = '{#'"
+.br
+.ti -1c
+.RI "str \fBCOMMENT_END_STRING\fP = '#}'"
+.br
+.ti -1c
+.RI "t \fBLINE_STATEMENT_PREFIX\fP = None"
+.br
+.ti -1c
+.RI "t \fBLINE_COMMENT_PREFIX\fP = None"
+.br
+.ti -1c
+.RI "bool \fBTRIM_BLOCKS\fP = False"
+.br
+.ti -1c
+.RI "bool \fBLSTRIP_BLOCKS\fP = False"
+.br
+.ti -1c
+.RI "str \fBNEWLINE_SEQUENCE\fP = '\\n'"
+.br
+.ti -1c
+.RI "bool \fBKEEP_TRAILING_NEWLINE\fP = False"
+.br
+.ti -1c
+.RI "dict \fBDEFAULT_NAMESPACE\fP"
+.br
+.ti -1c
+.RI "dict \fBDEFAULT_POLICIES\fP"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "str jinja2\&.defaults\&.BLOCK_END_STRING = '%}'"
+
+.SS "str jinja2\&.defaults\&.BLOCK_START_STRING = '{%'"
+
+.SS "str jinja2\&.defaults\&.COMMENT_END_STRING = '#}'"
+
+.SS "str jinja2\&.defaults\&.COMMENT_START_STRING = '{#'"
+
+.SS "dict jinja2\&.defaults\&.DEFAULT_NAMESPACE"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     "range": range,
+3     "dict": dict,
+4     "lipsum": generate_lorem_ipsum,
+5     "cycler": Cycler,
+6     "joiner": Joiner,
+7     "namespace": Namespace,
+8 }
+.fi
+
+.SS "dict jinja2\&.defaults\&.DEFAULT_POLICIES"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     "compiler\&.ascii_str": True,
+3     "urlize\&.rel": "noopener",
+4     "urlize\&.target": None,
+5     "urlize\&.extra_schemes": None,
+6     "truncate\&.leeway": 5,
+7     "json\&.dumps_function": None,
+8     "json\&.dumps_kwargs": {"sort_keys": True},
+9     "ext\&.i18n\&.trimmed": False,
+10 }
+.fi
+
+.SS "bool jinja2\&.defaults\&.KEEP_TRAILING_NEWLINE = False"
+
+.SS "t jinja2\&.defaults\&.LINE_COMMENT_PREFIX = None"
+
+.SS "t jinja2\&.defaults\&.LINE_STATEMENT_PREFIX = None"
+
+.SS "bool jinja2\&.defaults\&.LSTRIP_BLOCKS = False"
+
+.SS "str jinja2\&.defaults\&.NEWLINE_SEQUENCE = '\\n'"
+
+.SS "bool jinja2\&.defaults\&.TRIM_BLOCKS = False"
+
+.SS "str jinja2\&.defaults\&.VARIABLE_END_STRING = '}}'"
+
+.SS "str jinja2\&.defaults\&.VARIABLE_START_STRING = '{{'"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

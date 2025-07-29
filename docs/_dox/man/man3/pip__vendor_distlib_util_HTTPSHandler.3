@@ -1,0 +1,81 @@
+.TH "pip._vendor.distlib.util.HTTPSHandler" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.distlib.util.HTTPSHandler
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits BaseHTTPSHandler\&.
+.PP
+Inherited by \fBpip\&._vendor\&.distlib\&.util\&.HTTPSOnlyHandler\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBca_certs\fP, \fBcheck_domain\fP=True)"
+.br
+.ti -1c
+.RI "\fBhttps_open\fP (self, req)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBca_certs\fP"
+.br
+.ti -1c
+.RI "\fBcheck_domain\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_conn_maker\fP (self, *args, **kwargs)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_conn_maker\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.util\&.HTTPSHandler\&.__init__ ( self,  ca_certs,  check_domain = \fCTrue\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.util\&.HTTPSHandler\&._conn_maker ( self, * args, ** kwargs)\fC [protected]\fP"
+
+.PP
+.nf
+This is called to create a connection instance\&. Normally you'd
+pass a connection class to do_open, but it doesn't actually check for
+a class, and just expects a callable\&. As long as we behave just as a
+constructor would have, we should be OK\&. If it ever changes so that
+we *must* pass a class, we'll create an UnsafeHTTPSConnection class
+which just sets check_domain to False in the class definition, and
+choose which one to pass to do_open\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.util\&.HTTPSHandler\&.https_open ( self,  req)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.util\&.HTTPSHandler\&._conn_maker\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.HTTPSHandler\&.ca_certs"
+
+.SS "pip\&._vendor\&.distlib\&.util\&.HTTPSHandler\&.check_domain"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

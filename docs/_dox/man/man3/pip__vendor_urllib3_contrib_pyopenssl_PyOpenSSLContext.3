@@ -1,0 +1,119 @@
+.TH "pip._vendor.urllib3.contrib.pyopenssl.PyOpenSSLContext" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.urllib3.contrib.pyopenssl.PyOpenSSLContext
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBprotocol\fP)"
+.br
+.ti -1c
+.RI "\fBoptions\fP (self)"
+.br
+.ti -1c
+.RI "\fBoptions\fP (self, value)"
+.br
+.ti -1c
+.RI "\fBverify_mode\fP (self)"
+.br
+.ti -1c
+.RI "\fBverify_mode\fP (self, value)"
+.br
+.ti -1c
+.RI "\fBset_default_verify_paths\fP (self)"
+.br
+.ti -1c
+.RI "\fBset_ciphers\fP (self, ciphers)"
+.br
+.ti -1c
+.RI "\fBload_verify_locations\fP (self, cafile=None, capath=None, cadata=None)"
+.br
+.ti -1c
+.RI "\fBload_cert_chain\fP (self, certfile, keyfile=None, password=None)"
+.br
+.ti -1c
+.RI "\fBset_alpn_protocols\fP (self, protocols)"
+.br
+.ti -1c
+.RI "\fBwrap_socket\fP (self, sock, server_side=False, do_handshake_on_connect=True, suppress_ragged_eofs=True, server_hostname=None)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBprotocol\fP"
+.br
+.ti -1c
+.RI "\fBcheck_hostname\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_ctx\fP"
+.br
+.ti -1c
+.RI "\fB_options\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+I am a wrapper class for the PyOpenSSL ``Context`` object\&. I am responsible
+for translating the interface of the standard library ``SSLContext`` object
+to calls into PyOpenSSL\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.PyOpenSSLContext\&.__init__ ( self,  protocol)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.PyOpenSSLContext\&.load_cert_chain ( self,  certfile,  keyfile = \fCNone\fP,  password = \fCNone\fP)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.PyOpenSSLContext\&.load_verify_locations ( self,  cafile = \fCNone\fP,  capath = \fCNone\fP,  cadata = \fCNone\fP)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.PyOpenSSLContext\&.options ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.PyOpenSSLContext\&.options ( self,  value)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.PyOpenSSLContext\&.set_alpn_protocols ( self,  protocols)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.PyOpenSSLContext\&.set_ciphers ( self,  ciphers)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.PyOpenSSLContext\&.set_default_verify_paths ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.PyOpenSSLContext\&.verify_mode ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.PyOpenSSLContext\&.verify_mode ( self,  value)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.PyOpenSSLContext\&.wrap_socket ( self,  sock,  server_side = \fCFalse\fP,  do_handshake_on_connect = \fCTrue\fP,  suppress_ragged_eofs = \fCTrue\fP,  server_hostname = \fCNone\fP)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.PyOpenSSLContext\&._ctx\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.PyOpenSSLContext\&._options\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.PyOpenSSLContext\&.check_hostname"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.pyopenssl\&.PyOpenSSLContext\&.protocol"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

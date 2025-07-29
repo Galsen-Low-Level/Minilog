@@ -1,0 +1,110 @@
+\doxysection{sphinx.\+util.\+rst Namespace Reference}
+\hypertarget{namespacesphinx_1_1util_1_1rst}{}\label{namespacesphinx_1_1util_1_1rst}\index{sphinx.util.rst@{sphinx.util.rst}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1util_1_1rst_a18ec00f9e7e153faae1981017d4469e0}{escape}} (str text)
+\item 
+int \mbox{\hyperlink{namespacesphinx_1_1util_1_1rst_a23978e1e7229c64cc57529085ef5d8e2}{textwidth}} (str text, str widechars=\textquotesingle{}WF\textquotesingle{})
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1util_1_1rst_a8759721e1c59e9d2a0fc4731cd7e78ce}{heading}} (\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment}{Environment}} env, str text, int level=1)
+\item 
+Iterator\mbox{[}None\mbox{]} \mbox{\hyperlink{namespacesphinx_1_1util_1_1rst_a4794693500af790d80c6f6e01b1714e7}{default\+\_\+role}} (str docname, str name)
+\item 
+None \mbox{\hyperlink{namespacesphinx_1_1util_1_1rst_a4c8d5341cd971cf8d5451d7aa4c4f5a4}{prepend\+\_\+prolog}} (\mbox{\hyperlink{classdocutils_1_1statemachine_1_1StringList}{String\+List}} content, str prolog)
+\item 
+None \mbox{\hyperlink{namespacesphinx_1_1util_1_1rst_a63db73a425fded1ce227114e13f6c997}{append\+\_\+epilog}} (\mbox{\hyperlink{classdocutils_1_1statemachine_1_1StringList}{String\+List}} content, str epilog)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1rst_a292c304bebb07a4ca49f5b4f0fa7f13c}{logger}} = \mbox{\hyperlink{namespacesphinx_1_1util_1_1logging_a145fcac2d401a60c07071e113b1c8458}{logging.\+get\+Logger}}(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1rst_a3ceb7f2c0cc0c8d9ac5da66ca4e69776}{FIELD\+\_\+\+NAME\+\_\+\+RE}} = re.\+compile(\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Body_ae328f36dba41528999500b029e98ca6c}{Body.\+patterns}}\mbox{[}\textquotesingle{}field\+\_\+marker\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1rst_a4003f97157f380dfb3ae97776558fb1d}{symbols\+\_\+re}} = re.\+compile(r\textquotesingle{}(\mbox{[}!-\/\textbackslash{}-\//\+:-\/@\textbackslash{}\mbox{[}-\/\`{}\{-\/\texorpdfstring{$\sim$}{\string~}\mbox{]})\textquotesingle{})
+\item 
+list \mbox{\hyperlink{namespacesphinx_1_1util_1_1rst_a5ec51b2ce686b30acba15244dcbad1e1}{SECTIONING\+\_\+\+CHARS}} = \mbox{[}\textquotesingle{}=\textquotesingle{}, \textquotesingle{}-\/\textquotesingle{}, \textquotesingle{}\texorpdfstring{$\sim$}{\string~}\textquotesingle{}\mbox{]}
+\item 
+dict \mbox{\hyperlink{namespacesphinx_1_1util_1_1rst_ae33a380eadb40aef12a7c4404493e01f}{WIDECHARS}} = defaultdict(lambda\+: \textquotesingle{}WF\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}reST helper functions.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesphinx_1_1util_1_1rst_a63db73a425fded1ce227114e13f6c997}\label{namespacesphinx_1_1util_1_1rst_a63db73a425fded1ce227114e13f6c997} 
+\index{sphinx.util.rst@{sphinx.util.rst}!append\_epilog@{append\_epilog}}
+\index{append\_epilog@{append\_epilog}!sphinx.util.rst@{sphinx.util.rst}}
+\doxysubsubsection{\texorpdfstring{append\_epilog()}{append\_epilog()}}
+{\footnotesize\ttfamily  None sphinx.\+util.\+rst.\+append\+\_\+epilog (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdocutils_1_1statemachine_1_1StringList}{String\+List}}}]{content,  }\item[{str}]{epilog }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Append a string to content body as epilog.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1util_1_1rst_a4794693500af790d80c6f6e01b1714e7}\label{namespacesphinx_1_1util_1_1rst_a4794693500af790d80c6f6e01b1714e7} 
+\index{sphinx.util.rst@{sphinx.util.rst}!default\_role@{default\_role}}
+\index{default\_role@{default\_role}!sphinx.util.rst@{sphinx.util.rst}}
+\doxysubsubsection{\texorpdfstring{default\_role()}{default\_role()}}
+{\footnotesize\ttfamily  Iterator\mbox{[}None\mbox{]} sphinx.\+util.\+rst.\+default\+\_\+role (\begin{DoxyParamCaption}\item[{str}]{docname,  }\item[{str}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1util_1_1rst_a18ec00f9e7e153faae1981017d4469e0}\label{namespacesphinx_1_1util_1_1rst_a18ec00f9e7e153faae1981017d4469e0} 
+\index{sphinx.util.rst@{sphinx.util.rst}!escape@{escape}}
+\index{escape@{escape}!sphinx.util.rst@{sphinx.util.rst}}
+\doxysubsubsection{\texorpdfstring{escape()}{escape()}}
+{\footnotesize\ttfamily  str sphinx.\+util.\+rst.\+escape (\begin{DoxyParamCaption}\item[{str}]{text }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1util_1_1rst_a8759721e1c59e9d2a0fc4731cd7e78ce}\label{namespacesphinx_1_1util_1_1rst_a8759721e1c59e9d2a0fc4731cd7e78ce} 
+\index{sphinx.util.rst@{sphinx.util.rst}!heading@{heading}}
+\index{heading@{heading}!sphinx.util.rst@{sphinx.util.rst}}
+\doxysubsubsection{\texorpdfstring{heading()}{heading()}}
+{\footnotesize\ttfamily  str sphinx.\+util.\+rst.\+heading (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classjinja2_1_1environment_1_1Environment}{Environment}}}]{env,  }\item[{str}]{text,  }\item[{int }]{level = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a heading for *level*.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1util_1_1rst_a4c8d5341cd971cf8d5451d7aa4c4f5a4}\label{namespacesphinx_1_1util_1_1rst_a4c8d5341cd971cf8d5451d7aa4c4f5a4} 
+\index{sphinx.util.rst@{sphinx.util.rst}!prepend\_prolog@{prepend\_prolog}}
+\index{prepend\_prolog@{prepend\_prolog}!sphinx.util.rst@{sphinx.util.rst}}
+\doxysubsubsection{\texorpdfstring{prepend\_prolog()}{prepend\_prolog()}}
+{\footnotesize\ttfamily  None sphinx.\+util.\+rst.\+prepend\+\_\+prolog (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdocutils_1_1statemachine_1_1StringList}{String\+List}}}]{content,  }\item[{str}]{prolog }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Prepend a string to content body as prolog.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1util_1_1rst_a23978e1e7229c64cc57529085ef5d8e2}\label{namespacesphinx_1_1util_1_1rst_a23978e1e7229c64cc57529085ef5d8e2} 
+\index{sphinx.util.rst@{sphinx.util.rst}!textwidth@{textwidth}}
+\index{textwidth@{textwidth}!sphinx.util.rst@{sphinx.util.rst}}
+\doxysubsubsection{\texorpdfstring{textwidth()}{textwidth()}}
+{\footnotesize\ttfamily  int sphinx.\+util.\+rst.\+textwidth (\begin{DoxyParamCaption}\item[{str}]{text,  }\item[{str }]{widechars = {\ttfamily \textquotesingle{}WF\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get width of text.\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacesphinx_1_1util_1_1rst_a3ceb7f2c0cc0c8d9ac5da66ca4e69776}\label{namespacesphinx_1_1util_1_1rst_a3ceb7f2c0cc0c8d9ac5da66ca4e69776} 
+\index{sphinx.util.rst@{sphinx.util.rst}!FIELD\_NAME\_RE@{FIELD\_NAME\_RE}}
+\index{FIELD\_NAME\_RE@{FIELD\_NAME\_RE}!sphinx.util.rst@{sphinx.util.rst}}
+\doxysubsubsection{\texorpdfstring{FIELD\_NAME\_RE}{FIELD\_NAME\_RE}}
+{\footnotesize\ttfamily sphinx.\+util.\+rst.\+FIELD\+\_\+\+NAME\+\_\+\+RE = re.\+compile(\mbox{\hyperlink{classdocutils_1_1parsers_1_1rst_1_1states_1_1Body_ae328f36dba41528999500b029e98ca6c}{Body.\+patterns}}\mbox{[}\textquotesingle{}field\+\_\+marker\textquotesingle{}\mbox{]})}
+
+\Hypertarget{namespacesphinx_1_1util_1_1rst_a292c304bebb07a4ca49f5b4f0fa7f13c}\label{namespacesphinx_1_1util_1_1rst_a292c304bebb07a4ca49f5b4f0fa7f13c} 
+\index{sphinx.util.rst@{sphinx.util.rst}!logger@{logger}}
+\index{logger@{logger}!sphinx.util.rst@{sphinx.util.rst}}
+\doxysubsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily sphinx.\+util.\+rst.\+logger = \mbox{\hyperlink{namespacesphinx_1_1util_1_1logging_a145fcac2d401a60c07071e113b1c8458}{logging.\+get\+Logger}}(\+\_\+\+\_\+name\+\_\+\+\_\+)}
+
+\Hypertarget{namespacesphinx_1_1util_1_1rst_a5ec51b2ce686b30acba15244dcbad1e1}\label{namespacesphinx_1_1util_1_1rst_a5ec51b2ce686b30acba15244dcbad1e1} 
+\index{sphinx.util.rst@{sphinx.util.rst}!SECTIONING\_CHARS@{SECTIONING\_CHARS}}
+\index{SECTIONING\_CHARS@{SECTIONING\_CHARS}!sphinx.util.rst@{sphinx.util.rst}}
+\doxysubsubsection{\texorpdfstring{SECTIONING\_CHARS}{SECTIONING\_CHARS}}
+{\footnotesize\ttfamily list sphinx.\+util.\+rst.\+SECTIONING\+\_\+\+CHARS = \mbox{[}\textquotesingle{}=\textquotesingle{}, \textquotesingle{}-\/\textquotesingle{}, \textquotesingle{}\texorpdfstring{$\sim$}{\string~}\textquotesingle{}\mbox{]}}
+
+\Hypertarget{namespacesphinx_1_1util_1_1rst_a4003f97157f380dfb3ae97776558fb1d}\label{namespacesphinx_1_1util_1_1rst_a4003f97157f380dfb3ae97776558fb1d} 
+\index{sphinx.util.rst@{sphinx.util.rst}!symbols\_re@{symbols\_re}}
+\index{symbols\_re@{symbols\_re}!sphinx.util.rst@{sphinx.util.rst}}
+\doxysubsubsection{\texorpdfstring{symbols\_re}{symbols\_re}}
+{\footnotesize\ttfamily sphinx.\+util.\+rst.\+symbols\+\_\+re = re.\+compile(r\textquotesingle{}(\mbox{[}!-\/\textbackslash{}-\//\+:-\/@\textbackslash{}\mbox{[}-\/\`{}\{-\/\texorpdfstring{$\sim$}{\string~}\mbox{]})\textquotesingle{})}
+
+\Hypertarget{namespacesphinx_1_1util_1_1rst_ae33a380eadb40aef12a7c4404493e01f}\label{namespacesphinx_1_1util_1_1rst_ae33a380eadb40aef12a7c4404493e01f} 
+\index{sphinx.util.rst@{sphinx.util.rst}!WIDECHARS@{WIDECHARS}}
+\index{WIDECHARS@{WIDECHARS}!sphinx.util.rst@{sphinx.util.rst}}
+\doxysubsubsection{\texorpdfstring{WIDECHARS}{WIDECHARS}}
+{\footnotesize\ttfamily dict sphinx.\+util.\+rst.\+WIDECHARS = defaultdict(lambda\+: \textquotesingle{}WF\textquotesingle{})}
+

@@ -1,0 +1,97 @@
+.TH "sphinx.application.TemplateBridge" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.application.TemplateBridge
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBsphinx\&.jinja2glue\&.BuiltinTemplateLoader\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBinit\fP (self, \fBBuilder\fP builder, \fBTheme\fP|None theme=None, list[str]|None dirs=None)"
+.br
+.ti -1c
+.RI "float \fBnewest_template_mtime\fP (self)"
+.br
+.ti -1c
+.RI "None \fBrender\fP (self, str template, dict[str, Any] context)"
+.br
+.ti -1c
+.RI "str \fBrender_string\fP (self, str template, dict[str, Any] context)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This class defines the interface for a 'template bridge', that is, a class
+that renders templates given a template name and a context\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " None sphinx\&.application\&.TemplateBridge\&.init ( self, \fBBuilder\fP builder, \fBTheme\fP | None  theme = \fCNone\fP, list[str] | None  dirs = \fCNone\fP)"
+
+.PP
+.nf
+Called by the builder to initialize the template system\&.
+
+*builder* is the builder object; you'll probably want to look at the
+value of ``builder\&.config\&.templates_path``\&.
+
+*theme* is a :class:`sphinx\&.theming\&.Theme` object or None; in the latter
+case, *dirs* can be list of fixed directories to look for templates\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.jinja2glue\&.BuiltinTemplateLoader\fP\&.
+.SS " float sphinx\&.application\&.TemplateBridge\&.newest_template_mtime ( self)"
+
+.PP
+.nf
+Called by the builder to determine if output files are outdated
+because of template changes\&.  Return the mtime of the newest template
+file that was changed\&.  The default implementation returns ``0``\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.jinja2glue\&.BuiltinTemplateLoader\fP\&.
+.SS " None sphinx\&.application\&.TemplateBridge\&.render ( self, str template, dict[str, Any] context)"
+
+.PP
+.nf
+Called by the builder to render a template given as a filename with
+a specified context (a Python dictionary)\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.jinja2glue\&.BuiltinTemplateLoader\fP\&.
+.SS " str sphinx\&.application\&.TemplateBridge\&.render_string ( self, str template, dict[str, Any] context)"
+
+.PP
+.nf
+Called by the builder to render a template given as a string with a
+specified context (a Python dictionary)\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.jinja2glue\&.BuiltinTemplateLoader\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

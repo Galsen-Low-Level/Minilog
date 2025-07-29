@@ -1,0 +1,272 @@
+.TH "pip._vendor.tomli._parser" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.tomli._parser
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBFlags\fP"
+.br
+.ti -1c
+.RI "class \fBNestedDict\fP"
+.br
+.ti -1c
+.RI "class \fBOutput\fP"
+.br
+.ti -1c
+.RI "class \fBTOMLDecodeError\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "dict[str, Any] \fBload\fP (BinaryIO __fp, *ParseFloat parse_float=float)"
+.br
+.ti -1c
+.RI "dict[str, Any] \fBloads\fP (str __s, *ParseFloat parse_float=float)"
+.br
+.ti -1c
+.RI "Pos \fBskip_chars\fP (str src, Pos pos, Iterable[str] chars)"
+.br
+.ti -1c
+.RI "Pos \fBskip_until\fP (str src, Pos pos, str expect, *frozenset[str] error_on, bool error_on_eof)"
+.br
+.ti -1c
+.RI "Pos \fBskip_comment\fP (str src, Pos pos)"
+.br
+.ti -1c
+.RI "Pos \fBskip_comments_and_array_ws\fP (str src, Pos pos)"
+.br
+.ti -1c
+.RI "tuple[Pos, Key] \fBcreate_dict_rule\fP (str src, Pos pos, \fBOutput\fP out)"
+.br
+.ti -1c
+.RI "tuple[Pos, Key] \fBcreate_list_rule\fP (str src, Pos pos, \fBOutput\fP out)"
+.br
+.ti -1c
+.RI "Pos \fBkey_value_rule\fP (str src, Pos pos, \fBOutput\fP out, Key header, ParseFloat parse_float)"
+.br
+.ti -1c
+.RI "tuple[Pos, Key, Any] \fBparse_key_value_pair\fP (str src, Pos pos, ParseFloat parse_float)"
+.br
+.ti -1c
+.RI "tuple[Pos, Key] \fBparse_key\fP (str src, Pos pos)"
+.br
+.ti -1c
+.RI "tuple[Pos, str] \fBparse_key_part\fP (str src, Pos pos)"
+.br
+.ti -1c
+.RI "tuple[Pos, str] \fBparse_one_line_basic_str\fP (str src, Pos pos)"
+.br
+.ti -1c
+.RI "tuple[Pos, list] \fBparse_array\fP (str src, Pos pos, ParseFloat parse_float)"
+.br
+.ti -1c
+.RI "tuple[Pos, dict] \fBparse_inline_table\fP (str src, Pos pos, ParseFloat parse_float)"
+.br
+.ti -1c
+.RI "tuple[Pos, str] \fBparse_basic_str_escape\fP (str src, Pos pos, *bool multiline=False)"
+.br
+.ti -1c
+.RI "tuple[Pos, str] \fBparse_basic_str_escape_multiline\fP (str src, Pos pos)"
+.br
+.ti -1c
+.RI "tuple[Pos, str] \fBparse_hex_char\fP (str src, Pos pos, int hex_len)"
+.br
+.ti -1c
+.RI "tuple[Pos, str] \fBparse_literal_str\fP (str src, Pos pos)"
+.br
+.ti -1c
+.RI "tuple[Pos, str] \fBparse_multiline_str\fP (str src, Pos pos, *bool literal)"
+.br
+.ti -1c
+.RI "tuple[Pos, str] \fBparse_basic_str\fP (str src, Pos pos, *bool multiline)"
+.br
+.ti -1c
+.RI "tuple[Pos, Any] \fBparse_value\fP (str src, Pos pos, ParseFloat parse_float)"
+.br
+.ti -1c
+.RI "\fBTOMLDecodeError\fP \fBsuffixed_err\fP (str src, Pos pos, str msg)"
+.br
+.ti -1c
+.RI "bool \fBis_unicode_scalar_value\fP (int codepoint)"
+.br
+.ti -1c
+.RI "ParseFloat \fBmake_safe_parse_float\fP (ParseFloat parse_float)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBASCII_CTRL\fP = frozenset(chr(i) for i in range(32)) | frozenset(chr(127))"
+.br
+.ti -1c
+.RI "\fBILLEGAL_BASIC_STR_CHARS\fP = \fBASCII_CTRL\fP \- frozenset('\\t')"
+.br
+.ti -1c
+.RI "\fBILLEGAL_MULTILINE_BASIC_STR_CHARS\fP = \fBASCII_CTRL\fP \- frozenset('\\t\\n')"
+.br
+.ti -1c
+.RI "\fBILLEGAL_LITERAL_STR_CHARS\fP = \fBILLEGAL_BASIC_STR_CHARS\fP"
+.br
+.ti -1c
+.RI "\fBILLEGAL_MULTILINE_LITERAL_STR_CHARS\fP = \fBILLEGAL_MULTILINE_BASIC_STR_CHARS\fP"
+.br
+.ti -1c
+.RI "\fBILLEGAL_COMMENT_CHARS\fP = \fBILLEGAL_BASIC_STR_CHARS\fP"
+.br
+.ti -1c
+.RI "\fBTOML_WS\fP = frozenset(' \\t')"
+.br
+.ti -1c
+.RI "\fBTOML_WS_AND_NEWLINE\fP = \fBTOML_WS\fP | frozenset('\\n')"
+.br
+.ti -1c
+.RI "\fBBARE_KEY_CHARS\fP = frozenset(string\&.ascii_letters + string\&.digits + '\-_')"
+.br
+.ti -1c
+.RI "\fBKEY_INITIAL_CHARS\fP = \fBBARE_KEY_CHARS\fP | frozenset('\\''')"
+.br
+.ti -1c
+.RI "\fBHEXDIGIT_CHARS\fP = frozenset(string\&.hexdigits)"
+.br
+.ti -1c
+.RI "\fBBASIC_STR_ESCAPE_REPLACEMENTS\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " tuple[Pos, Key] pip\&._vendor\&.tomli\&._parser\&.create_dict_rule (str src, Pos pos, \fBOutput\fP out)"
+
+.SS " tuple[Pos, Key] pip\&._vendor\&.tomli\&._parser\&.create_list_rule (str src, Pos pos, \fBOutput\fP out)"
+
+.SS " bool pip\&._vendor\&.tomli\&._parser\&.is_unicode_scalar_value (int codepoint)"
+
+.SS " Pos pip\&._vendor\&.tomli\&._parser\&.key_value_rule (str src, Pos pos, \fBOutput\fP out, Key header, ParseFloat
+ parse_float)"
+
+.SS " dict[str, Any] pip\&._vendor\&.tomli\&._parser\&.load (BinaryIO __fp, *ParseFloat  parse_float = \fCfloat\fP)"
+
+.PP
+.nf
+Parse TOML from a binary file object\&.
+.fi
+.PP
+ 
+.SS " dict[str, Any] pip\&._vendor\&.tomli\&._parser\&.loads (str __s, *ParseFloat  parse_float = \fCfloat\fP)"
+
+.PP
+.nf
+Parse TOML from a string\&.
+.fi
+.PP
+ 
+.SS " ParseFloat pip\&._vendor\&.tomli\&._parser\&.make_safe_parse_float (ParseFloat parse_float)"
+
+.PP
+.nf
+A decorator to make `parse_float` safe\&.
+
+`parse_float` must not return dicts or lists, because these types
+would be mixed with parsed TOML tables and arrays, thus confusing
+the parser\&. The returned decorated callable raises `ValueError`
+instead of returning illegal types\&.
+
+.fi
+.PP
+ 
+.SS " tuple[Pos, list] pip\&._vendor\&.tomli\&._parser\&.parse_array (str src, Pos pos, ParseFloat parse_float)"
+
+.SS " tuple[Pos, str] pip\&._vendor\&.tomli\&._parser\&.parse_basic_str (str src, Pos pos, *bool multiline)"
+
+.SS " tuple[Pos, str] pip\&._vendor\&.tomli\&._parser\&.parse_basic_str_escape (str src, Pos pos, *bool  multiline = \fCFalse\fP)"
+
+.SS " tuple[Pos, str] pip\&._vendor\&.tomli\&._parser\&.parse_basic_str_escape_multiline (str src, Pos pos)"
+
+.SS " tuple[Pos, str] pip\&._vendor\&.tomli\&._parser\&.parse_hex_char (str src, Pos pos, int hex_len)"
+
+.SS " tuple[Pos, dict] pip\&._vendor\&.tomli\&._parser\&.parse_inline_table (str src, Pos pos, ParseFloat parse_float)"
+
+.SS " tuple[Pos, Key] pip\&._vendor\&.tomli\&._parser\&.parse_key (str src, Pos pos)"
+
+.SS " tuple[Pos, str] pip\&._vendor\&.tomli\&._parser\&.parse_key_part (str src, Pos pos)"
+
+.SS " tuple[Pos, Key, Any] pip\&._vendor\&.tomli\&._parser\&.parse_key_value_pair (str src, Pos pos, ParseFloat
+ parse_float)"
+
+.SS " tuple[Pos, str] pip\&._vendor\&.tomli\&._parser\&.parse_literal_str (str src, Pos pos)"
+
+.SS " tuple[Pos, str] pip\&._vendor\&.tomli\&._parser\&.parse_multiline_str (str src, Pos pos, *bool literal)"
+
+.SS " tuple[Pos, str] pip\&._vendor\&.tomli\&._parser\&.parse_one_line_basic_str (str src, Pos pos)"
+
+.SS " tuple[Pos, Any] pip\&._vendor\&.tomli\&._parser\&.parse_value (str src, Pos pos, ParseFloat
+ parse_float)"
+
+.SS " Pos pip\&._vendor\&.tomli\&._parser\&.skip_chars (str src, Pos pos, Iterable[str] chars)"
+
+.SS " Pos pip\&._vendor\&.tomli\&._parser\&.skip_comment (str src, Pos pos)"
+
+.SS " Pos pip\&._vendor\&.tomli\&._parser\&.skip_comments_and_array_ws (str src, Pos pos)"
+
+.SS " Pos pip\&._vendor\&.tomli\&._parser\&.skip_until (str src, Pos pos, str expect, *frozenset[str] error_on, bool error_on_eof)"
+
+.SS " \fBTOMLDecodeError\fP pip\&._vendor\&.tomli\&._parser\&.suffixed_err (str src, Pos pos, str msg)"
+
+.PP
+.nf
+Return a `TOMLDecodeError` where error message is suffixed with
+coordinates in source\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._vendor\&.tomli\&._parser\&.ASCII_CTRL = frozenset(chr(i) for i in range(32)) | frozenset(chr(127))"
+
+.SS "pip\&._vendor\&.tomli\&._parser\&.BARE_KEY_CHARS = frozenset(string\&.ascii_letters + string\&.digits + '\-_')"
+
+.SS "pip\&._vendor\&.tomli\&._parser\&.BASIC_STR_ESCAPE_REPLACEMENTS"
+\fBInitial value:\fP.PP
+.nf
+1 =  MappingProxyType(
+2     {
+3         "\\\\b": "\\u0008",  # backspace
+4         "\\\\t": "\\u0009",  # tab
+5         "\\\\n": "\\u000A",  # linefeed
+6         "\\\\f": "\\u000C",  # form feed
+7         "\\\\r": "\\u000D",  # carriage return
+8         '\\\\"': "\\u0022",  # quote
+9         "\\\\\\\\": "\\u005C",  # backslash
+10     }
+11 )
+.fi
+
+.SS "pip\&._vendor\&.tomli\&._parser\&.HEXDIGIT_CHARS = frozenset(string\&.hexdigits)"
+
+.SS "pip\&._vendor\&.tomli\&._parser\&.ILLEGAL_BASIC_STR_CHARS = \fBASCII_CTRL\fP \- frozenset('\\t')"
+
+.SS "pip\&._vendor\&.tomli\&._parser\&.ILLEGAL_COMMENT_CHARS = \fBILLEGAL_BASIC_STR_CHARS\fP"
+
+.SS "pip\&._vendor\&.tomli\&._parser\&.ILLEGAL_LITERAL_STR_CHARS = \fBILLEGAL_BASIC_STR_CHARS\fP"
+
+.SS "pip\&._vendor\&.tomli\&._parser\&.ILLEGAL_MULTILINE_BASIC_STR_CHARS = \fBASCII_CTRL\fP \- frozenset('\\t\\n')"
+
+.SS "pip\&._vendor\&.tomli\&._parser\&.ILLEGAL_MULTILINE_LITERAL_STR_CHARS = \fBILLEGAL_MULTILINE_BASIC_STR_CHARS\fP"
+
+.SS "pip\&._vendor\&.tomli\&._parser\&.KEY_INITIAL_CHARS = \fBBARE_KEY_CHARS\fP | frozenset('\\''')"
+
+.SS "pip\&._vendor\&.tomli\&._parser\&.TOML_WS = frozenset(' \\t')"
+
+.SS "pip\&._vendor\&.tomli\&._parser\&.TOML_WS_AND_NEWLINE = \fBTOML_WS\fP | frozenset('\\n')"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,248 @@
+.TH "packaging._parser" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+packaging._parser
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBNode\fP"
+.br
+.ti -1c
+.RI "class \fBOp\fP"
+.br
+.ti -1c
+.RI "class \fBParsedRequirement\fP"
+.br
+.ti -1c
+.RI "class \fBValue\fP"
+.br
+.ti -1c
+.RI "class \fBVariable\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBParsedRequirement\fP \fBparse_requirement\fP (str source)"
+.br
+.ti -1c
+.RI "\fBParsedRequirement\fP \fB_parse_requirement\fP (\fBTokenizer\fP tokenizer)"
+.br
+.ti -1c
+.RI "tuple[str, str, \fBMarkerList\fP|None] \fB_parse_requirement_details\fP (\fBTokenizer\fP tokenizer)"
+.br
+.ti -1c
+.RI "\fBMarkerList\fP \fB_parse_requirement_marker\fP (\fBTokenizer\fP tokenizer, *int span_start, str after)"
+.br
+.ti -1c
+.RI "list[str] \fB_parse_extras\fP (\fBTokenizer\fP tokenizer)"
+.br
+.ti -1c
+.RI "list[str] \fB_parse_extras_list\fP (\fBTokenizer\fP tokenizer)"
+.br
+.ti -1c
+.RI "str \fB_parse_specifier\fP (\fBTokenizer\fP tokenizer)"
+.br
+.ti -1c
+.RI "str \fB_parse_version_many\fP (\fBTokenizer\fP tokenizer)"
+.br
+.ti -1c
+.RI "\fBMarkerList\fP \fBparse_marker\fP (str source)"
+.br
+.ti -1c
+.RI "\fBMarkerList\fP \fB_parse_full_marker\fP (\fBTokenizer\fP tokenizer)"
+.br
+.ti -1c
+.RI "\fBMarkerList\fP \fB_parse_marker\fP (\fBTokenizer\fP tokenizer)"
+.br
+.ti -1c
+.RI "\fBMarkerAtom\fP \fB_parse_marker_atom\fP (\fBTokenizer\fP tokenizer)"
+.br
+.ti -1c
+.RI "\fBMarkerItem\fP \fB_parse_marker_item\fP (\fBTokenizer\fP tokenizer)"
+.br
+.ti -1c
+.RI "\fBMarkerVar\fP \fB_parse_marker_var\fP (\fBTokenizer\fP tokenizer)"
+.br
+.ti -1c
+.RI "\fBVariable\fP \fBprocess_env_var\fP (str env_var)"
+.br
+.ti -1c
+.RI "\fBValue\fP \fBprocess_python_str\fP (str python_str)"
+.br
+.ti -1c
+.RI "\fBOp\fP \fB_parse_marker_op\fP (\fBTokenizer\fP tokenizer)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBMarkerVar\fP = Union[\fBVariable\fP, \fBValue\fP]"
+.br
+.ti -1c
+.RI "\fBMarkerItem\fP = Tuple[\fBMarkerVar\fP, \fBOp\fP, \fBMarkerVar\fP]"
+.br
+.ti -1c
+.RI "\fBMarkerAtom\fP = Union[\fBMarkerItem\fP, Sequence['MarkerAtom']]"
+.br
+.ti -1c
+.RI "\fBMarkerList\fP = Sequence[Union['MarkerList', \fBMarkerAtom\fP, str]]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Handwritten parser of dependency specifiers\&.
+
+The docstring for each __parse_* function contains EBNF-inspired grammar representing
+the implementation\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " list[str] packaging\&._parser\&._parse_extras (\fBTokenizer\fP tokenizer)\fC [protected]\fP"
+
+.PP
+.nf
+extras = (LEFT_BRACKET wsp* extras_list? wsp* RIGHT_BRACKET)?
+
+.fi
+.PP
+ 
+.SS " list[str] packaging\&._parser\&._parse_extras_list (\fBTokenizer\fP tokenizer)\fC [protected]\fP"
+
+.PP
+.nf
+extras_list = identifier (wsp* ',' wsp* identifier)*
+
+.fi
+.PP
+ 
+.SS " \fBMarkerList\fP packaging\&._parser\&._parse_full_marker (\fBTokenizer\fP tokenizer)\fC [protected]\fP"
+
+.SS " \fBMarkerList\fP packaging\&._parser\&._parse_marker (\fBTokenizer\fP tokenizer)\fC [protected]\fP"
+
+.PP
+.nf
+marker = marker_atom (BOOLOP marker_atom)+
+
+.fi
+.PP
+ 
+.SS " \fBMarkerAtom\fP packaging\&._parser\&._parse_marker_atom (\fBTokenizer\fP tokenizer)\fC [protected]\fP"
+
+.PP
+.nf
+marker_atom = WS? LEFT_PARENTHESIS WS? marker WS? RIGHT_PARENTHESIS WS?
+            | WS? marker_item WS?
+
+.fi
+.PP
+ 
+.SS " \fBMarkerItem\fP packaging\&._parser\&._parse_marker_item (\fBTokenizer\fP tokenizer)\fC [protected]\fP"
+
+.PP
+.nf
+marker_item = WS? marker_var WS? marker_op WS? marker_var WS?
+
+.fi
+.PP
+ 
+.SS " \fBOp\fP packaging\&._parser\&._parse_marker_op (\fBTokenizer\fP tokenizer)\fC [protected]\fP"
+
+.PP
+.nf
+marker_op = IN | NOT IN | OP
+
+.fi
+.PP
+ 
+.SS " \fBMarkerVar\fP packaging\&._parser\&._parse_marker_var (\fBTokenizer\fP tokenizer)\fC [protected]\fP"
+
+.PP
+.nf
+marker_var = VARIABLE | QUOTED_STRING
+
+.fi
+.PP
+ 
+.SS " \fBParsedRequirement\fP packaging\&._parser\&._parse_requirement (\fBTokenizer\fP tokenizer)\fC [protected]\fP"
+
+.PP
+.nf
+requirement = WS? IDENTIFIER WS? extras WS? requirement_details
+
+.fi
+.PP
+ 
+.SS " tuple[str, str, \fBMarkerList\fP | None] packaging\&._parser\&._parse_requirement_details (\fBTokenizer\fP tokenizer)\fC [protected]\fP"
+
+.PP
+.nf
+requirement_details = AT URL (WS requirement_marker?)?
+                    | specifier WS? (requirement_marker)?
+
+.fi
+.PP
+ 
+.SS " \fBMarkerList\fP packaging\&._parser\&._parse_requirement_marker (\fBTokenizer\fP tokenizer, *int span_start, str
+ after)\fC [protected]\fP"
+
+.PP
+.nf
+requirement_marker = SEMICOLON marker WS?
+
+.fi
+.PP
+ 
+.SS " str packaging\&._parser\&._parse_specifier (\fBTokenizer\fP tokenizer)\fC [protected]\fP"
+
+.PP
+.nf
+specifier = LEFT_PARENTHESIS WS? version_many WS? RIGHT_PARENTHESIS
+          | WS? version_many WS?
+
+.fi
+.PP
+ 
+.SS " str packaging\&._parser\&._parse_version_many (\fBTokenizer\fP tokenizer)\fC [protected]\fP"
+
+.PP
+.nf
+version_many = (SPECIFIER (WS? COMMA WS? SPECIFIER)*)?
+
+.fi
+.PP
+ 
+.SS " \fBMarkerList\fP packaging\&._parser\&.parse_marker (str source)"
+
+.SS " \fBParsedRequirement\fP packaging\&._parser\&.parse_requirement (str source)"
+
+.SS " \fBVariable\fP packaging\&._parser\&.process_env_var (str env_var)"
+
+.SS " \fBValue\fP packaging\&._parser\&.process_python_str (str python_str)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "packaging\&._parser\&.MarkerAtom = Union[\fBMarkerItem\fP, Sequence['MarkerAtom']]"
+
+.SS "packaging\&._parser\&.MarkerItem = Tuple[\fBMarkerVar\fP, \fBOp\fP, \fBMarkerVar\fP]"
+
+.SS "packaging\&._parser\&.MarkerList = Sequence[Union['MarkerList', \fBMarkerAtom\fP, str]]"
+
+.SS "packaging\&._parser\&.MarkerVar = Union[\fBVariable\fP, \fBValue\fP]"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,334 @@
+.TH "webob.acceptparse._AcceptInvalidOrNoHeader" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webob.acceptparse._AcceptInvalidOrNoHeader
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBwebob\&.acceptparse\&.Accept\fP\&.
+.PP
+Inherited by \fBwebob\&.acceptparse\&.AcceptInvalidHeader\fP, and \fBwebob\&.acceptparse\&.AcceptNoHeader\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__bool__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__contains__\fP (self, offer)"
+.br
+.ti -1c
+.RI "\fB__iter__\fP (self)"
+.br
+.ti -1c
+.RI "\fBaccept_html\fP (self)"
+.br
+.ti -1c
+.RI "\fBacceptable_offers\fP (self, offers)"
+.br
+.ti -1c
+.RI "\fBbest_match\fP (self, offers, default_match=None)"
+.br
+.ti -1c
+.RI "\fBquality\fP (self, offer)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBwebob\&.acceptparse\&.Accept\fP
+.in +1c
+.ti -1c
+.RI "\fBparse\fP (cls, value)"
+.br
+.ti -1c
+.RI "\fBparse_offer\fP (cls, offer)"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBaccepts_html\fP = property(fget=\fBaccept_html\fP, doc=accept_html\&.__doc__)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Attributes inherited from \fBwebob\&.acceptparse\&.Accept\fP
+.in +1c
+.ti -1c
+.RI "str \fBvchar_re\fP = '\\x21\-\\x7e'"
+.br
+.ti -1c
+.RI "str \fBobs_text_re\fP = '\\x80\-\\xff'"
+.br
+.ti -1c
+.RI "str \fBqdtext_re\fP = '[\\t \\x21\\x23\-\\x5b\\\\\\x5d\-\\x7e' + \fBobs_text_re\fP + ']'"
+.br
+.ti -1c
+.RI "str \fBquoted_pair_re\fP = r'\\\\' + '[\\t ' + \fBvchar_re\fP + \fBobs_text_re\fP + ']'"
+.br
+.ti -1c
+.RI "str \fBquoted_string_re\fP"
+.br
+.ti -1c
+.RI "\fBtype_re\fP = \fBtoken_re\fP"
+.br
+.ti -1c
+.RI "\fBsubtype_re\fP = \fBtoken_re\fP"
+.br
+.ti -1c
+.RI "str \fBparameter_re\fP"
+.br
+.ti -1c
+.RI "tuple \fBmedia_range_re\fP"
+.br
+.ti -1c
+.RI "tuple \fBaccept_ext_re\fP"
+.br
+.ti -1c
+.RI "str \fBaccept_params_re\fP = \fBweight_re\fP + '((?:' + \fBaccept_ext_re\fP + ')*)'"
+.br
+.ti -1c
+.RI "tuple \fBmedia_range_n_accept_params_re\fP"
+.br
+.ti -1c
+.RI "\fBmedia_range_n_accept_params_compiled_re\fP"
+.br
+.ti -1c
+.RI "\fBaccept_compiled_re\fP"
+.br
+.ti -1c
+.RI "\fBparameters_compiled_re\fP"
+.br
+.ti -1c
+.RI "\fBaccept_ext_compiled_re\fP"
+.br
+.ti -1c
+.RI "tuple \fBmedia_type_re\fP = \fBmedia_range_re\fP"
+.br
+.ti -1c
+.RI "\fBmedia_type_compiled_re\fP = re\&.compile('^' + \fBmedia_type_re\fP + '$')"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBwebob\&.acceptparse\&.Accept\fP
+.in +1c
+.ti -1c
+.RI "\fB_escape_and_quote_parameter_value\fP (cls, param_value)"
+.br
+.ti -1c
+.RI "\fB_form_extension_params_segment\fP (cls, extension_params)"
+.br
+.ti -1c
+.RI "\fB_form_media_range\fP (cls, type_subtype, media_type_params)"
+.br
+.ti -1c
+.RI "\fB_iterable_to_header_element\fP (cls, iterable)"
+.br
+.ti -1c
+.RI "\fB_parse_media_type_params\fP (cls, media_type_params_segment)"
+.br
+.ti -1c
+.RI "\fB_process_quoted_string_token\fP (cls, token)"
+.br
+.ti -1c
+.RI "\fB_python_value_to_header_str\fP (cls, value)"
+.br
+.ti -1c
+.RI "\fB_parse_and_normalize_offers\fP (cls, offers)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Represent when an ``Accept`` header is invalid or not in request\&.
+
+This is the base class for the behaviour that :class:`\&.AcceptInvalidHeader`
+and :class:`\&.AcceptNoHeader` have in common\&.
+
+:rfc:`7231` does not provide any guidance on what should happen if the
+``Accept`` header has an invalid value\&. This implementation disregards the
+header when the header is invalid, so :class:`\&.AcceptInvalidHeader` and
+:class:`\&.AcceptNoHeader` have much behaviour in common\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "webob\&.acceptparse\&._AcceptInvalidOrNoHeader\&.__bool__ ( self)"
+
+.PP
+.nf
+Return whether ``self`` represents a valid ``Accept`` header\&.
+
+Return ``True`` if ``self`` represents a valid header, and ``False`` if
+it represents an invalid header, or the header not being in the
+request\&.
+
+For this class, it always returns ``False``\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.acceptparse\&._AcceptInvalidOrNoHeader\&.__contains__ ( self,  offer)"
+
+.PP
+.nf
+Return ``bool`` indicating whether `offer` is acceptable\&.
+
+\&.\&. warning::
+
+   The behavior of ``\&.__contains__`` for the ``Accept`` classes is
+   currently being maintained for backward compatibility, but it will
+   change in the future to better conform to the RFC\&.
+
+:param offer: (``str``) media type offer
+:return: (``bool``) Whether ``offer`` is acceptable according to the
+         header\&.
+
+For this class, either there is no ``Accept`` header in the request, or
+the header is invalid, so any media type is acceptable, and this always
+returns ``True``\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.acceptparse\&._AcceptInvalidOrNoHeader\&.__iter__ ( self)"
+
+.PP
+.nf
+Return all the ranges with non-0 qvalues, in order of preference\&.
+
+\&.\&. warning::
+
+   The behavior of this method is currently maintained for backward
+   compatibility, but will change in the future\&.
+
+:return: iterator of all the media ranges in the header with non-0
+         qvalues, in descending order of qvalue\&. If two ranges have the
+         same qvalue, they are returned in the order of their positions
+         in the header, from left to right\&.
+
+When there is no ``Accept`` header in the request or the header is
+invalid, there are no media ranges, so this always returns an empty
+iterator\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.acceptparse\&._AcceptInvalidOrNoHeader\&.accept_html ( self)"
+
+.PP
+.nf
+Return ``True`` if any HTML-like type is accepted\&.
+
+The HTML-like types are 'text/html', 'application/xhtml+xml',
+'application/xml' and 'text/xml'\&.
+
+When the header is invalid, or there is no `Accept` header in the
+request, all `offers` are considered acceptable, so this always returns
+``True``\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.acceptparse\&._AcceptInvalidOrNoHeader\&.acceptable_offers ( self,  offers)"
+
+.PP
+.nf
+Return the offers that are acceptable according to the header\&.
+
+Any offers that cannot be parsed via
+:meth:`\&.Accept\&.parse_offer` will be ignored\&.
+
+:param offers: ``iterable`` of ``str`` media types (media types can
+               include media type parameters)
+:return: When the header is invalid, or there is no ``Accept`` header
+         in the request, all `offers` are considered acceptable, so
+         this method returns a list of (media type, qvalue) tuples
+         where each offer in `offers` is paired with the qvalue of 1\&.0,
+         in the same order as in `offers`\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.acceptparse\&._AcceptInvalidOrNoHeader\&.best_match ( self,  offers,  default_match = \fCNone\fP)"
+
+.PP
+.nf
+Return the best match from the sequence of language tag `offers`\&.
+
+This is the ``\&.best_match()`` method for when the header is invalid or
+not found in the request, corresponding to
+:meth:`AcceptValidHeader\&.best_match`\&.
+
+\&.\&. warning::
+
+   This is currently maintained for backward compatibility, and will be
+   deprecated in the future (see the documentation for
+   :meth:`AcceptValidHeader\&.best_match`)\&.
+
+When the header is invalid, or there is no `Accept` header in the
+request, all `offers` are considered acceptable, so the best match is
+the media type in `offers` with the highest server quality value (if
+the server quality value is not supplied for a media type, it is 1)\&.
+
+If more than one media type in `offers` have the same highest server
+quality value, then the one that shows up first in `offers` is the best
+match\&.
+
+:param offers: (iterable)
+
+               | Each item in the iterable may be a ``str`` media type,
+                 or a (media type, server quality value) ``tuple`` or
+                 ``list``\&. (The two may be mixed in the iterable\&.)
+
+:param default_match: (optional, any type) the value to be returned if
+                      `offers` is empty\&.
+
+:return: (``str``, or the type of `default_match`)
+
+         | The offer that has the highest server quality value\&.  If
+           `offers` is empty, the value of `default_match` is returned\&.
+
+.fi
+.PP
+ 
+.SS "webob\&.acceptparse\&._AcceptInvalidOrNoHeader\&.quality ( self,  offer)"
+
+.PP
+.nf
+Return quality value of given offer, or ``None`` if there is no match\&.
+
+This is the ``\&.quality()`` method for when the header is invalid or not
+found in the request, corresponding to
+:meth:`AcceptValidHeader\&.quality`\&.
+
+\&.\&. warning::
+
+   This is currently maintained for backward compatibility, and will be
+   deprecated in the future (see the documentation for
+   :meth:`AcceptValidHeader\&.quality`)\&.
+
+:param offer: (``str``) media type offer
+:return: (``float``) ``1\&.0``\&.
+
+When the ``Accept`` header is invalid or not in the request, all offers
+are equally acceptable, so 1\&.0 is always returned\&.
+
+.fi
+.PP
+ 
+.SH "Property Documentation"
+.PP 
+.SS "webob\&.acceptparse\&._AcceptInvalidOrNoHeader\&.accepts_html = property(fget=\fBaccept_html\fP, doc=accept_html\&.__doc__)\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

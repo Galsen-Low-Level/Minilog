@@ -1,0 +1,885 @@
+.TH "bs4.BeautifulStoneSoup" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bs4.BeautifulStoneSoup
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBbs4\&.BeautifulSoup\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, *Any args, **Any kwargs)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBbs4\&.BeautifulSoup\fP
+.in +1c
+.ti -1c
+.RI "'BeautifulSoup' \fBcopy_self\fP (self)"
+.br
+.ti -1c
+.RI "Dict[str, Any] \fB__getstate__\fP (self)"
+.br
+.ti -1c
+.RI "None \fB__setstate__\fP (self, Dict[str, Any] state)"
+.br
+.ti -1c
+.RI "None \fBreset\fP (self)"
+.br
+.ti -1c
+.RI "\fBTag\fP \fBnew_tag\fP (self, str \fBname\fP, Optional[str] \fBnamespace\fP=None, Optional[str] nsprefix=None, Optional[_RawAttributeValues] \fBattrs\fP=None, Optional[int] \fBsourceline\fP=None, Optional[int] \fBsourcepos\fP=None, Optional[str] \fBstring\fP=None, **_RawAttributeValue kwattrs)"
+.br
+.ti -1c
+.RI "Type[\fBNavigableString\fP] \fBstring_container\fP (self, Optional[Type[\fBNavigableString\fP]] base_class=None)"
+.br
+.ti -1c
+.RI "\fBNavigableString\fP \fBnew_string\fP (self, str s, Optional[Type[\fBNavigableString\fP]] subclass=None)"
+.br
+.ti -1c
+.RI "List[\fBPageElement\fP] \fBinsert_before\fP (self, *_InsertableElement args)"
+.br
+.ti -1c
+.RI "List[\fBPageElement\fP] \fBinsert_after\fP (self, *_InsertableElement args)"
+.br
+.ti -1c
+.RI "Optional[\fBTag\fP] \fBpopTag\fP (self)"
+.br
+.ti -1c
+.RI "None \fBpushTag\fP (self, \fBTag\fP tag)"
+.br
+.ti -1c
+.RI "None \fBendData\fP (self, Optional[Type[\fBNavigableString\fP]] containerClass=None)"
+.br
+.ti -1c
+.RI "None \fBobject_was_parsed\fP (self, \fBPageElement\fP o, Optional[\fBTag\fP] \fBparent\fP=None, Optional[\fBPageElement\fP] most_recent_element=None)"
+.br
+.ti -1c
+.RI "Optional[\fBTag\fP] \fBhandle_starttag\fP (self, str \fBname\fP, Optional[str] \fBnamespace\fP, Optional[str] nsprefix, _RawAttributeValues \fBattrs\fP, Optional[int] \fBsourceline\fP=None, Optional[int] \fBsourcepos\fP=None, Optional[Dict[str, str]] namespaces=None)"
+.br
+.ti -1c
+.RI "None \fBhandle_endtag\fP (self, str \fBname\fP, Optional[str] nsprefix=None)"
+.br
+.ti -1c
+.RI "None \fBhandle_data\fP (self, str data)"
+.br
+.ti -1c
+.RI "str \fBdecode\fP (self, Optional[int] indent_level=None, _Encoding eventual_encoding=DEFAULT_OUTPUT_ENCODING, Union[\fBFormatter\fP, str] formatter='minimal', Optional[Iterator[\fBPageElement\fP]] iterator=None, **Any kwargs)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBbs4\&.element\&.Tag\fP
+.in +1c
+.ti -1c
+.RI "Self \fB__deepcopy__\fP (self, Dict[Any, Any] memo, bool recursive=True)"
+.br
+.ti -1c
+.RI "bool \fBis_empty_element\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBisSelfClosing\fP (self)"
+.br
+.ti -1c
+.RI "Optional[str] \fBstring\fP (self)"
+.br
+.ti -1c
+.RI "None \fBstring\fP (self, str string)"
+.br
+.ti -1c
+.RI "List[\fBPageElement\fP] \fBinsert\fP (self, int position, *_InsertableElement new_children)"
+.br
+.ti -1c
+.RI "Self \fBunwrap\fP (self)"
+.br
+.ti -1c
+.RI "_OneElement \fBreplaceWithChildren\fP (self)"
+.br
+.ti -1c
+.RI "\fBPageElement\fP \fBappend\fP (self, _InsertableElement tag)"
+.br
+.ti -1c
+.RI "List[\fBPageElement\fP] \fBextend\fP (self, Union[Iterable[_InsertableElement], \fBTag\fP] tags)"
+.br
+.ti -1c
+.RI "None \fBclear\fP (self, bool \fBdecompose\fP=False)"
+.br
+.ti -1c
+.RI "None \fBsmooth\fP (self)"
+.br
+.ti -1c
+.RI "int \fBindex\fP (self, \fBPageElement\fP element)"
+.br
+.ti -1c
+.RI "Optional[_AttributeValue] \fBget\fP (self, str key, Optional[_AttributeValue] \fBdefault\fP=None)"
+.br
+.ti -1c
+.RI "\fBAttributeValueList\fP \fBget_attribute_list\fP (self, str key, Optional[\fBAttributeValueList\fP] \fBdefault\fP=None)"
+.br
+.ti -1c
+.RI "bool \fBhas_attr\fP (self, str key)"
+.br
+.ti -1c
+.RI "int \fB__hash__\fP (self)"
+.br
+.ti -1c
+.RI "_AttributeValue \fB__getitem__\fP (self, str key)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fB__iter__\fP (self)"
+.br
+.ti -1c
+.RI "int \fB__len__\fP (self)"
+.br
+.ti -1c
+.RI "bool \fB__contains__\fP (self, Any x)"
+.br
+.ti -1c
+.RI "bool \fB__bool__\fP (self)"
+.br
+.ti -1c
+.RI "None \fB__setitem__\fP (self, str key, _AttributeValue value)"
+.br
+.ti -1c
+.RI "None \fB__delitem__\fP (self, str key)"
+.br
+.ti -1c
+.RI "_QueryResults \fB__call__\fP (self, Optional[_StrainableElement] \fBname\fP=None, _StrainableAttributes \fBattrs\fP={}, bool recursive=True, Optional[_StrainableString] \fBstring\fP=None, Optional[int] limit=None, int _stacklevel=2, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "Optional[\fBTag\fP] \fB__getattr__\fP (self, str subtag)"
+.br
+.ti -1c
+.RI "bool \fB__eq__\fP (self, Any other)"
+.br
+.ti -1c
+.RI "bool \fB__ne__\fP (self, Any other)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "bytes \fBencode\fP (self, _Encoding encoding=\fBDEFAULT_OUTPUT_ENCODING\fP, Optional[int] indent_level=None, _FormatterOrName formatter='minimal', str errors='xmlcharrefreplace')"
+.br
+.ti -1c
+.RI "Union[str, bytes] \fBprettify\fP (self, Optional[_Encoding] encoding=None, _FormatterOrName formatter='minimal')"
+.br
+.ti -1c
+.RI "str \fBdecode_contents\fP (self, Optional[int] indent_level=None, _Encoding eventual_encoding=\fBDEFAULT_OUTPUT_ENCODING\fP, _FormatterOrName formatter='minimal')"
+.br
+.ti -1c
+.RI "bytes \fBencode_contents\fP (self, Optional[int] indent_level=None, _Encoding encoding=\fBDEFAULT_OUTPUT_ENCODING\fP, _FormatterOrName formatter='minimal')"
+.br
+.ti -1c
+.RI "bytes \fBrenderContents\fP (self, _Encoding encoding=\fBDEFAULT_OUTPUT_ENCODING\fP, bool prettyPrint=False, Optional[int] indentLevel=0)"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBfind\fP (self, \fB_FindMethodName\fP \fBname\fP=None, _StrainableAttributes \fBattrs\fP={}, bool recursive=True, Optional[_StrainableString] \fBstring\fP=None, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_QueryResults \fBfind_all\fP (self, \fB_FindMethodName\fP \fBname\fP=None, _StrainableAttributes \fBattrs\fP={}, bool recursive=True, Optional[_StrainableString] \fBstring\fP=None, Optional[int] limit=None, int _stacklevel=2, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBchildren\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBself_and_descendants\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBdescendants\fP (self)"
+.br
+.ti -1c
+.RI "Optional[\fBTag\fP] \fBselect_one\fP (self, str selector, Optional[Dict[str, str]] namespaces=None, **Any kwargs)"
+.br
+.ti -1c
+.RI "\fBResultSet\fP[\fBTag\fP] \fBselect\fP (self, str selector, Optional[Dict[str, str]] namespaces=None, int limit=0, **Any kwargs)"
+.br
+.ti -1c
+.RI "\fBCSS\fP \fBcss\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBchildGenerator\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBrecursiveChildGenerator\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBhas_key\fP (self, str key)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBbs4\&.element\&.PageElement\fP
+.in +1c
+.ti -1c
+.RI "None \fBsetup\fP (self, Optional[\fBTag\fP] \fBparent\fP=None, _AtMostOneElement \fBprevious_element\fP=None, _AtMostOneElement \fBnext_element\fP=None, _AtMostOneElement \fBprevious_sibling\fP=None, _AtMostOneElement \fBnext_sibling\fP=None)"
+.br
+.ti -1c
+.RI "str \fBformat_string\fP (self, str s, Optional[_FormatterOrName] formatter)"
+.br
+.ti -1c
+.RI "\fBFormatter\fP \fBformatter_for_name\fP (self, Union[_FormatterOrName, _EntitySubstitutionFunction] formatter_name)"
+.br
+.ti -1c
+.RI "Self \fB__copy__\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[str] \fBstripped_strings\fP (self)"
+.br
+.ti -1c
+.RI "str \fBget_text\fP (self, str separator='', bool strip=False, Iterable[Type[\fBNavigableString\fP]] types=\fBdefault\fP)"
+.br
+.ti -1c
+.RI "Self \fBreplace_with\fP (self, *\fBPageElement\fP args)"
+.br
+.ti -1c
+.RI "\fBTag\fP \fBwrap\fP (self, \fBTag\fP wrap_inside)"
+.br
+.ti -1c
+.RI "Self \fBextract\fP (self, Optional[int] _self_index=None)"
+.br
+.ti -1c
+.RI "None \fBdecompose\fP (self)"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBfind_next\fP (self, \fB_FindMethodName\fP name=None, _StrainableAttributes attrs={}, Optional[_StrainableString] string=None, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_QueryResults \fBfind_all_next\fP (self, \fB_FindMethodName\fP name=None, _StrainableAttributes attrs={}, Optional[_StrainableString] string=None, Optional[int] limit=None, int _stacklevel=2, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBfind_next_sibling\fP (self, \fB_FindMethodName\fP name=None, _StrainableAttributes attrs={}, Optional[_StrainableString] string=None, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_QueryResults \fBfind_next_siblings\fP (self, \fB_FindMethodName\fP name=None, _StrainableAttributes attrs={}, Optional[_StrainableString] string=None, Optional[int] limit=None, int _stacklevel=2, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBfind_previous\fP (self, \fB_FindMethodName\fP name=None, _StrainableAttributes attrs={}, Optional[_StrainableString] string=None, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_QueryResults \fBfind_all_previous\fP (self, \fB_FindMethodName\fP name=None, _StrainableAttributes attrs={}, Optional[_StrainableString] string=None, Optional[int] limit=None, int _stacklevel=2, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBfind_previous_sibling\fP (self, \fB_FindMethodName\fP name=None, _StrainableAttributes attrs={}, Optional[_StrainableString] string=None, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_QueryResults \fBfind_previous_siblings\fP (self, \fB_FindMethodName\fP name=None, _StrainableAttributes attrs={}, Optional[_StrainableString] string=None, Optional[int] limit=None, int _stacklevel=2, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBfind_parent\fP (self, \fB_FindMethodName\fP name=None, _StrainableAttributes attrs={}, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_QueryResults \fBfind_parents\fP (self, \fB_FindMethodName\fP name=None, _StrainableAttributes attrs={}, Optional[int] limit=None, int _stacklevel=2, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBnext\fP (self)"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBprevious\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBnext_elements\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBself_and_next_elements\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBnext_siblings\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBself_and_next_siblings\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBprevious_elements\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBself_and_previous_elements\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBprevious_siblings\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBself_and_previous_siblings\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBTag\fP] \fBparents\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBself_and_parents\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBdecomposed\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBnextGenerator\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBnextSiblingGenerator\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBpreviousGenerator\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBpreviousSiblingGenerator\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBparentGenerator\fP (self)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBbs4\&.BeautifulSoup\fP
+.in +1c
+.ti -1c
+.RI "\fBelement_classes\fP"
+.br
+.ti -1c
+.RI "\fBbuilder\fP"
+.br
+.ti -1c
+.RI "\fBis_xml\fP"
+.br
+.ti -1c
+.RI "\fBknown_xml\fP"
+.br
+.ti -1c
+.RI "\fBparse_only\fP"
+.br
+.ti -1c
+.RI "\fBmarkup\fP"
+.br
+.ti -1c
+.RI "\fBoriginal_encoding\fP"
+.br
+.ti -1c
+.RI "\fBdeclared_html_encoding\fP"
+.br
+.ti -1c
+.RI "\fBcontains_replacement_characters\fP"
+.br
+.ti -1c
+.RI "\fBROOT_TAG_NAME\fP"
+.br
+.ti -1c
+.RI "\fBhidden\fP"
+.br
+.ti -1c
+.RI "\fBcurrent_data\fP"
+.br
+.ti -1c
+.RI "\fBcurrentTag\fP"
+.br
+.ti -1c
+.RI "\fBtagStack\fP"
+.br
+.ti -1c
+.RI "\fBopen_tag_counter\fP"
+.br
+.ti -1c
+.RI "\fBpreserve_whitespace_tag_stack\fP"
+.br
+.ti -1c
+.RI "\fBstring_container_stack\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBbs4\&.element\&.Tag\fP
+.in +1c
+.ti -1c
+.RI "\fBparser_class\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBnamespace\fP"
+.br
+.ti -1c
+.RI "\fBprefix\fP"
+.br
+.ti -1c
+.RI "\fBsourceline\fP"
+.br
+.ti -1c
+.RI "\fBsourcepos\fP"
+.br
+.ti -1c
+.RI "\fBattribute_value_list_class\fP"
+.br
+.ti -1c
+.RI "\fBattrs\fP"
+.br
+.ti -1c
+.RI "\fBknown_xml\fP"
+.br
+.ti -1c
+.RI "\fBhidden\fP"
+.br
+.ti -1c
+.RI "\fBcan_be_empty_element\fP"
+.br
+.ti -1c
+.RI "\fBcdata_list_attributes\fP"
+.br
+.ti -1c
+.RI "\fBpreserve_whitespace_tags\fP"
+.br
+.ti -1c
+.RI "\fBinteresting_string_types\fP"
+.br
+.ti -1c
+.RI "\fBdescendants\fP"
+.br
+.ti -1c
+.RI "\fBcontents\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBbs4\&.element\&.PageElement\fP
+.in +1c
+.ti -1c
+.RI "\fBparent\fP"
+.br
+.ti -1c
+.RI "\fBprevious_element\fP"
+.br
+.ti -1c
+.RI "\fBnext_element\fP"
+.br
+.ti -1c
+.RI "\fBnext_sibling\fP"
+.br
+.ti -1c
+.RI "\fBprevious_sibling\fP"
+.br
+.ti -1c
+.RI "\fBfind_all_next\fP"
+.br
+.ti -1c
+.RI "\fBnext_elements\fP"
+.br
+.ti -1c
+.RI "\fBfind_next_siblings\fP"
+.br
+.ti -1c
+.RI "\fBnext_siblings\fP"
+.br
+.ti -1c
+.RI "\fBfind_all_previous\fP"
+.br
+.ti -1c
+.RI "\fBprevious_elements\fP"
+.br
+.ti -1c
+.RI "\fBfind_previous_siblings\fP"
+.br
+.ti -1c
+.RI "\fBprevious_siblings\fP"
+.br
+.ti -1c
+.RI "\fBparents\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBbs4\&.BeautifulSoup\fP
+.in +1c
+.ti -1c
+.RI "str \fBROOT_TAG_NAME\fP = '[document]'"
+.br
+.ti -1c
+.RI "list \fBDEFAULT_BUILDER_FEATURES\fP = ['html', 'fast']"
+.br
+.ti -1c
+.RI "str \fBASCII_SPACES\fP = '\\x20\\x0a\\x09\\x0c\\x0d'"
+.br
+.ti -1c
+.RI "Dict \fBelement_classes\fP [Type[\fBPageElement\fP], Type[\fBPageElement\fP]]"
+.br
+.ti -1c
+.RI "\fBTreeBuilder\fP \fBbuilder\fP"
+.br
+.ti -1c
+.RI "bool \fBis_xml\fP"
+.br
+.ti -1c
+.RI "Optional \fBknown_xml\fP [bool]"
+.br
+.ti -1c
+.RI "Optional \fBparse_only\fP [\fBSoupStrainer\fP]"
+.br
+.ti -1c
+.RI "Optional \fBmarkup\fP [_RawMarkup]"
+.br
+.ti -1c
+.RI "List \fBcurrent_data\fP [str]"
+.br
+.ti -1c
+.RI "Optional \fBcurrentTag\fP [\fBTag\fP]"
+.br
+.ti -1c
+.RI "List \fBtagStack\fP [\fBTag\fP]"
+.br
+.ti -1c
+.RI "CounterType \fBopen_tag_counter\fP [str]"
+.br
+.ti -1c
+.RI "List \fBpreserve_whitespace_tag_stack\fP [\fBTag\fP]"
+.br
+.ti -1c
+.RI "List \fBstring_container_stack\fP [\fBTag\fP]"
+.br
+.ti -1c
+.RI "Optional \fBoriginal_encoding\fP [_Encoding]"
+.br
+.ti -1c
+.RI "Optional \fBdeclared_html_encoding\fP [_Encoding]"
+.br
+.ti -1c
+.RI "bool \fBcontains_replacement_characters\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBbs4\&.element\&.Tag\fP
+.in +1c
+.ti -1c
+.RI "Optional \fBparser_class\fP [type[\fBBeautifulSoup\fP]]"
+.br
+.ti -1c
+.RI "str \fBname\fP"
+.br
+.ti -1c
+.RI "Optional \fBnamespace\fP [str]"
+.br
+.ti -1c
+.RI "Optional \fBprefix\fP [str]"
+.br
+.ti -1c
+.RI "_AttributeValues \fBattrs\fP"
+.br
+.ti -1c
+.RI "Optional \fBsourceline\fP [int]"
+.br
+.ti -1c
+.RI "Optional \fBsourcepos\fP [int]"
+.br
+.ti -1c
+.RI "Optional \fBknown_xml\fP [bool]"
+.br
+.ti -1c
+.RI "List \fBcontents\fP [\fBPageElement\fP]"
+.br
+.ti -1c
+.RI "bool \fBhidden\fP"
+.br
+.ti -1c
+.RI "Optional \fBinteresting_string_types\fP [Set[Type[\fBNavigableString\fP]]]"
+.br
+.ti -1c
+.RI "Optional \fBcan_be_empty_element\fP [bool]"
+.br
+.ti -1c
+.RI "Optional \fBcdata_list_attributes\fP [Dict[str, Set[str]]]"
+.br
+.ti -1c
+.RI "Optional \fBpreserve_whitespace_tags\fP [Set[str]]"
+.br
+.ti -1c
+.RI "\fBparserClass\fP = _deprecated_alias('parserClass', 'parser_class', '4\&.0\&.0')"
+.br
+.ti -1c
+.RI "dict \fBMAIN_CONTENT_STRING_TYPES\fP = {\fBNavigableString\fP, \fBCData\fP}"
+.br
+.ti -1c
+.RI "Self \fBreplace_with_children\fP = \fBunwrap\fP"
+.br
+.ti -1c
+.RI "\fBSTART_ELEMENT_EVENT\fP = \fB_TreeTraversalEvent\fP()"
+.br
+.ti -1c
+.RI "\fBEND_ELEMENT_EVENT\fP = \fB_TreeTraversalEvent\fP()"
+.br
+.ti -1c
+.RI "\fBEMPTY_ELEMENT_EVENT\fP = \fB_TreeTraversalEvent\fP()"
+.br
+.ti -1c
+.RI "\fBSTRING_ELEMENT_EVENT\fP = \fB_TreeTraversalEvent\fP()"
+.br
+.ti -1c
+.RI "\fBfindChild\fP = _deprecated_function_alias('findChild', 'find', '3\&.0\&.0')"
+.br
+.ti -1c
+.RI "\fBfindAll\fP = _deprecated_function_alias('findAll', 'find_all', '4\&.0\&.0')"
+.br
+.ti -1c
+.RI "\fBfindChildren\fP = _deprecated_function_alias('findChildren', 'find_all', '3\&.0\&.0')"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBbs4\&.element\&.PageElement\fP
+.in +1c
+.ti -1c
+.RI "Optional \fBknown_xml\fP = None"
+.br
+.ti -1c
+.RI "Optional \fBparent\fP [\fBTag\fP]"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBnext_element\fP"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBprevious_element\fP"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBnext_sibling\fP"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBprevious_sibling\fP"
+.br
+.ti -1c
+.RI "bool \fBhidden\fP = False"
+.br
+.ti -1c
+.RI "\fBnextSibling\fP = _deprecated_alias('nextSibling', 'next_sibling', '4\&.0\&.0')"
+.br
+.ti -1c
+.RI "\fBpreviousSibling\fP = _deprecated_alias('previousSibling', 'previous_sibling', '4\&.0\&.0')"
+.br
+.ti -1c
+.RI "Iterable \fBdefault\fP = tuple()"
+.br
+.ti -1c
+.RI "str \fBgetText\fP = \fBget_text\fP"
+.br
+.ti -1c
+.RI "\fBreplaceWith\fP = _deprecated_function_alias('replaceWith', 'replace_with', '4\&.0\&.0')"
+.br
+.ti -1c
+.RI "\fBfindNext\fP = _deprecated_function_alias('findNext', 'find_next', '4\&.0\&.0')"
+.br
+.ti -1c
+.RI "\fBfindAllNext\fP = _deprecated_function_alias('findAllNext', 'find_all_next', '4\&.0\&.0')"
+.br
+.ti -1c
+.RI "\fBfindNextSibling\fP"
+.br
+.ti -1c
+.RI "\fBfindNextSiblings\fP"
+.br
+.ti -1c
+.RI "\fBfetchNextSiblings\fP"
+.br
+.ti -1c
+.RI "\fBfindPrevious\fP = _deprecated_function_alias('findPrevious', 'find_previous', '3\&.0\&.0')"
+.br
+.ti -1c
+.RI "\fBfindAllPrevious\fP"
+.br
+.ti -1c
+.RI "\fBfetchAllPrevious\fP"
+.br
+.ti -1c
+.RI "\fBfindPreviousSibling\fP"
+.br
+.ti -1c
+.RI "\fBfindPreviousSiblings\fP"
+.br
+.ti -1c
+.RI "\fBfetchPreviousSiblings\fP"
+.br
+.ti -1c
+.RI "\fBfindParent\fP = _deprecated_function_alias('findParent', 'find_parent', '4\&.0\&.0')"
+.br
+.ti -1c
+.RI "\fBfindParents\fP = _deprecated_function_alias('findParents', 'find_parents', '4\&.0\&.0')"
+.br
+.ti -1c
+.RI "\fBfetchParents\fP = _deprecated_function_alias('fetchParents', 'find_parents', '3\&.0\&.0')"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBbs4\&.BeautifulSoup\fP
+.in +1c
+.ti -1c
+.RI "str \fB_decode_markup\fP (cls, _RawMarkup \fBmarkup\fP)"
+.br
+.ti -1c
+.RI "bool \fB_markup_is_url\fP (cls, _RawMarkup \fBmarkup\fP)"
+.br
+.ti -1c
+.RI "bool \fB_markup_resembles_filename\fP (cls, _RawMarkup \fBmarkup\fP)"
+.br
+.ti -1c
+.RI "None \fB_feed\fP (self)"
+.br
+.ti -1c
+.RI "None \fB_linkage_fixer\fP (self, \fBTag\fP el)"
+.br
+.ti -1c
+.RI "Optional[\fBTag\fP] \fB_popToTag\fP (self, str \fBname\fP, Optional[str] nsprefix=None, bool inclusivePop=True)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBbs4\&.element\&.Tag\fP
+.in +1c
+.ti -1c
+.RI "Iterator[str] \fB_all_strings\fP (self, bool strip=False, \fB_OneOrMoreStringTypes\fP types=\fBPageElement\&.default\fP)"
+.br
+.ti -1c
+.RI "List[\fBPageElement\fP] \fB_insert\fP (self, int position, _InsertableElement new_child)"
+.br
+.ti -1c
+.RI "Iterator[Tuple[\fB_TreeTraversalEvent\fP, \fBPageElement\fP]] \fB_event_stream\fP (self, Optional[Iterator[\fBPageElement\fP]] iterator=None)"
+.br
+.ti -1c
+.RI "str \fB_indent_string\fP (self, str s, int indent_level, \fBFormatter\fP formatter, bool indent_before, bool indent_after)"
+.br
+.ti -1c
+.RI "str \fB_format_tag\fP (self, str eventual_encoding, \fBFormatter\fP formatter, bool opening)"
+.br
+.ti -1c
+.RI "bool \fB_should_pretty_print\fP (self, int indent_level=1)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBbs4\&.element\&.PageElement\fP
+.in +1c
+.ti -1c
+.RI "bool \fB_is_xml\fP (self)"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fB_last_descendant\fP (self, bool is_initialized=True, bool accept_self=True)"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fB_find_one\fP (self, Callable method, \fB_FindMethodName\fP name, _StrainableAttributes attrs, Optional[_StrainableString] string, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_QueryResults \fB_find_all\fP (self, \fB_FindMethodName\fP name, _StrainableAttributes attrs, Optional[_StrainableString] string, Optional[int] limit, Iterator[\fBPageElement\fP] generator, int _stacklevel=3, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fB_self_and\fP (self, Iterator[\fBPageElement\fP] other_generator)"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBbs4\&.BeautifulSoup\fP
+.in +1c
+.ti -1c
+.RI "\fB_namespaces\fP"
+.br
+.ti -1c
+.RI "\fB_most_recent_element\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBbs4\&.element\&.Tag\fP
+.in +1c
+.ti -1c
+.RI "\fB_namespaces\fP"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBbs4\&.BeautifulSoup\fP
+.in +1c
+.ti -1c
+.RI "Optional \fB_most_recent_element\fP [\fBPageElement\fP]"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBbs4\&.element\&.PageElement\fP
+.in +1c
+.ti -1c
+.RI "bool \fB_decomposed\fP"
+.br
+.ti -1c
+.RI "\fB_lastRecursiveChild\fP"
+.br
+.in -1c
+
+Properties inherited from \fBbs4\&.element\&.Tag\fP
+.in +1c
+.ti -1c
+.RI "\fBstrings\fP = property(\fB_all_strings\fP)"
+.br
+.in -1c
+
+Properties inherited from \fBbs4\&.element\&.PageElement\fP
+.in +1c
+.ti -1c
+.RI "\fBtext\fP = property(\fBget_text\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Deprecated interface to an XML parser\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "bs4\&.BeautifulStoneSoup\&.__init__ ( self, *Any markup, **Any features)"
+
+.PP
+.nf
+Constructor\&.
+
+:param markup: A string or a file-like object representing
+ markup to be parsed\&.
+
+:param features: Desirable features of the parser to be
+ used\&. This may be the name of a specific parser ('lxml',
+ 'lxml-xml', 'html\&.parser', or 'html5lib') or it may be the
+ type of markup to be used ('html', 'html5', 'xml')\&. It's
+ recommended that you name a specific parser, so that
+ Beautiful Soup gives you the same results across platforms
+ and virtual environments\&.
+
+:param builder: A TreeBuilder subclass to instantiate (or
+ instance to use) instead of looking one up based on
+ `features`\&. You only need to use this if you've implemented a
+ custom TreeBuilder\&.
+
+:param parse_only: A SoupStrainer\&. Only parts of the document
+ matching the SoupStrainer will be considered\&. This is useful
+ when parsing part of a document that would otherwise be too
+ large to fit into memory\&.
+
+:param from_encoding: A string indicating the encoding of the
+ document to be parsed\&. Pass this in if Beautiful Soup is
+ guessing wrongly about the document's encoding\&.
+
+:param exclude_encodings: A list of strings indicating
+ encodings known to be wrong\&. Pass this in if you don't know
+ the document's encoding but you know Beautiful Soup's guess is
+ wrong\&.
+
+:param element_classes: A dictionary mapping BeautifulSoup
+ classes like Tag and NavigableString, to other classes you'd
+ like to be instantiated instead as the parse tree is
+ built\&. This is useful for subclassing Tag or NavigableString
+ to modify default behavior\&.
+
+:param kwargs: For backwards compatibility purposes, the
+ constructor accepts certain keyword arguments used in
+ Beautiful Soup 3\&. None of these arguments do anything in
+ Beautiful Soup 4; they will result in a warning and then be
+ ignored\&.
+
+ Apart from this, any keyword arguments passed into the
+ BeautifulSoup constructor are propagated to the TreeBuilder
+ constructor\&. This makes it possible to configure a
+ TreeBuilder by passing in arguments, not just by saying which
+ one to use\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBbs4\&.BeautifulSoup\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

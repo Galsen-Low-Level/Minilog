@@ -1,0 +1,112 @@
+.TH "pip._vendor.cachecontrol.caches.file_cache._FileCacheMixin" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.cachecontrol.caches.file_cache._FileCacheMixin
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBpip\&._vendor\&.cachecontrol\&.caches\&.file_cache\&.FileCache\fP, and \fBpip\&._vendor\&.cachecontrol\&.caches\&.file_cache\&.SeparateBodyFileCache\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str|Path \fBdirectory\fP, bool \fBforever\fP=False, int \fBfilemode\fP=0o0600, int \fBdirmode\fP=0o0700, type[BaseFileLock]|None \fBlock_class\fP=None)"
+.br
+.ti -1c
+.RI "bytes|None \fBget\fP (self, str key)"
+.br
+.ti -1c
+.RI "None \fBset\fP (self, str key, bytes value, int|datetime|None expires=None)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fBencode\fP (str x)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdirectory\fP"
+.br
+.ti -1c
+.RI "\fBforever\fP"
+.br
+.ti -1c
+.RI "\fBfilemode\fP"
+.br
+.ti -1c
+.RI "\fBdirmode\fP"
+.br
+.ti -1c
+.RI "\fBlock_class\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fB_fn\fP (self, str name)"
+.br
+.ti -1c
+.RI "None \fB_write\fP (self, str path, bytes data)"
+.br
+.ti -1c
+.RI "None \fB_delete\fP (self, str key, str suffix)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Shared implementation for both FileCache variants\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._vendor\&.cachecontrol\&.caches\&.file_cache\&._FileCacheMixin\&.__init__ ( self, str | Path directory, bool  forever = \fCFalse\fP, int  filemode = \fC0o0600\fP, int  dirmode = \fC0o0700\fP, type[BaseFileLock] | None  lock_class = \fCNone\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " None pip\&._vendor\&.cachecontrol\&.caches\&.file_cache\&._FileCacheMixin\&._delete ( self, str key, str suffix)\fC [protected]\fP"
+
+.SS " str pip\&._vendor\&.cachecontrol\&.caches\&.file_cache\&._FileCacheMixin\&._fn ( self, str name)\fC [protected]\fP"
+
+.SS " None pip\&._vendor\&.cachecontrol\&.caches\&.file_cache\&._FileCacheMixin\&._write ( self, str path, bytes data)\fC [protected]\fP"
+
+.PP
+.nf
+Safely write the data to the given path\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.cachecontrol\&.caches\&.file_cache\&._FileCacheMixin\&.encode (str x)\fC [static]\fP"
+
+.SS " bytes | None pip\&._vendor\&.cachecontrol\&.caches\&.file_cache\&._FileCacheMixin\&.get ( self, str key)"
+
+.SS " None pip\&._vendor\&.cachecontrol\&.caches\&.file_cache\&._FileCacheMixin\&.set ( self, str key, bytes value, int | datetime | None  expires = \fCNone\fP)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.cachecontrol\&.caches\&.file_cache\&._FileCacheMixin\&.directory"
+
+.SS "pip\&._vendor\&.cachecontrol\&.caches\&.file_cache\&._FileCacheMixin\&.dirmode"
+
+.SS "pip\&._vendor\&.cachecontrol\&.caches\&.file_cache\&._FileCacheMixin\&.filemode"
+
+.SS "pip\&._vendor\&.cachecontrol\&.caches\&.file_cache\&._FileCacheMixin\&.forever"
+
+.SS "pip\&._vendor\&.cachecontrol\&.caches\&.file_cache\&._FileCacheMixin\&.lock_class"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

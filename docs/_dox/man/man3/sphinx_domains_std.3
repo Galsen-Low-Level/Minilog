@@ -1,0 +1,122 @@
+.TH "sphinx.domains.std" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.domains.std
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBCmdoption\fP"
+.br
+.ti -1c
+.RI "class \fBConfigurationValue\fP"
+.br
+.ti -1c
+.RI "class \fBEnvVar\fP"
+.br
+.ti -1c
+.RI "class \fBEnvVarXRefRole\fP"
+.br
+.ti -1c
+.RI "class \fBGenericObject\fP"
+.br
+.ti -1c
+.RI "class \fBGlossary\fP"
+.br
+.ti -1c
+.RI "class \fBOptionXRefRole\fP"
+.br
+.ti -1c
+.RI "class \fBProductionList\fP"
+.br
+.ti -1c
+.RI "class \fBProgram\fP"
+.br
+.ti -1c
+.RI "class \fBStandardDomain\fP"
+.br
+.ti -1c
+.RI "class \fBTarget\fP"
+.br
+.ti -1c
+.RI "class \fBTokenXRefRole\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "tuple[str, str|None] \fBsplit_term_classifiers\fP (str line)"
+.br
+.ti -1c
+.RI "nodes\&.term \fBmake_glossary_term\fP (\fBBuildEnvironment\fP env, Iterable[\fBNode\fP] textnodes, str|None index_key, str source, int lineno, str|None node_id, nodes\&.document document)"
+.br
+.ti -1c
+.RI "Iterable[\fBNode\fP] \fBtoken_xrefs\fP (str text, str production_group='')"
+.br
+.ti -1c
+.RI "bool|None \fBwarn_missing_reference\fP (\fBSphinx\fP app, \fBDomain\fP domain, \fBpending_xref\fP node)"
+.br
+.ti -1c
+.RI "\fBExtensionMetadata\fP \fBsetup\fP (\fBSphinx\fP app)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "\fBoption_desc_re\fP = re\&.compile(r'((?:/|\-\-|\-|\\+)?[^\\s=]+)(=?\\s*\&.*)')"
+.br
+.ti -1c
+.RI "\fBtoken_re\fP = re\&.compile(r'`((~?[\\w\-]*:)?\\w+)`')"
+.br
+.ti -1c
+.RI "\fBsamp_role\fP = \fBEmphasizedLiteral\fP()"
+.br
+.ti -1c
+.RI "\fB_term_classifiers_re\fP = re\&.compile(' +: +')"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+The standard domain\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " nodes\&.term sphinx\&.domains\&.std\&.make_glossary_term (\fBBuildEnvironment\fP env, Iterable[\fBNode\fP] textnodes, str | None index_key, str source, int lineno, str | None node_id, nodes\&.document document)"
+
+.SS " \fBExtensionMetadata\fP sphinx\&.domains\&.std\&.setup (\fBSphinx\fP app)"
+
+.SS " tuple[str, str | None] sphinx\&.domains\&.std\&.split_term_classifiers (str line)"
+
+.SS " Iterable[\fBNode\fP] sphinx\&.domains\&.std\&.token_xrefs (str text, str  production_group = \fC''\fP)"
+
+.SS " bool | None sphinx\&.domains\&.std\&.warn_missing_reference (\fBSphinx\fP app, \fBDomain\fP domain, \fBpending_xref\fP node)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "sphinx\&.domains\&.std\&._term_classifiers_re = re\&.compile(' +: +')\fC [protected]\fP"
+
+.SS "sphinx\&.domains\&.std\&.logger = logging\&.getLogger(__name__)"
+
+.SS "sphinx\&.domains\&.std\&.option_desc_re = re\&.compile(r'((?:/|\-\-|\-|\\+)?[^\\s=]+)(=?\\s*\&.*)')"
+
+.SS "sphinx\&.domains\&.std\&.samp_role = \fBEmphasizedLiteral\fP()"
+
+.SS "sphinx\&.domains\&.std\&.token_re = re\&.compile(r'`((~?[\\w\-]*:)?\\w+)`')"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

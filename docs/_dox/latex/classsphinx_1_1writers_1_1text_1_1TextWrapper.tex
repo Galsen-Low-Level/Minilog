@@ -1,0 +1,100 @@
+\doxysection{sphinx.\+writers.\+text.\+Text\+Wrapper Class Reference}
+\hypertarget{classsphinx_1_1writers_1_1text_1_1TextWrapper}{}\label{classsphinx_1_1writers_1_1text_1_1TextWrapper}\index{sphinx.writers.text.TextWrapper@{sphinx.writers.text.TextWrapper}}
+Inheritance diagram for sphinx.\+writers.\+text.\+Text\+Wrapper\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsphinx_1_1writers_1_1text_1_1TextWrapper}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1TextWrapper_accad51e1a0fed2455ebedf89bba9da44}{width}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1TextWrapper_ad09b17bc1a358b807328d1da5ebc3724}{wordsep\+\_\+re}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+list\mbox{[}str\mbox{]} \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1TextWrapper_a3ae13e7ccfd94fed438f46a5646606e4}{\+\_\+wrap\+\_\+chunks}} (self, list\mbox{[}str\mbox{]} chunks)
+\item 
+tuple\mbox{[}str, str\mbox{]} \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1TextWrapper_a775040f12a9301708c172eecc5115953}{\+\_\+break\+\_\+word}} (self, str word, int space\+\_\+left)
+\item 
+list\mbox{[}str\mbox{]} \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1TextWrapper_a11302b10bd158ec39df932524d24ac64}{\+\_\+split}} (self, str text)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1TextWrapper_a15726a219e4bb5f82ae10ab7ef985c30}{\+\_\+handle\+\_\+long\+\_\+word}} (self, list\mbox{[}str\mbox{]} reversed\+\_\+chunks, list\mbox{[}str\mbox{]} cur\+\_\+line, int cur\+\_\+len, int \mbox{\hyperlink{classsphinx_1_1writers_1_1text_1_1TextWrapper_accad51e1a0fed2455ebedf89bba9da44}{width}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Custom subclass that uses a different word separator regex.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsphinx_1_1writers_1_1text_1_1TextWrapper_a775040f12a9301708c172eecc5115953}\label{classsphinx_1_1writers_1_1text_1_1TextWrapper_a775040f12a9301708c172eecc5115953} 
+\index{sphinx.writers.text.TextWrapper@{sphinx.writers.text.TextWrapper}!\_break\_word@{\_break\_word}}
+\index{\_break\_word@{\_break\_word}!sphinx.writers.text.TextWrapper@{sphinx.writers.text.TextWrapper}}
+\doxysubsubsection{\texorpdfstring{\_break\_word()}{\_break\_word()}}
+{\footnotesize\ttfamily  tuple\mbox{[}str, str\mbox{]} sphinx.\+writers.\+text.\+Text\+Wrapper.\+\_\+break\+\_\+word (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{word,  }\item[{int}]{space\+\_\+left }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Break line by unicode width instead of len(word).\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1writers_1_1text_1_1TextWrapper_a15726a219e4bb5f82ae10ab7ef985c30}\label{classsphinx_1_1writers_1_1text_1_1TextWrapper_a15726a219e4bb5f82ae10ab7ef985c30} 
+\index{sphinx.writers.text.TextWrapper@{sphinx.writers.text.TextWrapper}!\_handle\_long\_word@{\_handle\_long\_word}}
+\index{\_handle\_long\_word@{\_handle\_long\_word}!sphinx.writers.text.TextWrapper@{sphinx.writers.text.TextWrapper}}
+\doxysubsubsection{\texorpdfstring{\_handle\_long\_word()}{\_handle\_long\_word()}}
+{\footnotesize\ttfamily  None sphinx.\+writers.\+text.\+Text\+Wrapper.\+\_\+handle\+\_\+long\+\_\+word (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{list\mbox{[}str\mbox{]}}]{reversed\+\_\+chunks,  }\item[{list\mbox{[}str\mbox{]}}]{cur\+\_\+line,  }\item[{int}]{cur\+\_\+len,  }\item[{int     }]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Override original method for using self._break_word() instead of slice.\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1writers_1_1text_1_1TextWrapper_a11302b10bd158ec39df932524d24ac64}\label{classsphinx_1_1writers_1_1text_1_1TextWrapper_a11302b10bd158ec39df932524d24ac64} 
+\index{sphinx.writers.text.TextWrapper@{sphinx.writers.text.TextWrapper}!\_split@{\_split}}
+\index{\_split@{\_split}!sphinx.writers.text.TextWrapper@{sphinx.writers.text.TextWrapper}}
+\doxysubsubsection{\texorpdfstring{\_split()}{\_split()}}
+{\footnotesize\ttfamily  list\mbox{[}str\mbox{]} sphinx.\+writers.\+text.\+Text\+Wrapper.\+\_\+split (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Override original method that only split by 'wordsep_re'.
+
+This '_split' splits wide-characters into chunks by one character.
+\end{DoxyVerb}
+ \Hypertarget{classsphinx_1_1writers_1_1text_1_1TextWrapper_a3ae13e7ccfd94fed438f46a5646606e4}\label{classsphinx_1_1writers_1_1text_1_1TextWrapper_a3ae13e7ccfd94fed438f46a5646606e4} 
+\index{sphinx.writers.text.TextWrapper@{sphinx.writers.text.TextWrapper}!\_wrap\_chunks@{\_wrap\_chunks}}
+\index{\_wrap\_chunks@{\_wrap\_chunks}!sphinx.writers.text.TextWrapper@{sphinx.writers.text.TextWrapper}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_chunks()}{\_wrap\_chunks()}}
+{\footnotesize\ttfamily  list\mbox{[}str\mbox{]} sphinx.\+writers.\+text.\+Text\+Wrapper.\+\_\+wrap\+\_\+chunks (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{list\mbox{[}str\mbox{]}}]{chunks }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}The original _wrap_chunks uses len() to calculate width.
+
+This method respects wide/fullwidth characters for width adjustment.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsphinx_1_1writers_1_1text_1_1TextWrapper_accad51e1a0fed2455ebedf89bba9da44}\label{classsphinx_1_1writers_1_1text_1_1TextWrapper_accad51e1a0fed2455ebedf89bba9da44} 
+\index{sphinx.writers.text.TextWrapper@{sphinx.writers.text.TextWrapper}!width@{width}}
+\index{width@{width}!sphinx.writers.text.TextWrapper@{sphinx.writers.text.TextWrapper}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily sphinx.\+writers.\+text.\+Text\+Wrapper.\+width}
+
+\Hypertarget{classsphinx_1_1writers_1_1text_1_1TextWrapper_ad09b17bc1a358b807328d1da5ebc3724}\label{classsphinx_1_1writers_1_1text_1_1TextWrapper_ad09b17bc1a358b807328d1da5ebc3724} 
+\index{sphinx.writers.text.TextWrapper@{sphinx.writers.text.TextWrapper}!wordsep\_re@{wordsep\_re}}
+\index{wordsep\_re@{wordsep\_re}!sphinx.writers.text.TextWrapper@{sphinx.writers.text.TextWrapper}}
+\doxysubsubsection{\texorpdfstring{wordsep\_re}{wordsep\_re}}
+{\footnotesize\ttfamily sphinx.\+writers.\+text.\+Text\+Wrapper.\+wordsep\+\_\+re\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ re.compile(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{r'(\(\backslash\)s+|'}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ any\ whitespace}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{r'(?<=\(\backslash\)s)(?::[a-\/z-\/]+:)?`\(\backslash\)S+|'}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ interpreted\ text\ start}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{r'[\string^\(\backslash\)s\(\backslash\)w]*\(\backslash\)w+[a-\/zA-\/Z]-\/(?=\(\backslash\)w+[a-\/zA-\/Z])|'}\ \ \ \textcolor{comment}{\#\ hyphenated\ words}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{r'(?<=[\(\backslash\)w\(\backslash\)!\(\backslash\)"{}\(\backslash\)'\(\backslash\)\&\(\backslash\).\(\backslash\),\(\backslash\)?])-\/\{2,\}(?=\(\backslash\)w))'}\ \ \ \ \textcolor{comment}{\#\ em-\/dash}}
+\DoxyCodeLine{\ \ \ \ )}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/sphinx/writers/\mbox{\hyperlink{sphinx_2writers_2text_8py}{text.\+py}}\end{DoxyCompactItemize}

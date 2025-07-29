@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="bav_2main_8c" kind="file" language="C++">
+    <compoundname>main.c</compoundname>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">errno.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">err.h</includes>
+    <includes local="no">ctype.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes refid="bav_2baseconv_8h" local="yes">baseconv.h</includes>
+    <includes refid="bav_2bcvrepl_8h" local="yes">bcvrepl.h</includes>
+    <incdepgraph>
+      <node id="9">
+        <label>baseconv.h</label>
+        <link refid="bav_2baseconv_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>bcvrepl.h</label>
+        <link refid="bav_2bcvrepl_8h"/>
+      </node>
+      <node id="1">
+        <label>/home/umar/Desktop/WorkShop/GLL/bav/main.c</label>
+        <link refid="bav_2main_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>ctype.h</label>
+      </node>
+      <node id="6">
+        <label>err.h</label>
+      </node>
+      <node id="4">
+        <label>errno.h</label>
+      </node>
+      <node id="3">
+        <label>stdio.h</label>
+      </node>
+      <node id="2">
+        <label>stdlib.h</label>
+      </node>
+      <node id="5">
+        <label>string.h</label>
+      </node>
+      <node id="8">
+        <label>unistd.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="bav_2main_8c_1adc4cc5c67b56f34138d786ef6331e3f4" prot="public" static="no">
+        <name>__USE_GNU</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/bav/main.c" line="5" column="9" bodyfile="/home/umar/Desktop/WorkShop/GLL/bav/main.c" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="bav_2main_8c_1a56fe9bff0a1be75aae2da3e593053e2c" prot="public" static="no">
+        <name>USAGE</name>
+        <initializer>&quot;\Usage : bcv [OPTION] ... &lt;NUMBER&gt;\n\Convert Number to specific base\n\-b,  Convert to binary Base\n\-x,  Convert to hexadecimal Base\n\-o,  Convert to Octal Base\n\-v,  Version of the Program\n\-h,  Print  this help\n\&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/bav/main.c" line="27" column="10" bodyfile="/home/umar/Desktop/WorkShop/GLL/bav/main.c" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="bav_2main_8c_1a0c99d968a34e803d378692bde2e3f18f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int ac, char **av)</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>ac</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>av</declname>
+        </param>
+        <briefdescription>
+<para>TODO : Build argparse library that handle arguments NOTICE : I&apos;it will be a seperate project. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>NOTICE : when no argument was provided the repl is automaticaly launched</para>
+<para>NOTICE : probably -h and -v (help and version) <linebreak/>
+</para>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/bav/main.c" line="31" column="5" bodyfile="/home/umar/Desktop/WorkShop/GLL/bav/main.c" bodystart="31" bodyend="86"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>@file<sp/><sp/>main.c<sp/><sp/></highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>@brief<sp/>entry<sp/><sp/>program<sp/></highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>@author<sp/>Umar<sp/>Ba<sp/>&lt;jUmarB@protonmail.com&gt;<sp/>&lt;github/Jukoo&gt;<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__USE_GNU<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;errno.h&gt;</highlight><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;err.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ctype.h&gt;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="bav_2baseconv_8h" kindref="compound">baseconv.h</ref>&quot;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="bav_2bcvrepl_8h" kindref="compound">bcvrepl.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/>USAGE<sp/>&quot;\</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor">Usage<sp/>:<sp/>bcv<sp/>[OPTION]<sp/>...<sp/>&lt;NUMBER&gt;\n\</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor">Convert<sp/>Number<sp/>to<sp/>specific<sp/>base\n\</highlight></codeline>
+<codeline lineno="22"><highlight class="preprocessor">-b,<sp/><sp/>Convert<sp/>to<sp/>binary<sp/>Base\n\</highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor">-x,<sp/><sp/>Convert<sp/>to<sp/>hexadecimal<sp/>Base\n\</highlight></codeline>
+<codeline lineno="24"><highlight class="preprocessor">-o,<sp/><sp/>Convert<sp/>to<sp/>Octal<sp/>Base\n\</highlight></codeline>
+<codeline lineno="25"><highlight class="preprocessor">-v,<sp/><sp/>Version<sp/>of<sp/>the<sp/>Program\n\</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor">-h,<sp/><sp/>Print<sp/><sp/>this<sp/>help\n\</highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor">&quot;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacemain" kindref="compound">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ac<sp/>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**av)<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{<sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>(void)<sp/>setvbuf(stdout<sp/>,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)0<sp/>,<sp/>_IONBF<sp/>,0)<sp/>;<sp/><sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ac<sp/>==<sp/>1<sp/>)<sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="baseconv_2bcvrepl_8c_1adf2ae91cfe31b49cf8318fe238e4d128" kindref="member">bcrepl_shell</ref>(<ref refid="baseconv_2bcvrepl_8h_1af0ecbcab5c985108aea37f1bb45eb8ad" kindref="member">__nptr</ref>);<sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_SUCCESS<sp/>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ac<sp/><sp/>==<sp/>2)<sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>short_flags<sp/>=<sp/>*(av+ac-1)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>0x2d<sp/>==<sp/><sp/>*(short_flags)&amp;<sp/>0xff)<sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(*(short_flags+1))<sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;h&apos;</highlight><highlight class="normal">:<sp/>printf(</highlight><highlight class="stringliteral">&quot;%s%s&quot;</highlight><highlight class="normal">,<ref refid="baseconv_2baseconv_8h_1a56fe9bff0a1be75aae2da3e593053e2c" kindref="member">USAGE</ref>,<sp/><ref refid="baseconv_2bcvrepl_8h_1a103f0c1553d878c0da29a4a1304a872c" kindref="member">bcv_version</ref>)<sp/>;</highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;v&apos;</highlight><highlight class="normal">:<sp/>printf(</highlight><highlight class="stringliteral">&quot;%s&quot;</highlight><highlight class="normal">,<sp/><ref refid="baseconv_2bcvrepl_8h_1a103f0c1553d878c0da29a4a1304a872c" kindref="member">bcv_version</ref>);</highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;unknow<sp/>option<sp/>\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s%s&quot;</highlight><highlight class="normal">,<ref refid="baseconv_2baseconv_8h_1a56fe9bff0a1be75aae2da3e593053e2c" kindref="member">USAGE</ref>,<sp/><ref refid="baseconv_2bcvrepl_8h_1a103f0c1553d878c0da29a4a1304a872c" kindref="member">bcv_version</ref>)<sp/>;</highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break<sp/>;<sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ac<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*short_flags<sp/>=<sp/><sp/>*(av+(ac-2))<sp/>;<sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="namespacewebob_1_1request_1adbafe2ffe970e4cf5ad12e2ac95c3ee8" kindref="member">value</ref><sp/>=<sp/>strtol(*(av+(ac-1))<sp/>,<sp/><sp/><ref refid="baseconv_2bcvrepl_8h_1af0ecbcab5c985108aea37f1bb45eb8ad" kindref="member">__nptr</ref><sp/>,<sp/>0xa)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>0x2d<sp/>==<sp/><sp/>*(short_flags)&amp;<sp/>0xff)<sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(*(short_flags+1))<sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;x&apos;</highlight><highlight class="normal">:<sp/><ref refid="baseconv_2baseconv_8c_1a4e08feb75ce93e977e86bdc1f20596b9" kindref="member">bc_hex</ref>(value);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;o&apos;</highlight><highlight class="normal">:<sp/><ref refid="baseconv_2baseconv_8c_1a69c96d980a677f402021fccefc894202" kindref="member">bc_oct</ref>(value);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;b&apos;</highlight><highlight class="normal">:<sp/><ref refid="baseconv_2baseconv_8c_1a4502298da24644539498825ebb38b212" kindref="member">bc_bin</ref>(value);<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;h&apos;</highlight><highlight class="normal">:<sp/>printf(</highlight><highlight class="stringliteral">&quot;%s%s&quot;</highlight><highlight class="normal">,<ref refid="baseconv_2baseconv_8h_1a56fe9bff0a1be75aae2da3e593053e2c" kindref="member">USAGE</ref>,<sp/><ref refid="baseconv_2bcvrepl_8h_1a103f0c1553d878c0da29a4a1304a872c" kindref="member">bcv_version</ref>)<sp/>;</highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;v&apos;</highlight><highlight class="normal">:<sp/>printf(</highlight><highlight class="stringliteral">&quot;%s&quot;</highlight><highlight class="normal">,<sp/><ref refid="baseconv_2bcvrepl_8h_1a103f0c1553d878c0da29a4a1304a872c" kindref="member">bcv_version</ref>);</highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;unknow<sp/>option<sp/>\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s%s&quot;</highlight><highlight class="normal">,<ref refid="baseconv_2baseconv_8h_1a56fe9bff0a1be75aae2da3e593053e2c" kindref="member">USAGE</ref>,<sp/><ref refid="baseconv_2bcvrepl_8h_1a103f0c1553d878c0da29a4a1304a872c" kindref="member">bcv_version</ref>)<sp/>;</highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break<sp/>;<sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EXIT_SUCCESS<sp/>;<sp/></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/umar/Desktop/WorkShop/GLL/bav/main.c"/>
+  </compounddef>
+</doxygen>

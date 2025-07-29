@@ -1,0 +1,78 @@
+.TH "pip._internal.commands.install" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.commands.install
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBInstallCommand\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "List[str] \fBget_lib_location_guesses\fP (bool user=False, Optional[str] home=None, Optional[str] root=None, bool isolated=False, Optional[str] prefix=None)"
+.br
+.ti -1c
+.RI "bool \fBsite_packages_writable\fP (Optional[str] root, bool isolated)"
+.br
+.ti -1c
+.RI "bool \fBdecide_user_install\fP (Optional[bool] use_user_site, Optional[str] prefix_path=None, Optional[str] target_dir=None, Optional[str] root_path=None, bool isolated_mode=False)"
+.br
+.ti -1c
+.RI "str \fBcreate_os_error_message\fP (OSError error, bool show_traceback, bool using_user_site)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = getLogger(__name__)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " str pip\&._internal\&.commands\&.install\&.create_os_error_message (OSError error, bool show_traceback, bool
+ using_user_site)"
+
+.PP
+.nf
+Format an error message for an OSError
+
+It may occur anytime during the execution of the install command\&.
+
+.fi
+.PP
+ 
+.SS " bool pip\&._internal\&.commands\&.install\&.decide_user_install (Optional[bool] use_user_site, Optional[str]  prefix_path = \fCNone\fP, Optional[str]  target_dir = \fCNone\fP, Optional[str]  root_path = \fCNone\fP, bool  isolated_mode = \fCFalse\fP)"
+
+.PP
+.nf
+Determine whether to do a user install based on the input options\&.
+
+If use_user_site is False, no additional checks are done\&.
+If use_user_site is True, it is checked for compatibility with other
+options\&.
+If use_user_site is None, the default behaviour depends on the environment,
+which is provided by the other arguments\&.
+
+.fi
+.PP
+ 
+.SS " List[str] pip\&._internal\&.commands\&.install\&.get_lib_location_guesses (bool  user = \fCFalse\fP, Optional[str]  home = \fCNone\fP, Optional[str]  root = \fCNone\fP, bool  isolated = \fCFalse\fP, Optional[str]  prefix = \fCNone\fP)"
+
+.SS " bool pip\&._internal\&.commands\&.install\&.site_packages_writable (Optional[str] root, bool isolated)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._internal\&.commands\&.install\&.logger = getLogger(__name__)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

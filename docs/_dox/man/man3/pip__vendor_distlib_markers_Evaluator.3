@@ -1,0 +1,71 @@
+.TH "pip._vendor.distlib.markers.Evaluator" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.distlib.markers.Evaluator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBevaluate\fP (self, expr, context)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBoperations\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This class is used to evaluate marker expressions\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.markers\&.Evaluator\&.evaluate ( self,  expr,  context)"
+
+.PP
+.nf
+Evaluate a marker expression returned by the :func:`parse_requirement`
+function in the specified context\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "dict pip\&._vendor\&.distlib\&.markers\&.Evaluator\&.operations\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        '==': lambda x, y: x == y,
+        '===': lambda x, y: x == y,
+        '~=': lambda x, y: x == y or x > y,
+        '!=': lambda x, y: x != y,
+        '<': lambda x, y: x < y,
+        '<=': lambda x, y: x == y or x < y,
+        '>': lambda x, y: x > y,
+        '>=': lambda x, y: x == y or x > y,
+        'and': lambda x, y: x and y,
+        'or': lambda x, y: x or y,
+        'in': lambda x, y: x in y,
+        'not in': lambda x, y: x not in y,
+    }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,447 @@
+.TH "webob.request.Request" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webob.request.Request
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBwebob\&.request\&.AdhocAttrMixin\fP, and \fBwebob\&.request\&.BaseRequest\fP\&.
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBwebob\&.request\&.AdhocAttrMixin\fP
+.in +1c
+.ti -1c
+.RI "\fB__setattr__\fP (self, attr, \fBvalue\fP, DEFAULT=object())"
+.br
+.ti -1c
+.RI "\fB__getattr__\fP (self, attr, DEFAULT=object())"
+.br
+.ti -1c
+.RI "\fB__delattr__\fP (self, attr, DEFAULT=object())"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBwebob\&.request\&.BaseRequest\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBenviron\fP, \fBcharset\fP=None, unicode_errors=None, decode_param_names=None, **kw)"
+.br
+.ti -1c
+.RI "\fBencget\fP (self, key, default=\fBNoDefault\fP, encattr=None)"
+.br
+.ti -1c
+.RI "\fBencset\fP (self, key, val, encattr=None)"
+.br
+.ti -1c
+.RI "\fBcharset\fP (self)"
+.br
+.ti -1c
+.RI "\fBcharset\fP (self, charset)"
+.br
+.ti -1c
+.RI "\fBdecode\fP (self, \fBcharset\fP=None, errors='strict')"
+.br
+.ti -1c
+.RI "\fBbody_file\fP (self)"
+.br
+.ti -1c
+.RI "\fBbody_file\fP (self, \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBbody_file\fP (self)"
+.br
+.ti -1c
+.RI "\fBbody_file_seekable\fP (self)"
+.br
+.ti -1c
+.RI "\fBclient_addr\fP (self)"
+.br
+.ti -1c
+.RI "\fBhost_port\fP (self)"
+.br
+.ti -1c
+.RI "\fBhost_url\fP (self)"
+.br
+.ti -1c
+.RI "\fBapplication_url\fP (self)"
+.br
+.ti -1c
+.RI "\fBpath_url\fP (self)"
+.br
+.ti -1c
+.RI "\fBpath\fP (self)"
+.br
+.ti -1c
+.RI "\fBpath_qs\fP (self)"
+.br
+.ti -1c
+.RI "\fBurl\fP (self)"
+.br
+.ti -1c
+.RI "\fBrelative_url\fP (self, other_url, to_application=False)"
+.br
+.ti -1c
+.RI "\fBpath_info_pop\fP (self, pattern=None)"
+.br
+.ti -1c
+.RI "\fBpath_info_peek\fP (self)"
+.br
+.ti -1c
+.RI "\fBis_xhr\fP (self)"
+.br
+.ti -1c
+.RI "\fBdomain\fP (self)"
+.br
+.ti -1c
+.RI "\fBbody\fP (self)"
+.br
+.ti -1c
+.RI "\fBbody\fP (self, \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBbody\fP (self)"
+.br
+.ti -1c
+.RI "\fBPOST\fP (self)"
+.br
+.ti -1c
+.RI "\fBGET\fP (self)"
+.br
+.ti -1c
+.RI "\fBparams\fP (self)"
+.br
+.ti -1c
+.RI "\fBcookies\fP (self)"
+.br
+.ti -1c
+.RI "\fBcookies\fP (self, val)"
+.br
+.ti -1c
+.RI "\fBcopy\fP (self)"
+.br
+.ti -1c
+.RI "\fBcopy_get\fP (self)"
+.br
+.ti -1c
+.RI "\fBis_body_readable\fP (self)"
+.br
+.ti -1c
+.RI "\fBis_body_readable\fP (self, flag)"
+.br
+.ti -1c
+.RI "\fBmake_body_seekable\fP (self)"
+.br
+.ti -1c
+.RI "\fBcopy_body\fP (self)"
+.br
+.ti -1c
+.RI "\fBmake_tempfile\fP (self)"
+.br
+.ti -1c
+.RI "\fBremove_conditional_headers\fP (self, remove_encoding=True, remove_range=True, remove_match=True, remove_modified=True)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBas_bytes\fP (self, skip_body=False)"
+.br
+.ti -1c
+.RI "\fBas_text\fP (self)"
+.br
+.ti -1c
+.RI "\fBfrom_bytes\fP (cls, b)"
+.br
+.ti -1c
+.RI "\fBfrom_text\fP (cls, s)"
+.br
+.ti -1c
+.RI "\fBfrom_file\fP (cls, fp)"
+.br
+.ti -1c
+.RI "\fBcall_application\fP (self, application, catch_exc_info=False)"
+.br
+.ti -1c
+.RI "\fBsend\fP (self, application=None, catch_exc_info=False)"
+.br
+.ti -1c
+.RI "\fBmake_default_send_app\fP (self)"
+.br
+.ti -1c
+.RI "\fBblank\fP (cls, \fBpath\fP, \fBenviron\fP=None, base_url=None, \fBheaders\fP=None, \fBPOST\fP=None, **kw)"
+.br
+.in -1c
+
+Public Attributes inherited from \fBwebob\&.request\&.BaseRequest\fP
+.in +1c
+.ti -1c
+.RI "\fBis_body_readable\fP"
+.br
+.ti -1c
+.RI "\fBbody\fP"
+.br
+.ti -1c
+.RI "\fBcharset\fP"
+.br
+.ti -1c
+.RI "\fBenviron\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBwebob\&.request\&.BaseRequest\fP
+.in +1c
+.ti -1c
+.RI "int \fBrequest_body_tempfile_limit\fP = 10 * 1024"
+.br
+.ti -1c
+.RI "\fBbody_file_raw\fP = environ_getter('wsgi\&.input')"
+.br
+.ti -1c
+.RI "\fBurl_encoding\fP = environ_getter('webob\&.url_encoding', 'UTF\-8')"
+.br
+.ti -1c
+.RI "\fBscheme\fP = environ_getter('wsgi\&.url_scheme')"
+.br
+.ti -1c
+.RI "\fBmethod\fP = environ_getter('REQUEST_METHOD', '\fBGET\fP')"
+.br
+.ti -1c
+.RI "\fBhttp_version\fP = environ_getter('SERVER_PROTOCOL')"
+.br
+.ti -1c
+.RI "\fBcontent_length\fP"
+.br
+.ti -1c
+.RI "\fBremote_user\fP = environ_getter('REMOTE_USER', None)"
+.br
+.ti -1c
+.RI "\fBremote_host\fP = environ_getter('REMOTE_HOST', None)"
+.br
+.ti -1c
+.RI "\fBremote_addr\fP = environ_getter('REMOTE_ADDR', None)"
+.br
+.ti -1c
+.RI "\fBquery_string\fP = environ_getter('QUERY_STRING', '')"
+.br
+.ti -1c
+.RI "\fBserver_name\fP = environ_getter('SERVER_NAME')"
+.br
+.ti -1c
+.RI "\fBserver_port\fP"
+.br
+.ti -1c
+.RI "\fBscript_name\fP = environ_decoder('SCRIPT_NAME', '', encattr='\fBurl_encoding\fP')"
+.br
+.ti -1c
+.RI "\fBpath_info\fP = environ_decoder('PATH_INFO', encattr='\fBurl_encoding\fP')"
+.br
+.ti -1c
+.RI "\fBuscript_name\fP = \fBscript_name\fP"
+.br
+.ti -1c
+.RI "\fBupath_info\fP = \fBpath_info\fP"
+.br
+.ti -1c
+.RI "\fBjson\fP = property(\fB_json_body__get\fP, \fB_json_body__set\fP, \fB_json_body__del\fP)"
+.br
+.ti -1c
+.RI "\fBis_body_seekable\fP = environ_getter('webob\&.is_body_seekable', False)"
+.br
+.ti -1c
+.RI "\fBaccept\fP = accept_property()"
+.br
+.ti -1c
+.RI "\fBaccept_charset\fP = accept_charset_property()"
+.br
+.ti -1c
+.RI "\fBaccept_encoding\fP = accept_encoding_property()"
+.br
+.ti -1c
+.RI "\fBaccept_language\fP = accept_language_property()"
+.br
+.ti -1c
+.RI "\fBauthorization\fP"
+.br
+.ti -1c
+.RI "\fBif_match\fP = etag_property('HTTP_IF_MATCH', AnyETag, '14\&.24')"
+.br
+.ti -1c
+.RI "\fBif_none_match\fP"
+.br
+.ti -1c
+.RI "\fBdate\fP = converter_date(environ_getter('HTTP_DATE', None, '14\&.8'))"
+.br
+.ti -1c
+.RI "\fBif_modified_since\fP"
+.br
+.ti -1c
+.RI "\fBif_unmodified_since\fP"
+.br
+.ti -1c
+.RI "\fBif_range\fP"
+.br
+.ti -1c
+.RI "\fBmax_forwards\fP"
+.br
+.ti -1c
+.RI "\fBpragma\fP = environ_getter('HTTP_PRAGMA', None, '14\&.32')"
+.br
+.ti -1c
+.RI "\fBrange\fP"
+.br
+.ti -1c
+.RI "\fBreferer\fP = environ_getter('HTTP_REFERER', None, '14\&.36')"
+.br
+.ti -1c
+.RI "\fBreferrer\fP = \fBreferer\fP"
+.br
+.ti -1c
+.RI "\fBuser_agent\fP = environ_getter('HTTP_USER_AGENT', None, '14\&.43')"
+.br
+.ti -1c
+.RI "\fBResponseClass\fP = None"
+.br
+.ti -1c
+.RI "\fBget_response\fP = \fBsend\fP"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBwebob\&.request\&.BaseRequest\fP
+.in +1c
+.ti -1c
+.RI "\fB_content_type__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_content_type__set\fP (self, \fBvalue\fP=None)"
+.br
+.ti -1c
+.RI "\fB_headers__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_headers__set\fP (self, \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fB_urlvars__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_urlvars__set\fP (self, \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fB_urlvars__del\fP (self)"
+.br
+.ti -1c
+.RI "\fB_urlargs__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_urlargs__set\fP (self, \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fB_urlargs__del\fP (self)"
+.br
+.ti -1c
+.RI "\fB_host__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_host__set\fP (self, \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fB_host__del\fP (self)"
+.br
+.ti -1c
+.RI "\fB_json_body__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_json_body__set\fP (self, \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fB_json_body__del\fP (self)"
+.br
+.ti -1c
+.RI "\fB_text__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_text__set\fP (self, \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fB_text__del\fP (self)"
+.br
+.ti -1c
+.RI "\fB_check_charset\fP (self)"
+.br
+.ti -1c
+.RI "\fB_cache_control__get\fP (self)"
+.br
+.ti -1c
+.RI "\fB_cache_control__set\fP (self, \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fB_cache_control__del\fP (self)"
+.br
+.ti -1c
+.RI "\fB_update_cache_control\fP (self, prop_dict)"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBwebob\&.request\&.AdhocAttrMixin\fP
+.in +1c
+.ti -1c
+.RI "int \fB_setattr_stacklevel\fP = 3"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBwebob\&.request\&.BaseRequest\fP
+.in +1c
+.ti -1c
+.RI "\fB_charset\fP = None"
+.br
+.ti -1c
+.RI "int \fB_setattr_stacklevel\fP = 2"
+.br
+.ti -1c
+.RI "\fB_content_type_raw\fP = environ_getter('CONTENT_TYPE', '')"
+.br
+.ti -1c
+.RI "\fB_headers\fP = None"
+.br
+.in -1c
+
+Properties inherited from \fBwebob\&.request\&.BaseRequest\fP
+.in +1c
+.ti -1c
+.RI "\fBcontent_type\fP"
+.br
+.ti -1c
+.RI "\fBheaders\fP = property(\fB_headers__get\fP, \fB_headers__set\fP, doc=_headers__get\&.__doc__)"
+.br
+.ti -1c
+.RI "\fBurlvars\fP"
+.br
+.ti -1c
+.RI "\fBurlargs\fP"
+.br
+.ti -1c
+.RI "\fBhost\fP = property(\fB_host__get\fP, \fB_host__set\fP, \fB_host__del\fP, doc=_host__get\&.__doc__)"
+.br
+.ti -1c
+.RI "\fBtext\fP = property(\fB_text__get\fP, \fB_text__set\fP, \fB_text__del\fP, doc=_text__get\&.__doc__)"
+.br
+.ti -1c
+.RI "\fBcache_control\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+ The default request implementation 
+.fi
+.PP
+ 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

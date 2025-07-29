@@ -1,0 +1,76 @@
+.TH "jinja2.visitor.NodeVisitor" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.visitor.NodeVisitor
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBjinja2\&.compiler\&.CodeGenerator\fP, \fBjinja2\&.compiler\&.DependencyFinderVisitor\fP, \fBjinja2\&.compiler\&.UndeclaredNameVisitor\fP, \fBjinja2\&.idtracking\&.FrameSymbolVisitor\fP, \fBjinja2\&.idtracking\&.RootVisitor\fP, and \fBjinja2\&.visitor\&.NodeTransformer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "'t\&.Optional[\fBVisitCallable\fP]' \fBget_visitor\fP (self, \fBNode\fP node)"
+.br
+.ti -1c
+.RI "t\&.Any \fBvisit\fP (self, \fBNode\fP node, *t\&.Any args, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "t\&.Any \fBgeneric_visit\fP (self, \fBNode\fP node, *t\&.Any args, **t\&.Any kwargs)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Walks the abstract syntax tree and call visitor functions for every
+node found\&.  The visitor functions may return values which will be
+forwarded by the `visit` method\&.
+
+Per default the visitor functions for the nodes are ``'visit_'`` +
+class name of the node\&.  So a `TryFinally` node visit function would
+be `visit_TryFinally`\&.  This behavior can be changed by overriding
+the `get_visitor` function\&.  If no visitor function exists for a node
+(return value `None`) the `generic_visit` visitor is used instead\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " t\&.Any jinja2\&.visitor\&.NodeVisitor\&.generic_visit ( self, \fBNode\fP node, *t\&.Any args, **t\&.Any kwargs)"
+
+.PP
+.nf
+Called if no explicit visitor function exists for a node\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBjinja2\&.visitor\&.NodeTransformer\fP, \fBjinja2\&.idtracking\&.RootVisitor\fP, and \fBjinja2\&.optimizer\&.Optimizer\fP\&.
+.SS " 't\&.Optional[\fBVisitCallable\fP]' jinja2\&.visitor\&.NodeVisitor\&.get_visitor ( self, \fBNode\fP node)"
+
+.PP
+.nf
+Return the visitor function for this node or `None` if no visitor
+exists for this node\&.  In that case the generic visit function is
+used instead\&.
+
+.fi
+.PP
+ 
+.SS " t\&.Any jinja2\&.visitor\&.NodeVisitor\&.visit ( self, \fBNode\fP node, *t\&.Any args, **t\&.Any kwargs)"
+
+.PP
+.nf
+Visit a node\&.
+.fi
+.PP
+ 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,262 @@
+\doxysection{cgi Namespace Reference}
+\hypertarget{namespacecgi}{}\label{namespacecgi}\index{cgi@{cgi}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classcgi_1_1FieldStorage}{Field\+Storage}}
+\item 
+class \mbox{\hyperlink{classcgi_1_1MiniFieldStorage}{Mini\+Field\+Storage}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacecgi_a90707dfb26d2e69ae497bb49e2320847}{initlog}} (\texorpdfstring{$\ast$}{*}allargs)
+\item 
+\mbox{\hyperlink{namespacecgi_a9629c513c345dfe47e1bc47d5976e72b}{dolog}} (fmt, \texorpdfstring{$\ast$}{*}args)
+\item 
+\mbox{\hyperlink{namespacecgi_a135f522ecf27c2674611b98377a6b33b}{nolog}} (\texorpdfstring{$\ast$}{*}allargs)
+\item 
+\mbox{\hyperlink{namespacecgi_a33457328715ef82e47c6e71e95aea342}{closelog}} ()
+\item 
+\mbox{\hyperlink{namespacecgi_ac91a55810ca370a48dadf977b194df9a}{parse}} (fp=None, environ=os.\+environ, keep\+\_\+blank\+\_\+values=0, strict\+\_\+parsing=0, separator=\textquotesingle{}\&\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacecgi_a95867aef70b1363379d5e42f22264948}{parse\+\_\+multipart}} (fp, pdict, encoding="{}utf-\/8"{}, errors="{}replace"{}, separator=\textquotesingle{}\&\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacecgi_a21d062b783a1047cfaf5cf986a4df99a}{\+\_\+parseparam}} (s)
+\item 
+\mbox{\hyperlink{namespacecgi_a093b00bf2e745ec903f54990e0ad6dcc}{parse\+\_\+header}} (line)
+\item 
+\mbox{\hyperlink{namespacecgi_ac428b0a2a92c7754b125ff6eb147d868}{test}} (environ=os.\+environ)
+\item 
+\mbox{\hyperlink{namespacecgi_ad88c586eeed20934c73da20f6ac5eeac}{print\+\_\+exception}} (type=None, value=None, tb=None, limit=None)
+\item 
+\mbox{\hyperlink{namespacecgi_a41357e727b174013d1e5da84ffe701b6}{print\+\_\+environ}} (environ=os.\+environ)
+\item 
+\mbox{\hyperlink{namespacecgi_a74ca8a5eab26b53b6957076b592049f0}{print\+\_\+form}} (form)
+\item 
+\mbox{\hyperlink{namespacecgi_a06e7c21c2b074f0875aed534b627e70b}{print\+\_\+directory}} ()
+\item 
+\mbox{\hyperlink{namespacecgi_a9d0160ceb77a7b2e7c86b4d99c755e20}{print\+\_\+arguments}} ()
+\item 
+\mbox{\hyperlink{namespacecgi_a1f95e4511b3f36009ff6dcdc384ac147}{print\+\_\+environ\+\_\+usage}} ()
+\item 
+\mbox{\hyperlink{namespacecgi_aed508fc135739a25e4e7dc408e449828}{valid\+\_\+boundary}} (s)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespacecgi_a9e8dadb7abe9313488e24deb5ca2b0c2}{logfile}} = "{}"{}
+\item 
+\mbox{\hyperlink{namespacecgi_a2aa8246ea2a1bcad65cc35bf5342499e}{logfp}} = None
+\item 
+\mbox{\hyperlink{namespacecgi_a0f5d5339369b60b124fe0028dbad01e3}{log}} = \mbox{\hyperlink{namespacecgi_a90707dfb26d2e69ae497bb49e2320847}{initlog}}
+\item 
+int \mbox{\hyperlink{namespacecgi_a01f70b758500dcce83a7c53d1282f225}{maxlen}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Support module for CGI (Common Gateway Interface) scripts.
+
+This module defines a number of utilities for use by CGI scripts
+written in Python.
+
+The global variable maxlen can be set to an integer indicating the maximum size
+of a POST request. POST requests larger than this size will result in a
+ValueError being raised during parsing. The default value of this variable is 0,
+meaning the request size is unlimited.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacecgi_a21d062b783a1047cfaf5cf986a4df99a}\label{namespacecgi_a21d062b783a1047cfaf5cf986a4df99a} 
+\index{cgi@{cgi}!\_parseparam@{\_parseparam}}
+\index{\_parseparam@{\_parseparam}!cgi@{cgi}}
+\doxysubsubsection{\texorpdfstring{\_parseparam()}{\_parseparam()}}
+{\footnotesize\ttfamily cgi.\+\_\+parseparam (\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacecgi_a33457328715ef82e47c6e71e95aea342}\label{namespacecgi_a33457328715ef82e47c6e71e95aea342} 
+\index{cgi@{cgi}!closelog@{closelog}}
+\index{closelog@{closelog}!cgi@{cgi}}
+\doxysubsubsection{\texorpdfstring{closelog()}{closelog()}}
+{\footnotesize\ttfamily cgi.\+closelog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Close the log file.\end{DoxyVerb}
+ \Hypertarget{namespacecgi_a9629c513c345dfe47e1bc47d5976e72b}\label{namespacecgi_a9629c513c345dfe47e1bc47d5976e72b} 
+\index{cgi@{cgi}!dolog@{dolog}}
+\index{dolog@{dolog}!cgi@{cgi}}
+\doxysubsubsection{\texorpdfstring{dolog()}{dolog()}}
+{\footnotesize\ttfamily cgi.\+dolog (\begin{DoxyParamCaption}\item[{}]{fmt,  }\item[{\texorpdfstring{$\ast$}{*}}]{args }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write a log message to the log file.  See initlog() for docs.\end{DoxyVerb}
+ \Hypertarget{namespacecgi_a90707dfb26d2e69ae497bb49e2320847}\label{namespacecgi_a90707dfb26d2e69ae497bb49e2320847} 
+\index{cgi@{cgi}!initlog@{initlog}}
+\index{initlog@{initlog}!cgi@{cgi}}
+\doxysubsubsection{\texorpdfstring{initlog()}{initlog()}}
+{\footnotesize\ttfamily cgi.\+initlog (\begin{DoxyParamCaption}\item[{\texorpdfstring{$\ast$}{*}}]{allargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Write a log message, if there is a log file.
+
+Even though this function is called initlog(), you should always
+use log(); log is a variable that is set either to initlog
+(initially), to dolog (once the log file has been opened), or to
+nolog (when logging is disabled).
+
+The first argument is a format string; the remaining arguments (if
+any) are arguments to the % operator, so e.g.
+    log("%s: %s", "a", "b")
+will write "a: b" to the log file, followed by a newline.
+
+If the global logfp is not None, it should be a file object to
+which log data is written.
+
+If the global logfp is None, the global logfile may be a string
+giving a filename to open, in append mode.  This file should be
+world writable!!!  If the file can't be opened, logging is
+silently disabled (since there is no safe place where we could
+send an error message).\end{DoxyVerb}
+ \Hypertarget{namespacecgi_a135f522ecf27c2674611b98377a6b33b}\label{namespacecgi_a135f522ecf27c2674611b98377a6b33b} 
+\index{cgi@{cgi}!nolog@{nolog}}
+\index{nolog@{nolog}!cgi@{cgi}}
+\doxysubsubsection{\texorpdfstring{nolog()}{nolog()}}
+{\footnotesize\ttfamily cgi.\+nolog (\begin{DoxyParamCaption}\item[{\texorpdfstring{$\ast$}{*}}]{allargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Dummy function, assigned to log when logging is disabled.\end{DoxyVerb}
+ \Hypertarget{namespacecgi_ac91a55810ca370a48dadf977b194df9a}\label{namespacecgi_ac91a55810ca370a48dadf977b194df9a} 
+\index{cgi@{cgi}!parse@{parse}}
+\index{parse@{parse}!cgi@{cgi}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily cgi.\+parse (\begin{DoxyParamCaption}\item[{}]{fp = {\ttfamily None},  }\item[{}]{environ = {\ttfamily os.environ},  }\item[{}]{keep\+\_\+blank\+\_\+values = {\ttfamily 0},  }\item[{}]{strict\+\_\+parsing = {\ttfamily 0},  }\item[{}]{separator = {\ttfamily \textquotesingle{}\&\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse a query in the environment or from a file (default stdin)
+
+    Arguments, all optional:
+
+    fp              : file pointer; default: sys.stdin.buffer
+
+    environ         : environment dictionary; default: os.environ
+
+    keep_blank_values: flag indicating whether blank values in
+        percent-encoded forms should be treated as blank strings.
+        A true value indicates that blanks should be retained as
+        blank strings.  The default false value indicates that
+        blank values are to be ignored and treated as if they were
+        not included.
+
+    strict_parsing: flag indicating what to do with parsing errors.
+        If false (the default), errors are silently ignored.
+        If true, errors raise a ValueError exception.
+
+    separator: str. The symbol to use for separating the query arguments.
+        Defaults to &.
+\end{DoxyVerb}
+ \Hypertarget{namespacecgi_a093b00bf2e745ec903f54990e0ad6dcc}\label{namespacecgi_a093b00bf2e745ec903f54990e0ad6dcc} 
+\index{cgi@{cgi}!parse\_header@{parse\_header}}
+\index{parse\_header@{parse\_header}!cgi@{cgi}}
+\doxysubsubsection{\texorpdfstring{parse\_header()}{parse\_header()}}
+{\footnotesize\ttfamily cgi.\+parse\+\_\+header (\begin{DoxyParamCaption}\item[{}]{line }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse a Content-type like header.
+
+Return the main content-type and a dictionary of options.\end{DoxyVerb}
+ \Hypertarget{namespacecgi_a95867aef70b1363379d5e42f22264948}\label{namespacecgi_a95867aef70b1363379d5e42f22264948} 
+\index{cgi@{cgi}!parse\_multipart@{parse\_multipart}}
+\index{parse\_multipart@{parse\_multipart}!cgi@{cgi}}
+\doxysubsubsection{\texorpdfstring{parse\_multipart()}{parse\_multipart()}}
+{\footnotesize\ttfamily cgi.\+parse\+\_\+multipart (\begin{DoxyParamCaption}\item[{}]{fp,  }\item[{}]{pdict,  }\item[{}]{encoding = {\ttfamily "{}utf-\/8"{}},  }\item[{}]{errors = {\ttfamily "{}replace"{}},  }\item[{}]{separator = {\ttfamily \textquotesingle{}\&\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parse multipart input.
+
+Arguments:
+fp   : input file
+pdict: dictionary containing other parameters of content-type header
+encoding, errors: request encoding and error handler, passed to
+    FieldStorage
+
+Returns a dictionary just like parse_qs(): keys are the field names, each
+value is a list of values for that field. For non-file fields, the value
+is a list of strings.
+\end{DoxyVerb}
+ \Hypertarget{namespacecgi_a9d0160ceb77a7b2e7c86b4d99c755e20}\label{namespacecgi_a9d0160ceb77a7b2e7c86b4d99c755e20} 
+\index{cgi@{cgi}!print\_arguments@{print\_arguments}}
+\index{print\_arguments@{print\_arguments}!cgi@{cgi}}
+\doxysubsubsection{\texorpdfstring{print\_arguments()}{print\_arguments()}}
+{\footnotesize\ttfamily cgi.\+print\+\_\+arguments (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacecgi_a06e7c21c2b074f0875aed534b627e70b}\label{namespacecgi_a06e7c21c2b074f0875aed534b627e70b} 
+\index{cgi@{cgi}!print\_directory@{print\_directory}}
+\index{print\_directory@{print\_directory}!cgi@{cgi}}
+\doxysubsubsection{\texorpdfstring{print\_directory()}{print\_directory()}}
+{\footnotesize\ttfamily cgi.\+print\+\_\+directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Dump the current directory as HTML.\end{DoxyVerb}
+ \Hypertarget{namespacecgi_a41357e727b174013d1e5da84ffe701b6}\label{namespacecgi_a41357e727b174013d1e5da84ffe701b6} 
+\index{cgi@{cgi}!print\_environ@{print\_environ}}
+\index{print\_environ@{print\_environ}!cgi@{cgi}}
+\doxysubsubsection{\texorpdfstring{print\_environ()}{print\_environ()}}
+{\footnotesize\ttfamily cgi.\+print\+\_\+environ (\begin{DoxyParamCaption}\item[{}]{environ = {\ttfamily os.environ} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Dump the shell environment as HTML.\end{DoxyVerb}
+ \Hypertarget{namespacecgi_a1f95e4511b3f36009ff6dcdc384ac147}\label{namespacecgi_a1f95e4511b3f36009ff6dcdc384ac147} 
+\index{cgi@{cgi}!print\_environ\_usage@{print\_environ\_usage}}
+\index{print\_environ\_usage@{print\_environ\_usage}!cgi@{cgi}}
+\doxysubsubsection{\texorpdfstring{print\_environ\_usage()}{print\_environ\_usage()}}
+{\footnotesize\ttfamily cgi.\+print\+\_\+environ\+\_\+usage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Dump a list of environment variables used by CGI as HTML.\end{DoxyVerb}
+ \Hypertarget{namespacecgi_ad88c586eeed20934c73da20f6ac5eeac}\label{namespacecgi_ad88c586eeed20934c73da20f6ac5eeac} 
+\index{cgi@{cgi}!print\_exception@{print\_exception}}
+\index{print\_exception@{print\_exception}!cgi@{cgi}}
+\doxysubsubsection{\texorpdfstring{print\_exception()}{print\_exception()}}
+{\footnotesize\ttfamily cgi.\+print\+\_\+exception (\begin{DoxyParamCaption}\item[{}]{type = {\ttfamily None},  }\item[{}]{value = {\ttfamily None},  }\item[{}]{tb = {\ttfamily None},  }\item[{}]{limit = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacecgi_a74ca8a5eab26b53b6957076b592049f0}\label{namespacecgi_a74ca8a5eab26b53b6957076b592049f0} 
+\index{cgi@{cgi}!print\_form@{print\_form}}
+\index{print\_form@{print\_form}!cgi@{cgi}}
+\doxysubsubsection{\texorpdfstring{print\_form()}{print\_form()}}
+{\footnotesize\ttfamily cgi.\+print\+\_\+form (\begin{DoxyParamCaption}\item[{}]{form }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Dump the contents of a form as HTML.\end{DoxyVerb}
+ \Hypertarget{namespacecgi_ac428b0a2a92c7754b125ff6eb147d868}\label{namespacecgi_ac428b0a2a92c7754b125ff6eb147d868} 
+\index{cgi@{cgi}!test@{test}}
+\index{test@{test}!cgi@{cgi}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily cgi.\+test (\begin{DoxyParamCaption}\item[{}]{environ = {\ttfamily os.environ} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Robust test CGI script, usable as main program.
+
+Write minimal HTTP headers and dump all information provided to
+the script in HTML form.\end{DoxyVerb}
+ \Hypertarget{namespacecgi_aed508fc135739a25e4e7dc408e449828}\label{namespacecgi_aed508fc135739a25e4e7dc408e449828} 
+\index{cgi@{cgi}!valid\_boundary@{valid\_boundary}}
+\index{valid\_boundary@{valid\_boundary}!cgi@{cgi}}
+\doxysubsubsection{\texorpdfstring{valid\_boundary()}{valid\_boundary()}}
+{\footnotesize\ttfamily cgi.\+valid\+\_\+boundary (\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacecgi_a0f5d5339369b60b124fe0028dbad01e3}\label{namespacecgi_a0f5d5339369b60b124fe0028dbad01e3} 
+\index{cgi@{cgi}!log@{log}}
+\index{log@{log}!cgi@{cgi}}
+\doxysubsubsection{\texorpdfstring{log}{log}}
+{\footnotesize\ttfamily cgi.\+log = \mbox{\hyperlink{namespacecgi_a90707dfb26d2e69ae497bb49e2320847}{initlog}}}
+
+\Hypertarget{namespacecgi_a9e8dadb7abe9313488e24deb5ca2b0c2}\label{namespacecgi_a9e8dadb7abe9313488e24deb5ca2b0c2} 
+\index{cgi@{cgi}!logfile@{logfile}}
+\index{logfile@{logfile}!cgi@{cgi}}
+\doxysubsubsection{\texorpdfstring{logfile}{logfile}}
+{\footnotesize\ttfamily str cgi.\+logfile = "{}"{}}
+
+\Hypertarget{namespacecgi_a2aa8246ea2a1bcad65cc35bf5342499e}\label{namespacecgi_a2aa8246ea2a1bcad65cc35bf5342499e} 
+\index{cgi@{cgi}!logfp@{logfp}}
+\index{logfp@{logfp}!cgi@{cgi}}
+\doxysubsubsection{\texorpdfstring{logfp}{logfp}}
+{\footnotesize\ttfamily cgi.\+logfp = None}
+
+\Hypertarget{namespacecgi_a01f70b758500dcce83a7c53d1282f225}\label{namespacecgi_a01f70b758500dcce83a7c53d1282f225} 
+\index{cgi@{cgi}!maxlen@{maxlen}}
+\index{maxlen@{maxlen}!cgi@{cgi}}
+\doxysubsubsection{\texorpdfstring{maxlen}{maxlen}}
+{\footnotesize\ttfamily int cgi.\+maxlen = 0}
+

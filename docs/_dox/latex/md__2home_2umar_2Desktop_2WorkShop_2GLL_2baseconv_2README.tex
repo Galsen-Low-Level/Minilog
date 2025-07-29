@@ -1,0 +1,110 @@
+\chapter{Baseconv \texorpdfstring{$<$}{<}img src="{}https\+://img.\+shields.\+io/badge/\+With\%20\+Python\%20\+Support-\/yellow?style=for-\/the-\/badge\&logo=python"{} width="{}152"{} height="{}"{} alt="{}\+Python-\/\+Support"{} style="{}margin-\/right\+:20px"{} align="{}right"{}/\texorpdfstring{$>$}{>}}
+\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2baseconv_2README}{}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2baseconv_2README}\index{Baseconv  $<$img src="{}https://img.shields.io/badge/With\%20Python\%20Support-\/yellow?style=for-\/the-\/badge\&logo=python"{} width="{}152"{}  height="{}"{} alt="{}Python-\/Support"{} style="{}margin-\/right:20px"{}  align="{}right"{}/$>$@{Baseconv  $<$img src=""https://img.shields.io/badge/With\%20Python\%20Support-\/yellow?style=for-\/the-\/badge\&logo=python"" width=""152""  height="""" alt=""Python-\/Support"" style=""margin-\/right:20px""  align=""right""/$>$}}
+\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2baseconv_2README_autotoc_md0}%
+\Hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2baseconv_2README_autotoc_md0}%
+ Converts to different numerical bases such as binary (2), octal (8) and hexadecimal (16) with built-\/in interactive shell.
+
+
+\begin{DoxyItemize}
+\item base 2 -\/\texorpdfstring{$>$}{>} for binary representation 0 to 1 ~\newline
+
+\item base 8 -\/\texorpdfstring{$>$}{>} for octal representation 0 to 7 base
+\item base 16 -\/\texorpdfstring{$>$}{>} for hexadecimal representation 0 to 15 (f)
+\end{DoxyItemize}\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2baseconv_2README_autotoc_md1}{}\doxysubsubsection{\texorpdfstring{Setting Up Ecosystem or Testing Environment}{Setting Up Ecosystem or Testing Environment}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2baseconv_2README_autotoc_md1}
+There are two alternatives\+: ~\newline
+
+
+{\bfseries{1}} -\/ Build On your direct host
+
+{\bfseries{2}} -\/ Or on a dedicated environment (for testing and a quick tour). ~\newline
+
+
+{\bfseries{The ecosystem chosen to build the project is based on the \href{https://mesonbuild.com/index.html}{\texttt{ meson build system}}}}\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2baseconv_2README_autotoc_md2}{}\doxysection{\texorpdfstring{1 -\/ Direct Host}{1 - Direct Host}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2baseconv_2README_autotoc_md2}
+It is therefore strongly recommended to have meson build available on your machine. Here are a few commands to type 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ >\ meson\ setup\ build\ \#\ to\ build\ the\ project\ }
+\DoxyCodeLine{\$\ >\ meson\ compile\ -\/C\ build\ \#\ to\ compile\ the\ project\ \ }
+
+\end{DoxyCode}
+ The Executable w\textquotesingle{}ill be stored in build directory {\ttfamily ./build/bcv} ~\newline
+\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2baseconv_2README_autotoc_md3}{}\doxysection{\texorpdfstring{2 -\/ Pre-\/build or Dedicated Environment}{2 - Pre-build or Dedicated Environment}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2baseconv_2README_autotoc_md3}
+By the way, there\textquotesingle{}s already a minimalistic {\bfseries{pre-\/build environment}} for those who want to test in Docker or Chroot. As you may have noticed, there\textquotesingle{}s no Docker file in the repository, because we want to launch the environment quickly without doing a full Docker command.
+
+We\textquotesingle{}ve already provided a script to export the environment to a local Docker image.\texorpdfstring{$\sim$}{\string~}(no Docker build , no Docker pull no Docker anything)\texorpdfstring{$\sim$}{\string~} Here\textquotesingle{}s a script named {\ttfamily build\+\_\+context.\+sh} in the {\ttfamily context} directory. Just run the script. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ go\ to\ the\ context\ directory\ and\ I\ assume\ you've\ given\ the\ right\ permission\ }
+\DoxyCodeLine{\$\ >\ ./build\_context.sh\ }
+
+\end{DoxyCode}
+ To clarify This script export the {\ttfamily rootfs.\+tar.\+xz} archive directly to Local Docker images and at the end generate a folder named {\ttfamily rootfs}, that you can use also. See (2-\/ A Change Root or ...).
+
+This script will generate 2 environments of your choice\+: 1 -\/ docker image directly available on your host, no need to docker pull just run... 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ docker\ run\ -\/ti\ bcv:testing\ bash\ \#\ to\ run}
+
+\end{DoxyCode}
+ 2 -\/ A Change Root or chroot environment is available in most Unix environments. After {\ttfamily build\+\_\+context.\+sh} has finished running, a {\ttfamily rootfs} directory will be available.
+
+To lock in \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ >\ sudo\ \ chroot\ rootfs\ bash\ }
+
+\end{DoxyCode}
+ And there you are! The command is available in whole environment just type {\ttfamily bcv -\/h}
+
+See USE section bellow for more info .\hypertarget{md__2home_2umar_2Desktop_2WorkShop_2GLL_2baseconv_2README_autotoc_md4}{}\doxysubsubsection{\texorpdfstring{Use}{Use}}\label{md__2home_2umar_2Desktop_2WorkShop_2GLL_2baseconv_2README_autotoc_md4}
+There are 2 modes of use An interactive mode \& Simple command-\/line mode
+
+\texorpdfstring{$\ast$}{*}\+Simple Command-\/line mode
+
+just do ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{bcv\ [option]\ <numeric\ value>\ }
+
+\end{DoxyCode}
+ e.\+g 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ bcv\ -\/o\ 12\ \#\ for\ octal\ representation\ \ }
+
+\end{DoxyCode}
+
+
+\begin{quote}
+Type {\ttfamily bcv -\/h} to display help. \end{quote}
+
+
+\texorpdfstring{$\ast$}{*}\+For interactive mode ~\newline
+
+
+If no argument is supplied, interactive mode is launched by default. here\textquotesingle{}s an example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ bcv\ -\/b/<number>\ \ }
+\DoxyCodeLine{\$\ bcv\ -\/o/<number>\ }
+\DoxyCodeLine{\$\ bcv\ -\/x/<number>\ \ \ }
+
+\end{DoxyCode}
+ e.\+g\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ bcv\ \#\ launch\ in\ interactive\ mode\ }
+\DoxyCodeLine{}
+\DoxyCodeLine{[1]\ bcv\ >\ x/100}
+\DoxyCodeLine{\ \ \ \ \ |-\/>\ 0x64}
+\DoxyCodeLine{[2]\ bcv\ >\ b/100}
+\DoxyCodeLine{\ \ \ \ \ |-\/>0b0110.0100}
+\DoxyCodeLine{[3]\ bcv\ >\ ...}
+
+\end{DoxyCode}
+
+
+\texorpdfstring{$\ast$}{*}\+To exit, type quit or exit (not case-\/sensitive).
+
+Feel free to contribute or declare issue to improve the repository
+
+We ❤️ Computers at all Levels.
+
+From Senegal. 🇸🇳 

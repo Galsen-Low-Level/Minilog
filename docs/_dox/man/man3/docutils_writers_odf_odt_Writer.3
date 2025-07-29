@@ -1,0 +1,360 @@
+.TH "docutils.writers.odf_odt.Writer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.writers.odf_odt.Writer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.writers\&.Writer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "\fBtranslate\fP (self)"
+.br
+.ti -1c
+.RI "\fBassemble_my_parts\fP (self)"
+.br
+.ti -1c
+.RI "\fBupdate_stylesheet\fP (self, stylesheet_root, language_code, region_code)"
+.br
+.ti -1c
+.RI "\fBwrite_zip_str\fP (self, zfile, name, bytes, compress_type=zipfile\&.ZIP_DEFLATED)"
+.br
+.ti -1c
+.RI "\fBstore_embedded_files\fP (self, zfile)"
+.br
+.ti -1c
+.RI "\fBget_settings\fP (self)"
+.br
+.ti -1c
+.RI "\fBget_stylesheet\fP (self)"
+.br
+.ti -1c
+.RI "\fBcopy_from_stylesheet\fP (self, outzipfile)"
+.br
+.ti -1c
+.RI "\fBassemble_parts\fP (self)"
+.br
+.ti -1c
+.RI "\fBcreate_manifest\fP (self)"
+.br
+.ti -1c
+.RI "\fBcreate_meta\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.writers\&.Writer\fP
+.in +1c
+.ti -1c
+.RI "\fBget_transforms\fP (self)"
+.br
+.ti -1c
+.RI "\fBwrite\fP (self, \fBdocument\fP, \fBdestination\fP)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.Component\fP
+.in +1c
+.ti -1c
+.RI "\fBsupports\fP (self, format)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBtranslator_class\fP"
+.br
+.ti -1c
+.RI "\fBsettings\fP"
+.br
+.ti -1c
+.RI "\fBvisitor\fP"
+.br
+.ti -1c
+.RI "\fBEXTENSION\fP"
+.br
+.ti -1c
+.RI "\fBoutput\fP"
+.br
+.ti -1c
+.RI "\fBMIME_TYPE\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.writers\&.Writer\fP
+.in +1c
+.ti -1c
+.RI "\fBparts\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_transforms\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBMIME_TYPE\fP = 'application/vnd\&.oasis\&.opendocument\&.text'"
+.br
+.ti -1c
+.RI "str \fBEXTENSION\fP = '\&.odt'"
+.br
+.ti -1c
+.RI "tuple \fBsupported\fP = ('odt', )"
+.br
+.ti -1c
+.RI "str \fBdefault_stylesheet\fP = 'styles' + \fBEXTENSION\fP"
+.br
+.ti -1c
+.RI "\fBdefault_stylesheet_path\fP"
+.br
+.ti -1c
+.RI "str \fBdefault_template\fP = 'template\&.txt'"
+.br
+.ti -1c
+.RI "\fBdefault_template_path\fP"
+.br
+.ti -1c
+.RI "tuple \fBsettings_spec\fP"
+.br
+.ti -1c
+.RI "dict \fBsettings_defaults\fP"
+.br
+.ti -1c
+.RI "tuple \fBrelative_path_settings\fP = ('odf_config_file', 'stylesheet',)"
+.br
+.ti -1c
+.RI "str \fBconfig_section\fP = 'odf_odt writer'"
+.br
+.ti -1c
+.RI "tuple \fBconfig_section_dependencies\fP = ('writers',)"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.writers\&.Writer\fP
+.in +1c
+.ti -1c
+.RI "str \fBcomponent_type\fP = 'writer'"
+.br
+.ti -1c
+.RI "str \fBconfig_section\fP = 'writers'"
+.br
+.ti -1c
+.RI "\fBdocument\fP = None"
+.br
+.ti -1c
+.RI "\fBoutput\fP = None"
+.br
+.ti -1c
+.RI "\fBlanguage\fP = None"
+.br
+.ti -1c
+.RI "\fBdestination\fP = None"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.Component\fP
+.in +1c
+.ti -1c
+.RI "\fBcomponent_type\fP = None"
+.br
+.ti -1c
+.RI "tuple \fBsupported\fP = ()"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.SettingsSpec\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBsettings_spec\fP = ()"
+.br
+.ti -1c
+.RI "\fBsettings_defaults\fP = None"
+.br
+.ti -1c
+.RI "\fBsettings_default_overrides\fP = None"
+.br
+.ti -1c
+.RI "tuple \fBrelative_path_settings\fP = ()"
+.br
+.ti -1c
+.RI "\fBconfig_section\fP = None"
+.br
+.ti -1c
+.RI "\fBconfig_section_dependencies\fP = None"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBdefault_transforms\fP = ()"
+.br
+.ti -1c
+.RI "tuple \fBunknown_reference_resolvers\fP = ()"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.writers\&.odf_odt\&.Writer\&.__init__ ( self)"
+
+.PP
+Reimplemented from \fBdocutils\&.writers\&.Writer\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.writers\&.odf_odt\&.Writer\&.assemble_my_parts ( self)"
+
+.PP
+.nf
+Assemble the `self\&.parts` dictionary\&.  Extend in subclasses\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.odf_odt\&.Writer\&.assemble_parts ( self)"
+
+.PP
+.nf
+Assemble the `self\&.parts` dictionary\&.  Extend in subclasses\&.
+
+See <https://docutils\&.sourceforge\&.io/docs/api/publisher\&.html>\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.writers\&.Writer\fP\&.
+.SS "docutils\&.writers\&.odf_odt\&.Writer\&.copy_from_stylesheet ( self,  outzipfile)"
+
+.PP
+.nf
+Copy images, settings, etc from the stylesheet doc into target doc\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.odf_odt\&.Writer\&.create_manifest ( self)"
+
+.SS "docutils\&.writers\&.odf_odt\&.Writer\&.create_meta ( self)"
+
+.SS "docutils\&.writers\&.odf_odt\&.Writer\&.get_settings ( self)"
+
+.PP
+.nf
+modeled after get_stylesheet
+
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.odf_odt\&.Writer\&.get_stylesheet ( self)"
+
+.PP
+.nf
+Get the stylesheet from the visitor\&.
+Ask the visitor to setup the page\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.odf_odt\&.Writer\&.store_embedded_files ( self,  zfile)"
+
+.SS "docutils\&.writers\&.odf_odt\&.Writer\&.translate ( self)"
+
+.PP
+.nf
+Do final translation of `self\&.document` into `self\&.output`\&.  Called
+from `write`\&.  Override in subclasses\&.
+
+Usually done with a `docutils\&.nodes\&.NodeVisitor` subclass, in
+combination with a call to `docutils\&.nodes\&.Node\&.walk()` or
+`docutils\&.nodes\&.Node\&.walkabout()`\&.  The ``NodeVisitor`` subclass must
+support all standard elements (listed in
+`docutils\&.nodes\&.node_class_names`) and possibly non-standard elements
+used by the current Reader as well\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.writers\&.Writer\fP\&.
+.SS "docutils\&.writers\&.odf_odt\&.Writer\&.update_stylesheet ( self,  stylesheet_root,  language_code,  region_code)"
+
+.PP
+.nf
+Update xml style sheet element with language and region/country\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.odf_odt\&.Writer\&.write_zip_str ( self,  zfile,  name,  bytes,  compress_type = \fCzipfile\&.ZIP_DEFLATED\fP)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "str docutils\&.writers\&.odf_odt\&.Writer\&.config_section = 'odf_odt writer'\fC [static]\fP"
+
+.SS "tuple docutils\&.writers\&.odf_odt\&.Writer\&.config_section_dependencies = ('writers',)\fC [static]\fP"
+
+.SS "str docutils\&.writers\&.odf_odt\&.Writer\&.default_stylesheet = 'styles' + \fBEXTENSION\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.Writer\&.default_stylesheet_path\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  utils\&.relative_path(
+        os\&.path\&.join(os\&.getcwd(), 'dummy'),
+        os\&.path\&.join(os\&.path\&.dirname(__file__), default_stylesheet))
+.fi
+
+.SS "str docutils\&.writers\&.odf_odt\&.Writer\&.default_template = 'template\&.txt'\fC [static]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.Writer\&.default_template_path\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  utils\&.relative_path(
+        os\&.path\&.join(os\&.getcwd(), 'dummy'),
+        os\&.path\&.join(os\&.path\&.dirname(__file__), default_template))
+.fi
+
+.SS "str docutils\&.writers\&.odf_odt\&.Writer\&.EXTENSION = '\&.odt'\fC [static]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.Writer\&.EXTENSION"
+
+.SS "str docutils\&.writers\&.odf_odt\&.Writer\&.MIME_TYPE = 'application/vnd\&.oasis\&.opendocument\&.text'\fC [static]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.Writer\&.MIME_TYPE"
+
+.SS "docutils\&.writers\&.odf_odt\&.Writer\&.output"
+
+.SS "tuple docutils\&.writers\&.odf_odt\&.Writer\&.relative_path_settings = ('odf_config_file', 'stylesheet',)\fC [static]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.Writer\&.settings"
+
+.SS "dict docutils\&.writers\&.odf_odt\&.Writer\&.settings_defaults\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        'output_encoding_error_handler': 'xmlcharrefreplace',
+    }
+.fi
+
+.SS "tuple docutils\&.writers\&.odf_odt\&.Writer\&.settings_spec\fC [static]\fP"
+
+.SS "tuple docutils\&.writers\&.odf_odt\&.Writer\&.supported = ('odt', )\fC [static]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.Writer\&.translator_class"
+
+.SS "docutils\&.writers\&.odf_odt\&.Writer\&.visitor"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

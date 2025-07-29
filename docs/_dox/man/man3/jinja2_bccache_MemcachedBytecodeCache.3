@@ -1,0 +1,155 @@
+.TH "jinja2.bccache.MemcachedBytecodeCache" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.bccache.MemcachedBytecodeCache
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBjinja2\&.bccache\&.BytecodeCache\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, '_MemcachedClient' \fBclient\fP, str \fBprefix\fP='jinja2/bytecode/', t\&.Optional[int] \fBtimeout\fP=None, bool \fBignore_memcache_errors\fP=True)"
+.br
+.ti -1c
+.RI "None \fBload_bytecode\fP (self, \fBBucket\fP bucket)"
+.br
+.ti -1c
+.RI "None \fBdump_bytecode\fP (self, \fBBucket\fP bucket)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBjinja2\&.bccache\&.BytecodeCache\fP
+.in +1c
+.ti -1c
+.RI "None \fBclear\fP (self)"
+.br
+.ti -1c
+.RI "str \fBget_cache_key\fP (self, str name, t\&.Optional[t\&.Union[str]] filename=None)"
+.br
+.ti -1c
+.RI "str \fBget_source_checksum\fP (self, str source)"
+.br
+.ti -1c
+.RI "\fBBucket\fP \fBget_bucket\fP (self, 'Environment' environment, str name, t\&.Optional[str] filename, str source)"
+.br
+.ti -1c
+.RI "None \fBset_bucket\fP (self, \fBBucket\fP bucket)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBclient\fP"
+.br
+.ti -1c
+.RI "\fBprefix\fP"
+.br
+.ti -1c
+.RI "\fBtimeout\fP"
+.br
+.ti -1c
+.RI "\fBignore_memcache_errors\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This class implements a bytecode cache that uses a memcache cache for
+storing the information\&.  It does not enforce a specific memcache library
+(tummy's memcache or cmemcache) but will accept any class that provides
+the minimal interface required\&.
+
+Libraries compatible with this class:
+
+-   `cachelib <https://github\&.com/pallets/cachelib>`_
+-   `python-memcached <https://pypi\&.org/project/python-memcached/>`_
+
+(Unfortunately the django cache interface is not compatible because it
+does not support storing binary data, only text\&. You can however pass
+the underlying cache client to the bytecode cache which is available
+as `django\&.core\&.cache\&.cache\&._client`\&.)
+
+The minimal interface for the client passed to the constructor is this:
+
+\&.\&. class:: MinimalClientInterface
+
+    \&.\&. method:: set(key, value[, timeout])
+
+        Stores the bytecode in the cache\&.  `value` is a string and
+        `timeout` the timeout of the key\&.  If timeout is not provided
+        a default timeout or no timeout should be assumed, if it's
+        provided it's an integer with the number of seconds the cache
+        item should exist\&.
+
+    \&.\&. method:: get(key)
+
+        Returns the value for the cache key\&.  If the item does not
+        exist in the cache the return value must be `None`\&.
+
+The other arguments to the constructor are the prefix for all keys that
+is added before the actual cache key and the timeout for the bytecode in
+the cache system\&.  We recommend a high (or no) timeout\&.
+
+This bytecode cache does not support clearing of used items in the cache\&.
+The clear method is a no-operation function\&.
+
+\&.\&. versionadded:: 2\&.7
+   Added support for ignoring memcache errors through the
+   `ignore_memcache_errors` parameter\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "jinja2\&.bccache\&.MemcachedBytecodeCache\&.__init__ ( self, '_MemcachedClient' client, str  prefix = \fC'jinja2/bytecode/'\fP, t\&.Optional[int]  timeout = \fCNone\fP, bool  ignore_memcache_errors = \fCTrue\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " None jinja2\&.bccache\&.MemcachedBytecodeCache\&.dump_bytecode ( self, \fBBucket\fP bucket)"
+
+.PP
+.nf
+Subclasses have to override this method to write the bytecode
+from a bucket back to the cache\&.  If it unable to do so it must not
+fail silently but raise an exception\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.bccache\&.BytecodeCache\fP\&.
+.SS " None jinja2\&.bccache\&.MemcachedBytecodeCache\&.load_bytecode ( self, \fBBucket\fP bucket)"
+
+.PP
+.nf
+Subclasses have to override this method to load bytecode into a
+bucket\&.  If they are not able to find code in the cache for the
+bucket, it must not do anything\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.bccache\&.BytecodeCache\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "jinja2\&.bccache\&.MemcachedBytecodeCache\&.client"
+
+.SS "jinja2\&.bccache\&.MemcachedBytecodeCache\&.ignore_memcache_errors"
+
+.SS "jinja2\&.bccache\&.MemcachedBytecodeCache\&.prefix"
+
+.SS "jinja2\&.bccache\&.MemcachedBytecodeCache\&.timeout"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

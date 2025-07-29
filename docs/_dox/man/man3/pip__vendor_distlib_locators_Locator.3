@@ -1,0 +1,338 @@
+.TH "pip._vendor.distlib.locators.Locator" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.distlib.locators.Locator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.PP
+Inherited by \fBpip\&._vendor\&.distlib\&.locators\&.AggregatingLocator\fP, \fBpip\&._vendor\&.distlib\&.locators\&.DirectoryLocator\fP, \fBpip\&._vendor\&.distlib\&.locators\&.DistPathLocator\fP, \fBpip\&._vendor\&.distlib\&.locators\&.JSONLocator\fP, \fBpip\&._vendor\&.distlib\&.locators\&.PyPIJSONLocator\fP, \fBpip\&._vendor\&.distlib\&.locators\&.PyPIRPCLocator\fP, and \fBpip\&._vendor\&.distlib\&.locators\&.SimpleScrapingLocator\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBscheme\fP='default')"
+.br
+.ti -1c
+.RI "\fBget_errors\fP (self)"
+.br
+.ti -1c
+.RI "\fBclear_errors\fP (self)"
+.br
+.ti -1c
+.RI "\fBclear_cache\fP (self)"
+.br
+.ti -1c
+.RI "\fBget_distribution_names\fP (self)"
+.br
+.ti -1c
+.RI "\fBget_project\fP (self, name)"
+.br
+.ti -1c
+.RI "\fBscore_url\fP (self, url)"
+.br
+.ti -1c
+.RI "\fBprefer_url\fP (self, url1, url2)"
+.br
+.ti -1c
+.RI "\fBsplit_filename\fP (self, filename, project_name)"
+.br
+.ti -1c
+.RI "\fBconvert_url_to_download_info\fP (self, url, project_name)"
+.br
+.ti -1c
+.RI "\fBlocate\fP (self, requirement, prereleases=False)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBopener\fP"
+.br
+.ti -1c
+.RI "\fBmatcher\fP"
+.br
+.ti -1c
+.RI "\fBerrors\fP"
+.br
+.ti -1c
+.RI "\fBdownloadable_extensions\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBsource_extensions\fP = ('\&.tar\&.gz', '\&.tar\&.bz2', '\&.tar', '\&.zip', '\&.tgz', '\&.tbz')"
+.br
+.ti -1c
+.RI "tuple \fBbinary_extensions\fP = ('\&.egg', '\&.exe', '\&.whl')"
+.br
+.ti -1c
+.RI "tuple \fBexcluded_extensions\fP = ('\&.pdf', )"
+.br
+.ti -1c
+.RI "\fBwheel_tags\fP = None"
+.br
+.ti -1c
+.RI "tuple \fBdownloadable_extensions\fP = \fBsource_extensions\fP + ('\&.whl', )"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_get_scheme\fP (self)"
+.br
+.ti -1c
+.RI "\fB_set_scheme\fP (self, value)"
+.br
+.ti -1c
+.RI "\fB_get_project\fP (self, name)"
+.br
+.ti -1c
+.RI "\fB_get_digest\fP (self, info)"
+.br
+.ti -1c
+.RI "\fB_update_version_data\fP (self, result, info)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_cache\fP"
+.br
+.ti -1c
+.RI "\fB_scheme\fP"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBscheme\fP = property(\fB_get_scheme\fP, \fB_set_scheme\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A base class for locators - things that locate distributions\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&.__init__ ( self,  scheme = \fC'default'\fP)"
+
+.PP
+.nf
+Initialise an instance\&.
+:param scheme: Because locators look for most recent versions, they
+               need to know the version scheme to use\&. This specifies
+               the current PEP-recommended scheme - use ``'legacy'``
+               if you need to support existing distributions on PyPI\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._vendor\&.distlib\&.locators\&.AggregatingLocator\fP, \fBpip\&._vendor\&.distlib\&.locators\&.DistPathLocator\fP, \fBpip\&._vendor\&.distlib\&.locators\&.DirectoryLocator\fP, \fBpip\&._vendor\&.distlib\&.locators\&.PyPIRPCLocator\fP, \fBpip\&._vendor\&.distlib\&.locators\&.PyPIJSONLocator\fP, and \fBpip\&._vendor\&.distlib\&.locators\&.SimpleScrapingLocator\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&._get_digest ( self,  info)\fC [protected]\fP"
+
+.PP
+.nf
+Get a digest from a dictionary by looking at a 'digests' dictionary
+or keys of the form 'algo_digest'\&.
+
+Returns a 2-tuple (algo, digest) if found, else None\&. Currently
+looks only for SHA256, then MD5\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&._get_project ( self,  name)\fC [protected]\fP"
+
+.PP
+.nf
+For a given project, get a dictionary mapping available versions to Distribution
+instances\&.
+
+This should be implemented in subclasses\&.
+
+If called from a locate() request, self\&.matcher will be set to a
+matcher for the requirement to satisfy, otherwise it will be None\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._vendor\&.distlib\&.locators\&.PyPIRPCLocator\fP, \fBpip\&._vendor\&.distlib\&.locators\&.PyPIJSONLocator\fP, \fBpip\&._vendor\&.distlib\&.locators\&.SimpleScrapingLocator\fP, \fBpip\&._vendor\&.distlib\&.locators\&.DirectoryLocator\fP, \fBpip\&._vendor\&.distlib\&.locators\&.JSONLocator\fP, \fBpip\&._vendor\&.distlib\&.locators\&.DistPathLocator\fP, and \fBpip\&._vendor\&.distlib\&.locators\&.AggregatingLocator\fP\&.
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&._get_scheme ( self)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&._set_scheme ( self,  value)\fC [protected]\fP"
+
+.PP
+Reimplemented in \fBpip\&._vendor\&.distlib\&.locators\&.AggregatingLocator\fP\&.
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&._update_version_data ( self,  result,  info)\fC [protected]\fP"
+
+.PP
+.nf
+Update a result dictionary (the final result from _get_project) with a
+dictionary for a specific version, which typically holds information
+gleaned from a filename or URL for an archive for the distribution\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&.clear_cache ( self)"
+
+.PP
+Reimplemented in \fBpip\&._vendor\&.distlib\&.locators\&.AggregatingLocator\fP\&.
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&.clear_errors ( self)"
+
+.PP
+.nf
+Clear any errors which may have been logged\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&.convert_url_to_download_info ( self,  url,  project_name)"
+
+.PP
+.nf
+See if a URL is a candidate for a download URL for a project (the URL
+has typically been scraped from an HTML page)\&.
+
+If it is, a dictionary is returned with keys 'name', 'version',
+'filename' and 'url'; otherwise, None is returned\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&.get_distribution_names ( self)"
+
+.PP
+.nf
+Return all the distribution names known to this locator\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._vendor\&.distlib\&.locators\&.PyPIRPCLocator\fP, \fBpip\&._vendor\&.distlib\&.locators\&.PyPIJSONLocator\fP, \fBpip\&._vendor\&.distlib\&.locators\&.SimpleScrapingLocator\fP, \fBpip\&._vendor\&.distlib\&.locators\&.DirectoryLocator\fP, \fBpip\&._vendor\&.distlib\&.locators\&.JSONLocator\fP, and \fBpip\&._vendor\&.distlib\&.locators\&.AggregatingLocator\fP\&.
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&.get_errors ( self)"
+
+.PP
+.nf
+Return any errors which have occurred\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&.get_project ( self,  name)"
+
+.PP
+.nf
+For a given project, get a dictionary mapping available versions to Distribution
+instances\&.
+
+This calls _get_project to do all the work, and just implements a caching layer on top\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&.locate ( self,  requirement,  prereleases = \fCFalse\fP)"
+
+.PP
+.nf
+Find the most recent distribution which matches the given
+requirement\&.
+
+:param requirement: A requirement of the form 'foo (1\&.0)' or perhaps
+                    'foo (>= 1\&.0, < 2\&.0, != 1\&.3)'
+:param prereleases: If ``True``, allow pre-release versions
+                    to be located\&. Otherwise, pre-release versions
+                    are not returned\&.
+:return: A :class:`Distribution` instance, or ``None`` if no such
+         distribution could be located\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&.prefer_url ( self,  url1,  url2)"
+
+.PP
+.nf
+Choose one of two URLs where both are candidates for distribution
+archives for the same version of a distribution (for example,
+\&.tar\&.gz vs\&. zip)\&.
+
+The current implementation favours https:// URLs over http://, archives
+from PyPI over those from other locations, wheel compatibility (if a
+wheel) and then the archive name\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&.score_url ( self,  url)"
+
+.PP
+.nf
+Give an url a score which can be used to choose preferred URLs
+for a given project release\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&.split_filename ( self,  filename,  project_name)"
+
+.PP
+.nf
+Attempt to split a filename in project name, version and Python version\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&._cache\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&._scheme\fC [protected]\fP"
+
+.SS "tuple pip\&._vendor\&.distlib\&.locators\&.Locator\&.binary_extensions = ('\&.egg', '\&.exe', '\&.whl')\fC [static]\fP"
+
+.SS "tuple pip\&._vendor\&.distlib\&.locators\&.Locator\&.downloadable_extensions = \fBsource_extensions\fP + ('\&.whl', )\fC [static]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&.downloadable_extensions"
+
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&.errors"
+
+.SS "tuple pip\&._vendor\&.distlib\&.locators\&.Locator\&.excluded_extensions = ('\&.pdf', )\fC [static]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&.matcher"
+
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&.opener"
+
+.SS "tuple pip\&._vendor\&.distlib\&.locators\&.Locator\&.source_extensions = ('\&.tar\&.gz', '\&.tar\&.bz2', '\&.tar', '\&.zip', '\&.tgz', '\&.tbz')\fC [static]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&.wheel_tags = None\fC [static]\fP"
+
+.SH "Property Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.locators\&.Locator\&.scheme = property(\fB_get_scheme\fP, \fB_set_scheme\fP)\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

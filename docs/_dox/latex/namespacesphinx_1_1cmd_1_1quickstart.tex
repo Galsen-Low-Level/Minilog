@@ -1,0 +1,242 @@
+\doxysection{sphinx.\+cmd.\+quickstart Namespace Reference}
+\hypertarget{namespacesphinx_1_1cmd_1_1quickstart}{}\label{namespacesphinx_1_1cmd_1_1quickstart}\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1cmd_1_1quickstart_1_1QuickstartRenderer}{Quickstart\+Renderer}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1cmd_1_1quickstart_1_1ValidationError}{Validation\+Error}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_adeb1d989f583fc71ee16d83428b63bb4}{term\+\_\+input}} (str prompt)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_ae28e34f87f0228bf7d99fb3738a3e7f0}{is\+\_\+path}} (str x)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_a9ac31a4dc8529a7903b2ee0060a87f34}{is\+\_\+path\+\_\+or\+\_\+empty}} (str x)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_aaa654cf381926d61b04367629c20d887}{allow\+\_\+empty}} (str x)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_a7ca439ea59f42a02738a82f81aa66a47}{nonempty}} (str x)
+\item 
+Callable\mbox{[}\mbox{[}str\mbox{]}, str\mbox{]} \mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_a995dccbdd2e4064742c20c41deebd991}{choice}} (\texorpdfstring{$\ast$}{*}str l)
+\item 
+bool \mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_a44bdccbadcc3d4c0eb55e5c21b3e9327}{boolean}} (str x)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_a4122d0300b71caedea68342a5413f3f0}{suffix}} (str x)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_af9cbb2c8daad69c0bb8a8770bb9e6212}{ok}} (str x)
+\item 
+str\texorpdfstring{$\vert$}{|}bool \mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_a24d7ec65ad6ba50f2319ad5da56cf861}{do\+\_\+prompt}} (str text, str\texorpdfstring{$\vert$}{|}None default=None, Callable\mbox{[}\mbox{[}str\mbox{]}, Any\mbox{]} validator=\mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_a7ca439ea59f42a02738a82f81aa66a47}{nonempty}})
+\item 
+None \mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_a82f8ce4d3071dd928bd9eabf5bdc6262}{ask\+\_\+user}} (dict\mbox{[}str, Any\mbox{]} d)
+\item 
+None \mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_a3d5b5010f68766255d127b34c0909e52}{generate}} (dict\mbox{[}str, Any\mbox{]} d, bool overwrite=True, bool silent=False, str\texorpdfstring{$\vert$}{|}None templatedir=None)
+\item 
+bool \mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_a9d218b98732f8e6021cf3d880d180760}{valid\+\_\+dir}} (dict\mbox{[}str, Any\mbox{]} d)
+\item 
+argparse.\+Argument\+Parser \mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_ada8621e59b9f6c0e9a1dacebb16081a5}{get\+\_\+parser}} ()
+\item 
+int \mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_a80dfbb1ae0523981ce86d58b3ebe25c3}{main}} (Sequence\mbox{[}str\mbox{]} argv=())
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_a0318e2014c5b7f9b5010bff84a4cabaa}{READLINE\+\_\+\+AVAILABLE}} = False
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_a7bbbfa9087f3606b8aff5909f7e069e5}{USE\+\_\+\+LIBEDIT}} = \textquotesingle{}libedit\textquotesingle{} in getattr(readline, \textquotesingle{}\+\_\+\+\_\+doc\+\_\+\+\_\+\textquotesingle{}, \textquotesingle{}\textquotesingle{})
+\item 
+dict \mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_a34ea50917c7514b4b8379840da7eefb4}{EXTENSIONS}}
+\item 
+dict \mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_a66bc15327aa611b1f9a927d4266960c0}{DEFAULTS}}
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_a424eebd010a121b44ec04b26c233f23f}{PROMPT\+\_\+\+PREFIX}} = \textquotesingle{}$>$ \textquotesingle{}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_ad919f0712f13c8961caf3c1aad608641}{\+\_\+question\+\_\+colour}} = \+\_\+create\+\_\+input\+\_\+mode\+\_\+colour\+\_\+func(escape\+\_\+code)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Quickly setup documentation source to work with Sphinx.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesphinx_1_1cmd_1_1quickstart_aaa654cf381926d61b04367629c20d887}\label{namespacesphinx_1_1cmd_1_1quickstart_aaa654cf381926d61b04367629c20d887} 
+\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}!allow\_empty@{allow\_empty}}
+\index{allow\_empty@{allow\_empty}!sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection{\texorpdfstring{allow\_empty()}{allow\_empty()}}
+{\footnotesize\ttfamily  str sphinx.\+cmd.\+quickstart.\+allow\+\_\+empty (\begin{DoxyParamCaption}\item[{str}]{x }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1cmd_1_1quickstart_a82f8ce4d3071dd928bd9eabf5bdc6262}\label{namespacesphinx_1_1cmd_1_1quickstart_a82f8ce4d3071dd928bd9eabf5bdc6262} 
+\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}!ask\_user@{ask\_user}}
+\index{ask\_user@{ask\_user}!sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection{\texorpdfstring{ask\_user()}{ask\_user()}}
+{\footnotesize\ttfamily  None sphinx.\+cmd.\+quickstart.\+ask\+\_\+user (\begin{DoxyParamCaption}\item[{dict\mbox{[}str, Any\mbox{]}}]{d }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Ask the user for quickstart values missing from *d*.
+
+Values are:
+
+* path:      root path
+* sep:       separate source and build dirs (bool)
+* dot:       replacement for dot in _templates etc.
+* project:   project name
+* author:    author names
+* version:   version of project
+* release:   release of project
+* language:  document language
+* suffix:    source file suffix
+* master:    master document name
+* extensions:  extensions to use (list)
+* makefile:  make Makefile
+* batchfile: make command file
+\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1cmd_1_1quickstart_a44bdccbadcc3d4c0eb55e5c21b3e9327}\label{namespacesphinx_1_1cmd_1_1quickstart_a44bdccbadcc3d4c0eb55e5c21b3e9327} 
+\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}!boolean@{boolean}}
+\index{boolean@{boolean}!sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection{\texorpdfstring{boolean()}{boolean()}}
+{\footnotesize\ttfamily  bool sphinx.\+cmd.\+quickstart.\+boolean (\begin{DoxyParamCaption}\item[{str}]{x }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1cmd_1_1quickstart_a995dccbdd2e4064742c20c41deebd991}\label{namespacesphinx_1_1cmd_1_1quickstart_a995dccbdd2e4064742c20c41deebd991} 
+\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}!choice@{choice}}
+\index{choice@{choice}!sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection{\texorpdfstring{choice()}{choice()}}
+{\footnotesize\ttfamily  Callable\mbox{[}\mbox{[}str\mbox{]}, str\mbox{]} sphinx.\+cmd.\+quickstart.\+choice (\begin{DoxyParamCaption}\item[{\texorpdfstring{$\ast$}{*}str}]{l }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1cmd_1_1quickstart_a24d7ec65ad6ba50f2319ad5da56cf861}\label{namespacesphinx_1_1cmd_1_1quickstart_a24d7ec65ad6ba50f2319ad5da56cf861} 
+\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}!do\_prompt@{do\_prompt}}
+\index{do\_prompt@{do\_prompt}!sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection{\texorpdfstring{do\_prompt()}{do\_prompt()}}
+{\footnotesize\ttfamily  str \texorpdfstring{$\vert$}{|} bool sphinx.\+cmd.\+quickstart.\+do\+\_\+prompt (\begin{DoxyParamCaption}\item[{str}]{text,  }\item[{str \texorpdfstring{$\vert$}{|} None }]{default = {\ttfamily None},  }\item[{Callable\mbox{[}\mbox{[}str\mbox{]}, Any\mbox{]} }]{validator = {\ttfamily \mbox{\hyperlink{namespacesphinx_1_1cmd_1_1quickstart_a7ca439ea59f42a02738a82f81aa66a47}{nonempty}}} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1cmd_1_1quickstart_a3d5b5010f68766255d127b34c0909e52}\label{namespacesphinx_1_1cmd_1_1quickstart_a3d5b5010f68766255d127b34c0909e52} 
+\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}!generate@{generate}}
+\index{generate@{generate}!sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily  None sphinx.\+cmd.\+quickstart.\+generate (\begin{DoxyParamCaption}\item[{dict\mbox{[}str, Any\mbox{]}}]{d,  }\item[{bool }]{overwrite = {\ttfamily True},  }\item[{bool }]{silent = {\ttfamily False},  }\item[{str \texorpdfstring{$\vert$}{|} None }]{templatedir = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate project based on values in *d*.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1cmd_1_1quickstart_ada8621e59b9f6c0e9a1dacebb16081a5}\label{namespacesphinx_1_1cmd_1_1quickstart_ada8621e59b9f6c0e9a1dacebb16081a5} 
+\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}!get\_parser@{get\_parser}}
+\index{get\_parser@{get\_parser}!sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection{\texorpdfstring{get\_parser()}{get\_parser()}}
+{\footnotesize\ttfamily  argparse.\+Argument\+Parser sphinx.\+cmd.\+quickstart.\+get\+\_\+parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1cmd_1_1quickstart_ae28e34f87f0228bf7d99fb3738a3e7f0}\label{namespacesphinx_1_1cmd_1_1quickstart_ae28e34f87f0228bf7d99fb3738a3e7f0} 
+\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}!is\_path@{is\_path}}
+\index{is\_path@{is\_path}!sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection{\texorpdfstring{is\_path()}{is\_path()}}
+{\footnotesize\ttfamily  str sphinx.\+cmd.\+quickstart.\+is\+\_\+path (\begin{DoxyParamCaption}\item[{str}]{x }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1cmd_1_1quickstart_a9ac31a4dc8529a7903b2ee0060a87f34}\label{namespacesphinx_1_1cmd_1_1quickstart_a9ac31a4dc8529a7903b2ee0060a87f34} 
+\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}!is\_path\_or\_empty@{is\_path\_or\_empty}}
+\index{is\_path\_or\_empty@{is\_path\_or\_empty}!sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection{\texorpdfstring{is\_path\_or\_empty()}{is\_path\_or\_empty()}}
+{\footnotesize\ttfamily  str sphinx.\+cmd.\+quickstart.\+is\+\_\+path\+\_\+or\+\_\+empty (\begin{DoxyParamCaption}\item[{str}]{x }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1cmd_1_1quickstart_a80dfbb1ae0523981ce86d58b3ebe25c3}\label{namespacesphinx_1_1cmd_1_1quickstart_a80dfbb1ae0523981ce86d58b3ebe25c3} 
+\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}!main@{main}}
+\index{main@{main}!sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily  int sphinx.\+cmd.\+quickstart.\+main (\begin{DoxyParamCaption}\item[{Sequence\mbox{[}str\mbox{]} }]{argv = {\ttfamily ()} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1cmd_1_1quickstart_a7ca439ea59f42a02738a82f81aa66a47}\label{namespacesphinx_1_1cmd_1_1quickstart_a7ca439ea59f42a02738a82f81aa66a47} 
+\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}!nonempty@{nonempty}}
+\index{nonempty@{nonempty}!sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection{\texorpdfstring{nonempty()}{nonempty()}}
+{\footnotesize\ttfamily  str sphinx.\+cmd.\+quickstart.\+nonempty (\begin{DoxyParamCaption}\item[{str}]{x }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1cmd_1_1quickstart_af9cbb2c8daad69c0bb8a8770bb9e6212}\label{namespacesphinx_1_1cmd_1_1quickstart_af9cbb2c8daad69c0bb8a8770bb9e6212} 
+\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}!ok@{ok}}
+\index{ok@{ok}!sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection{\texorpdfstring{ok()}{ok()}}
+{\footnotesize\ttfamily  str sphinx.\+cmd.\+quickstart.\+ok (\begin{DoxyParamCaption}\item[{str}]{x }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1cmd_1_1quickstart_a4122d0300b71caedea68342a5413f3f0}\label{namespacesphinx_1_1cmd_1_1quickstart_a4122d0300b71caedea68342a5413f3f0} 
+\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}!suffix@{suffix}}
+\index{suffix@{suffix}!sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection{\texorpdfstring{suffix()}{suffix()}}
+{\footnotesize\ttfamily  str sphinx.\+cmd.\+quickstart.\+suffix (\begin{DoxyParamCaption}\item[{str}]{x }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1cmd_1_1quickstart_adeb1d989f583fc71ee16d83428b63bb4}\label{namespacesphinx_1_1cmd_1_1quickstart_adeb1d989f583fc71ee16d83428b63bb4} 
+\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}!term\_input@{term\_input}}
+\index{term\_input@{term\_input}!sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection{\texorpdfstring{term\_input()}{term\_input()}}
+{\footnotesize\ttfamily  str sphinx.\+cmd.\+quickstart.\+term\+\_\+input (\begin{DoxyParamCaption}\item[{str}]{prompt }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1cmd_1_1quickstart_a9d218b98732f8e6021cf3d880d180760}\label{namespacesphinx_1_1cmd_1_1quickstart_a9d218b98732f8e6021cf3d880d180760} 
+\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}!valid\_dir@{valid\_dir}}
+\index{valid\_dir@{valid\_dir}!sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection{\texorpdfstring{valid\_dir()}{valid\_dir()}}
+{\footnotesize\ttfamily  bool sphinx.\+cmd.\+quickstart.\+valid\+\_\+dir (\begin{DoxyParamCaption}\item[{dict\mbox{[}str, Any\mbox{]}}]{d }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacesphinx_1_1cmd_1_1quickstart_ad919f0712f13c8961caf3c1aad608641}\label{namespacesphinx_1_1cmd_1_1quickstart_ad919f0712f13c8961caf3c1aad608641} 
+\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}!\_question\_colour@{\_question\_colour}}
+\index{\_question\_colour@{\_question\_colour}!sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection{\texorpdfstring{\_question\_colour}{\_question\_colour}}
+{\footnotesize\ttfamily sphinx.\+cmd.\+quickstart.\+\_\+question\+\_\+colour = \+\_\+create\+\_\+input\+\_\+mode\+\_\+colour\+\_\+func(escape\+\_\+code)\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1cmd_1_1quickstart_a66bc15327aa611b1f9a927d4266960c0}\label{namespacesphinx_1_1cmd_1_1quickstart_a66bc15327aa611b1f9a927d4266960c0} 
+\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}!DEFAULTS@{DEFAULTS}}
+\index{DEFAULTS@{DEFAULTS}!sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection{\texorpdfstring{DEFAULTS}{DEFAULTS}}
+{\footnotesize\ttfamily dict sphinx.\+cmd.\+quickstart.\+DEFAULTS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{'path'}:\ \textcolor{stringliteral}{'.'},}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{'sep'}:\ \textcolor{keyword}{False},}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{'dot'}:\ \textcolor{stringliteral}{'\_'},}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{stringliteral}{'language'}:\ \textcolor{keywordtype}{None},}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{stringliteral}{'suffix'}:\ \textcolor{stringliteral}{'.rst'},}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{stringliteral}{'master'}:\ \textcolor{stringliteral}{'index'},}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{stringliteral}{'makefile'}:\ \textcolor{keyword}{True},}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{stringliteral}{'batchfile'}:\ \textcolor{keyword}{True},}
+\DoxyCodeLine{00010\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacesphinx_1_1cmd_1_1quickstart_a34ea50917c7514b4b8379840da7eefb4}\label{namespacesphinx_1_1cmd_1_1quickstart_a34ea50917c7514b4b8379840da7eefb4} 
+\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}!EXTENSIONS@{EXTENSIONS}}
+\index{EXTENSIONS@{EXTENSIONS}!sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection{\texorpdfstring{EXTENSIONS}{EXTENSIONS}}
+{\footnotesize\ttfamily dict sphinx.\+cmd.\+quickstart.\+EXTENSIONS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{'autodoc'}:\ \_\_(\textcolor{stringliteral}{'automatically\ insert\ docstrings\ from\ modules'}),}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{'doctest'}:\ \_\_(\textcolor{stringliteral}{'automatically\ test\ code\ snippets\ in\ doctest\ blocks'}),}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{'intersphinx'}:\ \_\_(\textcolor{stringliteral}{'link\ between\ Sphinx\ documentation\ of\ different\ projects'}),}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{stringliteral}{'todo'}:\ \_\_(\textcolor{stringliteral}{'write\ "{}todo"{}\ entries\ that\ can\ be\ shown\ or\ hidden\ on\ build'}),}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{stringliteral}{'coverage'}:\ \_\_(\textcolor{stringliteral}{'checks\ for\ documentation\ coverage'}),}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{stringliteral}{'imgmath'}:\ \_\_(\textcolor{stringliteral}{'include\ math,\ rendered\ as\ PNG\ or\ SVG\ images'}),}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{stringliteral}{'mathjax'}:\ \_\_(\textcolor{stringliteral}{'include\ math,\ rendered\ in\ the\ browser\ by\ MathJax'}),}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{stringliteral}{'ifconfig'}:\ \_\_(\textcolor{stringliteral}{'conditional\ inclusion\ of\ content\ based\ on\ config\ values'}),}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{stringliteral}{'viewcode'}:\ \_\_(\textcolor{stringliteral}{'include\ links\ to\ the\ source\ code\ of\ documented\ Python\ objects'}),}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{stringliteral}{'githubpages'}:\ \_\_(\textcolor{stringliteral}{'create\ .nojekyll\ file\ to\ publish\ the\ document\ on\ GitHub\ pages'}),}
+\DoxyCodeLine{00012\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacesphinx_1_1cmd_1_1quickstart_a424eebd010a121b44ec04b26c233f23f}\label{namespacesphinx_1_1cmd_1_1quickstart_a424eebd010a121b44ec04b26c233f23f} 
+\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}!PROMPT\_PREFIX@{PROMPT\_PREFIX}}
+\index{PROMPT\_PREFIX@{PROMPT\_PREFIX}!sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection{\texorpdfstring{PROMPT\_PREFIX}{PROMPT\_PREFIX}}
+{\footnotesize\ttfamily str sphinx.\+cmd.\+quickstart.\+PROMPT\+\_\+\+PREFIX = \textquotesingle{}$>$ \textquotesingle{}}
+
+\Hypertarget{namespacesphinx_1_1cmd_1_1quickstart_a0318e2014c5b7f9b5010bff84a4cabaa}\label{namespacesphinx_1_1cmd_1_1quickstart_a0318e2014c5b7f9b5010bff84a4cabaa} 
+\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}!READLINE\_AVAILABLE@{READLINE\_AVAILABLE}}
+\index{READLINE\_AVAILABLE@{READLINE\_AVAILABLE}!sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection{\texorpdfstring{READLINE\_AVAILABLE}{READLINE\_AVAILABLE}}
+{\footnotesize\ttfamily bool sphinx.\+cmd.\+quickstart.\+READLINE\+\_\+\+AVAILABLE = False}
+
+\Hypertarget{namespacesphinx_1_1cmd_1_1quickstart_a7bbbfa9087f3606b8aff5909f7e069e5}\label{namespacesphinx_1_1cmd_1_1quickstart_a7bbbfa9087f3606b8aff5909f7e069e5} 
+\index{sphinx.cmd.quickstart@{sphinx.cmd.quickstart}!USE\_LIBEDIT@{USE\_LIBEDIT}}
+\index{USE\_LIBEDIT@{USE\_LIBEDIT}!sphinx.cmd.quickstart@{sphinx.cmd.quickstart}}
+\doxysubsubsection{\texorpdfstring{USE\_LIBEDIT}{USE\_LIBEDIT}}
+{\footnotesize\ttfamily str sphinx.\+cmd.\+quickstart.\+USE\+\_\+\+LIBEDIT = \textquotesingle{}libedit\textquotesingle{} in getattr(readline, \textquotesingle{}\+\_\+\+\_\+doc\+\_\+\+\_\+\textquotesingle{}, \textquotesingle{}\textquotesingle{})}
+

@@ -1,0 +1,105 @@
+.TH "jinja2.idtracking.Symbols" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.idtracking.Symbols
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, t\&.Optional['Symbols'] \fBparent\fP=None, t\&.Optional[int] level=None)"
+.br
+.ti -1c
+.RI "None \fBanalyze_node\fP (self, \fBnodes\&.Node\fP node, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "t\&.Optional[t\&.Any] \fBfind_load\fP (self, str target)"
+.br
+.ti -1c
+.RI "t\&.Optional[str] \fBfind_ref\fP (self, str name)"
+.br
+.ti -1c
+.RI "str \fBref\fP (self, str name)"
+.br
+.ti -1c
+.RI "'te\&.Self' \fBcopy\fP (self)"
+.br
+.ti -1c
+.RI "None \fBstore\fP (self, str name)"
+.br
+.ti -1c
+.RI "str \fBdeclare_parameter\fP (self, str name)"
+.br
+.ti -1c
+.RI "None \fBload\fP (self, str name)"
+.br
+.ti -1c
+.RI "None \fBbranch_update\fP (self, t\&.Sequence['Symbols'] branch_symbols)"
+.br
+.ti -1c
+.RI "t\&.Dict[str, str] \fBdump_stores\fP (self)"
+.br
+.ti -1c
+.RI "t\&.Set[str] \fBdump_param_targets\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBparent\fP"
+.br
+.ti -1c
+.RI "\fBstores\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fB_define_ref\fP (self, str name, t\&.Optional[t\&.Tuple[str, t\&.Optional[str]]] \fBload\fP=None)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None jinja2\&.idtracking\&.Symbols\&.__init__ ( self, t\&.Optional['Symbols']  parent = \fCNone\fP, t\&.Optional[int]  level = \fCNone\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " str jinja2\&.idtracking\&.Symbols\&._define_ref ( self, str name, t\&.Optional[t\&.Tuple[str, t\&.Optional[str]]]  load = \fCNone\fP)\fC [protected]\fP"
+
+.SS " None jinja2\&.idtracking\&.Symbols\&.analyze_node ( self, \fBnodes\&.Node\fP node, **t\&.Any kwargs)"
+
+.SS " None jinja2\&.idtracking\&.Symbols\&.branch_update ( self, t\&.Sequence['Symbols'] branch_symbols)"
+
+.SS " 'te\&.Self' jinja2\&.idtracking\&.Symbols\&.copy ( self)"
+
+.SS " str jinja2\&.idtracking\&.Symbols\&.declare_parameter ( self, str name)"
+
+.SS " t\&.Set[str] jinja2\&.idtracking\&.Symbols\&.dump_param_targets ( self)"
+
+.SS " t\&.Dict[str, str] jinja2\&.idtracking\&.Symbols\&.dump_stores ( self)"
+
+.SS " t\&.Optional[t\&.Any] jinja2\&.idtracking\&.Symbols\&.find_load ( self, str target)"
+
+.SS " t\&.Optional[str] jinja2\&.idtracking\&.Symbols\&.find_ref ( self, str name)"
+
+.SS " None jinja2\&.idtracking\&.Symbols\&.load ( self, str name)"
+
+.SS " str jinja2\&.idtracking\&.Symbols\&.ref ( self, str name)"
+
+.SS " None jinja2\&.idtracking\&.Symbols\&.store ( self, str name)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "jinja2\&.idtracking\&.Symbols\&.parent"
+
+.SS "jinja2\&.idtracking\&.Symbols\&.stores"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

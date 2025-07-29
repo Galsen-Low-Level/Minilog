@@ -1,0 +1,76 @@
+.TH "md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README \- README 
+.PP
+ 
+.br
+.PP
+Serve as a fast local http server and FTP utility\&. 
+.br
+ You can also use it to browse files like File Manager but in the Navigator\&.
+.PP
+Quite simple to use\&. Type the \fC--help\fP flag to get the usage summary\&.
+.PP
+NOTE: By default, if the target directory contains an \fC\&.html\fP or \fC\&.htm\fP index, priority is given to displaying these files\&.
+.SS "Project Structure"
+.SS "base Structure"
+config / - basic configuration, include/ - header files src / - source files
+.SS "After build"
+.IP "\(bu" 2
+bin/ - hold the final binary
+.IP "\(bu" 2
+lib/ - hold the needed library
+.PP
+.SS "Prelude"
+.PP
+.nf
+$ git clone https://github\&.com/Galsen\-Low\-Level/Ftp\-FM \-\-recursive 
+.fi
+.PP
+.SS "Quick assessment"
+This section is for those who want to get a quick overview of the project using Docker\&. Here's an example:
+.PP
+.PP
+.nf
+                        ___________
+                        v          v
+$ docker  run   \-v ~/Desktop/:/opt/local \-p 9090:9090 ftpfm   /ftp\-FM/bin/ftpFM  \-t /opt/local
+                                   ^\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-^
+.fi
+.PP
+ \fIThe contents of the Desktop folder are volume-mounted on /opt/local and the program will point to this folder to display the contents of the volume-mounted folder\&.\fP
+.SS "### Build"
+The default build tool is \fCCmake\fP
+.PP
+to build it, use the following command
+.PP
+.PP
+.nf
+cmake \-B build 
+cmake \-\-build build  
+.fi
+.PP
+.PP
+the binary source is located in the \&./bin folder the \&./lib folder contains the libraries (you can browse them) 
+.br
+.SS "Have fun"
+launch binary :
+.PP
+.PP
+.nf
+$ \&./bin/ftpfm \-h # to get help 
+$ \&./bin/ftpfm  # launch on default port 9090 
+.fi
+.PP
+.SS "ScreenShot"
+.PP
+**_Happy Hacking Folks_**
+.PP
+.PP
+Feel free to contribute\&.
+.PP
+We ❤️ Computers at all Levels\&.
+.PP
+From Senegal\&. 🇸🇳 

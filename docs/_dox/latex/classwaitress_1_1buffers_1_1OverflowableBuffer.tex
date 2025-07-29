@@ -1,0 +1,185 @@
+\doxysection{waitress.\+buffers.\+Overflowable\+Buffer Class Reference}
+\hypertarget{classwaitress_1_1buffers_1_1OverflowableBuffer}{}\label{classwaitress_1_1buffers_1_1OverflowableBuffer}\index{waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwaitress_1_1buffers_1_1OverflowableBuffer_af2533a39844b8e1ec56a9c86872e4463}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classwaitress_1_1buffers_1_1OverflowableBuffer_a40abf079b3dfc0444ba7638f88c45ed8}{overflow}})
+\item 
+\mbox{\hyperlink{classwaitress_1_1buffers_1_1OverflowableBuffer_a62786d2333ef29de0a41e0c30ecdef22}{\+\_\+\+\_\+len\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1buffers_1_1OverflowableBuffer_afb6d9eccdeea0e50b91f9281878e017a}{\+\_\+\+\_\+bool\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1buffers_1_1OverflowableBuffer_a7cdf1d76178eff78a4d79599c2717d55}{append}} (self, s)
+\item 
+\mbox{\hyperlink{classwaitress_1_1buffers_1_1OverflowableBuffer_a9d78eee7ccb088522778fc361ad1cbd1}{get}} (self, numbytes=-\/1, \mbox{\hyperlink{classwaitress_1_1buffers_1_1OverflowableBuffer_a4c66f1db736f8a41f7caa8d3601b7664}{skip}}=False)
+\item 
+\mbox{\hyperlink{classwaitress_1_1buffers_1_1OverflowableBuffer_a4c66f1db736f8a41f7caa8d3601b7664}{skip}} (self, numbytes, allow\+\_\+prune=False)
+\item 
+\mbox{\hyperlink{classwaitress_1_1buffers_1_1OverflowableBuffer_abd25c87547fbcd061dad0ca747392087}{prune}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1buffers_1_1OverflowableBuffer_ad0d89e8f47bbe1a48d35505c81f0bce5}{getfile}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1buffers_1_1OverflowableBuffer_a87c5934fd1ef475460022fea5c6431fc}{close}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwaitress_1_1buffers_1_1OverflowableBuffer_a40abf079b3dfc0444ba7638f88c45ed8}{overflow}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1buffers_1_1OverflowableBuffer_a585668884cf0f171f77349082cb32ac2}{strbuf}}
+\item 
+\mbox{\hyperlink{classwaitress_1_1buffers_1_1OverflowableBuffer_a9a33f4e84b7314f5a8cc121e12408da1}{overflowed}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classwaitress_1_1buffers_1_1OverflowableBuffer_a8503215455f17fc0388890644cdca98b}{overflowed}} = False
+\item 
+\mbox{\hyperlink{classwaitress_1_1buffers_1_1OverflowableBuffer_a973f246729c033ff345ef34f5489007e}{buf}} = None
+\item 
+str \mbox{\hyperlink{classwaitress_1_1buffers_1_1OverflowableBuffer_a913874188696cd84bb2233864c1ac5e7}{strbuf}} = b"{}"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwaitress_1_1buffers_1_1OverflowableBuffer_a198ea428c58c3ff72004599688a8b9de}{\+\_\+create\+\_\+buffer}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1buffers_1_1OverflowableBuffer_a072e9698cedccecbf11222ef43bbb432}{\+\_\+set\+\_\+small\+\_\+buffer}} (self)
+\item 
+\mbox{\hyperlink{classwaitress_1_1buffers_1_1OverflowableBuffer_a577757cf7d75e349d8156f040621715b}{\+\_\+set\+\_\+large\+\_\+buffer}} (self)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}This buffer implementation has four stages:
+- No data
+- Bytes-based buffer
+- BytesIO-based buffer
+- Temporary file storage
+The first two stages are fastest for simple transfers.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classwaitress_1_1buffers_1_1OverflowableBuffer_af2533a39844b8e1ec56a9c86872e4463}\label{classwaitress_1_1buffers_1_1OverflowableBuffer_af2533a39844b8e1ec56a9c86872e4463} 
+\index{waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily waitress.\+buffers.\+Overflowable\+Buffer.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{overflow }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classwaitress_1_1buffers_1_1OverflowableBuffer_afb6d9eccdeea0e50b91f9281878e017a}\label{classwaitress_1_1buffers_1_1OverflowableBuffer_afb6d9eccdeea0e50b91f9281878e017a} 
+\index{waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}!\_\_bool\_\_@{\_\_bool\_\_}}
+\index{\_\_bool\_\_@{\_\_bool\_\_}!waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}}
+\doxysubsubsection{\texorpdfstring{\_\_bool\_\_()}{\_\_bool\_\_()}}
+{\footnotesize\ttfamily waitress.\+buffers.\+Overflowable\+Buffer.\+\_\+\+\_\+bool\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classwaitress_1_1buffers_1_1OverflowableBuffer_a62786d2333ef29de0a41e0c30ecdef22}\label{classwaitress_1_1buffers_1_1OverflowableBuffer_a62786d2333ef29de0a41e0c30ecdef22} 
+\index{waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}!\_\_len\_\_@{\_\_len\_\_}}
+\index{\_\_len\_\_@{\_\_len\_\_}!waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}}
+\doxysubsubsection{\texorpdfstring{\_\_len\_\_()}{\_\_len\_\_()}}
+{\footnotesize\ttfamily waitress.\+buffers.\+Overflowable\+Buffer.\+\_\+\+\_\+len\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classwaitress_1_1buffers_1_1OverflowableBuffer_a198ea428c58c3ff72004599688a8b9de}\label{classwaitress_1_1buffers_1_1OverflowableBuffer_a198ea428c58c3ff72004599688a8b9de} 
+\index{waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}!\_create\_buffer@{\_create\_buffer}}
+\index{\_create\_buffer@{\_create\_buffer}!waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}}
+\doxysubsubsection{\texorpdfstring{\_create\_buffer()}{\_create\_buffer()}}
+{\footnotesize\ttfamily waitress.\+buffers.\+Overflowable\+Buffer.\+\_\+create\+\_\+buffer (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classwaitress_1_1buffers_1_1OverflowableBuffer_a577757cf7d75e349d8156f040621715b}\label{classwaitress_1_1buffers_1_1OverflowableBuffer_a577757cf7d75e349d8156f040621715b} 
+\index{waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}!\_set\_large\_buffer@{\_set\_large\_buffer}}
+\index{\_set\_large\_buffer@{\_set\_large\_buffer}!waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}}
+\doxysubsubsection{\texorpdfstring{\_set\_large\_buffer()}{\_set\_large\_buffer()}}
+{\footnotesize\ttfamily waitress.\+buffers.\+Overflowable\+Buffer.\+\_\+set\+\_\+large\+\_\+buffer (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classwaitress_1_1buffers_1_1OverflowableBuffer_a072e9698cedccecbf11222ef43bbb432}\label{classwaitress_1_1buffers_1_1OverflowableBuffer_a072e9698cedccecbf11222ef43bbb432} 
+\index{waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}!\_set\_small\_buffer@{\_set\_small\_buffer}}
+\index{\_set\_small\_buffer@{\_set\_small\_buffer}!waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}}
+\doxysubsubsection{\texorpdfstring{\_set\_small\_buffer()}{\_set\_small\_buffer()}}
+{\footnotesize\ttfamily waitress.\+buffers.\+Overflowable\+Buffer.\+\_\+set\+\_\+small\+\_\+buffer (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classwaitress_1_1buffers_1_1OverflowableBuffer_a7cdf1d76178eff78a4d79599c2717d55}\label{classwaitress_1_1buffers_1_1OverflowableBuffer_a7cdf1d76178eff78a4d79599c2717d55} 
+\index{waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}!append@{append}}
+\index{append@{append}!waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily waitress.\+buffers.\+Overflowable\+Buffer.\+append (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{s }\end{DoxyParamCaption})}
+
+\Hypertarget{classwaitress_1_1buffers_1_1OverflowableBuffer_a87c5934fd1ef475460022fea5c6431fc}\label{classwaitress_1_1buffers_1_1OverflowableBuffer_a87c5934fd1ef475460022fea5c6431fc} 
+\index{waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}!close@{close}}
+\index{close@{close}!waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily waitress.\+buffers.\+Overflowable\+Buffer.\+close (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classwaitress_1_1buffers_1_1OverflowableBuffer_a9d78eee7ccb088522778fc361ad1cbd1}\label{classwaitress_1_1buffers_1_1OverflowableBuffer_a9d78eee7ccb088522778fc361ad1cbd1} 
+\index{waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}!get@{get}}
+\index{get@{get}!waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily waitress.\+buffers.\+Overflowable\+Buffer.\+get (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{numbytes = {\ttfamily -\/1},  }\item[{}]{skip = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\Hypertarget{classwaitress_1_1buffers_1_1OverflowableBuffer_ad0d89e8f47bbe1a48d35505c81f0bce5}\label{classwaitress_1_1buffers_1_1OverflowableBuffer_ad0d89e8f47bbe1a48d35505c81f0bce5} 
+\index{waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}!getfile@{getfile}}
+\index{getfile@{getfile}!waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}}
+\doxysubsubsection{\texorpdfstring{getfile()}{getfile()}}
+{\footnotesize\ttfamily waitress.\+buffers.\+Overflowable\+Buffer.\+getfile (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classwaitress_1_1buffers_1_1OverflowableBuffer_abd25c87547fbcd061dad0ca747392087}\label{classwaitress_1_1buffers_1_1OverflowableBuffer_abd25c87547fbcd061dad0ca747392087} 
+\index{waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}!prune@{prune}}
+\index{prune@{prune}!waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}}
+\doxysubsubsection{\texorpdfstring{prune()}{prune()}}
+{\footnotesize\ttfamily waitress.\+buffers.\+Overflowable\+Buffer.\+prune (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A potentially expensive operation that removes all data
+already retrieved from the buffer.
+\end{DoxyVerb}
+ \Hypertarget{classwaitress_1_1buffers_1_1OverflowableBuffer_a4c66f1db736f8a41f7caa8d3601b7664}\label{classwaitress_1_1buffers_1_1OverflowableBuffer_a4c66f1db736f8a41f7caa8d3601b7664} 
+\index{waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}!skip@{skip}}
+\index{skip@{skip}!waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}}
+\doxysubsubsection{\texorpdfstring{skip()}{skip()}}
+{\footnotesize\ttfamily waitress.\+buffers.\+Overflowable\+Buffer.\+skip (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{numbytes,  }\item[{}]{allow\+\_\+prune = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classwaitress_1_1buffers_1_1OverflowableBuffer_a973f246729c033ff345ef34f5489007e}\label{classwaitress_1_1buffers_1_1OverflowableBuffer_a973f246729c033ff345ef34f5489007e} 
+\index{waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}!buf@{buf}}
+\index{buf@{buf}!waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}}
+\doxysubsubsection{\texorpdfstring{buf}{buf}}
+{\footnotesize\ttfamily waitress.\+buffers.\+Overflowable\+Buffer.\+buf = None\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classwaitress_1_1buffers_1_1OverflowableBuffer_a40abf079b3dfc0444ba7638f88c45ed8}\label{classwaitress_1_1buffers_1_1OverflowableBuffer_a40abf079b3dfc0444ba7638f88c45ed8} 
+\index{waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}!overflow@{overflow}}
+\index{overflow@{overflow}!waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}}
+\doxysubsubsection{\texorpdfstring{overflow}{overflow}}
+{\footnotesize\ttfamily waitress.\+buffers.\+Overflowable\+Buffer.\+overflow}
+
+\Hypertarget{classwaitress_1_1buffers_1_1OverflowableBuffer_a8503215455f17fc0388890644cdca98b}\label{classwaitress_1_1buffers_1_1OverflowableBuffer_a8503215455f17fc0388890644cdca98b} 
+\index{waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}!overflowed@{overflowed}}
+\index{overflowed@{overflowed}!waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}}
+\doxysubsubsection{\texorpdfstring{overflowed}{overflowed}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool waitress.\+buffers.\+Overflowable\+Buffer.\+overflowed = False\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classwaitress_1_1buffers_1_1OverflowableBuffer_a9a33f4e84b7314f5a8cc121e12408da1}\label{classwaitress_1_1buffers_1_1OverflowableBuffer_a9a33f4e84b7314f5a8cc121e12408da1} 
+\index{waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}!overflowed@{overflowed}}
+\index{overflowed@{overflowed}!waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}}
+\doxysubsubsection{\texorpdfstring{overflowed}{overflowed}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily waitress.\+buffers.\+Overflowable\+Buffer.\+overflowed}
+
+\Hypertarget{classwaitress_1_1buffers_1_1OverflowableBuffer_a913874188696cd84bb2233864c1ac5e7}\label{classwaitress_1_1buffers_1_1OverflowableBuffer_a913874188696cd84bb2233864c1ac5e7} 
+\index{waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}!strbuf@{strbuf}}
+\index{strbuf@{strbuf}!waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}}
+\doxysubsubsection{\texorpdfstring{strbuf}{strbuf}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily str waitress.\+buffers.\+Overflowable\+Buffer.\+strbuf = b"{}"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classwaitress_1_1buffers_1_1OverflowableBuffer_a585668884cf0f171f77349082cb32ac2}\label{classwaitress_1_1buffers_1_1OverflowableBuffer_a585668884cf0f171f77349082cb32ac2} 
+\index{waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}!strbuf@{strbuf}}
+\index{strbuf@{strbuf}!waitress.buffers.OverflowableBuffer@{waitress.buffers.OverflowableBuffer}}
+\doxysubsubsection{\texorpdfstring{strbuf}{strbuf}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily waitress.\+buffers.\+Overflowable\+Buffer.\+strbuf}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/waitress/\mbox{\hyperlink{buffers_8py}{buffers.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,240 @@
+.TH "sphinx.ext.intersphinx._resolve.IntersphinxRole" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.ext.intersphinx._resolve.IntersphinxRole
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.util\&.docutils\&.SphinxRole\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str \fBorig_name\fP)"
+.br
+.ti -1c
+.RI "tuple[list[\fBNode\fP], list[\fBsystem_message\fP]] \fBrun\fP (self)"
+.br
+.ti -1c
+.RI "tuple[str|None, str] \fBget_inventory_and_name_suffix\fP (self, str \fBname\fP)"
+.br
+.ti -1c
+.RI "tuple[str, str]|None \fBget_role_name\fP (self, str \fBname\fP)"
+.br
+.ti -1c
+.RI "bool \fBis_existent_role\fP (self, str domain_name, str role_name)"
+.br
+.ti -1c
+.RI "tuple[list[\fBNode\fP], list[\fBsystem_message\fP]] \fBinvoke_role\fP (self, tuple[str, str] role)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.util\&.docutils\&.SphinxRole\fP
+.in +1c
+.ti -1c
+.RI "tuple[list[\fBNode\fP], list[\fBsystem_message\fP]] \fB__call__\fP (self, str \fBname\fP, str \fBrawtext\fP, str \fBtext\fP, int \fBlineno\fP, \fBInliner\fP \fBinliner\fP, dict[str, Any]|None \fBoptions\fP=None, Sequence[str] \fBcontent\fP=())"
+.br
+.ti -1c
+.RI "\fBBuildEnvironment\fP \fBenv\fP (self)"
+.br
+.ti -1c
+.RI "\fBConfig\fP \fBconfig\fP (self)"
+.br
+.ti -1c
+.RI "tuple[str, int] \fBget_source_info\fP (self, int|None \fBlineno\fP=None)"
+.br
+.ti -1c
+.RI "None \fBset_source_info\fP (self, \fBNode\fP node, int|None \fBlineno\fP=None)"
+.br
+.ti -1c
+.RI "str \fBget_location\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBorig_name\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBenv\fP"
+.br
+.ti -1c
+.RI "\fBrawtext\fP"
+.br
+.ti -1c
+.RI "\fBtext\fP"
+.br
+.ti -1c
+.RI "\fBlineno\fP"
+.br
+.ti -1c
+.RI "\fBinliner\fP"
+.br
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBcontent\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsphinx\&.util\&.docutils\&.SphinxRole\fP
+.in +1c
+.ti -1c
+.RI "\fBrawtext\fP"
+.br
+.ti -1c
+.RI "\fBtext\fP"
+.br
+.ti -1c
+.RI "\fBlineno\fP"
+.br
+.ti -1c
+.RI "\fBinliner\fP"
+.br
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBcontent\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "tuple[str|None, str|None] \fB_get_domain_role\fP (self, str \fBname\fP)"
+.br
+.ti -1c
+.RI "None \fB_emit_warning\fP (self, str msg, *Any args)"
+.br
+.ti -1c
+.RI "str \fB_concat_strings\fP (self, Iterable[str] strings)"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_re_inv_ref\fP = re\&.compile(r'(\\+([^:]+))?:(\&.*)')"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Attributes inherited from \fBsphinx\&.util\&.docutils\&.SphinxRole\fP
+.in +1c
+.ti -1c
+.RI "str \fBname\fP"
+.br
+.ti -1c
+.RI "str \fBrawtext\fP"
+.br
+.ti -1c
+.RI "str \fBtext\fP"
+.br
+.ti -1c
+.RI "int \fBlineno\fP"
+.br
+.ti -1c
+.RI "\fBInliner\fP \fBinliner\fP"
+.br
+.ti -1c
+.RI "dict \fBoptions\fP [str, Any]"
+.br
+.ti -1c
+.RI "Sequence \fBcontent\fP [str]"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.ext\&.intersphinx\&._resolve\&.IntersphinxRole\&.__init__ ( self, str orig_name)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " str sphinx\&.ext\&.intersphinx\&._resolve\&.IntersphinxRole\&._concat_strings ( self, Iterable[str] strings)\fC [protected]\fP"
+
+.SS " None sphinx\&.ext\&.intersphinx\&._resolve\&.IntersphinxRole\&._emit_warning ( self, str msg, *Any args)\fC [protected]\fP"
+
+.SS " tuple[str | None, str | None] sphinx\&.ext\&.intersphinx\&._resolve\&.IntersphinxRole\&._get_domain_role ( self, str name)\fC [protected]\fP"
+
+.PP
+.nf
+Convert the *name* string into a domain and a role name\&.
+
+- If *name* contains no ``:``, return ``(None, name)``\&.
+- If *name* contains a single ``:``, the domain/role is split on this\&.
+- If *name* contains multiple ``:``, return ``(None, None)``\&.
+
+.fi
+.PP
+ 
+.SS " tuple[str | None, str] sphinx\&.ext\&.intersphinx\&._resolve\&.IntersphinxRole\&.get_inventory_and_name_suffix ( self, str name)"
+
+.PP
+.nf
+Extract an inventory name (if any) and ``domain+name`` suffix from a role *name*\&.
+and the domain+name suffix\&.
+
+The role name is expected to be of one of the following forms:
+
+- ``external+inv:name`` -- explicit inventory and name, any domain\&.
+- ``external+inv:domain:name`` -- explicit inventory, domain and name\&.
+- ``external:name`` -- any inventory and domain, explicit name\&.
+- ``external:domain:name`` -- any inventory, explicit domain and name\&.
+
+.fi
+.PP
+ 
+.SS " tuple[str, str] | None sphinx\&.ext\&.intersphinx\&._resolve\&.IntersphinxRole\&.get_role_name ( self, str name)"
+
+.SS " tuple[list[\fBNode\fP], list[\fBsystem_message\fP]] sphinx\&.ext\&.intersphinx\&._resolve\&.IntersphinxRole\&.invoke_role ( self, tuple[str, str]
+     role)"
+
+.PP
+.nf
+Invoke the role described by a ``(domain, role name)`` pair\&.
+.fi
+.PP
+ 
+.SS " bool sphinx\&.ext\&.intersphinx\&._resolve\&.IntersphinxRole\&.is_existent_role ( self, str domain_name, str role_name)"
+
+.SS " tuple[list[\fBNode\fP], list[\fBsystem_message\fP]] sphinx\&.ext\&.intersphinx\&._resolve\&.IntersphinxRole\&.run ( self)"
+
+.PP
+Reimplemented from \fBsphinx\&.util\&.docutils\&.SphinxRole\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.ext\&.intersphinx\&._resolve\&.IntersphinxRole\&._re_inv_ref = re\&.compile(r'(\\+([^:]+))?:(\&.*)')\fC [static]\fP, \fC [protected]\fP"
+
+.SS "sphinx\&.ext\&.intersphinx\&._resolve\&.IntersphinxRole\&.content"
+
+.SS "sphinx\&.ext\&.intersphinx\&._resolve\&.IntersphinxRole\&.env"
+
+.SS "sphinx\&.ext\&.intersphinx\&._resolve\&.IntersphinxRole\&.inliner"
+
+.SS "sphinx\&.ext\&.intersphinx\&._resolve\&.IntersphinxRole\&.lineno"
+
+.SS "sphinx\&.ext\&.intersphinx\&._resolve\&.IntersphinxRole\&.name"
+
+.SS "sphinx\&.ext\&.intersphinx\&._resolve\&.IntersphinxRole\&.options"
+
+.SS "sphinx\&.ext\&.intersphinx\&._resolve\&.IntersphinxRole\&.orig_name"
+
+.SS "sphinx\&.ext\&.intersphinx\&._resolve\&.IntersphinxRole\&.rawtext"
+
+.SS "sphinx\&.ext\&.intersphinx\&._resolve\&.IntersphinxRole\&.text"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

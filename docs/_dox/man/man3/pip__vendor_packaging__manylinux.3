@@ -1,0 +1,168 @@
+.TH "pip._vendor.packaging._manylinux" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.packaging._manylinux
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_GLibCVersion\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "Generator[\fBELFFile\fP|None, None, None] \fB_parse_elf\fP (str path)"
+.br
+.ti -1c
+.RI "bool \fB_is_linux_armhf\fP (str executable)"
+.br
+.ti -1c
+.RI "bool \fB_is_linux_i686\fP (str executable)"
+.br
+.ti -1c
+.RI "bool \fB_have_compatible_abi\fP (str executable, Sequence[str] archs)"
+.br
+.ti -1c
+.RI "str|None \fB_glibc_version_string_confstr\fP ()"
+.br
+.ti -1c
+.RI "str|None \fB_glibc_version_string_ctypes\fP ()"
+.br
+.ti -1c
+.RI "str|None \fB_glibc_version_string\fP ()"
+.br
+.ti -1c
+.RI "tuple[int, int] \fB_parse_glibc_version\fP (str version_str)"
+.br
+.ti -1c
+.RI "tuple[int, int] \fB_get_glibc_version\fP ()"
+.br
+.ti -1c
+.RI "bool \fB_is_compatible\fP (str arch, \fB_GLibCVersion\fP version)"
+.br
+.ti -1c
+.RI "Iterator[str] \fBplatform_tags\fP (Sequence[str] archs)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBEF_ARM_ABIMASK\fP = 0xFF000000"
+.br
+.ti -1c
+.RI "int \fBEF_ARM_ABI_VER5\fP = 0x05000000"
+.br
+.ti -1c
+.RI "int \fBEF_ARM_ABI_FLOAT_HARD\fP = 0x00000400"
+.br
+.ti -1c
+.RI "dict \fB_LAST_GLIBC_MINOR\fP = collections\&.defaultdict(lambda: 50)"
+.br
+.ti -1c
+.RI "dict \fB_LEGACY_MANYLINUX_MAP\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " tuple[int, int] pip\&._vendor\&.packaging\&._manylinux\&._get_glibc_version ()\fC [protected]\fP"
+
+.SS " str | None pip\&._vendor\&.packaging\&._manylinux\&._glibc_version_string ()\fC [protected]\fP"
+
+.PP
+.nf
+Returns glibc version string, or None if not using glibc\&.
+.fi
+.PP
+ 
+.SS " str | None pip\&._vendor\&.packaging\&._manylinux\&._glibc_version_string_confstr ()\fC [protected]\fP"
+
+.PP
+.nf
+Primary implementation of glibc_version_string using os\&.confstr\&.
+
+.fi
+.PP
+ 
+.SS " str | None pip\&._vendor\&.packaging\&._manylinux\&._glibc_version_string_ctypes ()\fC [protected]\fP"
+
+.PP
+.nf
+Fallback implementation of glibc_version_string using ctypes\&.
+
+.fi
+.PP
+ 
+.SS " bool pip\&._vendor\&.packaging\&._manylinux\&._have_compatible_abi (str executable, Sequence[str] archs)\fC [protected]\fP"
+
+.SS " bool pip\&._vendor\&.packaging\&._manylinux\&._is_compatible (str arch, \fB_GLibCVersion\fP version)\fC [protected]\fP"
+
+.SS " bool pip\&._vendor\&.packaging\&._manylinux\&._is_linux_armhf (str executable)\fC [protected]\fP"
+
+.SS " bool pip\&._vendor\&.packaging\&._manylinux\&._is_linux_i686 (str executable)\fC [protected]\fP"
+
+.SS " Generator[\fBELFFile\fP | None, None, None] pip\&._vendor\&.packaging\&._manylinux\&._parse_elf (str path)\fC [protected]\fP"
+
+.SS " tuple[int, int] pip\&._vendor\&.packaging\&._manylinux\&._parse_glibc_version (str version_str)\fC [protected]\fP"
+
+.PP
+.nf
+Parse glibc version\&.
+
+We use a regexp instead of str\&.split because we want to discard any
+random junk that might come after the minor version -- this might happen
+in patched/forked versions of glibc (e\&.g\&. Linaro's version of glibc
+uses version strings like '2\&.20-2014\&.11')\&. See gh-3588\&.
+
+.fi
+.PP
+ 
+.SS " Iterator[str] pip\&._vendor\&.packaging\&._manylinux\&.platform_tags (Sequence[str] archs)"
+
+.PP
+.nf
+Generate manylinux tags compatible to the current platform\&.
+
+:param archs: Sequence of compatible architectures\&.
+    The first one shall be the closest to the actual architecture and be the part of
+    platform tag after the ``linux_`` prefix, e\&.g\&. ``x86_64``\&.
+    The ``linux_`` prefix is assumed as a prerequisite for the current platform to
+    be manylinux-compatible\&.
+
+:returns: An iterator of compatible manylinux tags\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "dict pip\&._vendor\&.packaging\&._manylinux\&._LAST_GLIBC_MINOR = collections\&.defaultdict(lambda: 50)\fC [protected]\fP"
+
+.SS "dict pip\&._vendor\&.packaging\&._manylinux\&._LEGACY_MANYLINUX_MAP\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     # CentOS 7 w/ glibc 2\&.17 (PEP 599)
+3     (2, 17): "manylinux2014",
+4     # CentOS 6 w/ glibc 2\&.12 (PEP 571)
+5     (2, 12): "manylinux2010",
+6     # CentOS 5 w/ glibc 2\&.5 (PEP 513)
+7     (2, 5): "manylinux1",
+8 }
+.fi
+
+.SS "int pip\&._vendor\&.packaging\&._manylinux\&.EF_ARM_ABI_FLOAT_HARD = 0x00000400"
+
+.SS "int pip\&._vendor\&.packaging\&._manylinux\&.EF_ARM_ABI_VER5 = 0x05000000"
+
+.SS "int pip\&._vendor\&.packaging\&._manylinux\&.EF_ARM_ABIMASK = 0xFF000000"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

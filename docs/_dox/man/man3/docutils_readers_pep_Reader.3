@@ -1,0 +1,214 @@
+.TH "docutils.readers.pep.Reader" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.readers.pep.Reader
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.readers\&.standalone\&.Reader\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBget_transforms\fP (self)"
+.br
+.ti -1c
+.RI "\fB__init__\fP (self, \fBparser\fP=None, parser_name=None)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.readers\&.Reader\fP
+.in +1c
+.ti -1c
+.RI "\fBset_parser\fP (self, parser_name)"
+.br
+.ti -1c
+.RI "\fBread\fP (self, \fBsource\fP, \fBparser\fP, \fBsettings\fP)"
+.br
+.ti -1c
+.RI "\fBparse\fP (self)"
+.br
+.ti -1c
+.RI "\fBnew_document\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.Component\fP
+.in +1c
+.ti -1c
+.RI "\fBsupports\fP (self, format)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBsupported\fP = ('pep',)"
+.br
+.ti -1c
+.RI "tuple \fBsettings_spec\fP"
+.br
+.ti -1c
+.RI "str \fBconfig_section\fP = 'pep reader'"
+.br
+.ti -1c
+.RI "tuple \fBconfig_section_dependencies\fP = ('readers', 'standalone reader')"
+.br
+.ti -1c
+.RI "dict \fBsettings_default_overrides\fP = {'pep_references': 1, 'rfc_references': 1}"
+.br
+.ti -1c
+.RI "\fBinliner_class\fP = rst\&.states\&.Inliner"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.readers\&.standalone\&.Reader\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBsupported\fP = ('standalone',)"
+.br
+.ti -1c
+.RI "\fBdocument\fP = None"
+.br
+.ti -1c
+.RI "tuple \fBsettings_spec\fP"
+.br
+.ti -1c
+.RI "str \fBconfig_section\fP = 'standalone reader'"
+.br
+.ti -1c
+.RI "tuple \fBconfig_section_dependencies\fP = ('readers',)"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.readers\&.Reader\fP
+.in +1c
+.ti -1c
+.RI "str \fBcomponent_type\fP = 'reader'"
+.br
+.ti -1c
+.RI "str \fBconfig_section\fP = 'readers'"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.Component\fP
+.in +1c
+.ti -1c
+.RI "\fBcomponent_type\fP = None"
+.br
+.ti -1c
+.RI "tuple \fBsupported\fP = ()"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.SettingsSpec\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBsettings_spec\fP = ()"
+.br
+.ti -1c
+.RI "\fBsettings_defaults\fP = None"
+.br
+.ti -1c
+.RI "\fBsettings_default_overrides\fP = None"
+.br
+.ti -1c
+.RI "tuple \fBrelative_path_settings\fP = ()"
+.br
+.ti -1c
+.RI "\fBconfig_section\fP = None"
+.br
+.ti -1c
+.RI "\fBconfig_section_dependencies\fP = None"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBdefault_transforms\fP = ()"
+.br
+.ti -1c
+.RI "tuple \fBunknown_reference_resolvers\fP = ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBdocutils\&.readers\&.Reader\fP
+.in +1c
+.ti -1c
+.RI "\fBparser\fP"
+.br
+.ti -1c
+.RI "\fBsource\fP"
+.br
+.ti -1c
+.RI "\fBinput\fP"
+.br
+.ti -1c
+.RI "\fBsettings\fP"
+.br
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_transforms\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.readers\&.pep\&.Reader\&.__init__ ( self,  parser = \fCNone\fP,  parser_name = \fCNone\fP)"
+
+.PP
+.nf
+`parser` should be ``None``\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.readers\&.Reader\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.readers\&.pep\&.Reader\&.get_transforms ( self)"
+
+.PP
+.nf
+Transforms required by this class\&.  Override in subclasses\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.readers\&.standalone\&.Reader\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "str docutils\&.readers\&.pep\&.Reader\&.config_section = 'pep reader'\fC [static]\fP"
+
+.SS "tuple docutils\&.readers\&.pep\&.Reader\&.config_section_dependencies = ('readers', 'standalone reader')\fC [static]\fP"
+
+.SS "docutils\&.readers\&.pep\&.Reader\&.inliner_class = rst\&.states\&.Inliner\fC [static]\fP"
+
+.SS "dict docutils\&.readers\&.pep\&.Reader\&.settings_default_overrides = {'pep_references': 1, 'rfc_references': 1}\fC [static]\fP"
+
+.SS "tuple docutils\&.readers\&.pep\&.Reader\&.settings_spec\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  (
+        'PEP Reader Option Defaults',
+        'The \-\-pep\-references and \-\-rfc\-references options (for the '
+        'reStructuredText parser) are on by default\&.',
+        ())
+.fi
+
+.SS "tuple docutils\&.readers\&.pep\&.Reader\&.supported = ('pep',)\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

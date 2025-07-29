@@ -1,0 +1,262 @@
+.TH "pip._vendor.urllib3.connection.HTTPConnection" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.urllib3.connection.HTTPConnection
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits _HTTPConnection, and object\&.
+.PP
+Inherited by \fBpip\&._vendor\&.urllib3\&.connection\&.HTTPSConnection\fP, and \fBpip\&._vendor\&.urllib3\&.contrib\&.socks\&.SOCKSConnection\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, *args, **kw)"
+.br
+.ti -1c
+.RI "\fBhost\fP (self)"
+.br
+.ti -1c
+.RI "\fBhost\fP (self, value)"
+.br
+.ti -1c
+.RI "\fBconnect\fP (self)"
+.br
+.ti -1c
+.RI "\fBputrequest\fP (self, method, url, *args, **kwargs)"
+.br
+.ti -1c
+.RI "\fBputheader\fP (self, header, *values)"
+.br
+.ti -1c
+.RI "\fBrequest\fP (self, method, url, body=None, headers=None)"
+.br
+.ti -1c
+.RI "\fBrequest_chunked\fP (self, method, url, body=None, headers=None)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsource_address\fP"
+.br
+.ti -1c
+.RI "\fBsocket_options\fP"
+.br
+.ti -1c
+.RI "\fBproxy\fP"
+.br
+.ti -1c
+.RI "\fBproxy_config\fP"
+.br
+.ti -1c
+.RI "\fBport\fP"
+.br
+.ti -1c
+.RI "\fBtimeout\fP"
+.br
+.ti -1c
+.RI "\fBhost\fP"
+.br
+.ti -1c
+.RI "\fBsock\fP"
+.br
+.ti -1c
+.RI "\fBauto_open\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdefault_port\fP = \fBport_by_scheme\fP['http']"
+.br
+.ti -1c
+.RI "list \fBdefault_socket_options\fP = [(socket\&.IPPROTO_TCP, socket\&.TCP_NODELAY, 1)]"
+.br
+.ti -1c
+.RI "bool \fBis_verified\fP = False"
+.br
+.ti -1c
+.RI "\fBproxy_is_verified\fP = None"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_new_conn\fP (self)"
+.br
+.ti -1c
+.RI "\fB_is_using_tunnel\fP (self)"
+.br
+.ti -1c
+.RI "\fB_prepare_conn\fP (self, conn)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_dns_host\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Based on :class:`http\&.client\&.HTTPConnection` but provides an extra constructor
+backwards-compatibility layer between older and newer Pythons\&.
+
+Additional keyword parameters are used to configure attributes of the connection\&.
+Accepted parameters include:
+
+- ``strict``: See the documentation on :class:`urllib3\&.connectionpool\&.HTTPConnectionPool`
+- ``source_address``: Set the source address for the current connection\&.
+- ``socket_options``: Set specific options on the underlying socket\&. If not specified, then
+  defaults are loaded from ``HTTPConnection\&.default_socket_options`` which includes disabling
+  Nagle's algorithm (sets TCP_NODELAY to 1) unless the connection is behind a proxy\&.
+
+  For example, if you wish to enable TCP Keep Alive in addition to the defaults,
+  you might pass:
+
+  \&.\&. code-block:: python
+
+     HTTPConnection\&.default_socket_options + [
+         (socket\&.SOL_SOCKET, socket\&.SO_KEEPALIVE, 1),
+     ]
+
+  Or you may want to disable the defaults by passing an empty list (e\&.g\&., ``[]``)\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&.__init__ ( self, * args, ** kw)"
+
+.PP
+Reimplemented in \fBpip\&._vendor\&.urllib3\&.contrib\&.socks\&.SOCKSConnection\fP, and \fBpip\&._vendor\&.urllib3\&.connection\&.HTTPSConnection\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&._is_using_tunnel ( self)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&._new_conn ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Establish a socket connection and set nodelay settings on it\&.
+
+:return: New socket connection\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._vendor\&.urllib3\&.contrib\&.socks\&.SOCKSConnection\fP\&.
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&._prepare_conn ( self,  conn)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&.connect ( self)"
+
+.PP
+Reimplemented in \fBpip\&._vendor\&.urllib3\&.connection\&.HTTPSConnection\fP\&.
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&.host ( self)"
+
+.PP
+.nf
+Getter method to remove any trailing dots that indicate the hostname is an FQDN\&.
+
+In general, SSL certificates don't include the trailing dot indicating a
+fully-qualified domain name, and thus, they don't validate properly when
+checked against a domain name that includes the dot\&. In addition, some
+servers may not expect to receive the trailing dot when provided\&.
+
+However, the hostname with trailing dot is critical to DNS resolution; doing a
+lookup with the trailing dot will properly only resolve the appropriate FQDN,
+whereas a lookup without a trailing dot will search the system's search domain
+list\&. Thus, it's important to keep the original host around for use only in
+those cases where it's appropriate (i\&.e\&., when doing DNS lookup to establish the
+actual TCP connection across which we're going to send HTTP requests)\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&.host ( self,  value)"
+
+.PP
+.nf
+Setter for the `host` property\&.
+
+We assume that only urllib3 uses the _dns_host attribute; httplib itself
+only uses `host`, and it seems reasonable that other libraries follow suit\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&.putheader ( self,  header, * values)"
+
+.PP
+.nf
+ 
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&.putrequest ( self,  method,  url, * args, ** kwargs)"
+
+.PP
+.nf
+ 
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&.request ( self,  method,  url,  body = \fCNone\fP,  headers = \fCNone\fP)"
+
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&.request_chunked ( self,  method,  url,  body = \fCNone\fP,  headers = \fCNone\fP)"
+
+.PP
+.nf
+Alternative to the common request method, which sends the
+body with chunked encoding and not as one block
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&._dns_host\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&.auto_open"
+
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&.default_port = \fBport_by_scheme\fP['http']\fC [static]\fP"
+
+.SS "list pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&.default_socket_options = [(socket\&.IPPROTO_TCP, socket\&.TCP_NODELAY, 1)]\fC [static]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&.host"
+
+.SS "bool pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&.is_verified = False\fC [static]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&.port"
+
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&.proxy"
+
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&.proxy_config"
+
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&.proxy_is_verified = None\fC [static]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&.sock"
+
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&.socket_options"
+
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&.source_address"
+
+.SS "pip\&._vendor\&.urllib3\&.connection\&.HTTPConnection\&.timeout"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,264 @@
+.TH "babel.messages.catalog.Message" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+babel.messages.catalog.Message
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, \fB_MessageID\fP \fBid\fP, \fB_MessageID\fP|None \fBstring\fP='', Iterable[tuple[str, int]] \fBlocations\fP=(), Iterable[str] \fBflags\fP=(), Iterable[str] \fBauto_comments\fP=(), Iterable[str] \fBuser_comments\fP=(), \fB_MessageID\fP \fBprevious_id\fP=(), int|None \fBlineno\fP=None, str|None \fBcontext\fP=None)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "int \fB__cmp__\fP (self, object other)"
+.br
+.ti -1c
+.RI "bool \fB__gt__\fP (self, object other)"
+.br
+.ti -1c
+.RI "bool \fB__lt__\fP (self, object other)"
+.br
+.ti -1c
+.RI "bool \fB__ge__\fP (self, object other)"
+.br
+.ti -1c
+.RI "bool \fB__le__\fP (self, object other)"
+.br
+.ti -1c
+.RI "bool \fB__eq__\fP (self, object other)"
+.br
+.ti -1c
+.RI "bool \fB__ne__\fP (self, object other)"
+.br
+.ti -1c
+.RI "bool \fBis_identical\fP (self, \fBMessage\fP other)"
+.br
+.ti -1c
+.RI "\fBMessage\fP \fBclone\fP (self)"
+.br
+.ti -1c
+.RI "list[\fBTranslationError\fP] \fBcheck\fP (self, \fBCatalog\fP|None catalog=None)"
+.br
+.ti -1c
+.RI "bool \fBfuzzy\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBpluralizable\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBpython_format\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBpython_brace_format\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBid\fP"
+.br
+.ti -1c
+.RI "\fBstring\fP"
+.br
+.ti -1c
+.RI "\fBlocations\fP"
+.br
+.ti -1c
+.RI "\fBflags\fP"
+.br
+.ti -1c
+.RI "\fBauto_comments\fP"
+.br
+.ti -1c
+.RI "\fBuser_comments\fP"
+.br
+.ti -1c
+.RI "\fBprevious_id\fP"
+.br
+.ti -1c
+.RI "\fBlineno\fP"
+.br
+.ti -1c
+.RI "\fBcontext\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Representation of a single message in a catalog\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None babel\&.messages\&.catalog\&.Message\&.__init__ ( self, \fB_MessageID\fP id, \fB_MessageID\fP | None  string = \fC''\fP, Iterable[tuple[str, int]]  locations = \fC()\fP, Iterable[str]  flags = \fC()\fP, Iterable[str]  auto_comments = \fC()\fP, Iterable[str]  user_comments = \fC()\fP, \fB_MessageID\fP  previous_id = \fC()\fP, int | None  lineno = \fCNone\fP, str | None  context = \fCNone\fP)"
+
+.PP
+.nf
+Create the message object\&.
+
+:param id: the message ID, or a ``(singular, plural)`` tuple for
+           pluralizable messages
+:param string: the translated message string, or a
+               ``(singular, plural)`` tuple for pluralizable messages
+:param locations: a sequence of ``(filename, lineno)`` tuples
+:param flags: a set or sequence of flags
+:param auto_comments: a sequence of automatic comments for the message
+:param user_comments: a sequence of user comments for the message
+:param previous_id: the previous message ID, or a ``(singular, plural)``
+                    tuple for pluralizable messages
+:param lineno: the line number on which the msgid line was found in the
+               PO file, if any
+:param context: the message context
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " int babel\&.messages\&.catalog\&.Message\&.__cmp__ ( self, object other)"
+
+.PP
+.nf
+Compare Messages, taking into account plural ids
+.fi
+.PP
+ 
+.SS " bool babel\&.messages\&.catalog\&.Message\&.__eq__ ( self, object other)"
+
+.SS " bool babel\&.messages\&.catalog\&.Message\&.__ge__ ( self, object other)"
+
+.SS " bool babel\&.messages\&.catalog\&.Message\&.__gt__ ( self, object other)"
+
+.SS " bool babel\&.messages\&.catalog\&.Message\&.__le__ ( self, object other)"
+
+.SS " bool babel\&.messages\&.catalog\&.Message\&.__lt__ ( self, object other)"
+
+.SS " bool babel\&.messages\&.catalog\&.Message\&.__ne__ ( self, object other)"
+
+.SS " str babel\&.messages\&.catalog\&.Message\&.__repr__ ( self)"
+
+.SS " list[\fBTranslationError\fP] babel\&.messages\&.catalog\&.Message\&.check ( self, \fBCatalog\fP | None  catalog = \fCNone\fP)"
+
+.PP
+.nf
+Run various validation checks on the message\&.  Some validations
+are only performed if the catalog is provided\&.  This method returns
+a sequence of `TranslationError` objects\&.
+
+:rtype: ``iterator``
+:param catalog: A catalog instance that is passed to the checkers
+:see: `Catalog\&.check` for a way to perform checks for all messages
+      in a catalog\&.
+
+.fi
+.PP
+ 
+.SS " \fBMessage\fP babel\&.messages\&.catalog\&.Message\&.clone ( self)"
+
+.SS " bool babel\&.messages\&.catalog\&.Message\&.fuzzy ( self)"
+
+.PP
+.nf
+Whether the translation is fuzzy\&.
+
+>>> Message('foo')\&.fuzzy
+False
+>>> msg = Message('foo', 'foo', flags=['fuzzy'])
+>>> msg\&.fuzzy
+True
+>>> msg
+<Message 'foo' (flags: ['fuzzy'])>
+
+:type:  `bool`
+.fi
+.PP
+ 
+.SS " bool babel\&.messages\&.catalog\&.Message\&.is_identical ( self, \fBMessage\fP other)"
+
+.PP
+.nf
+Checks whether messages are identical, taking into account all
+properties\&.
+
+.fi
+.PP
+ 
+.SS " bool babel\&.messages\&.catalog\&.Message\&.pluralizable ( self)"
+
+.PP
+.nf
+Whether the message is plurizable\&.
+
+>>> Message('foo')\&.pluralizable
+False
+>>> Message(('foo', 'bar'))\&.pluralizable
+True
+
+:type:  `bool`
+.fi
+.PP
+ 
+.SS " bool babel\&.messages\&.catalog\&.Message\&.python_brace_format ( self)"
+
+.PP
+.nf
+Whether the message contains Python f-string parameters\&.
+
+>>> Message('Hello, {name}!')\&.python_brace_format
+True
+>>> Message(('One apple', '{count} apples'))\&.python_brace_format
+True
+
+:type:  `bool`
+.fi
+.PP
+ 
+.SS " bool babel\&.messages\&.catalog\&.Message\&.python_format ( self)"
+
+.PP
+.nf
+Whether the message contains Python-style parameters\&.
+
+>>> Message('foo %(name)s bar')\&.python_format
+True
+>>> Message(('foo %(name)s', 'foo %(name)s'))\&.python_format
+True
+
+:type:  `bool`
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "babel\&.messages\&.catalog\&.Message\&.auto_comments"
+
+.SS "babel\&.messages\&.catalog\&.Message\&.context"
+
+.SS "babel\&.messages\&.catalog\&.Message\&.flags"
+
+.SS "babel\&.messages\&.catalog\&.Message\&.id"
+
+.SS "babel\&.messages\&.catalog\&.Message\&.lineno"
+
+.SS "babel\&.messages\&.catalog\&.Message\&.locations"
+
+.SS "babel\&.messages\&.catalog\&.Message\&.previous_id"
+
+.SS "babel\&.messages\&.catalog\&.Message\&.string"
+
+.SS "babel\&.messages\&.catalog\&.Message\&.user_comments"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

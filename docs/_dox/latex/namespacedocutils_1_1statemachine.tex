@@ -1,0 +1,192 @@
+\doxysection{docutils.\+statemachine Namespace Reference}
+\hypertarget{namespacedocutils_1_1statemachine}{}\label{namespacedocutils_1_1statemachine}\index{docutils.statemachine@{docutils.statemachine}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1statemachine_1_1__SearchOverride}{\+\_\+\+Search\+Override}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1statemachine_1_1DuplicateStateError}{Duplicate\+State\+Error}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1statemachine_1_1DuplicateTransitionError}{Duplicate\+Transition\+Error}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1statemachine_1_1SearchStateMachine}{Search\+State\+Machine}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1statemachine_1_1SearchStateMachineWS}{Search\+State\+Machine\+WS}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1statemachine_1_1State}{State}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateCorrection}{State\+Correction}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateMachine}{State\+Machine}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateMachineError}{State\+Machine\+Error}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateMachineWS}{State\+Machine\+WS}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1statemachine_1_1StateWS}{State\+WS}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1statemachine_1_1StringList}{String\+List}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1statemachine_1_1TransitionCorrection}{Transition\+Correction}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1statemachine_1_1TransitionMethodNotFound}{Transition\+Method\+Not\+Found}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1statemachine_1_1TransitionPatternNotFound}{Transition\+Pattern\+Not\+Found}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1statemachine_1_1UnexpectedIndentationError}{Unexpected\+Indentation\+Error}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1statemachine_1_1UnknownStateError}{Unknown\+State\+Error}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1statemachine_1_1UnknownTransitionError}{Unknown\+Transition\+Error}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1statemachine_1_1ViewList}{View\+List}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacedocutils_1_1statemachine_a5b2d095d4f84209bcf6c2104fd5e59ba}{string2lines}} (astring, tab\+\_\+width=8, convert\+\_\+whitespace=False, whitespace=re.\+compile(\textquotesingle{}\mbox{[}\textbackslash{}v\textbackslash{}f\mbox{]}\textquotesingle{}))
+\item 
+\mbox{\hyperlink{namespacedocutils_1_1statemachine_a5a82e3d61096e6c0cbbb7d2683df1edd}{\+\_\+exception\+\_\+data}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A finite state machine specialized for regular-expression-based text filters,
+this module defines the following classes:
+
+- `StateMachine`, a state machine
+- `State`, a state superclass
+- `StateMachineWS`, a whitespace-sensitive version of `StateMachine`
+- `StateWS`, a state superclass for use with `StateMachineWS`
+- `SearchStateMachine`, uses `re.search()` instead of `re.match()`
+- `SearchStateMachineWS`, uses `re.search()` instead of `re.match()`
+- `ViewList`, extends standard Python lists.
+- `StringList`, string-specific ViewList.
+
+Exception classes:
+
+- `StateMachineError`
+- `UnknownStateError`
+- `DuplicateStateError`
+- `UnknownTransitionError`
+- `DuplicateTransitionError`
+- `TransitionPatternNotFound`
+- `TransitionMethodNotFound`
+- `UnexpectedIndentationError`
+- `TransitionCorrection`: Raised to switch to another transition.
+- `StateCorrection`: Raised to switch to another state & transition.
+
+Functions:
+
+- `string2lines()`: split a multi-line string into a list of one-line strings
+
+
+How To Use This Module
+======================
+(See the individual classes, methods, and attributes for details.)
+
+1. Import it: ``import statemachine`` or ``from statemachine import ...``.
+   You will also need to ``import re``.
+
+2. Derive a subclass of `State` (or `StateWS`) for each state in your state
+   machine::
+
+       class MyState(statemachine.State):
+
+   Within the state's class definition:
+
+   a) Include a pattern for each transition, in `State.patterns`::
+
+          patterns = {'atransition': r'pattern', ...}
+
+   b) Include a list of initial transitions to be set up automatically, in
+      `State.initial_transitions`::
+
+          initial_transitions = ['atransition', ...]
+
+   c) Define a method for each transition, with the same name as the
+      transition pattern::
+
+          def atransition(self, match, context, next_state):
+              # do something
+              result = [...]  # a list
+              return context, next_state, result
+              # context, next_state may be altered
+
+      Transition methods may raise an `EOFError` to cut processing short.
+
+   d) You may wish to override the `State.bof()` and/or `State.eof()` implicit
+      transition methods, which handle the beginning- and end-of-file.
+
+   e) In order to handle nested processing, you may wish to override the
+      attributes `State.nested_sm` and/or `State.nested_sm_kwargs`.
+
+      If you are using `StateWS` as a base class, in order to handle nested
+      indented blocks, you may wish to:
+
+      - override the attributes `StateWS.indent_sm`,
+        `StateWS.indent_sm_kwargs`, `StateWS.known_indent_sm`, and/or
+        `StateWS.known_indent_sm_kwargs`;
+      - override the `StateWS.blank()` method; and/or
+      - override or extend the `StateWS.indent()`, `StateWS.known_indent()`,
+        and/or `StateWS.firstknown_indent()` methods.
+
+3. Create a state machine object::
+
+       sm = StateMachine(state_classes=[MyState, ...],
+                         initial_state='MyState')
+
+4. Obtain the input text, which needs to be converted into a tab-free list of
+   one-line strings. For example, to read text from a file called
+   'inputfile'::
+
+       with open('inputfile', encoding='utf-8') as fp:
+           input_string = fp.read()
+       input_lines = statemachine.string2lines(input_string)
+
+5. Run the state machine on the input text and collect the results, a list::
+
+       results = sm.run(input_lines)
+
+6. Remove any lingering circular references::
+
+       sm.unlink()
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacedocutils_1_1statemachine_a5a82e3d61096e6c0cbbb7d2683df1edd}\label{namespacedocutils_1_1statemachine_a5a82e3d61096e6c0cbbb7d2683df1edd} 
+\index{docutils.statemachine@{docutils.statemachine}!\_exception\_data@{\_exception\_data}}
+\index{\_exception\_data@{\_exception\_data}!docutils.statemachine@{docutils.statemachine}}
+\doxysubsubsection{\texorpdfstring{\_exception\_data()}{\_exception\_data()}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+\_\+exception\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Return exception information:
+
+- the exception's class name;
+- the exception object;
+- the name of the file containing the offending code;
+- the line number of the offending code;
+- the function name of the offending code.
+\end{DoxyVerb}
+ \Hypertarget{namespacedocutils_1_1statemachine_a5b2d095d4f84209bcf6c2104fd5e59ba}\label{namespacedocutils_1_1statemachine_a5b2d095d4f84209bcf6c2104fd5e59ba} 
+\index{docutils.statemachine@{docutils.statemachine}!string2lines@{string2lines}}
+\index{string2lines@{string2lines}!docutils.statemachine@{docutils.statemachine}}
+\doxysubsubsection{\texorpdfstring{string2lines()}{string2lines()}}
+{\footnotesize\ttfamily docutils.\+statemachine.\+string2lines (\begin{DoxyParamCaption}\item[{}]{astring,  }\item[{}]{tab\+\_\+width = {\ttfamily 8},  }\item[{}]{convert\+\_\+whitespace = {\ttfamily False},  }\item[{}]{whitespace = {\ttfamily re.compile(\textquotesingle{}\mbox{[}\textbackslash{}v\textbackslash{}f\mbox{]}\textquotesingle{})} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a list of one-line strings with tabs expanded, no newlines, and
+trailing whitespace stripped.
+
+Each tab is expanded with between 1 and `tab_width` spaces, so that the
+next character's index becomes a multiple of `tab_width` (8 by default).
+
+Parameters:
+
+- `astring`: a multi-line string.
+- `tab_width`: the number of columns between tab stops.
+- `convert_whitespace`: convert form feeds and vertical tabs to spaces?
+- `whitespace`: pattern object with the to-be-converted
+  whitespace characters (default [\\v\\f]).
+\end{DoxyVerb}
+ 

@@ -1,0 +1,134 @@
+.TH "sphinx.environment._CurrentDocument" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.environment._CurrentDocument
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, *str docname='', str default_role='', \fBDomain\fP|None default_domain=None)"
+.br
+.ti -1c
+.RI "int \fBnew_serial_number\fP (self, str category='')"
+.br
+.ti -1c
+.RI "Any \fB__getitem__\fP (self, str item)"
+.br
+.ti -1c
+.RI "None \fB__setitem__\fP (self, str key, Any value)"
+.br
+.ti -1c
+.RI "None \fB__delitem__\fP (self, str key)"
+.br
+.ti -1c
+.RI "bool \fB__contains__\fP (self, str item)"
+.br
+.ti -1c
+.RI "Iterator[str] \fB__iter__\fP (self)"
+.br
+.ti -1c
+.RI "int \fB__len__\fP (self)"
+.br
+.ti -1c
+.RI "Iterable[str] \fBkeys\fP (self)"
+.br
+.ti -1c
+.RI "Iterable[tuple[str, Any]] \fBitems\fP (self)"
+.br
+.ti -1c
+.RI "Iterable[Any] \fBvalues\fP (self)"
+.br
+.ti -1c
+.RI "Any|None \fBget\fP (self, str key, Any|None default=None)"
+.br
+.ti -1c
+.RI "Any|None \fBpop\fP (self, str key, Any|None default=__sentinel)"
+.br
+.ti -1c
+.RI "Any|None \fBsetdefault\fP (self, str key, Any|None default=None)"
+.br
+.ti -1c
+.RI "None \fBclear\fP (self)"
+.br
+.ti -1c
+.RI "None \fBupdate\fP (self, Iterable[tuple[str, Any]] other=(), **Any kwargs)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_extension_data\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Temporary data storage while reading a document\&.
+
+This class is only for internal use\&. Please don't use this in your extensions\&.
+It will be removed or changed without notice\&.
+The only stable API is via ``env\&.current_document``\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.environment\&._CurrentDocument\&.__init__ ( self, *str  docname = \fC''\fP, str  default_role = \fC''\fP, \fBDomain\fP | None  default_domain = \fCNone\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " bool sphinx\&.environment\&._CurrentDocument\&.__contains__ ( self, str item)"
+
+.SS " None sphinx\&.environment\&._CurrentDocument\&.__delitem__ ( self, str key)"
+
+.SS " Any sphinx\&.environment\&._CurrentDocument\&.__getitem__ ( self, str item)"
+
+.SS " Iterator[str] sphinx\&.environment\&._CurrentDocument\&.__iter__ ( self)"
+
+.SS " int sphinx\&.environment\&._CurrentDocument\&.__len__ ( self)"
+
+.SS " None sphinx\&.environment\&._CurrentDocument\&.__setitem__ ( self, str key, Any value)"
+
+.SS " None sphinx\&.environment\&._CurrentDocument\&.clear ( self)"
+
+.SS " Any | None sphinx\&.environment\&._CurrentDocument\&.get ( self, str key, Any | None  default = \fCNone\fP)"
+
+.SS " Iterable[tuple[str, Any]] sphinx\&.environment\&._CurrentDocument\&.items ( self)"
+
+.SS " Iterable[str] sphinx\&.environment\&._CurrentDocument\&.keys ( self)"
+
+.SS " int sphinx\&.environment\&._CurrentDocument\&.new_serial_number ( self, str  category = \fC''\fP)"
+
+.PP
+.nf
+Return a serial number, e\&.g\&. for index entry targets\&.
+
+The number is guaranteed to be unique in the current document & category\&.
+
+.fi
+.PP
+ 
+.SS " Any | None sphinx\&.environment\&._CurrentDocument\&.pop ( self, str key, Any | None  default = \fC__sentinel\fP)"
+
+.SS " Any | None sphinx\&.environment\&._CurrentDocument\&.setdefault ( self, str key, Any | None  default = \fCNone\fP)"
+
+.SS " None sphinx\&.environment\&._CurrentDocument\&.update ( self, Iterable[tuple[str, Any]]  other = \fC()\fP, **Any kwargs)"
+
+.SS " Iterable[Any] sphinx\&.environment\&._CurrentDocument\&.values ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.environment\&._CurrentDocument\&._extension_data\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,110 @@
+.TH "soupsieve.util" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+soupsieve.util
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSelectorSyntaxError\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fBlower\fP (str string)"
+.br
+.ti -1c
+.RI "Callable[\&.\&.\&., Any] \fBdeprecated\fP (str message, int stacklevel=2)"
+.br
+.ti -1c
+.RI "None \fBwarn_deprecated\fP (str message, int stacklevel=2)"
+.br
+.ti -1c
+.RI "tuple[str, int, int] \fBget_pattern_context\fP (str pattern, int index)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBDEBUG\fP = 0x00001"
+.br
+.ti -1c
+.RI "\fBRE_PATTERN_LINE_SPLIT\fP = re\&.compile(r'(?:\\r\\n|(?!\\r\\n)[\\n\\r])|$')"
+.br
+.ti -1c
+.RI "\fBUC_A\fP = ord('A')"
+.br
+.ti -1c
+.RI "\fBUC_Z\fP = ord('Z')"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Utility\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " Callable[\&.\&.\&., Any] soupsieve\&.util\&.deprecated (str message, int  stacklevel = \fC2\fP)"
+
+.PP
+.nf
+Raise a `DeprecationWarning` when wrapped function/method is called\&.
+
+Usage:
+
+    @deprecated('This method will be removed in version X; use Y instead\&.')
+    def some_method()'
+        pass
+
+.fi
+.PP
+ 
+.SS " tuple[str, int, int] soupsieve\&.util\&.get_pattern_context (str pattern, int index)"
+
+.PP
+.nf
+Get the pattern context\&.
+.fi
+.PP
+ 
+.SS " str soupsieve\&.util\&.lower (str string)"
+
+.PP
+.nf
+Lower\&.
+.fi
+.PP
+ 
+.SS " None soupsieve\&.util\&.warn_deprecated (str message, int  stacklevel = \fC2\fP)"
+
+.PP
+.nf
+Warn deprecated\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "int soupsieve\&.util\&.DEBUG = 0x00001"
+
+.SS "soupsieve\&.util\&.RE_PATTERN_LINE_SPLIT = re\&.compile(r'(?:\\r\\n|(?!\\r\\n)[\\n\\r])|$')"
+
+.SS "soupsieve\&.util\&.UC_A = ord('A')"
+
+.SS "soupsieve\&.util\&.UC_Z = ord('Z')"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

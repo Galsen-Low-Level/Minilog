@@ -1,0 +1,130 @@
+.TH "bs4.filter.MatchRule" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bs4.filter.MatchRule
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.PP
+Inherited by \fBbs4\&.filter\&.AttributeValueMatchRule\fP, \fBbs4\&.filter\&.StringMatchRule\fP, and \fBbs4\&.filter\&.TagNameMatchRule\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, Optional[Union[str, bytes]] \fBstring\fP=None, Optional[\fB_RegularExpressionProtocol\fP] \fBpattern\fP=None, Optional[Callable] \fBfunction\fP=None, Optional[bool] \fBpresent\fP=None, Optional[bool] \fBexclude_everything\fP=None)"
+.br
+.ti -1c
+.RI "bool \fBmatches_string\fP (self, Optional[str] \fBstring\fP)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "bool \fB__eq__\fP (self, Any other)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBstring\fP"
+.br
+.ti -1c
+.RI "\fBpattern\fP"
+.br
+.ti -1c
+.RI "\fBfunction\fP"
+.br
+.ti -1c
+.RI "\fBpresent\fP"
+.br
+.ti -1c
+.RI "\fBexclude_everything\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "Optional \fBstring\fP [str]"
+.br
+.ti -1c
+.RI "Optional \fBpattern\fP [\fB_RegularExpressionProtocol\fP]"
+.br
+.ti -1c
+.RI "Optional \fBpresent\fP [bool]"
+.br
+.ti -1c
+.RI "Optional \fBexclude_everything\fP [bool]"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Optional[bool] \fB_base_match\fP (self, Optional[str] \fBstring\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Each MatchRule encapsulates the logic behind a single argument
+passed in to one of the Beautiful Soup find* methods\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "bs4\&.filter\&.MatchRule\&.__init__ ( self, Optional[Union[str, bytes]]  string = \fCNone\fP, Optional[\fB_RegularExpressionProtocol\fP]  pattern = \fCNone\fP, Optional[Callable]  function = \fCNone\fP, Optional[bool]  present = \fCNone\fP, Optional[bool]  exclude_everything = \fCNone\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " bool bs4\&.filter\&.MatchRule\&.__eq__ ( self, Any other)"
+
+.SS " str bs4\&.filter\&.MatchRule\&.__repr__ ( self)"
+
+.SS " Optional[bool] bs4\&.filter\&.MatchRule\&._base_match ( self, Optional[str] string)\fC [protected]\fP"
+
+.PP
+.nf
+Run the 'cheap' portion of a match, trying to get an answer without
+calling a potentially expensive custom function\&.
+
+:return: True or False if we have a (positive or negative)
+match; None if we need to keep trying\&.
+
+.fi
+.PP
+ 
+.SS " bool bs4\&.filter\&.MatchRule\&.matches_string ( self, Optional[str] string)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "Optional bs4\&.filter\&.MatchRule\&.exclude_everything [bool]\fC [static]\fP"
+
+.SS "bs4\&.filter\&.MatchRule\&.exclude_everything"
+
+.SS "bs4\&.filter\&.MatchRule\&.function"
+
+.SS "Optional bs4\&.filter\&.MatchRule\&.pattern [\fB_RegularExpressionProtocol\fP]\fC [static]\fP"
+
+.SS "bs4\&.filter\&.MatchRule\&.pattern"
+
+.SS "Optional bs4\&.filter\&.MatchRule\&.present [bool]\fC [static]\fP"
+
+.SS "bs4\&.filter\&.MatchRule\&.present"
+
+.SS "Optional bs4\&.filter\&.MatchRule\&.string [str]\fC [static]\fP"
+
+.SS "bs4\&.filter\&.MatchRule\&.string"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

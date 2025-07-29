@@ -1,0 +1,103 @@
+.TH "docutils.transforms.components.Filter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.transforms.components.Filter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.transforms\&.Transform\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBapply\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdocument\fP, \fBstartnode\fP=None)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBdefault_priority\fP = 780"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_priority\fP = None"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBdocutils\&.transforms\&.Transform\fP
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBstartnode\fP"
+.br
+.ti -1c
+.RI "\fBlanguage\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Include or exclude elements which depend on a specific Docutils component\&.
+
+For use with `nodes\&.pending` elements\&.  A 'pending' element's dictionary
+attribute ``details`` must contain the keys 'component' and 'format'\&.  The
+value of ``details['component']`` must match the type name of the
+component the elements depend on (e\&.g\&. 'writer')\&.  The value of
+``details['format']`` is the name of a specific format or context of that
+component (e\&.g\&. 'html')\&.  If the matching Docutils component supports that
+format or context, the 'pending' element is replaced by the contents of
+``details['nodes']`` (a list of nodes); otherwise, the 'pending' element
+is removed\&.
+
+For example, up to version 0\&.17, the reStructuredText 'meta'
+directive created a 'pending' element containing a 'meta' element
+(in ``pending\&.details['nodes']``)\&.
+Only writers (``pending\&.details['component'] == 'writer'``)
+supporting the 'html', 'latex', or 'odf' formats
+(``pending\&.details['format'] == 'html,latex,odf'``) included the
+'meta' element; it was deleted from the output of all other writers\&.
+
+This transform is no longer used by Docutils, it may be removed in future\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.transforms\&.components\&.Filter\&.apply ( self)"
+
+.PP
+.nf
+Override to apply the transform to the document tree\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.transforms\&.Transform\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int docutils\&.transforms\&.components\&.Filter\&.default_priority = 780\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

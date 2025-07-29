@@ -1,0 +1,210 @@
+.TH "jinja2.nodes.Node" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.nodes.Node
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits metaclass, and \fBjinja2\&.nodes\&.NodeType\fP\&.
+.PP
+Inherited by \fBjinja2\&.nodes\&.Expr\fP, \fBjinja2\&.nodes\&.Helper\fP, \fBjinja2\&.nodes\&.Stmt\fP, and \fBjinja2\&.nodes\&.Template\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, *t\&.Any \fBfields\fP, **t\&.Any \fBattributes\fP)"
+.br
+.ti -1c
+.RI "t\&.Iterator[t\&.Tuple[str, t\&.Any]] \fBiter_fields\fP (self, t\&.Optional[t\&.Container[str]] exclude=None, t\&.Optional[t\&.Container[str]] only=None)"
+.br
+.ti -1c
+.RI "t\&.Iterator['Node'] \fBiter_child_nodes\fP (self, t\&.Optional[t\&.Container[str]] exclude=None, t\&.Optional[t\&.Container[str]] only=None)"
+.br
+.ti -1c
+.RI "t\&.Optional[\fB_NodeBound\fP] \fBfind\fP (self, t\&.Type[\fB_NodeBound\fP] node_type)"
+.br
+.ti -1c
+.RI "t\&.Iterator[\fB_NodeBound\fP] \fBfind_all\fP (self, t\&.Union[t\&.Type[\fB_NodeBound\fP], t\&.Tuple[t\&.Type[\fB_NodeBound\fP],\&.\&.\&.]] node_type)"
+.br
+.ti -1c
+.RI "'Node' \fBset_ctx\fP (self, str ctx)"
+.br
+.ti -1c
+.RI "'Node' \fBset_lineno\fP (self, int \fBlineno\fP, bool override=False)"
+.br
+.ti -1c
+.RI "'Node' \fBset_environment\fP (self, 'Environment' \fBenvironment\fP)"
+.br
+.ti -1c
+.RI "bool \fB__eq__\fP (self, t\&.Any other)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "str \fBdump\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBjinja2\&.nodes\&.NodeType\fP
+.in +1c
+.ti -1c
+.RI "\fB__new__\fP (mcs, name, bases, d)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBfields\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBfields\fP = ()"
+.br
+.ti -1c
+.RI "tuple \fBattributes\fP = ('lineno', 'environment')"
+.br
+.ti -1c
+.RI "bool \fBabstract\fP = True"
+.br
+.ti -1c
+.RI "int \fBlineno\fP"
+.br
+.ti -1c
+.RI "t \fBenvironment\fP \&.Optional['Environment']"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Baseclass for all Jinja nodes\&.  There are a number of nodes available
+of different types\&.  There are four major types:
+
+-   :class:`Stmt`: statements
+-   :class:`Expr`: expressions
+-   :class:`Helper`: helper nodes
+-   :class:`Template`: the outermost wrapper node
+
+All nodes have fields and attributes\&.  Fields may be other nodes, lists,
+or arbitrary values\&.  Fields are passed to the constructor as regular
+positional arguments, attributes as keyword arguments\&.  Each node has
+two attributes: `lineno` (the line number of the node) and `environment`\&.
+The `environment` attribute is set at the end of the parsing process for
+all nodes automatically\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None jinja2\&.nodes\&.Node\&.__init__ ( self, *t\&.Any fields, **t\&.Any attributes)"
+
+.PP
+Reimplemented in \fBjinja2\&.nodes\&.InternalName\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " bool jinja2\&.nodes\&.Node\&.__eq__ ( self, t\&.Any other)"
+
+.SS " str jinja2\&.nodes\&.Node\&.__repr__ ( self)"
+
+.SS " str jinja2\&.nodes\&.Node\&.dump ( self)"
+
+.SS " t\&.Optional[\fB_NodeBound\fP] jinja2\&.nodes\&.Node\&.find ( self, t\&.Type[\fB_NodeBound\fP] node_type)"
+
+.PP
+.nf
+Find the first node of a given type\&.  If no such node exists the
+return value is `None`\&.
+
+.fi
+.PP
+ 
+.SS " t\&.Iterator[\fB_NodeBound\fP] jinja2\&.nodes\&.Node\&.find_all ( self, t\&.Union[t\&.Type[\fB_NodeBound\fP], t\&.Tuple[t\&.Type[\fB_NodeBound\fP], \&.\&.\&.]]
+     node_type)"
+
+.PP
+.nf
+Find all the nodes of a given type\&.  If the type is a tuple,
+the check is performed for any of the tuple items\&.
+
+.fi
+.PP
+ 
+.SS " t\&.Iterator['Node'] jinja2\&.nodes\&.Node\&.iter_child_nodes ( self, t\&.Optional[t\&.Container[str]]  exclude = \fCNone\fP, t\&.Optional[t\&.Container[str]]  only = \fCNone\fP)"
+
+.PP
+.nf
+Iterates over all direct child nodes of the node\&.  This iterates
+over all fields and yields the values of they are nodes\&.  If the value
+of a field is a list all the nodes in that list are returned\&.
+
+.fi
+.PP
+ 
+.SS " t\&.Iterator[t\&.Tuple[str, t\&.Any]] jinja2\&.nodes\&.Node\&.iter_fields ( self, t\&.Optional[t\&.Container[str]]  exclude = \fCNone\fP, t\&.Optional[t\&.Container[str]]  only = \fCNone\fP)"
+
+.PP
+.nf
+This method iterates over all fields that are defined and yields
+``(key, value)`` tuples\&.  Per default all fields are returned, but
+it's possible to limit that to some fields by providing the `only`
+parameter or to exclude some using the `exclude` parameter\&.  Both
+should be sets or tuples of field names\&.
+
+.fi
+.PP
+ 
+.SS " 'Node' jinja2\&.nodes\&.Node\&.set_ctx ( self, str ctx)"
+
+.PP
+.nf
+Reset the context of a node and all child nodes\&.  Per default the
+parser will all generate nodes that have a 'load' context as it's the
+most common one\&.  This method is used in the parser to set assignment
+targets and other nodes to a store context\&.
+
+.fi
+.PP
+ 
+.SS " 'Node' jinja2\&.nodes\&.Node\&.set_environment ( self, 'Environment' environment)"
+
+.PP
+.nf
+Set the environment for all nodes\&.
+.fi
+.PP
+ 
+.SS " 'Node' jinja2\&.nodes\&.Node\&.set_lineno ( self, int lineno, bool  override = \fCFalse\fP)"
+
+.PP
+.nf
+Set the line numbers of the node and children\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "bool jinja2\&.nodes\&.Node\&.abstract = True\fC [static]\fP"
+
+.SS "tuple jinja2\&.nodes\&.Node\&.attributes = ('lineno', 'environment')\fC [static]\fP"
+
+.SS "t jinja2\&.nodes\&.Node\&.environment \&.Optional['Environment']\fC [static]\fP"
+
+.SS "tuple jinja2\&.nodes\&.Node\&.fields = ()\fC [static]\fP"
+
+.SS "jinja2\&.nodes\&.Node\&.fields"
+
+.SS "int jinja2\&.nodes\&.Node\&.lineno\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,172 @@
+.TH "jinja2.nodes.Getattr" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.nodes.Getattr
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBjinja2\&.nodes\&.Expr\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "t\&.Any \fBas_const\fP (self, t\&.Optional[\fBEvalContext\fP] eval_ctx=None)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBjinja2\&.nodes\&.Expr\fP
+.in +1c
+.ti -1c
+.RI "bool \fBcan_assign\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBjinja2\&.nodes\&.Node\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, *t\&.Any \fBfields\fP, **t\&.Any \fBattributes\fP)"
+.br
+.ti -1c
+.RI "t\&.Iterator[t\&.Tuple[str, t\&.Any]] \fBiter_fields\fP (self, t\&.Optional[t\&.Container[str]] exclude=None, t\&.Optional[t\&.Container[str]] only=None)"
+.br
+.ti -1c
+.RI "t\&.Iterator['Node'] \fBiter_child_nodes\fP (self, t\&.Optional[t\&.Container[str]] exclude=None, t\&.Optional[t\&.Container[str]] only=None)"
+.br
+.ti -1c
+.RI "t\&.Optional[\fB_NodeBound\fP] \fBfind\fP (self, t\&.Type[\fB_NodeBound\fP] node_type)"
+.br
+.ti -1c
+.RI "t\&.Iterator[\fB_NodeBound\fP] \fBfind_all\fP (self, t\&.Union[t\&.Type[\fB_NodeBound\fP], t\&.Tuple[t\&.Type[\fB_NodeBound\fP],\&.\&.\&.]] node_type)"
+.br
+.ti -1c
+.RI "'Node' \fBset_ctx\fP (self, str ctx)"
+.br
+.ti -1c
+.RI "'Node' \fBset_lineno\fP (self, int \fBlineno\fP, bool override=False)"
+.br
+.ti -1c
+.RI "'Node' \fBset_environment\fP (self, 'Environment' \fBenvironment\fP)"
+.br
+.ti -1c
+.RI "bool \fB__eq__\fP (self, t\&.Any other)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "str \fBdump\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBjinja2\&.nodes\&.NodeType\fP
+.in +1c
+.ti -1c
+.RI "\fB__new__\fP (mcs, name, bases, d)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBattr\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBjinja2\&.nodes\&.Node\fP
+.in +1c
+.ti -1c
+.RI "\fBfields\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBfields\fP = ('node', 'attr', 'ctx')"
+.br
+.ti -1c
+.RI "\fBExpr\fP \fBnode\fP"
+.br
+.ti -1c
+.RI "str \fBattr\fP"
+.br
+.ti -1c
+.RI "str \fBctx\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBjinja2\&.nodes\&.Expr\fP
+.in +1c
+.ti -1c
+.RI "bool \fBabstract\fP = True"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBjinja2\&.nodes\&.Node\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBfields\fP = ()"
+.br
+.ti -1c
+.RI "tuple \fBattributes\fP = ('lineno', 'environment')"
+.br
+.ti -1c
+.RI "bool \fBabstract\fP = True"
+.br
+.ti -1c
+.RI "int \fBlineno\fP"
+.br
+.ti -1c
+.RI "t \fBenvironment\fP \&.Optional['Environment']"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Get an attribute or item from an expression that is a ascii-only
+bytestring and prefer the attribute\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " t\&.Any jinja2\&.nodes\&.Getattr\&.as_const ( self, t\&.Optional[\fBEvalContext\fP]  eval_ctx = \fCNone\fP)"
+
+.PP
+.nf
+Return the value of the expression as constant or raise
+:exc:`Impossible` if this was not possible\&.
+
+An :class:`EvalContext` can be provided, if none is given
+a default context is created which requires the nodes to have
+an attached environment\&.
+
+\&.\&. versionchanged:: 2\&.4
+   the `eval_ctx` parameter was added\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBjinja2\&.nodes\&.Expr\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "str jinja2\&.nodes\&.Getattr\&.attr\fC [static]\fP"
+
+.SS "jinja2\&.nodes\&.Getattr\&.attr"
+
+.SS "str jinja2\&.nodes\&.Getattr\&.ctx\fC [static]\fP"
+
+.SS "tuple jinja2\&.nodes\&.Getattr\&.fields = ('node', 'attr', 'ctx')\fC [static]\fP"
+
+.SS "\fBExpr\fP jinja2\&.nodes\&.Getattr\&.node\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

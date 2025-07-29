@@ -1,0 +1,162 @@
+.TH "pip._internal.cli.index_command.IndexGroupCommand" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.cli.index_command.IndexGroupCommand
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._internal\&.cli\&.base_command\&.Command\fP, and \fBpip\&._internal\&.cli\&.index_command\&.SessionCommandMixin\fP\&.
+.PP
+Inherited by \fBpip\&._internal\&.cli\&.req_command\&.RequirementCommand\fP, \fBpip\&._internal\&.commands\&.index\&.IndexCommand\fP, and \fBpip\&._internal\&.commands\&.list\&.ListCommand\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBhandle_pip_version_check\fP (self, Values options)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str \fBname\fP, str \fBsummary\fP, bool isolated=False)"
+.br
+.ti -1c
+.RI "None \fBadd_options\fP (self)"
+.br
+.ti -1c
+.RI "int \fBrun\fP (self, Values options, List[str] args)"
+.br
+.ti -1c
+.RI "Tuple[Values, List[str]] \fBparse_args\fP (self, List[str] args)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (self, List[str] args)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._internal\&.cli\&.command_context\&.CommandContextMixIn\fP
+.in +1c
+.ti -1c
+.RI "Generator[None, None, None] \fBmain_context\fP (self)"
+.br
+.ti -1c
+.RI "\fB_T\fP \fBenter_context\fP (self, ContextManager[\fB_T\fP] context_provider)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._internal\&.cli\&.index_command\&.SessionCommandMixin\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "'PipSession' \fBget_default_session\fP (self, Values options)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP
+.in +1c
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBsummary\fP"
+.br
+.ti -1c
+.RI "\fBparser\fP"
+.br
+.ti -1c
+.RI "\fBcmd_opts\fP"
+.br
+.ti -1c
+.RI "\fBtempdir_registry\fP"
+.br
+.ti -1c
+.RI "\fBverbosity\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP
+.in +1c
+.ti -1c
+.RI "str \fBusage\fP = ''"
+.br
+.ti -1c
+.RI "bool \fBignore_require_venv\fP = False"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP
+.in +1c
+.ti -1c
+.RI "int \fB_run_wrapper\fP (self, int level_number, Values options, List[str] args)"
+.br
+.ti -1c
+.RI "int \fB_main\fP (self, List[str] args)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpip\&._internal\&.cli\&.index_command\&.SessionCommandMixin\fP
+.in +1c
+.ti -1c
+.RI "Optional[List[str]] \fB_get_index_urls\fP (cls, Values options)"
+.br
+.ti -1c
+.RI "'PipSession' \fB_build_session\fP (self, Values options, Optional[int] retries=None, Optional[int] timeout=None)"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBpip\&._internal\&.cli\&.command_context\&.CommandContextMixIn\fP
+.in +1c
+.ti -1c
+.RI "\fB_in_main_context\fP"
+.br
+.ti -1c
+.RI "\fB_main_context\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBpip\&._internal\&.cli\&.index_command\&.SessionCommandMixin\fP
+.in +1c
+.ti -1c
+.RI "\fB_session\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Abstract base class for commands with the index_group options\&.
+
+This also corresponds to the commands that permit the pip version check\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " None pip\&._internal\&.cli\&.index_command\&.IndexGroupCommand\&.handle_pip_version_check ( self, Values options)"
+
+.PP
+.nf
+Do the pip version check if not disabled\&.
+
+This overrides the default behavior of not doing the check\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._internal\&.cli\&.base_command\&.Command\fP\&.
+.PP
+Reimplemented in \fBpip\&._internal\&.commands\&.list\&.ListCommand\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

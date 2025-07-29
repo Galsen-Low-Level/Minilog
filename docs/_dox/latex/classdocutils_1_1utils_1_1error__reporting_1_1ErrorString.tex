@@ -1,0 +1,75 @@
+\doxysection{docutils.\+utils.\+error\+\_\+reporting.\+Error\+String Class Reference}
+\hypertarget{classdocutils_1_1utils_1_1error__reporting_1_1ErrorString}{}\label{classdocutils_1_1utils_1_1error__reporting_1_1ErrorString}\index{docutils.utils.error\_reporting.ErrorString@{docutils.utils.error\_reporting.ErrorString}}
+Inheritance diagram for docutils.\+utils.\+error\+\_\+reporting.\+Error\+String\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdocutils_1_1utils_1_1error__reporting_1_1ErrorString}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1utils_1_1error__reporting_1_1ErrorString_a414334613aa8daddb91a55a2e1606d2d}{\+\_\+\+\_\+str\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classdocutils_1_1utils_1_1error__reporting_1_1ErrorString_ae2e32b834064a292bc269766b8601c1a}{\+\_\+\+\_\+unicode\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classdocutils_1_1utils_1_1error__reporting_1_1SafeString}{docutils.\+utils.\+error\+\_\+reporting.\+Safe\+String}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1utils_1_1error__reporting_1_1SafeString_a1427210508488ce67afda108af597bef}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classdocutils_1_1utils_1_1error__reporting_1_1SafeString_a15b6dec404a5b314bc9f3bbcb9e1d4ef}{data}}, \mbox{\hyperlink{classdocutils_1_1utils_1_1error__reporting_1_1SafeString_a563b7532c8f306b8838ebfa96281de10}{encoding}}=None, \mbox{\hyperlink{classdocutils_1_1utils_1_1error__reporting_1_1SafeString_a89bf14c011b6ac67591ff196f7a5df65}{encoding\+\_\+errors}}=\textquotesingle{}backslashreplace\textquotesingle{}, \mbox{\hyperlink{classdocutils_1_1utils_1_1error__reporting_1_1SafeString_a7401e52df594717f6b73bf5205106b4e}{decoding\+\_\+errors}}=\textquotesingle{}replace\textquotesingle{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classdocutils_1_1utils_1_1error__reporting_1_1SafeString}{docutils.\+utils.\+error\+\_\+reporting.\+Safe\+String}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1utils_1_1error__reporting_1_1SafeString_a15b6dec404a5b314bc9f3bbcb9e1d4ef}{data}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1utils_1_1error__reporting_1_1SafeString_a563b7532c8f306b8838ebfa96281de10}{encoding}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1utils_1_1error__reporting_1_1SafeString_a89bf14c011b6ac67591ff196f7a5df65}{encoding\+\_\+errors}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1utils_1_1error__reporting_1_1SafeString_a7401e52df594717f6b73bf5205106b4e}{decoding\+\_\+errors}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Safely report exception type and message.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdocutils_1_1utils_1_1error__reporting_1_1ErrorString_a414334613aa8daddb91a55a2e1606d2d}\label{classdocutils_1_1utils_1_1error__reporting_1_1ErrorString_a414334613aa8daddb91a55a2e1606d2d} 
+\index{docutils.utils.error\_reporting.ErrorString@{docutils.utils.error\_reporting.ErrorString}!\_\_str\_\_@{\_\_str\_\_}}
+\index{\_\_str\_\_@{\_\_str\_\_}!docutils.utils.error\_reporting.ErrorString@{docutils.utils.error\_reporting.ErrorString}}
+\doxysubsubsection{\texorpdfstring{\_\_str\_\_()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily docutils.\+utils.\+error\+\_\+reporting.\+Error\+String.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Reimplemented from \mbox{\hyperlink{classdocutils_1_1utils_1_1error__reporting_1_1SafeString_ab4c9318fc3b738bb0906ec41f40714f2}{docutils.\+utils.\+error\+\_\+reporting.\+Safe\+String}}.
+
+\Hypertarget{classdocutils_1_1utils_1_1error__reporting_1_1ErrorString_ae2e32b834064a292bc269766b8601c1a}\label{classdocutils_1_1utils_1_1error__reporting_1_1ErrorString_ae2e32b834064a292bc269766b8601c1a} 
+\index{docutils.utils.error\_reporting.ErrorString@{docutils.utils.error\_reporting.ErrorString}!\_\_unicode\_\_@{\_\_unicode\_\_}}
+\index{\_\_unicode\_\_@{\_\_unicode\_\_}!docutils.utils.error\_reporting.ErrorString@{docutils.utils.error\_reporting.ErrorString}}
+\doxysubsubsection{\texorpdfstring{\_\_unicode\_\_()}{\_\_unicode\_\_()}}
+{\footnotesize\ttfamily docutils.\+utils.\+error\+\_\+reporting.\+Error\+String.\+\_\+\+\_\+unicode\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return unicode representation of `self.data`.
+
+Try ``unicode(self.data)``, catch `UnicodeError` and
+
+* if `self.data` is an Exception instance, work around
+  http://bugs.python.org/issue2517 with an emulation of
+  Exception.__unicode__,
+
+* else decode with `self.encoding` and `self.decoding_errors`.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classdocutils_1_1utils_1_1error__reporting_1_1SafeString_a429ee43678013b089403c821a5bb01be}{docutils.\+utils.\+error\+\_\+reporting.\+Safe\+String}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/docutils/utils/\mbox{\hyperlink{error__reporting_8py}{error\+\_\+reporting.\+py}}\end{DoxyCompactItemize}

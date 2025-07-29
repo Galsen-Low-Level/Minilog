@@ -1,0 +1,2790 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classwebob_1_1request_1_1BaseRequest" kind="class" language="Python" prot="public">
+    <compoundname>webob::request::BaseRequest</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+    <derivedcompoundref refid="classwebob_1_1request_1_1LegacyRequest" prot="public" virt="non-virtual">webob.request.LegacyRequest</derivedcompoundref>
+    <derivedcompoundref refid="classwebob_1_1request_1_1Request" prot="public" virt="non-virtual">webob.request.Request</derivedcompoundref>
+    <derivedcompoundref refid="classwebtest_1_1app_1_1TestRequest" prot="public" virt="non-virtual">webtest.app.TestRequest</derivedcompoundref>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1afb8b34399b908990b12675497118cf96" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int webob.request.BaseRequest::request_body_tempfile_limit</definition>
+        <argsstring></argsstring>
+        <name>request_body_tempfile_limit</name>
+        <qualifiedname>webob.request.BaseRequest.request_body_tempfile_limit</qualifiedname>
+        <initializer>=  10 * 1024</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="95" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a4b1b71ace6b9c133218fdfb9e54e72df" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::body_file_raw</definition>
+        <argsstring></argsstring>
+        <name>body_file_raw</name>
+        <qualifiedname>webob.request.BaseRequest.body_file_raw</qualifiedname>
+        <initializer>=  environ_getter(&apos;wsgi.input&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="288" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="288" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a35a19e759e5b3dbcc07a23ee796f9cd8" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::url_encoding</definition>
+        <argsstring></argsstring>
+        <name>url_encoding</name>
+        <qualifiedname>webob.request.BaseRequest.url_encoding</qualifiedname>
+        <initializer>=  environ_getter(&apos;webob.url_encoding&apos;, &apos;UTF-8&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="303" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="303" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a8e7fe9780991d7e787d01f897623b8b9" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::scheme</definition>
+        <argsstring></argsstring>
+        <name>scheme</name>
+        <qualifiedname>webob.request.BaseRequest.scheme</qualifiedname>
+        <initializer>=  environ_getter(&apos;wsgi.url_scheme&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="304" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="304" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1aa1a2eaf37eaed1ab35898e61546b2a5a" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::method</definition>
+        <argsstring></argsstring>
+        <name>method</name>
+        <qualifiedname>webob.request.BaseRequest.method</qualifiedname>
+        <initializer>=  environ_getter(&apos;REQUEST_METHOD&apos;, &apos;<ref refid="classwebob_1_1request_1_1BaseRequest_1a295eea4d757c2e241a182cea60e6c40d" kindref="member">GET</ref>&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="305" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="305" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1ad05a64c5c23f8616970a26583e9bea4b" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::http_version</definition>
+        <argsstring></argsstring>
+        <name>http_version</name>
+        <qualifiedname>webob.request.BaseRequest.http_version</qualifiedname>
+        <initializer>=  environ_getter(&apos;SERVER_PROTOCOL&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="306" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="306" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a03fb6c18dda1fb0e864ccf18356a5413" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::content_length</definition>
+        <argsstring></argsstring>
+        <name>content_length</name>
+        <qualifiedname>webob.request.BaseRequest.content_length</qualifiedname>
+        <initializer>=  converter(
+        environ_getter(&apos;CONTENT_LENGTH&apos;, None, &apos;14.13&apos;),
+        parse_int_safe, serialize_int, &apos;int&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="307" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="307" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a6e6c74b8b34030231ba8ae52aa996f84" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::remote_user</definition>
+        <argsstring></argsstring>
+        <name>remote_user</name>
+        <qualifiedname>webob.request.BaseRequest.remote_user</qualifiedname>
+        <initializer>=  environ_getter(&apos;REMOTE_USER&apos;, None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="310" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="310" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1afdb015d4813f16876476c5c618fc5da7" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::remote_host</definition>
+        <argsstring></argsstring>
+        <name>remote_host</name>
+        <qualifiedname>webob.request.BaseRequest.remote_host</qualifiedname>
+        <initializer>=  environ_getter(&apos;REMOTE_HOST&apos;, None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="311" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="311" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a8c40feb2272c9f8eae2dddeb148d6390" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::remote_addr</definition>
+        <argsstring></argsstring>
+        <name>remote_addr</name>
+        <qualifiedname>webob.request.BaseRequest.remote_addr</qualifiedname>
+        <initializer>=  environ_getter(&apos;REMOTE_ADDR&apos;, None)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="312" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="312" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a12a5c3e7d0777b01c60547f292d8f2a2" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::query_string</definition>
+        <argsstring></argsstring>
+        <name>query_string</name>
+        <qualifiedname>webob.request.BaseRequest.query_string</qualifiedname>
+        <initializer>=  environ_getter(&apos;QUERY_STRING&apos;, &apos;&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="313" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="313" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a7173c2459b8c659120df63120d3cd3e7" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::server_name</definition>
+        <argsstring></argsstring>
+        <name>server_name</name>
+        <qualifiedname>webob.request.BaseRequest.server_name</qualifiedname>
+        <initializer>=  environ_getter(&apos;SERVER_NAME&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="314" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="314" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a477978c28203d5bc11a07fc555e86a42" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::server_port</definition>
+        <argsstring></argsstring>
+        <name>server_port</name>
+        <qualifiedname>webob.request.BaseRequest.server_port</qualifiedname>
+        <initializer>=  converter(
+        environ_getter(&apos;SERVER_PORT&apos;),
+        parse_int, serialize_int, &apos;int&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="315" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="315" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1aea3541054d25a471132d6097cd05ebfa" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::script_name</definition>
+        <argsstring></argsstring>
+        <name>script_name</name>
+        <qualifiedname>webob.request.BaseRequest.script_name</qualifiedname>
+        <initializer>=  environ_decoder(&apos;SCRIPT_NAME&apos;, &apos;&apos;, encattr=&apos;<ref refid="classwebob_1_1request_1_1BaseRequest_1a35a19e759e5b3dbcc07a23ee796f9cd8" kindref="member">url_encoding</ref>&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="319" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="319" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1aea16613f5d1d0a1b521985f1cbe0f63b" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::path_info</definition>
+        <argsstring></argsstring>
+        <name>path_info</name>
+        <qualifiedname>webob.request.BaseRequest.path_info</qualifiedname>
+        <initializer>=  environ_decoder(&apos;PATH_INFO&apos;, encattr=&apos;<ref refid="classwebob_1_1request_1_1BaseRequest_1a35a19e759e5b3dbcc07a23ee796f9cd8" kindref="member">url_encoding</ref>&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="320" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="320" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1ad4e4f404c6ece4e99ff3d1dced22dbcc" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::uscript_name</definition>
+        <argsstring></argsstring>
+        <name>uscript_name</name>
+        <qualifiedname>webob.request.BaseRequest.uscript_name</qualifiedname>
+        <initializer>=  <ref refid="classwebob_1_1request_1_1BaseRequest_1aea3541054d25a471132d6097cd05ebfa" kindref="member">script_name</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="323" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="323" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a01251c522d7304a1b14fc49f222e8f8f" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::upath_info</definition>
+        <argsstring></argsstring>
+        <name>upath_info</name>
+        <qualifiedname>webob.request.BaseRequest.upath_info</qualifiedname>
+        <initializer>=  <ref refid="classwebob_1_1request_1_1BaseRequest_1aea16613f5d1d0a1b521985f1cbe0f63b" kindref="member">path_info</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="324" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="324" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1aecc50a9267848b38fec3d56ae4c21fa8" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::json</definition>
+        <argsstring></argsstring>
+        <name>json</name>
+        <qualifiedname>webob.request.BaseRequest.json</qualifiedname>
+        <initializer>=  property(<ref refid="classwebob_1_1request_1_1BaseRequest_1ac7586e805a4a417cdb5005b63cc6f6ec" kindref="member">_json_body__get</ref>, <ref refid="classwebob_1_1request_1_1BaseRequest_1aad1f3f749aee16c33ddeafe6fe6511bb" kindref="member">_json_body__set</ref>, <ref refid="classwebob_1_1request_1_1BaseRequest_1a645e2cffbcad9f657151c34dfceefbb0" kindref="member">_json_body__del</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="723" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="723" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a749b7e68f1308e2c9c68299103a7f98c" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::is_body_seekable</definition>
+        <argsstring></argsstring>
+        <name>is_body_seekable</name>
+        <qualifiedname>webob.request.BaseRequest.is_body_seekable</qualifiedname>
+        <initializer>=  environ_getter(&apos;webob.is_body_seekable&apos;, False)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="879" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="879" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1af79c890891ada3d91e4464270d0f1c89" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::accept</definition>
+        <argsstring></argsstring>
+        <name>accept</name>
+        <qualifiedname>webob.request.BaseRequest.accept</qualifiedname>
+        <initializer>=  accept_property()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1049" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1049" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1aafb5f7c821e9071818d3cd988f01eb60" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::accept_charset</definition>
+        <argsstring></argsstring>
+        <name>accept_charset</name>
+        <qualifiedname>webob.request.BaseRequest.accept_charset</qualifiedname>
+        <initializer>=  accept_charset_property()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1050" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1050" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a767a50bc6d3dff921d48ef00589edbfc" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::accept_encoding</definition>
+        <argsstring></argsstring>
+        <name>accept_encoding</name>
+        <qualifiedname>webob.request.BaseRequest.accept_encoding</qualifiedname>
+        <initializer>=  accept_encoding_property()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1051" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1051" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1af318a3f9ac7861ec5d246dfe9c7dbfbb" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::accept_language</definition>
+        <argsstring></argsstring>
+        <name>accept_language</name>
+        <qualifiedname>webob.request.BaseRequest.accept_language</qualifiedname>
+        <initializer>=  accept_language_property()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1052" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1052" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a2f232042c4f3eaefdc2663b4be32057a" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::authorization</definition>
+        <argsstring></argsstring>
+        <name>authorization</name>
+        <qualifiedname>webob.request.BaseRequest.authorization</qualifiedname>
+        <initializer>=  converter(
+        environ_getter(&apos;HTTP_AUTHORIZATION&apos;, None, &apos;14.8&apos;),
+        parse_auth, serialize_auth,
+    )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1054" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1054" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a42ff9d89a6b85c20fe9937eeaeda79e0" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::if_match</definition>
+        <argsstring></argsstring>
+        <name>if_match</name>
+        <qualifiedname>webob.request.BaseRequest.if_match</qualifiedname>
+        <initializer>=  etag_property(&apos;HTTP_IF_MATCH&apos;, AnyETag, &apos;14.24&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1104" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1aba34987924ebd28deacdd0716ecd51c5" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::if_none_match</definition>
+        <argsstring></argsstring>
+        <name>if_none_match</name>
+        <qualifiedname>webob.request.BaseRequest.if_none_match</qualifiedname>
+        <initializer>=  etag_property(&apos;HTTP_IF_NONE_MATCH&apos;, NoETag, &apos;14.26&apos;,
+                                  strong=False)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1105" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a60fc02a2b576da55763781ea7b543e26" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::date</definition>
+        <argsstring></argsstring>
+        <name>date</name>
+        <qualifiedname>webob.request.BaseRequest.date</qualifiedname>
+        <initializer>=  converter_date(environ_getter(&apos;HTTP_DATE&apos;, None, &apos;14.8&apos;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1108" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a4aaafd82423e2857bcac953d6deff4ec" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::if_modified_since</definition>
+        <argsstring></argsstring>
+        <name>if_modified_since</name>
+        <qualifiedname>webob.request.BaseRequest.if_modified_since</qualifiedname>
+        <initializer>=  converter_date(
+                    environ_getter(&apos;HTTP_IF_MODIFIED_SINCE&apos;, None, &apos;14.25&apos;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1109" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a0980f239bc79c5c0eb74cecc90a514d0" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::if_unmodified_since</definition>
+        <argsstring></argsstring>
+        <name>if_unmodified_since</name>
+        <qualifiedname>webob.request.BaseRequest.if_unmodified_since</qualifiedname>
+        <initializer>=  converter_date(
+                    environ_getter(&apos;HTTP_IF_UNMODIFIED_SINCE&apos;, None, &apos;14.28&apos;))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1111" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a7227d77f9a74a2c06166e1c257f78448" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::if_range</definition>
+        <argsstring></argsstring>
+        <name>if_range</name>
+        <qualifiedname>webob.request.BaseRequest.if_range</qualifiedname>
+        <initializer>=  converter(
+        environ_getter(&apos;HTTP_IF_RANGE&apos;, None, &apos;14.27&apos;),
+        <ref refid="classwebob_1_1etag_1_1IfRange_1a153a5de4fddcd6a03b067a6d57fadfc0" kindref="member">IfRange.parse</ref>, serialize_if_range, &apos;<ref refid="classwebob_1_1etag_1_1IfRange" kindref="compound">IfRange</ref> object&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1113" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a4ece56ba096ad28e86e1bebf5e61041b" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::max_forwards</definition>
+        <argsstring></argsstring>
+        <name>max_forwards</name>
+        <qualifiedname>webob.request.BaseRequest.max_forwards</qualifiedname>
+        <initializer>=  converter(
+        environ_getter(&apos;HTTP_MAX_FORWARDS&apos;, None, &apos;14.31&apos;),
+        parse_int, serialize_int, &apos;int&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1118" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1aa0307ea9d574aa6c390588f7d40d70d6" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::pragma</definition>
+        <argsstring></argsstring>
+        <name>pragma</name>
+        <qualifiedname>webob.request.BaseRequest.pragma</qualifiedname>
+        <initializer>=  environ_getter(&apos;HTTP_PRAGMA&apos;, None, &apos;14.32&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1122" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a7b7a13767ccd711b43daf0481e75b62d" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::range</definition>
+        <argsstring></argsstring>
+        <name>range</name>
+        <qualifiedname>webob.request.BaseRequest.range</qualifiedname>
+        <initializer>=  converter(
+        environ_getter(&apos;HTTP_RANGE&apos;, None, &apos;14.35&apos;),
+        parse_range, serialize_range, &apos;Range object&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1124" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a3693a71aed6de6ae771f6f59da3bea67" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::referer</definition>
+        <argsstring></argsstring>
+        <name>referer</name>
+        <qualifiedname>webob.request.BaseRequest.referer</qualifiedname>
+        <initializer>=  environ_getter(&apos;HTTP_REFERER&apos;, None, &apos;14.36&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1128" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1ab41ada9eeb150d007b89c2971a55877f" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::referrer</definition>
+        <argsstring></argsstring>
+        <name>referrer</name>
+        <qualifiedname>webob.request.BaseRequest.referrer</qualifiedname>
+        <initializer>=  <ref refid="classwebob_1_1request_1_1BaseRequest_1a3693a71aed6de6ae771f6f59da3bea67" kindref="member">referer</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1129" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1ae12811f7dd1d26c2125b428286a48bea" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::user_agent</definition>
+        <argsstring></argsstring>
+        <name>user_agent</name>
+        <qualifiedname>webob.request.BaseRequest.user_agent</qualifiedname>
+        <initializer>=  environ_getter(&apos;HTTP_USER_AGENT&apos;, None, &apos;14.43&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1131" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1afe46735befe3c6ffd4b758c38bea3bbc" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::ResponseClass</definition>
+        <argsstring></argsstring>
+        <name>ResponseClass</name>
+        <qualifiedname>webob.request.BaseRequest.ResponseClass</qualifiedname>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1292" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1292" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a19979b4abc1ff9a20941e30a632c100b" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::get_response</definition>
+        <argsstring></argsstring>
+        <name>get_response</name>
+        <qualifiedname>webob.request.BaseRequest.get_response</qualifiedname>
+        <initializer>=  <ref refid="classwebob_1_1request_1_1BaseRequest_1a9f6c78cf15dc88a5261e0a6860851ba9" kindref="member">send</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1318" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1318" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a647086638de783b775762bb716a16747" prot="protected" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::_charset</definition>
+        <argsstring></argsstring>
+        <name>_charset</name>
+        <qualifiedname>webob.request.BaseRequest._charset</qualifiedname>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="97" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a530f3ba82d090427ba5e83823722310e" prot="protected" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int webob.request.BaseRequest::_setattr_stacklevel</definition>
+        <argsstring></argsstring>
+        <name>_setattr_stacklevel</name>
+        <qualifiedname>webob.request.BaseRequest._setattr_stacklevel</qualifiedname>
+        <initializer>=  2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="240" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a2a56ef83460ebd8452941b8ce8486804" prot="protected" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::_content_type_raw</definition>
+        <argsstring></argsstring>
+        <name>_content_type_raw</name>
+        <qualifiedname>webob.request.BaseRequest._content_type_raw</qualifiedname>
+        <initializer>=  environ_getter(&apos;CONTENT_TYPE&apos;, &apos;&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="326" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="326" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a8e86029c024edc4b3de5a23f863e83a7" prot="protected" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::_headers</definition>
+        <argsstring></argsstring>
+        <name>_headers</name>
+        <qualifiedname>webob.request.BaseRequest._headers</qualifiedname>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="352" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="352" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="classwebob_1_1request_1_1BaseRequest_1a679593ac6456c96d9b28338e06a8e533" prot="public" static="yes" readable="no" writable="no" gettable="no" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::content_type</definition>
+        <argsstring></argsstring>
+        <name>content_type</name>
+        <qualifiedname>webob.request.BaseRequest.content_type</qualifiedname>
+        <initializer>=  property(<ref refid="classwebob_1_1request_1_1BaseRequest_1a45ae8c491176e5c794226961cb5b8927" kindref="member">_content_type__get</ref>,
+                            <ref refid="classwebob_1_1request_1_1BaseRequest_1a75231bc6233d34b342d64514fd17e058" kindref="member">_content_type__set</ref>,
+                            <ref refid="classwebob_1_1request_1_1BaseRequest_1a75231bc6233d34b342d64514fd17e058" kindref="member">_content_type__set</ref>,
+                            _content_type__get.__doc__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="347" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="347" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="classwebob_1_1request_1_1BaseRequest_1aa9764bbaeb8c4b065efda37f13bdc2b2" prot="public" static="yes" readable="no" writable="no" gettable="no" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::headers</definition>
+        <argsstring></argsstring>
+        <name>headers</name>
+        <qualifiedname>webob.request.BaseRequest.headers</qualifiedname>
+        <initializer>=  property(<ref refid="classwebob_1_1request_1_1BaseRequest_1ab258649ad2ef5f34976bcb28969ea7ae" kindref="member">_headers__get</ref>, <ref refid="classwebob_1_1request_1_1BaseRequest_1af57f639ee1fd20cbcc6efca1a709eb61" kindref="member">_headers__set</ref>, doc=_headers__get.__doc__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="367" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="367" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="classwebob_1_1request_1_1BaseRequest_1a61a097bf14317eaa7d4da22ca32914a4" prot="public" static="yes" readable="no" writable="no" gettable="no" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::urlvars</definition>
+        <argsstring></argsstring>
+        <name>urlvars</name>
+        <qualifiedname>webob.request.BaseRequest.urlvars</qualifiedname>
+        <initializer>=  property(<ref refid="classwebob_1_1request_1_1BaseRequest_1aad9c2de2609b480a9ab4b483b30b0188" kindref="member">_urlvars__get</ref>,
+                       <ref refid="classwebob_1_1request_1_1BaseRequest_1a3432f0f1988da6d43addf6ae83c9c6a0" kindref="member">_urlvars__set</ref>,
+                       <ref refid="classwebob_1_1request_1_1BaseRequest_1ab198e5326ddbf7134df52805285abf5e" kindref="member">_urlvars__del</ref>,
+                       doc=_urlvars__get.__doc__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="594" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="594" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="classwebob_1_1request_1_1BaseRequest_1aef34a9b7fc042ec48bf919253502f5cb" prot="public" static="yes" readable="no" writable="no" gettable="no" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::urlargs</definition>
+        <argsstring></argsstring>
+        <name>urlargs</name>
+        <qualifiedname>webob.request.BaseRequest.urlargs</qualifiedname>
+        <initializer>=  property(<ref refid="classwebob_1_1request_1_1BaseRequest_1a6d03e4322d1beddd695587486dae6b7d" kindref="member">_urlargs__get</ref>,
+                       <ref refid="classwebob_1_1request_1_1BaseRequest_1a7855eeb0324adb2a8b51144c69405af6" kindref="member">_urlargs__set</ref>,
+                       <ref refid="classwebob_1_1request_1_1BaseRequest_1a974def3fb427d174c323ba8d4adc4071" kindref="member">_urlargs__del</ref>,
+                       _urlargs__get.__doc__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="633" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="633" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="classwebob_1_1request_1_1BaseRequest_1a21ca2455689bd30e8e6e4571bf985006" prot="public" static="yes" readable="no" writable="no" gettable="no" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::host</definition>
+        <argsstring></argsstring>
+        <name>host</name>
+        <qualifiedname>webob.request.BaseRequest.host</qualifiedname>
+        <initializer>=  property(<ref refid="classwebob_1_1request_1_1BaseRequest_1a4bb78417d7de4a22ed7c9f44b080c083" kindref="member">_host__get</ref>, <ref refid="classwebob_1_1request_1_1BaseRequest_1a820eb628b82d7748c1ef72a56ca683b3" kindref="member">_host__set</ref>, <ref refid="classwebob_1_1request_1_1BaseRequest_1a3e79355117e96d1792b280c5e943f218" kindref="member">_host__del</ref>, doc=_host__get.__doc__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="659" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="659" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="classwebob_1_1request_1_1BaseRequest_1af72790171a09b97b6b3447b26119b2b9" prot="public" static="yes" readable="no" writable="no" gettable="no" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::text</definition>
+        <argsstring></argsstring>
+        <name>text</name>
+        <qualifiedname>webob.request.BaseRequest.text</qualifiedname>
+        <initializer>=  property(<ref refid="classwebob_1_1request_1_1BaseRequest_1a986fa4b744c1b6f4cc86052d6d15485b" kindref="member">_text__get</ref>, <ref refid="classwebob_1_1request_1_1BaseRequest_1a2c8c673997acbec25b97a6d8eff677af" kindref="member">_text__set</ref>, <ref refid="classwebob_1_1request_1_1BaseRequest_1a4f2fea588bbb227aa1f889b49299f3aa" kindref="member">_text__del</ref>, doc=_text__get.__doc__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="748" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="748" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="classwebob_1_1request_1_1BaseRequest_1ac7d4ba3b7b133471393cea7297756e5a" prot="public" static="yes" readable="no" writable="no" gettable="no" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::cache_control</definition>
+        <argsstring></argsstring>
+        <name>cache_control</name>
+        <qualifiedname>webob.request.BaseRequest.cache_control</qualifiedname>
+        <initializer>=  property(<ref refid="classwebob_1_1request_1_1BaseRequest_1a287af977f6f363f4779530004bb495a6" kindref="member">_cache_control__get</ref>,
+                             <ref refid="classwebob_1_1request_1_1BaseRequest_1ac86a93458014b0a8ae3a21871d2ed35a" kindref="member">_cache_control__set</ref>,
+                             <ref refid="classwebob_1_1request_1_1BaseRequest_1a5b82f4815e1f5b378460d346d3359ea1" kindref="member">_cache_control__del</ref>,
+                             doc=_cache_control__get.__doc__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1098" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1098" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a05759eb5cbefe941bef4f24a65c3e957" prot="private" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::__str__</definition>
+        <argsstring></argsstring>
+        <name>__str__</name>
+        <qualifiedname>webob.request.BaseRequest.__str__</qualifiedname>
+        <initializer>=  <ref refid="classwebob_1_1request_1_1BaseRequest_1aa777a413587bb43be2d276db1879e11f" kindref="member">as_text</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1181" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1181" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1af361bf5e521585d023d78d6a1efae9dd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::is_body_readable</definition>
+        <argsstring></argsstring>
+        <name>is_body_readable</name>
+        <qualifiedname>webob.request.BaseRequest.is_body_readable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="282" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="282" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a7963236432d09df2733b4ce41f7dbd06" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::body</definition>
+        <argsstring></argsstring>
+        <name>body</name>
+        <qualifiedname>webob.request.BaseRequest.body</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="286" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="286" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1a1e9fe10ec6cbae1b45ffee4bce2d733d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::charset</definition>
+        <argsstring></argsstring>
+        <name>charset</name>
+        <qualifiedname>webob.request.BaseRequest.charset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="715" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="715" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwebob_1_1request_1_1BaseRequest_1ab10ba2bfe2591d12602cd7ea35dbf628" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>webob.request.BaseRequest::environ</definition>
+        <argsstring></argsstring>
+        <name>environ</name>
+        <qualifiedname>webob.request.BaseRequest.environ</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="847" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="847" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a57ecca69a6dde865136b72d698ff7f5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.__init__</definition>
+        <argsstring>(self, environ, charset=None, unicode_errors=None, decode_param_names=None, **kw)</argsstring>
+        <name>__init__</name>
+        <qualifiedname>webob.request.BaseRequest.__init__</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classwebob_1_1request_1_1BaseRequest_1ab10ba2bfe2591d12602cd7ea35dbf628" kindref="member">environ</ref></type>
+          <defname>environ</defname>
+        </param>
+        <param>
+          <type><ref refid="classwebob_1_1request_1_1BaseRequest_1a1e9fe10ec6cbae1b45ffee4bce2d733d" kindref="member">charset</ref></type>
+          <defname>charset</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>unicode_errors</type>
+          <defname>unicode_errors</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>decode_param_names</type>
+          <defname>decode_param_names</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>**</type>
+          <declname>kw</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="99" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="100" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1adc2bc9bef1f38b1c37223c0ea5476d1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.encget</definition>
+        <argsstring>(self, key, default=NoDefault, encattr=None)</argsstring>
+        <name>encget</name>
+        <qualifiedname>webob.request.BaseRequest.encget</qualifiedname>
+        <reimplementedby refid="classwebob_1_1request_1_1LegacyRequest_1ab634e4b42429362865c731ee29373d9a">encget</reimplementedby>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+        </param>
+        <param>
+          <type>default</type>
+          <defname>default</defname>
+          <defval><ref refid="namespacewebob_1_1request_1ae843858f35a2a2d027c8e271aae06d76" kindref="member">NoDefault</ref></defval>
+        </param>
+        <param>
+          <type>encattr</type>
+          <defname>encattr</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="150" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="150" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a8ba94190c9d8b9ae11ae5d1f6fe40945" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.encset</definition>
+        <argsstring>(self, key, val, encattr=None)</argsstring>
+        <name>encset</name>
+        <qualifiedname>webob.request.BaseRequest.encset</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+        </param>
+        <param>
+          <type>val</type>
+          <defname>val</defname>
+        </param>
+        <param>
+          <type>encattr</type>
+          <defname>encattr</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="167" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="167" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a52e4e23ff7b5fb5d2b2550cd7cd59e9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.charset</definition>
+        <argsstring>(self)</argsstring>
+        <name>charset</name>
+        <qualifiedname>webob.request.BaseRequest.charset</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="178" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="178" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a980f6b7063da73338d47ac8f6679efe6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.charset</definition>
+        <argsstring>(self, charset)</argsstring>
+        <name>charset</name>
+        <qualifiedname>webob.request.BaseRequest.charset</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>charset</type>
+          <defname>charset</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="187" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="187" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a8432b43ded7b226515dd4884a29a37fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.decode</definition>
+        <argsstring>(self, charset=None, errors=&apos;strict&apos;)</argsstring>
+        <name>decode</name>
+        <qualifiedname>webob.request.BaseRequest.decode</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classwebob_1_1request_1_1BaseRequest_1a1e9fe10ec6cbae1b45ffee4bce2d733d" kindref="member">charset</ref></type>
+          <defname>charset</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>errors</type>
+          <defname>errors</defname>
+          <defval>&apos;strict&apos;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="193" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="193" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a27f7f33dbc790b6d63e1ba009b49527e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.body_file</definition>
+        <argsstring>(self)</argsstring>
+        <name>body_file</name>
+        <qualifiedname>webob.request.BaseRequest.body_file</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>    Input stream of the request (wsgi.input).
+    Setting this property resets the content_length and seekable flag
+    (unlike setting req.body_file_raw).
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="243" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="243" bodyend="273"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a50f79ecf86e36022cac4b0c7b41faea2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.body_file</definition>
+        <argsstring>(self, value)</argsstring>
+        <name>body_file</name>
+        <qualifiedname>webob.request.BaseRequest.body_file</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacewebob_1_1request_1adbafe2ffe970e4cf5ad12e2ac95c3ee8" kindref="member">value</ref></type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="275" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="275" bodyend="283"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a27f7f33dbc790b6d63e1ba009b49527e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.body_file</definition>
+        <argsstring>(self)</argsstring>
+        <name>body_file</name>
+        <qualifiedname>webob.request.BaseRequest.body_file</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="285" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="285" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a9ba7c4e1fc2030a2dc97c069cf250302" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.body_file_seekable</definition>
+        <argsstring>(self)</argsstring>
+        <name>body_file_seekable</name>
+        <qualifiedname>webob.request.BaseRequest.body_file_seekable</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>    Get the body of the request (wsgi.input) as a seekable file-like
+    object. Middleware and routing applications should use this
+    attribute over .body_file.
+
+    If you access this value, CONTENT_LENGTH will also be updated.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="291" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="291" bodyend="302"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a405a0fcaf17e6286783358e4ecb79728" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.client_addr</definition>
+        <argsstring>(self)</argsstring>
+        <name>client_addr</name>
+        <qualifiedname>webob.request.BaseRequest.client_addr</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>The effective client IP address as a string.  If the
+``HTTP_X_FORWARDED_FOR`` header exists in the WSGI environ, this
+attribute returns the client IP address present in that header
+(e.g. if the header value is ``192.168.1.1, 192.168.1.2``, the value
+will be ``192.168.1.1``). If no ``HTTP_X_FORWARDED_FOR`` header is
+present in the environ at all, this attribute will return the value
+of the ``REMOTE_ADDR`` header.  If the ``REMOTE_ADDR`` header is
+unset, this attribute will return the value ``None``.
+
+.. warning::
+
+   It is possible for user agents to put someone else&apos;s IP or just
+   any string in ``HTTP_X_FORWARDED_FOR`` as it is a normal HTTP
+   header. Forward proxies can also provide incorrect values (private
+   IP addresses etc).  You cannot &quot;blindly&quot; trust the result of this
+   method to provide you with valid data unless you&apos;re certain that
+   ``HTTP_X_FORWARDED_FOR`` has the correct values.  The WSGI server
+   must be behind a trusted proxy for this to be true.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="370" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="370" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a5bcbc4a4fd290e8a693ae1d5995de23c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.host_port</definition>
+        <argsstring>(self)</argsstring>
+        <name>host_port</name>
+        <qualifiedname>webob.request.BaseRequest.host_port</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>The effective server port number as a string.  If the ``HTTP_HOST``
+header exists in the WSGI environ, this attribute returns the port
+number present in that header. If the ``HTTP_HOST`` header exists but
+contains no explicit port number: if the WSGI url scheme is &quot;https&quot; ,
+this attribute returns &quot;443&quot;, if the WSGI url scheme is &quot;http&quot;, this
+attribute returns &quot;80&quot; .  If no ``HTTP_HOST`` header is present in
+the environ at all, this attribute will return the value of the
+``SERVER_PORT`` header (which is guaranteed to be present).
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="400" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="400" bodyend="425"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a2fd293b88794d72436bc571b39b75ae8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.host_url</definition>
+        <argsstring>(self)</argsstring>
+        <name>host_url</name>
+        <qualifiedname>webob.request.BaseRequest.host_url</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>The URL through the host (no path)
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="427" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="427" bodyend="453"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1acf795353268a4d6eb3dbc8d0d7a6ac48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.application_url</definition>
+        <argsstring>(self)</argsstring>
+        <name>application_url</name>
+        <qualifiedname>webob.request.BaseRequest.application_url</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>The URL including SCRIPT_NAME (no PATH_INFO or query string)
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="455" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="455" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a66306ff21e4db02e9eaa01cb20916682" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.path_url</definition>
+        <argsstring>(self)</argsstring>
+        <name>path_url</name>
+        <qualifiedname>webob.request.BaseRequest.path_url</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>The URL including SCRIPT_NAME and PATH_INFO, but not QUERY_STRING
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="463" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="463" bodyend="469"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a6ea3a9bcd7ef631866a213b88e72ce8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.path</definition>
+        <argsstring>(self)</argsstring>
+        <name>path</name>
+        <qualifiedname>webob.request.BaseRequest.path</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>The path of the request, without host or query string
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="471" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="471" bodyend="478"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1ac1d148bfe367aed4b1048f79ed5377d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.path_qs</definition>
+        <argsstring>(self)</argsstring>
+        <name>path_qs</name>
+        <qualifiedname>webob.request.BaseRequest.path_qs</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>The path of the request, without host but with query string
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="480" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="480" bodyend="489"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1adc7224a416d66c93a8a9d8f2e670fb51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.url</definition>
+        <argsstring>(self)</argsstring>
+        <name>url</name>
+        <qualifiedname>webob.request.BaseRequest.url</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>The full request URL, including QUERY_STRING
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="491" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="491" bodyend="500"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1ad92926498b4ebd7c374905004f6fd555" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.relative_url</definition>
+        <argsstring>(self, other_url, to_application=False)</argsstring>
+        <name>relative_url</name>
+        <qualifiedname>webob.request.BaseRequest.relative_url</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>other_url</type>
+          <defname>other_url</defname>
+        </param>
+        <param>
+          <type>to_application</type>
+          <defname>to_application</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Resolve other_url relative to the request URL.
+
+If ``to_application`` is True, then resolve it relative to the
+URL with only SCRIPT_NAME
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="501" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="501" bodyend="515"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1ad37b3c883d3519bd8a6d58ae645eea1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.path_info_pop</definition>
+        <argsstring>(self, pattern=None)</argsstring>
+        <name>path_info_pop</name>
+        <qualifiedname>webob.request.BaseRequest.path_info_pop</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>pattern</type>
+          <defname>pattern</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>&apos;Pops&apos; off the next segment of PATH_INFO, pushing it onto
+SCRIPT_NAME, and returning the popped segment.  Returns None if
+there is nothing left on PATH_INFO.
+
+Does not return ``&apos;&apos;`` when there&apos;s an empty segment (like
+``/path//path``); these segments are just ignored.
+
+Optional ``pattern`` argument is a regexp to match the return value
+before returning. If there is no match, no changes are made to the
+request and None is returned.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="516" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="516" bodyend="544"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1aab41fb10cce32e575ebc2106ff0d2d25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.path_info_peek</definition>
+        <argsstring>(self)</argsstring>
+        <name>path_info_peek</name>
+        <qualifiedname>webob.request.BaseRequest.path_info_peek</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Returns the next segment on PATH_INFO, or None if there is no
+next segment.  Doesn&apos;t modify the environment.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="545" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="545" bodyend="555"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1ab32d333e127fe1a9cde36d31424d6a04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.is_xhr</definition>
+        <argsstring>(self)</argsstring>
+        <name>is_xhr</name>
+        <qualifiedname>webob.request.BaseRequest.is_xhr</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Is X-Requested-With header present and equal to ``XMLHttpRequest``?
+
+Note: this isn&apos;t set by every XMLHttpRequest request, it is
+only set if you are using a Javascript library that sets it
+(or you set the header yourself manually).  Currently
+Prototype and jQuery are known to set this header.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="639" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="639" bodyend="647"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a194e5eeb324eedbb0373e116ce1114e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.domain</definition>
+        <argsstring>(self)</argsstring>
+        <name>domain</name>
+        <qualifiedname>webob.request.BaseRequest.domain</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim> Returns the domain portion of the host value.  Equivalent to:
+
+.. code-block:: python
+
+   domain = request.host
+   if &apos;:&apos; in domain and domain[-1] != &apos;]&apos;: # Check for ] because of IPv6
+       domain = domain.rsplit(&apos;:&apos;, 1)[0]
+
+This will be equivalent to the domain portion of the ``HTTP_HOST``
+value in the environment if it exists, or the ``SERVER_NAME`` value in
+the environment if it doesn&apos;t.  For example, if the environment
+contains an ``HTTP_HOST`` value of ``foo.example.com:8000``,
+``request.domain`` will return ``foo.example.com``.
+
+Note that this value cannot be *set* on the request.  To set the host
+value use :meth:`webob.request.Request.host` instead.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="662" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="662" bodyend="684"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a8233ac05aba39a704a734556e0779a92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.body</definition>
+        <argsstring>(self)</argsstring>
+        <name>body</name>
+        <qualifiedname>webob.request.BaseRequest.body</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Return the content of the request body.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="686" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="686" bodyend="697"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a25008b69d84813ed8d8825115c98f914" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.body</definition>
+        <argsstring>(self, value)</argsstring>
+        <name>body</name>
+        <qualifiedname>webob.request.BaseRequest.body</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacewebob_1_1request_1adbafe2ffe970e4cf5ad12e2ac95c3ee8" kindref="member">value</ref></type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="699" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="699" bodyend="708"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a8233ac05aba39a704a734556e0779a92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.body</definition>
+        <argsstring>(self)</argsstring>
+        <name>body</name>
+        <qualifiedname>webob.request.BaseRequest.body</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="710" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="710" bodyend="712"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a9f8f370b76c3ab1993d7098cb2ed88f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.POST</definition>
+        <argsstring>(self)</argsstring>
+        <name>POST</name>
+        <qualifiedname>webob.request.BaseRequest.POST</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Return a MultiDict containing all the variables from a form
+request. Returns an empty dict-like object for non-form requests.
+
+Form requests are typically POST requests, however any other
+requests with an appropriate Content-Type are also supported.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="751" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="751" bodyend="799"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a295eea4d757c2e241a182cea60e6c40d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.GET</definition>
+        <argsstring>(self)</argsstring>
+        <name>GET</name>
+        <qualifiedname>webob.request.BaseRequest.GET</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Return a MultiDict containing all the variables from the
+QUERY_STRING.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="801" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="801" bodyend="824"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1ac9d042aafbd24b1545bc3f909a401fff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.params</definition>
+        <argsstring>(self)</argsstring>
+        <name>params</name>
+        <qualifiedname>webob.request.BaseRequest.params</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>A dictionary-like object containing both the parameters from
+the query string and request body.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="834" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="834" bodyend="841"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a7d4fbb66a3b50b674f28fff811984b97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.cookies</definition>
+        <argsstring>(self)</argsstring>
+        <name>cookies</name>
+        <qualifiedname>webob.request.BaseRequest.cookies</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Return a dictionary of cookies as found in the request.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="843" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="843" bodyend="848"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a98b750411440dba7f9df54397fe64903" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.cookies</definition>
+        <argsstring>(self, val)</argsstring>
+        <name>cookies</name>
+        <qualifiedname>webob.request.BaseRequest.cookies</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>val</type>
+          <defname>val</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="850" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="850" bodyend="854"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a0aa54f854b4b668d90d1f4ebeb4833fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.copy</definition>
+        <argsstring>(self)</argsstring>
+        <name>copy</name>
+        <qualifiedname>webob.request.BaseRequest.copy</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Copy the request and environment object.
+
+This only does a shallow copy, except of wsgi.input
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="855" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="855" bodyend="866"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a9619d92140f7cff55b7ab54806e3adf4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.copy_get</definition>
+        <argsstring>(self)</argsstring>
+        <name>copy_get</name>
+        <qualifiedname>webob.request.BaseRequest.copy_get</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Copies the request and environment object, but turning this request
+into a GET along the way.  If this was a POST request (or any other
+verb) then it becomes GET, and the request body is thrown away.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="867" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="867" bodyend="876"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a6cb2fc18a09931389c12d7d2bca8cdc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.is_body_readable</definition>
+        <argsstring>(self)</argsstring>
+        <name>is_body_readable</name>
+        <qualifiedname>webob.request.BaseRequest.is_body_readable</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>webob.is_body_readable is a flag that tells us that we can read the
+input stream even though CONTENT_LENGTH is missing.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="882" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="882" bodyend="908"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1aac2b1a64138a15b51b4e9ff363a47720" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.is_body_readable</definition>
+        <argsstring>(self, flag)</argsstring>
+        <name>is_body_readable</name>
+        <qualifiedname>webob.request.BaseRequest.is_body_readable</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="910" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="910" bodyend="912"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a352703793744492b7af74a0c5f9c9f57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.make_body_seekable</definition>
+        <argsstring>(self)</argsstring>
+        <name>make_body_seekable</name>
+        <qualifiedname>webob.request.BaseRequest.make_body_seekable</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>This forces ``environ[&apos;wsgi.input&apos;]`` to be seekable.
+That means that, the content is copied into a BytesIO or temporary
+file and flagged as seekable, so that it will not be unnecessarily
+copied again.
+
+After calling this method the .body_file is always seeked to the
+start of file and .content_length is not None.
+
+The choice to copy to BytesIO is made from
+``self.request_body_tempfile_limit``
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="913" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="913" bodyend="930"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1aecf628933812602619c761f159019624" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.copy_body</definition>
+        <argsstring>(self)</argsstring>
+        <name>copy_body</name>
+        <qualifiedname>webob.request.BaseRequest.copy_body</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Copies the body, in cases where it might be shared with another request
+object and that is not desired.
+
+This copies the body either into a BytesIO object (through setting
+req.body) or a temporary file.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="931" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="931" bodyend="1013"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a35a04fbb27a8912050674b6301569722" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.make_tempfile</definition>
+        <argsstring>(self)</argsstring>
+        <name>make_tempfile</name>
+        <qualifiedname>webob.request.BaseRequest.make_tempfile</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>    Create a tempfile to store big request body.
+    This API is not stable yet. A &apos;size&apos; argument might be added.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1014" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1014" bodyend="1020"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a5c4324cd77771a2f33f40db97173111f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.remove_conditional_headers</definition>
+        <argsstring>(self, remove_encoding=True, remove_range=True, remove_match=True, remove_modified=True)</argsstring>
+        <name>remove_conditional_headers</name>
+        <qualifiedname>webob.request.BaseRequest.remove_conditional_headers</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>remove_encoding</type>
+          <defname>remove_encoding</defname>
+          <defval>True</defval>
+        </param>
+        <param>
+          <type>remove_range</type>
+          <defname>remove_range</defname>
+          <defval>True</defval>
+        </param>
+        <param>
+          <type>remove_match</type>
+          <defname>remove_match</defname>
+          <defval>True</defval>
+        </param>
+        <param>
+          <type>remove_modified</type>
+          <defname>remove_modified</defname>
+          <defval>True</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Remove headers that make the request conditional.
+
+These headers can cause the response to be 304 Not Modified,
+which in some cases you may not want to be possible.
+
+This does not remove headers like If-Match, which are used for
+conflict detection.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1021" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1025" bodyend="1048"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a15b2566c63b1bf31fd3432ceaa58d842" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.__repr__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__repr__</name>
+        <qualifiedname>webob.request.BaseRequest.__repr__</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1133" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1133" bodyend="1142"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a3e3c13db01f06a63a6e75042fc6aa50e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.as_bytes</definition>
+        <argsstring>(self, skip_body=False)</argsstring>
+        <name>as_bytes</name>
+        <qualifiedname>webob.request.BaseRequest.as_bytes</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>skip_body</type>
+          <defname>skip_body</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>    Return HTTP bytes representing this request.
+    If skip_body is True, exclude the body.
+    If skip_body is an integer larger than one, skip body
+    only if its length is bigger than that number.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1143" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1143" bodyend="1176"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1aa777a413587bb43be2d276db1879e11f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.as_text</definition>
+        <argsstring>(self)</argsstring>
+        <name>as_text</name>
+        <qualifiedname>webob.request.BaseRequest.as_text</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1177" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1177" bodyend="1180"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1af983b2069486722f440712668891730e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.from_bytes</definition>
+        <argsstring>(cls, b)</argsstring>
+        <name>from_bytes</name>
+        <qualifiedname>webob.request.BaseRequest.from_bytes</qualifiedname>
+        <param>
+          <type>cls</type>
+          <defname>cls</defname>
+        </param>
+        <param>
+          <type>b</type>
+          <defname>b</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>    Create a request from HTTP bytes data. If the bytes contain
+    extra data after the request, raise a ValueError.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1184" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1184" bodyend="1194"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1ab9477b6e781fa50f1c878002fabc5d33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.from_text</definition>
+        <argsstring>(cls, s)</argsstring>
+        <name>from_text</name>
+        <qualifiedname>webob.request.BaseRequest.from_text</qualifiedname>
+        <param>
+          <type>cls</type>
+          <defname>cls</defname>
+        </param>
+        <param>
+          <type>s</type>
+          <defname>s</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1196" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1196" bodyend="1199"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a88f248a7b8b6724cf9706ff8ba4de21d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.from_file</definition>
+        <argsstring>(cls, fp)</argsstring>
+        <name>from_file</name>
+        <qualifiedname>webob.request.BaseRequest.from_file</qualifiedname>
+        <param>
+          <type>cls</type>
+          <defname>cls</defname>
+        </param>
+        <param>
+          <type>fp</type>
+          <defname>fp</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Read a request from a file-like object (it must implement
+``.read(size)`` and ``.readline()``).
+
+It will read up to the end of the request, not the end of the
+file (unless the request is a POST or PUT and has no
+Content-Length, in that case, the entire file is read).
+
+This reads the request as represented by ``str(req)``; it may
+not read every valid HTTP request properly.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1201" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1201" bodyend="1255"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1ac484fcb210f37ca634e010800546ae2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.call_application</definition>
+        <argsstring>(self, application, catch_exc_info=False)</argsstring>
+        <name>call_application</name>
+        <qualifiedname>webob.request.BaseRequest.call_application</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>application</type>
+          <defname>application</defname>
+        </param>
+        <param>
+          <type>catch_exc_info</type>
+          <defname>catch_exc_info</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Call the given WSGI application, returning ``(status_string,
+headerlist, app_iter)``
+
+Be sure to call ``app_iter.close()`` if it&apos;s there.
+
+If catch_exc_info is true, then returns ``(status_string,
+headerlist, app_iter, exc_info)``, where the fourth item may
+be None, but won&apos;t be if there was an exception.  If you don&apos;t
+do this and there was an exception, the exception will be
+raised directly.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1256" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1256" bodyend="1290"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a9f6c78cf15dc88a5261e0a6860851ba9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.send</definition>
+        <argsstring>(self, application=None, catch_exc_info=False)</argsstring>
+        <name>send</name>
+        <qualifiedname>webob.request.BaseRequest.send</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>application</type>
+          <defname>application</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>catch_exc_info</type>
+          <defname>catch_exc_info</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Like ``.call_application(application)``, except returns a
+response object with ``.status``, ``.headers``, and ``.body``
+attributes.
+
+This will use ``self.ResponseClass`` to figure out the class
+of the response object to return.
+
+If ``application`` is not given, this will send the request to
+``self.make_default_send_app()``
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1294" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1294" bodyend="1317"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a261164a0d815bc692e979703f3dc9417" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.make_default_send_app</definition>
+        <argsstring>(self)</argsstring>
+        <name>make_default_send_app</name>
+        <qualifiedname>webob.request.BaseRequest.make_default_send_app</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1320" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1320" bodyend="1328"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1adb54576fccfceae11faf1c7a2bb52fc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest.blank</definition>
+        <argsstring>(cls, path, environ=None, base_url=None, headers=None, POST=None, **kw)</argsstring>
+        <name>blank</name>
+        <qualifiedname>webob.request.BaseRequest.blank</qualifiedname>
+        <param>
+          <type>cls</type>
+          <defname>cls</defname>
+        </param>
+        <param>
+          <type><ref refid="classwebob_1_1request_1_1BaseRequest_1a6ea3a9bcd7ef631866a213b88e72ce8d" kindref="member">path</ref></type>
+          <defname>path</defname>
+        </param>
+        <param>
+          <type><ref refid="classwebob_1_1request_1_1BaseRequest_1ab10ba2bfe2591d12602cd7ea35dbf628" kindref="member">environ</ref></type>
+          <defname>environ</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>base_url</type>
+          <defname>base_url</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type><ref refid="classwebob_1_1request_1_1BaseRequest_1aa9764bbaeb8c4b065efda37f13bdc2b2" kindref="member">headers</ref></type>
+          <defname>headers</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type><ref refid="classwebob_1_1request_1_1BaseRequest_1a9f8f370b76c3ab1993d7098cb2ed88f4" kindref="member">POST</ref></type>
+          <defname>POST</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>**</type>
+          <declname>kw</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Create a blank request environ (and Request wrapper) with the
+given path (path should be urlencoded), and any keys from
+environ.
+
+The path will become path_info, with any query string split
+off and used.
+
+All necessary keys will be added to the environ, but the
+values you pass in will take precedence.  If you pass in
+base_url then wsgi.url_scheme, HTTP_HOST, and SCRIPT_NAME will
+be filled in from that value.
+
+Any extra keyword will be passed to ``__init__``.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1330" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1331" bodyend="1383"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a45ae8c491176e5c794226961cb5b8927" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._content_type__get</definition>
+        <argsstring>(self)</argsstring>
+        <name>_content_type__get</name>
+        <qualifiedname>webob.request.BaseRequest._content_type__get</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Return the content type, but leaving off any parameters (like
+charset, but also things like the type in ``application/atom+xml;
+type=entry``)
+
+If you set this property, you can include parameters, or if
+you don&apos;t include any parameters in the value then existing
+parameters will be preserved.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="328" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="328" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a75231bc6233d34b342d64514fd17e058" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._content_type__set</definition>
+        <argsstring>(self, value=None)</argsstring>
+        <name>_content_type__set</name>
+        <qualifiedname>webob.request.BaseRequest._content_type__set</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacewebob_1_1request_1adbafe2ffe970e4cf5ad12e2ac95c3ee8" kindref="member">value</ref></type>
+          <defname>value</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="338" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="338" bodyend="346"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1ab258649ad2ef5f34976bcb28969ea7ae" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._headers__get</definition>
+        <argsstring>(self)</argsstring>
+        <name>_headers__get</name>
+        <qualifiedname>webob.request.BaseRequest._headers__get</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>All the request headers as a case-insensitive dictionary-like
+object.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="354" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="354" bodyend="362"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1af57f639ee1fd20cbcc6efca1a709eb61" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._headers__set</definition>
+        <argsstring>(self, value)</argsstring>
+        <name>_headers__set</name>
+        <qualifiedname>webob.request.BaseRequest._headers__set</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacewebob_1_1request_1adbafe2ffe970e4cf5ad12e2ac95c3ee8" kindref="member">value</ref></type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="363" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="363" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1aad9c2de2609b480a9ab4b483b30b0188" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._urlvars__get</definition>
+        <argsstring>(self)</argsstring>
+        <name>_urlvars__get</name>
+        <qualifiedname>webob.request.BaseRequest._urlvars__get</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Return any *named* variables matched in the URL.
+
+Takes values from ``environ[&apos;wsgiorg.routing_args&apos;]``.
+Systems like ``routes`` set this value.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="556" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="556" bodyend="571"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a3432f0f1988da6d43addf6ae83c9c6a0" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._urlvars__set</definition>
+        <argsstring>(self, value)</argsstring>
+        <name>_urlvars__set</name>
+        <qualifiedname>webob.request.BaseRequest._urlvars__set</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacewebob_1_1request_1adbafe2ffe970e4cf5ad12e2ac95c3ee8" kindref="member">value</ref></type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="572" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="572" bodyend="583"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1ab198e5326ddbf7134df52805285abf5e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._urlvars__del</definition>
+        <argsstring>(self)</argsstring>
+        <name>_urlvars__del</name>
+        <qualifiedname>webob.request.BaseRequest._urlvars__del</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="584" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="584" bodyend="593"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a6d03e4322d1beddd695587486dae6b7d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._urlargs__get</definition>
+        <argsstring>(self)</argsstring>
+        <name>_urlargs__get</name>
+        <qualifiedname>webob.request.BaseRequest._urlargs__get</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Return any *positional* variables matched in the URL.
+
+Takes values from ``environ[&apos;wsgiorg.routing_args&apos;]``.
+Systems like ``routes`` set this value.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="599" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="599" bodyend="612"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a7855eeb0324adb2a8b51144c69405af6" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._urlargs__set</definition>
+        <argsstring>(self, value)</argsstring>
+        <name>_urlargs__set</name>
+        <qualifiedname>webob.request.BaseRequest._urlargs__set</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacewebob_1_1request_1adbafe2ffe970e4cf5ad12e2ac95c3ee8" kindref="member">value</ref></type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="613" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="613" bodyend="624"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a974def3fb427d174c323ba8d4adc4071" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._urlargs__del</definition>
+        <argsstring>(self)</argsstring>
+        <name>_urlargs__del</name>
+        <qualifiedname>webob.request.BaseRequest._urlargs__del</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="625" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="625" bodyend="632"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a4bb78417d7de4a22ed7c9f44b080c083" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._host__get</definition>
+        <argsstring>(self)</argsstring>
+        <name>_host__get</name>
+        <qualifiedname>webob.request.BaseRequest._host__get</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Host name provided in HTTP_HOST, with fall-back to SERVER_NAME</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="648" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="648" bodyend="653"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a820eb628b82d7748c1ef72a56ca683b3" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._host__set</definition>
+        <argsstring>(self, value)</argsstring>
+        <name>_host__set</name>
+        <qualifiedname>webob.request.BaseRequest._host__set</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacewebob_1_1request_1adbafe2ffe970e4cf5ad12e2ac95c3ee8" kindref="member">value</ref></type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="654" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="654" bodyend="655"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a3e79355117e96d1792b280c5e943f218" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._host__del</definition>
+        <argsstring>(self)</argsstring>
+        <name>_host__del</name>
+        <qualifiedname>webob.request.BaseRequest._host__del</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="656" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="656" bodyend="658"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1ac7586e805a4a417cdb5005b63cc6f6ec" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._json_body__get</definition>
+        <argsstring>(self)</argsstring>
+        <name>_json_body__get</name>
+        <qualifiedname>webob.request.BaseRequest._json_body__get</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Access the body of the request as JSON</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="713" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="713" bodyend="716"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1aad1f3f749aee16c33ddeafe6fe6511bb" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._json_body__set</definition>
+        <argsstring>(self, value)</argsstring>
+        <name>_json_body__set</name>
+        <qualifiedname>webob.request.BaseRequest._json_body__set</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacewebob_1_1request_1adbafe2ffe970e4cf5ad12e2ac95c3ee8" kindref="member">value</ref></type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="717" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="717" bodyend="719"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a645e2cffbcad9f657151c34dfceefbb0" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._json_body__del</definition>
+        <argsstring>(self)</argsstring>
+        <name>_json_body__del</name>
+        <qualifiedname>webob.request.BaseRequest._json_body__del</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="720" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="720" bodyend="722"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a986fa4b744c1b6f4cc86052d6d15485b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._text__get</definition>
+        <argsstring>(self)</argsstring>
+        <name>_text__get</name>
+        <qualifiedname>webob.request.BaseRequest._text__get</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get/set the text value of the body
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="725" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="725" bodyend="734"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a2c8c673997acbec25b97a6d8eff677af" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._text__set</definition>
+        <argsstring>(self, value)</argsstring>
+        <name>_text__set</name>
+        <qualifiedname>webob.request.BaseRequest._text__set</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacewebob_1_1request_1adbafe2ffe970e4cf5ad12e2ac95c3ee8" kindref="member">value</ref></type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="735" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="735" bodyend="744"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a4f2fea588bbb227aa1f889b49299f3aa" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._text__del</definition>
+        <argsstring>(self)</argsstring>
+        <name>_text__del</name>
+        <qualifiedname>webob.request.BaseRequest._text__del</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="745" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="745" bodyend="747"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a47c7fac25c29eb7c0f71ca011a429370" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._check_charset</definition>
+        <argsstring>(self)</argsstring>
+        <name>_check_charset</name>
+        <qualifiedname>webob.request.BaseRequest._check_charset</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="825" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="825" bodyend="832"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a287af977f6f363f4779530004bb495a6" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._cache_control__get</definition>
+        <argsstring>(self)</argsstring>
+        <name>_cache_control__get</name>
+        <qualifiedname>webob.request.BaseRequest._cache_control__get</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get/set/modify the Cache-Control header (`HTTP spec section 14.9
+&lt;http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9&gt;`_)
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1059" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1059" bodyend="1074"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1ac86a93458014b0a8ae3a21871d2ed35a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._cache_control__set</definition>
+        <argsstring>(self, value)</argsstring>
+        <name>_cache_control__set</name>
+        <qualifiedname>webob.request.BaseRequest._cache_control__set</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacewebob_1_1request_1adbafe2ffe970e4cf5ad12e2ac95c3ee8" kindref="member">value</ref></type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1075" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1075" bodyend="1087"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1a5b82f4815e1f5b378460d346d3359ea1" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._cache_control__del</definition>
+        <argsstring>(self)</argsstring>
+        <name>_cache_control__del</name>
+        <qualifiedname>webob.request.BaseRequest._cache_control__del</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1088" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1088" bodyend="1094"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1request_1_1BaseRequest_1af03fa3856fe35d6c6fcef5a72fe3b774" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.request.BaseRequest._update_cache_control</definition>
+        <argsstring>(self, prop_dict)</argsstring>
+        <name>_update_cache_control</name>
+        <qualifiedname>webob.request.BaseRequest._update_cache_control</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>prop_dict</type>
+          <defname>prop_dict</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="1095" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="1095" bodyend="1097"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>object</label>
+      </node>
+      <node id="1">
+        <label>webob.request.BaseRequest</label>
+        <link refid="classwebob_1_1request_1_1BaseRequest"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>webob.request.LegacyRequest</label>
+        <link refid="classwebob_1_1request_1_1LegacyRequest"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>webob.request.Request</label>
+        <link refid="classwebob_1_1request_1_1Request"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>webtest.app.TestRequest</label>
+        <link refid="classwebtest_1_1app_1_1TestRequest"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>object</label>
+      </node>
+      <node id="1">
+        <label>webob.request.BaseRequest</label>
+        <link refid="classwebob_1_1request_1_1BaseRequest"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" line="91" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/request.py" bodystart="91" bodyend="1383"/>
+    <listofallmembers>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a57ecca69a6dde865136b72d698ff7f5b" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>__init__</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a15b2566c63b1bf31fd3432ceaa58d842" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>__repr__</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a05759eb5cbefe941bef4f24a65c3e957" prot="private" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>__str__</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a5b82f4815e1f5b378460d346d3359ea1" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_cache_control__del</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a287af977f6f363f4779530004bb495a6" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_cache_control__get</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1ac86a93458014b0a8ae3a21871d2ed35a" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_cache_control__set</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a647086638de783b775762bb716a16747" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_charset</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a47c7fac25c29eb7c0f71ca011a429370" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_check_charset</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a45ae8c491176e5c794226961cb5b8927" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_content_type__get</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a75231bc6233d34b342d64514fd17e058" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_content_type__set</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a2a56ef83460ebd8452941b8ce8486804" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_content_type_raw</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a8e86029c024edc4b3de5a23f863e83a7" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_headers</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1ab258649ad2ef5f34976bcb28969ea7ae" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_headers__get</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1af57f639ee1fd20cbcc6efca1a709eb61" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_headers__set</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a3e79355117e96d1792b280c5e943f218" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_host__del</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a4bb78417d7de4a22ed7c9f44b080c083" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_host__get</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a820eb628b82d7748c1ef72a56ca683b3" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_host__set</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a645e2cffbcad9f657151c34dfceefbb0" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_json_body__del</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1ac7586e805a4a417cdb5005b63cc6f6ec" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_json_body__get</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1aad1f3f749aee16c33ddeafe6fe6511bb" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_json_body__set</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a530f3ba82d090427ba5e83823722310e" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_setattr_stacklevel</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a4f2fea588bbb227aa1f889b49299f3aa" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_text__del</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a986fa4b744c1b6f4cc86052d6d15485b" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_text__get</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a2c8c673997acbec25b97a6d8eff677af" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_text__set</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1af03fa3856fe35d6c6fcef5a72fe3b774" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_update_cache_control</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a974def3fb427d174c323ba8d4adc4071" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_urlargs__del</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a6d03e4322d1beddd695587486dae6b7d" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_urlargs__get</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a7855eeb0324adb2a8b51144c69405af6" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_urlargs__set</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1ab198e5326ddbf7134df52805285abf5e" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_urlvars__del</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1aad9c2de2609b480a9ab4b483b30b0188" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_urlvars__get</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a3432f0f1988da6d43addf6ae83c9c6a0" prot="protected" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>_urlvars__set</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1af79c890891ada3d91e4464270d0f1c89" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>accept</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1aafb5f7c821e9071818d3cd988f01eb60" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>accept_charset</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a767a50bc6d3dff921d48ef00589edbfc" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>accept_encoding</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1af318a3f9ac7861ec5d246dfe9c7dbfbb" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>accept_language</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1acf795353268a4d6eb3dbc8d0d7a6ac48" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>application_url</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a3e3c13db01f06a63a6e75042fc6aa50e" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>as_bytes</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1aa777a413587bb43be2d276db1879e11f" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>as_text</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a2f232042c4f3eaefdc2663b4be32057a" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>authorization</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1adb54576fccfceae11faf1c7a2bb52fc3" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>blank</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a7963236432d09df2733b4ce41f7dbd06" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>body</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a8233ac05aba39a704a734556e0779a92" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>body</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a25008b69d84813ed8d8825115c98f914" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>body</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a8233ac05aba39a704a734556e0779a92" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>body</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a27f7f33dbc790b6d63e1ba009b49527e" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>body_file</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a50f79ecf86e36022cac4b0c7b41faea2" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>body_file</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a27f7f33dbc790b6d63e1ba009b49527e" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>body_file</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a4b1b71ace6b9c133218fdfb9e54e72df" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>body_file_raw</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a9ba7c4e1fc2030a2dc97c069cf250302" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>body_file_seekable</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1ac7d4ba3b7b133471393cea7297756e5a" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>cache_control</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1ac484fcb210f37ca634e010800546ae2b" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>call_application</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a1e9fe10ec6cbae1b45ffee4bce2d733d" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>charset</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a52e4e23ff7b5fb5d2b2550cd7cd59e9b" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>charset</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a980f6b7063da73338d47ac8f6679efe6" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>charset</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a405a0fcaf17e6286783358e4ecb79728" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>client_addr</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a03fb6c18dda1fb0e864ccf18356a5413" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>content_length</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a679593ac6456c96d9b28338e06a8e533" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>content_type</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a7d4fbb66a3b50b674f28fff811984b97" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>cookies</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a98b750411440dba7f9df54397fe64903" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>cookies</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a0aa54f854b4b668d90d1f4ebeb4833fa" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>copy</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1aecf628933812602619c761f159019624" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>copy_body</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a9619d92140f7cff55b7ab54806e3adf4" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>copy_get</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a60fc02a2b576da55763781ea7b543e26" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>date</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a8432b43ded7b226515dd4884a29a37fb" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>decode</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a194e5eeb324eedbb0373e116ce1114e4" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>domain</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1adc2bc9bef1f38b1c37223c0ea5476d1e" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>encget</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a8ba94190c9d8b9ae11ae5d1f6fe40945" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>encset</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1ab10ba2bfe2591d12602cd7ea35dbf628" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>environ</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1af983b2069486722f440712668891730e" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>from_bytes</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a88f248a7b8b6724cf9706ff8ba4de21d" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>from_file</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1ab9477b6e781fa50f1c878002fabc5d33" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>from_text</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a295eea4d757c2e241a182cea60e6c40d" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>GET</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a19979b4abc1ff9a20941e30a632c100b" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>get_response</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1aa9764bbaeb8c4b065efda37f13bdc2b2" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>headers</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a21ca2455689bd30e8e6e4571bf985006" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>host</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a5bcbc4a4fd290e8a693ae1d5995de23c" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>host_port</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a2fd293b88794d72436bc571b39b75ae8" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>host_url</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1ad05a64c5c23f8616970a26583e9bea4b" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>http_version</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a42ff9d89a6b85c20fe9937eeaeda79e0" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>if_match</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a4aaafd82423e2857bcac953d6deff4ec" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>if_modified_since</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1aba34987924ebd28deacdd0716ecd51c5" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>if_none_match</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a7227d77f9a74a2c06166e1c257f78448" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>if_range</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a0980f239bc79c5c0eb74cecc90a514d0" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>if_unmodified_since</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1af361bf5e521585d023d78d6a1efae9dd" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>is_body_readable</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a6cb2fc18a09931389c12d7d2bca8cdc2" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>is_body_readable</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1aac2b1a64138a15b51b4e9ff363a47720" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>is_body_readable</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a749b7e68f1308e2c9c68299103a7f98c" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>is_body_seekable</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1ab32d333e127fe1a9cde36d31424d6a04" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>is_xhr</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1aecc50a9267848b38fec3d56ae4c21fa8" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>json</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a352703793744492b7af74a0c5f9c9f57" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>make_body_seekable</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a261164a0d815bc692e979703f3dc9417" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>make_default_send_app</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a35a04fbb27a8912050674b6301569722" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>make_tempfile</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a4ece56ba096ad28e86e1bebf5e61041b" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>max_forwards</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1aa1a2eaf37eaed1ab35898e61546b2a5a" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>method</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1ac9d042aafbd24b1545bc3f909a401fff" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>params</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a6ea3a9bcd7ef631866a213b88e72ce8d" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>path</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1aea16613f5d1d0a1b521985f1cbe0f63b" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>path_info</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1aab41fb10cce32e575ebc2106ff0d2d25" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>path_info_peek</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1ad37b3c883d3519bd8a6d58ae645eea1d" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>path_info_pop</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1ac1d148bfe367aed4b1048f79ed5377d8" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>path_qs</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a66306ff21e4db02e9eaa01cb20916682" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>path_url</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a9f8f370b76c3ab1993d7098cb2ed88f4" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>POST</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1aa0307ea9d574aa6c390588f7d40d70d6" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>pragma</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a12a5c3e7d0777b01c60547f292d8f2a2" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>query_string</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a7b7a13767ccd711b43daf0481e75b62d" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>range</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a3693a71aed6de6ae771f6f59da3bea67" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>referer</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1ab41ada9eeb150d007b89c2971a55877f" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>referrer</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1ad92926498b4ebd7c374905004f6fd555" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>relative_url</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a8c40feb2272c9f8eae2dddeb148d6390" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>remote_addr</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1afdb015d4813f16876476c5c618fc5da7" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>remote_host</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a6e6c74b8b34030231ba8ae52aa996f84" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>remote_user</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a5c4324cd77771a2f33f40db97173111f" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>remove_conditional_headers</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1afb8b34399b908990b12675497118cf96" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>request_body_tempfile_limit</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1afe46735befe3c6ffd4b758c38bea3bbc" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>ResponseClass</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a8e7fe9780991d7e787d01f897623b8b9" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>scheme</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1aea3541054d25a471132d6097cd05ebfa" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>script_name</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a9f6c78cf15dc88a5261e0a6860851ba9" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>send</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a7173c2459b8c659120df63120d3cd3e7" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>server_name</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a477978c28203d5bc11a07fc555e86a42" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>server_port</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1af72790171a09b97b6b3447b26119b2b9" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>text</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a01251c522d7304a1b14fc49f222e8f8f" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>upath_info</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1adc7224a416d66c93a8a9d8f2e670fb51" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>url</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a35a19e759e5b3dbcc07a23ee796f9cd8" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>url_encoding</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1aef34a9b7fc042ec48bf919253502f5cb" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>urlargs</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1a61a097bf14317eaa7d4da22ca32914a4" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>urlvars</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1ad4e4f404c6ece4e99ff3d1dced22dbcc" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>uscript_name</name></member>
+      <member refid="classwebob_1_1request_1_1BaseRequest_1ae12811f7dd1d26c2125b428286a48bea" prot="public" virt="non-virtual"><scope>webob::request::BaseRequest</scope><name>user_agent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,196 @@
+.TH "jinja2.runtime" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.runtime
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAsyncLoopContext\fP"
+.br
+.ti -1c
+.RI "class \fBBlockReference\fP"
+.br
+.ti -1c
+.RI "class \fBChainableUndefined\fP"
+.br
+.ti -1c
+.RI "class \fBContext\fP"
+.br
+.ti -1c
+.RI "class \fBDebugUndefined\fP"
+.br
+.ti -1c
+.RI "class \fBLoopContext\fP"
+.br
+.ti -1c
+.RI "class \fBLoopRenderFunc\fP"
+.br
+.ti -1c
+.RI "class \fBMacro\fP"
+.br
+.ti -1c
+.RI "class \fBStrictUndefined\fP"
+.br
+.ti -1c
+.RI "class \fBTemplateReference\fP"
+.br
+.ti -1c
+.RI "class \fBUndefined\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBV\fP \fBidentity\fP (\fBV\fP x)"
+.br
+.ti -1c
+.RI "str \fBmarkup_join\fP (t\&.Iterable[t\&.Any] seq)"
+.br
+.ti -1c
+.RI "str \fBstr_join\fP (t\&.Iterable[t\&.Any] seq)"
+.br
+.ti -1c
+.RI "'Context' \fBnew_context\fP ('Environment' environment, t\&.Optional[str] template_name, t\&.Dict[str, t\&.Callable[['Context'], t\&.Iterator[str]]] blocks, t\&.Optional[t\&.Dict[str, t\&.Any]] vars=None, bool shared=False, t\&.Optional[t\&.MutableMapping[str, t\&.Any]] globals=None, t\&.Optional[t\&.Mapping[str, t\&.Any]] locals=None)"
+.br
+.ti -1c
+.RI "\fBF\fP \fB_dict_method_all\fP (\fBF\fP dict_method)"
+.br
+.ti -1c
+.RI "t\&.Type[\fBUndefined\fP] \fBmake_logging_undefined\fP (t\&.Optional['logging\&.Logger'] logger=None, t\&.Type[\fBUndefined\fP] base=\fBUndefined\fP)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBV\fP = t\&.TypeVar('V')"
+.br
+.ti -1c
+.RI "\fBF\fP = t\&.TypeVar('F', bound=t\&.Callable[\&.\&.\&., t\&.Any])"
+.br
+.ti -1c
+.RI "list \fBexported\fP"
+.br
+.ti -1c
+.RI "list \fBasync_exported\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+The runtime functions and state used by compiled templates\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " \fBF\fP jinja2\&.runtime\&._dict_method_all (\fBF\fP dict_method)\fC [protected]\fP"
+
+.SS " \fBV\fP jinja2\&.runtime\&.identity (\fBV\fP x)"
+
+.PP
+.nf
+Returns its argument\&. Useful for certain things in the
+environment\&.
+
+.fi
+.PP
+ 
+.SS " t\&.Type[\fBUndefined\fP] jinja2\&.runtime\&.make_logging_undefined (t\&.Optional['logging\&.Logger']  logger = \fCNone\fP, t\&.Type[\fBUndefined\fP]  base = \fC\fBUndefined\fP\fP)"
+
+.PP
+.nf
+Given a logger object this returns a new undefined class that will
+log certain failures\&.  It will log iterations and printing\&.  If no
+logger is given a default logger is created\&.
+
+Example::
+
+    logger = logging\&.getLogger(__name__)
+    LoggingUndefined = make_logging_undefined(
+        logger=logger,
+        base=Undefined
+    )
+
+\&.\&. versionadded:: 2\&.8
+
+:param logger: the logger to use\&.  If not provided, a default logger
+               is created\&.
+:param base: the base class to add logging functionality to\&.  This
+             defaults to :class:`Undefined`\&.
+
+.fi
+.PP
+ 
+.SS " str jinja2\&.runtime\&.markup_join (t\&.Iterable[t\&.Any] seq)"
+
+.PP
+.nf
+Concatenation that escapes if necessary and converts to string\&.
+.fi
+.PP
+ 
+.SS " 'Context' jinja2\&.runtime\&.new_context ('Environment' environment, t\&.Optional[str] template_name, t\&.Dict[str, t\&.Callable[['Context'], t\&.Iterator[str]]] blocks, t\&.Optional[t\&.Dict[str, t\&.Any]]  vars = \fCNone\fP, bool  shared = \fCFalse\fP, t\&.Optional[t\&.MutableMapping[str, t\&.Any]]  globals = \fCNone\fP, t\&.Optional[t\&.Mapping[str, t\&.Any]]  locals = \fCNone\fP)"
+
+.PP
+.nf
+Internal helper for context creation\&.
+.fi
+.PP
+ 
+.SS " str jinja2\&.runtime\&.str_join (t\&.Iterable[t\&.Any] seq)"
+
+.PP
+.nf
+Simple args to string conversion and concatenation\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "list jinja2\&.runtime\&.async_exported"
+\fBInitial value:\fP.PP
+.nf
+1 =  [
+2     "AsyncLoopContext",
+3     "auto_aiter",
+4     "auto_await",
+5 ]
+.fi
+
+.SS "list jinja2\&.runtime\&.exported"
+\fBInitial value:\fP.PP
+.nf
+1 =  [
+2     "LoopContext",
+3     "TemplateReference",
+4     "Macro",
+5     "Markup",
+6     "TemplateRuntimeError",
+7     "missing",
+8     "escape",
+9     "markup_join",
+10     "str_join",
+11     "identity",
+12     "TemplateNotFound",
+13     "Namespace",
+14     "Undefined",
+15     "internalcode",
+16 ]
+.fi
+
+.SS "jinja2\&.runtime\&.F = t\&.TypeVar('F', bound=t\&.Callable[\&.\&.\&., t\&.Any])"
+
+.SS "jinja2\&.runtime\&.V = t\&.TypeVar('V')"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

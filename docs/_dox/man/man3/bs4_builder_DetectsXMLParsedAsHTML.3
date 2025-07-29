@@ -1,0 +1,175 @@
+.TH "bs4.builder.DetectsXMLParsedAsHTML" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bs4.builder.DetectsXMLParsedAsHTML
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.PP
+Inherited by \fBbs4\&.builder\&._htmlparser\&.BeautifulSoupHTMLParser\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBwarn_if_markup_looks_like_xml\fP (cls, Optional[_RawMarkup] markup, int stacklevel=3)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "Pattern \fBLOOKS_LIKE_HTML\fP = re\&.compile('<[^ +]html', re\&.I)"
+.br
+.ti -1c
+.RI "Pattern \fBLOOKS_LIKE_HTML_B\fP = re\&.compile(b'<[^ +]html', re\&.I)"
+.br
+.ti -1c
+.RI "str \fBXML_PREFIX\fP = '<?xml'"
+.br
+.ti -1c
+.RI "bytes \fBXML_PREFIX_B\fP = b'<?xml'"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB_warn\fP (cls, int stacklevel=5)"
+.br
+.ti -1c
+.RI "None \fB_initialize_xml_detector\fP (self)"
+.br
+.ti -1c
+.RI "None \fB_document_might_be_xml\fP (self, str processing_instruction)"
+.br
+.ti -1c
+.RI "None \fB_root_tag_encountered\fP (self, str name)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_first_processing_instruction\fP"
+.br
+.ti -1c
+.RI "\fB_root_tag_name\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "Optional \fB_first_processing_instruction\fP [str]"
+.br
+.ti -1c
+.RI "Optional \fB_root_tag_name\fP [str]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A mixin class for any class (a TreeBuilder, or some class used by a
+TreeBuilder) that's in a position to detect whether an XML
+document is being incorrectly parsed as HTML, and issue an
+appropriate warning\&.
+
+This requires being able to observe an incoming processing
+instruction that might be an XML declaration, and also able to
+observe tags as they're opened\&. If you can't do that for a given
+`TreeBuilder`, there's a less reliable implementation based on
+examining the raw markup\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " None bs4\&.builder\&.DetectsXMLParsedAsHTML\&._document_might_be_xml ( self, str processing_instruction)\fC [protected]\fP"
+
+.PP
+.nf
+Call this method when encountering an XML declaration, or a
+'processing instruction' that might be an XML declaration\&.
+
+This helps Beautiful Soup detect potential issues later, if
+the XML document turns out to be a non-XHTML document that's
+being parsed as XML\&.
+
+.fi
+.PP
+ 
+.SS " None bs4\&.builder\&.DetectsXMLParsedAsHTML\&._initialize_xml_detector ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Call this method before parsing a document\&.
+.fi
+.PP
+ 
+.SS " None bs4\&.builder\&.DetectsXMLParsedAsHTML\&._root_tag_encountered ( self, str name)\fC [protected]\fP"
+
+.PP
+.nf
+Call this when you encounter the document's root tag\&.
+
+This is where we actually check whether an XML document is
+being incorrectly parsed as HTML, and issue the warning\&.
+
+.fi
+.PP
+ 
+.SS " None bs4\&.builder\&.DetectsXMLParsedAsHTML\&._warn ( cls, int  stacklevel = \fC5\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Issue a warning about XML being parsed as HTML\&.
+.fi
+.PP
+ 
+.SS " bool bs4\&.builder\&.DetectsXMLParsedAsHTML\&.warn_if_markup_looks_like_xml ( cls, Optional[_RawMarkup] markup, int  stacklevel = \fC3\fP)"
+
+.PP
+.nf
+Perform a check on some markup to see if it looks like XML
+that's not XHTML\&. If so, issue a warning\&.
+
+This is much less reliable than doing the check while parsing,
+but some of the tree builders can't do that\&.
+
+:param stacklevel: The stacklevel of the code calling this\\
+ function\&.
+
+:return: True if the markup looks like non-XHTML XML, False
+ otherwise\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "Optional bs4\&.builder\&.DetectsXMLParsedAsHTML\&._first_processing_instruction [str]\fC [static]\fP, \fC [protected]\fP"
+
+.SS "bs4\&.builder\&.DetectsXMLParsedAsHTML\&._first_processing_instruction\fC [protected]\fP"
+
+.SS "Optional bs4\&.builder\&.DetectsXMLParsedAsHTML\&._root_tag_name [str]\fC [static]\fP, \fC [protected]\fP"
+
+.SS "bs4\&.builder\&.DetectsXMLParsedAsHTML\&._root_tag_name\fC [protected]\fP"
+
+.SS "Pattern bs4\&.builder\&.DetectsXMLParsedAsHTML\&.LOOKS_LIKE_HTML = re\&.compile('<[^ +]html', re\&.I)\fC [static]\fP"
+
+.SS "Pattern bs4\&.builder\&.DetectsXMLParsedAsHTML\&.LOOKS_LIKE_HTML_B = re\&.compile(b'<[^ +]html', re\&.I)\fC [static]\fP"
+
+.SS "str bs4\&.builder\&.DetectsXMLParsedAsHTML\&.XML_PREFIX = '<?xml'\fC [static]\fP"
+
+.SS "bytes bs4\&.builder\&.DetectsXMLParsedAsHTML\&.XML_PREFIX_B = b'<?xml'\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

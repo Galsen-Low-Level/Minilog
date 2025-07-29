@@ -1,0 +1,104 @@
+.TH "webob.acceptparse.AcceptLanguage" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webob.acceptparse.AcceptLanguage
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.PP
+Inherited by \fBwebob\&.acceptparse\&.AcceptLanguageValidHeader\fP, and \fBwebob\&.acceptparse\&._AcceptLanguageInvalidOrNoHeader\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBparse\fP (cls, value)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBlang_range_re\fP"
+.br
+.ti -1c
+.RI "\fBlang_range_n_weight_re\fP = \fB_item_n_weight_re\fP(item_re=\fBlang_range_re\fP)"
+.br
+.ti -1c
+.RI "\fBlang_range_n_weight_compiled_re\fP = re\&.compile(\fBlang_range_n_weight_re\fP)"
+.br
+.ti -1c
+.RI "\fBaccept_language_compiled_re\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_python_value_to_header_str\fP (cls, value)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Represent an ``Accept-Language`` header\&.
+
+Base class for :class:`AcceptLanguageValidHeader`,
+:class:`AcceptLanguageNoHeader`, and :class:`AcceptLanguageInvalidHeader`\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "webob\&.acceptparse\&.AcceptLanguage\&._python_value_to_header_str ( cls,  value)\fC [protected]\fP"
+
+.SS "webob\&.acceptparse\&.AcceptLanguage\&.parse ( cls,  value)"
+
+.PP
+.nf
+Parse an ``Accept-Language`` header\&.
+
+:param value: (``str``) header value
+:return: If `value` is a valid ``Accept-Language`` header, returns an
+         iterator of (language range, quality value) tuples, as parsed
+         from the header from left to right\&.
+:raises ValueError: if `value` is an invalid header
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "webob\&.acceptparse\&.AcceptLanguage\&.accept_language_compiled_re\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  _list_1_or_more__compiled_re(
+        element_re=lang_range_n_weight_re,
+    )
+.fi
+
+.SS "webob\&.acceptparse\&.AcceptLanguage\&.lang_range_n_weight_compiled_re = re\&.compile(\fBlang_range_n_weight_re\fP)\fC [static]\fP"
+
+.SS "webob\&.acceptparse\&.AcceptLanguage\&.lang_range_n_weight_re = \fB_item_n_weight_re\fP(item_re=\fBlang_range_re\fP)\fC [static]\fP"
+
+.SS "tuple webob\&.acceptparse\&.AcceptLanguage\&.lang_range_re\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  (
+        r'\\*|'
+        '(?:'
+        '[A\-Za\-z]{1,8}'
+        '(?:\-[A\-Za\-z0\-9]{1,8})*'
+        ')'
+    )
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

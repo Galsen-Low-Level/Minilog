@@ -1,0 +1,124 @@
+.TH "waitress.task.ThreadedTaskDispatcher" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+waitress.task.ThreadedTaskDispatcher
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "\fBstart_new_thread\fP (self, target, thread_no)"
+.br
+.ti -1c
+.RI "\fBhandler_thread\fP (self, thread_no)"
+.br
+.ti -1c
+.RI "\fBset_thread_count\fP (self, count)"
+.br
+.ti -1c
+.RI "\fBadd_task\fP (self, task)"
+.br
+.ti -1c
+.RI "\fBshutdown\fP (self, cancel_pending=True, timeout=5)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBthreads\fP"
+.br
+.ti -1c
+.RI "\fBqueue\fP"
+.br
+.ti -1c
+.RI "\fBlock\fP"
+.br
+.ti -1c
+.RI "\fBqueue_cv\fP"
+.br
+.ti -1c
+.RI "\fBthread_exit_cv\fP"
+.br
+.ti -1c
+.RI "\fBstop_count\fP"
+.br
+.ti -1c
+.RI "\fBhandler_thread\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBstop_count\fP = 0"
+.br
+.ti -1c
+.RI "int \fBactive_count\fP = 0"
+.br
+.ti -1c
+.RI "\fBlogger\fP = logger"
+.br
+.ti -1c
+.RI "\fBqueue_logger\fP = queue_logger"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A Task Dispatcher that creates a thread for each task\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "waitress\&.task\&.ThreadedTaskDispatcher\&.__init__ ( self)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "waitress\&.task\&.ThreadedTaskDispatcher\&.add_task ( self,  task)"
+
+.SS "waitress\&.task\&.ThreadedTaskDispatcher\&.handler_thread ( self,  thread_no)"
+
+.SS "waitress\&.task\&.ThreadedTaskDispatcher\&.set_thread_count ( self,  count)"
+
+.SS "waitress\&.task\&.ThreadedTaskDispatcher\&.shutdown ( self,  cancel_pending = \fCTrue\fP,  timeout = \fC5\fP)"
+
+.SS "waitress\&.task\&.ThreadedTaskDispatcher\&.start_new_thread ( self,  target,  thread_no)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "int waitress\&.task\&.ThreadedTaskDispatcher\&.active_count = 0\fC [static]\fP"
+
+.SS "waitress\&.task\&.ThreadedTaskDispatcher\&.handler_thread"
+
+.SS "waitress\&.task\&.ThreadedTaskDispatcher\&.lock"
+
+.SS "waitress\&.task\&.ThreadedTaskDispatcher\&.logger = logger\fC [static]\fP"
+
+.SS "waitress\&.task\&.ThreadedTaskDispatcher\&.queue"
+
+.SS "waitress\&.task\&.ThreadedTaskDispatcher\&.queue_cv"
+
+.SS "waitress\&.task\&.ThreadedTaskDispatcher\&.queue_logger = queue_logger\fC [static]\fP"
+
+.SS "int waitress\&.task\&.ThreadedTaskDispatcher\&.stop_count = 0\fC [static]\fP"
+
+.SS "waitress\&.task\&.ThreadedTaskDispatcher\&.stop_count"
+
+.SS "waitress\&.task\&.ThreadedTaskDispatcher\&.thread_exit_cv"
+
+.SS "waitress\&.task\&.ThreadedTaskDispatcher\&.threads"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,164 @@
+.TH "babel.messages.jslexer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+babel.messages.jslexer
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBToken\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "list[tuple[str|None, re\&.Pattern[str]]] \fBget_rules\fP (bool jsx, bool dotted, bool template_string)"
+.br
+.ti -1c
+.RI "bool \fBindicates_division\fP (\fBToken\fP token)"
+.br
+.ti -1c
+.RI "str \fBunquote_string\fP (str string)"
+.br
+.ti -1c
+.RI "Generator[\fBToken\fP, None, None] \fBtokenize\fP (str source, bool jsx=True, bool dotted=True, bool template_string=True, int lineno=1)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "list \fBoperators\fP"
+.br
+.ti -1c
+.RI "dict \fBescapes\fP = {'b': '\\b', 'f': '\\f', 'n': '\\n', 'r': '\\r', 't': '\\t'}"
+.br
+.ti -1c
+.RI "\fBname_re\fP = re\&.compile(r'[\\w$_][\\w\\d$_]*', re\&.UNICODE)"
+.br
+.ti -1c
+.RI "\fBdotted_name_re\fP = re\&.compile(r'[\\w$_][\\w\\d$_\&.]*[\\w\\d$_\&.]', re\&.UNICODE)"
+.br
+.ti -1c
+.RI "\fBdivision_re\fP = re\&.compile(r'/=?')"
+.br
+.ti -1c
+.RI "\fBregex_re\fP = re\&.compile(r'/(?:[^/\\\\]*(?:\\\\\&.[^/\\\\]*)*)/[a\-zA\-Z]*', re\&.DOTALL)"
+.br
+.ti -1c
+.RI "\fBline_re\fP = re\&.compile(r'(\\r\\n|\\n|\\r)')"
+.br
+.ti -1c
+.RI "\fBline_join_re\fP = re\&.compile(r'\\\\' + line_re\&.pattern)"
+.br
+.ti -1c
+.RI "\fBuni_escape_re\fP = re\&.compile(r'[a\-fA\-F0\-9]{1,4}')"
+.br
+.ti -1c
+.RI "\fBhex_escape_re\fP = re\&.compile(r'[a\-fA\-F0\-9]{1,2}')"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+    babel\&.messages\&.jslexer
+    ~~~~~~~~~~~~~~~~~~~~~~
+
+    A simple JavaScript 1\&.5 lexer which is used for the JavaScript
+    extractor\&.
+
+    :copyright: (c) 2013-2025 by the Babel Team\&.
+    :license: BSD, see LICENSE for more details\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " list[tuple[str | None, re\&.Pattern[str]]] babel\&.messages\&.jslexer\&.get_rules (bool jsx, bool dotted, bool template_string)"
+
+.PP
+.nf
+Get a tokenization rule list given the passed syntax options\&.
+
+Internal to this module\&.
+
+.fi
+.PP
+ 
+.SS " bool babel\&.messages\&.jslexer\&.indicates_division (\fBToken\fP token)"
+
+.PP
+.nf
+A helper function that helps the tokenizer to decide if the current
+token may be followed by a division operator\&.
+
+.fi
+.PP
+ 
+.SS " Generator[\fBToken\fP, None, None] babel\&.messages\&.jslexer\&.tokenize (str source, bool  jsx = \fCTrue\fP, bool  dotted = \fCTrue\fP, bool  template_string = \fCTrue\fP, int  lineno = \fC1\fP)"
+
+.PP
+.nf
+Tokenize JavaScript/JSX source\&.  Returns a generator of tokens\&.
+
+:param source: The JavaScript source to tokenize\&.
+:param jsx: Enable (limited) JSX parsing\&.
+:param dotted: Read dotted names as single name token\&.
+:param template_string: Support ES6 template strings
+:param lineno: starting line number (optional)
+
+.fi
+.PP
+ 
+.SS " str babel\&.messages\&.jslexer\&.unquote_string (str string)"
+
+.PP
+.nf
+Unquote a string with JavaScript rules\&.  The string has to start with
+string delimiters (``'``, ``'`` or the back-tick/grave accent (for template strings)\&.)
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "babel\&.messages\&.jslexer\&.division_re = re\&.compile(r'/=?')"
+
+.SS "babel\&.messages\&.jslexer\&.dotted_name_re = re\&.compile(r'[\\w$_][\\w\\d$_\&.]*[\\w\\d$_\&.]', re\&.UNICODE)"
+
+.SS "dict babel\&.messages\&.jslexer\&.escapes = {'b': '\\b', 'f': '\\f', 'n': '\\n', 'r': '\\r', 't': '\\t'}"
+
+.SS "babel\&.messages\&.jslexer\&.hex_escape_re = re\&.compile(r'[a\-fA\-F0\-9]{1,2}')"
+
+.SS "babel\&.messages\&.jslexer\&.line_join_re = re\&.compile(r'\\\\' + line_re\&.pattern)"
+
+.SS "babel\&.messages\&.jslexer\&.line_re = re\&.compile(r'(\\r\\n|\\n|\\r)')"
+
+.SS "babel\&.messages\&.jslexer\&.name_re = re\&.compile(r'[\\w$_][\\w\\d$_]*', re\&.UNICODE)"
+
+.SS "list babel\&.messages\&.jslexer\&.operators"
+\fBInitial value:\fP.PP
+.nf
+1 =  sorted([
+2     '+', '\-', '*', '%', '!=', '==', '<', '>', '<=', '>=', '=',
+3     '+=', '\-=', '*=', '%=', '<<', '>>', '>>>', '<<=', '>>=',
+4     '>>>=', '&', '&=', '|', '|=', '&&', '||', '^', '^=', '(', ')',
+5     '[', ']', '{', '}', '!', '\-\-', '++', '~', ',', ';', '\&.', ':',
+6 ], key=len, reverse=True)
+.fi
+
+.SS "babel\&.messages\&.jslexer\&.regex_re = re\&.compile(r'/(?:[^/\\\\]*(?:\\\\\&.[^/\\\\]*)*)/[a\-zA\-Z]*', re\&.DOTALL)"
+
+.SS "babel\&.messages\&.jslexer\&.uni_escape_re = re\&.compile(r'[a\-fA\-F0\-9]{1,4}')"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

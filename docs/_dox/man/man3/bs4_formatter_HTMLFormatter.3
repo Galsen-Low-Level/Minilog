@@ -1,0 +1,256 @@
+.TH "bs4.formatter.HTMLFormatter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bs4.formatter.HTMLFormatter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBbs4\&.formatter\&.Formatter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, Optional[_EntitySubstitutionFunction] \fBentity_substitution\fP=None, str \fBvoid_element_close_prefix\fP='/', Optional[Set[str]] \fBcdata_containing_tags\fP=None, bool \fBempty_attributes_are_booleans\fP=False, Union[int, str] \fBindent\fP=1)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBbs4\&.formatter\&.Formatter\fP
+.in +1c
+.ti -1c
+.RI "str \fBsubstitute\fP (self, str ns)"
+.br
+.ti -1c
+.RI "str \fBattribute_value\fP (self, str value)"
+.br
+.ti -1c
+.RI "Iterable[Tuple[str, Optional[_AttributeValue]]] \fBattributes\fP (self, \fBbs4\&.element\&.Tag\fP tag)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBbs4\&.dammit\&.EntitySubstitution\fP
+.in +1c
+.ti -1c
+.RI "str \fBquoted_attribute_value\fP (cls, str value)"
+.br
+.ti -1c
+.RI "str \fBsubstitute_xml\fP (cls, str value, bool make_quoted_attribute=False)"
+.br
+.ti -1c
+.RI "str \fBsubstitute_xml_containing_entities\fP (cls, str value, bool make_quoted_attribute=False)"
+.br
+.ti -1c
+.RI "str \fBsubstitute_html\fP (cls, str s)"
+.br
+.ti -1c
+.RI "str \fBsubstitute_html5\fP (cls, str s)"
+.br
+.ti -1c
+.RI "str \fBsubstitute_html5_raw\fP (cls, str s)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBHTML\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBbs4\&.formatter\&.Formatter\fP
+.in +1c
+.ti -1c
+.RI "\fBlanguage\fP"
+.br
+.ti -1c
+.RI "\fBentity_substitution\fP"
+.br
+.ti -1c
+.RI "\fBvoid_element_close_prefix\fP"
+.br
+.ti -1c
+.RI "\fBcdata_containing_tags\fP"
+.br
+.ti -1c
+.RI "\fBempty_attributes_are_booleans\fP"
+.br
+.ti -1c
+.RI "\fBindent\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBbs4\&.dammit\&.EntitySubstitution\fP
+.in +1c
+.ti -1c
+.RI "\fBCHARACTER_TO_HTML_ENTITY\fP"
+.br
+.ti -1c
+.RI "\fBHTML_ENTITY_TO_CHARACTER\fP"
+.br
+.ti -1c
+.RI "\fBCHARACTER_TO_HTML_ENTITY_RE\fP"
+.br
+.ti -1c
+.RI "\fBCHARACTER_TO_HTML_ENTITY_WITH_AMPERSAND_RE\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBREGISTRY\fP = {}"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBbs4\&.formatter\&.Formatter\fP
+.in +1c
+.ti -1c
+.RI "str \fBHTML\fP = 'html'"
+.br
+.ti -1c
+.RI "str \fBXML\fP = 'xml'"
+.br
+.ti -1c
+.RI "Dict \fBHTML_DEFAULTS\fP"
+.br
+.ti -1c
+.RI "Optional \fBlanguage\fP [str]"
+.br
+.ti -1c
+.RI "Optional \fBentity_substitution\fP [_EntitySubstitutionFunction]"
+.br
+.ti -1c
+.RI "str \fBvoid_element_close_prefix\fP"
+.br
+.ti -1c
+.RI "Set \fBcdata_containing_tags\fP [str]"
+.br
+.ti -1c
+.RI "str \fBindent\fP"
+.br
+.ti -1c
+.RI "bool \fBempty_attributes_are_booleans\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBbs4\&.dammit\&.EntitySubstitution\fP
+.in +1c
+.ti -1c
+.RI "Dict \fBHTML_ENTITY_TO_CHARACTER\fP [str, str]"
+.br
+.ti -1c
+.RI "Dict \fBCHARACTER_TO_HTML_ENTITY\fP [str, str]"
+.br
+.ti -1c
+.RI "Pattern \fBCHARACTER_TO_HTML_ENTITY_RE\fP [str]"
+.br
+.ti -1c
+.RI "Pattern \fBCHARACTER_TO_HTML_ENTITY_WITH_AMPERSAND_RE\fP [str]"
+.br
+.ti -1c
+.RI "dict \fBCHARACTER_TO_XML_ENTITY\fP"
+.br
+.ti -1c
+.RI "\fBANY_ENTITY_RE\fP = re\&.compile('&(#\\\\d+|#x[0\-9a\-fA\-F]+|\\\\w+);', re\&.I)"
+.br
+.ti -1c
+.RI "Pattern \fBBARE_AMPERSAND_OR_BRACKET\fP"
+.br
+.ti -1c
+.RI "Pattern \fBAMPERSAND_OR_BRACKET\fP = re\&.compile('([<>&])')"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Member Functions inherited from \fBbs4\&.formatter\&.Formatter\fP
+.in +1c
+.ti -1c
+.RI "Set[str] \fB_default\fP (self, str \fBlanguage\fP, Optional[Set[str]] value, str kwarg)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBbs4\&.dammit\&.EntitySubstitution\fP
+.in +1c
+.ti -1c
+.RI "None \fB_populate_class_variables\fP (cls)"
+.br
+.ti -1c
+.RI "str \fB_substitute_html_entity\fP (cls, re\&.Match matchobj)"
+.br
+.ti -1c
+.RI "str \fB_substitute_xml_entity\fP (cls, re\&.Match matchobj)"
+.br
+.ti -1c
+.RI "str \fB_escape_entity_name\fP (cls, re\&.Match matchobj)"
+.br
+.ti -1c
+.RI "str \fB_escape_unrecognized_entity_name\fP (cls, re\&.Match matchobj)"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBbs4\&.dammit\&.EntitySubstitution\fP
+.in +1c
+.ti -1c
+.RI "\fB_substitute_html_entity\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A generic Formatter for HTML\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "bs4\&.formatter\&.HTMLFormatter\&.__init__ ( self, Optional[_EntitySubstitutionFunction]  language = \fCNone\fP, str  entity_substitution = \fC'/'\fP, Optional[Set[str]]  void_element_close_prefix = \fCNone\fP, bool  cdata_containing_tags = \fCFalse\fP, Union[int,str]  empty_attributes_are_booleans = \fC1\fP)"
+
+.PP
+.nf
+Constructor\&.
+
+:param language: This should be `Formatter\&.XML` if you are formatting
+   XML markup and `Formatter\&.HTML` if you are formatting HTML markup\&.
+
+:param entity_substitution: A function to call to replace special
+   characters with XML/HTML entities\&. For examples, see
+   bs4\&.dammit\&.EntitySubstitution\&.substitute_html and substitute_xml\&.
+:param void_element_close_prefix: By default, void elements
+   are represented as <tag/> (XML rules) rather than <tag>
+   (HTML rules)\&. To get <tag>, pass in the empty string\&.
+:param cdata_containing_tags: The set of tags that are defined
+   as containing CDATA in this dialect\&. For example, in HTML,
+   <script> and <style> tags are defined as containing CDATA,
+   and their contents should not be formatted\&.
+:param empty_attributes_are_booleans: If this is set to true,
+  then attributes whose values are sent to the empty string
+  will be treated as `HTML boolean
+  attributes<https://dev\&.w3\&.org/html5/spec-LC/common-microsyntaxes\&.html#boolean-attributes>`_\&. (Attributes
+  whose value is None are always rendered this way\&.)
+:param indent: If indent is a non-negative integer or string,
+    then the contents of elements will be indented
+    appropriately when pretty-printing\&. An indent level of 0,
+    negative, or '' will only insert newlines\&. Using a
+    positive integer indent indents that many spaces per
+    level\&. If indent is a string (such as '\\t'), that string
+    is used to indent each level\&. The default behavior is to
+    indent one space per level\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBbs4\&.formatter\&.Formatter\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bs4\&.formatter\&.HTMLFormatter\&.HTML"
+
+.SS "dict bs4\&.formatter\&.HTMLFormatter\&.REGISTRY = {}\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

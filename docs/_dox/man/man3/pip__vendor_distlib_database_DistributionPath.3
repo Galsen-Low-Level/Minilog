@@ -1,0 +1,266 @@
+.TH "pip._vendor.distlib.database.DistributionPath" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.distlib.database.DistributionPath
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBpath\fP=None, include_egg=False)"
+.br
+.ti -1c
+.RI "\fBclear_cache\fP (self)"
+.br
+.ti -1c
+.RI "\fBdistinfo_dirname\fP (cls, name, version)"
+.br
+.ti -1c
+.RI "\fBget_distributions\fP (self)"
+.br
+.ti -1c
+.RI "\fBget_distribution\fP (self, name)"
+.br
+.ti -1c
+.RI "\fBprovides_distribution\fP (self, name, version=None)"
+.br
+.ti -1c
+.RI "\fBget_file_path\fP (self, name, relative_path)"
+.br
+.ti -1c
+.RI "\fBget_exported_entries\fP (self, category, name=None)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBpath\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_get_cache_enabled\fP (self)"
+.br
+.ti -1c
+.RI "\fB_set_cache_enabled\fP (self, value)"
+.br
+.ti -1c
+.RI "\fB_yield_distributions\fP (self)"
+.br
+.ti -1c
+.RI "\fB_generate_cache\fP (self)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_include_dist\fP"
+.br
+.ti -1c
+.RI "\fB_include_egg\fP"
+.br
+.ti -1c
+.RI "\fB_cache\fP"
+.br
+.ti -1c
+.RI "\fB_cache_egg\fP"
+.br
+.ti -1c
+.RI "\fB_cache_enabled\fP"
+.br
+.ti -1c
+.RI "\fB_scheme\fP"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBcache_enabled\fP = property(\fB_get_cache_enabled\fP, \fB_set_cache_enabled\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Represents a set of distributions installed on a path (typically sys\&.path)\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.database\&.DistributionPath\&.__init__ ( self,  path = \fCNone\fP,  include_egg = \fCFalse\fP)"
+
+.PP
+.nf
+Create an instance from a path, optionally including legacy (distutils/
+setuptools/distribute) distributions\&.
+:param path: The path to use, as a list of directories\&. If not specified,
+             sys\&.path is used\&.
+:param include_egg: If True, this instance will look for and return legacy
+                    distributions as well as those based on PEP 376\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.database\&.DistributionPath\&._generate_cache ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Scan the path for distributions and populate the cache with
+those that are found\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.database\&.DistributionPath\&._get_cache_enabled ( self)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.DistributionPath\&._set_cache_enabled ( self,  value)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.DistributionPath\&._yield_distributions ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Yield \&.dist-info and/or \&.egg(-info) distributions\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.database\&.DistributionPath\&.clear_cache ( self)"
+
+.PP
+.nf
+Clears the internal cache\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.database\&.DistributionPath\&.distinfo_dirname ( cls,  name,  version)"
+
+.PP
+.nf
+The *name* and *version* parameters are converted into their
+filename-escaped form, i\&.e\&. any ``'-'`` characters are replaced
+with ``'_'`` other than the one in ``'dist-info'`` and the one
+separating the name from the version number\&.
+
+:parameter name: is converted to a standard distribution name by replacing
+                 any runs of non- alphanumeric characters with a single
+                 ``'-'``\&.
+:type name: string
+:parameter version: is converted to a standard version string\&. Spaces
+                    become dots, and all other non-alphanumeric characters
+                    (except dots) become dashes, with runs of multiple
+                    dashes condensed to a single dash\&.
+:type version: string
+:returns: directory name
+:rtype: string
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.database\&.DistributionPath\&.get_distribution ( self,  name)"
+
+.PP
+.nf
+Looks for a named distribution on the path\&.
+
+This function only returns the first result found, as no more than one
+value is expected\&. If nothing is found, ``None`` is returned\&.
+
+:rtype: :class:`InstalledDistribution`, :class:`EggInfoDistribution`
+        or ``None``
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.database\&.DistributionPath\&.get_distributions ( self)"
+
+.PP
+.nf
+Provides an iterator that looks for distributions and returns
+:class:`InstalledDistribution` or
+:class:`EggInfoDistribution` instances for each one of them\&.
+
+:rtype: iterator of :class:`InstalledDistribution` and
+        :class:`EggInfoDistribution` instances
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.database\&.DistributionPath\&.get_exported_entries ( self,  category,  name = \fCNone\fP)"
+
+.PP
+.nf
+Return all of the exported entries in a particular category\&.
+
+:param category: The category to search for entries\&.
+:param name: If specified, only entries with that name are returned\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.database\&.DistributionPath\&.get_file_path ( self,  name,  relative_path)"
+
+.PP
+.nf
+Return the path to a resource file\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.database\&.DistributionPath\&.provides_distribution ( self,  name,  version = \fCNone\fP)"
+
+.PP
+.nf
+Iterates over all distributions to find which distributions provide *name*\&.
+If a *version* is provided, it will be used to filter the results\&.
+
+This function only returns the first result found, since no more than
+one values are expected\&. If the directory is not found, returns ``None``\&.
+
+:parameter version: a version specifier that indicates the version
+                    required, conforming to the format in ``PEP-345``
+
+:type name: string
+:type version: string
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.database\&.DistributionPath\&._cache\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.DistributionPath\&._cache_egg\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.DistributionPath\&._cache_enabled\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.DistributionPath\&._include_dist\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.DistributionPath\&._include_egg\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.DistributionPath\&._scheme\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.database\&.DistributionPath\&.path"
+
+.SH "Property Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.database\&.DistributionPath\&.cache_enabled = property(\fB_get_cache_enabled\fP, \fB_set_cache_enabled\fP)\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,185 @@
+.TH "pip._vendor.urllib3.contrib.securetransport.SecureTransportContext" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.urllib3.contrib.securetransport.SecureTransportContext
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, protocol)"
+.br
+.ti -1c
+.RI "\fBcheck_hostname\fP (self)"
+.br
+.ti -1c
+.RI "\fBcheck_hostname\fP (self, value)"
+.br
+.ti -1c
+.RI "\fBoptions\fP (self)"
+.br
+.ti -1c
+.RI "\fBoptions\fP (self, value)"
+.br
+.ti -1c
+.RI "\fBverify_mode\fP (self)"
+.br
+.ti -1c
+.RI "\fBverify_mode\fP (self, value)"
+.br
+.ti -1c
+.RI "\fBset_default_verify_paths\fP (self)"
+.br
+.ti -1c
+.RI "\fBload_default_certs\fP (self)"
+.br
+.ti -1c
+.RI "\fBset_ciphers\fP (self, ciphers)"
+.br
+.ti -1c
+.RI "\fBload_verify_locations\fP (self, cafile=None, capath=None, cadata=None)"
+.br
+.ti -1c
+.RI "\fBload_cert_chain\fP (self, certfile, keyfile=None, password=None)"
+.br
+.ti -1c
+.RI "\fBset_alpn_protocols\fP (self, protocols)"
+.br
+.ti -1c
+.RI "\fBwrap_socket\fP (self, sock, server_side=False, do_handshake_on_connect=True, suppress_ragged_eofs=True, server_hostname=None)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_min_version\fP"
+.br
+.ti -1c
+.RI "\fB_max_version\fP"
+.br
+.ti -1c
+.RI "\fB_options\fP"
+.br
+.ti -1c
+.RI "\fB_verify\fP"
+.br
+.ti -1c
+.RI "\fB_trust_bundle\fP"
+.br
+.ti -1c
+.RI "\fB_client_cert\fP"
+.br
+.ti -1c
+.RI "\fB_client_key\fP"
+.br
+.ti -1c
+.RI "\fB_client_key_passphrase\fP"
+.br
+.ti -1c
+.RI "\fB_alpn_protocols\fP"
+.br
+.ti -1c
+.RI "\fB_client_cert_passphrase\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+I am a wrapper class for the SecureTransport library, to translate the
+interface of the standard library ``SSLContext`` object to calls into
+SecureTransport\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&.__init__ ( self,  protocol)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&.check_hostname ( self)"
+
+.PP
+.nf
+SecureTransport cannot have its hostname checking disabled\&. For more,
+see the comment on getpeercert() in this file\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&.check_hostname ( self,  value)"
+
+.PP
+.nf
+SecureTransport cannot have its hostname checking disabled\&. For more,
+see the comment on getpeercert() in this file\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&.load_cert_chain ( self,  certfile,  keyfile = \fCNone\fP,  password = \fCNone\fP)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&.load_default_certs ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&.load_verify_locations ( self,  cafile = \fCNone\fP,  capath = \fCNone\fP,  cadata = \fCNone\fP)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&.options ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&.options ( self,  value)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&.set_alpn_protocols ( self,  protocols)"
+
+.PP
+.nf
+Sets the ALPN protocols that will later be set on the context\&.
+
+Raises a NotImplementedError if ALPN is not supported\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&.set_ciphers ( self,  ciphers)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&.set_default_verify_paths ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&.verify_mode ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&.verify_mode ( self,  value)"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&.wrap_socket ( self,  sock,  server_side = \fCFalse\fP,  do_handshake_on_connect = \fCTrue\fP,  suppress_ragged_eofs = \fCTrue\fP,  server_hostname = \fCNone\fP)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&._alpn_protocols\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&._client_cert\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&._client_cert_passphrase\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&._client_key\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&._client_key_passphrase\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&._max_version\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&._min_version\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&._options\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&._trust_bundle\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.contrib\&.securetransport\&.SecureTransportContext\&._verify\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

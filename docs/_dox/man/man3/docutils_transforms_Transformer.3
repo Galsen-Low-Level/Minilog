@@ -1,0 +1,196 @@
+.TH "docutils.transforms.Transformer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.transforms.Transformer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.TransformSpec\fP\&.
+.PP
+Inherited by \fBsphinx\&.transforms\&.SphinxTransformer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdocument\fP)"
+.br
+.ti -1c
+.RI "\fBadd_transform\fP (self, transform_class, priority=None, **kwargs)"
+.br
+.ti -1c
+.RI "\fBadd_transforms\fP (self, transform_list)"
+.br
+.ti -1c
+.RI "\fBadd_pending\fP (self, pending, priority=None)"
+.br
+.ti -1c
+.RI "\fBget_priority_string\fP (self, priority)"
+.br
+.ti -1c
+.RI "\fBpopulate_from_components\fP (self, \fBcomponents\fP)"
+.br
+.ti -1c
+.RI "\fBapply_transforms\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "\fBget_transforms\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBtransforms\fP"
+.br
+.ti -1c
+.RI "\fBunknown_reference_resolvers\fP"
+.br
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBapplied\fP"
+.br
+.ti -1c
+.RI "\fBsorted\fP"
+.br
+.ti -1c
+.RI "\fBcomponents\fP"
+.br
+.ti -1c
+.RI "\fBserialno\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_transforms\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBdefault_transforms\fP = ()"
+.br
+.ti -1c
+.RI "tuple \fBunknown_reference_resolvers\fP = ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Store 'transforms' and apply them to the document tree\&.
+
+Collect lists of `Transform` instances and 'unknown_reference_resolvers'
+from Docutils components (`TransformSpec` instances)\&.
+Apply collected 'transforms' to the document tree\&.
+
+Also keeps track of components by component type name\&.
+
+https://docutils\&.sourceforge\&.io/docs/peps/pep-0258\&.html#transformer
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.transforms\&.Transformer\&.__init__ ( self,  document)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.transforms\&.Transformer\&.add_pending ( self,  pending,  priority = \fCNone\fP)"
+
+.PP
+.nf
+Store a transform with an associated `pending` node\&.
+.fi
+.PP
+ 
+.SS "docutils\&.transforms\&.Transformer\&.add_transform ( self,  transform_class,  priority = \fCNone\fP, ** kwargs)"
+
+.PP
+.nf
+Store a single transform\&.  Use `priority` to override the default\&.
+`kwargs` is a dictionary whose contents are passed as keyword
+arguments to the `apply` method of the transform\&.  This can be used to
+pass application-specific data to the transform instance\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.transforms\&.Transformer\&.add_transforms ( self,  transform_list)"
+
+.PP
+.nf
+Store multiple transforms, with default priorities\&.
+.fi
+.PP
+ 
+.SS "docutils\&.transforms\&.Transformer\&.apply_transforms ( self)"
+
+.PP
+.nf
+Apply all of the stored transforms, in priority order\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.transforms\&.SphinxTransformer\fP\&.
+.SS "docutils\&.transforms\&.Transformer\&.get_priority_string ( self,  priority)"
+
+.PP
+.nf
+Return a string, `priority` combined with `self\&.serialno`\&.
+
+This ensures FIFO order on transforms with identical priority\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.transforms\&.Transformer\&.populate_from_components ( self,  components)"
+
+.PP
+.nf
+Store each component's default transforms and reference resolvers
+
+Transforms are stored with default priorities for later sorting\&.
+'Unknown reference resolvers' are sorted and stored\&.
+Components that don't inherit from `TransformSpec` are ignored\&.
+
+Also, store components by type name in a mapping for later lookup\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.transforms\&.Transformer\&.applied"
+
+.SS "docutils\&.transforms\&.Transformer\&.components"
+
+.SS "docutils\&.transforms\&.Transformer\&.document"
+
+.SS "docutils\&.transforms\&.Transformer\&.serialno"
+
+.SS "docutils\&.transforms\&.Transformer\&.sorted"
+
+.SS "docutils\&.transforms\&.Transformer\&.transforms"
+
+.SS "docutils\&.transforms\&.Transformer\&.unknown_reference_resolvers"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

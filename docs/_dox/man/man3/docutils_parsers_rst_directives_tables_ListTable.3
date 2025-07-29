@@ -1,0 +1,238 @@
+.TH "docutils.parsers.rst.directives.tables.ListTable" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.parsers.rst.directives.tables.ListTable
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.parsers\&.rst\&.directives\&.tables\&.Table\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBrun\fP (self)"
+.br
+.ti -1c
+.RI "\fBcheck_list_content\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBbuild_table_from_list\fP (self, table_data, col_widths, header_rows, stub_columns)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.parsers\&.rst\&.directives\&.tables\&.Table\fP
+.in +1c
+.ti -1c
+.RI "\fBmake_title\fP (self)"
+.br
+.ti -1c
+.RI "\fBcheck_table_dimensions\fP (self, rows, header_rows, stub_columns)"
+.br
+.ti -1c
+.RI "\fBset_table_width\fP (self, table_node)"
+.br
+.ti -1c
+.RI "\fBwidths\fP (self)"
+.br
+.ti -1c
+.RI "\fBget_column_widths\fP (self, n_cols)"
+.br
+.ti -1c
+.RI "\fBextend_short_rows_with_empty_cells\fP (self, columns, parts)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.parsers\&.rst\&.Directive\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBname\fP, \fBarguments\fP, \fBoptions\fP, \fBcontent\fP, \fBlineno\fP, \fBcontent_offset\fP, \fBblock_text\fP, \fBstate\fP, \fBstate_machine\fP)"
+.br
+.ti -1c
+.RI "\fBdirective_error\fP (self, level, message)"
+.br
+.ti -1c
+.RI "\fBdebug\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBinfo\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBwarning\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBerror\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBsevere\fP (self, message)"
+.br
+.ti -1c
+.RI "\fBassert_has_content\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd_name\fP (self, node)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBblock_text\fP"
+.br
+.ti -1c
+.RI "\fBcontent\fP"
+.br
+.ti -1c
+.RI "\fBcontent_offset\fP"
+.br
+.ti -1c
+.RI "\fBwidths\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.parsers\&.rst\&.directives\&.tables\&.Table\fP
+.in +1c
+.ti -1c
+.RI "\fBlineno\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBblock_text\fP"
+.br
+.ti -1c
+.RI "\fBwidths\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.parsers\&.rst\&.Directive\fP
+.in +1c
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBarguments\fP"
+.br
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBcontent\fP"
+.br
+.ti -1c
+.RI "\fBlineno\fP"
+.br
+.ti -1c
+.RI "\fBcontent_offset\fP"
+.br
+.ti -1c
+.RI "\fBblock_text\fP"
+.br
+.ti -1c
+.RI "\fBstate\fP"
+.br
+.ti -1c
+.RI "\fBstate_machine\fP"
+.br
+.ti -1c
+.RI "\fBreporter\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBoption_spec\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.parsers\&.rst\&.directives\&.tables\&.Table\fP
+.in +1c
+.ti -1c
+.RI "int \fBoptional_arguments\fP = 1"
+.br
+.ti -1c
+.RI "bool \fBfinal_argument_whitespace\fP = True"
+.br
+.ti -1c
+.RI "dict \fBoption_spec\fP"
+.br
+.ti -1c
+.RI "bool \fBhas_content\fP = True"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.parsers\&.rst\&.Directive\fP
+.in +1c
+.ti -1c
+.RI "int \fBrequired_arguments\fP = 0"
+.br
+.ti -1c
+.RI "int \fBoptional_arguments\fP = 0"
+.br
+.ti -1c
+.RI "bool \fBfinal_argument_whitespace\fP = False"
+.br
+.ti -1c
+.RI "\fBoption_spec\fP = None"
+.br
+.ti -1c
+.RI "bool \fBhas_content\fP = False"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Implement tables whose data is encoded as a uniform two-level bullet list\&.
+For further ideas, see
+https://docutils\&.sourceforge\&.io/docs/dev/rst/alternatives\&.html#list-driven-tables
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.parsers\&.rst\&.directives\&.tables\&.ListTable\&.build_table_from_list ( self,  table_data,  col_widths,  header_rows,  stub_columns)"
+
+.SS "docutils\&.parsers\&.rst\&.directives\&.tables\&.ListTable\&.check_list_content ( self,  node)"
+
+.SS "docutils\&.parsers\&.rst\&.directives\&.tables\&.ListTable\&.run ( self)"
+
+.PP
+Reimplemented from \fBdocutils\&.parsers\&.rst\&.Directive\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.parsers\&.rst\&.directives\&.tables\&.ListTable\&.block_text"
+
+.SS "docutils\&.parsers\&.rst\&.directives\&.tables\&.ListTable\&.content"
+
+.SS "docutils\&.parsers\&.rst\&.directives\&.tables\&.ListTable\&.content_offset"
+
+.SS "docutils\&.parsers\&.rst\&.directives\&.tables\&.ListTable\&.name"
+
+.SS "dict docutils\&.parsers\&.rst\&.directives\&.tables\&.ListTable\&.option_spec\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {'header\-rows': directives\&.nonnegative_int,
+                   'stub\-columns': directives\&.nonnegative_int,
+                   'width': directives\&.length_or_percentage_or_unitless,
+                   'widths': directives\&.value_or(('auto', ),
+                                                 directives\&.positive_int_list),
+                   'class': directives\&.class_option,
+                   'name': directives\&.unchanged,
+                   'align': align}
+.fi
+
+.SS "docutils\&.parsers\&.rst\&.directives\&.tables\&.ListTable\&.widths"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

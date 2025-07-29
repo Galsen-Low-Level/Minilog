@@ -1,0 +1,195 @@
+.TH "docutils.writers.html4css1.SimpleListChecker" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.writers.html4css1.SimpleListChecker
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.writers\&._html_base\&.SimpleListChecker\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvisit_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_paragraph\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_definition_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_docinfo\fP (self, node)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.writers\&._html_base\&.SimpleListChecker\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBpass_node\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBignore_node\fP (self, node)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.nodes\&.GenericNodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_departure\fP (self, node)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdocument\fP)"
+.br
+.ti -1c
+.RI "\fBdispatch_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdispatch_departure\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBunknown_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBunknown_departure\fP (self, node)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBoptional\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.writers\&._html_base\&.SimpleListChecker\fP
+.in +1c
+.ti -1c
+.RI "\fBvisit_Text\fP = \fBignore_node\fP"
+.br
+.ti -1c
+.RI "\fBvisit_bullet_list\fP = \fBpass_node\fP"
+.br
+.ti -1c
+.RI "\fBvisit_enumerated_list\fP = \fBpass_node\fP"
+.br
+.ti -1c
+.RI "\fBvisit_author\fP = \fBignore_node\fP"
+.br
+.ti -1c
+.RI "\fBvisit_authors\fP = \fBvisit_list_item\fP"
+.br
+.ti -1c
+.RI "\fBvisit_address\fP = \fBvisit_list_item\fP"
+.br
+.ti -1c
+.RI "\fBvisit_contact\fP = \fBpass_node\fP"
+.br
+.ti -1c
+.RI "\fBvisit_copyright\fP = \fBignore_node\fP"
+.br
+.ti -1c
+.RI "\fBvisit_date\fP = \fBignore_node\fP"
+.br
+.ti -1c
+.RI "\fBvisit_organization\fP = \fBignore_node\fP"
+.br
+.ti -1c
+.RI "\fBvisit_status\fP = \fBignore_node\fP"
+.br
+.ti -1c
+.RI "\fBvisit_version\fP = \fBvisit_list_item\fP"
+.br
+.ti -1c
+.RI "\fBvisit_definition_list_item\fP = \fBpass_node\fP"
+.br
+.ti -1c
+.RI "\fBvisit_term\fP = \fBignore_node\fP"
+.br
+.ti -1c
+.RI "\fBvisit_classifier\fP = \fBpass_node\fP"
+.br
+.ti -1c
+.RI "\fBvisit_definition\fP = \fBvisit_list_item\fP"
+.br
+.ti -1c
+.RI "\fBvisit_field_list\fP = \fBpass_node\fP"
+.br
+.ti -1c
+.RI "\fBvisit_field\fP = \fBpass_node\fP"
+.br
+.ti -1c
+.RI "\fBvisit_field_body\fP = \fBvisit_list_item\fP"
+.br
+.ti -1c
+.RI "\fBvisit_field_name\fP = \fBignore_node\fP"
+.br
+.ti -1c
+.RI "\fBvisit_comment\fP = \fBignore_node\fP"
+.br
+.ti -1c
+.RI "\fBvisit_substitution_definition\fP = \fBignore_node\fP"
+.br
+.ti -1c
+.RI "\fBvisit_target\fP = \fBignore_node\fP"
+.br
+.ti -1c
+.RI "\fBvisit_pending\fP = \fBignore_node\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBoptional\fP = ('\fBmeta\fP',)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Raise `nodes\&.NodeFound` if non-simple list item is encountered\&.
+
+Here 'simple' means a list item containing nothing other than a single
+paragraph, a simple list, or a paragraph followed by a simple list\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.writers\&.html4css1\&.SimpleListChecker\&.visit_definition_list ( self,  node)"
+
+.PP
+Reimplemented from \fBdocutils\&.writers\&._html_base\&.SimpleListChecker\fP\&.
+.SS "docutils\&.writers\&.html4css1\&.SimpleListChecker\&.visit_docinfo ( self,  node)"
+
+.PP
+Reimplemented from \fBdocutils\&.writers\&._html_base\&.SimpleListChecker\fP\&.
+.SS "docutils\&.writers\&.html4css1\&.SimpleListChecker\&.visit_list_item ( self,  node)"
+
+.PP
+Reimplemented from \fBdocutils\&.writers\&._html_base\&.SimpleListChecker\fP\&.
+.SS "docutils\&.writers\&.html4css1\&.SimpleListChecker\&.visit_paragraph ( self,  node)"
+
+.PP
+Reimplemented from \fBdocutils\&.writers\&._html_base\&.SimpleListChecker\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

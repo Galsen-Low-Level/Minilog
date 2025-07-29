@@ -1,0 +1,489 @@
+.TH "jinja2.parser.Parser" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.parser.Parser
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBsphinx\&.util\&.tags\&.BooleanParser\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, 'Environment' \fBenvironment\fP, str source, t\&.Optional[str] \fBname\fP=None, t\&.Optional[str] \fBfilename\fP=None, t\&.Optional[str] state=None)"
+.br
+.ti -1c
+.RI "'te\&.NoReturn' \fBfail\fP (self, str msg, t\&.Optional[int] lineno=None, t\&.Type[\fBTemplateSyntaxError\fP] exc=\fBTemplateSyntaxError\fP)"
+.br
+.ti -1c
+.RI "'te\&.NoReturn' \fBfail_unknown_tag\fP (self, str \fBname\fP, t\&.Optional[int] lineno=None)"
+.br
+.ti -1c
+.RI "'te\&.NoReturn' \fBfail_eof\fP (self, t\&.Optional[t\&.Tuple[str,\&.\&.\&.]] end_tokens=None, t\&.Optional[int] lineno=None)"
+.br
+.ti -1c
+.RI "bool \fBis_tuple_end\fP (self, t\&.Optional[t\&.Tuple[str,\&.\&.\&.]] extra_end_rules=None)"
+.br
+.ti -1c
+.RI "\fBnodes\&.InternalName\fP \fBfree_identifier\fP (self, t\&.Optional[int] lineno=None)"
+.br
+.ti -1c
+.RI "t\&.Union[\fBnodes\&.Node\fP, t\&.List[\fBnodes\&.Node\fP]] \fBparse_statement\fP (self)"
+.br
+.ti -1c
+.RI "t\&.List[\fBnodes\&.Node\fP] \fBparse_statements\fP (self, t\&.Tuple[str,\&.\&.\&.] end_tokens, bool drop_needle=False)"
+.br
+.ti -1c
+.RI "t\&.Union[\fBnodes\&.Assign\fP, \fBnodes\&.AssignBlock\fP] \fBparse_set\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.For\fP \fBparse_for\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.If\fP \fBparse_if\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.With\fP \fBparse_with\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Scope\fP \fBparse_autoescape\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Block\fP \fBparse_block\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Extends\fP \fBparse_extends\fP (self)"
+.br
+.ti -1c
+.RI "\fB_ImportInclude\fP \fBparse_import_context\fP (self, \fB_ImportInclude\fP node, bool default)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Include\fP \fBparse_include\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Import\fP \fBparse_import\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.FromImport\fP \fBparse_from\fP (self)"
+.br
+.ti -1c
+.RI "None \fBparse_signature\fP (self, \fB_MacroCall\fP node)"
+.br
+.ti -1c
+.RI "\fBnodes\&.CallBlock\fP \fBparse_call_block\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.FilterBlock\fP \fBparse_filter_block\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Macro\fP \fBparse_macro\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Output\fP \fBparse_print\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Name\fP \fBparse_assign_target\fP (self, bool with_tuple=\&.\&.\&., 'te\&.Literal[True]' name_only=\&.\&.\&.)"
+.br
+.ti -1c
+.RI "t\&.Union[\fBnodes\&.NSRef\fP, \fBnodes\&.Name\fP, \fBnodes\&.Tuple\fP] \fBparse_assign_target\fP (self, bool with_tuple=True, bool name_only=False, t\&.Optional[t\&.Tuple[str,\&.\&.\&.]] extra_end_rules=None, bool with_namespace=False)"
+.br
+.ti -1c
+.RI "t\&.Union[\fBnodes\&.NSRef\fP, \fBnodes\&.Name\fP, \fBnodes\&.Tuple\fP] \fBparse_assign_target\fP (self, bool with_tuple=True, bool name_only=False, t\&.Optional[t\&.Tuple[str,\&.\&.\&.]] extra_end_rules=None, bool with_namespace=False)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Expr\fP \fBparse_expression\fP (self, bool with_condexpr=True)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Expr\fP \fBparse_condexpr\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Expr\fP \fBparse_or\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Expr\fP \fBparse_and\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Expr\fP \fBparse_not\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Expr\fP \fBparse_compare\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Expr\fP \fBparse_math1\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Expr\fP \fBparse_concat\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Expr\fP \fBparse_math2\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Expr\fP \fBparse_pow\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Expr\fP \fBparse_unary\fP (self, bool with_filter=True)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Expr\fP \fBparse_primary\fP (self, bool with_namespace=False)"
+.br
+.ti -1c
+.RI "t\&.Union[\fBnodes\&.Tuple\fP, \fBnodes\&.Expr\fP] \fBparse_tuple\fP (self, bool simplified=False, bool with_condexpr=True, t\&.Optional[t\&.Tuple[str,\&.\&.\&.]] extra_end_rules=None, bool explicit_parentheses=False, bool with_namespace=False)"
+.br
+.ti -1c
+.RI "\fBnodes\&.List\fP \fBparse_list\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Dict\fP \fBparse_dict\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Expr\fP \fBparse_postfix\fP (self, \fBnodes\&.Expr\fP node)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Expr\fP \fBparse_filter_expr\fP (self, \fBnodes\&.Expr\fP node)"
+.br
+.ti -1c
+.RI "t\&.Union[\fBnodes\&.Getattr\fP, \fBnodes\&.Getitem\fP] \fBparse_subscript\fP (self, \fBnodes\&.Expr\fP node)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Expr\fP \fBparse_subscribed\fP (self)"
+.br
+.ti -1c
+.RI "t\&.Tuple[ t\&.List[\fBnodes\&.Expr\fP], t\&.List[\fBnodes\&.Keyword\fP], t\&.Optional[\fBnodes\&.Expr\fP], t\&.Optional[\fBnodes\&.Expr\fP],] \fBparse_call_args\fP (self)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Call\fP \fBparse_call\fP (self, \fBnodes\&.Expr\fP node)"
+.br
+.ti -1c
+.RI "t\&.Optional[\fBnodes\&.Expr\fP] \fBparse_filter\fP (self, t\&.Optional[\fBnodes\&.Expr\fP] node, bool start_inline=False)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Expr\fP \fBparse_test\fP (self, \fBnodes\&.Expr\fP node)"
+.br
+.ti -1c
+.RI "t\&.List[\fBnodes\&.Node\fP] \fBsubparse\fP (self, t\&.Optional[t\&.Tuple[str,\&.\&.\&.]] end_tokens=None)"
+.br
+.ti -1c
+.RI "\fBnodes\&.Template\fP \fBparse\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBenvironment\fP"
+.br
+.ti -1c
+.RI "\fBstream\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBfilename\fP"
+.br
+.ti -1c
+.RI "\fBclosed\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "'te\&.NoReturn' \fB_fail_ut_eof\fP (self, t\&.Optional[str] \fBname\fP, t\&.List[t\&.Tuple[str,\&.\&.\&.]] end_token_stack, t\&.Optional[int] lineno)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_last_identifier\fP"
+.br
+.ti -1c
+.RI "\fB_end_token_stack\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This is the central parsing class Jinja uses\&.  It's passed to
+extensions and can be used to parse expressions or statements\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None jinja2\&.parser\&.Parser\&.__init__ ( self, 'Environment' environment, str source, t\&.Optional[str]  name = \fCNone\fP, t\&.Optional[str]  filename = \fCNone\fP, t\&.Optional[str]  state = \fCNone\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " 'te\&.NoReturn' jinja2\&.parser\&.Parser\&._fail_ut_eof ( self, t\&.Optional[str] name, t\&.List[t\&.Tuple[str, \&.\&.\&.]] end_token_stack, t\&.Optional[int] lineno)\fC [protected]\fP"
+
+.SS " 'te\&.NoReturn' jinja2\&.parser\&.Parser\&.fail ( self, str msg, t\&.Optional[int]  lineno = \fCNone\fP, t\&.Type[\fBTemplateSyntaxError\fP]  exc = \fC\fBTemplateSyntaxError\fP\fP)"
+
+.PP
+.nf
+Convenience method that raises `exc` with the message, passed
+line number or last line number as well as the current name and
+filename\&.
+
+.fi
+.PP
+ 
+.SS " 'te\&.NoReturn' jinja2\&.parser\&.Parser\&.fail_eof ( self, t\&.Optional[t\&.Tuple[str, \&.\&.\&.]]  end_tokens = \fCNone\fP, t\&.Optional[int]  lineno = \fCNone\fP)"
+
+.PP
+.nf
+Like fail_unknown_tag but for end of template situations\&.
+.fi
+.PP
+ 
+.SS " 'te\&.NoReturn' jinja2\&.parser\&.Parser\&.fail_unknown_tag ( self, str name, t\&.Optional[int]  lineno = \fCNone\fP)"
+
+.PP
+.nf
+Called if the parser encounters an unknown tag\&.  Tries to fail
+with a human readable error message that could help to identify
+the problem\&.
+
+.fi
+.PP
+ 
+.SS " \fBnodes\&.InternalName\fP jinja2\&.parser\&.Parser\&.free_identifier ( self, t\&.Optional[int]  lineno = \fCNone\fP)"
+
+.PP
+.nf
+Return a new free identifier as :class:`~jinja2\&.nodes\&.InternalName`\&.
+.fi
+.PP
+ 
+.SS " bool jinja2\&.parser\&.Parser\&.is_tuple_end ( self, t\&.Optional[t\&.Tuple[str, \&.\&.\&.]]  extra_end_rules = \fCNone\fP)"
+
+.PP
+.nf
+Are we at the end of a tuple?
+.fi
+.PP
+ 
+.SS " \fBnodes\&.Template\fP jinja2\&.parser\&.Parser\&.parse ( self)"
+
+.PP
+.nf
+Parse the whole template into a `Template` node\&.
+.fi
+.PP
+ 
+.SS " \fBnodes\&.Expr\fP jinja2\&.parser\&.Parser\&.parse_and ( self)"
+
+.SS " \fBnodes\&.Name\fP jinja2\&.parser\&.Parser\&.parse_assign_target ( self, bool  with_tuple = \fC\&.\&.\&.\fP, 'te\&.Literal[True]'  name_only = \fC\&.\&.\&.\fP)"
+
+.SS " t\&.Union[\fBnodes\&.NSRef\fP, \fBnodes\&.Name\fP, \fBnodes\&.Tuple\fP] jinja2\&.parser\&.Parser\&.parse_assign_target ( self, bool  with_tuple = \fCTrue\fP, bool  name_only = \fCFalse\fP, t\&.Optional[t\&.Tuple[str, \&.\&.\&.]]  extra_end_rules = \fCNone\fP, bool  with_namespace = \fCFalse\fP)"
+
+.SS " t\&.Union[\fBnodes\&.NSRef\fP, \fBnodes\&.Name\fP, \fBnodes\&.Tuple\fP] jinja2\&.parser\&.Parser\&.parse_assign_target ( self, bool  with_tuple = \fCTrue\fP, bool  name_only = \fCFalse\fP, t\&.Optional[t\&.Tuple[str, \&.\&.\&.]]  extra_end_rules = \fCNone\fP, bool  with_namespace = \fCFalse\fP)"
+
+.PP
+.nf
+Parse an assignment target\&.  As Jinja allows assignments to
+tuples, this function can parse all allowed assignment targets\&.  Per
+default assignments to tuples are parsed, that can be disable however
+by setting `with_tuple` to `False`\&.  If only assignments to names are
+wanted `name_only` can be set to `True`\&.  The `extra_end_rules`
+parameter is forwarded to the tuple parsing function\&.  If
+`with_namespace` is enabled, a namespace assignment may be parsed\&.
+
+.fi
+.PP
+ 
+.SS " \fBnodes\&.Scope\fP jinja2\&.parser\&.Parser\&.parse_autoescape ( self)"
+
+.SS " \fBnodes\&.Block\fP jinja2\&.parser\&.Parser\&.parse_block ( self)"
+
+.SS " \fBnodes\&.Call\fP jinja2\&.parser\&.Parser\&.parse_call ( self, \fBnodes\&.Expr\fP node)"
+
+.SS " t\&.Tuple[
+        t\&.List[\fBnodes\&.Expr\fP],
+        t\&.List[\fBnodes\&.Keyword\fP],
+        t\&.Optional[\fBnodes\&.Expr\fP],
+        t\&.Optional[\fBnodes\&.Expr\fP],
+    ] jinja2\&.parser\&.Parser\&.parse_call_args ( self)"
+
+.SS " \fBnodes\&.CallBlock\fP jinja2\&.parser\&.Parser\&.parse_call_block ( self)"
+
+.SS " \fBnodes\&.Expr\fP jinja2\&.parser\&.Parser\&.parse_compare ( self)"
+
+.PP
+Reimplemented in \fBsphinx\&.util\&.tags\&.BooleanParser\fP\&.
+.SS " \fBnodes\&.Expr\fP jinja2\&.parser\&.Parser\&.parse_concat ( self)"
+
+.SS " \fBnodes\&.Expr\fP jinja2\&.parser\&.Parser\&.parse_condexpr ( self)"
+
+.SS " \fBnodes\&.Dict\fP jinja2\&.parser\&.Parser\&.parse_dict ( self)"
+
+.SS " \fBnodes\&.Expr\fP jinja2\&.parser\&.Parser\&.parse_expression ( self, bool  with_condexpr = \fCTrue\fP)"
+
+.PP
+.nf
+Parse an expression\&.  Per default all expressions are parsed, if
+the optional `with_condexpr` parameter is set to `False` conditional
+expressions are not parsed\&.
+
+.fi
+.PP
+ 
+.SS " \fBnodes\&.Extends\fP jinja2\&.parser\&.Parser\&.parse_extends ( self)"
+
+.SS " t\&.Optional[\fBnodes\&.Expr\fP] jinja2\&.parser\&.Parser\&.parse_filter ( self, t\&.Optional[\fBnodes\&.Expr\fP] node, bool  start_inline = \fCFalse\fP)"
+
+.SS " \fBnodes\&.FilterBlock\fP jinja2\&.parser\&.Parser\&.parse_filter_block ( self)"
+
+.SS " \fBnodes\&.Expr\fP jinja2\&.parser\&.Parser\&.parse_filter_expr ( self, \fBnodes\&.Expr\fP node)"
+
+.SS " \fBnodes\&.For\fP jinja2\&.parser\&.Parser\&.parse_for ( self)"
+
+.PP
+.nf
+Parse a for loop\&.
+.fi
+.PP
+ 
+.SS " \fBnodes\&.FromImport\fP jinja2\&.parser\&.Parser\&.parse_from ( self)"
+
+.SS " \fBnodes\&.If\fP jinja2\&.parser\&.Parser\&.parse_if ( self)"
+
+.PP
+.nf
+Parse an if construct\&.
+.fi
+.PP
+ 
+.SS " \fBnodes\&.Import\fP jinja2\&.parser\&.Parser\&.parse_import ( self)"
+
+.SS " \fB_ImportInclude\fP jinja2\&.parser\&.Parser\&.parse_import_context ( self, \fB_ImportInclude\fP node, bool
+     default)"
+
+.SS " \fBnodes\&.Include\fP jinja2\&.parser\&.Parser\&.parse_include ( self)"
+
+.SS " \fBnodes\&.List\fP jinja2\&.parser\&.Parser\&.parse_list ( self)"
+
+.SS " \fBnodes\&.Macro\fP jinja2\&.parser\&.Parser\&.parse_macro ( self)"
+
+.SS " \fBnodes\&.Expr\fP jinja2\&.parser\&.Parser\&.parse_math1 ( self)"
+
+.SS " \fBnodes\&.Expr\fP jinja2\&.parser\&.Parser\&.parse_math2 ( self)"
+
+.SS " \fBnodes\&.Expr\fP jinja2\&.parser\&.Parser\&.parse_not ( self)"
+
+.SS " \fBnodes\&.Expr\fP jinja2\&.parser\&.Parser\&.parse_or ( self)"
+
+.SS " \fBnodes\&.Expr\fP jinja2\&.parser\&.Parser\&.parse_postfix ( self, \fBnodes\&.Expr\fP node)"
+
+.SS " \fBnodes\&.Expr\fP jinja2\&.parser\&.Parser\&.parse_pow ( self)"
+
+.SS " \fBnodes\&.Expr\fP jinja2\&.parser\&.Parser\&.parse_primary ( self, bool  with_namespace = \fCFalse\fP)"
+
+.PP
+.nf
+Parse a name or literal value\&. If ``with_namespace`` is enabled, also
+parse namespace attr refs, for use in assignments\&.
+.fi
+.PP
+ 
+.SS " \fBnodes\&.Output\fP jinja2\&.parser\&.Parser\&.parse_print ( self)"
+
+.SS " t\&.Union[\fBnodes\&.Assign\fP, \fBnodes\&.AssignBlock\fP] jinja2\&.parser\&.Parser\&.parse_set ( self)"
+
+.PP
+.nf
+Parse an assign statement\&.
+.fi
+.PP
+ 
+.SS " None jinja2\&.parser\&.Parser\&.parse_signature ( self, \fB_MacroCall\fP node)"
+
+.SS " t\&.Union[\fBnodes\&.Node\fP, t\&.List[\fBnodes\&.Node\fP]] jinja2\&.parser\&.Parser\&.parse_statement ( self)"
+
+.PP
+.nf
+Parse a single statement\&.
+.fi
+.PP
+ 
+.SS " t\&.List[\fBnodes\&.Node\fP] jinja2\&.parser\&.Parser\&.parse_statements ( self, t\&.Tuple[str, \&.\&.\&.] end_tokens, bool  drop_needle = \fCFalse\fP)"
+
+.PP
+.nf
+Parse multiple statements into a list until one of the end tokens
+is reached\&.  This is used to parse the body of statements as it also
+parses template data if appropriate\&.  The parser checks first if the
+current token is a colon and skips it if there is one\&.  Then it checks
+for the block end and parses until if one of the `end_tokens` is
+reached\&.  Per default the active token in the stream at the end of
+the call is the matched end token\&.  If this is not wanted `drop_needle`
+can be set to `True` and the end token is removed\&.
+
+.fi
+.PP
+ 
+.SS " \fBnodes\&.Expr\fP jinja2\&.parser\&.Parser\&.parse_subscribed ( self)"
+
+.SS " t\&.Union[\fBnodes\&.Getattr\fP, \fBnodes\&.Getitem\fP] jinja2\&.parser\&.Parser\&.parse_subscript ( self, \fBnodes\&.Expr\fP
+     node)"
+
+.SS " \fBnodes\&.Expr\fP jinja2\&.parser\&.Parser\&.parse_test ( self, \fBnodes\&.Expr\fP node)"
+
+.SS " t\&.Union[\fBnodes\&.Tuple\fP, \fBnodes\&.Expr\fP] jinja2\&.parser\&.Parser\&.parse_tuple ( self, bool  simplified = \fCFalse\fP, bool  with_condexpr = \fCTrue\fP, t\&.Optional[t\&.Tuple[str, \&.\&.\&.]]  extra_end_rules = \fCNone\fP, bool  explicit_parentheses = \fCFalse\fP, bool  with_namespace = \fCFalse\fP)"
+
+.PP
+.nf
+Works like `parse_expression` but if multiple expressions are
+delimited by a comma a :class:`~jinja2\&.nodes\&.Tuple` node is created\&.
+This method could also return a regular expression instead of a tuple
+if no commas where found\&.
+
+The default parsing mode is a full tuple\&.  If `simplified` is `True`
+only names and literals are parsed; ``with_namespace`` allows namespace
+attr refs as well\&. The `no_condexpr` parameter is forwarded to
+:meth:`parse_expression`\&.
+
+Because tuples do not require delimiters and may end in a bogus comma
+an extra hint is needed that marks the end of a tuple\&.  For example
+for loops support tuples between `for` and `in`\&.  In that case the
+`extra_end_rules` is set to ``['name:in']``\&.
+
+`explicit_parentheses` is true if the parsing was triggered by an
+expression in parentheses\&.  This is used to figure out if an empty
+tuple is a valid expression or not\&.
+
+.fi
+.PP
+ 
+.SS " \fBnodes\&.Expr\fP jinja2\&.parser\&.Parser\&.parse_unary ( self, bool  with_filter = \fCTrue\fP)"
+
+.SS " \fBnodes\&.With\fP jinja2\&.parser\&.Parser\&.parse_with ( self)"
+
+.SS " t\&.List[\fBnodes\&.Node\fP] jinja2\&.parser\&.Parser\&.subparse ( self, t\&.Optional[t\&.Tuple[str, \&.\&.\&.]]  end_tokens = \fCNone\fP)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "jinja2\&.parser\&.Parser\&._end_token_stack\fC [protected]\fP"
+
+.SS "jinja2\&.parser\&.Parser\&._last_identifier\fC [protected]\fP"
+
+.SS "jinja2\&.parser\&.Parser\&.closed"
+
+.SS "jinja2\&.parser\&.Parser\&.environment"
+
+.SS "jinja2\&.parser\&.Parser\&.filename"
+
+.SS "jinja2\&.parser\&.Parser\&.name"
+
+.SS "jinja2\&.parser\&.Parser\&.stream"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

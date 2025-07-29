@@ -1,0 +1,327 @@
+.TH "pip._vendor.rich.prompt.PromptBase" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.rich.prompt.PromptBase
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Generic, and PromptType\&.
+.PP
+Inherited by \fBpip\&._vendor\&.rich\&.prompt\&.Confirm\fP, \fBpip\&._vendor\&.rich\&.prompt\&.FloatPrompt\fP, \fBpip\&._vendor\&.rich\&.prompt\&.IntPrompt\fP, and \fBpip\&._vendor\&.rich\&.prompt\&.Prompt\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, TextType \fBprompt\fP='', *Optional[\fBConsole\fP] \fBconsole\fP=None, bool \fBpassword\fP=False, Optional[List[str]] \fBchoices\fP=None, bool \fBshow_default\fP=True, bool \fBshow_choices\fP=True)"
+.br
+.ti -1c
+.RI "Union[\fBDefaultType\fP, \fBPromptType\fP] \fBask\fP (cls, TextType \fBprompt\fP='', *Optional[\fBConsole\fP] \fBconsole\fP=None, bool \fBpassword\fP=False, Optional[List[str]] \fBchoices\fP=None, bool \fBshow_default\fP=True, bool \fBshow_choices\fP=True, \fBDefaultType\fP \fBdefault\fP, Optional[TextIO] stream=None)"
+.br
+.ti -1c
+.RI "\fBPromptType\fP \fBask\fP (cls, TextType \fBprompt\fP='', *Optional[\fBConsole\fP] \fBconsole\fP=None, bool \fBpassword\fP=False, Optional[List[str]] \fBchoices\fP=None, bool \fBshow_default\fP=True, bool \fBshow_choices\fP=True, Optional[TextIO] stream=None)"
+.br
+.ti -1c
+.RI "Any \fBask\fP (cls, TextType \fBprompt\fP='', *Optional[\fBConsole\fP] \fBconsole\fP=None, bool \fBpassword\fP=False, Optional[List[str]] \fBchoices\fP=None, bool \fBshow_default\fP=True, bool \fBshow_choices\fP=True, Any \fBdefault\fP=\&.\&.\&., Optional[TextIO] stream=None)"
+.br
+.ti -1c
+.RI "\fBText\fP \fBrender_default\fP (self, \fBDefaultType\fP \fBdefault\fP)"
+.br
+.ti -1c
+.RI "\fBText\fP \fBmake_prompt\fP (self, \fBDefaultType\fP \fBdefault\fP)"
+.br
+.ti -1c
+.RI "str \fBget_input\fP (cls, \fBConsole\fP \fBconsole\fP, TextType \fBprompt\fP, bool \fBpassword\fP, Optional[TextIO] stream=None)"
+.br
+.ti -1c
+.RI "bool \fBcheck_choice\fP (self, str value)"
+.br
+.ti -1c
+.RI "\fBPromptType\fP \fBprocess_response\fP (self, str value)"
+.br
+.ti -1c
+.RI "None \fBon_validate_error\fP (self, str value, \fBInvalidResponse\fP error)"
+.br
+.ti -1c
+.RI "None \fBpre_prompt\fP (self)"
+.br
+.ti -1c
+.RI "\fBPromptType\fP \fB__call__\fP (self, *Optional[TextIO] stream=None)"
+.br
+.ti -1c
+.RI "Union[\fBPromptType\fP, \fBDefaultType\fP] \fB__call__\fP (self, *\fBDefaultType\fP \fBdefault\fP, Optional[TextIO] stream=None)"
+.br
+.ti -1c
+.RI "Any \fB__call__\fP (self, *Any \fBdefault\fP=\&.\&.\&., Optional[TextIO] stream=None)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBconsole\fP"
+.br
+.ti -1c
+.RI "\fBprompt\fP"
+.br
+.ti -1c
+.RI "\fBpassword\fP"
+.br
+.ti -1c
+.RI "\fBchoices\fP"
+.br
+.ti -1c
+.RI "\fBshow_default\fP"
+.br
+.ti -1c
+.RI "\fBshow_choices\fP"
+.br
+.ti -1c
+.RI "\fBresponse_type\fP"
+.br
+.ti -1c
+.RI "\fBprompt_suffix\fP"
+.br
+.ti -1c
+.RI "\fBvalidate_error_message\fP"
+.br
+.ti -1c
+.RI "\fBillegal_choice_message\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "type \fBresponse_type\fP = str"
+.br
+.ti -1c
+.RI "str \fBvalidate_error_message\fP = '[prompt\&.invalid]Please enter a valid value'"
+.br
+.ti -1c
+.RI "tuple \fBillegal_choice_message\fP"
+.br
+.ti -1c
+.RI "str \fBprompt_suffix\fP = ': '"
+.br
+.ti -1c
+.RI "Optional \fBchoices\fP = None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Ask the user for input until a valid response is received\&. This is the base class, see one of
+the concrete classes for examples\&.
+
+Args:
+    prompt (TextType, optional): Prompt text\&. Defaults to ''\&.
+    console (Console, optional): A Console instance or None to use global console\&. Defaults to None\&.
+    password (bool, optional): Enable password input\&. Defaults to False\&.
+    choices (List[str], optional): A list of valid choices\&. Defaults to None\&.
+    show_default (bool, optional): Show default in prompt\&. Defaults to True\&.
+    show_choices (bool, optional): Show choices in prompt\&. Defaults to True\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.__init__ ( self, TextType  prompt = \fC''\fP, *Optional[\fBConsole\fP]  console = \fCNone\fP, bool  password = \fCFalse\fP, Optional[List[str]]  choices = \fCNone\fP, bool  show_default = \fCTrue\fP, bool  show_choices = \fCTrue\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " Any pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.__call__ ( self, *Any  default = \fC\&.\&.\&.\fP, Optional[TextIO]  stream = \fCNone\fP)"
+
+.PP
+.nf
+Run the prompt loop\&.
+
+Args:
+    default (Any, optional): Optional default value\&.
+
+Returns:
+    PromptType: Processed value\&.
+
+.fi
+.PP
+ 
+.SS " Union[\fBPromptType\fP, \fBDefaultType\fP] pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.__call__ ( self, *\fBDefaultType\fP default, Optional[TextIO]  stream = \fCNone\fP)"
+
+.SS " \fBPromptType\fP pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.__call__ ( self, *Optional[TextIO]  stream = \fCNone\fP)"
+
+.SS " Any pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.ask ( cls, TextType  prompt = \fC''\fP, *Optional[\fBConsole\fP]  console = \fCNone\fP, bool  password = \fCFalse\fP, Optional[List[str]]  choices = \fCNone\fP, bool  show_default = \fCTrue\fP, bool  show_choices = \fCTrue\fP, Any  default = \fC\&.\&.\&.\fP, Optional[TextIO]  stream = \fCNone\fP)"
+
+.PP
+.nf
+Shortcut to construct and run a prompt loop and return the result\&.
+
+Example:
+    >>> filename = Prompt\&.ask('Enter a filename')
+
+Args:
+    prompt (TextType, optional): Prompt text\&. Defaults to ''\&.
+    console (Console, optional): A Console instance or None to use global console\&. Defaults to None\&.
+    password (bool, optional): Enable password input\&. Defaults to False\&.
+    choices (List[str], optional): A list of valid choices\&. Defaults to None\&.
+    show_default (bool, optional): Show default in prompt\&. Defaults to True\&.
+    show_choices (bool, optional): Show choices in prompt\&. Defaults to True\&.
+    stream (TextIO, optional): Optional text file open for reading to get input\&. Defaults to None\&.
+
+.fi
+.PP
+ 
+.SS " Union[\fBDefaultType\fP, \fBPromptType\fP] pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.ask ( cls, TextType  prompt = \fC''\fP, *Optional[\fBConsole\fP]  console = \fCNone\fP, bool  password = \fCFalse\fP, Optional[List[str]]  choices = \fCNone\fP, bool  show_default = \fCTrue\fP, bool  show_choices = \fCTrue\fP, \fBDefaultType\fP default, Optional[TextIO]  stream = \fCNone\fP)"
+
+.SS " \fBPromptType\fP pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.ask ( cls, TextType  prompt = \fC''\fP, *Optional[\fBConsole\fP]  console = \fCNone\fP, bool  password = \fCFalse\fP, Optional[List[str]]  choices = \fCNone\fP, bool  show_default = \fCTrue\fP, bool  show_choices = \fCTrue\fP, Optional[TextIO]  stream = \fCNone\fP)"
+
+.SS " bool pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.check_choice ( self, str value)"
+
+.PP
+.nf
+Check value is in the list of valid choices\&.
+
+Args:
+    value (str): Value entered by user\&.
+
+Returns:
+    bool: True if choice was valid, otherwise False\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.get_input ( cls, \fBConsole\fP console, TextType prompt, bool password, Optional[TextIO]  stream = \fCNone\fP)"
+
+.PP
+.nf
+Get input from user\&.
+
+Args:
+    console (Console): Console instance\&.
+    prompt (TextType): Prompt text\&.
+    password (bool): Enable password entry\&.
+
+Returns:
+    str: String from user\&.
+
+.fi
+.PP
+ 
+.SS " \fBText\fP pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.make_prompt ( self, \fBDefaultType\fP default)"
+
+.PP
+.nf
+Make prompt text\&.
+
+Args:
+    default (DefaultType): Default value\&.
+
+Returns:
+    Text: Text to display in prompt\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.on_validate_error ( self, str value, \fBInvalidResponse\fP error)"
+
+.PP
+.nf
+Called to handle validation error\&.
+
+Args:
+    value (str): String entered by user\&.
+    error (InvalidResponse): Exception instance the initiated the error\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.pre_prompt ( self)"
+
+.PP
+.nf
+Hook to display something before the prompt\&.
+.fi
+.PP
+ 
+.SS " \fBPromptType\fP pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.process_response ( self, str value)"
+
+.PP
+.nf
+Process response from user, convert to prompt type\&.
+
+Args:
+    value (str): String typed by user\&.
+
+Raises:
+    InvalidResponse: If ``value`` is invalid\&.
+
+Returns:
+    PromptType: The value to be returned from ask method\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._vendor\&.rich\&.prompt\&.Confirm\fP\&.
+.SS " \fBText\fP pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.render_default ( self, \fBDefaultType\fP default)"
+
+.PP
+.nf
+Turn the supplied default in to a Text instance\&.
+
+Args:
+    default (DefaultType): Default value\&.
+
+Returns:
+    Text: Text containing rendering of default value\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._vendor\&.rich\&.prompt\&.Confirm\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "Optional pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.choices = None\fC [static]\fP"
+
+.SS "pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.choices"
+
+.SS "pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.console"
+
+.SS "tuple pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.illegal_choice_message\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  (
+        "[prompt\&.invalid\&.choice]Please select one of the available options"
+    )
+.fi
+
+.SS "pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.illegal_choice_message"
+
+.SS "pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.password"
+
+.SS "pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.prompt"
+
+.SS "str pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.prompt_suffix = ': '\fC [static]\fP"
+
+.SS "pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.prompt_suffix"
+
+.SS "type pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.response_type = str\fC [static]\fP"
+
+.SS "pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.response_type"
+
+.SS "pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.show_choices"
+
+.SS "pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.show_default"
+
+.SS "str pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.validate_error_message = '[prompt\&.invalid]Please enter a valid value'\fC [static]\fP"
+
+.SS "pip\&._vendor\&.rich\&.prompt\&.PromptBase\&.validate_error_message"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

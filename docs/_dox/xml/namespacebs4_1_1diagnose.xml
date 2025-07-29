@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespacebs4_1_1diagnose" kind="namespace" language="Python">
+    <compoundname>bs4::diagnose</compoundname>
+    <innerclass refid="classbs4_1_1diagnose_1_1AnnouncingParser" prot="public">bs4::diagnose::AnnouncingParser</innerclass>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacebs4_1_1diagnose_1aded40b2f22fbf82d6af7e4f17fc5925a" prot="private" static="no" mutable="no">
+        <type>str</type>
+        <definition>str bs4::diagnose.__license__</definition>
+        <argsstring></argsstring>
+        <name>__license__</name>
+        <qualifiedname>bs4.diagnose.__license__</qualifiedname>
+        <initializer>=  &quot;MIT&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" line="4" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacebs4_1_1diagnose_1a19953959230ccc3d5784deeec150d220" prot="protected" static="no" mutable="no">
+        <type>str</type>
+        <definition>str bs4::diagnose._vowels</definition>
+        <argsstring></argsstring>
+        <name>_vowels</name>
+        <qualifiedname>bs4.diagnose._vowels</qualifiedname>
+        <initializer>=  &quot;aeiou&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" line="167" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacebs4_1_1diagnose_1a4801c65acc3bb7955abe9a3f7509ee76" prot="protected" static="no" mutable="no">
+        <type>str</type>
+        <definition>str bs4::diagnose._consonants</definition>
+        <argsstring></argsstring>
+        <name>_consonants</name>
+        <qualifiedname>bs4.diagnose._consonants</qualifiedname>
+        <initializer>=  &quot;bcdfghjklmnpqrstvwxyz&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" line="168" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" bodystart="168" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacebs4_1_1diagnose_1a466c6545a7be4055d8cdf2a8bbf67a82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>None</type>
+        <definition> None bs4.diagnose.diagnose</definition>
+        <argsstring>(&quot;_IncomingMarkup&quot; data)</argsstring>
+        <name>diagnose</name>
+        <qualifiedname>bs4.diagnose.diagnose</qualifiedname>
+        <param>
+          <type>&quot;_IncomingMarkup&quot;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Diagnostic suite for isolating common problems.
+
+:param data: Some markup that needs to be explained.
+:return: None; diagnostics are printed to standard output.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" line="32" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" bodystart="32" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacebs4_1_1diagnose_1a6e8b8ffb0db92effdbca0185ae992c21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>None</type>
+        <definition> None bs4.diagnose.lxml_trace</definition>
+        <argsstring>(&quot;_IncomingMarkup&quot; data, bool html=True, **Any kwargs)</argsstring>
+        <name>lxml_trace</name>
+        <qualifiedname>bs4.diagnose.lxml_trace</qualifiedname>
+        <param>
+          <type>&quot;_IncomingMarkup&quot;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>html</declname>
+          <defval>True</defval>
+        </param>
+        <param>
+          <type>**Any</type>
+          <declname>kwargs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Print out the lxml events that occur during parsing.
+
+This lets you see how lxml parses a document when no Beautiful
+Soup code is running. You can use this to determine whether
+an lxml-specific problem is in Beautiful Soup&apos;s lxml tree builders
+or in lxml itself.
+
+:param data: Some markup.
+:param html: If True, markup will be parsed with lxml&apos;s HTML parser.
+   if False, lxml&apos;s XML parser will be used.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" line="88" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" bodystart="88" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacebs4_1_1diagnose_1af957e02c632d5dff03e794b4aa6a0e26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>None</type>
+        <definition> None bs4.diagnose.htmlparser_trace</definition>
+        <argsstring>(str data)</argsstring>
+        <name>htmlparser_trace</name>
+        <qualifiedname>bs4.diagnose.htmlparser_trace</qualifiedname>
+        <param>
+          <type>str</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Print out the HTMLParser events that occur during parsing.
+
+This lets you see how HTMLParser parses a document when no
+Beautiful Soup code is running.
+
+:param data: Some markup.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" line="155" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" bodystart="155" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacebs4_1_1diagnose_1af2054451305f10aae513f38ccfa8dfd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>str</type>
+        <definition> str bs4.diagnose.rword</definition>
+        <argsstring>(int length=5)</argsstring>
+        <name>rword</name>
+        <qualifiedname>bs4.diagnose.rword</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+          <defval>5</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Generate a random word-like string.
+
+:meta private:
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" line="171" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" bodystart="171" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacebs4_1_1diagnose_1a1ccd5585e3765b5b16d60fa6987c7186" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>str</type>
+        <definition> str bs4.diagnose.rsentence</definition>
+        <argsstring>(int length=4)</argsstring>
+        <name>rsentence</name>
+        <qualifiedname>bs4.diagnose.rsentence</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+          <defval>4</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Generate a random sentence-like string.
+
+:meta private:
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" line="186" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" bodystart="186" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacebs4_1_1diagnose_1ac85c67b137f67e02fb0f007c4c514d96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>str</type>
+        <definition> str bs4.diagnose.rdoc</definition>
+        <argsstring>(int num_elements=1000)</argsstring>
+        <name>rdoc</name>
+        <qualifiedname>bs4.diagnose.rdoc</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>num_elements</declname>
+          <defval>1000</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Randomly generate an invalid HTML document.
+
+:meta private:
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" line="194" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" bodystart="194" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacebs4_1_1diagnose_1a1cf51efc1b8f8bcad39e9fb6df7bd9b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>None</type>
+        <definition> None bs4.diagnose.benchmark_parsers</definition>
+        <argsstring>(int num_elements=100000)</argsstring>
+        <name>benchmark_parsers</name>
+        <qualifiedname>bs4.diagnose.benchmark_parsers</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>num_elements</declname>
+          <defval>100000</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Very basic head-to-head performance benchmark.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" line="216" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" bodystart="216" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacebs4_1_1diagnose_1a0ee9e6ece1dd83c1c0ecf3517707c8c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>None</type>
+        <definition> None bs4.diagnose.profile</definition>
+        <argsstring>(int num_elements=100000, str parser=&quot;lxml&quot;)</argsstring>
+        <name>profile</name>
+        <qualifiedname>bs4.diagnose.profile</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>num_elements</declname>
+          <defval>100000</defval>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>parser</declname>
+          <defval>&quot;lxml&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Use Python&apos;s profiler on a randomly generated document.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" line="251" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" bodystart="251" bodyend="266"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Diagnostic functions, mainly for use when doing tech support.</verbatim> </para>
+    </detaileddescription>
+    <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/diagnose.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

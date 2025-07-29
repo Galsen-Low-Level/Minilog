@@ -1,0 +1,210 @@
+.TH "sphinx.ext.inheritance_diagram.InheritanceGraph" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.ext.inheritance_diagram.InheritanceGraph
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, list[str] \fBclass_names\fP, str currmodule, bool show_builtins=False, bool private_bases=False, int parts=0, dict[str, str]|None aliases=None, Set[str] top_classes=frozenset(), bool include_subclasses=False)"
+.br
+.ti -1c
+.RI "str \fBclass_name\fP (self, type[Any] cls, int parts=0, dict[str, str]|None aliases=None)"
+.br
+.ti -1c
+.RI "list[str] \fBget_all_class_names\fP (self)"
+.br
+.ti -1c
+.RI "str \fBgenerate_dot\fP (self, str name, dict[str, str]|None urls=None, \fBBuildEnvironment\fP|None env=None, dict[str, float|int|str]|None graph_attrs=None, dict[str, float|int|str]|None node_attrs=None, dict[str, float|int|str]|None edge_attrs=None)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBclass_names\fP"
+.br
+.ti -1c
+.RI "\fBclass_info\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBdefault_graph_attrs\fP"
+.br
+.ti -1c
+.RI "dict \fBdefault_node_attrs\fP"
+.br
+.ti -1c
+.RI "dict \fBdefault_edge_attrs\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Sequence[type[Any]] \fB_import_classes\fP (self, list[str] \fBclass_names\fP, str currmodule)"
+.br
+.ti -1c
+.RI "list[tuple[str, str, Sequence[str], str|None]] \fB_class_info\fP (self, Collection[type[Any]] classes, bool show_builtins, bool private_bases, int parts, dict[str, str]|None aliases, Set[str] top_classes)"
+.br
+.ti -1c
+.RI "str \fB_format_node_attrs\fP (self, dict[str, float|int|str] attrs)"
+.br
+.ti -1c
+.RI "str \fB_format_graph_attrs\fP (self, dict[str, float|int|str] attrs)"
+.br
+.ti -1c
+.RI "str \fB_generate_dot\fP (self, str name, dict[str, str]|None urls=None, \fBConfig\fP|None config=None, dict[str, float|int|str]|None graph_attrs=None, dict[str, float|int|str]|None node_attrs=None, dict[str, float|int|str]|None edge_attrs=None)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Given a list of classes, determines the set of classes that they inherit
+from all the way to the root 'object', and then is able to generate a
+graphviz dot graph from them\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.ext\&.inheritance_diagram\&.InheritanceGraph\&.__init__ ( self, list[str] class_names, str currmodule, bool  show_builtins = \fCFalse\fP, bool  private_bases = \fCFalse\fP, int  parts = \fC0\fP, dict[str, str] | None  aliases = \fCNone\fP, Set[str]  top_classes = \fCfrozenset()\fP, bool  include_subclasses = \fCFalse\fP)"
+
+.PP
+.nf
+*class_names* is a list of child classes to show bases from\&.
+
+If *show_builtins* is True, then Python builtins will be shown
+in the graph\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " list[tuple[str, str, Sequence[str], str | None]] sphinx\&.ext\&.inheritance_diagram\&.InheritanceGraph\&._class_info ( self, Collection[type[Any]] classes, bool show_builtins, bool private_bases, int parts, dict[str, str] | None aliases, Set[str] top_classes)\fC [protected]\fP"
+
+.PP
+.nf
+Return name and bases for all classes that are ancestors of
+*classes*\&.
+
+*parts* gives the number of dotted name parts to include in the
+displayed node names, from right to left\&. If given as a negative, the
+number of parts to drop from the left\&. A value of 0 displays the full
+dotted name\&. E\&.g\&. ``sphinx\&.ext\&.inheritance_diagram\&.InheritanceGraph``
+with ``parts=2`` or ``parts=-2`` gets displayed as
+``inheritance_diagram\&.InheritanceGraph``, and as
+``ext\&.inheritance_diagram\&.InheritanceGraph`` with ``parts=3`` or
+``parts=-1``\&.
+
+*top_classes* gives the name(s) of the top most ancestor class to
+traverse to\&. Multiple names can be specified separated by comma\&.
+
+.fi
+.PP
+ 
+.SS " str sphinx\&.ext\&.inheritance_diagram\&.InheritanceGraph\&._format_graph_attrs ( self, dict[str, float | int | str] attrs)\fC [protected]\fP"
+
+.SS " str sphinx\&.ext\&.inheritance_diagram\&.InheritanceGraph\&._format_node_attrs ( self, dict[str, float | int | str] attrs)\fC [protected]\fP"
+
+.SS " str sphinx\&.ext\&.inheritance_diagram\&.InheritanceGraph\&._generate_dot ( self, str name, dict[str, str] | None  urls = \fCNone\fP, \fBConfig\fP | None  config = \fCNone\fP, dict[str, float | int | str] | None  graph_attrs = \fCNone\fP, dict[str, float | int | str] | None  node_attrs = \fCNone\fP, dict[str, float | int | str] | None  edge_attrs = \fCNone\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Generate a graphviz dot graph from the classes that were passed in
+to __init__\&.
+
+*name* is the name of the graph\&.
+
+*urls* is a dictionary mapping class names to HTTP URLs\&.
+
+*graph_attrs*, *node_attrs*, *edge_attrs* are dictionaries containing
+key/value pairs to pass on as graphviz properties\&.
+
+.fi
+.PP
+ 
+.SS " Sequence[type[Any]] sphinx\&.ext\&.inheritance_diagram\&.InheritanceGraph\&._import_classes ( self, list[str] class_names, str
+     currmodule)\fC [protected]\fP"
+
+.PP
+.nf
+Import a list of classes\&.
+.fi
+.PP
+ 
+.SS " str sphinx\&.ext\&.inheritance_diagram\&.InheritanceGraph\&.class_name ( self, type[Any] cls, int  parts = \fC0\fP, dict[str, str] | None  aliases = \fCNone\fP)"
+
+.PP
+.nf
+Given a class object, return a fully-qualified name\&.
+
+This works for things I've tested in matplotlib so far, but may not be
+completely general\&.
+
+.fi
+.PP
+ 
+.SS " str sphinx\&.ext\&.inheritance_diagram\&.InheritanceGraph\&.generate_dot ( self, str name, dict[str, str] | None  urls = \fCNone\fP, \fBBuildEnvironment\fP | None  env = \fCNone\fP, dict[str, float | int | str] | None  graph_attrs = \fCNone\fP, dict[str, float | int | str] | None  node_attrs = \fCNone\fP, dict[str, float | int | str] | None  edge_attrs = \fCNone\fP)"
+
+.SS " list[str] sphinx\&.ext\&.inheritance_diagram\&.InheritanceGraph\&.get_all_class_names ( self)"
+
+.PP
+.nf
+Get all of the class names involved in the graph\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.ext\&.inheritance_diagram\&.InheritanceGraph\&.class_info"
+
+.SS "sphinx\&.ext\&.inheritance_diagram\&.InheritanceGraph\&.class_names"
+
+.SS "dict sphinx\&.ext\&.inheritance_diagram\&.InheritanceGraph\&.default_edge_attrs\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        'arrowsize': 0\&.5,
+        'style': '"setlinewidth(0\&.5)"',
+    }
+.fi
+
+.SS "dict sphinx\&.ext\&.inheritance_diagram\&.InheritanceGraph\&.default_graph_attrs\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        'rankdir': 'LR',
+        'size': '"8\&.0, 12\&.0"',
+        'bgcolor': 'transparent',
+    }
+.fi
+
+.SS "dict sphinx\&.ext\&.inheritance_diagram\&.InheritanceGraph\&.default_node_attrs\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        'shape': 'box',
+        'fontsize': 10,
+        'height': 0\&.25,
+        'fontname': '"Vera Sans, DejaVu Sans, Liberation Sans, Arial, Helvetica, sans"',
+        'style': '"setlinewidth(0\&.5),filled"',
+        'fillcolor': 'white',
+    }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

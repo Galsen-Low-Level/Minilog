@@ -1,0 +1,121 @@
+\doxysection{waitress.\+adjustments Namespace Reference}
+\hypertarget{namespacewaitress_1_1adjustments}{}\label{namespacewaitress_1_1adjustments}\index{waitress.adjustments@{waitress.adjustments}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classwaitress_1_1adjustments_1_1__int__marker}{\+\_\+int\+\_\+marker}}
+\item 
+class \mbox{\hyperlink{classwaitress_1_1adjustments_1_1__str__marker}{\+\_\+str\+\_\+marker}}
+\item 
+class \mbox{\hyperlink{classwaitress_1_1adjustments_1_1Adjustments}{Adjustments}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1adjustments_a94b8d1db1d7cfc9cb2d973560384fd79}{asbool}} (s)
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1adjustments_a4ad9099469b77ac5a07e1ea0f63732fe}{asoctal}} (s)
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1adjustments_a6279cb5d6c5685f750916de914d7a45a}{aslist\+\_\+cronly}} (value)
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1adjustments_a4d7dc0da979f348822606b84b41a7377}{aslist}} (value)
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1adjustments_ae8c3c5184d87674024222674b6b81923}{asset}} (value)
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1adjustments_a84ea994bfad99c369fe228fa9b31149a}{slash\+\_\+fixed\+\_\+str}} (s)
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1adjustments_a7309abbbfdc1578d8fbc616d01abe076}{str\+\_\+iftruthy}} (s)
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1adjustments_a16b77566eb99e6df5de17f75fff79817}{as\+\_\+socket\+\_\+list}} (sockets)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1adjustments_a292cbdf150f5a38ac6e0f5e04fae1e1a}{truthy}} = frozenset(("{}t"{}, "{}true"{}, "{}y"{}, "{}yes"{}, "{}on"{}, "{}1"{}))
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1adjustments_a638cddf31cb2f2ccd225efae7ab925f5}{KNOWN\+\_\+\+PROXY\+\_\+\+HEADERS}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacewaitress_1_1adjustments_a16b77566eb99e6df5de17f75fff79817}\label{namespacewaitress_1_1adjustments_a16b77566eb99e6df5de17f75fff79817} 
+\index{waitress.adjustments@{waitress.adjustments}!as\_socket\_list@{as\_socket\_list}}
+\index{as\_socket\_list@{as\_socket\_list}!waitress.adjustments@{waitress.adjustments}}
+\doxysubsubsection{\texorpdfstring{as\_socket\_list()}{as\_socket\_list()}}
+{\footnotesize\ttfamily waitress.\+adjustments.\+as\+\_\+socket\+\_\+list (\begin{DoxyParamCaption}\item[{}]{sockets }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks if the elements in the list are of type socket and
+removes them if not.\end{DoxyVerb}
+ \Hypertarget{namespacewaitress_1_1adjustments_a94b8d1db1d7cfc9cb2d973560384fd79}\label{namespacewaitress_1_1adjustments_a94b8d1db1d7cfc9cb2d973560384fd79} 
+\index{waitress.adjustments@{waitress.adjustments}!asbool@{asbool}}
+\index{asbool@{asbool}!waitress.adjustments@{waitress.adjustments}}
+\doxysubsubsection{\texorpdfstring{asbool()}{asbool()}}
+{\footnotesize\ttfamily waitress.\+adjustments.\+asbool (\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the boolean value ``True`` if the case-lowered value of string
+input ``s`` is any of ``t``, ``true``, ``y``, ``on``, or ``1``, otherwise
+return the boolean value ``False``.  If ``s`` is the value ``None``,
+return ``False``.  If ``s`` is already one of the boolean values ``True``
+or ``False``, return it.\end{DoxyVerb}
+ \Hypertarget{namespacewaitress_1_1adjustments_a4d7dc0da979f348822606b84b41a7377}\label{namespacewaitress_1_1adjustments_a4d7dc0da979f348822606b84b41a7377} 
+\index{waitress.adjustments@{waitress.adjustments}!aslist@{aslist}}
+\index{aslist@{aslist}!waitress.adjustments@{waitress.adjustments}}
+\doxysubsubsection{\texorpdfstring{aslist()}{aslist()}}
+{\footnotesize\ttfamily waitress.\+adjustments.\+aslist (\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a list of strings, separating the input based on newlines
+and, if flatten=True (the default), also split on spaces within
+each line.\end{DoxyVerb}
+ \Hypertarget{namespacewaitress_1_1adjustments_a6279cb5d6c5685f750916de914d7a45a}\label{namespacewaitress_1_1adjustments_a6279cb5d6c5685f750916de914d7a45a} 
+\index{waitress.adjustments@{waitress.adjustments}!aslist\_cronly@{aslist\_cronly}}
+\index{aslist\_cronly@{aslist\_cronly}!waitress.adjustments@{waitress.adjustments}}
+\doxysubsubsection{\texorpdfstring{aslist\_cronly()}{aslist\_cronly()}}
+{\footnotesize\ttfamily waitress.\+adjustments.\+aslist\+\_\+cronly (\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacewaitress_1_1adjustments_a4ad9099469b77ac5a07e1ea0f63732fe}\label{namespacewaitress_1_1adjustments_a4ad9099469b77ac5a07e1ea0f63732fe} 
+\index{waitress.adjustments@{waitress.adjustments}!asoctal@{asoctal}}
+\index{asoctal@{asoctal}!waitress.adjustments@{waitress.adjustments}}
+\doxysubsubsection{\texorpdfstring{asoctal()}{asoctal()}}
+{\footnotesize\ttfamily waitress.\+adjustments.\+asoctal (\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert the given octal string to an actual number.\end{DoxyVerb}
+ \Hypertarget{namespacewaitress_1_1adjustments_ae8c3c5184d87674024222674b6b81923}\label{namespacewaitress_1_1adjustments_ae8c3c5184d87674024222674b6b81923} 
+\index{waitress.adjustments@{waitress.adjustments}!asset@{asset}}
+\index{asset@{asset}!waitress.adjustments@{waitress.adjustments}}
+\doxysubsubsection{\texorpdfstring{asset()}{asset()}}
+{\footnotesize\ttfamily waitress.\+adjustments.\+asset (\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacewaitress_1_1adjustments_a84ea994bfad99c369fe228fa9b31149a}\label{namespacewaitress_1_1adjustments_a84ea994bfad99c369fe228fa9b31149a} 
+\index{waitress.adjustments@{waitress.adjustments}!slash\_fixed\_str@{slash\_fixed\_str}}
+\index{slash\_fixed\_str@{slash\_fixed\_str}!waitress.adjustments@{waitress.adjustments}}
+\doxysubsubsection{\texorpdfstring{slash\_fixed\_str()}{slash\_fixed\_str()}}
+{\footnotesize\ttfamily waitress.\+adjustments.\+slash\+\_\+fixed\+\_\+str (\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacewaitress_1_1adjustments_a7309abbbfdc1578d8fbc616d01abe076}\label{namespacewaitress_1_1adjustments_a7309abbbfdc1578d8fbc616d01abe076} 
+\index{waitress.adjustments@{waitress.adjustments}!str\_iftruthy@{str\_iftruthy}}
+\index{str\_iftruthy@{str\_iftruthy}!waitress.adjustments@{waitress.adjustments}}
+\doxysubsubsection{\texorpdfstring{str\_iftruthy()}{str\_iftruthy()}}
+{\footnotesize\ttfamily waitress.\+adjustments.\+str\+\_\+iftruthy (\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacewaitress_1_1adjustments_a638cddf31cb2f2ccd225efae7ab925f5}\label{namespacewaitress_1_1adjustments_a638cddf31cb2f2ccd225efae7ab925f5} 
+\index{waitress.adjustments@{waitress.adjustments}!KNOWN\_PROXY\_HEADERS@{KNOWN\_PROXY\_HEADERS}}
+\index{KNOWN\_PROXY\_HEADERS@{KNOWN\_PROXY\_HEADERS}!waitress.adjustments@{waitress.adjustments}}
+\doxysubsubsection{\texorpdfstring{KNOWN\_PROXY\_HEADERS}{KNOWN\_PROXY\_HEADERS}}
+{\footnotesize\ttfamily waitress.\+adjustments.\+KNOWN\+\_\+\+PROXY\+\_\+\+HEADERS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ frozenset(}
+\DoxyCodeLine{00002\ \ \ \ \ header.lower().replace(\textcolor{stringliteral}{"{}\_"{}},\ \textcolor{stringliteral}{"{}-\/"{}})\ \textcolor{keywordflow}{for}\ header\ \textcolor{keywordflow}{in}\ PROXY\_HEADERS}
+\DoxyCodeLine{00003\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacewaitress_1_1adjustments_a292cbdf150f5a38ac6e0f5e04fae1e1a}\label{namespacewaitress_1_1adjustments_a292cbdf150f5a38ac6e0f5e04fae1e1a} 
+\index{waitress.adjustments@{waitress.adjustments}!truthy@{truthy}}
+\index{truthy@{truthy}!waitress.adjustments@{waitress.adjustments}}
+\doxysubsubsection{\texorpdfstring{truthy}{truthy}}
+{\footnotesize\ttfamily waitress.\+adjustments.\+truthy = frozenset(("{}t"{}, "{}true"{}, "{}y"{}, "{}yes"{}, "{}on"{}, "{}1"{}))}
+

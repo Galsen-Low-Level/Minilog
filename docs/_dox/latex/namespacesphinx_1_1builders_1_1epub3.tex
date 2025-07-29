@@ -1,0 +1,207 @@
+\doxysection{sphinx.\+builders.\+epub3 Namespace Reference}
+\hypertarget{namespacesphinx_1_1builders_1_1epub3}{}\label{namespacesphinx_1_1builders_1_1epub3}\index{sphinx.builders.epub3@{sphinx.builders.epub3}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1builders_1_1epub3_1_1Epub3Builder}{Epub3\+Builder}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1builders_1_1epub3_1_1NavPoint}{Nav\+Point}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{namespacesphinx_1_1builders_1_1epub3_ac334393e85d65f826b99e3b3e14236e6}{validate\+\_\+config\+\_\+values}} (\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}} app)
+\item 
+None \mbox{\hyperlink{namespacesphinx_1_1builders_1_1epub3_a04360ffd119c9db13e0ddbdc8a485a68}{convert\+\_\+epub\+\_\+css\+\_\+files}} (\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}} app, \mbox{\hyperlink{classsphinx_1_1config_1_1Config}{Config}} config)
+\item 
+\mbox{\hyperlink{classsphinx_1_1util_1_1typing_1_1ExtensionMetadata}{Extension\+Metadata}} \mbox{\hyperlink{namespacesphinx_1_1builders_1_1epub3_afba61ec60405b7550285e18617612546}{setup}} (\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}} app)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1builders_1_1epub3_adba3253ef7bd3d72771c40501967dc25}{logger}} = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\item 
+dict \mbox{\hyperlink{namespacesphinx_1_1builders_1_1epub3_a089d3a82768d080553ba5bd3bc573300}{PAGE\+\_\+\+PROGRESSION\+\_\+\+DIRECTIONS}}
+\item 
+dict \mbox{\hyperlink{namespacesphinx_1_1builders_1_1epub3_a06fbbb9dec69ab1bb3260b85c2970d34}{IBOOK\+\_\+\+SCROLL\+\_\+\+AXIS}}
+\item 
+dict \mbox{\hyperlink{namespacesphinx_1_1builders_1_1epub3_a40860d68f521db5ab236294fe11c409d}{THEME\+\_\+\+WRITING\+\_\+\+MODES}}
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1builders_1_1epub3_add074068dc4c6fe4ab5455d7298d0c62}{DOCTYPE}} = "{}"{}"{}$<$!DOCTYPE html$>$"{}"{}"{}
+\item 
+tuple \mbox{\hyperlink{namespacesphinx_1_1builders_1_1epub3_a0d1af5f9a272e0cf6395a8caa0c33d67}{HTML\+\_\+\+TAG}}
+\item 
+tuple \mbox{\hyperlink{namespacesphinx_1_1builders_1_1epub3_af7927e534828b0ac5d494c8f134cf348}{\+\_\+xml\+\_\+name\+\_\+start\+\_\+char}}
+\item 
+tuple \mbox{\hyperlink{namespacesphinx_1_1builders_1_1epub3_a5dcd2cd8c563122ecd3327b2ce115a36}{\+\_\+xml\+\_\+name\+\_\+char}}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1builders_1_1epub3_a2c8bb7a1fcf8e14f8c1a07c80bc7e46f}{\+\_\+\+XML\+\_\+\+NAME\+\_\+\+PATTERN}} = re.\+compile(f\textquotesingle{}(\{\mbox{\hyperlink{namespacesphinx_1_1builders_1_1epub3_af7927e534828b0ac5d494c8f134cf348}{\+\_\+xml\+\_\+name\+\_\+start\+\_\+char}}\})(\{\mbox{\hyperlink{namespacesphinx_1_1builders_1_1epub3_a5dcd2cd8c563122ecd3327b2ce115a36}{\+\_\+xml\+\_\+name\+\_\+char}}\})\texorpdfstring{$\ast$}{*}\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1builders_1_1epub3_af595740499e41e130a910b66f48a2236}{project}}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1builders_1_1epub3_a91b61951b00afd42bf2818885c177c3a}{author}}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1builders_1_1epub3_a523ce2eb01ff68d4ed025f3737875812}{copyright}}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1builders_1_1epub3_a8c23d6c29a333ddf7e2b0d1a40075435}{html\+\_\+use\+\_\+index}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Build epub3 files.
+
+Originally derived from epub.py.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesphinx_1_1builders_1_1epub3_a04360ffd119c9db13e0ddbdc8a485a68}\label{namespacesphinx_1_1builders_1_1epub3_a04360ffd119c9db13e0ddbdc8a485a68} 
+\index{sphinx.builders.epub3@{sphinx.builders.epub3}!convert\_epub\_css\_files@{convert\_epub\_css\_files}}
+\index{convert\_epub\_css\_files@{convert\_epub\_css\_files}!sphinx.builders.epub3@{sphinx.builders.epub3}}
+\doxysubsubsection{\texorpdfstring{convert\_epub\_css\_files()}{convert\_epub\_css\_files()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+epub3.\+convert\+\_\+epub\+\_\+css\+\_\+files (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}}]{app,  }\item[{\mbox{\hyperlink{classsphinx_1_1config_1_1Config}{Config}}}]{config }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Convert string styled epub_css_files to tuple styled one.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1builders_1_1epub3_afba61ec60405b7550285e18617612546}\label{namespacesphinx_1_1builders_1_1epub3_afba61ec60405b7550285e18617612546} 
+\index{sphinx.builders.epub3@{sphinx.builders.epub3}!setup@{setup}}
+\index{setup@{setup}!sphinx.builders.epub3@{sphinx.builders.epub3}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classsphinx_1_1util_1_1typing_1_1ExtensionMetadata}{Extension\+Metadata}} sphinx.\+builders.\+epub3.\+setup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}}]{app }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacesphinx_1_1builders_1_1epub3_ac334393e85d65f826b99e3b3e14236e6}\label{namespacesphinx_1_1builders_1_1epub3_ac334393e85d65f826b99e3b3e14236e6} 
+\index{sphinx.builders.epub3@{sphinx.builders.epub3}!validate\_config\_values@{validate\_config\_values}}
+\index{validate\_config\_values@{validate\_config\_values}!sphinx.builders.epub3@{sphinx.builders.epub3}}
+\doxysubsubsection{\texorpdfstring{validate\_config\_values()}{validate\_config\_values()}}
+{\footnotesize\ttfamily  None sphinx.\+builders.\+epub3.\+validate\+\_\+config\+\_\+values (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsphinx_1_1application_1_1Sphinx}{Sphinx}}}]{app }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacesphinx_1_1builders_1_1epub3_a5dcd2cd8c563122ecd3327b2ce115a36}\label{namespacesphinx_1_1builders_1_1epub3_a5dcd2cd8c563122ecd3327b2ce115a36} 
+\index{sphinx.builders.epub3@{sphinx.builders.epub3}!\_xml\_name\_char@{\_xml\_name\_char}}
+\index{\_xml\_name\_char@{\_xml\_name\_char}!sphinx.builders.epub3@{sphinx.builders.epub3}}
+\doxysubsubsection{\texorpdfstring{\_xml\_name\_char}{\_xml\_name\_char}}
+{\footnotesize\ttfamily tuple sphinx.\+builders.\+epub3.\+\_\+xml\+\_\+name\+\_\+char\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ (}
+\DoxyCodeLine{00002\ \ \ \ \ \_xml\_name\_start\_char\ +\ \textcolor{stringliteral}{r'\(\backslash\)-\/|\(\backslash\).|[0-\/9]|\(\backslash\)u00b7|[\(\backslash\)u0300-\/\(\backslash\)u036f]|[\(\backslash\)u203f-\/\(\backslash\)u2040]'}}
+\DoxyCodeLine{00003\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacesphinx_1_1builders_1_1epub3_a2c8bb7a1fcf8e14f8c1a07c80bc7e46f}\label{namespacesphinx_1_1builders_1_1epub3_a2c8bb7a1fcf8e14f8c1a07c80bc7e46f} 
+\index{sphinx.builders.epub3@{sphinx.builders.epub3}!\_XML\_NAME\_PATTERN@{\_XML\_NAME\_PATTERN}}
+\index{\_XML\_NAME\_PATTERN@{\_XML\_NAME\_PATTERN}!sphinx.builders.epub3@{sphinx.builders.epub3}}
+\doxysubsubsection{\texorpdfstring{\_XML\_NAME\_PATTERN}{\_XML\_NAME\_PATTERN}}
+{\footnotesize\ttfamily sphinx.\+builders.\+epub3.\+\_\+\+XML\+\_\+\+NAME\+\_\+\+PATTERN = re.\+compile(f\textquotesingle{}(\{\mbox{\hyperlink{namespacesphinx_1_1builders_1_1epub3_af7927e534828b0ac5d494c8f134cf348}{\+\_\+xml\+\_\+name\+\_\+start\+\_\+char}}\})(\{\mbox{\hyperlink{namespacesphinx_1_1builders_1_1epub3_a5dcd2cd8c563122ecd3327b2ce115a36}{\+\_\+xml\+\_\+name\+\_\+char}}\})\texorpdfstring{$\ast$}{*}\textquotesingle{})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1builders_1_1epub3_af7927e534828b0ac5d494c8f134cf348}\label{namespacesphinx_1_1builders_1_1epub3_af7927e534828b0ac5d494c8f134cf348} 
+\index{sphinx.builders.epub3@{sphinx.builders.epub3}!\_xml\_name\_start\_char@{\_xml\_name\_start\_char}}
+\index{\_xml\_name\_start\_char@{\_xml\_name\_start\_char}!sphinx.builders.epub3@{sphinx.builders.epub3}}
+\doxysubsubsection{\texorpdfstring{\_xml\_name\_start\_char}{\_xml\_name\_start\_char}}
+{\footnotesize\ttfamily tuple sphinx.\+builders.\+epub3.\+\_\+xml\+\_\+name\+\_\+start\+\_\+char\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ (}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{':|[A-\/Z]|\_|[a-\/z]|[\(\backslash\)u00c0-\/\(\backslash\)u00d6]'}}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{'|[\(\backslash\)u00d8-\/\(\backslash\)u00f6]|[\(\backslash\)u00f8-\/\(\backslash\)u02ff]|[\(\backslash\)u0370-\/\(\backslash\)u037d]'}}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{'|[\(\backslash\)u037f-\/\(\backslash\)u1fff]|[\(\backslash\)u200c-\/\(\backslash\)u200d]|[\(\backslash\)u2070-\/\(\backslash\)u218f]'}}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{stringliteral}{'|[\(\backslash\)u2c00-\/\(\backslash\)u2fef]|[\(\backslash\)u3001-\/\(\backslash\)ud7ff]|[\(\backslash\)uf900-\/\(\backslash\)ufdcf]'}}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{stringliteral}{'|[\(\backslash\)ufdf0-\/\(\backslash\)ufffd]|[\(\backslash\)U00010000-\/\(\backslash\)U000effff]'}}
+\DoxyCodeLine{00007\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacesphinx_1_1builders_1_1epub3_a91b61951b00afd42bf2818885c177c3a}\label{namespacesphinx_1_1builders_1_1epub3_a91b61951b00afd42bf2818885c177c3a} 
+\index{sphinx.builders.epub3@{sphinx.builders.epub3}!author@{author}}
+\index{author@{author}!sphinx.builders.epub3@{sphinx.builders.epub3}}
+\doxysubsubsection{\texorpdfstring{author}{author}}
+{\footnotesize\ttfamily sphinx.\+builders.\+epub3.\+author}
+
+\Hypertarget{namespacesphinx_1_1builders_1_1epub3_a523ce2eb01ff68d4ed025f3737875812}\label{namespacesphinx_1_1builders_1_1epub3_a523ce2eb01ff68d4ed025f3737875812} 
+\index{sphinx.builders.epub3@{sphinx.builders.epub3}!copyright@{copyright}}
+\index{copyright@{copyright}!sphinx.builders.epub3@{sphinx.builders.epub3}}
+\doxysubsubsection{\texorpdfstring{copyright}{copyright}}
+{\footnotesize\ttfamily sphinx.\+builders.\+epub3.\+copyright}
+
+\Hypertarget{namespacesphinx_1_1builders_1_1epub3_add074068dc4c6fe4ab5455d7298d0c62}\label{namespacesphinx_1_1builders_1_1epub3_add074068dc4c6fe4ab5455d7298d0c62} 
+\index{sphinx.builders.epub3@{sphinx.builders.epub3}!DOCTYPE@{DOCTYPE}}
+\index{DOCTYPE@{DOCTYPE}!sphinx.builders.epub3@{sphinx.builders.epub3}}
+\doxysubsubsection{\texorpdfstring{DOCTYPE}{DOCTYPE}}
+{\footnotesize\ttfamily str sphinx.\+builders.\+epub3.\+DOCTYPE = "{}"{}"{}$<$!DOCTYPE html$>$"{}"{}"{}}
+
+\Hypertarget{namespacesphinx_1_1builders_1_1epub3_a0d1af5f9a272e0cf6395a8caa0c33d67}\label{namespacesphinx_1_1builders_1_1epub3_a0d1af5f9a272e0cf6395a8caa0c33d67} 
+\index{sphinx.builders.epub3@{sphinx.builders.epub3}!HTML\_TAG@{HTML\_TAG}}
+\index{HTML\_TAG@{HTML\_TAG}!sphinx.builders.epub3@{sphinx.builders.epub3}}
+\doxysubsubsection{\texorpdfstring{HTML\_TAG}{HTML\_TAG}}
+{\footnotesize\ttfamily tuple sphinx.\+builders.\+epub3.\+HTML\+\_\+\+TAG}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ (}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{'<html\ xmlns="{}http://www.w3.org/1999/xhtml"{}\ '}}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{'xmlns:epub="{}http://www.idpf.org/2007/ops"{}>'}}
+\DoxyCodeLine{00004\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacesphinx_1_1builders_1_1epub3_a8c23d6c29a333ddf7e2b0d1a40075435}\label{namespacesphinx_1_1builders_1_1epub3_a8c23d6c29a333ddf7e2b0d1a40075435} 
+\index{sphinx.builders.epub3@{sphinx.builders.epub3}!html\_use\_index@{html\_use\_index}}
+\index{html\_use\_index@{html\_use\_index}!sphinx.builders.epub3@{sphinx.builders.epub3}}
+\doxysubsubsection{\texorpdfstring{html\_use\_index}{html\_use\_index}}
+{\footnotesize\ttfamily sphinx.\+builders.\+epub3.\+html\+\_\+use\+\_\+index}
+
+\Hypertarget{namespacesphinx_1_1builders_1_1epub3_a06fbbb9dec69ab1bb3260b85c2970d34}\label{namespacesphinx_1_1builders_1_1epub3_a06fbbb9dec69ab1bb3260b85c2970d34} 
+\index{sphinx.builders.epub3@{sphinx.builders.epub3}!IBOOK\_SCROLL\_AXIS@{IBOOK\_SCROLL\_AXIS}}
+\index{IBOOK\_SCROLL\_AXIS@{IBOOK\_SCROLL\_AXIS}!sphinx.builders.epub3@{sphinx.builders.epub3}}
+\doxysubsubsection{\texorpdfstring{IBOOK\_SCROLL\_AXIS}{IBOOK\_SCROLL\_AXIS}}
+{\footnotesize\ttfamily dict sphinx.\+builders.\+epub3.\+IBOOK\+\_\+\+SCROLL\+\_\+\+AXIS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{'horizontal'}:\ \textcolor{stringliteral}{'vertical'},}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{'vertical'}:\ \textcolor{stringliteral}{'horizontal'},}
+\DoxyCodeLine{00004\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacesphinx_1_1builders_1_1epub3_adba3253ef7bd3d72771c40501967dc25}\label{namespacesphinx_1_1builders_1_1epub3_adba3253ef7bd3d72771c40501967dc25} 
+\index{sphinx.builders.epub3@{sphinx.builders.epub3}!logger@{logger}}
+\index{logger@{logger}!sphinx.builders.epub3@{sphinx.builders.epub3}}
+\doxysubsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily sphinx.\+builders.\+epub3.\+logger = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)}
+
+\Hypertarget{namespacesphinx_1_1builders_1_1epub3_a089d3a82768d080553ba5bd3bc573300}\label{namespacesphinx_1_1builders_1_1epub3_a089d3a82768d080553ba5bd3bc573300} 
+\index{sphinx.builders.epub3@{sphinx.builders.epub3}!PAGE\_PROGRESSION\_DIRECTIONS@{PAGE\_PROGRESSION\_DIRECTIONS}}
+\index{PAGE\_PROGRESSION\_DIRECTIONS@{PAGE\_PROGRESSION\_DIRECTIONS}!sphinx.builders.epub3@{sphinx.builders.epub3}}
+\doxysubsubsection{\texorpdfstring{PAGE\_PROGRESSION\_DIRECTIONS}{PAGE\_PROGRESSION\_DIRECTIONS}}
+{\footnotesize\ttfamily dict sphinx.\+builders.\+epub3.\+PAGE\+\_\+\+PROGRESSION\+\_\+\+DIRECTIONS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{'horizontal'}:\ \textcolor{stringliteral}{'ltr'},}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{'vertical'}:\ \textcolor{stringliteral}{'rtl'},}
+\DoxyCodeLine{00004\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacesphinx_1_1builders_1_1epub3_af595740499e41e130a910b66f48a2236}\label{namespacesphinx_1_1builders_1_1epub3_af595740499e41e130a910b66f48a2236} 
+\index{sphinx.builders.epub3@{sphinx.builders.epub3}!project@{project}}
+\index{project@{project}!sphinx.builders.epub3@{sphinx.builders.epub3}}
+\doxysubsubsection{\texorpdfstring{project}{project}}
+{\footnotesize\ttfamily sphinx.\+builders.\+epub3.\+project}
+
+\Hypertarget{namespacesphinx_1_1builders_1_1epub3_a40860d68f521db5ab236294fe11c409d}\label{namespacesphinx_1_1builders_1_1epub3_a40860d68f521db5ab236294fe11c409d} 
+\index{sphinx.builders.epub3@{sphinx.builders.epub3}!THEME\_WRITING\_MODES@{THEME\_WRITING\_MODES}}
+\index{THEME\_WRITING\_MODES@{THEME\_WRITING\_MODES}!sphinx.builders.epub3@{sphinx.builders.epub3}}
+\doxysubsubsection{\texorpdfstring{THEME\_WRITING\_MODES}{THEME\_WRITING\_MODES}}
+{\footnotesize\ttfamily dict sphinx.\+builders.\+epub3.\+THEME\+\_\+\+WRITING\+\_\+\+MODES}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{'vertical'}:\ \textcolor{stringliteral}{'vertical-\/rl'},}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{'horizontal'}:\ \textcolor{stringliteral}{'horizontal-\/tb'},}
+\DoxyCodeLine{00004\ \}}
+
+\end{DoxyCode}

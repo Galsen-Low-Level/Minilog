@@ -1,0 +1,85 @@
+\doxysection{/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Ftp-\/\+FM/main.c File Reference}
+\hypertarget{Ftp-FM_2main_8c}{}\label{Ftp-FM_2main_8c}\index{/home/umar/Desktop/WorkShop/GLL/Ftp-\/FM/main.c@{/home/umar/Desktop/WorkShop/GLL/Ftp-\/FM/main.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$err.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$poll.\+h$>$}\newline
+{\ttfamily \#include $<$error.\+h$>$}\newline
+{\ttfamily \#include $<$locale.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include "{}ftpfm.\+h"{}}\newline
+{\ttfamily \#include "{}ftpfm\+\_\+logprint.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structargobjects}{argobjects}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{Ftp-FM_2main_8c_a046896f93d1bdd18bae342b65a2c2196}{pa\+\_\+args}}(\+\_\+\+\_\+name)~...
+\begin{DoxyCompactList}\small\item\em NOTE \+: this is just for annotation ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Ftp-FM_2main_8c_a85e825112975e33e7ada754c8ec8034a}{sighdl}} (int nsigs, \mbox{\hyperlink{Ftp-FM_2main_8c_a046896f93d1bdd18bae342b65a2c2196}{pa\+\_\+args}}(multisigals))
+\item 
+int \mbox{\hyperlink{Ftp-FM_2main_8c_a0c99d968a34e803d378692bde2e3f18f}{main}} (int ac, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}av)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct sigaction \mbox{\hyperlink{Ftp-FM_2main_8c_aae6d913766d5e5bc6823dd0c1627ef31}{sa}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{Ftp-FM_2main_8c_a046896f93d1bdd18bae342b65a2c2196}\label{Ftp-FM_2main_8c_a046896f93d1bdd18bae342b65a2c2196} 
+\index{main.c@{main.c}!pa\_args@{pa\_args}}
+\index{pa\_args@{pa\_args}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{pa\_args}{pa\_args}}
+{\footnotesize\ttfamily \#define pa\+\_\+args(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+name }\end{DoxyParamCaption})~...}
+
+
+
+NOTE \+: this is just for annotation ~\newline
+ 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Ftp-FM_2main_8c_a0c99d968a34e803d378692bde2e3f18f}\label{Ftp-FM_2main_8c_a0c99d968a34e803d378692bde2e3f18f} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{ac,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{av }\end{DoxyParamCaption})}
+
+No buffering on stdout ~\newline
+
+
+Embed ua type code in user\+\_\+agent\+\_\+socket\Hypertarget{Ftp-FM_2main_8c_a85e825112975e33e7ada754c8ec8034a}\label{Ftp-FM_2main_8c_a85e825112975e33e7ada754c8ec8034a} 
+\index{main.c@{main.c}!sighdl@{sighdl}}
+\index{sighdl@{sighdl}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{sighdl()}{sighdl()}}
+{\footnotesize\ttfamily void sighdl (\begin{DoxyParamCaption}\item[{int}]{nsigs,  }\item[{\mbox{\hyperlink{Ftp-FM_2main_8c_a046896f93d1bdd18bae342b65a2c2196}{pa\+\_\+args}}(multisigals)}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{Ftp-FM_2main_8c_aae6d913766d5e5bc6823dd0c1627ef31}\label{Ftp-FM_2main_8c_aae6d913766d5e5bc6823dd0c1627ef31} 
+\index{main.c@{main.c}!sa@{sa}}
+\index{sa@{sa}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{sa}{sa}}
+{\footnotesize\ttfamily struct sigaction sa}
+

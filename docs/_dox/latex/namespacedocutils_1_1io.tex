@@ -1,0 +1,90 @@
+\doxysection{docutils.\+io Namespace Reference}
+\hypertarget{namespacedocutils_1_1io}{}\label{namespacedocutils_1_1io}\index{docutils.io@{docutils.io}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1io_1_1BinaryFileOutput}{Binary\+File\+Output}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1io_1_1DocTreeInput}{Doc\+Tree\+Input}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1io_1_1ErrorOutput}{Error\+Output}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1io_1_1FileInput}{File\+Input}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1io_1_1FileOutput}{File\+Output}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1io_1_1Input}{Input}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1io_1_1InputError}{Input\+Error}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1io_1_1NullInput}{Null\+Input}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1io_1_1NullOutput}{Null\+Output}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1io_1_1Output}{Output}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1io_1_1OutputError}{Output\+Error}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1io_1_1StringInput}{String\+Input}}
+\item 
+class \mbox{\hyperlink{classdocutils_1_1io_1_1StringOutput}{String\+Output}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacedocutils_1_1io_a8735cf50341974eb1886e4fb70090b0c}{check\+\_\+encoding}} (stream, encoding)
+\item 
+\mbox{\hyperlink{namespacedocutils_1_1io_aa855c420e9ee0c4fd90853420c997ee2}{error\+\_\+string}} (err)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+tuple \mbox{\hyperlink{namespacedocutils_1_1io_ab7dfc45a873ba500722b327146faf0e3}{\+\_\+locale\+\_\+encoding}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}I/O classes provide a uniform API for low-level input and output.  Subclasses
+exist for a variety of input/output mechanisms.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacedocutils_1_1io_a8735cf50341974eb1886e4fb70090b0c}\label{namespacedocutils_1_1io_a8735cf50341974eb1886e4fb70090b0c} 
+\index{docutils.io@{docutils.io}!check\_encoding@{check\_encoding}}
+\index{check\_encoding@{check\_encoding}!docutils.io@{docutils.io}}
+\doxysubsubsection{\texorpdfstring{check\_encoding()}{check\_encoding()}}
+{\footnotesize\ttfamily docutils.\+io.\+check\+\_\+encoding (\begin{DoxyParamCaption}\item[{}]{stream,  }\item[{}]{encoding }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Test, whether the encoding of `stream` matches `encoding`.
+
+Returns
+
+:None:  if `encoding` or `stream.encoding` are not a valid encoding
+        argument (e.g. ``None``) or `stream.encoding is missing.
+:True:  if the encoding argument resolves to the same value as `encoding`,
+:False: if the encodings differ.
+\end{DoxyVerb}
+ \Hypertarget{namespacedocutils_1_1io_aa855c420e9ee0c4fd90853420c997ee2}\label{namespacedocutils_1_1io_aa855c420e9ee0c4fd90853420c997ee2} 
+\index{docutils.io@{docutils.io}!error\_string@{error\_string}}
+\index{error\_string@{error\_string}!docutils.io@{docutils.io}}
+\doxysubsubsection{\texorpdfstring{error\_string()}{error\_string()}}
+{\footnotesize\ttfamily docutils.\+io.\+error\+\_\+string (\begin{DoxyParamCaption}\item[{}]{err }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return string representation of Exception `err`.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacedocutils_1_1io_ab7dfc45a873ba500722b327146faf0e3}\label{namespacedocutils_1_1io_ab7dfc45a873ba500722b327146faf0e3} 
+\index{docutils.io@{docutils.io}!\_locale\_encoding@{\_locale\_encoding}}
+\index{\_locale\_encoding@{\_locale\_encoding}!docutils.io@{docutils.io}}
+\doxysubsubsection{\texorpdfstring{\_locale\_encoding}{\_locale\_encoding}}
+{\footnotesize\ttfamily tuple docutils.\+io.\+\_\+locale\+\_\+encoding\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ (locale.getlocale()[1]}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{or}\ locale.getdefaultlocale()[1])}
+
+\end{DoxyCode}

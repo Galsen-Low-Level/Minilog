@@ -1,0 +1,111 @@
+.TH "webob.client.SendRequest" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webob.client.SendRequest
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBHTTPConnection\fP=httplib\&.HTTPConnection, \fBHTTPSConnection\fP=httplib\&.HTTPSConnection)"
+.br
+.ti -1c
+.RI "\fB__call__\fP (self, environ, start_response)"
+.br
+.ti -1c
+.RI "\fBparse_headers\fP (self, message)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBHTTPConnection\fP"
+.br
+.ti -1c
+.RI "\fBHTTPSConnection\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBfiltered_headers\fP"
+.br
+.ti -1c
+.RI "\fBMULTILINE_RE\fP = re\&.compile(r'\\r?\\n\\s*')"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_timeout_supported\fP (self, ConnClass)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Sends the request, as described by the environ, over actual HTTP\&.
+All controls about how it is sent are contained in the request
+environ itself\&.
+
+This connects to the server given in SERVER_NAME:SERVER_PORT, and
+sends the Host header in HTTP_HOST -- they do not have to match\&.
+You can send requests to servers despite what DNS says\&.
+
+Set ``environ['webob\&.client\&.timeout'] = 10`` to set the timeout on
+the request (to, for example, 10 seconds)\&.
+
+Does not add X-Forwarded-For or other standard headers
+
+If you use ``send_request_app`` then simple ``httplib``
+connections will be used\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "webob\&.client\&.SendRequest\&.__init__ ( self,  HTTPConnection = \fChttplib\&.HTTPConnection\fP,  HTTPSConnection = \fChttplib\&.HTTPSConnection\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "webob\&.client\&.SendRequest\&.__call__ ( self,  environ,  start_response)"
+
+.SS "webob\&.client\&.SendRequest\&._timeout_supported ( self,  ConnClass)\fC [protected]\fP"
+
+.SS "webob\&.client\&.SendRequest\&.parse_headers ( self,  message)"
+
+.PP
+.nf
+Turn a Message object into a list of WSGI-style headers\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "tuple webob\&.client\&.SendRequest\&.filtered_headers\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  (
+        'transfer\-encoding',
+    )
+.fi
+
+.SS "webob\&.client\&.SendRequest\&.HTTPConnection"
+
+.SS "webob\&.client\&.SendRequest\&.HTTPSConnection"
+
+.SS "webob\&.client\&.SendRequest\&.MULTILINE_RE = re\&.compile(r'\\r?\\n\\s*')\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,415 @@
+.TH "soupsieve.css_match._DocumentNav" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+soupsieve.css_match._DocumentNav
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBsoupsieve\&.css_match\&.CSSMatch\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBassert_valid_input\fP (cls, Any tag)"
+.br
+.ti -1c
+.RI "bool \fBis_content_string\fP (cls, \fBbs4\&.element\&.PageElement\fP|None obj)"
+.br
+.ti -1c
+.RI "bool \fBis_iframe\fP (self, \fBbs4\&.Tag\fP|None el)"
+.br
+.ti -1c
+.RI "bool \fBis_root\fP (self, \fBbs4\&.Tag\fP el)"
+.br
+.ti -1c
+.RI "Iterator[\fBbs4\&.element\&.PageElement\fP] \fBget_contents\fP (self, \fBbs4\&.Tag\fP|None el, bool no_iframe=False)"
+.br
+.ti -1c
+.RI "Iterator[\fBbs4\&.Tag\fP] \fBget_tag_children\fP (self, \fBbs4\&.Tag\fP|None el, int|None start=None, bool reverse=False, bool no_iframe=False)"
+.br
+.ti -1c
+.RI "Iterator[\fBbs4\&.element\&.PageElement\fP] \fBget_children\fP (self, \fBbs4\&.Tag\fP|None el, int|None start=None, bool reverse=False, bool tags=False, bool no_iframe=False)"
+.br
+.ti -1c
+.RI "Iterator[\fBbs4\&.Tag\fP] \fBget_tag_descendants\fP (self, \fBbs4\&.Tag\fP|None el, bool no_iframe=False)"
+.br
+.ti -1c
+.RI "Iterator[\fBbs4\&.element\&.PageElement\fP] \fBget_descendants\fP (self, \fBbs4\&.Tag\fP|None el, bool tags=False, bool no_iframe=False)"
+.br
+.ti -1c
+.RI "\fBbs4\&.Tag\fP|None \fBget_parent\fP (self, \fBbs4\&.Tag\fP|None el, bool no_iframe=False)"
+.br
+.ti -1c
+.RI "\fBbs4\&.Tag\fP|None \fBget_next_tag\fP (cls, \fBbs4\&.Tag\fP el)"
+.br
+.ti -1c
+.RI "\fBbs4\&.element\&.PageElement\fP|None \fBget_next\fP (cls, \fBbs4\&.Tag\fP el, bool tags=False)"
+.br
+.ti -1c
+.RI "\fBbs4\&.Tag\fP|None \fBget_previous_tag\fP (cls, \fBbs4\&.Tag\fP el, bool tags=True)"
+.br
+.ti -1c
+.RI "\fBbs4\&.element\&.PageElement\fP|None \fBget_previous\fP (cls, \fBbs4\&.Tag\fP el, bool tags=False)"
+.br
+.ti -1c
+.RI "str|Sequence[str] \fBnormalize_value\fP (cls, Any value)"
+.br
+.ti -1c
+.RI "str|Sequence[str]|None \fBget_attribute_by_name\fP (cls, \fBbs4\&.Tag\fP el, str name, str|Sequence[str]|None default=None)"
+.br
+.ti -1c
+.RI "Iterator[tuple[str, str|Sequence[str]|None]] \fBiter_attributes\fP (cls, \fBbs4\&.Tag\fP|None el)"
+.br
+.ti -1c
+.RI "Sequence[str] \fBget_classes\fP (cls, \fBbs4\&.Tag\fP el)"
+.br
+.ti -1c
+.RI "str \fBget_text\fP (self, \fBbs4\&.Tag\fP el, bool no_iframe=False)"
+.br
+.ti -1c
+.RI "list[str] \fBget_own_text\fP (self, \fBbs4\&.Tag\fP el, bool no_iframe=False)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBis_doc\fP (\fBbs4\&.element\&.PageElement\fP|None obj)"
+.br
+.ti -1c
+.RI "bool \fBis_tag\fP (\fBbs4\&.element\&.PageElement\fP|None obj)"
+.br
+.ti -1c
+.RI "bool \fBis_declaration\fP (\fBbs4\&.element\&.PageElement\fP|None obj)"
+.br
+.ti -1c
+.RI "bool \fBis_cdata\fP (\fBbs4\&.element\&.PageElement\fP|None obj)"
+.br
+.ti -1c
+.RI "bool \fBis_processing_instruction\fP (\fBbs4\&.element\&.PageElement\fP|None obj)"
+.br
+.ti -1c
+.RI "bool \fBis_navigable_string\fP (\fBbs4\&.element\&.PageElement\fP|None obj)"
+.br
+.ti -1c
+.RI "bool \fBis_special_string\fP (\fBbs4\&.element\&.PageElement\fP|None obj)"
+.br
+.ti -1c
+.RI "\fB_FakeParent\fP \fBcreate_fake_parent\fP (\fBbs4\&.Tag\fP el)"
+.br
+.ti -1c
+.RI "bool \fBis_xml_tree\fP (\fBbs4\&.Tag\fP|None el)"
+.br
+.ti -1c
+.RI "str|None \fBget_tag_name\fP (\fBbs4\&.Tag\fP|None el)"
+.br
+.ti -1c
+.RI "str|None \fBget_prefix_name\fP (\fBbs4\&.Tag\fP el)"
+.br
+.ti -1c
+.RI "str|None \fBget_uri\fP (\fBbs4\&.Tag\fP|None el)"
+.br
+.ti -1c
+.RI "bool \fBhas_html_ns\fP (\fBbs4\&.Tag\fP|None el)"
+.br
+.ti -1c
+.RI "tuple[str|None, str|None] \fBsplit_namespace\fP (\fBbs4\&.Tag\fP|None el, str attr_name)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Navigate a Beautiful Soup document\&.
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " None soupsieve\&.css_match\&._DocumentNav\&.assert_valid_input ( cls, Any tag)"
+
+.PP
+.nf
+Check if valid input tag or document\&.
+.fi
+.PP
+ 
+.SS " \fB_FakeParent\fP soupsieve\&.css_match\&._DocumentNav\&.create_fake_parent (\fBbs4\&.Tag\fP el)\fC [static]\fP"
+
+.PP
+.nf
+Create fake parent for a given element\&.
+.fi
+.PP
+ 
+.SS " str | Sequence[str] | None soupsieve\&.css_match\&._DocumentNav\&.get_attribute_by_name ( cls, \fBbs4\&.Tag\fP el, str name, str | Sequence[str] | None  default = \fCNone\fP)"
+
+.PP
+.nf
+Get attribute by name\&.
+.fi
+.PP
+ 
+.SS " Iterator[\fBbs4\&.element\&.PageElement\fP] soupsieve\&.css_match\&._DocumentNav\&.get_children ( self, \fBbs4\&.Tag\fP | None el, int | None  start = \fCNone\fP, bool  reverse = \fCFalse\fP, bool  tags = \fCFalse\fP, bool  no_iframe = \fCFalse\fP)"
+
+.PP
+.nf
+Get children\&.
+.fi
+.PP
+ 
+.SS " Sequence[str] soupsieve\&.css_match\&._DocumentNav\&.get_classes ( cls, \fBbs4\&.Tag\fP el)"
+
+.PP
+.nf
+Get classes\&.
+.fi
+.PP
+ 
+.SS " Iterator[\fBbs4\&.element\&.PageElement\fP] soupsieve\&.css_match\&._DocumentNav\&.get_contents ( self, \fBbs4\&.Tag\fP | None el, bool  no_iframe = \fCFalse\fP)"
+
+.PP
+.nf
+Get contents or contents in reverse\&.
+.fi
+.PP
+ 
+.SS " Iterator[\fBbs4\&.element\&.PageElement\fP] soupsieve\&.css_match\&._DocumentNav\&.get_descendants ( self, \fBbs4\&.Tag\fP | None el, bool  tags = \fCFalse\fP, bool  no_iframe = \fCFalse\fP)"
+
+.PP
+.nf
+Get descendants\&.
+.fi
+.PP
+ 
+.SS " \fBbs4\&.element\&.PageElement\fP | None soupsieve\&.css_match\&._DocumentNav\&.get_next ( cls, \fBbs4\&.Tag\fP el, bool  tags = \fCFalse\fP)"
+
+.PP
+.nf
+Get next sibling tag\&.
+.fi
+.PP
+ 
+.SS " \fBbs4\&.Tag\fP | None soupsieve\&.css_match\&._DocumentNav\&.get_next_tag ( cls, \fBbs4\&.Tag\fP el)"
+
+.PP
+.nf
+Get next sibling tag\&.
+.fi
+.PP
+ 
+.SS " list[str] soupsieve\&.css_match\&._DocumentNav\&.get_own_text ( self, \fBbs4\&.Tag\fP el, bool  no_iframe = \fCFalse\fP)"
+
+.PP
+.nf
+Get Own Text\&.
+.fi
+.PP
+ 
+.SS " \fBbs4\&.Tag\fP | None soupsieve\&.css_match\&._DocumentNav\&.get_parent ( self, \fBbs4\&.Tag\fP | None el, bool  no_iframe = \fCFalse\fP)"
+
+.PP
+.nf
+Get parent\&.
+.fi
+.PP
+ 
+.SS " str | None soupsieve\&.css_match\&._DocumentNav\&.get_prefix_name (\fBbs4\&.Tag\fP el)\fC [static]\fP"
+
+.PP
+.nf
+Get prefix\&.
+.fi
+.PP
+ 
+.SS " \fBbs4\&.element\&.PageElement\fP | None soupsieve\&.css_match\&._DocumentNav\&.get_previous ( cls, \fBbs4\&.Tag\fP el, bool  tags = \fCFalse\fP)"
+
+.PP
+.nf
+Get previous sibling tag\&.
+.fi
+.PP
+ 
+.SS " \fBbs4\&.Tag\fP | None soupsieve\&.css_match\&._DocumentNav\&.get_previous_tag ( cls, \fBbs4\&.Tag\fP el, bool  tags = \fCTrue\fP)"
+
+.PP
+.nf
+Get previous sibling tag\&.
+.fi
+.PP
+ 
+.SS " Iterator[\fBbs4\&.Tag\fP] soupsieve\&.css_match\&._DocumentNav\&.get_tag_children ( self, \fBbs4\&.Tag\fP | None el, int | None  start = \fCNone\fP, bool  reverse = \fCFalse\fP, bool  no_iframe = \fCFalse\fP)"
+
+.PP
+.nf
+Get tag children\&.
+.fi
+.PP
+ 
+.SS " Iterator[\fBbs4\&.Tag\fP] soupsieve\&.css_match\&._DocumentNav\&.get_tag_descendants ( self, \fBbs4\&.Tag\fP | None el, bool  no_iframe = \fCFalse\fP)"
+
+.PP
+.nf
+Specifically get tag descendants\&.
+.fi
+.PP
+ 
+.SS " str | None soupsieve\&.css_match\&._DocumentNav\&.get_tag_name (\fBbs4\&.Tag\fP | None el)\fC [static]\fP"
+
+.PP
+.nf
+Get tag\&.
+.fi
+.PP
+ 
+.SS " str soupsieve\&.css_match\&._DocumentNav\&.get_text ( self, \fBbs4\&.Tag\fP el, bool  no_iframe = \fCFalse\fP)"
+
+.PP
+.nf
+Get text\&.
+.fi
+.PP
+ 
+.SS " str | None soupsieve\&.css_match\&._DocumentNav\&.get_uri (\fBbs4\&.Tag\fP | None el)\fC [static]\fP"
+
+.PP
+.nf
+Get namespace `URI`\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&._DocumentNav\&.has_html_ns (\fBbs4\&.Tag\fP | None el)\fC [static]\fP"
+
+.PP
+.nf
+Check if element has an HTML namespace\&.
+
+This is a bit different than whether a element is treated as having an HTML namespace,
+like we do in the case of `is_html_tag`\&.
+
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&._DocumentNav\&.is_cdata (\fBbs4\&.element\&.PageElement\fP | None obj)\fC [static]\fP"
+
+.PP
+.nf
+Is CDATA\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&._DocumentNav\&.is_content_string ( cls, \fBbs4\&.element\&.PageElement\fP | None obj)"
+
+.PP
+.nf
+Check if node is content string\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&._DocumentNav\&.is_declaration (\fBbs4\&.element\&.PageElement\fP | None obj)\fC [static]\fP"
+
+.PP
+.nf
+Is declaration\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&._DocumentNav\&.is_doc (\fBbs4\&.element\&.PageElement\fP | None obj)\fC [static]\fP"
+
+.PP
+.nf
+Is `BeautifulSoup` object\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&._DocumentNav\&.is_iframe ( self, \fBbs4\&.Tag\fP | None el)"
+
+.PP
+.nf
+Check if element is an `iframe`\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&._DocumentNav\&.is_navigable_string (\fBbs4\&.element\&.PageElement\fP | None obj)\fC [static]\fP"
+
+.PP
+.nf
+Is navigable string\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&._DocumentNav\&.is_processing_instruction (\fBbs4\&.element\&.PageElement\fP | None obj)\fC [static]\fP"
+
+.PP
+.nf
+Is processing instruction\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&._DocumentNav\&.is_root ( self, \fBbs4\&.Tag\fP el)"
+
+.PP
+.nf
+Return whether element is a root element\&.
+
+We check that the element is the root of the tree (which we have already pre-calculated),
+and we check if it is the root element under an `iframe`\&.
+
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&._DocumentNav\&.is_special_string (\fBbs4\&.element\&.PageElement\fP | None obj)\fC [static]\fP"
+
+.PP
+.nf
+Is special string\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&._DocumentNav\&.is_tag (\fBbs4\&.element\&.PageElement\fP | None obj)\fC [static]\fP"
+
+.PP
+.nf
+Is tag\&.
+.fi
+.PP
+ 
+.SS " bool soupsieve\&.css_match\&._DocumentNav\&.is_xml_tree (\fBbs4\&.Tag\fP | None el)\fC [static]\fP"
+
+.PP
+.nf
+Check if element (or document) is from a XML tree\&.
+.fi
+.PP
+ 
+.SS " Iterator[tuple[str, str | Sequence[str] | None]] soupsieve\&.css_match\&._DocumentNav\&.iter_attributes ( cls, \fBbs4\&.Tag\fP | None el)"
+
+.PP
+.nf
+Iterate attributes\&.
+.fi
+.PP
+ 
+.SS " str | Sequence[str] soupsieve\&.css_match\&._DocumentNav\&.normalize_value ( cls, Any value)"
+
+.PP
+.nf
+Normalize the value to be a string or list of strings\&.
+.fi
+.PP
+ 
+.SS " tuple[str | None, str | None] soupsieve\&.css_match\&._DocumentNav\&.split_namespace (\fBbs4\&.Tag\fP | None el, str attr_name)\fC [static]\fP"
+
+.PP
+.nf
+Return namespace and attribute name without the prefix\&.
+.fi
+.PP
+ 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

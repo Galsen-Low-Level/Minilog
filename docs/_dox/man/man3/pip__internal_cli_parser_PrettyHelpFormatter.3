@@ -1,0 +1,107 @@
+.TH "pip._internal.cli.parser.PrettyHelpFormatter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.cli.parser.PrettyHelpFormatter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits optparse\&.IndentedHelpFormatter\&.
+.PP
+Inherited by \fBpip\&._internal\&.cli\&.parser\&.UpdatingDefaultsHelpFormatter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, *Any args, **Any kwargs)"
+.br
+.ti -1c
+.RI "str \fBformat_option_strings\fP (self, optparse\&.Option option)"
+.br
+.ti -1c
+.RI "str \fBformat_heading\fP (self, str heading)"
+.br
+.ti -1c
+.RI "str \fBformat_usage\fP (self, str usage)"
+.br
+.ti -1c
+.RI "str \fBformat_description\fP (self, Optional[str] description)"
+.br
+.ti -1c
+.RI "str \fBformat_epilog\fP (self, Optional[str] epilog)"
+.br
+.ti -1c
+.RI "str \fBindent_lines\fP (self, str text, str indent)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBparser\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fB_format_option_strings\fP (self, optparse\&.Option option, str mvarfmt=' <{}>', str optsep=', ')"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A prettier/less verbose help formatter for optparse\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._internal\&.cli\&.parser\&.PrettyHelpFormatter\&.__init__ ( self, *Any args, **Any kwargs)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " str pip\&._internal\&.cli\&.parser\&.PrettyHelpFormatter\&._format_option_strings ( self, optparse\&.Option option, str  mvarfmt = \fC' <{}>'\fP, str  optsep = \fC', '\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Return a comma-separated list of option strings and metavars\&.
+
+:param option:  tuple of (short opt, long opt), e\&.g: ('-f', '--format')
+:param mvarfmt: metavar format string
+:param optsep:  separator
+
+.fi
+.PP
+ 
+.SS " str pip\&._internal\&.cli\&.parser\&.PrettyHelpFormatter\&.format_description ( self, Optional[str] description)"
+
+.SS " str pip\&._internal\&.cli\&.parser\&.PrettyHelpFormatter\&.format_epilog ( self, Optional[str] epilog)"
+
+.SS " str pip\&._internal\&.cli\&.parser\&.PrettyHelpFormatter\&.format_heading ( self, str heading)"
+
+.SS " str pip\&._internal\&.cli\&.parser\&.PrettyHelpFormatter\&.format_option_strings ( self, optparse\&.Option option)"
+
+.SS " str pip\&._internal\&.cli\&.parser\&.PrettyHelpFormatter\&.format_usage ( self, str usage)"
+
+.PP
+.nf
+Ensure there is only one newline between usage and the first heading
+if there is no description\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._internal\&.cli\&.parser\&.PrettyHelpFormatter\&.indent_lines ( self, str text, str indent)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._internal\&.cli\&.parser\&.PrettyHelpFormatter\&.parser"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

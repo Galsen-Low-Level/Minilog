@@ -1,0 +1,224 @@
+.TH "pygments.lexers.j.JLexer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.lexers.j.JLexer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpygments\&.lexer\&.RegexLexer\fP\&.
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = 'J'"
+.br
+.ti -1c
+.RI "str \fBurl\fP = 'http://jsoftware\&.com/'"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = ['j']"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = ['*\&.ijs']"
+.br
+.ti -1c
+.RI "list \fBmimetypes\fP = ['text/x\-j']"
+.br
+.ti -1c
+.RI "str \fBversion_added\fP = '2\&.1'"
+.br
+.ti -1c
+.RI "str \fBvalidName\fP = r'\\b[a\-zA\-Z]\\w*'"
+.br
+.ti -1c
+.RI "dict \fBtokens\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpygments\&.lexer\&.RegexLexer\fP
+.in +1c
+.ti -1c
+.RI "\fBflags\fP = re\&.MULTILINE"
+.br
+.ti -1c
+.RI "dict \fBtokens\fP = {}"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fBname\fP = None"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = []"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBalias_filenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBmimetypes\fP = []"
+.br
+.ti -1c
+.RI "int \fBpriority\fP = 0"
+.br
+.ti -1c
+.RI "\fBurl\fP = None"
+.br
+.ti -1c
+.RI "\fBversion_added\fP = None"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.RegexLexer\fP
+.in +1c
+.ti -1c
+.RI "\fBget_tokens_unprocessed\fP (self, text, stack=('root',))"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd_filter\fP (self, filter_, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fBanalyse_text\fP (text)"
+.br
+.ti -1c
+.RI "\fBget_tokens\fP (self, text, unfiltered=False)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.LexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fB__new__\fP (mcs, name, bases, d)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.RegexLexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fBprocess_tokendef\fP (cls, name, tokendefs=None)"
+.br
+.ti -1c
+.RI "\fBget_tokendefs\fP (cls)"
+.br
+.ti -1c
+.RI "\fB__call__\fP (cls, *args, **kwds)"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBstripnl\fP"
+.br
+.ti -1c
+.RI "\fBstripall\fP"
+.br
+.ti -1c
+.RI "\fBensurenl\fP"
+.br
+.ti -1c
+.RI "\fBtabsize\fP"
+.br
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBfilters\fP"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB_preprocess_lexer_input\fP (self, text)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpygments\&.lexer\&.RegexLexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fB_process_regex\fP (cls, regex, rflags, state)"
+.br
+.ti -1c
+.RI "\fB_process_token\fP (cls, token)"
+.br
+.ti -1c
+.RI "\fB_process_new_state\fP (cls, new_state, unprocessed, processed)"
+.br
+.ti -1c
+.RI "\fB_process_state\fP (cls, unprocessed, processed, state)"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBpygments\&.lexer\&.RegexLexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fB_all_tokens\fP"
+.br
+.ti -1c
+.RI "\fB_tmpname\fP"
+.br
+.ti -1c
+.RI "\fB_tokens\fP"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB_example\fP = None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+For J source code\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "list pygments\&.lexers\&.j\&.JLexer\&.aliases = ['j']\fC [static]\fP"
+
+.SS "list pygments\&.lexers\&.j\&.JLexer\&.filenames = ['*\&.ijs']\fC [static]\fP"
+
+.SS "list pygments\&.lexers\&.j\&.JLexer\&.mimetypes = ['text/x\-j']\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.j\&.JLexer\&.name = 'J'\fC [static]\fP"
+
+.SS "dict pygments\&.lexers\&.j\&.JLexer\&.tokens\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.j\&.JLexer\&.url = 'http://jsoftware\&.com/'\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.j\&.JLexer\&.validName = r'\\b[a\-zA\-Z]\\w*'\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.j\&.JLexer\&.version_added = '2\&.1'\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,523 @@
+.TH "pip._vendor.urllib3.connectionpool.HTTPConnectionPool" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.urllib3.connectionpool.HTTPConnectionPool
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._vendor\&.urllib3\&.connectionpool\&.ConnectionPool\fP, and \fBpip\&._vendor\&.urllib3\&.request\&.RequestMethods\fP\&.
+.PP
+Inherited by \fBpip\&._vendor\&.urllib3\&.connectionpool\&.HTTPSConnectionPool\fP, and \fBpip\&._vendor\&.urllib3\&.contrib\&.socks\&.SOCKSHTTPConnectionPool\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBhost\fP, \fBport\fP=None, \fBstrict\fP=False, \fBtimeout\fP=\fBTimeout\&.DEFAULT_TIMEOUT\fP, maxsize=1, \fBblock\fP=False, \fBheaders\fP=None, \fBretries\fP=None, _proxy=None, _proxy_headers=None, _proxy_config=None, **\fBconn_kw\fP)"
+.br
+.ti -1c
+.RI "\fBclose\fP (self)"
+.br
+.ti -1c
+.RI "\fBis_same_host\fP (self, url)"
+.br
+.ti -1c
+.RI "\fBurlopen\fP (self, method, url, body=None, \fBheaders\fP=None, \fBretries\fP=None, redirect=True, assert_same_host=True, \fBtimeout\fP=\fB_Default\fP, pool_timeout=None, release_conn=None, chunked=False, body_pos=None, **response_kw)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._vendor\&.urllib3\&.connectionpool\&.ConnectionPool\fP
+.in +1c
+.ti -1c
+.RI "\fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__enter__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__exit__\fP (self, exc_type, exc_val, exc_tb)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._vendor\&.urllib3\&.request\&.RequestMethods\fP
+.in +1c
+.ti -1c
+.RI "\fBrequest\fP (self, method, url, fields=None, \fBheaders\fP=None, **urlopen_kw)"
+.br
+.ti -1c
+.RI "\fBrequest_encode_url\fP (self, method, url, fields=None, \fBheaders\fP=None, **urlopen_kw)"
+.br
+.ti -1c
+.RI "\fBrequest_encode_body\fP (self, method, url, fields=None, \fBheaders\fP=None, encode_multipart=True, multipart_boundary=None, **urlopen_kw)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBstrict\fP"
+.br
+.ti -1c
+.RI "\fBtimeout\fP"
+.br
+.ti -1c
+.RI "\fBretries\fP"
+.br
+.ti -1c
+.RI "\fBpool\fP"
+.br
+.ti -1c
+.RI "\fBblock\fP"
+.br
+.ti -1c
+.RI "\fBproxy\fP"
+.br
+.ti -1c
+.RI "\fBproxy_headers\fP"
+.br
+.ti -1c
+.RI "\fBproxy_config\fP"
+.br
+.ti -1c
+.RI "\fBnum_connections\fP"
+.br
+.ti -1c
+.RI "\fBnum_requests\fP"
+.br
+.ti -1c
+.RI "\fBconn_kw\fP"
+.br
+.ti -1c
+.RI "\fBhost\fP"
+.br
+.ti -1c
+.RI "\fBscheme\fP"
+.br
+.ti -1c
+.RI "\fBport\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpip\&._vendor\&.urllib3\&.connectionpool\&.ConnectionPool\fP
+.in +1c
+.ti -1c
+.RI "\fBhost\fP"
+.br
+.ti -1c
+.RI "\fBport\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpip\&._vendor\&.urllib3\&.request\&.RequestMethods\fP
+.in +1c
+.ti -1c
+.RI "\fBheaders\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBscheme\fP = 'http'"
+.br
+.ti -1c
+.RI "\fBConnectionCls\fP = \fBHTTPConnection\fP"
+.br
+.ti -1c
+.RI "\fBResponseCls\fP = \fBHTTPResponse\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpip\&._vendor\&.urllib3\&.connectionpool\&.ConnectionPool\fP
+.in +1c
+.ti -1c
+.RI "\fBscheme\fP = None"
+.br
+.ti -1c
+.RI "\fBQueueCls\fP = \fBLifoQueue\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_new_conn\fP (self)"
+.br
+.ti -1c
+.RI "\fB_get_conn\fP (self, \fBtimeout\fP=None)"
+.br
+.ti -1c
+.RI "\fB_put_conn\fP (self, conn)"
+.br
+.ti -1c
+.RI "\fB_validate_conn\fP (self, conn)"
+.br
+.ti -1c
+.RI "\fB_prepare_proxy\fP (self, conn)"
+.br
+.ti -1c
+.RI "\fB_get_timeout\fP (self, \fBtimeout\fP)"
+.br
+.ti -1c
+.RI "\fB_raise_timeout\fP (self, err, url, timeout_value)"
+.br
+.ti -1c
+.RI "\fB_make_request\fP (self, conn, method, url, \fBtimeout\fP=\fB_Default\fP, chunked=False, **httplib_request_kw)"
+.br
+.ti -1c
+.RI "\fB_absolute_url\fP (self, path)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Attributes inherited from \fBpip\&._vendor\&.urllib3\&.connectionpool\&.ConnectionPool\fP
+.in +1c
+.ti -1c
+.RI "\fB_proxy_host\fP"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBpip\&._vendor\&.urllib3\&.request\&.RequestMethods\fP
+.in +1c
+.ti -1c
+.RI "dict \fB_encode_url_methods\fP = {'DELETE', 'GET', 'HEAD', 'OPTIONS'}"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Thread-safe connection pool for one host\&.
+
+:param host:
+    Host used for this HTTP Connection (e\&.g\&. 'localhost'), passed into
+    :class:`http\&.client\&.HTTPConnection`\&.
+
+:param port:
+    Port used for this HTTP Connection (None is equivalent to 80), passed
+    into :class:`http\&.client\&.HTTPConnection`\&.
+
+:param strict:
+    Causes BadStatusLine to be raised if the status line can't be parsed
+    as a valid HTTP/1\&.0 or 1\&.1 status line, passed into
+    :class:`http\&.client\&.HTTPConnection`\&.
+
+    \&.\&. note::
+       Only works in Python 2\&. This parameter is ignored in Python 3\&.
+
+:param timeout:
+    Socket timeout in seconds for each individual connection\&. This can
+    be a float or integer, which sets the timeout for the HTTP request,
+    or an instance of :class:`urllib3\&.util\&.Timeout` which gives you more
+    fine-grained control over request timeouts\&. After the constructor has
+    been parsed, this is always a `urllib3\&.util\&.Timeout` object\&.
+
+:param maxsize:
+    Number of connections to save that can be reused\&. More than 1 is useful
+    in multithreaded situations\&. If ``block`` is set to False, more
+    connections will be created but they will not be saved once they've
+    been used\&.
+
+:param block:
+    If set to True, no more than ``maxsize`` connections will be used at
+    a time\&. When no free connections are available, the call will block
+    until a connection has been released\&. This is a useful side effect for
+    particular multithreaded situations where one does not want to use more
+    than maxsize connections per host to prevent flooding\&.
+
+:param headers:
+    Headers to include with all requests, unless other headers are given
+    explicitly\&.
+
+:param retries:
+    Retry configuration to use by default with requests in this pool\&.
+
+:param _proxy:
+    Parsed proxy URL, should not be used directly, instead, see
+    :class:`urllib3\&.ProxyManager`
+
+:param _proxy_headers:
+    A dictionary with proxy headers, should not be used directly,
+    instead, see :class:`urllib3\&.ProxyManager`
+
+:param \\\\**conn_kw:
+    Additional parameters are used to create fresh :class:`urllib3\&.connection\&.HTTPConnection`,
+    :class:`urllib3\&.connection\&.HTTPSConnection` instances\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&.__init__ ( self,  host,  port = \fCNone\fP,  strict = \fCFalse\fP,  timeout = \fC\fBTimeout\&.DEFAULT_TIMEOUT\fP\fP,  maxsize = \fC1\fP,  block = \fCFalse\fP,  headers = \fCNone\fP,  retries = \fCNone\fP,  _proxy = \fCNone\fP,  _proxy_headers = \fCNone\fP,  _proxy_config = \fCNone\fP, ** conn_kw)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.urllib3\&.connectionpool\&.ConnectionPool\fP\&.
+.PP
+Reimplemented in \fBpip\&._vendor\&.urllib3\&.connectionpool\&.HTTPSConnectionPool\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&._absolute_url ( self,  path)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&._get_conn ( self,  timeout = \fCNone\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Get a connection\&. Will return a pooled connection if one is available\&.
+
+If no connections are available and :prop:`\&.block` is ``False``, then a
+fresh connection is returned\&.
+
+:param timeout:
+    Seconds to wait before giving up and raising
+    :class:`urllib3\&.exceptions\&.EmptyPoolError` if the pool is empty and
+    :prop:`\&.block` is ``True``\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&._get_timeout ( self,  timeout)\fC [protected]\fP"
+
+.PP
+.nf
+Helper that always returns a :class:`urllib3\&.util\&.Timeout`
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&._make_request ( self,  conn,  method,  url,  timeout = \fC\fB_Default\fP\fP,  chunked = \fCFalse\fP, ** httplib_request_kw)\fC [protected]\fP"
+
+.PP
+.nf
+Perform a request on a given urllib connection object taken from our
+pool\&.
+
+:param conn:
+    a connection from one of our connection pools
+
+:param timeout:
+    Socket timeout in seconds for the request\&. This can be a
+    float or integer, which will set the same timeout value for
+    the socket connect and the socket read, or an instance of
+    :class:`urllib3\&.util\&.Timeout`, which gives you more fine-grained
+    control over your timeouts\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&._new_conn ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Return a fresh :class:`HTTPConnection`\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._vendor\&.urllib3\&.connectionpool\&.HTTPSConnectionPool\fP\&.
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&._prepare_proxy ( self,  conn)\fC [protected]\fP"
+
+.PP
+Reimplemented in \fBpip\&._vendor\&.urllib3\&.connectionpool\&.HTTPSConnectionPool\fP\&.
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&._put_conn ( self,  conn)\fC [protected]\fP"
+
+.PP
+.nf
+Put a connection back into the pool\&.
+
+:param conn:
+    Connection object for the current host and port as returned by
+    :meth:`\&._new_conn` or :meth:`\&._get_conn`\&.
+
+If the pool is already full, the connection is closed and discarded
+because we exceeded maxsize\&. If connections are discarded frequently,
+then maxsize should be increased\&.
+
+If the pool is closed, then the connection will be closed and discarded\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&._raise_timeout ( self,  err,  url,  timeout_value)\fC [protected]\fP"
+
+.PP
+.nf
+Is the error actually a timeout? Will raise a ReadTimeout or pass
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&._validate_conn ( self,  conn)\fC [protected]\fP"
+
+.PP
+.nf
+Called right before a request is made, after the socket is created\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._vendor\&.urllib3\&.connectionpool\&.HTTPSConnectionPool\fP\&.
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&.close ( self)"
+
+.PP
+.nf
+Close all pooled connections and disable the pool\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._vendor\&.urllib3\&.connectionpool\&.ConnectionPool\fP\&.
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&.is_same_host ( self,  url)"
+
+.PP
+.nf
+Check if the given ``url`` is a member of the same host as this
+connection pool\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&.urlopen ( self,  method,  url,  body = \fCNone\fP,  headers = \fCNone\fP,  retries = \fCNone\fP,  redirect = \fCTrue\fP,  assert_same_host = \fCTrue\fP,  timeout = \fC\fB_Default\fP\fP,  pool_timeout = \fCNone\fP,  release_conn = \fCNone\fP,  chunked = \fCFalse\fP,  body_pos = \fCNone\fP, ** response_kw)"
+
+.PP
+.nf
+Get a connection from the pool and perform an HTTP request\&. This is the
+lowest level call for making a request, so you'll need to specify all
+the raw details\&.
+
+\&.\&. note::
+
+   More commonly, it's appropriate to use a convenience method provided
+   by :class:`\&.RequestMethods`, such as :meth:`request`\&.
+
+\&.\&. note::
+
+   `release_conn` will only behave as expected if
+   `preload_content=False` because we want to make
+   `preload_content=False` the default behaviour someday soon without
+   breaking backwards compatibility\&.
+
+:param method:
+    HTTP request method (such as GET, POST, PUT, etc\&.)
+
+:param url:
+    The URL to perform the request on\&.
+
+:param body:
+    Data to send in the request body, either :class:`str`, :class:`bytes`,
+    an iterable of :class:`str`/:class:`bytes`, or a file-like object\&.
+
+:param headers:
+    Dictionary of custom headers to send, such as User-Agent,
+    If-None-Match, etc\&. If None, pool headers are used\&. If provided,
+    these headers completely replace any pool-specific headers\&.
+
+:param retries:
+    Configure the number of retries to allow before raising a
+    :class:`~urllib3\&.exceptions\&.MaxRetryError` exception\&.
+
+    Pass ``None`` to retry until you receive a response\&. Pass a
+    :class:`~urllib3\&.util\&.retry\&.Retry` object for fine-grained control
+    over different types of retries\&.
+    Pass an integer number to retry connection errors that many times,
+    but no other types of errors\&. Pass zero to never retry\&.
+
+    If ``False``, then retries are disabled and any exception is raised
+    immediately\&. Also, instead of raising a MaxRetryError on redirects,
+    the redirect response will be returned\&.
+
+:type retries: :class:`~urllib3\&.util\&.retry\&.Retry`, False, or an int\&.
+
+:param redirect:
+    If True, automatically handle redirects (status codes 301, 302,
+    303, 307, 308)\&. Each redirect counts as a retry\&. Disabling retries
+    will disable redirect, too\&.
+
+:param assert_same_host:
+    If ``True``, will make sure that the host of the pool requests is
+    consistent else will raise HostChangedError\&. When ``False``, you can
+    use the pool on an HTTP proxy and request foreign hosts\&.
+
+:param timeout:
+    If specified, overrides the default timeout for this one
+    request\&. It may be a float (in seconds) or an instance of
+    :class:`urllib3\&.util\&.Timeout`\&.
+
+:param pool_timeout:
+    If set and the pool is set to block=True, then this method will
+    block for ``pool_timeout`` seconds and raise EmptyPoolError if no
+    connection is available within the time period\&.
+
+:param release_conn:
+    If False, then the urlopen call will not release the connection
+    back into the pool once a response is received (but will release if
+    you read the entire contents of the response such as when
+    `preload_content=True`)\&. This is useful if you're not preloading
+    the response's content immediately\&. You will need to call
+    ``r\&.release_conn()`` on the response ``r`` to return the connection
+    back into the pool\&. If None, it takes the value of
+    ``response_kw\&.get('preload_content', True)``\&.
+
+:param chunked:
+    If True, urllib3 will send the body using chunked transfer
+    encoding\&. Otherwise, urllib3 will send the body using the standard
+    content-length form\&. Defaults to False\&.
+
+:param int body_pos:
+    Position to seek to in file-like body in the event of a retry or
+    redirect\&. Typically this won't need to be set because urllib3 will
+    auto-populate the value when needed\&.
+
+:param \\\\**response_kw:
+    Additional parameters are passed to
+    :meth:`urllib3\&.response\&.HTTPResponse\&.from_httplib`
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._vendor\&.urllib3\&.request\&.RequestMethods\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&.block"
+
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&.conn_kw"
+
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&.ConnectionCls = \fBHTTPConnection\fP\fC [static]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&.host"
+
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&.num_connections"
+
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&.num_requests"
+
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&.pool"
+
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&.port"
+
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&.proxy"
+
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&.proxy_config"
+
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&.proxy_headers"
+
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&.ResponseCls = \fBHTTPResponse\fP\fC [static]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&.retries"
+
+.SS "str pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&.scheme = 'http'\fC [static]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&.scheme"
+
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&.strict"
+
+.SS "pip\&._vendor\&.urllib3\&.connectionpool\&.HTTPConnectionPool\&.timeout"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classbs4_1_1element_1_1AttributeValueWithCharsetSubstitution" kind="class" language="Python" prot="public">
+    <compoundname>bs4::element::AttributeValueWithCharsetSubstitution</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">str</basecompoundref>
+    <derivedcompoundref refid="classbs4_1_1element_1_1CharsetMetaAttributeValue" prot="public" virt="non-virtual">bs4.element.CharsetMetaAttributeValue</derivedcompoundref>
+    <derivedcompoundref refid="classbs4_1_1element_1_1ContentMetaAttributeValue" prot="public" virt="non-virtual">bs4.element.ContentMetaAttributeValue</derivedcompoundref>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classbs4_1_1element_1_1AttributeValueWithCharsetSubstitution_1aa981ed759fe7334288f478480cd415d4" prot="public" static="yes" mutable="no">
+        <type>str</type>
+        <definition>str bs4.element.AttributeValueWithCharsetSubstitution::original_value</definition>
+        <argsstring></argsstring>
+        <name>original_value</name>
+        <qualifiedname>bs4.element.AttributeValueWithCharsetSubstitution.original_value</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/element.py" line="180" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/element.py" bodystart="180" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classbs4_1_1element_1_1AttributeValueWithCharsetSubstitution_1a09d8c87b697e959d4772b233da4758e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>str</type>
+        <definition> str bs4.element.AttributeValueWithCharsetSubstitution.substitute_encoding</definition>
+        <argsstring>(self, str eventual_encoding)</argsstring>
+        <name>substitute_encoding</name>
+        <qualifiedname>bs4.element.AttributeValueWithCharsetSubstitution.substitute_encoding</qualifiedname>
+        <reimplementedby refid="classbs4_1_1element_1_1CharsetMetaAttributeValue_1a2c69059fd5c8425e58a9c90f72107a82">substitute_encoding</reimplementedby>
+        <reimplementedby refid="classbs4_1_1element_1_1ContentMetaAttributeValue_1a730441e0de4f83e6aee4fb14d23864db">substitute_encoding</reimplementedby>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>eventual_encoding</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Do whatever&apos;s necessary in this implementation-specific
+portion an HTML document to substitute in a specific encoding.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/element.py" line="182" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/element.py" bodystart="182" bodyend="188"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>An abstract class standing in for a character encoding specified
+inside an HTML ``&lt;meta&gt;`` tag.
+
+Subclasses exist for each place such a character encoding might be
+found: either inside the ``charset`` attribute
+(`CharsetMetaAttributeValue`) or inside the ``content`` attribute
+(`ContentMetaAttributeValue`)
+
+This allows Beautiful Soup to replace that part of the HTML file
+with a different encoding when ouputting a tree as a string.
+</verbatim> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>bs4.element.AttributeValueWithCharsetSubstitution</label>
+        <link refid="classbs4_1_1element_1_1AttributeValueWithCharsetSubstitution"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>bs4.element.CharsetMetaAttributeValue</label>
+        <link refid="classbs4_1_1element_1_1CharsetMetaAttributeValue"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>bs4.element.ContentMetaAttributeValue</label>
+        <link refid="classbs4_1_1element_1_1ContentMetaAttributeValue"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>str</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>bs4.element.AttributeValueWithCharsetSubstitution</label>
+        <link refid="classbs4_1_1element_1_1AttributeValueWithCharsetSubstitution"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>original_value</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>str</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/element.py" line="165" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/bs4/element.py" bodystart="165" bodyend="188"/>
+    <listofallmembers>
+      <member refid="classbs4_1_1element_1_1AttributeValueWithCharsetSubstitution_1aa981ed759fe7334288f478480cd415d4" prot="public" virt="non-virtual"><scope>bs4::element::AttributeValueWithCharsetSubstitution</scope><name>original_value</name></member>
+      <member refid="classbs4_1_1element_1_1AttributeValueWithCharsetSubstitution_1a09d8c87b697e959d4772b233da4758e3" prot="public" virt="non-virtual"><scope>bs4::element::AttributeValueWithCharsetSubstitution</scope><name>substitute_encoding</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,207 @@
+.TH "pygments.formatters.groff.GroffFormatter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.formatters.groff.GroffFormatter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpygments\&.formatter\&.Formatter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fBformat_unencoded\fP (self, tokensource, outfile)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.formatter\&.Formatter\fP
+.in +1c
+.ti -1c
+.RI "\fBget_style_defs\fP (self, arg='')"
+.br
+.ti -1c
+.RI "\fBformat\fP (self, tokensource, outfile)"
+.br
+.ti -1c
+.RI "\fB__class_getitem__\fP (cls, \fBname\fP)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBmonospaced\fP"
+.br
+.ti -1c
+.RI "\fBlinenos\fP"
+.br
+.ti -1c
+.RI "\fBwrap\fP"
+.br
+.ti -1c
+.RI "\fBstyles\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpygments\&.formatter\&.Formatter\fP
+.in +1c
+.ti -1c
+.RI "\fBstyle\fP"
+.br
+.ti -1c
+.RI "\fBfull\fP"
+.br
+.ti -1c
+.RI "\fBtitle\fP"
+.br
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = 'groff'"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = ['groff','troff','roff']"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = []"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpygments\&.formatter\&.Formatter\fP
+.in +1c
+.ti -1c
+.RI "\fBname\fP = None"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = []"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = []"
+.br
+.ti -1c
+.RI "bool \fBunicodeoutput\fP = True"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_make_styles\fP (self)"
+.br
+.ti -1c
+.RI "\fB_define_colors\fP (self, outfile)"
+.br
+.ti -1c
+.RI "\fB_write_lineno\fP (self, outfile)"
+.br
+.ti -1c
+.RI "\fB_wrap_line\fP (self, line)"
+.br
+.ti -1c
+.RI "\fB_escape_chars\fP (self, text)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_lineno\fP"
+.br
+.ti -1c
+.RI "\fB_linelen\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Format tokens with groff escapes to change their color and font style\&.
+
+\&.\&. versionadded:: 2\&.11
+
+Additional options accepted:
+
+`style`
+    The style to use, can be a string or a Style subclass (default:
+    ``'default'``)\&.
+
+`monospaced`
+    If set to true, monospace font will be used (default: ``true``)\&.
+
+`linenos`
+    If set to true, print the line numbers (default: ``false``)\&.
+
+`wrap`
+    Wrap lines to the specified number of characters\&. Disabled if set to 0
+    (default: ``0``)\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pygments\&.formatters\&.groff\&.GroffFormatter\&.__init__ ( self, ** options)"
+
+.PP
+.nf
+As with lexers, this constructor takes arbitrary optional arguments,
+and if you override it, you should first process your own options, then
+call the base class implementation\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpygments\&.formatter\&.Formatter\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "pygments\&.formatters\&.groff\&.GroffFormatter\&._define_colors ( self,  outfile)\fC [protected]\fP"
+
+.SS "pygments\&.formatters\&.groff\&.GroffFormatter\&._escape_chars ( self,  text)\fC [protected]\fP"
+
+.SS "pygments\&.formatters\&.groff\&.GroffFormatter\&._make_styles ( self)\fC [protected]\fP"
+
+.SS "pygments\&.formatters\&.groff\&.GroffFormatter\&._wrap_line ( self,  line)\fC [protected]\fP"
+
+.SS "pygments\&.formatters\&.groff\&.GroffFormatter\&._write_lineno ( self,  outfile)\fC [protected]\fP"
+
+.SS "pygments\&.formatters\&.groff\&.GroffFormatter\&.format_unencoded ( self,  tokensource,  outfile)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pygments\&.formatters\&.groff\&.GroffFormatter\&._linelen\fC [protected]\fP"
+
+.SS "pygments\&.formatters\&.groff\&.GroffFormatter\&._lineno\fC [protected]\fP"
+
+.SS "list pygments\&.formatters\&.groff\&.GroffFormatter\&.aliases = ['groff','troff','roff']\fC [static]\fP"
+
+.SS "list pygments\&.formatters\&.groff\&.GroffFormatter\&.filenames = []\fC [static]\fP"
+
+.SS "pygments\&.formatters\&.groff\&.GroffFormatter\&.linenos"
+
+.SS "pygments\&.formatters\&.groff\&.GroffFormatter\&.monospaced"
+
+.SS "str pygments\&.formatters\&.groff\&.GroffFormatter\&.name = 'groff'\fC [static]\fP"
+
+.SS "pygments\&.formatters\&.groff\&.GroffFormatter\&.styles"
+
+.SS "pygments\&.formatters\&.groff\&.GroffFormatter\&.wrap"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

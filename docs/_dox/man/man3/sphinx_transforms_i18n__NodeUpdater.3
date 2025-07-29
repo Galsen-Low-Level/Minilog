@@ -1,0 +1,96 @@
+.TH "sphinx.transforms.i18n._NodeUpdater" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.transforms.i18n._NodeUpdater
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, nodes\&.Element \fBnode\fP, nodes\&.Element patch, nodes\&.document \fBdocument\fP, bool noqa)"
+.br
+.ti -1c
+.RI "None \fBcompare_references\fP (self, Sequence[nodes\&.Element] old_refs, Sequence[nodes\&.Element] new_refs, str warning_msg)"
+.br
+.ti -1c
+.RI "bool \fBupdate_title_mapping\fP (self)"
+.br
+.ti -1c
+.RI "None \fBupdate_autofootnote_references\fP (self)"
+.br
+.ti -1c
+.RI "None \fBupdate_refnamed_references\fP (self)"
+.br
+.ti -1c
+.RI "None \fBupdate_refnamed_footnote_references\fP (self)"
+.br
+.ti -1c
+.RI "None \fBupdate_citation_references\fP (self)"
+.br
+.ti -1c
+.RI "None \fBupdate_pending_xrefs\fP (self)"
+.br
+.ti -1c
+.RI "None \fBupdate_leaves\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBnode\fP"
+.br
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Contains logic for updating one node with the translated content\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.transforms\&.i18n\&._NodeUpdater\&.__init__ ( self, nodes\&.Element node, nodes\&.Element patch, nodes\&.document document, bool noqa)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " None sphinx\&.transforms\&.i18n\&._NodeUpdater\&.compare_references ( self, Sequence[nodes\&.Element] old_refs, Sequence[nodes\&.Element] new_refs, str warning_msg)"
+
+.PP
+.nf
+Warn about mismatches between references in original and translated content\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.transforms\&.i18n\&._NodeUpdater\&.update_autofootnote_references ( self)"
+
+.SS " None sphinx\&.transforms\&.i18n\&._NodeUpdater\&.update_citation_references ( self)"
+
+.SS " None sphinx\&.transforms\&.i18n\&._NodeUpdater\&.update_leaves ( self)"
+
+.SS " None sphinx\&.transforms\&.i18n\&._NodeUpdater\&.update_pending_xrefs ( self)"
+
+.SS " None sphinx\&.transforms\&.i18n\&._NodeUpdater\&.update_refnamed_footnote_references ( self)"
+
+.SS " None sphinx\&.transforms\&.i18n\&._NodeUpdater\&.update_refnamed_references ( self)"
+
+.SS " bool sphinx\&.transforms\&.i18n\&._NodeUpdater\&.update_title_mapping ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.transforms\&.i18n\&._NodeUpdater\&.document"
+
+.SS "sphinx\&.transforms\&.i18n\&._NodeUpdater\&.node"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,319 @@
+.TH "pygments.lexer.Lexer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.lexer.Lexer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits metaclass, and \fBpygments\&.lexer\&.LexerMeta\fP\&.
+.PP
+Inherited by \fBpygments\&.formatters\&.latex\&.LatexEmbeddedLexer\fP, \fBpygments\&.lexer\&.DelegatingLexer\fP, \fBpygments\&.lexer\&.RegexLexer\fP, \fBpygments\&.lexers\&.algebra\&.GAPConsoleLexer\fP, \fBpygments\&.lexers\&.data\&.JsonLexer\fP, \fBpygments\&.lexers\&.dylan\&.DylanConsoleLexer\fP, \fBpygments\&.lexers\&.erlang\&.ElixirConsoleLexer\fP, \fBpygments\&.lexers\&.erlang\&.ErlangShellLexer\fP, \fBpygments\&.lexers\&.haskell\&.LiterateLexer\fP, \fBpygments\&.lexers\&.javascript\&.NodeConsoleLexer\fP, \fBpygments\&.lexers\&.julia\&.JuliaConsoleLexer\fP, \fBpygments\&.lexers\&.jvm\&.GosuTemplateLexer\fP, \fBpygments\&.lexers\&.make\&.MakefileLexer\fP, \fBpygments\&.lexers\&.matlab\&.MatlabSessionLexer\fP, \fBpygments\&.lexers\&.pascal\&.DelphiLexer\fP, \fBpygments\&.lexers\&.pascal\&.PortugolLexer\fP, \fBpygments\&.lexers\&.php\&.PsyshConsoleLexer\fP, \fBpygments\&.lexers\&.r\&.RConsoleLexer\fP, \fBpygments\&.lexers\&.robotframework\&.RobotFrameworkLexer\fP, \fBpygments\&.lexers\&.ruby\&.RubyConsoleLexer\fP, \fBpygments\&.lexers\&.shell\&.ShellSessionBaseLexer\fP, \fBpygments\&.lexers\&.special\&.OutputLexer\fP, \fBpygments\&.lexers\&.special\&.RawTokenLexer\fP, \fBpygments\&.lexers\&.special\&.TextLexer\fP, \fBpygments\&.lexers\&.sql\&.PostgresConsoleLexer\fP, \fBpygments\&.lexers\&.sql\&.SqliteConsoleLexer\fP, \fBpygments\&.lexers\&.templates\&.CheetahPythonLexer\fP, \fBpygments\&.lexers\&.templates\&.ErbLexer\fP, and \fBpygments\&.lexers\&.tnt\&.TNTLexer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd_filter\fP (self, filter_, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fBanalyse_text\fP (text)"
+.br
+.ti -1c
+.RI "\fBget_tokens\fP (self, text, unfiltered=False)"
+.br
+.ti -1c
+.RI "\fBget_tokens_unprocessed\fP (self, text)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.LexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fB__new__\fP (mcs, name, bases, d)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBstripnl\fP"
+.br
+.ti -1c
+.RI "\fBstripall\fP"
+.br
+.ti -1c
+.RI "\fBensurenl\fP"
+.br
+.ti -1c
+.RI "\fBtabsize\fP"
+.br
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBfilters\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBname\fP = None"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = []"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBalias_filenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBmimetypes\fP = []"
+.br
+.ti -1c
+.RI "int \fBpriority\fP = 0"
+.br
+.ti -1c
+.RI "\fBurl\fP = None"
+.br
+.ti -1c
+.RI "\fBversion_added\fP = None"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_preprocess_lexer_input\fP (self, text)"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_example\fP = None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Lexer for a specific language\&.
+
+See also :doc:`lexerdevelopment`, a high-level guide to writing
+lexers\&.
+
+Lexer classes have attributes used for choosing the most appropriate
+lexer based on various criteria\&.
+
+\&.\&. autoattribute:: name
+   :no-value:
+\&.\&. autoattribute:: aliases
+   :no-value:
+\&.\&. autoattribute:: filenames
+   :no-value:
+\&.\&. autoattribute:: alias_filenames
+\&.\&. autoattribute:: mimetypes
+   :no-value:
+\&.\&. autoattribute:: priority
+
+Lexers included in Pygments should have two additional attributes:
+
+\&.\&. autoattribute:: url
+   :no-value:
+\&.\&. autoattribute:: version_added
+   :no-value:
+
+Lexers included in Pygments may have additional attributes:
+
+\&.\&. autoattribute:: _example
+   :no-value:
+
+You can pass options to the constructor\&. The basic options recognized
+by all lexers and processed by the base `Lexer` class are:
+
+``stripnl``
+    Strip leading and trailing newlines from the input (default: True)\&.
+``stripall``
+    Strip all leading and trailing whitespace from the input
+    (default: False)\&.
+``ensurenl``
+    Make sure that the input ends with a newline (default: True)\&.  This
+    is required for some lexers that consume input linewise\&.
+
+    \&.\&. versionadded:: 1\&.3
+
+``tabsize``
+    If given and greater than 0, expand tabs in the input (default: 0)\&.
+``encoding``
+    If given, must be an encoding name\&. This encoding will be used to
+    convert the input string to Unicode, if it is not already a Unicode
+    string (default: ``'guess'``, which uses a simple UTF-8 / Locale /
+    Latin1 detection\&.  Can also be ``'chardet'`` to use the chardet
+    library, if it is installed\&.
+``inencoding``
+    Overrides the ``encoding`` if given\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pygments\&.lexer\&.Lexer\&.__init__ ( self, ** options)"
+
+.PP
+.nf
+This constructor takes arbitrary options as keyword arguments\&.
+Every subclass must first process its own options and then call
+the `Lexer` constructor, since it processes the basic
+options like `stripnl`\&.
+
+An example looks like this:
+
+\&.\&. sourcecode:: python
+
+   def __init__(self, **options):
+       self\&.compress = options\&.get('compress', '')
+       Lexer\&.__init__(self, **options)
+
+As these options must all be specifiable as strings (due to the
+command line usage), there are various utility functions
+available to help with that, see `Utilities`_\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpygments\&.lexers\&.arturo\&.ArturoLexer\fP, \fBpygments\&.lexers\&.asm\&.DObjdumpLexer\fP, \fBpygments\&.lexers\&.asm\&.CppObjdumpLexer\fP, \fBpygments\&.lexers\&.asm\&.CObjdumpLexer\fP, \fBpygments\&.lexers\&.c_cpp\&.CFamilyLexer\fP, \fBpygments\&.lexers\&.dotnet\&.CSharpLexer\fP, \fBpygments\&.lexers\&.dotnet\&.NemerleLexer\fP, \fBpygments\&.lexers\&.dotnet\&.CSharpAspxLexer\fP, \fBpygments\&.lexers\&.dotnet\&.VbNetAspxLexer\fP, \fBpygments\&.lexers\&.dsls\&.SnowballLexer\fP, \fBpygments\&.lexers\&.email\&.EmailHeaderLexer\fP, \fBpygments\&.lexers\&.email\&.EmailLexer\fP, \fBpygments\&.lexers\&.ezhil\&.EzhilLexer\fP, \fBpygments\&.lexers\&.haskell\&.LiterateHaskellLexer\fP, \fBpygments\&.lexers\&.haskell\&.LiterateIdrisLexer\fP, \fBpygments\&.lexers\&.haskell\&.LiterateAgdaLexer\fP, \fBpygments\&.lexers\&.haskell\&.LiterateCryptolLexer\fP, \fBpygments\&.lexers\&.int_fiction\&.Inform7Lexer\fP, \fBpygments\&.lexers\&.javascript\&.LassoLexer\fP, \fBpygments\&.lexers\&.lisp\&.CommonLispLexer\fP, \fBpygments\&.lexers\&.markup\&.RstLexer\fP, \fBpygments\&.lexers\&.markup\&.MozPreprocXulLexer\fP, \fBpygments\&.lexers\&.markup\&.MozPreprocJavascriptLexer\fP, \fBpygments\&.lexers\&.markup\&.MozPreprocCssLexer\fP, \fBpygments\&.lexers\&.markup\&.MarkdownLexer\fP, \fBpygments\&.lexers\&.markup\&.TiddlyWiki5Lexer\fP, \fBpygments\&.lexers\&.mime\&.MIMELexer\fP, \fBpygments\&.lexers\&.modula2\&.Modula2Lexer\fP, \fBpygments\&.lexers\&.parsers\&.RagelRubyLexer\fP, \fBpygments\&.lexers\&.parsers\&.RagelCLexer\fP, \fBpygments\&.lexers\&.parsers\&.RagelDLexer\fP, \fBpygments\&.lexers\&.parsers\&.RagelCppLexer\fP, \fBpygments\&.lexers\&.parsers\&.RagelObjectiveCLexer\fP, \fBpygments\&.lexers\&.parsers\&.RagelJavaLexer\fP, \fBpygments\&.lexers\&.parsers\&.AntlrCppLexer\fP, \fBpygments\&.lexers\&.parsers\&.AntlrObjectiveCLexer\fP, \fBpygments\&.lexers\&.parsers\&.AntlrCSharpLexer\fP, \fBpygments\&.lexers\&.parsers\&.AntlrPythonLexer\fP, \fBpygments\&.lexers\&.parsers\&.AntlrJavaLexer\fP, \fBpygments\&.lexers\&.parsers\&.AntlrRubyLexer\fP, \fBpygments\&.lexers\&.parsers\&.AntlrPerlLexer\fP, \fBpygments\&.lexers\&.parsers\&.AntlrActionScriptLexer\fP, \fBpygments\&.lexers\&.parsers\&.TreetopLexer\fP, \fBpygments\&.lexers\&.pascal\&.PortugolLexer\fP, \fBpygments\&.lexers\&.pascal\&.DelphiLexer\fP, \fBpygments\&.lexers\&.pawn\&.SourcePawnLexer\fP, \fBpygments\&.lexers\&.perl\&.Perl6Lexer\fP, \fBpygments\&.lexers\&.php\&.PsyshConsoleLexer\fP, \fBpygments\&.lexers\&.python\&.PythonConsoleLexer\fP, \fBpygments\&.lexers\&.robotframework\&.RobotFrameworkLexer\fP, \fBpygments\&.lexers\&.scripting\&.LuaLexer\fP, \fBpygments\&.lexers\&.scripting\&.LuauLexer\fP, \fBpygments\&.lexers\&.slash\&.SlashLexer\fP, \fBpygments\&.lexers\&.special\&.RawTokenLexer\fP, \fBpygments\&.lexers\&.templates\&.ErbLexer\fP, \fBpygments\&.lexers\&.templates\&.VelocityHtmlLexer\fP, \fBpygments\&.lexers\&.templates\&.VelocityXmlLexer\fP, \fBpygments\&.lexers\&.templates\&.MyghtyHtmlLexer\fP, \fBpygments\&.lexers\&.templates\&.MyghtyXmlLexer\fP, \fBpygments\&.lexers\&.templates\&.MyghtyJavascriptLexer\fP, \fBpygments\&.lexers\&.templates\&.MyghtyCssLexer\fP, \fBpygments\&.lexers\&.templates\&.MakoHtmlLexer\fP, \fBpygments\&.lexers\&.templates\&.MakoXmlLexer\fP, \fBpygments\&.lexers\&.templates\&.MakoJavascriptLexer\fP, \fBpygments\&.lexers\&.templates\&.MakoCssLexer\fP, \fBpygments\&.lexers\&.templates\&.CheetahHtmlLexer\fP, \fBpygments\&.lexers\&.templates\&.CheetahXmlLexer\fP, \fBpygments\&.lexers\&.templates\&.CheetahJavascriptLexer\fP, \fBpygments\&.lexers\&.templates\&.HtmlGenshiLexer\fP, \fBpygments\&.lexers\&.templates\&.GenshiLexer\fP, \fBpygments\&.lexers\&.templates\&.JavascriptGenshiLexer\fP, \fBpygments\&.lexers\&.templates\&.CssGenshiLexer\fP, \fBpygments\&.lexers\&.templates\&.RhtmlLexer\fP, \fBpygments\&.lexers\&.templates\&.XmlErbLexer\fP, \fBpygments\&.lexers\&.templates\&.CssErbLexer\fP, \fBpygments\&.lexers\&.templates\&.JavascriptErbLexer\fP, \fBpygments\&.lexers\&.templates\&.HtmlPhpLexer\fP, \fBpygments\&.lexers\&.templates\&.XmlPhpLexer\fP, \fBpygments\&.lexers\&.templates\&.CssPhpLexer\fP, \fBpygments\&.lexers\&.templates\&.JavascriptPhpLexer\fP, \fBpygments\&.lexers\&.templates\&.HtmlSmartyLexer\fP, \fBpygments\&.lexers\&.templates\&.XmlSmartyLexer\fP, \fBpygments\&.lexers\&.templates\&.CssSmartyLexer\fP, \fBpygments\&.lexers\&.templates\&.JavascriptSmartyLexer\fP, \fBpygments\&.lexers\&.templates\&.HtmlDjangoLexer\fP, \fBpygments\&.lexers\&.templates\&.XmlDjangoLexer\fP, \fBpygments\&.lexers\&.templates\&.CssDjangoLexer\fP, \fBpygments\&.lexers\&.templates\&.JavascriptDjangoLexer\fP, \fBpygments\&.lexers\&.templates\&.JspLexer\fP, \fBpygments\&.lexers\&.templates\&.EvoqueHtmlLexer\fP, \fBpygments\&.lexers\&.templates\&.EvoqueXmlLexer\fP, \fBpygments\&.lexers\&.templates\&.ColdfusionHtmlLexer\fP, \fBpygments\&.lexers\&.templates\&.ColdfusionCFCLexer\fP, \fBpygments\&.lexers\&.templates\&.SspLexer\fP, \fBpygments\&.lexers\&.templates\&.TeaTemplateLexer\fP, \fBpygments\&.lexers\&.templates\&.LassoHtmlLexer\fP, \fBpygments\&.lexers\&.templates\&.LassoXmlLexer\fP, \fBpygments\&.lexers\&.templates\&.LassoCssLexer\fP, \fBpygments\&.lexers\&.templates\&.LassoJavascriptLexer\fP, \fBpygments\&.lexers\&.templates\&.HandlebarsHtmlLexer\fP, \fBpygments\&.lexers\&.templates\&.YamlJinjaLexer\fP, \fBpygments\&.lexers\&.templates\&.TwigHtmlLexer\fP, \fBpygments\&.lexers\&.templates\&.Angular2HtmlLexer\fP, \fBpygments\&.lexers\&.templates\&.SqlJinjaLexer\fP, \fBpygments\&.lexers\&.textedit\&.VimLexer\fP, \fBpygments\&.lexers\&.textfmts\&.NotmuchLexer\fP, \fBpygments\&.lexers\&.ul4\&.HTMLUL4Lexer\fP, \fBpygments\&.lexers\&.ul4\&.XMLUL4Lexer\fP, \fBpygments\&.lexers\&.ul4\&.CSSUL4Lexer\fP, \fBpygments\&.lexers\&.ul4\&.JavascriptUL4Lexer\fP, \fBpygments\&.lexers\&.ul4\&.PythonUL4Lexer\fP, \fBpygments\&.lexers\&.tnt\&.TNTLexer\fP, \fBpygments\&.lexer\&.DelegatingLexer\fP, \fBpygments\&.lexers\&.haskell\&.LiterateLexer\fP, and \fBpygments\&.formatters\&.latex\&.LatexEmbeddedLexer\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "pygments\&.lexer\&.Lexer\&.__repr__ ( self)"
+
+.SS "pygments\&.lexer\&.Lexer\&._preprocess_lexer_input ( self,  text)\fC [protected]\fP"
+
+.PP
+.nf
+Apply preprocessing such as decoding the input, removing BOM and normalizing newlines\&.
+.fi
+.PP
+ 
+.SS "pygments\&.lexer\&.Lexer\&.add_filter ( self,  filter_, ** options)"
+
+.PP
+.nf
+Add a new stream filter to this lexer\&.
+
+.fi
+.PP
+ 
+.SS "pygments\&.lexer\&.Lexer\&.analyse_text ( text)"
+
+.PP
+.nf
+A static method which is called for lexer guessing\&.
+
+It should analyse the text and return a float in the range
+from ``0\&.0`` to ``1\&.0``\&.  If it returns ``0\&.0``, the lexer
+will not be selected as the most probable one, if it returns
+``1\&.0``, it will be selected immediately\&.  This is used by
+`guess_lexer`\&.
+
+The `LexerMeta` metaclass automatically wraps this function so
+that it works like a static method (no ``self`` or ``cls``
+parameter) and the return value is automatically converted to
+`float`\&. If the return value is an object that is boolean `False`
+it's the same as if the return values was ``0\&.0``\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpygments\&.lexers\&.asm\&.Ca65Lexer\fP, \fBpygments\&.lexers\&.bdd\&.BddLexer\fP, \fBpygments\&.lexers\&.sql\&.SqlLexer\fP, \fBpygments\&.lexers\&.testing\&.GherkinLexer\fP, \fBpygments\&.lexers\&.actionscript\&.ActionScriptLexer\fP, \fBpygments\&.lexers\&.actionscript\&.ActionScript3Lexer\fP, \fBpygments\&.lexers\&.algebra\&.GAPLexer\fP, \fBpygments\&.lexers\&.algebra\&.GAPConsoleLexer\fP, \fBpygments\&.lexers\&.asc\&.AscLexer\fP, \fBpygments\&.lexers\&.asm\&.NasmLexer\fP, \fBpygments\&.lexers\&.basic\&.CbmBasicV2Lexer\fP, \fBpygments\&.lexers\&.basic\&.BBCBasicLexer\fP, \fBpygments\&.lexers\&.business\&.OpenEdgeLexer\fP, \fBpygments\&.lexers\&.c_cpp\&.CLexer\fP, \fBpygments\&.lexers\&.c_cpp\&.CppLexer\fP, \fBpygments\&.lexers\&.carbon\&.CarbonLexer\fP, \fBpygments\&.lexers\&.configs\&.IniLexer\fP, \fBpygments\&.lexers\&.configs\&.DesktopLexer\fP, \fBpygments\&.lexers\&.configs\&.SystemdLexer\fP, \fBpygments\&.lexers\&.configs\&.RegeditLexer\fP, \fBpygments\&.lexers\&.configs\&.SingularityLexer\fP, \fBpygments\&.lexers\&.dalvik\&.SmaliLexer\fP, \fBpygments\&.lexers\&.diff\&.DiffLexer\fP, \fBpygments\&.lexers\&.dns\&.DnsZoneLexer\fP, \fBpygments\&.lexers\&.dotnet\&.NemerleLexer\fP, \fBpygments\&.lexers\&.dotnet\&.VbNetLexer\fP, \fBpygments\&.lexers\&.dotnet\&.CSharpAspxLexer\fP, \fBpygments\&.lexers\&.dotnet\&.VbNetAspxLexer\fP, \fBpygments\&.lexers\&.dotnet\&.FSharpLexer\fP, \fBpygments\&.lexers\&.dsls\&.RslLexer\fP, \fBpygments\&.lexers\&.ecl\&.ECLLexer\fP, \fBpygments\&.lexers\&.esoteric\&.BrainfuckLexer\fP, \fBpygments\&.lexers\&.ezhil\&.EzhilLexer\fP, \fBpygments\&.lexers\&.forth\&.ForthLexer\fP, \fBpygments\&.lexers\&.gdscript\&.GDScriptLexer\fP, \fBpygments\&.lexers\&.graphics\&.PovrayLexer\fP, \fBpygments\&.lexers\&.haxe\&.HaxeLexer\fP, \fBpygments\&.lexers\&.hdl\&.VerilogLexer\fP, \fBpygments\&.lexers\&.html\&.HtmlLexer\fP, \fBpygments\&.lexers\&.html\&.DtdLexer\fP, \fBpygments\&.lexers\&.html\&.XmlLexer\fP, \fBpygments\&.lexers\&.html\&.XsltLexer\fP, \fBpygments\&.lexers\&.idl\&.IDLLexer\fP, \fBpygments\&.lexers\&.inferno\&.LimboLexer\fP, \fBpygments\&.lexers\&.installers\&.SourcesListLexer\fP, \fBpygments\&.lexers\&.int_fiction\&.Inform6Lexer\fP, \fBpygments\&.lexers\&.int_fiction\&.Tads3Lexer\fP, \fBpygments\&.lexers\&.javascript\&.LassoLexer\fP, \fBpygments\&.lexers\&.javascript\&.ObjectiveJLexer\fP, \fBpygments\&.lexers\&.julia\&.JuliaLexer\fP, \fBpygments\&.lexers\&.jvm\&.GroovyLexer\fP, \fBpygments\&.lexers\&.jvm\&.JasminLexer\fP, \fBpygments\&.lexers\&.lean\&.Lean3Lexer\fP, \fBpygments\&.lexers\&.lean\&.Lean4Lexer\fP, \fBpygments\&.lexers\&.lisp\&.CommonLispLexer\fP, \fBpygments\&.lexers\&.make\&.MakefileLexer\fP, \fBpygments\&.lexers\&.make\&.CMakeLexer\fP, \fBpygments\&.lexers\&.maple\&.MapleLexer\fP, \fBpygments\&.lexers\&.markup\&.RstLexer\fP, \fBpygments\&.lexers\&.markup\&.TexLexer\fP, \fBpygments\&.lexers\&.markup\&.GroffLexer\fP, \fBpygments\&.lexers\&.matlab\&.OctaveLexer\fP, \fBpygments\&.lexers\&.matlab\&.ScilabLexer\fP, \fBpygments\&.lexers\&.maxima\&.MaximaLexer\fP, \fBpygments\&.lexers\&.modeling\&.BugsLexer\fP, \fBpygments\&.lexers\&.modeling\&.JagsLexer\fP, \fBpygments\&.lexers\&.modula2\&.Modula2Lexer\fP, \fBpygments\&.lexers\&.mojo\&.MojoLexer\fP, \fBpygments\&.lexers\&.oberon\&.ComponentPascalLexer\fP, \fBpygments\&.lexers\&.objective\&.LogosLexer\fP, \fBpygments\&.lexers\&.parsers\&.RagelEmbeddedLexer\fP, \fBpygments\&.lexers\&.parsers\&.RagelRubyLexer\fP, \fBpygments\&.lexers\&.parsers\&.RagelCLexer\fP, \fBpygments\&.lexers\&.parsers\&.RagelDLexer\fP, \fBpygments\&.lexers\&.parsers\&.RagelCppLexer\fP, \fBpygments\&.lexers\&.parsers\&.RagelObjectiveCLexer\fP, \fBpygments\&.lexers\&.parsers\&.RagelJavaLexer\fP, \fBpygments\&.lexers\&.parsers\&.AntlrCppLexer\fP, \fBpygments\&.lexers\&.parsers\&.AntlrObjectiveCLexer\fP, \fBpygments\&.lexers\&.parsers\&.AntlrCSharpLexer\fP, \fBpygments\&.lexers\&.parsers\&.AntlrPythonLexer\fP, \fBpygments\&.lexers\&.parsers\&.AntlrJavaLexer\fP, \fBpygments\&.lexers\&.parsers\&.AntlrRubyLexer\fP, \fBpygments\&.lexers\&.parsers\&.AntlrPerlLexer\fP, \fBpygments\&.lexers\&.parsers\&.AntlrActionScriptLexer\fP, \fBpygments\&.lexers\&.pawn\&.PawnLexer\fP, \fBpygments\&.lexers\&.perl\&.Perl6Lexer\fP, \fBpygments\&.lexers\&.prolog\&.LogtalkLexer\fP, \fBpygments\&.lexers\&.python\&.PythonLexer\fP, \fBpygments\&.lexers\&.python\&.NumPyLexer\fP, \fBpygments\&.lexers\&.r\&.SLexer\fP, \fBpygments\&.lexers\&.rdf\&.TurtleLexer\fP, \fBpygments\&.lexers\&.rebol\&.RebolLexer\fP, \fBpygments\&.lexers\&.resource\&.ResourceLexer\fP, \fBpygments\&.lexers\&.ruby\&.RubyLexer\fP, \fBpygments\&.lexers\&.scdoc\&.ScdocLexer\fP, \fBpygments\&.lexers\&.scripting\&.RexxLexer\fP, \fBpygments\&.lexers\&.scripting\&.HybrisLexer\fP, \fBpygments\&.lexers\&.scripting\&.EasytrieveLexer\fP, \fBpygments\&.lexers\&.scripting\&.JclLexer\fP, \fBpygments\&.lexers\&.shell\&.BashLexer\fP, \fBpygments\&.lexers\&.shell\&.ExeclineLexer\fP, \fBpygments\&.lexers\&.special\&.TextLexer\fP, \fBpygments\&.lexers\&.sql\&.TransactSqlLexer\fP, \fBpygments\&.lexers\&.sql\&.MySqlLexer\fP, \fBpygments\&.lexers\&.sql\&.GoogleSqlLexer\fP, \fBpygments\&.lexers\&.supercollider\&.SuperColliderLexer\fP, \fBpygments\&.lexers\&.tal\&.TalLexer\fP, \fBpygments\&.lexers\&.tcl\&.TclLexer\fP, \fBpygments\&.lexers\&.templates\&.ErbLexer\fP, \fBpygments\&.lexers\&.templates\&.SmartyLexer\fP, \fBpygments\&.lexers\&.templates\&.VelocityLexer\fP, \fBpygments\&.lexers\&.templates\&.VelocityXmlLexer\fP, \fBpygments\&.lexers\&.templates\&.DjangoLexer\fP, \fBpygments\&.lexers\&.templates\&.MasonLexer\fP, \fBpygments\&.lexers\&.templates\&.HtmlGenshiLexer\fP, \fBpygments\&.lexers\&.templates\&.GenshiLexer\fP, \fBpygments\&.lexers\&.templates\&.JavascriptGenshiLexer\fP, \fBpygments\&.lexers\&.templates\&.CssGenshiLexer\fP, \fBpygments\&.lexers\&.templates\&.RhtmlLexer\fP, \fBpygments\&.lexers\&.templates\&.XmlErbLexer\fP, \fBpygments\&.lexers\&.templates\&.CssErbLexer\fP, \fBpygments\&.lexers\&.templates\&.JavascriptErbLexer\fP, \fBpygments\&.lexers\&.templates\&.HtmlPhpLexer\fP, \fBpygments\&.lexers\&.templates\&.XmlPhpLexer\fP, \fBpygments\&.lexers\&.templates\&.CssPhpLexer\fP, \fBpygments\&.lexers\&.templates\&.JavascriptPhpLexer\fP, \fBpygments\&.lexers\&.templates\&.HtmlSmartyLexer\fP, \fBpygments\&.lexers\&.templates\&.XmlSmartyLexer\fP, \fBpygments\&.lexers\&.templates\&.CssSmartyLexer\fP, \fBpygments\&.lexers\&.templates\&.JavascriptSmartyLexer\fP, \fBpygments\&.lexers\&.templates\&.HtmlDjangoLexer\fP, \fBpygments\&.lexers\&.templates\&.XmlDjangoLexer\fP, \fBpygments\&.lexers\&.templates\&.CssDjangoLexer\fP, \fBpygments\&.lexers\&.templates\&.JavascriptDjangoLexer\fP, \fBpygments\&.lexers\&.templates\&.JspLexer\fP, \fBpygments\&.lexers\&.templates\&.EvoqueLexer\fP, \fBpygments\&.lexers\&.templates\&.EvoqueHtmlLexer\fP, \fBpygments\&.lexers\&.templates\&.EvoqueXmlLexer\fP, \fBpygments\&.lexers\&.templates\&.SspLexer\fP, \fBpygments\&.lexers\&.templates\&.TeaTemplateLexer\fP, \fBpygments\&.lexers\&.templates\&.LassoHtmlLexer\fP, \fBpygments\&.lexers\&.templates\&.LassoXmlLexer\fP, \fBpygments\&.lexers\&.templates\&.LassoCssLexer\fP, \fBpygments\&.lexers\&.templates\&.LassoJavascriptLexer\fP, \fBpygments\&.lexers\&.templates\&.SqlJinjaLexer\fP, \fBpygments\&.lexers\&.teraterm\&.TeraTermLexer\fP, \fBpygments\&.lexers\&.textfmts\&.HttpLexer\fP, \fBpygments\&.lexers\&.textfmts\&.NotmuchLexer\fP, \fBpygments\&.lexers\&.theorem\&.CoqLexer\fP, \fBpygments\&.lexers\&.unicon\&.UcodeLexer\fP, \fBpygments\&.lexers\&.varnish\&.VCLLexer\fP, \fBpygments\&.lexers\&.varnish\&.VCLSnippetLexer\fP, \fBpygments\&.lexers\&.vip\&.VisualPrologLexer\fP, \fBpygments\&.lexers\&.vip\&.VisualPrologGrammarLexer\fP, and \fBpygments\&.lexers\&.wowtoc\&.WoWTocLexer\fP\&.
+.SS "pygments\&.lexer\&.Lexer\&.get_tokens ( self,  text,  unfiltered = \fCFalse\fP)"
+
+.PP
+.nf
+This method is the basic interface of a lexer\&. It is called by
+the `highlight()` function\&. It must process the text and return an
+iterable of ``(tokentype, value)`` pairs from `text`\&.
+
+Normally, you don't need to override this method\&. The default
+implementation processes the options recognized by all lexers
+(`stripnl`, `stripall` and so on), and then yields all tokens
+from `get_tokens_unprocessed()`, with the ``index`` dropped\&.
+
+If `unfiltered` is set to `True`, the filtering mechanism is
+bypassed even if filters are defined\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpygments\&.lexers\&.special\&.RawTokenLexer\fP\&.
+.SS "pygments\&.lexer\&.Lexer\&.get_tokens_unprocessed ( self,  text)"
+
+.PP
+.nf
+This method should process the text and return an iterable of
+``(index, tokentype, value)`` tuples where ``index`` is the starting
+position of the token within the input text\&.
+
+It must be overridden by subclasses\&. It is recommended to
+implement it as a generator to maximize effectiveness\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpygments\&.lexers\&.sql\&.PostgresConsoleLexer\fP, \fBpygments\&.lexers\&.sql\&.SqliteConsoleLexer\fP, \fBpygments\&.formatters\&.latex\&.LatexEmbeddedLexer\fP, \fBpygments\&.lexer\&.DelegatingLexer\fP, \fBpygments\&.lexers\&.algebra\&.GAPConsoleLexer\fP, \fBpygments\&.lexers\&.data\&.JsonLexer\fP, \fBpygments\&.lexers\&.data\&.JsonLdLexer\fP, \fBpygments\&.lexers\&.dylan\&.DylanLexer\fP, \fBpygments\&.lexers\&.dylan\&.DylanConsoleLexer\fP, \fBpygments\&.lexers\&.erlang\&.ErlangShellLexer\fP, \fBpygments\&.lexers\&.erlang\&.ElixirLexer\fP, \fBpygments\&.lexers\&.erlang\&.ElixirConsoleLexer\fP, \fBpygments\&.lexers\&.graphics\&.AsymptoteLexer\fP, \fBpygments\&.lexers\&.haskell\&.LiterateLexer\fP, \fBpygments\&.lexers\&.html\&.XsltLexer\fP, \fBpygments\&.lexers\&.int_fiction\&.Inform6Lexer\fP, \fBpygments\&.lexers\&.javascript\&.LassoLexer\fP, \fBpygments\&.lexers\&.javascript\&.NodeConsoleLexer\fP, \fBpygments\&.lexers\&.julia\&.JuliaConsoleLexer\fP, \fBpygments\&.lexers\&.jvm\&.AspectJLexer\fP, \fBpygments\&.lexers\&.jvm\&.GosuTemplateLexer\fP, \fBpygments\&.lexers\&.lilypond\&.LilyPondLexer\fP, \fBpygments\&.lexers\&.lisp\&.SchemeLexer\fP, \fBpygments\&.lexers\&.lisp\&.CommonLispLexer\fP, \fBpygments\&.lexers\&.lisp\&.EmacsLispLexer\fP, \fBpygments\&.lexers\&.lisp\&.ShenLexer\fP, \fBpygments\&.lexers\&.make\&.MakefileLexer\fP, \fBpygments\&.lexers\&.matlab\&.MatlabSessionLexer\fP, \fBpygments\&.lexers\&.modula2\&.Modula2Lexer\fP, \fBpygments\&.lexers\&.objective\&.SwiftLexer\fP, \fBpygments\&.lexers\&.pascal\&.PortugolLexer\fP, \fBpygments\&.lexers\&.pascal\&.DelphiLexer\fP, \fBpygments\&.lexers\&.pawn\&.SourcePawnLexer\fP, \fBpygments\&.lexers\&.php\&.PsyshConsoleLexer\fP, \fBpygments\&.lexers\&.python\&.NumPyLexer\fP, \fBpygments\&.lexers\&.r\&.RConsoleLexer\fP, \fBpygments\&.lexers\&.robotframework\&.RobotFrameworkLexer\fP, \fBpygments\&.lexers\&.ruby\&.RubyConsoleLexer\fP, \fBpygments\&.lexers\&.scripting\&.LuaLexer\fP, \fBpygments\&.lexers\&.scripting\&.LuauLexer\fP, \fBpygments\&.lexers\&.scripting\&.MoonScriptLexer\fP, \fBpygments\&.lexers\&.shell\&.SlurmBashLexer\fP, \fBpygments\&.lexers\&.shell\&.ShellSessionBaseLexer\fP, \fBpygments\&.lexers\&.special\&.TextLexer\fP, \fBpygments\&.lexers\&.special\&.OutputLexer\fP, \fBpygments\&.lexers\&.special\&.RawTokenLexer\fP, \fBpygments\&.lexers\&.templates\&.ErbLexer\fP, \fBpygments\&.lexers\&.templates\&.CheetahPythonLexer\fP, \fBpygments\&.lexers\&.textedit\&.VimLexer\fP, \fBpygments\&.lexers\&.tnt\&.TNTLexer\fP, \fBpygments\&.lexers\&.int_fiction\&.Tads3Lexer\fP, \fBpygments\&.lexers\&.int_fiction\&.Inform6TemplateLexer\fP, \fBpygments\&.lexer\&.RegexLexer\fP, \fBpygments\&.lexer\&.ProfilingRegexLexer\fP, \fBpygments\&.lexers\&.c_cpp\&.CFamilyLexer\fP, \fBpygments\&.lexers\&.c_like\&.CudaLexer\fP, \fBpygments\&.lexers\&.c_like\&.ArduinoLexer\fP, \fBpygments\&.lexers\&.freefem\&.FreeFemLexer\fP, \fBpygments\&.lexers\&.textfmts\&.HttpLexer\fP, \fBpygments\&.lexer\&.ExtendedRegexLexer\fP, \fBpygments\&.lexers\&.data\&.YamlLexer\fP, and \fBpygments\&.lexers\&.dsls\&.SnowballLexer\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "pygments\&.lexer\&.Lexer\&._example = None\fC [static]\fP, \fC [protected]\fP"
+
+.SS "list pygments\&.lexer\&.Lexer\&.alias_filenames = []\fC [static]\fP"
+
+.SS "list pygments\&.lexer\&.Lexer\&.aliases = []\fC [static]\fP"
+
+.SS "pygments\&.lexer\&.Lexer\&.encoding"
+
+.SS "pygments\&.lexer\&.Lexer\&.ensurenl"
+
+.SS "list pygments\&.lexer\&.Lexer\&.filenames = []\fC [static]\fP"
+
+.SS "pygments\&.lexer\&.Lexer\&.filters"
+
+.SS "list pygments\&.lexer\&.Lexer\&.mimetypes = []\fC [static]\fP"
+
+.SS "pygments\&.lexer\&.Lexer\&.name = None\fC [static]\fP"
+
+.SS "pygments\&.lexer\&.Lexer\&.options"
+
+.SS "int pygments\&.lexer\&.Lexer\&.priority = 0\fC [static]\fP"
+
+.SS "pygments\&.lexer\&.Lexer\&.stripall"
+
+.SS "pygments\&.lexer\&.Lexer\&.stripnl"
+
+.SS "pygments\&.lexer\&.Lexer\&.tabsize"
+
+.SS "pygments\&.lexer\&.Lexer\&.url = None\fC [static]\fP"
+
+.SS "pygments\&.lexer\&.Lexer\&.version_added = None\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

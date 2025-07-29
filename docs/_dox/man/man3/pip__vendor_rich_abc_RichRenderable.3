@@ -1,0 +1,46 @@
+.TH "pip._vendor.rich.abc.RichRenderable" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.rich.abc.RichRenderable
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits ABC\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fB__subclasshook__\fP (cls, type other)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+An abstract base class for Rich renderables\&.
+
+Note that there is no need to extend this class, the intended use is to check if an
+object supports the Rich renderable protocol\&. For example::
+
+    if isinstance(my_object, RichRenderable):
+        console\&.print(my_object)
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " bool pip\&._vendor\&.rich\&.abc\&.RichRenderable\&.__subclasshook__ ( cls, type other)"
+
+.PP
+.nf
+Check if this class supports the rich render protocol\&.
+.fi
+.PP
+ 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

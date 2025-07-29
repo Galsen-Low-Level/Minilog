@@ -1,0 +1,207 @@
+.TH "sphinx.domains.index.IndexDomain" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.domains.index.IndexDomain
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.domains\&.Domain\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "dict[str, list[tuple[str, str, str, str, str|None]]] \fBentries\fP (self)"
+.br
+.ti -1c
+.RI "None \fBclear_doc\fP (self, str docname)"
+.br
+.ti -1c
+.RI "None \fBmerge_domaindata\fP (self, Set[str] docnames, dict[str, Any] otherdata)"
+.br
+.ti -1c
+.RI "None \fBprocess_doc\fP (self, \fBBuildEnvironment\fP env, str docname, \fBNode\fP document)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.domains\&.Domain\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, \fBBuildEnvironment\fP env)"
+.br
+.ti -1c
+.RI "None \fBsetup\fP (self)"
+.br
+.ti -1c
+.RI "None \fBadd_object_type\fP (self, str \fBname\fP, \fBObjType\fP objtype)"
+.br
+.ti -1c
+.RI "\fBRoleFunction\fP|None \fBrole\fP (self, str \fBname\fP)"
+.br
+.ti -1c
+.RI "type[\fBDirective\fP]|None \fBdirective\fP (self, str \fBname\fP)"
+.br
+.ti -1c
+.RI "None \fBcheck_consistency\fP (self)"
+.br
+.ti -1c
+.RI "None \fBprocess_field_xref\fP (self, \fBpending_xref\fP pnode)"
+.br
+.ti -1c
+.RI "nodes\&.reference|None \fBresolve_xref\fP (self, \fBBuildEnvironment\fP env, str fromdocname, \fBBuilder\fP builder, str typ, str target, \fBpending_xref\fP node, \fBElement\fP contnode)"
+.br
+.ti -1c
+.RI "list[tuple[str, nodes\&.reference]] \fBresolve_any_xref\fP (self, \fBBuildEnvironment\fP env, str fromdocname, \fBBuilder\fP builder, str target, \fBpending_xref\fP node, \fBElement\fP contnode)"
+.br
+.ti -1c
+.RI "Iterable[tuple[str, str, str, str, str, int]] \fBget_objects\fP (self)"
+.br
+.ti -1c
+.RI "str \fBget_type_name\fP (self, \fBObjType\fP type, bool primary=False)"
+.br
+.ti -1c
+.RI "str|None \fBget_enumerable_node_type\fP (self, \fBNode\fP node)"
+.br
+.ti -1c
+.RI "str|None \fBget_full_qualified_name\fP (self, \fBElement\fP node)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = 'index'"
+.br
+.ti -1c
+.RI "str \fBlabel\fP = 'index'"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBsphinx\&.domains\&.Domain\fP
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = ''"
+.br
+.ti -1c
+.RI "str \fBlabel\fP = ''"
+.br
+.ti -1c
+.RI "dict \fBobject_types\fP = {}"
+.br
+.ti -1c
+.RI "dict \fBdirectives\fP = {}"
+.br
+.ti -1c
+.RI "dict \fBroles\fP = {}"
+.br
+.ti -1c
+.RI "list \fBindices\fP = []"
+.br
+.ti -1c
+.RI "dict \fBdangling_warnings\fP = {}"
+.br
+.ti -1c
+.RI "dict \fBenumerable_nodes\fP = {}"
+.br
+.ti -1c
+.RI "dict \fBinitial_data\fP = {}"
+.br
+.ti -1c
+.RI "dict \fBdata\fP [str, Any]"
+.br
+.ti -1c
+.RI "int \fBdata_version\fP = 0"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBsphinx\&.domains\&.Domain\fP
+.in +1c
+.ti -1c
+.RI "\fBobject_types\fP"
+.br
+.ti -1c
+.RI "\fBdirectives\fP"
+.br
+.ti -1c
+.RI "\fBroles\fP"
+.br
+.ti -1c
+.RI "\fBindices\fP"
+.br
+.ti -1c
+.RI "\fBinitial_data\fP"
+.br
+.ti -1c
+.RI "\fBdata\fP"
+.br
+.ti -1c
+.RI "\fBlabel\fP"
+.br
+.ti -1c
+.RI "\fBobjtypes_for_role\fP"
+.br
+.ti -1c
+.RI "\fBrole_for_objtype\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Index domain\&.
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " None sphinx\&.domains\&.index\&.IndexDomain\&.clear_doc ( self, str docname)"
+
+.PP
+.nf
+Remove traces of a document in the domain-specific inventories\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.domains\&.Domain\fP\&.
+.SS " dict[str, list[tuple[str, str, str, str, str | None]]] sphinx\&.domains\&.index\&.IndexDomain\&.entries ( self)"
+
+.SS " None sphinx\&.domains\&.index\&.IndexDomain\&.merge_domaindata ( self, Set[str] docnames, dict[str, Any] otherdata)"
+
+.PP
+.nf
+Merge in data regarding *docnames* from a different domaindata
+inventory (coming from a subprocess in parallel builds)\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.domains\&.Domain\fP\&.
+.SS " None sphinx\&.domains\&.index\&.IndexDomain\&.process_doc ( self, \fBBuildEnvironment\fP env, str docname, \fBNode\fP document)"
+
+.PP
+.nf
+Process a document after it is read by the environment\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.domains\&.Domain\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "str sphinx\&.domains\&.index\&.IndexDomain\&.label = 'index'\fC [static]\fP"
+
+.SS "str sphinx\&.domains\&.index\&.IndexDomain\&.name = 'index'\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

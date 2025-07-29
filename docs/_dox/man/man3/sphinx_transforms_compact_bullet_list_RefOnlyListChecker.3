@@ -1,0 +1,59 @@
+.TH "sphinx.transforms.compact_bullet_list.RefOnlyListChecker" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.transforms.compact_bullet_list.RefOnlyListChecker
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits nodes\&.GenericNodeVisitor\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBdefault_visit\fP (self, \fBNode\fP node)"
+.br
+.ti -1c
+.RI "None \fBvisit_bullet_list\fP (self, nodes\&.bullet_list node)"
+.br
+.ti -1c
+.RI "None \fBvisit_list_item\fP (self, nodes\&.list_item node)"
+.br
+.ti -1c
+.RI "None \fBinvisible_visit\fP (self, \fBNode\fP node)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Raise `nodes\&.NodeFound` if non-simple list item is encountered\&.
+
+Here 'simple' means a list item containing only a paragraph with a
+single reference in it\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " None sphinx\&.transforms\&.compact_bullet_list\&.RefOnlyListChecker\&.default_visit ( self, \fBNode\fP node)"
+
+.SS " None sphinx\&.transforms\&.compact_bullet_list\&.RefOnlyListChecker\&.invisible_visit ( self, \fBNode\fP node)"
+
+.PP
+.nf
+Invisible nodes should be ignored\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.transforms\&.compact_bullet_list\&.RefOnlyListChecker\&.visit_bullet_list ( self, nodes\&.bullet_list node)"
+
+.SS " None sphinx\&.transforms\&.compact_bullet_list\&.RefOnlyListChecker\&.visit_list_item ( self, nodes\&.list_item node)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

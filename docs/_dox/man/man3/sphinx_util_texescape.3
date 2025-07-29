@@ -1,0 +1,64 @@
+.TH "sphinx.util.texescape" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.util.texescape
+.SH SYNOPSIS
+.br
+.PP
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "list \fBtex_replacements\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+TeX escaping helper\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "list sphinx\&.util\&.texescape\&.tex_replacements"
+\fBInitial value:\fP.PP
+.nf
+1 =  [
+2     # map TeX special chars
+3     ('$', r'\\$'),
+4     ('%', r'\\%'),
+5     ('&', r'\\&'),
+6     ('#', r'\\#'),
+7     ('_', r'\\_'),
+8     ('{', r'\\{'),
+9     ('}', r'\\}'),
+10     ('\\\\', r'\\textbackslash{}'),
+11     ('~', r'\\textasciitilde{}'),
+12     ('^', r'\\textasciicircum{}'),
+13     # map chars to avoid mis\-interpretation in LaTeX
+14     ('[', r'{[}'),
+15     (']', r'{]}'),
+16     # map special Unicode characters to TeX commands
+17     ('✓', r'\\(\\checkmark\\)'),
+18     ('✔', r'\\(\\pmb{\\checkmark}\\)'),
+19     ('✕', r'\\(\\times\\)'),
+20     ('✖', r'\\(\\pmb{\\times}\\)'),
+21     # used to separate \-\- in options
+22     ('﻿', r'{}'),
+23     # map some special Unicode characters to similar ASCII ones
+24     # (even for Unicode LaTeX as may not be supported by OpenType font)
+25     ('⎽', r'\\_'),
+26     ('ℯ', r'e'),  # U+212F # NoQA: RUF001
+27     ('ⅈ', r'i'),  # U+2148 # NoQA: RUF001
+28     # Greek alphabet not escaped: pdflatex handles it via textalpha and inputenc
+29     # OHM SIGN U+2126 is handled by LaTeX textcomp package
+30 ]
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

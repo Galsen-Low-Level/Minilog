@@ -1,0 +1,102 @@
+.TH "soupsieve.__meta__" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+soupsieve.__meta__
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBVersion\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVersion\fP \fBparse_version\fP (str ver)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBRE_VER\fP"
+.br
+.ti -1c
+.RI "dict \fBREL_MAP\fP"
+.br
+.ti -1c
+.RI "dict \fBDEV_STATUS\fP"
+.br
+.ti -1c
+.RI "dict \fBPRE_REL_MAP\fP = {'a': 'alpha', 'b': 'beta', 'rc': 'candidate'}"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Meta related things\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " \fBVersion\fP soupsieve\&.__meta__\&.parse_version (str ver)"
+
+.PP
+.nf
+Parse version into a comparable Version tuple\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "dict soupsieve\&.__meta__\&.DEV_STATUS"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     "\&.dev": "2 \- Pre\-Alpha",
+3     "\&.dev\-alpha": "2 \- Pre\-Alpha",
+4     "\&.dev\-beta": "2 \- Pre\-Alpha",
+5     "\&.dev\-candidate": "2 \- Pre\-Alpha",
+6     "alpha": "3 \- Alpha",
+7     "beta": "4 \- Beta",
+8     "candidate": "4 \- Beta",
+9     "final": "5 \- Production/Stable"
+10 }
+.fi
+
+.SS "dict soupsieve\&.__meta__\&.PRE_REL_MAP = {'a': 'alpha', 'b': 'beta', 'rc': 'candidate'}"
+
+.SS "soupsieve\&.__meta__\&.RE_VER"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(
+2     
+3 )
+.fi
+
+.SS "dict soupsieve\&.__meta__\&.REL_MAP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     "\&.dev": "",
+3     "\&.dev\-alpha": "a",
+4     "\&.dev\-beta": "b",
+5     "\&.dev\-candidate": "rc",
+6     "alpha": "a",
+7     "beta": "b",
+8     "candidate": "rc",
+9     "final": ""
+10 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

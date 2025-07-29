@@ -1,0 +1,1224 @@
+.TH "pip._vendor.pkg_resources" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.pkg_resources
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_LoaderProtocol\fP"
+.br
+.ti -1c
+.RI "class \fB_ReqExtras\fP"
+.br
+.ti -1c
+.RI "class \fB_ZipLoaderModule\fP"
+.br
+.ti -1c
+.RI "class \fBContextualVersionConflict\fP"
+.br
+.ti -1c
+.RI "class \fBDefaultProvider\fP"
+.br
+.ti -1c
+.RI "class \fBDistInfoDistribution\fP"
+.br
+.ti -1c
+.RI "class \fBDistribution\fP"
+.br
+.ti -1c
+.RI "class \fBDistributionNotFound\fP"
+.br
+.ti -1c
+.RI "class \fBEggInfoDistribution\fP"
+.br
+.ti -1c
+.RI "class \fBEggMetadata\fP"
+.br
+.ti -1c
+.RI "class \fBEggProvider\fP"
+.br
+.ti -1c
+.RI "class \fBEmptyProvider\fP"
+.br
+.ti -1c
+.RI "class \fBEntryPoint\fP"
+.br
+.ti -1c
+.RI "class \fBEnvironment\fP"
+.br
+.ti -1c
+.RI "class \fBExtractionError\fP"
+.br
+.ti -1c
+.RI "class \fBFileMetadata\fP"
+.br
+.ti -1c
+.RI "class \fBIMetadataProvider\fP"
+.br
+.ti -1c
+.RI "class \fBIResourceProvider\fP"
+.br
+.ti -1c
+.RI "class \fBMemoizedZipManifests\fP"
+.br
+.ti -1c
+.RI "class \fBNoDists\fP"
+.br
+.ti -1c
+.RI "class \fBNullProvider\fP"
+.br
+.ti -1c
+.RI "class \fBPathMetadata\fP"
+.br
+.ti -1c
+.RI "class \fBPEP440Warning\fP"
+.br
+.ti -1c
+.RI "class \fBPkgResourcesDeprecationWarning\fP"
+.br
+.ti -1c
+.RI "class \fBRequirement\fP"
+.br
+.ti -1c
+.RI "class \fBRequirementParseError\fP"
+.br
+.ti -1c
+.RI "class \fBResolutionError\fP"
+.br
+.ti -1c
+.RI "class \fBResourceManager\fP"
+.br
+.ti -1c
+.RI "class \fBUnknownExtra\fP"
+.br
+.ti -1c
+.RI "class \fBVersionConflict\fP"
+.br
+.ti -1c
+.RI "class \fBWorkingSet\fP"
+.br
+.ti -1c
+.RI "class \fBZipManifests\fP"
+.br
+.ti -1c
+.RI "class \fBZipProvider\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_T\fP \fB_declare_state\fP (str vartype, str varname, \fB_T\fP initial_value)"
+.br
+.ti -1c
+.RI "dict[str, Any] \fB__getstate__\fP ()"
+.br
+.ti -1c
+.RI "dict[str, Any] \fB__setstate__\fP (dict[str, Any] state)"
+.br
+.ti -1c
+.RI "\fB_sget_dict\fP (val)"
+.br
+.ti -1c
+.RI "\fB_sset_dict\fP (key, ob, state)"
+.br
+.ti -1c
+.RI "\fB_sget_object\fP (val)"
+.br
+.ti -1c
+.RI "\fB_sset_object\fP (key, ob, state)"
+.br
+.ti -1c
+.RI "\fBget_supported_platform\fP ()"
+.br
+.ti -1c
+.RI "\fBregister_loader_type\fP (type[\fB_ModuleLike\fP] loader_type, \fB_ProviderFactoryType\fP provider_factory)"
+.br
+.ti -1c
+.RI "\fBIResourceProvider\fP \fBget_provider\fP (str moduleOrReq)"
+.br
+.ti -1c
+.RI "\fBDistribution\fP \fBget_provider\fP (\fBRequirement\fP moduleOrReq)"
+.br
+.ti -1c
+.RI "\fBIResourceProvider\fP|\fBDistribution\fP \fBget_provider\fP (str|\fBRequirement\fP moduleOrReq)"
+.br
+.ti -1c
+.RI "\fB_macos_vers\fP ()"
+.br
+.ti -1c
+.RI "\fB_macos_arch\fP (machine)"
+.br
+.ti -1c
+.RI "\fBget_build_platform\fP ()"
+.br
+.ti -1c
+.RI "\fBcompatible_platforms\fP (str|None provided, str|None required)"
+.br
+.ti -1c
+.RI "\fB_DistributionT\fP \fBget_distribution\fP (\fB_DistributionT\fP dist)"
+.br
+.ti -1c
+.RI "\fBDistribution\fP \fBget_distribution\fP (\fB_PkgReqType\fP dist)"
+.br
+.ti -1c
+.RI "\fBDistribution\fP \fBget_distribution\fP (\fBDistribution\fP|\fB_PkgReqType\fP dist)"
+.br
+.ti -1c
+.RI "\fB_ResolvedEntryPoint\fP \fBload_entry_point\fP (\fB_EPDistType\fP dist, str group, str name)"
+.br
+.ti -1c
+.RI "dict[str, dict[str, \fBEntryPoint\fP]] \fBget_entry_map\fP (\fB_EPDistType\fP dist, None group=None)"
+.br
+.ti -1c
+.RI "dict[str, \fBEntryPoint\fP] \fBget_entry_map\fP (\fB_EPDistType\fP dist, str group)"
+.br
+.ti -1c
+.RI "\fBget_entry_map\fP (\fB_EPDistType\fP dist, str|None group=None)"
+.br
+.ti -1c
+.RI "\fBget_entry_info\fP (\fB_EPDistType\fP dist, str group, str name)"
+.br
+.ti -1c
+.RI "str \fBget_default_cache\fP ()"
+.br
+.ti -1c
+.RI "\fBsafe_name\fP (str name)"
+.br
+.ti -1c
+.RI "\fBsafe_version\fP (str version)"
+.br
+.ti -1c
+.RI "\fB_forgiving_version\fP (version)"
+.br
+.ti -1c
+.RI "\fB_safe_segment\fP (segment)"
+.br
+.ti -1c
+.RI "\fBsafe_extra\fP (str extra)"
+.br
+.ti -1c
+.RI "\fBto_filename\fP (str name)"
+.br
+.ti -1c
+.RI "\fBinvalid_marker\fP (str text)"
+.br
+.ti -1c
+.RI "bool \fBevaluate_marker\fP (str text, str|None extra=None)"
+.br
+.ti -1c
+.RI "\fB_parents\fP (path)"
+.br
+.ti -1c
+.RI "\fBregister_finder\fP (type[\fB_T\fP] importer_type, \fB_DistFinderType\fP[\fB_T\fP] distribution_finder)"
+.br
+.ti -1c
+.RI "\fBfind_distributions\fP (str path_item, bool only=False)"
+.br
+.ti -1c
+.RI "Iterator[\fBDistribution\fP] \fBfind_eggs_in_zip\fP (zipimport\&.zipimporter importer, str path_item, bool only=False)"
+.br
+.ti -1c
+.RI "\fBfind_nothing\fP (object|None importer, str|None path_item, bool|None only=False)"
+.br
+.ti -1c
+.RI "\fBfind_on_path\fP (object|None importer, path_item, only=False)"
+.br
+.ti -1c
+.RI "\fBdist_factory\fP (path_item, entry, only)"
+.br
+.ti -1c
+.RI "\fBsafe_listdir\fP (StrOrBytesPath path)"
+.br
+.ti -1c
+.RI "\fBdistributions_from_metadata\fP (str path)"
+.br
+.ti -1c
+.RI "\fBnon_empty_lines\fP (path)"
+.br
+.ti -1c
+.RI "\fBresolve_egg_link\fP (path)"
+.br
+.ti -1c
+.RI "\fBregister_namespace_handler\fP (type[\fB_T\fP] importer_type, \fB_NSHandlerType\fP[\fB_T\fP] namespace_handler)"
+.br
+.ti -1c
+.RI "\fB_handle_ns\fP (packageName, path_item)"
+.br
+.ti -1c
+.RI "\fB_rebuild_mod_path\fP (orig_path, package_name, types\&.ModuleType module)"
+.br
+.ti -1c
+.RI "\fBdeclare_namespace\fP (str packageName)"
+.br
+.ti -1c
+.RI "\fBfixup_namespace_packages\fP (str path_item, str|None parent=None)"
+.br
+.ti -1c
+.RI "\fBfile_ns_handler\fP (object importer, StrPath path_item, str packageName, types\&.ModuleType module)"
+.br
+.ti -1c
+.RI "\fBnull_ns_handler\fP (object importer, str|None path_item, str|None packageName, \fB_ModuleLike\fP|None module)"
+.br
+.ti -1c
+.RI "str \fBnormalize_path\fP (StrPath filename)"
+.br
+.ti -1c
+.RI "bytes \fBnormalize_path\fP (BytesPath filename)"
+.br
+.ti -1c
+.RI "\fBnormalize_path\fP (StrOrBytesPath filename)"
+.br
+.ti -1c
+.RI "\fB_cygwin_patch\fP (StrOrBytesPath filename)"
+.br
+.ti -1c
+.RI "str \fB_normalize_cached\fP (StrPath filename)"
+.br
+.ti -1c
+.RI "bytes \fB_normalize_cached\fP (BytesPath filename)"
+.br
+.ti -1c
+.RI "str|bytes \fB_normalize_cached\fP (StrOrBytesPath filename)"
+.br
+.ti -1c
+.RI "\fB_normalize_cached\fP (filename)"
+.br
+.ti -1c
+.RI "\fB_is_egg_path\fP (path)"
+.br
+.ti -1c
+.RI "\fB_is_zip_egg\fP (path)"
+.br
+.ti -1c
+.RI "\fB_is_unpacked_egg\fP (path)"
+.br
+.ti -1c
+.RI "\fB_set_parent_ns\fP (packageName)"
+.br
+.ti -1c
+.RI "\fB_version_from_file\fP (lines)"
+.br
+.ti -1c
+.RI "\fBissue_warning\fP (*args, **kw)"
+.br
+.ti -1c
+.RI "\fBparse_requirements\fP (\fB_NestedStr\fP strs)"
+.br
+.ti -1c
+.RI "\fB_always_object\fP (classes)"
+.br
+.ti -1c
+.RI "\fB_AdapterT\fP \fB_find_adapter\fP (Mapping[type, \fB_AdapterT\fP] registry, object ob)"
+.br
+.ti -1c
+.RI "\fBensure_directory\fP (StrOrBytesPath path)"
+.br
+.ti -1c
+.RI "\fB_bypass_ensure_directory\fP (path)"
+.br
+.ti -1c
+.RI "Iterator[tuple[str|None, list[str]]] \fBsplit_sections\fP (\fB_NestedStr\fP s)"
+.br
+.ti -1c
+.RI "\fB_mkstemp\fP (*args, **kw)"
+.br
+.ti -1c
+.RI "str \fB_read_utf8_with_fallback\fP (str file, fallback_encoding=\fB_LOCALE_ENCODING\fP)"
+.br
+.ti -1c
+.RI "\fB_call_aside\fP (f, *args, **kwargs)"
+.br
+.ti -1c
+.RI "\fB_initialize\fP (g=globals())"
+.br
+.ti -1c
+.RI "\fB_initialize_master_working_set\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "bool \fBWRITE_SUPPORT\fP = True"
+.br
+.ti -1c
+.RI "\fB_T\fP = TypeVar('_T')"
+.br
+.ti -1c
+.RI "\fB_DistributionT\fP = TypeVar('_DistributionT', bound='Distribution')"
+.br
+.ti -1c
+.RI "\fB_NestedStr\fP = Union[str, Iterable[Union[str, Iterable['_NestedStr']]]]"
+.br
+.ti -1c
+.RI "\fB_InstallerTypeT\fP = Callable[['Requirement'], '_DistributionT']"
+.br
+.ti -1c
+.RI "\fB_InstallerType\fP = Callable[['Requirement'], Union['Distribution', None]]"
+.br
+.ti -1c
+.RI "\fB_PkgReqType\fP = Union[str, 'Requirement']"
+.br
+.ti -1c
+.RI "\fB_EPDistType\fP = Union['Distribution', \fB_PkgReqType\fP]"
+.br
+.ti -1c
+.RI "\fB_MetadataType\fP = Union['IResourceProvider', None]"
+.br
+.ti -1c
+.RI "\fB_ResolvedEntryPoint\fP = Any"
+.br
+.ti -1c
+.RI "\fB_ResourceStream\fP = Any"
+.br
+.ti -1c
+.RI "\fB_ModuleLike\fP = Union[object, types\&.ModuleType]"
+.br
+.ti -1c
+.RI "\fB_ProviderFactoryType\fP = Callable[[Any], 'IResourceProvider']"
+.br
+.ti -1c
+.RI "\fB_DistFinderType\fP = Callable[[\fB_T\fP, str, bool], Iterable['Distribution']]"
+.br
+.ti -1c
+.RI "\fB_NSHandlerType\fP = Callable[[\fB_T\fP, str, str, types\&.ModuleType], Union[str, None]]"
+.br
+.ti -1c
+.RI "\fB_AdapterT\fP"
+.br
+.ti -1c
+.RI "\fB_PEP440_FALLBACK\fP = re\&.compile(r'^v?(?P<safe>(?:[0\-9]+!)?[0\-9]+(?:\\\&.[0\-9]+)*)', re\&.I)"
+.br
+.ti -1c
+.RI "\fBparse_version\fP = _packaging_version\&.Version"
+.br
+.ti -1c
+.RI "dict \fB_state_vars\fP = {}"
+.br
+.ti -1c
+.RI "None \fB_sget_none\fP = lambda *args"
+.br
+.ti -1c
+.RI "str \fBPY_MAJOR\fP = '{}\&.{}'\&.format(*sys\&.version_info)"
+.br
+.ti -1c
+.RI "int \fBEGG_DIST\fP = 3"
+.br
+.ti -1c
+.RI "int \fBBINARY_DIST\fP = 2"
+.br
+.ti -1c
+.RI "int \fBSOURCE_DIST\fP = 1"
+.br
+.ti -1c
+.RI "int \fBCHECKOUT_DIST\fP = 0"
+.br
+.ti -1c
+.RI "int \fBDEVELOP_DIST\fP = \-1"
+.br
+.ti -1c
+.RI "\fBmacosVersionString\fP = re\&.compile(r'macosx\-(\\d+)\\\&.(\\d+)\-(\&.*)')"
+.br
+.ti -1c
+.RI "\fBdarwinVersionString\fP = re\&.compile(r'darwin\-(\\d+)\\\&.(\\d+)\\\&.(\\d+)\-(\&.*)')"
+.br
+.ti -1c
+.RI "\fBget_platform\fP = \fBget_build_platform\fP"
+.br
+.ti -1c
+.RI "\fBAvailableDistributions\fP = \fBEnvironment\fP"
+.br
+.ti -1c
+.RI "\fBempty_provider\fP = \fBEmptyProvider\fP()"
+.br
+.ti -1c
+.RI "dict \fB_namespace_handlers\fP"
+.br
+.ti -1c
+.RI "dict \fB_namespace_packages\fP"
+.br
+.ti -1c
+.RI "\fBMODULE\fP = re\&.compile(r'\\w+(\\\&.\\w+)*$')\&.match"
+.br
+.ti -1c
+.RI "\fBEGG_NAME\fP"
+.br
+.ti -1c
+.RI "dict \fB_distributionImpl\fP"
+.br
+.ti -1c
+.RI "\fBcategory\fP"
+.br
+.ti -1c
+.RI "\fBPEP440Warning\fP"
+.br
+.ti -1c
+.RI "\fBappend\fP"
+.br
+.ti -1c
+.RI "tuple \fB_LOCALE_ENCODING\fP = (3, 10) else None"
+.br
+.ti -1c
+.RI "\fBresource_exists\fP = __resource_manager\&.resource_exists"
+.br
+.ti -1c
+.RI "\fBresource_isdir\fP = __resource_manager\&.resource_isdir"
+.br
+.ti -1c
+.RI "\fBresource_filename\fP = __resource_manager\&.resource_filename"
+.br
+.ti -1c
+.RI "\fBresource_stream\fP = __resource_manager\&.resource_stream"
+.br
+.ti -1c
+.RI "\fBresource_string\fP = __resource_manager\&.resource_string"
+.br
+.ti -1c
+.RI "\fBresource_listdir\fP = __resource_manager\&.resource_listdir"
+.br
+.ti -1c
+.RI "\fBset_extraction_path\fP = __resource_manager\&.set_extraction_path"
+.br
+.ti -1c
+.RI "\fBcleanup_resources\fP = __resource_manager\&.cleanup_resources"
+.br
+.ti -1c
+.RI "\fBworking_set\fP = \fBWorkingSet\fP()"
+.br
+.ti -1c
+.RI "\fBrequire\fP = working_set\&.require"
+.br
+.ti -1c
+.RI "\fBiter_entry_points\fP = working_set\&.iter_entry_points"
+.br
+.ti -1c
+.RI "\fBadd_activation_listener\fP = working_set\&.subscribe"
+.br
+.ti -1c
+.RI "\fBrun_script\fP = working_set\&.run_script"
+.br
+.ti -1c
+.RI "\fBrun_main\fP = \fBrun_script\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Package resource API
+--------------------
+
+A resource is a logical file contained within a package, or a logical
+subdirectory thereof\&.  The package resource API expects resource names
+to have their path parts separated with ``/``, *not* whatever the local
+path separator is\&.  Do not use os\&.path operations to manipulate resource
+names being passed into the API\&.
+
+The package resource API is designed to work with normal filesystem packages,
+\&.egg files, and unpacked \&.egg files\&.  It can also work in a limited way with
+\&.zip files and with custom PEP 302 loaders that support the ``get_data()``
+method\&.
+
+This module is deprecated\&. Users are directed to :mod:`importlib\&.resources`,
+:mod:`importlib\&.metadata` and :pypi:`packaging` instead\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " dict[str, Any] pip\&._vendor\&.pkg_resources\&.__getstate__ ()"
+
+.SS " dict[str, Any] pip\&._vendor\&.pkg_resources\&.__setstate__ (dict[str, Any] state)"
+
+.SS "pip\&._vendor\&.pkg_resources\&._always_object ( classes)\fC [protected]\fP"
+
+.PP
+.nf
+Ensure object appears in the mro even
+for old-style classes\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&._bypass_ensure_directory ( path)\fC [protected]\fP"
+
+.PP
+.nf
+Sandbox-bypassing version of ensure_directory()
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&._call_aside ( f, * args, ** kwargs)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._cygwin_patch (StrOrBytesPath filename)\fC [protected]\fP"
+
+.PP
+.nf
+Contrary to POSIX 2008, on Cygwin, getcwd (3) contains
+symlink components\&. Using
+os\&.path\&.abspath() works around this limitation\&. A fix in os\&.getcwd()
+would probably better, in Cygwin even more so, except
+that this seems to be by design\&.\&.\&.
+
+.fi
+.PP
+ 
+.SS " \fB_T\fP pip\&._vendor\&.pkg_resources\&._declare_state (str vartype, str varname, \fB_T\fP initial_value)\fC [protected]\fP"
+
+.SS " \fB_AdapterT\fP pip\&._vendor\&.pkg_resources\&._find_adapter (Mapping[type, \fB_AdapterT\fP] registry, object ob)\fC [protected]\fP"
+
+.PP
+.nf
+Return an adapter factory for `ob` from `registry`
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&._forgiving_version ( version)\fC [protected]\fP"
+
+.PP
+.nf
+Fallback when ``safe_version`` is not safe enough
+>>> parse_version(_forgiving_version('0\&.23ubuntu1'))
+<Version('0\&.23\&.dev0+sanitized\&.ubuntu1')>
+>>> parse_version(_forgiving_version('0\&.23-'))
+<Version('0\&.23\&.dev0+sanitized')>
+>>> parse_version(_forgiving_version('0\&.-_'))
+<Version('0\&.dev0+sanitized')>
+>>> parse_version(_forgiving_version('42\&.+?1'))
+<Version('42\&.dev0+sanitized\&.1')>
+>>> parse_version(_forgiving_version('hello world'))
+<Version('0\&.dev0+sanitized\&.hello\&.world')>
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&._handle_ns ( packageName,  path_item)\fC [protected]\fP"
+
+.PP
+.nf
+Ensure that named package includes a subpath of path_item (if needed)
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&._initialize ( g = \fCglobals()\fP)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._initialize_master_working_set ()\fC [protected]\fP"
+
+.PP
+.nf
+Prepare the master working set and make the ``require()``
+API available\&.
+
+This function has explicit effects on the global state
+of pkg_resources\&. It is intended to be invoked once at
+the initialization of this module\&.
+
+Invocation by other packages is unsupported and done
+at their own risk\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&._is_egg_path ( path)\fC [protected]\fP"
+
+.PP
+.nf
+Determine if given path appears to be an egg\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&._is_unpacked_egg ( path)\fC [protected]\fP"
+
+.PP
+.nf
+Determine if given path appears to be an unpacked egg\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&._is_zip_egg ( path)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._macos_arch ( machine)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._macos_vers ()\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._mkstemp (* args, ** kw)\fC [protected]\fP"
+
+.SS " bytes pip\&._vendor\&.pkg_resources\&._normalize_cached (BytesPath filename)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._normalize_cached ( filename)\fC [protected]\fP"
+
+.SS " str | bytes pip\&._vendor\&.pkg_resources\&._normalize_cached (StrOrBytesPath filename)\fC [protected]\fP"
+
+.SS " str pip\&._vendor\&.pkg_resources\&._normalize_cached (StrPath filename)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._parents ( path)\fC [protected]\fP"
+
+.PP
+.nf
+yield all parents of path including path
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.pkg_resources\&._read_utf8_with_fallback (str file,  fallback_encoding = \fC\fB_LOCALE_ENCODING\fP\fP)\fC [protected]\fP"
+
+.PP
+.nf
+See setuptools\&.unicode_utils\&._read_utf8_with_fallback
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&._rebuild_mod_path ( orig_path,  package_name, types\&.ModuleType module)\fC [protected]\fP"
+
+.PP
+.nf
+Rebuild module\&.__path__ ensuring that all entries are ordered
+corresponding to their sys\&.path order
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&._safe_segment ( segment)\fC [protected]\fP"
+
+.PP
+.nf
+Convert an arbitrary string into a safe segment
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&._set_parent_ns ( packageName)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._sget_dict ( val)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._sget_object ( val)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._sset_dict ( key,  ob,  state)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._sset_object ( key,  ob,  state)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._version_from_file ( lines)\fC [protected]\fP"
+
+.PP
+.nf
+Given an iterable of lines from a Metadata file, return
+the value of the Version field, if present, or None otherwise\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.compatible_platforms (str | None provided, str | None required)"
+
+.PP
+.nf
+Can code for the `provided` platform run on the `required` platform?
+
+Returns true if either platform is ``None``, or the platforms are equal\&.
+
+XXX Needs compatibility checks for Linux and other unixy OSes\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.declare_namespace (str packageName)"
+
+.PP
+.nf
+Declare that package 'packageName' is a namespace package
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.dist_factory ( path_item,  entry,  only)"
+
+.PP
+.nf
+Return a dist_factory for the given entry\&.
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.distributions_from_metadata (str path)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.ensure_directory (StrOrBytesPath path)"
+
+.PP
+.nf
+Ensure that the parent directory of `path` exists
+.fi
+.PP
+ 
+.SS " bool pip\&._vendor\&.pkg_resources\&.evaluate_marker (str text, str | None  extra = \fCNone\fP)"
+
+.PP
+.nf
+Evaluate a PEP 508 environment marker\&.
+Return a boolean indicating the marker result in this environment\&.
+Raise SyntaxError if marker is invalid\&.
+
+This implementation uses the 'pyparsing' module\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.file_ns_handler (object importer, StrPath path_item, str packageName, types\&.ModuleType module)"
+
+.PP
+.nf
+Compute an ns-package subpath for a filesystem or zipfile importer
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.find_distributions (str path_item, bool  only = \fCFalse\fP)"
+
+.PP
+.nf
+Yield distributions accessible via `path_item`
+.fi
+.PP
+ 
+.SS " Iterator[\fBDistribution\fP] pip\&._vendor\&.pkg_resources\&.find_eggs_in_zip (zipimport\&.zipimporter importer, str path_item, bool  only = \fCFalse\fP)"
+
+.PP
+.nf
+Find eggs in zip files; possibly multiple nested eggs\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.find_nothing (object | None importer, str | None path_item, bool | None  only = \fCFalse\fP)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.find_on_path (object | None importer,  path_item,  only = \fCFalse\fP)"
+
+.PP
+.nf
+Yield distributions accessible on a sys\&.path directory
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.fixup_namespace_packages (str path_item, str | None  parent = \fCNone\fP)"
+
+.PP
+.nf
+Ensure that previously-declared namespace packages include path_item
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.get_build_platform ()"
+
+.PP
+.nf
+Return this platform's string for platform-specific distributions
+
+XXX Currently this is the same as ``distutils\&.util\&.get_platform()``, but it
+needs some hacks for Linux and macOS\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.pkg_resources\&.get_default_cache ()"
+
+.PP
+.nf
+Return the ``PYTHON_EGG_CACHE`` environment variable
+or a platform-relevant user cache dir for an app
+named 'Python-Eggs'\&.
+
+.fi
+.PP
+ 
+.SS " \fB_DistributionT\fP pip\&._vendor\&.pkg_resources\&.get_distribution (\fB_DistributionT\fP dist)"
+
+.SS " \fBDistribution\fP pip\&._vendor\&.pkg_resources\&.get_distribution (\fB_PkgReqType\fP dist)"
+
+.SS " \fBDistribution\fP pip\&._vendor\&.pkg_resources\&.get_distribution (\fBDistribution\fP | \fB_PkgReqType\fP dist)"
+
+.PP
+.nf
+Return a current distribution object for a Requirement or string
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.get_entry_info (\fB_EPDistType\fP dist, str group, str name)"
+
+.PP
+.nf
+Return the EntryPoint object for `group`+`name`, or ``None``
+.fi
+.PP
+ 
+.SS " dict[str, dict[str, \fBEntryPoint\fP]] pip\&._vendor\&.pkg_resources\&.get_entry_map (\fB_EPDistType\fP dist, None  group = \fCNone\fP)"
+
+.SS " dict[str, \fBEntryPoint\fP] pip\&._vendor\&.pkg_resources\&.get_entry_map (\fB_EPDistType\fP dist, str group)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.get_entry_map (\fB_EPDistType\fP dist, str | None  group = \fCNone\fP)"
+
+.PP
+.nf
+Return the entry point map for `group`, or the full entry map
+.fi
+.PP
+ 
+.SS " \fBDistribution\fP pip\&._vendor\&.pkg_resources\&.get_provider (\fBRequirement\fP moduleOrReq)"
+
+.SS " \fBIResourceProvider\fP pip\&._vendor\&.pkg_resources\&.get_provider (str moduleOrReq)"
+
+.SS " \fBIResourceProvider\fP | \fBDistribution\fP pip\&._vendor\&.pkg_resources\&.get_provider (str | \fBRequirement\fP moduleOrReq)"
+
+.PP
+.nf
+Return an IResourceProvider for the named module or requirement
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.get_supported_platform ()"
+
+.PP
+.nf
+Return this platform's maximum compatible version\&.
+
+distutils\&.util\&.get_platform() normally reports the minimum version
+of macOS that would be required to *use* extensions produced by
+distutils\&.  But what we want when checking compatibility is to know the
+version of macOS that we are *running*\&.  To allow usage of packages that
+explicitly require a newer version of macOS, we must also know the
+current version of the OS\&.
+
+If this condition occurs for any other platform with a version in its
+platform strings, this function should be extended accordingly\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.invalid_marker (str text)"
+
+.PP
+.nf
+Validate text as a PEP 508 environment marker; return an exception
+if invalid or False otherwise\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.issue_warning (* args, ** kw)"
+
+.SS " \fB_ResolvedEntryPoint\fP pip\&._vendor\&.pkg_resources\&.load_entry_point (\fB_EPDistType\fP dist, str group, str name)"
+
+.PP
+.nf
+Return `name` entry point of `group` for `dist` or raise ImportError
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.non_empty_lines ( path)"
+
+.PP
+.nf
+Yield non-empty lines from file at path
+
+.fi
+.PP
+ 
+.SS " bytes pip\&._vendor\&.pkg_resources\&.normalize_path (BytesPath filename)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.normalize_path (StrOrBytesPath filename)"
+
+.PP
+.nf
+Normalize a file/dir name for comparison purposes
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.pkg_resources\&.normalize_path (StrPath filename)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.null_ns_handler (object importer, str | None path_item, str | None packageName, \fB_ModuleLike\fP | None module)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.parse_requirements (\fB_NestedStr\fP strs)"
+
+.PP
+.nf
+Yield ``Requirement`` objects for each specification in `strs`\&.
+
+`strs` must be a string, or a (possibly-nested) iterable thereof\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.register_finder (type[\fB_T\fP] importer_type, \fB_DistFinderType\fP[\fB_T\fP] distribution_finder)"
+
+.PP
+.nf
+Register `distribution_finder` to find distributions in sys\&.path items
+
+`importer_type` is the type or class of a PEP 302 'Importer' (sys\&.path item
+handler), and `distribution_finder` is a callable that, passed a path
+item and the importer instance, yields ``Distribution`` instances found on
+that path item\&.  See ``pkg_resources\&.find_on_path`` for an example\&.
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.register_loader_type (type[\fB_ModuleLike\fP] loader_type, \fB_ProviderFactoryType\fP
+ provider_factory)"
+
+.PP
+.nf
+Register `provider_factory` to make providers for `loader_type`
+
+`loader_type` is the type or class of a PEP 302 ``module\&.__loader__``,
+and `provider_factory` is a function that, passed a *module* object,
+returns an ``IResourceProvider`` for that module\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.register_namespace_handler (type[\fB_T\fP] importer_type, \fB_NSHandlerType\fP[\fB_T\fP]
+ namespace_handler)"
+
+.PP
+.nf
+Register `namespace_handler` to declare namespace packages
+
+`importer_type` is the type or class of a PEP 302 'Importer' (sys\&.path item
+handler), and `namespace_handler` is a callable like this::
+
+    def namespace_handler(importer, path_entry, moduleName, module):
+        # return a path_entry to use for child packages
+
+Namespace handlers are only called if the importer object has already
+agreed that it can handle the relevant path item, and they should only
+return a subpath if the module __path__ does not already contain an
+equivalent subpath\&.  For an example namespace handler, see
+``pkg_resources\&.file_ns_handler``\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.resolve_egg_link ( path)"
+
+.PP
+.nf
+Given a path to an \&.egg-link, resolve distributions
+present in the referenced path\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.safe_extra (str extra)"
+
+.PP
+.nf
+Convert an arbitrary string to a standard 'extra' name
+
+Any runs of non-alphanumeric characters are replaced with a single '_',
+and the result is always lowercased\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.safe_listdir (StrOrBytesPath path)"
+
+.PP
+.nf
+Attempt to list contents of path, but suppress some exceptions\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.safe_name (str name)"
+
+.PP
+.nf
+Convert an arbitrary string to a standard distribution name
+
+Any runs of non-alphanumeric/\&. characters are replaced with a single '-'\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.safe_version (str version)"
+
+.PP
+.nf
+Convert an arbitrary string to a standard version string
+
+.fi
+.PP
+ 
+.SS " Iterator[tuple[str | None, list[str]]] pip\&._vendor\&.pkg_resources\&.split_sections (\fB_NestedStr\fP s)"
+
+.PP
+.nf
+Split a string or iterable thereof into (section, content) pairs
+
+Each ``section`` is a stripped version of the section header ('[section]')
+and each ``content`` is a list of stripped lines excluding blank lines and
+comment-only lines\&.  If there are any such lines before the first section
+header, they're returned in a first ``section`` of ``None``\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.to_filename (str name)"
+
+.PP
+.nf
+Convert a project or version name to its filename-escaped form
+
+Any '-' characters are currently replaced with '_'\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._vendor\&.pkg_resources\&._AdapterT\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  TypeVar(
+2     "_AdapterT", _DistFinderType[Any], _ProviderFactoryType, _NSHandlerType[Any]
+3 )
+.fi
+
+.SS "pip\&._vendor\&.pkg_resources\&._DistFinderType = Callable[[\fB_T\fP, str, bool], Iterable['Distribution']]\fC [protected]\fP"
+
+.SS "dict pip\&._vendor\&.pkg_resources\&._distributionImpl\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     '\&.egg': Distribution,
+3     '\&.egg\-info': EggInfoDistribution,
+4     '\&.dist\-info': DistInfoDistribution,
+5 }
+.fi
+
+.SS "pip\&._vendor\&.pkg_resources\&._DistributionT = TypeVar('_DistributionT', bound='Distribution')\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._EPDistType = Union['Distribution', \fB_PkgReqType\fP]\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._InstallerType = Callable[['Requirement'], Union['Distribution', None]]\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._InstallerTypeT = Callable[['Requirement'], '_DistributionT']\fC [protected]\fP"
+
+.SS "tuple pip\&._vendor\&.pkg_resources\&._LOCALE_ENCODING = (3, 10) else None\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._MetadataType = Union['IResourceProvider', None]\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._ModuleLike = Union[object, types\&.ModuleType]\fC [protected]\fP"
+
+.SS "dict pip\&._vendor\&.pkg_resources\&._namespace_handlers\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  _declare_state(
+2     'dict', '_namespace_handlers', {}
+3 )
+.fi
+
+.SS "dict pip\&._vendor\&.pkg_resources\&._namespace_packages\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  _declare_state(
+2     'dict', '_namespace_packages', {}
+3 )
+.fi
+
+.SS "pip\&._vendor\&.pkg_resources\&._NestedStr = Union[str, Iterable[Union[str, Iterable['_NestedStr']]]]\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._NSHandlerType = Callable[[\fB_T\fP, str, str, types\&.ModuleType], Union[str, None]]\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._PEP440_FALLBACK = re\&.compile(r'^v?(?P<safe>(?:[0\-9]+!)?[0\-9]+(?:\\\&.[0\-9]+)*)', re\&.I)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._PkgReqType = Union[str, 'Requirement']\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._ProviderFactoryType = Callable[[Any], 'IResourceProvider']\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._ResolvedEntryPoint = Any\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._ResourceStream = Any\fC [protected]\fP"
+
+.SS "None pip\&._vendor\&.pkg_resources\&._sget_none = lambda *args\fC [protected]\fP"
+
+.SS "dict pip\&._vendor\&.pkg_resources\&._state_vars = {}\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&._T = TypeVar('_T')\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.add_activation_listener = working_set\&.subscribe"
+
+.SS "pip\&._vendor\&.pkg_resources\&.append"
+
+.SS "pip\&._vendor\&.pkg_resources\&.AvailableDistributions = \fBEnvironment\fP"
+
+.SS "int pip\&._vendor\&.pkg_resources\&.BINARY_DIST = 2"
+
+.SS "pip\&._vendor\&.pkg_resources\&.category"
+
+.SS "int pip\&._vendor\&.pkg_resources\&.CHECKOUT_DIST = 0"
+
+.SS "pip\&._vendor\&.pkg_resources\&.cleanup_resources = __resource_manager\&.cleanup_resources"
+
+.SS "pip\&._vendor\&.pkg_resources\&.darwinVersionString = re\&.compile(r'darwin\-(\\d+)\\\&.(\\d+)\\\&.(\\d+)\-(\&.*)')"
+
+.SS "int pip\&._vendor\&.pkg_resources\&.DEVELOP_DIST = \-1"
+
+.SS "int pip\&._vendor\&.pkg_resources\&.EGG_DIST = 3"
+
+.SS "pip\&._vendor\&.pkg_resources\&.EGG_NAME"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(
+2     ,
+3     re\&.VERBOSE | re\&.IGNORECASE,
+4 )\&.match
+.fi
+
+.SS "pip\&._vendor\&.pkg_resources\&.empty_provider = \fBEmptyProvider\fP()"
+
+.SS "pip\&._vendor\&.pkg_resources\&.get_platform = \fBget_build_platform\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.iter_entry_points = working_set\&.iter_entry_points"
+
+.SS "pip\&._vendor\&.pkg_resources\&.macosVersionString = re\&.compile(r'macosx\-(\\d+)\\\&.(\\d+)\-(\&.*)')"
+
+.SS "pip\&._vendor\&.pkg_resources\&.MODULE = re\&.compile(r'\\w+(\\\&.\\w+)*$')\&.match"
+
+.SS "pip\&._vendor\&.pkg_resources\&.parse_version = _packaging_version\&.Version"
+
+.SS "\fBpip\&._vendor\&.pkg_resources\&.PEP440Warning\fP"
+
+.SS "str pip\&._vendor\&.pkg_resources\&.PY_MAJOR = '{}\&.{}'\&.format(*sys\&.version_info)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.require = working_set\&.require"
+
+.SS "pip\&._vendor\&.pkg_resources\&.resource_exists = __resource_manager\&.resource_exists"
+
+.SS "pip\&._vendor\&.pkg_resources\&.resource_filename = __resource_manager\&.resource_filename"
+
+.SS "pip\&._vendor\&.pkg_resources\&.resource_isdir = __resource_manager\&.resource_isdir"
+
+.SS "pip\&._vendor\&.pkg_resources\&.resource_listdir = __resource_manager\&.resource_listdir"
+
+.SS "pip\&._vendor\&.pkg_resources\&.resource_stream = __resource_manager\&.resource_stream"
+
+.SS "pip\&._vendor\&.pkg_resources\&.resource_string = __resource_manager\&.resource_string"
+
+.SS "pip\&._vendor\&.pkg_resources\&.run_main = \fBrun_script\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.run_script = working_set\&.run_script"
+
+.SS "pip\&._vendor\&.pkg_resources\&.set_extraction_path = __resource_manager\&.set_extraction_path"
+
+.SS "int pip\&._vendor\&.pkg_resources\&.SOURCE_DIST = 1"
+
+.SS "pip\&._vendor\&.pkg_resources\&.working_set = \fBWorkingSet\fP()"
+
+.SS "bool pip\&._vendor\&.pkg_resources\&.WRITE_SUPPORT = True"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,125 @@
+.TH "pip._internal.utils.wheel" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.utils.wheel
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "Tuple[str, Message] \fBparse_wheel\fP (ZipFile wheel_zip, str name)"
+.br
+.ti -1c
+.RI "str \fBwheel_dist_info_dir\fP (ZipFile source, str name)"
+.br
+.ti -1c
+.RI "bytes \fBread_wheel_metadata_file\fP (ZipFile source, str path)"
+.br
+.ti -1c
+.RI "Message \fBwheel_metadata\fP (ZipFile source, str dist_info_dir)"
+.br
+.ti -1c
+.RI "Tuple[int,\&.\&.\&.] \fBwheel_version\fP (Message wheel_data)"
+.br
+.ti -1c
+.RI "None \fBcheck_compatibility\fP (Tuple[int,\&.\&.\&.] version, str name)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBVERSION_COMPATIBLE\fP = (1, 0)"
+.br
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Support functions for working with wheel files\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " None pip\&._internal\&.utils\&.wheel\&.check_compatibility (Tuple[int, \&.\&.\&.] version, str name)"
+
+.PP
+.nf
+Raises errors or warns if called with an incompatible Wheel-Version\&.
+
+pip should refuse to install a Wheel-Version that's a major series
+ahead of what it's compatible with (e\&.g 2\&.0 > 1\&.1); and warn when
+installing a version only minor version ahead (e\&.g 1\&.2 > 1\&.1)\&.
+
+version: a 2-tuple representing a Wheel-Version (Major, Minor)
+name: name of wheel or package to raise exception about
+
+:raises UnsupportedWheel: when an incompatible Wheel-Version is given
+
+.fi
+.PP
+ 
+.SS " Tuple[str, Message] pip\&._internal\&.utils\&.wheel\&.parse_wheel (ZipFile wheel_zip, str name)"
+
+.PP
+.nf
+Extract information from the provided wheel, ensuring it meets basic
+standards\&.
+
+Returns the name of the \&.dist-info directory and the parsed WHEEL metadata\&.
+
+.fi
+.PP
+ 
+.SS " bytes pip\&._internal\&.utils\&.wheel\&.read_wheel_metadata_file (ZipFile source, str path)"
+
+.SS " str pip\&._internal\&.utils\&.wheel\&.wheel_dist_info_dir (ZipFile source, str name)"
+
+.PP
+.nf
+Returns the name of the contained \&.dist-info directory\&.
+
+Raises AssertionError or UnsupportedWheel if not found, >1 found, or
+it doesn't match the provided name\&.
+
+.fi
+.PP
+ 
+.SS " Message pip\&._internal\&.utils\&.wheel\&.wheel_metadata (ZipFile source, str dist_info_dir)"
+
+.PP
+.nf
+Return the WHEEL metadata of an extracted wheel, if possible\&.
+Otherwise, raise UnsupportedWheel\&.
+
+.fi
+.PP
+ 
+.SS " Tuple[int, \&.\&.\&.] pip\&._internal\&.utils\&.wheel\&.wheel_version (Message wheel_data)"
+
+.PP
+.nf
+Given WHEEL metadata, return the parsed Wheel-Version\&.
+Otherwise, raise UnsupportedWheel\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._internal\&.utils\&.wheel\&.logger = logging\&.getLogger(__name__)"
+
+.SS "tuple pip\&._internal\&.utils\&.wheel\&.VERSION_COMPATIBLE = (1, 0)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

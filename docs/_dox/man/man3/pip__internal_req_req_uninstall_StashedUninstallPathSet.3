@@ -1,0 +1,123 @@
+.TH "pip._internal.req.req_uninstall.StashedUninstallPathSet" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.req.req_uninstall.StashedUninstallPathSet
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "str \fBstash\fP (self, str path)"
+.br
+.ti -1c
+.RI "None \fBcommit\fP (self)"
+.br
+.ti -1c
+.RI "None \fBrollback\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBcan_rollback\fP (self)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fB_get_directory_stash\fP (self, str path)"
+.br
+.ti -1c
+.RI "str \fB_get_file_stash\fP (self, str path)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_moves\fP"
+.br
+.ti -1c
+.RI "\fB_save_dirs\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A set of file rename operations to stash files while
+tentatively uninstalling them\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._internal\&.req\&.req_uninstall\&.StashedUninstallPathSet\&.__init__ ( self)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " str pip\&._internal\&.req\&.req_uninstall\&.StashedUninstallPathSet\&._get_directory_stash ( self, str path)\fC [protected]\fP"
+
+.PP
+.nf
+Stashes a directory\&.
+
+Directories are stashed adjacent to their original location if
+possible, or else moved/copied into the user's temp dir\&.
+.fi
+.PP
+ 
+.SS " str pip\&._internal\&.req\&.req_uninstall\&.StashedUninstallPathSet\&._get_file_stash ( self, str path)\fC [protected]\fP"
+
+.PP
+.nf
+Stashes a file\&.
+
+If no root has been provided, one will be created for the directory
+in the user's temp directory\&.
+.fi
+.PP
+ 
+.SS " bool pip\&._internal\&.req\&.req_uninstall\&.StashedUninstallPathSet\&.can_rollback ( self)"
+
+.SS " None pip\&._internal\&.req\&.req_uninstall\&.StashedUninstallPathSet\&.commit ( self)"
+
+.PP
+.nf
+Commits the uninstall by removing stashed files\&.
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.req\&.req_uninstall\&.StashedUninstallPathSet\&.rollback ( self)"
+
+.PP
+.nf
+Undoes the uninstall by moving stashed files back\&.
+.fi
+.PP
+ 
+.SS " str pip\&._internal\&.req\&.req_uninstall\&.StashedUninstallPathSet\&.stash ( self, str path)"
+
+.PP
+.nf
+Stashes the directory or file and returns its new location\&.
+Handle symlinks as files to avoid modifying the symlink targets\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._internal\&.req\&.req_uninstall\&.StashedUninstallPathSet\&._moves\fC [protected]\fP"
+
+.SS "pip\&._internal\&.req\&.req_uninstall\&.StashedUninstallPathSet\&._save_dirs\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

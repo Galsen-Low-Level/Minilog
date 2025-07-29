@@ -1,0 +1,230 @@
+\doxysection{waitress.\+rfc7230 Namespace Reference}
+\hypertarget{namespacewaitress_1_1rfc7230}{}\label{namespacewaitress_1_1rfc7230}\index{waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a9693b3f9747b81885e634583a875af5d}{HEXDIG}} = "{}\mbox{[}0-\/9a-\/fA-\/F\mbox{]}"{}
+\item 
+str \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a6b205712ccf8627f517541ed4eca7896}{DIGIT}} = "{}\mbox{[}0-\/9\mbox{]}"{}
+\item 
+str \mbox{\hyperlink{namespacewaitress_1_1rfc7230_ac308ea22496e5218305f6af5100a0dee}{WS}} = "{}\mbox{[} \textbackslash{}t\mbox{]}"{}
+\item 
+str \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a2709e7b034443d3bc9f79689a00e1303}{OWS}} = \mbox{\hyperlink{namespacewaitress_1_1rfc7230_ac308ea22496e5218305f6af5100a0dee}{WS}} + "{}\{0,\}?"{}
+\item 
+str \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a6b46fc50b24819f634bb24da19e3635f}{RWS}} = \mbox{\hyperlink{namespacewaitress_1_1rfc7230_ac308ea22496e5218305f6af5100a0dee}{WS}} + "{}\{1,\}?"{}
+\item 
+str \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a18c2bebd5145c1e582a896c192312be9}{BWS}} = \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a2709e7b034443d3bc9f79689a00e1303}{OWS}}
+\item 
+str \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a52d7f109bc80e4d99d447a422dfa6c24}{TCHAR}} = r"{}\mbox{[}!\#\$\%\&\textquotesingle{}\texorpdfstring{$\ast$}{*}+\textbackslash{}-\/.\texorpdfstring{$^\wedge$}{\string^}\+\_\+\`{}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\sim$}{\string~}0-\/9A-\/Za-\/z\mbox{]}"{}
+\item 
+str \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a48dd9b22e366646d18ef8327b4a02294}{OBS\+\_\+\+TEXT}} = r"{}\textbackslash{}x80-\/\textbackslash{}xff"{}
+\item 
+str \mbox{\hyperlink{namespacewaitress_1_1rfc7230_ac23ad7263a6d39787e003d756855fd70}{TOKEN}} = \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a52d7f109bc80e4d99d447a422dfa6c24}{TCHAR}} + "{}\{1,\}"{}
+\item 
+str \mbox{\hyperlink{namespacewaitress_1_1rfc7230_aceb86c2223896fab7f04a6ac35977c46}{VCHAR}} = r"{}\textbackslash{}x21-\/\textbackslash{}x7e"{}
+\item 
+str \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a0c7e49a47f1e56d24459d806dfda9528}{QDTEXT}} = "{}\mbox{[}\textbackslash{}t \textbackslash{}x21\textbackslash{}x23-\/\textbackslash{}x5b\textbackslash{}\textbackslash{}\textbackslash{}x5d-\/\textbackslash{}x7e"{} + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a48dd9b22e366646d18ef8327b4a02294}{OBS\+\_\+\+TEXT}} + "{}\mbox{]}"{}
+\item 
+str \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a5e3f8b3b2515efb3a7ae0b586b51615d}{QUOTED\+\_\+\+PAIR}} = r"{}\textbackslash{}\textbackslash{}"{} + "{}(\mbox{[}\textbackslash{}t "{} + VCHAR + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a48dd9b22e366646d18ef8327b4a02294}{OBS\+\_\+\+TEXT}} + "{}\mbox{]})"{}
+\item 
+str \mbox{\hyperlink{namespacewaitress_1_1rfc7230_affe2cc03707035c7c205fa2ee2968a65}{QUOTED\+\_\+\+STRING}} = \textquotesingle{}"{}(?\+:(?\+:\textquotesingle{} + QDTEXT + "{})\texorpdfstring{$\vert$}{|}(?\+:"{} + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a5e3f8b3b2515efb3a7ae0b586b51615d}{QUOTED\+\_\+\+PAIR}} + \textquotesingle{}))\texorpdfstring{$\ast$}{*}"{}\textquotesingle{}
+\item 
+str \mbox{\hyperlink{namespacewaitress_1_1rfc7230_ae5ea3ee4dc832e650979587cda6b0568}{FIELD\+\_\+\+VCHAR}} = "{}\mbox{[}"{} + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_aceb86c2223896fab7f04a6ac35977c46}{VCHAR}} + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a48dd9b22e366646d18ef8327b4a02294}{OBS\+\_\+\+TEXT}} + "{}\mbox{]}"{}
+\item 
+str \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a1cbbfb0e3874abe10ea71dc026d669fa}{FIELD\+\_\+\+CONTENT}} = \mbox{\hyperlink{namespacewaitress_1_1rfc7230_ae5ea3ee4dc832e650979587cda6b0568}{FIELD\+\_\+\+VCHAR}} + "{}+(?\+:\mbox{[} \textbackslash{}t\mbox{]}+"{} + FIELD\+\_\+\+VCHAR + "{}+)\texorpdfstring{$\ast$}{*}"{}
+\item 
+str \mbox{\hyperlink{namespacewaitress_1_1rfc7230_ae5683f611bfc464dce85020eabd49934}{FIELD\+\_\+\+VALUE}} = "{}(?\+:"{} + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a1cbbfb0e3874abe10ea71dc026d669fa}{FIELD\+\_\+\+CONTENT}} + "{})?"{}
+\item 
+str \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a2c8b46e99b8e8e7090cf0fb921899473}{CHUNK\+\_\+\+EXT\+\_\+\+NAME}} = \mbox{\hyperlink{namespacewaitress_1_1rfc7230_ac23ad7263a6d39787e003d756855fd70}{TOKEN}}
+\item 
+str \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a3188ea098f6ad321ab5b21c27a11716a}{CHUNK\+\_\+\+EXT\+\_\+\+VAL}} = "{}(?\+:"{} + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_ac23ad7263a6d39787e003d756855fd70}{TOKEN}} + "{})\texorpdfstring{$\vert$}{|}(?\+:"{} + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_affe2cc03707035c7c205fa2ee2968a65}{QUOTED\+\_\+\+STRING}} + "{})"{}
+\item 
+tuple \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a4f4dc40afd1789b7bd483f7561264382}{CHUNK\+\_\+\+EXT}}
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1rfc7230_ac4f1b3671fac42f0a002320cc92c2d6d}{ONLY\+\_\+\+HEXDIG\+\_\+\+RE}} = re.\+compile(("{}\texorpdfstring{$^\wedge$}{\string^}"{} + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a9693b3f9747b81885e634583a875af5d}{HEXDIG}} + "{}+\$"{}).encode("{}latin-\/1"{}))
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1rfc7230_a2aebe6778a7d09c36512f7f0b258eebb}{ONLY\+\_\+\+DIGIT\+\_\+\+RE}} = re.\+compile(("{}\texorpdfstring{$^\wedge$}{\string^}"{} + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a6b205712ccf8627f517541ed4eca7896}{DIGIT}} + "{}+\$"{}).encode("{}latin-\/1"{}))
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1rfc7230_a36324a0a0c5ae6bcfc15d736d83939ed}{HEADER\+\_\+\+FIELD\+\_\+\+RE}}
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1rfc7230_a35355f0705b73b9346d65bbb45869787}{QUOTED\+\_\+\+PAIR\+\_\+\+RE}} = re.\+compile(\mbox{\hyperlink{namespacewaitress_1_1rfc7230_a5e3f8b3b2515efb3a7ae0b586b51615d}{QUOTED\+\_\+\+PAIR}})
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1rfc7230_a94b80b98545984008770361b294a52db}{QUOTED\+\_\+\+STRING\+\_\+\+RE}} = re.\+compile(\mbox{\hyperlink{namespacewaitress_1_1rfc7230_affe2cc03707035c7c205fa2ee2968a65}{QUOTED\+\_\+\+STRING}})
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1rfc7230_a7fab02655d3028c36ef6b40a4bd89f34}{CHUNK\+\_\+\+EXT\+\_\+\+RE}} = re.\+compile(("{}\texorpdfstring{$^\wedge$}{\string^}"{} + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a4f4dc40afd1789b7bd483f7561264382}{CHUNK\+\_\+\+EXT}} + "{}\$"{}).encode("{}latin-\/1"{}))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}This contains a bunch of RFC7230 definitions and regular expressions that are
+needed to properly parse HTTP messages.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacewaitress_1_1rfc7230_a18c2bebd5145c1e582a896c192312be9}\label{namespacewaitress_1_1rfc7230_a18c2bebd5145c1e582a896c192312be9} 
+\index{waitress.rfc7230@{waitress.rfc7230}!BWS@{BWS}}
+\index{BWS@{BWS}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{BWS}{BWS}}
+{\footnotesize\ttfamily str waitress.\+rfc7230.\+BWS = \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a2709e7b034443d3bc9f79689a00e1303}{OWS}}}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_a4f4dc40afd1789b7bd483f7561264382}\label{namespacewaitress_1_1rfc7230_a4f4dc40afd1789b7bd483f7561264382} 
+\index{waitress.rfc7230@{waitress.rfc7230}!CHUNK\_EXT@{CHUNK\_EXT}}
+\index{CHUNK\_EXT@{CHUNK\_EXT}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{CHUNK\_EXT}{CHUNK\_EXT}}
+{\footnotesize\ttfamily tuple waitress.\+rfc7230.\+CHUNK\+\_\+\+EXT}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ (}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{"{}(?:;(?P<extension>"{}}\ +\ CHUNK\_EXT\_NAME\ +\ \textcolor{stringliteral}{"{})(?:=(?P<value>"{}}\ +\ CHUNK\_EXT\_VAL\ +\ \textcolor{stringliteral}{"{}))?)*"{}}}
+\DoxyCodeLine{00003\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacewaitress_1_1rfc7230_a2c8b46e99b8e8e7090cf0fb921899473}\label{namespacewaitress_1_1rfc7230_a2c8b46e99b8e8e7090cf0fb921899473} 
+\index{waitress.rfc7230@{waitress.rfc7230}!CHUNK\_EXT\_NAME@{CHUNK\_EXT\_NAME}}
+\index{CHUNK\_EXT\_NAME@{CHUNK\_EXT\_NAME}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{CHUNK\_EXT\_NAME}{CHUNK\_EXT\_NAME}}
+{\footnotesize\ttfamily str waitress.\+rfc7230.\+CHUNK\+\_\+\+EXT\+\_\+\+NAME = \mbox{\hyperlink{namespacewaitress_1_1rfc7230_ac23ad7263a6d39787e003d756855fd70}{TOKEN}}}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_a7fab02655d3028c36ef6b40a4bd89f34}\label{namespacewaitress_1_1rfc7230_a7fab02655d3028c36ef6b40a4bd89f34} 
+\index{waitress.rfc7230@{waitress.rfc7230}!CHUNK\_EXT\_RE@{CHUNK\_EXT\_RE}}
+\index{CHUNK\_EXT\_RE@{CHUNK\_EXT\_RE}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{CHUNK\_EXT\_RE}{CHUNK\_EXT\_RE}}
+{\footnotesize\ttfamily waitress.\+rfc7230.\+CHUNK\+\_\+\+EXT\+\_\+\+RE = re.\+compile(("{}\texorpdfstring{$^\wedge$}{\string^}"{} + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a4f4dc40afd1789b7bd483f7561264382}{CHUNK\+\_\+\+EXT}} + "{}\$"{}).encode("{}latin-\/1"{}))}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_a3188ea098f6ad321ab5b21c27a11716a}\label{namespacewaitress_1_1rfc7230_a3188ea098f6ad321ab5b21c27a11716a} 
+\index{waitress.rfc7230@{waitress.rfc7230}!CHUNK\_EXT\_VAL@{CHUNK\_EXT\_VAL}}
+\index{CHUNK\_EXT\_VAL@{CHUNK\_EXT\_VAL}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{CHUNK\_EXT\_VAL}{CHUNK\_EXT\_VAL}}
+{\footnotesize\ttfamily str waitress.\+rfc7230.\+CHUNK\+\_\+\+EXT\+\_\+\+VAL = "{}(?\+:"{} + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_ac23ad7263a6d39787e003d756855fd70}{TOKEN}} + "{})\texorpdfstring{$\vert$}{|}(?\+:"{} + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_affe2cc03707035c7c205fa2ee2968a65}{QUOTED\+\_\+\+STRING}} + "{})"{}}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_a6b205712ccf8627f517541ed4eca7896}\label{namespacewaitress_1_1rfc7230_a6b205712ccf8627f517541ed4eca7896} 
+\index{waitress.rfc7230@{waitress.rfc7230}!DIGIT@{DIGIT}}
+\index{DIGIT@{DIGIT}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{DIGIT}{DIGIT}}
+{\footnotesize\ttfamily str waitress.\+rfc7230.\+DIGIT = "{}\mbox{[}0-\/9\mbox{]}"{}}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_a1cbbfb0e3874abe10ea71dc026d669fa}\label{namespacewaitress_1_1rfc7230_a1cbbfb0e3874abe10ea71dc026d669fa} 
+\index{waitress.rfc7230@{waitress.rfc7230}!FIELD\_CONTENT@{FIELD\_CONTENT}}
+\index{FIELD\_CONTENT@{FIELD\_CONTENT}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{FIELD\_CONTENT}{FIELD\_CONTENT}}
+{\footnotesize\ttfamily str waitress.\+rfc7230.\+FIELD\+\_\+\+CONTENT = \mbox{\hyperlink{namespacewaitress_1_1rfc7230_ae5ea3ee4dc832e650979587cda6b0568}{FIELD\+\_\+\+VCHAR}} + "{}+(?\+:\mbox{[} \textbackslash{}t\mbox{]}+"{} + FIELD\+\_\+\+VCHAR + "{}+)\texorpdfstring{$\ast$}{*}"{}}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_ae5683f611bfc464dce85020eabd49934}\label{namespacewaitress_1_1rfc7230_ae5683f611bfc464dce85020eabd49934} 
+\index{waitress.rfc7230@{waitress.rfc7230}!FIELD\_VALUE@{FIELD\_VALUE}}
+\index{FIELD\_VALUE@{FIELD\_VALUE}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{FIELD\_VALUE}{FIELD\_VALUE}}
+{\footnotesize\ttfamily str waitress.\+rfc7230.\+FIELD\+\_\+\+VALUE = "{}(?\+:"{} + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a1cbbfb0e3874abe10ea71dc026d669fa}{FIELD\+\_\+\+CONTENT}} + "{})?"{}}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_ae5ea3ee4dc832e650979587cda6b0568}\label{namespacewaitress_1_1rfc7230_ae5ea3ee4dc832e650979587cda6b0568} 
+\index{waitress.rfc7230@{waitress.rfc7230}!FIELD\_VCHAR@{FIELD\_VCHAR}}
+\index{FIELD\_VCHAR@{FIELD\_VCHAR}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{FIELD\_VCHAR}{FIELD\_VCHAR}}
+{\footnotesize\ttfamily str waitress.\+rfc7230.\+FIELD\+\_\+\+VCHAR = "{}\mbox{[}"{} + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_aceb86c2223896fab7f04a6ac35977c46}{VCHAR}} + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a48dd9b22e366646d18ef8327b4a02294}{OBS\+\_\+\+TEXT}} + "{}\mbox{]}"{}}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_a36324a0a0c5ae6bcfc15d736d83939ed}\label{namespacewaitress_1_1rfc7230_a36324a0a0c5ae6bcfc15d736d83939ed} 
+\index{waitress.rfc7230@{waitress.rfc7230}!HEADER\_FIELD\_RE@{HEADER\_FIELD\_RE}}
+\index{HEADER\_FIELD\_RE@{HEADER\_FIELD\_RE}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{HEADER\_FIELD\_RE}{HEADER\_FIELD\_RE}}
+{\footnotesize\ttfamily waitress.\+rfc7230.\+HEADER\+\_\+\+FIELD\+\_\+\+RE}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ re.compile(}
+\DoxyCodeLine{00002\ \ \ \ \ (}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\string^(?P<name>"{}}\ +\ TOKEN\ +\ \textcolor{stringliteral}{"{}):"{}}\ +\ OWS\ +\ \textcolor{stringliteral}{"{}(?P<value>"{}}\ +\ FIELD\_VALUE\ +\ \textcolor{stringliteral}{"{})"{}}\ +\ OWS\ +\ \textcolor{stringliteral}{"{}\$"{}}}
+\DoxyCodeLine{00004\ \ \ \ \ ).encode(\textcolor{stringliteral}{"{}latin-\/1"{}})}
+\DoxyCodeLine{00005\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacewaitress_1_1rfc7230_a9693b3f9747b81885e634583a875af5d}\label{namespacewaitress_1_1rfc7230_a9693b3f9747b81885e634583a875af5d} 
+\index{waitress.rfc7230@{waitress.rfc7230}!HEXDIG@{HEXDIG}}
+\index{HEXDIG@{HEXDIG}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{HEXDIG}{HEXDIG}}
+{\footnotesize\ttfamily str waitress.\+rfc7230.\+HEXDIG = "{}\mbox{[}0-\/9a-\/fA-\/F\mbox{]}"{}}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_a48dd9b22e366646d18ef8327b4a02294}\label{namespacewaitress_1_1rfc7230_a48dd9b22e366646d18ef8327b4a02294} 
+\index{waitress.rfc7230@{waitress.rfc7230}!OBS\_TEXT@{OBS\_TEXT}}
+\index{OBS\_TEXT@{OBS\_TEXT}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{OBS\_TEXT}{OBS\_TEXT}}
+{\footnotesize\ttfamily str waitress.\+rfc7230.\+OBS\+\_\+\+TEXT = r"{}\textbackslash{}x80-\/\textbackslash{}xff"{}}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_a2aebe6778a7d09c36512f7f0b258eebb}\label{namespacewaitress_1_1rfc7230_a2aebe6778a7d09c36512f7f0b258eebb} 
+\index{waitress.rfc7230@{waitress.rfc7230}!ONLY\_DIGIT\_RE@{ONLY\_DIGIT\_RE}}
+\index{ONLY\_DIGIT\_RE@{ONLY\_DIGIT\_RE}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{ONLY\_DIGIT\_RE}{ONLY\_DIGIT\_RE}}
+{\footnotesize\ttfamily waitress.\+rfc7230.\+ONLY\+\_\+\+DIGIT\+\_\+\+RE = re.\+compile(("{}\texorpdfstring{$^\wedge$}{\string^}"{} + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a6b205712ccf8627f517541ed4eca7896}{DIGIT}} + "{}+\$"{}).encode("{}latin-\/1"{}))}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_ac4f1b3671fac42f0a002320cc92c2d6d}\label{namespacewaitress_1_1rfc7230_ac4f1b3671fac42f0a002320cc92c2d6d} 
+\index{waitress.rfc7230@{waitress.rfc7230}!ONLY\_HEXDIG\_RE@{ONLY\_HEXDIG\_RE}}
+\index{ONLY\_HEXDIG\_RE@{ONLY\_HEXDIG\_RE}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{ONLY\_HEXDIG\_RE}{ONLY\_HEXDIG\_RE}}
+{\footnotesize\ttfamily waitress.\+rfc7230.\+ONLY\+\_\+\+HEXDIG\+\_\+\+RE = re.\+compile(("{}\texorpdfstring{$^\wedge$}{\string^}"{} + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a9693b3f9747b81885e634583a875af5d}{HEXDIG}} + "{}+\$"{}).encode("{}latin-\/1"{}))}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_a2709e7b034443d3bc9f79689a00e1303}\label{namespacewaitress_1_1rfc7230_a2709e7b034443d3bc9f79689a00e1303} 
+\index{waitress.rfc7230@{waitress.rfc7230}!OWS@{OWS}}
+\index{OWS@{OWS}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{OWS}{OWS}}
+{\footnotesize\ttfamily str waitress.\+rfc7230.\+OWS = \mbox{\hyperlink{namespacewaitress_1_1rfc7230_ac308ea22496e5218305f6af5100a0dee}{WS}} + "{}\{0,\}?"{}}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_a0c7e49a47f1e56d24459d806dfda9528}\label{namespacewaitress_1_1rfc7230_a0c7e49a47f1e56d24459d806dfda9528} 
+\index{waitress.rfc7230@{waitress.rfc7230}!QDTEXT@{QDTEXT}}
+\index{QDTEXT@{QDTEXT}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{QDTEXT}{QDTEXT}}
+{\footnotesize\ttfamily str waitress.\+rfc7230.\+QDTEXT = "{}\mbox{[}\textbackslash{}t \textbackslash{}x21\textbackslash{}x23-\/\textbackslash{}x5b\textbackslash{}\textbackslash{}\textbackslash{}x5d-\/\textbackslash{}x7e"{} + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a48dd9b22e366646d18ef8327b4a02294}{OBS\+\_\+\+TEXT}} + "{}\mbox{]}"{}}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_a5e3f8b3b2515efb3a7ae0b586b51615d}\label{namespacewaitress_1_1rfc7230_a5e3f8b3b2515efb3a7ae0b586b51615d} 
+\index{waitress.rfc7230@{waitress.rfc7230}!QUOTED\_PAIR@{QUOTED\_PAIR}}
+\index{QUOTED\_PAIR@{QUOTED\_PAIR}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{QUOTED\_PAIR}{QUOTED\_PAIR}}
+{\footnotesize\ttfamily str waitress.\+rfc7230.\+QUOTED\+\_\+\+PAIR = r"{}\textbackslash{}\textbackslash{}"{} + "{}(\mbox{[}\textbackslash{}t "{} + VCHAR + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a48dd9b22e366646d18ef8327b4a02294}{OBS\+\_\+\+TEXT}} + "{}\mbox{]})"{}}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_a35355f0705b73b9346d65bbb45869787}\label{namespacewaitress_1_1rfc7230_a35355f0705b73b9346d65bbb45869787} 
+\index{waitress.rfc7230@{waitress.rfc7230}!QUOTED\_PAIR\_RE@{QUOTED\_PAIR\_RE}}
+\index{QUOTED\_PAIR\_RE@{QUOTED\_PAIR\_RE}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{QUOTED\_PAIR\_RE}{QUOTED\_PAIR\_RE}}
+{\footnotesize\ttfamily waitress.\+rfc7230.\+QUOTED\+\_\+\+PAIR\+\_\+\+RE = re.\+compile(\mbox{\hyperlink{namespacewaitress_1_1rfc7230_a5e3f8b3b2515efb3a7ae0b586b51615d}{QUOTED\+\_\+\+PAIR}})}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_affe2cc03707035c7c205fa2ee2968a65}\label{namespacewaitress_1_1rfc7230_affe2cc03707035c7c205fa2ee2968a65} 
+\index{waitress.rfc7230@{waitress.rfc7230}!QUOTED\_STRING@{QUOTED\_STRING}}
+\index{QUOTED\_STRING@{QUOTED\_STRING}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{QUOTED\_STRING}{QUOTED\_STRING}}
+{\footnotesize\ttfamily str waitress.\+rfc7230.\+QUOTED\+\_\+\+STRING = \textquotesingle{}"{}(?\+:(?\+:\textquotesingle{} + QDTEXT + "{})\texorpdfstring{$\vert$}{|}(?\+:"{} + \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a5e3f8b3b2515efb3a7ae0b586b51615d}{QUOTED\+\_\+\+PAIR}} + \textquotesingle{}))\texorpdfstring{$\ast$}{*}"{}\textquotesingle{}}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_a94b80b98545984008770361b294a52db}\label{namespacewaitress_1_1rfc7230_a94b80b98545984008770361b294a52db} 
+\index{waitress.rfc7230@{waitress.rfc7230}!QUOTED\_STRING\_RE@{QUOTED\_STRING\_RE}}
+\index{QUOTED\_STRING\_RE@{QUOTED\_STRING\_RE}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{QUOTED\_STRING\_RE}{QUOTED\_STRING\_RE}}
+{\footnotesize\ttfamily waitress.\+rfc7230.\+QUOTED\+\_\+\+STRING\+\_\+\+RE = re.\+compile(\mbox{\hyperlink{namespacewaitress_1_1rfc7230_affe2cc03707035c7c205fa2ee2968a65}{QUOTED\+\_\+\+STRING}})}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_a6b46fc50b24819f634bb24da19e3635f}\label{namespacewaitress_1_1rfc7230_a6b46fc50b24819f634bb24da19e3635f} 
+\index{waitress.rfc7230@{waitress.rfc7230}!RWS@{RWS}}
+\index{RWS@{RWS}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{RWS}{RWS}}
+{\footnotesize\ttfamily str waitress.\+rfc7230.\+RWS = \mbox{\hyperlink{namespacewaitress_1_1rfc7230_ac308ea22496e5218305f6af5100a0dee}{WS}} + "{}\{1,\}?"{}}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_a52d7f109bc80e4d99d447a422dfa6c24}\label{namespacewaitress_1_1rfc7230_a52d7f109bc80e4d99d447a422dfa6c24} 
+\index{waitress.rfc7230@{waitress.rfc7230}!TCHAR@{TCHAR}}
+\index{TCHAR@{TCHAR}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{TCHAR}{TCHAR}}
+{\footnotesize\ttfamily str waitress.\+rfc7230.\+TCHAR = r"{}\mbox{[}!\#\$\%\&\textquotesingle{}\texorpdfstring{$\ast$}{*}+\textbackslash{}-\/.\texorpdfstring{$^\wedge$}{\string^}\+\_\+\`{}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\sim$}{\string~}0-\/9A-\/Za-\/z\mbox{]}"{}}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_ac23ad7263a6d39787e003d756855fd70}\label{namespacewaitress_1_1rfc7230_ac23ad7263a6d39787e003d756855fd70} 
+\index{waitress.rfc7230@{waitress.rfc7230}!TOKEN@{TOKEN}}
+\index{TOKEN@{TOKEN}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{TOKEN}{TOKEN}}
+{\footnotesize\ttfamily str waitress.\+rfc7230.\+TOKEN = \mbox{\hyperlink{namespacewaitress_1_1rfc7230_a52d7f109bc80e4d99d447a422dfa6c24}{TCHAR}} + "{}\{1,\}"{}}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_aceb86c2223896fab7f04a6ac35977c46}\label{namespacewaitress_1_1rfc7230_aceb86c2223896fab7f04a6ac35977c46} 
+\index{waitress.rfc7230@{waitress.rfc7230}!VCHAR@{VCHAR}}
+\index{VCHAR@{VCHAR}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{VCHAR}{VCHAR}}
+{\footnotesize\ttfamily str waitress.\+rfc7230.\+VCHAR = r"{}\textbackslash{}x21-\/\textbackslash{}x7e"{}}
+
+\Hypertarget{namespacewaitress_1_1rfc7230_ac308ea22496e5218305f6af5100a0dee}\label{namespacewaitress_1_1rfc7230_ac308ea22496e5218305f6af5100a0dee} 
+\index{waitress.rfc7230@{waitress.rfc7230}!WS@{WS}}
+\index{WS@{WS}!waitress.rfc7230@{waitress.rfc7230}}
+\doxysubsubsection{\texorpdfstring{WS}{WS}}
+{\footnotesize\ttfamily str waitress.\+rfc7230.\+WS = "{}\mbox{[} \textbackslash{}t\mbox{]}"{}}
+

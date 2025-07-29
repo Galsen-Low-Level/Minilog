@@ -1,0 +1,232 @@
+.TH "pygments.lexers.templates.CssErbLexer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.lexers.templates.CssErbLexer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpygments\&.lexer\&.DelegatingLexer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fBanalyse_text\fP (text)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.DelegatingLexer\fP
+.in +1c
+.ti -1c
+.RI "\fBget_tokens_unprocessed\fP (self, text)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd_filter\fP (self, filter_, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fBget_tokens\fP (self, text, unfiltered=False)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.LexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fB__new__\fP (mcs, name, bases, d)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = 'CSS+Ruby'"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = ['css+ruby', 'css+erb']"
+.br
+.ti -1c
+.RI "str \fBversion_added\fP = ''"
+.br
+.ti -1c
+.RI "list \fBalias_filenames\fP = ['*\&.css']"
+.br
+.ti -1c
+.RI "list \fBmimetypes\fP = ['text/css+ruby']"
+.br
+.ti -1c
+.RI "str \fBurl\fP = 'https://github\&.com/ruby/erb'"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fBname\fP = None"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = []"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBalias_filenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBmimetypes\fP = []"
+.br
+.ti -1c
+.RI "int \fBpriority\fP = 0"
+.br
+.ti -1c
+.RI "\fBurl\fP = None"
+.br
+.ti -1c
+.RI "\fBversion_added\fP = None"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBpygments\&.lexer\&.DelegatingLexer\fP
+.in +1c
+.ti -1c
+.RI "\fBroot_lexer\fP"
+.br
+.ti -1c
+.RI "\fBlanguage_lexer\fP"
+.br
+.ti -1c
+.RI "\fBneedle\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBstripnl\fP"
+.br
+.ti -1c
+.RI "\fBstripall\fP"
+.br
+.ti -1c
+.RI "\fBensurenl\fP"
+.br
+.ti -1c
+.RI "\fBtabsize\fP"
+.br
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBfilters\fP"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB_preprocess_lexer_input\fP (self, text)"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB_example\fP = None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Subclass of `ErbLexer` which highlights unlexed data with the `CssLexer`\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pygments\&.lexers\&.templates\&.CssErbLexer\&.__init__ ( self, ** options)"
+
+.PP
+.nf
+This constructor takes arbitrary options as keyword arguments\&.
+Every subclass must first process its own options and then call
+the `Lexer` constructor, since it processes the basic
+options like `stripnl`\&.
+
+An example looks like this:
+
+\&.\&. sourcecode:: python
+
+   def __init__(self, **options):
+       self\&.compress = options\&.get('compress', '')
+       Lexer\&.__init__(self, **options)
+
+As these options must all be specifiable as strings (due to the
+command line usage), there are various utility functions
+available to help with that, see `Utilities`_\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpygments\&.lexer\&.DelegatingLexer\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "pygments\&.lexers\&.templates\&.CssErbLexer\&.analyse_text ( text)"
+
+.PP
+.nf
+A static method which is called for lexer guessing\&.
+
+It should analyse the text and return a float in the range
+from ``0\&.0`` to ``1\&.0``\&.  If it returns ``0\&.0``, the lexer
+will not be selected as the most probable one, if it returns
+``1\&.0``, it will be selected immediately\&.  This is used by
+`guess_lexer`\&.
+
+The `LexerMeta` metaclass automatically wraps this function so
+that it works like a static method (no ``self`` or ``cls``
+parameter) and the return value is automatically converted to
+`float`\&. If the return value is an object that is boolean `False`
+it's the same as if the return values was ``0\&.0``\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpygments\&.lexer\&.Lexer\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "list pygments\&.lexers\&.templates\&.CssErbLexer\&.alias_filenames = ['*\&.css']\fC [static]\fP"
+
+.SS "list pygments\&.lexers\&.templates\&.CssErbLexer\&.aliases = ['css+ruby', 'css+erb']\fC [static]\fP"
+
+.SS "list pygments\&.lexers\&.templates\&.CssErbLexer\&.mimetypes = ['text/css+ruby']\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.templates\&.CssErbLexer\&.name = 'CSS+Ruby'\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.templates\&.CssErbLexer\&.url = 'https://github\&.com/ruby/erb'\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.templates\&.CssErbLexer\&.version_added = ''\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

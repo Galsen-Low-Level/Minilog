@@ -1,0 +1,161 @@
+.TH "sphinx.domains.cpp._ast.ASTDeclaration" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.domains.cpp._ast.ASTDeclaration
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.domains\&.cpp\&._ast\&.ASTBase\fP\&.
+.PP
+Inherited by \fBsphinx\&.domains\&.cpp\&.CPPObject\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str \fBobjectType\fP, str|None \fBdirectiveType\fP=None, str|None \fBvisibility\fP=None, \fBASTTemplateDeclarationPrefix\fP|None \fBtemplatePrefix\fP=None, Any \fBdeclaration\fP=None, \fBASTRequiresClause\fP|None \fBtrailingRequiresClause\fP=None, bool \fBsemicolon\fP=False)"
+.br
+.ti -1c
+.RI "bool \fB__eq__\fP (self, object other)"
+.br
+.ti -1c
+.RI "int \fB__hash__\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTDeclaration\fP \fBclone\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTNestedName\fP \fBname\fP (self)"
+.br
+.ti -1c
+.RI "list[\fBASTFunctionParameter\fP] \fBfunction_params\fP (self)"
+.br
+.ti -1c
+.RI "str \fBget_id\fP (self, int version, bool prefixed=True)"
+.br
+.ti -1c
+.RI "str \fBget_newest_id\fP (self)"
+.br
+.ti -1c
+.RI "None \fBdescribe_signature\fP (self, \fBdesc_signature\fP signode, str mode, \fBBuildEnvironment\fP env, dict[str, bool] options)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.util\&.cfamily\&.ASTBaseBase\fP
+.in +1c
+.ti -1c
+.RI "str \fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "str \fBget_display_string\fP (self)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBobjectType\fP"
+.br
+.ti -1c
+.RI "\fBdirectiveType\fP"
+.br
+.ti -1c
+.RI "\fBvisibility\fP"
+.br
+.ti -1c
+.RI "\fBtemplatePrefix\fP"
+.br
+.ti -1c
+.RI "\fBdeclaration\fP"
+.br
+.ti -1c
+.RI "\fBtrailingRequiresClause\fP"
+.br
+.ti -1c
+.RI "\fBsemicolon\fP"
+.br
+.ti -1c
+.RI "\fBsymbol\fP"
+.br
+.ti -1c
+.RI "\fBenumeratorScopedSymbol\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fB_stringify\fP (self, StringifyTransform transform)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_newest_id_cache\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.domains\&.cpp\&._ast\&.ASTDeclaration\&.__init__ ( self, str objectType, str | None  directiveType = \fCNone\fP, str | None  visibility = \fCNone\fP, \fBASTTemplateDeclarationPrefix\fP | None  templatePrefix = \fCNone\fP, Any  declaration = \fCNone\fP, \fBASTRequiresClause\fP | None  trailingRequiresClause = \fCNone\fP, bool  semicolon = \fCFalse\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " bool sphinx\&.domains\&.cpp\&._ast\&.ASTDeclaration\&.__eq__ ( self, object other)"
+
+.PP
+Reimplemented from \fBsphinx\&.util\&.cfamily\&.ASTBaseBase\fP\&.
+.SS " int sphinx\&.domains\&.cpp\&._ast\&.ASTDeclaration\&.__hash__ ( self)"
+
+.PP
+Reimplemented from \fBsphinx\&.util\&.cfamily\&.ASTBaseBase\fP\&.
+.SS " str sphinx\&.domains\&.cpp\&._ast\&.ASTDeclaration\&._stringify ( self, StringifyTransform transform)\fC [protected]\fP"
+
+.PP
+Reimplemented from \fBsphinx\&.util\&.cfamily\&.ASTBaseBase\fP\&.
+.SS " \fBASTDeclaration\fP sphinx\&.domains\&.cpp\&._ast\&.ASTDeclaration\&.clone ( self)"
+
+.PP
+Reimplemented from \fBsphinx\&.util\&.cfamily\&.ASTBaseBase\fP\&.
+.SS " None sphinx\&.domains\&.cpp\&._ast\&.ASTDeclaration\&.describe_signature ( self, \fBdesc_signature\fP signode, str mode, \fBBuildEnvironment\fP env, dict[str, bool] options)"
+
+.PP
+Reimplemented in \fBsphinx\&.domains\&.cpp\&.CPPObject\fP\&.
+.SS " list[\fBASTFunctionParameter\fP] sphinx\&.domains\&.cpp\&._ast\&.ASTDeclaration\&.function_params ( self)"
+
+.SS " str sphinx\&.domains\&.cpp\&._ast\&.ASTDeclaration\&.get_id ( self, int version, bool  prefixed = \fCTrue\fP)"
+
+.SS " str sphinx\&.domains\&.cpp\&._ast\&.ASTDeclaration\&.get_newest_id ( self)"
+
+.SS " \fBASTNestedName\fP sphinx\&.domains\&.cpp\&._ast\&.ASTDeclaration\&.name ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.domains\&.cpp\&._ast\&.ASTDeclaration\&._newest_id_cache\fC [protected]\fP"
+
+.SS "sphinx\&.domains\&.cpp\&._ast\&.ASTDeclaration\&.declaration"
+
+.SS "sphinx\&.domains\&.cpp\&._ast\&.ASTDeclaration\&.directiveType"
+
+.SS "sphinx\&.domains\&.cpp\&._ast\&.ASTDeclaration\&.enumeratorScopedSymbol"
+
+.SS "sphinx\&.domains\&.cpp\&._ast\&.ASTDeclaration\&.objectType"
+
+.SS "sphinx\&.domains\&.cpp\&._ast\&.ASTDeclaration\&.semicolon"
+
+.SS "sphinx\&.domains\&.cpp\&._ast\&.ASTDeclaration\&.symbol"
+
+.SS "sphinx\&.domains\&.cpp\&._ast\&.ASTDeclaration\&.templatePrefix"
+
+.SS "sphinx\&.domains\&.cpp\&._ast\&.ASTDeclaration\&.trailingRequiresClause"
+
+.SS "sphinx\&.domains\&.cpp\&._ast\&.ASTDeclaration\&.visibility"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

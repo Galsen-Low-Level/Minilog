@@ -1,0 +1,1127 @@
+.TH "babel.core.Locale" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+babel.core.Locale
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str \fBlanguage\fP, str|None \fBterritory\fP=None, str|None \fBscript\fP=None, str|None \fBvariant\fP=None, str|None \fBmodifier\fP=None)"
+.br
+.ti -1c
+.RI "\fBLocale\fP \fBdefault\fP (cls, str|None category=None, Mapping[str, str] aliases=\fBLOCALE_ALIASES\fP)"
+.br
+.ti -1c
+.RI "\fBLocale\fP|None \fBnegotiate\fP (cls, Iterable[str] preferred, Iterable[str] available, str sep='_', Mapping[str, str] aliases=\fBLOCALE_ALIASES\fP)"
+.br
+.ti -1c
+.RI "\fBLocale\fP \fBparse\fP (cls, \fBLocale\fP|str|None identifier, str sep='_', bool resolve_likely_subtags=True)"
+.br
+.ti -1c
+.RI "bool \fB__eq__\fP (self, object other)"
+.br
+.ti -1c
+.RI "bool \fB__ne__\fP (self, object other)"
+.br
+.ti -1c
+.RI "int \fB__hash__\fP (self)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "str \fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "str|None \fBget_display_name\fP (self, \fBLocale\fP|str|None locale=None)"
+.br
+.ti -1c
+.RI "str|None \fBget_language_name\fP (self, \fBLocale\fP|str|None locale=None)"
+.br
+.ti -1c
+.RI "str|None \fBget_territory_name\fP (self, \fBLocale\fP|str|None locale=None)"
+.br
+.ti -1c
+.RI "str|None \fBget_script_name\fP (self, \fBLocale\fP|str|None locale=None)"
+.br
+.ti -1c
+.RI "str|None \fBenglish_name\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBlanguages\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBscripts\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBterritories\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBvariants\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBcurrencies\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBcurrency_symbols\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBnumber_symbols\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBother_numbering_systems\fP (self)"
+.br
+.ti -1c
+.RI "str \fBdefault_numbering_system\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBdecimal_formats\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBcompact_decimal_formats\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBcurrency_formats\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBcompact_currency_formats\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBpercent_formats\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBscientific_formats\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBperiods\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBday_periods\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBday_period_rules\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBdays\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBmonths\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBquarters\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBeras\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBtime_zones\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBmeta_zones\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBzone_formats\fP (self)"
+.br
+.ti -1c
+.RI "int \fBfirst_week_day\fP (self)"
+.br
+.ti -1c
+.RI "int \fBweekend_start\fP (self)"
+.br
+.ti -1c
+.RI "int \fBweekend_end\fP (self)"
+.br
+.ti -1c
+.RI "int \fBmin_week_days\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBdate_formats\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBtime_formats\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBdatetime_formats\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBdatetime_skeletons\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBinterval_formats\fP (self)"
+.br
+.ti -1c
+.RI "\fBPluralRule\fP \fBplural_form\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBlist_patterns\fP (self)"
+.br
+.ti -1c
+.RI "\fBPluralRule\fP \fBordinal_form\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBmeasurement_systems\fP (self)"
+.br
+.ti -1c
+.RI "str \fBcharacter_order\fP (self)"
+.br
+.ti -1c
+.RI "str \fBtext_direction\fP (self)"
+.br
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fBunit_display_names\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBlanguage\fP"
+.br
+.ti -1c
+.RI "\fBterritory\fP"
+.br
+.ti -1c
+.RI "\fBscript\fP"
+.br
+.ti -1c
+.RI "\fBvariant\fP"
+.br
+.ti -1c
+.RI "\fBmodifier\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBlocaledata\&.LocaleDataDict\fP \fB_data\fP (self)"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBdisplay_name\fP = property(\fBget_display_name\fP, doc=)"
+.br
+.ti -1c
+.RI "\fBlanguage_name\fP = property(\fBget_language_name\fP, doc=)"
+.br
+.ti -1c
+.RI "\fBterritory_name\fP = property(\fBget_territory_name\fP, doc=)"
+.br
+.ti -1c
+.RI "\fBscript_name\fP = property(\fBget_script_name\fP, doc=)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Representation of a specific locale\&.
+
+>>> locale = Locale('en', 'US')
+>>> repr(locale)
+'Locale('en', territory='US')'
+>>> locale\&.display_name
+u'English (United States)'
+
+A `Locale` object can also be instantiated from a raw locale string:
+
+>>> locale = Locale\&.parse('en-US', sep='-')
+>>> repr(locale)
+'Locale('en', territory='US')'
+
+`Locale` objects provide access to a collection of locale data, such as
+territory and language names, number and date format patterns, and more:
+
+>>> locale\&.number_symbols['latn']['decimal']
+u'\&.'
+
+If a locale is requested for which no locale data is available, an
+`UnknownLocaleError` is raised:
+
+>>> Locale\&.parse('en_XX')
+Traceback (most recent call last):
+    \&.\&.\&.
+UnknownLocaleError: unknown locale 'en_XX'
+
+For more information see :rfc:`3066`\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None babel\&.core\&.Locale\&.__init__ ( self, str language, str | None  territory = \fCNone\fP, str | None  script = \fCNone\fP, str | None  variant = \fCNone\fP, str | None  modifier = \fCNone\fP)"
+
+.PP
+.nf
+Initialize the locale object from the given identifier components\&.
+
+>>> locale = Locale('en', 'US')
+>>> locale\&.language
+'en'
+>>> locale\&.territory
+'US'
+
+:param language: the language code
+:param territory: the territory (country or region) code
+:param script: the script code
+:param variant: the variant code
+:param modifier: a modifier (following the '@' symbol, sometimes called '@variant')
+:raise `UnknownLocaleError`: if no locale data is available for the
+                             requested locale
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " bool babel\&.core\&.Locale\&.__eq__ ( self, object other)"
+
+.SS " int babel\&.core\&.Locale\&.__hash__ ( self)"
+
+.SS " bool babel\&.core\&.Locale\&.__ne__ ( self, object other)"
+
+.SS " str babel\&.core\&.Locale\&.__repr__ ( self)"
+
+.SS " str babel\&.core\&.Locale\&.__str__ ( self)"
+
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&._data ( self)\fC [protected]\fP"
+
+.SS " str babel\&.core\&.Locale\&.character_order ( self)"
+
+.PP
+.nf
+The text direction for the language\&.
+
+>>> Locale('de', 'DE')\&.character_order
+'left-to-right'
+>>> Locale('ar', 'SA')\&.character_order
+'right-to-left'
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.compact_currency_formats ( self)"
+
+.PP
+.nf
+Locale patterns for compact currency number formatting\&.
+
+\&.\&. note:: The format of the value returned may change between
+          Babel versions\&.
+
+>>> Locale('en', 'US')\&.compact_currency_formats['short']['one']['1000']
+<NumberPattern u'¤0K'>
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.compact_decimal_formats ( self)"
+
+.PP
+.nf
+Locale patterns for compact decimal number formatting\&.
+
+\&.\&. note:: The format of the value returned may change between
+          Babel versions\&.
+
+>>> Locale('en', 'US')\&.compact_decimal_formats['short']['one']['1000']
+<NumberPattern u'0K'>
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.currencies ( self)"
+
+.PP
+.nf
+Mapping of currency codes to translated currency names\&.  This
+only returns the generic form of the currency name, not the count
+specific one\&.  If an actual number is requested use the
+:func:`babel\&.numbers\&.get_currency_name` function\&.
+
+>>> Locale('en')\&.currencies['COP']
+u'Colombian Peso'
+>>> Locale('de', 'DE')\&.currencies['COP']
+u'Kolumbianischer Peso'
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.currency_formats ( self)"
+
+.PP
+.nf
+Locale patterns for currency number formatting\&.
+
+\&.\&. note:: The format of the value returned may change between
+          Babel versions\&.
+
+>>> Locale('en', 'US')\&.currency_formats['standard']
+<NumberPattern u'\\\\xa4#,##0\&.00'>
+>>> Locale('en', 'US')\&.currency_formats['accounting']
+<NumberPattern u'\\\\xa4#,##0\&.00;(\\\\xa4#,##0\&.00)'>
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.currency_symbols ( self)"
+
+.PP
+.nf
+Mapping of currency codes to symbols\&.
+
+>>> Locale('en', 'US')\&.currency_symbols['USD']
+u'$'
+>>> Locale('es', 'CO')\&.currency_symbols['USD']
+u'US$'
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.date_formats ( self)"
+
+.PP
+.nf
+Locale patterns for date formatting\&.
+
+\&.\&. note:: The format of the value returned may change between
+          Babel versions\&.
+
+>>> Locale('en', 'US')\&.date_formats['short']
+<DateTimePattern u'M/d/yy'>
+>>> Locale('fr', 'FR')\&.date_formats['long']
+<DateTimePattern u'd MMMM y'>
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.datetime_formats ( self)"
+
+.PP
+.nf
+Locale patterns for datetime formatting\&.
+
+\&.\&. note:: The format of the value returned may change between
+          Babel versions\&.
+
+>>> Locale('en')\&.datetime_formats['full']
+u'{1}, {0}'
+>>> Locale('th')\&.datetime_formats['medium']
+u'{1} {0}'
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.datetime_skeletons ( self)"
+
+.PP
+.nf
+Locale patterns for formatting parts of a datetime\&.
+
+>>> Locale('en')\&.datetime_skeletons['MEd']
+<DateTimePattern u'E, M/d'>
+>>> Locale('fr')\&.datetime_skeletons['MEd']
+<DateTimePattern u'E dd/MM'>
+>>> Locale('fr')\&.datetime_skeletons['H']
+<DateTimePattern u'HH 'h''>
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.day_period_rules ( self)"
+
+.PP
+.nf
+Day period rules for the locale\&.  Used by `get_period_id`\&.
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.day_periods ( self)"
+
+.PP
+.nf
+Locale display names for various day periods (not necessarily only AM/PM)\&.
+
+These are not meant to be used without the relevant `day_period_rules`\&.
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.days ( self)"
+
+.PP
+.nf
+Locale display names for weekdays\&.
+
+>>> Locale('de', 'DE')\&.days['format']['wide'][3]
+u'Donnerstag'
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.decimal_formats ( self)"
+
+.PP
+.nf
+Locale patterns for decimal number formatting\&.
+
+\&.\&. note:: The format of the value returned may change between
+          Babel versions\&.
+
+>>> Locale('en', 'US')\&.decimal_formats[None]
+<NumberPattern u'#,##0\&.###'>
+
+.fi
+.PP
+ 
+.SS " \fBLocale\fP babel\&.core\&.Locale\&.default ( cls, str | None  category = \fCNone\fP, Mapping[str, str]  aliases = \fC\fBLOCALE_ALIASES\fP\fP)"
+
+.PP
+.nf
+Return the system default locale for the specified category\&.
+
+>>> for name in ['LANGUAGE', 'LC_ALL', 'LC_CTYPE', 'LC_MESSAGES']:
+\&.\&.\&.     os\&.environ[name] = ''
+>>> os\&.environ['LANG'] = 'fr_FR\&.UTF-8'
+>>> Locale\&.default('LC_MESSAGES')
+Locale('fr', territory='FR')
+
+The following fallbacks to the variable are always considered:
+
+- ``LANGUAGE``
+- ``LC_ALL``
+- ``LC_CTYPE``
+- ``LANG``
+
+:param category: one of the ``LC_XXX`` environment variable names
+:param aliases: a dictionary of aliases for locale identifiers
+
+.fi
+.PP
+ 
+.SS " str babel\&.core\&.Locale\&.default_numbering_system ( self)"
+
+.PP
+.nf
+The default numbering system used by the locale\&.
+>>> Locale('el', 'GR')\&.default_numbering_system
+u'latn'
+
+.fi
+.PP
+ 
+.SS " str | None babel\&.core\&.Locale\&.english_name ( self)"
+
+.PP
+.nf
+The english display name of the locale\&.
+
+>>> Locale('de')\&.english_name
+u'German'
+>>> Locale('de', 'DE')\&.english_name
+u'German (Germany)'
+
+:type: `unicode`
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.eras ( self)"
+
+.PP
+.nf
+Locale display names for eras\&.
+
+\&.\&. note:: The format of the value returned may change between
+          Babel versions\&.
+
+>>> Locale('en', 'US')\&.eras['wide'][1]
+u'Anno Domini'
+>>> Locale('en', 'US')\&.eras['abbreviated'][0]
+u'BC'
+
+.fi
+.PP
+ 
+.SS " int babel\&.core\&.Locale\&.first_week_day ( self)"
+
+.PP
+.nf
+The first day of a week, with 0 being Monday\&.
+
+>>> Locale('de', 'DE')\&.first_week_day
+0
+>>> Locale('en', 'US')\&.first_week_day
+6
+
+.fi
+.PP
+ 
+.SS " str | None babel\&.core\&.Locale\&.get_display_name ( self, \fBLocale\fP | str | None  locale = \fCNone\fP)"
+
+.PP
+.nf
+Return the display name of the locale using the given locale\&.
+
+The display name will include the language, territory, script, and
+variant, if those are specified\&.
+
+>>> Locale('zh', 'CN', script='Hans')\&.get_display_name('en')
+u'Chinese (Simplified, China)'
+
+Modifiers are currently passed through verbatim:
+
+>>> Locale('it', 'IT', modifier='euro')\&.get_display_name('en')
+u'Italian (Italy, euro)'
+
+:param locale: the locale to use
+
+.fi
+.PP
+ 
+.SS " str | None babel\&.core\&.Locale\&.get_language_name ( self, \fBLocale\fP | str | None  locale = \fCNone\fP)"
+
+.PP
+.nf
+Return the language of this locale in the given locale\&.
+
+>>> Locale('zh', 'CN', script='Hans')\&.get_language_name('de')
+u'Chinesisch'
+
+\&.\&. versionadded:: 1\&.0
+
+:param locale: the locale to use
+
+.fi
+.PP
+ 
+.SS " str | None babel\&.core\&.Locale\&.get_script_name ( self, \fBLocale\fP | str | None  locale = \fCNone\fP)"
+
+.PP
+.nf
+Return the script name in the given locale\&.
+.fi
+.PP
+ 
+.SS " str | None babel\&.core\&.Locale\&.get_territory_name ( self, \fBLocale\fP | str | None  locale = \fCNone\fP)"
+
+.PP
+.nf
+Return the territory name in the given locale\&.
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.interval_formats ( self)"
+
+.PP
+.nf
+Locale patterns for interval formatting\&.
+
+\&.\&. note:: The format of the value returned may change between
+          Babel versions\&.
+
+How to format date intervals in Finnish when the day is the
+smallest changing component:
+
+>>> Locale('fi_FI')\&.interval_formats['MEd']['d']
+[u'E d\&.\\u2009\\u2013\\u2009', u'E d\&.M\&.']
+
+\&.\&. seealso::
+
+   The primary API to use this data is :py:func:`babel\&.dates\&.format_interval`\&.
+
+
+:rtype: dict[str, dict[str, list[str]]]
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.languages ( self)"
+
+.PP
+.nf
+Mapping of language codes to translated language names\&.
+
+>>> Locale('de', 'DE')\&.languages['ja']
+u'Japanisch'
+
+See `ISO 639 <https://www\&.loc\&.gov/standards/iso639-2/>`_ for
+more information\&.
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.list_patterns ( self)"
+
+.PP
+.nf
+Patterns for generating lists
+
+\&.\&. note:: The format of the value returned may change between
+          Babel versions\&.
+
+>>> Locale('en')\&.list_patterns['standard']['start']
+u'{0}, {1}'
+>>> Locale('en')\&.list_patterns['standard']['end']
+u'{0}, and {1}'
+>>> Locale('en_GB')\&.list_patterns['standard']['end']
+u'{0} and {1}'
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.measurement_systems ( self)"
+
+.PP
+.nf
+Localized names for various measurement systems\&.
+
+>>> Locale('fr', 'FR')\&.measurement_systems['US']
+u'am\\\\xe9ricain'
+>>> Locale('en', 'US')\&.measurement_systems['US']
+u'US'
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.meta_zones ( self)"
+
+.PP
+.nf
+Locale display names for meta time zones\&.
+
+Meta time zones are basically groups of different Olson time zones that
+have the same GMT offset and daylight savings time\&.
+
+\&.\&. note:: The format of the value returned may change between
+          Babel versions\&.
+
+>>> Locale('en', 'US')\&.meta_zones['Europe_Central']['long']['daylight']
+u'Central European Summer Time'
+
+\&.\&. versionadded:: 0\&.9
+
+.fi
+.PP
+ 
+.SS " int babel\&.core\&.Locale\&.min_week_days ( self)"
+
+.PP
+.nf
+The minimum number of days in a week so that the week is counted as
+the first week of a year or month\&.
+
+>>> Locale('de', 'DE')\&.min_week_days
+4
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.months ( self)"
+
+.PP
+.nf
+Locale display names for months\&.
+
+>>> Locale('de', 'DE')\&.months['format']['wide'][10]
+u'Oktober'
+
+.fi
+.PP
+ 
+.SS " \fBLocale\fP | None babel\&.core\&.Locale\&.negotiate ( cls, Iterable[str] preferred, Iterable[str] available, str  sep = \fC'_'\fP, Mapping[str, str]  aliases = \fC\fBLOCALE_ALIASES\fP\fP)"
+
+.PP
+.nf
+Find the best match between available and requested locale strings\&.
+
+>>> Locale\&.negotiate(['de_DE', 'en_US'], ['de_DE', 'de_AT'])
+Locale('de', territory='DE')
+>>> Locale\&.negotiate(['de_DE', 'en_US'], ['en', 'de'])
+Locale('de')
+>>> Locale\&.negotiate(['de_DE', 'de'], ['en_US'])
+
+You can specify the character used in the locale identifiers to separate
+the different components\&. This separator is applied to both lists\&. Also,
+case is ignored in the comparison:
+
+>>> Locale\&.negotiate(['de-DE', 'de'], ['en-us', 'de-de'], sep='-')
+Locale('de', territory='DE')
+
+:param preferred: the list of locale identifiers preferred by the user
+:param available: the list of locale identifiers available
+:param aliases: a dictionary of aliases for locale identifiers
+:param sep: separator for parsing; e\&.g\&. Windows tends to use '-' instead of '_'\&.
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.number_symbols ( self)"
+
+.PP
+.nf
+Symbols used in number formatting by number system\&.
+
+\&.\&. note:: The format of the value returned may change between
+          Babel versions\&.
+
+>>> Locale('fr', 'FR')\&.number_symbols['latn']['decimal']
+u','
+>>> Locale('fa', 'IR')\&.number_symbols['arabext']['decimal']
+u'٫'
+>>> Locale('fa', 'IR')\&.number_symbols['latn']['decimal']
+u'\&.'
+
+.fi
+.PP
+ 
+.SS " \fBPluralRule\fP babel\&.core\&.Locale\&.ordinal_form ( self)"
+
+.PP
+.nf
+Plural rules for the locale\&.
+
+>>> Locale('en')\&.ordinal_form(1)
+'one'
+>>> Locale('en')\&.ordinal_form(2)
+'two'
+>>> Locale('en')\&.ordinal_form(3)
+'few'
+>>> Locale('fr')\&.ordinal_form(2)
+'other'
+>>> Locale('ru')\&.ordinal_form(100)
+'other'
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.other_numbering_systems ( self)"
+
+.PP
+.nf
+Mapping of other numbering systems available for the locale\&.
+See: https://www\&.unicode\&.org/reports/tr35/tr35-numbers\&.html#otherNumberingSystems
+
+>>> Locale('el', 'GR')\&.other_numbering_systems['traditional']
+u'grek'
+
+\&.\&. note:: The format of the value returned may change between
+          Babel versions\&.
+
+.fi
+.PP
+ 
+.SS " \fBLocale\fP babel\&.core\&.Locale\&.parse ( cls, \fBLocale\fP | str | None identifier, str  sep = \fC'_'\fP, bool  resolve_likely_subtags = \fCTrue\fP)"
+
+.PP
+.nf
+Create a `Locale` instance for the given locale identifier\&.
+
+>>> l = Locale\&.parse('de-DE', sep='-')
+>>> l\&.display_name
+u'Deutsch (Deutschland)'
+
+If the `identifier` parameter is not a string, but actually a `Locale`
+object, that object is returned:
+
+>>> Locale\&.parse(l)
+Locale('de', territory='DE')
+
+If the `identifier` parameter is neither of these, such as `None`
+or an empty string, e\&.g\&. because a default locale identifier
+could not be determined, a `TypeError` is raised:
+
+>>> Locale\&.parse(None)
+Traceback (most recent call last):
+    \&.\&.\&.
+TypeError: \&.\&.\&.
+
+This also can perform resolving of likely subtags which it does
+by default\&.  This is for instance useful to figure out the most
+likely locale for a territory you can use ``'und'`` as the
+language tag:
+
+>>> Locale\&.parse('und_AT')
+Locale('de', territory='AT')
+
+Modifiers are optional, and always at the end, separated by '@':
+
+>>> Locale\&.parse('de_AT@euro')
+Locale('de', territory='AT', modifier='euro')
+
+:param identifier: the locale identifier string
+:param sep: optional component separator
+:param resolve_likely_subtags: if this is specified then a locale will
+                               have its likely subtag resolved if the
+                               locale otherwise does not exist\&.  For
+                               instance ``zh_TW`` by itself is not a
+                               locale that exists but Babel can
+                               automatically expand it to the full
+                               form of ``zh_hant_TW``\&.  Note that this
+                               expansion is only taking place if no
+                               locale exists otherwise\&.  For instance
+                               there is a locale ``en`` that can exist
+                               by itself\&.
+:raise `ValueError`: if the string does not appear to be a valid locale
+                     identifier
+:raise `UnknownLocaleError`: if no locale data is available for the
+                             requested locale
+:raise `TypeError`: if the identifier is not a string or a `Locale`
+:raise `ValueError`: if the identifier is not a valid string
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.percent_formats ( self)"
+
+.PP
+.nf
+Locale patterns for percent number formatting\&.
+
+\&.\&. note:: The format of the value returned may change between
+          Babel versions\&.
+
+>>> Locale('en', 'US')\&.percent_formats[None]
+<NumberPattern u'#,##0%'>
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.periods ( self)"
+
+.PP
+.nf
+Locale display names for day periods (AM/PM)\&.
+
+>>> Locale('en', 'US')\&.periods['am']
+u'AM'
+
+.fi
+.PP
+ 
+.SS " \fBPluralRule\fP babel\&.core\&.Locale\&.plural_form ( self)"
+
+.PP
+.nf
+Plural rules for the locale\&.
+
+>>> Locale('en')\&.plural_form(1)
+'one'
+>>> Locale('en')\&.plural_form(0)
+'other'
+>>> Locale('fr')\&.plural_form(0)
+'one'
+>>> Locale('ru')\&.plural_form(100)
+'many'
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.quarters ( self)"
+
+.PP
+.nf
+Locale display names for quarters\&.
+
+>>> Locale('de', 'DE')\&.quarters['format']['wide'][1]
+u'1\&. Quartal'
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.scientific_formats ( self)"
+
+.PP
+.nf
+Locale patterns for scientific number formatting\&.
+
+\&.\&. note:: The format of the value returned may change between
+          Babel versions\&.
+
+>>> Locale('en', 'US')\&.scientific_formats[None]
+<NumberPattern u'#E0'>
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.scripts ( self)"
+
+.PP
+.nf
+Mapping of script codes to translated script names\&.
+
+>>> Locale('en', 'US')\&.scripts['Hira']
+u'Hiragana'
+
+See `ISO 15924 <https://www\&.unicode\&.org/iso15924/>`_
+for more information\&.
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.territories ( self)"
+
+.PP
+.nf
+Mapping of script codes to translated script names\&.
+
+>>> Locale('es', 'CO')\&.territories['DE']
+u'Alemania'
+
+See `ISO 3166 <https://en\&.wikipedia\&.org/wiki/ISO_3166>`_
+for more information\&.
+
+.fi
+.PP
+ 
+.SS " str babel\&.core\&.Locale\&.text_direction ( self)"
+
+.PP
+.nf
+The text direction for the language in CSS short-hand form\&.
+
+>>> Locale('de', 'DE')\&.text_direction
+'ltr'
+>>> Locale('ar', 'SA')\&.text_direction
+'rtl'
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.time_formats ( self)"
+
+.PP
+.nf
+Locale patterns for time formatting\&.
+
+\&.\&. note:: The format of the value returned may change between
+          Babel versions\&.
+
+>>> Locale('en', 'US')\&.time_formats['short']
+<DateTimePattern u'h:mm\\u202fa'>
+>>> Locale('fr', 'FR')\&.time_formats['long']
+<DateTimePattern u'HH:mm:ss z'>
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.time_zones ( self)"
+
+.PP
+.nf
+Locale display names for time zones\&.
+
+\&.\&. note:: The format of the value returned may change between
+          Babel versions\&.
+
+>>> Locale('en', 'US')\&.time_zones['Europe/London']['long']['daylight']
+u'British Summer Time'
+>>> Locale('en', 'US')\&.time_zones['America/St_Johns']['city']
+u'St\&. John\\u2019s'
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.unit_display_names ( self)"
+
+.PP
+.nf
+Display names for units of measurement\&.
+
+\&.\&. seealso::
+
+   You may want to use :py:func:`babel\&.units\&.get_unit_name` instead\&.
+
+\&.\&. note:: The format of the value returned may change between
+          Babel versions\&.
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.variants ( self)"
+
+.PP
+.nf
+Mapping of script codes to translated script names\&.
+
+>>> Locale('de', 'DE')\&.variants['1901']
+u'Alte deutsche Rechtschreibung'
+
+.fi
+.PP
+ 
+.SS " int babel\&.core\&.Locale\&.weekend_end ( self)"
+
+.PP
+.nf
+The day the weekend ends, with 0 being Monday\&.
+
+>>> Locale('de', 'DE')\&.weekend_end
+6
+
+.fi
+.PP
+ 
+.SS " int babel\&.core\&.Locale\&.weekend_start ( self)"
+
+.PP
+.nf
+The day the weekend starts, with 0 being Monday\&.
+
+>>> Locale('de', 'DE')\&.weekend_start
+5
+
+.fi
+.PP
+ 
+.SS " \fBlocaledata\&.LocaleDataDict\fP babel\&.core\&.Locale\&.zone_formats ( self)"
+
+.PP
+.nf
+Patterns related to the formatting of time zones\&.
+
+\&.\&. note:: The format of the value returned may change between
+          Babel versions\&.
+
+>>> Locale('en', 'US')\&.zone_formats['fallback']
+u'%(1)s (%(0)s)'
+>>> Locale('pt', 'BR')\&.zone_formats['region']
+u'Hor\\\\xe1rio %s'
+
+\&.\&. versionadded:: 0\&.9
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "babel\&.core\&.Locale\&.language"
+
+.SS "babel\&.core\&.Locale\&.modifier"
+
+.SS "babel\&.core\&.Locale\&.script"
+
+.SS "babel\&.core\&.Locale\&.territory"
+
+.SS "babel\&.core\&.Locale\&.variant"
+
+.SH "Property Documentation"
+.PP 
+.SS "babel\&.core\&.Locale\&.display_name = property(\fBget_display_name\fP, doc=)\fC [static]\fP"
+
+.SS "babel\&.core\&.Locale\&.language_name = property(\fBget_language_name\fP, doc=)\fC [static]\fP"
+
+.SS "babel\&.core\&.Locale\&.script_name = property(\fBget_script_name\fP, doc=)\fC [static]\fP"
+
+.SS "babel\&.core\&.Locale\&.territory_name = property(\fBget_territory_name\fP, doc=)\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

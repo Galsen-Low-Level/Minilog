@@ -1,0 +1,28 @@
+.TH "docutils.nodes.StopTraversal" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.nodes.StopTraversal
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.nodes\&.TreePruningException\fP\&.
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Stop the traversal altogether\&.  The current node's ``depart_\&.\&.\&.`` method
+is not affected\&.  The parent nodes ``depart_\&.\&.\&.`` methods are also called
+as usual\&.  No other nodes are visited\&.  This is an alternative to
+NodeFound that does not cause exception handling to trickle up to the
+caller\&.
+
+.fi
+.PP
+ 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

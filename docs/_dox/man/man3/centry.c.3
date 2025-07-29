@@ -1,0 +1,123 @@
+.TH "/home/umar/Desktop/WorkShop/GLL/centry/centry.c" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/umar/Desktop/WorkShop/GLL/centry/centry.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <sys/stat\&.h>\fP
+.br
+\fC#include <sys/cdefs\&.h>\fP
+.br
+\fC#include <sys/wait\&.h>\fP
+.br
+\fC#include <stdarg\&.h>\fP
+.br
+\fC#include <sched\&.h>\fP
+.br
+\fC#include <err\&.h>\fP
+.br
+\fC#include <fcntl\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <dirent\&.h>\fP
+.br
+\fC#include <errno\&.h>\fP
+.br
+\fC#include <sys/utsname\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+\fC#include <poll\&.h>\fP
+.br
+\fC#include <term\&.h>\fP
+.br
+\fC#include <curses\&.h>\fP
+.br
+\fC#include <termios\&.h>\fP
+.br
+\fC#include 'centry\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB_GNU_SOURCE\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBhas_command\fP (const char *restrict host_command)"
+.br
+.ti -1c
+.RI "\fBcpid_t\fP \fBcontainer_process_id\fP (char *restrict container_id)"
+.br
+.ti -1c
+.RI "void \fBload_ns_for\fP (\fBcpid_t\fP \fBcontainer_process_id\fP)"
+.br
+.ti -1c
+.RI "char * \fBcentry_check_running_container_for\fP (const char *container_name)"
+.br
+.ti -1c
+.RI "void \fBcentry_curses_select\fP (char(*buffer_result)[0xff], int size)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "char \fBdocker_location\fP [0x64] ={0}"
+.br
+.ti -1c
+.RI "struct \fB__ns_info_t\fP \fBnsinfo\fP [6] = \fBNS_DEFINITIONS\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define _GNU_SOURCE"
+
+.SH "Function Documentation"
+.PP 
+.SS "char * centry_check_running_container_for (const char * container_name)"
+shorten outbuffer i just need the container id and images name TODO : put this in speciale function
+.SS "void centry_curses_select (char(*) buffer_result[0xff], int size)"
+Initialising polling on keyboard 
+.br
+.PP
+Term dimension
+.PP
+Initial setup
+.PP
+start listening in keyboard
+.PP
+Big apologies to azerty users TODO :Implement navigation keys for AZERTY users or
+.PP
+TODO : Make more clear
+.SS "\fBcpid_t\fP container_process_id (char *restrict container_id)"
+
+.SS "int has_command (const char *restrict host_command)"
+
+.SS "void load_ns_for (\fBcpid_t\fP container_process_id)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "char docker_location[0x64] ={0}"
+
+.SS "struct \fB__ns_info_t\fP nsinfo[6] = \fBNS_DEFINITIONS\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

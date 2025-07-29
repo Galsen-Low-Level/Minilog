@@ -1,0 +1,84 @@
+.TH "docutils.utils.error_reporting.ErrorString" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.utils.error_reporting.ErrorString
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.utils\&.error_reporting\&.SafeString\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__unicode__\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.utils\&.error_reporting\&.SafeString\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdata\fP, \fBencoding\fP=None, \fBencoding_errors\fP='backslashreplace', \fBdecoding_errors\fP='replace')"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBdocutils\&.utils\&.error_reporting\&.SafeString\fP
+.in +1c
+.ti -1c
+.RI "\fBdata\fP"
+.br
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBencoding_errors\fP"
+.br
+.ti -1c
+.RI "\fBdecoding_errors\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Safely report exception type and message\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.utils\&.error_reporting\&.ErrorString\&.__str__ ( self)"
+
+.PP
+Reimplemented from \fBdocutils\&.utils\&.error_reporting\&.SafeString\fP\&.
+.SS "docutils\&.utils\&.error_reporting\&.ErrorString\&.__unicode__ ( self)"
+
+.PP
+.nf
+Return unicode representation of `self\&.data`\&.
+
+Try ``unicode(self\&.data)``, catch `UnicodeError` and
+
+* if `self\&.data` is an Exception instance, work around
+  http://bugs\&.python\&.org/issue2517 with an emulation of
+  Exception\&.__unicode__,
+
+* else decode with `self\&.encoding` and `self\&.decoding_errors`\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.utils\&.error_reporting\&.SafeString\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

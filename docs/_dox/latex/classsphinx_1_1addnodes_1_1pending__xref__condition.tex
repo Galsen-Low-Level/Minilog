@@ -1,0 +1,60 @@
+\doxysection{sphinx.\+addnodes.\+pending\+\_\+xref\+\_\+condition Class Reference}
+\hypertarget{classsphinx_1_1addnodes_1_1pending__xref__condition}{}\label{classsphinx_1_1addnodes_1_1pending__xref__condition}\index{sphinx.addnodes.pending\_xref\_condition@{sphinx.addnodes.pending\_xref\_condition}}
+Inheritance diagram for sphinx.\+addnodes.\+pending\+\_\+xref\+\_\+condition\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsphinx_1_1addnodes_1_1pending__xref__condition}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Node representing a potential way to create a cross-reference and the
+condition in which this way should be used.
+
+This node is only allowed to be placed under a :py:class:`pending_xref`
+node.  A **pending_xref** node must contain either no **pending_xref_condition**
+nodes or it must only contains **pending_xref_condition** nodes.
+
+The cross-reference resolver will replace a :py:class:`pending_xref` which
+contains **pending_xref_condition** nodes by the content of exactly one of
+those **pending_xref_condition** nodes' content. It uses the **condition**
+attribute to decide which **pending_xref_condition** node's content to
+use. For example, let us consider how the cross-reference resolver acts on::
+
+    <pending_xref refdomain="py" reftarget="io.StringIO ...>
+        <pending_xref_condition condition="resolved">
+            <literal>
+                StringIO
+        <pending_xref_condition condition="*">
+            <literal>
+                io.StringIO
+
+If the cross-reference resolver successfully resolves the cross-reference,
+then it rewrites the **pending_xref** as::
+
+    <reference>
+        <literal>
+            StringIO
+
+Otherwise, if the cross-reference resolution failed, it rewrites the
+**pending_xref** as::
+
+    <reference>
+        <literal>
+            io.StringIO
+
+The **pending_xref_condition** node should have **condition** attribute.
+Domains can be store their individual conditions into the attribute to
+filter contents on resolving phase.  As a reserved condition name,
+``condition="*"`` is used for the fallback of resolution failure.
+Additionally, as a recommended condition name, ``condition="resolved"``
+represents a resolution success in the intersphinx module.
+
+.. versionadded:: 4.0
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/sphinx/\mbox{\hyperlink{addnodes_8py}{addnodes.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,95 @@
+.TH "pygments.lexers.wgsl" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.lexers.wgsl
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBWgslLexer\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "str \fBLF\fP = '\\\\u000a'"
+.br
+.ti -1c
+.RI "str \fBVT\fP = '\\\\u000b'"
+.br
+.ti -1c
+.RI "str \fBFF\fP = '\\\\u000c'"
+.br
+.ti -1c
+.RI "str \fBCR\fP = '\\\\u000d'"
+.br
+.ti -1c
+.RI "str \fBNextLine\fP = '\\\\u0085'"
+.br
+.ti -1c
+.RI "str \fBLineSep\fP = '\\\\u2028'"
+.br
+.ti -1c
+.RI "str \fBParaSep\fP = '\\\\u2029'"
+.br
+.ti -1c
+.RI "list \fBLineEndCodePoints\fP = [\fBLF\fP,\fBVT\fP,\fBFF\fP,\fBCR\fP,\fBNextLine\fP,\fBLineSep\fP,\fBParaSep\fP]"
+.br
+.ti -1c
+.RI "str \fBNotLineEndRE\fP = '[^' + ''\&.join(\fBLineEndCodePoints\fP) + ']'"
+.br
+.ti -1c
+.RI "str \fBLineEndRE\fP = '[' + ''\&.join(\fBLineEndCodePoints\fP) + ']'"
+.br
+.ti -1c
+.RI "str \fBident_pattern_token\fP = f'([{uni\&.xid_start}][{uni\&.xid_continue}]+)|[{uni\&.xid_start}]'"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+    pygments\&.lexers\&.wgsl
+    ~~~~~~~~~~~~~~~~~~~~
+
+    Lexer for the WebGPU Shading Language\&.
+
+    :copyright: Copyright 2006-2025 by the Pygments team, see AUTHORS\&.
+    :license: BSD, see LICENSE for details\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "str pygments\&.lexers\&.wgsl\&.CR = '\\\\u000d'"
+
+.SS "str pygments\&.lexers\&.wgsl\&.FF = '\\\\u000c'"
+
+.SS "str pygments\&.lexers\&.wgsl\&.ident_pattern_token = f'([{uni\&.xid_start}][{uni\&.xid_continue}]+)|[{uni\&.xid_start}]'"
+
+.SS "str pygments\&.lexers\&.wgsl\&.LF = '\\\\u000a'"
+
+.SS "list pygments\&.lexers\&.wgsl\&.LineEndCodePoints = [\fBLF\fP,\fBVT\fP,\fBFF\fP,\fBCR\fP,\fBNextLine\fP,\fBLineSep\fP,\fBParaSep\fP]"
+
+.SS "str pygments\&.lexers\&.wgsl\&.LineEndRE = '[' + ''\&.join(\fBLineEndCodePoints\fP) + ']'"
+
+.SS "str pygments\&.lexers\&.wgsl\&.LineSep = '\\\\u2028'"
+
+.SS "str pygments\&.lexers\&.wgsl\&.NextLine = '\\\\u0085'"
+
+.SS "str pygments\&.lexers\&.wgsl\&.NotLineEndRE = '[^' + ''\&.join(\fBLineEndCodePoints\fP) + ']'"
+
+.SS "str pygments\&.lexers\&.wgsl\&.ParaSep = '\\\\u2029'"
+
+.SS "str pygments\&.lexers\&.wgsl\&.VT = '\\\\u000b'"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

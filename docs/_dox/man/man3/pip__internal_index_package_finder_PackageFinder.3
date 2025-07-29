@@ -1,0 +1,294 @@
+.TH "pip._internal.index.package_finder.PackageFinder" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.index.package_finder.PackageFinder
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, \fBLinkCollector\fP link_collector, \fBTargetPython\fP \fBtarget_python\fP, bool allow_yanked, Optional[\fBFormatControl\fP] \fBformat_control\fP=None, Optional[\fBCandidatePreferences\fP] candidate_prefs=None, Optional[bool] ignore_requires_python=None)"
+.br
+.ti -1c
+.RI "'PackageFinder' \fBcreate\fP (cls, \fBLinkCollector\fP link_collector, \fBSelectionPreferences\fP selection_prefs, Optional[\fBTargetPython\fP] \fBtarget_python\fP=None)"
+.br
+.ti -1c
+.RI "\fBTargetPython\fP \fBtarget_python\fP (self)"
+.br
+.ti -1c
+.RI "\fBSearchScope\fP \fBsearch_scope\fP (self)"
+.br
+.ti -1c
+.RI "None \fBsearch_scope\fP (self, \fBSearchScope\fP search_scope)"
+.br
+.ti -1c
+.RI "List[str] \fBfind_links\fP (self)"
+.br
+.ti -1c
+.RI "List[str] \fBindex_urls\fP (self)"
+.br
+.ti -1c
+.RI "Iterable[str] \fBtrusted_hosts\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBallow_all_prereleases\fP (self)"
+.br
+.ti -1c
+.RI "None \fBset_allow_all_prereleases\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBprefer_binary\fP (self)"
+.br
+.ti -1c
+.RI "None \fBset_prefer_binary\fP (self)"
+.br
+.ti -1c
+.RI "List[str] \fBrequires_python_skipped_reasons\fP (self)"
+.br
+.ti -1c
+.RI "\fBLinkEvaluator\fP \fBmake_link_evaluator\fP (self, str project_name)"
+.br
+.ti -1c
+.RI "Optional[\fBInstallationCandidate\fP] \fBget_install_candidate\fP (self, \fBLinkEvaluator\fP link_evaluator, \fBLink\fP link)"
+.br
+.ti -1c
+.RI "List[\fBInstallationCandidate\fP] \fBevaluate_links\fP (self, \fBLinkEvaluator\fP link_evaluator, Iterable[\fBLink\fP] links)"
+.br
+.ti -1c
+.RI "List[\fBInstallationCandidate\fP] \fBprocess_project_url\fP (self, \fBLink\fP project_url, \fBLinkEvaluator\fP link_evaluator)"
+.br
+.ti -1c
+.RI "List[\fBInstallationCandidate\fP] \fBfind_all_candidates\fP (self, str project_name)"
+.br
+.ti -1c
+.RI "\fBCandidateEvaluator\fP \fBmake_candidate_evaluator\fP (self, str project_name, Optional[specifiers\&.BaseSpecifier] specifier=None, Optional[\fBHashes\fP] hashes=None)"
+.br
+.ti -1c
+.RI "\fBBestCandidateResult\fP \fBfind_best_candidate\fP (self, str project_name, Optional[specifiers\&.BaseSpecifier] specifier=None, Optional[\fBHashes\fP] hashes=None)"
+.br
+.ti -1c
+.RI "Optional[\fBInstallationCandidate\fP] \fBfind_requirement\fP (self, \fBInstallRequirement\fP req, bool upgrade)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBformat_control\fP"
+.br
+.ti -1c
+.RI "\fBprocess_project_url\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "List[\fBLink\fP] \fB_sort_links\fP (self, Iterable[\fBLink\fP] links)"
+.br
+.ti -1c
+.RI "None \fB_log_skipped_link\fP (self, \fBLink\fP link, \fBLinkType\fP result, str detail)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_allow_yanked\fP"
+.br
+.ti -1c
+.RI "\fB_candidate_prefs\fP"
+.br
+.ti -1c
+.RI "\fB_ignore_requires_python\fP"
+.br
+.ti -1c
+.RI "\fB_link_collector\fP"
+.br
+.ti -1c
+.RI "\fB_target_python\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This finds packages\&.
+
+This is meant to match easy_install's technique for looking for
+packages, by reading pages and looking for appropriate links\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.__init__ ( self, \fBLinkCollector\fP link_collector, \fBTargetPython\fP target_python, bool allow_yanked, Optional[\fBFormatControl\fP]  format_control = \fCNone\fP, Optional[\fBCandidatePreferences\fP]  candidate_prefs = \fCNone\fP, Optional[bool]  ignore_requires_python = \fCNone\fP)"
+
+.PP
+.nf
+This constructor is primarily meant to be used by the create() class
+method and from tests\&.
+
+:param format_control: A FormatControl object, used to control
+    the selection of source packages / binary packages when consulting
+    the index and links\&.
+:param candidate_prefs: Options to use when creating a
+    CandidateEvaluator object\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " None pip\&._internal\&.index\&.package_finder\&.PackageFinder\&._log_skipped_link ( self, \fBLink\fP link, \fBLinkType\fP result, str detail)\fC [protected]\fP"
+
+.SS " List[\fBLink\fP] pip\&._internal\&.index\&.package_finder\&.PackageFinder\&._sort_links ( self, Iterable[\fBLink\fP] links)\fC [protected]\fP"
+
+.PP
+.nf
+Returns elements of links in order, non-egg links first, egg links
+second, while eliminating duplicates
+
+.fi
+.PP
+ 
+.SS " bool pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.allow_all_prereleases ( self)"
+
+.SS " 'PackageFinder' pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.create ( cls, \fBLinkCollector\fP link_collector, \fBSelectionPreferences\fP selection_prefs, Optional[\fBTargetPython\fP]  target_python = \fCNone\fP)"
+
+.PP
+.nf
+Create a PackageFinder\&.
+
+:param selection_prefs: The candidate selection preferences, as a
+    SelectionPreferences object\&.
+:param target_python: The target Python interpreter to use when
+    checking compatibility\&. If None (the default), a TargetPython
+    object will be constructed from the running Python\&.
+
+.fi
+.PP
+ 
+.SS " List[\fBInstallationCandidate\fP] pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.evaluate_links ( self, \fBLinkEvaluator\fP link_evaluator, Iterable[\fBLink\fP]
+     links)"
+
+.PP
+.nf
+Convert links that are candidates to InstallationCandidate objects\&.
+
+.fi
+.PP
+ 
+.SS " List[\fBInstallationCandidate\fP] pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.find_all_candidates ( self, str project_name)"
+
+.PP
+.nf
+Find all available InstallationCandidate for project_name
+
+This checks index_urls and find_links\&.
+All versions found are returned as an InstallationCandidate list\&.
+
+See LinkEvaluator\&.evaluate_link() for details on which files
+are accepted\&.
+
+.fi
+.PP
+ 
+.SS " \fBBestCandidateResult\fP pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.find_best_candidate ( self, str project_name, Optional[specifiers\&.BaseSpecifier]  specifier = \fCNone\fP, Optional[\fBHashes\fP]  hashes = \fCNone\fP)"
+
+.PP
+.nf
+Find matches for the given project and specifier\&.
+
+:param specifier: An optional object implementing `filter`
+    (e\&.g\&. `packaging\&.specifiers\&.SpecifierSet`) to filter applicable
+    versions\&.
+
+:return: A `BestCandidateResult` instance\&.
+
+.fi
+.PP
+ 
+.SS " List[str] pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.find_links ( self)"
+
+.SS " Optional[\fBInstallationCandidate\fP] pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.find_requirement ( self, \fBInstallRequirement\fP req, bool
+     upgrade)"
+
+.PP
+.nf
+Try to find a Link matching req
+
+Expects req, an InstallRequirement and upgrade, a boolean
+Returns a InstallationCandidate if found,
+Raises DistributionNotFound or BestVersionAlreadyInstalled otherwise
+
+.fi
+.PP
+ 
+.SS " Optional[\fBInstallationCandidate\fP] pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.get_install_candidate ( self, \fBLinkEvaluator\fP link_evaluator, \fBLink\fP
+     link)"
+
+.PP
+.nf
+If the link is a candidate for install, convert it to an
+InstallationCandidate and return it\&. Otherwise, return None\&.
+
+.fi
+.PP
+ 
+.SS " List[str] pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.index_urls ( self)"
+
+.SS " \fBCandidateEvaluator\fP pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.make_candidate_evaluator ( self, str project_name, Optional[specifiers\&.BaseSpecifier]  specifier = \fCNone\fP, Optional[\fBHashes\fP]  hashes = \fCNone\fP)"
+
+.PP
+.nf
+Create a CandidateEvaluator object to use\&.
+.fi
+.PP
+ 
+.SS " \fBLinkEvaluator\fP pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.make_link_evaluator ( self, str project_name)"
+
+.SS " bool pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.prefer_binary ( self)"
+
+.SS " List[\fBInstallationCandidate\fP] pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.process_project_url ( self, \fBLink\fP project_url, \fBLinkEvaluator\fP
+     link_evaluator)"
+
+.SS " List[str] pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.requires_python_skipped_reasons ( self)"
+
+.SS " \fBSearchScope\fP pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.search_scope ( self)"
+
+.SS " None pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.search_scope ( self, \fBSearchScope\fP search_scope)"
+
+.SS " None pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.set_allow_all_prereleases ( self)"
+
+.SS " None pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.set_prefer_binary ( self)"
+
+.SS " \fBTargetPython\fP pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.target_python ( self)"
+
+.SS " Iterable[str] pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.trusted_hosts ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._internal\&.index\&.package_finder\&.PackageFinder\&._allow_yanked\fC [protected]\fP"
+
+.SS "pip\&._internal\&.index\&.package_finder\&.PackageFinder\&._candidate_prefs\fC [protected]\fP"
+
+.SS "pip\&._internal\&.index\&.package_finder\&.PackageFinder\&._ignore_requires_python\fC [protected]\fP"
+
+.SS "pip\&._internal\&.index\&.package_finder\&.PackageFinder\&._link_collector\fC [protected]\fP"
+
+.SS "pip\&._internal\&.index\&.package_finder\&.PackageFinder\&._target_python\fC [protected]\fP"
+
+.SS "pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.format_control"
+
+.SS "pip\&._internal\&.index\&.package_finder\&.PackageFinder\&.process_project_url"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

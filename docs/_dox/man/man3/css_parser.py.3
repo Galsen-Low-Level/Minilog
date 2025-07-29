@@ -1,0 +1,276 @@
+.TH "/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/soupsieve/css_parser.py
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBsoupsieve\&.css_parser\&.SelectorPattern\fP"
+.br
+.ti -1c
+.RI "class \fBsoupsieve\&.css_parser\&.SpecialPseudoPattern\fP"
+.br
+.ti -1c
+.RI "class \fBsoupsieve\&.css_parser\&._Selector\fP"
+.br
+.ti -1c
+.RI "class \fBsoupsieve\&.css_parser\&.CSSParser\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBsoupsieve\fP"
+.br
+.ti -1c
+.RI "namespace \fBsoupsieve\&.css_parser\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "cm\&.SoupSieve \fBsoupsieve\&.css_parser\&._cached_css_compile\fP (str pattern, ct\&.Namespaces|None namespaces, ct\&.CustomSelectors|None custom, int flags)"
+.br
+.ti -1c
+.RI "None \fBsoupsieve\&.css_parser\&._purge_cache\fP ()"
+.br
+.ti -1c
+.RI "dict[str, str|ct\&.SelectorList] \fBsoupsieve\&.css_parser\&.process_custom\fP (ct\&.CustomSelectors|None custom)"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.css_unescape\fP (str content, bool string=False)"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.escape\fP (str ident)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBsoupsieve\&.css_parser\&.UNICODE_REPLACEMENT_CHAR\fP = 0xFFFD"
+.br
+.ti -1c
+.RI "dict \fBsoupsieve\&.css_parser\&.PSEUDO_SIMPLE\fP"
+.br
+.ti -1c
+.RI "dict \fBsoupsieve\&.css_parser\&.PSEUDO_SIMPLE_NO_MATCH\fP"
+.br
+.ti -1c
+.RI "dict \fBsoupsieve\&.css_parser\&.PSEUDO_COMPLEX\fP"
+.br
+.ti -1c
+.RI "dict \fBsoupsieve\&.css_parser\&.PSEUDO_COMPLEX_NO_MATCH\fP"
+.br
+.ti -1c
+.RI "dict \fBsoupsieve\&.css_parser\&.PSEUDO_SPECIAL\fP"
+.br
+.ti -1c
+.RI "dict \fBsoupsieve\&.css_parser\&.PSEUDO_SUPPORTED\fP = \fBPSEUDO_SIMPLE\fP | \fBPSEUDO_SIMPLE_NO_MATCH\fP | \fBPSEUDO_COMPLEX\fP | \fBPSEUDO_COMPLEX_NO_MATCH\fP | \fBPSEUDO_SPECIAL\fP"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.NEWLINE\fP = r'(?:\\r\\n|(?!\\r\\n)[\\n\\f\\r])'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.WS\fP = fr'(?:[ \\t]|{\fBNEWLINE\fP})'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.COMMENTS\fP = r'(?:/\\*[^*]*\\*+(?:[^/*][^*]*\\*+)*/)'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.WSC\fP = fr'(?:{\fBWS\fP}|{\fBCOMMENTS\fP})'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.CSS_ESCAPES\fP = fr'(?:\\\\(?:[a\-f0\-9]{{1,6}}{\fBWS\fP}?|[^\\r\\n\\f]|$))'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.CSS_STRING_ESCAPES\fP = fr'(?:\\\\(?:[a\-f0\-9]{{1,6}}{\fBWS\fP}?|[^\\r\\n\\f]|$|{\fBNEWLINE\fP}))'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.IDENTIFIER\fP"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.NTH\fP = fr'(?:[\-+])?(?:[0\-9]+n?|n)(?:(?<=n){\fBWSC\fP}*(?:[\-+]){\fBWSC\fP}*(?:[0\-9]+))?'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.VALUE\fP = fr'''(?:'(?:\\\\(?:\&.|{NEWLINE})|[^\\\\'\\r\\n\\f]+)*?'|'(?:\\\\(?:\&.|{NEWLINE})|[^\\\\'\\r\\n\\f]+)*?'|{\fBIDENTIFIER\fP}+)'''"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.ATTR\fP = fr'(?:{\fBWSC\fP}*(?P<cmp>[!~^|*$]?=){\fBWSC\fP}*(?P<value>{\fBVALUE\fP})(?:{\fBWSC\fP}*(?P<case>[is]))?)?{\fBWSC\fP}*\\]'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.PAT_ID\fP = fr'\\#{\fBIDENTIFIER\fP}'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.PAT_CLASS\fP = fr'\\\&.{\fBIDENTIFIER\fP}'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.PAT_TAG\fP = fr'(?P<tag_ns>(?:{\fBIDENTIFIER\fP}|\\*)?\\|)?(?P<tag_name>{\fBIDENTIFIER\fP}|\\*)'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.PAT_ATTR\fP = fr'\\[{\fBWSC\fP}*(?P<attr_ns>(?:{\fBIDENTIFIER\fP}|\\*)?\\|)?(?P<attr_name>{\fBIDENTIFIER\fP}){\fBATTR\fP}'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.PAT_PSEUDO_CLASS\fP = fr'(?P<name>:{\fBIDENTIFIER\fP})(?P<open>\\({\fBWSC\fP}*)?'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.PAT_PSEUDO_CLASS_SPECIAL\fP = fr'(?P<name>:{\fBIDENTIFIER\fP})(?P<open>\\({\fBWSC\fP}*)'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.PAT_PSEUDO_CLASS_CUSTOM\fP = fr'(?P<name>:(?=\-\-){\fBIDENTIFIER\fP})'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.PAT_AMP\fP = r'&'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.PAT_PSEUDO_CLOSE\fP = fr'{\fBWSC\fP}*\\)'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.PAT_PSEUDO_ELEMENT\fP = fr':{\fBPAT_PSEUDO_CLASS\fP}'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.PAT_AT_RULE\fP = fr'@P{\fBIDENTIFIER\fP}'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.PAT_PSEUDO_NTH_CHILD\fP"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.PAT_PSEUDO_NTH_TYPE\fP"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.PAT_PSEUDO_LANG\fP = fr'{\fBPAT_PSEUDO_CLASS_SPECIAL\fP}(?P<values>{\fBVALUE\fP}(?:{\fBWSC\fP}*,{\fBWSC\fP}*{\fBVALUE\fP})*){\fBWSC\fP}*\\)'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.PAT_PSEUDO_DIR\fP = fr'{\fBPAT_PSEUDO_CLASS_SPECIAL\fP}(?P<dir>ltr|rtl){\fBWSC\fP}*\\)'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.PAT_COMBINE\fP = fr'{\fBWSC\fP}*?(?P<relation>[,+>~]|{\fBWS\fP}(?![,+>~])){\fBWSC\fP}*'"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.PAT_PSEUDO_CONTAINS\fP = fr'{\fBPAT_PSEUDO_CLASS_SPECIAL\fP}(?P<values>{\fBVALUE\fP}(?:{\fBWSC\fP}*,{\fBWSC\fP}*{\fBVALUE\fP})*){\fBWSC\fP}*\\)'"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.RE_CSS_ESC\fP = re\&.compile(fr'(?:(\\\\[a\-f0\-9]{{1,6}}{\fBWSC\fP}?)|(\\\\[^\\r\\n\\f])|(\\\\$))', re\&.I)"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.RE_CSS_STR_ESC\fP = re\&.compile(fr'(?:(\\\\[a\-f0\-9]{{1,6}}{\fBWS\fP}?)|(\\\\[^\\r\\n\\f])|(\\\\$)|(\\\\{\fBNEWLINE\fP}))', re\&.I)"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.RE_NTH\fP = re\&.compile(fr'(?P<s1>[\-+])?(?P<a>[0\-9]+n?|n)(?:(?<=n){\fBWSC\fP}*(?P<s2>[\-+]){\fBWSC\fP}*(?P<b>[0\-9]+))?', re\&.I)"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.RE_VALUES\fP = re\&.compile(fr'(?:(?P<value>{\fBVALUE\fP})|(?P<split>{\fBWSC\fP}*,{\fBWSC\fP}*))', re\&.X)"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.RE_WS\fP = re\&.compile(\fBWS\fP)"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.RE_WS_BEGIN\fP = re\&.compile(fr'^{\fBWSC\fP}*')"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.RE_WS_END\fP = re\&.compile(fr'{\fBWSC\fP}*$')"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.RE_CUSTOM\fP = re\&.compile(fr'^{\fBPAT_PSEUDO_CLASS_CUSTOM\fP}$', re\&.X)"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.COMMA_COMBINATOR\fP = ','"
+.br
+.ti -1c
+.RI "str \fBsoupsieve\&.css_parser\&.WS_COMBINATOR\fP = ' '"
+.br
+.ti -1c
+.RI "int \fBsoupsieve\&.css_parser\&.FLG_PSEUDO\fP = 0x01"
+.br
+.ti -1c
+.RI "int \fBsoupsieve\&.css_parser\&.FLG_NOT\fP = 0x02"
+.br
+.ti -1c
+.RI "int \fBsoupsieve\&.css_parser\&.FLG_RELATIVE\fP = 0x04"
+.br
+.ti -1c
+.RI "int \fBsoupsieve\&.css_parser\&.FLG_DEFAULT\fP = 0x08"
+.br
+.ti -1c
+.RI "int \fBsoupsieve\&.css_parser\&.FLG_HTML\fP = 0x10"
+.br
+.ti -1c
+.RI "int \fBsoupsieve\&.css_parser\&.FLG_INDETERMINATE\fP = 0x20"
+.br
+.ti -1c
+.RI "int \fBsoupsieve\&.css_parser\&.FLG_OPEN\fP = 0x40"
+.br
+.ti -1c
+.RI "int \fBsoupsieve\&.css_parser\&.FLG_IN_RANGE\fP = 0x80"
+.br
+.ti -1c
+.RI "int \fBsoupsieve\&.css_parser\&.FLG_OUT_OF_RANGE\fP = 0x100"
+.br
+.ti -1c
+.RI "int \fBsoupsieve\&.css_parser\&.FLG_PLACEHOLDER_SHOWN\fP = 0x200"
+.br
+.ti -1c
+.RI "int \fBsoupsieve\&.css_parser\&.FLG_FORGIVE\fP = 0x400"
+.br
+.ti -1c
+.RI "int \fBsoupsieve\&.css_parser\&._MAXCACHE\fP = 500"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.CSS_LINK\fP"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.CSS_CHECKED\fP"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.CSS_DEFAULT\fP"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.CSS_INDETERMINATE\fP"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.CSS_DISABLED\fP"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.CSS_ENABLED\fP"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.CSS_REQUIRED\fP"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.CSS_OPTIONAL\fP"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.CSS_PLACEHOLDER_SHOWN\fP"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.CSS_NTH_OF_S_DEFAULT\fP"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.CSS_READ_WRITE\fP"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.CSS_READ_ONLY\fP"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.CSS_IN_RANGE\fP"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.CSS_OUT_OF_RANGE\fP"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.CSS_OPEN\fP"
+.br
+.ti -1c
+.RI "\fBsoupsieve\&.css_parser\&.CSS_MUTED\fP"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,149 @@
+.TH "sphinx.roles" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.roles
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAbbreviation\fP"
+.br
+.ti -1c
+.RI "class \fBAnyXRefRole\fP"
+.br
+.ti -1c
+.RI "class \fBCVE\fP"
+.br
+.ti -1c
+.RI "class \fBCWE\fP"
+.br
+.ti -1c
+.RI "class \fBEmphasizedLiteral\fP"
+.br
+.ti -1c
+.RI "class \fBGUILabel\fP"
+.br
+.ti -1c
+.RI "class \fBKeyboard\fP"
+.br
+.ti -1c
+.RI "class \fBManpage\fP"
+.br
+.ti -1c
+.RI "class \fBMenuSelection\fP"
+.br
+.ti -1c
+.RI "class \fBPEP\fP"
+.br
+.ti -1c
+.RI "class \fBRFC\fP"
+.br
+.ti -1c
+.RI "class \fBXRefRole\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fB_format_rfc_target\fP (str target)"
+.br
+.ti -1c
+.RI "tuple[list[\fBNode\fP], list[\fBsystem_message\fP]] \fBcode_role\fP (str name, str rawtext, str text, int lineno, \fBdocutils\&.parsers\&.rst\&.states\&.Inliner\fP inliner, dict[str, Any]|None \fBoptions\fP=None, Sequence[str] content=())"
+.br
+.ti -1c
+.RI "\fBExtensionMetadata\fP \fBsetup\fP (\fBSphinx\fP app)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "dict \fBgeneric_docroles\fP"
+.br
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "dict \fBspecific_docroles\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Handlers for additional ReST roles\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " str sphinx\&.roles\&._format_rfc_target (str target)\fC [protected]\fP"
+
+.PP
+.nf
+Takes an RFC number with an optional anchor (like ``123#section-2\&.5\&.3``)
+and attempts to produce a human-friendly title for it\&.
+
+We have a set of known anchors that we format nicely,
+everything else we leave alone\&.
+
+.fi
+.PP
+ 
+.SS " tuple[list[\fBNode\fP], list[\fBsystem_message\fP]] sphinx\&.roles\&.code_role (str name, str rawtext, str text, int lineno, \fBdocutils\&.parsers\&.rst\&.states\&.Inliner\fP inliner, dict[str, Any] | None  options = \fCNone\fP, Sequence[str]  content = \fC()\fP)"
+
+.SS " \fBExtensionMetadata\fP sphinx\&.roles\&.setup (\fBSphinx\fP app)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "dict sphinx\&.roles\&.generic_docroles"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     'command': addnodes\&.literal_strong,
+3     'dfn': nodes\&.emphasis,
+4     'mailheader': addnodes\&.literal_emphasis,
+5     'makevar': addnodes\&.literal_strong,
+6     'mimetype': addnodes\&.literal_emphasis,
+7     'newsgroup': addnodes\&.literal_emphasis,
+8     'program': addnodes\&.literal_strong,  # XXX should be an x\-ref
+9     'regexp': nodes\&.literal,
+10 }
+.fi
+
+.SS "sphinx\&.roles\&.options"
+
+.SS "dict sphinx\&.roles\&.specific_docroles"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     # links to download references
+3     'download': XRefRole(nodeclass=addnodes\&.download_reference),
+4     # links to anything
+5     'any': AnyXRefRole(warn_dangling=True),
+6     # external links
+7     'cve': CVE(),
+8     'cwe': CWE(),
+9     'pep': PEP(),
+10     'rfc': RFC(),
+11     # emphasised things
+12     'guilabel': GUILabel(),
+13     'menuselection': MenuSelection(),
+14     'file': EmphasizedLiteral(),
+15     'samp': EmphasizedLiteral(),
+16     # other
+17     'abbr': Abbreviation(),
+18     'kbd': Keyboard(),
+19     'manpage': Manpage(),
+20 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

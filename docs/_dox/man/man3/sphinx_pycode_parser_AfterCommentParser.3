@@ -1,0 +1,104 @@
+.TH "sphinx.pycode.parser.AfterCommentParser" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.pycode.parser.AfterCommentParser
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.pycode\&.parser\&.TokenProcessor\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, list[str] lines)"
+.br
+.ti -1c
+.RI "list[\fBToken\fP] \fBfetch_rvalue\fP (self)"
+.br
+.ti -1c
+.RI "None \fBparse\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.pycode\&.parser\&.TokenProcessor\fP
+.in +1c
+.ti -1c
+.RI "str \fBget_line\fP (self, int lineno)"
+.br
+.ti -1c
+.RI "\fBToken\fP|None \fBfetch_token\fP (self)"
+.br
+.ti -1c
+.RI "list[\fBToken\fP] \fBfetch_until\fP (self, Any condition)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcomment\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsphinx\&.pycode\&.parser\&.TokenProcessor\fP
+.in +1c
+.ti -1c
+.RI "\fBbuffers\fP"
+.br
+.ti -1c
+.RI "\fBtokens\fP"
+.br
+.ti -1c
+.RI "\fBprevious\fP"
+.br
+.ti -1c
+.RI "\fBcurrent\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Python source code parser to pick up comments after assignments\&.
+
+This parser takes code which starts with an assignment statement,
+and returns the comment for the variable if one exists\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.pycode\&.parser\&.AfterCommentParser\&.__init__ ( self, list[str] lines)"
+
+.PP
+Reimplemented from \fBsphinx\&.pycode\&.parser\&.TokenProcessor\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " list[\fBToken\fP] sphinx\&.pycode\&.parser\&.AfterCommentParser\&.fetch_rvalue ( self)"
+
+.PP
+.nf
+Fetch right-hand value of assignment\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.pycode\&.parser\&.AfterCommentParser\&.parse ( self)"
+
+.PP
+.nf
+Parse the code and obtain comment after assignment\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.pycode\&.parser\&.AfterCommentParser\&.comment"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

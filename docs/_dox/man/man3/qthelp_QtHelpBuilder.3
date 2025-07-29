@@ -1,0 +1,721 @@
+.TH "qthelp.QtHelpBuilder" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+qthelp.QtHelpBuilder
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBinit\fP (self)"
+.br
+.ti -1c
+.RI "tuple[str, dict[str, str|int|bool]] \fBget_theme_config\fP (self)"
+.br
+.ti -1c
+.RI "None \fBhandle_finish\fP (self)"
+.br
+.ti -1c
+.RI "None \fBbuild_qhp\fP (self, str|os\&.PathLike[str] \fBoutdir\fP, str outname)"
+.br
+.ti -1c
+.RI "bool \fBisdocnode\fP (self, \fBNode\fP node)"
+.br
+.ti -1c
+.RI "list[str] \fBwrite_toc\fP (self, \fBNode\fP node, int indentlevel=4)"
+.br
+.ti -1c
+.RI "str \fBkeyword_item\fP (self, str \fBname\fP, Any ref)"
+.br
+.ti -1c
+.RI "list[str] \fBbuild_keywords\fP (self, str title, list[Any] refs, Any subitems)"
+.br
+.ti -1c
+.RI "list[str] \fBget_project_files\fP (self, str|os\&.PathLike[str] \fBoutdir\fP)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, \fBSphinx\fP \fBapp\fP, \fBBuildEnvironment\fP \fBenv\fP)"
+.br
+.ti -1c
+.RI "\fBBuildInfo\fP \fBcreate_build_info\fP (self)"
+.br
+.ti -1c
+.RI "None \fBinit_templates\fP (self)"
+.br
+.ti -1c
+.RI "None \fBinit_highlighter\fP (self)"
+.br
+.ti -1c
+.RI "list[\fB_CascadingStyleSheet\fP] \fBcss_files\fP (self)"
+.br
+.ti -1c
+.RI "None \fBinit_css_files\fP (self)"
+.br
+.ti -1c
+.RI "None \fBadd_css_file\fP (self, str filename, **Any kwargs)"
+.br
+.ti -1c
+.RI "list[\fB_JavaScript\fP] \fBscript_files\fP (self)"
+.br
+.ti -1c
+.RI "None \fBinit_js_files\fP (self)"
+.br
+.ti -1c
+.RI "None \fBadd_js_file\fP (self, str filename, **Any kwargs)"
+.br
+.ti -1c
+.RI "str|None \fBmath_renderer_name\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[str] \fBget_outdated_docs\fP (self)"
+.br
+.ti -1c
+.RI "list[str] \fBget_asset_paths\fP (self)"
+.br
+.ti -1c
+.RI "dict[str, str] \fBrender_partial\fP (self, \fBNode\fP|None node)"
+.br
+.ti -1c
+.RI "None \fBprepare_writing\fP (self, Set[str] docnames)"
+.br
+.ti -1c
+.RI "dict[str, Any] \fBget_doc_context\fP (self, str docname, str body, str metatags)"
+.br
+.ti -1c
+.RI "None \fBcopy_assets\fP (self)"
+.br
+.ti -1c
+.RI "None \fBwrite_doc\fP (self, str docname, nodes\&.document doctree)"
+.br
+.ti -1c
+.RI "None \fBwrite_doc_serialized\fP (self, str docname, nodes\&.document doctree)"
+.br
+.ti -1c
+.RI "None \fBfinish\fP (self)"
+.br
+.ti -1c
+.RI "None \fBgen_indices\fP (self)"
+.br
+.ti -1c
+.RI "None \fBgen_pages_from_extensions\fP (self)"
+.br
+.ti -1c
+.RI "None \fBgen_additional_pages\fP (self)"
+.br
+.ti -1c
+.RI "None \fBwrite_genindex\fP (self)"
+.br
+.ti -1c
+.RI "None \fBwrite_domain_indices\fP (self)"
+.br
+.ti -1c
+.RI "None \fBcopy_image_files\fP (self)"
+.br
+.ti -1c
+.RI "None \fBcopy_download_files\fP (self)"
+.br
+.ti -1c
+.RI "None \fBcreate_pygments_style_file\fP (self)"
+.br
+.ti -1c
+.RI "None \fBcopy_translation_js\fP (self)"
+.br
+.ti -1c
+.RI "None \fBcopy_stemmer_js\fP (self)"
+.br
+.ti -1c
+.RI "None \fBcopy_theme_static_files\fP (self, dict[str, Any] context)"
+.br
+.ti -1c
+.RI "None \fBcopy_html_static_files\fP (self, dict[str, Any] context)"
+.br
+.ti -1c
+.RI "None \fBcopy_html_logo\fP (self)"
+.br
+.ti -1c
+.RI "None \fBcopy_html_favicon\fP (self)"
+.br
+.ti -1c
+.RI "None \fBcopy_static_files\fP (self)"
+.br
+.ti -1c
+.RI "None \fBcopy_extra_files\fP (self)"
+.br
+.ti -1c
+.RI "None \fBwrite_buildinfo\fP (self)"
+.br
+.ti -1c
+.RI "None \fBcleanup\fP (self)"
+.br
+.ti -1c
+.RI "None \fBpost_process_images\fP (self, \fBNode\fP doctree)"
+.br
+.ti -1c
+.RI "None \fBload_indexer\fP (self, Set[str] docnames)"
+.br
+.ti -1c
+.RI "None \fBindex_page\fP (self, str pagename, nodes\&.document doctree, str title)"
+.br
+.ti -1c
+.RI "Path \fBget_output_path\fP (self, str page_name)"
+.br
+.ti -1c
+.RI "\fB_StrPath\fP \fBget_outfilename\fP (self, str pagename)"
+.br
+.ti -1c
+.RI "None \fBadd_sidebars\fP (self, str pagename, dict[str, Any] ctx)"
+.br
+.ti -1c
+.RI "str \fBget_target_uri\fP (self, str docname, str|None typ=None)"
+.br
+.ti -1c
+.RI "None \fBhandle_page\fP (self, str pagename, dict[str, Any] addctx, str templatename='page\&.html', *Path|None outfilename=None, Any event_arg=None)"
+.br
+.ti -1c
+.RI "None \fBupdate_page_context\fP (self, str pagename, str templatename, dict[str, Any] ctx, Any event_arg)"
+.br
+.ti -1c
+.RI "None \fBdump_inventory\fP (self)"
+.br
+.ti -1c
+.RI "None \fBdump_search_index\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.builders\&.Builder\fP
+.in +1c
+.ti -1c
+.RI "type[nodes\&.NodeVisitor] \fBget_translator_class\fP (self, *Any args)"
+.br
+.ti -1c
+.RI "nodes\&.NodeVisitor \fBcreate_translator\fP (self, *Any args)"
+.br
+.ti -1c
+.RI "None \fBcreate_template_bridge\fP (self)"
+.br
+.ti -1c
+.RI "str \fBget_relative_uri\fP (self, str from_, str to, str|None typ=None)"
+.br
+.ti -1c
+.RI "None \fBcompile_catalogs\fP (self, set[\fBCatalogInfo\fP] catalogs, str message)"
+.br
+.ti -1c
+.RI "None \fBcompile_all_catalogs\fP (self)"
+.br
+.ti -1c
+.RI "None \fBcompile_specific_catalogs\fP (self, Iterable[Path] specified_files)"
+.br
+.ti -1c
+.RI "None \fBcompile_update_catalogs\fP (self)"
+.br
+.ti -1c
+.RI "None \fBbuild_all\fP (self)"
+.br
+.ti -1c
+.RI "None \fBbuild_specific\fP (self, Sequence[Path] filenames)"
+.br
+.ti -1c
+.RI "None \fBbuild_update\fP (self)"
+.br
+.ti -1c
+.RI "None \fBbuild\fP (self, Iterable[str]|None docnames, str|None summary=None, Literal['all', 'specific', 'update'] method='update')"
+.br
+.ti -1c
+.RI "list[str] \fBread\fP (self)"
+.br
+.ti -1c
+.RI "None \fBread_doc\fP (self, str docname, *bool _cache=True)"
+.br
+.ti -1c
+.RI "None \fBwrite_doctree\fP (self, str docname, nodes\&.document doctree, *bool _cache=True)"
+.br
+.ti -1c
+.RI "None \fBwrite\fP (self, Iterable[str]|None build_docnames, Iterable[str] updated_docnames, Literal['all', 'specific', 'update'] method='update')"
+.br
+.ti -1c
+.RI "None \fBwrite_documents\fP (self, Set[str] docnames)"
+.br
+.ti -1c
+.RI "Any \fBget_builder_config\fP (self, str option, str default)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBout_suffix\fP"
+.br
+.ti -1c
+.RI "\fBlink_suffix\fP"
+.br
+.ti -1c
+.RI "\fBoutdir\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP
+.in +1c
+.ti -1c
+.RI "\fBbuild_info\fP"
+.br
+.ti -1c
+.RI "\fBimagedir\fP"
+.br
+.ti -1c
+.RI "\fBout_suffix\fP"
+.br
+.ti -1c
+.RI "\fBlink_suffix\fP"
+.br
+.ti -1c
+.RI "\fBuse_index\fP"
+.br
+.ti -1c
+.RI "\fBconfig\fP"
+.br
+.ti -1c
+.RI "\fBtags\fP"
+.br
+.ti -1c
+.RI "\fBtheme\fP"
+.br
+.ti -1c
+.RI "\fBtheme_options\fP"
+.br
+.ti -1c
+.RI "\fBhighlighter\fP"
+.br
+.ti -1c
+.RI "\fBdark_highlighter\fP"
+.br
+.ti -1c
+.RI "\fBindexer\fP"
+.br
+.ti -1c
+.RI "\fBenv\fP"
+.br
+.ti -1c
+.RI "\fBdocwriter\fP"
+.br
+.ti -1c
+.RI "\fBdomain_indices\fP"
+.br
+.ti -1c
+.RI "\fBrelations\fP"
+.br
+.ti -1c
+.RI "\fBglobalcontext\fP"
+.br
+.ti -1c
+.RI "\fBembedded\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBcopy_download_files\fP"
+.br
+.ti -1c
+.RI "\fBcopy_static_files\fP"
+.br
+.ti -1c
+.RI "\fBcopy_extra_files\fP"
+.br
+.ti -1c
+.RI "\fBsecnumbers\fP"
+.br
+.ti -1c
+.RI "\fBfignumbers\fP"
+.br
+.ti -1c
+.RI "\fBimgpath\fP"
+.br
+.ti -1c
+.RI "\fBdlpath\fP"
+.br
+.ti -1c
+.RI "\fBcurrent_docname\fP"
+.br
+.ti -1c
+.RI "\fBgen_indices\fP"
+.br
+.ti -1c
+.RI "\fBgen_pages_from_extensions\fP"
+.br
+.ti -1c
+.RI "\fBgen_additional_pages\fP"
+.br
+.ti -1c
+.RI "\fBcopy_image_files\fP"
+.br
+.ti -1c
+.RI "\fBwrite_buildinfo\fP"
+.br
+.ti -1c
+.RI "\fBimages\fP"
+.br
+.ti -1c
+.RI "\fBsrcdir\fP"
+.br
+.ti -1c
+.RI "\fBoutdir\fP"
+.br
+.ti -1c
+.RI "\fBindexer_format\fP"
+.br
+.ti -1c
+.RI "\fBdump_search_index\fP"
+.br
+.ti -1c
+.RI "\fBdump_inventory\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsphinx\&.builders\&.Builder\fP
+.in +1c
+.ti -1c
+.RI "\fBversioning_method\fP"
+.br
+.ti -1c
+.RI "\fBversioning_compare\fP"
+.br
+.ti -1c
+.RI "\fBformat\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBimagedir\fP"
+.br
+.ti -1c
+.RI "\fBimgpath\fP"
+.br
+.ti -1c
+.RI "\fBparallel_ok\fP"
+.br
+.ti -1c
+.RI "\fBtemplates\fP"
+.br
+.ti -1c
+.RI "\fBapp\fP"
+.br
+.ti -1c
+.RI "\fBenv\fP"
+.br
+.ti -1c
+.RI "\fBfinish_tasks\fP"
+.br
+.ti -1c
+.RI "\fBconfig\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = 'qthelp'"
+.br
+.ti -1c
+.RI "\fBepilog\fP"
+.br
+.ti -1c
+.RI "bool \fBcopysource\fP = False"
+.br
+.ti -1c
+.RI "list \fBsupported_image_types\fP"
+.br
+.ti -1c
+.RI "bool \fBadd_permalinks\fP = False"
+.br
+.ti -1c
+.RI "bool \fBembedded\fP = True"
+.br
+.ti -1c
+.RI "bool \fBdownload_support\fP = False"
+.br
+.ti -1c
+.RI "bool \fBsearch\fP = False"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = 'html'"
+.br
+.ti -1c
+.RI "str \fBformat\fP = 'html'"
+.br
+.ti -1c
+.RI "\fBepilog\fP = __('The HTML pages are in %(\fBoutdir\fP)s\&.')"
+.br
+.ti -1c
+.RI "\fBdefault_translator_class\fP = \fBHTML5Translator\fP"
+.br
+.ti -1c
+.RI "bool \fBcopysource\fP = True"
+.br
+.ti -1c
+.RI "bool \fBallow_parallel\fP = True"
+.br
+.ti -1c
+.RI "str \fBout_suffix\fP = '\&.html'"
+.br
+.ti -1c
+.RI "str \fBlink_suffix\fP = '\&.html'"
+.br
+.ti -1c
+.RI "Any \fBindexer_format\fP = js_index"
+.br
+.ti -1c
+.RI "bool \fBindexer_dumps_unicode\fP = True"
+.br
+.ti -1c
+.RI "bool \fBhtml_scaled_image_link\fP = True"
+.br
+.ti -1c
+.RI "list \fBsupported_image_types\fP = ['image/svg+xml', 'image/png', 'image/gif', 'image/jpeg']"
+.br
+.ti -1c
+.RI "bool \fBsupported_remote_images\fP = True"
+.br
+.ti -1c
+.RI "bool \fBsupported_data_uri_images\fP = True"
+.br
+.ti -1c
+.RI "str \fBsearchindex_filename\fP = 'searchindex\&.js'"
+.br
+.ti -1c
+.RI "bool \fBadd_permalinks\fP = True"
+.br
+.ti -1c
+.RI "bool \fBallow_sharp_as_current_path\fP = True"
+.br
+.ti -1c
+.RI "bool \fBembedded\fP = False"
+.br
+.ti -1c
+.RI "bool \fBsearch\fP = True"
+.br
+.ti -1c
+.RI "bool \fBuse_index\fP = False"
+.br
+.ti -1c
+.RI "bool \fBdownload_support\fP = True"
+.br
+.ti -1c
+.RI "str \fBimgpath\fP = ''"
+.br
+.ti -1c
+.RI "list \fBdomain_indices\fP = []"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBsphinx\&.builders\&.Builder\fP
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = ''"
+.br
+.ti -1c
+.RI "str \fBformat\fP = ''"
+.br
+.ti -1c
+.RI "str \fBepilog\fP = ''"
+.br
+.ti -1c
+.RI "type \fBdefault_translator_class\fP [nodes\&.NodeVisitor]"
+.br
+.ti -1c
+.RI "str \fBversioning_method\fP = 'none'"
+.br
+.ti -1c
+.RI "bool \fBversioning_compare\fP = False"
+.br
+.ti -1c
+.RI "bool \fBallow_parallel\fP = False"
+.br
+.ti -1c
+.RI "bool \fBuse_message_catalog\fP = True"
+.br
+.ti -1c
+.RI "list \fBsupported_image_types\fP = []"
+.br
+.ti -1c
+.RI "bool \fBsupported_remote_images\fP = False"
+.br
+.ti -1c
+.RI "bool \fBsupported_data_uri_images\fP = False"
+.br
+.ti -1c
+.RI "\fBsrcdir\fP = \fB_StrPathProperty\fP()"
+.br
+.ti -1c
+.RI "\fBconfdir\fP = \fB_StrPathProperty\fP()"
+.br
+.ti -1c
+.RI "\fBoutdir\fP = \fB_StrPathProperty\fP()"
+.br
+.ti -1c
+.RI "\fBdoctreedir\fP = \fB_StrPathProperty\fP()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Member Functions inherited from \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP
+.in +1c
+.ti -1c
+.RI "Path|None \fB_get_translations_js\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[str] \fB_get_style_filenames\fP (self)"
+.br
+.ti -1c
+.RI "str \fB_get_local_toctree\fP (self, str docname, bool collapse=True, **Any kwargs)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBsphinx\&.builders\&.Builder\fP
+.in +1c
+.ti -1c
+.RI "NullTranslations|None \fB_translator\fP (self)"
+.br
+.ti -1c
+.RI "None \fB_read_serial\fP (self, list[str] docnames)"
+.br
+.ti -1c
+.RI "None \fB_read_parallel\fP (self, list[str] docnames, int nproc)"
+.br
+.ti -1c
+.RI "None \fB_write_serial\fP (self, Sequence[str] docnames)"
+.br
+.ti -1c
+.RI "None \fB_write_parallel\fP (self, Sequence[str] docnames, int nproc)"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP
+.in +1c
+.ti -1c
+.RI "\fB_static_dir\fP"
+.br
+.ti -1c
+.RI "\fB_sources_dir\fP"
+.br
+.ti -1c
+.RI "\fB_downloads_dir\fP"
+.br
+.ti -1c
+.RI "\fB_images_dir\fP"
+.br
+.ti -1c
+.RI "\fB_publisher\fP"
+.br
+.ti -1c
+.RI "\fB_css_files\fP"
+.br
+.ti -1c
+.RI "\fB_js_files\fP"
+.br
+.ti -1c
+.RI "\fB_orig_css_files\fP"
+.br
+.ti -1c
+.RI "\fB_orig_js_files\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Builder that also outputs Qt help project, contents and index files\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " list[str] qthelp\&.QtHelpBuilder\&.build_keywords ( self, str title, list[Any] refs, Any subitems)"
+
+.SS " None qthelp\&.QtHelpBuilder\&.build_qhp ( self, str | os\&.PathLike[str] outdir, str outname)"
+
+.SS " list[str] qthelp\&.QtHelpBuilder\&.get_project_files ( self, str | os\&.PathLike[str] outdir)"
+
+.SS " tuple[str, dict[str, str | int | bool]] qthelp\&.QtHelpBuilder\&.get_theme_config ( self)"
+
+.PP
+Reimplemented from \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP\&.
+.SS " None qthelp\&.QtHelpBuilder\&.handle_finish ( self)"
+
+.PP
+Reimplemented from \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP\&.
+.SS " None qthelp\&.QtHelpBuilder\&.init ( self)"
+
+.PP
+.nf
+Load necessary templates and perform initialization\&.  The default
+implementation does nothing\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.builders\&.html\&.StandaloneHTMLBuilder\fP\&.
+.SS " bool qthelp\&.QtHelpBuilder\&.isdocnode ( self, \fBNode\fP node)"
+
+.SS " str qthelp\&.QtHelpBuilder\&.keyword_item ( self, str name, Any ref)"
+
+.SS " list[str] qthelp\&.QtHelpBuilder\&.write_toc ( self, \fBNode\fP node, int  indentlevel = \fC4\fP)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "bool qthelp\&.QtHelpBuilder\&.add_permalinks = False\fC [static]\fP"
+
+.SS "bool qthelp\&.QtHelpBuilder\&.copysource = False\fC [static]\fP"
+
+.SS "bool qthelp\&.QtHelpBuilder\&.download_support = False\fC [static]\fP"
+
+.SS "bool qthelp\&.QtHelpBuilder\&.embedded = True\fC [static]\fP"
+
+.SS "qthelp\&.QtHelpBuilder\&.epilog\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  __('You can now run "qcollectiongenerator" with the \&.qhcp '
+                'project file in %(outdir)s, like this:\\n'
+                '$ qcollectiongenerator %(outdir)s/%(project)s\&.qhcp\\n'
+                'To view the help file:\\n'
+                '$ assistant \-collectionFile %(outdir)s/%(project)s\&.qhc')
+.fi
+
+.SS "qthelp\&.QtHelpBuilder\&.link_suffix"
+
+.SS "str qthelp\&.QtHelpBuilder\&.name = 'qthelp'\fC [static]\fP"
+
+.SS "qthelp\&.QtHelpBuilder\&.out_suffix"
+
+.SS "qthelp\&.QtHelpBuilder\&.outdir"
+
+.SS "bool qthelp\&.QtHelpBuilder\&.search = False\fC [static]\fP"
+
+.SS "list qthelp\&.QtHelpBuilder\&.supported_image_types\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  ['image/svg+xml', 'image/png', 'image/gif',
+                             'image/jpeg']
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

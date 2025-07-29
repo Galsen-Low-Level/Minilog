@@ -1,0 +1,443 @@
+.TH "pip._vendor.pkg_resources.Distribution" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.pkg_resources.Distribution
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBpip\&._vendor\&.pkg_resources\&.DistInfoDistribution\fP, and \fBpip\&._vendor\&.pkg_resources\&.EggInfoDistribution\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, str|None \fBlocation\fP=None, \fB_MetadataType\fP metadata=None, str|None \fBproject_name\fP=None, str|None \fBversion\fP=None, str|None \fBpy_version\fP=\fBPY_MAJOR\fP, str|None \fBplatform\fP=None, int \fBprecedence\fP=\fBEGG_DIST\fP)"
+.br
+.ti -1c
+.RI "\fBDistribution\fP \fBfrom_location\fP (cls, str \fBlocation\fP, StrPath basename, \fB_MetadataType\fP metadata=None, **int kw)"
+.br
+.ti -1c
+.RI "\fBhashcmp\fP (self)"
+.br
+.ti -1c
+.RI "\fB__hash__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__lt__\fP (self, \fBDistribution\fP other)"
+.br
+.ti -1c
+.RI "\fB__le__\fP (self, \fBDistribution\fP other)"
+.br
+.ti -1c
+.RI "\fB__gt__\fP (self, \fBDistribution\fP other)"
+.br
+.ti -1c
+.RI "\fB__ge__\fP (self, \fBDistribution\fP other)"
+.br
+.ti -1c
+.RI "\fB__eq__\fP (self, object other)"
+.br
+.ti -1c
+.RI "\fB__ne__\fP (self, object other)"
+.br
+.ti -1c
+.RI "\fBkey\fP (self)"
+.br
+.ti -1c
+.RI "\fBparsed_version\fP (self)"
+.br
+.ti -1c
+.RI "\fBversion\fP (self)"
+.br
+.ti -1c
+.RI "\fBrequires\fP (self, Iterable[str] \fBextras\fP=())"
+.br
+.ti -1c
+.RI "\fBactivate\fP (self, list[str]|None path=None, bool replace=False)"
+.br
+.ti -1c
+.RI "\fBegg_name\fP (self)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__getattr__\fP (self, attr)"
+.br
+.ti -1c
+.RI "\fB__dir__\fP (self)"
+.br
+.ti -1c
+.RI "\fBfrom_filename\fP (cls, StrPath filename, \fB_MetadataType\fP metadata=None, **int kw)"
+.br
+.ti -1c
+.RI "\fBas_requirement\fP (self)"
+.br
+.ti -1c
+.RI "\fB_ResolvedEntryPoint\fP \fBload_entry_point\fP (self, str group, str name)"
+.br
+.ti -1c
+.RI "dict[str, dict[str, \fBEntryPoint\fP]] \fBget_entry_map\fP (self, None group=None)"
+.br
+.ti -1c
+.RI "dict[str, \fBEntryPoint\fP] \fBget_entry_map\fP (self, str group)"
+.br
+.ti -1c
+.RI "\fBget_entry_map\fP (self, str|None group=None)"
+.br
+.ti -1c
+.RI "\fBget_entry_info\fP (self, str group, str name)"
+.br
+.ti -1c
+.RI "\fBinsert_on\fP (self, list[str] path, loc=None, bool replace=False)"
+.br
+.ti -1c
+.RI "\fBcheck_version_conflict\fP (self)"
+.br
+.ti -1c
+.RI "\fBhas_version\fP (self)"
+.br
+.ti -1c
+.RI "\fBclone\fP (self, **str|int|\fBIResourceProvider\fP|None kw)"
+.br
+.ti -1c
+.RI "\fBextras\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBproject_name\fP"
+.br
+.ti -1c
+.RI "\fBpy_version\fP"
+.br
+.ti -1c
+.RI "\fBplatform\fP"
+.br
+.ti -1c
+.RI "\fBlocation\fP"
+.br
+.ti -1c
+.RI "\fBprecedence\fP"
+.br
+.ti -1c
+.RI "\fBkey\fP"
+.br
+.ti -1c
+.RI "\fBhashcmp\fP"
+.br
+.ti -1c
+.RI "\fBPKG_INFO\fP"
+.br
+.ti -1c
+.RI "\fBversion\fP"
+.br
+.ti -1c
+.RI "\fBparsed_version\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBPKG_INFO\fP = 'PKG\-\fBINFO\fP'"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_reload_version\fP (self)"
+.br
+.ti -1c
+.RI "\fB_forgiving_parsed_version\fP (self)"
+.br
+.ti -1c
+.RI "\fB_dep_map\fP (self)"
+.br
+.ti -1c
+.RI "\fB_build_dep_map\fP (self)"
+.br
+.ti -1c
+.RI "\fB_get_metadata_path_for_display\fP (self, name)"
+.br
+.ti -1c
+.RI "\fB_get_metadata\fP (self, name)"
+.br
+.ti -1c
+.RI "\fB_get_version\fP (self)"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_filter_extras\fP (dict[str|None, list[\fBRequirement\fP]] dm)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_version\fP"
+.br
+.ti -1c
+.RI "\fB_provider\fP"
+.br
+.ti -1c
+.RI "\fB_forgiving_parsed_version\fP"
+.br
+.ti -1c
+.RI "\fB_key\fP"
+.br
+.ti -1c
+.RI "\fB_parsed_version\fP"
+.br
+.ti -1c
+.RI "\fB_ep_map\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Wrap an actual or potential sys\&.path entry w/metadata
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.__init__ ( self, str | None  location = \fCNone\fP, \fB_MetadataType\fP  metadata = \fCNone\fP, str | None  project_name = \fCNone\fP, str | None  version = \fCNone\fP, str | None  py_version = \fC\fBPY_MAJOR\fP\fP, str | None  platform = \fCNone\fP, int  precedence = \fC\fBEGG_DIST\fP\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.__dir__ ( self)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.__eq__ ( self, object other)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.__ge__ ( self, \fBDistribution\fP other)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.__getattr__ ( self,  attr)"
+
+.PP
+.nf
+Delegate all unrecognized public attributes to \&.metadata provider
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.__gt__ ( self, \fBDistribution\fP other)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.__hash__ ( self)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.__le__ ( self, \fBDistribution\fP other)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.__lt__ ( self, \fBDistribution\fP other)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.__ne__ ( self, object other)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.__repr__ ( self)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.__str__ ( self)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&._build_dep_map ( self)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&._dep_map ( self)\fC [protected]\fP"
+
+.PP
+.nf
+A map of extra to its list of (direct) requirements
+for this distribution, including the null extra\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._vendor\&.pkg_resources\&.DistInfoDistribution\fP\&.
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&._filter_extras (dict[str | None, list[\fBRequirement\fP]] dm)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+.nf
+Given a mapping of extras to dependencies, strip off
+environment markers and filter out any dependencies
+not matching the markers\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&._forgiving_parsed_version ( self)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&._get_metadata ( self,  name)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&._get_metadata_path_for_display ( self,  name)\fC [protected]\fP"
+
+.PP
+.nf
+Return the path to the given metadata file, if available\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&._get_version ( self)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&._reload_version ( self)\fC [protected]\fP"
+
+.PP
+Reimplemented in \fBpip\&._vendor\&.pkg_resources\&.EggInfoDistribution\fP\&.
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.activate ( self, list[str] | None  path = \fCNone\fP, bool  replace = \fCFalse\fP)"
+
+.PP
+.nf
+Ensure distribution is importable on `path` (default=sys\&.path)
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.as_requirement ( self)"
+
+.PP
+.nf
+Return a ``Requirement`` that matches this distribution exactly
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.check_version_conflict ( self)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.clone ( self, **str | int | \fBIResourceProvider\fP | None kw)"
+
+.PP
+.nf
+Copy this distribution, substituting in any changed keyword args
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.egg_name ( self)"
+
+.PP
+.nf
+Return what this distribution's standard \&.egg filename should be
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.extras ( self)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.from_filename ( cls, StrPath filename, \fB_MetadataType\fP  metadata = \fCNone\fP, **int kw)"
+
+.SS " \fBDistribution\fP pip\&._vendor\&.pkg_resources\&.Distribution\&.from_location ( cls, str location, StrPath basename, \fB_MetadataType\fP  metadata = \fCNone\fP, **int kw)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.get_entry_info ( self, str group, str name)"
+
+.PP
+.nf
+Return the EntryPoint object for `group`+`name`, or ``None``
+.fi
+.PP
+ 
+.SS " dict[str, dict[str, \fBEntryPoint\fP]] pip\&._vendor\&.pkg_resources\&.Distribution\&.get_entry_map ( self, None  group = \fCNone\fP)"
+
+.SS " dict[str, \fBEntryPoint\fP] pip\&._vendor\&.pkg_resources\&.Distribution\&.get_entry_map ( self, str group)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.get_entry_map ( self, str | None  group = \fCNone\fP)"
+
+.PP
+.nf
+Return the entry point map for `group`, or the full entry map
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.has_version ( self)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.hashcmp ( self)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.insert_on ( self, list[str] path,  loc = \fCNone\fP, bool  replace = \fCFalse\fP)"
+
+.PP
+.nf
+Ensure self\&.location is on path
+
+If replace=False (default):
+    - If location is already in path anywhere, do nothing\&.
+    - Else:
+      - If it's an egg and its parent directory is on path,
+        insert just ahead of the parent\&.
+      - Else: add to the end of path\&.
+If replace=True:
+    - If location is already on path anywhere (not eggs)
+      or higher priority than its parent (eggs)
+      do nothing\&.
+    - Else:
+      - If it's an egg and its parent directory is on path,
+        insert just ahead of the parent,
+        removing any lower-priority entries\&.
+      - Else: add it to the front of path\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.key ( self)"
+
+.SS " \fB_ResolvedEntryPoint\fP pip\&._vendor\&.pkg_resources\&.Distribution\&.load_entry_point ( self, str group, str name)"
+
+.PP
+.nf
+Return the `name` entry point of `group` or raise ImportError
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.parsed_version ( self)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.requires ( self, Iterable[str]  extras = \fC()\fP)"
+
+.PP
+.nf
+List of Requirements needed for this distro if `extras` are used
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.version ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&._ep_map\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&._forgiving_parsed_version\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&._key\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&._parsed_version\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&._provider\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&._version\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.hashcmp"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.key"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.location"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.parsed_version"
+
+.SS "str pip\&._vendor\&.pkg_resources\&.Distribution\&.PKG_INFO = 'PKG\-\fBINFO\fP'\fC [static]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.PKG_INFO"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.platform"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.precedence"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.project_name"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.py_version"
+
+.SS "pip\&._vendor\&.pkg_resources\&.Distribution\&.version"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

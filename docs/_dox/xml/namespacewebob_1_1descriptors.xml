@@ -1,0 +1,625 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespacewebob_1_1descriptors" kind="namespace" language="Python">
+    <compoundname>webob::descriptors</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacewebob_1_1descriptors_1a708fdc3436a2ff93efd9a377346341cc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>webob::descriptors.CHARSET_RE</definition>
+        <argsstring></argsstring>
+        <name>CHARSET_RE</name>
+        <qualifiedname>webob.descriptors.CHARSET_RE</qualifiedname>
+        <initializer>=  re.compile(r&apos;;\s*charset=([^;]*)&apos;, re.I)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="31" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacewebob_1_1descriptors_1ad200d7c26650d5b5cf77c861826a33c6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>webob::descriptors.SCHEME_RE</definition>
+        <argsstring></argsstring>
+        <name>SCHEME_RE</name>
+        <qualifiedname>webob.descriptors.SCHEME_RE</qualifiedname>
+        <initializer>=  re.compile(r&apos;^[a-z]+:&apos;, re.I)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="32" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacewebob_1_1descriptors_1a69196951daeb4bc6effec6f7ec127cdd" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>webob::descriptors._not_given</definition>
+        <argsstring></argsstring>
+        <name>_not_given</name>
+        <qualifiedname>webob.descriptors._not_given</qualifiedname>
+        <initializer>=  object()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="35" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacewebob_1_1descriptors_1ad4dde60fbf62c5f52021df086658364b" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>webob::descriptors._rx_etag</definition>
+        <argsstring></argsstring>
+        <name>_rx_etag</name>
+        <qualifiedname>webob.descriptors._rx_etag</qualifiedname>
+        <initializer>=  re.compile(r&apos;(?:^|\s)(W/)?&quot;((?:\\&quot;|.)*?)&quot;&apos;)</initializer>
+        <briefdescription>
+<para>Converter functions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="213" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacewebob_1_1descriptors_1a22de9100ad52ec02821a0664a146e2dc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>webob::descriptors.serialize_int</definition>
+        <argsstring></argsstring>
+        <name>serialize_int</name>
+        <qualifiedname>webob.descriptors.serialize_int</qualifiedname>
+        <initializer>=  str</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="281" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="281" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacewebob_1_1descriptors_1a85b023c8d702e75841f64a6b04f61aa6" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>webob::descriptors._rx_auth_param</definition>
+        <argsstring></argsstring>
+        <name>_rx_auth_param</name>
+        <qualifiedname>webob.descriptors._rx_auth_param</qualifiedname>
+        <initializer>=  re.compile(r&apos;([a-z]+)[ \t]*=[ \t]*(&quot;.*?&quot;|[^,]*?)[ \t]*(?:\Z|, *)&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="309" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="309" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacewebob_1_1descriptors_1a10b6a8997b88689911469193fdbb39c2" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>webob::descriptors.known_auth_schemes</definition>
+        <argsstring></argsstring>
+        <name>known_auth_schemes</name>
+        <qualifiedname>webob.descriptors.known_auth_schemes</qualifiedname>
+        <initializer>=  [&apos;Basic&apos;, &apos;Digest&apos;, &apos;WSSE&apos;, &apos;HMACDigest&apos;, &apos;GoogleLogin&apos;,
+                      &apos;Cookie&apos;, &apos;OpenID&apos;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="318" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="318" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacewebob_1_1descriptors_1a8e647cc0650e1a52f2743f0cbb6b896f" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>webob::descriptors._authorization</definition>
+        <argsstring></argsstring>
+        <name>_authorization</name>
+        <qualifiedname>webob.descriptors._authorization</qualifiedname>
+        <initializer>=  namedtuple(&apos;Authorization&apos;, [&apos;authtype&apos;, &apos;params&apos;])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="322" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="322" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1acb19a8466d4591eeef266490f08aae5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.environ_getter</definition>
+        <argsstring>(key, default=_not_given, rfc_section=None)</argsstring>
+        <name>environ_getter</name>
+        <qualifiedname>webob.descriptors.environ_getter</qualifiedname>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+        </param>
+        <param>
+          <type>default</type>
+          <defname>default</defname>
+          <defval><ref refid="namespacewebob_1_1descriptors_1a69196951daeb4bc6effec6f7ec127cdd" kindref="member">_not_given</ref></defval>
+        </param>
+        <param>
+          <type>rfc_section</type>
+          <defname>rfc_section</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="37" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="37" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1a49df4dfb841c7bc3479f93590858b96c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.environ_decoder</definition>
+        <argsstring>(key, default=_not_given, rfc_section=None, encattr=None)</argsstring>
+        <name>environ_decoder</name>
+        <qualifiedname>webob.descriptors.environ_decoder</qualifiedname>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+        </param>
+        <param>
+          <type>default</type>
+          <defname>default</defname>
+          <defval><ref refid="namespacewebob_1_1descriptors_1a69196951daeb4bc6effec6f7ec127cdd" kindref="member">_not_given</ref></defval>
+        </param>
+        <param>
+          <type>rfc_section</type>
+          <defname>rfc_section</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>encattr</type>
+          <defname>encattr</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="62" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="63" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1aa5d184a5142ae944b6b61d8a1eccbab8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.upath_property</definition>
+        <argsstring>(key)</argsstring>
+        <name>upath_property</name>
+        <qualifiedname>webob.descriptors.upath_property</qualifiedname>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="87" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="87" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1afdc970593839be3ba0ed84f6228beba5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.deprecated_property</definition>
+        <argsstring>(attr, name, text, version)</argsstring>
+        <name>deprecated_property</name>
+        <qualifiedname>webob.descriptors.deprecated_property</qualifiedname>
+        <param>
+          <type>attr</type>
+          <defname>attr</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>version</type>
+          <defname>version</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Wraps a descriptor, with a deprecation warning or error
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="108" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="108" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1a5d47c56d7619d15555a64ac0ea8fe576" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.header_getter</definition>
+        <argsstring>(header, rfc_section)</argsstring>
+        <name>header_getter</name>
+        <qualifiedname>webob.descriptors.header_getter</qualifiedname>
+        <param>
+          <type>header</type>
+          <defname>header</defname>
+        </param>
+        <param>
+          <type>rfc_section</type>
+          <defname>rfc_section</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="132" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="132" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1a8379e2ac6f9b8c13ede8a7e066b26902" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.converter</definition>
+        <argsstring>(prop, parse, serialize, convert_name=None)</argsstring>
+        <name>converter</name>
+        <qualifiedname>webob.descriptors.converter</qualifiedname>
+        <param>
+          <type>prop</type>
+          <defname>prop</defname>
+        </param>
+        <param>
+          <type>parse</type>
+          <defname>parse</defname>
+        </param>
+        <param>
+          <type>serialize</type>
+          <defname>serialize</defname>
+        </param>
+        <param>
+          <type>convert_name</type>
+          <defname>convert_name</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="159" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="159" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1a6d7dc319b3f6f02203e695a1e01349a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.list_header</definition>
+        <argsstring>(header, rfc_section)</argsstring>
+        <name>list_header</name>
+        <qualifiedname>webob.descriptors.list_header</qualifiedname>
+        <param>
+          <type>header</type>
+          <defname>header</defname>
+        </param>
+        <param>
+          <type>rfc_section</type>
+          <defname>rfc_section</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="176" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="176" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1ad002eb569370f26cc360117ff521e477" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.parse_list</definition>
+        <argsstring>(value)</argsstring>
+        <name>parse_list</name>
+        <qualifiedname>webob.descriptors.parse_list</qualifiedname>
+        <param>
+          <type>value</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="180" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="180" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1a53c46c86683e6f4e49bde10543c40648" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.serialize_list</definition>
+        <argsstring>(value)</argsstring>
+        <name>serialize_list</name>
+        <qualifiedname>webob.descriptors.serialize_list</qualifiedname>
+        <param>
+          <type>value</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="185" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="185" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1abfebd507a71812539bb4eb33df874959" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.converter_date</definition>
+        <argsstring>(prop)</argsstring>
+        <name>converter_date</name>
+        <qualifiedname>webob.descriptors.converter_date</qualifiedname>
+        <param>
+          <type>prop</type>
+          <defname>prop</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="194" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="194" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1aa659ce0ef6cbd784ffecb7632c638343" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.date_header</definition>
+        <argsstring>(header, rfc_section)</argsstring>
+        <name>date_header</name>
+        <qualifiedname>webob.descriptors.date_header</qualifiedname>
+        <param>
+          <type>header</type>
+          <defname>header</defname>
+        </param>
+        <param>
+          <type>rfc_section</type>
+          <defname>rfc_section</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="197" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="197" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1a5c9ae6e3941302a6454fe08d79020ea7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.parse_etag_response</definition>
+        <argsstring>(value, strong=False)</argsstring>
+        <name>parse_etag_response</name>
+        <qualifiedname>webob.descriptors.parse_etag_response</qualifiedname>
+        <param>
+          <type>value</type>
+          <defname>value</defname>
+        </param>
+        <param>
+          <type>strong</type>
+          <defname>strong</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Parse a response ETag.
+See:
+    * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.19
+    * http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.11
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="215" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="215" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1a3ffe04b5436e65d07a16ab4fdf8eb1ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.serialize_etag_response</definition>
+        <argsstring>(value)</argsstring>
+        <name>serialize_etag_response</name>
+        <qualifiedname>webob.descriptors.serialize_etag_response</qualifiedname>
+        <param>
+          <type>value</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="234" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="234" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1a1b62c173d4de17da36c5eb8b424a2067" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.serialize_if_range</definition>
+        <argsstring>(value)</argsstring>
+        <name>serialize_if_range</name>
+        <qualifiedname>webob.descriptors.serialize_if_range</qualifiedname>
+        <param>
+          <type>value</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="247" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="247" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1a8153d7a12f6e5c07409edf932173baae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.parse_range</definition>
+        <argsstring>(value)</argsstring>
+        <name>parse_range</name>
+        <qualifiedname>webob.descriptors.parse_range</qualifiedname>
+        <param>
+          <type>value</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="253" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="253" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1a73bf9d83dc19afdd131fbd735f536965" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.serialize_range</definition>
+        <argsstring>(value)</argsstring>
+        <name>serialize_range</name>
+        <qualifiedname>webob.descriptors.serialize_range</qualifiedname>
+        <param>
+          <type>value</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="259" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="259" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1a083fd72c4bb4f96010d8de020ebc65af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.parse_int</definition>
+        <argsstring>(value)</argsstring>
+        <name>parse_int</name>
+        <qualifiedname>webob.descriptors.parse_int</qualifiedname>
+        <param>
+          <type>value</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="268" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="268" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1ade3e423f737534d8f06573a0046e6c19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.parse_int_safe</definition>
+        <argsstring>(value)</argsstring>
+        <name>parse_int_safe</name>
+        <qualifiedname>webob.descriptors.parse_int_safe</qualifiedname>
+        <param>
+          <type>value</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="273" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="273" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1ac50f45ef84fb05dbbcca59b19dcc6444" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.parse_content_range</definition>
+        <argsstring>(value)</argsstring>
+        <name>parse_content_range</name>
+        <qualifiedname>webob.descriptors.parse_content_range</qualifiedname>
+        <param>
+          <type>value</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="283" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="283" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1a84c9008c061078bac28a833a5860c6e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.serialize_content_range</definition>
+        <argsstring>(value)</argsstring>
+        <name>serialize_content_range</name>
+        <qualifiedname>webob.descriptors.serialize_content_range</qualifiedname>
+        <param>
+          <type>value</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="289" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="289" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1ae7d4dd5392604bc53dfc8b47fce17135" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.parse_auth_params</definition>
+        <argsstring>(params)</argsstring>
+        <name>parse_auth_params</name>
+        <qualifiedname>webob.descriptors.parse_auth_params</qualifiedname>
+        <param>
+          <type>params</type>
+          <defname>params</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="311" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="311" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1a76d0b889f5b04b110956a61a668958e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.parse_auth</definition>
+        <argsstring>(val)</argsstring>
+        <name>parse_auth</name>
+        <qualifiedname>webob.descriptors.parse_auth</qualifiedname>
+        <param>
+          <type>val</type>
+          <defname>val</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="324" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="324" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewebob_1_1descriptors_1ad5de19c88e9ba06f8bc8b1618a489d6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.descriptors.serialize_auth</definition>
+        <argsstring>(val)</argsstring>
+        <name>serialize_auth</name>
+        <qualifiedname>webob.descriptors.serialize_auth</qualifiedname>
+        <param>
+          <type>val</type>
+          <defname>val</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="336" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" bodystart="336" bodyend="344"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/descriptors.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

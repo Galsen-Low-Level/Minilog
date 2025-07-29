@@ -1,0 +1,68 @@
+.TH "md__2home_2umar_2Desktop_2WorkShop_2GLL_2centry_2README" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__2home_2umar_2Desktop_2WorkShop_2GLL_2centry_2README \- CENTRY 
+.PP
+ 
+.PP
+.PP
+.nf
++ For the moment, this is an experimental phase, a proof of concept, using Docker as a combaye\&.
++ But in the future, we're going to extend it to other types of containerization, such as LXC Chroot and others\&. 
+.fi
+.PP
+.SS "What is Centry"
+Centry is a simple, lightweight program that \fBlets you access the inside of a running Docker container\fP just like in \fIinteractive tty mode\fP\&. The only prerequisite is to have Docker already available on your system\&.
+.SS "Quick demo"
+.PP
+.nf
+#  center  <short\-id\-container{2\-3}> 
+.fi
+.PP
+ Exemple : 
+.PP
+.nf
+$> docker ps 
+CONTAINER ID   IMAGE                     COMMAND           CREATED        STATUS        PORTS     NAMES
+c3784c6459b9   <image>                   "sleep 9999999"   24 hours ago   Up 24 hours            festive_ramanujan
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+
+#> center c37   
+
+.fi
+.PP
+ However ,If no arguments are supplied , an interface (TUI) will be proposed, allowing you to choose your target use <WASD> to move up and down
+.PP
+.PP
+.nf
+# centry
+.fi
+.PP
+ 
+.PP
+\fIFor Any issue happening after centry tui type \fCreset\fP to restore your terminal\fP
+.SS "COMPILE"
+\fBWe strongly recommend using the \fCMeson Build System\fP to build the project\&.\fP
+.PP
+.PP
+.nf
+$>  meson setup build 
+$>  meson compile \-C build 
+$>  meson install \-C build  #To install localy 
+.fi
+.PP
+.PP
+To uninstall 
+.PP
+.nf
+#> ninja uninstall \-C build 
+
+.fi
+.PP
+.SS "NOTE :"
+If you notice any problems, please open an issue and we will be happy to correct them\&. If you have the opportunity to do so, we encourage you to submit a PR\&.
+.PP
+Thank you in advance for your cooperation\&.
+.PP
+Appreciate Computer at all levels 🇸🇳 

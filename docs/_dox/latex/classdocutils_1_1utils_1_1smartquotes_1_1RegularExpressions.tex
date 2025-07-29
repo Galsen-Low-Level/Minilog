@@ -1,0 +1,142 @@
+\doxysection{docutils.\+utils.\+smartquotes.\+Regular\+Expressions Class Reference}
+\hypertarget{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions}{}\label{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions}\index{docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a3ddb3f5e2a249c1f30f08028d99f039c}{START\+\_\+\+SINGLE}} = re.\+compile(r"{}\texorpdfstring{$^\wedge$}{\string^}\textquotesingle{}(?=\%s\textbackslash{}\textbackslash{}B)"{} \% \+\_\+\+CH\+\_\+\+CLASSES\mbox{[}\textquotesingle{}punct\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a6638f21651696ae3004eae2d34332a95}{START\+\_\+\+DOUBLE}} = re.\+compile(r\textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}"{}(?=\%s\textbackslash{}\textbackslash{}B)\textquotesingle{} \% \mbox{\hyperlink{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a52a2e988465daf9e48c3a03916c1220f}{\+\_\+\+CH\+\_\+\+CLASSES}}\mbox{[}\textquotesingle{}punct\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a10c2a2930a82d2a5b85c9b93a8e89b59}{ADJACENT\+\_\+1}} = re.\+compile(\textquotesingle{}"{}\textbackslash{}\textquotesingle{}(?=\textbackslash{}\textbackslash{}w)\textquotesingle{})
+\item 
+\mbox{\hyperlink{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_ace13911173b4c341ba907abb0965a1b2}{ADJACENT\+\_\+2}} = re.\+compile(\textquotesingle{}\textbackslash{}\textquotesingle{}"{}(?=\textbackslash{}\textbackslash{}w)\textquotesingle{})
+\item 
+\mbox{\hyperlink{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_ac62b0012417968159ea689d89beadf1e}{OPEN\+\_\+\+SINGLE}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a4da87290bd3a7f5c5b9b7906f5d127a4}{OPEN\+\_\+\+DOUBLE}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_afdb7b74952b2d7d41a1cd1693fcaf61f}{DECADE}} = re.\+compile(r"{}\textquotesingle{}(?=\textbackslash{}d\{2\}s)"{})
+\item 
+\mbox{\hyperlink{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a092514ffc07d0bb7b49c1801e422312c}{APOSTROPHE}} = re.\+compile(r"{}(?$<$=(\textbackslash{}w\texorpdfstring{$\vert$}{|}\textbackslash{}d))\textquotesingle{}(?=\textbackslash{}w)"{})
+\item 
+\mbox{\hyperlink{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_ad2c85061c749ea6e0eaf3eeee097447c}{OPENING\+\_\+\+SECONDARY}} = re.\+compile( \% \mbox{\hyperlink{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a52a2e988465daf9e48c3a03916c1220f}{\+\_\+\+CH\+\_\+\+CLASSES}}, re.\+VERBOSE)
+\item 
+\mbox{\hyperlink{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a5e3f10b93b84a47813edef63bfc97654}{CLOSING\+\_\+\+SECONDARY}} = re.\+compile(r"{}(?$<$!\textbackslash{}s)\textquotesingle{}"{})
+\item 
+\mbox{\hyperlink{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a4487db9007486630adea7f5832c354ea}{OPENING\+\_\+\+PRIMARY}} = re.\+compile( \% \mbox{\hyperlink{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a52a2e988465daf9e48c3a03916c1220f}{\+\_\+\+CH\+\_\+\+CLASSES}}, re.\+VERBOSE)
+\item 
+\mbox{\hyperlink{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a6333587119acc18fdd814bf47ad7dad9}{CLOSING\+\_\+\+PRIMARY}} = re.\+compile(, re.\+VERBOSE)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+dict \mbox{\hyperlink{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a52a2e988465daf9e48c3a03916c1220f}{\+\_\+\+CH\+\_\+\+CLASSES}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a52a2e988465daf9e48c3a03916c1220f}\label{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a52a2e988465daf9e48c3a03916c1220f} 
+\index{docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}!\_CH\_CLASSES@{\_CH\_CLASSES}}
+\index{\_CH\_CLASSES@{\_CH\_CLASSES}!docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}}
+\doxysubsubsection{\texorpdfstring{\_CH\_CLASSES}{\_CH\_CLASSES}}
+{\footnotesize\ttfamily dict docutils.\+utils.\+smartquotes.\+Regular\+Expressions.\+\_\+\+CH\+\_\+\+CLASSES\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ \{\textcolor{stringliteral}{'open'}:\ \textcolor{stringliteral}{'[([\{]'},\ \ \ \ \textcolor{comment}{\#\ opening\ braces}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'close'}:\ \textcolor{stringliteral}{r'[\string^\(\backslash\)s]'},\ \ \textcolor{comment}{\#\ everything\ except\ whitespace}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'punct'}:\ ,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'dash'}:\ \textcolor{stringliteral}{r'[-\/–—]'},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'sep'}:\ \textcolor{stringliteral}{'[\(\backslash\)\(\backslash\)s\(\backslash\)u200B\(\backslash\)u200C]'},\ \ \textcolor{comment}{\#\ Whitespace,\ ZWSP,\ ZWNJ}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a10c2a2930a82d2a5b85c9b93a8e89b59}\label{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a10c2a2930a82d2a5b85c9b93a8e89b59} 
+\index{docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}!ADJACENT\_1@{ADJACENT\_1}}
+\index{ADJACENT\_1@{ADJACENT\_1}!docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}}
+\doxysubsubsection{\texorpdfstring{ADJACENT\_1}{ADJACENT\_1}}
+{\footnotesize\ttfamily docutils.\+utils.\+smartquotes.\+Regular\+Expressions.\+ADJACENT\+\_\+1 = re.\+compile(\textquotesingle{}"{}\textbackslash{}\textquotesingle{}(?=\textbackslash{}\textbackslash{}w)\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_ace13911173b4c341ba907abb0965a1b2}\label{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_ace13911173b4c341ba907abb0965a1b2} 
+\index{docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}!ADJACENT\_2@{ADJACENT\_2}}
+\index{ADJACENT\_2@{ADJACENT\_2}!docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}}
+\doxysubsubsection{\texorpdfstring{ADJACENT\_2}{ADJACENT\_2}}
+{\footnotesize\ttfamily docutils.\+utils.\+smartquotes.\+Regular\+Expressions.\+ADJACENT\+\_\+2 = re.\+compile(\textquotesingle{}\textbackslash{}\textquotesingle{}"{}(?=\textbackslash{}\textbackslash{}w)\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a092514ffc07d0bb7b49c1801e422312c}\label{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a092514ffc07d0bb7b49c1801e422312c} 
+\index{docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}!APOSTROPHE@{APOSTROPHE}}
+\index{APOSTROPHE@{APOSTROPHE}!docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}}
+\doxysubsubsection{\texorpdfstring{APOSTROPHE}{APOSTROPHE}}
+{\footnotesize\ttfamily docutils.\+utils.\+smartquotes.\+Regular\+Expressions.\+APOSTROPHE = re.\+compile(r"{}(?$<$=(\textbackslash{}w\texorpdfstring{$\vert$}{|}\textbackslash{}d))\textquotesingle{}(?=\textbackslash{}w)"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a6333587119acc18fdd814bf47ad7dad9}\label{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a6333587119acc18fdd814bf47ad7dad9} 
+\index{docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}!CLOSING\_PRIMARY@{CLOSING\_PRIMARY}}
+\index{CLOSING\_PRIMARY@{CLOSING\_PRIMARY}!docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}}
+\doxysubsubsection{\texorpdfstring{CLOSING\_PRIMARY}{CLOSING\_PRIMARY}}
+{\footnotesize\ttfamily docutils.\+utils.\+smartquotes.\+Regular\+Expressions.\+CLOSING\+\_\+\+PRIMARY = re.\+compile(, re.\+VERBOSE)\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a5e3f10b93b84a47813edef63bfc97654}\label{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a5e3f10b93b84a47813edef63bfc97654} 
+\index{docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}!CLOSING\_SECONDARY@{CLOSING\_SECONDARY}}
+\index{CLOSING\_SECONDARY@{CLOSING\_SECONDARY}!docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}}
+\doxysubsubsection{\texorpdfstring{CLOSING\_SECONDARY}{CLOSING\_SECONDARY}}
+{\footnotesize\ttfamily docutils.\+utils.\+smartquotes.\+Regular\+Expressions.\+CLOSING\+\_\+\+SECONDARY = re.\+compile(r"{}(?$<$!\textbackslash{}s)\textquotesingle{}"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_afdb7b74952b2d7d41a1cd1693fcaf61f}\label{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_afdb7b74952b2d7d41a1cd1693fcaf61f} 
+\index{docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}!DECADE@{DECADE}}
+\index{DECADE@{DECADE}!docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}}
+\doxysubsubsection{\texorpdfstring{DECADE}{DECADE}}
+{\footnotesize\ttfamily docutils.\+utils.\+smartquotes.\+Regular\+Expressions.\+DECADE = re.\+compile(r"{}\textquotesingle{}(?=\textbackslash{}d\{2\}s)"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a4da87290bd3a7f5c5b9b7906f5d127a4}\label{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a4da87290bd3a7f5c5b9b7906f5d127a4} 
+\index{docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}!OPEN\_DOUBLE@{OPEN\_DOUBLE}}
+\index{OPEN\_DOUBLE@{OPEN\_DOUBLE}!docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}}
+\doxysubsubsection{\texorpdfstring{OPEN\_DOUBLE}{OPEN\_DOUBLE}}
+{\footnotesize\ttfamily docutils.\+utils.\+smartquotes.\+Regular\+Expressions.\+OPEN\+\_\+\+DOUBLE\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ re.compile(\textcolor{stringliteral}{r'(\%(open)s|\%(dash)s)"{}(?=\%(punct)s?\ )'}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \%\ \_CH\_CLASSES)}
+
+\end{DoxyCode}
+\Hypertarget{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_ac62b0012417968159ea689d89beadf1e}\label{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_ac62b0012417968159ea689d89beadf1e} 
+\index{docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}!OPEN\_SINGLE@{OPEN\_SINGLE}}
+\index{OPEN\_SINGLE@{OPEN\_SINGLE}!docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}}
+\doxysubsubsection{\texorpdfstring{OPEN\_SINGLE}{OPEN\_SINGLE}}
+{\footnotesize\ttfamily docutils.\+utils.\+smartquotes.\+Regular\+Expressions.\+OPEN\+\_\+\+SINGLE\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ re.compile(\textcolor{stringliteral}{r"{}(\%(open)s|\%(dash)s)'(?=\%(punct)s?\ )"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \%\ \_CH\_CLASSES)}
+
+\end{DoxyCode}
+\Hypertarget{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a4487db9007486630adea7f5832c354ea}\label{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a4487db9007486630adea7f5832c354ea} 
+\index{docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}!OPENING\_PRIMARY@{OPENING\_PRIMARY}}
+\index{OPENING\_PRIMARY@{OPENING\_PRIMARY}!docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}}
+\doxysubsubsection{\texorpdfstring{OPENING\_PRIMARY}{OPENING\_PRIMARY}}
+{\footnotesize\ttfamily docutils.\+utils.\+smartquotes.\+Regular\+Expressions.\+OPENING\+\_\+\+PRIMARY = re.\+compile( \% \mbox{\hyperlink{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a52a2e988465daf9e48c3a03916c1220f}{\+\_\+\+CH\+\_\+\+CLASSES}}, re.\+VERBOSE)\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_ad2c85061c749ea6e0eaf3eeee097447c}\label{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_ad2c85061c749ea6e0eaf3eeee097447c} 
+\index{docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}!OPENING\_SECONDARY@{OPENING\_SECONDARY}}
+\index{OPENING\_SECONDARY@{OPENING\_SECONDARY}!docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}}
+\doxysubsubsection{\texorpdfstring{OPENING\_SECONDARY}{OPENING\_SECONDARY}}
+{\footnotesize\ttfamily docutils.\+utils.\+smartquotes.\+Regular\+Expressions.\+OPENING\+\_\+\+SECONDARY = re.\+compile( \% \mbox{\hyperlink{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a52a2e988465daf9e48c3a03916c1220f}{\+\_\+\+CH\+\_\+\+CLASSES}}, re.\+VERBOSE)\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a6638f21651696ae3004eae2d34332a95}\label{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a6638f21651696ae3004eae2d34332a95} 
+\index{docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}!START\_DOUBLE@{START\_DOUBLE}}
+\index{START\_DOUBLE@{START\_DOUBLE}!docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}}
+\doxysubsubsection{\texorpdfstring{START\_DOUBLE}{START\_DOUBLE}}
+{\footnotesize\ttfamily docutils.\+utils.\+smartquotes.\+Regular\+Expressions.\+START\+\_\+\+DOUBLE = re.\+compile(r\textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}"{}(?=\%s\textbackslash{}\textbackslash{}B)\textquotesingle{} \% \mbox{\hyperlink{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a52a2e988465daf9e48c3a03916c1220f}{\+\_\+\+CH\+\_\+\+CLASSES}}\mbox{[}\textquotesingle{}punct\textquotesingle{}\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a3ddb3f5e2a249c1f30f08028d99f039c}\label{classdocutils_1_1utils_1_1smartquotes_1_1RegularExpressions_a3ddb3f5e2a249c1f30f08028d99f039c} 
+\index{docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}!START\_SINGLE@{START\_SINGLE}}
+\index{START\_SINGLE@{START\_SINGLE}!docutils.utils.smartquotes.RegularExpressions@{docutils.utils.smartquotes.RegularExpressions}}
+\doxysubsubsection{\texorpdfstring{START\_SINGLE}{START\_SINGLE}}
+{\footnotesize\ttfamily docutils.\+utils.\+smartquotes.\+Regular\+Expressions.\+START\+\_\+\+SINGLE = re.\+compile(r"{}\texorpdfstring{$^\wedge$}{\string^}\textquotesingle{}(?=\%s\textbackslash{}\textbackslash{}B)"{} \% \+\_\+\+CH\+\_\+\+CLASSES\mbox{[}\textquotesingle{}punct\textquotesingle{}\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/docutils/utils/\mbox{\hyperlink{smartquotes_8py}{smartquotes.\+py}}\end{DoxyCompactItemize}

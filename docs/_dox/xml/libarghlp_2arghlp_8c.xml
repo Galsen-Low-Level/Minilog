@@ -1,0 +1,521 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="libarghlp_2arghlp_8c" kind="file" language="C++">
+    <compoundname>arghlp.c</compoundname>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes local="no">libgen.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">ctype.h</includes>
+    <includes refid="libarghlp_2arghlp_8h" local="yes">arghlp.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c</label>
+        <link refid="libarghlp_2arghlp_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>arghlp.h</label>
+        <link refid="libarghlp_2arghlp_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>ctype.h</label>
+      </node>
+      <node id="9">
+        <label>getopt.h</label>
+      </node>
+      <node id="4">
+        <label>libgen.h</label>
+      </node>
+      <node id="5">
+        <label>stdio.h</label>
+      </node>
+      <node id="2">
+        <label>stdlib.h</label>
+      </node>
+      <node id="6">
+        <label>string.h</label>
+      </node>
+      <node id="3">
+        <label>unistd.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct____flags__t" prot="public">__flags_t</innerclass>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="libarghlp_2arghlp_8c_1afeeaad3bd76fc89a5aa1867b278556b5" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char __usage[USAGE_BUFF]</definition>
+        <argsstring>[USAGE_BUFF]</argsstring>
+        <name>__usage</name>
+        <initializer>= {0}</initializer>
+        <briefdescription>
+<para>Opaque type of flags. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" line="22" column="6" bodyfile="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" bodystart="22" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="libarghlp_2arghlp_8c_1a8204888e047645546da90e30dba4bea8" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char __shopt[MAX_BUFF]</definition>
+        <argsstring>[MAX_BUFF]</argsstring>
+        <name>__shopt</name>
+        <initializer>={0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" line="23" column="6" bodyfile="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" bodystart="23" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="variable" id="libarghlp_2arghlp_8c_1a85f7bea2c17145feaba5eba7c7e7ccca" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int __nargp</definition>
+        <argsstring></argsstring>
+        <name>__nargp</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" line="24" column="5" bodyfile="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="libarghlp_2arghlp_8c_1abca8ea6c078d042d8266d9669597c11d" prot="public" static="no" mutable="no">
+        <type>struct option</type>
+        <definition>struct option __optl[MAX_BUFF]</definition>
+        <argsstring>[MAX_BUFF]</argsstring>
+        <name>__optl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" line="26" column="13" bodyfile="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" bodystart="26" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="libarghlp_2arghlp_8c_1a7873e167c5935f8cf52eec8a10c4e9a6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>static char * get_program_basename</definition>
+        <argsstring>(char *const *argvector)</argsstring>
+        <name>get_program_basename</name>
+        <param>
+          <type>char *const *</type>
+          <declname>argvector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" line="33" column="14" bodyfile="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="libarghlp_2arghlp_8c_1a111b57534967bb581d3e15547741abc1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>static void * set_option</definition>
+        <argsstring>(char *restrict shortopt, int has_arg)</argsstring>
+        <name>set_option</name>
+        <param>
+          <type>char *restrict</type>
+          <declname>shortopt</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>has_arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" line="38" column="15" bodyfile="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="libarghlp_2arghlp_8c_1a1f0268ff8c0e4e2f24d3802f4ab7fe79" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>static char * build_short_option</definition>
+        <argsstring>(const struct optionx *optxlist)</argsstring>
+        <name>build_short_option</name>
+        <param>
+          <type>const struct <ref refid="structoptionx" kindref="compound">optionx</ref> *</type>
+          <declname>optxlist</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>just used to easy build of <ndash/>longflags -l</para>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" line="42" column="14" bodyfile="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" bodystart="42" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="libarghlp_2arghlp_8c_1aeef2b64a1f05bc408887f4ea8235e5af" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void build_usage_helper</definition>
+        <argsstring>(char *flags, const char *flag_description)</argsstring>
+        <name>build_usage_helper</name>
+        <param>
+          <type>char *</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>flag_description</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" line="93" column="13" bodyfile="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" bodystart="93" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="libarghlp_2arghlp_8c_1ae3824f94828d1d2dcaab251c0e3c9335" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>static char * make_synopsys</definition>
+        <argsstring>(char *bn, struct arghlp *ah_synopsys, char *usage_body)</argsstring>
+        <name>make_synopsys</name>
+        <param>
+          <type>char *</type>
+          <declname>bn</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structarghlp" kindref="compound">arghlp</ref> *</type>
+          <declname>ah_synopsys</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>usage_body</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Save the usage body <linebreak/>
+</para>
+<para>clean usage body</para>
+<para>just replace the &apos;<linebreak/>
+&apos; if header if not null for better readability</para>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" line="107" column="14" bodyfile="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" bodystart="107" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="libarghlp_2arghlp_8c_1a8779d1194bf0fef826735e5aef969253" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * arghlp_context</definition>
+        <argsstring>(int ac, char *const *av, const struct arghlp *arghlp, void *ax)</argsstring>
+        <name>arghlp_context</name>
+        <param>
+          <type>int</type>
+          <declname>ac</declname>
+        </param>
+        <param>
+          <type>char *const *</type>
+          <declname>av</declname>
+        </param>
+        <param>
+          <type>const struct <ref refid="structarghlp" kindref="compound">arghlp</ref> *</type>
+          <declname>arghlp</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>ax</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" line="144" column="6" bodyfile="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" bodystart="144" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="libarghlp_2arghlp_8c_1a40ae4ac5985e32f473c48dcd4fadb967" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct option *</type>
+        <definition>static struct option * extract_getopt_option</definition>
+        <argsstring>(struct option *g_opt)</argsstring>
+        <name>extract_getopt_option</name>
+        <param>
+          <type>struct option *</type>
+          <declname>g_opt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" line="160" column="21" bodyfile="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" bodystart="160" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="libarghlp_2arghlp_8c_1acc239d6fc9af793154061583556742d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * optentry</definition>
+        <argsstring>(char *const *av, int ac, int optindex)</argsstring>
+        <name>optentry</name>
+        <param>
+          <type>char *const *</type>
+          <declname>av</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ac</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>optindex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>looking for equal symbol &quot;=&quot;</para>
+<para><ndash/>option=argument</para>
+<para><ndash/>option =args</para>
+<para><ndash/>option= args</para>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" line="172" column="6" bodyfile="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c" bodystart="172" bodyend="220"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/><sp/>@file<sp/>arghlp.c<sp/></highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/>*<sp/>@Copyright<sp/>(C)<sp/>2024<sp/>Umar<sp/>Ba<sp/>jUmarB@protonmail.com<sp/><sp/>@OpenWire<sp/>Studio<sp/>.HomeLab</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>program<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libgen.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ctype.h&gt;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/><sp/>&quot;<ref refid="libarghlp_2arghlp_8h" kindref="compound">arghlp.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8c_1afeeaad3bd76fc89a5aa1867b278556b5" kindref="member">__usage</ref>[<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a8a3cb5d23a8fa97623868f7f64177d14" kindref="member">USAGE_BUFF</ref>]<sp/>=<sp/>{0}<sp/>;<sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8c_1a8204888e047645546da90e30dba4bea8" kindref="member">__shopt</ref>[<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a4b70916bdf28ed7afd94e4fb98230a90" kindref="member">MAX_BUFF</ref>]<sp/>={0};<sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8c_1a85f7bea2c17145feaba5eba7c7e7ccca" kindref="member">__nargp</ref><sp/>=<sp/>0<sp/>;<sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="namespacepygments_1_1lexers_1_1__vim__builtins_1a35fb6c63c47b348b0000b0ad3fb0e8c2" kindref="member">option</ref><sp/><sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8c_1abca8ea6c078d042d8266d9669597c11d" kindref="member">__optl</ref>[<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a4b70916bdf28ed7afd94e4fb98230a90" kindref="member">MAX_BUFF</ref>];<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct____flags__t" kindref="compound">__flags_t</ref>{<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="struct____flags__t_1ab4b5e21bdc16561e3de630cb98e967d7" kindref="member">long_flags</ref><sp/>;<sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="struct____flags__t_1a1fa5eb123f0541e2ea9b9c8cb9e3b5ea" kindref="member">short_flags</ref><sp/>;<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>get_program_basename(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><sp/>*<sp/>argvector)<sp/><sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><sp/>__xpg_basename(<sp/>*argvector)<sp/><sp/><sp/>;<sp/><sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><sp/>set_option(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>restrict<sp/>shortopt<sp/>,<sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>has_arg)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><sp/>memset(shortopt<sp/>,<sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a0eb8ddd2e78fe5abec7e91b377cf12d1" kindref="member">ARGENTRY_SYMB</ref>,<sp/><sp/>has_arg)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>build_short_option(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structoptionx" kindref="compound">optionx</ref><sp/>*<sp/>optxlist)<sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="namespacepygments_1_1lexers_1_1__vim__builtins_1a35fb6c63c47b348b0000b0ad3fb0e8c2" kindref="member">option</ref><sp/>*<sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2example_2main_8c_1a82e29d49572cb88422ac9176f0bd06ce" kindref="member">opt</ref><sp/>=<sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a02648067ad66739ed70a10195891098a" kindref="member">nullable</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structoptionx" kindref="compound">optionx</ref><sp/>*<sp/>optx<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/><sp/></highlight><highlight class="normal"><ref refid="structoptionx" kindref="compound">optionx</ref><sp/>*)<sp/><sp/>optxlist<sp/>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>shortopts<sp/>=<sp/>calloc(<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a4b70916bdf28ed7afd94e4fb98230a90" kindref="member">MAX_BUFF</ref><sp/>,</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*))<sp/>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!shortopts)<sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a02648067ad66739ed70a10195891098a" kindref="member">nullable</ref><sp/>;<sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>optindex<sp/>=<sp/>0<sp/>;<sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>soptindex=<sp/>0<sp/>;<sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>((optx+optindex))-&gt;<ref refid="structoptionx_1a08fb872becc6f8d541e83d812b432fe7" kindref="member">optlong</ref>.name<sp/>!=<sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a02648067ad66739ed70a10195891098a" kindref="member">nullable</ref>)<sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2example_2main_8c_1a82e29d49572cb88422ac9176f0bd06ce" kindref="member">opt</ref><sp/>=<sp/>&amp;(optx+optindex)-&gt;<ref refid="structoptionx_1a08fb872becc6f8d541e83d812b432fe7" kindref="member">optlong</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>*(<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8c_1abca8ea6c078d042d8266d9669597c11d" kindref="member">__optl</ref>+optindex)=<sp/>*<ref refid="Ftp-FM_2subprojects_2Arghlp_2example_2main_8c_1a82e29d49572cb88422ac9176f0bd06ce" kindref="member">opt</ref>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BUILD_FROM_SNAME</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>*(shortopts+soptindex)=<sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2example_2main_8c_1a82e29d49572cb88422ac9176f0bd06ce" kindref="member">opt</ref>-&gt;name[0]<sp/>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>*(shortopts+soptindex)=<sp/><sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2example_2main_8c_1a82e29d49572cb88422ac9176f0bd06ce" kindref="member">opt</ref>-&gt;val;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct____flags__t" kindref="compound">flags_t</ref><sp/><sp/>flags<sp/>=<sp/><sp/>{<sp/>.<ref refid="struct____flags__t_1ab4b5e21bdc16561e3de630cb98e967d7" kindref="member">long_flags</ref>=(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<ref refid="Ftp-FM_2subprojects_2Arghlp_2example_2main_8c_1a82e29d49572cb88422ac9176f0bd06ce" kindref="member">opt</ref>-&gt;name<sp/>,<sp/>.short_flags=*(shortopts+soptindex)<sp/>}<sp/><sp/>;<sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>build_usage_helper((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)&amp;flags,<sp/>(optxlist+optindex)-&gt;<ref refid="structoptionx_1a6b54ca762e78ca1fab938226717015bc" kindref="member">optdesc</ref>)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="Ftp-FM_2subprojects_2Arghlp_2example_2main_8c_1a82e29d49572cb88422ac9176f0bd06ce" kindref="member">opt</ref>-&gt;has_arg)<sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>required_argument:<sp/><sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>soptindex++;<sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>set_option((shortopts+soptindex)<sp/>,<sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1adf764cbdea00d65edcd07bb9953ad2b7a779613937a96dc934924d48a0e29e154" kindref="member">REQUIRED</ref>)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>optional_argument:<sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>set_option((shortopts+<sp/>++soptindex)<sp/>,<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1adf764cbdea00d65edcd07bb9953ad2b7a468b290a6b16925fa56374f74698a9d7" kindref="member">OPTIONAL</ref>)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>soptindex++;<sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>no_argument:</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>optindex++<sp/>;<sp/></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>soptindex++;<sp/></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>explicit_bzero(<ref refid="Ftp-FM_2subprojects_2Arghlp_2example_2main_8c_1a82e29d49572cb88422ac9176f0bd06ce" kindref="member">opt</ref><sp/>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*<ref refid="Ftp-FM_2subprojects_2Arghlp_2example_2main_8c_1a82e29d49572cb88422ac9176f0bd06ce" kindref="member">opt</ref>))<sp/>;<sp/></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>memcpy(<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8c_1a8204888e047645546da90e30dba4bea8" kindref="member">__shopt</ref><sp/>,<sp/>shortopts<sp/>,<sp/>strlen(shortopts))<sp/>;<sp/></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>free(shortopts)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>*(<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8c_1abca8ea6c078d042d8266d9669597c11d" kindref="member">__optl</ref>+optindex)=<sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a0fa868bf2d168787deeba7cdff6f1aed" kindref="member">def</ref>(<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a8a11aee55c2d12e02c4c33ba3f94d313" kindref="member">OPT_END</ref>)<sp/>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8c_1a85f7bea2c17145feaba5eba7c7e7ccca" kindref="member">__nargp</ref><sp/>=<sp/><sp/>optindex++<sp/>+1<sp/><sp/>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8c_1a8204888e047645546da90e30dba4bea8" kindref="member">__shopt</ref><sp/>;<sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>build_usage_helper(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>flags,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>flag_description)<sp/></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>s[<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a4b70916bdf28ed7afd94e4fb98230a90" kindref="member">MAX_BUFF</ref>]=<sp/><sp/>{0};<sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><ref refid="struct____flags__t" kindref="compound">flags_t</ref><sp/><sp/>*<ref refid="namespacepip_1_1__vendor_1_1rich_1_1abc_1a05689400cde1b6357f1392557b8190b7" kindref="member">f</ref><sp/>=<sp/>(<ref refid="struct____flags__t" kindref="compound">flags_t</ref>*)<sp/>flags<sp/>;<sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>sprintf(s<sp/>,<sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a90e2f1b844f3f31eeb03303a3ffe13ce" kindref="member">HELPER_FRMT</ref>,<sp/><sp/><ref refid="namespacepip_1_1__vendor_1_1rich_1_1abc_1a05689400cde1b6357f1392557b8190b7" kindref="member">f</ref>-&gt;short_flags<sp/>,<sp/><sp/><ref refid="namespacepip_1_1__vendor_1_1rich_1_1abc_1a05689400cde1b6357f1392557b8190b7" kindref="member">f</ref>-&gt;long_flags<sp/>,<sp/>flag_description)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!strrchr(s,0xa))<sp/></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>strcat(s,</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>strcat(<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8c_1afeeaad3bd76fc89a5aa1867b278556b5" kindref="member">__usage</ref><sp/>,s)<sp/>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>make_synopsys(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>bn<sp/>,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structarghlp" kindref="compound">arghlp</ref><sp/>*<sp/>ah_synopsys,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>usage_body)<sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!ah_synopsys)<sp/></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>usage_body<sp/>;<sp/></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>usage_tmp[<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a8a3cb5d23a8fa97623868f7f64177d14" kindref="member">USAGE_BUFF</ref>]<sp/>=<sp/><sp/>{0}<sp/>;<sp/></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>memcpy(usage_tmp<sp/>,<sp/>usage_body<sp/>,<sp/><sp/>strlen(usage_body))<sp/>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/>explicit_bzero(usage_body<sp/>,<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a8a3cb5d23a8fa97623868f7f64177d14" kindref="member">USAGE_BUFF</ref>)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/><sp/></highlight><highlight class="normal"><ref refid="structsynopsys__t" kindref="compound">synopsys_t</ref><sp/>*s=<sp/><sp/>&amp;ah_synopsys-&gt;<ref refid="structarghlp_1a46af361a1e788a3f95d207ba35ced47a" kindref="member">synopsys</ref><sp/>;<sp/><sp/></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="namespacepip_1_1__vendor_1_1pygments_1_1unistring_1a12ef7fc28aa1ce50d195d2f00a71c718" kindref="member">header</ref><sp/>=<sp/>s-&gt;<ref refid="structsynopsys__t_1afacf4e85b03e563d3b6f96b1a0b62543" kindref="member">header_description</ref><sp/>;<sp/></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="namespacepip_1_1__vendor_1_1pygments_1_1unistring_1a1df8aebfeb2fb0659c608970b136ce2c" kindref="member">footer</ref><sp/>=<sp/>s-&gt;<ref refid="structsynopsys__t_1a9a669cbd71231795c04dd58cbc47ec9c" kindref="member">footer_description</ref><sp/>;<sp/><sp/></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/>sprintf(usage_body<sp/>,<sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a9d76aa99546b46011ace91e260a08681" kindref="member">USAGE_FRMT</ref><sp/>,<sp/>bn)<sp/>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(header!=<sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a02648067ad66739ed70a10195891098a" kindref="member">nullable</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>remove_sn<sp/>=<sp/>strrchr(usage_body<sp/>,<sp/>0xa)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>*remove_sn<sp/>=<sp/>0<sp/>;<sp/></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf((usage_body+strlen(usage_body))<sp/>,<sp/></highlight><highlight class="stringliteral">&quot;%s<sp/>\n\n&quot;</highlight><highlight class="normal">,<sp/>header)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/>memcpy((usage_body+strlen(usage_body)),<sp/>usage_tmp<sp/>,<sp/>strlen(usage_tmp))<sp/>;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(footer<sp/>!=<sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a02648067ad66739ed70a10195891098a" kindref="member">nullable</ref>)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>sprintf((usage_body+strlen(usage_body))<sp/>,<sp/></highlight><highlight class="stringliteral">&quot;\n%s&quot;</highlight><highlight class="normal">,<sp/>footer)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>usage_body<sp/>;<sp/></highlight></codeline>
+<codeline lineno="142"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8c_1a8779d1194bf0fef826735e5aef969253" kindref="member">arghlp_context</ref><sp/>(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ac<sp/><sp/><sp/><sp/>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/>av<sp/><sp/>,<sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><sp/><ref refid="structarghlp" kindref="compound">arghlp</ref><sp/>*<sp/><sp/><ref refid="structarghlp" kindref="compound">arghlp</ref><sp/>,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>ax<sp/>)<sp/></highlight></codeline>
+<codeline lineno="145"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>bn<sp/><sp/>=<sp/>get_program_basename(av)<sp/>;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>sopt<sp/>=<sp/>build_short_option(<ref refid="structarghlp" kindref="compound">arghlp</ref>-&gt;<ref refid="structarghlp_1abd2e4eafa2ac21ff44e5d3fde4555d66" kindref="member">options</ref>);<sp/></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structarghlp" kindref="compound">arghlp</ref><sp/><sp/><sp/>*<ref refid="structarghlp_1a46af361a1e788a3f95d207ba35ced47a" kindref="member">synopsys</ref><sp/>=<sp/><sp/>(<sp/></highlight><highlight class="keyword">struct<sp/><sp/></highlight><highlight class="normal"><ref refid="structarghlp" kindref="compound">arghlp</ref><sp/>*<sp/>)<sp/><ref refid="structarghlp" kindref="compound">arghlp</ref><sp/>;<sp/></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)<sp/>make_synopsys(<sp/>bn<sp/>,<sp/><ref refid="structarghlp_1a46af361a1e788a3f95d207ba35ced47a" kindref="member">synopsys</ref>,<sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8c_1afeeaad3bd76fc89a5aa1867b278556b5" kindref="member">__usage</ref>)<sp/>;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="namespacepygments_1_1lexers_1_1__vim__builtins_1a35fb6c63c47b348b0000b0ad3fb0e8c2" kindref="member">option</ref><sp/><sp/>getopt_option[<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8c_1a85f7bea2c17145feaba5eba7c7e7ccca" kindref="member">__nargp</ref>];<sp/><sp/></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!extract_getopt_option(getopt_option))<sp/></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a02648067ad66739ed70a10195891098a" kindref="member">nullable</ref><sp/>;<sp/></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structarghlp" kindref="compound">arghlp</ref>-&gt;<ref refid="structarghlp_1ae889f39b2abf2140ccb12a23ed762fea" kindref="member">ah_handler</ref>(ac<sp/>,<sp/>av<sp/>,<sp/>sopt,<sp/><sp/>getopt_option<sp/>,<sp/>ax);<sp/><sp/></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="namespacepygments_1_1lexers_1_1__vim__builtins_1a35fb6c63c47b348b0000b0ad3fb0e8c2" kindref="member">option</ref><sp/>*<sp/>extract_getopt_option(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><sp/>option<sp/>*<sp/>g_opt)<sp/></highlight></codeline>
+<codeline lineno="161"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/><sp/>0<sp/>&gt;=<sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8c_1a85f7bea2c17145feaba5eba7c7e7ccca" kindref="member">__nargp</ref><sp/>)<sp/></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8h_1a02648067ad66739ed70a10195891098a" kindref="member">nullable</ref><sp/>;<sp/></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>~0<sp/>;<sp/></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(++i<sp/>&lt;<sp/><ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8c_1a85f7bea2c17145feaba5eba7c7e7ccca" kindref="member">__nargp</ref><sp/><sp/>)<sp/></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*(g_opt+i)<sp/>=<sp/><sp/>*(<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8c_1abca8ea6c078d042d8266d9669597c11d" kindref="member">__optl</ref>+i);<sp/></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>g_opt<sp/>;<sp/><sp/></highlight></codeline>
+<codeline lineno="170"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="Ftp-FM_2subprojects_2Arghlp_2arghlp_8c_1acc239d6fc9af793154061583556742d3" kindref="member">optentry</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*av<sp/><sp/>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ac<sp/><sp/>,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>optindex)<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="173"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ac<sp/>==<sp/>optindex)<sp/></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><sp/><sp/>optarg<sp/><sp/>;<sp/></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*optfname=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<sp/>*(av<sp/>+<sp/>(optindex<sp/>-1))<sp/>;<sp/></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(0x2d<sp/>==<sp/>(*optfname<sp/>&amp;<sp/>0xff)<sp/>&amp;&amp;<sp/>0x2d<sp/>!=<sp/><sp/>(*(optfname<sp/>+1)<sp/>&amp;<sp/>0xff<sp/>))</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>optarg<sp/>;<sp/></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*equ_symb=<sp/>strchr(optfname<sp/>,<sp/><sp/>0x3d<sp/>&amp;<sp/>0xff<sp/>)<sp/>;<sp/><sp/></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(equ_symb)<sp/><sp/></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>symb_offset=<sp/>equ_symb<sp/>-<sp/><sp/>optfname<sp/><sp/>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="namespacepip_1_1__vendor_1_1urllib3_1_1packages_1_1six_1ab697374917e1c7817e37c3d059bc1bd7" kindref="member">next</ref>=<sp/>equ_symb+1;<sp/></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*next<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>__maybe_next;<sp/></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><sp/>strdup(next)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>__maybe_next;<sp/></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal">__maybe_next:<sp/></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*optfname_value<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<sp/>*(av+optindex);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(0x2d<sp/>==<sp/>(*optfname_value<sp/>&amp;<sp/>0xff))<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>optarg<sp/>;<sp/></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(0x3d<sp/>==<sp/>(*optfname_value<sp/>&amp;<sp/>0xff))<sp/></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>optfname_value++<sp/>;<sp/></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(0<sp/>==<sp/>(*optfname_value<sp/>&amp;<sp/>0xff))<sp/><sp/></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>optindex++<sp/>;<sp/></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>__maybe_next<sp/>;<sp/></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(optfname_value)<sp/><sp/>;<sp/></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><sp/>strdup(optfname_value)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/umar/Desktop/WorkShop/GLL/libarghlp/arghlp.c"/>
+  </compounddef>
+</doxygen>

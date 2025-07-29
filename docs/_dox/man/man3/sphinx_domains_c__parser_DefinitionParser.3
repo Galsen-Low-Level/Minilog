@@ -1,0 +1,377 @@
+.TH "sphinx.domains.c._parser.DefinitionParser" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.domains.c._parser.DefinitionParser
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.util\&.cfamily\&.BaseParser\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fBlanguage\fP (self)"
+.br
+.ti -1c
+.RI "Sequence[str] \fBid_attributes\fP (self)"
+.br
+.ti -1c
+.RI "Sequence[str] \fBparen_attributes\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTDeclaration\fP \fBparse_declaration\fP (self, str objectType, str directiveType)"
+.br
+.ti -1c
+.RI "\fBASTNestedName\fP \fBparse_namespace_object\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTNestedName\fP \fBparse_xref_object\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTExpression\fP|\fBASTType\fP \fBparse_expression\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.util\&.cfamily\&.BaseParser\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str \fBdefinition\fP, *\fBnodes\&.Node\fP|tuple[str, int]|str \fBlocation\fP, \fBConfig\fP \fBconfig\fP)"
+.br
+.ti -1c
+.RI "None \fBstatus\fP (self, str msg)"
+.br
+.ti -1c
+.RI "NoReturn \fBfail\fP (self, str msg)"
+.br
+.ti -1c
+.RI "None \fBwarn\fP (self, str msg)"
+.br
+.ti -1c
+.RI "bool \fBmatch\fP (self, re\&.Pattern[str] regex)"
+.br
+.ti -1c
+.RI "bool \fBskip_string\fP (self, str string)"
+.br
+.ti -1c
+.RI "bool \fBskip_word\fP (self, str word)"
+.br
+.ti -1c
+.RI "bool \fBskip_ws\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBskip_word_and_ws\fP (self, str word)"
+.br
+.ti -1c
+.RI "bool \fBskip_string_and_ws\fP (self, str string)"
+.br
+.ti -1c
+.RI "bool \fBeof\fP (self)"
+.br
+.ti -1c
+.RI "str \fBcurrent_char\fP (self)"
+.br
+.ti -1c
+.RI "str \fBmatched_text\fP (self)"
+.br
+.ti -1c
+.RI "str \fBread_rest\fP (self)"
+.br
+.ti -1c
+.RI "None \fBassert_end\fP (self, *bool allowSemicolon=False)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcurrent_char\fP"
+.br
+.ti -1c
+.RI "\fBpos\fP"
+.br
+.ti -1c
+.RI "\fBmatched_text\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsphinx\&.util\&.cfamily\&.BaseParser\fP
+.in +1c
+.ti -1c
+.RI "\fBdefinition\fP"
+.br
+.ti -1c
+.RI "\fBlocation\fP"
+.br
+.ti -1c
+.RI "\fBconfig\fP"
+.br
+.ti -1c
+.RI "\fBpos\fP"
+.br
+.ti -1c
+.RI "\fBend\fP"
+.br
+.ti -1c
+.RI "\fBallowFallbackExpressionParsing\fP"
+.br
+.ti -1c
+.RI "\fBotherErrors\fP"
+.br
+.ti -1c
+.RI "\fBlast_match\fP"
+.br
+.ti -1c
+.RI "\fBcurrent_char\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str|None \fB_parse_string\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTLiteral\fP|None \fB_parse_literal\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTExpression\fP|None \fB_parse_paren_expression\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTExpression\fP|None \fB_parse_primary_expression\fP (self)"
+.br
+.ti -1c
+.RI "tuple[list[\fBASTExpression\fP]|None, bool|None] \fB_parse_initializer_list\fP (self, str name, str open, str close)"
+.br
+.ti -1c
+.RI "\fBASTParenExprList\fP|None \fB_parse_paren_expression_list\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTBracedInitList\fP|None \fB_parse_braced_init_list\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTPostfixExpr\fP \fB_parse_postfix_expression\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTExpression\fP \fB_parse_unary_expression\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTExpression\fP \fB_parse_cast_expression\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTExpression\fP \fB_parse_logical_or_expression\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTExpression\fP|None \fB_parse_conditional_expression_tail\fP (self, Any or_expr_head)"
+.br
+.ti -1c
+.RI "\fBASTExpression\fP \fB_parse_assignment_expression\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTExpression\fP \fB_parse_constant_expression\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTExpression\fP \fB_parse_expression\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTExpression\fP \fB_parse_expression_fallback\fP (self, list[str] \fBend\fP, Callable[[], \fBASTExpression\fP] parser, bool allow=True)"
+.br
+.ti -1c
+.RI "\fBASTNestedName\fP \fB_parse_nested_name\fP (self)"
+.br
+.ti -1c
+.RI "str|None \fB_parse_simple_type_specifier\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTTrailingTypeSpecFundamental\fP|None \fB_parse_simple_type_specifiers\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTTrailingTypeSpec\fP \fB_parse_trailing_type_spec\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTParameters\fP|None \fB_parse_parameters\fP (self, str param_mode)"
+.br
+.ti -1c
+.RI "\fBASTDeclSpecsSimple\fP \fB_parse_decl_specs_simple\fP (self, str|None outer, bool typed)"
+.br
+.ti -1c
+.RI "\fBASTDeclSpecs\fP \fB_parse_decl_specs\fP (self, str|None outer, bool typed=True)"
+.br
+.ti -1c
+.RI "\fBASTDeclarator\fP \fB_parse_declarator_name_suffix\fP (self, bool|str named, str param_mode, bool typed)"
+.br
+.ti -1c
+.RI "\fBASTDeclarator\fP \fB_parse_declarator\fP (self, bool|str named, str param_mode, bool typed=True)"
+.br
+.ti -1c
+.RI "\fBASTInitializer\fP|None \fB_parse_initializer\fP (self, str|None outer=None, bool allow_fallback=True)"
+.br
+.ti -1c
+.RI "\fBASTType\fP \fB_parse_type\fP (self, bool|str named, str|None outer=None)"
+.br
+.ti -1c
+.RI "\fBASTTypeWithInit\fP \fB_parse_type_with_init\fP (self, bool|str named, str|None outer)"
+.br
+.ti -1c
+.RI "\fBASTMacro\fP \fB_parse_macro\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTStruct\fP \fB_parse_struct\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTUnion\fP \fB_parse_union\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTEnum\fP \fB_parse_enum\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTEnumerator\fP \fB_parse_enumerator\fP (self)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBsphinx\&.util\&.cfamily\&.BaseParser\fP
+.in +1c
+.ti -1c
+.RI "\fBDefinitionError\fP \fB_make_multi_error\fP (self, list[Any] errors, str header)"
+.br
+.ti -1c
+.RI "str \fB_parse_balanced_token_seq\fP (self, list[str] \fBend\fP)"
+.br
+.ti -1c
+.RI "\fBASTAttribute\fP|None \fB_parse_attribute\fP (self)"
+.br
+.ti -1c
+.RI "\fBASTAttributeList\fP \fB_parse_attribute_list\fP (self)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Attributes inherited from \fBsphinx\&.util\&.cfamily\&.BaseParser\fP
+.in +1c
+.ti -1c
+.RI "\fB_previous_state\fP"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS " \fBASTExpression\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_assignment_expression ( self)\fC [protected]\fP"
+
+.SS " \fBASTBracedInitList\fP | None sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_braced_init_list ( self)\fC [protected]\fP"
+
+.SS " \fBASTExpression\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_cast_expression ( self)\fC [protected]\fP"
+
+.SS " \fBASTExpression\fP | None sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_conditional_expression_tail ( self, Any
+     or_expr_head)\fC [protected]\fP"
+
+.SS " \fBASTExpression\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_constant_expression ( self)\fC [protected]\fP"
+
+.SS " \fBASTDeclSpecs\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_decl_specs ( self, str | None outer, bool  typed = \fCTrue\fP)\fC [protected]\fP"
+
+.SS " \fBASTDeclSpecsSimple\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_decl_specs_simple ( self, str | None outer, bool
+     typed)\fC [protected]\fP"
+
+.PP
+.nf
+Just parse the simple ones\&.
+.fi
+.PP
+ 
+.SS " \fBASTDeclarator\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_declarator ( self, bool | str named, str param_mode, bool  typed = \fCTrue\fP)\fC [protected]\fP"
+
+.SS " \fBASTDeclarator\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_declarator_name_suffix ( self, bool | str named, str param_mode, bool
+     typed)\fC [protected]\fP"
+
+.SS " \fBASTEnum\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_enum ( self)\fC [protected]\fP"
+
+.SS " \fBASTEnumerator\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_enumerator ( self)\fC [protected]\fP"
+
+.SS " \fBASTExpression\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_expression ( self)\fC [protected]\fP"
+
+.SS " \fBASTExpression\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_expression_fallback ( self, list[str] end, Callable[[], \fBASTExpression\fP] parser, bool  allow = \fCTrue\fP)\fC [protected]\fP"
+
+.SS " \fBASTInitializer\fP | None sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_initializer ( self, str | None  outer = \fCNone\fP, bool  allow_fallback = \fCTrue\fP)\fC [protected]\fP"
+
+.SS " tuple[list[\fBASTExpression\fP] | None, bool | None] sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_initializer_list ( self, str name, str open, str
+     close)\fC [protected]\fP"
+
+.SS " \fBASTLiteral\fP | None sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_literal ( self)\fC [protected]\fP"
+
+.SS " \fBASTExpression\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_logical_or_expression ( self)\fC [protected]\fP"
+
+.SS " \fBASTMacro\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_macro ( self)\fC [protected]\fP"
+
+.SS " \fBASTNestedName\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_nested_name ( self)\fC [protected]\fP"
+
+.SS " \fBASTParameters\fP | None sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_parameters ( self, str param_mode)\fC [protected]\fP"
+
+.SS " \fBASTExpression\fP | None sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_paren_expression ( self)\fC [protected]\fP"
+
+.SS " \fBASTParenExprList\fP | None sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_paren_expression_list ( self)\fC [protected]\fP"
+
+.PP
+Reimplemented from \fBsphinx\&.util\&.cfamily\&.BaseParser\fP\&.
+.SS " \fBASTPostfixExpr\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_postfix_expression ( self)\fC [protected]\fP"
+
+.SS " \fBASTExpression\fP | None sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_primary_expression ( self)\fC [protected]\fP"
+
+.SS " str | None sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_simple_type_specifier ( self)\fC [protected]\fP"
+
+.SS " \fBASTTrailingTypeSpecFundamental\fP | None sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_simple_type_specifiers ( self)\fC [protected]\fP"
+
+.SS " str | None sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_string ( self)\fC [protected]\fP"
+
+.SS " \fBASTStruct\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_struct ( self)\fC [protected]\fP"
+
+.SS " \fBASTTrailingTypeSpec\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_trailing_type_spec ( self)\fC [protected]\fP"
+
+.SS " \fBASTType\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_type ( self, bool | str named, str | None  outer = \fCNone\fP)\fC [protected]\fP"
+
+.PP
+.nf
+named=False|'single'|True: 'single' is e\&.g\&., for function objects which
+doesn't need to name the arguments, but otherwise is a single name
+
+.fi
+.PP
+ 
+.SS " \fBASTTypeWithInit\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_type_with_init ( self, bool | str named, str | None
+     outer)\fC [protected]\fP"
+
+.SS " \fBASTExpression\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_unary_expression ( self)\fC [protected]\fP"
+
+.SS " \fBASTUnion\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&._parse_union ( self)\fC [protected]\fP"
+
+.SS " Sequence[str] sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&.id_attributes ( self)"
+
+.PP
+Reimplemented from \fBsphinx\&.util\&.cfamily\&.BaseParser\fP\&.
+.SS " str sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&.language ( self)"
+
+.PP
+Reimplemented from \fBsphinx\&.util\&.cfamily\&.BaseParser\fP\&.
+.SS " Sequence[str] sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&.paren_attributes ( self)"
+
+.PP
+Reimplemented from \fBsphinx\&.util\&.cfamily\&.BaseParser\fP\&.
+.SS " \fBASTDeclaration\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&.parse_declaration ( self, str objectType, str directiveType)"
+
+.SS " \fBASTExpression\fP | \fBASTType\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&.parse_expression ( self)"
+
+.SS " \fBASTNestedName\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&.parse_namespace_object ( self)"
+
+.SS " \fBASTNestedName\fP sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&.parse_xref_object ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&.current_char"
+
+.SS "sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&.matched_text"
+
+.SS "sphinx\&.domains\&.c\&._parser\&.DefinitionParser\&.pos"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

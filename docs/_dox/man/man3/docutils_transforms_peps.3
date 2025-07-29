@@ -1,0 +1,87 @@
+.TH "docutils.transforms.peps" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.transforms.peps
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBContents\fP"
+.br
+.ti -1c
+.RI "class \fBHeaders\fP"
+.br
+.ti -1c
+.RI "class \fBPEPZero\fP"
+.br
+.ti -1c
+.RI "class \fBPEPZeroSpecial\fP"
+.br
+.ti -1c
+.RI "class \fBTargetNotes\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBmask_email\fP (ref, pepno=None)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBnon_masked_addresses\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Transforms for PEP processing\&.
+
+- `Headers`: Used to transform a PEP's initial RFC-2822 header\&.  It remains a
+  field list, but some entries get processed\&.
+- `Contents`: Auto-inserts a table of contents\&.
+- `PEPZero`: Special processing for PEP 0\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "docutils\&.transforms\&.peps\&.mask_email ( ref,  pepno = \fCNone\fP)"
+
+.PP
+.nf
+Mask the email address in `ref` and return a replacement node\&.
+
+`ref` is returned unchanged if it contains no email address\&.
+
+For email addresses such as 'user@host', mask the address as 'user at
+host' (text) to thwart simple email address harvesters (except for those
+listed in `non_masked_addresses`)\&.  If a PEP number (`pepno`) is given,
+return a reference including a default email subject\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "tuple docutils\&.transforms\&.peps\&.non_masked_addresses"
+\fBInitial value:\fP.PP
+.nf
+1 =  ('peps@python\&.org',
+2                         'python\-list@python\&.org',
+3                         'python\-dev@python\&.org')
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

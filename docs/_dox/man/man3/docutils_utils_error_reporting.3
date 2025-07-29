@@ -1,0 +1,85 @@
+.TH "docutils.utils.error_reporting" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.utils.error_reporting
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBErrorOutput\fP"
+.br
+.ti -1c
+.RI "class \fBErrorString\fP"
+.br
+.ti -1c
+.RI "class \fBSafeString\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBDeprecationWarning\fP"
+.br
+.ti -1c
+.RI "\fBstacklevel\fP"
+.br
+.ti -1c
+.RI "\fBunicode\fP = str"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Deprecated module to handle Exceptions across Python versions\&.
+
+\&.\&. warning::
+   This module is deprecated with the end of support for Python 2\&.7
+   and will be removed in Docutils 0\&.21 or later\&.
+
+   Replacements:
+     | SafeString  -> str
+     | ErrorString -> docutils\&.io\&.error_string()
+     | ErrorOutput -> docutils\&.io\&.ErrorOutput
+
+Error reporting should be safe from encoding/decoding errors\&.
+However, implicit conversions of strings and exceptions like
+
+>>> u'%s world: %s' % ('H\\xe4llo', Exception(u'H\\xe4llo'))
+
+fail in some Python versions:
+
+* In Python <= 2\&.6, ``unicode(<exception instance>)`` uses
+  `__str__` and fails with non-ASCII chars in`unicode` arguments\&.
+  (work around http://bugs\&.python\&.org/issue2517):
+
+* In Python 2, unicode(<exception instance>) fails, with non-ASCII
+  chars in arguments\&. (Use case: in some locales, the errstr
+  argument of IOError contains non-ASCII chars\&.)
+
+* In Python 2, str(<exception instance>) fails, with non-ASCII chars
+  in `unicode` arguments\&.
+
+The `SafeString`, `ErrorString` and `ErrorOutput` classes handle
+common exceptions\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "docutils\&.utils\&.error_reporting\&.DeprecationWarning"
+
+.SS "docutils\&.utils\&.error_reporting\&.stacklevel"
+
+.SS "docutils\&.utils\&.error_reporting\&.unicode = str"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

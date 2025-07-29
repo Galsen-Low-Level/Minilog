@@ -1,0 +1,204 @@
+.TH "pygments.lexers.shell.TcshSessionLexer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.lexers.shell.TcshSessionLexer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpygments\&.lexers\&.shell\&.ShellSessionBaseLexer\fP\&.
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = 'Tcsh Session'"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = ['tcshcon']"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBmimetypes\fP = []"
+.br
+.ti -1c
+.RI "str \fBurl\fP = 'https://www\&.tcsh\&.org'"
+.br
+.ti -1c
+.RI "str \fBversion_added\fP = '2\&.1'"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fBname\fP = None"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = []"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBalias_filenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBmimetypes\fP = []"
+.br
+.ti -1c
+.RI "int \fBpriority\fP = 0"
+.br
+.ti -1c
+.RI "\fBurl\fP = None"
+.br
+.ti -1c
+.RI "\fBversion_added\fP = None"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fB_example\fP = 'tcshcon/session'"
+.br
+.ti -1c
+.RI "\fB_innerLexerCls\fP = \fBTcshLexer\fP"
+.br
+.ti -1c
+.RI "\fB_ps1rgx\fP = re\&.compile(r'^([^>]+>)(\&.*\\n?)')"
+.br
+.ti -1c
+.RI "str \fB_ps2\fP = '? '"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBpygments\&.lexers\&.shell\&.ShellSessionBaseLexer\fP
+.in +1c
+.ti -1c
+.RI "bool \fB_bare_continuation\fP = False"
+.br
+.ti -1c
+.RI "\fB_venv\fP = re\&.compile(r'^(\\([^)]*\\))(\\s*)')"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB_example\fP = None"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBpygments\&.lexers\&.shell\&.ShellSessionBaseLexer\fP
+.in +1c
+.ti -1c
+.RI "\fBget_tokens_unprocessed\fP (self, text)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd_filter\fP (self, filter_, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fBanalyse_text\fP (text)"
+.br
+.ti -1c
+.RI "\fBget_tokens\fP (self, text, unfiltered=False)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.LexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fB__new__\fP (mcs, name, bases, d)"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBstripnl\fP"
+.br
+.ti -1c
+.RI "\fBstripall\fP"
+.br
+.ti -1c
+.RI "\fBensurenl\fP"
+.br
+.ti -1c
+.RI "\fBtabsize\fP"
+.br
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBfilters\fP"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB_preprocess_lexer_input\fP (self, text)"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBpygments\&.lexers\&.shell\&.ShellSessionBaseLexer\fP
+.in +1c
+.ti -1c
+.RI "\fB_ps2\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Lexer for Tcsh sessions, i\&.e\&. command lines, including a
+prompt, interspersed with output\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "str pygments\&.lexers\&.shell\&.TcshSessionLexer\&._example = 'tcshcon/session'\fC [static]\fP, \fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.shell\&.TcshSessionLexer\&._innerLexerCls = \fBTcshLexer\fP\fC [static]\fP, \fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.shell\&.TcshSessionLexer\&._ps1rgx = re\&.compile(r'^([^>]+>)(\&.*\\n?)')\fC [static]\fP, \fC [protected]\fP"
+
+.SS "str pygments\&.lexers\&.shell\&.TcshSessionLexer\&._ps2 = '? '\fC [static]\fP, \fC [protected]\fP"
+
+.SS "list pygments\&.lexers\&.shell\&.TcshSessionLexer\&.aliases = ['tcshcon']\fC [static]\fP"
+
+.SS "list pygments\&.lexers\&.shell\&.TcshSessionLexer\&.filenames = []\fC [static]\fP"
+
+.SS "list pygments\&.lexers\&.shell\&.TcshSessionLexer\&.mimetypes = []\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.shell\&.TcshSessionLexer\&.name = 'Tcsh Session'\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.shell\&.TcshSessionLexer\&.url = 'https://www\&.tcsh\&.org'\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.shell\&.TcshSessionLexer\&.version_added = '2\&.1'\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

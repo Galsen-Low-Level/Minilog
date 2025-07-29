@@ -1,0 +1,36 @@
+.TH "urllib3.util.proxy" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+urllib3.util.proxy
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBconnection_requires_http_tunnel\fP (\fBUrl\fP|None proxy_url=None, \fBProxyConfig\fP|None proxy_config=None, str|None destination_scheme=None)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " bool urllib3\&.util\&.proxy\&.connection_requires_http_tunnel (\fBUrl\fP | None  proxy_url = \fCNone\fP, \fBProxyConfig\fP | None  proxy_config = \fCNone\fP, str | None  destination_scheme = \fCNone\fP)"
+
+.PP
+.nf
+Returns True if the connection requires an HTTP CONNECT through the proxy\&.
+
+:param URL proxy_url:
+    URL of the proxy\&.
+:param ProxyConfig proxy_config:
+    Proxy configuration from poolmanager\&.py
+:param str destination_scheme:
+    The scheme of the destination\&. (i\&.e https, http, etc)
+
+.fi
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

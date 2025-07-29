@@ -1,0 +1,306 @@
+.TH "pip._vendor.pygments.lexers" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.pygments.lexers
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fB_mapping\fP"
+.br
+.ti -1c
+.RI "namespace \fBpython\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_automodule\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_fn_matches\fP (fn, glob)"
+.br
+.ti -1c
+.RI "\fB_load_lexers\fP (module_name)"
+.br
+.ti -1c
+.RI "\fBget_all_lexers\fP (plugins=True)"
+.br
+.ti -1c
+.RI "\fBfind_lexer_class\fP (\fBname\fP)"
+.br
+.ti -1c
+.RI "\fBfind_lexer_class_by_name\fP (_alias)"
+.br
+.ti -1c
+.RI "\fBget_lexer_by_name\fP (_alias, **options)"
+.br
+.ti -1c
+.RI "\fBload_lexer_from_file\fP (filename, lexername='CustomLexer', **options)"
+.br
+.ti -1c
+.RI "\fBfind_lexer_class_for_filename\fP (_fn, code=None)"
+.br
+.ti -1c
+.RI "\fBget_lexer_for_filename\fP (_fn, code=None, **options)"
+.br
+.ti -1c
+.RI "\fBget_lexer_for_mimetype\fP (_mime, **options)"
+.br
+.ti -1c
+.RI "\fB_iter_lexerclasses\fP (plugins=True)"
+.br
+.ti -1c
+.RI "\fBguess_lexer_for_filename\fP (_fn, _text, **options)"
+.br
+.ti -1c
+.RI "\fBguess_lexer\fP (_text, **options)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "dict \fBCOMPAT\fP"
+.br
+.ti -1c
+.RI "dict \fB_lexer_cache\fP = {}"
+.br
+.ti -1c
+.RI "dict \fB_pattern_cache\fP = {}"
+.br
+.ti -1c
+.RI "\fBoldmod\fP = sys\&.modules[__name__]"
+.br
+.ti -1c
+.RI "\fBnewmod\fP = \fB_automodule\fP(__name__)"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+    pygments\&.lexers
+    ~~~~~~~~~~~~~~~
+
+    Pygments lexers\&.
+
+    :copyright: Copyright 2006-2024 by the Pygments team, see AUTHORS\&.
+    :license: BSD, see LICENSE for details\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.pygments\&.lexers\&._fn_matches ( fn,  glob)\fC [protected]\fP"
+
+.PP
+.nf
+Return whether the supplied file name fn matches pattern filename\&.
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pygments\&.lexers\&._iter_lexerclasses ( plugins = \fCTrue\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Return an iterator over all lexer classes\&.
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pygments\&.lexers\&._load_lexers ( module_name)\fC [protected]\fP"
+
+.PP
+.nf
+Load a lexer (and all others in the module too)\&.
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pygments\&.lexers\&.find_lexer_class ( name)"
+
+.PP
+.nf
+Return the `Lexer` subclass that with the *name* attribute as given by
+the *name* argument\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pygments\&.lexers\&.find_lexer_class_by_name ( _alias)"
+
+.PP
+.nf
+Return the `Lexer` subclass that has `alias` in its aliases list, without
+instantiating it\&.
+
+Like `get_lexer_by_name`, but does not instantiate the class\&.
+
+Will raise :exc:`pygments\&.util\&.ClassNotFound` if no lexer with that alias is
+found\&.
+
+\&.\&. versionadded:: 2\&.2
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pygments\&.lexers\&.find_lexer_class_for_filename ( _fn,  code = \fCNone\fP)"
+
+.PP
+.nf
+Get a lexer for a filename\&.
+
+If multiple lexers match the filename pattern, use ``analyse_text()`` to
+figure out which one is more appropriate\&.
+
+Returns None if not found\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pygments\&.lexers\&.get_all_lexers ( plugins = \fCTrue\fP)"
+
+.PP
+.nf
+Return a generator of tuples in the form ``(name, aliases,
+filenames, mimetypes)`` of all know lexers\&.
+
+If *plugins* is true (the default), plugin lexers supplied by entrypoints
+are also returned\&.  Otherwise, only builtin ones are considered\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pygments\&.lexers\&.get_lexer_by_name ( _alias, ** options)"
+
+.PP
+.nf
+Return an instance of a `Lexer` subclass that has `alias` in its
+aliases list\&. The lexer is given the `options` at its
+instantiation\&.
+
+Will raise :exc:`pygments\&.util\&.ClassNotFound` if no lexer with that alias is
+found\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pygments\&.lexers\&.get_lexer_for_filename ( _fn,  code = \fCNone\fP, ** options)"
+
+.PP
+.nf
+Get a lexer for a filename\&.
+
+Return a `Lexer` subclass instance that has a filename pattern
+matching `fn`\&. The lexer is given the `options` at its
+instantiation\&.
+
+Raise :exc:`pygments\&.util\&.ClassNotFound` if no lexer for that filename
+is found\&.
+
+If multiple lexers match the filename pattern, use their ``analyse_text()``
+methods to figure out which one is more appropriate\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pygments\&.lexers\&.get_lexer_for_mimetype ( _mime, ** options)"
+
+.PP
+.nf
+Return a `Lexer` subclass instance that has `mime` in its mimetype
+list\&. The lexer is given the `options` at its instantiation\&.
+
+Will raise :exc:`pygments\&.util\&.ClassNotFound` if not lexer for that mimetype
+is found\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pygments\&.lexers\&.guess_lexer ( _text, ** options)"
+
+.PP
+.nf
+Return a `Lexer` subclass instance that's guessed from the text in
+`text`\&. For that, the :meth:`\&.analyse_text()` method of every known lexer
+class is called with the text as argument, and the lexer which returned the
+highest value will be instantiated and returned\&.
+
+:exc:`pygments\&.util\&.ClassNotFound` is raised if no lexer thinks it can
+handle the content\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pygments\&.lexers\&.guess_lexer_for_filename ( _fn,  _text, ** options)"
+
+.PP
+.nf
+As :func:`guess_lexer()`, but only lexers which have a pattern in `filenames`
+or `alias_filenames` that matches `filename` are taken into consideration\&.
+
+:exc:`pygments\&.util\&.ClassNotFound` is raised if no lexer thinks it can
+handle the content\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pygments\&.lexers\&.load_lexer_from_file ( filename,  lexername = \fC'CustomLexer'\fP, ** options)"
+
+.PP
+.nf
+Load a lexer from a file\&.
+
+This method expects a file located relative to the current working
+directory, which contains a Lexer class\&. By default, it expects the
+Lexer to be name CustomLexer; you can specify your own class name
+as the second argument to this function\&.
+
+Users should be very careful with the input, because this method
+is equivalent to running eval on the input file\&.
+
+Raises ClassNotFound if there are any problems importing the Lexer\&.
+
+\&.\&. versionadded:: 2\&.2
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "dict pip\&._vendor\&.pygments\&.lexers\&._lexer_cache = {}\fC [protected]\fP"
+
+.SS "dict pip\&._vendor\&.pygments\&.lexers\&._pattern_cache = {}\fC [protected]\fP"
+
+.SS "dict pip\&._vendor\&.pygments\&.lexers\&.COMPAT"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     'Python3Lexer': 'PythonLexer',
+3     'Python3TracebackLexer': 'PythonTracebackLexer',
+4     'LeanLexer': 'Lean3Lexer',
+5 }
+.fi
+
+.SS "pip\&._vendor\&.pygments\&.lexers\&.name"
+
+.SS "pip\&._vendor\&.pygments\&.lexers\&.newmod = \fB_automodule\fP(__name__)"
+
+.SS "pip\&._vendor\&.pygments\&.lexers\&.oldmod = sys\&.modules[__name__]"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,145 @@
+.TH "webtest.forms.Field" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webtest.forms.Field
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBwebtest\&.forms\&.Checkbox\fP, \fBwebtest\&.forms\&.Email\fP, \fBwebtest\&.forms\&.File\fP, \fBwebtest\&.forms\&.MultipleSelect\fP, \fBwebtest\&.forms\&.Select\fP, \fBwebtest\&.forms\&.Submit\fP, and \fBwebtest\&.forms\&.Text\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBform\fP, \fBtag\fP, \fBname\fP, \fBpos\fP, \fBvalue\fP=None, \fBid\fP=None, **\fBattrs\fP)"
+.br
+.ti -1c
+.RI "\fBvalue__get\fP (self)"
+.br
+.ti -1c
+.RI "\fBvalue__set\fP (self, \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBforce_value\fP (self, \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBform\fP"
+.br
+.ti -1c
+.RI "\fBtag\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBpos\fP"
+.br
+.ti -1c
+.RI "\fBid\fP"
+.br
+.ti -1c
+.RI "\fBattrs\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBclasses\fP = {}"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_value\fP"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBvalue\fP = property(\fBvalue__get\fP, \fBvalue__set\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Base class for all Field objects\&.
+
+\&.\&. attribute:: classes
+
+    Dictionary of field types (select, radio, etc)
+
+\&.\&. attribute:: value
+
+    Set/get value of the field\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "webtest\&.forms\&.Field\&.__init__ ( self,  form,  tag,  name,  pos,  value = \fCNone\fP,  id = \fCNone\fP, ** attrs)"
+
+.PP
+Reimplemented in \fBwebtest\&.forms\&.Select\fP, \fBwebtest\&.forms\&.MultipleSelect\fP, and \fBwebtest\&.forms\&.Checkbox\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "webtest\&.forms\&.Field\&.__repr__ ( self)"
+
+.SS "webtest\&.forms\&.Field\&.force_value ( self,  value)"
+
+.PP
+.nf
+Like setting a value, except forces it (even for, say, hidden
+fields)\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBwebtest\&.forms\&.Select\fP, and \fBwebtest\&.forms\&.MultipleSelect\fP\&.
+.SS "webtest\&.forms\&.Field\&.value__get ( self)"
+
+.PP
+Reimplemented in \fBwebtest\&.forms\&.Select\fP, \fBwebtest\&.forms\&.MultipleSelect\fP, \fBwebtest\&.forms\&.Radio\fP, \fBwebtest\&.forms\&.Checkbox\fP, \fBwebtest\&.forms\&.File\fP, and \fBwebtest\&.forms\&.Submit\fP\&.
+.SS "webtest\&.forms\&.Field\&.value__set ( self,  value)"
+
+.PP
+Reimplemented in \fBwebtest\&.forms\&.Select\fP, \fBwebtest\&.forms\&.Checkbox\fP, \fBwebtest\&.forms\&.Submit\fP, and \fBwebtest\&.forms\&.MultipleSelect\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "webtest\&.forms\&.Field\&._value\fC [protected]\fP"
+
+.SS "webtest\&.forms\&.Field\&.attrs"
+
+.SS "dict webtest\&.forms\&.Field\&.classes = {}\fC [static]\fP"
+
+.SS "webtest\&.forms\&.Field\&.form"
+
+.SS "webtest\&.forms\&.Field\&.id"
+
+.SS "webtest\&.forms\&.Field\&.name"
+
+.SS "webtest\&.forms\&.Field\&.pos"
+
+.SS "webtest\&.forms\&.Field\&.tag"
+
+.SH "Property Documentation"
+.PP 
+.SS "webtest\&.forms\&.Field\&.value = property(\fBvalue__get\fP, \fBvalue__set\fP)\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

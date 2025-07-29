@@ -1,0 +1,68 @@
+.TH "sphinx.config.ENUM" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.config.ENUM
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, *str|bool|None candidates)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBmatch\fP (self, str|bool|None|Sequence[str|bool|None] value)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_candidates\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "TypeAlias \fB_OptValidTypes\fP = frozenset[type] | \fBENUM\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Represents the candidates which a config value should be one of\&.
+
+Example:
+    app\&.add_config_value('latex_show_urls', 'no', None, ENUM('no', 'footnote', 'inline'))
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.config\&.ENUM\&.__init__ ( self, *str | bool | None candidates)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " str sphinx\&.config\&.ENUM\&.__repr__ ( self)"
+
+.SS " bool sphinx\&.config\&.ENUM\&.match ( self, str | bool | None | Sequence[str | bool | None] value)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.config\&.ENUM\&._candidates\fC [protected]\fP"
+
+.SS "TypeAlias sphinx\&.config\&.ENUM\&._OptValidTypes = frozenset[type] | \fBENUM\fP\fC [static]\fP, \fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

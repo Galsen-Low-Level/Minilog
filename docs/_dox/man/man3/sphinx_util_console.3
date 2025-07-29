@@ -1,0 +1,84 @@
+.TH "sphinx.util.console" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.util.console
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fBterminal_safe\fP (str s)"
+.br
+.ti -1c
+.RI "int \fBget_terminal_width\fP ()"
+.br
+.ti -1c
+.RI "str \fBterm_width_line\fP (str text)"
+.br
+.ti -1c
+.RI "str \fBcolorize\fP (str name, str text, bool input_mode=False)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBnocolor\fP = disable_colour"
+.br
+.ti -1c
+.RI "\fBcoloron\fP = enable_colour"
+.br
+.ti -1c
+.RI "\fBstrip_colors\fP = strip_escape_sequences"
+.br
+.ti -1c
+.RI "int \fB_tw\fP = \fBget_terminal_width\fP()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Format colored console output\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " str sphinx\&.util\&.console\&.colorize (str name, str text, bool  input_mode = \fCFalse\fP)"
+
+.SS " int sphinx\&.util\&.console\&.get_terminal_width ()"
+
+.PP
+.nf
+Return the width of the terminal in columns\&.
+.fi
+.PP
+ 
+.SS " str sphinx\&.util\&.console\&.term_width_line (str text)"
+
+.SS " str sphinx\&.util\&.console\&.terminal_safe (str s)"
+
+.PP
+.nf
+Safely encode a string for printing to the terminal\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "int sphinx\&.util\&.console\&._tw = \fBget_terminal_width\fP()\fC [protected]\fP"
+
+.SS "sphinx\&.util\&.console\&.coloron = enable_colour"
+
+.SS "sphinx\&.util\&.console\&.nocolor = disable_colour"
+
+.SS "sphinx\&.util\&.console\&.strip_colors = strip_escape_sequences"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespacewaitress_1_1parser" kind="namespace" language="Python">
+    <compoundname>waitress::parser</compoundname>
+    <innerclass refid="classwaitress_1_1parser_1_1HTTPRequestParser" prot="public">waitress::parser::HTTPRequestParser</innerclass>
+    <innerclass refid="classwaitress_1_1parser_1_1ParsingError" prot="public">waitress::parser::ParsingError</innerclass>
+    <innerclass refid="classwaitress_1_1parser_1_1TransferEncodingNotImplemented" prot="public">waitress::parser::TransferEncodingNotImplemented</innerclass>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacewaitress_1_1parser_1a54b9689cc1eda65d87997d5fb96adfd0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>waitress::parser.first_line_re</definition>
+        <argsstring></argsstring>
+        <name>first_line_re</name>
+        <qualifiedname>waitress.parser.first_line_re</qualifiedname>
+        <initializer>=  re.compile(
+    rb&quot;(?P&lt;method&gt;[!#$%&amp;&apos;*+\-.^_`|~0-9A-Za-z]+) &quot;
+    rb&quot;(?P&lt;uri&gt;(?:[^ :?#]+://[^ ?#/]*(?:[0-9]{1,5})?)?[^ ]+)&quot;
+    rb&quot;(?: HTTP/(?P&lt;version&gt;[0-9]\.[0-9]))?&quot;
+)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/parser.py" line="412" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/parser.py" bodystart="412" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacewaitress_1_1parser_1a8dfa63ff453b4d01a77268889ad14be0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.parser.unquote_bytes_to_wsgi</definition>
+        <argsstring>(bytestring)</argsstring>
+        <name>unquote_bytes_to_wsgi</name>
+        <qualifiedname>waitress.parser.unquote_bytes_to_wsgi</qualifiedname>
+        <param>
+          <type>bytestring</type>
+          <defname>bytestring</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/parser.py" line="36" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/parser.py" bodystart="36" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewaitress_1_1parser_1a40489c0ff1aebeaf129fe0a02b6fb623" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.parser.split_uri</definition>
+        <argsstring>(uri)</argsstring>
+        <name>split_uri</name>
+        <qualifiedname>waitress.parser.split_uri</qualifiedname>
+        <param>
+          <type>uri</type>
+          <defname>uri</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/parser.py" line="349" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/parser.py" bodystart="349" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewaitress_1_1parser_1a2dbcb6e52f4f4a93f06438502368d00b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.parser.get_header_lines</definition>
+        <argsstring>(header)</argsstring>
+        <name>get_header_lines</name>
+        <qualifiedname>waitress.parser.get_header_lines</qualifiedname>
+        <param>
+          <type>header</type>
+          <defname>header</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Splits the header into lines, putting multi-line headers together.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/parser.py" line="385" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/parser.py" bodystart="385" bodyend="411"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacewaitress_1_1parser_1a94cd71e94c53c0d97213564fb504abd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>waitress.parser.crack_first_line</definition>
+        <argsstring>(line)</argsstring>
+        <name>crack_first_line</name>
+        <qualifiedname>waitress.parser.crack_first_line</qualifiedname>
+        <param>
+          <type>line</type>
+          <defname>line</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/parser.py" line="419" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/parser.py" bodystart="419" bodyend="443"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/waitress/parser.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

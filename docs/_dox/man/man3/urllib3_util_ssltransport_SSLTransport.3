@@ -1,0 +1,255 @@
+.TH "urllib3.util.ssltransport.SSLTransport" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+urllib3.util.ssltransport.SSLTransport
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, socket\&.socket \fBsocket\fP, ssl\&.SSLContext ssl_context, str|None server_hostname=None, bool \fBsuppress_ragged_eofs\fP=True)"
+.br
+.ti -1c
+.RI "Self \fB__enter__\fP (self)"
+.br
+.ti -1c
+.RI "None \fB__exit__\fP (self, *typing\&.Any _)"
+.br
+.ti -1c
+.RI "int \fBfileno\fP (self)"
+.br
+.ti -1c
+.RI "int|bytes \fBread\fP (self, int len=1024, typing\&.Any|None buffer=None)"
+.br
+.ti -1c
+.RI "int|bytes \fBrecv\fP (self, int buflen=1024, int flags=0)"
+.br
+.ti -1c
+.RI "None|int|bytes \fBrecv_into\fP (self, \fB_WriteBuffer\fP buffer, int|None nbytes=None, int flags=0)"
+.br
+.ti -1c
+.RI "None \fBsendall\fP (self, bytes data, int flags=0)"
+.br
+.ti -1c
+.RI "int \fBsend\fP (self, bytes data, int flags=0)"
+.br
+.ti -1c
+.RI "typing\&.BinaryIO|typing\&.TextIO|socket\&.SocketIO \fBmakefile\fP (self, str mode, int|None buffering=None, *str|None encoding=None, str|None errors=None, str|None newline=None)"
+.br
+.ti -1c
+.RI "None \fBunwrap\fP (self)"
+.br
+.ti -1c
+.RI "None \fBclose\fP (self)"
+.br
+.ti -1c
+.RI "\fB_TYPE_PEER_CERT_RET_DICT\fP|None \fBgetpeercert\fP (self, typing\&.Literal[False] binary_form=\&.\&.\&.)"
+.br
+.ti -1c
+.RI "bytes|None \fBgetpeercert\fP (self, typing\&.Literal[True] binary_form)"
+.br
+.ti -1c
+.RI "_TYPE_PEER_CERT_RET \fBgetpeercert\fP (self, bool binary_form=False)"
+.br
+.ti -1c
+.RI "str|None \fBversion\fP (self)"
+.br
+.ti -1c
+.RI "tuple[str, str, int]|None \fBcipher\fP (self)"
+.br
+.ti -1c
+.RI "str|None \fBselected_alpn_protocol\fP (self)"
+.br
+.ti -1c
+.RI "list[tuple[str, str, int]]|None \fBshared_ciphers\fP (self)"
+.br
+.ti -1c
+.RI "str|None \fBcompression\fP (self)"
+.br
+.ti -1c
+.RI "None \fBsettimeout\fP (self, float|None value)"
+.br
+.ti -1c
+.RI "float|None \fBgettimeout\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBincoming\fP"
+.br
+.ti -1c
+.RI "\fBoutgoing\fP"
+.br
+.ti -1c
+.RI "\fBsuppress_ragged_eofs\fP"
+.br
+.ti -1c
+.RI "\fBsocket\fP"
+.br
+.ti -1c
+.RI "\fBsslobj\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB_decref_socketios\fP (self)"
+.br
+.ti -1c
+.RI "int|bytes \fB_wrap_ssl_read\fP (self, int len, bytearray|None buffer=None)"
+.br
+.ti -1c
+.RI "None \fB_ssl_io_loop\fP (self, typing\&.Callable[[], None] func)"
+.br
+.ti -1c
+.RI "int \fB_ssl_io_loop\fP (self, typing\&.Callable[[bytes], int] func, bytes arg1)"
+.br
+.ti -1c
+.RI "bytes \fB_ssl_io_loop\fP (self, typing\&.Callable[[int, bytearray|None], bytes] func, int arg1, bytearray|None arg2)"
+.br
+.ti -1c
+.RI "\fB_ReturnValue\fP \fB_ssl_io_loop\fP (self, typing\&.Callable[\&.\&.\&., \fB_ReturnValue\fP] func, None|bytes|int arg1=None, bytearray|None arg2=None)"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB_validate_ssl_context_for_tls_in_tls\fP (ssl\&.SSLContext ssl_context)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+The SSLTransport wraps an existing socket and establishes an SSL connection\&.
+
+Contrary to Python's implementation of SSLSocket, it allows you to chain
+multiple TLS connections together\&. It's particularly useful if you need to
+implement TLS within TLS\&.
+
+The class supports most of the socket API operations\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None urllib3\&.util\&.ssltransport\&.SSLTransport\&.__init__ ( self, socket\&.socket socket, ssl\&.SSLContext ssl_context, str | None  server_hostname = \fCNone\fP, bool  suppress_ragged_eofs = \fCTrue\fP)"
+
+.PP
+.nf
+Create an SSLTransport around socket using the provided ssl_context\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " Self urllib3\&.util\&.ssltransport\&.SSLTransport\&.__enter__ ( self)"
+
+.SS " None urllib3\&.util\&.ssltransport\&.SSLTransport\&.__exit__ ( self, *typing\&.Any _)"
+
+.SS " None urllib3\&.util\&.ssltransport\&.SSLTransport\&._decref_socketios ( self)\fC [protected]\fP"
+
+.SS " \fB_ReturnValue\fP urllib3\&.util\&.ssltransport\&.SSLTransport\&._ssl_io_loop ( self, typing\&.Callable[\&.\&.\&., \fB_ReturnValue\fP] func, None | bytes | int  arg1 = \fCNone\fP, bytearray | None  arg2 = \fCNone\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Performs an I/O loop between incoming/outgoing and the socket\&.
+.fi
+.PP
+ 
+.SS " None urllib3\&.util\&.ssltransport\&.SSLTransport\&._ssl_io_loop ( self, typing\&.Callable[[], None] func)\fC [protected]\fP"
+
+.SS " int urllib3\&.util\&.ssltransport\&.SSLTransport\&._ssl_io_loop ( self, typing\&.Callable[[bytes], int] func, bytes arg1)\fC [protected]\fP"
+
+.SS " bytes urllib3\&.util\&.ssltransport\&.SSLTransport\&._ssl_io_loop ( self, typing\&.Callable[[int, bytearray | None], bytes] func, int arg1, bytearray | None arg2)\fC [protected]\fP"
+
+.SS " None urllib3\&.util\&.ssltransport\&.SSLTransport\&._validate_ssl_context_for_tls_in_tls (ssl\&.SSLContext ssl_context)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+.nf
+Raises a ProxySchemeUnsupported if the provided ssl_context can't be used
+for TLS in TLS\&.
+
+The only requirement is that the ssl_context provides the 'wrap_bio'
+methods\&.
+
+.fi
+.PP
+ 
+.SS " int | bytes urllib3\&.util\&.ssltransport\&.SSLTransport\&._wrap_ssl_read ( self, int len, bytearray | None  buffer = \fCNone\fP)\fC [protected]\fP"
+
+.SS " tuple[str, str, int] | None urllib3\&.util\&.ssltransport\&.SSLTransport\&.cipher ( self)"
+
+.SS " None urllib3\&.util\&.ssltransport\&.SSLTransport\&.close ( self)"
+
+.SS " str | None urllib3\&.util\&.ssltransport\&.SSLTransport\&.compression ( self)"
+
+.SS " int urllib3\&.util\&.ssltransport\&.SSLTransport\&.fileno ( self)"
+
+.SS " _TYPE_PEER_CERT_RET urllib3\&.util\&.ssltransport\&.SSLTransport\&.getpeercert ( self, bool  binary_form = \fCFalse\fP)"
+
+.SS " \fB_TYPE_PEER_CERT_RET_DICT\fP | None urllib3\&.util\&.ssltransport\&.SSLTransport\&.getpeercert ( self, typing\&.Literal[False]  binary_form = \fC\&.\&.\&.\fP)"
+
+.SS " bytes | None urllib3\&.util\&.ssltransport\&.SSLTransport\&.getpeercert ( self, typing\&.Literal[True] binary_form)"
+
+.SS " float | None urllib3\&.util\&.ssltransport\&.SSLTransport\&.gettimeout ( self)"
+
+.SS " typing\&.BinaryIO | typing\&.TextIO | socket\&.SocketIO urllib3\&.util\&.ssltransport\&.SSLTransport\&.makefile ( self, str mode, int | None  buffering = \fCNone\fP, *str | None  encoding = \fCNone\fP, str | None  errors = \fCNone\fP, str | None  newline = \fCNone\fP)"
+
+.PP
+.nf
+Python's httpclient uses makefile and buffered io when reading HTTP
+messages and we need to support it\&.
+
+This is unfortunately a copy and paste of socket\&.py makefile with small
+changes to point to the socket directly\&.
+
+.fi
+.PP
+ 
+.SS " int | bytes urllib3\&.util\&.ssltransport\&.SSLTransport\&.read ( self, int  len = \fC1024\fP, typing\&.Any | None  buffer = \fCNone\fP)"
+
+.SS " int | bytes urllib3\&.util\&.ssltransport\&.SSLTransport\&.recv ( self, int  buflen = \fC1024\fP, int  flags = \fC0\fP)"
+
+.SS " None | int | bytes urllib3\&.util\&.ssltransport\&.SSLTransport\&.recv_into ( self, \fB_WriteBuffer\fP buffer, int | None  nbytes = \fCNone\fP, int  flags = \fC0\fP)"
+
+.SS " str | None urllib3\&.util\&.ssltransport\&.SSLTransport\&.selected_alpn_protocol ( self)"
+
+.SS " int urllib3\&.util\&.ssltransport\&.SSLTransport\&.send ( self, bytes data, int  flags = \fC0\fP)"
+
+.SS " None urllib3\&.util\&.ssltransport\&.SSLTransport\&.sendall ( self, bytes data, int  flags = \fC0\fP)"
+
+.SS " None urllib3\&.util\&.ssltransport\&.SSLTransport\&.settimeout ( self, float | None value)"
+
+.SS " list[tuple[str, str, int]] | None urllib3\&.util\&.ssltransport\&.SSLTransport\&.shared_ciphers ( self)"
+
+.SS " None urllib3\&.util\&.ssltransport\&.SSLTransport\&.unwrap ( self)"
+
+.SS " str | None urllib3\&.util\&.ssltransport\&.SSLTransport\&.version ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "urllib3\&.util\&.ssltransport\&.SSLTransport\&.incoming"
+
+.SS "urllib3\&.util\&.ssltransport\&.SSLTransport\&.outgoing"
+
+.SS "urllib3\&.util\&.ssltransport\&.SSLTransport\&.socket"
+
+.SS "urllib3\&.util\&.ssltransport\&.SSLTransport\&.sslobj"
+
+.SS "urllib3\&.util\&.ssltransport\&.SSLTransport\&.suppress_ragged_eofs"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

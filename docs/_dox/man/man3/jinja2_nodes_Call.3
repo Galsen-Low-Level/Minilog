@@ -1,0 +1,153 @@
+.TH "jinja2.nodes.Call" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.nodes.Call
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBjinja2\&.nodes\&.Expr\fP\&.
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBfields\fP = ('node', 'args', 'kwargs', 'dyn_args', 'dyn_kwargs')"
+.br
+.ti -1c
+.RI "\fBExpr\fP \fBnode\fP"
+.br
+.ti -1c
+.RI "t \fBargs\fP \&.\fBList\fP[\fBExpr\fP]"
+.br
+.ti -1c
+.RI "t \fBkwargs\fP \&.\fBList\fP[\fBKeyword\fP]"
+.br
+.ti -1c
+.RI "t \fBdyn_args\fP \&.Optional[\fBExpr\fP]"
+.br
+.ti -1c
+.RI "t \fBdyn_kwargs\fP \&.Optional[\fBExpr\fP]"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBjinja2\&.nodes\&.Expr\fP
+.in +1c
+.ti -1c
+.RI "bool \fBabstract\fP = True"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBjinja2\&.nodes\&.Node\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBfields\fP = ()"
+.br
+.ti -1c
+.RI "tuple \fBattributes\fP = ('lineno', 'environment')"
+.br
+.ti -1c
+.RI "bool \fBabstract\fP = True"
+.br
+.ti -1c
+.RI "int \fBlineno\fP"
+.br
+.ti -1c
+.RI "t \fBenvironment\fP \&.Optional['Environment']"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBjinja2\&.nodes\&.Expr\fP
+.in +1c
+.ti -1c
+.RI "t\&.Any \fBas_const\fP (self, t\&.Optional[\fBEvalContext\fP] eval_ctx=None)"
+.br
+.ti -1c
+.RI "bool \fBcan_assign\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBjinja2\&.nodes\&.Node\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, *t\&.Any \fBfields\fP, **t\&.Any \fBattributes\fP)"
+.br
+.ti -1c
+.RI "t\&.Iterator[t\&.Tuple[str, t\&.Any]] \fBiter_fields\fP (self, t\&.Optional[t\&.Container[str]] exclude=None, t\&.Optional[t\&.Container[str]] only=None)"
+.br
+.ti -1c
+.RI "t\&.Iterator['Node'] \fBiter_child_nodes\fP (self, t\&.Optional[t\&.Container[str]] exclude=None, t\&.Optional[t\&.Container[str]] only=None)"
+.br
+.ti -1c
+.RI "t\&.Optional[\fB_NodeBound\fP] \fBfind\fP (self, t\&.Type[\fB_NodeBound\fP] node_type)"
+.br
+.ti -1c
+.RI "t\&.Iterator[\fB_NodeBound\fP] \fBfind_all\fP (self, t\&.Union[t\&.Type[\fB_NodeBound\fP], t\&.Tuple[t\&.Type[\fB_NodeBound\fP],\&.\&.\&.]] node_type)"
+.br
+.ti -1c
+.RI "'Node' \fBset_ctx\fP (self, str ctx)"
+.br
+.ti -1c
+.RI "'Node' \fBset_lineno\fP (self, int \fBlineno\fP, bool override=False)"
+.br
+.ti -1c
+.RI "'Node' \fBset_environment\fP (self, 'Environment' \fBenvironment\fP)"
+.br
+.ti -1c
+.RI "bool \fB__eq__\fP (self, t\&.Any other)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "str \fBdump\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBjinja2\&.nodes\&.NodeType\fP
+.in +1c
+.ti -1c
+.RI "\fB__new__\fP (mcs, name, bases, d)"
+.br
+.in -1c
+
+Public Attributes inherited from \fBjinja2\&.nodes\&.Node\fP
+.in +1c
+.ti -1c
+.RI "\fBfields\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Calls an expression\&.  `args` is a list of arguments, `kwargs` a list
+of keyword arguments (list of :class:`Keyword` nodes), and `dyn_args`
+and `dyn_kwargs` has to be either `None` or a node that is used as
+node for dynamic positional (``*args``) or keyword (``**kwargs``)
+arguments\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "t jinja2\&.nodes\&.Call\&.args \&.\fBList\fP[\fBExpr\fP]\fC [static]\fP"
+
+.SS "t jinja2\&.nodes\&.Call\&.dyn_args \&.Optional[\fBExpr\fP]\fC [static]\fP"
+
+.SS "t jinja2\&.nodes\&.Call\&.dyn_kwargs \&.Optional[\fBExpr\fP]\fC [static]\fP"
+
+.SS "tuple jinja2\&.nodes\&.Call\&.fields = ('node', 'args', 'kwargs', 'dyn_args', 'dyn_kwargs')\fC [static]\fP"
+
+.SS "t jinja2\&.nodes\&.Call\&.kwargs \&.\fBList\fP[\fBKeyword\fP]\fC [static]\fP"
+
+.SS "\fBExpr\fP jinja2\&.nodes\&.Call\&.node\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

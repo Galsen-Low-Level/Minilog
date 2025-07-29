@@ -1,0 +1,235 @@
+.TH "pip._vendor.urllib3.util.ssltransport.SSLTransport" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.urllib3.util.ssltransport.SSLTransport
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBsocket\fP, ssl_context, server_hostname=None, \fBsuppress_ragged_eofs\fP=True)"
+.br
+.ti -1c
+.RI "\fB__enter__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__exit__\fP (self, *_)"
+.br
+.ti -1c
+.RI "\fBfileno\fP (self)"
+.br
+.ti -1c
+.RI "\fBread\fP (self, len=1024, buffer=None)"
+.br
+.ti -1c
+.RI "\fBrecv\fP (self, len=1024, flags=0)"
+.br
+.ti -1c
+.RI "\fBrecv_into\fP (self, buffer, nbytes=None, flags=0)"
+.br
+.ti -1c
+.RI "\fBsendall\fP (self, data, flags=0)"
+.br
+.ti -1c
+.RI "\fBsend\fP (self, data, flags=0)"
+.br
+.ti -1c
+.RI "\fBmakefile\fP (self, mode='r', buffering=None, encoding=None, errors=None, newline=None)"
+.br
+.ti -1c
+.RI "\fBunwrap\fP (self)"
+.br
+.ti -1c
+.RI "\fBclose\fP (self)"
+.br
+.ti -1c
+.RI "\fBgetpeercert\fP (self, binary_form=False)"
+.br
+.ti -1c
+.RI "\fBversion\fP (self)"
+.br
+.ti -1c
+.RI "\fBcipher\fP (self)"
+.br
+.ti -1c
+.RI "\fBselected_alpn_protocol\fP (self)"
+.br
+.ti -1c
+.RI "\fBselected_npn_protocol\fP (self)"
+.br
+.ti -1c
+.RI "\fBshared_ciphers\fP (self)"
+.br
+.ti -1c
+.RI "\fBcompression\fP (self)"
+.br
+.ti -1c
+.RI "\fBsettimeout\fP (self, value)"
+.br
+.ti -1c
+.RI "\fBgettimeout\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBincoming\fP"
+.br
+.ti -1c
+.RI "\fBoutgoing\fP"
+.br
+.ti -1c
+.RI "\fBsuppress_ragged_eofs\fP"
+.br
+.ti -1c
+.RI "\fBsocket\fP"
+.br
+.ti -1c
+.RI "\fBsslobj\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_decref_socketios\fP (self)"
+.br
+.ti -1c
+.RI "\fB_wrap_ssl_read\fP (self, len, buffer=None)"
+.br
+.ti -1c
+.RI "\fB_ssl_io_loop\fP (self, func, *args)"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_validate_ssl_context_for_tls_in_tls\fP (ssl_context)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+The SSLTransport wraps an existing socket and establishes an SSL connection\&.
+
+Contrary to Python's implementation of SSLSocket, it allows you to chain
+multiple TLS connections together\&. It's particularly useful if you need to
+implement TLS within TLS\&.
+
+The class supports most of the socket API operations\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.__init__ ( self,  socket,  ssl_context,  server_hostname = \fCNone\fP,  suppress_ragged_eofs = \fCTrue\fP)"
+
+.PP
+.nf
+Create an SSLTransport around socket using the provided ssl_context\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.__enter__ ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.__exit__ ( self, * _)"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&._decref_socketios ( self)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&._ssl_io_loop ( self,  func, * args)\fC [protected]\fP"
+
+.PP
+.nf
+Performs an I/O loop between incoming/outgoing and the socket\&.
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&._validate_ssl_context_for_tls_in_tls ( ssl_context)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+.nf
+Raises a ProxySchemeUnsupported if the provided ssl_context can't be used
+for TLS in TLS\&.
+
+The only requirement is that the ssl_context provides the 'wrap_bio'
+methods\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&._wrap_ssl_read ( self,  len,  buffer = \fCNone\fP)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.cipher ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.close ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.compression ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.fileno ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.getpeercert ( self,  binary_form = \fCFalse\fP)"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.gettimeout ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.makefile ( self,  mode = \fC'r'\fP,  buffering = \fCNone\fP,  encoding = \fCNone\fP,  errors = \fCNone\fP,  newline = \fCNone\fP)"
+
+.PP
+.nf
+Python's httpclient uses makefile and buffered io when reading HTTP
+messages and we need to support it\&.
+
+This is unfortunately a copy and paste of socket\&.py makefile with small
+changes to point to the socket directly\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.read ( self,  len = \fC1024\fP,  buffer = \fCNone\fP)"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.recv ( self,  len = \fC1024\fP,  flags = \fC0\fP)"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.recv_into ( self,  buffer,  nbytes = \fCNone\fP,  flags = \fC0\fP)"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.selected_alpn_protocol ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.selected_npn_protocol ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.send ( self,  data,  flags = \fC0\fP)"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.sendall ( self,  data,  flags = \fC0\fP)"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.settimeout ( self,  value)"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.shared_ciphers ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.unwrap ( self)"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.version ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.incoming"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.outgoing"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.socket"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.sslobj"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssltransport\&.SSLTransport\&.suppress_ragged_eofs"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

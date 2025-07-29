@@ -1,0 +1,251 @@
+.TH "pip._vendor.rich.syntax" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.rich.syntax
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_SyntaxHighlightRange\fP"
+.br
+.ti -1c
+.RI "class \fBANSISyntaxTheme\fP"
+.br
+.ti -1c
+.RI "class \fBPygmentsSyntaxTheme\fP"
+.br
+.ti -1c
+.RI "class \fBSyntax\fP"
+.br
+.ti -1c
+.RI "class \fBSyntaxTheme\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "Optional[\fBint\fP] \fB_get_code_index_for_syntax_position\fP (Sequence[\fBint\fP] newlines_offsets, \fBSyntaxPosition\fP position)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBTokenType\fP = Tuple[str, \&.\&.\&.]"
+.br
+.ti -1c
+.RI "str \fBWINDOWS\fP = 'Windows'"
+.br
+.ti -1c
+.RI "str \fBDEFAULT_THEME\fP = 'monokai'"
+.br
+.ti -1c
+.RI "dict \fBANSI_LIGHT\fP"
+.br
+.ti -1c
+.RI "dict \fBANSI_DARK\fP"
+.br
+.ti -1c
+.RI "dict \fBRICH_SYNTAX_THEMES\fP = {'ansi_light': \fBANSI_LIGHT\fP, 'ansi_dark': \fBANSI_DARK\fP}"
+.br
+.ti -1c
+.RI "\fBint\fP \fBNUMBERS_COLUMN_DEFAULT_PADDING\fP = 2"
+.br
+.ti -1c
+.RI "\fBSyntaxPosition\fP = Tuple[\fBint\fP, \fBint\fP]"
+.br
+.ti -1c
+.RI "\fBparser\fP"
+.br
+.ti -1c
+.RI "\fBmetavar\fP"
+.br
+.ti -1c
+.RI "\fBhelp\fP"
+.br
+.ti -1c
+.RI "\fBdest\fP"
+.br
+.ti -1c
+.RI "\fBaction\fP"
+.br
+.ti -1c
+.RI "\fBdefault\fP"
+.br
+.ti -1c
+.RI "\fBtype\fP"
+.br
+.ti -1c
+.RI "\fBint\fP"
+.br
+.ti -1c
+.RI "\fBargs\fP = parser\&.parse_args()"
+.br
+.ti -1c
+.RI "\fBconsole\fP = \fBConsole\fP(force_terminal=args\&.force_color, width=args\&.width)"
+.br
+.ti -1c
+.RI "\fBcode\fP = sys\&.stdin\&.read()"
+.br
+.ti -1c
+.RI "\fBsyntax\fP"
+.br
+.ti -1c
+.RI "\fBsoft_wrap\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " Optional[\fBint\fP] pip\&._vendor\&.rich\&.syntax\&._get_code_index_for_syntax_position (Sequence[\fBint\fP] newlines_offsets, \fBSyntaxPosition\fP
+ position)\fC [protected]\fP"
+
+.PP
+.nf
+Returns the index of the code string for the given positions\&.
+
+Args:
+    newlines_offsets (Sequence[int]): The offset of each newline character found in the code snippet\&.
+    position (SyntaxPosition): The position to search for\&.
+
+Returns:
+    Optional[int]: The index of the code string for this position, or `None`
+        if the given position's line number is out of range (if it's the column that is out of range
+        we silently clamp its value so that it reaches the end of the line)
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._vendor\&.rich\&.syntax\&.action"
+
+.SS "dict pip\&._vendor\&.rich\&.syntax\&.ANSI_DARK"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     Token: Style(),
+3     Whitespace: Style(color="bright_black"),
+4     Comment: Style(dim=True),
+5     Comment\&.Preproc: Style(color="bright_cyan"),
+6     Keyword: Style(color="bright_blue"),
+7     Keyword\&.Type: Style(color="bright_cyan"),
+8     Operator\&.Word: Style(color="bright_magenta"),
+9     Name\&.Builtin: Style(color="bright_cyan"),
+10     Name\&.Function: Style(color="bright_green"),
+11     Name\&.Namespace: Style(color="bright_cyan", underline=True),
+12     Name\&.Class: Style(color="bright_green", underline=True),
+13     Name\&.Exception: Style(color="bright_cyan"),
+14     Name\&.Decorator: Style(color="bright_magenta", bold=True),
+15     Name\&.Variable: Style(color="bright_red"),
+16     Name\&.Constant: Style(color="bright_red"),
+17     Name\&.Attribute: Style(color="bright_cyan"),
+18     Name\&.Tag: Style(color="bright_blue"),
+19     String: Style(color="yellow"),
+20     Number: Style(color="bright_blue"),
+21     Generic\&.Deleted: Style(color="bright_red"),
+22     Generic\&.Inserted: Style(color="bright_green"),
+23     Generic\&.Heading: Style(bold=True),
+24     Generic\&.Subheading: Style(color="bright_magenta", bold=True),
+25     Generic\&.Prompt: Style(bold=True),
+26     Generic\&.Error: Style(color="bright_red"),
+27     Error: Style(color="red", underline=True),
+28 }
+.fi
+
+.SS "dict pip\&._vendor\&.rich\&.syntax\&.ANSI_LIGHT"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     Token: Style(),
+3     Whitespace: Style(color="white"),
+4     Comment: Style(dim=True),
+5     Comment\&.Preproc: Style(color="cyan"),
+6     Keyword: Style(color="blue"),
+7     Keyword\&.Type: Style(color="cyan"),
+8     Operator\&.Word: Style(color="magenta"),
+9     Name\&.Builtin: Style(color="cyan"),
+10     Name\&.Function: Style(color="green"),
+11     Name\&.Namespace: Style(color="cyan", underline=True),
+12     Name\&.Class: Style(color="green", underline=True),
+13     Name\&.Exception: Style(color="cyan"),
+14     Name\&.Decorator: Style(color="magenta", bold=True),
+15     Name\&.Variable: Style(color="red"),
+16     Name\&.Constant: Style(color="red"),
+17     Name\&.Attribute: Style(color="cyan"),
+18     Name\&.Tag: Style(color="bright_blue"),
+19     String: Style(color="yellow"),
+20     Number: Style(color="blue"),
+21     Generic\&.Deleted: Style(color="bright_red"),
+22     Generic\&.Inserted: Style(color="green"),
+23     Generic\&.Heading: Style(bold=True),
+24     Generic\&.Subheading: Style(color="magenta", bold=True),
+25     Generic\&.Prompt: Style(bold=True),
+26     Generic\&.Error: Style(color="bright_red"),
+27     Error: Style(color="red", underline=True),
+28 }
+.fi
+
+.SS "pip\&._vendor\&.rich\&.syntax\&.args = parser\&.parse_args()"
+
+.SS "pip\&._vendor\&.rich\&.syntax\&.code = sys\&.stdin\&.read()"
+
+.SS "pip\&._vendor\&.rich\&.syntax\&.console = \fBConsole\fP(force_terminal=args\&.force_color, width=args\&.width)"
+
+.SS "pip\&._vendor\&.rich\&.syntax\&.default"
+
+.SS "str pip\&._vendor\&.rich\&.syntax\&.DEFAULT_THEME = 'monokai'"
+
+.SS "pip\&._vendor\&.rich\&.syntax\&.dest"
+
+.SS "pip\&._vendor\&.rich\&.syntax\&.help"
+
+.SS "pip\&._vendor\&.rich\&.syntax\&.int"
+
+.SS "pip\&._vendor\&.rich\&.syntax\&.metavar"
+
+.SS "\fBint\fP pip\&._vendor\&.rich\&.syntax\&.NUMBERS_COLUMN_DEFAULT_PADDING = 2"
+
+.SS "pip\&._vendor\&.rich\&.syntax\&.parser"
+\fBInitial value:\fP.PP
+.nf
+1 =  argparse\&.ArgumentParser(
+2         description="Render syntax to the console with Rich"
+3     )
+.fi
+
+.SS "dict pip\&._vendor\&.rich\&.syntax\&.RICH_SYNTAX_THEMES = {'ansi_light': \fBANSI_LIGHT\fP, 'ansi_dark': \fBANSI_DARK\fP}"
+
+.SS "pip\&._vendor\&.rich\&.syntax\&.soft_wrap"
+
+.SS "pip\&._vendor\&.rich\&.syntax\&.syntax"
+\fBInitial value:\fP.PP
+.nf
+1 =  Syntax(
+2             code=code,
+3             lexer=args\&.lexer_name,
+4             line_numbers=args\&.line_numbers,
+5             word_wrap=args\&.word_wrap,
+6             theme=args\&.theme,
+7             background_color=args\&.background_color,
+8             indent_guides=args\&.indent_guides,
+9             padding=args\&.padding,
+10             highlight_lines={args\&.highlight_line},
+11         )
+.fi
+
+.SS "pip\&._vendor\&.rich\&.syntax\&.SyntaxPosition = Tuple[\fBint\fP, \fBint\fP]"
+
+.SS "pip\&._vendor\&.rich\&.syntax\&.TokenType = Tuple[str, \&.\&.\&.]"
+
+.SS "pip\&._vendor\&.rich\&.syntax\&.type"
+
+.SS "str pip\&._vendor\&.rich\&.syntax\&.WINDOWS = 'Windows'"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,175 @@
+.TH "bs4.element" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bs4.element
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAttributeDict\fP"
+.br
+.ti -1c
+.RI "class \fBAttributeValueList\fP"
+.br
+.ti -1c
+.RI "class \fBAttributeValueWithCharsetSubstitution\fP"
+.br
+.ti -1c
+.RI "class \fBCData\fP"
+.br
+.ti -1c
+.RI "class \fBCharsetMetaAttributeValue\fP"
+.br
+.ti -1c
+.RI "class \fBComment\fP"
+.br
+.ti -1c
+.RI "class \fBContentMetaAttributeValue\fP"
+.br
+.ti -1c
+.RI "class \fBDeclaration\fP"
+.br
+.ti -1c
+.RI "class \fBDoctype\fP"
+.br
+.ti -1c
+.RI "class \fBHTMLAttributeDict\fP"
+.br
+.ti -1c
+.RI "class \fBNamespacedAttribute\fP"
+.br
+.ti -1c
+.RI "class \fBNavigableString\fP"
+.br
+.ti -1c
+.RI "class \fBPageElement\fP"
+.br
+.ti -1c
+.RI "class \fBPreformattedString\fP"
+.br
+.ti -1c
+.RI "class \fBProcessingInstruction\fP"
+.br
+.ti -1c
+.RI "class \fBResultSet\fP"
+.br
+.ti -1c
+.RI "class \fBRubyParenthesisString\fP"
+.br
+.ti -1c
+.RI "class \fBRubyTextString\fP"
+.br
+.ti -1c
+.RI "class \fBScript\fP"
+.br
+.ti -1c
+.RI "class \fBStylesheet\fP"
+.br
+.ti -1c
+.RI "class \fBTag\fP"
+.br
+.ti -1c
+.RI "class \fBTemplateString\fP"
+.br
+.ti -1c
+.RI "class \fBXMLAttributeDict\fP"
+.br
+.ti -1c
+.RI "class \fBXMLProcessingInstruction\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "Any \fB__getattr__\fP (str name)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "TypeAlias \fB_OneOrMoreStringTypes\fP"
+.br
+.ti -1c
+.RI "TypeAlias \fB_FindMethodName\fP = Optional[Union['_StrainableElement', 'ElementFilter']]"
+.br
+.ti -1c
+.RI "\fB_deprecated_names\fP"
+.br
+.ti -1c
+.RI "Pattern \fB_deprecated_whitespace_re\fP = re\&.compile(r'\\s+')"
+.br
+.ti -1c
+.RI "str \fBDEFAULT_OUTPUT_ENCODING\fP = 'utf\-8'"
+.br
+.ti -1c
+.RI "Pattern \fBnonwhitespace_re\fP = re\&.compile(r'\\S+')"
+.br
+.ti -1c
+.RI "Set \fBPYTHON_SPECIFIC_ENCODINGS\fP"
+.br
+.ti -1c
+.RI "\fB_PageElementT\fP = TypeVar('_PageElementT', bound=\fBPageElement\fP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " Any bs4\&.element\&.__getattr__ (str name)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "bs4\&.element\&._deprecated_names\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  dict(
+2     whitespace_re="The {name} attribute was deprecated in version 4\&.7\&.0\&. If you need it, make your own copy\&."
+3 )
+.fi
+
+.SS "Pattern bs4\&.element\&._deprecated_whitespace_re = re\&.compile(r'\\s+')\fC [protected]\fP"
+
+.SS "TypeAlias bs4\&.element\&._FindMethodName = Optional[Union['_StrainableElement', 'ElementFilter']]\fC [protected]\fP"
+
+.SS "TypeAlias bs4\&.element\&._OneOrMoreStringTypes\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  Union[
+2     Type["NavigableString"], Iterable[Type["NavigableString"]]
+3 ]
+.fi
+
+.SS "bs4\&.element\&._PageElementT = TypeVar('_PageElementT', bound=\fBPageElement\fP)\fC [protected]\fP"
+
+.SS "str bs4\&.element\&.DEFAULT_OUTPUT_ENCODING = 'utf\-8'"
+
+.SS "Pattern bs4\&.element\&.nonwhitespace_re = re\&.compile(r'\\S+')"
+
+.SS "Set bs4\&.element\&.PYTHON_SPECIFIC_ENCODINGS"
+\fBInitial value:\fP.PP
+.nf
+1 =  set(
+2     [
+3         "idna",
+4         "mbcs",
+5         "oem",
+6         "palmos",
+7         "punycode",
+8         "raw_unicode_escape",
+9         "undefined",
+10         "unicode_escape",
+11         "raw\-unicode\-escape",
+12         "unicode\-escape",
+13         "string\-escape",
+14         "string_escape",
+15     ]
+16 )
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,158 @@
+.TH "pip._internal.cli.base_command.Command" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.cli.base_command.Command
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._internal\&.cli\&.command_context\&.CommandContextMixIn\fP\&.
+.PP
+Inherited by \fBpip\&._internal\&.cli\&.index_command\&.IndexGroupCommand\fP, \fBpip\&._internal\&.commands\&.cache\&.CacheCommand\fP, \fBpip\&._internal\&.commands\&.check\&.CheckCommand\fP, \fBpip\&._internal\&.commands\&.completion\&.CompletionCommand\fP, \fBpip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\fP, \fBpip\&._internal\&.commands\&.debug\&.DebugCommand\fP, \fBpip\&._internal\&.commands\&.freeze\&.FreezeCommand\fP, \fBpip\&._internal\&.commands\&.hash\&.HashCommand\fP, \fBpip\&._internal\&.commands\&.help\&.HelpCommand\fP, \fBpip\&._internal\&.commands\&.inspect\&.InspectCommand\fP, \fBpip\&._internal\&.commands\&.search\&.SearchCommand\fP, \fBpip\&._internal\&.commands\&.show\&.ShowCommand\fP, and \fBpip\&._internal\&.commands\&.uninstall\&.UninstallCommand\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str \fBname\fP, str \fBsummary\fP, bool isolated=False)"
+.br
+.ti -1c
+.RI "None \fBadd_options\fP (self)"
+.br
+.ti -1c
+.RI "None \fBhandle_pip_version_check\fP (self, Values options)"
+.br
+.ti -1c
+.RI "int \fBrun\fP (self, Values options, List[str] args)"
+.br
+.ti -1c
+.RI "Tuple[Values, List[str]] \fBparse_args\fP (self, List[str] args)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (self, List[str] args)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._internal\&.cli\&.command_context\&.CommandContextMixIn\fP
+.in +1c
+.ti -1c
+.RI "Generator[None, None, None] \fBmain_context\fP (self)"
+.br
+.ti -1c
+.RI "\fB_T\fP \fBenter_context\fP (self, ContextManager[\fB_T\fP] context_provider)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBsummary\fP"
+.br
+.ti -1c
+.RI "\fBparser\fP"
+.br
+.ti -1c
+.RI "\fBcmd_opts\fP"
+.br
+.ti -1c
+.RI "\fBtempdir_registry\fP"
+.br
+.ti -1c
+.RI "\fBverbosity\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBusage\fP = ''"
+.br
+.ti -1c
+.RI "bool \fBignore_require_venv\fP = False"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fB_run_wrapper\fP (self, int level_number, Values options, List[str] args)"
+.br
+.ti -1c
+.RI "int \fB_main\fP (self, List[str] args)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Attributes inherited from \fBpip\&._internal\&.cli\&.command_context\&.CommandContextMixIn\fP
+.in +1c
+.ti -1c
+.RI "\fB_in_main_context\fP"
+.br
+.ti -1c
+.RI "\fB_main_context\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._internal\&.cli\&.base_command\&.Command\&.__init__ ( self, str name, str summary, bool  isolated = \fCFalse\fP)"
+
+.PP
+Reimplemented from \fBpip\&._internal\&.cli\&.command_context\&.CommandContextMixIn\fP\&.
+.PP
+Reimplemented in \fBpip\&._internal\&.cli\&.req_command\&.RequirementCommand\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " int pip\&._internal\&.cli\&.base_command\&.Command\&._main ( self, List[str] args)\fC [protected]\fP"
+
+.SS " int pip\&._internal\&.cli\&.base_command\&.Command\&._run_wrapper ( self, int level_number, Values options, List[str] args)\fC [protected]\fP"
+
+.SS " None pip\&._internal\&.cli\&.base_command\&.Command\&.add_options ( self)"
+
+.PP
+Reimplemented in \fBpip\&._internal\&.commands\&.cache\&.CacheCommand\fP, \fBpip\&._internal\&.commands\&.completion\&.CompletionCommand\fP, \fBpip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\fP, \fBpip\&._internal\&.commands\&.debug\&.DebugCommand\fP, \fBpip\&._internal\&.commands\&.download\&.DownloadCommand\fP, \fBpip\&._internal\&.commands\&.freeze\&.FreezeCommand\fP, \fBpip\&._internal\&.commands\&.hash\&.HashCommand\fP, \fBpip\&._internal\&.commands\&.index\&.IndexCommand\fP, \fBpip\&._internal\&.commands\&.inspect\&.InspectCommand\fP, \fBpip\&._internal\&.commands\&.install\&.InstallCommand\fP, \fBpip\&._internal\&.commands\&.list\&.ListCommand\fP, \fBpip\&._internal\&.commands\&.search\&.SearchCommand\fP, \fBpip\&._internal\&.commands\&.show\&.ShowCommand\fP, \fBpip\&._internal\&.commands\&.uninstall\&.UninstallCommand\fP, and \fBpip\&._internal\&.commands\&.wheel\&.WheelCommand\fP\&.
+.SS " None pip\&._internal\&.cli\&.base_command\&.Command\&.handle_pip_version_check ( self, Values options)"
+
+.PP
+.nf
+This is a no-op so that commands by default do not do the pip version
+check\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._internal\&.cli\&.index_command\&.IndexGroupCommand\fP, and \fBpip\&._internal\&.commands\&.list\&.ListCommand\fP\&.
+.SS " int pip\&._internal\&.cli\&.base_command\&.Command\&.main ( self, List[str] args)"
+
+.SS " Tuple[Values, List[str]] pip\&._internal\&.cli\&.base_command\&.Command\&.parse_args ( self, List[str] args)"
+
+.SS " int pip\&._internal\&.cli\&.base_command\&.Command\&.run ( self, Values options, List[str] args)"
+
+.PP
+Reimplemented in \fBpip\&._internal\&.commands\&.cache\&.CacheCommand\fP, \fBpip\&._internal\&.commands\&.check\&.CheckCommand\fP, \fBpip\&._internal\&.commands\&.completion\&.CompletionCommand\fP, \fBpip\&._internal\&.commands\&.configuration\&.ConfigurationCommand\fP, \fBpip\&._internal\&.commands\&.debug\&.DebugCommand\fP, \fBpip\&._internal\&.commands\&.download\&.DownloadCommand\fP, \fBpip\&._internal\&.commands\&.freeze\&.FreezeCommand\fP, \fBpip\&._internal\&.commands\&.hash\&.HashCommand\fP, \fBpip\&._internal\&.commands\&.help\&.HelpCommand\fP, \fBpip\&._internal\&.commands\&.index\&.IndexCommand\fP, \fBpip\&._internal\&.commands\&.inspect\&.InspectCommand\fP, \fBpip\&._internal\&.commands\&.install\&.InstallCommand\fP, \fBpip\&._internal\&.commands\&.list\&.ListCommand\fP, \fBpip\&._internal\&.commands\&.search\&.SearchCommand\fP, \fBpip\&._internal\&.commands\&.show\&.ShowCommand\fP, \fBpip\&._internal\&.commands\&.uninstall\&.UninstallCommand\fP, and \fBpip\&._internal\&.commands\&.wheel\&.WheelCommand\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._internal\&.cli\&.base_command\&.Command\&.cmd_opts"
+
+.SS "bool pip\&._internal\&.cli\&.base_command\&.Command\&.ignore_require_venv = False\fC [static]\fP"
+
+.SS "pip\&._internal\&.cli\&.base_command\&.Command\&.name"
+
+.SS "pip\&._internal\&.cli\&.base_command\&.Command\&.parser"
+
+.SS "pip\&._internal\&.cli\&.base_command\&.Command\&.summary"
+
+.SS "pip\&._internal\&.cli\&.base_command\&.Command\&.tempdir_registry"
+
+.SS "str pip\&._internal\&.cli\&.base_command\&.Command\&.usage = ''\fC [static]\fP"
+
+.SS "pip\&._internal\&.cli\&.base_command\&.Command\&.verbosity"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

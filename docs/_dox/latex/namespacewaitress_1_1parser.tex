@@ -1,0 +1,74 @@
+\doxysection{waitress.\+parser Namespace Reference}
+\hypertarget{namespacewaitress_1_1parser}{}\label{namespacewaitress_1_1parser}\index{waitress.parser@{waitress.parser}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classwaitress_1_1parser_1_1HTTPRequestParser}{HTTPRequest\+Parser}}
+\item 
+class \mbox{\hyperlink{classwaitress_1_1parser_1_1ParsingError}{Parsing\+Error}}
+\item 
+class \mbox{\hyperlink{classwaitress_1_1parser_1_1TransferEncodingNotImplemented}{Transfer\+Encoding\+Not\+Implemented}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1parser_a8dfa63ff453b4d01a77268889ad14be0}{unquote\+\_\+bytes\+\_\+to\+\_\+wsgi}} (bytestring)
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1parser_a40489c0ff1aebeaf129fe0a02b6fb623}{split\+\_\+uri}} (uri)
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1parser_a2dbcb6e52f4f4a93f06438502368d00b}{get\+\_\+header\+\_\+lines}} (header)
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1parser_a94cd71e94c53c0d97213564fb504abd4}{crack\+\_\+first\+\_\+line}} (line)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacewaitress_1_1parser_a54b9689cc1eda65d87997d5fb96adfd0}{first\+\_\+line\+\_\+re}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacewaitress_1_1parser_a94cd71e94c53c0d97213564fb504abd4}\label{namespacewaitress_1_1parser_a94cd71e94c53c0d97213564fb504abd4} 
+\index{waitress.parser@{waitress.parser}!crack\_first\_line@{crack\_first\_line}}
+\index{crack\_first\_line@{crack\_first\_line}!waitress.parser@{waitress.parser}}
+\doxysubsubsection{\texorpdfstring{crack\_first\_line()}{crack\_first\_line()}}
+{\footnotesize\ttfamily waitress.\+parser.\+crack\+\_\+first\+\_\+line (\begin{DoxyParamCaption}\item[{}]{line }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacewaitress_1_1parser_a2dbcb6e52f4f4a93f06438502368d00b}\label{namespacewaitress_1_1parser_a2dbcb6e52f4f4a93f06438502368d00b} 
+\index{waitress.parser@{waitress.parser}!get\_header\_lines@{get\_header\_lines}}
+\index{get\_header\_lines@{get\_header\_lines}!waitress.parser@{waitress.parser}}
+\doxysubsubsection{\texorpdfstring{get\_header\_lines()}{get\_header\_lines()}}
+{\footnotesize\ttfamily waitress.\+parser.\+get\+\_\+header\+\_\+lines (\begin{DoxyParamCaption}\item[{}]{header }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Splits the header into lines, putting multi-line headers together.
+\end{DoxyVerb}
+ \Hypertarget{namespacewaitress_1_1parser_a40489c0ff1aebeaf129fe0a02b6fb623}\label{namespacewaitress_1_1parser_a40489c0ff1aebeaf129fe0a02b6fb623} 
+\index{waitress.parser@{waitress.parser}!split\_uri@{split\_uri}}
+\index{split\_uri@{split\_uri}!waitress.parser@{waitress.parser}}
+\doxysubsubsection{\texorpdfstring{split\_uri()}{split\_uri()}}
+{\footnotesize\ttfamily waitress.\+parser.\+split\+\_\+uri (\begin{DoxyParamCaption}\item[{}]{uri }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacewaitress_1_1parser_a8dfa63ff453b4d01a77268889ad14be0}\label{namespacewaitress_1_1parser_a8dfa63ff453b4d01a77268889ad14be0} 
+\index{waitress.parser@{waitress.parser}!unquote\_bytes\_to\_wsgi@{unquote\_bytes\_to\_wsgi}}
+\index{unquote\_bytes\_to\_wsgi@{unquote\_bytes\_to\_wsgi}!waitress.parser@{waitress.parser}}
+\doxysubsubsection{\texorpdfstring{unquote\_bytes\_to\_wsgi()}{unquote\_bytes\_to\_wsgi()}}
+{\footnotesize\ttfamily waitress.\+parser.\+unquote\+\_\+bytes\+\_\+to\+\_\+wsgi (\begin{DoxyParamCaption}\item[{}]{bytestring }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacewaitress_1_1parser_a54b9689cc1eda65d87997d5fb96adfd0}\label{namespacewaitress_1_1parser_a54b9689cc1eda65d87997d5fb96adfd0} 
+\index{waitress.parser@{waitress.parser}!first\_line\_re@{first\_line\_re}}
+\index{first\_line\_re@{first\_line\_re}!waitress.parser@{waitress.parser}}
+\doxysubsubsection{\texorpdfstring{first\_line\_re}{first\_line\_re}}
+{\footnotesize\ttfamily waitress.\+parser.\+first\+\_\+line\+\_\+re}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ re.compile(}
+\DoxyCodeLine{00002\ \ \ \ \ rb\textcolor{stringliteral}{"{}(?P<method>[!\#\$\%\&'*+\(\backslash\)-\/.\string^\_`|\string~0-\/9A-\/Za-\/z]+)\ "{}}}
+\DoxyCodeLine{00003\ \ \ \ \ rb\textcolor{stringliteral}{"{}(?P<uri>(?:[\string^\ :?\#]+://[\string^\ ?\#/]*(?:[0-\/9]\{1,5\})?)?[\string^\ ]+)"{}}}
+\DoxyCodeLine{00004\ \ \ \ \ rb\textcolor{stringliteral}{"{}(?:\ HTTP/(?P<version>[0-\/9]\(\backslash\).[0-\/9]))?"{}}}
+\DoxyCodeLine{00005\ )}
+
+\end{DoxyCode}

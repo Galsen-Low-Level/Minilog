@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="md__2home_2umar_2Desktop_2WorkShop_2GLL_2baseconv_2README" kind="page">
+    <compoundname>md__2home_2umar_2Desktop_2WorkShop_2GLL_2baseconv_2README</compoundname>
+    <title>Baseconv  &lt;img src=&quot;https://img.shields.io/badge/With%20Python%20Support-yellow?style=for-the-badge&amp;logo=python&quot; width=&quot;152&quot;  height=&quot;&quot; alt=&quot;Python-Support&quot; style=&quot;margin-right:20px&quot;  align=&quot;right&quot;/&gt;</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="md__2home_2umar_2Desktop_2WorkShop_2GLL_2baseconv_2README_1autotoc_md0"/> Converts to different numerical bases such as binary (2), octal (8) and hexadecimal (16) with built-in interactive shell.</para>
+<para><itemizedlist>
+<listitem><para>base 2 -&gt; for binary representation 0 to 1 <linebreak/>
+</para>
+</listitem><listitem><para>base 8 -&gt; for octal representation 0 to 7 base</para>
+</listitem><listitem><para>base 16 -&gt; for hexadecimal representation 0 to 15 (f)</para>
+</listitem></itemizedlist>
+</para>
+<sect3 id="md__2home_2umar_2Desktop_2WorkShop_2GLL_2baseconv_2README_1autotoc_md1">
+<title>Setting Up Ecosystem or Testing Environment</title>
+<para>There are two alternatives: <linebreak/>
+</para>
+<para><bold>1</bold> - Build On your direct host</para>
+<para><bold>2</bold> - Or on a dedicated environment (for testing and a quick tour). <linebreak/>
+</para>
+<para><bold>The ecosystem chosen to build the project is based on the <ulink url="https://mesonbuild.com/index.html">meson build system</ulink></bold></para>
+</sect3>
+<sect1 id="md__2home_2umar_2Desktop_2WorkShop_2GLL_2baseconv_2README_1autotoc_md2">
+<title>1 - Direct Host</title>
+<para>It is therefore strongly recommended to have meson build available on your machine. Here are a few commands to type <programlisting filename=".bash"><codeline><highlight class="normal">$<sp/>&gt;<sp/>meson<sp/>setup<sp/>build<sp/>#<sp/>to<sp/>build<sp/>the<sp/>project<sp/></highlight></codeline>
+<codeline><highlight class="normal">$<sp/>&gt;<sp/>meson<sp/>compile<sp/>-C<sp/>build<sp/>#<sp/>to<sp/>compile<sp/>the<sp/>project<sp/><sp/></highlight></codeline>
+</programlisting> The Executable w&apos;ill be stored in build directory <computeroutput>./build/bcv</computeroutput> <linebreak/>
+</para>
+</sect1>
+<sect1 id="md__2home_2umar_2Desktop_2WorkShop_2GLL_2baseconv_2README_1autotoc_md3">
+<title>2 - Pre-build or Dedicated Environment</title>
+<para>By the way, there&apos;s already a minimalistic <bold>pre-build environment</bold> for those who want to test in Docker or Chroot. As you may have noticed, there&apos;s no Docker file in the repository, because we want to launch the environment quickly without doing a full Docker command.</para>
+<para>We&apos;ve already provided a script to export the environment to a local Docker image.~(no Docker build , no Docker pull no Docker anything)~ Here&apos;s a script named <computeroutput>build_context.sh</computeroutput> in the <computeroutput>context</computeroutput> directory. Just run the script. <programlisting filename=".bash"><codeline><highlight class="normal">#<sp/>go<sp/>to<sp/>the<sp/>context<sp/>directory<sp/>and<sp/>I<sp/>assume<sp/>you&apos;ve<sp/>given<sp/>the<sp/>right<sp/>permission<sp/></highlight></codeline>
+<codeline><highlight class="normal">$<sp/>&gt;<sp/>./build_context.sh<sp/></highlight></codeline>
+</programlisting> To clarify This script export the <computeroutput>rootfs.tar.xz</computeroutput> archive directly to Local Docker images and at the end generate a folder named <computeroutput>rootfs</computeroutput>, that you can use also. See (2- A Change Root or ...).</para>
+<para>This script will generate 2 environments of your choice: 1 - docker image directly available on your host, no need to docker pull just run... <programlisting filename=".bash"><codeline><highlight class="normal">$<sp/>docker<sp/>run<sp/>-ti<sp/>bcv:testing<sp/>bash<sp/>#<sp/>to<sp/>run</highlight></codeline>
+</programlisting> 2 - A Change Root or chroot environment is available in most Unix environments. After <computeroutput>build_context.sh</computeroutput> has finished running, a <computeroutput>rootfs</computeroutput> directory will be available.</para>
+<para>To lock in : <programlisting filename=".bash"><codeline><highlight class="normal">$<sp/>&gt;<sp/>sudo<sp/><sp/>chroot<sp/>rootfs<sp/>bash<sp/></highlight></codeline>
+</programlisting> And there you are! The command is available in whole environment just type <computeroutput>bcv -h</computeroutput></para>
+<para>See USE section bellow for more info .</para>
+<sect3 id="md__2home_2umar_2Desktop_2WorkShop_2GLL_2baseconv_2README_1autotoc_md4">
+<title>Use</title>
+<para>There are 2 modes of use An interactive mode &amp; Simple command-line mode</para>
+<para>*Simple Command-line mode</para>
+<para>just do <linebreak/>
+ <programlisting filename=".bash"><codeline><highlight class="normal">bcv<sp/>[option]<sp/>&lt;numeric<sp/>value&gt;<sp/></highlight></codeline>
+</programlisting> e.g <programlisting filename=".bash"><codeline><highlight class="normal">$<sp/>bcv<sp/>-o<sp/>12<sp/>#<sp/>for<sp/>octal<sp/>representation<sp/><sp/></highlight></codeline>
+</programlisting></para>
+<para><blockquote><para><zwj/>Type <computeroutput>bcv -h</computeroutput> to display help. </para>
+</blockquote></para>
+<para>*For interactive mode <linebreak/>
+</para>
+<para>If no argument is supplied, interactive mode is launched by default. here&apos;s an example:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">$<sp/>bcv<sp/>-b/&lt;number&gt;<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">$<sp/>bcv<sp/>-o/&lt;number&gt;<sp/></highlight></codeline>
+<codeline><highlight class="normal">$<sp/>bcv<sp/>-x/&lt;number&gt;<sp/><sp/><sp/></highlight></codeline>
+</programlisting> e.g:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">$<sp/>bcv<sp/>#<sp/>launch<sp/>in<sp/>interactive<sp/>mode<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[1]<sp/>bcv<sp/>&gt;<sp/>x/100</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>|-&gt;<sp/>0x64</highlight></codeline>
+<codeline><highlight class="normal">[2]<sp/>bcv<sp/>&gt;<sp/>b/100</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>|-&gt;0b0110.0100</highlight></codeline>
+<codeline><highlight class="normal">[3]<sp/>bcv<sp/>&gt;<sp/>...</highlight></codeline>
+</programlisting></para>
+<para>*To exit, type quit or exit (not case-sensitive).</para>
+<para>Feel free to contribute or declare issue to improve the repository</para>
+<para>We ❤️ Computers at all Levels.</para>
+<para>From Senegal. 🇸🇳 </para>
+</sect3>
+</sect1>
+    </detaileddescription>
+    <location file="/home/umar/Desktop/WorkShop/GLL/baseconv/README.md"/>
+  </compounddef>
+</doxygen>

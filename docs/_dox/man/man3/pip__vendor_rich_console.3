@@ -1,0 +1,247 @@
+.TH "pip._vendor.rich.console" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.rich.console
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBCapture\fP"
+.br
+.ti -1c
+.RI "class \fBCaptureError\fP"
+.br
+.ti -1c
+.RI "class \fBConsole\fP"
+.br
+.ti -1c
+.RI "class \fBConsoleDimensions\fP"
+.br
+.ti -1c
+.RI "class \fBConsoleOptions\fP"
+.br
+.ti -1c
+.RI "class \fBConsoleRenderable\fP"
+.br
+.ti -1c
+.RI "class \fBConsoleThreadLocals\fP"
+.br
+.ti -1c
+.RI "class \fBGroup\fP"
+.br
+.ti -1c
+.RI "class \fBNewLine\fP"
+.br
+.ti -1c
+.RI "class \fBNoChange\fP"
+.br
+.ti -1c
+.RI "class \fBPagerContext\fP"
+.br
+.ti -1c
+.RI "class \fBRenderHook\fP"
+.br
+.ti -1c
+.RI "class \fBRichCast\fP"
+.br
+.ti -1c
+.RI "class \fBScreenContext\fP"
+.br
+.ti -1c
+.RI "class \fBScreenUpdate\fP"
+.br
+.ti -1c
+.RI "class \fBThemeContext\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "Callable[\&.\&.\&., Callable[\&.\&.\&., \fBGroup\fP]] \fBgroup\fP (bool fit=True)"
+.br
+.ti -1c
+.RI "bool \fB_is_jupyter\fP ()"
+.br
+.ti -1c
+.RI "'WindowsConsoleFeatures' \fBget_windows_console_features\fP ()"
+.br
+.ti -1c
+.RI "bool \fBdetect_legacy_windows\fP ()"
+.br
+.ti -1c
+.RI "str \fB_svg_hash\fP (str svg_main_code)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBJUPYTER_DEFAULT_COLUMNS\fP = 115"
+.br
+.ti -1c
+.RI "int \fBJUPYTER_DEFAULT_LINES\fP = 100"
+.br
+.ti -1c
+.RI "str \fBWINDOWS\fP = 'Windows'"
+.br
+.ti -1c
+.RI "\fBHighlighterType\fP = Callable[[Union[str, 'Text']], 'Text']"
+.br
+.ti -1c
+.RI "\fBJustifyMethod\fP = Literal['default', 'left', 'center', 'right', 'full']"
+.br
+.ti -1c
+.RI "\fBOverflowMethod\fP = Literal['fold', 'crop', 'ellipsis', 'ignore']"
+.br
+.ti -1c
+.RI "\fBNO_CHANGE\fP = \fBNoChange\fP()"
+.br
+.ti -1c
+.RI "\fB_STDIN_FILENO\fP = sys\&.__stdin__\&.fileno()"
+.br
+.ti -1c
+.RI "\fB_STDOUT_FILENO\fP = sys\&.__stdout__\&.fileno()"
+.br
+.ti -1c
+.RI "\fB_STDERR_FILENO\fP = sys\&.__stderr__\&.fileno()"
+.br
+.ti -1c
+.RI "tuple \fB_STD_STREAMS\fP = (\fB_STDIN_FILENO\fP, \fB_STDOUT_FILENO\fP, \fB_STDERR_FILENO\fP)"
+.br
+.ti -1c
+.RI "tuple \fB_STD_STREAMS_OUTPUT\fP = (\fB_STDOUT_FILENO\fP, \fB_STDERR_FILENO\fP)"
+.br
+.ti -1c
+.RI "dict \fB_TERM_COLORS\fP"
+.br
+.ti -1c
+.RI "\fBRenderableType\fP = Union[\fBConsoleRenderable\fP, \fBRichCast\fP, str]"
+.br
+.ti -1c
+.RI "\fBRenderResult\fP = Iterable[Union[\fBRenderableType\fP, \fBSegment\fP]]"
+.br
+.ti -1c
+.RI "\fB_null_highlighter\fP = \fBNullHighlighter\fP()"
+.br
+.ti -1c
+.RI "dict \fBCOLOR_SYSTEMS\fP"
+.br
+.ti -1c
+.RI "dict \fB_COLOR_SYSTEMS_NAMES\fP = {system: name for name, system in COLOR_SYSTEMS\&.items()}"
+.br
+.ti -1c
+.RI "\fBconsole\fP = \fBConsole\fP(record=True)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " bool pip\&._vendor\&.rich\&.console\&._is_jupyter ()\fC [protected]\fP"
+
+.PP
+.nf
+Check if we're running in a Jupyter notebook\&.
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.rich\&.console\&._svg_hash (str svg_main_code)\fC [protected]\fP"
+
+.PP
+.nf
+Returns a unique hash for the given SVG main code\&.
+
+Args:
+    svg_main_code (str): The content we're going to inject in the SVG envelope\&.
+
+Returns:
+    str: a hash of the given content
+
+.fi
+.PP
+ 
+.SS " bool pip\&._vendor\&.rich\&.console\&.detect_legacy_windows ()"
+
+.PP
+.nf
+Detect legacy Windows\&.
+.fi
+.PP
+ 
+.SS " 'WindowsConsoleFeatures' pip\&._vendor\&.rich\&.console\&.get_windows_console_features ()"
+
+.SS " Callable[\&.\&.\&., Callable[\&.\&.\&., \fBGroup\fP]] pip\&._vendor\&.rich\&.console\&.group (bool  fit = \fCTrue\fP)"
+
+.PP
+.nf
+A decorator that turns an iterable of renderables in to a group\&.
+
+Args:
+    fit (bool, optional): Fit dimension of group to contents, or fill available space\&. Defaults to True\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "dict pip\&._vendor\&.rich\&.console\&._COLOR_SYSTEMS_NAMES = {system: name for name, system in COLOR_SYSTEMS\&.items()}\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.console\&._null_highlighter = \fBNullHighlighter\fP()\fC [protected]\fP"
+
+.SS "tuple pip\&._vendor\&.rich\&.console\&._STD_STREAMS = (\fB_STDIN_FILENO\fP, \fB_STDOUT_FILENO\fP, \fB_STDERR_FILENO\fP)\fC [protected]\fP"
+
+.SS "tuple pip\&._vendor\&.rich\&.console\&._STD_STREAMS_OUTPUT = (\fB_STDOUT_FILENO\fP, \fB_STDERR_FILENO\fP)\fC [protected]\fP"
+
+.SS "int pip\&._vendor\&.rich\&.console\&._STDERR_FILENO = sys\&.__stderr__\&.fileno()\fC [protected]\fP"
+
+.SS "int pip\&._vendor\&.rich\&.console\&._STDIN_FILENO = sys\&.__stdin__\&.fileno()\fC [protected]\fP"
+
+.SS "int pip\&._vendor\&.rich\&.console\&._STDOUT_FILENO = sys\&.__stdout__\&.fileno()\fC [protected]\fP"
+
+.SS "dict pip\&._vendor\&.rich\&.console\&._TERM_COLORS\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     "kitty": ColorSystem\&.EIGHT_BIT,
+3     "256color": ColorSystem\&.EIGHT_BIT,
+4     "16color": ColorSystem\&.STANDARD,
+5 }
+.fi
+
+.SS "dict pip\&._vendor\&.rich\&.console\&.COLOR_SYSTEMS"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     "standard": ColorSystem\&.STANDARD,
+3     "256": ColorSystem\&.EIGHT_BIT,
+4     "truecolor": ColorSystem\&.TRUECOLOR,
+5     "windows": ColorSystem\&.WINDOWS,
+6 }
+.fi
+
+.SS "pip\&._vendor\&.rich\&.console\&.console = \fBConsole\fP(record=True)"
+
+.SS "pip\&._vendor\&.rich\&.console\&.HighlighterType = Callable[[Union[str, 'Text']], 'Text']"
+
+.SS "int pip\&._vendor\&.rich\&.console\&.JUPYTER_DEFAULT_COLUMNS = 115"
+
+.SS "int pip\&._vendor\&.rich\&.console\&.JUPYTER_DEFAULT_LINES = 100"
+
+.SS "pip\&._vendor\&.rich\&.console\&.JustifyMethod = Literal['default', 'left', 'center', 'right', 'full']"
+
+.SS "pip\&._vendor\&.rich\&.console\&.NO_CHANGE = \fBNoChange\fP()"
+
+.SS "pip\&._vendor\&.rich\&.console\&.OverflowMethod = Literal['fold', 'crop', 'ellipsis', 'ignore']"
+
+.SS "pip\&._vendor\&.rich\&.console\&.RenderableType = Union[\fBConsoleRenderable\fP, \fBRichCast\fP, str]"
+
+.SS "pip\&._vendor\&.rich\&.console\&.RenderResult = Iterable[Union[\fBRenderableType\fP, \fBSegment\fP]]"
+
+.SS "str pip\&._vendor\&.rich\&.console\&.WINDOWS = 'Windows'"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

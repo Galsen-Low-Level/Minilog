@@ -1,0 +1,337 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classwebob_1_1acceptparse_1_1__AcceptEncodingInvalidOrNoHeader" kind="class" language="Python" prot="protected">
+    <compoundname>webob::acceptparse::_AcceptEncodingInvalidOrNoHeader</compoundname>
+    <basecompoundref refid="classwebob_1_1acceptparse_1_1AcceptEncoding" prot="public" virt="non-virtual">webob.acceptparse.AcceptEncoding</basecompoundref>
+    <derivedcompoundref refid="classwebob_1_1acceptparse_1_1AcceptEncodingInvalidHeader" prot="public" virt="non-virtual">webob.acceptparse.AcceptEncodingInvalidHeader</derivedcompoundref>
+    <derivedcompoundref refid="classwebob_1_1acceptparse_1_1AcceptEncodingNoHeader" prot="public" virt="non-virtual">webob.acceptparse.AcceptEncodingNoHeader</derivedcompoundref>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classwebob_1_1acceptparse_1_1__AcceptEncodingInvalidOrNoHeader_1ae5276804b543c0cfc7a2735351e61734" prot="private" static="yes" mutable="no">
+        <type></type>
+        <definition>webob.acceptparse._AcceptEncodingInvalidOrNoHeader::__nonzero__</definition>
+        <argsstring></argsstring>
+        <name>__nonzero__</name>
+        <qualifiedname>webob.acceptparse._AcceptEncodingInvalidOrNoHeader.__nonzero__</qualifiedname>
+        <initializer>=  <ref refid="classwebob_1_1acceptparse_1_1__AcceptEncodingInvalidOrNoHeader_1a019c7a495e9496118a94ce943d9cf21e" kindref="member">__bool__</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" line="3302" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" bodystart="3302" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwebob_1_1acceptparse_1_1__AcceptEncodingInvalidOrNoHeader_1a019c7a495e9496118a94ce943d9cf21e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.acceptparse._AcceptEncodingInvalidOrNoHeader.__bool__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__bool__</name>
+        <qualifiedname>webob.acceptparse._AcceptEncodingInvalidOrNoHeader.__bool__</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Return whether ``self`` represents a valid ``Accept-Encoding`` header.
+
+Return ``True`` if ``self`` represents a valid header, and ``False`` if
+it represents an invalid header, or the header not being in the
+request.
+
+For this class, it always returns ``False``.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" line="3291" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" bodystart="3291" bodyend="3301"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1acceptparse_1_1__AcceptEncodingInvalidOrNoHeader_1afcb91464af798d39af6bc372b0d5e67c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.acceptparse._AcceptEncodingInvalidOrNoHeader.__contains__</definition>
+        <argsstring>(self, offer)</argsstring>
+        <name>__contains__</name>
+        <qualifiedname>webob.acceptparse._AcceptEncodingInvalidOrNoHeader.__contains__</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>offer</type>
+          <defname>offer</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Return ``bool`` indicating whether `offer` is acceptable.
+
+.. warning::
+
+   The behavior of ``.__contains__`` for the ``Accept-Encoding``
+   classes is currently being maintained for backward compatibility,
+   but it will change in the future to better conform to the RFC.
+
+:param offer: (``str``) a content-coding or ``identity`` offer
+:return: (``bool``) Whether ``offer`` is acceptable according to the
+         header.
+
+For this class, either there is no ``Accept-Encoding`` header in the
+request, or the header is invalid, so any content-coding is acceptable,
+and this always returns ``True``.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" line="3304" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" bodystart="3304" bodyend="3329"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1acceptparse_1_1__AcceptEncodingInvalidOrNoHeader_1ae7825119b8ca2dbec44f6e80365ec662" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.acceptparse._AcceptEncodingInvalidOrNoHeader.__iter__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__iter__</name>
+        <qualifiedname>webob.acceptparse._AcceptEncodingInvalidOrNoHeader.__iter__</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Return all the header items with non-0 qvalues, in order of preference.
+
+.. warning::
+
+   The behavior of this method is currently maintained for backward
+   compatibility, but will change in the future.
+
+:return: iterator of all the (content-coding/``identity``/``*``) items
+         in the header with non-0 qvalues, in descending order of
+         qvalue. If two items have the same qvalue, they are returned
+         in the order of their positions in the header, from left to
+         right.
+
+When there is no ``Accept-Encoding`` header in the request or the
+header is invalid, there are no items in the header, so this always
+returns an empty iterator.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" line="3330" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" bodystart="3330" bodyend="3356"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1acceptparse_1_1__AcceptEncodingInvalidOrNoHeader_1a848648356b85c0ec3c2002030cb27cfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.acceptparse._AcceptEncodingInvalidOrNoHeader.acceptable_offers</definition>
+        <argsstring>(self, offers)</argsstring>
+        <name>acceptable_offers</name>
+        <qualifiedname>webob.acceptparse._AcceptEncodingInvalidOrNoHeader.acceptable_offers</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>offers</type>
+          <defname>offers</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Return the offers that are acceptable according to the header.
+
+:param offers: ``iterable`` of ``str``s, where each ``str`` is a
+               content-coding or the string ``identity`` (the token
+               used to represent &quot;no encoding&quot;)
+:return: When the header is invalid, or there is no ``Accept-Encoding``
+         header in the request, all `offers` are considered acceptable,
+         so this method returns a list of (content-coding or
+         &quot;identity&quot;, qvalue) tuples where each offer in `offers` is
+         paired with the qvalue of 1.0, in the same order as in
+         `offers`.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" line="3357" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" bodystart="3357" bodyend="3372"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1acceptparse_1_1__AcceptEncodingInvalidOrNoHeader_1a5b176f5c34172b3ba0a7a30baf05da27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.acceptparse._AcceptEncodingInvalidOrNoHeader.best_match</definition>
+        <argsstring>(self, offers, default_match=None)</argsstring>
+        <name>best_match</name>
+        <qualifiedname>webob.acceptparse._AcceptEncodingInvalidOrNoHeader.best_match</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>offers</type>
+          <defname>offers</defname>
+        </param>
+        <param>
+          <type>default_match</type>
+          <defname>default_match</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Return the best match from the sequence of `offers`.
+
+This is the ``.best_match()`` method for when the header is invalid or
+not found in the request, corresponding to
+:meth:`AcceptEncodingValidHeader.best_match`.
+
+.. warning::
+
+   This is currently maintained for backward compatibility, and will be
+   deprecated in the future (see the documentation for
+   :meth:`AcceptEncodingValidHeader.best_match`).
+
+When the header is invalid, or there is no `Accept-Encoding` header in
+the request, all `offers` are considered acceptable, so the best match
+is the offer in `offers` with the highest server quality value (if the
+server quality value is not supplied for a media type, it is 1).
+
+If more than one offer in `offers` have the same highest server quality
+value, then the one that shows up first in `offers` is the best match.
+
+:param offers: (iterable)
+
+               | Each item in the iterable may be a ``str`` *codings*,
+                 or a (*codings*, server quality value) ``tuple`` or
+                 ``list``, where *codings* is either a content-coding,
+                 or the string ``identity`` (which represents *no
+                 encoding*). ``str`` and ``tuple``/``list`` elements
+                 may be mixed within the iterable.
+
+:param default_match: (optional, any type) the value to be returned if
+                      `offers` is empty.
+
+:return: (``str``, or the type of `default_match`)
+
+         | The offer that has the highest server quality value. If
+           `offers` is empty, the value of `default_match` is returned.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" line="3373" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" bodystart="3373" bodyend="3430"/>
+      </memberdef>
+      <memberdef kind="function" id="classwebob_1_1acceptparse_1_1__AcceptEncodingInvalidOrNoHeader_1a1a267f6c95d3a01b764c3713063420c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>webob.acceptparse._AcceptEncodingInvalidOrNoHeader.quality</definition>
+        <argsstring>(self, offer)</argsstring>
+        <name>quality</name>
+        <qualifiedname>webob.acceptparse._AcceptEncodingInvalidOrNoHeader.quality</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>offer</type>
+          <defname>offer</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Return quality value of given offer, or ``None`` if there is no match.
+
+This is the ``.quality()`` method for when the header is invalid or not
+found in the request, corresponding to
+:meth:`AcceptEncodingValidHeader.quality`.
+
+.. warning::
+
+   This is currently maintained for backward compatibility, and will be
+   deprecated in the future (see the documentation for
+   :meth:`AcceptEncodingValidHeader.quality`).
+
+:param offer: (``str``) A content-coding, or ``identity``.
+:return: (``float``) ``1.0``.
+
+When the ``Accept-Encoding`` header is invalid or not in the request,
+all offers are equally acceptable, so 1.0 is always returned.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" line="3431" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" bodystart="3431" bodyend="3460"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Represent when an ``Accept-Encoding`` header is invalid or not in request.
+
+This is the base class for the behaviour that
+:class:`.AcceptEncodingInvalidHeader` and :class:`.AcceptEncodingNoHeader`
+have in common.
+
+:rfc:`7231` does not provide any guidance on what should happen if the
+``AcceptEncoding`` header has an invalid value. This implementation
+disregards the header when the header is invalid, so
+:class:`.AcceptEncodingInvalidHeader` and :class:`.AcceptEncodingNoHeader`
+have much behaviour in common.
+</verbatim> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>object</label>
+      </node>
+      <node id="1">
+        <label>webob.acceptparse._AcceptEncodingInvalidOrNoHeader</label>
+        <link refid="classwebob_1_1acceptparse_1_1__AcceptEncodingInvalidOrNoHeader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>webob.acceptparse.AcceptEncoding</label>
+        <link refid="classwebob_1_1acceptparse_1_1AcceptEncoding"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>webob.acceptparse.AcceptEncodingInvalidHeader</label>
+        <link refid="classwebob_1_1acceptparse_1_1AcceptEncodingInvalidHeader"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>webob.acceptparse.AcceptEncodingNoHeader</label>
+        <link refid="classwebob_1_1acceptparse_1_1AcceptEncodingNoHeader"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>object</label>
+      </node>
+      <node id="1">
+        <label>webob.acceptparse._AcceptEncodingInvalidOrNoHeader</label>
+        <link refid="classwebob_1_1acceptparse_1_1__AcceptEncodingInvalidOrNoHeader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>webob.acceptparse.AcceptEncoding</label>
+        <link refid="classwebob_1_1acceptparse_1_1AcceptEncoding"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" line="3276" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/webob/acceptparse.py" bodystart="3276" bodyend="3460"/>
+    <listofallmembers>
+      <member refid="classwebob_1_1acceptparse_1_1__AcceptEncodingInvalidOrNoHeader_1a019c7a495e9496118a94ce943d9cf21e" prot="public" virt="non-virtual"><scope>webob::acceptparse::_AcceptEncodingInvalidOrNoHeader</scope><name>__bool__</name></member>
+      <member refid="classwebob_1_1acceptparse_1_1__AcceptEncodingInvalidOrNoHeader_1afcb91464af798d39af6bc372b0d5e67c" prot="public" virt="non-virtual"><scope>webob::acceptparse::_AcceptEncodingInvalidOrNoHeader</scope><name>__contains__</name></member>
+      <member refid="classwebob_1_1acceptparse_1_1__AcceptEncodingInvalidOrNoHeader_1ae7825119b8ca2dbec44f6e80365ec662" prot="public" virt="non-virtual"><scope>webob::acceptparse::_AcceptEncodingInvalidOrNoHeader</scope><name>__iter__</name></member>
+      <member refid="classwebob_1_1acceptparse_1_1__AcceptEncodingInvalidOrNoHeader_1ae5276804b543c0cfc7a2735351e61734" prot="private" virt="non-virtual"><scope>webob::acceptparse::_AcceptEncodingInvalidOrNoHeader</scope><name>__nonzero__</name></member>
+      <member refid="classwebob_1_1acceptparse_1_1__AcceptEncodingInvalidOrNoHeader_1a848648356b85c0ec3c2002030cb27cfe" prot="public" virt="non-virtual"><scope>webob::acceptparse::_AcceptEncodingInvalidOrNoHeader</scope><name>acceptable_offers</name></member>
+      <member refid="classwebob_1_1acceptparse_1_1__AcceptEncodingInvalidOrNoHeader_1a5b176f5c34172b3ba0a7a30baf05da27" prot="public" virt="non-virtual"><scope>webob::acceptparse::_AcceptEncodingInvalidOrNoHeader</scope><name>best_match</name></member>
+      <member refid="classwebob_1_1acceptparse_1_1__AcceptEncodingInvalidOrNoHeader_1a1a267f6c95d3a01b764c3713063420c4" prot="public" virt="non-virtual"><scope>webob::acceptparse::_AcceptEncodingInvalidOrNoHeader</scope><name>quality</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

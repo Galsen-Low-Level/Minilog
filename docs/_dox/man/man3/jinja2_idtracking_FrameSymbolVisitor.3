@@ -1,0 +1,180 @@
+.TH "jinja2.idtracking.FrameSymbolVisitor" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.idtracking.FrameSymbolVisitor
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBjinja2\&.visitor\&.NodeVisitor\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, 'Symbols' \fBsymbols\fP)"
+.br
+.ti -1c
+.RI "None \fBvisit_Name\fP (self, \fBnodes\&.Name\fP node, bool store_as_param=False, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "None \fBvisit_NSRef\fP (self, \fBnodes\&.NSRef\fP node, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "None \fBvisit_If\fP (self, \fBnodes\&.If\fP node, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "None \fBvisit_Macro\fP (self, \fBnodes\&.Macro\fP node, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "None \fBvisit_Import\fP (self, \fBnodes\&.Import\fP node, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "None \fBvisit_FromImport\fP (self, \fBnodes\&.FromImport\fP node, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "None \fBvisit_Assign\fP (self, \fBnodes\&.Assign\fP node, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "None \fBvisit_For\fP (self, \fBnodes\&.For\fP node, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "None \fBvisit_CallBlock\fP (self, \fBnodes\&.CallBlock\fP node, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "None \fBvisit_FilterBlock\fP (self, \fBnodes\&.FilterBlock\fP node, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "None \fBvisit_With\fP (self, \fBnodes\&.With\fP node, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "None \fBvisit_AssignBlock\fP (self, \fBnodes\&.AssignBlock\fP node, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "None \fBvisit_Scope\fP (self, \fBnodes\&.Scope\fP node, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "None \fBvisit_Block\fP (self, \fBnodes\&.Block\fP node, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "None \fBvisit_OverlayScope\fP (self, \fBnodes\&.OverlayScope\fP node, **t\&.Any kwargs)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBjinja2\&.visitor\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "'t\&.Optional[\fBVisitCallable\fP]' \fBget_visitor\fP (self, \fBNode\fP node)"
+.br
+.ti -1c
+.RI "t\&.Any \fBvisit\fP (self, \fBNode\fP node, *t\&.Any args, **t\&.Any kwargs)"
+.br
+.ti -1c
+.RI "t\&.Any \fBgeneric_visit\fP (self, \fBNode\fP node, *t\&.Any args, **t\&.Any kwargs)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsymbols\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A visitor for `Frame\&.inspect`\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None jinja2\&.idtracking\&.FrameSymbolVisitor\&.__init__ ( self, 'Symbols' symbols)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " None jinja2\&.idtracking\&.FrameSymbolVisitor\&.visit_Assign ( self, \fBnodes\&.Assign\fP node, **t\&.Any kwargs)"
+
+.PP
+.nf
+Visit assignments in the correct order\&.
+.fi
+.PP
+ 
+.SS " None jinja2\&.idtracking\&.FrameSymbolVisitor\&.visit_AssignBlock ( self, \fBnodes\&.AssignBlock\fP node, **t\&.Any kwargs)"
+
+.PP
+.nf
+Stop visiting at block assigns\&.
+.fi
+.PP
+ 
+.SS " None jinja2\&.idtracking\&.FrameSymbolVisitor\&.visit_Block ( self, \fBnodes\&.Block\fP node, **t\&.Any kwargs)"
+
+.PP
+.nf
+Stop visiting at blocks\&.
+.fi
+.PP
+ 
+.SS " None jinja2\&.idtracking\&.FrameSymbolVisitor\&.visit_CallBlock ( self, \fBnodes\&.CallBlock\fP node, **t\&.Any kwargs)"
+
+.SS " None jinja2\&.idtracking\&.FrameSymbolVisitor\&.visit_FilterBlock ( self, \fBnodes\&.FilterBlock\fP node, **t\&.Any kwargs)"
+
+.SS " None jinja2\&.idtracking\&.FrameSymbolVisitor\&.visit_For ( self, \fBnodes\&.For\fP node, **t\&.Any kwargs)"
+
+.PP
+.nf
+Visiting stops at for blocks\&.  However the block sequence
+is visited as part of the outer scope\&.
+
+.fi
+.PP
+ 
+.SS " None jinja2\&.idtracking\&.FrameSymbolVisitor\&.visit_FromImport ( self, \fBnodes\&.FromImport\fP node, **t\&.Any kwargs)"
+
+.SS " None jinja2\&.idtracking\&.FrameSymbolVisitor\&.visit_If ( self, \fBnodes\&.If\fP node, **t\&.Any kwargs)"
+
+.SS " None jinja2\&.idtracking\&.FrameSymbolVisitor\&.visit_Import ( self, \fBnodes\&.Import\fP node, **t\&.Any kwargs)"
+
+.SS " None jinja2\&.idtracking\&.FrameSymbolVisitor\&.visit_Macro ( self, \fBnodes\&.Macro\fP node, **t\&.Any kwargs)"
+
+.SS " None jinja2\&.idtracking\&.FrameSymbolVisitor\&.visit_Name ( self, \fBnodes\&.Name\fP node, bool  store_as_param = \fCFalse\fP, **t\&.Any
+     kwargs)"
+
+.PP
+.nf
+All assignments to names go through this function\&.
+.fi
+.PP
+ 
+.SS " None jinja2\&.idtracking\&.FrameSymbolVisitor\&.visit_NSRef ( self, \fBnodes\&.NSRef\fP node, **t\&.Any kwargs)"
+
+.SS " None jinja2\&.idtracking\&.FrameSymbolVisitor\&.visit_OverlayScope ( self, \fBnodes\&.OverlayScope\fP node, **t\&.Any kwargs)"
+
+.PP
+.nf
+Do not visit into overlay scopes\&.
+.fi
+.PP
+ 
+.SS " None jinja2\&.idtracking\&.FrameSymbolVisitor\&.visit_Scope ( self, \fBnodes\&.Scope\fP node, **t\&.Any kwargs)"
+
+.PP
+.nf
+Stop visiting at scopes\&.
+.fi
+.PP
+ 
+.SS " None jinja2\&.idtracking\&.FrameSymbolVisitor\&.visit_With ( self, \fBnodes\&.With\fP node, **t\&.Any kwargs)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "jinja2\&.idtracking\&.FrameSymbolVisitor\&.symbols"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

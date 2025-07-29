@@ -1,0 +1,146 @@
+.TH "docutils.frontend.ConfigParser" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.frontend.ConfigParser
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits configparser\&.RawConfigParser\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBread\fP (self, filenames, option_parser=None)"
+.br
+.ti -1c
+.RI "\fBhandle_old_config\fP (self, filename)"
+.br
+.ti -1c
+.RI "\fBvalidate_settings\fP (self, filename, option_parser)"
+.br
+.ti -1c
+.RI "\fBoptionxform\fP (self, optionstr)"
+.br
+.ti -1c
+.RI "\fBget_section\fP (self, section)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBold_warning\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBold_settings\fP"
+.br
+.ti -1c
+.RI "tuple \fBold_warning\fP"
+.br
+.ti -1c
+.RI "str \fBnot_utf8_error\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Parser for Docutils configuration files\&.
+
+See https://docutils\&.sourceforge\&.io/docs/user/config\&.html\&.
+
+Option key normalization includes conversion of '-' to '_'\&.
+
+Config file encoding is 'utf-8'\&. Encoding errors are reported
+and the affected file(s) skipped\&.
+
+This class is provisional and will change in future versions\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.frontend\&.ConfigParser\&.get_section ( self,  section)"
+
+.PP
+.nf
+Return a given section as a dictionary\&.
+
+Return empty dictionary if the section doesn't exist\&.
+
+Deprecated\&. Use the configparser 'Mapping Protocol Access' and
+catch KeyError\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.frontend\&.ConfigParser\&.handle_old_config ( self,  filename)"
+
+.SS "docutils\&.frontend\&.ConfigParser\&.optionxform ( self,  optionstr)"
+
+.PP
+.nf
+Lowercase and transform '-' to '_'\&.
+
+So the cmdline form of option names can be used in config files\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.frontend\&.ConfigParser\&.read ( self,  filenames,  option_parser = \fCNone\fP)"
+
+.SS "docutils\&.frontend\&.ConfigParser\&.validate_settings ( self,  filename,  option_parser)"
+
+.PP
+.nf
+Call the validator function and implement overrides on all applicable
+settings\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "str docutils\&.frontend\&.ConfigParser\&.not_utf8_error\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  """\\
+Unable to read configuration file "%s": content not encoded as UTF\-8\&.
+Skipping "%s" configuration file\&.
+"""
+.fi
+
+.SS "dict docutils\&.frontend\&.ConfigParser\&.old_settings\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        'pep_stylesheet': ('pep_html writer', 'stylesheet'),
+        'pep_stylesheet_path': ('pep_html writer', 'stylesheet_path'),
+        'pep_template': ('pep_html writer', 'template')}
+.fi
+
+.SS "tuple docutils\&.frontend\&.ConfigParser\&.old_warning\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  (
+        'The "[option]" section is deprecated\&.\\n'
+        'Support for old\-format configuration files will be removed in '
+        'Docutils 2\&.0\&.  Please revise your configuration files\&.  '
+        'See <https://docutils\&.sourceforge\&.io/docs/user/config\&.html>, '
+        'section "Old\-Format Configuration Files"\&.')
+.fi
+
+.SS "docutils\&.frontend\&.ConfigParser\&.old_warning"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

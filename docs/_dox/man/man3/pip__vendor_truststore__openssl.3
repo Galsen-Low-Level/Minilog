@@ -1,0 +1,67 @@
+.TH "pip._vendor.truststore._openssl" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.truststore._openssl
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "typing\&.Iterator[None] \fB_configure_context\fP (ssl\&.SSLContext ctx)"
+.br
+.ti -1c
+.RI "bool \fB_capath_contains_certs\fP (str capath)"
+.br
+.ti -1c
+.RI "None \fB_verify_peercerts_impl\fP (ssl\&.SSLContext ssl_context, list[bytes] cert_chain, str|None server_hostname=None)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "list \fB_CA_FILE_CANDIDATES\fP"
+.br
+.ti -1c
+.RI "\fB_HASHED_CERT_FILENAME_RE\fP = re\&.compile(r'^[0\-9a\-fA\-F]{8}\\\&.[0\-9]$')"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " bool pip\&._vendor\&.truststore\&._openssl\&._capath_contains_certs (str capath)\fC [protected]\fP"
+
+.PP
+.nf
+Check whether capath exists and contains certs in the expected format\&.
+.fi
+.PP
+ 
+.SS " typing\&.Iterator[None] pip\&._vendor\&.truststore\&._openssl\&._configure_context (ssl\&.SSLContext ctx)\fC [protected]\fP"
+
+.SS " None pip\&._vendor\&.truststore\&._openssl\&._verify_peercerts_impl (ssl\&.SSLContext ssl_context, list[bytes] cert_chain, str | None  server_hostname = \fCNone\fP)\fC [protected]\fP"
+
+.SH "Variable Documentation"
+.PP 
+.SS "list pip\&._vendor\&.truststore\&._openssl\&._CA_FILE_CANDIDATES\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  [
+2     # Alpine, Arch, Fedora 34+, OpenWRT, RHEL 9+, BSD
+3     "/etc/ssl/cert\&.pem",
+4     # Fedora <= 34, RHEL <= 9, CentOS <= 9
+5     "/etc/pki/tls/cert\&.pem",
+6     # Debian, Ubuntu (requires ca\-certificates)
+7     "/etc/ssl/certs/ca\-certificates\&.crt",
+8     # SUSE
+9     "/etc/ssl/ca\-bundle\&.pem",
+10 ]
+.fi
+
+.SS "pip\&._vendor\&.truststore\&._openssl\&._HASHED_CERT_FILENAME_RE = re\&.compile(r'^[0\-9a\-fA\-F]{8}\\\&.[0\-9]$')\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

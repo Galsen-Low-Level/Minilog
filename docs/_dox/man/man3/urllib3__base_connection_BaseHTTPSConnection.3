@@ -1,0 +1,176 @@
+.TH "urllib3._base_connection.BaseHTTPSConnection" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+urllib3._base_connection.BaseHTTPSConnection
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBurllib3\&._base_connection\&.BaseHTTPConnection\fP, and Protocol\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, str \fBhost\fP, int|None \fBport\fP=None, *_TYPE_TIMEOUT \fBtimeout\fP=_DEFAULT_TIMEOUT, tuple[str, int]|None \fBsource_address\fP=None, int \fBblocksize\fP=16384, _TYPE_SOCKET_OPTIONS|None \fBsocket_options\fP=\&.\&.\&., \fBUrl\fP|None \fBproxy\fP=None, \fBProxyConfig\fP|None \fBproxy_config\fP=None, int|str|None \fBcert_reqs\fP=None, None|str|typing\&.Literal[False] \fBassert_hostname\fP=None, str|None \fBassert_fingerprint\fP=None, str|None server_hostname=None, ssl\&.SSLContext|None \fBssl_context\fP=None, str|None \fBca_certs\fP=None, str|None \fBca_cert_dir\fP=None, None|str|bytes \fBca_cert_data\fP=None, int|None \fBssl_minimum_version\fP=None, int|None \fBssl_maximum_version\fP=None, int|str|None \fBssl_version\fP=None, str|None \fBcert_file\fP=None, str|None \fBkey_file\fP=None, str|None \fBkey_password\fP=None)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBurllib3\&._base_connection\&.BaseHTTPConnection\fP
+.in +1c
+.ti -1c
+.RI "None \fBset_tunnel\fP (self, str \fBhost\fP, int|None \fBport\fP=None, typing\&.Mapping[str, str]|None headers=None, str scheme='http')"
+.br
+.ti -1c
+.RI "None \fBconnect\fP (self)"
+.br
+.ti -1c
+.RI "None \fBrequest\fP (self, str method, str url, \fB_TYPE_BODY\fP|None body=None, typing\&.Mapping[str, str]|None headers=None, *bool chunked=False, bool preload_content=True, bool decode_content=True, bool enforce_content_length=True)"
+.br
+.ti -1c
+.RI "\fBBaseHTTPResponse\fP \fBgetresponse\fP (self)"
+.br
+.ti -1c
+.RI "None \fBclose\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBis_closed\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBis_connected\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBhas_connected_to_proxy\fP (self)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "typing \fBdefault_port\fP \&.ClassVar[int]"
+.br
+.ti -1c
+.RI "typing \fBdefault_socket_options\fP \&.ClassVar[_TYPE_SOCKET_OPTIONS]"
+.br
+.ti -1c
+.RI "int \fBcert_reqs\fP | str | None"
+.br
+.ti -1c
+.RI "None \fBassert_hostname\fP | str | typing\&.Literal[False]"
+.br
+.ti -1c
+.RI "str \fBassert_fingerprint\fP | None"
+.br
+.ti -1c
+.RI "ssl \fBssl_context\fP \&.SSLContext | None"
+.br
+.ti -1c
+.RI "str \fBca_certs\fP | None"
+.br
+.ti -1c
+.RI "str \fBca_cert_dir\fP | None"
+.br
+.ti -1c
+.RI "None \fBca_cert_data\fP | str | bytes"
+.br
+.ti -1c
+.RI "int \fBssl_minimum_version\fP | None"
+.br
+.ti -1c
+.RI "int \fBssl_maximum_version\fP | None"
+.br
+.ti -1c
+.RI "int \fBssl_version\fP | str | None"
+.br
+.ti -1c
+.RI "str \fBcert_file\fP | None"
+.br
+.ti -1c
+.RI "str \fBkey_file\fP | None"
+.br
+.ti -1c
+.RI "str \fBkey_password\fP | None"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBurllib3\&._base_connection\&.BaseHTTPConnection\fP
+.in +1c
+.ti -1c
+.RI "typing \fBdefault_port\fP \&.ClassVar[int]"
+.br
+.ti -1c
+.RI "typing \fBdefault_socket_options\fP \&.ClassVar[_TYPE_SOCKET_OPTIONS]"
+.br
+.ti -1c
+.RI "str \fBhost\fP"
+.br
+.ti -1c
+.RI "int \fBport\fP"
+.br
+.ti -1c
+.RI "None \fBtimeout\fP"
+.br
+.ti -1c
+.RI "int \fBblocksize\fP"
+.br
+.ti -1c
+.RI "tuple \fBsource_address\fP [str, int] | None"
+.br
+.ti -1c
+.RI "_TYPE_SOCKET_OPTIONS \fBsocket_options\fP | None"
+.br
+.ti -1c
+.RI "\fBUrl\fP \fBproxy\fP | None"
+.br
+.ti -1c
+.RI "\fBProxyConfig\fP \fBproxy_config\fP | None"
+.br
+.ti -1c
+.RI "bool \fBis_verified\fP"
+.br
+.ti -1c
+.RI "bool \fBproxy_is_verified\fP | None"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None urllib3\&._base_connection\&.BaseHTTPSConnection\&.__init__ ( self, str host, int | None  port = \fCNone\fP, *_TYPE_TIMEOUT  timeout = \fC_DEFAULT_TIMEOUT\fP, tuple[str, int] | None  source_address = \fCNone\fP, int  blocksize = \fC16384\fP, _TYPE_SOCKET_OPTIONS | None  socket_options = \fC\&.\&.\&.\fP, \fBUrl\fP | None  proxy = \fCNone\fP, \fBProxyConfig\fP | None  proxy_config = \fCNone\fP, int | str | None  cert_reqs = \fCNone\fP, None | str | typing\&.Literal[False]  assert_hostname = \fCNone\fP, str | None  assert_fingerprint = \fCNone\fP, str | None  server_hostname = \fCNone\fP, ssl\&.SSLContext | None  ssl_context = \fCNone\fP, str | None  ca_certs = \fCNone\fP, str | None  ca_cert_dir = \fCNone\fP, None | str | bytes  ca_cert_data = \fCNone\fP, int | None  ssl_minimum_version = \fCNone\fP, int | None  ssl_maximum_version = \fCNone\fP, int | str | None  ssl_version = \fCNone\fP, str | None  cert_file = \fCNone\fP, str | None  key_file = \fCNone\fP, str | None  key_password = \fCNone\fP)"
+
+.PP
+Reimplemented from \fBurllib3\&._base_connection\&.BaseHTTPConnection\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "str urllib3\&._base_connection\&.BaseHTTPSConnection\&.assert_fingerprint | None\fC [static]\fP"
+
+.SS "None urllib3\&._base_connection\&.BaseHTTPSConnection\&.assert_hostname | str | typing\&.Literal[False]\fC [static]\fP"
+
+.SS "None urllib3\&._base_connection\&.BaseHTTPSConnection\&.ca_cert_data | str | bytes\fC [static]\fP"
+
+.SS "str urllib3\&._base_connection\&.BaseHTTPSConnection\&.ca_cert_dir | None\fC [static]\fP"
+
+.SS "str urllib3\&._base_connection\&.BaseHTTPSConnection\&.ca_certs | None\fC [static]\fP"
+
+.SS "str urllib3\&._base_connection\&.BaseHTTPSConnection\&.cert_file | None\fC [static]\fP"
+
+.SS "int urllib3\&._base_connection\&.BaseHTTPSConnection\&.cert_reqs | str | None\fC [static]\fP"
+
+.SS "typing urllib3\&._base_connection\&.BaseHTTPSConnection\&.default_port \&.ClassVar[int]\fC [static]\fP"
+
+.SS "typing urllib3\&._base_connection\&.BaseHTTPSConnection\&.default_socket_options \&.ClassVar[_TYPE_SOCKET_OPTIONS]\fC [static]\fP"
+
+.SS "str urllib3\&._base_connection\&.BaseHTTPSConnection\&.key_file | None\fC [static]\fP"
+
+.SS "str urllib3\&._base_connection\&.BaseHTTPSConnection\&.key_password | None\fC [static]\fP"
+
+.SS "ssl urllib3\&._base_connection\&.BaseHTTPSConnection\&.ssl_context \&.SSLContext | None\fC [static]\fP"
+
+.SS "int urllib3\&._base_connection\&.BaseHTTPSConnection\&.ssl_maximum_version | None\fC [static]\fP"
+
+.SS "int urllib3\&._base_connection\&.BaseHTTPSConnection\&.ssl_minimum_version | None\fC [static]\fP"
+
+.SS "int urllib3\&._base_connection\&.BaseHTTPSConnection\&.ssl_version | str | None\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

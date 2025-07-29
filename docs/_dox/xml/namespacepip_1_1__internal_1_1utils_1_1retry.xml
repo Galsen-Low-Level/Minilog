@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespacepip_1_1__internal_1_1utils_1_1retry" kind="namespace" language="Python">
+    <compoundname>pip::_internal::utils::retry</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepip_1_1__internal_1_1utils_1_1retry_1a160aae0decd608d0482f13fbcdf9b782" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pip::_internal::utils::retry.T</definition>
+        <argsstring></argsstring>
+        <name>T</name>
+        <qualifiedname>pip._internal.utils.retry.T</qualifiedname>
+        <initializer>=  TypeVar(&quot;T&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_internal/utils/retry.py" line="7" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_internal/utils/retry.py" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepip_1_1__internal_1_1utils_1_1retry_1a886fe165b59b7879f46410cd4bcd413a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pip::_internal::utils::retry.P</definition>
+        <argsstring></argsstring>
+        <name>P</name>
+        <qualifiedname>pip._internal.utils.retry.P</qualifiedname>
+        <initializer>=  <ref refid="classpip_1_1__vendor_1_1typing__extensions_1_1ParamSpec" kindref="compound">ParamSpec</ref>(&quot;P&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_internal/utils/retry.py" line="8" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_internal/utils/retry.py" bodystart="8" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepip_1_1__internal_1_1utils_1_1retry_1a919dc9c25f994ed238abb7313bf909cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Callable[[Callable[<ref refid="namespacepip_1_1__internal_1_1utils_1_1retry_1a886fe165b59b7879f46410cd4bcd413a" kindref="member">P</ref>, <ref refid="namespacepip_1_1__internal_1_1utils_1_1retry_1a160aae0decd608d0482f13fbcdf9b782" kindref="member">T</ref>]], Callable[<ref refid="namespacepip_1_1__internal_1_1utils_1_1retry_1a886fe165b59b7879f46410cd4bcd413a" kindref="member">P</ref>, <ref refid="namespacepip_1_1__internal_1_1utils_1_1retry_1a160aae0decd608d0482f13fbcdf9b782" kindref="member">T</ref>]]</type>
+        <definition> Callable[[Callable[P, T]], Callable[P, T]] pip._internal.utils.retry.retry</definition>
+        <argsstring>(float wait, float stop_after_delay)</argsstring>
+        <name>retry</name>
+        <qualifiedname>pip._internal.utils.retry.retry</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>wait</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>stop_after_delay</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Decorator to automatically retry a function on error.
+
+If the function raises, the function is recalled with the same arguments
+until it returns or the time limit is reached. When the time limit is
+surpassed, the last exception raised is reraised.
+
+:param wait: The time to wait after an error before retrying, in seconds.
+:param stop_after_delay: The time limit after which retries will cease,
+    in seconds.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_internal/utils/retry.py" line="11" column="1" bodyfile="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_internal/utils/retry.py" bodystart="13" bodyend="43"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-packages/pip/_internal/utils/retry.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

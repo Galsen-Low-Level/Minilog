@@ -1,0 +1,349 @@
+.TH "/home/umar/Desktop/WorkShop/GLL/Ftp-FM/include/ftpfm.h" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/umar/Desktop/WorkShop/GLL/Ftp-FM/include/ftpfm.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <sys/cdefs\&.h>\fP
+.br
+\fC#include <stdarg\&.h>\fP
+.br
+\fC#include 'config\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fB__fobject_t\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB__parmreq\fP   [static 1]"
+.br
+.ti -1c
+.RI "#define \fB__parmreq_\fP(__requested_size)   [static __requested_size]"
+.br
+.ti -1c
+.RI "#define \fB__null\fP   (__ptr_t) 0"
+.br
+.ti -1c
+.RI "#define \fB__bunit\fP   1<<3"
+.br
+.ti -1c
+.RI "#define \fBnptr\fP   \fB__null\fP"
+.br
+.ti -1c
+.RI "#define \fB_Nullable\fP"
+.br
+.ti -1c
+.RI "#define \fB_Opac\fP"
+.br
+.ti -1c
+.RI "#define \fB__maybe_unused\fP"
+.br
+.ti -1c
+.RI "#define \fBEMPTY_SPACE\fP   ( (char[2]){0x20}  )"
+.br
+.ti -1c
+.RI "#define \fBDESC\fP(__description)     __description"
+.br
+.ti -1c
+.RI "#define \fBDOM_TITLE\fP(__title,  __dump)     sprintf(__dump , \fBHTTP_DIRENDER_DOCTYPE\fP , __title);"
+.br
+.ti -1c
+.RI "#define \fB__STR\fP(x)   #x"
+.br
+.ti -1c
+.RI "#define \fBSTR\fP(x)   \fB__STR\fP(x)"
+.br
+.ti -1c
+.RI "#define \fBCRLF\fP   \\r\\n\\r\\n"
+.br
+.ti -1c
+.RI "#define \fBHTTP_HEADER_RESPONSE_OK\fP   'HTTP/1\&.1 200 OK' \fBSTR\fP(\fBCRLF\fP)"
+.br
+.ti -1c
+.RI "#define \fBHTTP_EXTF_DEF\fP   html"
+.br
+.ti -1c
+.RI "#define \fBHTTP_EXTF_ATL\fP   htm"
+.br
+.ti -1c
+.RI "#define \fBHTML_DEFAULT_RESSOURCE\fP   'index\&.'STR(\fBHTTP_EXTF_DEF\fP)"
+.br
+.ti -1c
+.RI "#define \fBHTML_DEFAULT_RESSOURCE_ALT\fP   'index\&.'STR(\fBHTTP_EXTF_ATL\fP)"
+.br
+.ti -1c
+.RI "#define \fBMETHOD\fP   METHOD"
+.br
+.ti -1c
+.RI "#define \fBRESOURCE\fP   RESOURCE"
+.br
+.ti -1c
+.RI "#define \fBVERSION\fP   VERSION"
+.br
+.ti -1c
+.RI "#define \fBhget\fP(__item)     htftp_get_##__item(\fBhtftp_reqhdr_t\fP *)"
+.br
+.ti -1c
+.RI "#define \fBLISTEN_BACKLOG\fP   4"
+.br
+.ti -1c
+.RI "#define \fBUA_CURL\fP   (1 << 1)"
+.br
+.ti -1c
+.RI "#define \fBUA_WGET\fP   (1 << 2)"
+.br
+.ti -1c
+.RI "#define \fBUA_ALL\fP   (\fBUA_CURL\fP|\fBUA_WGET\fP)"
+.br
+.ti -1c
+.RI "#define \fBHTTP_REQUEST_HEADER_LINE\fP   3"
+.br
+.RI "GET , HOST , USER-AGENT\&. "
+.ti -1c
+.RI "#define \fBHTTP_GLOBAL_CONTENT_DISPATCH\fP   3"
+.br
+.ti -1c
+.RI "#define \fBHTTP_REQST_BUFF\fP   sizeof(__ptr_t) <<  (\fB__bunit\fP << 1)"
+.br
+.ti -1c
+.RI "#define \fBPATH_MAX_LENGHT\fP   1024"
+.br
+.ti -1c
+.RI "#define \fB_rblock\fP(sbyte)   [(sbyte)]"
+.br
+.ti -1c
+.RI "#define \fBstatops\fP(__ops,  __filed,  __member)"
+.br
+.RI "NOTE::WARNING: no control on __ops\&. "
+.ti -1c
+.RI "#define \fB__habsp\fP   (path+1)"
+.br
+.ti -1c
+.RI "#define \fBHTFTP_DEFCFG\fP   {PF_INET, htons(\fBDEFAULT_PORT\fP) ,htonl(INADDR_ANY)}"
+.br
+.ti -1c
+.RI "#define \fB__getsockfd\fP(__hf)   ((__hf\->_sp) >> 0x10)"
+.br
+.ti -1c
+.RI "#define \fB__getportnb\fP(__hf)   ((__hf\->_sp) &  0xffff)"
+.br
+.ti -1c
+.RI "#define \fBSA\fP   struct sockaddr"
+.br
+.ti -1c
+.RI "#define \fBhtftp_fcfg\fP   \fB__htftp_fcfg_t\fP"
+.br
+.ti -1c
+.RI "#define \fBTIME_ASC\fP   1"
+.br
+.ti -1c
+.RI "#define \fBTIME_NUM\fP   2"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef typedef_Opac struct \fB__htftp_protocol_header_t\fP \fBhtftp_protocol_header_t\fP"
+.br
+.ti -1c
+.RI "typedef typedef_Opac struct \fB__htftp_request_header_t\fP \fBhtftp_reqhdr_t\fP"
+.br
+.ti -1c
+.RI "typedef typedef_Opac struct \fB__htftp_t\fP \fBhtftp_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB__fobject_t\fP \fBfobject_t\fP"
+.br
+.ti -1c
+.RI "typedef void(* \fB__htftp_fcfg_t\fP) (struct \fB__htftp_t\fP *__restrict__, void *\fB__maybe_unused\fP \fB_Nullable\fP)"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum { \fBMETHOD\fP, \fBMETHOD\fP, \fBRESOURCE\fP, \fBRESOURCE\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBhtftp_t\fP * \fBhtftp_start\fP (int __port_number, \fB__htftp_fcfg_t\fP \fB_Nullable\fP __function_configuration, void *\fB_Nullable\fP __restrict__ __extra_argument) \fB__attribute__\fP((weak))"
+.br
+.ti -1c
+.RI "int \fBhtftp_polling\fP (struct \fB__htftp_t\fP *__restrict__ __hf)"
+.br
+.ti -1c
+.RI "\fBhtftp_reqhdr_t\fP * \fBhtftp_parse_request\fP (char __htftp_buffer \fB__parmreq\fP)"
+.br
+.ti -1c
+.RI "char * \fBhtftp_get_requested_content\fP (\fBhtftp_reqhdr_t\fP *__restrict__ __hproto, char *__restrict__ __target_path)"
+.br
+.ti -1c
+.RI "void \fBhtftp_close\fP (struct \fB__htftp_t\fP *__restrict__ __hf)"
+.br
+.ti -1c
+.RI "char * \fBhtftp_read_content\fP (int __user_agent, char *__restrict__ __filename, char *__restrict__ __dump)"
+.br
+.ti -1c
+.RI "int \fBhtftp_transmission\fP (int __user_agent, char __content_delivry \fB__parmreq\fP)"
+.br
+.ti -1c
+.RI "\fBfobject_t\fP * \fBfile_detail\fP (\fBfobject_t\fP *__restrict__ __fobj, char *__restrict__ __fitem, int __tfmtopt)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define __bunit   1<<3"
+
+.SS "#define __getportnb(__hf)   ((__hf\->_sp) &  0xffff)"
+
+.SS "#define __getsockfd(__hf)   ((__hf\->_sp) >> 0x10)"
+
+.SS "#define __habsp   (path+1)"
+
+.SS "#define __maybe_unused"
+END OF NOTE 
+.SS "#define __null   (__ptr_t) 0"
+
+.SS "#define __parmreq   [static 1]"
+
+.SS "#define __parmreq_(__requested_size)   [static __requested_size]"
+
+.SS "#define __STR(x)   #x"
+
+.SS "#define _Nullable"
+
+.SS "#define _Opac"
+
+.SS "#define _rblock(sbyte)   [(sbyte)]"
+
+.SS "#define CRLF   \\r\\n\\r\\n"
+
+.SS "#define DESC(__description)     __description"
+
+.SS "#define DOM_TITLE(__title, __dump)     sprintf(__dump , \fBHTTP_DIRENDER_DOCTYPE\fP , __title);"
+
+.SS "#define EMPTY_SPACE   ( (char[2]){0x20}  )"
+
+.SS "#define hget(__item)     htftp_get_##__item(\fBhtftp_reqhdr_t\fP *)"
+
+.SS "#define HTFTP_DEFCFG   {PF_INET, htons(\fBDEFAULT_PORT\fP) ,htonl(INADDR_ANY)}"
+
+.SS "#define htftp_fcfg   \fB__htftp_fcfg_t\fP"
+
+.SS "#define HTML_DEFAULT_RESSOURCE   'index\&.'STR(\fBHTTP_EXTF_DEF\fP)"
+
+.SS "#define HTML_DEFAULT_RESSOURCE_ALT   'index\&.'STR(\fBHTTP_EXTF_ATL\fP)"
+
+.SS "#define HTTP_EXTF_ATL   htm"
+
+.SS "#define HTTP_EXTF_DEF   html"
+
+.SS "#define HTTP_GLOBAL_CONTENT_DISPATCH   3"
+
+.SS "#define HTTP_HEADER_RESPONSE_OK   'HTTP/1\&.1 200 OK' \fBSTR\fP(\fBCRLF\fP)"
+
+.SS "#define HTTP_REQST_BUFF   sizeof(__ptr_t) <<  (\fB__bunit\fP << 1)"
+
+.SS "#define HTTP_REQUEST_HEADER_LINE   3"
+
+.PP
+GET , HOST , USER-AGENT\&. 
+.SS "#define LISTEN_BACKLOG   4"
+
+.SS "#define METHOD   METHOD"
+
+.SS "#define nptr   \fB__null\fP"
+
+.SS "#define PATH_MAX_LENGHT   1024"
+
+.SS "#define RESOURCE   RESOURCE"
+
+.SS "#define SA   struct sockaddr"
+
+.SS "#define statops(__ops, __filed, __member)"
+\fBValue:\fP.PP
+.nf
+    ({   \\
+    struct stat  __sbuff;                        \\
+    __ops(__filed , &__sbuff);                   \\
+    __sbuff\&.__member ;                           \\
+    })
+.fi
+
+.PP
+NOTE::WARNING: no control on __ops\&. 
+.SS "#define STR(x)   \fB__STR\fP(x)"
+
+.SS "#define TIME_ASC   1"
+
+.SS "#define TIME_NUM   2"
+
+.SS "#define UA_ALL   (\fBUA_CURL\fP|\fBUA_WGET\fP)"
+
+.SS "#define UA_CURL   (1 << 1)"
+
+.SS "#define UA_WGET   (1 << 2)"
+
+.SS "#define VERSION   VERSION"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef void(* __htftp_fcfg_t) (struct \fB__htftp_t\fP *__restrict__, void *\fB__maybe_unused\fP \fB_Nullable\fP)"
+
+.SS "typedef struct \fB__fobject_t\fP \fBfobject_t\fP"
+
+.SS "typedef typedef_Opac struct \fB__htftp_protocol_header_t\fP \fBhtftp_protocol_header_t\fP"
+
+.SS "typedef typedef_Opac struct \fB__htftp_request_header_t\fP \fBhtftp_reqhdr_t\fP"
+
+.SS "typedef typedef_Opac struct \fB__htftp_t\fP \fBhtftp_t\fP"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "anonymous enum"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMETHOD \fP\fP
+.TP
+\fB\fIMETHOD \fP\fP
+.TP
+\fB\fIRESOURCE \fP\fP
+.TP
+\fB\fIRESOURCE \fP\fP
+.SH "Function Documentation"
+.PP 
+.SS "\fBfobject_t\fP * file_detail (\fBfobject_t\fP *__restrict__ __fobj, char *__restrict__ __fitem, int __tfmtopt)"
+
+.SS "void htftp_close (struct \fB__htftp_t\fP *__restrict__ __hf)\fC [extern]\fP"
+
+.SS "char * htftp_get_requested_content (\fBhtftp_reqhdr_t\fP *__restrict__ __hproto, char *__restrict__ __target_path)"
+
+.SS "\fBhtftp_reqhdr_t\fP * htftp_parse_request (char __htftp_buffer __parmreq)"
+
+.SS "int htftp_polling (struct \fB__htftp_t\fP *__restrict__ __hf)"
+
+.SS "char * htftp_read_content (int __user_agent, char *__restrict__ __filename, char *__restrict__ __dump)"
+
+.SS "\fBhtftp_t\fP * htftp_start (int __port_number, \fB__htftp_fcfg_t\fP \fB_Nullable\fP __function_configuration, void *\fB_Nullable\fP __restrict__ __extra_argument)"
+
+.SS "int htftp_transmission (int __user_agent, char __content_delivry __parmreq)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

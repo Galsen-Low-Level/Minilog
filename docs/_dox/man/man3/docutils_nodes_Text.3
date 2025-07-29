@@ -1,0 +1,229 @@
+.TH "docutils.nodes.Text" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.nodes.Text
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.nodes\&.Node\fP, and str\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__new__\fP (cls, data, rawsource=None)"
+.br
+.ti -1c
+.RI "\fBshortrepr\fP (self, maxlen=18)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBastext\fP (self)"
+.br
+.ti -1c
+.RI "\fBcopy\fP (self)"
+.br
+.ti -1c
+.RI "\fBdeepcopy\fP (self)"
+.br
+.ti -1c
+.RI "\fBpformat\fP (self, indent=' ', level=0)"
+.br
+.ti -1c
+.RI "\fBrstrip\fP (self, chars=None)"
+.br
+.ti -1c
+.RI "\fBlstrip\fP (self, chars=None)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.nodes\&.Node\fP
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP (self)"
+.br
+.ti -1c
+.RI "\fBdocument\fP (self, value)"
+.br
+.ti -1c
+.RI "\fB__bool__\fP (self)"
+.br
+.ti -1c
+.RI "\fBasdom\fP (self, dom=None)"
+.br
+.ti -1c
+.RI "\fBsetup_child\fP (self, child)"
+.br
+.ti -1c
+.RI "\fBwalk\fP (self, visitor)"
+.br
+.ti -1c
+.RI "\fBwalkabout\fP (self, visitor)"
+.br
+.ti -1c
+.RI "\fBtraverse\fP (self, condition=None, include_self=True, descend=True, siblings=False, ascend=False)"
+.br
+.ti -1c
+.RI "\fBfindall\fP (self, condition=None, include_self=True, descend=True, siblings=False, ascend=False)"
+.br
+.ti -1c
+.RI "\fBnext_node\fP (self, condition=None, include_self=False, descend=True, siblings=False, ascend=False)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBtagname\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.nodes\&.Node\fP
+.in +1c
+.ti -1c
+.RI "\fBchildren\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBtagname\fP = '#text'"
+.br
+.ti -1c
+.RI "tuple \fBchildren\fP = ()"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.nodes\&.Node\fP
+.in +1c
+.ti -1c
+.RI "\fBparent\fP = None"
+.br
+.ti -1c
+.RI "\fBsource\fP = None"
+.br
+.ti -1c
+.RI "\fBline\fP = None"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_dom_node\fP (self, domroot)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBdocutils\&.nodes\&.Node\fP
+.in +1c
+.ti -1c
+.RI "\fB_fast_findall\fP (self, cls)"
+.br
+.ti -1c
+.RI "\fB_superfast_findall\fP (self)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Protected Attributes inherited from \fBdocutils\&.nodes\&.Node\fP
+.in +1c
+.ti -1c
+.RI "\fB_document\fP = None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Instances are terminal nodes (leaves) containing text only; no child
+nodes or attributes\&.  Initialize by passing a string to the constructor\&.
+
+Access the raw (null-escaped) text with ``str(<instance>)``
+and unescaped text with ``<instance>\&.astext()``\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.nodes\&.Text\&.__new__ ( cls,  data,  rawsource = \fCNone\fP)"
+
+.PP
+.nf
+Assert that `data` is not an array of bytes
+and warn if the deprecated `rawsource` argument is used\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.nodes\&.Text\&.__repr__ ( self)"
+
+.SS "docutils\&.nodes\&.Text\&._dom_node ( self,  domroot)\fC [protected]\fP"
+
+.SS "docutils\&.nodes\&.Text\&.astext ( self)"
+
+.PP
+.nf
+Return a string representation of this Node\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.nodes\&.Node\fP\&.
+.SS "docutils\&.nodes\&.Text\&.copy ( self)"
+
+.PP
+.nf
+Return a copy of self\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.nodes\&.Node\fP\&.
+.SS "docutils\&.nodes\&.Text\&.deepcopy ( self)"
+
+.PP
+.nf
+Return a deep copy of self (also copying children)\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.nodes\&.Node\fP\&.
+.SS "docutils\&.nodes\&.Text\&.lstrip ( self,  chars = \fCNone\fP)"
+
+.SS "docutils\&.nodes\&.Text\&.pformat ( self,  indent = \fC'    '\fP,  level = \fC0\fP)"
+
+.PP
+.nf
+Return an indented pseudo-XML representation, for test purposes\&.
+
+Override in subclasses\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.nodes\&.Node\fP\&.
+.SS "docutils\&.nodes\&.Text\&.rstrip ( self,  chars = \fCNone\fP)"
+
+.SS "docutils\&.nodes\&.Text\&.shortrepr ( self,  maxlen = \fC18\fP)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "tuple docutils\&.nodes\&.Text\&.children = ()\fC [static]\fP"
+
+.SS "str docutils\&.nodes\&.Text\&.tagname = '#text'\fC [static]\fP"
+
+.SS "docutils\&.nodes\&.Text\&.tagname"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

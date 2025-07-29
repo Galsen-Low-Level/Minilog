@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="centry_2README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>CENTRY<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">![StatusBuild](https://img.shields.io/badge/Center-On_Progress...-blue)<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```diff</highlight></codeline>
+<codeline><highlight class="normal">+<sp/>For<sp/>the<sp/>moment,<sp/>this<sp/>is<sp/>an<sp/>experimental<sp/>phase,<sp/>a<sp/>proof<sp/>of<sp/>concept,<sp/>using<sp/>Docker<sp/>as<sp/>a<sp/>combaye.</highlight></codeline>
+<codeline><highlight class="normal">+<sp/>But<sp/>in<sp/>the<sp/>future,<sp/>we&apos;re<sp/>going<sp/>to<sp/>extend<sp/>it<sp/>to<sp/>other<sp/>types<sp/>of<sp/>containerization,<sp/>such<sp/>as<sp/>LXC<sp/>Chroot<sp/>and<sp/>others.<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>What<sp/>is<sp/>Centry<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Centry<sp/>is<sp/>a<sp/>simple,<sp/>lightweight<sp/>program<sp/>that<sp/>**lets<sp/>you<sp/>access<sp/>the<sp/>inside<sp/>of<sp/>a<sp/>running<sp/>Docker<sp/>container**<sp/>just<sp/>like<sp/>in<sp/>_interactive<sp/>tty<sp/>mode_.<sp/></highlight></codeline>
+<codeline><highlight class="normal">The<sp/>only<sp/>prerequisite<sp/>is<sp/>to<sp/>have<sp/>Docker<sp/>already<sp/>available<sp/>on<sp/>your<sp/>system.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Quick<sp/>demo<sp/></highlight></codeline>
+<codeline><highlight class="normal">```bash<sp/></highlight></codeline>
+<codeline><highlight class="normal">#<sp/><sp/>center<sp/><sp/>&lt;short-id-container{2-3}&gt;<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Exemple<sp/>:<sp/></highlight></codeline>
+<codeline><highlight class="normal">```bash<sp/></highlight></codeline>
+<codeline><highlight class="normal">$&gt;<sp/>docker<sp/>ps<sp/></highlight></codeline>
+<codeline><highlight class="normal">CONTAINER<sp/>ID<sp/><sp/><sp/>IMAGE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>COMMAND<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CREATED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>STATUS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PORTS<sp/><sp/><sp/><sp/><sp/>NAMES</highlight></codeline>
+<codeline><highlight class="normal">c3784c6459b9<sp/><sp/><sp/>&lt;image&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;sleep<sp/>9999999&quot;<sp/><sp/><sp/>24<sp/>hours<sp/>ago<sp/><sp/><sp/>Up<sp/>24<sp/>hours<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>festive_ramanujan</highlight></codeline>
+<codeline><highlight class="normal">-------------------------------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#&gt;<sp/>center<sp/>c37<sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">However<sp/>,If<sp/>no<sp/>arguments<sp/>are<sp/>supplied<sp/>,<sp/>an<sp/>interface<sp/>(TUI)<sp/>will<sp/>be<sp/>proposed,<sp/>allowing<sp/>you<sp/>to<sp/>choose<sp/>your<sp/>target<sp/>use<sp/>&lt;WASD&gt;<sp/>to<sp/>move<sp/>up<sp/>and<sp/>down<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>centry</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=&quot;screenshots/centry_tui.png&quot;<sp/>width=&quot;500&quot;&gt;<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_For<sp/>Any<sp/>issue<sp/>happening<sp/>after<sp/><sp/>centry<sp/>tui<sp/>type<sp/>`reset`<sp/>to<sp/>restore<sp/>your<sp/>terminal_<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>COMPILE<sp/></highlight></codeline>
+<codeline><highlight class="normal">**We<sp/>strongly<sp/>recommend<sp/>using<sp/>the<sp/>[Meson<sp/>Build<sp/>System](https://mesonbuild.com/)<sp/>to<sp/>build<sp/>the<sp/>project.**<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash<sp/></highlight></codeline>
+<codeline><highlight class="normal">$&gt;<sp/><sp/>meson<sp/>setup<sp/>build<sp/></highlight></codeline>
+<codeline><highlight class="normal">$&gt;<sp/><sp/>meson<sp/>compile<sp/>-C<sp/>build<sp/></highlight></codeline>
+<codeline><highlight class="normal">$&gt;<sp/><sp/>meson<sp/>install<sp/>-C<sp/>build<sp/><sp/>#To<sp/>install<sp/>localy<sp/></highlight></codeline>
+<codeline><highlight class="normal">```<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>uninstall<sp/></highlight></codeline>
+<codeline><highlight class="normal">```bash<sp/></highlight></codeline>
+<codeline><highlight class="normal">#&gt;<sp/>ninja<sp/>uninstall<sp/>-C<sp/>build<sp/></highlight></codeline>
+<codeline><highlight class="normal">```<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>NOTE<sp/>:<sp/></highlight></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>notice<sp/>any<sp/>problems,<sp/>please<sp/>open<sp/>an<sp/>issue<sp/>and<sp/>we<sp/>will<sp/>be<sp/>happy<sp/>to<sp/>correct<sp/>them.</highlight></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>have<sp/>the<sp/>opportunity<sp/>to<sp/>do<sp/>so,<sp/>we<sp/>encourage<sp/>you<sp/>to<sp/>submit<sp/>a<sp/>PR.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Thank<sp/>you<sp/>in<sp/>advance<sp/>for<sp/>your<sp/>cooperation.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Appreciate<sp/>Computer<sp/>at<sp/>all<sp/>levels<sp/>🇸🇳</highlight></codeline>
+    </programlisting>
+    <location file="/home/umar/Desktop/WorkShop/GLL/centry/README.md"/>
+  </compounddef>
+</doxygen>

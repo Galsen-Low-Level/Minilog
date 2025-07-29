@@ -1,0 +1,277 @@
+.TH "docutils.parsers.rst.roles" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.parsers.rst.roles
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBCustomRole\fP"
+.br
+.ti -1c
+.RI "class \fBGenericRole\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBrole\fP (role_name, language_module, \fBlineno\fP, reporter)"
+.br
+.ti -1c
+.RI "\fBregister_canonical_role\fP (\fBname\fP, role_fn)"
+.br
+.ti -1c
+.RI "\fBregister_local_role\fP (\fBname\fP, role_fn)"
+.br
+.ti -1c
+.RI "\fBset_implicit_options\fP (role_fn)"
+.br
+.ti -1c
+.RI "\fBregister_generic_role\fP (canonical_name, node_class)"
+.br
+.ti -1c
+.RI "\fBgeneric_custom_role\fP (\fBrole\fP, rawtext, text, \fBlineno\fP, inliner, \fBoptions\fP=None, \fBcontent\fP=None)"
+.br
+.ti -1c
+.RI "\fBpep_reference_role\fP (\fBrole\fP, rawtext, text, \fBlineno\fP, inliner, \fBoptions\fP=None, \fBcontent\fP=None)"
+.br
+.RI "Define and register the standard roles: "
+.ti -1c
+.RI "\fBrfc_reference_role\fP (\fBrole\fP, rawtext, text, \fBlineno\fP, inliner, \fBoptions\fP=None, \fBcontent\fP=None)"
+.br
+.ti -1c
+.RI "\fBraw_role\fP (\fBrole\fP, rawtext, text, \fBlineno\fP, inliner, \fBoptions\fP=None, \fBcontent\fP=None)"
+.br
+.ti -1c
+.RI "\fBcode_role\fP (\fBrole\fP, rawtext, text, \fBlineno\fP, inliner, \fBoptions\fP=None, \fBcontent\fP=None)"
+.br
+.ti -1c
+.RI "\fBmath_role\fP (\fBrole\fP, rawtext, text, \fBlineno\fP, inliner, \fBoptions\fP=None, \fBcontent\fP=None)"
+.br
+.ti -1c
+.RI "\fBunimplemented_role\fP (\fBrole\fP, rawtext, text, \fBlineno\fP, inliner, \fBoptions\fP=None, \fBcontent\fP=None)"
+.br
+.RI "Register roles that are currently unimplemented\&. "
+.ti -1c
+.RI "\fBset_classes\fP (\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fBnormalized_role_options\fP (\fBoptions\fP)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "str \fBDEFAULT_INTERPRETED_ROLE\fP = 'title\-reference'"
+.br
+.ti -1c
+.RI "dict \fB_role_registry\fP = {}"
+.br
+.ti -1c
+.RI "dict \fB_roles\fP = {}"
+.br
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This module defines standard interpreted text role functions, a registry for
+interpreted text roles, and an API for adding to and retrieving from the
+registry\&. See also `Creating reStructuredText Interpreted Text Roles`__\&.
+
+__ https://docutils\&.sourceforge\&.io/docs/ref/rst/roles\&.html
+
+
+The interface for interpreted role functions is as follows::
+
+    def role_fn(name, rawtext, text, lineno, inliner,
+                options=None, content=None):
+        code\&.\&.\&.
+
+    # Set function attributes for customization:
+    role_fn\&.options = \&.\&.\&.
+    role_fn\&.content = \&.\&.\&.
+
+Parameters:
+
+- ``name`` is the local name of the interpreted text role, the role name
+  actually used in the document\&.
+
+- ``rawtext`` is a string containing the entire interpreted text construct\&.
+  Return it as a ``problematic`` node linked to a system message if there is a
+  problem\&.
+
+- ``text`` is the interpreted text content, with backslash escapes converted
+  to nulls (``\\x00``)\&.
+
+- ``lineno`` is the line number where the text block containing the
+  interpreted text begins\&.
+
+- ``inliner`` is the Inliner object that called the role function\&.
+  It defines the following useful attributes: ``reporter``,
+  ``problematic``, ``memo``, ``parent``, ``document``\&.
+
+- ``options``: A dictionary of directive options for customization, to be
+  interpreted by the role function\&.  Used for additional attributes for the
+  generated elements and other functionality\&.
+
+- ``content``: A list of strings, the directive content for customization
+  ('role' directive)\&.  To be interpreted by the role function\&.
+
+Function attributes for customization, interpreted by the 'role' directive:
+
+- ``options``: A dictionary, mapping known option names to conversion
+  functions such as `int` or `float`\&.  ``None`` or an empty dict implies no
+  options to parse\&.  Several directive option conversion functions are defined
+  in the `directives` module\&.
+
+  All role functions implicitly support the 'class' option, unless disabled
+  with an explicit ``{'class': None}``\&.
+
+- ``content``: A boolean; true if content is allowed\&.  Client code must handle
+  the case where content is required but not supplied (an empty content list
+  will be supplied)\&.
+
+Note that unlike directives, the 'arguments' function attribute is not
+supported for role customization\&.  Directive arguments are handled by the
+'role' directive itself\&.
+
+Interpreted role functions return a tuple of two values:
+
+- A list of nodes which will be inserted into the document tree at the
+  point where the interpreted role was encountered (can be an empty
+  list)\&.
+
+- A list of system messages, which will be inserted into the document tree
+  immediately after the end of the current inline block (can also be empty)\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "docutils\&.parsers\&.rst\&.roles\&.code_role ( role,  rawtext,  text,  lineno,  inliner,  options = \fCNone\fP,  content = \fCNone\fP)"
+
+.SS "docutils\&.parsers\&.rst\&.roles\&.generic_custom_role ( role,  rawtext,  text,  lineno,  inliner,  options = \fCNone\fP,  content = \fCNone\fP)"
+
+.PP
+.nf
+Base for custom roles if no other base role is specified\&.
+.fi
+.PP
+ 
+.SS "docutils\&.parsers\&.rst\&.roles\&.math_role ( role,  rawtext,  text,  lineno,  inliner,  options = \fCNone\fP,  content = \fCNone\fP)"
+
+.SS "docutils\&.parsers\&.rst\&.roles\&.normalized_role_options ( options)"
+
+.PP
+.nf
+Return normalized dictionary of role options\&.
+
+* ``None`` is replaced by an empty dictionary\&.
+* The key 'class' is renamed to 'classes'\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.parsers\&.rst\&.roles\&.pep_reference_role ( role,  rawtext,  text,  lineno,  inliner,  options = \fCNone\fP,  content = \fCNone\fP)"
+
+.PP
+Define and register the standard roles: 
+.SS "docutils\&.parsers\&.rst\&.roles\&.raw_role ( role,  rawtext,  text,  lineno,  inliner,  options = \fCNone\fP,  content = \fCNone\fP)"
+
+.SS "docutils\&.parsers\&.rst\&.roles\&.register_canonical_role ( name,  role_fn)"
+
+.PP
+.nf
+Register an interpreted text role by its canonical name\&.
+
+:Parameters:
+  - `name`: The canonical name of the interpreted role\&.
+  - `role_fn`: The role function\&.  See the module docstring\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.parsers\&.rst\&.roles\&.register_generic_role ( canonical_name,  node_class)"
+
+.PP
+.nf
+For roles which simply wrap a given `node_class` around the text\&.
+.fi
+.PP
+ 
+.SS "docutils\&.parsers\&.rst\&.roles\&.register_local_role ( name,  role_fn)"
+
+.PP
+.nf
+Register an interpreted text role by its local or language-dependent name\&.
+
+:Parameters:
+  - `name`: The local or language-dependent name of the interpreted role\&.
+  - `role_fn`: The role function\&.  See the module docstring\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.parsers\&.rst\&.roles\&.rfc_reference_role ( role,  rawtext,  text,  lineno,  inliner,  options = \fCNone\fP,  content = \fCNone\fP)"
+
+.SS "docutils\&.parsers\&.rst\&.roles\&.role ( role_name,  language_module,  lineno,  reporter)"
+
+.PP
+.nf
+Locate and return a role function from its language-dependent name, along
+with a list of system messages\&.
+
+If the role is not found in the current language, check English\&. Return a
+2-tuple: role function (``None`` if the named role cannot be found) and a
+list of system messages\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.parsers\&.rst\&.roles\&.set_classes ( options)"
+
+.PP
+.nf
+Deprecated\&. Obsoleted by ``normalized_role_options()``\&.
+.fi
+.PP
+ 
+.SS "docutils\&.parsers\&.rst\&.roles\&.set_implicit_options ( role_fn)"
+
+.PP
+.nf
+Add customization options to role functions, unless explicitly set or
+disabled\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.parsers\&.rst\&.roles\&.unimplemented_role ( role,  rawtext,  text,  lineno,  inliner,  options = \fCNone\fP,  content = \fCNone\fP)"
+
+.PP
+Register roles that are currently unimplemented\&. 
+.SH "Variable Documentation"
+.PP 
+.SS "dict docutils\&.parsers\&.rst\&.roles\&._role_registry = {}\fC [protected]\fP"
+
+.SS "dict docutils\&.parsers\&.rst\&.roles\&._roles = {}\fC [protected]\fP"
+
+.SS "str docutils\&.parsers\&.rst\&.roles\&.DEFAULT_INTERPRETED_ROLE = 'title\-reference'"
+
+.SS "docutils\&.parsers\&.rst\&.roles\&.options"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

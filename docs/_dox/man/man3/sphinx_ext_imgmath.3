@@ -1,0 +1,218 @@
+.TH "sphinx.ext.imgmath" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.ext.imgmath
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBInvokeError\fP"
+.br
+.ti -1c
+.RI "class \fBMathExtError\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int|None \fBread_svg_depth\fP (str|os\&.PathLike[str] filename)"
+.br
+.ti -1c
+.RI "None \fBwrite_svg_depth\fP (Path filename, int depth)"
+.br
+.ti -1c
+.RI "str \fBgenerate_latex_macro\fP (str image_format, str math, \fBConfig\fP config, \fB_StrPath\fP confdir)"
+.br
+.ti -1c
+.RI "Path \fBensure_tempdir\fP (\fBBuilder\fP builder)"
+.br
+.ti -1c
+.RI "Path \fBcompile_math\fP (str latex, \fBBuilder\fP builder)"
+.br
+.ti -1c
+.RI "tuple[str, str] \fBconvert_dvi_to_image\fP (list[str] command, str name)"
+.br
+.ti -1c
+.RI "int|None \fBconvert_dvi_to_png\fP (Path dvipath, \fBBuilder\fP builder, Path out_path)"
+.br
+.ti -1c
+.RI "int|None \fBconvert_dvi_to_svg\fP (Path dvipath, \fBBuilder\fP builder, Path out_path)"
+.br
+.ti -1c
+.RI "tuple[\fB_StrPath\fP|None, int|None] \fBrender_math\fP (\fBHTML5Translator\fP self, str math)"
+.br
+.ti -1c
+.RI "str \fBrender_maths_to_base64\fP (str image_format, Path generated_path)"
+.br
+.ti -1c
+.RI "None \fBclean_up_files\fP (\fBSphinx\fP app, Exception exc)"
+.br
+.ti -1c
+.RI "str \fBget_tooltip\fP (\fBHTML5Translator\fP self, \fBElement\fP node)"
+.br
+.ti -1c
+.RI "None \fBhtml_visit_math\fP (\fBHTML5Translator\fP self, nodes\&.math node)"
+.br
+.ti -1c
+.RI "None \fBhtml_visit_displaymath\fP (\fBHTML5Translator\fP self, nodes\&.math_block node)"
+.br
+.ti -1c
+.RI "\fBExtensionMetadata\fP \fBsetup\fP (\fBSphinx\fP app)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "\fBtemplates_path\fP = package_dir\&.joinpath('templates', 'imgmath')"
+.br
+.ti -1c
+.RI "tuple \fBSUPPORT_FORMAT\fP = ('png', 'svg')"
+.br
+.ti -1c
+.RI "\fBdepth_re\fP = re\&.compile(r'\\[\\d+ depth=(\-?\\d+)\\]')"
+.br
+.ti -1c
+.RI "\fBdepthsvg_re\fP = re\&.compile(r'\&.*, depth=(\&.*)pt')"
+.br
+.ti -1c
+.RI "\fBdepthsvgcomment_re\fP = re\&.compile(r'<!\-\- DEPTH=(\-?\\d+) \-\->')"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Render math in HTML via dvipng or dvisvgm\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " None sphinx\&.ext\&.imgmath\&.clean_up_files (\fBSphinx\fP app, Exception exc)"
+
+.SS " Path sphinx\&.ext\&.imgmath\&.compile_math (str latex, \fBBuilder\fP builder)"
+
+.PP
+.nf
+Compile LaTeX macros for math to DVI\&.
+.fi
+.PP
+ 
+.SS " tuple[str, str] sphinx\&.ext\&.imgmath\&.convert_dvi_to_image (list[str] command, str name)"
+
+.PP
+.nf
+Convert DVI file to specific image format\&.
+.fi
+.PP
+ 
+.SS " int | None sphinx\&.ext\&.imgmath\&.convert_dvi_to_png (Path dvipath, \fBBuilder\fP builder, Path out_path)"
+
+.PP
+.nf
+Convert DVI file to PNG image\&.
+.fi
+.PP
+ 
+.SS " int | None sphinx\&.ext\&.imgmath\&.convert_dvi_to_svg (Path dvipath, \fBBuilder\fP builder, Path out_path)"
+
+.PP
+.nf
+Convert DVI file to SVG image\&.
+.fi
+.PP
+ 
+.SS " Path sphinx\&.ext\&.imgmath\&.ensure_tempdir (\fBBuilder\fP builder)"
+
+.PP
+.nf
+Create temporary directory\&.
+
+use only one tempdir per build -- the use of a directory is cleaner
+than using temporary files, since we can clean up everything at once
+just removing the whole directory (see cleanup_tempdir)
+
+.fi
+.PP
+ 
+.SS " str sphinx\&.ext\&.imgmath\&.generate_latex_macro (str image_format, str math, \fBConfig\fP config, \fB_StrPath\fP confdir)"
+
+.PP
+.nf
+Generate LaTeX macro\&.
+.fi
+.PP
+ 
+.SS " str sphinx\&.ext\&.imgmath\&.get_tooltip (\fBHTML5Translator\fP self, \fBElement\fP node)"
+
+.SS " None sphinx\&.ext\&.imgmath\&.html_visit_displaymath (\fBHTML5Translator\fP self, nodes\&.math_block node)"
+
+.SS " None sphinx\&.ext\&.imgmath\&.html_visit_math (\fBHTML5Translator\fP self, nodes\&.math node)"
+
+.SS " int | None sphinx\&.ext\&.imgmath\&.read_svg_depth (str | os\&.PathLike[str] filename)"
+
+.PP
+.nf
+Read the depth from comment at last line of SVG file
+.fi
+.PP
+ 
+.SS " tuple[\fB_StrPath\fP | None, int | None] sphinx\&.ext\&.imgmath\&.render_math (\fBHTML5Translator\fP self, str math)"
+
+.PP
+.nf
+Render the LaTeX math expression *math* using latex and dvipng or
+dvisvgm\&.
+
+Return the image absolute filename and the 'depth',
+that is, the distance of image bottom and baseline in pixels, if the
+option to use preview_latex is switched on\&.
+
+Error handling may seem strange, but follows a pattern: if LaTeX or dvipng
+(dvisvgm) aren't available, only a warning is generated (since that enables
+people on machines without these programs to at least build the rest of the
+docs successfully)\&.  If the programs are there, however, they may not fail
+since that indicates a problem in the math source\&.
+
+.fi
+.PP
+ 
+.SS " str sphinx\&.ext\&.imgmath\&.render_maths_to_base64 (str image_format, Path generated_path)"
+
+.SS " \fBExtensionMetadata\fP sphinx\&.ext\&.imgmath\&.setup (\fBSphinx\fP app)"
+
+.SS " None sphinx\&.ext\&.imgmath\&.write_svg_depth (Path filename, int depth)"
+
+.PP
+.nf
+Write the depth to SVG file as a comment at end of file
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "sphinx\&.ext\&.imgmath\&.depth_re = re\&.compile(r'\\[\\d+ depth=(\-?\\d+)\\]')"
+
+.SS "sphinx\&.ext\&.imgmath\&.depthsvg_re = re\&.compile(r'\&.*, depth=(\&.*)pt')"
+
+.SS "sphinx\&.ext\&.imgmath\&.depthsvgcomment_re = re\&.compile(r'<!\-\- DEPTH=(\-?\\d+) \-\->')"
+
+.SS "sphinx\&.ext\&.imgmath\&.logger = logging\&.getLogger(__name__)"
+
+.SS "tuple sphinx\&.ext\&.imgmath\&.SUPPORT_FORMAT = ('png', 'svg')"
+
+.SS "sphinx\&.ext\&.imgmath\&.templates_path = package_dir\&.joinpath('templates', 'imgmath')"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

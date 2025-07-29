@@ -1,0 +1,150 @@
+\doxysection{babel.\+plural.\+Plural\+Rule Class Reference}
+\hypertarget{classbabel_1_1plural_1_1PluralRule}{}\label{classbabel_1_1plural_1_1PluralRule}\index{babel.plural.PluralRule@{babel.plural.PluralRule}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classbabel_1_1plural_1_1PluralRule_a9b7cf4572f9bcbc1944246a0e346ef57}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, Mapping\mbox{[}str, str\mbox{]}\texorpdfstring{$\vert$}{|}Iterable\mbox{[}tuple\mbox{[}str, str\mbox{]}\mbox{]} \mbox{\hyperlink{classbabel_1_1plural_1_1PluralRule_aa3f468d9cfb1744df64b980f7b41d8d6}{rules}})
+\item 
+str \mbox{\hyperlink{classbabel_1_1plural_1_1PluralRule_a94c1437b7c660887a12579a4a2cdb924}{\+\_\+\+\_\+repr\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classbabel_1_1plural_1_1PluralRule}{Plural\+Rule}} \mbox{\hyperlink{classbabel_1_1plural_1_1PluralRule_a90b2e932caad104c88ea4f71438b56c8}{parse}} (cls, Mapping\mbox{[}str, str\mbox{]}\texorpdfstring{$\vert$}{|}Iterable\mbox{[}tuple\mbox{[}str, str\mbox{]}\mbox{]}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{classbabel_1_1plural_1_1PluralRule}{Plural\+Rule}} \mbox{\hyperlink{classbabel_1_1plural_1_1PluralRule_aa3f468d9cfb1744df64b980f7b41d8d6}{rules}})
+\item 
+Mapping\mbox{[}str, str\mbox{]} \mbox{\hyperlink{classbabel_1_1plural_1_1PluralRule_aa3f468d9cfb1744df64b980f7b41d8d6}{rules}} (self)
+\item 
+frozenset\mbox{[}str\mbox{]} \mbox{\hyperlink{classbabel_1_1plural_1_1PluralRule_a9cd49fe4bf5531fa8b720da802b12232}{tags}} (self)
+\item 
+list\mbox{[}tuple\mbox{[}str, Any\mbox{]}\mbox{]} \mbox{\hyperlink{classbabel_1_1plural_1_1PluralRule_aba973df8811ba5848aaa41b97de4e1a1}{\+\_\+\+\_\+getstate\+\_\+\+\_\+}} (self)
+\item 
+None \mbox{\hyperlink{classbabel_1_1plural_1_1PluralRule_a4266c2d82babfb5c9acd2f7a2bcbafc2}{\+\_\+\+\_\+setstate\+\_\+\+\_\+}} (self, list\mbox{[}tuple\mbox{[}str, Any\mbox{]}\mbox{]} \mbox{\hyperlink{classbabel_1_1plural_1_1PluralRule_ad90099cb1fc1700c93543108f610e5dc}{abstract}})
+\item 
+str \mbox{\hyperlink{classbabel_1_1plural_1_1PluralRule_aaf0596ca7ed3b9c8a074ab8dd16aa9f7}{\+\_\+\+\_\+call\+\_\+\+\_\+}} (self, float\texorpdfstring{$\vert$}{|}decimal.\+Decimal n)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbabel_1_1plural_1_1PluralRule_ad90099cb1fc1700c93543108f610e5dc}{abstract}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbabel_1_1plural_1_1PluralRule_ae9eff860808d8937a3e512798a8bcd4c}{\+\_\+func}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Represents a set of language pluralization rules.  The constructor
+accepts a list of (tag, expr) tuples or a dict of `CLDR rules`_. The
+resulting object is callable and accepts one parameter with a positive or
+negative number (both integer and float) for the number that indicates the
+plural form for a string and returns the tag for the format:
+
+>>> rule = PluralRule({'one': 'n is 1'})
+>>> rule(1)
+'one'
+>>> rule(2)
+'other'
+
+Currently the CLDR defines these tags: zero, one, two, few, many and
+other where other is an implicit default.  Rules should be mutually
+exclusive; for a given numeric value, only one rule should apply (i.e.
+the condition should only be true for one of the plural rule elements.
+
+.. _`CLDR rules`: https://www.unicode.org/reports/tr35/tr35-33/tr35-numbers.html#Language_Plural_Rules
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbabel_1_1plural_1_1PluralRule_a9b7cf4572f9bcbc1944246a0e346ef57}\label{classbabel_1_1plural_1_1PluralRule_a9b7cf4572f9bcbc1944246a0e346ef57} 
+\index{babel.plural.PluralRule@{babel.plural.PluralRule}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!babel.plural.PluralRule@{babel.plural.PluralRule}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None babel.\+plural.\+Plural\+Rule.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Mapping\mbox{[}str, str\mbox{]} \texorpdfstring{$\vert$}{|} Iterable\mbox{[}tuple\mbox{[}str, str\mbox{]}\mbox{]}}]{rules }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize the rule instance.
+
+:param rules: a list of ``(tag, expr)``) tuples with the rules
+              conforming to UTS #35 or a dict with the tags as keys
+              and expressions as values.
+:raise RuleError: if the expression is malformed
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbabel_1_1plural_1_1PluralRule_aaf0596ca7ed3b9c8a074ab8dd16aa9f7}\label{classbabel_1_1plural_1_1PluralRule_aaf0596ca7ed3b9c8a074ab8dd16aa9f7} 
+\index{babel.plural.PluralRule@{babel.plural.PluralRule}!\_\_call\_\_@{\_\_call\_\_}}
+\index{\_\_call\_\_@{\_\_call\_\_}!babel.plural.PluralRule@{babel.plural.PluralRule}}
+\doxysubsubsection{\texorpdfstring{\_\_call\_\_()}{\_\_call\_\_()}}
+{\footnotesize\ttfamily  str babel.\+plural.\+Plural\+Rule.\+\_\+\+\_\+call\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{float \texorpdfstring{$\vert$}{|} decimal.\+Decimal}]{n }\end{DoxyParamCaption})}
+
+\Hypertarget{classbabel_1_1plural_1_1PluralRule_aba973df8811ba5848aaa41b97de4e1a1}\label{classbabel_1_1plural_1_1PluralRule_aba973df8811ba5848aaa41b97de4e1a1} 
+\index{babel.plural.PluralRule@{babel.plural.PluralRule}!\_\_getstate\_\_@{\_\_getstate\_\_}}
+\index{\_\_getstate\_\_@{\_\_getstate\_\_}!babel.plural.PluralRule@{babel.plural.PluralRule}}
+\doxysubsubsection{\texorpdfstring{\_\_getstate\_\_()}{\_\_getstate\_\_()}}
+{\footnotesize\ttfamily  list\mbox{[}tuple\mbox{[}str, Any\mbox{]}\mbox{]} babel.\+plural.\+Plural\+Rule.\+\_\+\+\_\+getstate\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classbabel_1_1plural_1_1PluralRule_a94c1437b7c660887a12579a4a2cdb924}\label{classbabel_1_1plural_1_1PluralRule_a94c1437b7c660887a12579a4a2cdb924} 
+\index{babel.plural.PluralRule@{babel.plural.PluralRule}!\_\_repr\_\_@{\_\_repr\_\_}}
+\index{\_\_repr\_\_@{\_\_repr\_\_}!babel.plural.PluralRule@{babel.plural.PluralRule}}
+\doxysubsubsection{\texorpdfstring{\_\_repr\_\_()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily  str babel.\+plural.\+Plural\+Rule.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classbabel_1_1plural_1_1PluralRule_a4266c2d82babfb5c9acd2f7a2bcbafc2}\label{classbabel_1_1plural_1_1PluralRule_a4266c2d82babfb5c9acd2f7a2bcbafc2} 
+\index{babel.plural.PluralRule@{babel.plural.PluralRule}!\_\_setstate\_\_@{\_\_setstate\_\_}}
+\index{\_\_setstate\_\_@{\_\_setstate\_\_}!babel.plural.PluralRule@{babel.plural.PluralRule}}
+\doxysubsubsection{\texorpdfstring{\_\_setstate\_\_()}{\_\_setstate\_\_()}}
+{\footnotesize\ttfamily  None babel.\+plural.\+Plural\+Rule.\+\_\+\+\_\+setstate\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{list\mbox{[}tuple\mbox{[}str, Any\mbox{]}\mbox{]}}]{abstract }\end{DoxyParamCaption})}
+
+\Hypertarget{classbabel_1_1plural_1_1PluralRule_a90b2e932caad104c88ea4f71438b56c8}\label{classbabel_1_1plural_1_1PluralRule_a90b2e932caad104c88ea4f71438b56c8} 
+\index{babel.plural.PluralRule@{babel.plural.PluralRule}!parse@{parse}}
+\index{parse@{parse}!babel.plural.PluralRule@{babel.plural.PluralRule}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classbabel_1_1plural_1_1PluralRule}{Plural\+Rule}} babel.\+plural.\+Plural\+Rule.\+parse (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{Mapping\mbox{[}str, str\mbox{]} \texorpdfstring{$\vert$}{|} Iterable\mbox{[}tuple\mbox{[}str, str\mbox{]}\mbox{]} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{classbabel_1_1plural_1_1PluralRule}{Plural\+Rule}}}]{rules }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a `PluralRule` instance for the given rules.  If the rules
+are a `PluralRule` object, that object is returned.
+
+:param rules: the rules as list or dict, or a `PluralRule` object
+:raise RuleError: if the expression is malformed
+\end{DoxyVerb}
+ \Hypertarget{classbabel_1_1plural_1_1PluralRule_aa3f468d9cfb1744df64b980f7b41d8d6}\label{classbabel_1_1plural_1_1PluralRule_aa3f468d9cfb1744df64b980f7b41d8d6} 
+\index{babel.plural.PluralRule@{babel.plural.PluralRule}!rules@{rules}}
+\index{rules@{rules}!babel.plural.PluralRule@{babel.plural.PluralRule}}
+\doxysubsubsection{\texorpdfstring{rules()}{rules()}}
+{\footnotesize\ttfamily  Mapping\mbox{[}str, str\mbox{]} babel.\+plural.\+Plural\+Rule.\+rules (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}The `PluralRule` as a dict of unicode plural rules.
+
+>>> rule = PluralRule({'one': 'n is 1'})
+>>> rule.rules
+{'one': 'n is 1'}
+\end{DoxyVerb}
+ \Hypertarget{classbabel_1_1plural_1_1PluralRule_a9cd49fe4bf5531fa8b720da802b12232}\label{classbabel_1_1plural_1_1PluralRule_a9cd49fe4bf5531fa8b720da802b12232} 
+\index{babel.plural.PluralRule@{babel.plural.PluralRule}!tags@{tags}}
+\index{tags@{tags}!babel.plural.PluralRule@{babel.plural.PluralRule}}
+\doxysubsubsection{\texorpdfstring{tags()}{tags()}}
+{\footnotesize\ttfamily  frozenset\mbox{[}str\mbox{]} babel.\+plural.\+Plural\+Rule.\+tags (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A set of explicitly defined tags in this rule.  The implicit default
+``'other'`` rules is not part of this set unless there is an explicit
+rule for it.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classbabel_1_1plural_1_1PluralRule_ae9eff860808d8937a3e512798a8bcd4c}\label{classbabel_1_1plural_1_1PluralRule_ae9eff860808d8937a3e512798a8bcd4c} 
+\index{babel.plural.PluralRule@{babel.plural.PluralRule}!\_func@{\_func}}
+\index{\_func@{\_func}!babel.plural.PluralRule@{babel.plural.PluralRule}}
+\doxysubsubsection{\texorpdfstring{\_func}{\_func}}
+{\footnotesize\ttfamily babel.\+plural.\+Plural\+Rule.\+\_\+func\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classbabel_1_1plural_1_1PluralRule_ad90099cb1fc1700c93543108f610e5dc}\label{classbabel_1_1plural_1_1PluralRule_ad90099cb1fc1700c93543108f610e5dc} 
+\index{babel.plural.PluralRule@{babel.plural.PluralRule}!abstract@{abstract}}
+\index{abstract@{abstract}!babel.plural.PluralRule@{babel.plural.PluralRule}}
+\doxysubsubsection{\texorpdfstring{abstract}{abstract}}
+{\footnotesize\ttfamily babel.\+plural.\+Plural\+Rule.\+abstract}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/babel/\mbox{\hyperlink{plural_8py}{plural.\+py}}\end{DoxyCompactItemize}

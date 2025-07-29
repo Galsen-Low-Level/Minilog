@@ -1,0 +1,381 @@
+.TH "docutils.parsers.rst.states.RSTState" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.parsers.rst.states.RSTState
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.statemachine\&.StateWS\fP\&.
+.PP
+Inherited by \fBdocutils\&.parsers\&.rst\&.states\&.Body\fP, \fBdocutils\&.parsers\&.rst\&.states\&.QuotedLiteralBlock\fP, and \fBdocutils\&.parsers\&.rst\&.states\&.Text\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBstate_machine\fP, \fBdebug\fP=False)"
+.br
+.ti -1c
+.RI "\fBruntime_init\fP (self)"
+.br
+.ti -1c
+.RI "\fBgoto_line\fP (self, abs_line_offset)"
+.br
+.ti -1c
+.RI "\fBno_match\fP (self, context, \fBtransitions\fP)"
+.br
+.ti -1c
+.RI "\fBbof\fP (self, context)"
+.br
+.ti -1c
+.RI "\fBnested_parse\fP (self, block, input_offset, node, match_titles=False, state_machine_class=None, state_machine_kwargs=None)"
+.br
+.ti -1c
+.RI "\fBnested_list_parse\fP (self, block, input_offset, node, initial_state, blank_finish, blank_finish_state=None, extra_settings={}, match_titles=False, state_machine_class=None, state_machine_kwargs=None)"
+.br
+.ti -1c
+.RI "\fBsection\fP (self, title, source, style, \fBlineno\fP, messages)"
+.br
+.ti -1c
+.RI "\fBcheck_subsection\fP (self, source, style, \fBlineno\fP)"
+.br
+.ti -1c
+.RI "\fBtitle_inconsistent\fP (self, sourcetext, \fBlineno\fP)"
+.br
+.ti -1c
+.RI "\fBnew_subsection\fP (self, title, \fBlineno\fP, messages)"
+.br
+.ti -1c
+.RI "\fBparagraph\fP (self, lines, \fBlineno\fP)"
+.br
+.ti -1c
+.RI "\fBinline_text\fP (self, text, \fBlineno\fP)"
+.br
+.ti -1c
+.RI "\fBunindent_warning\fP (self, node_name)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.statemachine\&.StateWS\fP
+.in +1c
+.ti -1c
+.RI "\fBadd_initial_transitions\fP (self)"
+.br
+.ti -1c
+.RI "\fBblank\fP (self, match, context, next_state)"
+.br
+.ti -1c
+.RI "\fBindent\fP (self, match, context, next_state)"
+.br
+.ti -1c
+.RI "\fBknown_indent\fP (self, match, context, next_state)"
+.br
+.ti -1c
+.RI "\fBfirst_known_indent\fP (self, match, context, next_state)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.statemachine\&.State\fP
+.in +1c
+.ti -1c
+.RI "\fBunlink\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd_transitions\fP (self, names, \fBtransitions\fP)"
+.br
+.ti -1c
+.RI "\fBadd_transition\fP (self, name, transition)"
+.br
+.ti -1c
+.RI "\fBremove_transition\fP (self, name)"
+.br
+.ti -1c
+.RI "\fBmake_transition\fP (self, name, next_state=None)"
+.br
+.ti -1c
+.RI "\fBmake_transitions\fP (self, name_list)"
+.br
+.ti -1c
+.RI "\fBeof\fP (self, context)"
+.br
+.ti -1c
+.RI "\fBnop\fP (self, match, context, next_state)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBnested_sm_kwargs\fP"
+.br
+.ti -1c
+.RI "\fBmemo\fP"
+.br
+.ti -1c
+.RI "\fBreporter\fP"
+.br
+.ti -1c
+.RI "\fBinliner\fP"
+.br
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBparent\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.statemachine\&.StateWS\fP
+.in +1c
+.ti -1c
+.RI "\fBpatterns\fP"
+.br
+.ti -1c
+.RI "\fBws_patterns\fP"
+.br
+.ti -1c
+.RI "\fBws_initial_transitions\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.statemachine\&.State\fP
+.in +1c
+.ti -1c
+.RI "\fBtransition_order\fP"
+.br
+.ti -1c
+.RI "\fBtransitions\fP"
+.br
+.ti -1c
+.RI "\fBstate_machine\fP"
+.br
+.ti -1c
+.RI "\fBdebug\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBnested_sm\fP = \fBNestedStateMachine\fP"
+.br
+.ti -1c
+.RI "list \fBnested_sm_cache\fP = []"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.statemachine\&.StateWS\fP
+.in +1c
+.ti -1c
+.RI "\fBindent_sm\fP = None"
+.br
+.ti -1c
+.RI "\fBindent_sm_kwargs\fP = None"
+.br
+.ti -1c
+.RI "\fBknown_indent_sm\fP = None"
+.br
+.ti -1c
+.RI "\fBknown_indent_sm_kwargs\fP = None"
+.br
+.ti -1c
+.RI "dict \fBws_patterns\fP"
+.br
+.ti -1c
+.RI "tuple \fBws_initial_transitions\fP = ('\fBblank\fP', '\fBindent\fP')"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.statemachine\&.State\fP
+.in +1c
+.ti -1c
+.RI "\fBpatterns\fP = None"
+.br
+.ti -1c
+.RI "\fBinitial_transitions\fP = None"
+.br
+.ti -1c
+.RI "\fBnested_sm\fP = None"
+.br
+.ti -1c
+.RI "\fBnested_sm_kwargs\fP = None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+reStructuredText State superclass\&.
+
+Contains methods used by all State subclasses\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.parsers\&.rst\&.states\&.RSTState\&.__init__ ( self,  state_machine,  debug = \fCFalse\fP)"
+
+.PP
+.nf
+Initialize a `StateSM` object; extends `State\&.__init__()`\&.
+
+Check for indent state machine attributes, set defaults if not set\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.statemachine\&.StateWS\fP\&.
+.PP
+Reimplemented in \fBdocutils\&.parsers\&.rst\&.states\&.QuotedLiteralBlock\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.parsers\&.rst\&.states\&.RSTState\&.bof ( self,  context)"
+
+.PP
+.nf
+Called at beginning of file\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.statemachine\&.State\fP\&.
+.SS "docutils\&.parsers\&.rst\&.states\&.RSTState\&.check_subsection ( self,  source,  style,  lineno)"
+
+.PP
+.nf
+Check for a valid subsection header\&.  Return True or False\&.
+
+When a new section is reached that isn't a subsection of the current
+section, back up the line count (use ``previous_line(-x)``), then
+``raise EOFError``\&.  The current StateMachine will finish, then the
+calling StateMachine can re-examine the title\&.  This will work its way
+back up the calling chain until the correct section level isreached\&.
+
+@@@ Alternative: Evaluate the title, store the title info & level, and
+back up the chain until that level is reached\&.  Store in memo? Or
+return in results?
+
+:Exception: `EOFError` when a sibling or supersection encountered\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.parsers\&.rst\&.states\&.RSTState\&.goto_line ( self,  abs_line_offset)"
+
+.PP
+.nf
+Jump to input line `abs_line_offset`, ignoring jumps past the end\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.parsers\&.rst\&.states\&.RSTState\&.inline_text ( self,  text,  lineno)"
+
+.PP
+.nf
+Return 2 lists: nodes (text and inline elements), and system_messages\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.parsers\&.rst\&.states\&.RSTState\&.nested_list_parse ( self,  block,  input_offset,  node,  initial_state,  blank_finish,  blank_finish_state = \fCNone\fP,  extra_settings = \fC{}\fP,  match_titles = \fCFalse\fP,  state_machine_class = \fCNone\fP,  state_machine_kwargs = \fCNone\fP)"
+
+.PP
+.nf
+Create a new StateMachine rooted at `node` and run it over the input
+`block`\&. Also keep track of optional intermediate blank lines and the
+required final one\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.parsers\&.rst\&.states\&.RSTState\&.nested_parse ( self,  block,  input_offset,  node,  match_titles = \fCFalse\fP,  state_machine_class = \fCNone\fP,  state_machine_kwargs = \fCNone\fP)"
+
+.PP
+.nf
+Create a new StateMachine rooted at `node` and run it over the input
+`block`\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.parsers\&.rst\&.states\&.RSTState\&.new_subsection ( self,  title,  lineno,  messages)"
+
+.PP
+.nf
+Append new subsection to document tree\&. On return, check level\&.
+.fi
+.PP
+ 
+.SS "docutils\&.parsers\&.rst\&.states\&.RSTState\&.no_match ( self,  context,  transitions)"
+
+.PP
+.nf
+Override `StateWS\&.no_match` to generate a system message\&.
+
+This code should never be run\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.statemachine\&.State\fP\&.
+.SS "docutils\&.parsers\&.rst\&.states\&.RSTState\&.paragraph ( self,  lines,  lineno)"
+
+.PP
+.nf
+Return a list (paragraph & messages) & a boolean: literal_block next?
+
+.fi
+.PP
+ 
+.SS "docutils\&.parsers\&.rst\&.states\&.RSTState\&.runtime_init ( self)"
+
+.PP
+.nf
+Initialize this `State` before running the state machine; called from
+`self\&.state_machine\&.run()`\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.statemachine\&.State\fP\&.
+.SS "docutils\&.parsers\&.rst\&.states\&.RSTState\&.section ( self,  title,  source,  style,  lineno,  messages)"
+
+.PP
+.nf
+Check for a valid subsection and create one if it checks out\&.
+.fi
+.PP
+ 
+.SS "docutils\&.parsers\&.rst\&.states\&.RSTState\&.title_inconsistent ( self,  sourcetext,  lineno)"
+
+.SS "docutils\&.parsers\&.rst\&.states\&.RSTState\&.unindent_warning ( self,  node_name)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.parsers\&.rst\&.states\&.RSTState\&.document"
+
+.SS "docutils\&.parsers\&.rst\&.states\&.RSTState\&.inliner"
+
+.SS "docutils\&.parsers\&.rst\&.states\&.RSTState\&.memo"
+
+.SS "docutils\&.parsers\&.rst\&.states\&.RSTState\&.nested_sm = \fBNestedStateMachine\fP\fC [static]\fP"
+
+.SS "list docutils\&.parsers\&.rst\&.states\&.RSTState\&.nested_sm_cache = []\fC [static]\fP"
+
+.SS "docutils\&.parsers\&.rst\&.states\&.RSTState\&.nested_sm_kwargs"
+
+.SS "docutils\&.parsers\&.rst\&.states\&.RSTState\&.parent"
+
+.SS "docutils\&.parsers\&.rst\&.states\&.RSTState\&.reporter"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

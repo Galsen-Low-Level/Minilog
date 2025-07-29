@@ -1,0 +1,84 @@
+.TH "pip._internal.utils.filetypes" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.utils.filetypes
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBis_archive_file\fP (str name)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "str \fBWHEEL_EXTENSION\fP = '\&.whl'"
+.br
+.ti -1c
+.RI "tuple \fBBZ2_EXTENSIONS\fP = ('\&.tar\&.bz2', '\&.tbz')"
+.br
+.ti -1c
+.RI "tuple \fBXZ_EXTENSIONS\fP"
+.br
+.ti -1c
+.RI "tuple \fBZIP_EXTENSIONS\fP = ('\&.zip', \fBWHEEL_EXTENSION\fP)"
+.br
+.ti -1c
+.RI "tuple \fBTAR_EXTENSIONS\fP = ('\&.tar\&.gz', '\&.tgz', '\&.tar')"
+.br
+.ti -1c
+.RI "tuple \fBARCHIVE_EXTENSIONS\fP = \fBZIP_EXTENSIONS\fP + \fBBZ2_EXTENSIONS\fP + \fBTAR_EXTENSIONS\fP + \fBXZ_EXTENSIONS\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Filetype information\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " bool pip\&._internal\&.utils\&.filetypes\&.is_archive_file (str name)"
+
+.PP
+.nf
+Return True if `name` is a considered as an archive file\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "tuple pip\&._internal\&.utils\&.filetypes\&.ARCHIVE_EXTENSIONS = \fBZIP_EXTENSIONS\fP + \fBBZ2_EXTENSIONS\fP + \fBTAR_EXTENSIONS\fP + \fBXZ_EXTENSIONS\fP"
+
+.SS "tuple pip\&._internal\&.utils\&.filetypes\&.BZ2_EXTENSIONS = ('\&.tar\&.bz2', '\&.tbz')"
+
+.SS "tuple pip\&._internal\&.utils\&.filetypes\&.TAR_EXTENSIONS = ('\&.tar\&.gz', '\&.tgz', '\&.tar')"
+
+.SS "str pip\&._internal\&.utils\&.filetypes\&.WHEEL_EXTENSION = '\&.whl'"
+
+.SS "tuple pip\&._internal\&.utils\&.filetypes\&.XZ_EXTENSIONS"
+\fBInitial value:\fP.PP
+.nf
+1 =  (
+2     "\&.tar\&.xz",
+3     "\&.txz",
+4     "\&.tlz",
+5     "\&.tar\&.lz",
+6     "\&.tar\&.lzma",
+7 )
+.fi
+
+.SS "tuple pip\&._internal\&.utils\&.filetypes\&.ZIP_EXTENSIONS = ('\&.zip', \fBWHEEL_EXTENSION\fP)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

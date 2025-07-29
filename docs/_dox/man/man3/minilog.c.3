@@ -1,0 +1,227 @@
+.TH "/home/umar/Desktop/WorkShop/GLL/Minilog/minilog.c" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/umar/Desktop/WorkShop/GLL/Minilog/minilog.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <locale\&.h>\fP
+.br
+\fC#include <errno\&.h>\fP
+.br
+\fC#include <stdalign\&.h>\fP
+.br
+\fC#include <sys/syslog\&.h>\fP
+.br
+\fC#include <sys/wait\&.h>\fP
+.br
+\fC#include <fcntl\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <sys/stat\&.h>\fP
+.br
+\fC#include <signal\&.h>\fP
+.br
+\fC#include <poll\&.h>\fP
+.br
+\fC#include <stdarg\&.h>\fP
+.br
+\fC#include 'minilog\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBminilog_pipeline_stream\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB_GNU_SOURCE\fP"
+.br
+.ti -1c
+.RI "#define \fB_XOPEN_SOURCE\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBminilog_setup\fP (struct \fB__minilog_initial_param_t\fP *\fB__Nullable\fP miniparm)"
+.br
+.ti -1c
+.RI "int \fBminilog_configure\fP (struct \fB__minilog_initial_param_t\fP *restrict parm)"
+.br
+.ti -1c
+.RI "int \fBminilog_create_record_stream_pipeline\fP (\fBmr_sync\fP *restrict source)"
+.br
+.ti -1c
+.RI "int \fBminilog_watchlog\fP (int fds)"
+.br
+.RI "create the subprocess stream but register the signal before "
+.ti -1c
+.RI "void \fBsigcatcher\fP (const int nsigs,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "void \fBminilog_sighdl\fP (int signum)"
+.br
+.RI "handle subprocess exiting signal "
+.ti -1c
+.RI "int \fBminilog\fP (int loglvl, const char *restrict fmtstr,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "int \fBminilog_register\fP (int severity, char *buffer)"
+.br
+.RI "!status @override "
+.ti -1c
+.RI "void \fBminilog_exit\fP (void)"
+.br
+.RI "basic exit function 
+.br
+ "
+.ti -1c
+.RI "void \fBminilog_auto_check_program_bn\fP (void)"
+.br
+.ti -1c
+.RI "void \fBminilog_cleanup\fP (void)"
+.br
+.RI "clean all allocated memory when the application turned off (exit or brutal exit) "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "char * \fBminilog_basename\fP = (char *)00"
+.br
+.ti -1c
+.RI "struct \fBminilog_pipeline_stream\fP \fBmps\fP"
+.br
+.ti -1c
+.RI "int \fBchannels\fP [2] = {0}"
+.br
+.ti -1c
+.RI "char * \fBpipefile\fP = (char *)00"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define _GNU_SOURCE"
+
+.SS "#define _XOPEN_SOURCE"
+
+.SH "Function Documentation"
+.PP 
+.SS "int minilog (int loglvl, const char *restrict fmtstr,  \&.\&.\&.)"
+Direct log out if the extra symbole to define action or tag 
+.br
+ was not found
+.SS "void minilog_auto_check_program_bn (void)"
+get root program name
+.SS "minilog_cleanup (void)"
+
+.PP
+clean all allocated memory when the application turned off (exit or brutal exit) 
+.SS "int minilog_configure (struct \fB__minilog_initial_param_t\fP *restrict parm)"
+
+.SS "int minilog_create_record_stream_pipeline (\fBmr_sync\fP *restrict source)"
+get type of communication specified
+.SS "minilog_exit (void)"
+
+.PP
+basic exit function 
+.br
+ 
+.SS "minilog_register (int severity, char * buffer)"
+
+.PP
+!status @override submit the formated log with combined severity level 
+.br
+ 
+.PP
+\fBParameters\fP
+.RS 4
+\fIint\fP - the severity of the log 
+.br
+\fIchar\fP - the buffer is aligned with the minilog extension size see: struct \fB__minilog_extended\fP But However it can be something else 
+.br
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+int - the submit status 
+.RE
+.PP
+
+.SS "int minilog_setup (struct \fB__minilog_initial_param_t\fP *\fB__Nullable\fP miniparm)"
+
+.SS "minilog_sighdl (int signum)"
+
+.PP
+handle subprocess exiting signal 
+.PP
+\fBParameters\fP
+.RS 4
+\fIint\fP - the signal itself 
+.RE
+.PP
+TODO: Analyse status code 
+.br
+.PP
+_is_terminated_signal(signum) 
+.br
+
+.SS "minilog_watchlog (int fds)"
+
+.PP
+create the subprocess stream but register the signal before 
+.PP
+\fBParameters\fP
+.RS 4
+\fIint\fP - bit compacted file descritors 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+int - 0 :OK ; Otherwise error 
+.RE
+.PP
+Register predefined signal handler before lauching the process for early exiting or crashing
+.SS "void sigcatcher (const int nsigs,  \&.\&.\&.)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "int channels[2] = {0}"
+
+.SS "char* minilog_basename = (char *)00"
+
+.SS "struct \fBminilog_pipeline_stream\fP mps"
+\fBInitial value:\fP.PP
+.nf
+= { 
+  \&._tmpipe = (char *) 00 , 
+  0 
+}
+.fi
+
+.SS "char* pipefile = (char *)00"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

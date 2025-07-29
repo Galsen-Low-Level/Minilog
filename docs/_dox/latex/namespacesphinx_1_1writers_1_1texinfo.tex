@@ -1,0 +1,82 @@
+\doxysection{sphinx.\+writers.\+texinfo Namespace Reference}
+\hypertarget{namespacesphinx_1_1writers_1_1texinfo}{}\label{namespacesphinx_1_1writers_1_1texinfo}\index{sphinx.writers.texinfo@{sphinx.writers.texinfo}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1writers_1_1texinfo_1_1TexinfoTranslator}{Texinfo\+Translator}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1writers_1_1texinfo_1_1TexinfoWriter}{Texinfo\+Writer}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+list\mbox{[}nodes.\+section\mbox{]} \mbox{\hyperlink{namespacesphinx_1_1writers_1_1texinfo_a62201cf6dbcde167287393d4da2ece26}{find\+\_\+subsections}} (\mbox{\hyperlink{classdocutils_1_1nodes_1_1Element}{Element}} section)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1writers_1_1texinfo_aace11a790406fb14e972c1a9d90c69aa}{smart\+\_\+capwords}} (str s, str\texorpdfstring{$\vert$}{|}None sep=None)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1writers_1_1texinfo_a9efb7c234101ae43ff58977c12a8df39}{logger}} = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1writers_1_1texinfo_a1fe17f276b7adec859a396036f0c1d56}{COPYING}}
+\item 
+str \mbox{\hyperlink{namespacesphinx_1_1writers_1_1texinfo_a4f416a6544655c06e11e085abf1472c4}{TEMPLATE}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Custom docutils writer for Texinfo.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesphinx_1_1writers_1_1texinfo_a62201cf6dbcde167287393d4da2ece26}\label{namespacesphinx_1_1writers_1_1texinfo_a62201cf6dbcde167287393d4da2ece26} 
+\index{sphinx.writers.texinfo@{sphinx.writers.texinfo}!find\_subsections@{find\_subsections}}
+\index{find\_subsections@{find\_subsections}!sphinx.writers.texinfo@{sphinx.writers.texinfo}}
+\doxysubsubsection{\texorpdfstring{find\_subsections()}{find\_subsections()}}
+{\footnotesize\ttfamily  list\mbox{[}nodes.\+section\mbox{]} sphinx.\+writers.\+texinfo.\+find\+\_\+subsections (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdocutils_1_1nodes_1_1Element}{Element}}}]{section }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return a list of subsections for the given ``section``.\end{DoxyVerb}
+ \Hypertarget{namespacesphinx_1_1writers_1_1texinfo_aace11a790406fb14e972c1a9d90c69aa}\label{namespacesphinx_1_1writers_1_1texinfo_aace11a790406fb14e972c1a9d90c69aa} 
+\index{sphinx.writers.texinfo@{sphinx.writers.texinfo}!smart\_capwords@{smart\_capwords}}
+\index{smart\_capwords@{smart\_capwords}!sphinx.writers.texinfo@{sphinx.writers.texinfo}}
+\doxysubsubsection{\texorpdfstring{smart\_capwords()}{smart\_capwords()}}
+{\footnotesize\ttfamily  str sphinx.\+writers.\+texinfo.\+smart\+\_\+capwords (\begin{DoxyParamCaption}\item[{str}]{s,  }\item[{str \texorpdfstring{$\vert$}{|} None }]{sep = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Like string.capwords() but does not capitalize words that already
+contain a capital letter.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacesphinx_1_1writers_1_1texinfo_a1fe17f276b7adec859a396036f0c1d56}\label{namespacesphinx_1_1writers_1_1texinfo_a1fe17f276b7adec859a396036f0c1d56} 
+\index{sphinx.writers.texinfo@{sphinx.writers.texinfo}!COPYING@{COPYING}}
+\index{COPYING@{COPYING}!sphinx.writers.texinfo@{sphinx.writers.texinfo}}
+\doxysubsubsection{\texorpdfstring{COPYING}{COPYING}}
+{\footnotesize\ttfamily str sphinx.\+writers.\+texinfo.\+COPYING}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \textcolor{stringliteral}{"{}"{}"{}\(\backslash\)}}
+\DoxyCodeLine{00002\ \textcolor{stringliteral}{@quotation}}
+\DoxyCodeLine{00003\ \textcolor{stringliteral}{\%(project)s\ \%(release)s,\ \%(date)s}}
+\DoxyCodeLine{00004\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{00005\ \textcolor{stringliteral}{\%(author)s}}
+\DoxyCodeLine{00006\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{00007\ \textcolor{stringliteral}{Copyright\ @copyright\{\}\ \%(copyright)s}}
+\DoxyCodeLine{00008\ \textcolor{stringliteral}{@end\ quotation}}
+\DoxyCodeLine{00009\ \textcolor{stringliteral}{"{}"{}"{}}}
+
+\end{DoxyCode}
+\Hypertarget{namespacesphinx_1_1writers_1_1texinfo_a9efb7c234101ae43ff58977c12a8df39}\label{namespacesphinx_1_1writers_1_1texinfo_a9efb7c234101ae43ff58977c12a8df39} 
+\index{sphinx.writers.texinfo@{sphinx.writers.texinfo}!logger@{logger}}
+\index{logger@{logger}!sphinx.writers.texinfo@{sphinx.writers.texinfo}}
+\doxysubsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily sphinx.\+writers.\+texinfo.\+logger = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)}
+
+\Hypertarget{namespacesphinx_1_1writers_1_1texinfo_a4f416a6544655c06e11e085abf1472c4}\label{namespacesphinx_1_1writers_1_1texinfo_a4f416a6544655c06e11e085abf1472c4} 
+\index{sphinx.writers.texinfo@{sphinx.writers.texinfo}!TEMPLATE@{TEMPLATE}}
+\index{TEMPLATE@{TEMPLATE}!sphinx.writers.texinfo@{sphinx.writers.texinfo}}
+\doxysubsubsection{\texorpdfstring{TEMPLATE}{TEMPLATE}}
+{\footnotesize\ttfamily str sphinx.\+writers.\+texinfo.\+TEMPLATE}
+

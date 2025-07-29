@@ -1,0 +1,63 @@
+\doxysection{sphinx.\+util.\+\_\+pathlib Namespace Reference}
+\hypertarget{namespacesphinx_1_1util_1_1__pathlib}{}\label{namespacesphinx_1_1util_1_1__pathlib}\index{sphinx.util.\_pathlib@{sphinx.util.\_pathlib}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPath}{\+\_\+\+Str\+Path}}
+\item 
+class \mbox{\hyperlink{classsphinx_1_1util_1_1__pathlib_1_1__StrPathProperty}{\+\_\+\+Str\+Path\+Property}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1__pathlib_a94cfa2d7284cbc2ae8d374e5027e923f}{\+\_\+\+STR\+\_\+\+METHODS}} = frozenset(str.\+\_\+\+\_\+dict\+\_\+\+\_\+)
+\item 
+\mbox{\hyperlink{namespacesphinx_1_1util_1_1__pathlib_ab37ffda8eeae004f091301f37fe58107}{\+\_\+\+PATH\+\_\+\+NAME}} = Path().\+\_\+\+\_\+class\+\_\+\+\_\+.\+\_\+\+\_\+name\+\_\+\+\_\+
+\item 
+tuple \mbox{\hyperlink{namespacesphinx_1_1util_1_1__pathlib_ae4c55b311b6890bd7c989a772ab665b2}{\+\_\+\+MSG}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}What follows is awful and will be gone in Sphinx 9.
+
+Instances of _StrPath should not be constructed except in Sphinx itself.
+Consumers of Sphinx APIs should prefer using ``pathlib.Path`` objects
+where possible. _StrPath objects can be treated as equivalent to ``Path``,
+save that ``_StrPath.replace`` is overridden with ``str.replace``.
+
+To continue treating path-like objects as strings, use ``os.fspath``,
+or explicit string coercion.
+
+In Sphinx 9, ``Path`` objects will be expected and returned in all instances
+that ``_StrPath`` is currently used.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacesphinx_1_1util_1_1__pathlib_ae4c55b311b6890bd7c989a772ab665b2}\label{namespacesphinx_1_1util_1_1__pathlib_ae4c55b311b6890bd7c989a772ab665b2} 
+\index{sphinx.util.\_pathlib@{sphinx.util.\_pathlib}!\_MSG@{\_MSG}}
+\index{\_MSG@{\_MSG}!sphinx.util.\_pathlib@{sphinx.util.\_pathlib}}
+\doxysubsubsection{\texorpdfstring{\_MSG}{\_MSG}}
+{\footnotesize\ttfamily tuple sphinx.\+util.\+\_\+pathlib.\+\_\+\+MSG\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ (}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{'Sphinx\ 9\ will\ drop\ support\ for\ representing\ paths\ as\ strings.\ '}}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{'Use\ "{}pathlib.Path"{}\ or\ "{}os.fspath"{}\ instead.'}}
+\DoxyCodeLine{00004\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacesphinx_1_1util_1_1__pathlib_ab37ffda8eeae004f091301f37fe58107}\label{namespacesphinx_1_1util_1_1__pathlib_ab37ffda8eeae004f091301f37fe58107} 
+\index{sphinx.util.\_pathlib@{sphinx.util.\_pathlib}!\_PATH\_NAME@{\_PATH\_NAME}}
+\index{\_PATH\_NAME@{\_PATH\_NAME}!sphinx.util.\_pathlib@{sphinx.util.\_pathlib}}
+\doxysubsubsection{\texorpdfstring{\_PATH\_NAME}{\_PATH\_NAME}}
+{\footnotesize\ttfamily sphinx.\+util.\+\_\+pathlib.\+\_\+\+PATH\+\_\+\+NAME = Path().\+\_\+\+\_\+class\+\_\+\+\_\+.\+\_\+\+\_\+name\+\_\+\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacesphinx_1_1util_1_1__pathlib_a94cfa2d7284cbc2ae8d374e5027e923f}\label{namespacesphinx_1_1util_1_1__pathlib_a94cfa2d7284cbc2ae8d374e5027e923f} 
+\index{sphinx.util.\_pathlib@{sphinx.util.\_pathlib}!\_STR\_METHODS@{\_STR\_METHODS}}
+\index{\_STR\_METHODS@{\_STR\_METHODS}!sphinx.util.\_pathlib@{sphinx.util.\_pathlib}}
+\doxysubsubsection{\texorpdfstring{\_STR\_METHODS}{\_STR\_METHODS}}
+{\footnotesize\ttfamily sphinx.\+util.\+\_\+pathlib.\+\_\+\+STR\+\_\+\+METHODS = frozenset(str.\+\_\+\+\_\+dict\+\_\+\+\_\+)\hspace{0.3cm}{\ttfamily [protected]}}
+

@@ -1,0 +1,214 @@
+.TH "pygments.lexers.data.JsonLexer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.lexers.data.JsonLexer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpygments\&.lexer\&.Lexer\fP\&.
+.PP
+Inherited by \fBpygments\&.lexers\&.data\&.JsonBareObjectLexer\fP, and \fBpygments\&.lexers\&.data\&.JsonLdLexer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBget_tokens_unprocessed\fP (self, text)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd_filter\fP (self, filter_, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fBanalyse_text\fP (text)"
+.br
+.ti -1c
+.RI "\fBget_tokens\fP (self, text, unfiltered=False)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.LexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fB__new__\fP (mcs, name, bases, d)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = 'JSON'"
+.br
+.ti -1c
+.RI "str \fBurl\fP = 'https://www\&.json\&.org'"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = ['json', 'json\-object']"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = ['*\&.json', '*\&.jsonl', '*\&.ndjson', 'Pipfile\&.lock']"
+.br
+.ti -1c
+.RI "list \fBmimetypes\fP = ['application/json', 'application/json\-object', 'application/x\-ndjson', 'application/jsonl', 'application/json\-seq']"
+.br
+.ti -1c
+.RI "str \fBversion_added\fP = '1\&.5'"
+.br
+.ti -1c
+.RI "\fBintegers\fP = set('\-0123456789')"
+.br
+.ti -1c
+.RI "\fBfloats\fP = set('\&.eE+')"
+.br
+.ti -1c
+.RI "\fBconstants\fP = set('truefalsenull')"
+.br
+.ti -1c
+.RI "\fBhexadecimals\fP = set('0123456789abcdefABCDEF')"
+.br
+.ti -1c
+.RI "\fBpunctuations\fP = set('{}[],')"
+.br
+.ti -1c
+.RI "dict \fBwhitespaces\fP = {'\\u0020', '\\u000a', '\\u000d', '\\u0009'}"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fBname\fP = None"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = []"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBalias_filenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBmimetypes\fP = []"
+.br
+.ti -1c
+.RI "int \fBpriority\fP = 0"
+.br
+.ti -1c
+.RI "\fBurl\fP = None"
+.br
+.ti -1c
+.RI "\fBversion_added\fP = None"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBstripnl\fP"
+.br
+.ti -1c
+.RI "\fBstripall\fP"
+.br
+.ti -1c
+.RI "\fBensurenl\fP"
+.br
+.ti -1c
+.RI "\fBtabsize\fP"
+.br
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBfilters\fP"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB_preprocess_lexer_input\fP (self, text)"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB_example\fP = None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+For JSON data structures\&.
+
+Javascript-style comments are supported (like ``/* */`` and ``//``),
+though comments are not part of the JSON specification\&.
+This allows users to highlight JSON as it is used in the wild\&.
+
+No validation is performed on the input JSON document\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "pygments\&.lexers\&.data\&.JsonLexer\&.get_tokens_unprocessed ( self,  text)"
+
+.PP
+.nf
+Parse JSON data\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpygments\&.lexer\&.Lexer\fP\&.
+.PP
+Reimplemented in \fBpygments\&.lexers\&.data\&.JsonLdLexer\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "list pygments\&.lexers\&.data\&.JsonLexer\&.aliases = ['json', 'json\-object']\fC [static]\fP"
+
+.SS "pygments\&.lexers\&.data\&.JsonLexer\&.constants = set('truefalsenull')\fC [static]\fP"
+
+.SS "list pygments\&.lexers\&.data\&.JsonLexer\&.filenames = ['*\&.json', '*\&.jsonl', '*\&.ndjson', 'Pipfile\&.lock']\fC [static]\fP"
+
+.SS "pygments\&.lexers\&.data\&.JsonLexer\&.floats = set('\&.eE+')\fC [static]\fP"
+
+.SS "pygments\&.lexers\&.data\&.JsonLexer\&.hexadecimals = set('0123456789abcdefABCDEF')\fC [static]\fP"
+
+.SS "pygments\&.lexers\&.data\&.JsonLexer\&.integers = set('\-0123456789')\fC [static]\fP"
+
+.SS "list pygments\&.lexers\&.data\&.JsonLexer\&.mimetypes = ['application/json', 'application/json\-object', 'application/x\-ndjson', 'application/jsonl', 'application/json\-seq']\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.data\&.JsonLexer\&.name = 'JSON'\fC [static]\fP"
+
+.SS "pygments\&.lexers\&.data\&.JsonLexer\&.punctuations = set('{}[],')\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.data\&.JsonLexer\&.url = 'https://www\&.json\&.org'\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.data\&.JsonLexer\&.version_added = '1\&.5'\fC [static]\fP"
+
+.SS "dict pygments\&.lexers\&.data\&.JsonLexer\&.whitespaces = {'\\u0020', '\\u000a', '\\u000d', '\\u0009'}\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

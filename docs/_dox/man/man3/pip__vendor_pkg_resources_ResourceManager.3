@@ -1,0 +1,251 @@
+.TH "pip._vendor.pkg_resources.ResourceManager" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.pkg_resources.ResourceManager
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "\fBresource_exists\fP (self, \fB_PkgReqType\fP package_or_requirement, str resource_name)"
+.br
+.ti -1c
+.RI "\fBresource_isdir\fP (self, \fB_PkgReqType\fP package_or_requirement, str resource_name)"
+.br
+.ti -1c
+.RI "\fBresource_filename\fP (self, \fB_PkgReqType\fP package_or_requirement, str resource_name)"
+.br
+.ti -1c
+.RI "\fBresource_stream\fP (self, \fB_PkgReqType\fP package_or_requirement, str resource_name)"
+.br
+.ti -1c
+.RI "bytes \fBresource_string\fP (self, \fB_PkgReqType\fP package_or_requirement, str resource_name)"
+.br
+.ti -1c
+.RI "\fBresource_listdir\fP (self, \fB_PkgReqType\fP package_or_requirement, str resource_name)"
+.br
+.ti -1c
+.RI "NoReturn \fBextraction_error\fP (self)"
+.br
+.ti -1c
+.RI "\fBget_cache_path\fP (self, str archive_name, Iterable[StrPath] names=())"
+.br
+.ti -1c
+.RI "\fBpostprocess\fP (self, StrOrBytesPath tempname, StrOrBytesPath filename)"
+.br
+.ti -1c
+.RI "\fBset_extraction_path\fP (self, str path)"
+.br
+.ti -1c
+.RI "list[str] \fBcleanup_resources\fP (self, bool force=False)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcached_files\fP"
+.br
+.ti -1c
+.RI "\fBextraction_path\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBextraction_path\fP = None"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_warn_unsafe_extraction_path\fP (path)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Manage resource extraction and packages
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.pkg_resources\&.ResourceManager\&.__init__ ( self)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.pkg_resources\&.ResourceManager\&._warn_unsafe_extraction_path ( path)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+.nf
+If the default extraction path is overridden and set to an insecure
+location, such as /tmp, it opens up an opportunity for an attacker to
+replace an extracted file with an unauthorized payload\&. Warn the user
+if a known insecure location is used\&.
+
+See Distribute #375 for more details\&.
+
+.fi
+.PP
+ 
+.SS " list[str] pip\&._vendor\&.pkg_resources\&.ResourceManager\&.cleanup_resources ( self, bool  force = \fCFalse\fP)"
+
+.PP
+.nf
+Delete all extracted resource files and directories, returning a list
+of the file and directory names that could not be successfully removed\&.
+This function does not have any concurrency protection, so it should
+generally only be called when the extraction path is a temporary
+directory exclusive to a single process\&.  This method is not
+automatically called; you must call it explicitly or register it as an
+``atexit`` function if you wish to ensure cleanup of a temporary
+directory used for extractions\&.
+
+.fi
+.PP
+ 
+.SS " NoReturn pip\&._vendor\&.pkg_resources\&.ResourceManager\&.extraction_error ( self)"
+
+.PP
+.nf
+Give an error message for problems extracting file(s)
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.ResourceManager\&.get_cache_path ( self, str archive_name, Iterable[StrPath]  names = \fC()\fP)"
+
+.PP
+.nf
+Return absolute location in cache for `archive_name` and `names`
+
+The parent directory of the resulting path will be created if it does
+not already exist\&.  `archive_name` should be the base filename of the
+enclosing egg (which may not be the name of the enclosing zipfile!),
+including its '\&.egg' extension\&.  `names`, if provided, should be a
+sequence of path name parts 'under' the egg's extraction location\&.
+
+This method should only be called by resource providers that need to
+obtain an extraction location, and only for names they intend to
+extract, as it tracks the generated names for possible cleanup later\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.ResourceManager\&.postprocess ( self, StrOrBytesPath tempname, StrOrBytesPath filename)"
+
+.PP
+.nf
+Perform any platform-specific postprocessing of `tempname`
+
+This is where Mac header rewrites should be done; other platforms don't
+have anything special they should do\&.
+
+Resource providers should call this method ONLY after successfully
+extracting a compressed resource\&.  They must NOT call it on resources
+that are already in the filesystem\&.
+
+`tempname` is the current (temporary) name of the file, and `filename`
+is the name it will be renamed to by the caller after this routine
+returns\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.ResourceManager\&.resource_exists ( self, \fB_PkgReqType\fP package_or_requirement, str resource_name)"
+
+.PP
+.nf
+Does the named resource exist?
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.ResourceManager\&.resource_filename ( self, \fB_PkgReqType\fP package_or_requirement, str
+     resource_name)"
+
+.PP
+.nf
+Return a true filesystem path for specified resource
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.ResourceManager\&.resource_isdir ( self, \fB_PkgReqType\fP package_or_requirement, str resource_name)"
+
+.PP
+.nf
+Is the named resource an existing directory?
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.ResourceManager\&.resource_listdir ( self, \fB_PkgReqType\fP package_or_requirement, str resource_name)"
+
+.PP
+.nf
+List the contents of the named resource directory
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.ResourceManager\&.resource_stream ( self, \fB_PkgReqType\fP package_or_requirement, str resource_name)"
+
+.PP
+.nf
+Return a readable file-like object for specified resource
+.fi
+.PP
+ 
+.SS " bytes pip\&._vendor\&.pkg_resources\&.ResourceManager\&.resource_string ( self, \fB_PkgReqType\fP package_or_requirement, str
+     resource_name)"
+
+.PP
+.nf
+Return specified resource as :obj:`bytes`
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.ResourceManager\&.set_extraction_path ( self, str path)"
+
+.PP
+.nf
+Set the base path where resources will be extracted to, if needed\&.
+
+If you do not call this routine before any extractions take place, the
+path defaults to the return value of ``get_default_cache()``\&.  (Which
+is based on the ``PYTHON_EGG_CACHE`` environment variable, with various
+platform-specific fallbacks\&.  See that routine's documentation for more
+details\&.)
+
+Resources are extracted to subdirectories of this path based upon
+information given by the ``IResourceProvider``\&.  You may set this to a
+temporary directory, but then you must call ``cleanup_resources()`` to
+delete the extracted files when done\&.  There is no guarantee that
+``cleanup_resources()`` will be able to remove all extracted files\&.
+
+(Note: you may not change the extraction path for a given resource
+manager once resources have been extracted, unless you first call
+``cleanup_resources()``\&.)
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.pkg_resources\&.ResourceManager\&.cached_files"
+
+.SS "str pip\&._vendor\&.pkg_resources\&.ResourceManager\&.extraction_path = None\fC [static]\fP"
+
+.SS "pip\&._vendor\&.pkg_resources\&.ResourceManager\&.extraction_path"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

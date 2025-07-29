@@ -1,0 +1,264 @@
+.TH "snowballstemmer.catalan_stemmer.CatalanStemmer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+snowballstemmer.catalan_stemmer.CatalanStemmer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP\&.
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBI_p1\fP"
+.br
+.ti -1c
+.RI "\fBI_p2\fP"
+.br
+.ti -1c
+.RI "\fBcursor\fP"
+.br
+.ti -1c
+.RI "\fBbra\fP"
+.br
+.ti -1c
+.RI "\fBket\fP"
+.br
+.ti -1c
+.RI "\fBlimit_backward\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP
+.in +1c
+.ti -1c
+.RI "\fBcurrent\fP"
+.br
+.ti -1c
+.RI "\fBcursor\fP"
+.br
+.ti -1c
+.RI "\fBlimit\fP"
+.br
+.ti -1c
+.RI "\fBlimit_backward\fP"
+.br
+.ti -1c
+.RI "\fBbra\fP"
+.br
+.ti -1c
+.RI "\fBket\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBg_v\fP = {u'a', u'e', u'i', u'o', u'u', u'á', u'à', u'é', u'è', u'í', u'ï', u'ó', u'ò', u'ú', u'ü'}"
+.br
+.ti -1c
+.RI "int \fBI_p2\fP = 0"
+.br
+.ti -1c
+.RI "int \fBI_p1\fP = 0"
+.br
+.ti -1c
+.RI "list \fBa_0\fP"
+.br
+.ti -1c
+.RI "list \fBa_1\fP"
+.br
+.ti -1c
+.RI "list \fBa_2\fP"
+.br
+.ti -1c
+.RI "list \fBa_3\fP"
+.br
+.ti -1c
+.RI "list \fBa_4\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_stem\fP (self)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "\fBset_current\fP (self, value)"
+.br
+.ti -1c
+.RI "\fBget_current\fP (self)"
+.br
+.ti -1c
+.RI "\fBcopy_from\fP (self, other)"
+.br
+.ti -1c
+.RI "\fBin_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_in_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBin_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_in_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBout_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_out_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBout_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_out_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBeq_s\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBeq_s_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBfind_among\fP (self, v)"
+.br
+.ti -1c
+.RI "\fBfind_among_b\fP (self, v)"
+.br
+.ti -1c
+.RI "\fBreplace_s\fP (self, c_bra, c_ket, s)"
+.br
+.ti -1c
+.RI "\fBslice_check\fP (self)"
+.br
+.ti -1c
+.RI "\fBslice_from\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBslice_del\fP (self)"
+.br
+.ti -1c
+.RI "\fBinsert\fP (self, c_bra, c_ket, s)"
+.br
+.ti -1c
+.RI "\fBslice_to\fP (self)"
+.br
+.ti -1c
+.RI "\fBassign_to\fP (self)"
+.br
+.ti -1c
+.RI "\fBstemWord\fP (self, word)"
+.br
+.ti -1c
+.RI "\fBstemWords\fP (self, words)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This class implements the stemming algorithm defined by a snowball script\&.
+Generated from catalan\&.sbl by Snowball 3\&.0\&.1 - https://snowballstem\&.org/
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "snowballstemmer\&.catalan_stemmer\&.CatalanStemmer\&._stem ( self)\fC [protected]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "list snowballstemmer\&.catalan_stemmer\&.CatalanStemmer\&.a_0\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"", \-1, 7),
+        Among(u"·", 0, 6),
+        Among(u"à", 0, 1),
+        Among(u"á", 0, 1),
+        Among(u"è", 0, 2),
+        Among(u"é", 0, 2),
+        Among(u"ì", 0, 3),
+        Among(u"í", 0, 3),
+        Among(u"ï", 0, 3),
+        Among(u"ò", 0, 4),
+        Among(u"ó", 0, 4),
+        Among(u"ú", 0, 5),
+        Among(u"ü", 0, 5)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.catalan_stemmer\&.CatalanStemmer\&.a_1\fC [static]\fP"
+
+.SS "list snowballstemmer\&.catalan_stemmer\&.CatalanStemmer\&.a_2\fC [static]\fP"
+
+.SS "list snowballstemmer\&.catalan_stemmer\&.CatalanStemmer\&.a_3\fC [static]\fP"
+
+.SS "list snowballstemmer\&.catalan_stemmer\&.CatalanStemmer\&.a_4\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"a", \-1, 1),
+        Among(u"e", \-1, 1),
+        Among(u"i", \-1, 1),
+        Among(u"ïn", \-1, 1),
+        Among(u"o", \-1, 1),
+        Among(u"ir", \-1, 1),
+        Among(u"s", \-1, 1),
+        Among(u"is", 6, 1),
+        Among(u"os", 6, 1),
+        Among(u"ïs", 6, 1),
+        Among(u"it", \-1, 1),
+        Among(u"eu", \-1, 1),
+        Among(u"iu", \-1, 1),
+        Among(u"iqu", \-1, 2),
+        Among(u"itz", \-1, 1),
+        Among(u"à", \-1, 1),
+        Among(u"á", \-1, 1),
+        Among(u"é", \-1, 1),
+        Among(u"ì", \-1, 1),
+        Among(u"í", \-1, 1),
+        Among(u"ï", \-1, 1),
+        Among(u"ó", \-1, 1)
+    ]
+.fi
+
+.SS "snowballstemmer\&.catalan_stemmer\&.CatalanStemmer\&.bra"
+
+.SS "snowballstemmer\&.catalan_stemmer\&.CatalanStemmer\&.cursor"
+
+.SS "dict snowballstemmer\&.catalan_stemmer\&.CatalanStemmer\&.g_v = {u'a', u'e', u'i', u'o', u'u', u'á', u'à', u'é', u'è', u'í', u'ï', u'ó', u'ò', u'ú', u'ü'}\fC [static]\fP"
+
+.SS "int snowballstemmer\&.catalan_stemmer\&.CatalanStemmer\&.I_p1 = 0\fC [static]\fP"
+
+.SS "snowballstemmer\&.catalan_stemmer\&.CatalanStemmer\&.I_p1"
+
+.SS "int snowballstemmer\&.catalan_stemmer\&.CatalanStemmer\&.I_p2 = 0\fC [static]\fP"
+
+.SS "snowballstemmer\&.catalan_stemmer\&.CatalanStemmer\&.I_p2"
+
+.SS "snowballstemmer\&.catalan_stemmer\&.CatalanStemmer\&.ket"
+
+.SS "snowballstemmer\&.catalan_stemmer\&.CatalanStemmer\&.limit_backward"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,90 @@
+.TH "webob.headers.EnvironHeaders" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webob.headers.EnvironHeaders
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits MutableMapping\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBenviron\fP)"
+.br
+.ti -1c
+.RI "\fB__getitem__\fP (self, hname)"
+.br
+.ti -1c
+.RI "\fB__setitem__\fP (self, hname, value)"
+.br
+.ti -1c
+.RI "\fB__delitem__\fP (self, hname)"
+.br
+.ti -1c
+.RI "\fBkeys\fP (self)"
+.br
+.ti -1c
+.RI "\fB__contains__\fP (self, hname)"
+.br
+.ti -1c
+.RI "\fB__len__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__iter__\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBenviron\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+An object that represents the headers as present in a
+WSGI environment\&.
+
+This object is a wrapper (with no internal state) for a WSGI
+request object, representing the CGI-style HTTP_* keys as a
+dictionary\&.  Because a CGI environment can only hold one value for
+each key, this dictionary is single-valued (unlike outgoing
+headers)\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "webob\&.headers\&.EnvironHeaders\&.__init__ ( self,  environ)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "webob\&.headers\&.EnvironHeaders\&.__contains__ ( self,  hname)"
+
+.SS "webob\&.headers\&.EnvironHeaders\&.__delitem__ ( self,  hname)"
+
+.SS "webob\&.headers\&.EnvironHeaders\&.__getitem__ ( self,  hname)"
+
+.SS "webob\&.headers\&.EnvironHeaders\&.__iter__ ( self)"
+
+.SS "webob\&.headers\&.EnvironHeaders\&.__len__ ( self)"
+
+.SS "webob\&.headers\&.EnvironHeaders\&.__setitem__ ( self,  hname,  value)"
+
+.SS "webob\&.headers\&.EnvironHeaders\&.keys ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "webob\&.headers\&.EnvironHeaders\&.environ"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

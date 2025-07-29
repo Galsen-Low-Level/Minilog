@@ -1,0 +1,333 @@
+.TH "bs4.filter.SoupStrainer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bs4.filter.SoupStrainer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBbs4\&.filter\&.ElementFilter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, Optional[_StrainableElement] name=None, Dict[str, _StrainableAttribute] attrs={}, Optional[_StrainableString] \fBstring\fP=None, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "bool \fBincludes_everything\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBexcludes_everything\fP (self)"
+.br
+.ti -1c
+.RI "Optional[_StrainableString] \fBstring\fP (self)"
+.br
+.ti -1c
+.RI "Optional[_StrainableString] \fBtext\fP (self)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBmatches_tag\fP (self, \fBTag\fP tag)"
+.br
+.ti -1c
+.RI "bool \fBallow_tag_creation\fP (self, Optional[str] nsprefix, str name, Optional[_RawAttributeValues] attrs)"
+.br
+.ti -1c
+.RI "bool \fBallow_string_creation\fP (self, str \fBstring\fP)"
+.br
+.ti -1c
+.RI "bool \fBmatches_any_string_rule\fP (self, str \fBstring\fP)"
+.br
+.ti -1c
+.RI "bool \fBmatch\fP (self, \fBPageElement\fP element, bool _known_rules=False)"
+.br
+.ti -1c
+.RI "bool \fBsearch_tag\fP (self, str name, Optional[_RawAttributeValues] attrs)"
+.br
+.ti -1c
+.RI "Optional[\fBPageElement\fP] \fBsearch\fP (self, \fBPageElement\fP element)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBbs4\&.filter\&.ElementFilter\fP
+.in +1c
+.ti -1c
+.RI "Iterator[_OneElement] \fBfilter\fP (self, Iterator[\fBPageElement\fP] generator)"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBfind\fP (self, Iterator[\fBPageElement\fP] generator)"
+.br
+.ti -1c
+.RI "_QueryResults \fBfind_all\fP (self, Iterator[\fBPageElement\fP] generator, Optional[int] limit=None)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBname_rules\fP"
+.br
+.ti -1c
+.RI "\fBattribute_rules\fP"
+.br
+.ti -1c
+.RI "\fBstring_rules\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBbs4\&.filter\&.ElementFilter\fP
+.in +1c
+.ti -1c
+.RI "\fBmatch_function\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "List \fBname_rules\fP [\fBTagNameMatchRule\fP]"
+.br
+.ti -1c
+.RI "Dict \fBattribute_rules\fP [str, List[\fBAttributeValueMatchRule\fP]]"
+.br
+.ti -1c
+.RI "List \fBstring_rules\fP [\fBStringMatchRule\fP]"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBbs4\&.filter\&.ElementFilter\fP
+.in +1c
+.ti -1c
+.RI "Optional \fBmatch_function\fP [_PageElementMatchFunction]"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Iterator[\fBMatchRule\fP] \fB_make_match_rules\fP (cls, Optional[Union[_StrainableElement, _StrainableAttribute]] obj, Type[\fBMatchRule\fP] rule_class)"
+.br
+.ti -1c
+.RI "bool \fB_attribute_match\fP (self, Optional[_AttributeValue] attr_value, Iterable[\fBAttributeValueMatchRule\fP] rules)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+The `ElementFilter` subclass used internally by Beautiful Soup\&.
+
+A `SoupStrainer` encapsulates the logic necessary to perform the
+kind of matches supported by methods such as
+:py:meth:`Tag\&.find`\&. `SoupStrainer` objects are primarily created
+internally, but you can create one yourself and pass it in as
+``parse_only`` to the `BeautifulSoup` constructor, to parse a
+subset of a large document\&.
+
+Internally, `SoupStrainer` objects work by converting the
+constructor arguments into `MatchRule` objects\&. Incoming
+tags/markup are matched against those rules\&.
+
+:param name: One or more restrictions on the tags found in a document\&.
+
+:param attrs: A dictionary that maps attribute names to
+  restrictions on tags that use those attributes\&.
+
+:param string: One or more restrictions on the strings found in a
+  document\&.
+
+:param kwargs: A dictionary that maps attribute names to restrictions
+  on tags that use those attributes\&. These restrictions are additive to
+  any specified in ``attrs``\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "bs4\&.filter\&.SoupStrainer\&.__init__ ( self, Optional[_StrainableElement]  match_function = \fCNone\fP, Dict[str, _StrainableAttribute]  attrs = \fC{}\fP, Optional[_StrainableString]  string = \fCNone\fP, **_StrainableAttribute kwargs)"
+
+.PP
+.nf
+Pass in a match function to easily customize the behavior of
+`ElementFilter\&.match` without needing to subclass\&.
+
+:param match_function: A function that takes a `PageElement`
+  and returns `True` if that `PageElement` matches some criteria\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBbs4\&.filter\&.ElementFilter\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " str bs4\&.filter\&.SoupStrainer\&.__repr__ ( self)"
+
+.SS " bool bs4\&.filter\&.SoupStrainer\&._attribute_match ( self, Optional[_AttributeValue] attr_value, Iterable[\fBAttributeValueMatchRule\fP] rules)\fC [protected]\fP"
+
+.SS " Iterator[\fBMatchRule\fP] bs4\&.filter\&.SoupStrainer\&._make_match_rules ( cls, Optional[Union[_StrainableElement, _StrainableAttribute]] obj, Type[\fBMatchRule\fP] rule_class)\fC [protected]\fP"
+
+.PP
+.nf
+Convert a vaguely-specific 'object' into one or more well-defined
+`MatchRule` objects\&.
+
+:param obj: Some kind of object that corresponds to one or more
+   matching rules\&.
+:param rule_class: Create instances of this `MatchRule` subclass\&.
+
+.fi
+.PP
+ 
+.SS " bool bs4\&.filter\&.SoupStrainer\&.allow_string_creation ( self, str string)"
+
+.PP
+.nf
+Based on the content of a markup string, see whether this
+`SoupStrainer` will allow it to be instantiated as a
+`NavigableString` object, or whether it should be ignored\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBbs4\&.filter\&.ElementFilter\fP\&.
+.SS " bool bs4\&.filter\&.SoupStrainer\&.allow_tag_creation ( self, Optional[str] nsprefix, str name, Optional[_RawAttributeValues]
+     attrs)"
+
+.PP
+.nf
+Based on the name and attributes of a tag, see whether this
+`SoupStrainer` will allow a `Tag` object to even be created\&.
+
+:param name: The name of the prospective tag\&.
+:param attrs: The attributes of the prospective tag\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBbs4\&.filter\&.ElementFilter\fP\&.
+.SS " bool bs4\&.filter\&.SoupStrainer\&.excludes_everything ( self)"
+
+.PP
+.nf
+Check whether the provided rules will obviously exclude
+everything\&. (They might exclude everything even if this returns `False`,
+but not in an obvious way\&.)
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBbs4\&.filter\&.ElementFilter\fP\&.
+.SS " bool bs4\&.filter\&.SoupStrainer\&.includes_everything ( self)"
+
+.PP
+.nf
+Check whether the provided rules will obviously include
+everything\&. (They might include everything even if this returns `False`,
+but not in an obvious way\&.)
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBbs4\&.filter\&.ElementFilter\fP\&.
+.SS " bool bs4\&.filter\&.SoupStrainer\&.match ( self, \fBPageElement\fP element, bool _known_rules = \fCFalse\fP)"
+
+.PP
+.nf
+Does the given `PageElement` match the rules set down by this
+`SoupStrainer`?
+
+The find_* methods rely heavily on this method to find matches\&.
+
+:param element: A `PageElement`\&.
+:param _known_rules: Set to true in the common case where
+   we already checked and found at least one rule in this SoupStrainer
+   that might exclude a PageElement\&. Without this, we need
+   to check \&.includes_everything every time, just to be safe\&.
+:return: `True` if the element matches this `SoupStrainer`'s rules; `False` otherwise\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBbs4\&.filter\&.ElementFilter\fP\&.
+.SS " bool bs4\&.filter\&.SoupStrainer\&.matches_any_string_rule ( self, str string)"
+
+.PP
+.nf
+See whether the content of a string matches any of
+this `SoupStrainer`'s string rules\&.
+
+.fi
+.PP
+ 
+.SS " bool bs4\&.filter\&.SoupStrainer\&.matches_tag ( self, \fBTag\fP tag)"
+
+.PP
+.nf
+Do the rules of this `SoupStrainer` trigger a match against the
+given `Tag`?
+
+If the `SoupStrainer` has any `TagNameMatchRule`, at least one
+must match the `Tag` or its `Tag\&.name`\&.
+
+If there are any `AttributeValueMatchRule` for a given
+attribute, at least one of them must match the attribute
+value\&.
+
+If there are any `StringMatchRule`, at least one must match,
+but a `SoupStrainer` that *only* contains `StringMatchRule`
+cannot match a `Tag`, only a `NavigableString`\&.
+
+.fi
+.PP
+ 
+.SS " Optional[\fBPageElement\fP] bs4\&.filter\&.SoupStrainer\&.search ( self, \fBPageElement\fP element)"
+
+.PP
+.nf
+A less elegant version of match()\&. Deprecated as of 4\&.13\&.0\&.
+
+:meta private:
+
+.fi
+.PP
+ 
+.SS " bool bs4\&.filter\&.SoupStrainer\&.search_tag ( self, str name, Optional[_RawAttributeValues] attrs)"
+
+.PP
+.nf
+A less elegant version of `allow_tag_creation`\&. Deprecated as of 4\&.13\&.0
+.fi
+.PP
+ 
+.SS " Optional[_StrainableString] bs4\&.filter\&.SoupStrainer\&.string ( self)"
+
+.SS " Optional[_StrainableString] bs4\&.filter\&.SoupStrainer\&.text ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "Dict bs4\&.filter\&.SoupStrainer\&.attribute_rules [str, List[\fBAttributeValueMatchRule\fP]]\fC [static]\fP"
+
+.SS "bs4\&.filter\&.SoupStrainer\&.attribute_rules"
+
+.SS "List bs4\&.filter\&.SoupStrainer\&.name_rules [\fBTagNameMatchRule\fP]\fC [static]\fP"
+
+.SS "bs4\&.filter\&.SoupStrainer\&.name_rules"
+
+.SS "List bs4\&.filter\&.SoupStrainer\&.string_rules [\fBStringMatchRule\fP]\fC [static]\fP"
+
+.SS "bs4\&.filter\&.SoupStrainer\&.string_rules"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

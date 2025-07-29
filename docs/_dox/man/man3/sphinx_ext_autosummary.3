@@ -1,0 +1,319 @@
+.TH "sphinx.ext.autosummary" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.ext.autosummary
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBgenerate\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAutoLink\fP"
+.br
+.ti -1c
+.RI "class \fBAutosummary\fP"
+.br
+.ti -1c
+.RI "class \fBautosummary_table\fP"
+.br
+.ti -1c
+.RI "class \fBautosummary_toc\fP"
+.br
+.ti -1c
+.RI "class \fBFakeApplication\fP"
+.br
+.ti -1c
+.RI "class \fBFakeDirective\fP"
+.br
+.ti -1c
+.RI "class \fBImportExceptionGroup\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBautosummary_toc_visit_html\fP (nodes\&.NodeVisitor self, \fBautosummary_toc\fP node)"
+.br
+.ti -1c
+.RI "None \fBautosummary_noop\fP (nodes\&.NodeVisitor self, \fBNode\fP node)"
+.br
+.ti -1c
+.RI "None \fBautosummary_table_visit_html\fP (\fBHTML5Translator\fP self, \fBautosummary_table\fP node)"
+.br
+.ti -1c
+.RI "type[\fBDocumenter\fP] \fBget_documenter\fP (\fBSphinx\fP app, Any obj, Any parent)"
+.br
+.ti -1c
+.RI "type[\fBDocumenter\fP] \fB_get_documenter\fP (Any obj, Any parent, *\fBSphinxComponentRegistry\fP registry)"
+.br
+.ti -1c
+.RI "str \fBstrip_arg_typehint\fP (str s)"
+.br
+.ti -1c
+.RI "str \fB_cleanup_signature\fP (str s)"
+.br
+.ti -1c
+.RI "str \fBmangle_signature\fP (str sig, int max_chars=30)"
+.br
+.ti -1c
+.RI "str \fBextract_summary\fP (list[str] doc, Any document)"
+.br
+.ti -1c
+.RI "str \fBlimited_join\fP (str sep, list[str] items, int max_chars=30, str overflow_marker='\&.\&.\&.')"
+.br
+.ti -1c
+.RI "list[str|None] \fBget_import_prefixes_from_env\fP (\fBBuildEnvironment\fP env)"
+.br
+.ti -1c
+.RI "tuple[str, Any, Any, str] \fBimport_by_name\fP (str name, Sequence[str|None] prefixes=(None,))"
+.br
+.ti -1c
+.RI "tuple[Any, Any, str] \fB_import_by_name\fP (str name, bool grouped_exception=True)"
+.br
+.ti -1c
+.RI "tuple[str, Any, Any, str] \fBimport_ivar_by_name\fP (str name, Sequence[str|None] prefixes=(None,), bool grouped_exception=True)"
+.br
+.ti -1c
+.RI "str|None \fBget_rst_suffix\fP (\fBSphinx\fP app)"
+.br
+.ti -1c
+.RI "None \fBprocess_generate_options\fP (\fBSphinx\fP app)"
+.br
+.ti -1c
+.RI "\fBExtensionMetadata\fP \fBsetup\fP (\fBSphinx\fP app)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "\fBperiods_re\fP = re\&.compile(r'\\\&.(?:\\s+)')"
+.br
+.ti -1c
+.RI "\fBliteral_re\fP = re\&.compile(r'::\\s*$')"
+.br
+.ti -1c
+.RI "tuple \fBWELL_KNOWN_ABBREVIATIONS\fP = ('et al\&.', 'e\&.g\&.', 'i\&.e\&.')"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Extension that adds an autosummary:: directive\&.
+
+The directive can be used to generate function/method/attribute/etc\&. summary
+lists, similar to those output eg\&. by Epydoc and other API doc generation tools\&.
+
+An :autolink: role is also provided\&.
+
+autosummary directive
+---------------------
+
+The autosummary directive has the form::
+
+    \&.\&. autosummary::
+       :signatures: none
+       :toctree: generated/
+
+       module\&.function_1
+       module\&.function_2
+       \&.\&.\&.
+
+and it generates an output table (containing signatures, optionally)
+
+    ========================  =============================================
+    module\&.function_1(args)   Summary line from the docstring of function_1
+    module\&.function_2(args)   Summary line from the docstring
+    \&.\&.\&.
+    ========================  =============================================
+
+If the :toctree: option is specified, files matching the function names
+are inserted to the toctree with the given prefix:
+
+    generated/module\&.function_1
+    generated/module\&.function_2
+    \&.\&.\&.
+
+Note: The file names contain the module:: or currentmodule:: prefixes\&.
+
+\&.\&. seealso:: autosummary_generate\&.py
+
+
+autolink role
+-------------
+
+The autolink role functions as ``:obj:`` when the name referred can be
+resolved to a Python object, and otherwise it becomes simple emphasis\&.
+This can be used as the default role to make links 'smart'\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " str sphinx\&.ext\&.autosummary\&._cleanup_signature (str s)\fC [protected]\fP"
+
+.PP
+.nf
+Clean up signature using inspect\&.signautre() for mangle_signature()
+.fi
+.PP
+ 
+.SS " type[\fBDocumenter\fP] sphinx\&.ext\&.autosummary\&._get_documenter (Any obj, Any parent, *\fBSphinxComponentRegistry\fP
+ registry)\fC [protected]\fP"
+
+.PP
+.nf
+Get an autodoc\&.Documenter class suitable for documenting the given
+object\&.
+
+*obj* is the Python object to be documented, and *parent* is an
+another Python object (e\&.g\&. a module or a class) to which *obj*
+belongs to\&.
+
+.fi
+.PP
+ 
+.SS " tuple[Any, Any, str] sphinx\&.ext\&.autosummary\&._import_by_name (str name, bool  grouped_exception = \fCTrue\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Import a Python object given its full name\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.ext\&.autosummary\&.autosummary_noop (nodes\&.NodeVisitor self, \fBNode\fP node)"
+
+.SS " None sphinx\&.ext\&.autosummary\&.autosummary_table_visit_html (\fBHTML5Translator\fP self, \fBautosummary_table\fP
+ node)"
+
+.PP
+.nf
+Make the first column of the table non-breaking\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.ext\&.autosummary\&.autosummary_toc_visit_html (nodes\&.NodeVisitor self, \fBautosummary_toc\fP node)"
+
+.PP
+.nf
+Hide autosummary toctree list in HTML output\&.
+.fi
+.PP
+ 
+.SS " str sphinx\&.ext\&.autosummary\&.extract_summary (list[str] doc, Any document)"
+
+.PP
+.nf
+Extract summary from docstring\&.
+.fi
+.PP
+ 
+.SS " type[\fBDocumenter\fP] sphinx\&.ext\&.autosummary\&.get_documenter (\fBSphinx\fP app, Any obj, Any parent)"
+
+.PP
+.nf
+Get an autodoc\&.Documenter class suitable for documenting the given
+object\&.
+
+*obj* is the Python object to be documented, and *parent* is an
+another Python object (e\&.g\&. a module or a class) to which *obj*
+belongs to\&.
+
+.fi
+.PP
+ 
+.SS " list[str | None] sphinx\&.ext\&.autosummary\&.get_import_prefixes_from_env (\fBBuildEnvironment\fP env)"
+
+.PP
+.nf
+Obtain current Python import prefixes (for `import_by_name`)
+from ``document\&.env``
+
+.fi
+.PP
+ 
+.SS " str | None sphinx\&.ext\&.autosummary\&.get_rst_suffix (\fBSphinx\fP app)"
+
+.SS " tuple[str, Any, Any, str] sphinx\&.ext\&.autosummary\&.import_by_name (str name, Sequence[str | None]  prefixes = \fC(None,)\fP)"
+
+.PP
+.nf
+Import a Python object that has the given *name*, under one of the
+*prefixes*\&.  The first name that succeeds is used\&.
+
+.fi
+.PP
+ 
+.SS " tuple[str, Any, Any, str] sphinx\&.ext\&.autosummary\&.import_ivar_by_name (str name, Sequence[str | None]  prefixes = \fC(None,)\fP, bool  grouped_exception = \fCTrue\fP)"
+
+.PP
+.nf
+Import an instance variable that has the given *name*, under one of the
+*prefixes*\&.  The first name that succeeds is used\&.
+
+.fi
+.PP
+ 
+.SS " str sphinx\&.ext\&.autosummary\&.limited_join (str sep, list[str] items, int  max_chars = \fC30\fP, str  overflow_marker = \fC'\&.\&.\&.'\fP)"
+
+.PP
+.nf
+Join a number of strings into one, limiting the length to *max_chars*\&.
+
+If the string overflows this limit, replace the last fitting item by
+*overflow_marker*\&.
+
+Returns: joined_string
+
+.fi
+.PP
+ 
+.SS " str sphinx\&.ext\&.autosummary\&.mangle_signature (str sig, int  max_chars = \fC30\fP)"
+
+.PP
+.nf
+Reformat a function signature to a more compact form\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.ext\&.autosummary\&.process_generate_options (\fBSphinx\fP app)"
+
+.SS " \fBExtensionMetadata\fP sphinx\&.ext\&.autosummary\&.setup (\fBSphinx\fP app)"
+
+.SS " str sphinx\&.ext\&.autosummary\&.strip_arg_typehint (str s)"
+
+.PP
+.nf
+Strip a type hint from argument definition\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "sphinx\&.ext\&.autosummary\&.literal_re = re\&.compile(r'::\\s*$')"
+
+.SS "sphinx\&.ext\&.autosummary\&.logger = logging\&.getLogger(__name__)"
+
+.SS "sphinx\&.ext\&.autosummary\&.periods_re = re\&.compile(r'\\\&.(?:\\s+)')"
+
+.SS "tuple sphinx\&.ext\&.autosummary\&.WELL_KNOWN_ABBREVIATIONS = ('et al\&.', 'e\&.g\&.', 'i\&.e\&.')"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

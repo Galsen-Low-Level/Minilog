@@ -1,0 +1,110 @@
+.TH "md__2home_2umar_2Desktop_2WorkShop_2GLL_2bav_2README" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__2home_2umar_2Desktop_2WorkShop_2GLL_2bav_2README \- Baseconv 
+.PP
+ Converts to different numerical bases such as binary (2), octal (8) and hexadecimal (16) with built-in interactive shell\&.
+.PP
+.IP "\(bu" 2
+base 2 -> for binary representation 0 to 1 
+.br
+
+.IP "\(bu" 2
+base 8 -> for octal representation 0 to 7 base
+.IP "\(bu" 2
+base 16 -> for hexadecimal representation 0 to 15 (f)
+.PP
+.SS "Setting Up Ecosystem or Testing Environment"
+There are two alternatives: 
+.br
+ 1 - Build On your direct host 2 - Or on a dedicated environment (for testing and a quick tour)\&. 
+.br
+.PP
+\fBThe ecosystem chosen to build the project is based on the \fCmeson build system\fP\fP 
+.SH "1 - Direct Host"
+.PP
+It is therefore strongly recommended to have meson build available on your machine\&. Here are a few commands to type 
+.PP
+.nf
+$ > meson setup build # to build the project 
+$ > meson compile \-C build # to compile the project  
+
+.fi
+.PP
+ The Executable w'ill be stored in build directory \fC\&./build/bcv\fP 
+.br
+.SH "2 - Pre-build or Dedicated Environment"
+.PP
+By the way, there's already a \fBpre-build environment\fP for those who want to test in Docker or Chroot\&. As you may have noticed, there's no Docker file in the repository, because we want to launch the environment quickly without doing a full Docker command\&.
+.PP
+We've already provided a script to export the environment to a local Docker image\&.~(no Docker build , no Docker pull no Docker anything)~ Here's a script named \fCbuild_context\&.sh\fP in the \fCcontext\fP directory\&. Just run the script\&. \fCbash @section autotoc_md9 go to the context directory and I assume you've given the right permission $ > \&./build_context\&.sh @icode This script will generate 2 environments of your choice: 1 - docker image directly available on your host, no need to docker pull just run\&.\&.\&. \fPbash $ docker run -ti bcv bash # to run  2 - A Change Root or chroot environment is available in most Unix environments\&. After \fCbuild_context\&.sh\fP has finished running, a \fCrootfs\fP directory will be available\&. To lock in : 
+.PP
+.nf
+$ > sudo  chroot rootfs bash 
+
+.fi
+.PP
+ And there you are! The command is available in whole environment just type \fCbcv -h\fP
+.PP
+See \fBUSE\fP section bellow for more info \&.
+.SS "Use"
+There are 2 modes of use An interactive mode & Simple command-line mode
+.PP
+*Simple Command-line mode
+.PP
+just do 
+.br
+ 
+.PP
+.nf
+bcv [option] <numeric value> 
+
+.fi
+.PP
+ e\&.g 
+.PP
+.nf
+$ bcv \-o 12 # for octal representation  
+
+.fi
+.PP
+.PP
+.RS 4
+Type \fCbcv -h\fP to display help\&. 
+.RE
+.PP
+.PP
+*For interactive mode 
+.br
+.PP
+If no argument is supplied, interactive mode is launched by default\&. here's an example:
+.PP
+.PP
+.nf
+$ bcv \-b/<number>  
+$ bcv \-o/<number> 
+$ bcv \-x/<number>   
+.fi
+.PP
+ e\&.g:
+.PP
+.PP
+.nf
+$ bcv # launch in interactive mode 
+
+[1] bcv > x/100
+     |\-> 0x64
+[2] bcv > b/100
+     |\->0b0110\&.0100
+[3] bcv > \&.\&.\&.
+.fi
+.PP
+.PP
+*To exit, type quit or exit (not case-sensitive)\&.
+.PP
+Feel free to contribute or declare issue to improve the repository
+.PP
+We ❤️ Computers at all Levels\&.
+.PP
+From Senegal\&. 🇸🇳 

@@ -1,0 +1,1749 @@
+.TH "docutils.writers.odf_odt.ODFTranslator" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.writers.odf_odt.ODFTranslator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.nodes\&.GenericNodeVisitor\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdocument\fP)"
+.br
+.ti -1c
+.RI "\fBget_str_stylesheet\fP (self)"
+.br
+.ti -1c
+.RI "\fBretrieve_styles\fP (self, extension)"
+.br
+.ti -1c
+.RI "\fBextract_table_styles\fP (self, styles_str)"
+.br
+.ti -1c
+.RI "\fBget_property\fP (self, stylenode)"
+.br
+.ti -1c
+.RI "\fBadd_doc_title\fP (self)"
+.br
+.ti -1c
+.RI "\fBfind_first_text_p\fP (self, el)"
+.br
+.ti -1c
+.RI "\fBattach_page_style\fP (self, el)"
+.br
+.ti -1c
+.RI "\fBrststyle\fP (self, name, parameters=())"
+.br
+.ti -1c
+.RI "\fBgenerate_content_element\fP (self, root)"
+.br
+.ti -1c
+.RI "\fBsetup_page\fP (self)"
+.br
+.ti -1c
+.RI "\fBget_dom_stylesheet\fP (self)"
+.br
+.ti -1c
+.RI "\fBsetup_paper\fP (self, root_el)"
+.br
+.ti -1c
+.RI "\fBadd_header_footer\fP (self, root_el)"
+.br
+.ti -1c
+.RI "\fBcreate_custom_headfoot\fP (self, parent, text, style_name, \fBautomatic_styles\fP)"
+.br
+.ti -1c
+.RI "\fBmake_field_element\fP (self, parent, text, style_name, \fBautomatic_styles\fP)"
+.br
+.ti -1c
+.RI "\fBsplit_field_specifiers_iter\fP (self, text)"
+.br
+.ti -1c
+.RI "\fBastext\fP (self)"
+.br
+.ti -1c
+.RI "\fBcontent_astext\fP (self)"
+.br
+.ti -1c
+.RI "\fBset_title\fP (self, \fBtitle\fP)"
+.br
+.ti -1c
+.RI "\fBget_title\fP (self)"
+.br
+.ti -1c
+.RI "\fBset_embedded_file_list\fP (self, \fBembedded_file_list\fP)"
+.br
+.ti -1c
+.RI "\fBget_embedded_file_list\fP (self)"
+.br
+.ti -1c
+.RI "\fBget_meta_dict\fP (self)"
+.br
+.ti -1c
+.RI "\fBprocess_footnotes\fP (self)"
+.br
+.ti -1c
+.RI "\fBappend_child\fP (self, tag, attrib=None, parent=None)"
+.br
+.ti -1c
+.RI "\fBappend_p\fP (self, style, text=None)"
+.br
+.ti -1c
+.RI "\fBappend_pending_ids\fP (self, el)"
+.br
+.ti -1c
+.RI "\fBset_current_element\fP (self, el)"
+.br
+.ti -1c
+.RI "\fBset_to_parent\fP (self)"
+.br
+.ti -1c
+.RI "\fBgenerate_labeled_block\fP (self, node, label)"
+.br
+.ti -1c
+.RI "\fBgenerate_labeled_line\fP (self, node, label)"
+.br
+.ti -1c
+.RI "\fBencode\fP (self, text)"
+.br
+.ti -1c
+.RI "\fBdispatch_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBhandle_basic_atts\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdefault_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdefault_departure\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_Text\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_Text\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_address\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_address\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_author\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_author\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_authors\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_authors\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_contact\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_contact\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_copyright\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_copyright\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_date\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_date\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_organization\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_organization\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_status\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_status\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_revision\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_revision\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_version\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_version\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_attribution\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_attribution\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_block_quote\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_block_quote\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_bullet_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_bullet_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_caption\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_caption\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_comment\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_comment\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_compound\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_compound\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_container\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_container\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_decoration\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_decoration\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_definition_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_definition_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_definition_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_definition_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_term\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_term\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_definition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_definition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_classifier\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_classifier\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_document\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_document\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_docinfo\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_docinfo\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_emphasis\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_emphasis\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_enumerated_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_enumerated_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_header\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_header\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_footer\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_footer\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_field\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_field\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_field_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_field_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_field_name\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_field_name\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_field_body\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_field_body\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_figure\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_figure\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_footnote\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_footnote\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_footnote_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_footnote_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_citation\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_citation\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_citation_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_citation_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_label\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_label\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_generated\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_generated\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBcheck_file_exists\fP (self, path)"
+.br
+.ti -1c
+.RI "\fBvisit_image\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_image\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBget_image_width_height\fP (self, node, attr)"
+.br
+.ti -1c
+.RI "\fBconvert_to_cm\fP (self, size)"
+.br
+.ti -1c
+.RI "\fBget_image_scale\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBget_image_scaled_width_height\fP (self, node, source)"
+.br
+.ti -1c
+.RI "\fBget_page_width\fP (self)"
+.br
+.ti -1c
+.RI "\fBgenerate_figure\fP (self, node, source, destination, \fBcurrent_element\fP)"
+.br
+.ti -1c
+.RI "\fBgenerate_image\fP (self, node, source, destination, \fBcurrent_element\fP, frame_attrs=None)"
+.br
+.ti -1c
+.RI "\fBis_in_table\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_legend\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_legend\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_line_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_line_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_line\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_line\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_literal\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_literal\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_inline\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_inline\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBfill_line\fP (self, line)"
+.br
+.ti -1c
+.RI "\fBfill_func1\fP (self, matchobj)"
+.br
+.ti -1c
+.RI "\fBfill_func2\fP (self, matchobj)"
+.br
+.ti -1c
+.RI "\fBvisit_literal_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_literal_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_math\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_math\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_math_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_math_block\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_meta\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_meta\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option_list\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option_list_item\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option_group\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option_group\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option_string\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option_string\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_option_argument\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_option_argument\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_description\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_description\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_paragraph\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_paragraph\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_problematic\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_problematic\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_raw\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_raw\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_rubric\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_rubric\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_section\fP (self, node, move_ids=1)"
+.br
+.ti -1c
+.RI "\fBdepart_section\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_strong\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_strong\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_substitution_definition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_substitution_definition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_system_message\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_system_message\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBget_table_style\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_table\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_table\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_tgroup\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_tgroup\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_colspec\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_colspec\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_thead\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_thead\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_row\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_row\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_entry\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_entry\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_tbody\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_tbody\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_target\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_target\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_title\fP (self, node, move_ids=1, title_type='\fBtitle\fP')"
+.br
+.ti -1c
+.RI "\fBdepart_title\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_subtitle\fP (self, node, move_ids=1)"
+.br
+.ti -1c
+.RI "\fBdepart_subtitle\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_title_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_title_reference\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBgenerate_table_of_content_entry_template\fP (self, el1)"
+.br
+.ti -1c
+.RI "\fBfind_title_label\fP (self, node, class_type, label_key)"
+.br
+.ti -1c
+.RI "\fBvisit_topic\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_topic\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBupdate_toc_page_numbers\fP (self, el)"
+.br
+.ti -1c
+.RI "\fBupdate_toc_collect\fP (self, el, level, collection)"
+.br
+.ti -1c
+.RI "\fBupdate_toc_add_numbers\fP (self, collection)"
+.br
+.ti -1c
+.RI "\fBvisit_transition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_transition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_warning\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_warning\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_attention\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_caution\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_danger\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_error\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_hint\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_important\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_note\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_tip\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_admonition\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBgenerate_admonition\fP (self, node, label, \fBtitle\fP=None)"
+.br
+.ti -1c
+.RI "\fBvisit_subscript\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_subscript\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_superscript\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_superscript\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_abbreviation\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_abbreviation\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_acronym\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_acronym\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBvisit_sidebar\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdepart_sidebar\fP (self, node)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "\fBdispatch_departure\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBunknown_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBunknown_departure\fP (self, node)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsettings\fP"
+.br
+.ti -1c
+.RI "\fBlanguage_code\fP"
+.br
+.ti -1c
+.RI "\fBlanguage\fP"
+.br
+.ti -1c
+.RI "\fBformat_map\fP"
+.br
+.ti -1c
+.RI "\fBsection_level\fP"
+.br
+.ti -1c
+.RI "\fBsection_count\fP"
+.br
+.ti -1c
+.RI "\fBcontent_tree\fP"
+.br
+.ti -1c
+.RI "\fBcurrent_element\fP"
+.br
+.ti -1c
+.RI "\fBautomatic_styles\fP"
+.br
+.ti -1c
+.RI "\fBbody_text_element\fP"
+.br
+.ti -1c
+.RI "\fBparagraph_style_stack\fP"
+.br
+.ti -1c
+.RI "\fBlist_style_stack\fP"
+.br
+.ti -1c
+.RI "\fBtable_count\fP"
+.br
+.ti -1c
+.RI "\fBcolumn_count\fP"
+.br
+.ti -1c
+.RI "\fBtrace_level\fP"
+.br
+.ti -1c
+.RI "\fBoptiontablestyles_generated\fP"
+.br
+.ti -1c
+.RI "\fBfield_name\fP"
+.br
+.ti -1c
+.RI "\fBfield_element\fP"
+.br
+.ti -1c
+.RI "\fBtitle\fP"
+.br
+.ti -1c
+.RI "\fBimage_count\fP"
+.br
+.ti -1c
+.RI "\fBimage_style_count\fP"
+.br
+.ti -1c
+.RI "\fBimage_dict\fP"
+.br
+.ti -1c
+.RI "\fBembedded_file_list\fP"
+.br
+.ti -1c
+.RI "\fBsyntaxhighlighting\fP"
+.br
+.ti -1c
+.RI "\fBsyntaxhighlight_lexer\fP"
+.br
+.ti -1c
+.RI "\fBheader_content\fP"
+.br
+.ti -1c
+.RI "\fBfooter_content\fP"
+.br
+.ti -1c
+.RI "\fBin_header\fP"
+.br
+.ti -1c
+.RI "\fBin_footer\fP"
+.br
+.ti -1c
+.RI "\fBblockstyle\fP"
+.br
+.ti -1c
+.RI "\fBin_table_of_contents\fP"
+.br
+.ti -1c
+.RI "\fBtable_of_content_index_body\fP"
+.br
+.ti -1c
+.RI "\fBlist_level\fP"
+.br
+.ti -1c
+.RI "\fBdef_list_level\fP"
+.br
+.ti -1c
+.RI "\fBfootnote_ref_dict\fP"
+.br
+.ti -1c
+.RI "\fBfootnote_list\fP"
+.br
+.ti -1c
+.RI "\fBfootnote_chars_idx\fP"
+.br
+.ti -1c
+.RI "\fBfootnote_level\fP"
+.br
+.ti -1c
+.RI "\fBpending_ids\fP"
+.br
+.ti -1c
+.RI "\fBin_paragraph\fP"
+.br
+.ti -1c
+.RI "\fBfound_doc_title\fP"
+.br
+.ti -1c
+.RI "\fBbumped_list_level_stack\fP"
+.br
+.ti -1c
+.RI "\fBmeta_dict\fP"
+.br
+.ti -1c
+.RI "\fBline_block_level\fP"
+.br
+.ti -1c
+.RI "\fBline_indent_level\fP"
+.br
+.ti -1c
+.RI "\fBcitation_id\fP"
+.br
+.ti -1c
+.RI "\fBstyle_index\fP"
+.br
+.ti -1c
+.RI "\fBstr_stylesheet\fP"
+.br
+.ti -1c
+.RI "\fBstr_stylesheetcontent\fP"
+.br
+.ti -1c
+.RI "\fBdom_stylesheet\fP"
+.br
+.ti -1c
+.RI "\fBtable_styles\fP"
+.br
+.ti -1c
+.RI "\fBin_citation\fP"
+.br
+.ti -1c
+.RI "\fBinline_style_count_stack\fP"
+.br
+.ti -1c
+.RI "\fBdom_stylesheetcontent\fP"
+.br
+.ti -1c
+.RI "\fBsave_footnote_current\fP"
+.br
+.ti -1c
+.RI "\fBfill_func2\fP"
+.br
+.ti -1c
+.RI "\fBcurrent_table_style\fP"
+.br
+.ti -1c
+.RI "\fBtable_width\fP"
+.br
+.ti -1c
+.RI "\fBin_thead\fP"
+.br
+.ti -1c
+.RI "\fBsave_current_element\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBoptional\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBused_styles\fP"
+.br
+.ti -1c
+.RI "\fBcode_none\fP"
+.br
+.ti -1c
+.RI "\fBcode_field\fP"
+.br
+.ti -1c
+.RI "\fBcode_text\fP"
+.br
+.ti -1c
+.RI "\fBfield_pat\fP = re\&.compile(r'%(\&.\&.?)%')"
+.br
+.ti -1c
+.RI "list \fBfootnote_chars\fP"
+.br
+.ti -1c
+.RI "\fBvisit_doctest_block\fP = \fBvisit_literal_block\fP"
+.br
+.ti -1c
+.RI "\fBdepart_doctest_block\fP = \fBdepart_literal_block\fP"
+.br
+.ti -1c
+.RI "\fBdepart_attention\fP = \fBdepart_warning\fP"
+.br
+.ti -1c
+.RI "\fBdepart_caution\fP = \fBdepart_warning\fP"
+.br
+.ti -1c
+.RI "\fBdepart_danger\fP = \fBdepart_warning\fP"
+.br
+.ti -1c
+.RI "\fBdepart_error\fP = \fBdepart_warning\fP"
+.br
+.ti -1c
+.RI "\fBdepart_hint\fP = \fBdepart_warning\fP"
+.br
+.ti -1c
+.RI "\fBdepart_important\fP = \fBdepart_warning\fP"
+.br
+.ti -1c
+.RI "\fBdepart_note\fP = \fBdepart_warning\fP"
+.br
+.ti -1c
+.RI "\fBdepart_tip\fP = \fBdepart_warning\fP"
+.br
+.ti -1c
+.RI "\fBdepart_admonition\fP = \fBdepart_warning\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBoptional\fP = ('\fBmeta\fP',)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_calculate_code_block_padding\fP (self, line)"
+.br
+.ti -1c
+.RI "\fB_add_syntax_highlighting\fP (self, insource, \fBlanguage\fP)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.__init__ ( self,  document)"
+
+.PP
+Reimplemented from \fBdocutils\&.nodes\&.NodeVisitor\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&._add_syntax_highlighting ( self,  insource,  language)\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&._calculate_code_block_padding ( self,  line)\fC [protected]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.add_doc_title ( self)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.add_header_footer ( self,  root_el)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.append_child ( self,  tag,  attrib = \fCNone\fP,  parent = \fCNone\fP)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.append_p ( self,  style,  text = \fCNone\fP)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.append_pending_ids ( self,  el)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.astext ( self)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.attach_page_style ( self,  el)"
+
+.PP
+.nf
+Attach the default page style\&.
+
+Create an automatic-style that refers to the current style
+of this element and that refers to the default page style\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.check_file_exists ( self,  path)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.content_astext ( self)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.convert_to_cm ( self,  size)"
+
+.PP
+.nf
+Convert various units to centimeters\&.
+
+Note that a call to this method should be wrapped in:
+    try: except ValueError:
+
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.create_custom_headfoot ( self,  parent,  text,  style_name,  automatic_styles)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.default_departure ( self,  node)"
+
+.PP
+.nf
+Override for generic, uniform traversals\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.nodes\&.GenericNodeVisitor\fP\&.
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.default_visit ( self,  node)"
+
+.PP
+.nf
+Override for generic, uniform traversals\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.nodes\&.GenericNodeVisitor\fP\&.
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_abbreviation ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_acronym ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_address ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_attribution ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_author ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_authors ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_block_quote ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_bullet_list ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_caption ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_citation ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_citation_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_classifier ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_colspec ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_comment ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_compound ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_contact ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_container ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_copyright ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_date ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_decoration ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_definition ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_definition_list ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_definition_list_item ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_description ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_docinfo ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_document ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_emphasis ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_entry ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_enumerated_list ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_field ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_field_body ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_field_list ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_field_name ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_figure ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_footer ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_footnote ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_footnote_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_generated ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_header ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_image ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_inline ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_label ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_legend ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_line ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_line_block ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_list_item ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_literal ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_literal_block ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_math ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_math_block ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_meta ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_option ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_option_argument ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_option_group ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_option_list ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_option_list_item ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_option_string ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_organization ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_paragraph ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_problematic ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_raw ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_revision ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_row ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_rubric ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_section ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_sidebar ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_status ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_strong ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_subscript ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_substitution_definition ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_subtitle ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_superscript ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_system_message ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_table ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_target ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_tbody ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_term ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_Text ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_tgroup ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_thead ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_title ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_title_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_topic ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_transition ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_version ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_warning ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.dispatch_visit ( self,  node)"
+
+.PP
+.nf
+Override to catch basic attributes which many nodes have\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.nodes\&.NodeVisitor\fP\&.
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.encode ( self,  text)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.extract_table_styles ( self,  styles_str)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.fill_func1 ( self,  matchobj)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.fill_func2 ( self,  matchobj)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.fill_line ( self,  line)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.find_first_text_p ( self,  el)"
+
+.PP
+.nf
+Search the generated doc and return the first <text:p> element\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.find_title_label ( self,  node,  class_type,  label_key)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.generate_admonition ( self,  node,  label,  title = \fCNone\fP)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.generate_content_element ( self,  root)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.generate_figure ( self,  node,  source,  destination,  current_element)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.generate_image ( self,  node,  source,  destination,  current_element,  frame_attrs = \fCNone\fP)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.generate_labeled_block ( self,  node,  label)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.generate_labeled_line ( self,  node,  label)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.generate_table_of_content_entry_template ( self,  el1)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.get_dom_stylesheet ( self)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.get_embedded_file_list ( self)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.get_image_scale ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.get_image_scaled_width_height ( self,  node,  source)"
+
+.PP
+.nf
+Return the image size in centimeters adjusted by image attrs\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.get_image_width_height ( self,  node,  attr)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.get_meta_dict ( self)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.get_page_width ( self)"
+
+.PP
+.nf
+Return the document's page width in centimeters\&.
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.get_property ( self,  stylenode)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.get_str_stylesheet ( self)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.get_table_style ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.get_title ( self)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.handle_basic_atts ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.is_in_table ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.make_field_element ( self,  parent,  text,  style_name,  automatic_styles)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.process_footnotes ( self)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.retrieve_styles ( self,  extension)"
+
+.PP
+.nf
+Retrieve the stylesheet from either a \&.xml file or from
+a \&.odt (zip) file\&.  Return the content as a string\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.rststyle ( self,  name,  parameters = \fC()\fP)"
+
+.PP
+.nf
+Returns the style name to use for the given style\&.
+
+If `parameters` is given `name` must contain a matching number of
+``%`` and is used as a format expression with `parameters` as
+the value\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.set_current_element ( self,  el)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.set_embedded_file_list ( self,  embedded_file_list)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.set_title ( self,  title)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.set_to_parent ( self)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.setup_page ( self)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.setup_paper ( self,  root_el)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.split_field_specifiers_iter ( self,  text)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.update_toc_add_numbers ( self,  collection)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.update_toc_collect ( self,  el,  level,  collection)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.update_toc_page_numbers ( self,  el)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_abbreviation ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_acronym ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_address ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_admonition ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_attention ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_attribution ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_author ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_authors ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_block_quote ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_bullet_list ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_caption ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_caution ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_citation ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_citation_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_classifier ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_colspec ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_comment ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_compound ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_contact ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_container ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_copyright ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_danger ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_date ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_decoration ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_definition ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_definition_list ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_definition_list_item ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_description ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_docinfo ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_document ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_emphasis ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_entry ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_enumerated_list ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_error ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_field ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_field_body ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_field_list ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_field_name ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_figure ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_footer ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_footnote ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_footnote_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_generated ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_header ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_hint ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_image ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_important ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_inline ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_label ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_legend ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_line ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_line_block ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_list_item ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_literal ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_literal_block ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_math ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_math_block ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_meta ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_note ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_option ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_option_argument ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_option_group ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_option_list ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_option_list_item ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_option_string ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_organization ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_paragraph ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_problematic ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_raw ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_revision ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_row ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_rubric ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_section ( self,  node,  move_ids = \fC1\fP)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_sidebar ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_status ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_strong ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_subscript ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_substitution_definition ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_subtitle ( self,  node,  move_ids = \fC1\fP)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_superscript ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_system_message ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_table ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_target ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_tbody ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_term ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_Text ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_tgroup ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_thead ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_tip ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_title ( self,  node,  move_ids = \fC1\fP,  title_type = \fC'\fBtitle\fP'\fP)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_title_reference ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_topic ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_transition ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_version ( self,  node)"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_warning ( self,  node)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.automatic_styles"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.blockstyle"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.body_text_element"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.bumped_list_level_stack"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.citation_id"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.code_field\fC [static]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.code_none\fC [static]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.code_text\fC [static]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.column_count"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.content_tree"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.current_element"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.current_table_style"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.def_list_level"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_admonition = \fBdepart_warning\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_attention = \fBdepart_warning\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_caution = \fBdepart_warning\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_danger = \fBdepart_warning\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_doctest_block = \fBdepart_literal_block\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_error = \fBdepart_warning\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_hint = \fBdepart_warning\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_important = \fBdepart_warning\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_note = \fBdepart_warning\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.depart_tip = \fBdepart_warning\fP\fC [static]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.dom_stylesheet"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.dom_stylesheetcontent"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.embedded_file_list"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.field_element"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.field_name"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.field_pat = re\&.compile(r'%(\&.\&.?)%')\fC [static]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.fill_func2"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.footer_content"
+
+.SS "list docutils\&.writers\&.odf_odt\&.ODFTranslator\&.footnote_chars\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        '*', '**', '***',
+        '++', '+++',
+        '##', '###',
+        '@@', '@@@',
+    ]
+.fi
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.footnote_chars_idx"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.footnote_level"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.footnote_list"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.footnote_ref_dict"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.format_map"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.found_doc_title"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.header_content"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.image_count"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.image_dict"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.image_style_count"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.in_citation"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.in_footer"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.in_header"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.in_paragraph"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.in_table_of_contents"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.in_thead"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.inline_style_count_stack"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.language"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.language_code"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.line_block_level"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.line_indent_level"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.list_level"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.list_style_stack"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.meta_dict"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.optiontablestyles_generated"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.paragraph_style_stack"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.pending_ids"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.save_current_element"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.save_footnote_current"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.section_count"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.section_level"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.settings"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.str_stylesheet"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.str_stylesheetcontent"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.style_index"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.syntaxhighlight_lexer"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.syntaxhighlighting"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.table_count"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.table_of_content_index_body"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.table_styles"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.table_width"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.title"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.trace_level"
+
+.SS "tuple docutils\&.writers\&.odf_odt\&.ODFTranslator\&.used_styles\fC [static]\fP"
+
+.SS "docutils\&.writers\&.odf_odt\&.ODFTranslator\&.visit_doctest_block = \fBvisit_literal_block\fP\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

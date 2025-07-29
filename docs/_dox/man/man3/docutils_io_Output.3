@@ -1,0 +1,148 @@
+.TH "docutils.io.Output" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.io.Output
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.TransformSpec\fP\&.
+.PP
+Inherited by \fBdocutils\&.io\&.FileOutput\fP, \fBdocutils\&.io\&.NullOutput\fP, and \fBdocutils\&.io\&.StringOutput\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdestination\fP=None, \fBdestination_path\fP=None, \fBencoding\fP=None, \fBerror_handler\fP='strict')"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBwrite\fP (self, data)"
+.br
+.ti -1c
+.RI "\fBencode\fP (self, data)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "\fBget_transforms\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBerror_handler\fP"
+.br
+.ti -1c
+.RI "\fBdestination\fP"
+.br
+.ti -1c
+.RI "\fBdestination_path\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_transforms\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBcomponent_type\fP = 'output'"
+.br
+.ti -1c
+.RI "\fBdefault_destination_path\fP = None"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBdefault_transforms\fP = ()"
+.br
+.ti -1c
+.RI "tuple \fBunknown_reference_resolvers\fP = ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Abstract base class for output wrappers\&.
+
+Docutils output objects must provide a `write()` method that
+expects and handles one argument (the output)\&.
+
+Inheriting `TransformSpec` allows output objects to add
+'transforms' and 'unknown_reference_resolvers' to the 'Transformer'\&.
+(Optional for custom output objects since Docutils 0\&.19\&.)
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.io\&.Output\&.__init__ ( self,  destination = \fCNone\fP,  destination_path = \fCNone\fP,  encoding = \fCNone\fP,  error_handler = \fC'strict'\fP)"
+
+.PP
+Reimplemented in \fBsphinx\&.util\&.docutils\&.SphinxFileOutput\fP, and \fBdocutils\&.io\&.FileOutput\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.io\&.Output\&.__repr__ ( self)"
+
+.SS "docutils\&.io\&.Output\&.encode ( self,  data)"
+
+.PP
+.nf
+Encode and return `data`\&.
+
+If `data` is a `bytes` instance, it is returned unchanged\&.
+Otherwise it is encoded with `self\&.encoding`\&.
+
+Provisional: If `self\&.encoding` is set to the pseudo encoding name
+'unicode', `data` must be a `str` instance and is returned unchanged\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.io\&.Output\&.write ( self,  data)"
+
+.PP
+.nf
+Write `data`\&. Define in subclasses\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBdocutils\&.io\&.FileOutput\fP, \fBdocutils\&.io\&.StringOutput\fP, \fBdocutils\&.io\&.NullOutput\fP, and \fBsphinx\&.util\&.docutils\&.SphinxFileOutput\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "str docutils\&.io\&.Output\&.component_type = 'output'\fC [static]\fP"
+
+.SS "docutils\&.io\&.Output\&.default_destination_path = None\fC [static]\fP"
+
+.SS "docutils\&.io\&.Output\&.destination"
+
+.SS "docutils\&.io\&.Output\&.destination_path"
+
+.SS "docutils\&.io\&.Output\&.encoding"
+
+.SS "docutils\&.io\&.Output\&.error_handler"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

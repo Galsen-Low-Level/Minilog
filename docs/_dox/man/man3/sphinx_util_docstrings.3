@@ -1,0 +1,78 @@
+.TH "sphinx.util.docstrings" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.util.docstrings
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "tuple[str|None, dict[str, str]] \fBseparate_metadata\fP (str|None s)"
+.br
+.ti -1c
+.RI "list[str] \fBprepare_docstring\fP (str s, int tabsize=8)"
+.br
+.ti -1c
+.RI "list[str] \fBprepare_commentdoc\fP (str s)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBfield_list_item_re\fP = re\&.compile(\fBBody\&.patterns\fP['field_marker'])"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Utilities for docstring processing\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " list[str] sphinx\&.util\&.docstrings\&.prepare_commentdoc (str s)"
+
+.PP
+.nf
+Extract documentation comment lines (starting with #:) and return them
+as a list of lines\&.  Returns an empty list if there is no documentation\&.
+
+.fi
+.PP
+ 
+.SS " list[str] sphinx\&.util\&.docstrings\&.prepare_docstring (str s, int  tabsize = \fC8\fP)"
+
+.PP
+.nf
+Convert a docstring into lines of parseable reST\&.  Remove common leading
+indentation, where the indentation of the first line is ignored\&.
+
+Return the docstring as a list of lines usable for inserting into a docutils
+ViewList (used as argument of nested_parse()\&.)  An empty line is added to
+act as a separator between this docstring and following content\&.
+
+.fi
+.PP
+ 
+.SS " tuple[str | None, dict[str, str]] sphinx\&.util\&.docstrings\&.separate_metadata (str | None s)"
+
+.PP
+.nf
+Separate docstring into metadata and others\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "sphinx\&.util\&.docstrings\&.field_list_item_re = re\&.compile(\fBBody\&.patterns\fP['field_marker'])"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,84 @@
+\doxysection{/home/umar/\+Desktop/\+Work\+Shop/\+GLL/mksck/mksck.c File Reference}
+\hypertarget{mksck_8c}{}\label{mksck_8c}\index{/home/umar/Desktop/WorkShop/GLL/mksck/mksck.c@{/home/umar/Desktop/WorkShop/GLL/mksck/mksck.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/un.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$err.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/file.\+h$>$}\newline
+{\ttfamily \#include "{}mksck.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mksck_8h_a3fdab9c71568c7c8602148af691b261a}{sfd\+\_\+t}} \mbox{\hyperlink{mksck_8c_a4a899b95f5018707e01f904bddbdabac}{mksck}} (const char \texorpdfstring{$\ast$}{*}restrict filename, const char \texorpdfstring{$\ast$}{*}mode, int re\+\_\+use)
+\item 
+int \mbox{\hyperlink{mksck_8c_aa6ef48ad4c9291b98d8977c955011ce4}{mksck\+\_\+close}} (const char \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+restrict\+\_\+\+\_\+ socket\+\_\+filename)
+\item 
+\mbox{\hyperlink{mksck_8h_a3fdab9c71568c7c8602148af691b261a}{sfd\+\_\+t}} \mbox{\hyperlink{mksck_8c_a1c9fbdc814d59ee720771675fdc9c3cd}{\+\_\+\+\_\+create\+\_\+local\+\_\+unix\+\_\+socket}} (const char \texorpdfstring{$\ast$}{*}filename, mode\+\_\+t mode)
+\item 
+\mbox{\hyperlink{mksck_8h_a3fdab9c71568c7c8602148af691b261a}{sfd\+\_\+t}} \mbox{\hyperlink{mksck_8c_ac31a64c0ff3a176fc5b5a5764c4e1bf2}{mksck\+\_\+ack}} (\mbox{\hyperlink{mksck_8h_a3fdab9c71568c7c8602148af691b261a}{sfd\+\_\+t}} local\+\_\+unix\+\_\+socket)
+\item 
+void \mbox{\hyperlink{mksck_8c_af36b553ba68149831e620aa3f642638a}{\+\_\+\+\_\+close\+\_\+lsck}} (const char \texorpdfstring{$\ast$}{*}filename, int should\+\_\+be\+\_\+unlinked)
+\item 
+mode\+\_\+t \mbox{\hyperlink{mksck_8c_a5a0e49c36099504a4a8ab6f3eeb560de}{\+\_\+\+\_\+is\+\_\+sock}} (const char \texorpdfstring{$\ast$}{*}filename)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct____lsck__t}{\+\_\+\+\_\+lsck\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{mksck_8c_ad4c319b41338e92e9561cd47992a8612}{\+\_\+\+\_\+local\+\_\+\+\_\+}} = \mbox{\hyperlink{baseconv_2bcvrepl_8h_af0ecbcab5c985108aea37f1bb45eb8ad}{\+\_\+\+\_\+nptr}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mksck_8c_af36b553ba68149831e620aa3f642638a}\label{mksck_8c_af36b553ba68149831e620aa3f642638a} 
+\index{mksck.c@{mksck.c}!\_\_close\_lsck@{\_\_close\_lsck}}
+\index{\_\_close\_lsck@{\_\_close\_lsck}!mksck.c@{mksck.c}}
+\doxysubsubsection{\texorpdfstring{\_\_close\_lsck()}{\_\_close\_lsck()}}
+{\footnotesize\ttfamily void \+\_\+\+\_\+close\+\_\+lsck (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{int}]{should\+\_\+be\+\_\+unlinked }\end{DoxyParamCaption})}
+
+\Hypertarget{mksck_8c_a1c9fbdc814d59ee720771675fdc9c3cd}\label{mksck_8c_a1c9fbdc814d59ee720771675fdc9c3cd} 
+\index{mksck.c@{mksck.c}!\_\_create\_local\_unix\_socket@{\_\_create\_local\_unix\_socket}}
+\index{\_\_create\_local\_unix\_socket@{\_\_create\_local\_unix\_socket}!mksck.c@{mksck.c}}
+\doxysubsubsection{\texorpdfstring{\_\_create\_local\_unix\_socket()}{\_\_create\_local\_unix\_socket()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mksck_8h_a3fdab9c71568c7c8602148af691b261a}{sfd\+\_\+t}} \+\_\+\+\_\+create\+\_\+local\+\_\+unix\+\_\+socket (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{mode\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+NOTICE \+: the MSCK\+\_\+\+MODE\+\_\+\+WRITE create the socket and the process relate is defined as the server\Hypertarget{mksck_8c_a5a0e49c36099504a4a8ab6f3eeb560de}\label{mksck_8c_a5a0e49c36099504a4a8ab6f3eeb560de} 
+\index{mksck.c@{mksck.c}!\_\_is\_sock@{\_\_is\_sock}}
+\index{\_\_is\_sock@{\_\_is\_sock}!mksck.c@{mksck.c}}
+\doxysubsubsection{\texorpdfstring{\_\_is\_sock()}{\_\_is\_sock()}}
+{\footnotesize\ttfamily mode\+\_\+t \+\_\+\+\_\+is\+\_\+sock (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+\Hypertarget{mksck_8c_a4a899b95f5018707e01f904bddbdabac}\label{mksck_8c_a4a899b95f5018707e01f904bddbdabac} 
+\index{mksck.c@{mksck.c}!mksck@{mksck}}
+\index{mksck@{mksck}!mksck.c@{mksck.c}}
+\doxysubsubsection{\texorpdfstring{mksck()}{mksck()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mksck_8h_a3fdab9c71568c7c8602148af691b261a}{sfd\+\_\+t}} mksck (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}restrict}]{filename,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{mode,  }\item[{int}]{re\+\_\+use }\end{DoxyParamCaption})}
+
+When re\+\_\+use is set to true (1) or whatever positive number only the last bit will be taken and the last bit of flags will be enable\Hypertarget{mksck_8c_ac31a64c0ff3a176fc5b5a5764c4e1bf2}\label{mksck_8c_ac31a64c0ff3a176fc5b5a5764c4e1bf2} 
+\index{mksck.c@{mksck.c}!mksck\_ack@{mksck\_ack}}
+\index{mksck\_ack@{mksck\_ack}!mksck.c@{mksck.c}}
+\doxysubsubsection{\texorpdfstring{mksck\_ack()}{mksck\_ack()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mksck_8h_a3fdab9c71568c7c8602148af691b261a}{sfd\+\_\+t}} mksck\+\_\+ack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mksck_8h_a3fdab9c71568c7c8602148af691b261a}{sfd\+\_\+t}}}]{local\+\_\+unix\+\_\+socket }\end{DoxyParamCaption})}
+
+\Hypertarget{mksck_8c_aa6ef48ad4c9291b98d8977c955011ce4}\label{mksck_8c_aa6ef48ad4c9291b98d8977c955011ce4} 
+\index{mksck.c@{mksck.c}!mksck\_close@{mksck\_close}}
+\index{mksck\_close@{mksck\_close}!mksck.c@{mksck.c}}
+\doxysubsubsection{\texorpdfstring{mksck\_close()}{mksck\_close()}}
+{\footnotesize\ttfamily int mksck\+\_\+close (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+restrict\+\_\+\+\_\+}]{socket\+\_\+filename }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{mksck_8c_ad4c319b41338e92e9561cd47992a8612}\label{mksck_8c_ad4c319b41338e92e9561cd47992a8612} 
+\index{mksck.c@{mksck.c}!\_\_local\_\_@{\_\_local\_\_}}
+\index{\_\_local\_\_@{\_\_local\_\_}!mksck.c@{mksck.c}}
+\doxysubsubsection{\texorpdfstring{\_\_local\_\_}{\_\_local\_\_}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct____lsck__t}{\+\_\+\+\_\+lsck\+\_\+t}}\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+local\+\_\+\+\_\+ = \mbox{\hyperlink{baseconv_2bcvrepl_8h_af0ecbcab5c985108aea37f1bb45eb8ad}{\+\_\+\+\_\+nptr}}}
+

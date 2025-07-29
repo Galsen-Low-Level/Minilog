@@ -1,0 +1,85 @@
+.TH "sphinx.addnodes.translatable" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.addnodes.translatable
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits nodes\&.Node\&.
+.PP
+Inherited by \fBsphinx\&.addnodes\&.toctree\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBpreserve_original_messages\fP (self)"
+.br
+.ti -1c
+.RI "None \fBapply_translated_message\fP (self, str original_message, str translated_message)"
+.br
+.ti -1c
+.RI "Sequence[str] \fBextract_original_messages\fP (self)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Node which supports translation\&.
+
+The translation goes forward with following steps:
+
+1\&. Preserve original translatable messages
+2\&. Apply translated messages from message catalog
+3\&. Extract preserved messages (for gettext builder)
+
+The translatable nodes MUST preserve original messages\&.
+And these messages should not be overridden at applying step\&.
+Because they are used at final step; extraction\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " None sphinx\&.addnodes\&.translatable\&.apply_translated_message ( self, str original_message, str
+     translated_message)"
+
+.PP
+.nf
+Apply translated message\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.addnodes\&.toctree\fP\&.
+.SS " Sequence[str] sphinx\&.addnodes\&.translatable\&.extract_original_messages ( self)"
+
+.PP
+.nf
+Extract translation messages\&.
+
+:returns: list of extracted messages or messages generator
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.addnodes\&.toctree\fP\&.
+.SS " None sphinx\&.addnodes\&.translatable\&.preserve_original_messages ( self)"
+
+.PP
+.nf
+Preserve original translatable messages\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBsphinx\&.addnodes\&.toctree\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

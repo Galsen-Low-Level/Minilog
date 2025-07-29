@@ -1,0 +1,40 @@
+.TH "babel.localtime._unix" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+babel.localtime._unix
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "datetime\&.tzinfo \fB_tz_from_env\fP (str tzenv)"
+.br
+.ti -1c
+.RI "datetime\&.tzinfo \fB_get_localzone\fP (str _root='/')"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " datetime\&.tzinfo babel\&.localtime\&._unix\&._get_localzone (str  _root = \fC'/'\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Tries to find the local timezone configuration\&.
+This method prefers finding the timezone name and passing that to
+zoneinfo or pytz, over passing in the localtime file, as in the later
+case the zoneinfo name is unknown\&.
+The parameter _root makes the function look for files like /etc/localtime
+beneath the _root directory\&. This is primarily used by the tests\&.
+In normal usage you call the function without parameters\&.
+
+.fi
+.PP
+ 
+.SS " datetime\&.tzinfo babel\&.localtime\&._unix\&._tz_from_env (str tzenv)\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

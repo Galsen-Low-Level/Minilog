@@ -1,0 +1,279 @@
+\doxysection{webob.\+acceptparse.\+\_\+\+Accept\+Language\+Invalid\+Or\+No\+Header Class Reference}
+\hypertarget{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader}{}\label{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader}\index{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader@{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader}}
+Inheritance diagram for webob.\+acceptparse.\+\_\+\+Accept\+Language\+Invalid\+Or\+No\+Header\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.218391cm]{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader_a401bd84cc4edbe4dcdd9bc27bdf3f4cf}{\+\_\+\+\_\+nonzero\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader_aa846d188f04523110acde95c1c553956}{\+\_\+\+\_\+contains\+\_\+\+\_\+}} (self, offer)
+\item 
+\mbox{\hyperlink{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader_ad2dd5eb92f27b31bdd94ea2527bd400f}{\+\_\+\+\_\+iter\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader_a9ea946180f9d84bbb834273422567154}{basic\+\_\+filtering}} (self, language\+\_\+tags)
+\item 
+\mbox{\hyperlink{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader_aefd49d045ede3ead13398d2a9ec96e4c}{best\+\_\+match}} (self, offers, default\+\_\+match=None)
+\item 
+\mbox{\hyperlink{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader_a78a0ab0ff443348daf532835d4ba2b7c}{lookup}} (self, language\+\_\+tags=None, default\+\_\+range=None, default\+\_\+tag=None, default=None)
+\item 
+\mbox{\hyperlink{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader_add9f8f93b97a63fdffe71164cc2ae392}{quality}} (self, offer)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classwebob_1_1acceptparse_1_1AcceptLanguage}{webob.\+acceptparse.\+Accept\+Language}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwebob_1_1acceptparse_1_1AcceptLanguage_a63eb2fbaaec84f7ae067d66f818c9054}{parse}} (cls, value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classwebob_1_1acceptparse_1_1AcceptLanguage}{webob.\+acceptparse.\+Accept\+Language}}}
+\begin{DoxyCompactItemize}
+\item 
+tuple \mbox{\hyperlink{classwebob_1_1acceptparse_1_1AcceptLanguage_ae78fd6a59ad24c3fc79e29575cbff68c}{lang\+\_\+range\+\_\+re}}
+\item 
+\mbox{\hyperlink{classwebob_1_1acceptparse_1_1AcceptLanguage_a1a0b7d2279e70fecd6ca8ea608ae6df4}{lang\+\_\+range\+\_\+n\+\_\+weight\+\_\+re}} = \mbox{\hyperlink{namespacewebob_1_1acceptparse_aa13114c6421eb5c591c66565b5042855}{\+\_\+item\+\_\+n\+\_\+weight\+\_\+re}}(item\+\_\+re=\mbox{\hyperlink{classwebob_1_1acceptparse_1_1AcceptLanguage_ae78fd6a59ad24c3fc79e29575cbff68c}{lang\+\_\+range\+\_\+re}})
+\item 
+\mbox{\hyperlink{classwebob_1_1acceptparse_1_1AcceptLanguage_a270bedc4c358f1a88c3559107e61d9af}{lang\+\_\+range\+\_\+n\+\_\+weight\+\_\+compiled\+\_\+re}} = re.\+compile(\mbox{\hyperlink{classwebob_1_1acceptparse_1_1AcceptLanguage_a1a0b7d2279e70fecd6ca8ea608ae6df4}{lang\+\_\+range\+\_\+n\+\_\+weight\+\_\+re}})
+\item 
+\mbox{\hyperlink{classwebob_1_1acceptparse_1_1AcceptLanguage_add9bb45fa90693ff840969666c34ad5f}{accept\+\_\+language\+\_\+compiled\+\_\+re}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classwebob_1_1acceptparse_1_1AcceptLanguage}{webob.\+acceptparse.\+Accept\+Language}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwebob_1_1acceptparse_1_1AcceptLanguage_a5d89207bdb9b2226ff00b3923b5cad41}{\+\_\+python\+\_\+value\+\_\+to\+\_\+header\+\_\+str}} (cls, value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Represent when an ``Accept-Language`` header is invalid or not in request.
+
+This is the base class for the behaviour that
+:class:`.AcceptLanguageInvalidHeader` and :class:`.AcceptLanguageNoHeader`
+have in common.
+
+:rfc:`7231` does not provide any guidance on what should happen if the
+``Accept-Language`` header has an invalid value. This implementation
+disregards the header when the header is invalid, so
+:class:`.AcceptLanguageInvalidHeader` and :class:`.AcceptLanguageNoHeader`
+have much behaviour in common.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader_aa846d188f04523110acde95c1c553956}\label{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader_aa846d188f04523110acde95c1c553956} 
+\index{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader@{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader}!\_\_contains\_\_@{\_\_contains\_\_}}
+\index{\_\_contains\_\_@{\_\_contains\_\_}!webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader@{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader}}
+\doxysubsubsection{\texorpdfstring{\_\_contains\_\_()}{\_\_contains\_\_()}}
+{\footnotesize\ttfamily webob.\+acceptparse.\+\_\+\+Accept\+Language\+Invalid\+Or\+No\+Header.\+\_\+\+\_\+contains\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{offer }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return ``bool`` indicating whether `offer` is acceptable.
+
+.. warning::
+
+   The behavior of ``.__contains__`` for the ``AcceptLanguage`` classes
+   is currently being maintained for backward compatibility, but it
+   will change in the future to better conform to the RFC.
+
+:param offer: (``str``) language tag offer
+:return: (``bool``) Whether ``offer`` is acceptable according to the
+         header.
+
+For this class, either there is no ``Accept-Language`` header in the
+request, or the header is invalid, so any language tag is acceptable,
+and this always returns ``True``.
+\end{DoxyVerb}
+ \Hypertarget{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader_ad2dd5eb92f27b31bdd94ea2527bd400f}\label{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader_ad2dd5eb92f27b31bdd94ea2527bd400f} 
+\index{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader@{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader}!\_\_iter\_\_@{\_\_iter\_\_}}
+\index{\_\_iter\_\_@{\_\_iter\_\_}!webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader@{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader}}
+\doxysubsubsection{\texorpdfstring{\_\_iter\_\_()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily webob.\+acceptparse.\+\_\+\+Accept\+Language\+Invalid\+Or\+No\+Header.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return all the ranges with non-0 qvalues, in order of preference.
+
+.. warning::
+
+   The behavior of this method is currently maintained for backward
+   compatibility, but will change in the future.
+
+:return: iterator of all the language ranges in the header with non-0
+         qvalues, in descending order of qvalue. If two ranges have the
+         same qvalue, they are returned in the order of their positions
+         in the header, from left to right.
+
+For this class, either there is no ``Accept-Language`` header in the
+request, or the header is invalid, so there are no language ranges, and
+this always returns an empty iterator.
+\end{DoxyVerb}
+ \Hypertarget{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader_a401bd84cc4edbe4dcdd9bc27bdf3f4cf}\label{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader_a401bd84cc4edbe4dcdd9bc27bdf3f4cf} 
+\index{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader@{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader}!\_\_nonzero\_\_@{\_\_nonzero\_\_}}
+\index{\_\_nonzero\_\_@{\_\_nonzero\_\_}!webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader@{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader}}
+\doxysubsubsection{\texorpdfstring{\_\_nonzero\_\_()}{\_\_nonzero\_\_()}}
+{\footnotesize\ttfamily webob.\+acceptparse.\+\_\+\+Accept\+Language\+Invalid\+Or\+No\+Header.\+\_\+\+\_\+nonzero\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return whether ``self`` represents a valid ``Accept-Language`` header.
+
+Return ``True`` if ``self`` represents a valid header, and ``False`` if
+it represents an invalid header, or the header not being in the
+request.
+
+For this class, it always returns ``False``.
+\end{DoxyVerb}
+ \Hypertarget{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader_a9ea946180f9d84bbb834273422567154}\label{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader_a9ea946180f9d84bbb834273422567154} 
+\index{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader@{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader}!basic\_filtering@{basic\_filtering}}
+\index{basic\_filtering@{basic\_filtering}!webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader@{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader}}
+\doxysubsubsection{\texorpdfstring{basic\_filtering()}{basic\_filtering()}}
+{\footnotesize\ttfamily webob.\+acceptparse.\+\_\+\+Accept\+Language\+Invalid\+Or\+No\+Header.\+basic\+\_\+filtering (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{language\+\_\+tags }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the tags that match the header, using Basic Filtering.
+
+:param language_tags: (``iterable``) language tags
+:return: A list of tuples of the form (language tag, qvalue), in
+         descending order of preference.
+
+When the header is invalid and when the header is not in the request,
+there are no matches, so this method always returns an empty list.
+\end{DoxyVerb}
+ \Hypertarget{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader_aefd49d045ede3ead13398d2a9ec96e4c}\label{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader_aefd49d045ede3ead13398d2a9ec96e4c} 
+\index{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader@{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader}!best\_match@{best\_match}}
+\index{best\_match@{best\_match}!webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader@{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader}}
+\doxysubsubsection{\texorpdfstring{best\_match()}{best\_match()}}
+{\footnotesize\ttfamily webob.\+acceptparse.\+\_\+\+Accept\+Language\+Invalid\+Or\+No\+Header.\+best\+\_\+match (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{offers,  }\item[{}]{default\+\_\+match = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the best match from the sequence of language tag `offers`.
+
+This is the ``.best_match()`` method for when the header is invalid or
+not found in the request, corresponding to
+:meth:`AcceptLanguageValidHeader.best_match`.
+
+.. warning::
+
+   This is currently maintained for backward compatibility, and will be
+   deprecated in the future (see the documentation for
+   :meth:`AcceptLanguageValidHeader.best_match`).
+
+When the header is invalid, or there is no `Accept-Language` header in
+the request, any of the language tags in `offers` are considered
+acceptable, so the best match is the tag in `offers` with the highest
+server quality value (if the server quality value is not supplied, it
+is 1).
+
+If more than one language tags in `offers` have the same highest server
+quality value, then the one that shows up first in `offers` is the best
+match.
+
+:param offers: (iterable)
+
+               | Each item in the iterable may be a ``str`` language
+                 tag, or a (language tag, server quality value)
+                 ``tuple`` or ``list``. (The two may be mixed in the
+                 iterable.)
+
+:param default_match: (optional, any type) the value to be returned if
+                      `offers` is empty.
+
+:return: (``str``, or the type of `default_match`)
+
+         | The language tag that has the highest server quality value.
+           If `offers` is empty, the value of `default_match` is
+           returned.
+\end{DoxyVerb}
+ \Hypertarget{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader_a78a0ab0ff443348daf532835d4ba2b7c}\label{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader_a78a0ab0ff443348daf532835d4ba2b7c} 
+\index{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader@{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader}!lookup@{lookup}}
+\index{lookup@{lookup}!webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader@{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader}}
+\doxysubsubsection{\texorpdfstring{lookup()}{lookup()}}
+{\footnotesize\ttfamily webob.\+acceptparse.\+\_\+\+Accept\+Language\+Invalid\+Or\+No\+Header.\+lookup (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{language\+\_\+tags = {\ttfamily None},  }\item[{}]{default\+\_\+range = {\ttfamily None},  }\item[{}]{default\+\_\+tag = {\ttfamily None},  }\item[{}]{default = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the language tag that best matches the header, using Lookup.
+
+When the header is invalid, or there is no ``Accept-Language`` header
+in the request, all language tags are considered acceptable, so it is
+as if the header is '*'. As specified for the Lookup matching scheme in
+:rfc:`RFC 4647, section 3.4 <4647#section-3.4>`, when the header is
+'*', the default value is to be computed and returned. So this method
+will ignore the `language_tags` and `default_range` arguments, and
+proceed to `default_tag`, then `default`.
+
+:param language_tags: (optional, any type)
+
+                      | This argument is ignored, and is only used as a
+                        placeholder so that the method signature
+                        corresponds to that of
+                        :meth:`AcceptLanguageValidHeader.lookup`.
+
+:param default_range: (optional, any type)
+
+                      | This argument is ignored, and is only used as a
+                        placeholder so that the method signature
+                        corresponds to that of
+                        :meth:`AcceptLanguageValidHeader.lookup`.
+
+:param default_tag: (optional, ``None`` or ``str``)
+
+                    | At least one of `default_tag` or `default` must
+                      be supplied as an argument to the method, to
+                      define the defaulting behaviour.
+
+                    | If this argument is not ``None``, then it is
+                      returned.
+
+                    | This parameter corresponds to "return a
+                      particular language tag designated for the
+                      operation", one of the examples of "defaulting
+                      behavior" described in :rfc:`RFC 4647, section
+                      3.4.1 <4647#section-3.4.1>`.
+
+:param default: (optional, ``None`` or any type, including a callable)
+
+                | At least one of `default_tag` or `default` must be
+                  supplied as an argument to the method, to define the
+                  defaulting behaviour.
+
+                | If `default_tag` is ``None``, then Lookup will next
+                  examine the `default` argument.
+
+                | If `default` is a callable, it will be called, and
+                  the callable's return value will be returned.
+
+                | If `default` is not a callable, the value itself will
+                  be returned.
+
+                | This parameter corresponds to the "defaulting
+                  behavior" described in :rfc:`RFC 4647, section 3.4.1
+                  <4647#section-3.4.1>`
+
+:return: (``str``, or any type)
+
+         | the return value from `default_tag` or `default`.
+\end{DoxyVerb}
+ \Hypertarget{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader_add9f8f93b97a63fdffe71164cc2ae392}\label{classwebob_1_1acceptparse_1_1__AcceptLanguageInvalidOrNoHeader_add9f8f93b97a63fdffe71164cc2ae392} 
+\index{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader@{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader}!quality@{quality}}
+\index{quality@{quality}!webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader@{webob.acceptparse.\_AcceptLanguageInvalidOrNoHeader}}
+\doxysubsubsection{\texorpdfstring{quality()}{quality()}}
+{\footnotesize\ttfamily webob.\+acceptparse.\+\_\+\+Accept\+Language\+Invalid\+Or\+No\+Header.\+quality (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{offer }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return quality value of given offer, or ``None`` if there is no match.
+
+This is the ``.quality()`` method for when the header is invalid or not
+found in the request, corresponding to
+:meth:`AcceptLanguageValidHeader.quality`.
+
+.. warning::
+
+   This is currently maintained for backward compatibility, and will be
+   deprecated in the future (see the documentation for
+   :meth:`AcceptLanguageValidHeader.quality`).
+
+:param offer: (``str``) language tag offer
+:return: (``float``) ``1.0``.
+
+When the ``Accept-Language`` header is invalid or not in the request,
+all offers are equally acceptable, so 1.0 is always returned.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/webob/\mbox{\hyperlink{acceptparse_8py}{acceptparse.\+py}}\end{DoxyCompactItemize}

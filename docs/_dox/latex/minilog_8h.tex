@@ -1,0 +1,796 @@
+\doxysection{/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/minilog.h File Reference}
+\hypertarget{minilog_8h}{}\label{minilog_8h}\index{/home/umar/Desktop/WorkShop/GLL/Minilog/minilog.h@{/home/umar/Desktop/WorkShop/GLL/Minilog/minilog.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$curses.\+h$>$}\newline
+{\ttfamily \#include $<$term.\+h$>$}\newline
+{\ttfamily \#include $<$fmtmsg.\+h$>$}\newline
+{\ttfamily \#include $<$sys/cdefs.\+h$>$}\newline
+{\ttfamily \#include $<$features.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct____minilog__extended}{\+\_\+\+\_\+minilog\+\_\+extended}}
+\item 
+struct \mbox{\hyperlink{struct____minilog__record__sync}{\+\_\+\+\_\+minilog\+\_\+record\+\_\+sync}}
+\item 
+struct \mbox{\hyperlink{struct____minilog__initial__param__t}{\+\_\+\+\_\+minilog\+\_\+initial\+\_\+param\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{minilog_8h_ac40d7139209bc29da98f6b73a9b5cb80}{\+\_\+\+\_\+need\+\_\+\+\_\+\+\_\+va\+\_\+list}}
+\item 
+\#define \mbox{\hyperlink{minilog_8h_aec26fcefc56c012d15e277da79fb9acf}{\+\_\+\+\_\+mlog}}
+\item 
+\#define \mbox{\hyperlink{minilog_8h_ab4981ad415fe19e7a31bbee96ac10c7c}{\+\_\+\+\_\+\+Nullable}}
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a08e12a3588fc796daa042efe6ad31fae}{\+\_\+\+\_\+\+Nonullable\+\_\+}}(\+\_\+\+\_\+sizereq)~\mbox{[}static \+\_\+\+\_\+sizereq\mbox{]}
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a8a85ce3fc15d4a422cccd9954f259c48}{\+\_\+\+\_\+\+Nonullable}}~\mbox{[}static  0x1\mbox{]}
+\item 
+\#define \mbox{\hyperlink{minilog_8h_ab42a43b6291cf51c6c3c85301160c078}{\+\_\+\+\_\+maybe\+\_\+unused}}
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a630c5071266e5d7888f7389b4f198e96}{\+\_\+\+\_\+dtor}}~/\texorpdfstring{$\ast$}{*}  \mbox{\hyperlink{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffacfe24a7b308a82835c8a9a9a89bc4ca2}{NOTHING}}  \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{minilog_8h_aa6e024a1b2d64521b21b24d7ad0b6191}{\+\_\+\+\_\+user\+\_\+override}}~/\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffacfe24a7b308a82835c8a9a9a89bc4ca2}{NOTHING}} \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{minilog_8h_ab1c1174de397f21760c78566760258dd}{nptr}}~NULL
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a87b5d4cdc60cfe796fcb08b00d16da04}{MINILOG\+\_\+\+INLINE\+\_\+\+BUFFER\+\_\+\+LIMIT}}~(8$<$$<$7)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a2fe5baa84f9c7198c4323aa616c19d6a}{MIBLMT}}~\mbox{\hyperlink{minilog_8h_a87b5d4cdc60cfe796fcb08b00d16da04}{MINILOG\+\_\+\+INLINE\+\_\+\+BUFFER\+\_\+\+LIMIT}}
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a261f0dc199ff26dc3abe0b097d5dcaf3}{\+\_\+\+\_\+msr}}~\mbox{[}\mbox{\hyperlink{minilog_8h_a87b5d4cdc60cfe796fcb08b00d16da04}{MINILOG\+\_\+\+INLINE\+\_\+\+BUFFER\+\_\+\+LIMIT}}\mbox{]}
+\item 
+\#define \mbox{\hyperlink{minilog_8h_af825a8046e39c81b15e306f2d8f5690c}{\+\_\+\+\_\+mlg\+\_\+ext\+\_\+init}}(\+\_\+\+\_\+v\+\_\+identifier)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a2d1302c4376ceb9d89ce009a9137add4}{\+\_\+\+\_\+mlg\+\_\+isextended}}(\+\_\+\+\_\+mlg\+\_\+ds)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a27ae9a01602358bafb4552032b5ae880}{MINILOG\+\_\+\+EXTSYMB}}~0x24 /\texorpdfstring{$\ast$}{*}\$\texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{minilog_8h_aed593f562fce4c4c1905e80abd39d6ed}{MESG}}~MESG
+\item 
+\#define \mbox{\hyperlink{minilog_8h_abeb73dfe8d6e8c280ebce28d84190c7e}{ACTION}}~ACTION
+\item 
+\#define \mbox{\hyperlink{minilog_8h_afc3d101f633a076cc1ca84b85b6224b2}{TAG}}~TAG
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a4cfe9ea1bf525c8db832194c5d31a547}{MLOG}}(\+\_\+\+\_\+severity\+\_\+level,  \+\_\+\+\_\+minext)~  \mbox{\hyperlink{minilog_8c_abe67e541461452bec85588fcd36f4b18}{minilog\+\_\+register}}(\+\_\+\+\_\+severity\+\_\+level, \+\_\+\+\_\+minext)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a8c1a005ee493a6a3b8ee1ab7fe017927}{\+\_\+\+\_\+mlog\+\_\+interupt}}~0x1 , putchar
+\item 
+\#define \mbox{\hyperlink{minilog_8h_ad7683279acf994b5ac75e4ced9813cc1}{mlog\+\_\+exec}}(\+\_\+\+\_\+itermcap)~tputs(\+\_\+\+\_\+itermcap , \mbox{\hyperlink{minilog_8h_a8c1a005ee493a6a3b8ee1ab7fe017927}{\+\_\+\+\_\+mlog\+\_\+interupt}})
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a9bb0bfe93be60f5f3edf57a233135976}{mlog\+\_\+cusror}}(\+\_\+\+\_\+x,  \+\_\+\+\_\+y)~\mbox{\hyperlink{minilog_8h_ad7683279acf994b5ac75e4ced9813cc1}{mlog\+\_\+exec}}(tgoto(cursor\+\_\+address , \+\_\+\+\_\+x , \+\_\+\+\_\+y))
+\begin{DoxyCompactList}\small\item\em NOTE \+: For Cursor movement. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{minilog_8h_a5a9526ea6cd10cf56652a8db8249950a}{CAPCODE}}(\+\_\+\+\_\+code)~  ((TERMTYPE\texorpdfstring{$\ast$}{*})(cur\+\_\+term))-\/$>$Strings\mbox{[}\+\_\+\+\_\+code\mbox{]}
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a54e4addadb4b0b35aa759fd1cc0b9d5a}{SETAF}}~\mbox{\hyperlink{minilog_8h_a5a9526ea6cd10cf56652a8db8249950a}{CAPCODE}}(0x167)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a204b59cfa2bdae74c2de680d439eb05e}{RSET}}~\mbox{\hyperlink{minilog_8h_a5a9526ea6cd10cf56652a8db8249950a}{CAPCODE}}(0x27)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_af1bc6423a13af8afb8aed0b54245a059}{CADDR}}~\mbox{\hyperlink{minilog_8h_a5a9526ea6cd10cf56652a8db8249950a}{CAPCODE}}(0xa)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a38eec52a7dccb94ff563e30eda32c891}{BLINK}}~\mbox{\hyperlink{minilog_8h_a5a9526ea6cd10cf56652a8db8249950a}{CAPCODE}}(0x1a)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a26cdbb1a00213c810caccf21cd33a631}{BOLD}}~\mbox{\hyperlink{minilog_8h_a5a9526ea6cd10cf56652a8db8249950a}{CAPCODE}}(0x1b)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_ae73d14e784439c845febb81e3cbe2375}{\+\_\+\+\_\+restore}}~\mbox{\hyperlink{minilog_8h_ad7683279acf994b5ac75e4ced9813cc1}{mlog\+\_\+exec}}(\mbox{\hyperlink{ftpfm__logprint_8h_a204b59cfa2bdae74c2de680d439eb05e}{RSET}})
+\item 
+\#define \mbox{\hyperlink{minilog_8h_abaab315ba8b06988b1073120fc351b22}{tc\+\_\+color\+\_\+attr}}(\+\_\+\+\_\+color\+\_\+attribute)~\mbox{\hyperlink{minilog_8h_ad7683279acf994b5ac75e4ced9813cc1}{mlog\+\_\+exec}}(tiparm(\mbox{\hyperlink{ftpfm__logprint_8h_a54e4addadb4b0b35aa759fd1cc0b9d5a}{SETAF}}, \+\_\+\+\_\+color\+\_\+attribute))
+\item 
+\#define \mbox{\hyperlink{minilog_8h_aa63ed4bd8810c68a1fd0de38335d1284}{LP\+\_\+\+NOTHING}}
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a51c5cbdb97aefedc10d295c1b4fd404d}{LP\+\_\+\+INFO}}~\mbox{\hyperlink{ftpfm__logprint_8h_abaab315ba8b06988b1073120fc351b22}{tc\+\_\+color\+\_\+attr}}(COLOR\+\_\+\+CYAN)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a98812bf1998f5041efe560331f77dbed}{LP\+\_\+\+WARN}}~\mbox{\hyperlink{ftpfm__logprint_8h_abaab315ba8b06988b1073120fc351b22}{tc\+\_\+color\+\_\+attr}}(COLOR\+\_\+\+YELLOW)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a8f66146bf09e2f278520c0ce55aa0749}{LP\+\_\+\+ERROR}}~\mbox{\hyperlink{ftpfm__logprint_8h_abaab315ba8b06988b1073120fc351b22}{tc\+\_\+color\+\_\+attr}}(COLOR\+\_\+\+RED)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_ae2fd4305e27fbe40ffca13e28d0e634e}{LP\+\_\+\+ALERT}}~\mbox{\hyperlink{minilog_8h_ad7683279acf994b5ac75e4ced9813cc1}{mlog\+\_\+exec}}(\mbox{\hyperlink{minilog_8h_a38eec52a7dccb94ff563e30eda32c891}{BLINK}}); \mbox{\hyperlink{ftpfm__logprint_8h_abaab315ba8b06988b1073120fc351b22}{tc\+\_\+color\+\_\+attr}}(COLOR\+\_\+\+MAGENTA)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a524ef4911e527e9aeb04dd1acb57f84a}{MM\+\_\+\+ALERT}}~5
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a052e5b2bfdd6d46ec6d114aacb27124f}{LP\+\_\+\+FATALITY}}~\mbox{\hyperlink{minilog_8h_ad7683279acf994b5ac75e4ced9813cc1}{mlog\+\_\+exec}}(\mbox{\hyperlink{minilog_8h_a26cdbb1a00213c810caccf21cd33a631}{BOLD}}); \mbox{\hyperlink{ftpfm__logprint_8h_a8f66146bf09e2f278520c0ce55aa0749}{LP\+\_\+\+ERROR}}
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a87bde9b9ff5783da30800abb03b542dc}{\+\_\+\+\_\+get\+\_\+lp\+\_\+level}}(\+\_\+\+\_\+lp\+\_\+level)~LP\+\_\+\#\#\+\_\+\+\_\+lp\+\_\+level
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a2aecef6d7b3690da073f87b2e7ea46f2}{\+\_\+\+\_\+\+LP\+\_\+\+GENERIC}}(\+\_\+\+\_\+lvl, ...)~\mbox{\hyperlink{minilog_8c_a535d4148dac9dace5672a16f415be95a}{minilog}}(\+\_\+\+\_\+lvl ,\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_ac039567033dba8509501b64e55ec2de3}{LOGINFO}}(...)~\mbox{\hyperlink{ftpfm__logprint_8h_a2aecef6d7b3690da073f87b2e7ea46f2}{\+\_\+\+\_\+\+LP\+\_\+\+GENERIC}}(\mbox{\hyperlink{ftpfm__logprint_8h_abe38b4385b5ca5bc5e7eeb7b243311ffa748005382152808a72b1a9177d9dc806}{INFO}}, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a4ee40d887237a6594d0d643f6c6b9fa3}{LOGWARN}}(...)~\mbox{\hyperlink{ftpfm__logprint_8h_a2aecef6d7b3690da073f87b2e7ea46f2}{\+\_\+\+\_\+\+LP\+\_\+\+GENERIC}}(\mbox{\hyperlink{ftpfm__logprint_8h_abe38b4385b5ca5bc5e7eeb7b243311ffa74dac7ac23d5b810db6d4067f14e8676}{WARN}}, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a144d39e9de6b315c05100b4d34a2c4c3}{LOGERR}}(...)~\mbox{\hyperlink{ftpfm__logprint_8h_a2aecef6d7b3690da073f87b2e7ea46f2}{\+\_\+\+\_\+\+LP\+\_\+\+GENERIC}}(ERROR,\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_aeb7531af19cdbcac71fdbb1e4f1642ad}{LOGARLT}}(...)~\mbox{\hyperlink{ftpfm__logprint_8h_a2aecef6d7b3690da073f87b2e7ea46f2}{\+\_\+\+\_\+\+LP\+\_\+\+GENERIC}}(\mbox{\hyperlink{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffa45e0bb0f520fb3851c7d6cc5c5ddd6f9}{ALERT}},\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a6df843e6680404230f490359458ff265}{LOGFATAL}}(...)~\mbox{\hyperlink{ftpfm__logprint_8h_a2aecef6d7b3690da073f87b2e7ea46f2}{\+\_\+\+\_\+\+LP\+\_\+\+GENERIC}}(FATALITY,\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a086d9bf7c6d1cded3ad8e54751f379b4}{LOGNTH}}(...)~\mbox{\hyperlink{ftpfm__logprint_8h_a2aecef6d7b3690da073f87b2e7ea46f2}{\+\_\+\+\_\+\+LP\+\_\+\+GENERIC}}(\mbox{\hyperlink{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffacfe24a7b308a82835c8a9a9a89bc4ca2}{NOTHING}} ,\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_afb8d9d5b560c7c17181409c6a43b6c21}{INIT}}(...)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_ac03864312505ba7432a18ba416ff8fe0}{CIN}}~\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{minilog_8c_a42000a624228678f59bce88e4f192ad7}{channels}}+01)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a8c54b10b84183429bcbcbc82c92fcca9}{COUT}}~\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{minilog_8c_a42000a624228678f59bce88e4f192ad7}{channels}})
+\item 
+\#define \mbox{\hyperlink{minilog_8h_ae660719f797ee1b95530c987516bdd5f}{FDIN}}(\+\_\+\+\_\+fds)~(((\+\_\+\+\_\+fds) $>$$>$ 8)  \& 0xff)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a2dfbe95d5ac2d8e1b727d7ee70cd93f5}{FDOUT}}(\+\_\+\+\_\+fds)~((\+\_\+\+\_\+fds) \& 0xff)
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a636381e1f5876a126dc10dbd6e8a52fb}{MINILOG\+\_\+\+COM\+\_\+\+PIPE}}~PIPE
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a0835b78af1216ab83916da8f8008c8bb}{MINILOG\+\_\+\+COM\+\_\+\+SOCKET}}~SOCKET
+\begin{DoxyCompactList}\small\item\em NOTE\+: This part is not implemented yet but stay in draft.\+W\textquotesingle{}ll be available in the next version. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{minilog_8h_a778e7a71ac54abf7db63737b35b6d053}{DEFAULT\+\_\+\+TARGET\+\_\+\+SIGNALS}}~3,SIGINT,SIGCHLD,SIGTERM
+\item 
+\#define \mbox{\hyperlink{minilog_8h_a74a41ab83b787a66352a817f37ea531f}{MLOG\+\_\+\+DEFSIGCATCH}}(\+\_\+\+\_\+nsigs, ...)~  \mbox{\hyperlink{minilog_8c_a63ef106978387f7f285e2f265f40f6be}{sigcatcher}}(\+\_\+\+\_\+nsigs , \#\#\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \mbox{\hyperlink{minilog_8h_ae3ccadc85d0e3905f257e86d53ca6382}{bitfs\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct____minilog__record__sync}{\+\_\+\+\_\+minilog\+\_\+record\+\_\+sync}} \mbox{\hyperlink{minilog_8h_ab11ce5ff116f450c99f976d5652db6cb}{mr\+\_\+sync}}
+\begin{DoxyCompactList}\small\item\em Data structure that handle the target logfile specified by the user here is some information you should awareof such as the logfilename and the communication type. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct____minilog__initial__param__t}{\+\_\+\+\_\+minilog\+\_\+initial\+\_\+param\+\_\+t}} \mbox{\hyperlink{minilog_8h_a3f9729ef6510be2fbd4e37da70d8f232}{mparm}}
+\begin{DoxyCompactList}\small\item\em Wrap\textquotesingle{}s up some information and allow user to determine how the logfile or stream syncronisation should operate and more. \end{DoxyCompactList}\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{minilog_8h_af2fec8fd922076c8220c64c812aa6e24}{multi\+\_\+sigcatch}}) (int,...)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{minilog_8h_a61dadd085c1777f559549e05962b2c9eadfb6d80c156462709c9e69f15c657d23}{MESG}}
+, \mbox{\hyperlink{minilog_8h_a61dadd085c1777f559549e05962b2c9eadfb6d80c156462709c9e69f15c657d23}{MESG}}
+, \mbox{\hyperlink{minilog_8h_a61dadd085c1777f559549e05962b2c9eae1bb1460cb779888412e634e983be161}{ACTION}}
+, \mbox{\hyperlink{minilog_8h_a61dadd085c1777f559549e05962b2c9eae1bb1460cb779888412e634e983be161}{ACTION}}
+ \}
+\item 
+enum \mbox{\hyperlink{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ff}{\+\_\+\+\_\+log\+\_\+level}} \{ \newline
+\mbox{\hyperlink{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffacfe24a7b308a82835c8a9a9a89bc4ca2}{NOTHING}}
+, \mbox{\hyperlink{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffa748005382152808a72b1a9177d9dc806}{INFO}}
+, \mbox{\hyperlink{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffa74dac7ac23d5b810db6d4067f14e8676}{WARN}}
+, \mbox{\hyperlink{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffa2fd6f336d08340583bd620a7f5694c90}{ERROR}}
+, \newline
+\mbox{\hyperlink{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffa45e0bb0f520fb3851c7d6cc5c5ddd6f9}{ALERT}}
+ \}
+\item 
+enum \{ \mbox{\hyperlink{minilog_8h_a726ca809ffd3d67ab4b8476646f26635a31b4c335905dd654e7254b092945a877}{ALRT}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0)
+, \mbox{\hyperlink{minilog_8h_a726ca809ffd3d67ab4b8476646f26635a2672bd8ead3342662c14eab5bba873f9}{FATL}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1)
+, \mbox{\hyperlink{minilog_8h_a726ca809ffd3d67ab4b8476646f26635a267f109614471614af2172fa49c8e674}{CRTC}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2)
+ \}
+\item 
+enum \mbox{\hyperlink{minilog_8h_aad5154f41b5967089f991ab6c7df3002}{\+\_\+\+\_\+minilog\+\_\+record\+\_\+comtype}} \{ \mbox{\hyperlink{minilog_8h_aad5154f41b5967089f991ab6c7df3002a9bc832fa28809fb974f6ce5bb0cc7117}{PIPE}} = 0xC
+ \}
+\begin{DoxyCompactList}\small\item\em Representing the stream communication should be handled by using Named Pipe or using Local Socket (Unix Domain Name) ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{minilog_8h_aec26fcefc56c012d15e277da79fb9acf}{\+\_\+\+\_\+mlog}} int \mbox{\hyperlink{minilog_8h_ac7201456ecfde1e71e7ab1e53cee2497}{minilog\+\_\+setup}} (struct \mbox{\hyperlink{struct____minilog__initial__param__t}{\+\_\+\+\_\+minilog\+\_\+initial\+\_\+param\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{minilog_8h_ab4981ad415fe19e7a31bbee96ac10c7c}{\+\_\+\+\_\+\+Nullable}} \+\_\+\+\_\+initial\+\_\+parameters)
+\item 
+void \mbox{\hyperlink{minilog_8h_ab971bf528fd4e4ef816a232c65f11fff}{minilog\+\_\+cleanup}} (void) \mbox{\hyperlink{minilog_8h_a630c5071266e5d7888f7389b4f198e96}{\+\_\+\+\_\+dtor}}
+\begin{DoxyCompactList}\small\item\em clean all allocated memory when the application turned off (exit or brutal exit) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{minilog_8h_a472c64ae0981d3baaa091443929a4a58}{minilog\+\_\+configure}} (struct \mbox{\hyperlink{struct____minilog__initial__param__t}{\+\_\+\+\_\+minilog\+\_\+initial\+\_\+param\+\_\+t}} \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+restrict\+\_\+\+\_\+ \+\_\+\+\_\+parm)
+\item 
+int \mbox{\hyperlink{minilog_8h_ac313935f11289fd1183496ad7056d20c}{minilog\+\_\+create\+\_\+record\+\_\+stream\+\_\+pipeline}} (\mbox{\hyperlink{minilog_8h_ab11ce5ff116f450c99f976d5652db6cb}{mr\+\_\+sync}} \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+restrict\+\_\+\+\_\+ \+\_\+\+\_\+source)
+\item 
+int \mbox{\hyperlink{minilog_8h_af8ff7e9043a0868ec2fea72329002655}{minilog\+\_\+watchlog}} (\mbox{\hyperlink{minilog_8h_ae3ccadc85d0e3905f257e86d53ca6382}{bitfs\+\_\+t}} \+\_\+\+\_\+bitfds)
+\begin{DoxyCompactList}\small\item\em create the subprocess stream but register the signal before \end{DoxyCompactList}\item 
+\mbox{\hyperlink{minilog_8h_aec26fcefc56c012d15e277da79fb9acf}{\+\_\+\+\_\+mlog}} void \mbox{\hyperlink{minilog_8h_aa6e024a1b2d64521b21b24d7ad0b6191}{\+\_\+\+\_\+user\+\_\+override}} \mbox{\hyperlink{minilog_8h_a582aeeeee8c38e564a2b5290b44f8dc3}{sigcatcher}} (const int \+\_\+\+\_\+nsigs,...)
+\item 
+\mbox{\hyperlink{minilog_8h_aec26fcefc56c012d15e277da79fb9acf}{\+\_\+\+\_\+mlog}} void \mbox{\hyperlink{minilog_8h_aa6e024a1b2d64521b21b24d7ad0b6191}{\+\_\+\+\_\+user\+\_\+override}} \mbox{\hyperlink{minilog_8h_a3a0de560613a1061154960c03781fc94}{minilog\+\_\+sighdl}} (int \+\_\+\+\_\+target\+\_\+signal)
+\begin{DoxyCompactList}\small\item\em handle subprocess exiting signal \end{DoxyCompactList}\item 
+\mbox{\hyperlink{minilog_8h_aec26fcefc56c012d15e277da79fb9acf}{\+\_\+\+\_\+mlog}} int \mbox{\hyperlink{minilog_8h_a36c62efdf753bdeaafebc7be36203566}{minilog}} (int \mbox{\hyperlink{ftpfm__logprint_8h_abe38b4385b5ca5bc5e7eeb7b243311ff}{\+\_\+\+\_\+log\+\_\+level}}, const char \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+restrict\+\_\+\+\_\+ \+\_\+\+\_\+fmtstr,...) \mbox{\hyperlink{baseconv_2bcvrepl_8h_acc8ab5a1d9918513e22eeb8a80215c7c}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}((format(printf
+\item 
+void \mbox{\hyperlink{minilog_8h_aff2ca5ba34238871518b1224da4125b1}{minilog\+\_\+exit}} (void) \mbox{\hyperlink{baseconv_2bcvrepl_8h_acc8ab5a1d9918513e22eeb8a80215c7c}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}((noreturn))
+\begin{DoxyCompactList}\small\item\em basic exit function ~\newline
+ \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{minilog_8h_aa513823d2b66f8d24995339064de4c00}{minilog\+\_\+register}} (int \+\_\+\+\_\+severity, char \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+restrict\+\_\+\+\_\+ \+\_\+\+\_\+buffer) \mbox{\hyperlink{minilog_8h_aa6e024a1b2d64521b21b24d7ad0b6191}{\+\_\+\+\_\+user\+\_\+override}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{minilog_8h_afa66490651de6bbb55196607822d0e27}{minilog\+\_\+basname}}
+\item 
+int \mbox{\hyperlink{minilog_8h_acd07b2f6fea28b918e80b29608ce4d46}{fdstream}}
+\item 
+int \mbox{\hyperlink{minilog_8h_a42000a624228678f59bce88e4f192ad7}{channels}} \mbox{[}2\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{minilog_8h_a630c5071266e5d7888f7389b4f198e96}\label{minilog_8h_a630c5071266e5d7888f7389b4f198e96} 
+\index{minilog.h@{minilog.h}!\_\_dtor@{\_\_dtor}}
+\index{\_\_dtor@{\_\_dtor}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{\_\_dtor}{\_\_dtor}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+dtor~/\texorpdfstring{$\ast$}{*}  \mbox{\hyperlink{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffacfe24a7b308a82835c8a9a9a89bc4ca2}{NOTHING}}  \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{minilog_8h_a87bde9b9ff5783da30800abb03b542dc}\label{minilog_8h_a87bde9b9ff5783da30800abb03b542dc} 
+\index{minilog.h@{minilog.h}!\_\_get\_lp\_level@{\_\_get\_lp\_level}}
+\index{\_\_get\_lp\_level@{\_\_get\_lp\_level}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{\_\_get\_lp\_level}{\_\_get\_lp\_level}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+get\+\_\+lp\+\_\+level(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+lp\+\_\+level }\end{DoxyParamCaption})~LP\+\_\+\#\#\+\_\+\+\_\+lp\+\_\+level}
+
+\Hypertarget{minilog_8h_a2aecef6d7b3690da073f87b2e7ea46f2}\label{minilog_8h_a2aecef6d7b3690da073f87b2e7ea46f2} 
+\index{minilog.h@{minilog.h}!\_\_LP\_GENERIC@{\_\_LP\_GENERIC}}
+\index{\_\_LP\_GENERIC@{\_\_LP\_GENERIC}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{\_\_LP\_GENERIC}{\_\_LP\_GENERIC}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+LP\+\_\+\+GENERIC(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+lvl,  }\item[{}]{... }\end{DoxyParamCaption})~\mbox{\hyperlink{minilog_8c_a535d4148dac9dace5672a16f415be95a}{minilog}}(\+\_\+\+\_\+lvl ,\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)}
+
+\Hypertarget{minilog_8h_ab42a43b6291cf51c6c3c85301160c078}\label{minilog_8h_ab42a43b6291cf51c6c3c85301160c078} 
+\index{minilog.h@{minilog.h}!\_\_maybe\_unused@{\_\_maybe\_unused}}
+\index{\_\_maybe\_unused@{\_\_maybe\_unused}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{\_\_maybe\_unused}{\_\_maybe\_unused}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+maybe\+\_\+unused}
+
+\Hypertarget{minilog_8h_af825a8046e39c81b15e306f2d8f5690c}\label{minilog_8h_af825a8046e39c81b15e306f2d8f5690c} 
+\index{minilog.h@{minilog.h}!\_\_mlg\_ext\_init@{\_\_mlg\_ext\_init}}
+\index{\_\_mlg\_ext\_init@{\_\_mlg\_ext\_init}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{\_\_mlg\_ext\_init}{\_\_mlg\_ext\_init}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+mlg\+\_\+ext\+\_\+init(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+v\+\_\+identifier }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct____minilog__extended}{\_\_minilog\_extended}}\ \ \_\_v\_identifier;\(\backslash\)}
+\DoxyCodeLine{\ \ memset(\&\_\_v\_identifier\ ,\ \ 0,\ \textcolor{keyword}{sizeof}(\_\_v\_identifier))}
+
+\end{DoxyCode}
+\Hypertarget{minilog_8h_a2d1302c4376ceb9d89ce009a9137add4}\label{minilog_8h_a2d1302c4376ceb9d89ce009a9137add4} 
+\index{minilog.h@{minilog.h}!\_\_mlg\_isextended@{\_\_mlg\_isextended}}
+\index{\_\_mlg\_isextended@{\_\_mlg\_isextended}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{\_\_mlg\_isextended}{\_\_mlg\_isextended}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+mlg\+\_\+isextended(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+mlg\+\_\+ds }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ ((*(*\_\_mlg\_ds).action\ !=\ \ 0)\ ?\ (*\_\_mlg\_ds).action:\ \ 0),\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ ((*(*\_\_mlg\_ds).tag\ !=\ \ 0)\ ?\ (*\_\_mlg\_ds).tag:\ \ 0)}
+
+\end{DoxyCode}
+\Hypertarget{minilog_8h_aec26fcefc56c012d15e277da79fb9acf}\label{minilog_8h_aec26fcefc56c012d15e277da79fb9acf} 
+\index{minilog.h@{minilog.h}!\_\_mlog@{\_\_mlog}}
+\index{\_\_mlog@{\_\_mlog}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{\_\_mlog}{\_\_mlog}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+mlog}
+
+\Hypertarget{minilog_8h_a8c1a005ee493a6a3b8ee1ab7fe017927}\label{minilog_8h_a8c1a005ee493a6a3b8ee1ab7fe017927} 
+\index{minilog.h@{minilog.h}!\_\_mlog\_interupt@{\_\_mlog\_interupt}}
+\index{\_\_mlog\_interupt@{\_\_mlog\_interupt}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{\_\_mlog\_interupt}{\_\_mlog\_interupt}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+mlog\+\_\+interupt~0x1 , putchar}
+
+\Hypertarget{minilog_8h_a261f0dc199ff26dc3abe0b097d5dcaf3}\label{minilog_8h_a261f0dc199ff26dc3abe0b097d5dcaf3} 
+\index{minilog.h@{minilog.h}!\_\_msr@{\_\_msr}}
+\index{\_\_msr@{\_\_msr}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{\_\_msr}{\_\_msr}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+msr~\mbox{[}\mbox{\hyperlink{minilog_8h_a87b5d4cdc60cfe796fcb08b00d16da04}{MINILOG\+\_\+\+INLINE\+\_\+\+BUFFER\+\_\+\+LIMIT}}\mbox{]}}
+
+\Hypertarget{minilog_8h_ac40d7139209bc29da98f6b73a9b5cb80}\label{minilog_8h_ac40d7139209bc29da98f6b73a9b5cb80} 
+\index{minilog.h@{minilog.h}!\_\_need\_\_\_va\_list@{\_\_need\_\_\_va\_list}}
+\index{\_\_need\_\_\_va\_list@{\_\_need\_\_\_va\_list}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{\_\_need\_\_\_va\_list}{\_\_need\_\_\_va\_list}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+need\+\_\+\+\_\+\+\_\+va\+\_\+list}
+
+\Hypertarget{minilog_8h_a8a85ce3fc15d4a422cccd9954f259c48}\label{minilog_8h_a8a85ce3fc15d4a422cccd9954f259c48} 
+\index{minilog.h@{minilog.h}!\_\_Nonullable@{\_\_Nonullable}}
+\index{\_\_Nonullable@{\_\_Nonullable}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{\_\_Nonullable}{\_\_Nonullable}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+Nonullable~\mbox{[}static  0x1\mbox{]}}
+
+\Hypertarget{minilog_8h_a08e12a3588fc796daa042efe6ad31fae}\label{minilog_8h_a08e12a3588fc796daa042efe6ad31fae} 
+\index{minilog.h@{minilog.h}!\_\_Nonullable\_@{\_\_Nonullable\_}}
+\index{\_\_Nonullable\_@{\_\_Nonullable\_}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{\_\_Nonullable\_}{\_\_Nonullable\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+Nonullable\+\_\+(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+sizereq }\end{DoxyParamCaption})~\mbox{[}static \+\_\+\+\_\+sizereq\mbox{]}}
+
+\Hypertarget{minilog_8h_ab4981ad415fe19e7a31bbee96ac10c7c}\label{minilog_8h_ab4981ad415fe19e7a31bbee96ac10c7c} 
+\index{minilog.h@{minilog.h}!\_\_Nullable@{\_\_Nullable}}
+\index{\_\_Nullable@{\_\_Nullable}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{\_\_Nullable}{\_\_Nullable}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+Nullable}
+
+\Hypertarget{minilog_8h_ae73d14e784439c845febb81e3cbe2375}\label{minilog_8h_ae73d14e784439c845febb81e3cbe2375} 
+\index{minilog.h@{minilog.h}!\_\_restore@{\_\_restore}}
+\index{\_\_restore@{\_\_restore}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{\_\_restore}{\_\_restore}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+restore~\mbox{\hyperlink{minilog_8h_ad7683279acf994b5ac75e4ced9813cc1}{mlog\+\_\+exec}}(\mbox{\hyperlink{ftpfm__logprint_8h_a204b59cfa2bdae74c2de680d439eb05e}{RSET}})}
+
+\Hypertarget{minilog_8h_aa6e024a1b2d64521b21b24d7ad0b6191}\label{minilog_8h_aa6e024a1b2d64521b21b24d7ad0b6191} 
+\index{minilog.h@{minilog.h}!\_\_user\_override@{\_\_user\_override}}
+\index{\_\_user\_override@{\_\_user\_override}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{\_\_user\_override}{\_\_user\_override}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+user\+\_\+override~/\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffacfe24a7b308a82835c8a9a9a89bc4ca2}{NOTHING}} \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{minilog_8h_abeb73dfe8d6e8c280ebce28d84190c7e}\label{minilog_8h_abeb73dfe8d6e8c280ebce28d84190c7e} 
+\index{minilog.h@{minilog.h}!ACTION@{ACTION}}
+\index{ACTION@{ACTION}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{ACTION}{ACTION}}
+{\footnotesize\ttfamily \#define ACTION~ACTION}
+
+\Hypertarget{minilog_8h_a38eec52a7dccb94ff563e30eda32c891}\label{minilog_8h_a38eec52a7dccb94ff563e30eda32c891} 
+\index{minilog.h@{minilog.h}!BLINK@{BLINK}}
+\index{BLINK@{BLINK}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{BLINK}{BLINK}}
+{\footnotesize\ttfamily \#define BLINK~\mbox{\hyperlink{minilog_8h_a5a9526ea6cd10cf56652a8db8249950a}{CAPCODE}}(0x1a)}
+
+\Hypertarget{minilog_8h_a26cdbb1a00213c810caccf21cd33a631}\label{minilog_8h_a26cdbb1a00213c810caccf21cd33a631} 
+\index{minilog.h@{minilog.h}!BOLD@{BOLD}}
+\index{BOLD@{BOLD}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{BOLD}{BOLD}}
+{\footnotesize\ttfamily \#define BOLD~\mbox{\hyperlink{minilog_8h_a5a9526ea6cd10cf56652a8db8249950a}{CAPCODE}}(0x1b)}
+
+\Hypertarget{minilog_8h_af1bc6423a13af8afb8aed0b54245a059}\label{minilog_8h_af1bc6423a13af8afb8aed0b54245a059} 
+\index{minilog.h@{minilog.h}!CADDR@{CADDR}}
+\index{CADDR@{CADDR}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{CADDR}{CADDR}}
+{\footnotesize\ttfamily \#define CADDR~\mbox{\hyperlink{minilog_8h_a5a9526ea6cd10cf56652a8db8249950a}{CAPCODE}}(0xa)}
+
+\Hypertarget{minilog_8h_a5a9526ea6cd10cf56652a8db8249950a}\label{minilog_8h_a5a9526ea6cd10cf56652a8db8249950a} 
+\index{minilog.h@{minilog.h}!CAPCODE@{CAPCODE}}
+\index{CAPCODE@{CAPCODE}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{CAPCODE}{CAPCODE}}
+{\footnotesize\ttfamily \#define CAPCODE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+code }\end{DoxyParamCaption})~  ((TERMTYPE\texorpdfstring{$\ast$}{*})(cur\+\_\+term))-\/$>$Strings\mbox{[}\+\_\+\+\_\+code\mbox{]}}
+
+\Hypertarget{minilog_8h_ac03864312505ba7432a18ba416ff8fe0}\label{minilog_8h_ac03864312505ba7432a18ba416ff8fe0} 
+\index{minilog.h@{minilog.h}!CIN@{CIN}}
+\index{CIN@{CIN}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{CIN}{CIN}}
+{\footnotesize\ttfamily \#define CIN~\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{minilog_8c_a42000a624228678f59bce88e4f192ad7}{channels}}+01)}
+
+\Hypertarget{minilog_8h_a8c54b10b84183429bcbcbc82c92fcca9}\label{minilog_8h_a8c54b10b84183429bcbcbc82c92fcca9} 
+\index{minilog.h@{minilog.h}!COUT@{COUT}}
+\index{COUT@{COUT}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{COUT}{COUT}}
+{\footnotesize\ttfamily \#define COUT~\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{minilog_8c_a42000a624228678f59bce88e4f192ad7}{channels}})}
+
+\Hypertarget{minilog_8h_a778e7a71ac54abf7db63737b35b6d053}\label{minilog_8h_a778e7a71ac54abf7db63737b35b6d053} 
+\index{minilog.h@{minilog.h}!DEFAULT\_TARGET\_SIGNALS@{DEFAULT\_TARGET\_SIGNALS}}
+\index{DEFAULT\_TARGET\_SIGNALS@{DEFAULT\_TARGET\_SIGNALS}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_TARGET\_SIGNALS}{DEFAULT\_TARGET\_SIGNALS}}
+{\footnotesize\ttfamily \#define DEFAULT\+\_\+\+TARGET\+\_\+\+SIGNALS~3,SIGINT,SIGCHLD,SIGTERM}
+
+\Hypertarget{minilog_8h_ae660719f797ee1b95530c987516bdd5f}\label{minilog_8h_ae660719f797ee1b95530c987516bdd5f} 
+\index{minilog.h@{minilog.h}!FDIN@{FDIN}}
+\index{FDIN@{FDIN}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{FDIN}{FDIN}}
+{\footnotesize\ttfamily \#define FDIN(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+fds }\end{DoxyParamCaption})~(((\+\_\+\+\_\+fds) $>$$>$ 8)  \& 0xff)}
+
+\Hypertarget{minilog_8h_a2dfbe95d5ac2d8e1b727d7ee70cd93f5}\label{minilog_8h_a2dfbe95d5ac2d8e1b727d7ee70cd93f5} 
+\index{minilog.h@{minilog.h}!FDOUT@{FDOUT}}
+\index{FDOUT@{FDOUT}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{FDOUT}{FDOUT}}
+{\footnotesize\ttfamily \#define FDOUT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+fds }\end{DoxyParamCaption})~((\+\_\+\+\_\+fds) \& 0xff)}
+
+\Hypertarget{minilog_8h_afb8d9d5b560c7c17181409c6a43b6c21}\label{minilog_8h_afb8d9d5b560c7c17181409c6a43b6c21} 
+\index{minilog.h@{minilog.h}!INIT@{INIT}}
+\index{INIT@{INIT}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{INIT}{INIT}}
+{\footnotesize\ttfamily \#define INIT(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \&(\textcolor{keyword}{struct\ \ }\mbox{\hyperlink{struct____minilog__initial__param__t}{\_\_minilog\_initial\_param\_t}})\(\backslash\)}
+\DoxyCodeLine{\ \ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \_\_VA\_ARGS\_\_\(\backslash\)}
+\DoxyCodeLine{\ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{minilog_8h_aeb7531af19cdbcac71fdbb1e4f1642ad}\label{minilog_8h_aeb7531af19cdbcac71fdbb1e4f1642ad} 
+\index{minilog.h@{minilog.h}!LOGARLT@{LOGARLT}}
+\index{LOGARLT@{LOGARLT}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{LOGARLT}{LOGARLT}}
+{\footnotesize\ttfamily \#define LOGARLT(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~\mbox{\hyperlink{ftpfm__logprint_8h_a2aecef6d7b3690da073f87b2e7ea46f2}{\+\_\+\+\_\+\+LP\+\_\+\+GENERIC}}(\mbox{\hyperlink{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffa45e0bb0f520fb3851c7d6cc5c5ddd6f9}{ALERT}},\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)}
+
+\Hypertarget{minilog_8h_a144d39e9de6b315c05100b4d34a2c4c3}\label{minilog_8h_a144d39e9de6b315c05100b4d34a2c4c3} 
+\index{minilog.h@{minilog.h}!LOGERR@{LOGERR}}
+\index{LOGERR@{LOGERR}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{LOGERR}{LOGERR}}
+{\footnotesize\ttfamily \#define LOGERR(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~\mbox{\hyperlink{ftpfm__logprint_8h_a2aecef6d7b3690da073f87b2e7ea46f2}{\+\_\+\+\_\+\+LP\+\_\+\+GENERIC}}(ERROR,\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)}
+
+\Hypertarget{minilog_8h_a6df843e6680404230f490359458ff265}\label{minilog_8h_a6df843e6680404230f490359458ff265} 
+\index{minilog.h@{minilog.h}!LOGFATAL@{LOGFATAL}}
+\index{LOGFATAL@{LOGFATAL}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{LOGFATAL}{LOGFATAL}}
+{\footnotesize\ttfamily \#define LOGFATAL(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~\mbox{\hyperlink{ftpfm__logprint_8h_a2aecef6d7b3690da073f87b2e7ea46f2}{\+\_\+\+\_\+\+LP\+\_\+\+GENERIC}}(FATALITY,\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)}
+
+\Hypertarget{minilog_8h_ac039567033dba8509501b64e55ec2de3}\label{minilog_8h_ac039567033dba8509501b64e55ec2de3} 
+\index{minilog.h@{minilog.h}!LOGINFO@{LOGINFO}}
+\index{LOGINFO@{LOGINFO}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{LOGINFO}{LOGINFO}}
+{\footnotesize\ttfamily \#define LOGINFO(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~\mbox{\hyperlink{ftpfm__logprint_8h_a2aecef6d7b3690da073f87b2e7ea46f2}{\+\_\+\+\_\+\+LP\+\_\+\+GENERIC}}(\mbox{\hyperlink{ftpfm__logprint_8h_abe38b4385b5ca5bc5e7eeb7b243311ffa748005382152808a72b1a9177d9dc806}{INFO}}, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)}
+
+\Hypertarget{minilog_8h_a086d9bf7c6d1cded3ad8e54751f379b4}\label{minilog_8h_a086d9bf7c6d1cded3ad8e54751f379b4} 
+\index{minilog.h@{minilog.h}!LOGNTH@{LOGNTH}}
+\index{LOGNTH@{LOGNTH}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{LOGNTH}{LOGNTH}}
+{\footnotesize\ttfamily \#define LOGNTH(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~\mbox{\hyperlink{ftpfm__logprint_8h_a2aecef6d7b3690da073f87b2e7ea46f2}{\+\_\+\+\_\+\+LP\+\_\+\+GENERIC}}(\mbox{\hyperlink{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffacfe24a7b308a82835c8a9a9a89bc4ca2}{NOTHING}} ,\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)}
+
+\Hypertarget{minilog_8h_a4ee40d887237a6594d0d643f6c6b9fa3}\label{minilog_8h_a4ee40d887237a6594d0d643f6c6b9fa3} 
+\index{minilog.h@{minilog.h}!LOGWARN@{LOGWARN}}
+\index{LOGWARN@{LOGWARN}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{LOGWARN}{LOGWARN}}
+{\footnotesize\ttfamily \#define LOGWARN(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~\mbox{\hyperlink{ftpfm__logprint_8h_a2aecef6d7b3690da073f87b2e7ea46f2}{\+\_\+\+\_\+\+LP\+\_\+\+GENERIC}}(\mbox{\hyperlink{ftpfm__logprint_8h_abe38b4385b5ca5bc5e7eeb7b243311ffa74dac7ac23d5b810db6d4067f14e8676}{WARN}}, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)}
+
+\Hypertarget{minilog_8h_ae2fd4305e27fbe40ffca13e28d0e634e}\label{minilog_8h_ae2fd4305e27fbe40ffca13e28d0e634e} 
+\index{minilog.h@{minilog.h}!LP\_ALERT@{LP\_ALERT}}
+\index{LP\_ALERT@{LP\_ALERT}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{LP\_ALERT}{LP\_ALERT}}
+{\footnotesize\ttfamily \#define LP\+\_\+\+ALERT~\mbox{\hyperlink{minilog_8h_ad7683279acf994b5ac75e4ced9813cc1}{mlog\+\_\+exec}}(\mbox{\hyperlink{minilog_8h_a38eec52a7dccb94ff563e30eda32c891}{BLINK}}); \mbox{\hyperlink{ftpfm__logprint_8h_abaab315ba8b06988b1073120fc351b22}{tc\+\_\+color\+\_\+attr}}(COLOR\+\_\+\+MAGENTA)}
+
+\Hypertarget{minilog_8h_a8f66146bf09e2f278520c0ce55aa0749}\label{minilog_8h_a8f66146bf09e2f278520c0ce55aa0749} 
+\index{minilog.h@{minilog.h}!LP\_ERROR@{LP\_ERROR}}
+\index{LP\_ERROR@{LP\_ERROR}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{LP\_ERROR}{LP\_ERROR}}
+{\footnotesize\ttfamily \#define LP\+\_\+\+ERROR~\mbox{\hyperlink{ftpfm__logprint_8h_abaab315ba8b06988b1073120fc351b22}{tc\+\_\+color\+\_\+attr}}(COLOR\+\_\+\+RED)}
+
+\Hypertarget{minilog_8h_a052e5b2bfdd6d46ec6d114aacb27124f}\label{minilog_8h_a052e5b2bfdd6d46ec6d114aacb27124f} 
+\index{minilog.h@{minilog.h}!LP\_FATALITY@{LP\_FATALITY}}
+\index{LP\_FATALITY@{LP\_FATALITY}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{LP\_FATALITY}{LP\_FATALITY}}
+{\footnotesize\ttfamily \#define LP\+\_\+\+FATALITY~\mbox{\hyperlink{minilog_8h_ad7683279acf994b5ac75e4ced9813cc1}{mlog\+\_\+exec}}(\mbox{\hyperlink{minilog_8h_a26cdbb1a00213c810caccf21cd33a631}{BOLD}}); \mbox{\hyperlink{ftpfm__logprint_8h_a8f66146bf09e2f278520c0ce55aa0749}{LP\+\_\+\+ERROR}}}
+
+\Hypertarget{minilog_8h_a51c5cbdb97aefedc10d295c1b4fd404d}\label{minilog_8h_a51c5cbdb97aefedc10d295c1b4fd404d} 
+\index{minilog.h@{minilog.h}!LP\_INFO@{LP\_INFO}}
+\index{LP\_INFO@{LP\_INFO}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{LP\_INFO}{LP\_INFO}}
+{\footnotesize\ttfamily \#define LP\+\_\+\+INFO~\mbox{\hyperlink{ftpfm__logprint_8h_abaab315ba8b06988b1073120fc351b22}{tc\+\_\+color\+\_\+attr}}(COLOR\+\_\+\+CYAN)}
+
+\Hypertarget{minilog_8h_aa63ed4bd8810c68a1fd0de38335d1284}\label{minilog_8h_aa63ed4bd8810c68a1fd0de38335d1284} 
+\index{minilog.h@{minilog.h}!LP\_NOTHING@{LP\_NOTHING}}
+\index{LP\_NOTHING@{LP\_NOTHING}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{LP\_NOTHING}{LP\_NOTHING}}
+{\footnotesize\ttfamily \#define LP\+\_\+\+NOTHING}
+
+\Hypertarget{minilog_8h_a98812bf1998f5041efe560331f77dbed}\label{minilog_8h_a98812bf1998f5041efe560331f77dbed} 
+\index{minilog.h@{minilog.h}!LP\_WARN@{LP\_WARN}}
+\index{LP\_WARN@{LP\_WARN}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{LP\_WARN}{LP\_WARN}}
+{\footnotesize\ttfamily \#define LP\+\_\+\+WARN~\mbox{\hyperlink{ftpfm__logprint_8h_abaab315ba8b06988b1073120fc351b22}{tc\+\_\+color\+\_\+attr}}(COLOR\+\_\+\+YELLOW)}
+
+\Hypertarget{minilog_8h_aed593f562fce4c4c1905e80abd39d6ed}\label{minilog_8h_aed593f562fce4c4c1905e80abd39d6ed} 
+\index{minilog.h@{minilog.h}!MESG@{MESG}}
+\index{MESG@{MESG}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{MESG}{MESG}}
+{\footnotesize\ttfamily \#define MESG~MESG}
+
+\Hypertarget{minilog_8h_a2fe5baa84f9c7198c4323aa616c19d6a}\label{minilog_8h_a2fe5baa84f9c7198c4323aa616c19d6a} 
+\index{minilog.h@{minilog.h}!MIBLMT@{MIBLMT}}
+\index{MIBLMT@{MIBLMT}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{MIBLMT}{MIBLMT}}
+{\footnotesize\ttfamily \#define MIBLMT~\mbox{\hyperlink{minilog_8h_a87b5d4cdc60cfe796fcb08b00d16da04}{MINILOG\+\_\+\+INLINE\+\_\+\+BUFFER\+\_\+\+LIMIT}}}
+
+\Hypertarget{minilog_8h_a636381e1f5876a126dc10dbd6e8a52fb}\label{minilog_8h_a636381e1f5876a126dc10dbd6e8a52fb} 
+\index{minilog.h@{minilog.h}!MINILOG\_COM\_PIPE@{MINILOG\_COM\_PIPE}}
+\index{MINILOG\_COM\_PIPE@{MINILOG\_COM\_PIPE}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{MINILOG\_COM\_PIPE}{MINILOG\_COM\_PIPE}}
+{\footnotesize\ttfamily \#define MINILOG\+\_\+\+COM\+\_\+\+PIPE~PIPE}
+
+\Hypertarget{minilog_8h_a0835b78af1216ab83916da8f8008c8bb}\label{minilog_8h_a0835b78af1216ab83916da8f8008c8bb} 
+\index{minilog.h@{minilog.h}!MINILOG\_COM\_SOCKET@{MINILOG\_COM\_SOCKET}}
+\index{MINILOG\_COM\_SOCKET@{MINILOG\_COM\_SOCKET}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{MINILOG\_COM\_SOCKET}{MINILOG\_COM\_SOCKET}}
+{\footnotesize\ttfamily \#define MINILOG\+\_\+\+COM\+\_\+\+SOCKET~SOCKET}
+
+
+
+NOTE\+: This part is not implemented yet but stay in draft.\+W\textquotesingle{}ll be available in the next version. 
+
+\Hypertarget{minilog_8h_a27ae9a01602358bafb4552032b5ae880}\label{minilog_8h_a27ae9a01602358bafb4552032b5ae880} 
+\index{minilog.h@{minilog.h}!MINILOG\_EXTSYMB@{MINILOG\_EXTSYMB}}
+\index{MINILOG\_EXTSYMB@{MINILOG\_EXTSYMB}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{MINILOG\_EXTSYMB}{MINILOG\_EXTSYMB}}
+{\footnotesize\ttfamily \#define MINILOG\+\_\+\+EXTSYMB~0x24 /\texorpdfstring{$\ast$}{*}\$\texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{minilog_8h_a87b5d4cdc60cfe796fcb08b00d16da04}\label{minilog_8h_a87b5d4cdc60cfe796fcb08b00d16da04} 
+\index{minilog.h@{minilog.h}!MINILOG\_INLINE\_BUFFER\_LIMIT@{MINILOG\_INLINE\_BUFFER\_LIMIT}}
+\index{MINILOG\_INLINE\_BUFFER\_LIMIT@{MINILOG\_INLINE\_BUFFER\_LIMIT}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{MINILOG\_INLINE\_BUFFER\_LIMIT}{MINILOG\_INLINE\_BUFFER\_LIMIT}}
+{\footnotesize\ttfamily \#define MINILOG\+\_\+\+INLINE\+\_\+\+BUFFER\+\_\+\+LIMIT~(8$<$$<$7)}
+
+\Hypertarget{minilog_8h_a4cfe9ea1bf525c8db832194c5d31a547}\label{minilog_8h_a4cfe9ea1bf525c8db832194c5d31a547} 
+\index{minilog.h@{minilog.h}!MLOG@{MLOG}}
+\index{MLOG@{MLOG}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{MLOG}{MLOG}}
+{\footnotesize\ttfamily \#define MLOG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+severity\+\_\+level,  }\item[{}]{\+\_\+\+\_\+minext }\end{DoxyParamCaption})~  \mbox{\hyperlink{minilog_8c_abe67e541461452bec85588fcd36f4b18}{minilog\+\_\+register}}(\+\_\+\+\_\+severity\+\_\+level, \+\_\+\+\_\+minext)}
+
+\Hypertarget{minilog_8h_a9bb0bfe93be60f5f3edf57a233135976}\label{minilog_8h_a9bb0bfe93be60f5f3edf57a233135976} 
+\index{minilog.h@{minilog.h}!mlog\_cusror@{mlog\_cusror}}
+\index{mlog\_cusror@{mlog\_cusror}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{mlog\_cusror}{mlog\_cusror}}
+{\footnotesize\ttfamily \#define mlog\+\_\+cusror(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+x,  }\item[{}]{\+\_\+\+\_\+y }\end{DoxyParamCaption})~\mbox{\hyperlink{minilog_8h_ad7683279acf994b5ac75e4ced9813cc1}{mlog\+\_\+exec}}(tgoto(cursor\+\_\+address , \+\_\+\+\_\+x , \+\_\+\+\_\+y))}
+
+
+
+NOTE \+: For Cursor movement. 
+
+\Hypertarget{minilog_8h_a74a41ab83b787a66352a817f37ea531f}\label{minilog_8h_a74a41ab83b787a66352a817f37ea531f} 
+\index{minilog.h@{minilog.h}!MLOG\_DEFSIGCATCH@{MLOG\_DEFSIGCATCH}}
+\index{MLOG\_DEFSIGCATCH@{MLOG\_DEFSIGCATCH}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{MLOG\_DEFSIGCATCH}{MLOG\_DEFSIGCATCH}}
+{\footnotesize\ttfamily \#define MLOG\+\_\+\+DEFSIGCATCH(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+nsigs,  }\item[{}]{... }\end{DoxyParamCaption})~  \mbox{\hyperlink{minilog_8c_a63ef106978387f7f285e2f265f40f6be}{sigcatcher}}(\+\_\+\+\_\+nsigs , \#\#\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)}
+
+\Hypertarget{minilog_8h_ad7683279acf994b5ac75e4ced9813cc1}\label{minilog_8h_ad7683279acf994b5ac75e4ced9813cc1} 
+\index{minilog.h@{minilog.h}!mlog\_exec@{mlog\_exec}}
+\index{mlog\_exec@{mlog\_exec}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{mlog\_exec}{mlog\_exec}}
+{\footnotesize\ttfamily \#define mlog\+\_\+exec(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+itermcap }\end{DoxyParamCaption})~tputs(\+\_\+\+\_\+itermcap , \mbox{\hyperlink{minilog_8h_a8c1a005ee493a6a3b8ee1ab7fe017927}{\+\_\+\+\_\+mlog\+\_\+interupt}})}
+
+\Hypertarget{minilog_8h_a524ef4911e527e9aeb04dd1acb57f84a}\label{minilog_8h_a524ef4911e527e9aeb04dd1acb57f84a} 
+\index{minilog.h@{minilog.h}!MM\_ALERT@{MM\_ALERT}}
+\index{MM\_ALERT@{MM\_ALERT}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{MM\_ALERT}{MM\_ALERT}}
+{\footnotesize\ttfamily \#define MM\+\_\+\+ALERT~5}
+
+\Hypertarget{minilog_8h_ab1c1174de397f21760c78566760258dd}\label{minilog_8h_ab1c1174de397f21760c78566760258dd} 
+\index{minilog.h@{minilog.h}!nptr@{nptr}}
+\index{nptr@{nptr}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{nptr}{nptr}}
+{\footnotesize\ttfamily \#define nptr~NULL}
+
+\Hypertarget{minilog_8h_a204b59cfa2bdae74c2de680d439eb05e}\label{minilog_8h_a204b59cfa2bdae74c2de680d439eb05e} 
+\index{minilog.h@{minilog.h}!RSET@{RSET}}
+\index{RSET@{RSET}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{RSET}{RSET}}
+{\footnotesize\ttfamily \#define RSET~\mbox{\hyperlink{minilog_8h_a5a9526ea6cd10cf56652a8db8249950a}{CAPCODE}}(0x27)}
+
+\Hypertarget{minilog_8h_a54e4addadb4b0b35aa759fd1cc0b9d5a}\label{minilog_8h_a54e4addadb4b0b35aa759fd1cc0b9d5a} 
+\index{minilog.h@{minilog.h}!SETAF@{SETAF}}
+\index{SETAF@{SETAF}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{SETAF}{SETAF}}
+{\footnotesize\ttfamily \#define SETAF~\mbox{\hyperlink{minilog_8h_a5a9526ea6cd10cf56652a8db8249950a}{CAPCODE}}(0x167)}
+
+\Hypertarget{minilog_8h_afc3d101f633a076cc1ca84b85b6224b2}\label{minilog_8h_afc3d101f633a076cc1ca84b85b6224b2} 
+\index{minilog.h@{minilog.h}!TAG@{TAG}}
+\index{TAG@{TAG}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{TAG}{TAG}}
+{\footnotesize\ttfamily \#define TAG~TAG}
+
+\Hypertarget{minilog_8h_abaab315ba8b06988b1073120fc351b22}\label{minilog_8h_abaab315ba8b06988b1073120fc351b22} 
+\index{minilog.h@{minilog.h}!tc\_color\_attr@{tc\_color\_attr}}
+\index{tc\_color\_attr@{tc\_color\_attr}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{tc\_color\_attr}{tc\_color\_attr}}
+{\footnotesize\ttfamily \#define tc\+\_\+color\+\_\+attr(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+color\+\_\+attribute }\end{DoxyParamCaption})~\mbox{\hyperlink{minilog_8h_ad7683279acf994b5ac75e4ced9813cc1}{mlog\+\_\+exec}}(tiparm(\mbox{\hyperlink{ftpfm__logprint_8h_a54e4addadb4b0b35aa759fd1cc0b9d5a}{SETAF}}, \+\_\+\+\_\+color\+\_\+attribute))}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{minilog_8h_ae3ccadc85d0e3905f257e86d53ca6382}\label{minilog_8h_ae3ccadc85d0e3905f257e86d53ca6382} 
+\index{minilog.h@{minilog.h}!bitfs\_t@{bitfs\_t}}
+\index{bitfs\_t@{bitfs\_t}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{bitfs\_t}{bitfs\_t}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{minilog_8h_ae3ccadc85d0e3905f257e86d53ca6382}{bitfs\+\_\+t}}}
+
+\Hypertarget{minilog_8h_a3f9729ef6510be2fbd4e37da70d8f232}\label{minilog_8h_a3f9729ef6510be2fbd4e37da70d8f232} 
+\index{minilog.h@{minilog.h}!mparm@{mparm}}
+\index{mparm@{mparm}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{mparm}{mparm}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct____minilog__initial__param__t}{\+\_\+\+\_\+minilog\+\_\+initial\+\_\+param\+\_\+t}} \mbox{\hyperlink{minilog_8h_a3f9729ef6510be2fbd4e37da70d8f232}{mparm}}}
+
+
+
+Wrap\textquotesingle{}s up some information and allow user to determine how the logfile or stream syncronisation should operate and more. 
+
+It\textquotesingle{}s just like and object that you can specified some values to control how the stream log should behave \Hypertarget{minilog_8h_ab11ce5ff116f450c99f976d5652db6cb}\label{minilog_8h_ab11ce5ff116f450c99f976d5652db6cb} 
+\index{minilog.h@{minilog.h}!mr\_sync@{mr\_sync}}
+\index{mr\_sync@{mr\_sync}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{mr\_sync}{mr\_sync}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct____minilog__record__sync}{\+\_\+\+\_\+minilog\+\_\+record\+\_\+sync}} \mbox{\hyperlink{minilog_8h_ab11ce5ff116f450c99f976d5652db6cb}{mr\+\_\+sync}}}
+
+
+
+Data structure that handle the target logfile specified by the user here is some information you should awareof such as the logfilename and the communication type. 
+
+\Hypertarget{minilog_8h_af2fec8fd922076c8220c64c812aa6e24}\label{minilog_8h_af2fec8fd922076c8220c64c812aa6e24} 
+\index{minilog.h@{minilog.h}!multi\_sigcatch@{multi\_sigcatch}}
+\index{multi\_sigcatch@{multi\_sigcatch}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{multi\_sigcatch}{multi\_sigcatch}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} multi\+\_\+sigcatch) (int,...)}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{minilog_8h_a61dadd085c1777f559549e05962b2c9e}\label{minilog_8h_a61dadd085c1777f559549e05962b2c9e} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MESG@{MESG}!minilog.h@{minilog.h}}\index{minilog.h@{minilog.h}!MESG@{MESG}}}\Hypertarget{minilog_8h_a61dadd085c1777f559549e05962b2c9eadfb6d80c156462709c9e69f15c657d23}\label{minilog_8h_a61dadd085c1777f559549e05962b2c9eadfb6d80c156462709c9e69f15c657d23} 
+MESG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MESG@{MESG}!minilog.h@{minilog.h}}\index{minilog.h@{minilog.h}!MESG@{MESG}}}\Hypertarget{minilog_8h_a61dadd085c1777f559549e05962b2c9eadfb6d80c156462709c9e69f15c657d23}\label{minilog_8h_a61dadd085c1777f559549e05962b2c9eadfb6d80c156462709c9e69f15c657d23} 
+MESG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION@{ACTION}!minilog.h@{minilog.h}}\index{minilog.h@{minilog.h}!ACTION@{ACTION}}}\Hypertarget{minilog_8h_a61dadd085c1777f559549e05962b2c9eae1bb1460cb779888412e634e983be161}\label{minilog_8h_a61dadd085c1777f559549e05962b2c9eae1bb1460cb779888412e634e983be161} 
+ACTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION@{ACTION}!minilog.h@{minilog.h}}\index{minilog.h@{minilog.h}!ACTION@{ACTION}}}\Hypertarget{minilog_8h_a61dadd085c1777f559549e05962b2c9eae1bb1460cb779888412e634e983be161}\label{minilog_8h_a61dadd085c1777f559549e05962b2c9eae1bb1460cb779888412e634e983be161} 
+ACTION&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{minilog_8h_a726ca809ffd3d67ab4b8476646f26635}\label{minilog_8h_a726ca809ffd3d67ab4b8476646f26635} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALRT@{ALRT}!minilog.h@{minilog.h}}\index{minilog.h@{minilog.h}!ALRT@{ALRT}}}\Hypertarget{minilog_8h_a726ca809ffd3d67ab4b8476646f26635a31b4c335905dd654e7254b092945a877}\label{minilog_8h_a726ca809ffd3d67ab4b8476646f26635a31b4c335905dd654e7254b092945a877} 
+ALRT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FATL@{FATL}!minilog.h@{minilog.h}}\index{minilog.h@{minilog.h}!FATL@{FATL}}}\Hypertarget{minilog_8h_a726ca809ffd3d67ab4b8476646f26635a2672bd8ead3342662c14eab5bba873f9}\label{minilog_8h_a726ca809ffd3d67ab4b8476646f26635a2672bd8ead3342662c14eab5bba873f9} 
+FATL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CRTC@{CRTC}!minilog.h@{minilog.h}}\index{minilog.h@{minilog.h}!CRTC@{CRTC}}}\Hypertarget{minilog_8h_a726ca809ffd3d67ab4b8476646f26635a267f109614471614af2172fa49c8e674}\label{minilog_8h_a726ca809ffd3d67ab4b8476646f26635a267f109614471614af2172fa49c8e674} 
+CRTC&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ff}\label{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ff} 
+\index{minilog.h@{minilog.h}!\_\_log\_level@{\_\_log\_level}}
+\index{\_\_log\_level@{\_\_log\_level}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{\_\_log\_level}{\_\_log\_level}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ftpfm__logprint_8h_abe38b4385b5ca5bc5e7eeb7b243311ff}{\+\_\+\+\_\+log\+\_\+level}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NOTHING@{NOTHING}!minilog.h@{minilog.h}}\index{minilog.h@{minilog.h}!NOTHING@{NOTHING}}}\Hypertarget{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffacfe24a7b308a82835c8a9a9a89bc4ca2}\label{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffacfe24a7b308a82835c8a9a9a89bc4ca2} 
+NOTHING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INFO@{INFO}!minilog.h@{minilog.h}}\index{minilog.h@{minilog.h}!INFO@{INFO}}}\Hypertarget{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffa748005382152808a72b1a9177d9dc806}\label{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffa748005382152808a72b1a9177d9dc806} 
+INFO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WARN@{WARN}!minilog.h@{minilog.h}}\index{minilog.h@{minilog.h}!WARN@{WARN}}}\Hypertarget{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffa74dac7ac23d5b810db6d4067f14e8676}\label{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffa74dac7ac23d5b810db6d4067f14e8676} 
+WARN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERROR@{ERROR}!minilog.h@{minilog.h}}\index{minilog.h@{minilog.h}!ERROR@{ERROR}}}\Hypertarget{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffa2fd6f336d08340583bd620a7f5694c90}\label{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffa2fd6f336d08340583bd620a7f5694c90} 
+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALERT@{ALERT}!minilog.h@{minilog.h}}\index{minilog.h@{minilog.h}!ALERT@{ALERT}}}\Hypertarget{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffa45e0bb0f520fb3851c7d6cc5c5ddd6f9}\label{minilog_8h_abe38b4385b5ca5bc5e7eeb7b243311ffa45e0bb0f520fb3851c7d6cc5c5ddd6f9} 
+ALERT&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{minilog_8h_aad5154f41b5967089f991ab6c7df3002}\label{minilog_8h_aad5154f41b5967089f991ab6c7df3002} 
+\index{minilog.h@{minilog.h}!\_\_minilog\_record\_comtype@{\_\_minilog\_record\_comtype}}
+\index{\_\_minilog\_record\_comtype@{\_\_minilog\_record\_comtype}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{\_\_minilog\_record\_comtype}{\_\_minilog\_record\_comtype}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{minilog_8h_aad5154f41b5967089f991ab6c7df3002}{\+\_\+\+\_\+minilog\+\_\+record\+\_\+comtype}}}
+
+
+
+Representing the stream communication should be handled by using Named Pipe or using Local Socket (Unix Domain Name) ~\newline
+ 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PIPE@{PIPE}!minilog.h@{minilog.h}}\index{minilog.h@{minilog.h}!PIPE@{PIPE}}}\Hypertarget{minilog_8h_aad5154f41b5967089f991ab6c7df3002a9bc832fa28809fb974f6ce5bb0cc7117}\label{minilog_8h_aad5154f41b5967089f991ab6c7df3002a9bc832fa28809fb974f6ce5bb0cc7117} 
+PIPE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{minilog_8h_a36c62efdf753bdeaafebc7be36203566}\label{minilog_8h_a36c62efdf753bdeaafebc7be36203566} 
+\index{minilog.h@{minilog.h}!minilog@{minilog}}
+\index{minilog@{minilog}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{minilog()}{minilog()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{minilog_8h_aec26fcefc56c012d15e277da79fb9acf}{\+\_\+\+\_\+mlog}} int minilog (\begin{DoxyParamCaption}\item[{int}]{\+\_\+\+\_\+log\+\_\+level,  }\item[{const char \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+restrict\+\_\+\+\_\+}]{\+\_\+\+\_\+fmtstr,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\Hypertarget{minilog_8h_ab971bf528fd4e4ef816a232c65f11fff}\label{minilog_8h_ab971bf528fd4e4ef816a232c65f11fff} 
+\index{minilog.h@{minilog.h}!minilog\_cleanup@{minilog\_cleanup}}
+\index{minilog\_cleanup@{minilog\_cleanup}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{minilog\_cleanup()}{minilog\_cleanup()}}
+{\footnotesize\ttfamily void minilog\+\_\+cleanup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+clean all allocated memory when the application turned off (exit or brutal exit) 
+
+\Hypertarget{minilog_8h_a472c64ae0981d3baaa091443929a4a58}\label{minilog_8h_a472c64ae0981d3baaa091443929a4a58} 
+\index{minilog.h@{minilog.h}!minilog\_configure@{minilog\_configure}}
+\index{minilog\_configure@{minilog\_configure}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{minilog\_configure()}{minilog\_configure()}}
+{\footnotesize\ttfamily int minilog\+\_\+configure (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct____minilog__initial__param__t}{\+\_\+\+\_\+minilog\+\_\+initial\+\_\+param\+\_\+t}} \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+restrict\+\_\+\+\_\+}]{\+\_\+\+\_\+parm }\end{DoxyParamCaption})}
+
+\Hypertarget{minilog_8h_ac313935f11289fd1183496ad7056d20c}\label{minilog_8h_ac313935f11289fd1183496ad7056d20c} 
+\index{minilog.h@{minilog.h}!minilog\_create\_record\_stream\_pipeline@{minilog\_create\_record\_stream\_pipeline}}
+\index{minilog\_create\_record\_stream\_pipeline@{minilog\_create\_record\_stream\_pipeline}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{minilog\_create\_record\_stream\_pipeline()}{minilog\_create\_record\_stream\_pipeline()}}
+{\footnotesize\ttfamily int minilog\+\_\+create\+\_\+record\+\_\+stream\+\_\+pipeline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{minilog_8h_ab11ce5ff116f450c99f976d5652db6cb}{mr\+\_\+sync}} \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+restrict\+\_\+\+\_\+}]{\+\_\+\+\_\+source }\end{DoxyParamCaption})}
+
+\Hypertarget{minilog_8h_aff2ca5ba34238871518b1224da4125b1}\label{minilog_8h_aff2ca5ba34238871518b1224da4125b1} 
+\index{minilog.h@{minilog.h}!minilog\_exit@{minilog\_exit}}
+\index{minilog\_exit@{minilog\_exit}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{minilog\_exit()}{minilog\_exit()}}
+{\footnotesize\ttfamily void minilog\+\_\+exit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+basic exit function ~\newline
+ 
+
+\Hypertarget{minilog_8h_aa513823d2b66f8d24995339064de4c00}\label{minilog_8h_aa513823d2b66f8d24995339064de4c00} 
+\index{minilog.h@{minilog.h}!minilog\_register@{minilog\_register}}
+\index{minilog\_register@{minilog\_register}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{minilog\_register()}{minilog\_register()}}
+{\footnotesize\ttfamily int minilog\+\_\+register (\begin{DoxyParamCaption}\item[{int}]{\+\_\+\+\_\+severity,  }\item[{char \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+restrict\+\_\+\+\_\+}]{\+\_\+\+\_\+buffer }\end{DoxyParamCaption})}
+
+\Hypertarget{minilog_8h_ac7201456ecfde1e71e7ab1e53cee2497}\label{minilog_8h_ac7201456ecfde1e71e7ab1e53cee2497} 
+\index{minilog.h@{minilog.h}!minilog\_setup@{minilog\_setup}}
+\index{minilog\_setup@{minilog\_setup}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{minilog\_setup()}{minilog\_setup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{minilog_8h_aec26fcefc56c012d15e277da79fb9acf}{\+\_\+\+\_\+mlog}} int minilog\+\_\+setup (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct____minilog__initial__param__t}{\+\_\+\+\_\+minilog\+\_\+initial\+\_\+param\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{minilog_8h_ab4981ad415fe19e7a31bbee96ac10c7c}{\+\_\+\+\_\+\+Nullable}}}]{\+\_\+\+\_\+initial\+\_\+parameters }\end{DoxyParamCaption})}
+
+\Hypertarget{minilog_8h_a3a0de560613a1061154960c03781fc94}\label{minilog_8h_a3a0de560613a1061154960c03781fc94} 
+\index{minilog.h@{minilog.h}!minilog\_sighdl@{minilog\_sighdl}}
+\index{minilog\_sighdl@{minilog\_sighdl}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{minilog\_sighdl()}{minilog\_sighdl()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{minilog_8h_aec26fcefc56c012d15e277da79fb9acf}{\+\_\+\+\_\+mlog}} void \mbox{\hyperlink{minilog_8h_aa6e024a1b2d64521b21b24d7ad0b6191}{\+\_\+\+\_\+user\+\_\+override}} minilog\+\_\+sighdl (\begin{DoxyParamCaption}\item[{int}]{signum }\end{DoxyParamCaption})}
+
+
+
+handle subprocess exiting signal 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & -\/ the signal itself \\
+\hline
+\end{DoxyParams}
+TODO\+: Analyse status code ~\newline
+
+
+\+\_\+is\+\_\+terminated\+\_\+signal(signum) ~\newline
+\Hypertarget{minilog_8h_af8ff7e9043a0868ec2fea72329002655}\label{minilog_8h_af8ff7e9043a0868ec2fea72329002655} 
+\index{minilog.h@{minilog.h}!minilog\_watchlog@{minilog\_watchlog}}
+\index{minilog\_watchlog@{minilog\_watchlog}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{minilog\_watchlog()}{minilog\_watchlog()}}
+{\footnotesize\ttfamily int minilog\+\_\+watchlog (\begin{DoxyParamCaption}\item[{int}]{fds }\end{DoxyParamCaption})}
+
+
+
+create the subprocess stream but register the signal before 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & -\/ bit compacted file descritors \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/ 0 \+:OK ; Otherwise error 
+\end{DoxyReturn}
+Register predefined signal handler before lauching the process for early exiting or crashing\Hypertarget{minilog_8h_a582aeeeee8c38e564a2b5290b44f8dc3}\label{minilog_8h_a582aeeeee8c38e564a2b5290b44f8dc3} 
+\index{minilog.h@{minilog.h}!sigcatcher@{sigcatcher}}
+\index{sigcatcher@{sigcatcher}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{sigcatcher()}{sigcatcher()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{minilog_8h_aec26fcefc56c012d15e277da79fb9acf}{\+\_\+\+\_\+mlog}} void \mbox{\hyperlink{minilog_8h_aa6e024a1b2d64521b21b24d7ad0b6191}{\+\_\+\+\_\+user\+\_\+override}} sigcatcher (\begin{DoxyParamCaption}\item[{const int}]{\+\_\+\+\_\+nsigs,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{minilog_8h_a42000a624228678f59bce88e4f192ad7}\label{minilog_8h_a42000a624228678f59bce88e4f192ad7} 
+\index{minilog.h@{minilog.h}!channels@{channels}}
+\index{channels@{channels}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{channels}{channels}}
+{\footnotesize\ttfamily int channels\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{minilog_8h_acd07b2f6fea28b918e80b29608ce4d46}\label{minilog_8h_acd07b2f6fea28b918e80b29608ce4d46} 
+\index{minilog.h@{minilog.h}!fdstream@{fdstream}}
+\index{fdstream@{fdstream}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{fdstream}{fdstream}}
+{\footnotesize\ttfamily int fdstream\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{minilog_8h_afa66490651de6bbb55196607822d0e27}\label{minilog_8h_afa66490651de6bbb55196607822d0e27} 
+\index{minilog.h@{minilog.h}!minilog\_basname@{minilog\_basname}}
+\index{minilog\_basname@{minilog\_basname}!minilog.h@{minilog.h}}
+\doxysubsubsection{\texorpdfstring{minilog\_basname}{minilog\_basname}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} minilog\+\_\+basname\hspace{0.3cm}{\ttfamily [extern]}}
+

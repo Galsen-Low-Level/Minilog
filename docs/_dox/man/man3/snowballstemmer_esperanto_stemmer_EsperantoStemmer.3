@@ -1,0 +1,411 @@
+.TH "snowballstemmer.esperanto_stemmer.EsperantoStemmer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+snowballstemmer.esperanto_stemmer.EsperantoStemmer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP\&.
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBB_foreign\fP"
+.br
+.ti -1c
+.RI "\fBbra\fP"
+.br
+.ti -1c
+.RI "\fBket\fP"
+.br
+.ti -1c
+.RI "\fBcursor\fP"
+.br
+.ti -1c
+.RI "\fBlimit_backward\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP
+.in +1c
+.ti -1c
+.RI "\fBcurrent\fP"
+.br
+.ti -1c
+.RI "\fBcursor\fP"
+.br
+.ti -1c
+.RI "\fBlimit\fP"
+.br
+.ti -1c
+.RI "\fBlimit_backward\fP"
+.br
+.ti -1c
+.RI "\fBbra\fP"
+.br
+.ti -1c
+.RI "\fBket\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dict \fBg_vowel\fP = {u'a', u'e', u'i', u'o', u'u'}"
+.br
+.ti -1c
+.RI "dict \fBg_aou\fP = {u'a', u'o', u'u'}"
+.br
+.ti -1c
+.RI "dict \fBg_digit\fP = {u'0', u'1', u'2', u'3', u'4', u'5', u'6', u'7', u'8', u'9'}"
+.br
+.ti -1c
+.RI "bool \fBB_foreign\fP = False"
+.br
+.ti -1c
+.RI "list \fBa_0\fP"
+.br
+.ti -1c
+.RI "list \fBa_1\fP"
+.br
+.ti -1c
+.RI "list \fBa_2\fP"
+.br
+.ti -1c
+.RI "list \fBa_3\fP"
+.br
+.ti -1c
+.RI "list \fBa_4\fP"
+.br
+.ti -1c
+.RI "list \fBa_5\fP"
+.br
+.ti -1c
+.RI "list \fBa_6\fP"
+.br
+.ti -1c
+.RI "list \fBa_7\fP"
+.br
+.ti -1c
+.RI "list \fBa_8\fP"
+.br
+.ti -1c
+.RI "list \fBa_9\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_stem\fP (self)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBsnowballstemmer\&.basestemmer\&.BaseStemmer\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "\fBset_current\fP (self, value)"
+.br
+.ti -1c
+.RI "\fBget_current\fP (self)"
+.br
+.ti -1c
+.RI "\fBcopy_from\fP (self, other)"
+.br
+.ti -1c
+.RI "\fBin_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_in_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBin_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_in_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBout_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_out_grouping\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBout_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBgo_out_grouping_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBeq_s\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBeq_s_b\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBfind_among\fP (self, v)"
+.br
+.ti -1c
+.RI "\fBfind_among_b\fP (self, v)"
+.br
+.ti -1c
+.RI "\fBreplace_s\fP (self, c_bra, c_ket, s)"
+.br
+.ti -1c
+.RI "\fBslice_check\fP (self)"
+.br
+.ti -1c
+.RI "\fBslice_from\fP (self, s)"
+.br
+.ti -1c
+.RI "\fBslice_del\fP (self)"
+.br
+.ti -1c
+.RI "\fBinsert\fP (self, c_bra, c_ket, s)"
+.br
+.ti -1c
+.RI "\fBslice_to\fP (self)"
+.br
+.ti -1c
+.RI "\fBassign_to\fP (self)"
+.br
+.ti -1c
+.RI "\fBstemWord\fP (self, word)"
+.br
+.ti -1c
+.RI "\fBstemWords\fP (self, words)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+This class implements the stemming algorithm defined by a snowball script\&.
+Generated from esperanto\&.sbl by Snowball 3\&.0\&.1 - https://snowballstem\&.org/
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "snowballstemmer\&.esperanto_stemmer\&.EsperantoStemmer\&._stem ( self)\fC [protected]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "list snowballstemmer\&.esperanto_stemmer\&.EsperantoStemmer\&.a_0\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"", \-1, 14),
+        Among(u"\-", 0, 13),
+        Among(u"cx", 0, 1),
+        Among(u"gx", 0, 2),
+        Among(u"hx", 0, 3),
+        Among(u"jx", 0, 4),
+        Among(u"q", 0, 12),
+        Among(u"sx", 0, 5),
+        Among(u"ux", 0, 6),
+        Among(u"w", 0, 12),
+        Among(u"x", 0, 12),
+        Among(u"y", 0, 12),
+        Among(u"á", 0, 7),
+        Among(u"é", 0, 8),
+        Among(u"í", 0, 9),
+        Among(u"ó", 0, 10),
+        Among(u"ú", 0, 11)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.esperanto_stemmer\&.EsperantoStemmer\&.a_1\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"as", \-1, \-1),
+        Among(u"i", \-1, \-1),
+        Among(u"is", 1, \-1),
+        Among(u"os", \-1, \-1),
+        Among(u"u", \-1, \-1),
+        Among(u"us", 4, \-1)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.esperanto_stemmer\&.EsperantoStemmer\&.a_2\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"ci", \-1, \-1),
+        Among(u"gi", \-1, \-1),
+        Among(u"hi", \-1, \-1),
+        Among(u"li", \-1, \-1),
+        Among(u"ili", 3, \-1),
+        Among(u"ŝli", 3, \-1),
+        Among(u"mi", \-1, \-1),
+        Among(u"ni", \-1, \-1),
+        Among(u"oni", 7, \-1),
+        Among(u"ri", \-1, \-1),
+        Among(u"si", \-1, \-1),
+        Among(u"vi", \-1, \-1),
+        Among(u"ivi", 11, \-1),
+        Among(u"ĝi", \-1, \-1),
+        Among(u"ŝi", \-1, \-1),
+        Among(u"iŝi", 14, \-1),
+        Among(u"malŝi", 14, \-1)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.esperanto_stemmer\&.EsperantoStemmer\&.a_3\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"amb", \-1, \-1),
+        Among(u"bald", \-1, \-1),
+        Among(u"malbald", 1, \-1),
+        Among(u"morg", \-1, \-1),
+        Among(u"postmorg", 3, \-1),
+        Among(u"adi", \-1, \-1),
+        Among(u"hodi", \-1, \-1),
+        Among(u"ank", \-1, \-1),
+        Among(u"ĉirk", \-1, \-1),
+        Among(u"tutĉirk", 8, \-1),
+        Among(u"presk", \-1, \-1),
+        Among(u"almen", \-1, \-1),
+        Among(u"apen", \-1, \-1),
+        Among(u"hier", \-1, \-1),
+        Among(u"antaŭhier", 13, \-1),
+        Among(u"malgr", \-1, \-1),
+        Among(u"ankor", \-1, \-1),
+        Among(u"kontr", \-1, \-1),
+        Among(u"anstat", \-1, \-1),
+        Among(u"kvaz", \-1, \-1)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.esperanto_stemmer\&.EsperantoStemmer\&.a_4\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"aliu", \-1, \-1),
+        Among(u"unu", \-1, \-1)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.esperanto_stemmer\&.EsperantoStemmer\&.a_5\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"aha", \-1, \-1),
+        Among(u"haha", 0, \-1),
+        Among(u"haleluja", \-1, \-1),
+        Among(u"hola", \-1, \-1),
+        Among(u"hosana", \-1, \-1),
+        Among(u"maltra", \-1, \-1),
+        Among(u"hura", \-1, \-1),
+        Among(u"ĥaĥa", \-1, \-1),
+        Among(u"ekde", \-1, \-1),
+        Among(u"elde", \-1, \-1),
+        Among(u"disde", \-1, \-1),
+        Among(u"ehe", \-1, \-1),
+        Among(u"maltre", \-1, \-1),
+        Among(u"dirlididi", \-1, \-1),
+        Among(u"malpli", \-1, \-1),
+        Among(u"malĉi", \-1, \-1),
+        Among(u"malkaj", \-1, \-1),
+        Among(u"amen", \-1, \-1),
+        Among(u"tamen", 17, \-1),
+        Among(u"oho", \-1, \-1),
+        Among(u"maltro", \-1, \-1),
+        Among(u"minus", \-1, \-1),
+        Among(u"uhu", \-1, \-1),
+        Among(u"muu", \-1, \-1)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.esperanto_stemmer\&.EsperantoStemmer\&.a_6\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"tri", \-1, \-1),
+        Among(u"du", \-1, \-1),
+        Among(u"unu", \-1, \-1)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.esperanto_stemmer\&.EsperantoStemmer\&.a_7\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"dek", \-1, \-1),
+        Among(u"cent", \-1, \-1)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.esperanto_stemmer\&.EsperantoStemmer\&.a_8\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"k", \-1, \-1),
+        Among(u"kelk", 0, \-1),
+        Among(u"nen", \-1, \-1),
+        Among(u"t", \-1, \-1),
+        Among(u"mult", 3, \-1),
+        Among(u"samt", 3, \-1),
+        Among(u"ĉ", \-1, \-1)
+    ]
+.fi
+
+.SS "list snowballstemmer\&.esperanto_stemmer\&.EsperantoStemmer\&.a_9\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  [
+        Among(u"a", \-1, \-1),
+        Among(u"e", \-1, \-1),
+        Among(u"i", \-1, \-1),
+        Among(u"j", \-1, \-1, __r_not_after_letter),
+        Among(u"aj", 3, \-1),
+        Among(u"oj", 3, \-1),
+        Among(u"n", \-1, \-1, __r_not_after_letter),
+        Among(u"an", 6, \-1),
+        Among(u"en", 6, \-1),
+        Among(u"jn", 6, \-1, __r_not_after_letter),
+        Among(u"ajn", 9, \-1),
+        Among(u"ojn", 9, \-1),
+        Among(u"on", 6, \-1),
+        Among(u"o", \-1, \-1),
+        Among(u"as", \-1, \-1),
+        Among(u"is", \-1, \-1),
+        Among(u"os", \-1, \-1),
+        Among(u"us", \-1, \-1),
+        Among(u"u", \-1, \-1)
+    ]
+.fi
+
+.SS "bool snowballstemmer\&.esperanto_stemmer\&.EsperantoStemmer\&.B_foreign = False\fC [static]\fP"
+
+.SS "snowballstemmer\&.esperanto_stemmer\&.EsperantoStemmer\&.B_foreign"
+
+.SS "snowballstemmer\&.esperanto_stemmer\&.EsperantoStemmer\&.bra"
+
+.SS "snowballstemmer\&.esperanto_stemmer\&.EsperantoStemmer\&.cursor"
+
+.SS "dict snowballstemmer\&.esperanto_stemmer\&.EsperantoStemmer\&.g_aou = {u'a', u'o', u'u'}\fC [static]\fP"
+
+.SS "dict snowballstemmer\&.esperanto_stemmer\&.EsperantoStemmer\&.g_digit = {u'0', u'1', u'2', u'3', u'4', u'5', u'6', u'7', u'8', u'9'}\fC [static]\fP"
+
+.SS "dict snowballstemmer\&.esperanto_stemmer\&.EsperantoStemmer\&.g_vowel = {u'a', u'e', u'i', u'o', u'u'}\fC [static]\fP"
+
+.SS "snowballstemmer\&.esperanto_stemmer\&.EsperantoStemmer\&.ket"
+
+.SS "snowballstemmer\&.esperanto_stemmer\&.EsperantoStemmer\&.limit_backward"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

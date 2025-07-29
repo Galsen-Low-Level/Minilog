@@ -1,0 +1,74 @@
+.TH "pygments.filter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.filter
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBFilter\fP"
+.br
+.ti -1c
+.RI "class \fBFunctionFilter\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBapply_filters\fP (stream, filters, lexer=None)"
+.br
+.ti -1c
+.RI "\fBsimplefilter\fP (f)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+    pygments\&.filter
+    ~~~~~~~~~~~~~~~
+
+    Module that implements the default filter\&.
+
+    :copyright: Copyright 2006-2025 by the Pygments team, see AUTHORS\&.
+    :license: BSD, see LICENSE for details\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "pygments\&.filter\&.apply_filters ( stream,  filters,  lexer = \fCNone\fP)"
+
+.PP
+.nf
+Use this method to apply an iterable of filters to
+a stream\&. If lexer is given it's forwarded to the
+filter, otherwise the filter receives `None`\&.
+
+.fi
+.PP
+ 
+.SS "pygments\&.filter\&.simplefilter ( f)"
+
+.PP
+.nf
+Decorator that converts a function into a filter::
+
+    @simplefilter
+    def lowercase(self, lexer, stream, options):
+        for ttype, value in stream:
+            yield ttype, value\&.lower()
+
+.fi
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

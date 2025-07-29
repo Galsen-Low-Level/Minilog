@@ -1,0 +1,154 @@
+\doxysection{webob.\+request Namespace Reference}
+\hypertarget{namespacewebob_1_1request}{}\label{namespacewebob_1_1request}\index{webob.request@{webob.request}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classwebob_1_1request_1_1__NoDefault}{\+\_\+\+No\+Default}}
+\item 
+class \mbox{\hyperlink{classwebob_1_1request_1_1AdhocAttrMixin}{Adhoc\+Attr\+Mixin}}
+\item 
+class \mbox{\hyperlink{classwebob_1_1request_1_1BaseRequest}{Base\+Request}}
+\item 
+class \mbox{\hyperlink{classwebob_1_1request_1_1DisconnectionError}{Disconnection\+Error}}
+\item 
+class \mbox{\hyperlink{classwebob_1_1request_1_1FakeCGIBody}{Fake\+CGIBody}}
+\item 
+class \mbox{\hyperlink{classwebob_1_1request_1_1LegacyRequest}{Legacy\+Request}}
+\item 
+class \mbox{\hyperlink{classwebob_1_1request_1_1LimitedLengthFile}{Limited\+Length\+File}}
+\item 
+class \mbox{\hyperlink{classwebob_1_1request_1_1Request}{Request}}
+\item 
+class \mbox{\hyperlink{classwebob_1_1request_1_1Transcoder}{Transcoder}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacewebob_1_1request_a6a463682ba6383835bd54a3fd10bce08}{environ\+\_\+from\+\_\+url}} (path)
+\item 
+\mbox{\hyperlink{namespacewebob_1_1request_a1d1ce78a5d55b05b911c8be6a2caf5a3}{environ\+\_\+add\+\_\+\+POST}} (env, data, content\+\_\+type=None)
+\item 
+\mbox{\hyperlink{namespacewebob_1_1request_aa450630370a4dc64018ee2d91d8e081c}{\+\_\+cgi\+\_\+\+Field\+Storage\+\_\+\+\_\+repr\+\_\+\+\_\+patch}} (self)
+\item 
+\mbox{\hyperlink{namespacewebob_1_1request_a726e2c022ebc14d5548af882daff9118}{\+\_\+get\+\_\+multipart\+\_\+boundary}} (ctype)
+\item 
+\mbox{\hyperlink{namespacewebob_1_1request_a598646c1648ecc3e737af2724f246674}{\+\_\+encode\+\_\+multipart}} (vars, content\+\_\+type, fout=None)
+\item 
+\mbox{\hyperlink{namespacewebob_1_1request_ade4ccb870a8d9d2c96d5cadbe702719f}{detect\+\_\+charset}} (ctype)
+\item 
+\mbox{\hyperlink{namespacewebob_1_1request_af5786f9861c35f0feb33448e22e89d0c}{\+\_\+is\+\_\+utf8}} (charset)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacewebob_1_1request_ae843858f35a2a2d027c8e271aae06d76}{No\+Default}} = \mbox{\hyperlink{classwebob_1_1request_1_1__NoDefault}{\+\_\+\+No\+Default}}()
+\item 
+str \mbox{\hyperlink{namespacewebob_1_1request_af173465a5ca7e11b14a9c74270da75e0}{PATH\+\_\+\+SAFE}} = "{}/\texorpdfstring{$\sim$}{\string~}!\$\&\textquotesingle{}()\texorpdfstring{$\ast$}{*}+,;=\+:@"{}
+\item 
+tuple \mbox{\hyperlink{namespacewebob_1_1request_acad7462fc67061c219bd1f8bcef5f897}{\+\_\+\+LATIN\+\_\+\+ENCODINGS}}
+\item 
+\mbox{\hyperlink{namespacewebob_1_1request_afc62b7d0412c65477efb31b3f15d676f}{name}}
+\item 
+\mbox{\hyperlink{namespacewebob_1_1request_a2615ac0ea05ad5187546ab1894759275}{filename}}
+\item 
+\mbox{\hyperlink{namespacewebob_1_1request_adbafe2ffe970e4cf5ad12e2ac95c3ee8}{value}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacewebob_1_1request_aa450630370a4dc64018ee2d91d8e081c}\label{namespacewebob_1_1request_aa450630370a4dc64018ee2d91d8e081c} 
+\index{webob.request@{webob.request}!\_cgi\_FieldStorage\_\_repr\_\_patch@{\_cgi\_FieldStorage\_\_repr\_\_patch}}
+\index{\_cgi\_FieldStorage\_\_repr\_\_patch@{\_cgi\_FieldStorage\_\_repr\_\_patch}!webob.request@{webob.request}}
+\doxysubsubsection{\texorpdfstring{\_cgi\_FieldStorage\_\_repr\_\_patch()}{\_cgi\_FieldStorage\_\_repr\_\_patch()}}
+{\footnotesize\ttfamily webob.\+request.\+\_\+cgi\+\_\+\+Field\+Storage\+\_\+\+\_\+repr\+\_\+\+\_\+patch (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb} monkey patch for FieldStorage.__repr__
+
+Unbelievably, the default __repr__ on FieldStorage reads
+the entire file content instead of being sane about it.
+This is a simple replacement that doesn't do that
+\end{DoxyVerb}
+ \Hypertarget{namespacewebob_1_1request_a598646c1648ecc3e737af2724f246674}\label{namespacewebob_1_1request_a598646c1648ecc3e737af2724f246674} 
+\index{webob.request@{webob.request}!\_encode\_multipart@{\_encode\_multipart}}
+\index{\_encode\_multipart@{\_encode\_multipart}!webob.request@{webob.request}}
+\doxysubsubsection{\texorpdfstring{\_encode\_multipart()}{\_encode\_multipart()}}
+{\footnotesize\ttfamily webob.\+request.\+\_\+encode\+\_\+multipart (\begin{DoxyParamCaption}\item[{}]{vars,  }\item[{}]{content\+\_\+type,  }\item[{}]{fout = {\ttfamily None} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Encode a multipart request body into a string\end{DoxyVerb}
+ \Hypertarget{namespacewebob_1_1request_a726e2c022ebc14d5548af882daff9118}\label{namespacewebob_1_1request_a726e2c022ebc14d5548af882daff9118} 
+\index{webob.request@{webob.request}!\_get\_multipart\_boundary@{\_get\_multipart\_boundary}}
+\index{\_get\_multipart\_boundary@{\_get\_multipart\_boundary}!webob.request@{webob.request}}
+\doxysubsubsection{\texorpdfstring{\_get\_multipart\_boundary()}{\_get\_multipart\_boundary()}}
+{\footnotesize\ttfamily webob.\+request.\+\_\+get\+\_\+multipart\+\_\+boundary (\begin{DoxyParamCaption}\item[{}]{ctype }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1request_af5786f9861c35f0feb33448e22e89d0c}\label{namespacewebob_1_1request_af5786f9861c35f0feb33448e22e89d0c} 
+\index{webob.request@{webob.request}!\_is\_utf8@{\_is\_utf8}}
+\index{\_is\_utf8@{\_is\_utf8}!webob.request@{webob.request}}
+\doxysubsubsection{\texorpdfstring{\_is\_utf8()}{\_is\_utf8()}}
+{\footnotesize\ttfamily webob.\+request.\+\_\+is\+\_\+utf8 (\begin{DoxyParamCaption}\item[{}]{charset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{namespacewebob_1_1request_ade4ccb870a8d9d2c96d5cadbe702719f}\label{namespacewebob_1_1request_ade4ccb870a8d9d2c96d5cadbe702719f} 
+\index{webob.request@{webob.request}!detect\_charset@{detect\_charset}}
+\index{detect\_charset@{detect\_charset}!webob.request@{webob.request}}
+\doxysubsubsection{\texorpdfstring{detect\_charset()}{detect\_charset()}}
+{\footnotesize\ttfamily webob.\+request.\+detect\+\_\+charset (\begin{DoxyParamCaption}\item[{}]{ctype }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacewebob_1_1request_a1d1ce78a5d55b05b911c8be6a2caf5a3}\label{namespacewebob_1_1request_a1d1ce78a5d55b05b911c8be6a2caf5a3} 
+\index{webob.request@{webob.request}!environ\_add\_POST@{environ\_add\_POST}}
+\index{environ\_add\_POST@{environ\_add\_POST}!webob.request@{webob.request}}
+\doxysubsubsection{\texorpdfstring{environ\_add\_POST()}{environ\_add\_POST()}}
+{\footnotesize\ttfamily webob.\+request.\+environ\+\_\+add\+\_\+\+POST (\begin{DoxyParamCaption}\item[{}]{env,  }\item[{}]{data,  }\item[{}]{content\+\_\+type = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacewebob_1_1request_a6a463682ba6383835bd54a3fd10bce08}\label{namespacewebob_1_1request_a6a463682ba6383835bd54a3fd10bce08} 
+\index{webob.request@{webob.request}!environ\_from\_url@{environ\_from\_url}}
+\index{environ\_from\_url@{environ\_from\_url}!webob.request@{webob.request}}
+\doxysubsubsection{\texorpdfstring{environ\_from\_url()}{environ\_from\_url()}}
+{\footnotesize\ttfamily webob.\+request.\+environ\+\_\+from\+\_\+url (\begin{DoxyParamCaption}\item[{}]{path }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacewebob_1_1request_acad7462fc67061c219bd1f8bcef5f897}\label{namespacewebob_1_1request_acad7462fc67061c219bd1f8bcef5f897} 
+\index{webob.request@{webob.request}!\_LATIN\_ENCODINGS@{\_LATIN\_ENCODINGS}}
+\index{\_LATIN\_ENCODINGS@{\_LATIN\_ENCODINGS}!webob.request@{webob.request}}
+\doxysubsubsection{\texorpdfstring{\_LATIN\_ENCODINGS}{\_LATIN\_ENCODINGS}}
+{\footnotesize\ttfamily tuple webob.\+request.\+\_\+\+LATIN\+\_\+\+ENCODINGS\hspace{0.3cm}{\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ (}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{'ascii'},\ \textcolor{stringliteral}{'latin-\/1'},\ \textcolor{stringliteral}{'latin'},\ \textcolor{stringliteral}{'latin\_1'},\ \textcolor{stringliteral}{'l1'},\ \textcolor{stringliteral}{'latin1'},}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{'iso-\/8859-\/1'},\ \textcolor{stringliteral}{'iso8859\_1'},\ \textcolor{stringliteral}{'iso\_8859\_1'},\ \textcolor{stringliteral}{'iso8859'},\ \textcolor{stringliteral}{'8859'},}
+\DoxyCodeLine{00004\ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacewebob_1_1request_a2615ac0ea05ad5187546ab1894759275}\label{namespacewebob_1_1request_a2615ac0ea05ad5187546ab1894759275} 
+\index{webob.request@{webob.request}!filename@{filename}}
+\index{filename@{filename}!webob.request@{webob.request}}
+\doxysubsubsection{\texorpdfstring{filename}{filename}}
+{\footnotesize\ttfamily webob.\+request.\+filename}
+
+\Hypertarget{namespacewebob_1_1request_afc62b7d0412c65477efb31b3f15d676f}\label{namespacewebob_1_1request_afc62b7d0412c65477efb31b3f15d676f} 
+\index{webob.request@{webob.request}!name@{name}}
+\index{name@{name}!webob.request@{webob.request}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily webob.\+request.\+name}
+
+\Hypertarget{namespacewebob_1_1request_ae843858f35a2a2d027c8e271aae06d76}\label{namespacewebob_1_1request_ae843858f35a2a2d027c8e271aae06d76} 
+\index{webob.request@{webob.request}!NoDefault@{NoDefault}}
+\index{NoDefault@{NoDefault}!webob.request@{webob.request}}
+\doxysubsubsection{\texorpdfstring{NoDefault}{NoDefault}}
+{\footnotesize\ttfamily webob.\+request.\+No\+Default = \mbox{\hyperlink{classwebob_1_1request_1_1__NoDefault}{\+\_\+\+No\+Default}}()}
+
+\Hypertarget{namespacewebob_1_1request_af173465a5ca7e11b14a9c74270da75e0}\label{namespacewebob_1_1request_af173465a5ca7e11b14a9c74270da75e0} 
+\index{webob.request@{webob.request}!PATH\_SAFE@{PATH\_SAFE}}
+\index{PATH\_SAFE@{PATH\_SAFE}!webob.request@{webob.request}}
+\doxysubsubsection{\texorpdfstring{PATH\_SAFE}{PATH\_SAFE}}
+{\footnotesize\ttfamily str webob.\+request.\+PATH\+\_\+\+SAFE = "{}/\texorpdfstring{$\sim$}{\string~}!\$\&\textquotesingle{}()\texorpdfstring{$\ast$}{*}+,;=\+:@"{}}
+
+\Hypertarget{namespacewebob_1_1request_adbafe2ffe970e4cf5ad12e2ac95c3ee8}\label{namespacewebob_1_1request_adbafe2ffe970e4cf5ad12e2ac95c3ee8} 
+\index{webob.request@{webob.request}!value@{value}}
+\index{value@{value}!webob.request@{webob.request}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily webob.\+request.\+value}
+

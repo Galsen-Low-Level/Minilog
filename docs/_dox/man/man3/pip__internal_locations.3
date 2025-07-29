@@ -1,0 +1,252 @@
+.TH "pip._internal.locations" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.locations
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fB_distutils\fP"
+.br
+.ti -1c
+.RI "namespace \fB_sysconfig\fP"
+.br
+.ti -1c
+.RI "namespace \fBbase\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fB_should_use_sysconfig\fP ()"
+.br
+.ti -1c
+.RI "bool \fB_looks_like_bpo_44860\fP ()"
+.br
+.ti -1c
+.RI "bool \fB_looks_like_red_hat_patched_platlib_purelib\fP (Dict[str, str] scheme)"
+.br
+.ti -1c
+.RI "bool \fB_looks_like_red_hat_lib\fP ()"
+.br
+.ti -1c
+.RI "bool \fB_looks_like_debian_scheme\fP ()"
+.br
+.ti -1c
+.RI "bool \fB_looks_like_red_hat_scheme\fP ()"
+.br
+.ti -1c
+.RI "bool \fB_looks_like_slackware_scheme\fP ()"
+.br
+.ti -1c
+.RI "bool \fB_looks_like_msys2_mingw_scheme\fP ()"
+.br
+.ti -1c
+.RI "Generator[str, None, None] \fB_fix_abiflags\fP (Tuple[str] parts)"
+.br
+.ti -1c
+.RI "None \fB_warn_mismatched\fP (pathlib\&.Path old, pathlib\&.Path new, *str key)"
+.br
+.ti -1c
+.RI "bool \fB_warn_if_mismatch\fP (pathlib\&.Path old, pathlib\&.Path new, *str key)"
+.br
+.ti -1c
+.RI "None \fB_log_context\fP (*bool user=False, Optional[str] home=None, Optional[str] root=None, Optional[str] prefix=None)"
+.br
+.ti -1c
+.RI "\fBScheme\fP \fBget_scheme\fP (str dist_name, bool user=False, Optional[str] home=None, Optional[str] root=None, bool isolated=False, Optional[str] prefix=None)"
+.br
+.ti -1c
+.RI "str \fBget_bin_prefix\fP ()"
+.br
+.ti -1c
+.RI "str \fBget_bin_user\fP ()"
+.br
+.ti -1c
+.RI "bool \fB_looks_like_deb_system_dist_packages\fP (str value)"
+.br
+.ti -1c
+.RI "str \fBget_purelib\fP ()"
+.br
+.ti -1c
+.RI "str \fBget_platlib\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "str \fB_PLATLIBDIR\fP = getattr(sys, 'platlibdir', 'lib')"
+.br
+.ti -1c
+.RI "tuple \fB_USE_SYSCONFIG_DEFAULT\fP = (3, 10)"
+.br
+.ti -1c
+.RI "bool \fB_USE_SYSCONFIG\fP = \fB_should_use_sysconfig\fP()"
+.br
+.ti -1c
+.RI "\fB_MISMATCH_LEVEL\fP = logging\&.WARNING"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " Generator[str, None, None] pip\&._internal\&.locations\&._fix_abiflags (Tuple[str] parts)\fC [protected]\fP"
+
+.SS " None pip\&._internal\&.locations\&._log_context (*bool  user = \fCFalse\fP, Optional[str]  home = \fCNone\fP, Optional[str]  root = \fCNone\fP, Optional[str]  prefix = \fCNone\fP)\fC [protected]\fP"
+
+.SS " bool pip\&._internal\&.locations\&._looks_like_bpo_44860 ()\fC [protected]\fP"
+
+.PP
+.nf
+The resolution to bpo-44860 will change this incorrect platlib\&.
+
+See <https://bugs\&.python\&.org/issue44860>\&.
+
+.fi
+.PP
+ 
+.SS " bool pip\&._internal\&.locations\&._looks_like_deb_system_dist_packages (str value)\fC [protected]\fP"
+
+.PP
+.nf
+Check if the value is Debian's APT-controlled dist-packages\&.
+
+Debian's ``distutils\&.sysconfig\&.get_python_lib()`` implementation returns the
+default package path controlled by APT, but does not patch ``sysconfig`` to
+do the same\&. This is similar to the bug worked around in ``get_scheme()``,
+but here the default is ``deb_system`` instead of ``unix_local``\&. Ultimately
+we can't do anything about this Debian bug, and this detection allows us to
+skip the warning when needed\&.
+
+.fi
+.PP
+ 
+.SS " bool pip\&._internal\&.locations\&._looks_like_debian_scheme ()\fC [protected]\fP"
+
+.PP
+.nf
+Debian adds two additional schemes\&.
+.fi
+.PP
+ 
+.SS " bool pip\&._internal\&.locations\&._looks_like_msys2_mingw_scheme ()\fC [protected]\fP"
+
+.PP
+.nf
+MSYS2 patches distutils and sysconfig to use a UNIX-like scheme\&.
+
+However, MSYS2 incorrectly patches sysconfig ``nt`` scheme\&. The fix is
+likely going to be included in their 3\&.10 release, so we ignore the warning\&.
+See msys2/MINGW-packages#9319\&.
+
+MSYS2 MINGW's patch uses lowercase ``'lib'`` instead of the usual uppercase,
+and is missing the final ``'site-packages'``\&.
+
+.fi
+.PP
+ 
+.SS " bool pip\&._internal\&.locations\&._looks_like_red_hat_lib ()\fC [protected]\fP"
+
+.PP
+.nf
+Red Hat patches platlib in unix_prefix and unix_home, but not purelib\&.
+
+This is the only way I can see to tell a Red Hat-patched Python\&.
+
+.fi
+.PP
+ 
+.SS " bool pip\&._internal\&.locations\&._looks_like_red_hat_patched_platlib_purelib (Dict[str, str] scheme)\fC [protected]\fP"
+
+.SS " bool pip\&._internal\&.locations\&._looks_like_red_hat_scheme ()\fC [protected]\fP"
+
+.PP
+.nf
+Red Hat patches ``sys\&.prefix`` and ``sys\&.exec_prefix``\&.
+
+Red Hat's ``00251-change-user-install-location\&.patch`` changes the install
+command's ``prefix`` and ``exec_prefix`` to append ``'/local'``\&. This is
+(fortunately?) done quite unconditionally, so we create a default command
+object without any configuration to detect this\&.
+
+.fi
+.PP
+ 
+.SS " bool pip\&._internal\&.locations\&._looks_like_slackware_scheme ()\fC [protected]\fP"
+
+.PP
+.nf
+Slackware patches sysconfig but fails to patch distutils and site\&.
+
+Slackware changes sysconfig's user scheme to use ``'lib64'`` for the lib
+path, but does not do the same to the site module\&.
+
+.fi
+.PP
+ 
+.SS " bool pip\&._internal\&.locations\&._should_use_sysconfig ()\fC [protected]\fP"
+
+.PP
+.nf
+This function determines the value of _USE_SYSCONFIG\&.
+
+By default, pip uses sysconfig on Python 3\&.10+\&.
+But Python distributors can override this decision by setting:
+    sysconfig\&._PIP_USE_SYSCONFIG = True / False
+Rationale in https://github\&.com/pypa/pip/issues/10647
+
+This is a function for testability, but should be constant during any one
+run\&.
+
+.fi
+.PP
+ 
+.SS " bool pip\&._internal\&.locations\&._warn_if_mismatch (pathlib\&.Path old, pathlib\&.Path new, *str key)\fC [protected]\fP"
+
+.SS " None pip\&._internal\&.locations\&._warn_mismatched (pathlib\&.Path old, pathlib\&.Path new, *str key)\fC [protected]\fP"
+
+.SS " str pip\&._internal\&.locations\&.get_bin_prefix ()"
+
+.SS " str pip\&._internal\&.locations\&.get_bin_user ()"
+
+.SS " str pip\&._internal\&.locations\&.get_platlib ()"
+
+.PP
+.nf
+Return the default platform-shared lib location\&.
+.fi
+.PP
+ 
+.SS " str pip\&._internal\&.locations\&.get_purelib ()"
+
+.PP
+.nf
+Return the default pure-Python lib location\&.
+.fi
+.PP
+ 
+.SS " \fBScheme\fP pip\&._internal\&.locations\&.get_scheme (str dist_name, bool  user = \fCFalse\fP, Optional[str]  home = \fCNone\fP, Optional[str]  root = \fCNone\fP, bool  isolated = \fCFalse\fP, Optional[str]  prefix = \fCNone\fP)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._internal\&.locations\&._MISMATCH_LEVEL = logging\&.WARNING\fC [protected]\fP"
+
+.SS "str pip\&._internal\&.locations\&._PLATLIBDIR = getattr(sys, 'platlibdir', 'lib')\fC [protected]\fP"
+
+.SS "bool pip\&._internal\&.locations\&._USE_SYSCONFIG = \fB_should_use_sysconfig\fP()\fC [protected]\fP"
+
+.SS "tuple pip\&._internal\&.locations\&._USE_SYSCONFIG_DEFAULT = (3, 10)\fC [protected]\fP"
+
+.SS "pip\&._internal\&.locations\&.logger = logging\&.getLogger(__name__)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

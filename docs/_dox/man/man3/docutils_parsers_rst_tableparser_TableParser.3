@@ -1,0 +1,89 @@
+.TH "docutils.parsers.rst.tableparser.TableParser" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.parsers.rst.tableparser.TableParser
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBdocutils\&.parsers\&.rst\&.tableparser\&.GridTableParser\fP, and \fBdocutils\&.parsers\&.rst\&.tableparser\&.SimpleTableParser\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBparse\fP (self, \fBblock\fP)"
+.br
+.ti -1c
+.RI "\fBfind_head_body_sep\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBblock\fP"
+.br
+.ti -1c
+.RI "\fBhead_body_sep\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBhead_body_separator_pat\fP = None"
+.br
+.ti -1c
+.RI "str \fBdouble_width_pad_char\fP = '\\x00'"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Abstract superclass for the common parts of the syntax-specific parsers\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.parsers\&.rst\&.tableparser\&.TableParser\&.find_head_body_sep ( self)"
+
+.PP
+.nf
+Look for a head/body row separator line; store the line index\&.
+.fi
+.PP
+ 
+.SS "docutils\&.parsers\&.rst\&.tableparser\&.TableParser\&.parse ( self,  block)"
+
+.PP
+.nf
+Analyze the text `block` and return a table data structure\&.
+
+Given a plaintext-graphic table in `block` (list of lines of text; no
+whitespace padding), parse the table, construct and return the data
+necessary to construct a CALS table or equivalent\&.
+
+Raise `TableMarkupError` if there is any problem with the markup\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.parsers\&.rst\&.tableparser\&.TableParser\&.block"
+
+.SS "str docutils\&.parsers\&.rst\&.tableparser\&.TableParser\&.double_width_pad_char = '\\x00'\fC [static]\fP"
+
+.SS "docutils\&.parsers\&.rst\&.tableparser\&.TableParser\&.head_body_sep"
+
+.SS "docutils\&.parsers\&.rst\&.tableparser\&.TableParser\&.head_body_separator_pat = None\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

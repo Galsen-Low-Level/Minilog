@@ -1,0 +1,139 @@
+.TH "pip._vendor.rich.control" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.rich.control
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBControl\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fBstrip_control_codes\fP (str text, Dict[int, None] _translate_table=\fB_CONTROL_STRIP_TRANSLATE\fP)"
+.br
+.ti -1c
+.RI "str \fBescape_control_codes\fP (str text, Dict[int, str] _translate_table=\fBCONTROL_ESCAPE\fP)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "list \fBSTRIP_CONTROL_CODES\fP"
+.br
+.ti -1c
+.RI "dict \fB_CONTROL_STRIP_TRANSLATE\fP"
+.br
+.ti -1c
+.RI "dict \fBCONTROL_ESCAPE\fP"
+.br
+.ti -1c
+.RI "dict \fBCONTROL_CODES_FORMAT\fP"
+.br
+.ti -1c
+.RI "\fBconsole\fP = \fBConsole\fP()"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " str pip\&._vendor\&.rich\&.control\&.escape_control_codes (str text, Dict[int, str]  _translate_table = \fC\fBCONTROL_ESCAPE\fP\fP)"
+
+.PP
+.nf
+Replace control codes with their 'escaped' equivalent in the given text\&.
+(e\&.g\&. '\\b' becomes '\\\\b')
+
+Args:
+    text (str): A string possibly containing control codes\&.
+
+Returns:
+    str: String with control codes replaced with their escaped version\&.
+
+.fi
+.PP
+ 
+.SS " str pip\&._vendor\&.rich\&.control\&.strip_control_codes (str text, Dict[int, None]  _translate_table = \fC\fB_CONTROL_STRIP_TRANSLATE\fP\fP)"
+
+.PP
+.nf
+Remove control codes from text\&.
+
+Args:
+    text (str): A string possibly contain control codes\&.
+
+Returns:
+    str: String with control codes removed\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "dict pip\&._vendor\&.rich\&.control\&._CONTROL_STRIP_TRANSLATE\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     _codepoint: None for _codepoint in STRIP_CONTROL_CODES
+3 }
+.fi
+
+.SS "pip\&._vendor\&.rich\&.control\&.console = \fBConsole\fP()"
+
+.SS "dict pip\&._vendor\&.rich\&.control\&.CONTROL_CODES_FORMAT"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     ControlType\&.BELL: lambda: "\\x07",
+3     ControlType\&.CARRIAGE_RETURN: lambda: "\\r",
+4     ControlType\&.HOME: lambda: "\\x1b[H",
+5     ControlType\&.CLEAR: lambda: "\\x1b[2J",
+6     ControlType\&.ENABLE_ALT_SCREEN: lambda: "\\x1b[?1049h",
+7     ControlType\&.DISABLE_ALT_SCREEN: lambda: "\\x1b[?1049l",
+8     ControlType\&.SHOW_CURSOR: lambda: "\\x1b[?25h",
+9     ControlType\&.HIDE_CURSOR: lambda: "\\x1b[?25l",
+10     ControlType\&.CURSOR_UP: lambda param: f"\\x1b[{param}A",
+11     ControlType\&.CURSOR_DOWN: lambda param: f"\\x1b[{param}B",
+12     ControlType\&.CURSOR_FORWARD: lambda param: f"\\x1b[{param}C",
+13     ControlType\&.CURSOR_BACKWARD: lambda param: f"\\x1b[{param}D",
+14     ControlType\&.CURSOR_MOVE_TO_COLUMN: lambda param: f"\\x1b[{param+1}G",
+15     ControlType\&.ERASE_IN_LINE: lambda param: f"\\x1b[{param}K",
+16     ControlType\&.CURSOR_MOVE_TO: lambda x, y: f"\\x1b[{y+1};{x+1}H",
+17     ControlType\&.SET_WINDOW_TITLE: lambda title: f"\\x1b]0;{title}\\x07",
+18 }
+.fi
+
+.SS "dict pip\&._vendor\&.rich\&.control\&.CONTROL_ESCAPE"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     7: "\\\\a",
+3     8: "\\\\b",
+4     11: "\\\\v",
+5     12: "\\\\f",
+6     13: "\\\\r",
+7 }
+.fi
+
+.SS "list pip\&._vendor\&.rich\&.control\&.STRIP_CONTROL_CODES"
+\fBInitial value:\fP.PP
+.nf
+1 =  [
+2     7,  # Bell
+3     8,  # Backspace
+4     11,  # Vertical tab
+5     12,  # Form feed
+6     13,  # Carriage return
+7 ]
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,379 @@
+.TH "docutils.core" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.core
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBPublisher\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBpublish_cmdline\fP (reader=None, reader_name='standalone', parser=None, parser_name='restructuredtext', writer=None, writer_name='pseudoxml', settings=None, settings_spec=None, settings_overrides=None, config_section=None, enable_exit_status=True, argv=None, usage=\fBdefault_usage\fP, description=\fBdefault_description\fP)"
+.br
+.ti -1c
+.RI "\fBpublish_file\fP (source=None, source_path=None, destination=None, destination_path=None, reader=None, reader_name='standalone', parser=None, parser_name='restructuredtext', writer=None, writer_name='pseudoxml', settings=None, settings_spec=None, settings_overrides=None, config_section=None, enable_exit_status=False)"
+.br
+.ti -1c
+.RI "\fBpublish_string\fP (source, source_path=None, destination_path=None, reader=None, reader_name='standalone', parser=None, parser_name='restructuredtext', writer=None, writer_name='pseudoxml', settings=None, settings_spec=None, settings_overrides=None, config_section=None, enable_exit_status=False)"
+.br
+.ti -1c
+.RI "\fBpublish_parts\fP (source, source_path=None, source_class=\fBio\&.StringInput\fP, destination_path=None, reader=None, reader_name='standalone', parser=None, parser_name='restructuredtext', writer=None, writer_name='pseudoxml', settings=None, settings_spec=None, settings_overrides=None, config_section=None, enable_exit_status=False)"
+.br
+.ti -1c
+.RI "\fBpublish_doctree\fP (source, source_path=None, source_class=\fBio\&.StringInput\fP, reader=None, reader_name='standalone', parser=None, parser_name='restructuredtext', settings=None, settings_spec=None, settings_overrides=None, config_section=None, enable_exit_status=False)"
+.br
+.ti -1c
+.RI "\fBpublish_from_doctree\fP (document, destination_path=None, writer=None, writer_name='pseudoxml', settings=None, settings_spec=None, settings_overrides=None, config_section=None, enable_exit_status=False)"
+.br
+.ti -1c
+.RI "\fBpublish_cmdline_to_binary\fP (reader=None, reader_name='standalone', parser=None, parser_name='restructuredtext', writer=None, writer_name='pseudoxml', settings=None, settings_spec=None, settings_overrides=None, config_section=None, enable_exit_status=True, argv=None, usage=\fBdefault_usage\fP, description=\fBdefault_description\fP, destination=None, destination_class=\fBio\&.BinaryFileOutput\fP)"
+.br
+.ti -1c
+.RI "\fBpublish_programmatically\fP (source_class, source, source_path, destination_class, destination, destination_path, reader, reader_name, parser, parser_name, writer, writer_name, settings, settings_spec, settings_overrides, config_section, enable_exit_status)"
+.br
+.ti -1c
+.RI "\fBrst2something\fP (writer, documenttype, doc_path='')"
+.br
+.ti -1c
+.RI "\fBrst2html\fP ()"
+.br
+.ti -1c
+.RI "\fBrst2html4\fP ()"
+.br
+.ti -1c
+.RI "\fBrst2html5\fP ()"
+.br
+.ti -1c
+.RI "\fBrst2latex\fP ()"
+.br
+.ti -1c
+.RI "\fBrst2man\fP ()"
+.br
+.ti -1c
+.RI "\fBrst2odt\fP ()"
+.br
+.ti -1c
+.RI "\fBrst2pseudoxml\fP ()"
+.br
+.ti -1c
+.RI "\fBrst2s5\fP ()"
+.br
+.ti -1c
+.RI "\fBrst2xetex\fP ()"
+.br
+.ti -1c
+.RI "\fBrst2xml\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "str \fBdefault_usage\fP = '%prog [options] [<source> [<destination>]]'"
+.br
+.ti -1c
+.RI "tuple \fBdefault_description\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Calling the ``publish_*`` convenience functions (or instantiating a
+`Publisher` object) with component names will result in default
+behavior\&.  For custom behavior (setting component options), create
+custom component objects first, and pass *them* to
+``publish_*``/`Publisher`\&.  See `The Docutils Publisher`_\&.
+
+\&.\&. _The Docutils Publisher:
+    https://docutils\&.sourceforge\&.io/docs/api/publisher\&.html
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "docutils\&.core\&.publish_cmdline ( reader = \fCNone\fP,  reader_name = \fC'standalone'\fP,  parser = \fCNone\fP,  parser_name = \fC'restructuredtext'\fP,  writer = \fCNone\fP,  writer_name = \fC'pseudoxml'\fP,  settings = \fCNone\fP,  settings_spec = \fCNone\fP,  settings_overrides = \fCNone\fP,  config_section = \fCNone\fP,  enable_exit_status = \fCTrue\fP,  argv = \fCNone\fP,  usage = \fC\fBdefault_usage\fP\fP,  description = \fC\fBdefault_description\fP\fP)"
+
+.PP
+.nf
+Set up & run a `Publisher` for command-line-based file I/O (input and
+output file paths taken automatically from the command line)\&.
+Also return the output as `str` or `bytes` (for binary output document
+formats)\&.
+
+Parameters: see `publish_programmatically()` for the remainder\&.
+
+- `argv`: Command-line argument list to use instead of ``sys\&.argv[1:]``\&.
+- `usage`: Usage string, output if there's a problem parsing the command
+  line\&.
+- `description`: Program description, output for the '--help' option
+  (along with command-line option descriptions)\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.core\&.publish_cmdline_to_binary ( reader = \fCNone\fP,  reader_name = \fC'standalone'\fP,  parser = \fCNone\fP,  parser_name = \fC'restructuredtext'\fP,  writer = \fCNone\fP,  writer_name = \fC'pseudoxml'\fP,  settings = \fCNone\fP,  settings_spec = \fCNone\fP,  settings_overrides = \fCNone\fP,  config_section = \fCNone\fP,  enable_exit_status = \fCTrue\fP,  argv = \fCNone\fP,  usage = \fC\fBdefault_usage\fP\fP,  description = \fC\fBdefault_description\fP\fP,  destination = \fCNone\fP,  destination_class = \fC\fBio\&.BinaryFileOutput\fP\fP)"
+
+.PP
+.nf
+Set up & run a `Publisher` for command-line-based file I/O (input and
+output file paths taken automatically from the command line)\&.
+Also return the output as `bytes`\&.
+
+This is just like publish_cmdline, except that it uses
+io\&.BinaryFileOutput instead of io\&.FileOutput\&.
+
+Parameters: see `publish_programmatically()` for the remainder\&.
+
+- `argv`: Command-line argument list to use instead of ``sys\&.argv[1:]``\&.
+- `usage`: Usage string, output if there's a problem parsing the command
+  line\&.
+- `description`: Program description, output for the '--help' option
+  (along with command-line option descriptions)\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.core\&.publish_doctree ( source,  source_path = \fCNone\fP,  source_class = \fC\fBio\&.StringInput\fP\fP,  reader = \fCNone\fP,  reader_name = \fC'standalone'\fP,  parser = \fCNone\fP,  parser_name = \fC'restructuredtext'\fP,  settings = \fCNone\fP,  settings_spec = \fCNone\fP,  settings_overrides = \fCNone\fP,  config_section = \fCNone\fP,  enable_exit_status = \fCFalse\fP)"
+
+.PP
+.nf
+Set up & run a `Publisher` for programmatic use\&. Return a document tree\&.
+
+Parameters: see `publish_programmatically()`\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.core\&.publish_file ( source = \fCNone\fP,  source_path = \fCNone\fP,  destination = \fCNone\fP,  destination_path = \fCNone\fP,  reader = \fCNone\fP,  reader_name = \fC'standalone'\fP,  parser = \fCNone\fP,  parser_name = \fC'restructuredtext'\fP,  writer = \fCNone\fP,  writer_name = \fC'pseudoxml'\fP,  settings = \fCNone\fP,  settings_spec = \fCNone\fP,  settings_overrides = \fCNone\fP,  config_section = \fCNone\fP,  enable_exit_status = \fCFalse\fP)"
+
+.PP
+.nf
+Set up & run a `Publisher` for programmatic use with file-like I/O\&.
+Also return the output as `str` or `bytes` (for binary output document
+formats)\&.
+
+Parameters: see `publish_programmatically()`\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.core\&.publish_from_doctree ( document,  destination_path = \fCNone\fP,  writer = \fCNone\fP,  writer_name = \fC'pseudoxml'\fP,  settings = \fCNone\fP,  settings_spec = \fCNone\fP,  settings_overrides = \fCNone\fP,  config_section = \fCNone\fP,  enable_exit_status = \fCFalse\fP)"
+
+.PP
+.nf
+Set up & run a `Publisher` to render from an existing document tree
+data structure\&. For programmatic use with string output
+(`bytes` or `str`, cf\&. `publish_string()`)\&.
+
+Note that ``document\&.settings`` is overridden; if you want to use the
+settings of the original `document`, pass ``settings=document\&.settings``\&.
+
+Also, new `document\&.transformer` and `document\&.reporter` objects are
+generated\&.
+
+Parameters: `document` is a `docutils\&.nodes\&.document` object, an existing
+document tree\&.
+
+Other parameters: see `publish_programmatically()`\&.
+
+This function is provisional because in Python 3 name and behaviour
+of the `io\&.StringOutput` class no longer match\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.core\&.publish_parts ( source,  source_path = \fCNone\fP,  source_class = \fC\fBio\&.StringInput\fP\fP,  destination_path = \fCNone\fP,  reader = \fCNone\fP,  reader_name = \fC'standalone'\fP,  parser = \fCNone\fP,  parser_name = \fC'restructuredtext'\fP,  writer = \fCNone\fP,  writer_name = \fC'pseudoxml'\fP,  settings = \fCNone\fP,  settings_spec = \fCNone\fP,  settings_overrides = \fCNone\fP,  config_section = \fCNone\fP,  enable_exit_status = \fCFalse\fP)"
+
+.PP
+.nf
+Set up & run a `Publisher`, and return a dictionary of document parts\&.
+
+Dictionary keys are the names of parts\&.
+Dictionary values are `str` instances; encoding is up to the client,
+e\&.g\&.::
+
+   parts = publish_parts(\&.\&.\&.)
+   body = parts['body']\&.encode(parts['encoding'], parts['errors'])
+
+See the `API documentation`__ for details on the provided parts\&.
+
+Parameters: see `publish_programmatically()`\&.
+
+__ https://docutils\&.sourceforge\&.io/docs/api/publisher\&.html#publish-parts
+
+.fi
+.PP
+ 
+.SS "docutils\&.core\&.publish_programmatically ( source_class,  source,  source_path,  destination_class,  destination,  destination_path,  reader,  reader_name,  parser,  parser_name,  writer,  writer_name,  settings,  settings_spec,  settings_overrides,  config_section,  enable_exit_status)"
+
+.PP
+.nf
+Set up & run a `Publisher` for custom programmatic use\&.
+
+Return the output (as `str` or `bytes`, depending on `destination_class`,
+writer, and the 'output_encoding' setting) and the Publisher object\&.
+
+Applications should not need to call this function directly\&.  If it does
+seem to be necessary to call this function directly, please write to the
+Docutils-develop mailing list
+<https://docutils\&.sourceforge\&.io/docs/user/mailing-lists\&.html#docutils-develop>\&.
+
+Parameters:
+
+* `source_class` **required**: The class for dynamically created source
+  objects\&.  Typically `io\&.FileInput` or `io\&.StringInput`\&.
+
+* `source`: Type depends on `source_class`:
+
+  - If `source_class` is `io\&.FileInput`: Either a file-like object
+    (must have 'read' and 'close' methods), or ``None``
+    (`source_path` is opened)\&.  If neither `source` nor
+    `source_path` are supplied, `sys\&.stdin` is used\&.
+
+  - If `source_class` is `io\&.StringInput` **required**:
+    The input as either a `bytes` object (ensure the 'input_encoding'
+    setting matches its encoding) or a `str` object\&.
+
+* `source_path`: Type depends on `source_class`:
+
+  - `io\&.FileInput`: Path to the input file, opened if no `source`
+    supplied\&.
+
+  - `io\&.StringInput`: Optional\&.  Path to the file or name of the
+    object that produced `source`\&.  Only used for diagnostic output\&.
+
+* `destination_class` **required**: The class for dynamically created
+  destination objects\&.  Typically `io\&.FileOutput` or `io\&.StringOutput`\&.
+
+* `destination`: Type depends on `destination_class`:
+
+  - `io\&.FileOutput`: Either a file-like object (must have 'write' and
+    'close' methods), or ``None`` (`destination_path` is opened)\&.  If
+    neither `destination` nor `destination_path` are supplied,
+    `sys\&.stdout` is used\&.
+
+  - `io\&.StringOutput`: Not used; pass ``None``\&.
+
+* `destination_path`: Type depends on `destination_class`:
+
+  - `io\&.FileOutput`: Path to the output file\&.  Opened if no `destination`
+    supplied\&.
+
+  - `io\&.StringOutput`: Path to the file or object which will receive the
+    output; optional\&.  Used for determining relative paths (stylesheets,
+    source links, etc\&.)\&.
+
+* `reader`: A `docutils\&.readers\&.Reader` object\&.
+
+* `reader_name`: Name or alias of the Reader class to be instantiated if
+  no `reader` supplied\&.
+
+* `parser`: A `docutils\&.parsers\&.Parser` object\&.
+
+* `parser_name`: Name or alias of the Parser class to be instantiated if
+  no `parser` supplied\&.
+
+* `writer`: A `docutils\&.writers\&.Writer` object\&.
+
+* `writer_name`: Name or alias of the Writer class to be instantiated if
+  no `writer` supplied\&.
+
+* `settings`: A runtime settings (`docutils\&.frontend\&.Values`) object, for
+  dotted-attribute access to runtime settings\&.  It's the end result of the
+  `SettingsSpec`, config file, and option processing\&.  If `settings` is
+  passed, it's assumed to be complete and no further setting/config/option
+  processing is done\&.
+
+* `settings_spec`: A `docutils\&.SettingsSpec` subclass or object\&.  Provides
+  extra application-specific settings definitions independently of
+  components\&.  In other words, the application becomes a component, and
+  its settings data is processed along with that of the other components\&.
+  Used only if no `settings` specified\&.
+
+* `settings_overrides`: A dictionary containing application-specific
+  settings defaults that override the defaults of other components\&.
+  Used only if no `settings` specified\&.
+
+* `config_section`: A string, the name of the configuration file section
+  for this application\&.  Overrides the ``config_section`` attribute
+  defined by `settings_spec`\&.  Used only if no `settings` specified\&.
+
+* `enable_exit_status`: Boolean; enable exit status at end of processing?
+
+.fi
+.PP
+ 
+.SS "docutils\&.core\&.publish_string ( source,  source_path = \fCNone\fP,  destination_path = \fCNone\fP,  reader = \fCNone\fP,  reader_name = \fC'standalone'\fP,  parser = \fCNone\fP,  parser_name = \fC'restructuredtext'\fP,  writer = \fCNone\fP,  writer_name = \fC'pseudoxml'\fP,  settings = \fCNone\fP,  settings_spec = \fCNone\fP,  settings_overrides = \fCNone\fP,  config_section = \fCNone\fP,  enable_exit_status = \fCFalse\fP)"
+
+.PP
+.nf
+Set up & run a `Publisher` for programmatic use with string I/O\&.
+
+Accepts a `bytes` or `str` instance as `source`\&.
+
+The output is encoded according to the `output_encoding`_ setting;
+the return value is a `bytes` instance (unless `output_encoding`_ is
+'unicode', cf\&. `docutils\&.io\&.StringOutput\&.write()`)\&.
+
+Parameters: see `publish_programmatically()`\&.
+
+This function is provisional because in Python 3 name and behaviour
+no longer match\&.
+
+\&.\&. _output_encoding:
+    https://docutils\&.sourceforge\&.io/docs/user/config\&.html#output-encoding
+
+.fi
+.PP
+ 
+.SS "docutils\&.core\&.rst2html ()"
+
+.SS "docutils\&.core\&.rst2html4 ()"
+
+.SS "docutils\&.core\&.rst2html5 ()"
+
+.SS "docutils\&.core\&.rst2latex ()"
+
+.SS "docutils\&.core\&.rst2man ()"
+
+.SS "docutils\&.core\&.rst2odt ()"
+
+.SS "docutils\&.core\&.rst2pseudoxml ()"
+
+.SS "docutils\&.core\&.rst2s5 ()"
+
+.SS "docutils\&.core\&.rst2something ( writer,  documenttype,  doc_path = \fC''\fP)"
+
+.SS "docutils\&.core\&.rst2xetex ()"
+
+.SS "docutils\&.core\&.rst2xml ()"
+
+.SH "Variable Documentation"
+.PP 
+.SS "tuple docutils\&.core\&.default_description"
+\fBInitial value:\fP.PP
+.nf
+1 =  (
+2     'Reads from <source> (default is stdin) '
+3     'and writes to <destination> (default is stdout)\&.  '
+4     'See https://docutils\&.sourceforge\&.io/docs/user/config\&.html '
+5     'for a detailed settings reference\&.')
+.fi
+
+.SS "str docutils\&.core\&.default_usage = '%prog [options] [<source> [<destination>]]'"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

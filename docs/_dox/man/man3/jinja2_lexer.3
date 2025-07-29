@@ -1,0 +1,500 @@
+.TH "jinja2.lexer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.lexer
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_Rule\fP"
+.br
+.ti -1c
+.RI "class \fBFailure\fP"
+.br
+.ti -1c
+.RI "class \fBLexer\fP"
+.br
+.ti -1c
+.RI "class \fBOptionalLStrip\fP"
+.br
+.ti -1c
+.RI "class \fBToken\fP"
+.br
+.ti -1c
+.RI "class \fBTokenStream\fP"
+.br
+.ti -1c
+.RI "class \fBTokenStreamIterator\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fB_describe_token_type\fP (str token_type)"
+.br
+.ti -1c
+.RI "str \fBdescribe_token\fP ('Token' token)"
+.br
+.ti -1c
+.RI "str \fBdescribe_token_expr\fP (str expr)"
+.br
+.ti -1c
+.RI "int \fBcount_newlines\fP (str value)"
+.br
+.ti -1c
+.RI "t\&.List[t\&.Tuple[str, str]] \fBcompile_rules\fP ('Environment' environment)"
+.br
+.ti -1c
+.RI "'Lexer' \fBget_lexer\fP ('Environment' environment)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "t \fB_lexer_cache\fP = \fBLRUCache\fP(50)"
+.br
+.ti -1c
+.RI "\fBwhitespace_re\fP = re\&.compile(r'\\s+')"
+.br
+.ti -1c
+.RI "\fBnewline_re\fP = re\&.compile(r'(\\r\\n|\\r|\\n)')"
+.br
+.ti -1c
+.RI "\fBstring_re\fP"
+.br
+.ti -1c
+.RI "\fBinteger_re\fP"
+.br
+.ti -1c
+.RI "\fBfloat_re\fP"
+.br
+.ti -1c
+.RI "\fBTOKEN_ADD\fP = intern('add')"
+.br
+.ti -1c
+.RI "\fBTOKEN_ASSIGN\fP = intern('assign')"
+.br
+.ti -1c
+.RI "\fBTOKEN_COLON\fP = intern('colon')"
+.br
+.ti -1c
+.RI "\fBTOKEN_COMMA\fP = intern('comma')"
+.br
+.ti -1c
+.RI "\fBTOKEN_DIV\fP = intern('div')"
+.br
+.ti -1c
+.RI "\fBTOKEN_DOT\fP = intern('dot')"
+.br
+.ti -1c
+.RI "\fBTOKEN_EQ\fP = intern('eq')"
+.br
+.ti -1c
+.RI "\fBTOKEN_FLOORDIV\fP = intern('floordiv')"
+.br
+.ti -1c
+.RI "\fBTOKEN_GT\fP = intern('gt')"
+.br
+.ti -1c
+.RI "\fBTOKEN_GTEQ\fP = intern('gteq')"
+.br
+.ti -1c
+.RI "\fBTOKEN_LBRACE\fP = intern('lbrace')"
+.br
+.ti -1c
+.RI "\fBTOKEN_LBRACKET\fP = intern('lbracket')"
+.br
+.ti -1c
+.RI "\fBTOKEN_LPAREN\fP = intern('lparen')"
+.br
+.ti -1c
+.RI "\fBTOKEN_LT\fP = intern('lt')"
+.br
+.ti -1c
+.RI "\fBTOKEN_LTEQ\fP = intern('lteq')"
+.br
+.ti -1c
+.RI "\fBTOKEN_MOD\fP = intern('mod')"
+.br
+.ti -1c
+.RI "\fBTOKEN_MUL\fP = intern('mul')"
+.br
+.ti -1c
+.RI "\fBTOKEN_NE\fP = intern('ne')"
+.br
+.ti -1c
+.RI "\fBTOKEN_PIPE\fP = intern('pipe')"
+.br
+.ti -1c
+.RI "\fBTOKEN_POW\fP = intern('pow')"
+.br
+.ti -1c
+.RI "\fBTOKEN_RBRACE\fP = intern('rbrace')"
+.br
+.ti -1c
+.RI "\fBTOKEN_RBRACKET\fP = intern('rbracket')"
+.br
+.ti -1c
+.RI "\fBTOKEN_RPAREN\fP = intern('rparen')"
+.br
+.ti -1c
+.RI "\fBTOKEN_SEMICOLON\fP = intern('semicolon')"
+.br
+.ti -1c
+.RI "\fBTOKEN_SUB\fP = intern('sub')"
+.br
+.ti -1c
+.RI "\fBTOKEN_TILDE\fP = intern('tilde')"
+.br
+.ti -1c
+.RI "\fBTOKEN_WHITESPACE\fP = intern('whitespace')"
+.br
+.ti -1c
+.RI "\fBTOKEN_FLOAT\fP = intern('float')"
+.br
+.ti -1c
+.RI "\fBTOKEN_INTEGER\fP = intern('integer')"
+.br
+.ti -1c
+.RI "\fBTOKEN_NAME\fP = intern('name')"
+.br
+.ti -1c
+.RI "\fBTOKEN_STRING\fP = intern('string')"
+.br
+.ti -1c
+.RI "\fBTOKEN_OPERATOR\fP = intern('operator')"
+.br
+.ti -1c
+.RI "\fBTOKEN_BLOCK_BEGIN\fP = intern('block_begin')"
+.br
+.ti -1c
+.RI "\fBTOKEN_BLOCK_END\fP = intern('block_end')"
+.br
+.ti -1c
+.RI "\fBTOKEN_VARIABLE_BEGIN\fP = intern('variable_begin')"
+.br
+.ti -1c
+.RI "\fBTOKEN_VARIABLE_END\fP = intern('variable_end')"
+.br
+.ti -1c
+.RI "\fBTOKEN_RAW_BEGIN\fP = intern('raw_begin')"
+.br
+.ti -1c
+.RI "\fBTOKEN_RAW_END\fP = intern('raw_end')"
+.br
+.ti -1c
+.RI "\fBTOKEN_COMMENT_BEGIN\fP = intern('comment_begin')"
+.br
+.ti -1c
+.RI "\fBTOKEN_COMMENT_END\fP = intern('comment_end')"
+.br
+.ti -1c
+.RI "\fBTOKEN_COMMENT\fP = intern('comment')"
+.br
+.ti -1c
+.RI "\fBTOKEN_LINESTATEMENT_BEGIN\fP = intern('linestatement_begin')"
+.br
+.ti -1c
+.RI "\fBTOKEN_LINESTATEMENT_END\fP = intern('linestatement_end')"
+.br
+.ti -1c
+.RI "\fBTOKEN_LINECOMMENT_BEGIN\fP = intern('linecomment_begin')"
+.br
+.ti -1c
+.RI "\fBTOKEN_LINECOMMENT_END\fP = intern('linecomment_end')"
+.br
+.ti -1c
+.RI "\fBTOKEN_LINECOMMENT\fP = intern('linecomment')"
+.br
+.ti -1c
+.RI "\fBTOKEN_DATA\fP = intern('data')"
+.br
+.ti -1c
+.RI "\fBTOKEN_INITIAL\fP = intern('initial')"
+.br
+.ti -1c
+.RI "\fBTOKEN_EOF\fP = intern('eof')"
+.br
+.ti -1c
+.RI "dict \fBoperators\fP"
+.br
+.ti -1c
+.RI "dict \fBreverse_operators\fP = {v: k for k, v in operators\&.items()}"
+.br
+.ti -1c
+.RI "\fBoperator_re\fP"
+.br
+.ti -1c
+.RI "\fBignored_tokens\fP"
+.br
+.ti -1c
+.RI "\fBignore_if_empty\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Implements a Jinja / Python combination lexer\&. The ``Lexer`` class
+is used to do some preprocessing\&. It filters out invalid operators like
+the bitshift operators we don't allow in templates\&. It separates
+template code and python code in expressions\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " str jinja2\&.lexer\&._describe_token_type (str token_type)\fC [protected]\fP"
+
+.SS " t\&.List[t\&.Tuple[str, str]] jinja2\&.lexer\&.compile_rules ('Environment' environment)"
+
+.PP
+.nf
+Compiles all the rules from the environment into a list of rules\&.
+.fi
+.PP
+ 
+.SS " int jinja2\&.lexer\&.count_newlines (str value)"
+
+.PP
+.nf
+Count the number of newline characters in the string\&.  This is
+useful for extensions that filter a stream\&.
+
+.fi
+.PP
+ 
+.SS " str jinja2\&.lexer\&.describe_token ('Token' token)"
+
+.PP
+.nf
+Returns a description of the token\&.
+.fi
+.PP
+ 
+.SS " str jinja2\&.lexer\&.describe_token_expr (str expr)"
+
+.PP
+.nf
+Like `describe_token` but for token expressions\&.
+.fi
+.PP
+ 
+.SS " 'Lexer' jinja2\&.lexer\&.get_lexer ('Environment' environment)"
+
+.PP
+.nf
+Return a lexer which is probably cached\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "t jinja2\&.lexer\&._lexer_cache = \fBLRUCache\fP(50)\fC [protected]\fP"
+
+.SS "jinja2\&.lexer\&.float_re"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(
+2     ,
+3     re\&.IGNORECASE | re\&.VERBOSE,
+4 )
+.fi
+
+.SS "jinja2\&.lexer\&.ignore_if_empty"
+\fBInitial value:\fP.PP
+.nf
+1 =  frozenset(
+2     [TOKEN_WHITESPACE, TOKEN_DATA, TOKEN_COMMENT, TOKEN_LINECOMMENT]
+3 )
+.fi
+
+.SS "jinja2\&.lexer\&.ignored_tokens"
+\fBInitial value:\fP.PP
+.nf
+1 =  frozenset(
+2     [
+3         TOKEN_COMMENT_BEGIN,
+4         TOKEN_COMMENT,
+5         TOKEN_COMMENT_END,
+6         TOKEN_WHITESPACE,
+7         TOKEN_LINECOMMENT_BEGIN,
+8         TOKEN_LINECOMMENT_END,
+9         TOKEN_LINECOMMENT,
+10     ]
+11 )
+.fi
+
+.SS "jinja2\&.lexer\&.integer_re"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(
+2     ,
+3     re\&.IGNORECASE | re\&.VERBOSE,
+4 )
+.fi
+
+.SS "jinja2\&.lexer\&.newline_re = re\&.compile(r'(\\r\\n|\\r|\\n)')"
+
+.SS "jinja2\&.lexer\&.operator_re"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(
+2     f"({'|'\&.join(re\&.escape(x) for x in sorted(operators, key=lambda x: \-len(x)))})"
+3 )
+.fi
+
+.SS "dict jinja2\&.lexer\&.operators"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     "+": TOKEN_ADD,
+3     "\-": TOKEN_SUB,
+4     "/": TOKEN_DIV,
+5     "//": TOKEN_FLOORDIV,
+6     "*": TOKEN_MUL,
+7     "%": TOKEN_MOD,
+8     "**": TOKEN_POW,
+9     "~": TOKEN_TILDE,
+10     "[": TOKEN_LBRACKET,
+11     "]": TOKEN_RBRACKET,
+12     "(": TOKEN_LPAREN,
+13     ")": TOKEN_RPAREN,
+14     "{": TOKEN_LBRACE,
+15     "}": TOKEN_RBRACE,
+16     "==": TOKEN_EQ,
+17     "!=": TOKEN_NE,
+18     ">": TOKEN_GT,
+19     ">=": TOKEN_GTEQ,
+20     "<": TOKEN_LT,
+21     "<=": TOKEN_LTEQ,
+22     "=": TOKEN_ASSIGN,
+23     "\&.": TOKEN_DOT,
+24     ":": TOKEN_COLON,
+25     "|": TOKEN_PIPE,
+26     ",": TOKEN_COMMA,
+27     ";": TOKEN_SEMICOLON,
+28 }
+.fi
+
+.SS "dict jinja2\&.lexer\&.reverse_operators = {v: k for k, v in operators\&.items()}"
+
+.SS "jinja2\&.lexer\&.string_re"
+\fBInitial value:\fP.PP
+.nf
+1 =  re\&.compile(
+2     r"('([^'\\\\]*(?:\\\\\&.[^'\\\\]*)*)'" r'|"([^"\\\\]*(?:\\\\\&.[^"\\\\]*)*)")', re\&.S
+3 )
+.fi
+
+.SS "jinja2\&.lexer\&.TOKEN_ADD = intern('add')"
+
+.SS "jinja2\&.lexer\&.TOKEN_ASSIGN = intern('assign')"
+
+.SS "jinja2\&.lexer\&.TOKEN_BLOCK_BEGIN = intern('block_begin')"
+
+.SS "jinja2\&.lexer\&.TOKEN_BLOCK_END = intern('block_end')"
+
+.SS "jinja2\&.lexer\&.TOKEN_COLON = intern('colon')"
+
+.SS "jinja2\&.lexer\&.TOKEN_COMMA = intern('comma')"
+
+.SS "jinja2\&.lexer\&.TOKEN_COMMENT = intern('comment')"
+
+.SS "jinja2\&.lexer\&.TOKEN_COMMENT_BEGIN = intern('comment_begin')"
+
+.SS "jinja2\&.lexer\&.TOKEN_COMMENT_END = intern('comment_end')"
+
+.SS "jinja2\&.lexer\&.TOKEN_DATA = intern('data')"
+
+.SS "jinja2\&.lexer\&.TOKEN_DIV = intern('div')"
+
+.SS "jinja2\&.lexer\&.TOKEN_DOT = intern('dot')"
+
+.SS "jinja2\&.lexer\&.TOKEN_EOF = intern('eof')"
+
+.SS "jinja2\&.lexer\&.TOKEN_EQ = intern('eq')"
+
+.SS "jinja2\&.lexer\&.TOKEN_FLOAT = intern('float')"
+
+.SS "jinja2\&.lexer\&.TOKEN_FLOORDIV = intern('floordiv')"
+
+.SS "jinja2\&.lexer\&.TOKEN_GT = intern('gt')"
+
+.SS "jinja2\&.lexer\&.TOKEN_GTEQ = intern('gteq')"
+
+.SS "jinja2\&.lexer\&.TOKEN_INITIAL = intern('initial')"
+
+.SS "jinja2\&.lexer\&.TOKEN_INTEGER = intern('integer')"
+
+.SS "jinja2\&.lexer\&.TOKEN_LBRACE = intern('lbrace')"
+
+.SS "jinja2\&.lexer\&.TOKEN_LBRACKET = intern('lbracket')"
+
+.SS "jinja2\&.lexer\&.TOKEN_LINECOMMENT = intern('linecomment')"
+
+.SS "jinja2\&.lexer\&.TOKEN_LINECOMMENT_BEGIN = intern('linecomment_begin')"
+
+.SS "jinja2\&.lexer\&.TOKEN_LINECOMMENT_END = intern('linecomment_end')"
+
+.SS "jinja2\&.lexer\&.TOKEN_LINESTATEMENT_BEGIN = intern('linestatement_begin')"
+
+.SS "jinja2\&.lexer\&.TOKEN_LINESTATEMENT_END = intern('linestatement_end')"
+
+.SS "jinja2\&.lexer\&.TOKEN_LPAREN = intern('lparen')"
+
+.SS "jinja2\&.lexer\&.TOKEN_LT = intern('lt')"
+
+.SS "jinja2\&.lexer\&.TOKEN_LTEQ = intern('lteq')"
+
+.SS "jinja2\&.lexer\&.TOKEN_MOD = intern('mod')"
+
+.SS "jinja2\&.lexer\&.TOKEN_MUL = intern('mul')"
+
+.SS "jinja2\&.lexer\&.TOKEN_NAME = intern('name')"
+
+.SS "jinja2\&.lexer\&.TOKEN_NE = intern('ne')"
+
+.SS "jinja2\&.lexer\&.TOKEN_OPERATOR = intern('operator')"
+
+.SS "jinja2\&.lexer\&.TOKEN_PIPE = intern('pipe')"
+
+.SS "jinja2\&.lexer\&.TOKEN_POW = intern('pow')"
+
+.SS "jinja2\&.lexer\&.TOKEN_RAW_BEGIN = intern('raw_begin')"
+
+.SS "jinja2\&.lexer\&.TOKEN_RAW_END = intern('raw_end')"
+
+.SS "jinja2\&.lexer\&.TOKEN_RBRACE = intern('rbrace')"
+
+.SS "jinja2\&.lexer\&.TOKEN_RBRACKET = intern('rbracket')"
+
+.SS "jinja2\&.lexer\&.TOKEN_RPAREN = intern('rparen')"
+
+.SS "jinja2\&.lexer\&.TOKEN_SEMICOLON = intern('semicolon')"
+
+.SS "jinja2\&.lexer\&.TOKEN_STRING = intern('string')"
+
+.SS "jinja2\&.lexer\&.TOKEN_SUB = intern('sub')"
+
+.SS "jinja2\&.lexer\&.TOKEN_TILDE = intern('tilde')"
+
+.SS "jinja2\&.lexer\&.TOKEN_VARIABLE_BEGIN = intern('variable_begin')"
+
+.SS "jinja2\&.lexer\&.TOKEN_VARIABLE_END = intern('variable_end')"
+
+.SS "jinja2\&.lexer\&.TOKEN_WHITESPACE = intern('whitespace')"
+
+.SS "jinja2\&.lexer\&.whitespace_re = re\&.compile(r'\\s+')"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

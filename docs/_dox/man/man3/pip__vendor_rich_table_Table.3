@@ -1,0 +1,470 @@
+.TH "pip._vendor.rich.table.Table" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.rich.table.Table
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._vendor\&.rich\&.jupyter\&.JupyterMixin\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, *Union[\fBColumn\fP, str] headers, Optional[TextType] \fBtitle\fP=None, Optional[TextType] \fBcaption\fP=None, Optional[int] \fBwidth\fP=None, Optional[int] \fBmin_width\fP=None, Optional[\fBbox\&.Box\fP] \fBbox\fP=box\&.HEAVY_HEAD, Optional[bool] \fBsafe_box\fP=None, PaddingDimensions \fBpadding\fP=(0, 1), bool \fBcollapse_padding\fP=False, bool \fBpad_edge\fP=True, bool \fBexpand\fP=False, bool \fBshow_header\fP=True, bool \fBshow_footer\fP=False, bool \fBshow_edge\fP=True, bool \fBshow_lines\fP=False, int \fBleading\fP=0, StyleType \fBstyle\fP='none', Optional[Iterable[StyleType]] \fBrow_styles\fP=None, Optional[StyleType] \fBheader_style\fP='table\&.header', Optional[StyleType] \fBfooter_style\fP='table\&.footer', Optional[StyleType] \fBborder_style\fP=None, Optional[StyleType] \fBtitle_style\fP=None, Optional[StyleType] \fBcaption_style\fP=None, 'JustifyMethod' title_justify='center', 'JustifyMethod' caption_justify='center', bool \fBhighlight\fP=False)"
+.br
+.ti -1c
+.RI "'Table' \fBgrid\fP (cls, *Union[\fBColumn\fP, str] headers, PaddingDimensions \fBpadding\fP=0, bool \fBcollapse_padding\fP=True, bool \fBpad_edge\fP=False, bool \fBexpand\fP=False)"
+.br
+.ti -1c
+.RI "bool \fBexpand\fP (self)"
+.br
+.ti -1c
+.RI "None \fBexpand\fP (self, bool expand)"
+.br
+.ti -1c
+.RI "int \fBrow_count\fP (self)"
+.br
+.ti -1c
+.RI "StyleType \fBget_row_style\fP (self, 'Console' \fBconsole\fP, int index)"
+.br
+.ti -1c
+.RI "\fBMeasurement\fP \fB__rich_measure__\fP (self, 'Console' \fBconsole\fP, 'ConsoleOptions' options)"
+.br
+.ti -1c
+.RI "Tuple[int, int, int, int] \fBpadding\fP (self)"
+.br
+.ti -1c
+.RI "'Table' \fBpadding\fP (self, PaddingDimensions padding)"
+.br
+.ti -1c
+.RI "None \fBadd_column\fP (self, 'RenderableType' \fBheader\fP='', 'RenderableType' footer='', *Optional[StyleType] \fBheader_style\fP=None, Optional[StyleType] \fBfooter_style\fP=None, Optional[StyleType] \fBstyle\fP=None, 'JustifyMethod' \fBjustify\fP='left', 'VerticalAlignMethod' vertical='top', 'OverflowMethod' overflow='ellipsis', Optional[int] \fBwidth\fP=None, Optional[int] \fBmin_width\fP=None, Optional[int] max_width=None, Optional[int] ratio=None, bool \fBno_wrap\fP=False)"
+.br
+.ti -1c
+.RI "None \fBadd_row\fP (self, *Optional['RenderableType'] renderables, Optional[StyleType] \fBstyle\fP=None, bool \fBend_section\fP=False)"
+.br
+.ti -1c
+.RI "None \fBadd_section\fP (self)"
+.br
+.ti -1c
+.RI "'RenderResult' \fB__rich_console__\fP (self, 'Console' \fBconsole\fP, 'ConsoleOptions' options)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBtitle\fP"
+.br
+.ti -1c
+.RI "\fBcaption\fP"
+.br
+.ti -1c
+.RI "\fBwidth\fP"
+.br
+.ti -1c
+.RI "\fBmin_width\fP"
+.br
+.ti -1c
+.RI "\fBbox\fP"
+.br
+.ti -1c
+.RI "\fBsafe_box\fP"
+.br
+.ti -1c
+.RI "\fBpad_edge\fP"
+.br
+.ti -1c
+.RI "\fBshow_header\fP"
+.br
+.ti -1c
+.RI "\fBshow_footer\fP"
+.br
+.ti -1c
+.RI "\fBshow_edge\fP"
+.br
+.ti -1c
+.RI "\fBshow_lines\fP"
+.br
+.ti -1c
+.RI "\fBleading\fP"
+.br
+.ti -1c
+.RI "\fBcollapse_padding\fP"
+.br
+.ti -1c
+.RI "\fBstyle\fP"
+.br
+.ti -1c
+.RI "\fBheader_style\fP"
+.br
+.ti -1c
+.RI "\fBfooter_style\fP"
+.br
+.ti -1c
+.RI "\fBborder_style\fP"
+.br
+.ti -1c
+.RI "\fBtitle_style\fP"
+.br
+.ti -1c
+.RI "\fBcaption_style\fP"
+.br
+.ti -1c
+.RI "\fBhighlight\fP"
+.br
+.ti -1c
+.RI "\fBrows\fP"
+.br
+.ti -1c
+.RI "\fBexpand\fP"
+.br
+.ti -1c
+.RI "\fBcolumns\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "List \fBcolumns\fP [\fBColumn\fP]"
+.br
+.ti -1c
+.RI "List \fBrows\fP [\fBRow\fP]"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fB_extra_width\fP (self)"
+.br
+.ti -1c
+.RI "List[int] \fB_calculate_column_widths\fP (self, 'Console' \fBconsole\fP, 'ConsoleOptions' options)"
+.br
+.ti -1c
+.RI "List[int] \fB_collapse_widths\fP (cls, List[int] widths, List[bool] wrapable, int max_width)"
+.br
+.ti -1c
+.RI "Iterable[\fB_Cell\fP] \fB_get_cells\fP (self, 'Console' \fBconsole\fP, int column_index, \fBColumn\fP column)"
+.br
+.ti -1c
+.RI "int \fB_get_padding_width\fP (self, int column_index)"
+.br
+.ti -1c
+.RI "\fBMeasurement\fP \fB_measure_column\fP (self, 'Console' \fBconsole\fP, 'ConsoleOptions' options, \fBColumn\fP column)"
+.br
+.ti -1c
+.RI "'RenderResult' \fB_render\fP (self, 'Console' \fBconsole\fP, 'ConsoleOptions' options, List[int] widths)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpip\&._vendor\&.rich\&.jupyter\&.JupyterMixin\fP
+.in +1c
+.ti -1c
+.RI "Dict[str, str] \fB_repr_mimebundle_\fP ('ConsoleRenderable' self, Sequence[str] include, Sequence[str] exclude, **Any kwargs)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_padding\fP"
+.br
+.ti -1c
+.RI "\fB_expand\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A console renderable to draw a table\&.
+
+Args:
+    *headers (Union[Column, str]): Column headers, either as a string, or :class:`~rich\&.table\&.Column` instance\&.
+    title (Union[str, Text], optional): The title of the table rendered at the top\&. Defaults to None\&.
+    caption (Union[str, Text], optional): The table caption rendered below\&. Defaults to None\&.
+    width (int, optional): The width in characters of the table, or ``None`` to automatically fit\&. Defaults to None\&.
+    min_width (Optional[int], optional): The minimum width of the table, or ``None`` for no minimum\&. Defaults to None\&.
+    box (box\&.Box, optional): One of the constants in box\&.py used to draw the edges (see :ref:`appendix_box`), or ``None`` for no box lines\&. Defaults to box\&.HEAVY_HEAD\&.
+    safe_box (Optional[bool], optional): Disable box characters that don't display on windows legacy terminal with *raster* fonts\&. Defaults to True\&.
+    padding (PaddingDimensions, optional): Padding for cells (top, right, bottom, left)\&. Defaults to (0, 1)\&.
+    collapse_padding (bool, optional): Enable collapsing of padding around cells\&. Defaults to False\&.
+    pad_edge (bool, optional): Enable padding of edge cells\&. Defaults to True\&.
+    expand (bool, optional): Expand the table to fit the available space if ``True``, otherwise the table width will be auto-calculated\&. Defaults to False\&.
+    show_header (bool, optional): Show a header row\&. Defaults to True\&.
+    show_footer (bool, optional): Show a footer row\&. Defaults to False\&.
+    show_edge (bool, optional): Draw a box around the outside of the table\&. Defaults to True\&.
+    show_lines (bool, optional): Draw lines between every row\&. Defaults to False\&.
+    leading (bool, optional): Number of blank lines between rows (precludes ``show_lines``)\&. Defaults to 0\&.
+    style (Union[str, Style], optional): Default style for the table\&. Defaults to 'none'\&.
+    row_styles (List[Union, str], optional): Optional list of row styles, if more than one style is given then the styles will alternate\&. Defaults to None\&.
+    header_style (Union[str, Style], optional): Style of the header\&. Defaults to 'table\&.header'\&.
+    footer_style (Union[str, Style], optional): Style of the footer\&. Defaults to 'table\&.footer'\&.
+    border_style (Union[str, Style], optional): Style of the border\&. Defaults to None\&.
+    title_style (Union[str, Style], optional): Style of the title\&. Defaults to None\&.
+    caption_style (Union[str, Style], optional): Style of the caption\&. Defaults to None\&.
+    title_justify (str, optional): Justify method for title\&. Defaults to 'center'\&.
+    caption_justify (str, optional): Justify method for caption\&. Defaults to 'center'\&.
+    highlight (bool, optional): Highlight cell contents (if str)\&. Defaults to False\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._vendor\&.rich\&.table\&.Table\&.__init__ ( self, *Union[\fBColumn\fP, str] headers, Optional[TextType]  title = \fCNone\fP, Optional[TextType]  caption = \fCNone\fP, Optional[int]  width = \fCNone\fP, Optional[int]  min_width = \fCNone\fP, Optional[\fBbox\&.Box\fP]  box = \fCbox\&.HEAVY_HEAD\fP, Optional[bool]  safe_box = \fCNone\fP, PaddingDimensions  padding = \fC(0, 1)\fP, bool  collapse_padding = \fCFalse\fP, bool  pad_edge = \fCTrue\fP, bool  expand = \fCFalse\fP, bool  show_header = \fCTrue\fP, bool  show_footer = \fCFalse\fP, bool  show_edge = \fCTrue\fP, bool  show_lines = \fCFalse\fP, int  leading = \fC0\fP, StyleType  style = \fC'none'\fP, Optional[Iterable[StyleType]]  row_styles = \fCNone\fP, Optional[StyleType]  header_style = \fC'table\&.header'\fP, Optional[StyleType]  footer_style = \fC'table\&.footer'\fP, Optional[StyleType]  border_style = \fCNone\fP, Optional[StyleType]  title_style = \fCNone\fP, Optional[StyleType]  caption_style = \fCNone\fP, 'JustifyMethod'  title_justify = \fC'center'\fP, 'JustifyMethod'  caption_justify = \fC'center'\fP, bool  highlight = \fCFalse\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " 'RenderResult' pip\&._vendor\&.rich\&.table\&.Table\&.__rich_console__ ( self, 'Console' console, 'ConsoleOptions'
+     options)"
+
+.SS " \fBMeasurement\fP pip\&._vendor\&.rich\&.table\&.Table\&.__rich_measure__ ( self, 'Console' console, 'ConsoleOptions'
+     options)"
+
+.SS " List[int] pip\&._vendor\&.rich\&.table\&.Table\&._calculate_column_widths ( self, 'Console' console, 'ConsoleOptions'
+     options)\fC [protected]\fP"
+
+.PP
+.nf
+Calculate the widths of each column, including padding, not including borders\&.
+.fi
+.PP
+ 
+.SS " List[int] pip\&._vendor\&.rich\&.table\&.Table\&._collapse_widths ( cls, List[int] widths, List[bool] wrapable, int
+     max_width)\fC [protected]\fP"
+
+.PP
+.nf
+Reduce widths so that the total is under max_width\&.
+
+Args:
+    widths (List[int]): List of widths\&.
+    wrapable (List[bool]): List of booleans that indicate if a column may shrink\&.
+    max_width (int): Maximum width to reduce to\&.
+
+Returns:
+    List[int]: A new list of widths\&.
+
+.fi
+.PP
+ 
+.SS " int pip\&._vendor\&.rich\&.table\&.Table\&._extra_width ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Get extra width to add to cell content\&.
+.fi
+.PP
+ 
+.SS " Iterable[\fB_Cell\fP] pip\&._vendor\&.rich\&.table\&.Table\&._get_cells ( self, 'Console' console, int column_index, \fBColumn\fP
+     column)\fC [protected]\fP"
+
+.PP
+.nf
+Get all the cells with padding and optional header\&.
+.fi
+.PP
+ 
+.SS " int pip\&._vendor\&.rich\&.table\&.Table\&._get_padding_width ( self, int column_index)\fC [protected]\fP"
+
+.PP
+.nf
+Get extra width from padding\&.
+.fi
+.PP
+ 
+.SS " \fBMeasurement\fP pip\&._vendor\&.rich\&.table\&.Table\&._measure_column ( self, 'Console' console, 'ConsoleOptions' options, \fBColumn\fP column)\fC [protected]\fP"
+
+.PP
+.nf
+Get the minimum and maximum width of the column\&.
+.fi
+.PP
+ 
+.SS " 'RenderResult' pip\&._vendor\&.rich\&.table\&.Table\&._render ( self, 'Console' console, 'ConsoleOptions' options, List[int]
+     widths)\fC [protected]\fP"
+
+.SS " None pip\&._vendor\&.rich\&.table\&.Table\&.add_column ( self, 'RenderableType'  header = \fC''\fP, 'RenderableType'  footer = \fC''\fP, *Optional[StyleType]  header_style = \fCNone\fP, Optional[StyleType]  footer_style = \fCNone\fP, Optional[StyleType]  style = \fCNone\fP, 'JustifyMethod'  justify = \fC'left'\fP, 'VerticalAlignMethod'  vertical = \fC'top'\fP, 'OverflowMethod'  overflow = \fC'ellipsis'\fP, Optional[int]  width = \fCNone\fP, Optional[int]  min_width = \fCNone\fP, Optional[int]  max_width = \fCNone\fP, Optional[int]  ratio = \fCNone\fP, bool  no_wrap = \fCFalse\fP)"
+
+.PP
+.nf
+Add a column to the table\&.
+
+Args:
+    header (RenderableType, optional): Text or renderable for the header\&.
+        Defaults to ''\&.
+    footer (RenderableType, optional): Text or renderable for the footer\&.
+        Defaults to ''\&.
+    header_style (Union[str, Style], optional): Style for the header, or None for default\&. Defaults to None\&.
+    footer_style (Union[str, Style], optional): Style for the footer, or None for default\&. Defaults to None\&.
+    style (Union[str, Style], optional): Style for the column cells, or None for default\&. Defaults to None\&.
+    justify (JustifyMethod, optional): Alignment for cells\&. Defaults to 'left'\&.
+    vertical (VerticalAlignMethod, optional): Vertical alignment, one of 'top', 'middle', or 'bottom'\&. Defaults to 'top'\&.
+    overflow (OverflowMethod): Overflow method: 'crop', 'fold', 'ellipsis'\&. Defaults to 'ellipsis'\&.
+    width (int, optional): Desired width of column in characters, or None to fit to contents\&. Defaults to None\&.
+    min_width (Optional[int], optional): Minimum width of column, or ``None`` for no minimum\&. Defaults to None\&.
+    max_width (Optional[int], optional): Maximum width of column, or ``None`` for no maximum\&. Defaults to None\&.
+    ratio (int, optional): Flexible ratio for the column (requires ``Table\&.expand`` or ``Table\&.width``)\&. Defaults to None\&.
+    no_wrap (bool, optional): Set to ``True`` to disable wrapping of this column\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.table\&.Table\&.add_row ( self, *Optional['RenderableType'] renderables, Optional[StyleType]  style = \fCNone\fP, bool  end_section = \fCFalse\fP)"
+
+.PP
+.nf
+Add a row of renderables\&.
+
+Args:
+    *renderables (None or renderable): Each cell in a row must be a renderable object (including str),
+        or ``None`` for a blank cell\&.
+    style (StyleType, optional): An optional style to apply to the entire row\&. Defaults to None\&.
+    end_section (bool, optional): End a section and draw a line\&. Defaults to False\&.
+
+Raises:
+    errors\&.NotRenderableError: If you add something that can't be rendered\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.table\&.Table\&.add_section ( self)"
+
+.PP
+.nf
+Add a new section (draw a line after current row)\&.
+.fi
+.PP
+ 
+.SS " bool pip\&._vendor\&.rich\&.table\&.Table\&.expand ( self)"
+
+.PP
+.nf
+Setting a non-None self\&.width implies expand\&.
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.table\&.Table\&.expand ( self, bool expand)"
+
+.PP
+.nf
+Set expand\&.
+.fi
+.PP
+ 
+.SS " StyleType pip\&._vendor\&.rich\&.table\&.Table\&.get_row_style ( self, 'Console' console, int index)"
+
+.PP
+.nf
+Get the current row style\&.
+.fi
+.PP
+ 
+.SS " 'Table' pip\&._vendor\&.rich\&.table\&.Table\&.grid ( cls, *Union[\fBColumn\fP, str] headers, PaddingDimensions  padding = \fC0\fP, bool  collapse_padding = \fCTrue\fP, bool  pad_edge = \fCFalse\fP, bool  expand = \fCFalse\fP)"
+
+.PP
+.nf
+Get a table with no lines, headers, or footer\&.
+
+Args:
+    *headers (Union[Column, str]): Column headers, either as a string, or :class:`~rich\&.table\&.Column` instance\&.
+    padding (PaddingDimensions, optional): Get padding around cells\&. Defaults to 0\&.
+    collapse_padding (bool, optional): Enable collapsing of padding around cells\&. Defaults to True\&.
+    pad_edge (bool, optional): Enable padding around edges of table\&. Defaults to False\&.
+    expand (bool, optional): Expand the table to fit the available space if ``True``, otherwise the table width will be auto-calculated\&. Defaults to False\&.
+
+Returns:
+    Table: A table instance\&.
+
+.fi
+.PP
+ 
+.SS " Tuple[int, int, int, int] pip\&._vendor\&.rich\&.table\&.Table\&.padding ( self)"
+
+.PP
+.nf
+Get cell padding\&.
+.fi
+.PP
+ 
+.SS " 'Table' pip\&._vendor\&.rich\&.table\&.Table\&.padding ( self, PaddingDimensions padding)"
+
+.PP
+.nf
+Set cell padding\&.
+.fi
+.PP
+ 
+.SS " int pip\&._vendor\&.rich\&.table\&.Table\&.row_count ( self)"
+
+.PP
+.nf
+Get the current number of rows\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&._expand\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&._padding\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.border_style"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.box"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.caption"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.caption_style"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.collapse_padding"
+
+.SS "List pip\&._vendor\&.rich\&.table\&.Table\&.columns [\fBColumn\fP]\fC [static]\fP"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.columns"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.expand"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.footer_style"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.header_style"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.highlight"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.leading"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.min_width"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.pad_edge"
+
+.SS "List pip\&._vendor\&.rich\&.table\&.Table\&.rows [\fBRow\fP]\fC [static]\fP"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.rows"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.safe_box"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.show_edge"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.show_footer"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.show_header"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.show_lines"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.style"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.title"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.title_style"
+
+.SS "pip\&._vendor\&.rich\&.table\&.Table\&.width"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

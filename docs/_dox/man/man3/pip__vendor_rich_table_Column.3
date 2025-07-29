@@ -1,0 +1,173 @@
+.TH "pip._vendor.rich.table.Column" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.rich.table.Column
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "'Column' \fBcopy\fP (self)"
+.br
+.ti -1c
+.RI "Iterable['RenderableType'] \fBcells\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBflexible\fP (self)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBheader\fP = ''"
+.br
+.ti -1c
+.RI "str \fBfooter\fP = ''"
+.br
+.ti -1c
+.RI "StyleType \fBheader_style\fP = ''"
+.br
+.ti -1c
+.RI "StyleType \fBfooter_style\fP = ''"
+.br
+.ti -1c
+.RI "StyleType \fBstyle\fP = ''"
+.br
+.ti -1c
+.RI "str \fBjustify\fP = 'left'"
+.br
+.ti -1c
+.RI "str \fBvertical\fP = 'top'"
+.br
+.ti -1c
+.RI "str \fBoverflow\fP = 'ellipsis'"
+.br
+.ti -1c
+.RI "Optional \fBwidth\fP = None"
+.br
+.ti -1c
+.RI "Optional \fBmin_width\fP = None"
+.br
+.ti -1c
+.RI "Optional \fBmax_width\fP = None"
+.br
+.ti -1c
+.RI "Optional \fBratio\fP = None"
+.br
+.ti -1c
+.RI "bool \fBno_wrap\fP = False"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fB_index\fP = 0"
+.br
+.ti -1c
+.RI "List \fB_cells\fP = field(default_factory=list)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Defines a column within a ~Table\&.
+
+Args:
+    title (Union[str, Text], optional): The title of the table rendered at the top\&. Defaults to None\&.
+    caption (Union[str, Text], optional): The table caption rendered below\&. Defaults to None\&.
+    width (int, optional): The width in characters of the table, or ``None`` to automatically fit\&. Defaults to None\&.
+    min_width (Optional[int], optional): The minimum width of the table, or ``None`` for no minimum\&. Defaults to None\&.
+    box (box\&.Box, optional): One of the constants in box\&.py used to draw the edges (see :ref:`appendix_box`), or ``None`` for no box lines\&. Defaults to box\&.HEAVY_HEAD\&.
+    safe_box (Optional[bool], optional): Disable box characters that don't display on windows legacy terminal with *raster* fonts\&. Defaults to True\&.
+    padding (PaddingDimensions, optional): Padding for cells (top, right, bottom, left)\&. Defaults to (0, 1)\&.
+    collapse_padding (bool, optional): Enable collapsing of padding around cells\&. Defaults to False\&.
+    pad_edge (bool, optional): Enable padding of edge cells\&. Defaults to True\&.
+    expand (bool, optional): Expand the table to fit the available space if ``True``, otherwise the table width will be auto-calculated\&. Defaults to False\&.
+    show_header (bool, optional): Show a header row\&. Defaults to True\&.
+    show_footer (bool, optional): Show a footer row\&. Defaults to False\&.
+    show_edge (bool, optional): Draw a box around the outside of the table\&. Defaults to True\&.
+    show_lines (bool, optional): Draw lines between every row\&. Defaults to False\&.
+    leading (bool, optional): Number of blank lines between rows (precludes ``show_lines``)\&. Defaults to 0\&.
+    style (Union[str, Style], optional): Default style for the table\&. Defaults to 'none'\&.
+    row_styles (List[Union, str], optional): Optional list of row styles, if more than one style is given then the styles will alternate\&. Defaults to None\&.
+    header_style (Union[str, Style], optional): Style of the header\&. Defaults to 'table\&.header'\&.
+    footer_style (Union[str, Style], optional): Style of the footer\&. Defaults to 'table\&.footer'\&.
+    border_style (Union[str, Style], optional): Style of the border\&. Defaults to None\&.
+    title_style (Union[str, Style], optional): Style of the title\&. Defaults to None\&.
+    caption_style (Union[str, Style], optional): Style of the caption\&. Defaults to None\&.
+    title_justify (str, optional): Justify method for title\&. Defaults to 'center'\&.
+    caption_justify (str, optional): Justify method for caption\&. Defaults to 'center'\&.
+    highlight (bool, optional): Highlight cell contents (if str)\&. Defaults to False\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " Iterable['RenderableType'] pip\&._vendor\&.rich\&.table\&.Column\&.cells ( self)"
+
+.PP
+.nf
+Get all cells in the column, not including header\&.
+.fi
+.PP
+ 
+.SS " 'Column' pip\&._vendor\&.rich\&.table\&.Column\&.copy ( self)"
+
+.PP
+.nf
+Return a copy of this Column\&.
+.fi
+.PP
+ 
+.SS " bool pip\&._vendor\&.rich\&.table\&.Column\&.flexible ( self)"
+
+.PP
+.nf
+Check if this column is flexible\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "List pip\&._vendor\&.rich\&.table\&.Column\&._cells = field(default_factory=list)\fC [static]\fP, \fC [protected]\fP"
+
+.SS "int pip\&._vendor\&.rich\&.table\&.Column\&._index = 0\fC [static]\fP, \fC [protected]\fP"
+
+.SS "str pip\&._vendor\&.rich\&.table\&.Column\&.footer = ''\fC [static]\fP"
+
+.SS "StyleType pip\&._vendor\&.rich\&.table\&.Column\&.footer_style = ''\fC [static]\fP"
+
+.SS "str pip\&._vendor\&.rich\&.table\&.Column\&.header = ''\fC [static]\fP"
+
+.SS "StyleType pip\&._vendor\&.rich\&.table\&.Column\&.header_style = ''\fC [static]\fP"
+
+.SS "str pip\&._vendor\&.rich\&.table\&.Column\&.justify = 'left'\fC [static]\fP"
+
+.SS "Optional pip\&._vendor\&.rich\&.table\&.Column\&.max_width = None\fC [static]\fP"
+
+.SS "Optional pip\&._vendor\&.rich\&.table\&.Column\&.min_width = None\fC [static]\fP"
+
+.SS "bool pip\&._vendor\&.rich\&.table\&.Column\&.no_wrap = False\fC [static]\fP"
+
+.SS "str pip\&._vendor\&.rich\&.table\&.Column\&.overflow = 'ellipsis'\fC [static]\fP"
+
+.SS "Optional pip\&._vendor\&.rich\&.table\&.Column\&.ratio = None\fC [static]\fP"
+
+.SS "StyleType pip\&._vendor\&.rich\&.table\&.Column\&.style = ''\fC [static]\fP"
+
+.SS "str pip\&._vendor\&.rich\&.table\&.Column\&.vertical = 'top'\fC [static]\fP"
+
+.SS "Optional pip\&._vendor\&.rich\&.table\&.Column\&.width = None\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

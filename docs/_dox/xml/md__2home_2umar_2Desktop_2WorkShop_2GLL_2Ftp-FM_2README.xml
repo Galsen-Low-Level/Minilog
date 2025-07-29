@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README" kind="page">
+    <compoundname>md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README</compoundname>
+    <title>README</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><image type="html" name="screenshots/ftpfm-logo-1.png" alt="ftpfm-logo" inline="yes"></image>
+ <linebreak/>
+</para>
+<para>Serve as a fast local http server and FTP utility. <linebreak/>
+ You can also use it to browse files like File Manager but in the Navigator.</para>
+<para>Quite simple to use. Type the <computeroutput>--help</computeroutput> flag to get the usage summary.</para>
+<para>NOTE: By default, if the target directory contains an <computeroutput>.html</computeroutput> or <computeroutput>.htm</computeroutput> index, priority is given to displaying these files.</para>
+<sect3 id="md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_1autotoc_md16">
+<title>Project Structure</title>
+</sect3>
+<sect2 id="md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_1autotoc_md17">
+<title>base Structure</title>
+<para>config / - basic configuration, include/ - header files src / - source files</para>
+</sect2>
+<sect2 id="md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_1autotoc_md18">
+<title>After build</title>
+<para><itemizedlist>
+<listitem><para>bin/ - hold the final binary</para>
+</listitem><listitem><para>lib/ - hold the needed library</para>
+</listitem></itemizedlist>
+</para>
+<sect3 id="md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_1autotoc_md19">
+<title>Prelude</title>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">$<sp/>git<sp/>clone<sp/>https://github.com/Galsen-Low-Level/Ftp-FM<sp/>--recursive<sp/></highlight></codeline>
+</programlisting></para>
+</sect3>
+<sect3 id="md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_1autotoc_md20">
+<title>Quick assessment</title>
+<para>This section is for those who want to get a quick overview of the project using Docker. Here&apos;s an example:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>___________</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v</highlight></codeline>
+<codeline><highlight class="normal">$<sp/>docker<sp/><sp/>run<sp/><sp/><sp/>-v<sp/>~/Desktop/:/opt/local<sp/>-p<sp/>9090:9090<sp/>ftpfm<sp/><sp/><sp/>/ftp-FM/bin/ftpFM<sp/><sp/>-t<sp/>/opt/local</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>^---------------------------------------------------^</highlight></codeline>
+</programlisting> <emphasis>The contents of the Desktop folder are volume-mounted on /opt/local and the program will point to this folder to display the contents of the volume-mounted folder.</emphasis></para>
+</sect3>
+</sect2>
+<sect2 id="md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_1autotoc_md21">
+<title>### Build</title>
+<para>The default build tool is <computeroutput>Cmake</computeroutput></para>
+<para>to build it, use the following command</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">cmake<sp/>-B<sp/>build<sp/></highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--build<sp/>build<sp/><sp/></highlight></codeline>
+</programlisting></para>
+<para>the binary source is located in the ./bin folder the ./lib folder contains the libraries (you can browse them) <linebreak/>
+</para>
+<sect3 id="md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_1autotoc_md22">
+<title>Have fun</title>
+<para>launch binary :</para>
+<para><programlisting><codeline><highlight class="normal">$<sp/>./bin/ftpfm<sp/>-h<sp/>#<sp/>to<sp/>get<sp/>help<sp/></highlight></codeline>
+<codeline><highlight class="normal">$<sp/>./bin/ftpfm<sp/><sp/>#<sp/>launch<sp/>on<sp/>default<sp/>port<sp/>9090<sp/></highlight></codeline>
+</programlisting></para>
+</sect3>
+<sect3 id="md__2home_2umar_2Desktop_2WorkShop_2GLL_2Ftp-FM_2README_1autotoc_md23">
+<title>ScreenShot</title>
+<para><image type="html" name="screenshots/ftpfm-1.png" alt="ftpfm" inline="yes"></image>
+</para>
+<para>**_Happy Hacking Folks_**</para>
+<para><image type="html" name="screenshots/glls1-logo-svg.png" alt="gllogo" inline="yes"></image>
+</para>
+<para>Feel free to contribute.</para>
+<para>We ❤️ Computers at all Levels.</para>
+<para>From Senegal. 🇸🇳 </para>
+</sect3>
+</sect2>
+    </detaileddescription>
+    <location file="/home/umar/Desktop/WorkShop/GLL/Ftp-FM/README.md"/>
+  </compounddef>
+</doxygen>

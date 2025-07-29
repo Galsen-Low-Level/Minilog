@@ -1,0 +1,69 @@
+.TH "pip._vendor.rich.highlighter.Highlighter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.rich.highlighter.Highlighter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits ABC\&.
+.PP
+Inherited by \fBpip\&._vendor\&.rich\&.highlighter\&.NullHighlighter\fP, and \fBpip\&._vendor\&.rich\&.highlighter\&.RegexHighlighter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBText\fP \fB__call__\fP (self, Union[str, \fBText\fP] text)"
+.br
+.ti -1c
+.RI "None \fBhighlight\fP (self, \fBText\fP text)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Abstract base class for highlighters\&.
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " \fBText\fP pip\&._vendor\&.rich\&.highlighter\&.Highlighter\&.__call__ ( self, Union[str, \fBText\fP] text)"
+
+.PP
+.nf
+Highlight a str or Text instance\&.
+
+Args:
+    text (Union[str, ~Text]): Text to highlight\&.
+
+Raises:
+    TypeError: If not called with text or str\&.
+
+Returns:
+    Text: A test instance with highlighting applied\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.rich\&.highlighter\&.Highlighter\&.highlight ( self, \fBText\fP text)"
+
+.PP
+.nf
+Apply highlighting in place to text\&.
+
+Args:
+    text (~Text): A text object highlight\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._vendor\&.rich\&.highlighter\&.NullHighlighter\fP, \fBpip\&._vendor\&.rich\&.highlighter\&.RegexHighlighter\fP, and \fBpip\&._vendor\&.rich\&.highlighter\&.JSONHighlighter\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

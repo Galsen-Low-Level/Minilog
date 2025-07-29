@@ -1,0 +1,232 @@
+.TH "pygments.lexers.css" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.lexers.css
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBCssLexer\fP"
+.br
+.ti -1c
+.RI "class \fBLessCssLexer\fP"
+.br
+.ti -1c
+.RI "class \fBSassLexer\fP"
+.br
+.ti -1c
+.RI "class \fBScssLexer\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_indentation\fP (lexer, match, ctx)"
+.br
+.ti -1c
+.RI "\fB_starts_block\fP (token, state)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tuple \fB_vendor_prefixes\fP"
+.br
+.ti -1c
+.RI "tuple \fB_color_keywords\fP"
+.br
+.ti -1c
+.RI "tuple \fB_keyword_values\fP"
+.br
+.ti -1c
+.RI "tuple \fB_other_keyword_values\fP"
+.br
+.ti -1c
+.RI "tuple \fB_functional_notation_keyword_values\fP"
+.br
+.ti -1c
+.RI "tuple \fB_angle_units\fP"
+.br
+.ti -1c
+.RI "tuple \fB_frequency_units\fP"
+.br
+.ti -1c
+.RI "tuple \fB_length_units\fP"
+.br
+.ti -1c
+.RI "tuple \fB_resolution_units\fP"
+.br
+.ti -1c
+.RI "tuple \fB_time_units\fP"
+.br
+.ti -1c
+.RI "tuple \fB_all_units\fP"
+.br
+.ti -1c
+.RI "dict \fBcommon_sass_tokens\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+    pygments\&.lexers\&.css
+    ~~~~~~~~~~~~~~~~~~~
+
+    Lexers for CSS and related stylesheet formats\&.
+
+    :copyright: Copyright 2006-2025 by the Pygments team, see AUTHORS\&.
+    :license: BSD, see LICENSE for details\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "pygments\&.lexers\&.css\&._indentation ( lexer,  match,  ctx)\fC [protected]\fP"
+
+.SS "pygments\&.lexers\&.css\&._starts_block ( token,  state)\fC [protected]\fP"
+
+.SH "Variable Documentation"
+.PP 
+.SS "tuple pygments\&.lexers\&.css\&._all_units\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  _angle_units + _frequency_units + _length_units + \\
+2     _resolution_units + _time_units
+.fi
+
+.SS "tuple pygments\&.lexers\&.css\&._angle_units\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  (
+2     'deg', 'grad', 'rad', 'turn',
+3 )
+.fi
+
+.SS "tuple pygments\&.lexers\&.css\&._color_keywords\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  (
+2     'aliceblue', 'antiquewhite', 'aqua', 'aquamarine', 'azure', 'beige',
+3     'bisque', 'black', 'blanchedalmond', 'blue', 'blueviolet', 'brown',
+4     'burlywood', 'cadetblue', 'chartreuse', 'chocolate', 'coral',
+5     'cornflowerblue', 'cornsilk', 'crimson', 'cyan', 'darkblue', 'darkcyan',
+6     'darkgoldenrod', 'darkgray', 'darkgreen', 'darkgrey', 'darkkhaki',
+7     'darkmagenta', 'darkolivegreen', 'darkorange', 'darkorchid', 'darkred',
+8     'darksalmon', 'darkseagreen', 'darkslateblue', 'darkslategray',
+9     'darkslategrey', 'darkturquoise', 'darkviolet', 'deeppink', 'deepskyblue',
+10     'dimgray', 'dimgrey', 'dodgerblue', 'firebrick', 'floralwhite',
+11     'forestgreen', 'fuchsia', 'gainsboro', 'ghostwhite', 'gold', 'goldenrod',
+12     'gray', 'green', 'greenyellow', 'grey', 'honeydew', 'hotpink', 'indianred',
+13     'indigo', 'ivory', 'khaki', 'lavender', 'lavenderblush', 'lawngreen',
+14     'lemonchiffon', 'lightblue', 'lightcoral', 'lightcyan',
+15     'lightgoldenrodyellow', 'lightgray', 'lightgreen', 'lightgrey',
+16     'lightpink', 'lightsalmon', 'lightseagreen', 'lightskyblue',
+17     'lightslategray', 'lightslategrey', 'lightsteelblue', 'lightyellow',
+18     'lime', 'limegreen', 'linen', 'magenta', 'maroon', 'mediumaquamarine',
+19     'mediumblue', 'mediumorchid', 'mediumpurple', 'mediumseagreen',
+20     'mediumslateblue', 'mediumspringgreen', 'mediumturquoise',
+21     'mediumvioletred', 'midnightblue', 'mintcream', 'mistyrose', 'moccasin',
+22     'navajowhite', 'navy', 'oldlace', 'olive', 'olivedrab', 'orange',
+23     'orangered', 'orchid', 'palegoldenrod', 'palegreen', 'paleturquoise',
+24     'palevioletred', 'papayawhip', 'peachpuff', 'peru', 'pink', 'plum',
+25     'powderblue', 'purple', 'rebeccapurple', 'red', 'rosybrown', 'royalblue',
+26     'saddlebrown', 'salmon', 'sandybrown', 'seagreen', 'seashell', 'sienna',
+27     'silver', 'skyblue', 'slateblue', 'slategray', 'slategrey', 'snow',
+28     'springgreen', 'steelblue', 'tan', 'teal', 'thistle', 'tomato', 'turquoise',
+29     'violet', 'wheat', 'white', 'whitesmoke', 'yellow', 'yellowgreen',
+30 ) + ('transparent',)
+.fi
+
+.SS "tuple pygments\&.lexers\&.css\&._frequency_units\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  (
+2     'Hz', 'kHz',
+3 )
+.fi
+
+.SS "tuple pygments\&.lexers\&.css\&._functional_notation_keyword_values\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  (
+2     'attr', 'blackness', 'blend', 'blenda', 'blur', 'brightness', 'calc',
+3     'circle', 'color\-mod', 'contrast', 'counter', 'cubic\-bezier', 'device\-cmyk',
+4     'drop\-shadow', 'ellipse', 'gray', 'grayscale', 'hsl', 'hsla', 'hue',
+5     'hue\-rotate', 'hwb', 'image', 'inset', 'invert', 'lightness',
+6     'linear\-gradient', 'matrix', 'matrix3d', 'opacity', 'perspective',
+7     'polygon', 'radial\-gradient', 'rect', 'repeating\-linear\-gradient',
+8     'repeating\-radial\-gradient', 'rgb', 'rgba', 'rotate', 'rotate3d', 'rotateX',
+9     'rotateY', 'rotateZ', 'saturate', 'saturation', 'scale', 'scale3d',
+10     'scaleX', 'scaleY', 'scaleZ', 'sepia', 'shade', 'skewX', 'skewY', 'steps',
+11     'tint', 'toggle', 'translate', 'translate3d', 'translateX', 'translateY',
+12     'translateZ', 'whiteness',
+13 )
+.fi
+
+.SS "tuple pygments\&.lexers\&.css\&._keyword_values\fC [protected]\fP"
+
+.SS "tuple pygments\&.lexers\&.css\&._length_units\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  (
+2     'em', 'ex', 'ch', 'rem',
+3     'vh', 'vw', 'vmin', 'vmax',
+4     'px', 'mm', 'cm', 'in', 'pt', 'pc', 'q',
+5 )
+.fi
+
+.SS "tuple pygments\&.lexers\&.css\&._other_keyword_values\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  (
+2     'above', 'aural', 'behind', 'bidi\-override', 'center\-left', 'center\-right',
+3     'cjk\-ideographic', 'continuous', 'crop', 'cross', 'embed', 'far\-left',
+4     'far\-right', 'fast', 'faster', 'hebrew', 'high', 'higher', 'hiragana',
+5     'hiragana\-iroha', 'katakana', 'katakana\-iroha', 'landscape', 'left\-side',
+6     'leftwards', 'level', 'loud', 'low', 'lower', 'message\-box', 'middle',
+7     'mix', 'narrower', 'once', 'portrait', 'right\-side', 'rightwards', 'silent',
+8     'slow', 'slower', 'small\-caption', 'soft', 'spell\-out', 'status\-bar',
+9     'super', 'text\-bottom', 'text\-top', 'wider', 'x\-fast', 'x\-high', 'x\-loud',
+10     'x\-low', 'x\-soft', 'yes', 'pre', 'pre\-wrap', 'pre\-line',
+11 )
+.fi
+
+.SS "tuple pygments\&.lexers\&.css\&._resolution_units\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  (
+2     'dpi', 'dpcm', 'dppx',
+3 )
+.fi
+
+.SS "tuple pygments\&.lexers\&.css\&._time_units\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  (
+2     's', 'ms',
+3 )
+.fi
+
+.SS "tuple pygments\&.lexers\&.css\&._vendor_prefixes\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  (
+2     '\-ms\-', 'mso\-', '\-moz\-', '\-o\-', '\-xv\-', '\-atsc\-', '\-wap\-', '\-khtml\-',
+3     '\-webkit\-', 'prince\-', '\-ah\-', '\-hp\-', '\-ro\-', '\-rim\-', '\-tc\-',
+4 )
+.fi
+
+.SS "dict pygments\&.lexers\&.css\&.common_sass_tokens"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

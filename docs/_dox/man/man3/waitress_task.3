@@ -1,0 +1,65 @@
+.TH "waitress.task" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+waitress.task
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBErrorTask\fP"
+.br
+.ti -1c
+.RI "class \fBTask\fP"
+.br
+.ti -1c
+.RI "class \fBThreadedTaskDispatcher\fP"
+.br
+.ti -1c
+.RI "class \fBWSGITask\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "dict \fBrename_headers\fP"
+.br
+.ti -1c
+.RI "\fBhop_by_hop\fP"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "waitress\&.task\&.hop_by_hop"
+\fBInitial value:\fP.PP
+.nf
+1 =  frozenset(
+2     (
+3         "connection",
+4         "keep\-alive",
+5         "proxy\-authenticate",
+6         "proxy\-authorization",
+7         "te",
+8         "trailers",
+9         "transfer\-encoding",
+10         "upgrade",
+11     )
+12 )
+.fi
+
+.SS "dict waitress\&.task\&.rename_headers"
+\fBInitial value:\fP.PP
+.nf
+1 =  {  # or keep them without the HTTP_ prefix added
+2     "CONTENT_LENGTH": "CONTENT_LENGTH",
+3     "CONTENT_TYPE": "CONTENT_TYPE",
+4 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

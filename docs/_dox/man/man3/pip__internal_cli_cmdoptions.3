@@ -1,0 +1,915 @@
+.TH "pip._internal.cli.cmdoptions" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.cli.cmdoptions
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBPipOption\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBraise_option_error\fP (OptionParser parser, Option option, str msg)"
+.br
+.ti -1c
+.RI "OptionGroup \fBmake_option_group\fP (Dict[str, Any] group, \fBConfigOptionParser\fP parser)"
+.br
+.ti -1c
+.RI "None \fBcheck_dist_restriction\fP (Values options, bool check_target=False)"
+.br
+.ti -1c
+.RI "str \fB_path_option_check\fP (Option option, str \fBopt\fP, str value)"
+.br
+.ti -1c
+.RI "str \fB_package_name_option_check\fP (Option option, str \fBopt\fP, str value)"
+.br
+.ti -1c
+.RI "Option \fBexists_action\fP ()"
+.br
+.ti -1c
+.RI "Option \fBextra_index_url\fP ()"
+.br
+.ti -1c
+.RI "Option \fBfind_links\fP ()"
+.br
+.ti -1c
+.RI "Option \fBtrusted_host\fP ()"
+.br
+.ti -1c
+.RI "Option \fBconstraints\fP ()"
+.br
+.ti -1c
+.RI "Option \fBrequirements\fP ()"
+.br
+.ti -1c
+.RI "Option \fBeditable\fP ()"
+.br
+.ti -1c
+.RI "None \fB_handle_src\fP (Option option, str opt_str, str value, OptionParser parser)"
+.br
+.ti -1c
+.RI "Any \fB_get_format_control\fP (Values values, Option option)"
+.br
+.ti -1c
+.RI "None \fB_handle_no_binary\fP (Option option, str opt_str, str value, OptionParser parser)"
+.br
+.ti -1c
+.RI "None \fB_handle_only_binary\fP (Option option, str opt_str, str value, OptionParser parser)"
+.br
+.ti -1c
+.RI "Option \fBno_binary\fP ()"
+.br
+.ti -1c
+.RI "Option \fBonly_binary\fP ()"
+.br
+.ti -1c
+.RI "Tuple[Tuple[int,\&.\&.\&.], Optional[str]] \fB_convert_python_version\fP (str value)"
+.br
+.ti -1c
+.RI "None \fB_handle_python_version\fP (Option option, str opt_str, str value, OptionParser parser)"
+.br
+.ti -1c
+.RI "None \fBadd_target_python_options\fP (OptionGroup cmd_opts)"
+.br
+.ti -1c
+.RI "\fBTargetPython\fP \fBmake_target_python\fP (Values options)"
+.br
+.ti -1c
+.RI "Option \fBprefer_binary\fP ()"
+.br
+.ti -1c
+.RI "None \fB_handle_no_cache_dir\fP (Option option, str \fBopt\fP, str value, OptionParser parser)"
+.br
+.ti -1c
+.RI "None \fB_handle_no_use_pep517\fP (Option option, str \fBopt\fP, str value, OptionParser parser)"
+.br
+.ti -1c
+.RI "None \fB_handle_config_settings\fP (Option option, str opt_str, str value, OptionParser parser)"
+.br
+.ti -1c
+.RI "None \fB_handle_merge_hash\fP (Option option, str opt_str, str value, OptionParser parser)"
+.br
+.ti -1c
+.RI "None \fBcheck_list_path_option\fP (Values options)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "Callable \fBcert\fP"
+.br
+.ti -1c
+.RI "Callable \fBclient_cert\fP"
+.br
+.ti -1c
+.RI "Callable \fBindex_url\fP"
+.br
+.ti -1c
+.RI "Callable \fBno_index\fP"
+.br
+.ti -1c
+.RI "Callable \fBsrc\fP"
+.br
+.ti -1c
+.RI "Callable \fBplatforms\fP"
+.br
+.ti -1c
+.RI "Callable \fBpython_version\fP"
+.br
+.ti -1c
+.RI "Callable \fBimplementation\fP"
+.br
+.ti -1c
+.RI "Callable \fBabis\fP"
+.br
+.ti -1c
+.RI "Callable \fBcache_dir\fP"
+.br
+.ti -1c
+.RI "Callable \fBno_cache\fP"
+.br
+.ti -1c
+.RI "Callable \fBno_deps\fP"
+.br
+.ti -1c
+.RI "Callable \fBignore_requires_python\fP"
+.br
+.ti -1c
+.RI "Callable \fBno_build_isolation\fP"
+.br
+.ti -1c
+.RI "Callable \fBcheck_build_deps\fP"
+.br
+.ti -1c
+.RI "Any \fBuse_pep517\fP"
+.br
+.ti -1c
+.RI "Any \fBno_use_pep517\fP"
+.br
+.ti -1c
+.RI "Callable \fBconfig_settings\fP"
+.br
+.ti -1c
+.RI "Callable \fBbuild_options\fP"
+.br
+.ti -1c
+.RI "Callable \fBglobal_options\fP"
+.br
+.ti -1c
+.RI "Callable \fBno_clean\fP"
+.br
+.ti -1c
+.RI "Callable \fBpre\fP"
+.br
+.ti -1c
+.RI "Callable \fBdisable_pip_version_check\fP"
+.br
+.ti -1c
+.RI "Callable \fBroot_user_action\fP"
+.br
+.ti -1c
+.RI "Callable \fBhash\fP"
+.br
+.ti -1c
+.RI "Callable \fBrequire_hashes\fP"
+.br
+.ti -1c
+.RI "Callable \fBlist_path\fP"
+.br
+.ti -1c
+.RI "Callable \fBlist_exclude\fP"
+.br
+.ti -1c
+.RI "Callable \fBno_python_version_warning\fP"
+.br
+.ti -1c
+.RI "list \fBALWAYS_ENABLED_FEATURES\fP"
+.br
+.ti -1c
+.RI "Callable \fBuse_new_feature\fP"
+.br
+.ti -1c
+.RI "Callable \fBuse_deprecated_feature\fP"
+.br
+.ti -1c
+.RI "dict \fBgeneral_group\fP"
+.br
+.RI "groups # "
+.ti -1c
+.RI "dict \fBindex_group\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+shared options and groups
+
+The principle here is to define options once, but *not* instantiate them
+globally\&. One reason being that options with action='append' can carry state
+between parses\&. pip parses general options twice internally, and shouldn't
+pass on state\&. To be consistent, all options will follow this design\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " Tuple[Tuple[int, \&.\&.\&.], Optional[str]] pip\&._internal\&.cli\&.cmdoptions\&._convert_python_version (str value)\fC [protected]\fP"
+
+.PP
+.nf
+Convert a version string like '3', '37', or '3\&.7\&.3' into a tuple of ints\&.
+
+:return: A 2-tuple (version_info, error_msg), where `error_msg` is
+    non-None if and only if there was a parsing error\&.
+
+.fi
+.PP
+ 
+.SS " Any pip\&._internal\&.cli\&.cmdoptions\&._get_format_control (Values values, Option option)\fC [protected]\fP"
+
+.PP
+.nf
+Get a format_control object\&.
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.cli\&.cmdoptions\&._handle_config_settings (Option option, str opt_str, str value, OptionParser
+ parser)\fC [protected]\fP"
+
+.SS " None pip\&._internal\&.cli\&.cmdoptions\&._handle_merge_hash (Option option, str opt_str, str value, OptionParser
+ parser)\fC [protected]\fP"
+
+.PP
+.nf
+Given a value spelled 'algo:digest', append the digest to a list
+pointed to in a dict by the algo name\&.
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.cli\&.cmdoptions\&._handle_no_binary (Option option, str opt_str, str value, OptionParser
+ parser)\fC [protected]\fP"
+
+.SS " None pip\&._internal\&.cli\&.cmdoptions\&._handle_no_cache_dir (Option option, str opt, str value, OptionParser
+ parser)\fC [protected]\fP"
+
+.PP
+.nf
+Process a value provided for the --no-cache-dir option\&.
+
+This is an optparse\&.Option callback for the --no-cache-dir option\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.cli\&.cmdoptions\&._handle_no_use_pep517 (Option option, str opt, str value, OptionParser
+ parser)\fC [protected]\fP"
+
+.PP
+.nf
+Process a value provided for the --no-use-pep517 option\&.
+
+This is an optparse\&.Option callback for the no_use_pep517 option\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.cli\&.cmdoptions\&._handle_only_binary (Option option, str opt_str, str value, OptionParser
+ parser)\fC [protected]\fP"
+
+.SS " None pip\&._internal\&.cli\&.cmdoptions\&._handle_python_version (Option option, str opt_str, str value, OptionParser
+ parser)\fC [protected]\fP"
+
+.PP
+.nf
+Handle a provided --python-version value\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.cli\&.cmdoptions\&._handle_src (Option option, str opt_str, str value, OptionParser parser)\fC [protected]\fP"
+
+.SS " str pip\&._internal\&.cli\&.cmdoptions\&._package_name_option_check (Option option, str opt, str value)\fC [protected]\fP"
+
+.SS " str pip\&._internal\&.cli\&.cmdoptions\&._path_option_check (Option option, str opt, str value)\fC [protected]\fP"
+
+.SS " None pip\&._internal\&.cli\&.cmdoptions\&.add_target_python_options (OptionGroup cmd_opts)"
+
+.SS " None pip\&._internal\&.cli\&.cmdoptions\&.check_dist_restriction (Values options, bool  check_target = \fCFalse\fP)"
+
+.PP
+.nf
+Function for determining if custom platform options are allowed\&.
+
+:param options: The OptionParser options\&.
+:param check_target: Whether or not to check if --target is being used\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._internal\&.cli\&.cmdoptions\&.check_list_path_option (Values options)"
+
+.SS " Option pip\&._internal\&.cli\&.cmdoptions\&.constraints ()"
+
+.SS " Option pip\&._internal\&.cli\&.cmdoptions\&.editable ()"
+
+.SS " Option pip\&._internal\&.cli\&.cmdoptions\&.exists_action ()"
+
+.SS " Option pip\&._internal\&.cli\&.cmdoptions\&.extra_index_url ()"
+
+.SS " Option pip\&._internal\&.cli\&.cmdoptions\&.find_links ()"
+
+.SS " OptionGroup pip\&._internal\&.cli\&.cmdoptions\&.make_option_group (Dict[str, Any] group, \fBConfigOptionParser\fP parser)"
+
+.PP
+.nf
+Return an OptionGroup object
+group  -- assumed to be dict with 'name' and 'options' keys
+parser -- an optparse Parser
+
+.fi
+.PP
+ 
+.SS " \fBTargetPython\fP pip\&._internal\&.cli\&.cmdoptions\&.make_target_python (Values options)"
+
+.SS " Option pip\&._internal\&.cli\&.cmdoptions\&.no_binary ()"
+
+.SS " Option pip\&._internal\&.cli\&.cmdoptions\&.only_binary ()"
+
+.SS " Option pip\&._internal\&.cli\&.cmdoptions\&.prefer_binary ()"
+
+.SS " None pip\&._internal\&.cli\&.cmdoptions\&.raise_option_error (OptionParser parser, Option option, str msg)"
+
+.PP
+.nf
+Raise an option parsing error using parser\&.error()\&.
+
+Args:
+  parser: an OptionParser instance\&.
+  option: an Option instance\&.
+  msg: the error text\&.
+
+.fi
+.PP
+ 
+.SS " Option pip\&._internal\&.cli\&.cmdoptions\&.requirements ()"
+
+.SS " Option pip\&._internal\&.cli\&.cmdoptions\&.trusted_host ()"
+
+.SH "Variable Documentation"
+.PP 
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.abis"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-abi",
+4     dest="abis",
+5     metavar="abi",
+6     action="append",
+7     default=None,
+8     help=(
+9         "Only use wheels compatible with Python abi <abi>, e\&.g\&. 'pypy_41'\&. "
+10         "If not specified, then the current interpreter abi tag is used\&. "
+11         "Use this option multiple times to specify multiple abis supported "
+12         "by the target interpreter\&. Generally you will need to specify "
+13         "\-\-implementation, \-\-platform, and \-\-python\-version when using this "
+14         "option\&."
+15     ),
+16 )
+.fi
+
+.SS "list pip\&._internal\&.cli\&.cmdoptions\&.ALWAYS_ENABLED_FEATURES"
+\fBInitial value:\fP.PP
+.nf
+1 =  [
+2     "truststore",  # always on since 24\&.2
+3     "no\-binary\-enable\-wheel\-cache",  # always on since 23\&.1
+4 ]
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.build_options"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-build\-option",
+4     dest="build_options",
+5     metavar="options",
+6     action="append",
+7     help="Extra arguments to be supplied to 'setup\&.py bdist_wheel'\&.",
+8 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.cache_dir"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     PipOption,
+3     "\-\-cache\-dir",
+4     dest="cache_dir",
+5     default=USER_CACHE_DIR,
+6     metavar="dir",
+7     type="path",
+8     help="Store the cache data in <dir>\&.",
+9 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.cert"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     PipOption,
+3     "\-\-cert",
+4     dest="cert",
+5     type="path",
+6     metavar="path",
+7     help=(
+8         "Path to PEM\-encoded CA certificate bundle\&. "
+9         "If provided, overrides the default\&. "
+10         "See 'SSL Certificate Verification' in pip documentation "
+11         "for more information\&."
+12     ),
+13 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.check_build_deps"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-check\-build\-dependencies",
+4     dest="check_build_deps",
+5     action="store_true",
+6     default=False,
+7     help="Check the build dependencies when PEP517 is used\&.",
+8 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.client_cert"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     PipOption,
+3     "\-\-client\-cert",
+4     dest="client_cert",
+5     type="path",
+6     default=None,
+7     metavar="path",
+8     help="Path to SSL client certificate, a single file containing the "
+9     "private key and the certificate in PEM format\&.",
+10 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.config_settings"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-C",
+4     "\-\-config\-settings",
+5     dest="config_settings",
+6     type=str,
+7     action="callback",
+8     callback=_handle_config_settings,
+9     metavar="settings",
+10     help="Configuration settings to be passed to the PEP 517 build backend\&. "
+11     "Settings take the form KEY=VALUE\&. Use multiple \-\-config\-settings options "
+12     "to pass multiple keys to the backend\&.",
+13 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.disable_pip_version_check"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-disable\-pip\-version\-check",
+4     dest="disable_pip_version_check",
+5     action="store_true",
+6     default=False,
+7     help="Don't periodically check PyPI to determine whether a new version "
+8     "of pip is available for download\&. Implied with \-\-no\-index\&.",
+9 )
+.fi
+
+.SS "dict pip\&._internal\&.cli\&.cmdoptions\&.general_group"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     "name": "General Options",
+3     "options": [
+4         help_,
+5         debug_mode,
+6         isolated_mode,
+7         require_virtualenv,
+8         python,
+9         verbose,
+10         version,
+11         quiet,
+12         log,
+13         no_input,
+14         keyring_provider,
+15         proxy,
+16         retries,
+17         timeout,
+18         exists_action,
+19         trusted_host,
+20         cert,
+21         client_cert,
+22         cache_dir,
+23         no_cache,
+24         disable_pip_version_check,
+25         no_color,
+26         no_python_version_warning,
+27         use_new_feature,
+28         use_deprecated_feature,
+29     ],
+30 }
+.fi
+
+.PP
+groups # 
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.global_options"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-global\-option",
+4     dest="global_options",
+5     action="append",
+6     metavar="options",
+7     help="Extra global options to be supplied to the setup\&.py "
+8     "call before the install or bdist_wheel command\&.",
+9 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.hash"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-hash",
+4     # Hash values eventually end up in InstallRequirement\&.hashes due to
+5     # __dict__ copying in process_line()\&.
+6     dest="hashes",
+7     action="callback",
+8     callback=_handle_merge_hash,
+9     type="string",
+10     help="Verify that the package's archive matches this "
+11     "hash before installing\&. Example: \-\-hash=sha256:abcdef\&.\&.\&.",
+12 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.ignore_requires_python"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-ignore\-requires\-python",
+4     dest="ignore_requires_python",
+5     action="store_true",
+6     help="Ignore the Requires\-Python information\&.",
+7 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.implementation"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-implementation",
+4     dest="implementation",
+5     metavar="implementation",
+6     default=None,
+7     help=(
+8         "Only use wheels compatible with Python "
+9         "implementation <implementation>, e\&.g\&. 'pp', 'jy', 'cp', "
+10         " or 'ip'\&. If not specified, then the current "
+11         "interpreter implementation is used\&.  Use 'py' to force "
+12         "implementation\-agnostic wheels\&."
+13     ),
+14 )
+.fi
+
+.SS "dict pip\&._internal\&.cli\&.cmdoptions\&.index_group"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     "name": "Package Index Options",
+3     "options": [
+4         index_url,
+5         extra_index_url,
+6         no_index,
+7         find_links,
+8     ],
+9 }
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.index_url"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-i",
+4     "\-\-index\-url",
+5     "\-\-pypi\-url",
+6     dest="index_url",
+7     metavar="URL",
+8     default=PyPI\&.simple_url,
+9     help="Base URL of the Python Package Index (default %default)\&. "
+10     "This should point to a repository compliant with PEP 503 "
+11     "(the simple repository API) or a local directory laid out "
+12     "in the same format\&.",
+13 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.list_exclude"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     PipOption,
+3     "\-\-exclude",
+4     dest="excludes",
+5     action="append",
+6     metavar="package",
+7     type="package_name",
+8     help="Exclude specified package from the output",
+9 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.list_path"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     PipOption,
+3     "\-\-path",
+4     dest="path",
+5     type="path",
+6     action="append",
+7     help="Restrict to the specified installation path for listing "
+8     "packages (can be used multiple times)\&.",
+9 )
+.fi
+
+.SS "pip\&._internal\&.cli\&.cmdoptions\&.logger = logging\&.getLogger(__name__)"
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.no_build_isolation"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-no\-build\-isolation",
+4     dest="build_isolation",
+5     action="store_false",
+6     default=True,
+7     help="Disable isolation when building a modern source distribution\&. "
+8     "Build dependencies specified by PEP 518 must be already installed "
+9     "if this option is used\&.",
+10 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.no_cache"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-no\-cache\-dir",
+4     dest="cache_dir",
+5     action="callback",
+6     callback=_handle_no_cache_dir,
+7     help="Disable the cache\&.",
+8 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.no_clean"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-no\-clean",
+4     action="store_true",
+5     default=False,
+6     help="Don't clean up build directories\&.",
+7 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.no_deps"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-no\-deps",
+4     "\-\-no\-dependencies",
+5     dest="ignore_dependencies",
+6     action="store_true",
+7     default=False,
+8     help="Don't install package dependencies\&.",
+9 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.no_index"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-no\-index",
+4     dest="no_index",
+5     action="store_true",
+6     default=False,
+7     help="Ignore package index (only looking at \-\-find\-links URLs instead)\&.",
+8 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.no_python_version_warning"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-no\-python\-version\-warning",
+4     dest="no_python_version_warning",
+5     action="store_true",
+6     default=False,
+7     help="Silence deprecation warnings for upcoming unsupported Pythons\&.",
+8 )
+.fi
+
+.SS "Any pip\&._internal\&.cli\&.cmdoptions\&.no_use_pep517"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-no\-use\-pep517",
+4     dest="use_pep517",
+5     action="callback",
+6     callback=_handle_no_use_pep517,
+7     default=None,
+8     help=SUPPRESS_HELP,
+9 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.platforms"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-platform",
+4     dest="platforms",
+5     metavar="platform",
+6     action="append",
+7     default=None,
+8     help=(
+9         "Only use wheels compatible with <platform>\&. Defaults to the "
+10         "platform of the running system\&. Use this option multiple times to "
+11         "specify multiple platforms supported by the target interpreter\&."
+12     ),
+13 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.pre"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-pre",
+4     action="store_true",
+5     default=False,
+6     help="Include pre\-release and development versions\&. By default, "
+7     "pip only finds stable versions\&.",
+8 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.python_version"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-python\-version",
+4     dest="python_version",
+5     metavar="python_version",
+6     action="callback",
+7     callback=_handle_python_version,
+8     type="str",
+9     default=None,
+10     help=dedent(
+11         
+12     ),
+13 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.require_hashes"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-require\-hashes",
+4     dest="require_hashes",
+5     action="store_true",
+6     default=False,
+7     help="Require a hash to check each requirement against, for "
+8     "repeatable installs\&. This option is implied when any package in a "
+9     "requirements file has a \-\-hash option\&.",
+10 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.root_user_action"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-root\-user\-action",
+4     dest="root_user_action",
+5     default="warn",
+6     choices=["warn", "ignore"],
+7     help="Action if pip is run as a root user [warn, ignore] (default: warn)",
+8 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.src"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     PipOption,
+3     "\-\-src",
+4     "\-\-source",
+5     "\-\-source\-dir",
+6     "\-\-source\-directory",
+7     dest="src_dir",
+8     type="path",
+9     metavar="dir",
+10     default=get_src_prefix(),
+11     action="callback",
+12     callback=_handle_src,
+13     help="Directory to check out editable projects into\&. "
+14     'The default in a virtualenv is "<venv path>/src"\&. '
+15     'The default for global installs is "<current dir>/src"\&.',
+16 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.use_deprecated_feature"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-use\-deprecated",
+4     dest="deprecated_features_enabled",
+5     metavar="feature",
+6     action="append",
+7     default=[],
+8     choices=[
+9         "legacy\-resolver",
+10         "legacy\-certs",
+11     ],
+12     help=("Enable deprecated functionality, that will be removed in the future\&."),
+13 )
+.fi
+
+.SS "Callable pip\&._internal\&.cli\&.cmdoptions\&.use_new_feature"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-use\-feature",
+4     dest="features_enabled",
+5     metavar="feature",
+6     action="append",
+7     default=[],
+8     choices=[
+9         "fast\-deps",
+10     ]
+11     + ALWAYS_ENABLED_FEATURES,
+12     help="Enable new functionality, that may be backward incompatible\&.",
+13 )
+.fi
+
+.SS "Any pip\&._internal\&.cli\&.cmdoptions\&.use_pep517"
+\fBInitial value:\fP.PP
+.nf
+1 =  partial(
+2     Option,
+3     "\-\-use\-pep517",
+4     dest="use_pep517",
+5     action="store_true",
+6     default=None,
+7     help="Use PEP 517 for building source distributions "
+8     "(use \-\-no\-use\-pep517 to force legacy behaviour)\&.",
+9 )
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

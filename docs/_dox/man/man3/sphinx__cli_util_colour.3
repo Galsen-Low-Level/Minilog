@@ -1,0 +1,193 @@
+.TH "sphinx._cli.util.colour" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx._cli.util.colour
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBterminal_supports_colour\fP ()"
+.br
+.ti -1c
+.RI "None \fBdisable_colour\fP ()"
+.br
+.ti -1c
+.RI "None \fBenable_colour\fP ()"
+.br
+.ti -1c
+.RI "str \fBcolourise\fP (str colour_name, str text)"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fB_create_colour_func\fP (str escape_code)"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fB_create_input_mode_colour_func\fP (str escape_code)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "bool \fBTYPE_CHECKING\fP = False"
+.br
+.ti -1c
+.RI "bool \fB_COLOURING_DISABLED\fP = False"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fB_create_input_mode_colour_func\fP = \fB_create_colour_func\fP"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBreset\fP = \fB_create_colour_func\fP('39;49;00')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBbold\fP = \fB_create_colour_func\fP('01')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBfaint\fP = \fB_create_colour_func\fP('02')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBstandout\fP = \fB_create_colour_func\fP('03')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBunderline\fP = \fB_create_colour_func\fP('04')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBblink\fP = \fB_create_colour_func\fP('05')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBblack\fP = \fB_create_colour_func\fP('30')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBdarkred\fP = \fB_create_colour_func\fP('31')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBdarkgreen\fP = \fB_create_colour_func\fP('32')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBbrown\fP = \fB_create_colour_func\fP('33')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBdarkblue\fP = \fB_create_colour_func\fP('34')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBpurple\fP = \fB_create_colour_func\fP('35')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBturquoise\fP = \fB_create_colour_func\fP('36')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBlightgray\fP = \fB_create_colour_func\fP('37')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBdarkgray\fP = \fB_create_colour_func\fP('90')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBred\fP = \fB_create_colour_func\fP('91')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBgreen\fP = \fB_create_colour_func\fP('92')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fByellow\fP = \fB_create_colour_func\fP('93')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBblue\fP = \fB_create_colour_func\fP('94')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBfuchsia\fP = \fB_create_colour_func\fP('95')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBteal\fP = \fB_create_colour_func\fP('96')"
+.br
+.ti -1c
+.RI "Callable[[str], str] \fBwhite\fP = \fB_create_colour_func\fP('97')"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Format coloured console output\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " Callable[[str], str] sphinx\&._cli\&.util\&.colour\&._create_colour_func (str escape_code)\fC [protected]\fP"
+
+.SS " Callable[[str], str] sphinx\&._cli\&.util\&.colour\&._create_input_mode_colour_func (str escape_code)\fC [protected]\fP"
+
+.SS " str sphinx\&._cli\&.util\&.colour\&.colourise (str colour_name, str text)"
+
+.SS " None sphinx\&._cli\&.util\&.colour\&.disable_colour ()"
+
+.SS " None sphinx\&._cli\&.util\&.colour\&.enable_colour ()"
+
+.SS " bool sphinx\&._cli\&.util\&.colour\&.terminal_supports_colour ()"
+
+.PP
+.nf
+Return True if coloured terminal output is supported\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "bool sphinx\&._cli\&.util\&.colour\&._COLOURING_DISABLED = False\fC [protected]\fP"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&._create_input_mode_colour_func = \fB_create_colour_func\fP\fC [protected]\fP"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.black = \fB_create_colour_func\fP('30')"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.blink = \fB_create_colour_func\fP('05')"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.blue = \fB_create_colour_func\fP('94')"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.bold = \fB_create_colour_func\fP('01')"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.brown = \fB_create_colour_func\fP('33')"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.darkblue = \fB_create_colour_func\fP('34')"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.darkgray = \fB_create_colour_func\fP('90')"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.darkgreen = \fB_create_colour_func\fP('32')"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.darkred = \fB_create_colour_func\fP('31')"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.faint = \fB_create_colour_func\fP('02')"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.fuchsia = \fB_create_colour_func\fP('95')"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.green = \fB_create_colour_func\fP('92')"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.lightgray = \fB_create_colour_func\fP('37')"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.purple = \fB_create_colour_func\fP('35')"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.red = \fB_create_colour_func\fP('91')"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.reset = \fB_create_colour_func\fP('39;49;00')"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.standout = \fB_create_colour_func\fP('03')"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.teal = \fB_create_colour_func\fP('96')"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.turquoise = \fB_create_colour_func\fP('36')"
+
+.SS "bool sphinx\&._cli\&.util\&.colour\&.TYPE_CHECKING = False"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.underline = \fB_create_colour_func\fP('04')"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.white = \fB_create_colour_func\fP('97')"
+
+.SS "Callable[[str], str] sphinx\&._cli\&.util\&.colour\&.yellow = \fB_create_colour_func\fP('93')"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

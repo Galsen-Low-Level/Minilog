@@ -1,0 +1,62 @@
+.TH "/home/umar/Desktop/WorkShop/GLL/waitress/server.c" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/umar/Desktop/WorkShop/GLL/waitress/server.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <sys/socket\&.h>\fP
+.br
+\fC#include <netinet/in\&.h>\fP
+.br
+\fC#include <arpa/inet\&.h>\fP
+.br
+\fC#include <errno\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBperr\fP(__fcall)     perror(#__fcall)"
+.br
+.ti -1c
+.RI "#define \fBgperr\fP(__fcall,  __returned_code,  __label)     do{\fBperr\fP(__fcall); goto __label;}while(0)"
+.br
+.ti -1c
+.RI "#define \fBPORT\fP   8000"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int ac, char **av)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define gperr(__fcall, __returned_code, __label)     do{\fBperr\fP(__fcall); goto __label;}while(0)"
+
+.SS "#define perr(__fcall)     perror(#__fcall)"
+
+.SS "#define PORT   8000"
+
+.SH "Function Documentation"
+.PP 
+.SS "int main (int ac, char ** av)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

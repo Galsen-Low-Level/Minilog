@@ -1,0 +1,81 @@
+.TH "pip._vendor.rich.ansi.AnsiDecoder" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.rich.ansi.AnsiDecoder
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "Iterable[\fBText\fP] \fBdecode\fP (self, str terminal_text)"
+.br
+.ti -1c
+.RI "\fBText\fP \fBdecode_line\fP (self, str line)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBstyle\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Translate ANSI code in to styled Text\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None pip\&._vendor\&.rich\&.ansi\&.AnsiDecoder\&.__init__ ( self)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS " Iterable[\fBText\fP] pip\&._vendor\&.rich\&.ansi\&.AnsiDecoder\&.decode ( self, str terminal_text)"
+
+.PP
+.nf
+Decode ANSI codes in an iterable of lines\&.
+
+Args:
+    lines (Iterable[str]): An iterable of lines of terminal output\&.
+
+Yields:
+    Text: Marked up Text\&.
+
+.fi
+.PP
+ 
+.SS " \fBText\fP pip\&._vendor\&.rich\&.ansi\&.AnsiDecoder\&.decode_line ( self, str line)"
+
+.PP
+.nf
+Decode a line containing ansi codes\&.
+
+Args:
+    line (str): A line of terminal output\&.
+
+Returns:
+    Text: A Text instance marked up according to ansi codes\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.rich\&.ansi\&.AnsiDecoder\&.style"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

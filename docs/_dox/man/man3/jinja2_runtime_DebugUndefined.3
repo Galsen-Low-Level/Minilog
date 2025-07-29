@@ -1,0 +1,112 @@
+.TH "jinja2.runtime.DebugUndefined" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.runtime.DebugUndefined
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBjinja2\&.runtime\&.Undefined\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fB__str__\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBjinja2\&.runtime\&.Undefined\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, t\&.Optional[str] hint=None, t\&.Any obj=missing, t\&.Optional[str] name=None, t\&.Type[\fBTemplateRuntimeError\fP] exc=\fBUndefinedError\fP)"
+.br
+.ti -1c
+.RI "t\&.Any \fB__getattr__\fP (self, str name)"
+.br
+.ti -1c
+.RI "bool \fB__eq__\fP (self, t\&.Any other)"
+.br
+.ti -1c
+.RI "bool \fB__ne__\fP (self, t\&.Any other)"
+.br
+.ti -1c
+.RI "int \fB__hash__\fP (self)"
+.br
+.ti -1c
+.RI "int \fB__len__\fP (self)"
+.br
+.ti -1c
+.RI "t\&.Iterator[t\&.Any] \fB__iter__\fP (self)"
+.br
+.ti -1c
+.RI "t\&.AsyncIterator[t\&.Any] \fB__aiter__\fP (self)"
+.br
+.ti -1c
+.RI "bool \fB__bool__\fP (self)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Member Functions inherited from \fBjinja2\&.runtime\&.Undefined\fP
+.in +1c
+.ti -1c
+.RI "str \fB_undefined_message\fP (self)"
+.br
+.ti -1c
+.RI "'te\&.NoReturn' \fB_fail_with_undefined_error\fP (self, *t\&.Any args, **t\&.Any kwargs)"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBjinja2\&.runtime\&.Undefined\fP
+.in +1c
+.ti -1c
+.RI "\fB_undefined_hint\fP"
+.br
+.ti -1c
+.RI "\fB_undefined_obj\fP"
+.br
+.ti -1c
+.RI "\fB_undefined_name\fP"
+.br
+.ti -1c
+.RI "\fB_undefined_exception\fP"
+.br
+.ti -1c
+.RI "\fB_undefined_message\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+An undefined that returns the debug info when printed\&.
+
+>>> foo = DebugUndefined(name='foo')
+>>> str(foo)
+'{{ foo }}'
+>>> not foo
+True
+>>> foo + 42
+Traceback (most recent call last):
+  \&.\&.\&.
+jinja2\&.exceptions\&.UndefinedError: 'foo' is undefined
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " str jinja2\&.runtime\&.DebugUndefined\&.__str__ ( self)"
+
+.PP
+Reimplemented from \fBjinja2\&.runtime\&.Undefined\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

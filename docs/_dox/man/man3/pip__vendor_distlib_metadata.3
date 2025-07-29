@@ -1,0 +1,283 @@
+.TH "pip._vendor.distlib.metadata" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.distlib.metadata
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBLegacyMetadata\fP"
+.br
+.ti -1c
+.RI "class \fBMetadata\fP"
+.br
+.ti -1c
+.RI "class \fBMetadataConflictError\fP"
+.br
+.ti -1c
+.RI "class \fBMetadataInvalidError\fP"
+.br
+.ti -1c
+.RI "class \fBMetadataMissingError\fP"
+.br
+.ti -1c
+.RI "class \fBMetadataUnrecognizedVersionError\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_version2fieldlist\fP (version)"
+.br
+.ti -1c
+.RI "\fB_best_version\fP (fields)"
+.br
+.ti -1c
+.RI "\fB_get_name_and_version\fP (name, version, for_filename=False)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "str \fBPKG_INFO_ENCODING\fP = 'utf\-8'"
+.br
+.ti -1c
+.RI "str \fBPKG_INFO_PREFERRED_VERSION\fP = '1\&.1'"
+.br
+.ti -1c
+.RI "\fB_LINE_PREFIX_1_2\fP = re\&.compile('\\n \\\\|')"
+.br
+.ti -1c
+.RI "\fB_LINE_PREFIX_PRE_1_2\fP = re\&.compile('\\n ')"
+.br
+.ti -1c
+.RI "tuple \fB_241_FIELDS\fP"
+.br
+.ti -1c
+.RI "tuple \fB_314_FIELDS\fP"
+.br
+.ti -1c
+.RI "tuple \fB_314_MARKERS\fP = ('Obsoletes', 'Provides', 'Requires', 'Classifier', 'Download\-URL')"
+.br
+.ti -1c
+.RI "tuple \fB_345_FIELDS\fP"
+.br
+.ti -1c
+.RI "tuple \fB_345_MARKERS\fP"
+.br
+.ti -1c
+.RI "tuple \fB_426_FIELDS\fP"
+.br
+.ti -1c
+.RI "tuple \fB_426_MARKERS\fP = ('Private\-Version', 'Provides\-Extra', 'Obsoleted\-By', 'Setup\-Requires\-Dist', 'Extension')"
+.br
+.ti -1c
+.RI "tuple \fB_566_FIELDS\fP = \fB_426_FIELDS\fP + ('Description\-Content\-Type', 'Requires', 'Provides', 'Obsoletes')"
+.br
+.ti -1c
+.RI "tuple \fB_566_MARKERS\fP = ('Description\-Content\-Type', )"
+.br
+.ti -1c
+.RI "tuple \fB_643_MARKERS\fP = ('Dynamic', 'License\-File')"
+.br
+.ti -1c
+.RI "tuple \fB_643_FIELDS\fP = \fB_566_FIELDS\fP + \fB_643_MARKERS\fP"
+.br
+.ti -1c
+.RI "\fB_ALL_FIELDS\fP = set()"
+.br
+.ti -1c
+.RI "\fBEXTRA_RE\fP = re\&.compile()"
+.br
+.ti -1c
+.RI "dict \fB_ATTR2FIELD\fP = {name\&.lower()\&.replace('\-', '_'): name for name in \fB_ALL_FIELDS\fP}"
+.br
+.ti -1c
+.RI "dict \fB_FIELD2ATTR\fP = {field: attr for attr, field in _ATTR2FIELD\&.items()}"
+.br
+.ti -1c
+.RI "tuple \fB_PREDICATE_FIELDS\fP = ('Requires\-Dist', 'Obsoletes\-Dist', 'Provides\-Dist')"
+.br
+.ti -1c
+.RI "tuple \fB_VERSIONS_FIELDS\fP = ('Requires\-Python', )"
+.br
+.ti -1c
+.RI "tuple \fB_VERSION_FIELDS\fP = ('Version', )"
+.br
+.ti -1c
+.RI "tuple \fB_LISTFIELDS\fP"
+.br
+.ti -1c
+.RI "tuple \fB_LISTTUPLEFIELDS\fP = ('Project\-URL', )"
+.br
+.ti -1c
+.RI "tuple \fB_ELEMENTSFIELD\fP = ('Keywords', )"
+.br
+.ti -1c
+.RI "tuple \fB_UNICODEFIELDS\fP = ('Author', 'Maintainer', 'Summary', 'Description')"
+.br
+.ti -1c
+.RI "\fB_MISSING\fP = object()"
+.br
+.ti -1c
+.RI "\fB_FILESAFE\fP = re\&.compile('[^A\-Za\-z0\-9\&.]+')"
+.br
+.ti -1c
+.RI "str \fBMETADATA_FILENAME\fP = 'pydist\&.json'"
+.br
+.ti -1c
+.RI "str \fBWHEEL_METADATA_FILENAME\fP = 'metadata\&.json'"
+.br
+.ti -1c
+.RI "str \fBLEGACY_METADATA_FILENAME\fP = 'METADATA'"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Implementation of the Metadata for Python packages PEPs\&.
+
+Supports all metadata formats (1\&.0, 1\&.1, 1\&.2, 1\&.3/2\&.1 and 2\&.2)\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.metadata\&._best_version ( fields)\fC [protected]\fP"
+
+.PP
+.nf
+Detect the best version depending on the fields used\&.
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.metadata\&._get_name_and_version ( name,  version,  for_filename = \fCFalse\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Return the distribution name with version\&.
+
+If for_filename is true, return a filename-escaped form\&.
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.metadata\&._version2fieldlist ( version)\fC [protected]\fP"
+
+.SH "Variable Documentation"
+.PP 
+.SS "tuple pip\&._vendor\&.distlib\&.metadata\&._241_FIELDS\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  ('Metadata\-Version', 'Name', 'Version', 'Platform', 'Summary', 'Description', 'Keywords', 'Home\-page',
+2                'Author', 'Author\-email', 'License')
+.fi
+
+.SS "tuple pip\&._vendor\&.distlib\&.metadata\&._314_FIELDS\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  ('Metadata\-Version', 'Name', 'Version', 'Platform', 'Supported\-Platform', 'Summary', 'Description',
+2                'Keywords', 'Home\-page', 'Author', 'Author\-email', 'License', 'Classifier', 'Download\-URL', 'Obsoletes',
+3                'Provides', 'Requires')
+.fi
+
+.SS "tuple pip\&._vendor\&.distlib\&.metadata\&._314_MARKERS = ('Obsoletes', 'Provides', 'Requires', 'Classifier', 'Download\-URL')\fC [protected]\fP"
+
+.SS "tuple pip\&._vendor\&.distlib\&.metadata\&._345_FIELDS\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  ('Metadata\-Version', 'Name', 'Version', 'Platform', 'Supported\-Platform', 'Summary', 'Description',
+2                'Keywords', 'Home\-page', 'Author', 'Author\-email', 'Maintainer', 'Maintainer\-email', 'License',
+3                'Classifier', 'Download\-URL', 'Obsoletes\-Dist', 'Project\-URL', 'Provides\-Dist', 'Requires\-Dist',
+4                'Requires\-Python', 'Requires\-External')
+.fi
+
+.SS "tuple pip\&._vendor\&.distlib\&.metadata\&._345_MARKERS\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  ('Provides\-Dist', 'Requires\-Dist', 'Requires\-Python', 'Obsoletes\-Dist', 'Requires\-External',
+2                 'Maintainer', 'Maintainer\-email', 'Project\-URL')
+.fi
+
+.SS "tuple pip\&._vendor\&.distlib\&.metadata\&._426_FIELDS\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  ('Metadata\-Version', 'Name', 'Version', 'Platform', 'Supported\-Platform', 'Summary', 'Description',
+2                'Keywords', 'Home\-page', 'Author', 'Author\-email', 'Maintainer', 'Maintainer\-email', 'License',
+3                'Classifier', 'Download\-URL', 'Obsoletes\-Dist', 'Project\-URL', 'Provides\-Dist', 'Requires\-Dist',
+4                'Requires\-Python', 'Requires\-External', 'Private\-Version', 'Obsoleted\-By', 'Setup\-Requires\-Dist',
+5                'Extension', 'Provides\-Extra')
+.fi
+
+.SS "tuple pip\&._vendor\&.distlib\&.metadata\&._426_MARKERS = ('Private\-Version', 'Provides\-Extra', 'Obsoleted\-By', 'Setup\-Requires\-Dist', 'Extension')\fC [protected]\fP"
+
+.SS "tuple pip\&._vendor\&.distlib\&.metadata\&._566_FIELDS = \fB_426_FIELDS\fP + ('Description\-Content\-Type', 'Requires', 'Provides', 'Obsoletes')\fC [protected]\fP"
+
+.SS "tuple pip\&._vendor\&.distlib\&.metadata\&._566_MARKERS = ('Description\-Content\-Type', )\fC [protected]\fP"
+
+.SS "tuple pip\&._vendor\&.distlib\&.metadata\&._643_FIELDS = \fB_566_FIELDS\fP + \fB_643_MARKERS\fP\fC [protected]\fP"
+
+.SS "tuple pip\&._vendor\&.distlib\&.metadata\&._643_MARKERS = ('Dynamic', 'License\-File')\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&._ALL_FIELDS = set()\fC [protected]\fP"
+
+.SS "dict pip\&._vendor\&.distlib\&.metadata\&._ATTR2FIELD = {name\&.lower()\&.replace('\-', '_'): name for name in \fB_ALL_FIELDS\fP}\fC [protected]\fP"
+
+.SS "tuple pip\&._vendor\&.distlib\&.metadata\&._ELEMENTSFIELD = ('Keywords', )\fC [protected]\fP"
+
+.SS "dict pip\&._vendor\&.distlib\&.metadata\&._FIELD2ATTR = {field: attr for attr, field in _ATTR2FIELD\&.items()}\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&._FILESAFE = re\&.compile('[^A\-Za\-z0\-9\&.]+')\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&._LINE_PREFIX_1_2 = re\&.compile('\\n \\\\|')\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&._LINE_PREFIX_PRE_1_2 = re\&.compile('\\n ')\fC [protected]\fP"
+
+.SS "tuple pip\&._vendor\&.distlib\&.metadata\&._LISTFIELDS\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  ('Platform', 'Classifier', 'Obsoletes', 'Requires', 'Provides', 'Obsoletes\-Dist', 'Provides\-Dist',
+2                'Requires\-Dist', 'Requires\-External', 'Project\-URL', 'Supported\-Platform', 'Setup\-Requires\-Dist',
+3                'Provides\-Extra', 'Extension', 'License\-File')
+.fi
+
+.SS "tuple pip\&._vendor\&.distlib\&.metadata\&._LISTTUPLEFIELDS = ('Project\-URL', )\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&._MISSING = object()\fC [protected]\fP"
+
+.SS "tuple pip\&._vendor\&.distlib\&.metadata\&._PREDICATE_FIELDS = ('Requires\-Dist', 'Obsoletes\-Dist', 'Provides\-Dist')\fC [protected]\fP"
+
+.SS "tuple pip\&._vendor\&.distlib\&.metadata\&._UNICODEFIELDS = ('Author', 'Maintainer', 'Summary', 'Description')\fC [protected]\fP"
+
+.SS "tuple pip\&._vendor\&.distlib\&.metadata\&._VERSION_FIELDS = ('Version', )\fC [protected]\fP"
+
+.SS "tuple pip\&._vendor\&.distlib\&.metadata\&._VERSIONS_FIELDS = ('Requires\-Python', )\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.EXTRA_RE = re\&.compile()"
+
+.SS "str pip\&._vendor\&.distlib\&.metadata\&.LEGACY_METADATA_FILENAME = 'METADATA'"
+
+.SS "pip\&._vendor\&.distlib\&.metadata\&.logger = logging\&.getLogger(__name__)"
+
+.SS "str pip\&._vendor\&.distlib\&.metadata\&.METADATA_FILENAME = 'pydist\&.json'"
+
+.SS "str pip\&._vendor\&.distlib\&.metadata\&.PKG_INFO_ENCODING = 'utf\-8'"
+
+.SS "str pip\&._vendor\&.distlib\&.metadata\&.PKG_INFO_PREFERRED_VERSION = '1\&.1'"
+
+.SS "str pip\&._vendor\&.distlib\&.metadata\&.WHEEL_METADATA_FILENAME = 'metadata\&.json'"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

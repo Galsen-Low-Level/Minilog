@@ -1,0 +1,184 @@
+.TH "pip._vendor.pkg_resources.EntryPoint" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.pkg_resources.EntryPoint
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, str \fBname\fP, str \fBmodule_name\fP, Iterable[str] \fBattrs\fP=(), Iterable[str] \fBextras\fP=(), \fBDistribution\fP|None \fBdist\fP=None)"
+.br
+.ti -1c
+.RI "\fB__str__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fB_ResolvedEntryPoint\fP \fBload\fP (self, Literal[True] \fBrequire\fP=True, \fBEnvironment\fP|None env=None, \fB_InstallerType\fP|None installer=None)"
+.br
+.ti -1c
+.RI "\fB_ResolvedEntryPoint\fP \fBload\fP (self, Literal[False] \fBrequire\fP, *Any args, **Any kwargs)"
+.br
+.ti -1c
+.RI "\fB_ResolvedEntryPoint\fP \fBload\fP (self, bool \fBrequire\fP=True, *\fBEnvironment\fP|\fB_InstallerType\fP|None args, **\fBEnvironment\fP|\fB_InstallerType\fP|None kwargs)"
+.br
+.ti -1c
+.RI "\fB_ResolvedEntryPoint\fP \fBresolve\fP (self)"
+.br
+.ti -1c
+.RI "\fBrequire\fP (self, \fBEnvironment\fP|None env=None, \fB_InstallerType\fP|None installer=None)"
+.br
+.ti -1c
+.RI "\fBparse\fP (cls, str src, \fBDistribution\fP|None \fBdist\fP=None)"
+.br
+.ti -1c
+.RI "\fBparse_group\fP (cls, str group, \fB_NestedStr\fP lines, \fBDistribution\fP|None \fBdist\fP=None)"
+.br
+.ti -1c
+.RI "\fBparse_map\fP (cls, str|Iterable[str]|dict[str, str|Iterable[str]] data, \fBDistribution\fP|None \fBdist\fP=None)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBmodule_name\fP"
+.br
+.ti -1c
+.RI "\fBattrs\fP"
+.br
+.ti -1c
+.RI "\fBextras\fP"
+.br
+.ti -1c
+.RI "\fBdist\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBpattern\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_parse_extras\fP (cls, extras_spec)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Object representing an advertised importable object
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.pkg_resources\&.EntryPoint\&.__init__ ( self, str name, str module_name, Iterable[str]  attrs = \fC()\fP, Iterable[str]  extras = \fC()\fP, \fBDistribution\fP | None  dist = \fCNone\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.pkg_resources\&.EntryPoint\&.__repr__ ( self)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.EntryPoint\&.__str__ ( self)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.EntryPoint\&._parse_extras ( cls,  extras_spec)\fC [protected]\fP"
+
+.SS " \fB_ResolvedEntryPoint\fP pip\&._vendor\&.pkg_resources\&.EntryPoint\&.load ( self, bool  require = \fCTrue\fP, *\fBEnvironment\fP | \fB_InstallerType\fP | None args, **\fBEnvironment\fP | \fB_InstallerType\fP | None kwargs)"
+
+.PP
+.nf
+Require packages for this EntryPoint, then resolve it\&.
+
+.fi
+.PP
+ 
+.SS " \fB_ResolvedEntryPoint\fP pip\&._vendor\&.pkg_resources\&.EntryPoint\&.load ( self, Literal[False] require, *Any args, **Any kwargs)"
+
+.SS " \fB_ResolvedEntryPoint\fP pip\&._vendor\&.pkg_resources\&.EntryPoint\&.load ( self, Literal[True]  require = \fCTrue\fP, \fBEnvironment\fP | None  env = \fCNone\fP, \fB_InstallerType\fP | None  installer = \fCNone\fP)"
+
+.SS "pip\&._vendor\&.pkg_resources\&.EntryPoint\&.parse ( cls, str src, \fBDistribution\fP | None  dist = \fCNone\fP)"
+
+.PP
+.nf
+Parse a single entry point from string `src`
+
+Entry point syntax follows the form::
+
+    name = some\&.module:some\&.attr [extra1, extra2]
+
+The entry name and module name are required, but the ``:attrs`` and
+``[extras]`` parts are optional
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.EntryPoint\&.parse_group ( cls, str group, \fB_NestedStr\fP lines, \fBDistribution\fP | None  dist = \fCNone\fP)"
+
+.PP
+.nf
+Parse an entry point group
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.EntryPoint\&.parse_map ( cls, str | Iterable[str] | dict[str, str | Iterable[str]] data, \fBDistribution\fP | None  dist = \fCNone\fP)"
+
+.PP
+.nf
+Parse a map of entry point groups
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pkg_resources\&.EntryPoint\&.require ( self, \fBEnvironment\fP | None  env = \fCNone\fP, \fB_InstallerType\fP | None  installer = \fCNone\fP)"
+
+.SS " \fB_ResolvedEntryPoint\fP pip\&._vendor\&.pkg_resources\&.EntryPoint\&.resolve ( self)"
+
+.PP
+.nf
+Resolve the entry point from its module and attrs\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.pkg_resources\&.EntryPoint\&.attrs"
+
+.SS "pip\&._vendor\&.pkg_resources\&.EntryPoint\&.dist"
+
+.SS "pip\&._vendor\&.pkg_resources\&.EntryPoint\&.extras"
+
+.SS "pip\&._vendor\&.pkg_resources\&.EntryPoint\&.module_name"
+
+.SS "pip\&._vendor\&.pkg_resources\&.EntryPoint\&.name"
+
+.SS "pip\&._vendor\&.pkg_resources\&.EntryPoint\&.pattern\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  re\&.compile(
+        r'\\s*'
+        r'(?P<name>\&.+?)\\s*'
+        r'=\\s*'
+        r'(?P<module>[\\w\&.]+)\\s*'
+        r'(:\\s*(?P<attr>[\\w\&.]+))?\\s*'
+        r'(?P<extras>\\[\&.*\\])?\\s*$'
+    )
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,106 @@
+.TH "docutils.parsers.rst.languages.RstLanguageImporter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.parsers.rst.languages.RstLanguageImporter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.languages\&.LanguageImporter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcheck_content\fP (self, module)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.languages\&.LanguageImporter\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "\fBimport_from_packages\fP (self, name, reporter=None)"
+.br
+.ti -1c
+.RI "\fB__call__\fP (self, language_code, reporter=None)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBpackages\fP = ('docutils\&.parsers\&.rst\&.languages\&.', '')"
+.br
+.ti -1c
+.RI "str \fBwarn_msg\fP = 'rST localisation for language '%s' not found\&.'"
+.br
+.ti -1c
+.RI "\fBfallback\fP = None"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.languages\&.LanguageImporter\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBpackages\fP = ('docutils\&.languages\&.', '')"
+.br
+.ti -1c
+.RI "tuple \fBwarn_msg\fP"
+.br
+.ti -1c
+.RI "str \fBfallback\fP = 'en'"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBdocutils\&.languages\&.LanguageImporter\fP
+.in +1c
+.ti -1c
+.RI "\fBcache\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Import language modules\&.
+
+When called with a BCP 47 language tag, instances return a module
+with localisations for 'directive' and 'role' names for  from
+`docutils\&.parsers\&.rst\&.languages` or the PYTHONPATH\&.
+
+If there is no matching module, warn (if a `reporter` is passed)
+and return None\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.parsers\&.rst\&.languages\&.RstLanguageImporter\&.check_content ( self,  module)"
+
+.PP
+.nf
+Check if we got an rST language module\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.languages\&.LanguageImporter\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.parsers\&.rst\&.languages\&.RstLanguageImporter\&.fallback = None\fC [static]\fP"
+
+.SS "tuple docutils\&.parsers\&.rst\&.languages\&.RstLanguageImporter\&.packages = ('docutils\&.parsers\&.rst\&.languages\&.', '')\fC [static]\fP"
+
+.SS "str docutils\&.parsers\&.rst\&.languages\&.RstLanguageImporter\&.warn_msg = 'rST localisation for language '%s' not found\&.'\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,1429 @@
+.TH "bs4.element.Tag" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bs4.element.Tag
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBbs4\&.element\&.PageElement\fP\&.
+.PP
+Inherited by \fBbs4\&.BeautifulSoup\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fB_TreeTraversalEvent\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, Optional[\fBBeautifulSoup\fP] parser=None, Optional[\fBTreeBuilder\fP] builder=None, Optional[str] \fBname\fP=None, Optional[str] \fBnamespace\fP=None, Optional[str] \fBprefix\fP=None, Optional[_RawOrProcessedAttributeValues] \fBattrs\fP=None, Optional[Union[\fBBeautifulSoup\fP, \fBTag\fP]] \fBparent\fP=None, _AtMostOneElement \fBprevious\fP=None, Optional[bool] is_xml=None, Optional[int] \fBsourceline\fP=None, Optional[int] \fBsourcepos\fP=None, Optional[bool] \fBcan_be_empty_element\fP=None, Optional[Dict[str, Set[str]]] \fBcdata_list_attributes\fP=None, Optional[Set[str]] \fBpreserve_whitespace_tags\fP=None, Optional[Set[Type[\fBNavigableString\fP]]] \fBinteresting_string_types\fP=None, Optional[Dict[str, str]] namespaces=None)"
+.br
+.ti -1c
+.RI "Self \fB__deepcopy__\fP (self, Dict[Any, Any] memo, bool recursive=True)"
+.br
+.ti -1c
+.RI "Self \fBcopy_self\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBis_empty_element\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBisSelfClosing\fP (self)"
+.br
+.ti -1c
+.RI "Optional[str] \fBstring\fP (self)"
+.br
+.ti -1c
+.RI "None \fBstring\fP (self, str string)"
+.br
+.ti -1c
+.RI "List[\fBPageElement\fP] \fBinsert\fP (self, int position, *_InsertableElement new_children)"
+.br
+.ti -1c
+.RI "Self \fBunwrap\fP (self)"
+.br
+.ti -1c
+.RI "_OneElement \fBreplaceWithChildren\fP (self)"
+.br
+.ti -1c
+.RI "\fBPageElement\fP \fBappend\fP (self, _InsertableElement tag)"
+.br
+.ti -1c
+.RI "List[\fBPageElement\fP] \fBextend\fP (self, Union[Iterable[_InsertableElement], \fBTag\fP] tags)"
+.br
+.ti -1c
+.RI "None \fBclear\fP (self, bool \fBdecompose\fP=False)"
+.br
+.ti -1c
+.RI "None \fBsmooth\fP (self)"
+.br
+.ti -1c
+.RI "int \fBindex\fP (self, \fBPageElement\fP element)"
+.br
+.ti -1c
+.RI "Optional[_AttributeValue] \fBget\fP (self, str key, Optional[_AttributeValue] \fBdefault\fP=None)"
+.br
+.ti -1c
+.RI "\fBAttributeValueList\fP \fBget_attribute_list\fP (self, str key, Optional[\fBAttributeValueList\fP] \fBdefault\fP=None)"
+.br
+.ti -1c
+.RI "bool \fBhas_attr\fP (self, str key)"
+.br
+.ti -1c
+.RI "int \fB__hash__\fP (self)"
+.br
+.ti -1c
+.RI "_AttributeValue \fB__getitem__\fP (self, str key)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fB__iter__\fP (self)"
+.br
+.ti -1c
+.RI "int \fB__len__\fP (self)"
+.br
+.ti -1c
+.RI "bool \fB__contains__\fP (self, Any x)"
+.br
+.ti -1c
+.RI "bool \fB__bool__\fP (self)"
+.br
+.ti -1c
+.RI "None \fB__setitem__\fP (self, str key, _AttributeValue value)"
+.br
+.ti -1c
+.RI "None \fB__delitem__\fP (self, str key)"
+.br
+.ti -1c
+.RI "_QueryResults \fB__call__\fP (self, Optional[_StrainableElement] \fBname\fP=None, _StrainableAttributes \fBattrs\fP={}, bool recursive=True, Optional[_StrainableString] \fBstring\fP=None, Optional[int] limit=None, int _stacklevel=2, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "Optional[\fBTag\fP] \fB__getattr__\fP (self, str subtag)"
+.br
+.ti -1c
+.RI "bool \fB__eq__\fP (self, Any other)"
+.br
+.ti -1c
+.RI "bool \fB__ne__\fP (self, Any other)"
+.br
+.ti -1c
+.RI "str \fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "bytes \fBencode\fP (self, _Encoding encoding=\fBDEFAULT_OUTPUT_ENCODING\fP, Optional[int] indent_level=None, _FormatterOrName formatter='minimal', str errors='xmlcharrefreplace')"
+.br
+.ti -1c
+.RI "str \fBdecode\fP (self, Optional[int] indent_level=None, _Encoding eventual_encoding=\fBDEFAULT_OUTPUT_ENCODING\fP, _FormatterOrName formatter='minimal', Optional[Iterator[\fBPageElement\fP]] iterator=None)"
+.br
+.ti -1c
+.RI "Union[str, bytes] \fBprettify\fP (self, Optional[_Encoding] encoding=None, _FormatterOrName formatter='minimal')"
+.br
+.ti -1c
+.RI "str \fBdecode_contents\fP (self, Optional[int] indent_level=None, _Encoding eventual_encoding=\fBDEFAULT_OUTPUT_ENCODING\fP, _FormatterOrName formatter='minimal')"
+.br
+.ti -1c
+.RI "bytes \fBencode_contents\fP (self, Optional[int] indent_level=None, _Encoding encoding=\fBDEFAULT_OUTPUT_ENCODING\fP, _FormatterOrName formatter='minimal')"
+.br
+.ti -1c
+.RI "bytes \fBrenderContents\fP (self, _Encoding encoding=\fBDEFAULT_OUTPUT_ENCODING\fP, bool prettyPrint=False, Optional[int] indentLevel=0)"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBfind\fP (self, \fB_FindMethodName\fP \fBname\fP=None, _StrainableAttributes \fBattrs\fP={}, bool recursive=True, Optional[_StrainableString] \fBstring\fP=None, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_QueryResults \fBfind_all\fP (self, \fB_FindMethodName\fP \fBname\fP=None, _StrainableAttributes \fBattrs\fP={}, bool recursive=True, Optional[_StrainableString] \fBstring\fP=None, Optional[int] limit=None, int _stacklevel=2, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBchildren\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBself_and_descendants\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBdescendants\fP (self)"
+.br
+.ti -1c
+.RI "Optional[\fBTag\fP] \fBselect_one\fP (self, str selector, Optional[Dict[str, str]] namespaces=None, **Any kwargs)"
+.br
+.ti -1c
+.RI "\fBResultSet\fP[\fBTag\fP] \fBselect\fP (self, str selector, Optional[Dict[str, str]] namespaces=None, int limit=0, **Any kwargs)"
+.br
+.ti -1c
+.RI "\fBCSS\fP \fBcss\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBchildGenerator\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBrecursiveChildGenerator\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBhas_key\fP (self, str key)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBbs4\&.element\&.PageElement\fP
+.in +1c
+.ti -1c
+.RI "None \fBsetup\fP (self, Optional[\fBTag\fP] \fBparent\fP=None, _AtMostOneElement \fBprevious_element\fP=None, _AtMostOneElement \fBnext_element\fP=None, _AtMostOneElement \fBprevious_sibling\fP=None, _AtMostOneElement \fBnext_sibling\fP=None)"
+.br
+.ti -1c
+.RI "str \fBformat_string\fP (self, str s, Optional[_FormatterOrName] formatter)"
+.br
+.ti -1c
+.RI "\fBFormatter\fP \fBformatter_for_name\fP (self, Union[_FormatterOrName, _EntitySubstitutionFunction] formatter_name)"
+.br
+.ti -1c
+.RI "Self \fB__copy__\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[str] \fBstripped_strings\fP (self)"
+.br
+.ti -1c
+.RI "str \fBget_text\fP (self, str separator='', bool strip=False, Iterable[Type[\fBNavigableString\fP]] types=\fBdefault\fP)"
+.br
+.ti -1c
+.RI "Self \fBreplace_with\fP (self, *\fBPageElement\fP args)"
+.br
+.ti -1c
+.RI "\fBTag\fP \fBwrap\fP (self, \fBTag\fP wrap_inside)"
+.br
+.ti -1c
+.RI "Self \fBextract\fP (self, Optional[int] _self_index=None)"
+.br
+.ti -1c
+.RI "None \fBdecompose\fP (self)"
+.br
+.ti -1c
+.RI "List[\fBPageElement\fP] \fBinsert_before\fP (self, *_InsertableElement args)"
+.br
+.ti -1c
+.RI "List[\fBPageElement\fP] \fBinsert_after\fP (self, *_InsertableElement args)"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBfind_next\fP (self, \fB_FindMethodName\fP name=None, _StrainableAttributes attrs={}, Optional[_StrainableString] string=None, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_QueryResults \fBfind_all_next\fP (self, \fB_FindMethodName\fP name=None, _StrainableAttributes attrs={}, Optional[_StrainableString] string=None, Optional[int] limit=None, int _stacklevel=2, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBfind_next_sibling\fP (self, \fB_FindMethodName\fP name=None, _StrainableAttributes attrs={}, Optional[_StrainableString] string=None, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_QueryResults \fBfind_next_siblings\fP (self, \fB_FindMethodName\fP name=None, _StrainableAttributes attrs={}, Optional[_StrainableString] string=None, Optional[int] limit=None, int _stacklevel=2, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBfind_previous\fP (self, \fB_FindMethodName\fP name=None, _StrainableAttributes attrs={}, Optional[_StrainableString] string=None, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_QueryResults \fBfind_all_previous\fP (self, \fB_FindMethodName\fP name=None, _StrainableAttributes attrs={}, Optional[_StrainableString] string=None, Optional[int] limit=None, int _stacklevel=2, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBfind_previous_sibling\fP (self, \fB_FindMethodName\fP name=None, _StrainableAttributes attrs={}, Optional[_StrainableString] string=None, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_QueryResults \fBfind_previous_siblings\fP (self, \fB_FindMethodName\fP name=None, _StrainableAttributes attrs={}, Optional[_StrainableString] string=None, Optional[int] limit=None, int _stacklevel=2, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBfind_parent\fP (self, \fB_FindMethodName\fP name=None, _StrainableAttributes attrs={}, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_QueryResults \fBfind_parents\fP (self, \fB_FindMethodName\fP name=None, _StrainableAttributes attrs={}, Optional[int] limit=None, int _stacklevel=2, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBnext\fP (self)"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBprevious\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBnext_elements\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBself_and_next_elements\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBnext_siblings\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBself_and_next_siblings\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBprevious_elements\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBself_and_previous_elements\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBprevious_siblings\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBself_and_previous_siblings\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBTag\fP] \fBparents\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBself_and_parents\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBdecomposed\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBnextGenerator\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBnextSiblingGenerator\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBpreviousGenerator\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBpreviousSiblingGenerator\fP (self)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fBparentGenerator\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBparser_class\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBnamespace\fP"
+.br
+.ti -1c
+.RI "\fBprefix\fP"
+.br
+.ti -1c
+.RI "\fBsourceline\fP"
+.br
+.ti -1c
+.RI "\fBsourcepos\fP"
+.br
+.ti -1c
+.RI "\fBattribute_value_list_class\fP"
+.br
+.ti -1c
+.RI "\fBattrs\fP"
+.br
+.ti -1c
+.RI "\fBknown_xml\fP"
+.br
+.ti -1c
+.RI "\fBhidden\fP"
+.br
+.ti -1c
+.RI "\fBcan_be_empty_element\fP"
+.br
+.ti -1c
+.RI "\fBcdata_list_attributes\fP"
+.br
+.ti -1c
+.RI "\fBpreserve_whitespace_tags\fP"
+.br
+.ti -1c
+.RI "\fBinteresting_string_types\fP"
+.br
+.ti -1c
+.RI "\fBdescendants\fP"
+.br
+.ti -1c
+.RI "\fBcontents\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBbs4\&.element\&.PageElement\fP
+.in +1c
+.ti -1c
+.RI "\fBparent\fP"
+.br
+.ti -1c
+.RI "\fBprevious_element\fP"
+.br
+.ti -1c
+.RI "\fBnext_element\fP"
+.br
+.ti -1c
+.RI "\fBnext_sibling\fP"
+.br
+.ti -1c
+.RI "\fBprevious_sibling\fP"
+.br
+.ti -1c
+.RI "\fBfind_all_next\fP"
+.br
+.ti -1c
+.RI "\fBnext_elements\fP"
+.br
+.ti -1c
+.RI "\fBfind_next_siblings\fP"
+.br
+.ti -1c
+.RI "\fBnext_siblings\fP"
+.br
+.ti -1c
+.RI "\fBfind_all_previous\fP"
+.br
+.ti -1c
+.RI "\fBprevious_elements\fP"
+.br
+.ti -1c
+.RI "\fBfind_previous_siblings\fP"
+.br
+.ti -1c
+.RI "\fBprevious_siblings\fP"
+.br
+.ti -1c
+.RI "\fBparents\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "Optional \fBparser_class\fP [type[\fBBeautifulSoup\fP]]"
+.br
+.ti -1c
+.RI "str \fBname\fP"
+.br
+.ti -1c
+.RI "Optional \fBnamespace\fP [str]"
+.br
+.ti -1c
+.RI "Optional \fBprefix\fP [str]"
+.br
+.ti -1c
+.RI "_AttributeValues \fBattrs\fP"
+.br
+.ti -1c
+.RI "Optional \fBsourceline\fP [int]"
+.br
+.ti -1c
+.RI "Optional \fBsourcepos\fP [int]"
+.br
+.ti -1c
+.RI "Optional \fBknown_xml\fP [bool]"
+.br
+.ti -1c
+.RI "List \fBcontents\fP [\fBPageElement\fP]"
+.br
+.ti -1c
+.RI "bool \fBhidden\fP"
+.br
+.ti -1c
+.RI "Optional \fBinteresting_string_types\fP [Set[Type[\fBNavigableString\fP]]]"
+.br
+.ti -1c
+.RI "Optional \fBcan_be_empty_element\fP [bool]"
+.br
+.ti -1c
+.RI "Optional \fBcdata_list_attributes\fP [Dict[str, Set[str]]]"
+.br
+.ti -1c
+.RI "Optional \fBpreserve_whitespace_tags\fP [Set[str]]"
+.br
+.ti -1c
+.RI "\fBparserClass\fP = _deprecated_alias('parserClass', 'parser_class', '4\&.0\&.0')"
+.br
+.ti -1c
+.RI "dict \fBMAIN_CONTENT_STRING_TYPES\fP = {\fBNavigableString\fP, \fBCData\fP}"
+.br
+.ti -1c
+.RI "Self \fBreplace_with_children\fP = \fBunwrap\fP"
+.br
+.ti -1c
+.RI "\fBSTART_ELEMENT_EVENT\fP = \fB_TreeTraversalEvent\fP()"
+.br
+.ti -1c
+.RI "\fBEND_ELEMENT_EVENT\fP = \fB_TreeTraversalEvent\fP()"
+.br
+.ti -1c
+.RI "\fBEMPTY_ELEMENT_EVENT\fP = \fB_TreeTraversalEvent\fP()"
+.br
+.ti -1c
+.RI "\fBSTRING_ELEMENT_EVENT\fP = \fB_TreeTraversalEvent\fP()"
+.br
+.ti -1c
+.RI "\fBfindChild\fP = _deprecated_function_alias('findChild', 'find', '3\&.0\&.0')"
+.br
+.ti -1c
+.RI "\fBfindAll\fP = _deprecated_function_alias('findAll', 'find_all', '4\&.0\&.0')"
+.br
+.ti -1c
+.RI "\fBfindChildren\fP = _deprecated_function_alias('findChildren', 'find_all', '3\&.0\&.0')"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBbs4\&.element\&.PageElement\fP
+.in +1c
+.ti -1c
+.RI "Optional \fBknown_xml\fP = None"
+.br
+.ti -1c
+.RI "Optional \fBparent\fP [\fBTag\fP]"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBnext_element\fP"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBprevious_element\fP"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBnext_sibling\fP"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fBprevious_sibling\fP"
+.br
+.ti -1c
+.RI "bool \fBhidden\fP = False"
+.br
+.ti -1c
+.RI "\fBnextSibling\fP = _deprecated_alias('nextSibling', 'next_sibling', '4\&.0\&.0')"
+.br
+.ti -1c
+.RI "\fBpreviousSibling\fP = _deprecated_alias('previousSibling', 'previous_sibling', '4\&.0\&.0')"
+.br
+.ti -1c
+.RI "Iterable \fBdefault\fP = tuple()"
+.br
+.ti -1c
+.RI "str \fBgetText\fP = \fBget_text\fP"
+.br
+.ti -1c
+.RI "\fBreplaceWith\fP = _deprecated_function_alias('replaceWith', 'replace_with', '4\&.0\&.0')"
+.br
+.ti -1c
+.RI "\fBfindNext\fP = _deprecated_function_alias('findNext', 'find_next', '4\&.0\&.0')"
+.br
+.ti -1c
+.RI "\fBfindAllNext\fP = _deprecated_function_alias('findAllNext', 'find_all_next', '4\&.0\&.0')"
+.br
+.ti -1c
+.RI "\fBfindNextSibling\fP"
+.br
+.ti -1c
+.RI "\fBfindNextSiblings\fP"
+.br
+.ti -1c
+.RI "\fBfetchNextSiblings\fP"
+.br
+.ti -1c
+.RI "\fBfindPrevious\fP = _deprecated_function_alias('findPrevious', 'find_previous', '3\&.0\&.0')"
+.br
+.ti -1c
+.RI "\fBfindAllPrevious\fP"
+.br
+.ti -1c
+.RI "\fBfetchAllPrevious\fP"
+.br
+.ti -1c
+.RI "\fBfindPreviousSibling\fP"
+.br
+.ti -1c
+.RI "\fBfindPreviousSiblings\fP"
+.br
+.ti -1c
+.RI "\fBfetchPreviousSiblings\fP"
+.br
+.ti -1c
+.RI "\fBfindParent\fP = _deprecated_function_alias('findParent', 'find_parent', '4\&.0\&.0')"
+.br
+.ti -1c
+.RI "\fBfindParents\fP = _deprecated_function_alias('findParents', 'find_parents', '4\&.0\&.0')"
+.br
+.ti -1c
+.RI "\fBfetchParents\fP = _deprecated_function_alias('fetchParents', 'find_parents', '3\&.0\&.0')"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "Iterator[str] \fB_all_strings\fP (self, bool strip=False, \fB_OneOrMoreStringTypes\fP types=\fBPageElement\&.default\fP)"
+.br
+.ti -1c
+.RI "List[\fBPageElement\fP] \fB_insert\fP (self, int position, _InsertableElement new_child)"
+.br
+.ti -1c
+.RI "Iterator[Tuple[\fB_TreeTraversalEvent\fP, \fBPageElement\fP]] \fB_event_stream\fP (self, Optional[Iterator[\fBPageElement\fP]] iterator=None)"
+.br
+.ti -1c
+.RI "str \fB_indent_string\fP (self, str s, int indent_level, \fBFormatter\fP formatter, bool indent_before, bool indent_after)"
+.br
+.ti -1c
+.RI "str \fB_format_tag\fP (self, str eventual_encoding, \fBFormatter\fP formatter, bool opening)"
+.br
+.ti -1c
+.RI "bool \fB_should_pretty_print\fP (self, int indent_level=1)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBbs4\&.element\&.PageElement\fP
+.in +1c
+.ti -1c
+.RI "bool \fB_is_xml\fP (self)"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fB_last_descendant\fP (self, bool is_initialized=True, bool accept_self=True)"
+.br
+.ti -1c
+.RI "_AtMostOneElement \fB_find_one\fP (self, Callable method, \fB_FindMethodName\fP name, _StrainableAttributes attrs, Optional[_StrainableString] string, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "_QueryResults \fB_find_all\fP (self, \fB_FindMethodName\fP name, _StrainableAttributes attrs, Optional[_StrainableString] string, Optional[int] limit, Iterator[\fBPageElement\fP] generator, int _stacklevel=3, **_StrainableAttribute kwargs)"
+.br
+.ti -1c
+.RI "Iterator[\fBPageElement\fP] \fB_self_and\fP (self, Iterator[\fBPageElement\fP] other_generator)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_namespaces\fP"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBstrings\fP = property(\fB_all_strings\fP)"
+.br
+.in -1c
+
+Properties inherited from \fBbs4\&.element\&.PageElement\fP
+.in +1c
+.ti -1c
+.RI "\fBtext\fP = property(\fBget_text\fP)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Protected Attributes inherited from \fBbs4\&.element\&.PageElement\fP
+.in +1c
+.ti -1c
+.RI "bool \fB_decomposed\fP"
+.br
+.ti -1c
+.RI "\fB_lastRecursiveChild\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+An HTML or XML tag that is part of a parse tree, along with its
+attributes, contents, and relationships to other parts of the tree\&.
+
+When Beautiful Soup parses the markup ``<b>penguin</b>``, it will
+create a `Tag` object representing the ``<b>`` tag\&. You can
+instantiate `Tag` objects directly, but it's not necessary unless
+you're adding entirely new markup to a parsed document\&. Most of
+the constructor arguments are intended for use by the `TreeBuilder`
+that's parsing a document\&.
+
+:param parser: A `BeautifulSoup` object representing the parse tree this
+    `Tag` will be part of\&.
+:param builder: The `TreeBuilder` being used to build the tree\&.
+:param name: The name of the tag\&.
+:param namespace: The URI of this tag's XML namespace, if any\&.
+:param prefix: The prefix for this tag's XML namespace, if any\&.
+:param attrs: A dictionary of attribute values\&.
+:param parent: The `Tag` to use as the parent of this `Tag`\&. May be
+   the `BeautifulSoup` object itself\&.
+:param previous: The `PageElement` that was parsed immediately before
+    parsing this tag\&.
+:param is_xml: If True, this is an XML tag\&. Otherwise, this is an
+    HTML tag\&.
+:param sourceline: The line number where this tag was found in its
+    source document\&.
+:param sourcepos: The character position within ``sourceline`` where this
+    tag was found\&.
+:param can_be_empty_element: If True, this tag should be
+    represented as <tag/>\&. If False, this tag should be represented
+    as <tag></tag>\&.
+:param cdata_list_attributes: A dictionary of attributes whose values should
+    be parsed as lists of strings if they ever show up on this tag\&.
+:param preserve_whitespace_tags: Names of tags whose contents
+    should have their whitespace preserved if they are encountered inside
+    this tag\&.
+:param interesting_string_types: When iterating over this tag's
+    string contents in methods like `Tag\&.strings` or
+    `PageElement\&.get_text`, these are the types of strings that are
+    interesting enough to be considered\&. By default,
+    `NavigableString` (normal strings) and `CData` (CDATA
+    sections) are the only interesting string subtypes\&.
+:param namespaces: A dictionary mapping currently active
+    namespace prefixes to URIs, as of the point in the parsing process when
+    this tag was encountered\&. This can be used later to
+    construct CSS selectors\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "bs4\&.element\&.Tag\&.__init__ ( self, Optional[\fBBeautifulSoup\fP]  parser = \fCNone\fP, Optional[\fBTreeBuilder\fP]  builder = \fCNone\fP, Optional[str]  name = \fCNone\fP, Optional[str]  namespace = \fCNone\fP, Optional[str]  prefix = \fCNone\fP, Optional[_RawOrProcessedAttributeValues]  attrs = \fCNone\fP, Optional[Union[\fBBeautifulSoup\fP, \fBTag\fP]]  parent = \fCNone\fP, _AtMostOneElement  previous = \fCNone\fP, Optional[bool]  is_xml = \fCNone\fP, Optional[int]  sourceline = \fCNone\fP, Optional[int]  sourcepos = \fCNone\fP, Optional[bool]  can_be_empty_element = \fCNone\fP, Optional[Dict[str, Set[str]]]  cdata_list_attributes = \fCNone\fP, Optional[Set[str]]  preserve_whitespace_tags = \fCNone\fP, Optional[Set[Type[\fBNavigableString\fP]]]  interesting_string_types = \fCNone\fP, Optional[Dict[str, str]]  namespaces = \fCNone\fP)"
+
+.PP
+Reimplemented in \fBbs4\&.BeautifulStoneSoup\fP, and \fBbs4\&.BeautifulSoup\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " bool bs4\&.element\&.Tag\&.__bool__ ( self)"
+
+.SS " _QueryResults bs4\&.element\&.Tag\&.__call__ ( self, Optional[_StrainableElement]  name = \fCNone\fP, _StrainableAttributes  attrs = \fC{}\fP, bool  recursive = \fCTrue\fP, Optional[_StrainableString]  string = \fCNone\fP, Optional[int]  limit = \fCNone\fP, int  _stacklevel = \fC2\fP, **_StrainableAttribute kwargs)"
+
+.PP
+.nf
+Calling a Tag like a function is the same as calling its
+find_all() method\&. Eg\&. tag('a') returns a list of all the A tags
+found within this tag\&.
+.fi
+.PP
+ 
+.SS " bool bs4\&.element\&.Tag\&.__contains__ ( self, Any x)"
+
+.SS " Self bs4\&.element\&.Tag\&.__deepcopy__ ( self, Dict[Any, Any] memo, bool  recursive = \fCTrue\fP)"
+
+.PP
+.nf
+A deepcopy of a Tag is a new Tag, unconnected to the parse tree\&.
+Its contents are a copy of the old Tag's contents\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBbs4\&.element\&.PageElement\fP\&.
+.SS " None bs4\&.element\&.Tag\&.__delitem__ ( self, str key)"
+
+.SS " bool bs4\&.element\&.Tag\&.__eq__ ( self, Any other)"
+
+.PP
+.nf
+Returns true iff this Tag has the same name, the same attributes,
+and the same contents (recursively) as `other`\&.
+.fi
+.PP
+ 
+.SS " Optional[\fBTag\fP] bs4\&.element\&.Tag\&.__getattr__ ( self, str subtag)"
+
+.PP
+.nf
+Calling tag\&.subtag is the same as calling tag\&.find(name='subtag')
+.fi
+.PP
+ 
+.SS " _AttributeValue bs4\&.element\&.Tag\&.__getitem__ ( self, str key)"
+
+.PP
+.nf
+tag[key] returns the value of the 'key' attribute for the Tag,
+and throws an exception if it's not there\&.
+.fi
+.PP
+ 
+.SS " int bs4\&.element\&.Tag\&.__hash__ ( self)"
+
+.SS " Iterator[\fBPageElement\fP] bs4\&.element\&.Tag\&.__iter__ ( self)"
+
+.SS " int bs4\&.element\&.Tag\&.__len__ ( self)"
+
+.SS " bool bs4\&.element\&.Tag\&.__ne__ ( self, Any other)"
+
+.PP
+.nf
+Returns true iff this Tag is not identical to `other`,
+as defined in __eq__\&.
+.fi
+.PP
+ 
+.SS " str bs4\&.element\&.Tag\&.__repr__ ( self)"
+
+.PP
+.nf
+Renders this `Tag` as a string\&.
+.fi
+.PP
+ 
+.SS " None bs4\&.element\&.Tag\&.__setitem__ ( self, str key, _AttributeValue value)"
+
+.PP
+.nf
+Setting tag[key] sets the value of the 'key' attribute for the
+tag\&.
+.fi
+.PP
+ 
+.SS " Iterator[str] bs4\&.element\&.Tag\&._all_strings ( self, bool  strip = \fCFalse\fP, \fB_OneOrMoreStringTypes\fP  types = \fC\fBPageElement\&.default\fP\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Yield all strings of certain classes, possibly stripping them\&.
+
+:param strip: If True, all strings will be stripped before being
+    yielded\&.
+
+:param types: A tuple of NavigableString subclasses\&. Any strings of
+    a subclass not found in this list will be ignored\&. By
+    default, the subclasses considered are the ones found in
+    self\&.interesting_string_types\&. If that's not specified,
+    only NavigableString and CData objects will be
+    considered\&. That means no comments, processing
+    instructions, etc\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBbs4\&.element\&.PageElement\fP\&.
+.SS " Iterator[Tuple[\fB_TreeTraversalEvent\fP, \fBPageElement\fP]] bs4\&.element\&.Tag\&._event_stream ( self, Optional[Iterator[\fBPageElement\fP]]  iterator = \fCNone\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Yield a sequence of events that can be used to reconstruct the DOM
+for this element\&.
+
+This lets us recreate the nested structure of this element
+(e\&.g\&. when formatting it as a string) without using recursive
+method calls\&.
+
+This is similar in concept to the SAX API, but it's a simpler
+interface designed for internal use\&. The events are different
+from SAX and the arguments associated with the events are Tags
+and other Beautiful Soup objects\&.
+
+:param iterator: An alternate iterator to use when traversing
+ the tree\&.
+
+.fi
+.PP
+ 
+.SS " str bs4\&.element\&.Tag\&._format_tag ( self, str eventual_encoding, \fBFormatter\fP formatter, bool
+     opening)\fC [protected]\fP"
+
+.SS " str bs4\&.element\&.Tag\&._indent_string ( self, str s, int indent_level, \fBFormatter\fP formatter, bool indent_before, bool indent_after)\fC [protected]\fP"
+
+.PP
+.nf
+Add indentation whitespace before and/or after a string\&.
+
+:param s: The string to amend with whitespace\&.
+:param indent_level: The indentation level; affects how much
+   whitespace goes before the string\&.
+:param indent_before: Whether or not to add whitespace
+   before the string\&.
+:param indent_after: Whether or not to add whitespace
+   (a newline) after the string\&.
+
+.fi
+.PP
+ 
+.SS " List[\fBPageElement\fP] bs4\&.element\&.Tag\&._insert ( self, int position, _InsertableElement new_child)\fC [protected]\fP"
+
+.SS " bool bs4\&.element\&.Tag\&._should_pretty_print ( self, int  indent_level = \fC1\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Should this tag be pretty-printed?
+
+Most of them should, but some (such as <pre> in HTML
+documents) should not\&.
+
+.fi
+.PP
+ 
+.SS " \fBPageElement\fP bs4\&.element\&.Tag\&.append ( self, _InsertableElement tag)"
+
+.PP
+.nf
+Appends the given `PageElement` to the contents of this `Tag`\&.
+
+:param tag: A PageElement\&.
+
+:return The newly appended PageElement\&.
+
+.fi
+.PP
+ 
+.SS " Iterator[\fBPageElement\fP] bs4\&.element\&.Tag\&.childGenerator ( self)"
+
+.PP
+.nf
+Deprecated generator\&.
+
+:meta private:
+
+.fi
+.PP
+ 
+.SS " Iterator[\fBPageElement\fP] bs4\&.element\&.Tag\&.children ( self)"
+
+.PP
+.nf
+Iterate over all direct children of this `PageElement`\&.
+.fi
+.PP
+ 
+.SS " None bs4\&.element\&.Tag\&.clear ( self, bool  decompose = \fCFalse\fP)"
+
+.PP
+.nf
+Destroy all children of this `Tag` by calling
+   `PageElement\&.extract` on them\&.
+
+:param decompose: If this is True, `PageElement\&.decompose` (a
+    more destructive method) will be called instead of
+    `PageElement\&.extract`\&.
+
+.fi
+.PP
+ 
+.SS " Self bs4\&.element\&.Tag\&.copy_self ( self)"
+
+.PP
+.nf
+Create a new Tag just like this one, but with no
+contents and unattached to any parse tree\&.
+
+This is the first step in the deepcopy process, but you can
+call it on its own to create a copy of a Tag without copying its
+contents\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBbs4\&.BeautifulSoup\fP\&.
+.SS " \fBCSS\fP bs4\&.element\&.Tag\&.css ( self)"
+
+.PP
+.nf
+Return an interface to the CSS selector API\&.
+.fi
+.PP
+ 
+.SS " str bs4\&.element\&.Tag\&.decode ( self, Optional[int]  indent_level = \fCNone\fP, _Encoding  eventual_encoding = \fC\fBDEFAULT_OUTPUT_ENCODING\fP\fP, _FormatterOrName  formatter = \fC'minimal'\fP, Optional[Iterator[\fBPageElement\fP]]  iterator = \fCNone\fP)"
+
+.PP
+.nf
+Render this `Tag` and its contents as a Unicode string\&.
+
+:param indent_level: Each line of the rendering will be
+   indented this many levels\&. (The ``formatter`` decides what a
+   'level' means, in terms of spaces or other characters
+   output\&.) This is used internally in recursive calls while
+   pretty-printing\&.
+:param encoding: The encoding you intend to use when
+   converting the string to a bytestring\&. decode() is *not*
+   responsible for performing that encoding\&. This information
+   is needed so that a real encoding can be substituted in if
+   the document contains an encoding declaration (e\&.g\&. in a
+   <meta> tag)\&.
+:param formatter: Either a `Formatter` object, or a string
+    naming one of the standard formatters\&.
+:param iterator: The iterator to use when navigating over the
+    parse tree\&. This is only used by `Tag\&.decode_contents` and
+    you probably won't need to use it\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBbs4\&.BeautifulSoup\fP\&.
+.SS " str bs4\&.element\&.Tag\&.decode_contents ( self, Optional[int]  indent_level = \fCNone\fP, _Encoding  eventual_encoding = \fC\fBDEFAULT_OUTPUT_ENCODING\fP\fP, _FormatterOrName  formatter = \fC'minimal'\fP)"
+
+.PP
+.nf
+Renders the contents of this tag as a Unicode string\&.
+
+:param indent_level: Each line of the rendering will be
+   indented this many levels\&. (The formatter decides what a
+   'level' means in terms of spaces or other characters
+   output\&.) Used internally in recursive calls while
+   pretty-printing\&.
+
+:param eventual_encoding: The tag is destined to be
+   encoded into this encoding\&. decode_contents() is *not*
+   responsible for performing that encoding\&. This information
+   is needed so that a real encoding can be substituted in if
+   the document contains an encoding declaration (e\&.g\&. in a
+   <meta> tag)\&.
+
+:param formatter: A `Formatter` object, or a string naming one of
+    the standard Formatters\&.
+
+.fi
+.PP
+ 
+.SS " Iterator[\fBPageElement\fP] bs4\&.element\&.Tag\&.descendants ( self)"
+
+.PP
+.nf
+Iterate over all children of this `Tag` in a
+breadth-first sequence\&.
+
+.fi
+.PP
+ 
+.SS " bytes bs4\&.element\&.Tag\&.encode ( self, _Encoding  encoding = \fC\fBDEFAULT_OUTPUT_ENCODING\fP\fP, Optional[int]  indent_level = \fCNone\fP, _FormatterOrName  formatter = \fC'minimal'\fP, str  errors = \fC'xmlcharrefreplace'\fP)"
+
+.PP
+.nf
+Render this `Tag` and its contents as a bytestring\&.
+
+:param encoding: The encoding to use when converting to
+   a bytestring\&. This may also affect the text of the document,
+   specifically any encoding declarations within the document\&.
+:param indent_level: Each line of the rendering will be
+   indented this many levels\&. (The ``formatter`` decides what a
+   'level' means, in terms of spaces or other characters
+   output\&.) This is used internally in recursive calls while
+   pretty-printing\&.
+:param formatter: Either a `Formatter` object, or a string naming one of
+    the standard formatters\&.
+:param errors: An error handling strategy such as
+    'xmlcharrefreplace'\&. This value is passed along into
+    :py:meth:`str\&.encode` and its value should be one of the `error
+    handling constants defined by Python's codecs module
+    <https://docs\&.python\&.org/3/library/codecs\&.html#error-handlers>`_\&.
+
+.fi
+.PP
+ 
+.SS " bytes bs4\&.element\&.Tag\&.encode_contents ( self, Optional[int]  indent_level = \fCNone\fP, _Encoding  encoding = \fC\fBDEFAULT_OUTPUT_ENCODING\fP\fP, _FormatterOrName  formatter = \fC'minimal'\fP)"
+
+.PP
+.nf
+Renders the contents of this PageElement as a bytestring\&.
+
+:param indent_level: Each line of the rendering will be
+   indented this many levels\&. (The ``formatter`` decides what a
+   'level' means, in terms of spaces or other characters
+   output\&.) This is used internally in recursive calls while
+   pretty-printing\&.
+:param formatter: Either a `Formatter` object, or a string naming one of
+    the standard formatters\&.
+:param encoding: The bytestring will be in this encoding\&.
+
+.fi
+.PP
+ 
+.SS " List[\fBPageElement\fP] bs4\&.element\&.Tag\&.extend ( self, Union[Iterable[_InsertableElement], \fBTag\fP] tags)"
+
+.PP
+.nf
+Appends one or more objects to the contents of this
+`Tag`\&.
+
+:param tags: If a list of `PageElement` objects is provided,
+    they will be appended to this tag's contents, one at a time\&.
+    If a single `Tag` is provided, its `Tag\&.contents` will be
+    used to extend this object's `Tag\&.contents`\&.
+
+:return The list of PageElements that were appended\&.
+
+.fi
+.PP
+ 
+.SS " _AtMostOneElement bs4\&.element\&.Tag\&.find ( self, \fB_FindMethodName\fP  name = \fCNone\fP, _StrainableAttributes  attrs = \fC{}\fP, bool  recursive = \fCTrue\fP, Optional[_StrainableString]  string = \fCNone\fP, **_StrainableAttribute kwargs)"
+
+.PP
+.nf
+Look in the children of this PageElement and find the first
+PageElement that matches the given criteria\&.
+
+All find_* methods take a common set of arguments\&. See the online
+documentation for detailed explanations\&.
+
+:param name: A filter on tag name\&.
+:param attrs: Additional filters on attribute values\&.
+:param recursive: If this is True, find() will perform a
+    recursive search of this Tag's children\&. Otherwise,
+    only the direct children will be considered\&.
+:param string: A filter on the `Tag\&.string` attribute\&.
+:param limit: Stop looking after finding this many results\&.
+:kwargs: Additional filters on attribute values\&.
+
+.fi
+.PP
+ 
+.SS " _QueryResults bs4\&.element\&.Tag\&.find_all ( self, \fB_FindMethodName\fP  name = \fCNone\fP, _StrainableAttributes  attrs = \fC{}\fP, bool  recursive = \fCTrue\fP, Optional[_StrainableString]  string = \fCNone\fP, Optional[int]  limit = \fCNone\fP, int  _stacklevel = \fC2\fP, **_StrainableAttribute kwargs)"
+
+.PP
+.nf
+Look in the children of this `PageElement` and find all
+`PageElement` objects that match the given criteria\&.
+
+All find_* methods take a common set of arguments\&. See the online
+documentation for detailed explanations\&.
+
+:param name: A filter on tag name\&.
+:param attrs: Additional filters on attribute values\&.
+:param recursive: If this is True, find_all() will perform a
+    recursive search of this PageElement's children\&. Otherwise,
+    only the direct children will be considered\&.
+:param limit: Stop looking after finding this many results\&.
+:param _stacklevel: Used internally to improve warning messages\&.
+:kwargs: Additional filters on attribute values\&.
+
+.fi
+.PP
+ 
+.SS " Optional[_AttributeValue] bs4\&.element\&.Tag\&.get ( self, str key, Optional[_AttributeValue]  default = \fCNone\fP)"
+
+.PP
+.nf
+Returns the value of the 'key' attribute for the tag, or
+the value given for 'default' if it doesn't have that
+attribute\&.
+
+:param key: The attribute to look for\&.
+:param default: Use this value if the attribute is not present
+    on this `Tag`\&.
+
+.fi
+.PP
+ 
+.SS " \fBAttributeValueList\fP bs4\&.element\&.Tag\&.get_attribute_list ( self, str key, Optional[\fBAttributeValueList\fP]  default = \fCNone\fP)"
+
+.PP
+.nf
+The same as get(), but always returns a (possibly empty) list\&.
+
+:param key: The attribute to look for\&.
+:param default: Use this value if the attribute is not present
+    on this `Tag`\&.
+:return: A list of strings, usually empty or containing only a single
+    value\&.
+
+.fi
+.PP
+ 
+.SS " bool bs4\&.element\&.Tag\&.has_attr ( self, str key)"
+
+.PP
+.nf
+Does this `Tag` have an attribute with the given name?
+.fi
+.PP
+ 
+.SS " bool bs4\&.element\&.Tag\&.has_key ( self, str key)"
+
+.PP
+.nf
+Deprecated method\&. This was kind of misleading because has_key()
+(attributes) was different from __in__ (contents)\&.
+
+has_key() is gone in Python 3, anyway\&.
+
+:meta private:
+
+.fi
+.PP
+ 
+.SS " int bs4\&.element\&.Tag\&.index ( self, \fBPageElement\fP element)"
+
+.PP
+.nf
+Find the index of a child of this `Tag` (by identity, not value)\&.
+
+Doing this by identity avoids issues when a `Tag` contains two
+children that have string equality\&.
+
+:param element: Look for this `PageElement` in this object's contents\&.
+
+.fi
+.PP
+ 
+.SS " List[\fBPageElement\fP] bs4\&.element\&.Tag\&.insert ( self, int position, *_InsertableElement new_children)"
+
+.PP
+.nf
+Insert one or more new PageElements as a child of this `Tag`\&.
+
+This works similarly to :py:meth:`list\&.insert`, except you can insert
+multiple elements at once\&.
+
+:param position: The numeric position that should be occupied
+   in this Tag's `Tag\&.children` by the first new `PageElement`\&.
+
+:param new_children: The PageElements to insert\&.
+
+:return The newly inserted PageElements\&.
+
+.fi
+.PP
+ 
+.SS " bool bs4\&.element\&.Tag\&.is_empty_element ( self)"
+
+.PP
+.nf
+Is this tag an empty-element tag? (aka a self-closing tag)
+
+A tag that has contents is never an empty-element tag\&.
+
+A tag that has no contents may or may not be an empty-element
+tag\&. It depends on the `TreeBuilder` used to create the
+tag\&. If the builder has a designated list of empty-element
+tags, then only a tag whose name shows up in that list is
+considered an empty-element tag\&. This is usually the case
+for HTML documents\&.
+
+If the builder has no designated list of empty-element, then
+any tag with no contents is an empty-element tag\&. This is usually
+the case for XML documents\&.
+
+.fi
+.PP
+ 
+.SS " bool bs4\&.element\&.Tag\&.isSelfClosing ( self)"
+
+.SS " Union[str, bytes] bs4\&.element\&.Tag\&.prettify ( self, Optional[_Encoding]  encoding = \fCNone\fP, _FormatterOrName  formatter = \fC'minimal'\fP)"
+
+.PP
+.nf
+Pretty-print this `Tag` as a string or bytestring\&.
+
+:param encoding: The encoding of the bytestring, or None if you want Unicode\&.
+:param formatter: A Formatter object, or a string naming one of
+    the standard formatters\&.
+:return: A string (if no ``encoding`` is provided) or a bytestring
+    (otherwise)\&.
+
+.fi
+.PP
+ 
+.SS " Iterator[\fBPageElement\fP] bs4\&.element\&.Tag\&.recursiveChildGenerator ( self)"
+
+.PP
+.nf
+Deprecated generator\&.
+
+:meta private:
+
+.fi
+.PP
+ 
+.SS " bytes bs4\&.element\&.Tag\&.renderContents ( self, _Encoding  encoding = \fC\fBDEFAULT_OUTPUT_ENCODING\fP\fP, bool  prettyPrint = \fCFalse\fP, Optional[int]  indentLevel = \fC0\fP)"
+
+.PP
+.nf
+Deprecated method for BS3 compatibility\&.
+
+:meta private:
+
+.fi
+.PP
+ 
+.SS " _OneElement bs4\&.element\&.Tag\&.replaceWithChildren ( self)"
+
+.SS " \fBResultSet\fP[\fBTag\fP] bs4\&.element\&.Tag\&.select ( self, str selector, Optional[Dict[str, str]]  namespaces = \fCNone\fP, int  limit = \fC0\fP, **Any kwargs)"
+
+.PP
+.nf
+Perform a CSS selection operation on the current element\&.
+
+This uses the SoupSieve library\&.
+
+:param selector: A string containing a CSS selector\&.
+
+:param namespaces: A dictionary mapping namespace prefixes
+   used in the CSS selector to namespace URIs\&. By default,
+   Beautiful Soup will use the prefixes it encountered while
+   parsing the document\&.
+
+:param limit: After finding this number of results, stop looking\&.
+
+:param kwargs: Keyword arguments to be passed into SoupSieve's
+   soupsieve\&.select() method\&.
+
+.fi
+.PP
+ 
+.SS " Optional[\fBTag\fP] bs4\&.element\&.Tag\&.select_one ( self, str selector, Optional[Dict[str, str]]  namespaces = \fCNone\fP, **Any
+     kwargs)"
+
+.PP
+.nf
+Perform a CSS selection operation on the current element\&.
+
+:param selector: A CSS selector\&.
+
+:param namespaces: A dictionary mapping namespace prefixes
+   used in the CSS selector to namespace URIs\&. By default,
+   Beautiful Soup will use the prefixes it encountered while
+   parsing the document\&.
+
+:param kwargs: Keyword arguments to be passed into Soup Sieve's
+   soupsieve\&.select() method\&.
+
+.fi
+.PP
+ 
+.SS " Iterator[\fBPageElement\fP] bs4\&.element\&.Tag\&.self_and_descendants ( self)"
+
+.PP
+.nf
+Iterate over this `Tag` and its children in a
+breadth-first sequence\&.
+
+.fi
+.PP
+ 
+.SS " None bs4\&.element\&.Tag\&.smooth ( self)"
+
+.PP
+.nf
+Smooth out the children of this `Tag` by consolidating consecutive
+strings\&.
+
+If you perform a lot of operations that modify the tree,
+calling this method afterwards can make pretty-printed output
+look more natural\&.
+
+.fi
+.PP
+ 
+.SS " Optional[str] bs4\&.element\&.Tag\&.string ( self)"
+
+.PP
+.nf
+Convenience property to get the single string within this
+`Tag`, assuming there is just one\&.
+
+:return: If this `Tag` has a single child that's a
+ `NavigableString`, the return value is that string\&. If this
+ element has one child `Tag`, the return value is that child's
+ `Tag\&.string`, recursively\&. If this `Tag` has no children,
+ or has more than one child, the return value is ``None``\&.
+
+ If this property is unexpectedly returning ``None`` for you,
+ it's probably because your `Tag` has more than one thing
+ inside it\&.
+
+.fi
+.PP
+ 
+.SS " None bs4\&.element\&.Tag\&.string ( self, str string)"
+
+.PP
+.nf
+Replace the `Tag\&.contents` of this `Tag` with a single string\&.
+.fi
+.PP
+ 
+.SS " Self bs4\&.element\&.Tag\&.unwrap ( self)"
+
+.PP
+.nf
+Replace this `PageElement` with its contents\&.
+
+:return: This object, no longer part of the tree\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "bs4\&.element\&.Tag\&._namespaces\fC [protected]\fP"
+
+.SS "bs4\&.element\&.Tag\&.attribute_value_list_class"
+
+.SS "bs4\&.element\&.Tag\&.attrs"
+
+.SS "_AttributeValues bs4\&.element\&.Tag\&.attrs\fC [static]\fP"
+
+.SS "bs4\&.element\&.Tag\&.can_be_empty_element"
+
+.SS "Optional bs4\&.element\&.Tag\&.can_be_empty_element [bool]\fC [static]\fP"
+
+.SS "bs4\&.element\&.Tag\&.cdata_list_attributes"
+
+.SS "Optional bs4\&.element\&.Tag\&.cdata_list_attributes [Dict[str, Set[str]]]\fC [static]\fP"
+
+.SS "List bs4\&.element\&.Tag\&.contents [\fBPageElement\fP]\fC [static]\fP"
+
+.SS "bs4\&.element\&.Tag\&.contents"
+
+.SS "bs4\&.element\&.Tag\&.descendants"
+
+.SS "bs4\&.element\&.Tag\&.EMPTY_ELEMENT_EVENT = \fB_TreeTraversalEvent\fP()\fC [static]\fP"
+
+.SS "bs4\&.element\&.Tag\&.END_ELEMENT_EVENT = \fB_TreeTraversalEvent\fP()\fC [static]\fP"
+
+.SS "bs4\&.element\&.Tag\&.findAll = _deprecated_function_alias('findAll', 'find_all', '4\&.0\&.0')\fC [static]\fP"
+
+.SS "bs4\&.element\&.Tag\&.findChild = _deprecated_function_alias('findChild', 'find', '3\&.0\&.0')\fC [static]\fP"
+
+.SS "bs4\&.element\&.Tag\&.findChildren = _deprecated_function_alias('findChildren', 'find_all', '3\&.0\&.0')\fC [static]\fP"
+
+.SS "bs4\&.element\&.Tag\&.hidden"
+
+.SS "bool bs4\&.element\&.Tag\&.hidden\fC [static]\fP"
+
+.SS "bs4\&.element\&.Tag\&.interesting_string_types"
+
+.SS "Optional bs4\&.element\&.Tag\&.interesting_string_types [Set[Type[\fBNavigableString\fP]]]\fC [static]\fP"
+
+.SS "bs4\&.element\&.Tag\&.known_xml"
+
+.SS "Optional bs4\&.element\&.Tag\&.known_xml [bool]\fC [static]\fP"
+
+.SS "dict bs4\&.element\&.Tag\&.MAIN_CONTENT_STRING_TYPES = {\fBNavigableString\fP, \fBCData\fP}\fC [static]\fP"
+
+.SS "bs4\&.element\&.Tag\&.name"
+
+.SS "str bs4\&.element\&.Tag\&.name\fC [static]\fP"
+
+.SS "bs4\&.element\&.Tag\&.namespace"
+
+.SS "Optional bs4\&.element\&.Tag\&.namespace [str]\fC [static]\fP"
+
+.SS "bs4\&.element\&.Tag\&.parser_class"
+
+.SS "Optional bs4\&.element\&.Tag\&.parser_class [type[\fBBeautifulSoup\fP]]\fC [static]\fP"
+
+.SS "bs4\&.element\&.Tag\&.parserClass = _deprecated_alias('parserClass', 'parser_class', '4\&.0\&.0')\fC [static]\fP"
+
+.SS "bs4\&.element\&.Tag\&.prefix"
+
+.SS "Optional bs4\&.element\&.Tag\&.prefix [str]\fC [static]\fP"
+
+.SS "bs4\&.element\&.Tag\&.preserve_whitespace_tags"
+
+.SS "Optional bs4\&.element\&.Tag\&.preserve_whitespace_tags [Set[str]]\fC [static]\fP"
+
+.SS "Self bs4\&.element\&.Tag\&.replace_with_children = \fBunwrap\fP\fC [static]\fP"
+
+.SS "bs4\&.element\&.Tag\&.sourceline"
+
+.SS "Optional bs4\&.element\&.Tag\&.sourceline [int]\fC [static]\fP"
+
+.SS "bs4\&.element\&.Tag\&.sourcepos"
+
+.SS "Optional bs4\&.element\&.Tag\&.sourcepos [int]\fC [static]\fP"
+
+.SS "bs4\&.element\&.Tag\&.START_ELEMENT_EVENT = \fB_TreeTraversalEvent\fP()\fC [static]\fP"
+
+.SS "bs4\&.element\&.Tag\&.STRING_ELEMENT_EVENT = \fB_TreeTraversalEvent\fP()\fC [static]\fP"
+
+.SH "Property Documentation"
+.PP 
+.SS "bs4\&.element\&.Tag\&.strings = property(\fB_all_strings\fP)\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

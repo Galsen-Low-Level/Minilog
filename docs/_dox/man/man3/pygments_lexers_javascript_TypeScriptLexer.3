@@ -1,0 +1,275 @@
+.TH "pygments.lexers.javascript.TypeScriptLexer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.lexers.javascript.TypeScriptLexer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpygments\&.lexers\&.javascript\&.JavascriptLexer\fP\&.
+.PP
+Inherited by \fBpygments\&.lexers\&.jsx\&.TsxLexer\fP\&.
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = 'TypeScript'"
+.br
+.ti -1c
+.RI "str \fBurl\fP = 'https://www\&.typescriptlang\&.org/'"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = ['typescript', 'ts']"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = ['*\&.ts']"
+.br
+.ti -1c
+.RI "list \fBmimetypes\fP = ['application/x\-typescript', 'text/x\-typescript']"
+.br
+.ti -1c
+.RI "str \fBversion_added\fP = '1\&.6'"
+.br
+.ti -1c
+.RI "float \fBpriority\fP = 0\&.5"
+.br
+.ti -1c
+.RI "dict \fBtokens\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpygments\&.lexers\&.javascript\&.JavascriptLexer\fP
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = 'JavaScript'"
+.br
+.ti -1c
+.RI "str \fBurl\fP = 'https://www\&.ecma\-international\&.org/publications\-and\-standards/standards/ecma\-262/'"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = ['javascript', 'js']"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = ['*\&.js', '*\&.jsm', '*\&.mjs', '*\&.cjs']"
+.br
+.ti -1c
+.RI "list \fBmimetypes\fP"
+.br
+.ti -1c
+.RI "str \fBversion_added\fP = ''"
+.br
+.ti -1c
+.RI "\fBflags\fP = re\&.DOTALL | re\&.MULTILINE"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpygments\&.lexer\&.RegexLexer\fP
+.in +1c
+.ti -1c
+.RI "\fBflags\fP = re\&.MULTILINE"
+.br
+.ti -1c
+.RI "dict \fBtokens\fP = {}"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fBname\fP = None"
+.br
+.ti -1c
+.RI "list \fBaliases\fP = []"
+.br
+.ti -1c
+.RI "list \fBfilenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBalias_filenames\fP = []"
+.br
+.ti -1c
+.RI "list \fBmimetypes\fP = []"
+.br
+.ti -1c
+.RI "int \fBpriority\fP = 0"
+.br
+.ti -1c
+.RI "\fBurl\fP = None"
+.br
+.ti -1c
+.RI "\fBversion_added\fP = None"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.RegexLexer\fP
+.in +1c
+.ti -1c
+.RI "\fBget_tokens_unprocessed\fP (self, text, stack=('root',))"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBadd_filter\fP (self, filter_, **\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fBanalyse_text\fP (text)"
+.br
+.ti -1c
+.RI "\fBget_tokens\fP (self, text, unfiltered=False)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.LexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fB__new__\fP (mcs, name, bases, d)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpygments\&.lexer\&.RegexLexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fBprocess_tokendef\fP (cls, name, tokendefs=None)"
+.br
+.ti -1c
+.RI "\fBget_tokendefs\fP (cls)"
+.br
+.ti -1c
+.RI "\fB__call__\fP (cls, *args, **kwds)"
+.br
+.in -1c
+
+Public Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBstripnl\fP"
+.br
+.ti -1c
+.RI "\fBstripall\fP"
+.br
+.ti -1c
+.RI "\fBensurenl\fP"
+.br
+.ti -1c
+.RI "\fBtabsize\fP"
+.br
+.ti -1c
+.RI "\fBencoding\fP"
+.br
+.ti -1c
+.RI "\fBfilters\fP"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB_preprocess_lexer_input\fP (self, text)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBpygments\&.lexer\&.RegexLexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fB_process_regex\fP (cls, regex, rflags, state)"
+.br
+.ti -1c
+.RI "\fB_process_token\fP (cls, token)"
+.br
+.ti -1c
+.RI "\fB_process_new_state\fP (cls, new_state, unprocessed, processed)"
+.br
+.ti -1c
+.RI "\fB_process_state\fP (cls, unprocessed, processed, state)"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBpygments\&.lexer\&.RegexLexerMeta\fP
+.in +1c
+.ti -1c
+.RI "\fB_all_tokens\fP"
+.br
+.ti -1c
+.RI "\fB_tmpname\fP"
+.br
+.ti -1c
+.RI "\fB_tokens\fP"
+.br
+.in -1c
+
+Static Protected Attributes inherited from \fBpygments\&.lexer\&.Lexer\fP
+.in +1c
+.ti -1c
+.RI "\fB_example\fP = None"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+For TypeScript source code\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "list pygments\&.lexers\&.javascript\&.TypeScriptLexer\&.aliases = ['typescript', 'ts']\fC [static]\fP"
+
+.SS "list pygments\&.lexers\&.javascript\&.TypeScriptLexer\&.filenames = ['*\&.ts']\fC [static]\fP"
+
+.SS "list pygments\&.lexers\&.javascript\&.TypeScriptLexer\&.mimetypes = ['application/x\-typescript', 'text/x\-typescript']\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.javascript\&.TypeScriptLexer\&.name = 'TypeScript'\fC [static]\fP"
+
+.SS "float pygments\&.lexers\&.javascript\&.TypeScriptLexer\&.priority = 0\&.5\fC [static]\fP"
+
+.SS "dict pygments\&.lexers\&.javascript\&.TypeScriptLexer\&.tokens\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+=  {
+        'root': [
+            (r'(abstract|implements|private|protected|public|readonly)\\b',
+                Keyword, 'slashstartsregex'),
+            (r'(enum|interface|override)\\b', Keyword\&.Declaration, 'slashstartsregex'),
+            (r'\\b(declare|type)\\b', Keyword\&.Reserved),
+            # Match variable type keywords
+            (r'\\b(string|boolean|number)\\b', Keyword\&.Type),
+            # Match stuff like: module name {\&.\&.\&.}
+            (r'\\b(module)(\\s*)([\\w?\&.$]+)(\\s*)',
+             bygroups(Keyword\&.Reserved, Whitespace, Name\&.Other, Whitespace), 'slashstartsregex'),
+            # Match stuff like: (function: return type)
+            (r'([\\w?\&.$]+)(\\s*)(:)(\\s*)([\\w?\&.$]+)',
+             bygroups(Name\&.Other, Whitespace, Operator, Whitespace, Keyword\&.Type)),
+            # Match stuff like: Decorators
+            (r'@' + JS_IDENT, Keyword\&.Declaration),
+            inherit,
+            # private identifier
+            (r'#[a\-zA\-Z_]\\w*', Name),
+        ],
+    }
+.fi
+
+.SS "str pygments\&.lexers\&.javascript\&.TypeScriptLexer\&.url = 'https://www\&.typescriptlang\&.org/'\fC [static]\fP"
+
+.SS "str pygments\&.lexers\&.javascript\&.TypeScriptLexer\&.version_added = '1\&.6'\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

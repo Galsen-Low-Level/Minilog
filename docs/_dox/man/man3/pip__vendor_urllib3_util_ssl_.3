@@ -1,0 +1,303 @@
+.TH "pip._vendor.urllib3.util.ssl_" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.urllib3.util.ssl_
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSSLContext\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_const_compare_digest_backport\fP (a, b)"
+.br
+.ti -1c
+.RI "\fBassert_fingerprint\fP (cert, fingerprint)"
+.br
+.ti -1c
+.RI "\fBresolve_cert_reqs\fP (candidate)"
+.br
+.ti -1c
+.RI "\fBresolve_ssl_version\fP (candidate)"
+.br
+.ti -1c
+.RI "\fBcreate_urllib3_context\fP (ssl_version=None, cert_reqs=None, options=None, ciphers=None)"
+.br
+.ti -1c
+.RI "\fBssl_wrap_socket\fP (sock, keyfile=None, certfile=None, cert_reqs=None, ca_certs=None, server_hostname=None, ssl_version=None, ciphers=None, ssl_context=None, ca_cert_dir=None, key_password=None, ca_cert_data=None, tls_in_tls=False)"
+.br
+.ti -1c
+.RI "\fBis_ipaddress\fP (hostname)"
+.br
+.ti -1c
+.RI "\fB_is_key_file_encrypted\fP (key_file)"
+.br
+.ti -1c
+.RI "\fB_ssl_wrap_socket_impl\fP (sock, ssl_context, tls_in_tls, server_hostname=None)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBSSLContext\fP = None"
+.br
+.ti -1c
+.RI "\fBSSLTransport\fP = None"
+.br
+.ti -1c
+.RI "bool \fBHAS_SNI\fP = False"
+.br
+.ti -1c
+.RI "bool \fBIS_PYOPENSSL\fP = False"
+.br
+.ti -1c
+.RI "bool \fBIS_SECURETRANSPORT\fP = False"
+.br
+.ti -1c
+.RI "list \fBALPN_PROTOCOLS\fP = ['http/1\&.1']"
+.br
+.ti -1c
+.RI "dict \fBHASHFUNC_MAP\fP"
+.br
+.ti -1c
+.RI "\fB_const_compare_digest\fP = getattr(hmac, 'compare_digest', \fB_const_compare_digest_backport\fP)"
+.br
+.ti -1c
+.RI "\fBPROTOCOL_SSLv23\fP = PROTOCOL_TLS"
+.br
+.ti -1c
+.RI "\fBPROTOCOL_TLS_CLIENT\fP = PROTOCOL_TLS"
+.br
+.ti -1c
+.RI "\fBOP_NO_SSLv2\fP"
+.br
+.ti -1c
+.RI "\fBOP_NO_SSLv3\fP"
+.br
+.ti -1c
+.RI "int \fBOP_NO_COMPRESSION\fP = 0x20000"
+.br
+.ti -1c
+.RI "int \fBOP_NO_TICKET\fP = 0x4000"
+.br
+.ti -1c
+.RI "str \fBDEFAULT_CIPHERS\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssl_\&._const_compare_digest_backport ( a,  b)\fC [protected]\fP"
+
+.PP
+.nf
+Compare two digests of equal length in constant time\&.
+
+The digests must be of type str/bytes\&.
+Returns True if the digests match, and False otherwise\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssl_\&._is_key_file_encrypted ( key_file)\fC [protected]\fP"
+
+.PP
+.nf
+Detects if a key file is encrypted or not\&.
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssl_\&._ssl_wrap_socket_impl ( sock,  ssl_context,  tls_in_tls,  server_hostname = \fCNone\fP)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssl_\&.assert_fingerprint ( cert,  fingerprint)"
+
+.PP
+.nf
+Checks if given fingerprint matches the supplied certificate\&.
+
+:param cert:
+    Certificate as bytes object\&.
+:param fingerprint:
+    Fingerprint as string of hexdigits, can be interspersed by colons\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssl_\&.create_urllib3_context ( ssl_version = \fCNone\fP,  cert_reqs = \fCNone\fP,  options = \fCNone\fP,  ciphers = \fCNone\fP)"
+
+.PP
+.nf
+All arguments have the same meaning as ``ssl_wrap_socket``\&.
+
+By default, this function does a lot of the same work that
+``ssl\&.create_default_context`` does on Python 3\&.4+\&. It:
+
+- Disables SSLv2, SSLv3, and compression
+- Sets a restricted set of server ciphers
+
+If you wish to enable SSLv3, you can do::
+
+    from pip\&._vendor\&.urllib3\&.util import ssl_
+    context = ssl_\&.create_urllib3_context()
+    context\&.options &= ~ssl_\&.OP_NO_SSLv3
+
+You can do the same to enable compression (substituting ``COMPRESSION``
+for ``SSLv3`` in the last line above)\&.
+
+:param ssl_version:
+    The desired protocol version to use\&. This will default to
+    PROTOCOL_SSLv23 which will negotiate the highest protocol that both
+    the server and your installation of OpenSSL support\&.
+:param cert_reqs:
+    Whether to require the certificate verification\&. This defaults to
+    ``ssl\&.CERT_REQUIRED``\&.
+:param options:
+    Specific OpenSSL options\&. These default to ``ssl\&.OP_NO_SSLv2``,
+    ``ssl\&.OP_NO_SSLv3``, ``ssl\&.OP_NO_COMPRESSION``, and ``ssl\&.OP_NO_TICKET``\&.
+:param ciphers:
+    Which cipher suites to allow the server to select\&.
+:returns:
+    Constructed SSLContext object with specified options
+:rtype: SSLContext
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssl_\&.is_ipaddress ( hostname)"
+
+.PP
+.nf
+Detects whether the hostname given is an IPv4 or IPv6 address\&.
+Also detects IPv6 addresses with Zone IDs\&.
+
+:param str hostname: Hostname to examine\&.
+:return: True if the hostname is an IP address, False otherwise\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssl_\&.resolve_cert_reqs ( candidate)"
+
+.PP
+.nf
+Resolves the argument to a numeric constant, which can be passed to
+the wrap_socket function/method from the ssl module\&.
+Defaults to :data:`ssl\&.CERT_REQUIRED`\&.
+If given a string it is assumed to be the name of the constant in the
+:mod:`ssl` module or its abbreviation\&.
+(So you can specify `REQUIRED` instead of `CERT_REQUIRED`\&.
+If it's neither `None` nor a string we assume it is already the numeric
+constant which can directly be passed to wrap_socket\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssl_\&.resolve_ssl_version ( candidate)"
+
+.PP
+.nf
+like resolve_cert_reqs
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssl_\&.ssl_wrap_socket ( sock,  keyfile = \fCNone\fP,  certfile = \fCNone\fP,  cert_reqs = \fCNone\fP,  ca_certs = \fCNone\fP,  server_hostname = \fCNone\fP,  ssl_version = \fCNone\fP,  ciphers = \fCNone\fP,  ssl_context = \fCNone\fP,  ca_cert_dir = \fCNone\fP,  key_password = \fCNone\fP,  ca_cert_data = \fCNone\fP,  tls_in_tls = \fCFalse\fP)"
+
+.PP
+.nf
+All arguments except for server_hostname, ssl_context, and ca_cert_dir have
+the same meaning as they do when using :func:`ssl\&.wrap_socket`\&.
+
+:param server_hostname:
+    When SNI is supported, the expected hostname of the certificate
+:param ssl_context:
+    A pre-made :class:`SSLContext` object\&. If none is provided, one will
+    be created using :func:`create_urllib3_context`\&.
+:param ciphers:
+    A string of ciphers we wish the client to support\&.
+:param ca_cert_dir:
+    A directory containing CA certificates in multiple separate files, as
+    supported by OpenSSL's -CApath flag or the capath argument to
+    SSLContext\&.load_verify_locations()\&.
+:param key_password:
+    Optional password if the keyfile is encrypted\&.
+:param ca_cert_data:
+    Optional string containing CA certificates in PEM format suitable for
+    passing as the cadata parameter to SSLContext\&.load_verify_locations()
+:param tls_in_tls:
+    Use SSLTransport to wrap the existing socket\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssl_\&._const_compare_digest = getattr(hmac, 'compare_digest', \fB_const_compare_digest_backport\fP)\fC [protected]\fP"
+
+.SS "list pip\&._vendor\&.urllib3\&.util\&.ssl_\&.ALPN_PROTOCOLS = ['http/1\&.1']"
+
+.SS "str pip\&._vendor\&.urllib3\&.util\&.ssl_\&.DEFAULT_CIPHERS"
+\fBInitial value:\fP.PP
+.nf
+1 =  ":"\&.join(
+2     [
+3         "ECDHE+AESGCM",
+4         "ECDHE+CHACHA20",
+5         "DHE+AESGCM",
+6         "DHE+CHACHA20",
+7         "ECDH+AESGCM",
+8         "DH+AESGCM",
+9         "ECDH+AES",
+10         "DH+AES",
+11         "RSA+AESGCM",
+12         "RSA+AES",
+13         "!aNULL",
+14         "!eNULL",
+15         "!MD5",
+16         "!DSS",
+17     ]
+18 )
+.fi
+
+.SS "bool pip\&._vendor\&.urllib3\&.util\&.ssl_\&.HAS_SNI = False"
+
+.SS "dict pip\&._vendor\&.urllib3\&.util\&.ssl_\&.HASHFUNC_MAP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     length: getattr(hashlib, algorithm, None)
+3     for length, algorithm in ((32, "md5"), (40, "sha1"), (64, "sha256"))
+4 }
+.fi
+
+.SS "bool pip\&._vendor\&.urllib3\&.util\&.ssl_\&.IS_PYOPENSSL = False"
+
+.SS "bool pip\&._vendor\&.urllib3\&.util\&.ssl_\&.IS_SECURETRANSPORT = False"
+
+.SS "int pip\&._vendor\&.urllib3\&.util\&.ssl_\&.OP_NO_COMPRESSION = 0x20000"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssl_\&.OP_NO_SSLv2"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssl_\&.OP_NO_SSLv3"
+
+.SS "int pip\&._vendor\&.urllib3\&.util\&.ssl_\&.OP_NO_TICKET = 0x4000"
+
+.SS "int pip\&._vendor\&.urllib3\&.util\&.ssl_\&.PROTOCOL_SSLv23 = PROTOCOL_TLS"
+
+.SS "pip\&._vendor\&.urllib3\&.util\&.ssl_\&.PROTOCOL_TLS_CLIENT = PROTOCOL_TLS"
+
+.SS "\fBpip\&._vendor\&.urllib3\&.util\&.ssl_\&.SSLContext\fP = None"
+
+.SS "\fBpip\&._vendor\&.urllib3\&.util\&.ssl_\&.SSLTransport\fP = None"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

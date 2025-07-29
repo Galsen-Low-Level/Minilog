@@ -1,0 +1,154 @@
+.TH "docutils.readers.ReReader" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.readers.ReReader
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.readers\&.Reader\fP\&.
+.PP
+Inherited by \fBdocutils\&.readers\&.doctree\&.Reader\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBget_transforms\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.readers\&.Reader\fP
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBparser\fP=None, parser_name=None)"
+.br
+.ti -1c
+.RI "\fBset_parser\fP (self, parser_name)"
+.br
+.ti -1c
+.RI "\fBread\fP (self, \fBsource\fP, \fBparser\fP, \fBsettings\fP)"
+.br
+.ti -1c
+.RI "\fBparse\fP (self)"
+.br
+.ti -1c
+.RI "\fBnew_document\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.Component\fP
+.in +1c
+.ti -1c
+.RI "\fBsupports\fP (self, format)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBdocutils\&.readers\&.Reader\fP
+.in +1c
+.ti -1c
+.RI "\fBparser\fP"
+.br
+.ti -1c
+.RI "\fBsource\fP"
+.br
+.ti -1c
+.RI "\fBinput\fP"
+.br
+.ti -1c
+.RI "\fBsettings\fP"
+.br
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "\fBdefault_transforms\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.readers\&.Reader\fP
+.in +1c
+.ti -1c
+.RI "str \fBcomponent_type\fP = 'reader'"
+.br
+.ti -1c
+.RI "str \fBconfig_section\fP = 'readers'"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.Component\fP
+.in +1c
+.ti -1c
+.RI "\fBcomponent_type\fP = None"
+.br
+.ti -1c
+.RI "tuple \fBsupported\fP = ()"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.SettingsSpec\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBsettings_spec\fP = ()"
+.br
+.ti -1c
+.RI "\fBsettings_defaults\fP = None"
+.br
+.ti -1c
+.RI "\fBsettings_default_overrides\fP = None"
+.br
+.ti -1c
+.RI "tuple \fBrelative_path_settings\fP = ()"
+.br
+.ti -1c
+.RI "\fBconfig_section\fP = None"
+.br
+.ti -1c
+.RI "\fBconfig_section_dependencies\fP = None"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBdocutils\&.TransformSpec\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBdefault_transforms\fP = ()"
+.br
+.ti -1c
+.RI "tuple \fBunknown_reference_resolvers\fP = ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A reader which rereads an existing document tree (e\&.g\&. a
+deserializer)\&.
+
+Often used in conjunction with `writers\&.UnfilteredWriter`\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.readers\&.ReReader\&.get_transforms ( self)"
+
+.PP
+.nf
+Transforms required by this class\&.  Override in subclasses\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.readers\&.Reader\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

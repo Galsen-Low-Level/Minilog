@@ -1,0 +1,180 @@
+.TH "pip._vendor.packaging.metadata.RawMetadata" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.packaging.metadata.RawMetadata
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits TypedDict, total, and False\&.
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBmetadata_version\fP"
+.br
+.ti -1c
+.RI "str \fBname\fP"
+.br
+.ti -1c
+.RI "str \fBversion\fP"
+.br
+.ti -1c
+.RI "list \fBplatforms\fP [str]"
+.br
+.ti -1c
+.RI "str \fBsummary\fP"
+.br
+.ti -1c
+.RI "str \fBdescription\fP"
+.br
+.ti -1c
+.RI "list \fBkeywords\fP [str]"
+.br
+.ti -1c
+.RI "str \fBhome_page\fP"
+.br
+.ti -1c
+.RI "str \fBauthor\fP"
+.br
+.ti -1c
+.RI "str \fBauthor_email\fP"
+.br
+.ti -1c
+.RI "str \fBlicense\fP"
+.br
+.ti -1c
+.RI "list \fBsupported_platforms\fP [str]"
+.br
+.ti -1c
+.RI "str \fBdownload_url\fP"
+.br
+.ti -1c
+.RI "list \fBclassifiers\fP [str]"
+.br
+.ti -1c
+.RI "list \fBrequires\fP [str]"
+.br
+.ti -1c
+.RI "list \fBprovides\fP [str]"
+.br
+.ti -1c
+.RI "list \fBobsoletes\fP [str]"
+.br
+.ti -1c
+.RI "str \fBmaintainer\fP"
+.br
+.ti -1c
+.RI "str \fBmaintainer_email\fP"
+.br
+.ti -1c
+.RI "list \fBrequires_dist\fP [str]"
+.br
+.ti -1c
+.RI "list \fBprovides_dist\fP [str]"
+.br
+.ti -1c
+.RI "list \fBobsoletes_dist\fP [str]"
+.br
+.ti -1c
+.RI "str \fBrequires_python\fP"
+.br
+.ti -1c
+.RI "list \fBrequires_external\fP [str]"
+.br
+.ti -1c
+.RI "dict \fBproject_urls\fP [str, str]"
+.br
+.ti -1c
+.RI "str \fBdescription_content_type\fP"
+.br
+.ti -1c
+.RI "list \fBprovides_extra\fP [str]"
+.br
+.ti -1c
+.RI "list \fBdynamic\fP [str]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A dictionary of raw core metadata\&.
+
+Each field in core metadata maps to a key of this dictionary (when data is
+provided)\&. The key is lower-case and underscores are used instead of dashes
+compared to the equivalent core metadata field\&. Any core metadata field that
+can be specified multiple times or can hold multiple values in a single
+field have a key with a plural name\&. See :class:`Metadata` whose attributes
+match the keys of this dictionary\&.
+
+Core metadata fields that can be specified multiple times are stored as a
+list or dict depending on which is appropriate for the field\&. Any fields
+which hold multiple values in a single field are stored as a list\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "str pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.author\fC [static]\fP"
+
+.SS "str pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.author_email\fC [static]\fP"
+
+.SS "list pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.classifiers [str]\fC [static]\fP"
+
+.SS "str pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.description\fC [static]\fP"
+
+.SS "str pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.description_content_type\fC [static]\fP"
+
+.SS "str pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.download_url\fC [static]\fP"
+
+.SS "list pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.dynamic [str]\fC [static]\fP"
+
+.SS "str pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.home_page\fC [static]\fP"
+
+.SS "list pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.keywords [str]\fC [static]\fP"
+
+.SS "str pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.license\fC [static]\fP"
+
+.SS "str pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.maintainer\fC [static]\fP"
+
+.SS "str pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.maintainer_email\fC [static]\fP"
+
+.SS "str pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.metadata_version\fC [static]\fP"
+
+.SS "str pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.name\fC [static]\fP"
+
+.SS "list pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.obsoletes [str]\fC [static]\fP"
+
+.SS "list pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.obsoletes_dist [str]\fC [static]\fP"
+
+.SS "list pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.platforms [str]\fC [static]\fP"
+
+.SS "dict pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.project_urls [str, str]\fC [static]\fP"
+
+.SS "list pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.provides [str]\fC [static]\fP"
+
+.SS "list pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.provides_dist [str]\fC [static]\fP"
+
+.SS "list pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.provides_extra [str]\fC [static]\fP"
+
+.SS "list pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.requires [str]\fC [static]\fP"
+
+.SS "list pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.requires_dist [str]\fC [static]\fP"
+
+.SS "list pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.requires_external [str]\fC [static]\fP"
+
+.SS "str pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.requires_python\fC [static]\fP"
+
+.SS "str pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.summary\fC [static]\fP"
+
+.SS "list pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.supported_platforms [str]\fC [static]\fP"
+
+.SS "str pip\&._vendor\&.packaging\&.metadata\&.RawMetadata\&.version\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

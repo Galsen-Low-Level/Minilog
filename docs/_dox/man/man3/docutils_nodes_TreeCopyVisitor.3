@@ -1,0 +1,123 @@
+.TH "docutils.nodes.TreeCopyVisitor" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.nodes.TreeCopyVisitor
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBdocutils\&.nodes\&.GenericNodeVisitor\fP\&.
+.PP
+Inherited by \fBdocutils\&.transforms\&.parts\&.ContentsFilter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBdocument\fP)"
+.br
+.ti -1c
+.RI "\fBget_tree_copy\fP (self)"
+.br
+.ti -1c
+.RI "\fBdefault_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdefault_departure\fP (self, node)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "\fBdispatch_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBdispatch_departure\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBunknown_visit\fP (self, node)"
+.br
+.ti -1c
+.RI "\fBunknown_departure\fP (self, node)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBparent_stack\fP"
+.br
+.ti -1c
+.RI "\fBparent\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "\fBdocument\fP"
+.br
+.ti -1c
+.RI "\fBoptional\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Attributes inherited from \fBdocutils\&.nodes\&.NodeVisitor\fP
+.in +1c
+.ti -1c
+.RI "tuple \fBoptional\fP = ('\fBmeta\fP',)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Make a complete copy of a tree or branch, including element attributes\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.nodes\&.TreeCopyVisitor\&.__init__ ( self,  document)"
+
+.PP
+Reimplemented from \fBdocutils\&.nodes\&.NodeVisitor\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.nodes\&.TreeCopyVisitor\&.default_departure ( self,  node)"
+
+.PP
+.nf
+Restore the previous acting parent\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.nodes\&.GenericNodeVisitor\fP\&.
+.SS "docutils\&.nodes\&.TreeCopyVisitor\&.default_visit ( self,  node)"
+
+.PP
+.nf
+Copy the current node, and make it the new acting parent\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBdocutils\&.nodes\&.GenericNodeVisitor\fP\&.
+.SS "docutils\&.nodes\&.TreeCopyVisitor\&.get_tree_copy ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.nodes\&.TreeCopyVisitor\&.parent"
+
+.SS "docutils\&.nodes\&.TreeCopyVisitor\&.parent_stack"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

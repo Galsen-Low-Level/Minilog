@@ -1,0 +1,160 @@
+.TH "pip._vendor.distlib.resources.ResourceFinder" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.distlib.resources.ResourceFinder
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.PP
+Inherited by \fBpip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBmodule\fP)"
+.br
+.ti -1c
+.RI "\fBget_cache_info\fP (self, resource)"
+.br
+.ti -1c
+.RI "\fBfind\fP (self, resource_name)"
+.br
+.ti -1c
+.RI "\fBget_stream\fP (self, resource)"
+.br
+.ti -1c
+.RI "\fBget_bytes\fP (self, resource)"
+.br
+.ti -1c
+.RI "\fBget_size\fP (self, resource)"
+.br
+.ti -1c
+.RI "\fBget_resources\fP (self, resource)"
+.br
+.ti -1c
+.RI "\fBis_container\fP (self, resource)"
+.br
+.ti -1c
+.RI "\fBiterator\fP (self, resource_name)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBmodule\fP"
+.br
+.ti -1c
+.RI "\fBloader\fP"
+.br
+.ti -1c
+.RI "\fBbase\fP"
+.br
+.ti -1c
+.RI "\fBskipped_extensions\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "tuple \fBskipped_extensions\fP = ('\&.pyc', '\&.pyo', '\&.class')"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_adjust_path\fP (self, path)"
+.br
+.ti -1c
+.RI "\fB_make_path\fP (self, resource_name)"
+.br
+.ti -1c
+.RI "\fB_find\fP (self, path)"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_is_directory\fP = staticmethod(os\&.path\&.isdir)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Resource finder for file system resources\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.resources\&.ResourceFinder\&.__init__ ( self,  module)"
+
+.PP
+Reimplemented in \fBpip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.resources\&.ResourceFinder\&._adjust_path ( self,  path)\fC [protected]\fP"
+
+.PP
+Reimplemented in \fBpip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\fP\&.
+.SS "pip\&._vendor\&.distlib\&.resources\&.ResourceFinder\&._find ( self,  path)\fC [protected]\fP"
+
+.PP
+Reimplemented in \fBpip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\fP\&.
+.SS "pip\&._vendor\&.distlib\&.resources\&.ResourceFinder\&._make_path ( self,  resource_name)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.resources\&.ResourceFinder\&.find ( self,  resource_name)"
+
+.SS "pip\&._vendor\&.distlib\&.resources\&.ResourceFinder\&.get_bytes ( self,  resource)"
+
+.PP
+Reimplemented in \fBpip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\fP\&.
+.SS "pip\&._vendor\&.distlib\&.resources\&.ResourceFinder\&.get_cache_info ( self,  resource)"
+
+.PP
+Reimplemented in \fBpip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\fP\&.
+.SS "pip\&._vendor\&.distlib\&.resources\&.ResourceFinder\&.get_resources ( self,  resource)"
+
+.PP
+Reimplemented in \fBpip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\fP\&.
+.SS "pip\&._vendor\&.distlib\&.resources\&.ResourceFinder\&.get_size ( self,  resource)"
+
+.PP
+Reimplemented in \fBpip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\fP\&.
+.SS "pip\&._vendor\&.distlib\&.resources\&.ResourceFinder\&.get_stream ( self,  resource)"
+
+.PP
+Reimplemented in \fBpip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\fP\&.
+.SS "pip\&._vendor\&.distlib\&.resources\&.ResourceFinder\&.is_container ( self,  resource)"
+
+.SS "pip\&._vendor\&.distlib\&.resources\&.ResourceFinder\&.iterator ( self,  resource_name)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.resources\&.ResourceFinder\&._is_directory = staticmethod(os\&.path\&.isdir)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Reimplemented in \fBpip\&._vendor\&.distlib\&.resources\&.ZipResourceFinder\fP\&.
+.SS "pip\&._vendor\&.distlib\&.resources\&.ResourceFinder\&.base"
+
+.SS "pip\&._vendor\&.distlib\&.resources\&.ResourceFinder\&.loader"
+
+.SS "pip\&._vendor\&.distlib\&.resources\&.ResourceFinder\&.module"
+
+.SS "tuple pip\&._vendor\&.distlib\&.resources\&.ResourceFinder\&.skipped_extensions = ('\&.pyc', '\&.pyo', '\&.class')\fC [static]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.resources\&.ResourceFinder\&.skipped_extensions"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

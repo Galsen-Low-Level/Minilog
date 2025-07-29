@@ -1,0 +1,129 @@
+.TH "docutils.utils.math.tex2mathml_extern" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.utils.math.tex2mathml_extern
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_check_result\fP (result, details=[])"
+.br
+.ti -1c
+.RI "\fBblahtexml\fP (math_code, as_block=False)"
+.br
+.ti -1c
+.RI "\fBlatexml\fP (math_code, as_block=False)"
+.br
+.ti -1c
+.RI "\fBpandoc\fP (math_code, as_block=False)"
+.br
+.ti -1c
+.RI "\fBttm\fP (math_code, as_block=False)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "str \fBdocument_template\fP"
+.br
+.ti -1c
+.RI "tuple \fBexample\fP"
+.br
+.ti -1c
+.RI "str \fBbuggy\fP = r'\\sinc \\phy'"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Wrappers for TeX->MathML conversion by external tools
+
+This module is provisional:
+the API is not settled and may change with any minor Docutils version\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "docutils\&.utils\&.math\&.tex2mathml_extern\&._check_result ( result,  details = \fC[]\fP)\fC [protected]\fP"
+
+.SS "docutils\&.utils\&.math\&.tex2mathml_extern\&.blahtexml ( math_code,  as_block = \fCFalse\fP)"
+
+.PP
+.nf
+Convert LaTeX math code to MathML with blahtexml__\&.
+
+__ http://gva\&.noekeon\&.org/blahtexml/
+
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.math\&.tex2mathml_extern\&.latexml ( math_code,  as_block = \fCFalse\fP)"
+
+.PP
+.nf
+Convert LaTeX math code to MathML with LaTeXML__\&.
+
+Comprehensive macro support but **very** slow\&.
+
+__ http://dlmf\&.nist\&.gov/LaTeXML/
+
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.math\&.tex2mathml_extern\&.pandoc ( math_code,  as_block = \fCFalse\fP)"
+
+.PP
+.nf
+Convert LaTeX math code to MathML with pandoc__\&.
+
+__ https://pandoc\&.org/
+
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.math\&.tex2mathml_extern\&.ttm ( math_code,  as_block = \fCFalse\fP)"
+
+.PP
+.nf
+Convert LaTeX math code to MathML with TtM__\&.
+
+Aged, limited, but fast\&.
+
+__ http://silas\&.psfc\&.mit\&.edu/tth/mml/
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "str docutils\&.utils\&.math\&.tex2mathml_extern\&.buggy = r'\\sinc \\phy'"
+
+.SS "str docutils\&.utils\&.math\&.tex2mathml_extern\&.document_template"
+\fBInitial value:\fP.PP
+.nf
+1 =  r"""\\documentclass{article}
+2 \\begin{document}
+3 %s
+4 \\end{document}
+5 """
+.fi
+
+.SS "tuple docutils\&.utils\&.math\&.tex2mathml_extern\&.example"
+\fBInitial value:\fP.PP
+.nf
+1 =  (r'\\frac{\\partial \\sin^2(\\alpha)}{\\partial \\vec r}'
+2                r'\\varpi \\mathbb{R} \\, \\text{Grüße}')
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

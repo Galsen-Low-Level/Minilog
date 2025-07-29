@@ -1,0 +1,93 @@
+\doxysection{docutils.\+transforms.\+references.\+Substitutions Class Reference}
+\hypertarget{classdocutils_1_1transforms_1_1references_1_1Substitutions}{}\label{classdocutils_1_1transforms_1_1references_1_1Substitutions}\index{docutils.transforms.references.Substitutions@{docutils.transforms.references.Substitutions}}
+Inheritance diagram for docutils.\+transforms.\+references.\+Substitutions\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdocutils_1_1transforms_1_1references_1_1Substitutions}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1references_1_1Substitutions_aa3e9f1f5c9bd0ded7da31e89895b8337}{apply}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform}{docutils.\+transforms.\+Transform}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_ab1ceb3a09ea1b3fc6256c2e536f82d6c}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_ad3aaf46a728e4300b65a525b2c35c5dd}{document}}, \mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_aa3b293e3c50fc8701e4fcbb2c86b32dc}{startnode}}=None)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classdocutils_1_1transforms_1_1references_1_1Substitutions_a4d9330942a4105d74d82469bca7399db}{default\+\_\+priority}} = 220
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform}{docutils.\+transforms.\+Transform}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_a942614b593b43d29ea9edce9ae763c49}{default\+\_\+priority}} = None
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform}{docutils.\+transforms.\+Transform}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_ad3aaf46a728e4300b65a525b2c35c5dd}{document}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_aa3b293e3c50fc8701e4fcbb2c86b32dc}{startnode}}
+\item 
+\mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_ac4deb10345409110344aa2d0d060e2e3}{language}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Given the following ``document`` as input::
+
+    <document>
+        <paragraph>
+            The
+            <substitution_reference refname="biohazard">
+                biohazard
+             symbol is deservedly scary-looking.
+        <substitution_definition name="biohazard">
+            <image alt="biohazard" uri="biohazard.png">
+
+The ``substitution_reference`` will simply be replaced by the
+contents of the corresponding ``substitution_definition``.
+
+The transformed result will be::
+
+    <document>
+        <paragraph>
+            The
+            <image alt="biohazard" uri="biohazard.png">
+             symbol is deservedly scary-looking.
+        <substitution_definition name="biohazard">
+            <image alt="biohazard" uri="biohazard.png">
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdocutils_1_1transforms_1_1references_1_1Substitutions_aa3e9f1f5c9bd0ded7da31e89895b8337}\label{classdocutils_1_1transforms_1_1references_1_1Substitutions_aa3e9f1f5c9bd0ded7da31e89895b8337} 
+\index{docutils.transforms.references.Substitutions@{docutils.transforms.references.Substitutions}!apply@{apply}}
+\index{apply@{apply}!docutils.transforms.references.Substitutions@{docutils.transforms.references.Substitutions}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily docutils.\+transforms.\+references.\+Substitutions.\+apply (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Override to apply the transform to the document tree.\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{classdocutils_1_1transforms_1_1Transform_a0a9e91ca01b2b5377cb61a18d8914f34}{docutils.\+transforms.\+Transform}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classdocutils_1_1transforms_1_1references_1_1Substitutions_a4d9330942a4105d74d82469bca7399db}\label{classdocutils_1_1transforms_1_1references_1_1Substitutions_a4d9330942a4105d74d82469bca7399db} 
+\index{docutils.transforms.references.Substitutions@{docutils.transforms.references.Substitutions}!default\_priority@{default\_priority}}
+\index{default\_priority@{default\_priority}!docutils.transforms.references.Substitutions@{docutils.transforms.references.Substitutions}}
+\doxysubsubsection{\texorpdfstring{default\_priority}{default\_priority}}
+{\footnotesize\ttfamily int docutils.\+transforms.\+references.\+Substitutions.\+default\+\_\+priority = 220\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/docutils/transforms/\mbox{\hyperlink{docutils_2transforms_2references_8py}{references.\+py}}\end{DoxyCompactItemize}

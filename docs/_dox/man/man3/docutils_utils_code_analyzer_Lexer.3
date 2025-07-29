@@ -1,0 +1,110 @@
+.TH "docutils.utils.code_analyzer.Lexer" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.utils.code_analyzer.Lexer
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBcode\fP, \fBlanguage\fP, \fBtokennames\fP='short')"
+.br
+.ti -1c
+.RI "\fBmerge\fP (self, tokens)"
+.br
+.ti -1c
+.RI "\fB__iter__\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcode\fP"
+.br
+.ti -1c
+.RI "\fBlanguage\fP"
+.br
+.ti -1c
+.RI "\fBtokennames\fP"
+.br
+.ti -1c
+.RI "\fBlexer\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Parse `code` lines and yield 'classified' tokens\&.
+
+Arguments
+
+  code       -- string of source code to parse,
+  language   -- formal language the code is written in,
+  tokennames -- either 'long', 'short', or 'none' (see below)\&.
+
+Merge subsequent tokens of the same token-type\&.
+
+Iterating over an instance yields the tokens as ``(tokentype, value)``
+tuples\&. The value of `tokennames` configures the naming of the tokentype:
+
+  'long':  downcased full token type name,
+  'short': short name defined by pygments\&.token\&.STANDARD_TYPES
+           (= class argument used in pygments html output),
+  'none':  skip lexical analysis\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "docutils\&.utils\&.code_analyzer\&.Lexer\&.__init__ ( self,  code,  language,  tokennames = \fC'short'\fP)"
+
+.PP
+.nf
+Set up a lexical analyzer for `code` in `language`\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "docutils\&.utils\&.code_analyzer\&.Lexer\&.__iter__ ( self)"
+
+.PP
+.nf
+Parse self\&.code and yield 'classified' tokens\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.code_analyzer\&.Lexer\&.merge ( self,  tokens)"
+
+.PP
+.nf
+Merge subsequent tokens of same token-type\&.
+
+   Also strip the final newline (added by pygments)\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "docutils\&.utils\&.code_analyzer\&.Lexer\&.code"
+
+.SS "docutils\&.utils\&.code_analyzer\&.Lexer\&.language"
+
+.SS "docutils\&.utils\&.code_analyzer\&.Lexer\&.lexer"
+
+.SS "docutils\&.utils\&.code_analyzer\&.Lexer\&.tokennames"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

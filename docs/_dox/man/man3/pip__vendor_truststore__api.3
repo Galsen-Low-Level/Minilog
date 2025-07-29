@@ -1,0 +1,83 @@
+.TH "pip._vendor.truststore._api" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.truststore._api
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSSLContext\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBinject_into_ssl\fP ()"
+.br
+.ti -1c
+.RI "None \fBextract_from_ssl\fP ()"
+.br
+.ti -1c
+.RI "list[bytes] \fB_get_unverified_chain_bytes\fP (ssl\&.SSLObject sslobj)"
+.br
+.ti -1c
+.RI "None \fB_verify_peercerts\fP (ssl\&.SSLSocket|ssl\&.SSLObject sock_or_sslobj, str|None server_hostname)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "typing \fB_StrOrBytesPath\fP = str | bytes | os\&.PathLike[str] | os\&.PathLike[bytes]"
+.br
+.ti -1c
+.RI "typing \fB_PasswordType\fP = str | bytes | typing\&.Callable[[], str | bytes]"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS " list[bytes] pip\&._vendor\&.truststore\&._api\&._get_unverified_chain_bytes (ssl\&.SSLObject sslobj)\fC [protected]\fP"
+
+.SS " None pip\&._vendor\&.truststore\&._api\&._verify_peercerts (ssl\&.SSLSocket | ssl\&.SSLObject sock_or_sslobj, str | None
+ server_hostname)\fC [protected]\fP"
+
+.PP
+.nf
+Verifies the peer certificates from an SSLSocket or SSLObject
+against the certificates in the OS trust store\&.
+
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.truststore\&._api\&.extract_from_ssl ()"
+
+.PP
+.nf
+Restores the :class:`ssl\&.SSLContext` class to its original state
+.fi
+.PP
+ 
+.SS " None pip\&._vendor\&.truststore\&._api\&.inject_into_ssl ()"
+
+.PP
+.nf
+Injects the :class:`truststore\&.SSLContext` into the ``ssl``
+module by replacing :class:`ssl\&.SSLContext`\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "typing pip\&._vendor\&.truststore\&._api\&._PasswordType = str | bytes | typing\&.Callable[[], str | bytes]\fC [protected]\fP"
+
+.SS "typing pip\&._vendor\&.truststore\&._api\&._StrOrBytesPath = str | bytes | os\&.PathLike[str] | os\&.PathLike[bytes]\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,85 @@
+\doxysection{jinja2.\+compiler.\+Undeclared\+Name\+Visitor Class Reference}
+\hypertarget{classjinja2_1_1compiler_1_1UndeclaredNameVisitor}{}\label{classjinja2_1_1compiler_1_1UndeclaredNameVisitor}\index{jinja2.compiler.UndeclaredNameVisitor@{jinja2.compiler.UndeclaredNameVisitor}}
+Inheritance diagram for jinja2.\+compiler.\+Undeclared\+Name\+Visitor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classjinja2_1_1compiler_1_1UndeclaredNameVisitor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classjinja2_1_1compiler_1_1UndeclaredNameVisitor_a9790adde83cca52fc2a8eb8e6f272931}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, t.\+Iterable\mbox{[}str\mbox{]} \mbox{\hyperlink{classjinja2_1_1compiler_1_1UndeclaredNameVisitor_adaecc08843556609fab0907fc201c378}{names}})
+\item 
+None \mbox{\hyperlink{classjinja2_1_1compiler_1_1UndeclaredNameVisitor_ac17a801fe940d88fef09023f51d782f3}{visit\+\_\+\+Name}} (self, \mbox{\hyperlink{classjinja2_1_1nodes_1_1Name}{nodes.\+Name}} node)
+\item 
+None \mbox{\hyperlink{classjinja2_1_1compiler_1_1UndeclaredNameVisitor_a4e3eaa75658c6543b223ac3f8653523e}{visit\+\_\+\+Block}} (self, \mbox{\hyperlink{classjinja2_1_1nodes_1_1Block}{nodes.\+Block}} node)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classjinja2_1_1visitor_1_1NodeVisitor}{jinja2.\+visitor.\+Node\+Visitor}}}
+\begin{DoxyCompactItemize}
+\item 
+"{}t.\+Optional\mbox{[}\mbox{\hyperlink{classjinja2_1_1visitor_1_1VisitCallable}{Visit\+Callable}}\mbox{]}"{} \mbox{\hyperlink{classjinja2_1_1visitor_1_1NodeVisitor_a48f14e449d8a76b3abe49109a6a1aef9}{get\+\_\+visitor}} (self, \mbox{\hyperlink{classjinja2_1_1nodes_1_1Node}{Node}} node)
+\item 
+t.\+Any \mbox{\hyperlink{classjinja2_1_1visitor_1_1NodeVisitor_ac46313d5a7f643dd6b516f67e7a0e3cb}{visit}} (self, \mbox{\hyperlink{classjinja2_1_1nodes_1_1Node}{Node}} node, \texorpdfstring{$\ast$}{*}t.\+Any args, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}t.\+Any kwargs)
+\item 
+t.\+Any \mbox{\hyperlink{classjinja2_1_1visitor_1_1NodeVisitor_a9020040a2124eaa206bd1505642fa9fa}{generic\+\_\+visit}} (self, \mbox{\hyperlink{classjinja2_1_1nodes_1_1Node}{Node}} node, \texorpdfstring{$\ast$}{*}t.\+Any args, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}t.\+Any kwargs)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classjinja2_1_1compiler_1_1UndeclaredNameVisitor_adaecc08843556609fab0907fc201c378}{names}}
+\item 
+\mbox{\hyperlink{classjinja2_1_1compiler_1_1UndeclaredNameVisitor_ac3dbee66c1f9f827694df77c2144f90f}{undeclared}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A visitor that checks if a name is accessed without being
+declared.  This is different from the frame visitor as it will
+not stop at closure frames.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classjinja2_1_1compiler_1_1UndeclaredNameVisitor_a9790adde83cca52fc2a8eb8e6f272931}\label{classjinja2_1_1compiler_1_1UndeclaredNameVisitor_a9790adde83cca52fc2a8eb8e6f272931} 
+\index{jinja2.compiler.UndeclaredNameVisitor@{jinja2.compiler.UndeclaredNameVisitor}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!jinja2.compiler.UndeclaredNameVisitor@{jinja2.compiler.UndeclaredNameVisitor}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None jinja2.\+compiler.\+Undeclared\+Name\+Visitor.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{t.\+Iterable\mbox{[}str\mbox{]}}]{names }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classjinja2_1_1compiler_1_1UndeclaredNameVisitor_a4e3eaa75658c6543b223ac3f8653523e}\label{classjinja2_1_1compiler_1_1UndeclaredNameVisitor_a4e3eaa75658c6543b223ac3f8653523e} 
+\index{jinja2.compiler.UndeclaredNameVisitor@{jinja2.compiler.UndeclaredNameVisitor}!visit\_Block@{visit\_Block}}
+\index{visit\_Block@{visit\_Block}!jinja2.compiler.UndeclaredNameVisitor@{jinja2.compiler.UndeclaredNameVisitor}}
+\doxysubsubsection{\texorpdfstring{visit\_Block()}{visit\_Block()}}
+{\footnotesize\ttfamily  None jinja2.\+compiler.\+Undeclared\+Name\+Visitor.\+visit\+\_\+\+Block (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classjinja2_1_1nodes_1_1Block}{nodes.\+Block}}}]{node }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Stop visiting a blocks.\end{DoxyVerb}
+ \Hypertarget{classjinja2_1_1compiler_1_1UndeclaredNameVisitor_ac17a801fe940d88fef09023f51d782f3}\label{classjinja2_1_1compiler_1_1UndeclaredNameVisitor_ac17a801fe940d88fef09023f51d782f3} 
+\index{jinja2.compiler.UndeclaredNameVisitor@{jinja2.compiler.UndeclaredNameVisitor}!visit\_Name@{visit\_Name}}
+\index{visit\_Name@{visit\_Name}!jinja2.compiler.UndeclaredNameVisitor@{jinja2.compiler.UndeclaredNameVisitor}}
+\doxysubsubsection{\texorpdfstring{visit\_Name()}{visit\_Name()}}
+{\footnotesize\ttfamily  None jinja2.\+compiler.\+Undeclared\+Name\+Visitor.\+visit\+\_\+\+Name (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classjinja2_1_1nodes_1_1Name}{nodes.\+Name}}}]{node }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classjinja2_1_1compiler_1_1UndeclaredNameVisitor_adaecc08843556609fab0907fc201c378}\label{classjinja2_1_1compiler_1_1UndeclaredNameVisitor_adaecc08843556609fab0907fc201c378} 
+\index{jinja2.compiler.UndeclaredNameVisitor@{jinja2.compiler.UndeclaredNameVisitor}!names@{names}}
+\index{names@{names}!jinja2.compiler.UndeclaredNameVisitor@{jinja2.compiler.UndeclaredNameVisitor}}
+\doxysubsubsection{\texorpdfstring{names}{names}}
+{\footnotesize\ttfamily jinja2.\+compiler.\+Undeclared\+Name\+Visitor.\+names}
+
+\Hypertarget{classjinja2_1_1compiler_1_1UndeclaredNameVisitor_ac3dbee66c1f9f827694df77c2144f90f}\label{classjinja2_1_1compiler_1_1UndeclaredNameVisitor_ac3dbee66c1f9f827694df77c2144f90f} 
+\index{jinja2.compiler.UndeclaredNameVisitor@{jinja2.compiler.UndeclaredNameVisitor}!undeclared@{undeclared}}
+\index{undeclared@{undeclared}!jinja2.compiler.UndeclaredNameVisitor@{jinja2.compiler.UndeclaredNameVisitor}}
+\doxysubsubsection{\texorpdfstring{undeclared}{undeclared}}
+{\footnotesize\ttfamily jinja2.\+compiler.\+Undeclared\+Name\+Visitor.\+undeclared}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/jinja2/\mbox{\hyperlink{compiler_8py}{compiler.\+py}}\end{DoxyCompactItemize}

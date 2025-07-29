@@ -1,0 +1,253 @@
+.TH "requests.models.PreparedRequest" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+requests.models.PreparedRequest
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBrequests\&.models\&.RequestEncodingMixin\fP, and \fBrequests\&.models\&.RequestHooksMixin\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "\fBprepare\fP (self, \fBmethod\fP=None, \fBurl\fP=None, \fBheaders\fP=None, files=None, data=None, params=None, auth=None, cookies=None, \fBhooks\fP=None, json=None)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fBcopy\fP (self)"
+.br
+.ti -1c
+.RI "\fBprepare_method\fP (self, \fBmethod\fP)"
+.br
+.ti -1c
+.RI "\fBprepare_url\fP (self, \fBurl\fP, params)"
+.br
+.ti -1c
+.RI "\fBprepare_headers\fP (self, \fBheaders\fP)"
+.br
+.ti -1c
+.RI "\fBprepare_body\fP (self, data, files, json=None)"
+.br
+.ti -1c
+.RI "\fBprepare_content_length\fP (self, \fBbody\fP)"
+.br
+.ti -1c
+.RI "\fBprepare_auth\fP (self, auth, \fBurl\fP='')"
+.br
+.ti -1c
+.RI "\fBprepare_cookies\fP (self, cookies)"
+.br
+.ti -1c
+.RI "\fBprepare_hooks\fP (self, \fBhooks\fP)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBrequests\&.models\&.RequestEncodingMixin\fP
+.in +1c
+.ti -1c
+.RI "\fBpath_url\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBrequests\&.models\&.RequestHooksMixin\fP
+.in +1c
+.ti -1c
+.RI "\fBregister_hook\fP (self, event, hook)"
+.br
+.ti -1c
+.RI "\fBderegister_hook\fP (self, event, hook)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBmethod\fP"
+.br
+.ti -1c
+.RI "\fBurl\fP"
+.br
+.ti -1c
+.RI "\fBheaders\fP"
+.br
+.ti -1c
+.RI "\fBbody\fP"
+.br
+.ti -1c
+.RI "\fBhooks\fP"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_get_idna_encoded_host\fP (host)"
+.br
+.in -1c
+
+Static Protected Member Functions inherited from \fBrequests\&.models\&.RequestEncodingMixin\fP
+.in +1c
+.ti -1c
+.RI "\fB_encode_params\fP (data)"
+.br
+.ti -1c
+.RI "\fB_encode_files\fP (files, data)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_cookies\fP"
+.br
+.ti -1c
+.RI "\fB_body_position\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+The fully mutable :class:`PreparedRequest <PreparedRequest>` object,
+containing the exact bytes that will be sent to the server\&.
+
+Instances are generated from a :class:`Request <Request>` object, and
+should not be instantiated manually; doing so may produce undesirable
+effects\&.
+
+Usage::
+
+  >>> import requests
+  >>> req = requests\&.Request('GET', 'https://httpbin\&.org/get')
+  >>> r = req\&.prepare()
+  >>> r
+  <PreparedRequest [GET]>
+
+  >>> s = requests\&.Session()
+  >>> s\&.send(r)
+  <Response [200]>
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "requests\&.models\&.PreparedRequest\&.__init__ ( self)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "requests\&.models\&.PreparedRequest\&.__repr__ ( self)"
+
+.SS "requests\&.models\&.PreparedRequest\&._get_idna_encoded_host ( host)\fC [static]\fP, \fC [protected]\fP"
+
+.SS "requests\&.models\&.PreparedRequest\&.copy ( self)"
+
+.SS "requests\&.models\&.PreparedRequest\&.prepare ( self,  method = \fCNone\fP,  url = \fCNone\fP,  headers = \fCNone\fP,  files = \fCNone\fP,  data = \fCNone\fP,  params = \fCNone\fP,  auth = \fCNone\fP,  cookies = \fCNone\fP,  hooks = \fCNone\fP,  json = \fCNone\fP)"
+
+.PP
+.nf
+Prepares the entire request with the given parameters\&.
+.fi
+.PP
+ 
+.SS "requests\&.models\&.PreparedRequest\&.prepare_auth ( self,  auth,  url = \fC''\fP)"
+
+.PP
+.nf
+Prepares the given HTTP auth data\&.
+.fi
+.PP
+ 
+.SS "requests\&.models\&.PreparedRequest\&.prepare_body ( self,  data,  files,  json = \fCNone\fP)"
+
+.PP
+.nf
+Prepares the given HTTP body data\&.
+.fi
+.PP
+ 
+.SS "requests\&.models\&.PreparedRequest\&.prepare_content_length ( self,  body)"
+
+.PP
+.nf
+Prepare Content-Length header based on request method and body
+.fi
+.PP
+ 
+.SS "requests\&.models\&.PreparedRequest\&.prepare_cookies ( self,  cookies)"
+
+.PP
+.nf
+Prepares the given HTTP cookie data\&.
+
+This function eventually generates a ``Cookie`` header from the
+given cookies using cookielib\&. Due to cookielib's design, the header
+will not be regenerated if it already exists, meaning this function
+can only be called once for the life of the
+:class:`PreparedRequest <PreparedRequest>` object\&. Any subsequent calls
+to ``prepare_cookies`` will have no actual effect, unless the 'Cookie'
+header is removed beforehand\&.
+
+.fi
+.PP
+ 
+.SS "requests\&.models\&.PreparedRequest\&.prepare_headers ( self,  headers)"
+
+.PP
+.nf
+Prepares the given HTTP headers\&.
+.fi
+.PP
+ 
+.SS "requests\&.models\&.PreparedRequest\&.prepare_hooks ( self,  hooks)"
+
+.PP
+.nf
+Prepares the given hooks\&.
+.fi
+.PP
+ 
+.SS "requests\&.models\&.PreparedRequest\&.prepare_method ( self,  method)"
+
+.PP
+.nf
+Prepares the given HTTP method\&.
+.fi
+.PP
+ 
+.SS "requests\&.models\&.PreparedRequest\&.prepare_url ( self,  url,  params)"
+
+.PP
+.nf
+Prepares the given HTTP URL\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "requests\&.models\&.PreparedRequest\&._body_position\fC [protected]\fP"
+
+.SS "requests\&.models\&.PreparedRequest\&._cookies\fC [protected]\fP"
+
+.SS "requests\&.models\&.PreparedRequest\&.body"
+
+.SS "requests\&.models\&.PreparedRequest\&.headers"
+
+.SS "requests\&.models\&.PreparedRequest\&.hooks"
+
+.SS "requests\&.models\&.PreparedRequest\&.method"
+
+.SS "requests\&.models\&.PreparedRequest\&.url"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,122 @@
+.TH "requests.structures.CaseInsensitiveDict" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+requests.structures.CaseInsensitiveDict
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits MutableMapping\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, data=None, **kwargs)"
+.br
+.ti -1c
+.RI "\fB__setitem__\fP (self, key, value)"
+.br
+.ti -1c
+.RI "\fB__getitem__\fP (self, key)"
+.br
+.ti -1c
+.RI "\fB__delitem__\fP (self, key)"
+.br
+.ti -1c
+.RI "\fB__iter__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__len__\fP (self)"
+.br
+.ti -1c
+.RI "\fBlower_items\fP (self)"
+.br
+.ti -1c
+.RI "\fB__eq__\fP (self, other)"
+.br
+.ti -1c
+.RI "\fBcopy\fP (self)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_store\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A case-insensitive ``dict``-like object\&.
+
+Implements all methods and operations of
+``MutableMapping`` as well as dict's ``copy``\&. Also
+provides ``lower_items``\&.
+
+All keys are expected to be strings\&. The structure remembers the
+case of the last key to be set, and ``iter(instance)``,
+``keys()``, ``items()``, ``iterkeys()``, and ``iteritems()``
+will contain case-sensitive keys\&. However, querying and contains
+testing is case insensitive::
+
+    cid = CaseInsensitiveDict()
+    cid['Accept'] = 'application/json'
+    cid['aCCEPT'] == 'application/json'  # True
+    list(cid) == ['Accept']  # True
+
+For example, ``headers['content-encoding']`` will return the
+value of a ``'Content-Encoding'`` response header, regardless
+of how the header name was originally stored\&.
+
+If the constructor, ``\&.update``, or equality comparison
+operations are given keys that have equal ``\&.lower()``s, the
+behavior is undefined\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "requests\&.structures\&.CaseInsensitiveDict\&.__init__ ( self,  data = \fCNone\fP, ** kwargs)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "requests\&.structures\&.CaseInsensitiveDict\&.__delitem__ ( self,  key)"
+
+.SS "requests\&.structures\&.CaseInsensitiveDict\&.__eq__ ( self,  other)"
+
+.SS "requests\&.structures\&.CaseInsensitiveDict\&.__getitem__ ( self,  key)"
+
+.SS "requests\&.structures\&.CaseInsensitiveDict\&.__iter__ ( self)"
+
+.SS "requests\&.structures\&.CaseInsensitiveDict\&.__len__ ( self)"
+
+.SS "requests\&.structures\&.CaseInsensitiveDict\&.__repr__ ( self)"
+
+.SS "requests\&.structures\&.CaseInsensitiveDict\&.__setitem__ ( self,  key,  value)"
+
+.SS "requests\&.structures\&.CaseInsensitiveDict\&.copy ( self)"
+
+.SS "requests\&.structures\&.CaseInsensitiveDict\&.lower_items ( self)"
+
+.PP
+.nf
+Like iteritems(), but with all lowercase keys\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "requests\&.structures\&.CaseInsensitiveDict\&._store\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

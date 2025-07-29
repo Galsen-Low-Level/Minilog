@@ -1,0 +1,521 @@
+.TH "docutils.utils" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+docutils.utils
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBcode_analyzer\fP"
+.br
+.ti -1c
+.RI "namespace \fBerror_reporting\fP"
+.br
+.ti -1c
+.RI "namespace \fBmath\fP"
+.br
+.ti -1c
+.RI "namespace \fBpunctuation_chars\fP"
+.br
+.ti -1c
+.RI "namespace \fBroman\fP"
+.br
+.ti -1c
+.RI "namespace \fBsmartquotes\fP"
+.br
+.ti -1c
+.RI "namespace \fBurischemes\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBBadOptionDataError\fP"
+.br
+.ti -1c
+.RI "class \fBBadOptionError\fP"
+.br
+.ti -1c
+.RI "class \fBDependencyList\fP"
+.br
+.ti -1c
+.RI "class \fBDuplicateOptionError\fP"
+.br
+.ti -1c
+.RI "class \fBExtensionOptionError\fP"
+.br
+.ti -1c
+.RI "class \fBNameValueError\fP"
+.br
+.ti -1c
+.RI "class \fBReporter\fP"
+.br
+.ti -1c
+.RI "class \fBSystemMessage\fP"
+.br
+.ti -1c
+.RI "class \fBSystemMessagePropagation\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBextract_extension_options\fP (field_list, options_spec)"
+.br
+.ti -1c
+.RI "\fBextract_options\fP (field_list)"
+.br
+.ti -1c
+.RI "\fBassemble_option_dict\fP (option_list, options_spec)"
+.br
+.ti -1c
+.RI "\fBdecode_path\fP (path)"
+.br
+.ti -1c
+.RI "\fBextract_name_value\fP (line)"
+.br
+.ti -1c
+.RI "\fBnew_reporter\fP (source_path, settings)"
+.br
+.ti -1c
+.RI "\fBnew_document\fP (source_path, settings=None)"
+.br
+.ti -1c
+.RI "\fBclean_rcs_keywords\fP (paragraph, keyword_substitutions)"
+.br
+.ti -1c
+.RI "\fBrelative_path\fP (source, target)"
+.br
+.ti -1c
+.RI "\fBget_stylesheet_reference\fP (settings, relative_to=None)"
+.br
+.ti -1c
+.RI "\fBget_stylesheet_list\fP (settings)"
+.br
+.ti -1c
+.RI "\fBfind_file_in_dirs\fP (path, dirs)"
+.br
+.ti -1c
+.RI "\fBget_trim_footnote_ref_space\fP (settings)"
+.br
+.ti -1c
+.RI "\fBget_source_line\fP (node)"
+.br
+.ti -1c
+.RI "\fBescape2null\fP (text)"
+.br
+.ti -1c
+.RI "\fBsplit_escaped_whitespace\fP (text)"
+.br
+.ti -1c
+.RI "\fBstrip_combining_chars\fP (text)"
+.br
+.ti -1c
+.RI "\fBfind_combining_chars\fP (text)"
+.br
+.ti -1c
+.RI "\fBcolumn_indices\fP (text)"
+.br
+.ti -1c
+.RI "\fBcolumn_width\fP (text)"
+.br
+.ti -1c
+.RI "\fBuniq\fP (L)"
+.br
+.ti -1c
+.RI "\fBnormalize_language_tag\fP (tag)"
+.br
+.ti -1c
+.RI "\fBxml_declaration\fP (encoding=None)"
+.br
+.ti -1c
+.RI "\fBversion_identifier\fP (version_info=None)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "dict \fBeast_asian_widths\fP"
+.br
+.ti -1c
+.RI "dict \fBrelease_level_abbreviations\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Miscellaneous utilities for the documentation utilities\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "docutils\&.utils\&.assemble_option_dict ( option_list,  options_spec)"
+
+.PP
+.nf
+Return a mapping of option names to values\&.
+
+:Parameters:
+    - `option_list`: A list of (name, value) pairs (the output of
+      `extract_options()`)\&.
+    - `options_spec`: Dictionary mapping known option names to a
+      conversion function such as `int` or `float`\&.
+
+:Exceptions:
+    - `KeyError` for unknown option names\&.
+    - `DuplicateOptionError` for duplicate options\&.
+    - `ValueError` for invalid option values (raised by conversion
+       function)\&.
+    - `TypeError` for invalid option value types (raised by conversion
+       function)\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.clean_rcs_keywords ( paragraph,  keyword_substitutions)"
+
+.SS "docutils\&.utils\&.column_indices ( text)"
+
+.PP
+.nf
+Indices of Unicode string `text` when skipping combining characters\&.
+
+>>> from docutils\&.utils import column_indices
+>>> column_indices('A t̆ab̆lĕ')
+[0, 1, 2, 4, 5, 7, 8]
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.column_width ( text)"
+
+.PP
+.nf
+Return the column width of text\&.
+
+Correct ``len(text)`` for wide East Asian and combining Unicode chars\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.decode_path ( path)"
+
+.PP
+.nf
+Ensure `path` is Unicode\&. Return `str` instance\&.
+
+Decode file/path string in a failsafe manner if not already done\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.escape2null ( text)"
+
+.PP
+.nf
+Return a string with escape-backslashes converted to nulls\&.
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.extract_extension_options ( field_list,  options_spec)"
+
+.PP
+.nf
+Return a dictionary mapping extension option names to converted values\&.
+
+:Parameters:
+    - `field_list`: A flat field list without field arguments, where each
+      field body consists of a single paragraph only\&.
+    - `options_spec`: Dictionary mapping known option names to a
+      conversion function such as `int` or `float`\&.
+
+:Exceptions:
+    - `KeyError` for unknown option names\&.
+    - `ValueError` for invalid option values (raised by the conversion
+       function)\&.
+    - `TypeError` for invalid option value types (raised by conversion
+       function)\&.
+    - `DuplicateOptionError` for duplicate options\&.
+    - `BadOptionError` for invalid fields\&.
+    - `BadOptionDataError` for invalid option data (missing name,
+      missing data, bad quotes, etc\&.)\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.extract_name_value ( line)"
+
+.PP
+.nf
+Return a list of (name, value) from a line of the form 'name=value \&.\&.\&.'\&.
+
+:Exception:
+    `NameValueError` for invalid input (missing name, missing data, bad
+    quotes, etc\&.)\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.extract_options ( field_list)"
+
+.PP
+.nf
+Return a list of option (name, value) pairs from field names & bodies\&.
+
+:Parameter:
+    `field_list`: A flat field list, where each field name is a single
+    word and each field body consists of a single paragraph only\&.
+
+:Exceptions:
+    - `BadOptionError` for invalid fields\&.
+    - `BadOptionDataError` for invalid option data (missing name,
+      missing data, bad quotes, etc\&.)\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.find_combining_chars ( text)"
+
+.PP
+.nf
+Return indices of all combining chars in  Unicode string `text`\&.
+
+>>> from docutils\&.utils import find_combining_chars
+>>> find_combining_chars('A t̆ab̆lĕ')
+[3, 6, 9]
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.find_file_in_dirs ( path,  dirs)"
+
+.PP
+.nf
+Search for `path` in the list of directories `dirs`\&.
+
+Return the first expansion that matches an existing file\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.get_source_line ( node)"
+
+.PP
+.nf
+Return the 'source' and 'line' attributes from the `node` given or from
+its closest ancestor\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.get_stylesheet_list ( settings)"
+
+.PP
+.nf
+Retrieve list of stylesheet references from the settings object\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.get_stylesheet_reference ( settings,  relative_to = \fCNone\fP)"
+
+.PP
+.nf
+Retrieve a stylesheet reference from the settings object\&.
+
+Deprecated\&. Use get_stylesheet_list() instead to
+enable specification of multiple stylesheets as a comma-separated
+list\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.get_trim_footnote_ref_space ( settings)"
+
+.PP
+.nf
+Return whether or not to trim footnote space\&.
+
+If trim_footnote_reference_space is not None, return it\&.
+
+If trim_footnote_reference_space is None, return False unless the
+footnote reference style is 'superscript'\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.new_document ( source_path,  settings = \fCNone\fP)"
+
+.PP
+.nf
+Return a new empty document object\&.
+
+:Parameters:
+    `source_path` : string
+        The path to or description of the source text of the document\&.
+    `settings` : optparse\&.Values object
+        Runtime settings\&.  If none are provided, a default core set will
+        be used\&.  If you will use the document object with any Docutils
+        components, you must provide their default settings as well\&.
+
+        For example, if parsing rST, at least provide the rst-parser
+        settings, obtainable as follows:
+
+        Defaults for parser component::
+
+            settings = docutils\&.frontend\&.get_default_settings(
+                           docutils\&.parsers\&.rst\&.Parser)
+
+        Defaults and configuration file customizations::
+
+            settings = docutils\&.core\&.Publisher(
+                parser=docutils\&.parsers\&.rst\&.Parser)\&.get_settings()
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.new_reporter ( source_path,  settings)"
+
+.PP
+.nf
+Return a new Reporter object\&.
+
+:Parameters:
+    `source` : string
+        The path to or description of the source text of the document\&.
+    `settings` : optparse\&.Values object
+        Runtime settings\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.normalize_language_tag ( tag)"
+
+.PP
+.nf
+Return a list of normalized combinations for a `BCP 47` language tag\&.
+
+Example:
+
+>>> from docutils\&.utils import normalize_language_tag
+>>> normalize_language_tag('de_AT-1901')
+['de-at-1901', 'de-at', 'de-1901', 'de']
+>>> normalize_language_tag('de-CH-x_altquot')
+['de-ch-x-altquot', 'de-ch', 'de-x-altquot', 'de']
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.relative_path ( source,  target)"
+
+.PP
+.nf
+Build and return a path to `target`, relative to `source` (both files)\&.
+
+The return value is a `str` suitable to be included in `source`
+as a reference to `target`\&.
+
+:Parameters:
+    `source` : path-like object or None
+        Path of a file in the start directory for the relative path
+        (the file does not need to exist)\&.
+        The value ``None`` is replaced with '<cwd>/dummy_file'\&.
+    `target` : path-like object
+        End point of the returned relative path\&.
+
+Differences to `os\&.path\&.relpath()`:
+
+* Inverse argument order\&.
+* `source` is assumed to be a FILE in the start directory (add a 'dummy'
+  file name to obtain the path relative from a directory)
+  while `os\&.path\&.relpath()` expects a DIRECTORY as `start` argument\&.
+* Always use Posix path separator ('/') for the output\&.
+* Use `os\&.sep` for parsing the input
+  (changing the value of `os\&.sep` is ignored by `os\&.relpath()`)\&.
+* If there is no common prefix, return the absolute path to `target`\&.
+
+Differences to `pathlib\&.PurePath\&.relative_to(other)`:
+
+* pathlib offers an object oriented interface\&.
+* `source` expects path to a FILE while `other` expects a DIRECTORY\&.
+* `target` defaults to the cwd, no default value for `other`\&.
+* `relative_path()` always returns a path (relative or absolute),
+  while `PurePath\&.relative_to()` raises a ValueError
+  if `target` is not a subpath of `other` (no '\&.\&.' inserted)\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.split_escaped_whitespace ( text)"
+
+.PP
+.nf
+Split `text` on escaped whitespace (null+space or null+newline)\&.
+Return a list of strings\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.strip_combining_chars ( text)"
+
+.SS "docutils\&.utils\&.uniq ( L)"
+
+.SS "docutils\&.utils\&.version_identifier ( version_info = \fCNone\fP)"
+
+.PP
+.nf
+Return a version identifier string built from `version_info`, a
+`docutils\&.VersionInfo` namedtuple instance or compatible tuple\&. If
+`version_info` is not provided, by default return a version identifier
+string based on `docutils\&.__version_info__` (i\&.e\&. the current Docutils
+version)\&.
+
+.fi
+.PP
+ 
+.SS "docutils\&.utils\&.xml_declaration ( encoding = \fCNone\fP)"
+
+.PP
+.nf
+Return an XML text declaration\&.
+
+Include an encoding declaration, if `encoding`
+is not 'unicode', '', or None\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "dict docutils\&.utils\&.east_asian_widths"
+\fBInitial value:\fP.PP
+.nf
+1 =  {'W': 2,   # Wide
+2                      'F': 2,   # Full\-width (wide)
+3                      'Na': 1,  # Narrow
+4                      'H': 1,   # Half\-width (narrow)
+5                      'N': 1,   # Neutral (not East Asian, treated as narrow)
+6                      'A': 1,   # Ambiguous (s/b wide in East Asian context,
+7                      }
+.fi
+
+.SS "dict docutils\&.utils\&.release_level_abbreviations"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     'alpha': 'a',
+3     'beta': 'b',
+4     'candidate': 'rc',
+5     'final': ''}
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,119 @@
+.TH "sphinx.cmd.build" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.cmd.build
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBhandle_exception\fP (\fBSphinx\fP|None app, Any args, BaseException exception, TextIO stderr=sys\&.stderr)"
+.br
+.ti -1c
+.RI "int \fBjobs_argument\fP (str value)"
+.br
+.ti -1c
+.RI "argparse\&.ArgumentParser \fBget_parser\fP ()"
+.br
+.ti -1c
+.RI "int \fBmake_main\fP (Sequence[str] argv)"
+.br
+.ti -1c
+.RI "argparse\&.Namespace \fB_parse_arguments\fP (argparse\&.ArgumentParser parser, Sequence[str] argv)"
+.br
+.ti -1c
+.RI "str|None \fB_parse_confdir\fP (bool noconfig, str confdir, str sourcedir)"
+.br
+.ti -1c
+.RI "\fB_StrPath\fP \fB_parse_doctreedir\fP (str doctreedir, str outputdir)"
+.br
+.ti -1c
+.RI "None \fB_validate_filenames\fP (argparse\&.ArgumentParser parser, bool force_all, list[str] filenames)"
+.br
+.ti -1c
+.RI "None \fB_validate_colour_support\fP (str colour)"
+.br
+.ti -1c
+.RI "tuple[TextIO|None, TextIO|None, TextIO, TextIO|None] \fB_parse_logging\fP (argparse\&.ArgumentParser parser, bool quiet, bool really_quiet, str|None warnfile)"
+.br
+.ti -1c
+.RI "dict[str, Any] \fB_parse_confoverrides\fP (argparse\&.ArgumentParser parser, list[str] define, list[str] htmldefine, bool nitpicky)"
+.br
+.ti -1c
+.RI "int \fBbuild_main\fP (Sequence[str] argv)"
+.br
+.ti -1c
+.RI "int \fB_bug_report_info\fP ()"
+.br
+.ti -1c
+.RI "int \fBmain\fP (Sequence[str] argv=())"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Build documentation from a provided source\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " int sphinx\&.cmd\&.build\&._bug_report_info ()\fC [protected]\fP"
+
+.SS " argparse\&.Namespace sphinx\&.cmd\&.build\&._parse_arguments (argparse\&.ArgumentParser parser, Sequence[str]
+ argv)\fC [protected]\fP"
+
+.SS " str | None sphinx\&.cmd\&.build\&._parse_confdir (bool noconfig, str confdir, str sourcedir)\fC [protected]\fP"
+
+.SS " dict[str, Any] sphinx\&.cmd\&.build\&._parse_confoverrides (argparse\&.ArgumentParser parser, list[str] define, list[str] htmldefine, bool nitpicky)\fC [protected]\fP"
+
+.SS " \fB_StrPath\fP sphinx\&.cmd\&.build\&._parse_doctreedir (str doctreedir, str outputdir)\fC [protected]\fP"
+
+.SS " tuple[TextIO | None, TextIO | None, TextIO, TextIO | None] sphinx\&.cmd\&.build\&._parse_logging (argparse\&.ArgumentParser parser, bool quiet, bool really_quiet, str | None warnfile)\fC [protected]\fP"
+
+.SS " None sphinx\&.cmd\&.build\&._validate_colour_support (str colour)\fC [protected]\fP"
+
+.SS " None sphinx\&.cmd\&.build\&._validate_filenames (argparse\&.ArgumentParser parser, bool force_all, list[str] filenames)\fC [protected]\fP"
+
+.SS " int sphinx\&.cmd\&.build\&.build_main (Sequence[str] argv)"
+
+.PP
+.nf
+Sphinx build 'main' command-line entry\&.
+.fi
+.PP
+ 
+.SS " argparse\&.ArgumentParser sphinx\&.cmd\&.build\&.get_parser ()"
+
+.SS " None sphinx\&.cmd\&.build\&.handle_exception (\fBSphinx\fP | None app, Any args, BaseException exception, TextIO  stderr = \fCsys\&.stderr\fP)"
+
+.SS " int sphinx\&.cmd\&.build\&.jobs_argument (str value)"
+
+.PP
+.nf
+Parse the ``--jobs`` flag\&.
+
+Return the number of CPUs if 'auto' is used,
+otherwise ensure *value* is a positive integer\&.
+
+.fi
+.PP
+ 
+.SS " int sphinx\&.cmd\&.build\&.main (Sequence[str]  argv = \fC()\fP)"
+
+.SS " int sphinx\&.cmd\&.build\&.make_main (Sequence[str] argv)"
+
+.PP
+.nf
+Sphinx build 'make mode' entry\&.
+.fi
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

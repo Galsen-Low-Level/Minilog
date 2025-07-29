@@ -1,0 +1,124 @@
+.TH "sphinx.pycode.parser.DefinitionFinder" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.pycode.parser.DefinitionFinder
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.pycode\&.parser\&.TokenProcessor\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, list[str] lines)"
+.br
+.ti -1c
+.RI "None \fBadd_definition\fP (self, str name, tuple[str, int, int] entry)"
+.br
+.ti -1c
+.RI "None \fBparse\fP (self)"
+.br
+.ti -1c
+.RI "None \fBparse_definition\fP (self, str typ)"
+.br
+.ti -1c
+.RI "None \fBfinalize_block\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.pycode\&.parser\&.TokenProcessor\fP
+.in +1c
+.ti -1c
+.RI "str \fBget_line\fP (self, int lineno)"
+.br
+.ti -1c
+.RI "\fBToken\fP|None \fBfetch_token\fP (self)"
+.br
+.ti -1c
+.RI "list[\fBToken\fP] \fBfetch_until\fP (self, Any condition)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdecorator\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsphinx\&.pycode\&.parser\&.TokenProcessor\fP
+.in +1c
+.ti -1c
+.RI "\fBbuffers\fP"
+.br
+.ti -1c
+.RI "\fBtokens\fP"
+.br
+.ti -1c
+.RI "\fBprevious\fP"
+.br
+.ti -1c
+.RI "\fBcurrent\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Python source code parser to detect location of functions,
+classes and methods\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None sphinx\&.pycode\&.parser\&.DefinitionFinder\&.__init__ ( self, list[str] lines)"
+
+.PP
+Reimplemented from \fBsphinx\&.pycode\&.parser\&.TokenProcessor\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " None sphinx\&.pycode\&.parser\&.DefinitionFinder\&.add_definition ( self, str name, tuple[str, int, int] entry)"
+
+.PP
+.nf
+Add a location of definition\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.pycode\&.parser\&.DefinitionFinder\&.finalize_block ( self)"
+
+.PP
+.nf
+Finalize definition block\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.pycode\&.parser\&.DefinitionFinder\&.parse ( self)"
+
+.PP
+.nf
+Parse the code to obtain location of definitions\&.
+.fi
+.PP
+ 
+.SS " None sphinx\&.pycode\&.parser\&.DefinitionFinder\&.parse_definition ( self, str typ)"
+
+.PP
+.nf
+Parse AST of definition\&.
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.pycode\&.parser\&.DefinitionFinder\&.decorator"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

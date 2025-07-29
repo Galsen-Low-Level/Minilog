@@ -1,0 +1,107 @@
+.TH "webob.response" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+webob.response
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAppIterRange\fP"
+.br
+.ti -1c
+.RI "class \fBEmptyResponse\fP"
+.br
+.ti -1c
+.RI "class \fBResponse\fP"
+.br
+.ti -1c
+.RI "class \fBResponseBodyFile\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBfilter_headers\fP (hlist, remove_headers=('content\-length', 'content\-type'))"
+.br
+.ti -1c
+.RI "\fBiter_file\fP (file, block_size=1<< 18)"
+.br
+.ti -1c
+.RI "\fB_is_xml\fP (content_type)"
+.br
+.ti -1c
+.RI "\fB_content_type_has_charset\fP (content_type)"
+.br
+.ti -1c
+.RI "\fB_request_uri\fP (environ)"
+.br
+.ti -1c
+.RI "\fBiter_close\fP (iter)"
+.br
+.ti -1c
+.RI "\fBgzip_app_iter\fP (app_iter)"
+.br
+.ti -1c
+.RI "\fB_error_unicode_in_app_iter\fP (app_iter, body)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB_PARAM_RE\fP = re\&.compile(r'([a\-z0\-9]+)=(?:'([^']*)'|([a\-z0\-9_\&.\-]*))', re\&.I)"
+.br
+.ti -1c
+.RI "\fB_OK_PARAM_RE\fP = re\&.compile(r'^[a\-z0\-9_\&.\-]+$', re\&.I)"
+.br
+.ti -1c
+.RI "str \fB_gzip_header\fP = b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xff'"
+.br
+.ti -1c
+.RI "\fB_marker\fP = object()"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "webob\&.response\&._content_type_has_charset ( content_type)\fC [protected]\fP"
+
+.SS "webob\&.response\&._error_unicode_in_app_iter ( app_iter,  body)\fC [protected]\fP"
+
+.SS "webob\&.response\&._is_xml ( content_type)\fC [protected]\fP"
+
+.SS "webob\&.response\&._request_uri ( environ)\fC [protected]\fP"
+
+.PP
+.nf
+Like ``wsgiref\&.url\&.request_uri``, except eliminates ``:80`` ports\&.
+
+Returns the full request URI\&.
+.fi
+.PP
+ 
+.SS "webob\&.response\&.filter_headers ( hlist,  remove_headers = \fC('content\-length', 'content\-type')\fP)"
+
+.SS "webob\&.response\&.gzip_app_iter ( app_iter)"
+
+.SS "webob\&.response\&.iter_close ( iter)"
+
+.SS "webob\&.response\&.iter_file ( file,  block_size = \fC1 << 18\fP)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "str webob\&.response\&._gzip_header = b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xff'\fC [protected]\fP"
+
+.SS "webob\&.response\&._marker = object()\fC [protected]\fP"
+
+.SS "webob\&.response\&._OK_PARAM_RE = re\&.compile(r'^[a\-z0\-9_\&.\-]+$', re\&.I)\fC [protected]\fP"
+
+.SS "webob\&.response\&._PARAM_RE = re\&.compile(r'([a\-z0\-9]+)=(?:'([^']*)'|([a\-z0\-9_\&.\-]*))', re\&.I)\fC [protected]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

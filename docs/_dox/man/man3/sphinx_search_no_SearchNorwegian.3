@@ -1,0 +1,143 @@
+.TH "sphinx.search.no.SearchNorwegian" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.search.no.SearchNorwegian
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.search\&.SearchLanguage\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBinit\fP (self, dict[str, str] \fBoptions\fP)"
+.br
+.ti -1c
+.RI "str \fBstem\fP (self, str word)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.search\&.SearchLanguage\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, dict[str, str] \fBoptions\fP)"
+.br
+.ti -1c
+.RI "list[str] \fBsplit\fP (self, str input)"
+.br
+.ti -1c
+.RI "bool \fBword_filter\fP (self, str word)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBstemmer\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBsphinx\&.search\&.SearchLanguage\fP
+.in +1c
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBstopwords\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBlang\fP = 'no'"
+.br
+.ti -1c
+.RI "str \fBlanguage_name\fP = 'Norwegian'"
+.br
+.ti -1c
+.RI "str \fBjs_stemmer_rawcode\fP = 'norwegian\-stemmer\&.js'"
+.br
+.ti -1c
+.RI "\fBstopwords\fP = \fBnorwegian_stopwords\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBsphinx\&.search\&.SearchLanguage\fP
+.in +1c
+.ti -1c
+.RI "str \fBlang\fP = ''"
+.br
+.ti -1c
+.RI "str \fBlanguage_name\fP = ''"
+.br
+.ti -1c
+.RI "set \fBstopwords\fP = set()"
+.br
+.ti -1c
+.RI "str \fBjs_splitter_code\fP = ''"
+.br
+.ti -1c
+.RI "str \fBjs_stemmer_rawcode\fP = ''"
+.br
+.ti -1c
+.RI "str \fBjs_stemmer_code\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Protected Attributes inherited from \fBsphinx\&.search\&.SearchLanguage\fP
+.in +1c
+.ti -1c
+.RI "\fB_word_re\fP = re\&.compile(r'\\w+')"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS " None sphinx\&.search\&.no\&.SearchNorwegian\&.init ( self, dict[str, str] options)"
+
+.PP
+.nf
+Initialize the class with the options the user has given\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.search\&.SearchLanguage\fP\&.
+.SS " str sphinx\&.search\&.no\&.SearchNorwegian\&.stem ( self, str word)"
+
+.PP
+.nf
+This method implements stemming algorithm of the Python version\&.
+
+Default implementation does nothing\&.  You should implement this if the
+language has any stemming rules\&.
+
+This class is used to preprocess search words before registering them in
+the search index\&.  The stemming of the Python version and the JS version
+(given in the js_stemmer_code attribute) must be compatible\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.search\&.SearchLanguage\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "str sphinx\&.search\&.no\&.SearchNorwegian\&.js_stemmer_rawcode = 'norwegian\-stemmer\&.js'\fC [static]\fP"
+
+.SS "str sphinx\&.search\&.no\&.SearchNorwegian\&.lang = 'no'\fC [static]\fP"
+
+.SS "str sphinx\&.search\&.no\&.SearchNorwegian\&.language_name = 'Norwegian'\fC [static]\fP"
+
+.SS "sphinx\&.search\&.no\&.SearchNorwegian\&.stemmer"
+
+.SS "sphinx\&.search\&.no\&.SearchNorwegian\&.stopwords = \fBnorwegian_stopwords\fP\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,149 @@
+.TH "jinja2.bccache.BytecodeCache" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.bccache.BytecodeCache
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBjinja2\&.bccache\&.FileSystemBytecodeCache\fP, and \fBjinja2\&.bccache\&.MemcachedBytecodeCache\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBload_bytecode\fP (self, \fBBucket\fP bucket)"
+.br
+.ti -1c
+.RI "None \fBdump_bytecode\fP (self, \fBBucket\fP bucket)"
+.br
+.ti -1c
+.RI "None \fBclear\fP (self)"
+.br
+.ti -1c
+.RI "str \fBget_cache_key\fP (self, str name, t\&.Optional[t\&.Union[str]] filename=None)"
+.br
+.ti -1c
+.RI "str \fBget_source_checksum\fP (self, str source)"
+.br
+.ti -1c
+.RI "\fBBucket\fP \fBget_bucket\fP (self, 'Environment' environment, str name, t\&.Optional[str] filename, str source)"
+.br
+.ti -1c
+.RI "None \fBset_bucket\fP (self, \fBBucket\fP bucket)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+To implement your own bytecode cache you have to subclass this class
+and override :meth:`load_bytecode` and :meth:`dump_bytecode`\&.  Both of
+these methods are passed a :class:`~jinja2\&.bccache\&.Bucket`\&.
+
+A very basic bytecode cache that saves the bytecode on the file system::
+
+    from os import path
+
+    class MyCache(BytecodeCache):
+
+        def __init__(self, directory):
+            self\&.directory = directory
+
+        def load_bytecode(self, bucket):
+            filename = path\&.join(self\&.directory, bucket\&.key)
+            if path\&.exists(filename):
+                with open(filename, 'rb') as f:
+                    bucket\&.load_bytecode(f)
+
+        def dump_bytecode(self, bucket):
+            filename = path\&.join(self\&.directory, bucket\&.key)
+            with open(filename, 'wb') as f:
+                bucket\&.write_bytecode(f)
+
+A more advanced version of a filesystem based bytecode cache is part of
+Jinja\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " None jinja2\&.bccache\&.BytecodeCache\&.clear ( self)"
+
+.PP
+.nf
+Clears the cache\&.  This method is not used by Jinja but should be
+implemented to allow applications to clear the bytecode cache used
+by a particular environment\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBjinja2\&.bccache\&.FileSystemBytecodeCache\fP\&.
+.SS " None jinja2\&.bccache\&.BytecodeCache\&.dump_bytecode ( self, \fBBucket\fP bucket)"
+
+.PP
+.nf
+Subclasses have to override this method to write the bytecode
+from a bucket back to the cache\&.  If it unable to do so it must not
+fail silently but raise an exception\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBjinja2\&.bccache\&.FileSystemBytecodeCache\fP, and \fBjinja2\&.bccache\&.MemcachedBytecodeCache\fP\&.
+.SS " \fBBucket\fP jinja2\&.bccache\&.BytecodeCache\&.get_bucket ( self, 'Environment' environment, str name, t\&.Optional[str] filename, str source)"
+
+.PP
+.nf
+Return a cache bucket for the given template\&.  All arguments are
+mandatory but filename may be `None`\&.
+
+.fi
+.PP
+ 
+.SS " str jinja2\&.bccache\&.BytecodeCache\&.get_cache_key ( self, str name, t\&.Optional[t\&.Union[str]]  filename = \fCNone\fP)"
+
+.PP
+.nf
+Returns the unique hash key for this template name\&.
+.fi
+.PP
+ 
+.SS " str jinja2\&.bccache\&.BytecodeCache\&.get_source_checksum ( self, str source)"
+
+.PP
+.nf
+Returns a checksum for the source\&.
+.fi
+.PP
+ 
+.SS " None jinja2\&.bccache\&.BytecodeCache\&.load_bytecode ( self, \fBBucket\fP bucket)"
+
+.PP
+.nf
+Subclasses have to override this method to load bytecode into a
+bucket\&.  If they are not able to find code in the cache for the
+bucket, it must not do anything\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBjinja2\&.bccache\&.FileSystemBytecodeCache\fP, and \fBjinja2\&.bccache\&.MemcachedBytecodeCache\fP\&.
+.SS " None jinja2\&.bccache\&.BytecodeCache\&.set_bucket ( self, \fBBucket\fP bucket)"
+
+.PP
+.nf
+Put the bucket into the cache\&.
+.fi
+.PP
+ 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

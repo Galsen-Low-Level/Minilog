@@ -1,0 +1,56 @@
+\doxysection{/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.13/site-\/packages/markupsafe/\+\_\+speedups.c File Reference}
+\hypertarget{__speedups_8c}{}\label{__speedups_8c}\index{/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-\/packages/markupsafe/\_speedups.c@{/home/umar/Desktop/WorkShop/GLL/Minilog/dist/lib/python3.13/site-\/packages/markupsafe/\_speedups.c}}
+{\ttfamily \#include $<$Python.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{__speedups_8c_a61461a3221a3efc87171a12abd130b05}{GET\+\_\+\+DELTA}}(inp,  inp\+\_\+end,  delta)
+\item 
+\#define \mbox{\hyperlink{__speedups_8c_a9fdb2cdc9f9f4517ea077a2095a3fdca}{DO\+\_\+\+ESCAPE}}(inp,  inp\+\_\+end,  outp)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Py\+MODINIT\+\_\+\+FUNC \mbox{\hyperlink{__speedups_8c_ab296dcd644b30cbb5d0c527e69e380c3}{Py\+Init\+\_\+\+\_\+speedups}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{__speedups_8c_a9fdb2cdc9f9f4517ea077a2095a3fdca}\label{__speedups_8c_a9fdb2cdc9f9f4517ea077a2095a3fdca} 
+\index{\_speedups.c@{\_speedups.c}!DO\_ESCAPE@{DO\_ESCAPE}}
+\index{DO\_ESCAPE@{DO\_ESCAPE}!\_speedups.c@{\_speedups.c}}
+\doxysubsubsection{\texorpdfstring{DO\_ESCAPE}{DO\_ESCAPE}}
+{\footnotesize\ttfamily \#define DO\+\_\+\+ESCAPE(\begin{DoxyParamCaption}\item[{}]{inp,  }\item[{}]{inp\+\_\+end,  }\item[{}]{outp }\end{DoxyParamCaption})}
+
+\Hypertarget{__speedups_8c_a61461a3221a3efc87171a12abd130b05}\label{__speedups_8c_a61461a3221a3efc87171a12abd130b05} 
+\index{\_speedups.c@{\_speedups.c}!GET\_DELTA@{GET\_DELTA}}
+\index{GET\_DELTA@{GET\_DELTA}!\_speedups.c@{\_speedups.c}}
+\doxysubsubsection{\texorpdfstring{GET\_DELTA}{GET\_DELTA}}
+{\footnotesize\ttfamily \#define GET\+\_\+\+DELTA(\begin{DoxyParamCaption}\item[{}]{inp,  }\item[{}]{inp\+\_\+end,  }\item[{}]{delta }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}\ (inp\ <\ inp\_end)\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ switch\ (*inp++)\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'"{}'}:\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\(\backslash\)''}:\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\&'}:\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ delta\ +=\ 4;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'<'}:\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'>'}:\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ delta\ +=\ 3;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{__speedups_8c_ab296dcd644b30cbb5d0c527e69e380c3}\label{__speedups_8c_ab296dcd644b30cbb5d0c527e69e380c3} 
+\index{\_speedups.c@{\_speedups.c}!PyInit\_\_speedups@{PyInit\_\_speedups}}
+\index{PyInit\_\_speedups@{PyInit\_\_speedups}!\_speedups.c@{\_speedups.c}}
+\doxysubsubsection{\texorpdfstring{PyInit\_\_speedups()}{PyInit\_\_speedups()}}
+{\footnotesize\ttfamily Py\+MODINIT\+\_\+\+FUNC Py\+Init\+\_\+\+\_\+speedups (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+

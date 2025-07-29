@@ -1,0 +1,88 @@
+.TH "jinja2.parser" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jinja2.parser
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBParser\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB_ImportInclude\fP = t\&.TypeVar('_ImportInclude', \fBnodes\&.Import\fP, \fBnodes\&.Include\fP)"
+.br
+.ti -1c
+.RI "\fB_MacroCall\fP = t\&.TypeVar('_MacroCall', \fBnodes\&.Macro\fP, \fBnodes\&.CallBlock\fP)"
+.br
+.ti -1c
+.RI "\fB_statement_keywords\fP"
+.br
+.ti -1c
+.RI "\fB_compare_operators\fP = frozenset(['eq', 'ne', 'lt', 'lteq', 'gt', 'gteq'])"
+.br
+.ti -1c
+.RI "dict \fB_math_nodes\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Parse tokens from the lexer into nodes for the compiler\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "jinja2\&.parser\&._compare_operators = frozenset(['eq', 'ne', 'lt', 'lteq', 'gt', 'gteq'])\fC [protected]\fP"
+
+.SS "jinja2\&.parser\&._ImportInclude = t\&.TypeVar('_ImportInclude', \fBnodes\&.Import\fP, \fBnodes\&.Include\fP)\fC [protected]\fP"
+
+.SS "jinja2\&.parser\&._MacroCall = t\&.TypeVar('_MacroCall', \fBnodes\&.Macro\fP, \fBnodes\&.CallBlock\fP)\fC [protected]\fP"
+
+.SS "dict jinja2\&.parser\&._math_nodes\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     "add": nodes\&.Add,
+3     "sub": nodes\&.Sub,
+4     "mul": nodes\&.Mul,
+5     "div": nodes\&.Div,
+6     "floordiv": nodes\&.FloorDiv,
+7     "mod": nodes\&.Mod,
+8 }
+.fi
+
+.SS "jinja2\&.parser\&._statement_keywords\fC [protected]\fP"
+\fBInitial value:\fP.PP
+.nf
+1 =  frozenset(
+2     [
+3         "for",
+4         "if",
+5         "block",
+6         "extends",
+7         "print",
+8         "macro",
+9         "include",
+10         "from",
+11         "import",
+12         "set",
+13         "with",
+14         "autoescape",
+15     ]
+16 )
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

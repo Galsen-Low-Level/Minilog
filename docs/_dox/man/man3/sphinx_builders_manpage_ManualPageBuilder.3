@@ -1,0 +1,333 @@
+.TH "sphinx.builders.manpage.ManualPageBuilder" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.builders.manpage.ManualPageBuilder
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.builders\&.Builder\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBinit\fP (self)"
+.br
+.ti -1c
+.RI "str|list[str] \fBget_outdated_docs\fP (self)"
+.br
+.ti -1c
+.RI "str \fBget_target_uri\fP (self, str docname, str|None typ=None)"
+.br
+.ti -1c
+.RI "None \fBwrite_documents\fP (self, Set[str] _docnames)"
+.br
+.ti -1c
+.RI "None \fBfinish\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.builders\&.Builder\fP
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, \fBSphinx\fP \fBapp\fP, \fBBuildEnvironment\fP \fBenv\fP)"
+.br
+.ti -1c
+.RI "type[nodes\&.NodeVisitor] \fBget_translator_class\fP (self, *Any args)"
+.br
+.ti -1c
+.RI "nodes\&.NodeVisitor \fBcreate_translator\fP (self, *Any args)"
+.br
+.ti -1c
+.RI "None \fBcreate_template_bridge\fP (self)"
+.br
+.ti -1c
+.RI "str \fBget_relative_uri\fP (self, str from_, str to, str|None typ=None)"
+.br
+.ti -1c
+.RI "list[str] \fBget_asset_paths\fP (self)"
+.br
+.ti -1c
+.RI "None \fBpost_process_images\fP (self, \fBNode\fP doctree)"
+.br
+.ti -1c
+.RI "None \fBcompile_catalogs\fP (self, set[\fBCatalogInfo\fP] catalogs, str message)"
+.br
+.ti -1c
+.RI "None \fBcompile_all_catalogs\fP (self)"
+.br
+.ti -1c
+.RI "None \fBcompile_specific_catalogs\fP (self, Iterable[Path] specified_files)"
+.br
+.ti -1c
+.RI "None \fBcompile_update_catalogs\fP (self)"
+.br
+.ti -1c
+.RI "None \fBbuild_all\fP (self)"
+.br
+.ti -1c
+.RI "None \fBbuild_specific\fP (self, Sequence[Path] filenames)"
+.br
+.ti -1c
+.RI "None \fBbuild_update\fP (self)"
+.br
+.ti -1c
+.RI "None \fBbuild\fP (self, Iterable[str]|None docnames, str|None summary=None, Literal['all', 'specific', 'update'] method='update')"
+.br
+.ti -1c
+.RI "list[str] \fBread\fP (self)"
+.br
+.ti -1c
+.RI "None \fBread_doc\fP (self, str docname, *bool _cache=True)"
+.br
+.ti -1c
+.RI "None \fBwrite_doctree\fP (self, str docname, nodes\&.document doctree, *bool _cache=True)"
+.br
+.ti -1c
+.RI "None \fBwrite\fP (self, Iterable[str]|None build_docnames, Iterable[str] updated_docnames, Literal['all', 'specific', 'update'] method='update')"
+.br
+.ti -1c
+.RI "None \fBprepare_writing\fP (self, Set[str] docnames)"
+.br
+.ti -1c
+.RI "None \fBcopy_assets\fP (self)"
+.br
+.ti -1c
+.RI "None \fBwrite_doc\fP (self, str docname, nodes\&.document doctree)"
+.br
+.ti -1c
+.RI "None \fBwrite_doc_serialized\fP (self, str docname, nodes\&.document doctree)"
+.br
+.ti -1c
+.RI "None \fBcleanup\fP (self)"
+.br
+.ti -1c
+.RI "Any \fBget_builder_config\fP (self, str option, str default)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = 'man'"
+.br
+.ti -1c
+.RI "str \fBformat\fP = 'man'"
+.br
+.ti -1c
+.RI "\fBepilog\fP = __('The manual pages are in %(\fBoutdir\fP)s\&.')"
+.br
+.ti -1c
+.RI "\fBdefault_translator_class\fP = \fBManualPageTranslator\fP"
+.br
+.ti -1c
+.RI "list \fBsupported_image_types\fP = []"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBsphinx\&.builders\&.Builder\fP
+.in +1c
+.ti -1c
+.RI "str \fBname\fP = ''"
+.br
+.ti -1c
+.RI "str \fBformat\fP = ''"
+.br
+.ti -1c
+.RI "str \fBepilog\fP = ''"
+.br
+.ti -1c
+.RI "type \fBdefault_translator_class\fP [nodes\&.NodeVisitor]"
+.br
+.ti -1c
+.RI "str \fBversioning_method\fP = 'none'"
+.br
+.ti -1c
+.RI "bool \fBversioning_compare\fP = False"
+.br
+.ti -1c
+.RI "bool \fBallow_parallel\fP = False"
+.br
+.ti -1c
+.RI "bool \fBuse_message_catalog\fP = True"
+.br
+.ti -1c
+.RI "list \fBsupported_image_types\fP = []"
+.br
+.ti -1c
+.RI "bool \fBsupported_remote_images\fP = False"
+.br
+.ti -1c
+.RI "bool \fBsupported_data_uri_images\fP = False"
+.br
+.ti -1c
+.RI "\fBsrcdir\fP = \fB_StrPathProperty\fP()"
+.br
+.ti -1c
+.RI "\fBconfdir\fP = \fB_StrPathProperty\fP()"
+.br
+.ti -1c
+.RI "\fBoutdir\fP = \fB_StrPathProperty\fP()"
+.br
+.ti -1c
+.RI "\fBdoctreedir\fP = \fB_StrPathProperty\fP()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBsphinx\&.builders\&.Builder\fP
+.in +1c
+.ti -1c
+.RI "\fBversioning_method\fP"
+.br
+.ti -1c
+.RI "\fBversioning_compare\fP"
+.br
+.ti -1c
+.RI "\fBformat\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBimagedir\fP"
+.br
+.ti -1c
+.RI "\fBimgpath\fP"
+.br
+.ti -1c
+.RI "\fBparallel_ok\fP"
+.br
+.ti -1c
+.RI "\fBtemplates\fP"
+.br
+.ti -1c
+.RI "\fBapp\fP"
+.br
+.ti -1c
+.RI "\fBenv\fP"
+.br
+.ti -1c
+.RI "\fBfinish_tasks\fP"
+.br
+.ti -1c
+.RI "\fBconfig\fP"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBsphinx\&.builders\&.Builder\fP
+.in +1c
+.ti -1c
+.RI "NullTranslations|None \fB_translator\fP (self)"
+.br
+.ti -1c
+.RI "None \fB_read_serial\fP (self, list[str] docnames)"
+.br
+.ti -1c
+.RI "None \fB_read_parallel\fP (self, list[str] docnames, int nproc)"
+.br
+.ti -1c
+.RI "None \fB_write_serial\fP (self, Sequence[str] docnames)"
+.br
+.ti -1c
+.RI "None \fB_write_parallel\fP (self, Sequence[str] docnames, int nproc)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Builds groff output in manual page format\&.
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " None sphinx\&.builders\&.manpage\&.ManualPageBuilder\&.finish ( self)"
+
+.PP
+.nf
+Finish the building process\&.
+
+The default implementation does nothing\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.builders\&.Builder\fP\&.
+.SS " str | list[str] sphinx\&.builders\&.manpage\&.ManualPageBuilder\&.get_outdated_docs ( self)"
+
+.PP
+.nf
+Return an iterable of output files that are outdated, or a string
+describing what an update build will build\&.
+
+If the builder does not output individual files corresponding to
+source files, return a string here\&.  If it does, return an iterable
+of those files that need to be written\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.builders\&.Builder\fP\&.
+.SS " str sphinx\&.builders\&.manpage\&.ManualPageBuilder\&.get_target_uri ( self, str docname, str | None  typ = \fCNone\fP)"
+
+.PP
+.nf
+Return the target URI for a document name\&.
+
+*typ* can be used to qualify the link characteristic for individual
+builders\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.builders\&.Builder\fP\&.
+.SS " None sphinx\&.builders\&.manpage\&.ManualPageBuilder\&.init ( self)"
+
+.PP
+.nf
+Load necessary templates and perform initialization\&.  The default
+implementation does nothing\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.builders\&.Builder\fP\&.
+.SS " None sphinx\&.builders\&.manpage\&.ManualPageBuilder\&.write_documents ( self, Set[str] docnames)"
+
+.PP
+.nf
+Write all documents in *docnames*\&.
+
+This method can be overridden if a builder does not create
+output files for each document\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.builders\&.Builder\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.builders\&.manpage\&.ManualPageBuilder\&.default_translator_class = \fBManualPageTranslator\fP\fC [static]\fP"
+
+.SS "sphinx\&.builders\&.manpage\&.ManualPageBuilder\&.epilog = __('The manual pages are in %(\fBoutdir\fP)s\&.')\fC [static]\fP"
+
+.SS "str sphinx\&.builders\&.manpage\&.ManualPageBuilder\&.format = 'man'\fC [static]\fP"
+
+.SS "str sphinx\&.builders\&.manpage\&.ManualPageBuilder\&.name = 'man'\fC [static]\fP"
+
+.SS "list sphinx\&.builders\&.manpage\&.ManualPageBuilder\&.supported_image_types = []\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,109 @@
+.TH "requests._internal_utils" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+requests._internal_utils
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBto_native_string\fP (string, encoding='ascii')"
+.br
+.ti -1c
+.RI "\fBunicode_is_ascii\fP (u_string)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB_VALID_HEADER_NAME_RE_BYTE\fP = re\&.compile(rb'^[^:\\s][^:\\r\\n]*$')"
+.br
+.ti -1c
+.RI "\fB_VALID_HEADER_NAME_RE_STR\fP = re\&.compile(r'^[^:\\s][^:\\r\\n]*$')"
+.br
+.ti -1c
+.RI "\fB_VALID_HEADER_VALUE_RE_BYTE\fP = re\&.compile(rb'^\\S[^\\r\\n]*$|^$')"
+.br
+.ti -1c
+.RI "\fB_VALID_HEADER_VALUE_RE_STR\fP = re\&.compile(r'^\\S[^\\r\\n]*$|^$')"
+.br
+.ti -1c
+.RI "tuple \fB_HEADER_VALIDATORS_STR\fP = (\fB_VALID_HEADER_NAME_RE_STR\fP, \fB_VALID_HEADER_VALUE_RE_STR\fP)"
+.br
+.ti -1c
+.RI "tuple \fB_HEADER_VALIDATORS_BYTE\fP = (\fB_VALID_HEADER_NAME_RE_BYTE\fP, \fB_VALID_HEADER_VALUE_RE_BYTE\fP)"
+.br
+.ti -1c
+.RI "dict \fBHEADER_VALIDATORS\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+requests\&._internal_utils
+~~~~~~~~~~~~~~
+
+Provides utility functions that are consumed internally by Requests
+which depend on extremely few external helpers (such as compat)
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "requests\&._internal_utils\&.to_native_string ( string,  encoding = \fC'ascii'\fP)"
+
+.PP
+.nf
+Given a string object, regardless of type, returns a representation of
+that string in the native string type, encoding and decoding where
+necessary\&. This assumes ASCII unless told otherwise\&.
+
+.fi
+.PP
+ 
+.SS "requests\&._internal_utils\&.unicode_is_ascii ( u_string)"
+
+.PP
+.nf
+Determine if unicode string only contains ASCII characters\&.
+
+:param str u_string: unicode string to check\&. Must be unicode
+    and not Python 2 `str`\&.
+:rtype: bool
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "tuple requests\&._internal_utils\&._HEADER_VALIDATORS_BYTE = (\fB_VALID_HEADER_NAME_RE_BYTE\fP, \fB_VALID_HEADER_VALUE_RE_BYTE\fP)\fC [protected]\fP"
+
+.SS "tuple requests\&._internal_utils\&._HEADER_VALIDATORS_STR = (\fB_VALID_HEADER_NAME_RE_STR\fP, \fB_VALID_HEADER_VALUE_RE_STR\fP)\fC [protected]\fP"
+
+.SS "requests\&._internal_utils\&._VALID_HEADER_NAME_RE_BYTE = re\&.compile(rb'^[^:\\s][^:\\r\\n]*$')\fC [protected]\fP"
+
+.SS "requests\&._internal_utils\&._VALID_HEADER_NAME_RE_STR = re\&.compile(r'^[^:\\s][^:\\r\\n]*$')\fC [protected]\fP"
+
+.SS "requests\&._internal_utils\&._VALID_HEADER_VALUE_RE_BYTE = re\&.compile(rb'^\\S[^\\r\\n]*$|^$')\fC [protected]\fP"
+
+.SS "requests\&._internal_utils\&._VALID_HEADER_VALUE_RE_STR = re\&.compile(r'^\\S[^\\r\\n]*$|^$')\fC [protected]\fP"
+
+.SS "dict requests\&._internal_utils\&.HEADER_VALIDATORS"
+\fBInitial value:\fP.PP
+.nf
+1 =  {
+2     bytes: _HEADER_VALIDATORS_BYTE,
+3     str: _HEADER_VALIDATORS_STR,
+4 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

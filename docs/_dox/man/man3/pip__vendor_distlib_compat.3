@@ -1,0 +1,270 @@
+.TH "pip._vendor.distlib.compat" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.distlib.compat
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBBaseConfigurator\fP"
+.br
+.ti -1c
+.RI "class \fBCertificateError\fP"
+.br
+.ti -1c
+.RI "class \fBChainMap\fP"
+.br
+.ti -1c
+.RI "class \fBContainer\fP"
+.br
+.ti -1c
+.RI "class \fBConvertingDict\fP"
+.br
+.ti -1c
+.RI "class \fBConvertingList\fP"
+.br
+.ti -1c
+.RI "class \fBConvertingTuple\fP"
+.br
+.ti -1c
+.RI "class \fBOrderedDict\fP"
+.br
+.ti -1c
+.RI "class \fBZipExtFile\fP"
+.br
+.ti -1c
+.RI "class \fBZipFile\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBquote\fP (s)"
+.br
+.ti -1c
+.RI "\fB_dnsname_match\fP (dn, hostname, max_wildcards=1)"
+.br
+.ti -1c
+.RI "\fBmatch_hostname\fP (cert, hostname)"
+.br
+.ti -1c
+.RI "\fBwhich\fP (cmd, mode=os\&.F_OK|os\&.X_OK, path=None)"
+.br
+.ti -1c
+.RI "\fBpython_implementation\fP ()"
+.br
+.ti -1c
+.RI "\fBcallable\fP (obj)"
+.br
+.ti -1c
+.RI "\fBfsencode\fP (filename)"
+.br
+.ti -1c
+.RI "\fBfsdecode\fP (filename)"
+.br
+.ti -1c
+.RI "\fB_get_normal_name\fP (orig_enc)"
+.br
+.ti -1c
+.RI "\fBdetect_encoding\fP (readline)"
+.br
+.ti -1c
+.RI "\fB_recursive_repr\fP (fillvalue='\&.\&.\&.')"
+.br
+.ti -1c
+.RI "\fBcache_from_source\fP (path, debug_override=None)"
+.br
+.ti -1c
+.RI "\fBvalid_ident\fP (s)"
+.br
+.ti -1c
+.RI "\fBpop\fP (self, key, default=None)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBssl\fP = None"
+.br
+.ti -1c
+.RI "\fBstring_types\fP = basestring,"
+.br
+.ti -1c
+.RI "\fBtext_type\fP = unicode"
+.br
+.ti -1c
+.RI "\fBraw_input\fP = raw_input"
+.br
+.ti -1c
+.RI "\fBfilter\fP = filter"
+.br
+.ti -1c
+.RI "\fBZipFile\fP = BaseZipFile"
+.br
+.ti -1c
+.RI "\fBcallable\fP = callable"
+.br
+.ti -1c
+.RI "\fBfsencode\fP = os\&.fsencode"
+.br
+.ti -1c
+.RI "\fBfsdecode\fP = os\&.fsdecode"
+.br
+.ti -1c
+.RI "str \fB_fsencoding\fP = sys\&.getfilesystemencoding() or 'utf\-8'"
+.br
+.ti -1c
+.RI "str \fB_fserrors\fP = 'strict'"
+.br
+.ti -1c
+.RI "\fBcookie_re\fP = re\&.compile(r'coding[:=]\\s*([\-\\w\&.]+)')"
+.br
+.ti -1c
+.RI "\fBunescape\fP = HTMLParser()\&.unescape"
+.br
+.ti -1c
+.RI "\fBIDENTIFIER\fP = re\&.compile('^[a\-z_][a\-z0\-9_]*$', re\&.I)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.distlib\&.compat\&._dnsname_match ( dn,  hostname,  max_wildcards = \fC1\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Matching according to RFC 6125, section 6\&.4\&.3
+
+http://tools\&.ietf\&.org/html/rfc6125#section-6\&.4\&.3
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.compat\&._get_normal_name ( orig_enc)\fC [protected]\fP"
+
+.PP
+.nf
+Imitates get_normal_name in tokenizer\&.c\&.
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.compat\&._recursive_repr ( fillvalue = \fC'\&.\&.\&.'\fP)\fC [protected]\fP"
+
+.PP
+.nf
+Decorator to make a repr function return fillvalue for a recursive
+call
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.compat\&.cache_from_source ( path,  debug_override = \fCNone\fP)"
+
+.SS "pip\&._vendor\&.distlib\&.compat\&.callable ( obj)"
+
+.SS "pip\&._vendor\&.distlib\&.compat\&.detect_encoding ( readline)"
+
+.PP
+.nf
+The detect_encoding() function is used to detect the encoding that should
+be used to decode a Python source file\&.  It requires one argument, readline,
+in the same way as the tokenize() generator\&.
+
+It will call readline a maximum of twice, and return the encoding used
+(as a string) and a list of any lines (left as bytes) it has read in\&.
+
+It detects the encoding from the presence of a utf-8 bom or an encoding
+cookie as specified in pep-0263\&.  If both a bom and a cookie are present,
+but disagree, a SyntaxError will be raised\&.  If the encoding cookie is an
+invalid charset, raise a SyntaxError\&.  Note that if a utf-8 bom is found,
+'utf-8-sig' is returned\&.
+
+If no encoding is specified, then the default of 'utf-8' will be returned\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.compat\&.fsdecode ( filename)"
+
+.SS "pip\&._vendor\&.distlib\&.compat\&.fsencode ( filename)"
+
+.SS "pip\&._vendor\&.distlib\&.compat\&.match_hostname ( cert,  hostname)"
+
+.PP
+.nf
+Verify that *cert* (in decoded format as returned by
+SSLSocket\&.getpeercert()) matches the *hostname*\&.  RFC 2818 and RFC 6125
+rules are followed, but IP addresses are not accepted for *hostname*\&.
+
+CertificateError is raised on failure\&. On success, the function
+returns nothing\&.
+
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.compat\&.pop ( self,  key,  default = \fCNone\fP)"
+
+.SS "pip\&._vendor\&.distlib\&.compat\&.python_implementation ()"
+
+.PP
+.nf
+Return a string identifying the Python implementation\&.
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.distlib\&.compat\&.quote ( s)"
+
+.SS "pip\&._vendor\&.distlib\&.compat\&.valid_ident ( s)"
+
+.SS "pip\&._vendor\&.distlib\&.compat\&.which ( cmd,  mode = \fCos\&.F_OK | os\&.X_OK\fP,  path = \fCNone\fP)"
+
+.PP
+.nf
+Given a command, mode, and a PATH string, return the path which
+conforms to the given mode on the PATH, or None if there is no such
+file\&.
+
+`mode` defaults to os\&.F_OK | os\&.X_OK\&. `path` defaults to the result
+of os\&.environ\&.get('PATH'), or can be overridden with a custom search
+path\&.
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "str pip\&._vendor\&.distlib\&.compat\&._fsencoding = sys\&.getfilesystemencoding() or 'utf\-8'\fC [protected]\fP"
+
+.SS "str pip\&._vendor\&.distlib\&.compat\&._fserrors = 'strict'\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.distlib\&.compat\&.callable = callable"
+
+.SS "pip\&._vendor\&.distlib\&.compat\&.cookie_re = re\&.compile(r'coding[:=]\\s*([\-\\w\&.]+)')"
+
+.SS "pip\&._vendor\&.distlib\&.compat\&.filter = filter"
+
+.SS "pip\&._vendor\&.distlib\&.compat\&.fsdecode = os\&.fsdecode"
+
+.SS "pip\&._vendor\&.distlib\&.compat\&.fsencode = os\&.fsencode"
+
+.SS "pip\&._vendor\&.distlib\&.compat\&.IDENTIFIER = re\&.compile('^[a\-z_][a\-z0\-9_]*$', re\&.I)"
+
+.SS "pip\&._vendor\&.distlib\&.compat\&.raw_input = raw_input"
+
+.SS "pip\&._vendor\&.distlib\&.compat\&.ssl = None"
+
+.SS "pip\&._vendor\&.distlib\&.compat\&.string_types = basestring,"
+
+.SS "pip\&._vendor\&.distlib\&.compat\&.text_type = unicode"
+
+.SS "pip\&._vendor\&.distlib\&.compat\&.unescape = HTMLParser()\&.unescape"
+
+.SS "\fBpip\&._vendor\&.distlib\&.compat\&.ZipFile\fP = BaseZipFile"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

@@ -1,0 +1,94 @@
+.TH "htmlhelp" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+htmlhelp
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBHTMLHelpBuilder\fP"
+.br
+.ti -1c
+.RI "class \fBToCTreeVisitor\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fBchm_htmlescape\fP (str s, bool quote=True)"
+.br
+.ti -1c
+.RI "str \fBdefault_htmlhelp_basename\fP (\fBConfig\fP config)"
+.br
+.ti -1c
+.RI "dict[str, Any] \fBsetup\fP (\fBSphinx\fP app)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger(__name__)"
+.br
+.ti -1c
+.RI "\fBpackage_dir\fP = path\&.abspath(path\&.dirname(__file__))"
+.br
+.ti -1c
+.RI "\fBtemplate_dir\fP = path\&.join(\fBpackage_dir\fP, 'templates')"
+.br
+.ti -1c
+.RI "dict \fBchm_locales\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Build HTML help support files\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS " str htmlhelp\&.chm_htmlescape (str s, bool  quote = \fCTrue\fP)"
+
+.PP
+.nf
+chm_htmlescape() is a wrapper of html\&.escape()\&.
+\&.hhc/\&.hhk files don't recognize hex escaping, we need convert
+hex escaping to decimal escaping\&. for example: ``&#x27;`` -> ``&#39;``
+html\&.escape() may generates a hex escaping ``&#x27;`` for single
+quote ``'``, this wrapper fixes this\&.
+
+.fi
+.PP
+ 
+.SS " str htmlhelp\&.default_htmlhelp_basename (\fBConfig\fP config)"
+
+.PP
+.nf
+Better default htmlhelp_basename setting\&.
+.fi
+.PP
+ 
+.SS " dict[str, Any] htmlhelp\&.setup (\fBSphinx\fP app)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "dict htmlhelp\&.chm_locales"
+
+.SS "htmlhelp\&.logger = logging\&.getLogger(__name__)"
+
+.SS "htmlhelp\&.package_dir = path\&.abspath(path\&.dirname(__file__))"
+
+.SS "htmlhelp\&.template_dir = path\&.join(\fBpackage_dir\fP, 'templates')"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

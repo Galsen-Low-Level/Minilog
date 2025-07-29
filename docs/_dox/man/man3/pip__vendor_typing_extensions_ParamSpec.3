@@ -1,0 +1,159 @@
+.TH "pip._vendor.typing_extensions.ParamSpec" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.typing_extensions.ParamSpec
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits metaclass, \fBpip\&._vendor\&.typing_extensions\&._TypeVarLikeMeta\fP, list, and \fBpip\&._vendor\&.typing_extensions\&._DefaultMixin\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__new__\fP (cls, name, *bound=None, covariant=False, contravariant=False, infer_variance=False, default=\fBNoDefault\fP)"
+.br
+.ti -1c
+.RI "None \fB__init_subclass__\fP (cls)"
+.br
+.ti -1c
+.RI "\fBargs\fP (self)"
+.br
+.ti -1c
+.RI "\fBkwargs\fP (self)"
+.br
+.ti -1c
+.RI "\fB__init__\fP (self, name, *bound=None, covariant=False, contravariant=False, infer_variance=False, default=\fBNoDefault\fP)"
+.br
+.ti -1c
+.RI "\fB__repr__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__hash__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__eq__\fP (self, other)"
+.br
+.ti -1c
+.RI "\fB__reduce__\fP (self)"
+.br
+.ti -1c
+.RI "\fB__call__\fP (self, *\fBargs\fP, **\fBkwargs\fP)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._vendor\&.typing_extensions\&._TypeVarLikeMeta\fP
+.in +1c
+.ti -1c
+.RI "bool \fB__instancecheck__\fP (cls, \fBAny\fP __instance)"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_backported_typevarlike\fP = typing\&.ParamSpec"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Attributes inherited from \fBpip\&._vendor\&.typing_extensions\&._TypeVarLikeMeta\fP
+.in +1c
+.ti -1c
+.RI "\fB_backported_typevarlike\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Parameter specification\&.
+.fi
+.PP
+.PP
+.PP
+.nf
+Parameter specification variable\&.
+
+Usage::
+
+   P = ParamSpec('P')
+
+Parameter specification variables exist primarily for the benefit of static
+type checkers\&.  They are used to forward the parameter types of one
+callable to another callable, a pattern commonly found in higher order
+functions and decorators\&.  They are only valid when used in ``Concatenate``,
+or s the first argument to ``Callable``\&. In Python 3\&.10 and higher,
+they are also supported in user-defined Generics at runtime\&.
+See class Generic for more information on generic types\&.  An
+example for annotating a decorator::
+
+   T = TypeVar('T')
+   P = ParamSpec('P')
+
+   def add_logging(f: Callable[P, T]) -> Callable[P, T]:
+       '''A type-safe decorator to add logging to a function\&.'''
+       def inner(*args: P\&.args, **kwargs: P\&.kwargs) -> T:
+           logging\&.info(f'{f\&.__name__} was called')
+           return f(*args, **kwargs)
+       return inner
+
+   @add_logging
+   def add_two(x: float, y: float) -> float:
+       '''Add two numbers together\&.'''
+       return x + y
+
+Parameter specification variables defined with covariant=True or
+contravariant=True can be used to declare covariant or contravariant
+generic types\&.  These keyword arguments are valid, but their actual semantics
+are yet to be decided\&.  See PEP 612 for details\&.
+
+Parameter specification variables can be introspected\&. e\&.g\&.:
+
+   P\&.__name__ == 'T'
+   P\&.__bound__ == None
+   P\&.__covariant__ == False
+   P\&.__contravariant__ == False
+
+Note that only parameter specification variables defined in global scope can
+be pickled\&.
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.typing_extensions\&.ParamSpec\&.__init__ ( self,  name, * bound = \fCNone\fP,  covariant = \fCFalse\fP,  contravariant = \fCFalse\fP,  infer_variance = \fCFalse\fP,  default = \fC\fBNoDefault\fP\fP)"
+
+.PP
+Reimplemented from \fBpip\&._vendor\&.typing_extensions\&._DefaultMixin\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.typing_extensions\&.ParamSpec\&.__call__ ( self, * args, ** kwargs)"
+
+.SS "pip\&._vendor\&.typing_extensions\&.ParamSpec\&.__eq__ ( self,  other)"
+
+.SS "pip\&._vendor\&.typing_extensions\&.ParamSpec\&.__hash__ ( self)"
+
+.SS " None pip\&._vendor\&.typing_extensions\&.ParamSpec\&.__init_subclass__ ( cls)"
+
+.SS "pip\&._vendor\&.typing_extensions\&.ParamSpec\&.__new__ ( cls,  name, * bound = \fCNone\fP,  covariant = \fCFalse\fP,  contravariant = \fCFalse\fP,  infer_variance = \fCFalse\fP,  default = \fC\fBNoDefault\fP\fP)"
+
+.SS "pip\&._vendor\&.typing_extensions\&.ParamSpec\&.__reduce__ ( self)"
+
+.SS "pip\&._vendor\&.typing_extensions\&.ParamSpec\&.__repr__ ( self)"
+
+.SS "pip\&._vendor\&.typing_extensions\&.ParamSpec\&.args ( self)"
+
+.SS "pip\&._vendor\&.typing_extensions\&.ParamSpec\&.kwargs ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.typing_extensions\&.ParamSpec\&._backported_typevarlike = typing\&.ParamSpec\fC [static]\fP, \fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

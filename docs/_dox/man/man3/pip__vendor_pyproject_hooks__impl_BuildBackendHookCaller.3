@@ -1,0 +1,302 @@
+.TH "pip._vendor.pyproject_hooks._impl.BuildBackendHookCaller" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._vendor.pyproject_hooks._impl.BuildBackendHookCaller
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBpip\&._internal\&.utils\&.misc\&.ConfiguredBuildBackendHookCaller\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__init__\fP (self, \fBsource_dir\fP, \fBbuild_backend\fP, \fBbackend_path\fP=None, runner=None, \fBpython_executable\fP=None)"
+.br
+.ti -1c
+.RI "\fBsubprocess_runner\fP (self, runner)"
+.br
+.ti -1c
+.RI "\fBget_requires_for_build_wheel\fP (self, config_settings=None)"
+.br
+.ti -1c
+.RI "\fBprepare_metadata_for_build_wheel\fP (self, metadata_directory, config_settings=None, _allow_fallback=True)"
+.br
+.ti -1c
+.RI "\fBbuild_wheel\fP (self, wheel_directory, config_settings=None, metadata_directory=None)"
+.br
+.ti -1c
+.RI "\fBget_requires_for_build_editable\fP (self, config_settings=None)"
+.br
+.ti -1c
+.RI "\fBprepare_metadata_for_build_editable\fP (self, metadata_directory, config_settings=None, _allow_fallback=True)"
+.br
+.ti -1c
+.RI "\fBbuild_editable\fP (self, wheel_directory, config_settings=None, metadata_directory=None)"
+.br
+.ti -1c
+.RI "\fBget_requires_for_build_sdist\fP (self, config_settings=None)"
+.br
+.ti -1c
+.RI "\fBbuild_sdist\fP (self, sdist_directory, config_settings=None)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsource_dir\fP"
+.br
+.ti -1c
+.RI "\fBbuild_backend\fP"
+.br
+.ti -1c
+.RI "\fBbackend_path\fP"
+.br
+.ti -1c
+.RI "\fBpython_executable\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_supported_features\fP (self)"
+.br
+.ti -1c
+.RI "\fB_call_hook\fP (self, hook_name, kwargs)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB_subprocess_runner\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A wrapper to call the build backend hooks for a source directory\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pip\&._vendor\&.pyproject_hooks\&._impl\&.BuildBackendHookCaller\&.__init__ ( self,  source_dir,  build_backend,  backend_path = \fCNone\fP,  runner = \fCNone\fP,  python_executable = \fCNone\fP)"
+
+.PP
+.nf
+:param source_dir: The source directory to invoke the build backend for
+:param build_backend: The build backend spec
+:param backend_path: Additional path entries for the build backend spec
+:param runner: The :ref:`subprocess runner <Subprocess Runners>` to use
+:param python_executable:
+    The Python executable used to invoke the build backend
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._internal\&.utils\&.misc\&.ConfiguredBuildBackendHookCaller\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "pip\&._vendor\&.pyproject_hooks\&._impl\&.BuildBackendHookCaller\&._call_hook ( self,  hook_name,  kwargs)\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pyproject_hooks\&._impl\&.BuildBackendHookCaller\&._supported_features ( self)\fC [protected]\fP"
+
+.PP
+.nf
+Return the list of optional features supported by the backend\&.
+.fi
+.PP
+ 
+.SS "pip\&._vendor\&.pyproject_hooks\&._impl\&.BuildBackendHookCaller\&.build_editable ( self,  wheel_directory,  config_settings = \fCNone\fP,  metadata_directory = \fCNone\fP)"
+
+.PP
+.nf
+Build an editable wheel from this project\&.
+
+:returns:
+    The name of the newly created wheel within ``wheel_directory``\&.
+
+\&.\&. admonition:: Interaction with fallback
+
+    If the ``build_editable`` hook was called in the fallback for
+    :meth:`prepare_metadata_for_build_editable`, the build backend
+    would not be invoked\&. Instead, the previously built wheel will be
+    copied to ``wheel_directory`` and the name of that file will be
+    returned\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._internal\&.utils\&.misc\&.ConfiguredBuildBackendHookCaller\fP\&.
+.SS "pip\&._vendor\&.pyproject_hooks\&._impl\&.BuildBackendHookCaller\&.build_sdist ( self,  sdist_directory,  config_settings = \fCNone\fP)"
+
+.PP
+.nf
+Build an sdist from this project\&.
+
+:returns:
+    The name of the newly created sdist within ``wheel_directory``\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._internal\&.utils\&.misc\&.ConfiguredBuildBackendHookCaller\fP\&.
+.SS "pip\&._vendor\&.pyproject_hooks\&._impl\&.BuildBackendHookCaller\&.build_wheel ( self,  wheel_directory,  config_settings = \fCNone\fP,  metadata_directory = \fCNone\fP)"
+
+.PP
+.nf
+Build a wheel from this project\&.
+
+:returns:
+    The name of the newly created wheel within ``wheel_directory``\&.
+
+\&.\&. admonition:: Interaction with fallback
+
+    If the ``build_wheel`` hook was called in the fallback for
+    :meth:`prepare_metadata_for_build_wheel`, the build backend would
+    not be invoked\&. Instead, the previously built wheel will be copied
+    to ``wheel_directory`` and the name of that file will be returned\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._internal\&.utils\&.misc\&.ConfiguredBuildBackendHookCaller\fP\&.
+.SS "pip\&._vendor\&.pyproject_hooks\&._impl\&.BuildBackendHookCaller\&.get_requires_for_build_editable ( self,  config_settings = \fCNone\fP)"
+
+.PP
+.nf
+Get additional dependencies required for building an editable wheel\&.
+
+:returns: A list of :pep:`dependency specifiers <508>`\&.
+:rtype: list[str]
+
+\&.\&. admonition:: Fallback
+
+    If the build backend does not defined a hook with this name, an
+    empty list will be returned\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._internal\&.utils\&.misc\&.ConfiguredBuildBackendHookCaller\fP\&.
+.SS "pip\&._vendor\&.pyproject_hooks\&._impl\&.BuildBackendHookCaller\&.get_requires_for_build_sdist ( self,  config_settings = \fCNone\fP)"
+
+.PP
+.nf
+Get additional dependencies required for building an sdist\&.
+
+:returns: A list of :pep:`dependency specifiers <508>`\&.
+:rtype: list[str]
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._internal\&.utils\&.misc\&.ConfiguredBuildBackendHookCaller\fP\&.
+.SS "pip\&._vendor\&.pyproject_hooks\&._impl\&.BuildBackendHookCaller\&.get_requires_for_build_wheel ( self,  config_settings = \fCNone\fP)"
+
+.PP
+.nf
+Get additional dependencies required for building a wheel\&.
+
+:returns: A list of :pep:`dependency specifiers <508>`\&.
+:rtype: list[str]
+
+\&.\&. admonition:: Fallback
+
+    If the build backend does not defined a hook with this name, an
+    empty list will be returned\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._internal\&.utils\&.misc\&.ConfiguredBuildBackendHookCaller\fP\&.
+.SS "pip\&._vendor\&.pyproject_hooks\&._impl\&.BuildBackendHookCaller\&.prepare_metadata_for_build_editable ( self,  metadata_directory,  config_settings = \fCNone\fP,  _allow_fallback = \fCTrue\fP)"
+
+.PP
+.nf
+Prepare a ``*\&.dist-info`` folder with metadata for this project\&.
+
+:returns: Name of the newly created subfolder within
+          ``metadata_directory``, containing the metadata\&.
+:rtype: str
+
+\&.\&. admonition:: Fallback
+
+    If the build backend does not define a hook with this name and
+    ``_allow_fallback`` is truthy, the backend will be asked to build a
+    wheel via the ``build_editable`` hook and the dist-info
+    extracted from that will be returned\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._internal\&.utils\&.misc\&.ConfiguredBuildBackendHookCaller\fP\&.
+.SS "pip\&._vendor\&.pyproject_hooks\&._impl\&.BuildBackendHookCaller\&.prepare_metadata_for_build_wheel ( self,  metadata_directory,  config_settings = \fCNone\fP,  _allow_fallback = \fCTrue\fP)"
+
+.PP
+.nf
+Prepare a ``*\&.dist-info`` folder with metadata for this project\&.
+
+:returns: Name of the newly created subfolder within
+          ``metadata_directory``, containing the metadata\&.
+:rtype: str
+
+\&.\&. admonition:: Fallback
+
+    If the build backend does not define a hook with this name and
+    ``_allow_fallback`` is truthy, the backend will be asked to build a
+    wheel via the ``build_wheel`` hook and the dist-info extracted from
+    that will be returned\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBpip\&._internal\&.utils\&.misc\&.ConfiguredBuildBackendHookCaller\fP\&.
+.SS "pip\&._vendor\&.pyproject_hooks\&._impl\&.BuildBackendHookCaller\&.subprocess_runner ( self,  runner)"
+
+.PP
+.nf
+A context manager for temporarily overriding the default
+:ref:`subprocess runner <Subprocess Runners>`\&.
+
+\&.\&. code-block:: python
+
+    hook_caller = BuildBackendHookCaller(\&.\&.\&.)
+    with hook_caller\&.subprocess_runner(quiet_subprocess_runner):
+        \&.\&.\&.
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "pip\&._vendor\&.pyproject_hooks\&._impl\&.BuildBackendHookCaller\&._subprocess_runner\fC [protected]\fP"
+
+.SS "pip\&._vendor\&.pyproject_hooks\&._impl\&.BuildBackendHookCaller\&.backend_path"
+
+.SS "pip\&._vendor\&.pyproject_hooks\&._impl\&.BuildBackendHookCaller\&.build_backend"
+
+.SS "pip\&._vendor\&.pyproject_hooks\&._impl\&.BuildBackendHookCaller\&.python_executable"
+
+.SS "pip\&._vendor\&.pyproject_hooks\&._impl\&.BuildBackendHookCaller\&.source_dir"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

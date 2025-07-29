@@ -1,0 +1,48 @@
+.TH "bs4.element.XMLAttributeDict" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bs4.element.XMLAttributeDict
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBbs4\&.element\&.AttributeDict\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__setitem__\fP (self, str key, Any value)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A dictionary for holding a Tag's attributes, which processes
+incoming values for consistency with the HTML spec\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " None bs4\&.element\&.XMLAttributeDict\&.__setitem__ ( self, str key, Any value)"
+
+.PP
+.nf
+Set an attribute value, possibly modifying it to comply with
+the XML spec\&.
+
+This just means converting common non-string values to
+strings: XML attributes may have 'any literal string as a
+value\&.'
+
+.fi
+.PP
+ 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

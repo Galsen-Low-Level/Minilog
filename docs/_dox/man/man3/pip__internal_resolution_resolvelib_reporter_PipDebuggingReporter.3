@@ -1,0 +1,141 @@
+.TH "pip._internal.resolution.resolvelib.reporter.PipDebuggingReporter" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pip._internal.resolution.resolvelib.reporter.PipDebuggingReporter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBpip\&._vendor\&.resolvelib\&.reporters\&.BaseReporter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fBstarting\fP (self)"
+.br
+.ti -1c
+.RI "None \fBstarting_round\fP (self, int index)"
+.br
+.ti -1c
+.RI "None \fBending_round\fP (self, int index, Any state)"
+.br
+.ti -1c
+.RI "None \fBending\fP (self, Any state)"
+.br
+.ti -1c
+.RI "None \fBadding_requirement\fP (self, \fBRequirement\fP requirement, \fBCandidate\fP parent)"
+.br
+.ti -1c
+.RI "None \fBrejecting_candidate\fP (self, Any criterion, \fBCandidate\fP candidate)"
+.br
+.ti -1c
+.RI "None \fBpinning\fP (self, \fBCandidate\fP candidate)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBpip\&._vendor\&.resolvelib\&.reporters\&.BaseReporter\fP
+.in +1c
+.ti -1c
+.RI "\fBresolving_conflicts\fP (self, causes)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A reporter that does an info log for every event it sees\&.
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " None pip\&._internal\&.resolution\&.resolvelib\&.reporter\&.PipDebuggingReporter\&.adding_requirement ( self, \fBRequirement\fP requirement, \fBCandidate\fP parent)"
+
+.PP
+.nf
+Called when adding a new requirement into the resolve criteria\&.
+
+:param requirement: The additional requirement to be applied to filter
+    the available candidaites\&.
+:param parent: The candidate that requires ``requirement`` as a
+    dependency, or None if ``requirement`` is one of the root
+    requirements passed in from ``Resolver\&.resolve()``\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._vendor\&.resolvelib\&.reporters\&.BaseReporter\fP\&.
+.SS " None pip\&._internal\&.resolution\&.resolvelib\&.reporter\&.PipDebuggingReporter\&.ending ( self, Any state)"
+
+.PP
+.nf
+Called before the resolution ends successfully\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._vendor\&.resolvelib\&.reporters\&.BaseReporter\fP\&.
+.SS " None pip\&._internal\&.resolution\&.resolvelib\&.reporter\&.PipDebuggingReporter\&.ending_round ( self, int index, Any state)"
+
+.PP
+.nf
+Called before each round of resolution ends\&.
+
+This is NOT called if the resolution ends at this round\&. Use `ending`
+if you want to report finalization\&. The index is zero-based\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._vendor\&.resolvelib\&.reporters\&.BaseReporter\fP\&.
+.SS " None pip\&._internal\&.resolution\&.resolvelib\&.reporter\&.PipDebuggingReporter\&.pinning ( self, \fBCandidate\fP candidate)"
+
+.PP
+.nf
+Called when adding a candidate to the potential solution\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._vendor\&.resolvelib\&.reporters\&.BaseReporter\fP\&.
+.SS " None pip\&._internal\&.resolution\&.resolvelib\&.reporter\&.PipDebuggingReporter\&.rejecting_candidate ( self, Any criterion, \fBCandidate\fP candidate)"
+
+.PP
+.nf
+Called when rejecting a candidate during backtracking\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._vendor\&.resolvelib\&.reporters\&.BaseReporter\fP\&.
+.SS " None pip\&._internal\&.resolution\&.resolvelib\&.reporter\&.PipDebuggingReporter\&.starting ( self)"
+
+.PP
+.nf
+Called before the resolution actually starts\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._vendor\&.resolvelib\&.reporters\&.BaseReporter\fP\&.
+.SS " None pip\&._internal\&.resolution\&.resolvelib\&.reporter\&.PipDebuggingReporter\&.starting_round ( self, int index)"
+
+.PP
+.nf
+Called before each round of resolution starts\&.
+
+The index is zero-based\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBpip\&._vendor\&.resolvelib\&.reporters\&.BaseReporter\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

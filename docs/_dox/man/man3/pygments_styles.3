@@ -1,0 +1,221 @@
+.TH "pygments.styles" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pygments.styles
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fB_mapping\fP"
+.br
+.ti -1c
+.RI "namespace \fBabap\fP"
+.br
+.ti -1c
+.RI "namespace \fBalgol\fP"
+.br
+.ti -1c
+.RI "namespace \fBalgol_nu\fP"
+.br
+.ti -1c
+.RI "namespace \fBarduino\fP"
+.br
+.ti -1c
+.RI "namespace \fBautumn\fP"
+.br
+.ti -1c
+.RI "namespace \fBborland\fP"
+.br
+.ti -1c
+.RI "namespace \fBbw\fP"
+.br
+.ti -1c
+.RI "namespace \fBcoffee\fP"
+.br
+.ti -1c
+.RI "namespace \fBcolorful\fP"
+.br
+.ti -1c
+.RI "namespace \fBdefault\fP"
+.br
+.ti -1c
+.RI "namespace \fBdracula\fP"
+.br
+.ti -1c
+.RI "namespace \fBemacs\fP"
+.br
+.ti -1c
+.RI "namespace \fBfriendly\fP"
+.br
+.ti -1c
+.RI "namespace \fBfriendly_grayscale\fP"
+.br
+.ti -1c
+.RI "namespace \fBfruity\fP"
+.br
+.ti -1c
+.RI "namespace \fBgh_dark\fP"
+.br
+.ti -1c
+.RI "namespace \fBgruvbox\fP"
+.br
+.ti -1c
+.RI "namespace \fBigor\fP"
+.br
+.ti -1c
+.RI "namespace \fBinkpot\fP"
+.br
+.ti -1c
+.RI "namespace \fBlightbulb\fP"
+.br
+.ti -1c
+.RI "namespace \fBlilypond\fP"
+.br
+.ti -1c
+.RI "namespace \fBlovelace\fP"
+.br
+.ti -1c
+.RI "namespace \fBmanni\fP"
+.br
+.ti -1c
+.RI "namespace \fBmaterial\fP"
+.br
+.ti -1c
+.RI "namespace \fBmonokai\fP"
+.br
+.ti -1c
+.RI "namespace \fBmurphy\fP"
+.br
+.ti -1c
+.RI "namespace \fBnative\fP"
+.br
+.ti -1c
+.RI "namespace \fBnord\fP"
+.br
+.ti -1c
+.RI "namespace \fBonedark\fP"
+.br
+.ti -1c
+.RI "namespace \fBparaiso_dark\fP"
+.br
+.ti -1c
+.RI "namespace \fBparaiso_light\fP"
+.br
+.ti -1c
+.RI "namespace \fBpastie\fP"
+.br
+.ti -1c
+.RI "namespace \fBperldoc\fP"
+.br
+.ti -1c
+.RI "namespace \fBrainbow_dash\fP"
+.br
+.ti -1c
+.RI "namespace \fBrrt\fP"
+.br
+.ti -1c
+.RI "namespace \fBsas\fP"
+.br
+.ti -1c
+.RI "namespace \fBsolarized\fP"
+.br
+.ti -1c
+.RI "namespace \fBstaroffice\fP"
+.br
+.ti -1c
+.RI "namespace \fBstata_dark\fP"
+.br
+.ti -1c
+.RI "namespace \fBstata_light\fP"
+.br
+.ti -1c
+.RI "namespace \fBtango\fP"
+.br
+.ti -1c
+.RI "namespace \fBtrac\fP"
+.br
+.ti -1c
+.RI "namespace \fBvim\fP"
+.br
+.ti -1c
+.RI "namespace \fBvs\fP"
+.br
+.ti -1c
+.RI "namespace \fBxcode\fP"
+.br
+.ti -1c
+.RI "namespace \fBzenburn\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBget_style_by_name\fP (name)"
+.br
+.ti -1c
+.RI "\fBget_all_styles\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "dict \fBSTYLE_MAP\fP = {v[1]: v[0]\&.split('\&.')[\-1] + '::' + k for k, v in STYLES\&.items()}"
+.br
+.ti -1c
+.RI "dict \fB_STYLE_NAME_TO_MODULE_MAP\fP = {v[1]: (v[0], k) for k, v in STYLES\&.items()}"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+    pygments\&.styles
+    ~~~~~~~~~~~~~~~
+
+    Contains built-in styles\&.
+
+    :copyright: Copyright 2006-2025 by the Pygments team, see AUTHORS\&.
+    :license: BSD, see LICENSE for details\&.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "pygments\&.styles\&.get_all_styles ()"
+
+.PP
+.nf
+Return a generator for all styles by name, both builtin and plugin\&.
+.fi
+.PP
+ 
+.SS "pygments\&.styles\&.get_style_by_name ( name)"
+
+.PP
+.nf
+Return a style class by its short name\&. The names of the builtin styles
+are listed in :data:`pygments\&.styles\&.STYLE_MAP`\&.
+
+Will raise :exc:`pygments\&.util\&.ClassNotFound` if no style of that name is
+found\&.
+
+.fi
+.PP
+ 
+.SH "Variable Documentation"
+.PP 
+.SS "dict pygments\&.styles\&._STYLE_NAME_TO_MODULE_MAP = {v[1]: (v[0], k) for k, v in STYLES\&.items()}\fC [protected]\fP"
+
+.SS "dict pygments\&.styles\&.STYLE_MAP = {v[1]: v[0]\&.split('\&.')[\-1] + '::' + k for k, v in STYLES\&.items()}"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

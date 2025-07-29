@@ -1,0 +1,91 @@
+\doxysection{sphinx.\+application.\+Template\+Bridge Class Reference}
+\hypertarget{classsphinx_1_1application_1_1TemplateBridge}{}\label{classsphinx_1_1application_1_1TemplateBridge}\index{sphinx.application.TemplateBridge@{sphinx.application.TemplateBridge}}
+Inheritance diagram for sphinx.\+application.\+Template\+Bridge\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsphinx_1_1application_1_1TemplateBridge}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1TemplateBridge_a2d054c4a6ef5aa227fe72f3f088450b3}{init}} (self, \mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}} builder, \mbox{\hyperlink{classsphinx_1_1theming_1_1Theme}{Theme}}\texorpdfstring{$\vert$}{|}None theme=None, list\mbox{[}str\mbox{]}\texorpdfstring{$\vert$}{|}None dirs=None)
+\item 
+float \mbox{\hyperlink{classsphinx_1_1application_1_1TemplateBridge_ae35e332919adf688ca290f0957c5deeb}{newest\+\_\+template\+\_\+mtime}} (self)
+\item 
+None \mbox{\hyperlink{classsphinx_1_1application_1_1TemplateBridge_a98905403a6b45a97dda798d792d13f1a}{render}} (self, str template, dict\mbox{[}str, Any\mbox{]} context)
+\item 
+str \mbox{\hyperlink{classsphinx_1_1application_1_1TemplateBridge_abeb3280094e147d0febde9febf255f7d}{render\+\_\+string}} (self, str template, dict\mbox{[}str, Any\mbox{]} context)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}This class defines the interface for a "template bridge", that is, a class
+that renders templates given a template name and a context.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsphinx_1_1application_1_1TemplateBridge_a2d054c4a6ef5aa227fe72f3f088450b3}\label{classsphinx_1_1application_1_1TemplateBridge_a2d054c4a6ef5aa227fe72f3f088450b3} 
+\index{sphinx.application.TemplateBridge@{sphinx.application.TemplateBridge}!init@{init}}
+\index{init@{init}!sphinx.application.TemplateBridge@{sphinx.application.TemplateBridge}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Template\+Bridge.\+init (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classsphinx_1_1builders_1_1Builder}{Builder}}}]{builder,  }\item[{\mbox{\hyperlink{classsphinx_1_1theming_1_1Theme}{Theme}} \texorpdfstring{$\vert$}{|} None }]{theme = {\ttfamily None},  }\item[{list\mbox{[}str\mbox{]} \texorpdfstring{$\vert$}{|} None }]{dirs = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Called by the builder to initialize the template system.
+
+*builder* is the builder object; you'll probably want to look at the
+value of ``builder.config.templates_path``.
+
+*theme* is a :class:`sphinx.theming.Theme` object or None; in the latter
+case, *dirs* can be list of fixed directories to look for templates.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a871c1ce79da8c17476d1cfd43af7e05c}{sphinx.\+jinja2glue.\+Builtin\+Template\+Loader}}.
+
+\Hypertarget{classsphinx_1_1application_1_1TemplateBridge_ae35e332919adf688ca290f0957c5deeb}\label{classsphinx_1_1application_1_1TemplateBridge_ae35e332919adf688ca290f0957c5deeb} 
+\index{sphinx.application.TemplateBridge@{sphinx.application.TemplateBridge}!newest\_template\_mtime@{newest\_template\_mtime}}
+\index{newest\_template\_mtime@{newest\_template\_mtime}!sphinx.application.TemplateBridge@{sphinx.application.TemplateBridge}}
+\doxysubsubsection{\texorpdfstring{newest\_template\_mtime()}{newest\_template\_mtime()}}
+{\footnotesize\ttfamily  float sphinx.\+application.\+Template\+Bridge.\+newest\+\_\+template\+\_\+mtime (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Called by the builder to determine if output files are outdated
+because of template changes.  Return the mtime of the newest template
+file that was changed.  The default implementation returns ``0``.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a4c330f9ea19431f2613c4ebcde5c938d}{sphinx.\+jinja2glue.\+Builtin\+Template\+Loader}}.
+
+\Hypertarget{classsphinx_1_1application_1_1TemplateBridge_a98905403a6b45a97dda798d792d13f1a}\label{classsphinx_1_1application_1_1TemplateBridge_a98905403a6b45a97dda798d792d13f1a} 
+\index{sphinx.application.TemplateBridge@{sphinx.application.TemplateBridge}!render@{render}}
+\index{render@{render}!sphinx.application.TemplateBridge@{sphinx.application.TemplateBridge}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily  None sphinx.\+application.\+Template\+Bridge.\+render (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{template,  }\item[{dict\mbox{[}str, Any\mbox{]}}]{context }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Called by the builder to render a template given as a filename with
+a specified context (a Python dictionary).
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a558f7872c32d2481f935304cf107d4e5}{sphinx.\+jinja2glue.\+Builtin\+Template\+Loader}}.
+
+\Hypertarget{classsphinx_1_1application_1_1TemplateBridge_abeb3280094e147d0febde9febf255f7d}\label{classsphinx_1_1application_1_1TemplateBridge_abeb3280094e147d0febde9febf255f7d} 
+\index{sphinx.application.TemplateBridge@{sphinx.application.TemplateBridge}!render\_string@{render\_string}}
+\index{render\_string@{render\_string}!sphinx.application.TemplateBridge@{sphinx.application.TemplateBridge}}
+\doxysubsubsection{\texorpdfstring{render\_string()}{render\_string()}}
+{\footnotesize\ttfamily  str sphinx.\+application.\+Template\+Bridge.\+render\+\_\+string (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{template,  }\item[{dict\mbox{[}str, Any\mbox{]}}]{context }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Called by the builder to render a template given as a string with a
+specified context (a Python dictionary).
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classsphinx_1_1jinja2glue_1_1BuiltinTemplateLoader_a9c5d3e2141b76288bfe88ce94436471e}{sphinx.\+jinja2glue.\+Builtin\+Template\+Loader}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/umar/\+Desktop/\+Work\+Shop/\+GLL/\+Minilog/dist/lib/python3.\+13/site-\/packages/sphinx/\mbox{\hyperlink{application_8py}{application.\+py}}\end{DoxyCompactItemize}

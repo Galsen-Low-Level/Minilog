@@ -1,0 +1,133 @@
+.TH "sphinx.ext.autodoc.UninitializedInstanceAttributeMixin" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sphinx.ext.autodoc.UninitializedInstanceAttributeMixin
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBsphinx\&.ext\&.autodoc\&.DataDocumenterMixinBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBis_uninitialized_instance_attribute\fP (self, Any \fBparent\fP)"
+.br
+.ti -1c
+.RI "bool \fBimport_object\fP (self, bool raiseerror=False)"
+.br
+.ti -1c
+.RI "bool \fBshould_suppress_value_header\fP (self)"
+.br
+.ti -1c
+.RI "list[list[str]]|None \fBget_doc\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBsphinx\&.ext\&.autodoc\&.DataDocumenterMixinBase\fP
+.in +1c
+.ti -1c
+.RI "bool \fBshould_suppress_directive_header\fP (self)"
+.br
+.ti -1c
+.RI "None \fBupdate_content\fP (self, \fBStringList\fP more_content)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBmodname\fP"
+.br
+.ti -1c
+.RI "\fBobject\fP"
+.br
+.ti -1c
+.RI "\fBparent\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Attributes inherited from \fBsphinx\&.ext\&.autodoc\&.DataDocumenterMixinBase\fP
+.in +1c
+.ti -1c
+.RI "\fBConfig\fP \fBconfig\fP"
+.br
+.ti -1c
+.RI "\fBBuildEnvironment\fP \fBenv\fP"
+.br
+.ti -1c
+.RI "str \fBmodname\fP"
+.br
+.ti -1c
+.RI "Any \fBparent\fP"
+.br
+.ti -1c
+.RI "Any \fBobject\fP"
+.br
+.ti -1c
+.RI "list \fBobjpath\fP [str]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Mixin for AttributeDocumenter to provide the feature for supporting uninitialized
+instance attributes (PEP-526 styled, annotation only attributes)\&.
+
+Example::
+
+    class Foo:
+        attr: int  #: This is a target of this mix-in\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " list[list[str]] | None sphinx\&.ext\&.autodoc\&.UninitializedInstanceAttributeMixin\&.get_doc ( self)"
+
+.SS " bool sphinx\&.ext\&.autodoc\&.UninitializedInstanceAttributeMixin\&.import_object ( self, bool  raiseerror = \fCFalse\fP)"
+
+.PP
+.nf
+Check the existence of uninitialized instance attribute when failed to import
+the attribute\&.
+
+.fi
+.PP
+ 
+.SS " bool sphinx\&.ext\&.autodoc\&.UninitializedInstanceAttributeMixin\&.is_uninitialized_instance_attribute ( self, Any parent)"
+
+.PP
+.nf
+Check the subject is an annotation only attribute\&.
+.fi
+.PP
+ 
+.SS " bool sphinx\&.ext\&.autodoc\&.UninitializedInstanceAttributeMixin\&.should_suppress_value_header ( self)"
+
+.PP
+.nf
+Check :value: header should be suppressed\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBsphinx\&.ext\&.autodoc\&.DataDocumenterMixinBase\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "sphinx\&.ext\&.autodoc\&.UninitializedInstanceAttributeMixin\&.modname"
+
+.SS "sphinx\&.ext\&.autodoc\&.UninitializedInstanceAttributeMixin\&.object"
+
+.SS "sphinx\&.ext\&.autodoc\&.UninitializedInstanceAttributeMixin\&.parent"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

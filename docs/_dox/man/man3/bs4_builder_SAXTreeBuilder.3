@@ -1,0 +1,222 @@
+.TH "bs4.builder.SAXTreeBuilder" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bs4.builder.SAXTreeBuilder
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBbs4\&.builder\&.TreeBuilder\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "None \fB__init__\fP (self, *Any args, **Any kwargs)"
+.br
+.ti -1c
+.RI "None \fBfeed\fP (self, _RawMarkup markup)"
+.br
+.ti -1c
+.RI "None \fBclose\fP (self)"
+.br
+.ti -1c
+.RI "None \fBstartElement\fP (self, str name, Dict[str, str] attrs)"
+.br
+.ti -1c
+.RI "None \fBendElement\fP (self, str name)"
+.br
+.ti -1c
+.RI "None \fBstartElementNS\fP (self, Tuple[str, str] nsTuple, str nodeName, Dict[str, str] attrs)"
+.br
+.ti -1c
+.RI "None \fBendElementNS\fP (self, Tuple[str, str] nsTuple, str nodeName)"
+.br
+.ti -1c
+.RI "None \fBstartPrefixMapping\fP (self, str prefix, str nodeValue)"
+.br
+.ti -1c
+.RI "None \fBendPrefixMapping\fP (self, str prefix)"
+.br
+.ti -1c
+.RI "None \fBcharacters\fP (self, str content)"
+.br
+.ti -1c
+.RI "None \fBstartDocument\fP (self)"
+.br
+.ti -1c
+.RI "None \fBendDocument\fP (self)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBbs4\&.builder\&.TreeBuilder\fP
+.in +1c
+.ti -1c
+.RI "None \fBinitialize_soup\fP (self, \fBBeautifulSoup\fP \fBsoup\fP)"
+.br
+.ti -1c
+.RI "None \fBreset\fP (self)"
+.br
+.ti -1c
+.RI "bool \fBcan_be_empty_element\fP (self, str tag_name)"
+.br
+.ti -1c
+.RI "Iterable[Tuple[_RawMarkup, Optional[_Encoding], Optional[_Encoding], bool]] \fBprepare_markup\fP (self, _RawMarkup markup, Optional[_Encoding] user_specified_encoding=None, Optional[_Encoding] document_declared_encoding=None, Optional[_Encodings] exclude_encodings=None)"
+.br
+.ti -1c
+.RI "str \fBtest_fragment_to_document\fP (self, str fragment)"
+.br
+.ti -1c
+.RI "bool \fBset_up_substitutions\fP (self, \fBTag\fP tag)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBbs4\&.builder\&.TreeBuilder\fP
+.in +1c
+.ti -1c
+.RI "\fBsoup\fP"
+.br
+.ti -1c
+.RI "\fBcdata_list_attributes\fP"
+.br
+.ti -1c
+.RI "\fBpreserve_whitespace_tags\fP"
+.br
+.ti -1c
+.RI "\fBempty_element_tags\fP"
+.br
+.ti -1c
+.RI "\fBstore_line_numbers\fP"
+.br
+.ti -1c
+.RI "\fBstring_containers\fP"
+.br
+.ti -1c
+.RI "\fBattribute_dict_class\fP"
+.br
+.ti -1c
+.RI "\fBattribute_value_list_class\fP"
+.br
+.in -1c
+
+Static Public Attributes inherited from \fBbs4\&.builder\&.TreeBuilder\fP
+.in +1c
+.ti -1c
+.RI "Any \fBUSE_DEFAULT\fP = object()"
+.br
+.ti -1c
+.RI "str \fBNAME\fP = '[Unknown tree builder]'"
+.br
+.ti -1c
+.RI "list \fBALTERNATE_NAMES\fP = []"
+.br
+.ti -1c
+.RI "list \fBfeatures\fP = []"
+.br
+.ti -1c
+.RI "bool \fBis_xml\fP = False"
+.br
+.ti -1c
+.RI "bool \fBpicklable\fP = False"
+.br
+.ti -1c
+.RI "Optional \fBsoup\fP [\fBBeautifulSoup\fP]"
+.br
+.ti -1c
+.RI "Optional \fBempty_element_tags\fP = None"
+.br
+.ti -1c
+.RI "Dict \fBcdata_list_attributes\fP [str, Set[str]]"
+.br
+.ti -1c
+.RI "Set \fBpreserve_whitespace_tags\fP [str]"
+.br
+.ti -1c
+.RI "Dict \fBstring_containers\fP [str, Type[\fBNavigableString\fP]]"
+.br
+.ti -1c
+.RI "bool \fBtracks_line_numbers\fP"
+.br
+.ti -1c
+.RI "Dict \fBDEFAULT_CDATA_LIST_ATTRIBUTES\fP = defaultdict(set)"
+.br
+.ti -1c
+.RI "Set \fBDEFAULT_PRESERVE_WHITESPACE_TAGS\fP = set()"
+.br
+.ti -1c
+.RI "dict \fBDEFAULT_STRING_CONTAINERS\fP = {}"
+.br
+.ti -1c
+.RI "Optional \fBDEFAULT_EMPTY_ELEMENT_TAGS\fP = None"
+.br
+.ti -1c
+.RI "bool \fBTRACKS_LINE_NUMBERS\fP = False"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBbs4\&.builder\&.TreeBuilder\fP
+.in +1c
+.ti -1c
+.RI "_AttributeValues \fB_replace_cdata_list_attribute_values\fP (self, str tag_name, _RawOrProcessedAttributeValues attrs)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A Beautiful Soup treebuilder that listens for SAX events\&.
+
+This is not currently used for anything, and it will be removed
+soon\&. It was a good idea, but it wasn't properly integrated into the
+rest of Beautiful Soup, so there have been long stretches where it
+hasn't worked properly\&.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS " None bs4\&.builder\&.SAXTreeBuilder\&.__init__ ( self, *Any args, **Any kwargs)"
+
+.PP
+Reimplemented from \fBbs4\&.builder\&.TreeBuilder\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS " None bs4\&.builder\&.SAXTreeBuilder\&.characters ( self, str content)"
+
+.SS " None bs4\&.builder\&.SAXTreeBuilder\&.close ( self)"
+
+.SS " None bs4\&.builder\&.SAXTreeBuilder\&.endDocument ( self)"
+
+.SS " None bs4\&.builder\&.SAXTreeBuilder\&.endElement ( self, str name)"
+
+.SS " None bs4\&.builder\&.SAXTreeBuilder\&.endElementNS ( self, Tuple[str, str] nsTuple, str nodeName)"
+
+.SS " None bs4\&.builder\&.SAXTreeBuilder\&.endPrefixMapping ( self, str prefix)"
+
+.SS " None bs4\&.builder\&.SAXTreeBuilder\&.feed ( self, _RawMarkup markup)"
+
+.PP
+.nf
+Run incoming markup through some parsing process\&.
+.fi
+.PP
+ 
+.PP
+Reimplemented from \fBbs4\&.builder\&.TreeBuilder\fP\&.
+.SS " None bs4\&.builder\&.SAXTreeBuilder\&.startDocument ( self)"
+
+.SS " None bs4\&.builder\&.SAXTreeBuilder\&.startElement ( self, str name, Dict[str, str] attrs)"
+
+.SS " None bs4\&.builder\&.SAXTreeBuilder\&.startElementNS ( self, Tuple[str, str] nsTuple, str nodeName, Dict[str, str]
+     attrs)"
+
+.SS " None bs4\&.builder\&.SAXTreeBuilder\&.startPrefixMapping ( self, str prefix, str nodeValue)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.

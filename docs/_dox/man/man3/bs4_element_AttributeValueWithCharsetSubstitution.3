@@ -1,0 +1,67 @@
+.TH "bs4.element.AttributeValueWithCharsetSubstitution" 3 "Version 1.0" "Minilog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bs4.element.AttributeValueWithCharsetSubstitution
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits str\&.
+.PP
+Inherited by \fBbs4\&.element\&.CharsetMetaAttributeValue\fP, and \fBbs4\&.element\&.ContentMetaAttributeValue\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "str \fBsubstitute_encoding\fP (self, str eventual_encoding)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "str \fBoriginal_value\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+An abstract class standing in for a character encoding specified
+inside an HTML ``<meta>`` tag\&.
+
+Subclasses exist for each place such a character encoding might be
+found: either inside the ``charset`` attribute
+(`CharsetMetaAttributeValue`) or inside the ``content`` attribute
+(`ContentMetaAttributeValue`)
+
+This allows Beautiful Soup to replace that part of the HTML file
+with a different encoding when ouputting a tree as a string\&.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS " str bs4\&.element\&.AttributeValueWithCharsetSubstitution\&.substitute_encoding ( self, str eventual_encoding)"
+
+.PP
+.nf
+Do whatever's necessary in this implementation-specific
+portion an HTML document to substitute in a specific encoding\&.
+
+.fi
+.PP
+ 
+.PP
+Reimplemented in \fBbs4\&.element\&.CharsetMetaAttributeValue\fP, and \fBbs4\&.element\&.ContentMetaAttributeValue\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "str bs4\&.element\&.AttributeValueWithCharsetSubstitution\&.original_value\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Minilog from the source code\&.
